@@ -49,7 +49,7 @@ class HPOP(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
 
         # Get IVehiclePropagatorLOP interface
         hpopProp: "IVehiclePropagatorHPOP" = clr.CastAs(satellite.propagator, IVehiclePropagatorHPOP)

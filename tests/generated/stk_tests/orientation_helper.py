@@ -441,31 +441,31 @@ class PositionTest(object):
     # region Display method
     def Display(self, oPosition: "IPosition"):
         Assert.assertIsNotNone(oPosition)
-        if oPosition.pos_type == POSITION_TYPE.CARTESIAN:
+        if oPosition.position_type == POSITION_TYPE.CARTESIAN:
             oCartesian: "ICartesian" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CARTESIAN), ICartesian)
             Assert.assertIsNotNone(oCartesian)
             self.m_logger.WriteLine6("\t\tCartesian X is: {0}", oCartesian.x)
             self.m_logger.WriteLine6("\t\tCartesian Y is: {0}", oCartesian.y)
             self.m_logger.WriteLine6("\t\tCartesian Z is: {0}", oCartesian.z)
-        elif oPosition.pos_type == POSITION_TYPE.CYLINDRICAL:
+        elif oPosition.position_type == POSITION_TYPE.CYLINDRICAL:
             oCylindrical: "ICylindrical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CYLINDRICAL), ICylindrical)
             Assert.assertIsNotNone(oCylindrical)
             self.m_logger.WriteLine6("\t\tCylindrical Radius is: {0}", oCylindrical.radius)
             self.m_logger.WriteLine6("\t\tCylindrical Z is: {0}", oCylindrical.z)
             self.m_logger.WriteLine6("\t\tCylindrical Lon is: {0}", oCylindrical.lon)
-        elif oPosition.pos_type == POSITION_TYPE.GEOCENTRIC:
+        elif oPosition.position_type == POSITION_TYPE.GEOCENTRIC:
             oGeocentric: "IGeocentric" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEOCENTRIC), IGeocentric)
             Assert.assertIsNotNone(oGeocentric)
             self.m_logger.WriteLine6("\t\tGeocentric Lat is: {0}", oGeocentric.lat)
             self.m_logger.WriteLine6("\t\tGeocentric Lon is: {0}", oGeocentric.lon)
-            self.m_logger.WriteLine6("\t\tGeocentric Alt is: {0}", oGeocentric.alt)
-        elif oPosition.pos_type == POSITION_TYPE.GEODETIC:
+            self.m_logger.WriteLine6("\t\tGeocentric Alt is: {0}", oGeocentric.altitude)
+        elif oPosition.position_type == POSITION_TYPE.GEODETIC:
             oGeodetic: "IGeodetic" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEODETIC), IGeodetic)
             Assert.assertIsNotNone(oGeodetic)
             self.m_logger.WriteLine6("\t\tGeodetic Lat is: {0}", oGeodetic.lat)
             self.m_logger.WriteLine6("\t\tGeodetic Lon is: {0}", oGeodetic.lon)
-            self.m_logger.WriteLine6("\t\tGeodetic Alt is: {0}", oGeodetic.alt)
-        elif oPosition.pos_type == POSITION_TYPE.SPHERICAL:
+            self.m_logger.WriteLine6("\t\tGeodetic Alt is: {0}", oGeodetic.altitude)
+        elif oPosition.position_type == POSITION_TYPE.SPHERICAL:
             oSpherical: "ISpherical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.SPHERICAL), ISpherical)
             Assert.assertIsNotNone(oSpherical)
             self.m_logger.WriteLine6("\t\tSpherical Lat is: {0}", oSpherical.lat)
@@ -514,13 +514,13 @@ class PositionTest(object):
         )
         Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
-        self.m_logger.WriteLine6("\tCurrent position type is: {0}", oPosition.pos_type)
+        self.m_logger.WriteLine6("\tCurrent position type is: {0}", oPosition.position_type)
         self.Display(oPosition)
         if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
             oCartesian: "ICartesian" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CARTESIAN), ICartesian)
             Assert.assertIsNotNone(oCartesian)
             oCartesian.assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oCartesian.pos_type)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oCartesian.position_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oCartesian)
             oCartesian.x = 1234.5
@@ -559,7 +559,7 @@ class PositionTest(object):
             oCylindrical: "ICylindrical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CYLINDRICAL), ICylindrical)
             Assert.assertIsNotNone(oCylindrical)
             oCylindrical.assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oCylindrical.pos_type)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oCylindrical.position_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oCylindrical)
             oCylindrical.radius = 12203.4
@@ -598,12 +598,12 @@ class PositionTest(object):
             oGeocentric: "IGeocentric" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEOCENTRIC), IGeocentric)
             Assert.assertIsNotNone(oGeocentric)
             oGeocentric.assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeocentric.pos_type)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeocentric.position_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oGeocentric)
             oGeocentric.lat = 1.234
             oGeocentric.lon = 2.345
-            oGeocentric.alt = 12.34
+            oGeocentric.altitude = 12.34
             oGeocentric.assign_geocentric(1.234, 2.345, 12.34)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oGeocentric)
@@ -619,7 +619,7 @@ class PositionTest(object):
             TryCatchAssertBlock.DoAssert("", action21)
 
             def action22():
-                oGeocentric.alt = 6780000000000.0
+                oGeocentric.altitude = 6780000000000.0
 
             TryCatchAssertBlock.DoAssert("", action22)
 
@@ -637,12 +637,12 @@ class PositionTest(object):
             oGeodetic: "IGeodetic" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEODETIC), IGeodetic)
             Assert.assertIsNotNone(oGeodetic)
             oGeodetic.assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeodetic.pos_type)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeodetic.position_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oGeodetic)
             oGeodetic.lat = 0.190988679940043
             oGeodetic.lon = -0.743582379766568
-            oGeodetic.alt = 0.640787459798838
+            oGeodetic.altitude = 0.640787459798838
             oGeodetic.assign_geodetic(0.190988679940043, -0.743582379766568, 0.640787459798838)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oGeodetic)
@@ -658,7 +658,7 @@ class PositionTest(object):
             TryCatchAssertBlock.DoAssert("", action24)
 
             def action25():
-                oGeodetic.alt = 6780000000000.0
+                oGeodetic.altitude = 6780000000000.0
 
             TryCatchAssertBlock.DoAssert("", action25)
 
@@ -676,7 +676,7 @@ class PositionTest(object):
             oSpherical: "ISpherical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.SPHERICAL), ISpherical)
             Assert.assertIsNotNone(oSpherical)
             oSpherical.assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oSpherical.pos_type)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oSpherical.position_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oSpherical)
             oSpherical.lat = 1
@@ -797,17 +797,17 @@ class LLAPositionTest(object):
             Assert.assertIsNotNone(llaGeodetic)
             self.m_logger.WriteLine6("\t\tGeodetic Lat is: {0}", llaGeodetic.lat)
             self.m_logger.WriteLine6("\t\tGeodetic Lon is: {0}", llaGeodetic.lon)
-            self.m_logger.WriteLine6("\t\tGeodetic Alt is: {0}", llaGeodetic.alt)
+            self.m_logger.WriteLine6("\t\tGeodetic Alt is: {0}", llaGeodetic.altitude)
 
             llaGeodetic.assign_geocentric(10.0, 20.0, 10000.0)
             Assert.assertAlmostEqual(10.04, llaGeodetic.lat, delta=0.01)
             Assert.assertAlmostEqual(19.95, llaGeodetic.lon, delta=0.1)
-            Assert.assertAlmostEqual(3622, llaGeodetic.alt, delta=1.0)
+            Assert.assertAlmostEqual(3622, llaGeodetic.altitude, delta=1.0)
 
             llaGeodetic.assign_geodetic(40.0, 50.0, 10000.0)
             Assert.assertEqual(40.0, llaGeodetic.lat)
             Assert.assertEqual(50.0, llaGeodetic.lon)
-            Assert.assertEqual(10000.0, llaGeodetic.alt)
+            Assert.assertEqual(10000.0, llaGeodetic.altitude)
         else:
             Assert.fail("Invalid LLA Position type: {0}", oPosition.type)
 
@@ -883,11 +883,11 @@ class LLAPositionTest(object):
 
         TryCatchAssertBlock.DoAssert("", action33)
         # Alt
-        oGeodetic.alt = 123.456
-        Assert.assertAlmostEqual(123.456, oGeodetic.alt, delta=0.001)
+        oGeodetic.altitude = 123.456
+        Assert.assertAlmostEqual(123.456, oGeodetic.altitude, delta=0.001)
 
         def action34():
-            oGeodetic.alt = -321
+            oGeodetic.altitude = -321
 
         TryCatchAssertBlock.DoAssert("", action34)
         self.m_logger.WriteLine("\t\tNew values:")

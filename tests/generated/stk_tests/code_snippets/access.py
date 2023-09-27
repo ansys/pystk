@@ -104,7 +104,7 @@ class Access(CodeSnippetsTestBase):
         light: "IAccessConstraintCondition" = clr.CastAs(
             accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LIGHTING), IAccessConstraintCondition
         )
-        light.condition = CNSTR_LIGHTING.DIRECT_SUN
+        light.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
 
     # endregion
 
@@ -253,7 +253,7 @@ class Access(CodeSnippetsTestBase):
         fac: "IFacility" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1"), IFacility
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         tb: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
@@ -279,7 +279,7 @@ class Access(CodeSnippetsTestBase):
         fac: "IFacility" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1"), IFacility
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         tb: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
@@ -309,7 +309,7 @@ class Access(CodeSnippetsTestBase):
         fac: "IFacility" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1"), IFacility
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         tb: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
@@ -337,7 +337,7 @@ class Access(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"),
             ISatellite,
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(sat.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "1 Jan 2012 13:00:00.000")
         j2prop.step = 60
@@ -355,7 +355,7 @@ class Access(CodeSnippetsTestBase):
         onePtAccess.start_time = "1 Jan 2012 12:00:00.000"
         onePtAccess.stop_time = "1 Jan 2012 13:00:00.000"
         onePtAccess.step_size = 120
-        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.DETAILED
+        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.DETAILED
 
         # Compute results
         results: "IOnePointAccessResultCollection" = onePtAccess.compute()
@@ -570,7 +570,7 @@ class Access(CodeSnippetsTestBase):
         sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Sat1"), ISatellite
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)).propagate()
 
         access: "IStkAccess" = objFac.get_access_to_object(clr.CastAs(sat, IStkObject))
@@ -624,13 +624,16 @@ class Access(CodeSnippetsTestBase):
 
     def AddMultipleAWBAccessConstraintsOfTheSameTypeToAnObject(self, stkobject: "IStkObject"):
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
-        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
+        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
+            accessConstraints.analysis_workbench_constraints
+        )
 
         # Add constraints
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
         awbConst: "IAccessConstraintAnalysisWorkbench" = clr.CastAs(
             awbAccessConstraints.add_constraint(
-                AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector")
+                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
+                (objectPath + " East Vector"),
             ),
             IAccessConstraintAnalysisWorkbench,
         )
@@ -639,7 +642,8 @@ class Access(CodeSnippetsTestBase):
 
         awbConst2: "IAccessConstraintAnalysisWorkbench" = clr.CastAs(
             awbAccessConstraints.add_constraint(
-                AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " North Vector")
+                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
+                (objectPath + " North Vector"),
             ),
             IAccessConstraintAnalysisWorkbench,
         )
@@ -654,21 +658,29 @@ class Access(CodeSnippetsTestBase):
             STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
-        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
+        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
+            accessConstraints.analysis_workbench_constraints
+        )
 
         # Add constraints
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
-        awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector"))
+        awbAccessConstraints.add_constraint(
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
+            (objectPath + " East Vector"),
+        )
         self.RemoveAWBAccessConstraint(stkobject)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def RemoveAWBAccessConstraint(self, stkobject: "IStkObject"):
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
-        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
+        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
+            accessConstraints.analysis_workbench_constraints
+        )
 
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
         awbAccessConstraints.remove_constraint(
-            AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector")
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
+            (objectPath + " East Vector"),
         )
 
     # endregion
@@ -679,14 +691,22 @@ class Access(CodeSnippetsTestBase):
             STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
-        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
+        awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
+            accessConstraints.analysis_workbench_constraints
+        )
 
         # Add constraints
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
-        awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector"))
-        awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_ANGLE, (objectPath + " SunAzimuth Angle"))
         awbAccessConstraints.add_constraint(
-            AWB_ACCESS_CONSTRAINTS.CSTR_AWB_CONDITION, (objectPath + " BeforeStop Condition")
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
+            (objectPath + " East Vector"),
+        )
+        awbAccessConstraints.add_constraint(
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_ANGLE, (objectPath + " SunAzimuth Angle")
+        )
+        awbAccessConstraints.add_constraint(
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_CONDITION,
+            (objectPath + " BeforeStop Condition"),
         )
 
         self.ListAllAWBConstraints(stkobject)
@@ -695,7 +715,7 @@ class Access(CodeSnippetsTestBase):
 
     def ListAllAWBConstraints(self, stkobject: "IStkObject"):
         awbaccessconstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
-            stkobject.access_constraints.awb_constraints
+            stkobject.access_constraints.analysis_workbench_constraints
         )
         awbConstraint: "IAccessConstraintAnalysisWorkbench"
         for awbConstraint in awbaccessconstraints:
@@ -713,10 +733,12 @@ class Access(CodeSnippetsTestBase):
 
     def ListAllAvailableReferencesForAWBConstraintType(self, stkobject: "IStkObject"):
         awbaccessconstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
-            stkobject.access_constraints.awb_constraints
+            stkobject.access_constraints.analysis_workbench_constraints
         )
         availableReference: str
-        for availableReference in awbaccessconstraints.get_available_references(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_ANGLE):
+        for availableReference in awbaccessconstraints.get_available_references(
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_ANGLE
+        ):
             Console.WriteLine("Available Reference: {0}", availableReference)
 
     # endregion
@@ -735,10 +757,15 @@ class Access(CodeSnippetsTestBase):
             crdnVec: "IAnalysisWorkbenchComponent" = clr.CastAs(vec, IAnalysisWorkbenchComponent)
 
             accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
-            awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
+            awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
+                accessConstraints.analysis_workbench_constraints
+            )
 
             awbConst: "IAccessConstraintAnalysisWorkbench" = clr.CastAs(
-                awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, crdnVec.qualified_path),
+                awbAccessConstraints.add_constraint(
+                    ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
+                    crdnVec.qualified_path,
+                ),
                 IAccessConstraintAnalysisWorkbench,
             )
             awbConst.enable_min = True

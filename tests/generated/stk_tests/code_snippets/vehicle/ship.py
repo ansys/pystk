@@ -57,7 +57,7 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseGreatArcPropagator(self, ship: "IShip"):
         # Set ship route to great arc
-        ship.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        ship.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(ship.route, IVehiclePropagatorGreatArc)
@@ -70,7 +70,7 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseStkExternalPropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
-        ship.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        ship.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(ship.route, IVehiclePropagatorStkExternal)
@@ -83,7 +83,7 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseRealtimePropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
-        ship.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        ship.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorRealtime" = clr.CastAs(ship.route, IVehiclePropagatorRealtime)

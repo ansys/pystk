@@ -8,7 +8,7 @@ import os
 from tkinter                    import Frame
 from ctypes                     import *
 
-from ..stkx             import IUiAxVOCntrl, IUiAx2DCntrl, IUiAxGfxAnalysisCntrl
+from ..stkx             import IUiAxGraphics3DCntrl, IUiAx2DCntrl, IUiAxGraphics2DAnalysisCntrl
 from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
 from ..stkengine        import *
 
@@ -182,10 +182,10 @@ class ControlBase(Frame):
             """Occurs when key is released."""
             self._nativeContainerMethods.KeyReleased(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
-class GlobeControl(IUiAxVOCntrl, ControlBase):
+class GlobeControl(IUiAxGraphics3DCntrl, ControlBase):
     """The 3D Globe control for Tkinter."""
     _progid = "STKX12.VOControl.1"
-    _interface = IUiAxVOCntrl
+    _interface = IUiAxGraphics3DCntrl
 
     def __init__(self, parent, *args, **kwargs):
         ControlBase.__init__(self, parent, *args, **kwargs)
@@ -204,10 +204,10 @@ class MapControl(IUiAx2DCntrl, ControlBase):
     def __setattr__(self, attrname, value):
         ControlBase.__setattr__(self, attrname, value)
 
-class GfxAnalysisControl(IUiAxGfxAnalysisCntrl, ControlBase):
+class GfxAnalysisControl(IUiAxGraphics2DAnalysisCntrl, ControlBase):
     """The Graphics Analysis control for Tkinter."""
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = IUiAxGfxAnalysisCntrl
+    _interface = IUiAxGraphics2DAnalysisCntrl
 
     def __init__(self, parent, *args, **kwargs):
         ControlBase.__init__(self, parent, *args, **kwargs)

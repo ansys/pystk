@@ -61,7 +61,7 @@ class Planet(CodeSnippetsTestBase):
         )
 
     def ConfigurePlanet(self, planet: "IPlanet"):
-        planet.position_source = PL_POSITION_SOURCE_TYPE.POS_CENTRAL_BODY
+        planet.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
 
         # Get IPlanetPositionCentralBody interface
         body: "IPlanetPositionCentralBody" = clr.CastAs(planet.position_source_data, IPlanetPositionCentralBody)
@@ -91,7 +91,7 @@ class Planet(CodeSnippetsTestBase):
         graphics.position_label_visible = False
         graphics.sub_planet_label_visible = False
         graphics.orbit_visible = True
-        graphics.orbit_display = PL_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
+        graphics.orbit_display = PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
         displayTime: "IPlanetOrbitDisplayTime" = clr.CastAs(graphics.orbit_display_data, IPlanetOrbitDisplayTime)
         displayTime.time = 10000.0
 

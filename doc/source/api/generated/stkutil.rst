@@ -76,8 +76,8 @@ Classes
 
 .. autosummary::
 
-    AgExecCmdResult
-    AgExecMultiCmdResult
+    ExecCmdResult
+    ExecMultiCmdResult
     UnitPreferencesUnit
     UnitPreferencesUnitCollection
     UnitPreferencesDimension
@@ -275,10 +275,10 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgExecCmdResult
+.. autoclass:: ExecCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgExecMultiCmdResult
+.. autoclass:: ExecMultiCmdResult
     :members:
     :exclude-members: __init__
 .. autoclass:: UnitPreferencesUnit

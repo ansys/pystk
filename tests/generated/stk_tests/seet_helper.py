@@ -27,8 +27,10 @@ class SEETHelper(object):
         SEETHelper.Test_IAgVeSpEnvRadiation(spEnv.radiation)
 
     @staticmethod
-    def TestEnvironment_2D(spEnv: "IVehicleSpaceEnvironment", veGfxSAA: "IVehicleGfxSAA", veVOSAA: "IVehicleVOSAA"):
-        SEETHelper.Test_IAgVeSpEnvMagFieldLine(spEnv.graphics.mag_field_line)
+    def TestEnvironment_2D(
+        spEnv: "IVehicleSpaceEnvironment", veGfxSAA: "IVehicleGraphics2DSAA", veVOSAA: "IVehicleGraphics3DSAA"
+    ):
+        SEETHelper.Test_IAgVeSpEnvMagFieldLine(spEnv.graphics.magnitude_field_line)
         SEETHelper.Test_IAgVeGfxSAA(veGfxSAA)
         SEETHelper.Test_IAgVeVOSAA(veVOSAA)
 
@@ -53,7 +55,7 @@ class SEETHelper(object):
         # Radiation - Dose Rate Compute methods
         #
 
-        spEnv.radiation.computation_mode = VE_SP_ENV_COMPUTATION_MODE.CRRES
+        spEnv.radiation.computation_mode = VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.CRRES
 
         rdrColl: "IVehicleSpaceEnvironmentRadDoseRateCollection" = spEnv.radiation.compute_dose_rates(
             "1 Jul 1999 00:58:00.000"
@@ -114,7 +116,7 @@ class SEETHelper(object):
         #
 
         dp = clr.Convert(obj.data_providers["SEET Magnetic Field"], IDataProvider)
-        dp.allow_ui = False
+        dp.allow_user_interface = False
         tv = clr.CastAs(dp, IDataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
 
@@ -247,7 +249,7 @@ class SEETHelper(object):
         dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], IDataProviderGroup)
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Impacts"], IDataProvider)
-        dp.allow_ui = False
+        dp.allow_user_interface = False
         tv = clr.CastAs(dp, IDataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
 
@@ -271,7 +273,7 @@ class SEETHelper(object):
         dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], IDataProviderGroup)
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Damaging Impacts"], IDataProvider)
-        dp.allow_ui = False
+        dp.allow_user_interface = False
         tv = clr.CastAs(dp, IDataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
 
@@ -358,7 +360,7 @@ class SEETHelper(object):
         #
 
         seetSat: "ISatellite" = clr.CastAs(obj, ISatellite)
-        seetSat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        seetSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twobody: "IVehiclePropagatorTwoBody" = clr.Convert(seetSat.propagator, IVehiclePropagatorTwoBody)
         classical: "IOrbitStateClassical" = clr.Convert(
             twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), IOrbitStateClassical
@@ -381,7 +383,7 @@ class SEETHelper(object):
             Console.WriteLine(dpx.name)
 
         dp = clr.CastAs(dpColl[0], IDataProvider)
-        dp.allow_ui = False
+        dp.allow_user_interface = False
         tv = clr.CastAs(dp, IDataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
         drDataSet = result.data_sets.get_data_set_by_name("Flux intensity")
@@ -396,7 +398,7 @@ class SEETHelper(object):
         #
 
         dp = clr.Convert(obj.data_providers["SEET Vehicle Temperature"], IDataProvider)
-        dp.allow_ui = False
+        dp.allow_user_interface = False
         tv = clr.CastAs(dp, IDataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
         drDataSet = result.data_sets.get_data_set_by_name("Temperature")
@@ -414,26 +416,26 @@ class SEETHelper(object):
     @staticmethod
     def Test_IAgVeSpEnvMagneticField(magField: "IVehicleSpaceEnvironmentMagneticField"):
         def action4():
-            magField.main_field = SP_ENV_MAGNETIC_MAIN_FIELD.UNKNOWN
+            magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action4)
-        magField.main_field = SP_ENV_MAGNETIC_MAIN_FIELD.IGRF
-        Assert.assertEqual(SP_ENV_MAGNETIC_MAIN_FIELD.IGRF, magField.main_field)
-        magField.main_field = SP_ENV_MAGNETIC_MAIN_FIELD.OFFSET_DIPOLE
-        Assert.assertEqual(SP_ENV_MAGNETIC_MAIN_FIELD.OFFSET_DIPOLE, magField.main_field)
-        magField.main_field = SP_ENV_MAGNETIC_MAIN_FIELD.TILTED_DIPOLE
-        Assert.assertEqual(SP_ENV_MAGNETIC_MAIN_FIELD.TILTED_DIPOLE, magField.main_field)
-        magField.main_field = SP_ENV_MAGNETIC_MAIN_FIELD.FAST_IGRF
-        Assert.assertEqual(SP_ENV_MAGNETIC_MAIN_FIELD.FAST_IGRF, magField.main_field)
+        magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.IGRF
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.IGRF, magField.main_field)
+        magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.OFFSET_DIPOLE
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.OFFSET_DIPOLE, magField.main_field)
+        magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.TILTED_DIPOLE
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.TILTED_DIPOLE, magField.main_field)
+        magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.FAST_IGRF
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.FAST_IGRF, magField.main_field)
 
         def action5():
-            magField.external_field = SP_ENV_MAGNETIC_EXTERNAL_FIELD.UNKNOWN
+            magField.external_field = SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action5)
-        magField.external_field = SP_ENV_MAGNETIC_EXTERNAL_FIELD.OLSON_PFITZER
-        Assert.assertEqual(SP_ENV_MAGNETIC_EXTERNAL_FIELD.OLSON_PFITZER, magField.external_field)
-        magField.external_field = SP_ENV_MAGNETIC_EXTERNAL_FIELD.NONE
-        Assert.assertEqual(SP_ENV_MAGNETIC_EXTERNAL_FIELD.NONE, magField.external_field)
+        magField.external_field = SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.OLSON_PFITZER
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.OLSON_PFITZER, magField.external_field)
+        magField.external_field = SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.NONE
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.NONE, magField.external_field)
 
         magField.i_g_r_f_update_rate = 2.0
         Assert.assertEqual(2.0, magField.i_g_r_f_update_rate)
@@ -441,28 +443,28 @@ class SEETHelper(object):
     @staticmethod
     def Test_IAgSpEnvSAAContour(saaContour: "ISpaceEnvironmentSAAContour"):
         def action6():
-            saaContour.channel = SP_ENV_SAA_CHANNEL.UNKNOWN
+            saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action6)
-        saaContour.channel = SP_ENV_SAA_CHANNEL.CHANNEL23_ME_V
-        Assert.assertEqual(SP_ENV_SAA_CHANNEL.CHANNEL23_ME_V, saaContour.channel)
-        saaContour.channel = SP_ENV_SAA_CHANNEL.CHANNEL38_ME_V
-        Assert.assertEqual(SP_ENV_SAA_CHANNEL.CHANNEL38_ME_V, saaContour.channel)
-        saaContour.channel = SP_ENV_SAA_CHANNEL.CHANNEL66_ME_V
-        Assert.assertEqual(SP_ENV_SAA_CHANNEL.CHANNEL66_ME_V, saaContour.channel)
-        saaContour.channel = SP_ENV_SAA_CHANNEL.CHANNEL94_ME_V
-        Assert.assertEqual(SP_ENV_SAA_CHANNEL.CHANNEL94_ME_V, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL38_ME_V
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL38_ME_V, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL66_ME_V
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL66_ME_V, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL94_ME_V
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL94_ME_V, saaContour.channel)
 
         def action7():
-            saaContour.flux_level = SP_ENV_SAA_FLUX_LEVEL.UNKNOWN
+            saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action7)
-        saaContour.flux_level = SP_ENV_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA
-        Assert.assertEqual(SP_ENV_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA, saaContour.flux_level)
-        saaContour.flux_level = SP_ENV_SAA_FLUX_LEVEL.HALF_OF_PEAK
-        Assert.assertEqual(SP_ENV_SAA_FLUX_LEVEL.HALF_OF_PEAK, saaContour.flux_level)
-        saaContour.flux_level = SP_ENV_SAA_FLUX_LEVEL.TENTH_OF_PEAK
-        Assert.assertEqual(SP_ENV_SAA_FLUX_LEVEL.TENTH_OF_PEAK, saaContour.flux_level)
+        saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA, saaContour.flux_level)
+        saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.HALF_OF_PEAK
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.HALF_OF_PEAK, saaContour.flux_level)
+        saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.TENTH_OF_PEAK
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.TENTH_OF_PEAK, saaContour.flux_level)
 
     @staticmethod
     def Test_IAgVeSpEnvVehTemperature(vehTemp: "IVehicleSpaceEnvironmentVehTemperature"):
@@ -478,18 +480,18 @@ class SEETHelper(object):
         Assert.assertEqual(1.1, vehTemp.cross_sectional_area)
 
         def action8():
-            vehTemp.shape_model = VE_SP_ENV_SHAPE_MODEL.UNKNOWN
+            vehTemp.shape_model = VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action8)
 
-        vehTemp.shape_model = VE_SP_ENV_SHAPE_MODEL.PLATE
-        Assert.assertEqual(VE_SP_ENV_SHAPE_MODEL.PLATE, vehTemp.shape_model)
+        vehTemp.shape_model = VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.PLATE
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.PLATE, vehTemp.shape_model)
 
         vehTemp.normal_vector = "Satellite/Satellite1 Sun"  # ShapeModel must be "Plate"
         Assert.assertEqual("Satellite/Satellite1 Sun", vehTemp.normal_vector)
 
-        vehTemp.shape_model = VE_SP_ENV_SHAPE_MODEL.SPHERE
-        Assert.assertEqual(VE_SP_ENV_SHAPE_MODEL.SPHERE, vehTemp.shape_model)
+        vehTemp.shape_model = VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.SPHERE
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.SPHERE, vehTemp.shape_model)
 
         def action9():
             vehTemp.normal_vector = "Satellite/Satellite1 Sun"
@@ -499,11 +501,11 @@ class SEETHelper(object):
     @staticmethod
     def Test_IAgVeSpEnvParticleFlux(particleFlux: "IVehicleSpaceEnvironmentParticleFlux"):
         def action10():
-            particleFlux.f_10_p7_source = VE_SP_ENV_F_10_P7_SOURCE.UNKNOWN
+            particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action10)
-        particleFlux.f_10_p7_source = VE_SP_ENV_F_10_P7_SOURCE.FILE
-        Assert.assertEqual(VE_SP_ENV_F_10_P7_SOURCE.FILE, particleFlux.f_10_p7_source)
+        particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.FILE
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.FILE, particleFlux.f_10_p7_source)
 
         particleFlux.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
         Assert.assertEqual("SpaceWeather-v1.2.txt", particleFlux.flux_file)
@@ -513,8 +515,8 @@ class SEETHelper(object):
 
         TryCatchAssertBlock.DoAssert("", action11)
 
-        particleFlux.f_10_p7_source = VE_SP_ENV_F_10_P7_SOURCE.SPECIFY
-        Assert.assertEqual(VE_SP_ENV_F_10_P7_SOURCE.SPECIFY, particleFlux.f_10_p7_source)
+        particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.SPECIFY
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.SPECIFY, particleFlux.f_10_p7_source)
 
         particleFlux.f_10_p7 = 160
         Assert.assertEqual(160, particleFlux.f_10_p7)
@@ -531,14 +533,14 @@ class SEETHelper(object):
         Assert.assertEqual(0.05, particleFlux.pit_depth)
 
         def action13():
-            particleFlux.material = VE_SP_ENV_MATERIAL.UNKNOWN
+            particleFlux.material = VEHICLE_SPACE_ENVIRONMENT_MATERIAL.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action13)
 
-        particleFlux.material = VE_SP_ENV_MATERIAL.ALUMINUM
-        Assert.assertEqual(VE_SP_ENV_MATERIAL.ALUMINUM, particleFlux.material)
-        particleFlux.material = VE_SP_ENV_MATERIAL.BERYLIUM_COPPER
-        Assert.assertEqual(VE_SP_ENV_MATERIAL.BERYLIUM_COPPER, particleFlux.material)
+        particleFlux.material = VEHICLE_SPACE_ENVIRONMENT_MATERIAL.ALUMINUM
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_MATERIAL.ALUMINUM, particleFlux.material)
+        particleFlux.material = VEHICLE_SPACE_ENVIRONMENT_MATERIAL.BERYLIUM_COPPER
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_MATERIAL.BERYLIUM_COPPER, particleFlux.material)
 
         def action14():
             particleFlux.material_density = 11
@@ -550,8 +552,8 @@ class SEETHelper(object):
 
         TryCatchAssertBlock.DoAssert("", action15)
 
-        particleFlux.material = VE_SP_ENV_MATERIAL.USER_DEFINED
-        Assert.assertEqual(VE_SP_ENV_MATERIAL.USER_DEFINED, particleFlux.material)
+        particleFlux.material = VEHICLE_SPACE_ENVIRONMENT_MATERIAL.USER_DEFINED
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_MATERIAL.USER_DEFINED, particleFlux.material)
 
         particleFlux.material_density = 11
         Assert.assertEqual(11, particleFlux.material_density)
@@ -606,15 +608,15 @@ class SEETHelper(object):
         Assert.assertTrue(magFieldLine.label_visible)
 
     @staticmethod
-    def Test_IAgVeGfxSAA(veGfxSAA: "IVehicleGfxSAA"):
-        veGfxSAA.use_vehicle_alt = False
-        Assert.assertFalse(veGfxSAA.use_vehicle_alt)
+    def Test_IAgVeGfxSAA(veGfxSAA: "IVehicleGraphics2DSAA"):
+        veGfxSAA.use_vehicle_altitude = False
+        Assert.assertFalse(veGfxSAA.use_vehicle_altitude)
 
         veGfxSAA.altitude = 600
         Assert.assertEqual(600, veGfxSAA.altitude)
 
-        veGfxSAA.use_vehicle_alt = True
-        Assert.assertTrue(veGfxSAA.use_vehicle_alt)
+        veGfxSAA.use_vehicle_altitude = True
+        Assert.assertTrue(veGfxSAA.use_vehicle_altitude)
 
         def action18():
             veGfxSAA.altitude = 600
@@ -652,7 +654,7 @@ class SEETHelper(object):
         TryCatchAssertBlock.DoAssert("", action21)
 
     @staticmethod
-    def Test_IAgVeVOSAA(veVOSAA: "IVehicleVOSAA"):
+    def Test_IAgVeVOSAA(veVOSAA: "IVehicleGraphics3DSAA"):
         veVOSAA.is_visible = True
         Assert.assertTrue(veVOSAA.is_visible)
         veVOSAA.is_visible = False
@@ -667,30 +669,30 @@ class SEETHelper(object):
         )
 
         def action22():
-            radiation.computation_mode = VE_SP_ENV_COMPUTATION_MODE.UNKNOWN
+            radiation.computation_mode = VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action22)
 
-        compMode: "VE_SP_ENV_COMPUTATION_MODE"
+        compMode: "VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE"
 
-        for compMode in Enum.GetValues(clr.TypeOf(VE_SP_ENV_COMPUTATION_MODE)):
-            if compMode != VE_SP_ENV_COMPUTATION_MODE.UNKNOWN:
+        for compMode in Enum.GetValues(clr.TypeOf(VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE)):
+            if compMode != VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.UNKNOWN:
                 radiation.computation_mode = compMode
-                compMode1: "VE_SP_ENV_COMPUTATION_MODE" = radiation.computation_mode
+                compMode1: "VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE" = radiation.computation_mode
                 Assert.assertEqual(compMode, compMode1)
-                if compMode == VE_SP_ENV_COMPUTATION_MODE.APEXRAD:
+                if compMode == VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.APEXRAD:
                     SEETHelper.TestDoseChannelEnabled(radiation)
                     SEETHelper.TestApFluxEnabled(radiation)
-                elif compMode == VE_SP_ENV_COMPUTATION_MODE.CRRES:
+                elif compMode == VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.CRRES:
                     SEETHelper.TestDoseChannelDisabled(radiation, 10.0)
                     SEETHelper.TestApFluxEnabled(radiation)
-                elif compMode == VE_SP_ENV_COMPUTATION_MODE.CRRESRAD:
+                elif compMode == VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.CRRESRAD:
                     SEETHelper.TestDoseChannelEnabled(radiation)
                     SEETHelper.TestApFluxDisabled(radiation)
-                elif compMode == VE_SP_ENV_COMPUTATION_MODE.NASA:
+                elif compMode == VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.NASA:
                     SEETHelper.TestDoseChannelDisabled(radiation, 10.1)
                     SEETHelper.TestApFluxDisabled(radiation)
-                elif compMode == VE_SP_ENV_COMPUTATION_MODE.RADIATION_ONLY:
+                elif compMode == VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.RADIATION_ONLY:
                     SEETHelper.TestDoseChannelEnabled(radiation)
                     SEETHelper.TestApFluxEnabled(radiation)
                 else:
@@ -699,24 +701,24 @@ class SEETHelper(object):
     @staticmethod
     def TestDoseChannelEnabled(radiation: "IVehicleSpaceEnvironmentRadiation"):
         def action23():
-            radiation.dose_channel = VE_SP_ENV_DOSE_CHANNEL.UNKNOWN
+            radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action23)
 
-        radiation.dose_channel = VE_SP_ENV_DOSE_CHANNEL.HIGH_LET
-        Assert.assertEqual(VE_SP_ENV_DOSE_CHANNEL.HIGH_LET, radiation.dose_channel)
-        radiation.dose_channel = VE_SP_ENV_DOSE_CHANNEL.LOW_LET
-        Assert.assertEqual(VE_SP_ENV_DOSE_CHANNEL.LOW_LET, radiation.dose_channel)
-        radiation.dose_channel = VE_SP_ENV_DOSE_CHANNEL.TOTAL
-        Assert.assertEqual(VE_SP_ENV_DOSE_CHANNEL.TOTAL, radiation.dose_channel)
+        radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET, radiation.dose_channel)
+        radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.LOW_LET
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.LOW_LET, radiation.dose_channel)
+        radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.TOTAL
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.TOTAL, radiation.dose_channel)
 
         def action24():
-            radiation.detector_type = VE_SP_ENV_DETECTOR_TYPE.AIR
+            radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.AIR
 
         TryCatchAssertBlock.DoAssert("", action24)
 
         def action25():
-            radiation.detector_geometry = VE_SP_ENV_DETECTOR_GEOMETRY.FINITE_SLAB
+            radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.FINITE_SLAB
 
         TryCatchAssertBlock.DoAssert("", action25)
 
@@ -734,7 +736,7 @@ class SEETHelper(object):
             radiation.shielding_thicknesses.add(10)
 
         TryCatchAssertBlock.DoAssert("", action28)
-        if radiation.computation_mode != VE_SP_ENV_COMPUTATION_MODE.RADIATION_ONLY:
+        if radiation.computation_mode != VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.RADIATION_ONLY:
             arEE = radiation.get_electron_energies()
             ee: float
             for ee in arEE:
@@ -748,29 +750,29 @@ class SEETHelper(object):
     @staticmethod
     def TestDoseChannelDisabled(radiation: "IVehicleSpaceEnvironmentRadiation", shieldingThicknessesVal: float):
         def action29():
-            radiation.dose_channel = VE_SP_ENV_DOSE_CHANNEL.HIGH_LET
+            radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET
 
         TryCatchAssertBlock.DoAssert("", action29)
 
         def action30():
-            radiation.detector_type = VE_SP_ENV_DETECTOR_TYPE.UNKNOWN
+            radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action30)
-        radiation.detector_type = VE_SP_ENV_DETECTOR_TYPE.AIR
-        Assert.assertEqual(VE_SP_ENV_DETECTOR_TYPE.AIR, radiation.detector_type)
-        radiation.detector_type = VE_SP_ENV_DETECTOR_TYPE.ALUMINUM
-        Assert.assertEqual(VE_SP_ENV_DETECTOR_TYPE.ALUMINUM, radiation.detector_type)
+        radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.AIR
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.AIR, radiation.detector_type)
+        radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.ALUMINUM
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.ALUMINUM, radiation.detector_type)
 
         def action31():
-            radiation.detector_geometry = VE_SP_ENV_DETECTOR_GEOMETRY.UNKNOWN
+            radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action31)
-        radiation.detector_geometry = VE_SP_ENV_DETECTOR_GEOMETRY.FINITE_SLAB
-        Assert.assertEqual(VE_SP_ENV_DETECTOR_GEOMETRY.FINITE_SLAB, radiation.detector_geometry)
-        radiation.detector_geometry = VE_SP_ENV_DETECTOR_GEOMETRY.SEMI_INFINITE_SLAB
-        Assert.assertEqual(VE_SP_ENV_DETECTOR_GEOMETRY.SEMI_INFINITE_SLAB, radiation.detector_geometry)
-        radiation.detector_geometry = VE_SP_ENV_DETECTOR_GEOMETRY.SPHERICAL
-        Assert.assertEqual(VE_SP_ENV_DETECTOR_GEOMETRY.SPHERICAL, radiation.detector_geometry)
+        radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.FINITE_SLAB
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.FINITE_SLAB, radiation.detector_geometry)
+        radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.SEMI_INFINITE_SLAB
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.SEMI_INFINITE_SLAB, radiation.detector_geometry)
+        radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.SPHERICAL
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.SPHERICAL, radiation.detector_geometry)
 
         radiation.use_nuclear_attenuation = True
         Assert.assertTrue(radiation.use_nuclear_attenuation)
@@ -805,11 +807,11 @@ class SEETHelper(object):
     @staticmethod
     def TestApFluxEnabled(radiation: "IVehicleSpaceEnvironmentRadiation"):
         def action33():
-            radiation.ap_source = VE_SP_ENV_AP_SOURCE.UNKNOWN
+            radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action33)
-        radiation.ap_source = VE_SP_ENV_AP_SOURCE.FILE
-        Assert.assertEqual(VE_SP_ENV_AP_SOURCE.FILE, radiation.ap_source)
+        radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE, radiation.ap_source)
 
         radiation.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
         Assert.assertEqual("SpaceWeather-v1.2.txt", radiation.flux_file)
@@ -819,8 +821,8 @@ class SEETHelper(object):
 
         TryCatchAssertBlock.DoAssert("", action34)
 
-        radiation.ap_source = VE_SP_ENV_AP_SOURCE.SPECIFY
-        Assert.assertEqual(VE_SP_ENV_AP_SOURCE.SPECIFY, radiation.ap_source)
+        radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.SPECIFY
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.SPECIFY, radiation.ap_source)
 
         radiation.ap = 11
         Assert.assertEqual(11, radiation.ap)
@@ -833,7 +835,7 @@ class SEETHelper(object):
     @staticmethod
     def TestApFluxDisabled(radiation: "IVehicleSpaceEnvironmentRadiation"):
         def action36():
-            radiation.ap_source = VE_SP_ENV_AP_SOURCE.FILE
+            radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE
 
         TryCatchAssertBlock.DoAssert("", action36)
 
@@ -858,13 +860,13 @@ class SEETHelper(object):
             pBy: float = 0
             pBz: float = 0
 
-            startOM = scenSpEnv.vo.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics3_d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.0125, startOM, delta=0.0001)
-            stopOM = scenSpEnv.vo.magnetic_field.compute_b_beq(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics3_d.magnetic_field.compute_b_beq(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.0125, stopOM, delta=0.0001)
-            bFieldArray = scenSpEnv.vo.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
+            bFieldArray = scenSpEnv.graphics3_d.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
             pBx = float(bFieldArray[0])
             pBy = float(bFieldArray[1])
             pBz = float(bFieldArray[2])
@@ -874,7 +876,7 @@ class SEETHelper(object):
             Assert.assertAlmostEqual(-1911.277, pBy, delta=0.001)
             Console.WriteLine(pBz)
             Assert.assertAlmostEqual(20328.957, pBz, delta=0.001)
-            arStart = scenSpEnv.vo.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
+            arStart = scenSpEnv.graphics3_d.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
             Console.WriteLine(arStart[0])
             Assert.assertAlmostEqual(-3668.952, float(arStart[0]), delta=0.001)
             Console.WriteLine(arStart[1])
@@ -882,7 +884,7 @@ class SEETHelper(object):
             Console.WriteLine(arStart[2])
             Assert.assertAlmostEqual(20328.957, float(arStart[2]), delta=0.001)
 
-            arStop = scenSpEnv.vo.magnetic_field.compute_b_field_as_array(stopTime, 10, 20, 1000)
+            arStop = scenSpEnv.graphics3_d.magnetic_field.compute_b_field_as_array(stopTime, 10, 20, 1000)
             Console.WriteLine(arStop[0])
             Assert.assertAlmostEqual(-3668.952, float(arStop[0]), delta=0.001)
             Console.WriteLine(arStop[1])
@@ -890,24 +892,24 @@ class SEETHelper(object):
             Console.WriteLine(arStop[2])
             Assert.assertAlmostEqual(20328.957, float(arStop[2]), delta=0.001)
 
-            startOM = scenSpEnv.vo.magnetic_field.compute_dipole_l(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics3_d.magnetic_field.compute_dipole_l(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.1913, startOM, delta=0.0001)
-            stopOM = scenSpEnv.vo.magnetic_field.compute_dipole_l(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics3_d.magnetic_field.compute_dipole_l(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.1914, stopOM, delta=0.0001)
 
-            startOM = scenSpEnv.vo.magnetic_field.compute_mc_ilwain_l(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics3_d.magnetic_field.compute_mc_ilwain_l(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.1498, startOM, delta=0.0001)
-            stopOM = scenSpEnv.vo.magnetic_field.compute_mc_ilwain_l(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics3_d.magnetic_field.compute_mc_ilwain_l(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.1498, stopOM, delta=0.0001)
 
         else:
 
             def action39():
-                startOM: float = scenSpEnv.vo.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
+                startOM: float = scenSpEnv.graphics3_d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action39)
 
@@ -915,10 +917,14 @@ class SEETHelper(object):
         # SAA Flux Intensity Compute methods
         #
 
-        d: float = scen.space_environment.compute_saa_flux_intensity(SP_ENV_SAA_CHANNEL.CHANNEL23_ME_V, 10, 20, 1000)
+        d: float = scen.space_environment.compute_saa_flux_intensity(
+            SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, 10, 20, 1000
+        )
         Assert.assertAlmostEqual(19543.74, d, delta=0.01)
 
         def action40():
-            d = scen.space_environment.compute_saa_flux_intensity(SP_ENV_SAA_CHANNEL.CHANNEL23_ME_V, 10, 20, 2000)
+            d = scen.space_environment.compute_saa_flux_intensity(
+                SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, 10, 20, 2000
+            )
 
         TryCatchAssertBlock.DoAssert("", action40)

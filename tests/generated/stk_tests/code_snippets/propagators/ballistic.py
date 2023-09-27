@@ -45,7 +45,7 @@ class Ballistic(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("DistanceUnit", "km")
         CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("TimeUnit", "sec")
 
-        self.m_Object.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
+        self.m_Object.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
 
         propBallistic: "IVehiclePropagatorBallistic" = clr.CastAs(self.m_Object.trajectory, IVehiclePropagatorBallistic)
         impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(
@@ -60,25 +60,25 @@ class Ballistic(CodeSnippetsTestBase):
 
     def ConfigureBallisticPropagator(self, propagator: "IVehiclePropagatorBallistic"):
         propagator.step = 30
-        propagator.set_launch_type(VE_LAUNCH.LAUNCH_LLA)
+        propagator.set_launch_type(VEHICLE_LAUNCH.LAUNCH_LLA)
 
         launch: "IVehicleLaunchLLA" = clr.CastAs(propagator.launch, IVehicleLaunchLLA)
         launch.lat = 40.04
         launch.lon = -76.304
-        launch.alt = 1.5
+        launch.altitude = 1.5
 
-        propagator.set_impact_location_type(VE_IMPACT_LOCATION.IMPACT_LOCATION_POINT)
+        propagator.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_POINT)
 
         impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(
             propagator.impact_location, IVehicleImpactLocationPoint
         )
-        impactLocation.set_impact_type(VE_IMPACT.IMPACT_LLA)
-        impactLocation.set_launch_control_type(VE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V)
+        impactLocation.set_impact_type(VEHICLE_IMPACT.IMPACT_LLA)
+        impactLocation.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V)
 
         impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
         impact.lat = 40.337
         impact.lon = -75.922
-        impact.alt = 0.0
+        impact.altitude = 0.0
 
         fixedDeltaV: "IVehicleLaunchControlFixedDeltaV" = clr.CastAs(
             impactLocation.launch_control, IVehicleLaunchControlFixedDeltaV

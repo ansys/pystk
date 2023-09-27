@@ -154,8 +154,8 @@ class STKObjectHelper(object):
             oObject.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MIR"), ISatellite
         )
         Assert.assertIsNotNone(oSatellite)
-        oSatellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        Assert.assertEqual(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
         oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, IVehiclePropagatorTwoBody)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
@@ -255,8 +255,8 @@ class STKObjectHelper(object):
         Assert.assertEqual("1 Jul 2007 01:00:00.000", onePtAccess.stop_time)
         onePtAccess.step_size = 120
         Assert.assertEqual(120, onePtAccess.step_size)
-        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.DETAILED
-        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.DETAILED, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.DETAILED
+        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.DETAILED, onePtAccess.summary_option)
         result: "IOnePointAccessResult" = None
         results: "IOnePointAccessResultCollection" = onePtAccess.compute()
 
@@ -284,8 +284,8 @@ class STKObjectHelper(object):
             for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
-        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.FAST
-        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.FAST, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.FAST
+        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.FAST, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -293,8 +293,8 @@ class STKObjectHelper(object):
             Assert.assertEqual(1, result.constraints.count)
             self.dumpOnePtAccessConstraint(result.constraints[0])
 
-        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.RESULT_ONLY
-        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.RESULT_ONLY, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.RESULT_ONLY
+        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.RESULT_ONLY, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -561,16 +561,16 @@ class DataProviderCollectionHelper(object):
                     # IDataProvider
                     # Console.WriteLine(oCollection[iIndex].Name);
                     self.DataProvider(clr.CastAs(oCollection[iIndex], IDataProvider), oCollection[iIndex].name)
-                    if oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_FIXED:
+                    if oCollection[iIndex].type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_FIXED:
                         self.DataProviderFixed(
                             clr.CastAs(oCollection[iIndex], IDataProviderFixed), oCollection[iIndex].name
                         )
-                    elif oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_INTVL:
+                    elif oCollection[iIndex].type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_INTVL:
                         self.DataProviderInterval(
                             clr.CastAs(oCollection[iIndex], IDataProviderInterval), oCollection[iIndex].name
                         )
-                    elif ((oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_TIME_VAR)) or (
-                        (oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_INTVL_DEFINED)
+                    elif ((oCollection[iIndex].type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_TIME_VARYING)) or (
+                        (oCollection[iIndex].type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_INTVL_DEFINED)
                     ):
                         self.DataProviderTimeVar(
                             clr.CastAs(oCollection[iIndex], IDataProviderTimeVarying), oCollection[iIndex].name
@@ -624,13 +624,13 @@ class DataProviderCollectionHelper(object):
         self.m_logger.WriteLine5("----- DATA PROVIDER TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oProvider)
         # AllowUI
-        self.m_logger.WriteLine4("\tThe current AllowUI is: {0}", oProvider.allow_ui)
-        oProvider.allow_ui = False
-        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.allow_ui)
-        Assert.assertFalse(oProvider.allow_ui)
-        oProvider.allow_ui = True
-        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.allow_ui)
-        Assert.assertTrue(oProvider.allow_ui)
+        self.m_logger.WriteLine4("\tThe current AllowUI is: {0}", oProvider.allow_user_interface)
+        oProvider.allow_user_interface = False
+        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.allow_user_interface)
+        Assert.assertFalse(oProvider.allow_user_interface)
+        oProvider.allow_user_interface = True
+        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.allow_user_interface)
+        Assert.assertTrue(oProvider.allow_user_interface)
         # PreData
         self.m_logger.WriteLine5("\tThe current PreData is: {0}", oProvider.pre_data)
         oProvider.pre_data = "Some PreData string"
@@ -657,7 +657,7 @@ class DataProviderCollectionHelper(object):
         iIndex: int = 0
         while iIndex < oElements.count:
             strElementName: str = oElements[iIndex].name
-            eType: "DATA_PRV_ELEMENT_TYPE" = oElements[iIndex].type
+            eType: "DATA_PROVIDER_ELEMENT_TYPE" = oElements[iIndex].type
             Assert.assertFalse(String.IsNullOrEmpty(oElements[iIndex].dimension_name))
 
             iIndex += 1
@@ -716,13 +716,13 @@ class DataProviderCollectionHelper(object):
         self.DrResultDataSets(oResult.data_sets)
         # Message
         self.DrResultMessage(oResult.message)
-        if oResult.category == DR_CATEGORIES.DATA_SET_LIST:
+        if oResult.category == DATA_PROVIDER_RESULT_CATEGORIES.DATA_SET_LIST:
             self.DrResultDataSets(clr.CastAs(oResult.value, IDataProviderResultDataSetCollection))
-        elif oResult.category == DR_CATEGORIES.INTERVAL_LIST:
+        elif oResult.category == DATA_PROVIDER_RESULT_CATEGORIES.INTERVAL_LIST:
             self.DrResultIntervals(clr.CastAs(oResult.value, IDataProviderResultIntervalCollection))
-        elif oResult.category == DR_CATEGORIES.MESSAGE:
+        elif oResult.category == DATA_PROVIDER_RESULT_CATEGORIES.MESSAGE:
             self.DrResultMessage(clr.CastAs(oResult.value, IDataProviderResultTextMessage))
-        elif oResult.category == DR_CATEGORIES.SUB_SECTION_LIST:
+        elif oResult.category == DATA_PROVIDER_RESULT_CATEGORIES.SUB_SECTION_LIST:
             self.DrResultSections(clr.CastAs(oResult.value, IDataProviderResultSubSectionCollection))
         else:
             Assert.fail("Invalid type!")
@@ -991,7 +991,7 @@ class StkAccessHelper(object):
         Assert.assertTrue(oGraphics.inherit)
 
         def action19():
-            oGraphics.animate_gfx = True
+            oGraphics.animate_graphics2_d = True
 
         # AnimateGfx (readonly)
         TryCatchAssertBlock.DoAssert("", action19)
@@ -1003,7 +1003,7 @@ class StkAccessHelper(object):
         TryCatchAssertBlock.DoAssert("", action20)
 
         def action21():
-            oGraphics.static_gfx = True
+            oGraphics.static_graphics2_d = True
 
         # StaticGfx (readonly)
         TryCatchAssertBlock.DoAssert("", action21)
@@ -1024,13 +1024,13 @@ class StkAccessHelper(object):
         self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.inherit)
         Assert.assertFalse(oGraphics.inherit)
         # AnimateGfx
-        self.m_logger.WriteLine4("\tThe current AnimateGfx is: {0}", oGraphics.animate_gfx)
-        oGraphics.animate_gfx = True
-        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_gfx)
-        Assert.assertTrue(oGraphics.animate_gfx)
-        oGraphics.animate_gfx = False
-        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_gfx)
-        Assert.assertFalse(oGraphics.animate_gfx)
+        self.m_logger.WriteLine4("\tThe current AnimateGfx is: {0}", oGraphics.animate_graphics2_d)
+        oGraphics.animate_graphics2_d = True
+        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_graphics2_d)
+        Assert.assertTrue(oGraphics.animate_graphics2_d)
+        oGraphics.animate_graphics2_d = False
+        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_graphics2_d)
+        Assert.assertFalse(oGraphics.animate_graphics2_d)
         # LineVisible
         self.m_logger.WriteLine4("\tThe current LineVisible is: {0}", oGraphics.line_visible)
         oGraphics.line_visible = True
@@ -1075,13 +1075,13 @@ class StkAccessHelper(object):
         oGraphics.line_visible = False
 
         # StaticGfx
-        self.m_logger.WriteLine4("\tThe current StaticGfx is: {0}", oGraphics.static_gfx)
-        oGraphics.static_gfx = True
-        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_gfx)
-        Assert.assertTrue(oGraphics.static_gfx)
-        oGraphics.static_gfx = False
-        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_gfx)
-        Assert.assertFalse(oGraphics.static_gfx)
+        self.m_logger.WriteLine4("\tThe current StaticGfx is: {0}", oGraphics.static_graphics2_d)
+        oGraphics.static_graphics2_d = True
+        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_graphics2_d)
+        Assert.assertTrue(oGraphics.static_graphics2_d)
+        oGraphics.static_graphics2_d = False
+        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_graphics2_d)
+        Assert.assertFalse(oGraphics.static_graphics2_d)
 
     # endregion
 
@@ -1279,7 +1279,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oDataCollection: "IVODataDisplayCollection", bIsAccessRequired: bool, bIsChain: bool):
+    def Run(self, oDataCollection: "IGraphics3DDataDisplayCollection", bIsAccessRequired: bool, bIsChain: bool):
         self.m_logger.WriteLine("----- THE VO DATA DISPLAY TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oDataCollection)
         # save AccessRequired flag
@@ -1330,7 +1330,7 @@ class VODataDisplayHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
-            oDataDisp: "IVODataDisplayElement" = None
+            oDataDisp: "IGraphics3DDataDisplayElement" = None
             strAvailable: str = str(arAvailable[iIndex])
             if oDataCollection.is_pre_data_required(strAvailable):
                 preData: str = "Missile/Missile1"
@@ -1352,7 +1352,7 @@ class VODataDisplayHelper(object):
         # Count
         iSize = oDataCollection.count
         self.m_logger.WriteLine3("The new Data Display collection contains: {0} elements.", iSize)
-        dataDisplayElement: "IVODataDisplayElement"
+        dataDisplayElement: "IGraphics3DDataDisplayElement"
         for dataDisplayElement in oDataCollection:
             self.m_logger.WriteLine5("\tElement: {0}", dataDisplayElement.name)
 
@@ -1366,7 +1366,7 @@ class VODataDisplayHelper(object):
                 "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.count
             )
             Assert.assertEqual((iSize - 1), oDataCollection.count)
-            dataDisplayElement: "IVODataDisplayElement"
+            dataDisplayElement: "IGraphics3DDataDisplayElement"
             for dataDisplayElement in oDataCollection:
                 self.m_logger.WriteLine5("\tElement: {0}", dataDisplayElement.name)
 
@@ -1382,7 +1382,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region ElementTest
-    def ElementTest(self, oVODataDisplayElement: "IVODataDisplayElement"):
+    def ElementTest(self, oVODataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # IsVisible
         self.m_logger.WriteLine4("\t\tCurrent IsVisible flag: {0}", oVODataDisplayElement.is_visible)
@@ -1484,11 +1484,11 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotVisibleCheck
-    def NotVisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
+    def NotVisibleCheck(self, oVODataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
         def action47():
-            oVODataDisplayElement.location = VO_LOCATION.WINDOW_3D
+            oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.WINDOW_3D
 
         # Location
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action47)
@@ -1500,13 +1500,13 @@ class VODataDisplayHelper(object):
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action48)
 
         def action49():
-            oVODataDisplayElement.x_origin = VOX_ORIGIN.X_ORIGIN_LEFT
+            oVODataDisplayElement.x_origin = GRAPHICS3_DX_ORIGIN.X_ORIGIN_LEFT
 
         # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action49)
 
         def action50():
-            oVODataDisplayElement.y_origin = VOY_ORIGIN.Y_ORIGIN_BOTTOM
+            oVODataDisplayElement.y_origin = GRAPHICS3_DY_ORIGIN.Y_ORIGIN_BOTTOM
 
         # YOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action50)
@@ -1530,13 +1530,13 @@ class VODataDisplayHelper(object):
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action53)
 
         def action54():
-            oVODataDisplayElement.font_size = VO_FONT_SIZE.SMALL
+            oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.SMALL
 
         # FontSize
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action54)
 
         def action55():
-            oVODataDisplayElement.format = VO_FORMAT.HORIZONTAL
+            oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.HORIZONTAL
 
         # Format
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action55)
@@ -1574,40 +1574,40 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region VisibleCheck
-    def VisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
+    def VisibleCheck(self, oVODataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # Location
         self.m_logger.WriteLine6("\t\t\tThe current Location is: {0}", oVODataDisplayElement.location)
         if self.m_bIsAccessRequired:
-            oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_ACCESS_OBJECT
+            oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(VO_LOCATION.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
+            Assert.assertEqual(GRAPHICS3_D_LOCATION.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
 
         else:
 
             def action61():
-                oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_ACCESS_OBJECT
+                oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
 
             TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action61)
 
         if self.m_bIsChain:
 
             def action62():
-                oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_OBJECT
+                oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_OBJECT
 
             TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action62)
 
         else:
-            oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_OBJECT
+            oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(VO_LOCATION.OFFSET_FROM_OBJECT, oVODataDisplayElement.location)
+            Assert.assertEqual(GRAPHICS3_D_LOCATION.OFFSET_FROM_OBJECT, oVODataDisplayElement.location)
 
-        oVODataDisplayElement.location = VO_LOCATION.DATA_DISPLAY_AREA
+        oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.DATA_DISPLAY_AREA
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(VO_LOCATION.DATA_DISPLAY_AREA, oVODataDisplayElement.location)
-        oVODataDisplayElement.location = VO_LOCATION.WINDOW_3D
+        Assert.assertEqual(GRAPHICS3_D_LOCATION.DATA_DISPLAY_AREA, oVODataDisplayElement.location)
+        oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.WINDOW_3D
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(VO_LOCATION.WINDOW_3D, oVODataDisplayElement.location)
+        Assert.assertEqual(GRAPHICS3_D_LOCATION.WINDOW_3D, oVODataDisplayElement.location)
         # Font Color
         self.m_logger.WriteLine6("\t\t\tThe current Font Color is: {0}", oVODataDisplayElement.font_color)
         oVODataDisplayElement.font_color = Color.FromArgb(65280)
@@ -1615,20 +1615,20 @@ class VODataDisplayHelper(object):
         AssertEx.AreEqual(Color.FromArgb(65280), oVODataDisplayElement.font_color)
         # XOrigin
         self.m_logger.WriteLine6("\t\t\tThe current X Origin is: {0}", oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = VOX_ORIGIN.X_ORIGIN_LEFT
+        oVODataDisplayElement.x_origin = GRAPHICS3_DX_ORIGIN.X_ORIGIN_LEFT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(VOX_ORIGIN.X_ORIGIN_LEFT, oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = VOX_ORIGIN.X_ORIGIN_RIGHT
+        Assert.assertEqual(GRAPHICS3_DX_ORIGIN.X_ORIGIN_LEFT, oVODataDisplayElement.x_origin)
+        oVODataDisplayElement.x_origin = GRAPHICS3_DX_ORIGIN.X_ORIGIN_RIGHT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(VOX_ORIGIN.X_ORIGIN_RIGHT, oVODataDisplayElement.x_origin)
+        Assert.assertEqual(GRAPHICS3_DX_ORIGIN.X_ORIGIN_RIGHT, oVODataDisplayElement.x_origin)
         # YOrigin
         self.m_logger.WriteLine6("\t\t\tThe current Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = VOY_ORIGIN.Y_ORIGIN_TOP
+        oVODataDisplayElement.y_origin = GRAPHICS3_DY_ORIGIN.Y_ORIGIN_TOP
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(VOY_ORIGIN.Y_ORIGIN_TOP, oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = VOY_ORIGIN.Y_ORIGIN_BOTTOM
+        Assert.assertEqual(GRAPHICS3_DY_ORIGIN.Y_ORIGIN_TOP, oVODataDisplayElement.y_origin)
+        oVODataDisplayElement.y_origin = GRAPHICS3_DY_ORIGIN.Y_ORIGIN_BOTTOM
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(VOY_ORIGIN.Y_ORIGIN_BOTTOM, oVODataDisplayElement.y_origin)
+        Assert.assertEqual(GRAPHICS3_DY_ORIGIN.Y_ORIGIN_BOTTOM, oVODataDisplayElement.y_origin)
         # X
         self.m_logger.WriteLine3("\t\t\tThe current X is: {0}", oVODataDisplayElement.x)
         oVODataDisplayElement.x = 12
@@ -1649,31 +1649,31 @@ class VODataDisplayHelper(object):
         Assert.assertEqual(True, oVODataDisplayElement.title)
         # FontSize
         self.m_logger.WriteLine6("\t\t\tThe current Font Size is: {0}", oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = VO_FONT_SIZE.LARGE
+        oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.LARGE
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(VO_FONT_SIZE.LARGE, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = VO_FONT_SIZE.SMALL
+        Assert.assertEqual(GRAPHICS3_D_FONT_SIZE.LARGE, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.SMALL
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(VO_FONT_SIZE.SMALL, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = VO_FONT_SIZE.MEDIUM
+        Assert.assertEqual(GRAPHICS3_D_FONT_SIZE.SMALL, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.MEDIUM
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(VO_FONT_SIZE.MEDIUM, oVODataDisplayElement.font_size)
+        Assert.assertEqual(GRAPHICS3_D_FONT_SIZE.MEDIUM, oVODataDisplayElement.font_size)
         # Format
         self.m_logger.WriteLine6("\t\t\tThe current Font Format is: {0}", oVODataDisplayElement.format)
-        oVODataDisplayElement.format = VO_FORMAT.HORIZONTAL
+        oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.HORIZONTAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(VO_FORMAT.HORIZONTAL, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = VO_FORMAT.NO_LABELS
+        Assert.assertEqual(GRAPHICS3_D_FORMAT.HORIZONTAL, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.NO_LABELS
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(VO_FORMAT.NO_LABELS, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = VO_FORMAT.VERTICAL
+        Assert.assertEqual(GRAPHICS3_D_FORMAT.NO_LABELS, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.VERTICAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(VO_FORMAT.VERTICAL, oVODataDisplayElement.format)
+        Assert.assertEqual(GRAPHICS3_D_FORMAT.VERTICAL, oVODataDisplayElement.format)
 
     # endregion
 
     # region NotUseBackgroundCheck
-    def NotUseBackgroundCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
+    def NotUseBackgroundCheck(self, oVODataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
         def action63():
@@ -1733,7 +1733,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseBackgroundCheck
-    def UseBackgroundCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
+    def UseBackgroundCheck(self, oVODataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # TransparentBg
         self.m_logger.WriteLine4(
@@ -1816,7 +1816,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseTitleCheck
-    def NotUseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def NotUseTitleCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action72():
@@ -1834,7 +1834,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseTitleCheck
-    def UseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def UseTitleCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # TitleText
         self.m_logger.WriteLine5("\t\t\tThe current TitleText is: {0}", oDataDisplayElement.title_text)
@@ -1854,7 +1854,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseAutoSizeCheck
-    def NotUseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def NotUseAutoSizeCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BgWidth
         self.m_logger.WriteLine3("\t\t\tThe current BgWidth is: {0}", oDataDisplayElement.bg_width)
@@ -1870,7 +1870,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseAutoSizeCheck
-    def UseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def UseAutoSizeCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action74():
@@ -1886,7 +1886,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseBackgroundBorderCheck
-    def NotUseBackgroundBorderCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def NotUseBackgroundBorderCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action76():
@@ -1898,7 +1898,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseBackgroundBorderCheck
-    def UseBackgroundBorderCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def UseBackgroundBorderCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BackgroundBorderColor
         self.m_logger.WriteLine6(
@@ -1913,7 +1913,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseBackgroundTextureCheck
-    def NotUseBackgroundTextureCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def NotUseBackgroundTextureCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action77():
@@ -1925,7 +1925,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseBackgroundTextureCheck
-    def UseBackgroundTextureCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
+    def UseBackgroundTextureCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BackgroundTextureFileName
         self.m_logger.WriteLine5(

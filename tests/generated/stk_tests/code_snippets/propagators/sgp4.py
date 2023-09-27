@@ -43,7 +43,7 @@ class SGP4(CodeSnippetsTestBase):
 
     # region ConfigureSGP4WithFileSource
     def test_ConfigureSGP4WithFileSource(self):
-        SGP4.m_Object.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+        SGP4.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
 
         sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.propagator, IVehiclePropagatorSGP4)
         self.ConfigureSGP4WithFileSource(
@@ -73,7 +73,7 @@ class SGP4(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromFileSource
     def test_SetSGP4ToAutoUpdateFromFileSource(self):
         # Set propagator
-        SGP4.m_Object.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+        SGP4.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
         sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.propagator, IVehiclePropagatorSGP4)
 
         sgp4.common_tasks.add_segs_from_file(
@@ -84,7 +84,7 @@ class SGP4(CodeSnippetsTestBase):
 
     def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "IVehiclePropagatorSGP4", fileUpdateSource: str):
         propagator.auto_update_enabled = True
-        propagator.auto_update.selected_source = VE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_FILE
+        propagator.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_FILE
         propagator.auto_update.file_source.filename = fileUpdateSource
 
         # Preview TLEs (optional)
@@ -110,7 +110,7 @@ class SGP4(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromOnlineSource
     def test_SetSGP4ToAutoUpdateFromOnlineSource(self):
         # Set propagator
-        SGP4.m_Object.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+        SGP4.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
         sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.propagator, IVehiclePropagatorSGP4)
 
         sgp4.common_tasks.add_segs_from_file(
@@ -121,7 +121,7 @@ class SGP4(CodeSnippetsTestBase):
 
     def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator: "IVehiclePropagatorSGP4"):
         propagator.auto_update_enabled = True
-        propagator.auto_update.selected_source = VE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_ONLINE
+        propagator.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_ONLINE
 
         # Preview TLEs (optional)
         # Preview() returns a one dimension string of tles

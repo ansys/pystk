@@ -62,7 +62,7 @@ class StkExternal(CodeSnippetsTestBase):
         )
 
         # Configure propagator's external file path
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
         ext: "IVehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, IVehiclePropagatorStkExternal)
         ext.filename = ephemerisFilePath
 

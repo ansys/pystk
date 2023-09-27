@@ -4,8 +4,8 @@
 
 __all__ = [ "IStkObjectRootEventHandler", 
             "ISTKXApplicationEventHandler", 
-            "IUiAx2DCntrlEventHandler", 
-            "IUiAxVOCntrlEventHandler",
+            "IUiAxGraphics2DCntrlEventHandler", 
+            "IUiAxGraphics3DCntrlEventHandler",
             "ISceneEventHandler",
             "IKmlGraphicsEventHandler",
             "IImageCollectionEventHandler",
@@ -934,7 +934,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnNewGfxAnalysisCtrlRequest(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GFX_ANALYSIS_MODE") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GRAPHICS2_D_ANALYSIS_MODE") -> None]"""
         return self._OnNewGfxAnalysisCtrlRequestEvent
         
     @OnNewGfxAnalysisCtrlRequest.setter
@@ -1006,7 +1006,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     def _OnNewGfxAnalysisCtrlRequest(self, pThis:PVOID, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._OnNewGfxAnalysisCtrlRequestEvent._callbacks:
-            callback(SceneID, agcls.AgTypeNameMap["GFX_ANALYSIS_MODE"](GfxAnalysisMode))
+            callback(SceneID, agcls.AgTypeNameMap["GRAPHICS2_D_ANALYSIS_MODE"](GfxAnalysisMode))
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnSSLCertificateServerErrorEvent._callbacks:
@@ -1230,13 +1230,13 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         return S_OK
         
         
-class IUiAx2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
+class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
     _IID_IAgUiAx2DCntrlEvents    = GUID.from_registry_format("{DA0E1628-101E-4A18-B922-B4189E31AD7E}")
 
     def __init__(self, pUnk):
         IAgUiAxStockEventHandler.__init__(self)
         self._init_vtable()
-        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IUiAx2DCntrlEventHandler._IID_IAgUiAx2DCntrlEvents)
+        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IUiAxGraphics2DCntrlEventHandler._IID_IAgUiAx2DCntrlEvents)
         
     def __del__(self):
         STKEventSubscriber.__del__(self)
@@ -1245,8 +1245,8 @@ class IUiAx2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         try:
             IAgUiAxStockEventHandler.__setattr__(self, attrname, value)
         except:
-            if attrname in IUiAx2DCntrlEventHandler.__dict__ and type(IUiAx2DCntrlEventHandler.__dict__[attrname]) == property:
-                IUiAx2DCntrlEventHandler.__dict__[attrname].__set__(self, value)
+            if attrname in IUiAxGraphics2DCntrlEventHandler.__dict__ and type(IUiAxGraphics2DCntrlEventHandler.__dict__[attrname]) == property:
+                IUiAxGraphics2DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
                 raise STKAttributeError(attrname + " is not a recognized event in IUiAx2DCntrlEvents.")
         
@@ -1283,7 +1283,7 @@ class IUiAx2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         elif iid == IAgUiAxStockEventHandler._IID_IAgUiAxStockRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAx2DCntrlEventHandler._IID_IAgUiAx2DCntrlEvents:
+        elif iid == IUiAxGraphics2DCntrlEventHandler._IID_IAgUiAx2DCntrlEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
@@ -1292,7 +1292,7 @@ class IUiAx2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
             
             
             
-class IUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
+class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
     _IID_IAgUiAxVOCntrlRawEvents = GUID.from_registry_format("{1ADE7AE0-B431-4ED4-8494-335EBB14007C}")
     _IID_IAgUiAxVOCntrlEvents    = GUID.from_registry_format("{C46F1BA0-22E4-432B-9259-C6DEF33FE2B2}")
 
@@ -1303,7 +1303,7 @@ class IUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         self.__dict__["_OnObjectEditingApplyEvent"]     = _STKEvent()
         self.__dict__["_OnObjectEditingCancelEvent"]    = _STKEvent()
         self.__dict__["_OnObjectEditingStopEvent"]      = _STKEvent()
-        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IUiAxVOCntrlEventHandler._IID_IAgUiAxVOCntrlEvents)
+        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IUiAxGraphics3DCntrlEventHandler._IID_IAgUiAxVOCntrlEvents)
         
     def __del__(self):
         STKEventSubscriber.__del__(self)
@@ -1312,10 +1312,10 @@ class IUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         try:
             IAgUiAxStockEventHandler.__setattr__(self, attrname, value)
         except:
-            if attrname in IUiAxVOCntrlEventHandler.__dict__ and type(IUiAxVOCntrlEventHandler.__dict__[attrname]) == property:
-                IUiAxVOCntrlEventHandler.__dict__[attrname].__set__(self, value)
+            if attrname in IUiAxGraphics3DCntrlEventHandler.__dict__ and type(IUiAxGraphics3DCntrlEventHandler.__dict__[attrname]) == property:
+                IUiAxGraphics3DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in IUiAxVOCntrlEvents.")
+                raise STKAttributeError(attrname + " is not a recognized event in IUiAxGraphics3DCntrlEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1358,10 +1358,10 @@ class IUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         elif iid == IAgUiAxStockEventHandler._IID_IAgUiAxStockRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxVOCntrlEventHandler._IID_IAgUiAxVOCntrlRawEvents:
+        elif iid == IUiAxGraphics3DCntrlEventHandler._IID_IAgUiAxVOCntrlRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxVOCntrlEventHandler._IID_IAgUiAxVOCntrlEvents:
+        elif iid == IUiAxGraphics3DCntrlEventHandler._IID_IAgUiAxVOCntrlEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
