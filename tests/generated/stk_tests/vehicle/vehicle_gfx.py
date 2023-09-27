@@ -210,6 +210,112 @@ class GfxAttributesOrbitHelper(object):
 # endregion
 
 
+# region GfxAttributesTrajectoryHelper
+class GfxAttributesTrajectoryHelper(object):
+    def __init__(self, *args, **kwargs):
+        self.m_logger = Logger.Instance
+
+    # endregion
+
+    # region Run method
+    def Run(self, oTrajectory: "IVehicleGraphics2DAttributesTrajectory"):
+        Assert.assertIsNotNone(oTrajectory)
+
+        # Basic
+        oHelper = GfxAttributesBasicHelper()
+        oHelper.Run(clr.Convert(oTrajectory, IVehicleGraphics2DAttributesBasic))
+
+        self.m_logger.WriteLine("GfxAttributesTrajectoryHelper test:")
+
+        # IsVisible (false)
+        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oTrajectory.is_visible)
+        oTrajectory.is_visible = False
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.is_visible)
+        Assert.assertEqual(False, oTrajectory.is_visible)
+
+        def action16():
+            oTrajectory.is_ground_track_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action16)
+
+        def action17():
+            oTrajectory.is_ground_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action17)
+
+        def action18():
+            oTrajectory.is_trajectory_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action18)
+
+        def action19():
+            oTrajectory.is_trajectory_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action19)
+
+        # IsVisible (true)
+        oTrajectory.is_visible = True
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.is_visible)
+        Assert.assertEqual(True, oTrajectory.is_visible)
+        # Inherit (true)
+        self.m_logger.WriteLine4("\t\tCurrent Inherit flag is: {0}", oTrajectory.inherit)
+        oTrajectory.inherit = True
+        self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oTrajectory.inherit)
+        Assert.assertEqual(True, oTrajectory.inherit)
+
+        def action20():
+            oTrajectory.is_ground_track_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action20)
+
+        def action21():
+            oTrajectory.is_ground_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action21)
+
+        def action22():
+            oTrajectory.is_trajectory_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action22)
+
+        def action23():
+            oTrajectory.is_trajectory_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action23)
+
+        # Inherit (false)
+        oTrajectory.inherit = False
+        self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oTrajectory.inherit)
+        Assert.assertEqual(False, oTrajectory.inherit)
+        # IsGroundTrackVisible
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundTrackVisible flag is: {0}", oTrajectory.is_ground_track_visible)
+        oTrajectory.is_ground_track_visible = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundTrackVisible flag is: {0}", oTrajectory.is_ground_track_visible)
+        Assert.assertEqual(True, oTrajectory.is_ground_track_visible)
+        # IsGroundMarkerVisible
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundMarkerVisible flag is: {0}", oTrajectory.is_ground_marker_visible)
+        oTrajectory.is_ground_marker_visible = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundMarkerVisible flag is: {0}", oTrajectory.is_ground_marker_visible)
+        Assert.assertEqual(True, oTrajectory.is_ground_marker_visible)
+        # IsTrajectoryVisible
+        self.m_logger.WriteLine4("\t\tCurrent IsTrajectoryVisible flag is: {0}", oTrajectory.is_trajectory_visible)
+        oTrajectory.is_trajectory_visible = True
+        self.m_logger.WriteLine4("\t\tNew IsTrajectoryVisible flag is: {0}", oTrajectory.is_trajectory_visible)
+        Assert.assertEqual(True, oTrajectory.is_trajectory_visible)
+        # IsTrajectoryMarkerVisible
+        self.m_logger.WriteLine4(
+            "\t\tCurrent IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.is_trajectory_marker_visible
+        )
+        oTrajectory.is_trajectory_marker_visible = True
+        self.m_logger.WriteLine4(
+            "\t\tNew IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.is_trajectory_marker_visible
+        )
+        Assert.assertEqual(True, oTrajectory.is_trajectory_marker_visible)
+
+
+# endregion
+
+
 # region GfxAttributesType enum
 class GfxAttributesType:
     eOrbit = 0
@@ -241,19 +347,19 @@ class GfxAttributesAccessHelper(object):
             oBasic: "IVehicleGraphics2DAttributesBasic" = oAccess.during_access
             Assert.assertIsNotNone(oBasic)
 
-            def action16():
+            def action24():
                 oBasic.is_visible = False
 
-            TryCatchAssertBlock.ExpectedException("read-only", action16)
+            TryCatchAssertBlock.ExpectedException("read-only", action24)
 
             # NoAccess (readonly)
             oBasic = oAccess.no_access
             Assert.assertIsNotNone(oBasic)
 
-            def action17():
+            def action25():
                 oBasic.is_visible = False
 
-            TryCatchAssertBlock.ExpectedException("read-only", action17)
+            TryCatchAssertBlock.ExpectedException("read-only", action25)
 
         if oLinkCollection.count == 0:
             arObjects = oLinkCollection.available_objects
@@ -351,21 +457,21 @@ class GfxAttributesTimeComponentsHelper(object):
         tcColl.remove_all()
         Assert.assertEqual(0, tcColl.count)
 
-        def action18():
+        def action26():
             tcColl.add((("Scenario/" + oRoot.current_scenario.instance_name) + " AnalysisStartTime Event"))
 
         # Should not be able to add Event, EventArray, or invalid components
-        TryCatchAssertBlock.DoAssert("Added Event", action18)
+        TryCatchAssertBlock.DoAssert("Added Event", action26)
 
-        def action19():
+        def action27():
             tcColl.add((("Scenario/" + oRoot.current_scenario.instance_name) + " OneMinuteSampleTimes EventArray"))
 
-        TryCatchAssertBlock.DoAssert("Added EventArray", action19)
+        TryCatchAssertBlock.DoAssert("Added EventArray", action27)
 
-        def action20():
+        def action28():
             tcColl.add("Scenario/Scenario1 Bogus EventInterval")
 
-        TryCatchAssertBlock.DoAssert("Added invalid component", action20)
+        TryCatchAssertBlock.DoAssert("Added invalid component", action28)
 
         # Should be able to add EventInterval, EventIntervalList, or EventIntervalCollection
         tcElement1: "IVehicleGraphics2DTimeComponentsElement" = tcColl.add(
@@ -426,10 +532,10 @@ class GfxAttributesTimeComponentsHelper(object):
         )
         Assert.assertEqual("Aircraft/Boing737 LightingIntervals EventIntervalCollection", tcColl[2].qualified_path)
 
-        def action21():
+        def action29():
             Console.WriteLine(tcColl[3].qualified_path)
 
-        TryCatchAssertBlock.DoAssert("bad index", action21)
+        TryCatchAssertBlock.DoAssert("bad index", action29)
 
         # enumerate
         ele: "IVehicleGraphics2DTimeComponentsElement"
@@ -499,11 +605,11 @@ class GfxAttributesTimeComponentsHelper(object):
         oBasicHelper.Run(evCollEle3.penumbra)
         oBasicHelper.Run(evCollEle3.sunlight)
 
-        def action22():
+        def action30():
             tcColl.remove_at(3)
 
         # RemoveAt
-        TryCatchAssertBlock.DoAssert("RemoveAt bad index", action22)
+        TryCatchAssertBlock.DoAssert("RemoveAt bad index", action30)
 
         tcColl.remove_at(1)
         Assert.assertEqual(2, tcColl.count)
@@ -622,10 +728,10 @@ class GfxIntervalsCollectionHelper(object):
         Assert.assertEqual("1 Jul 1999 00:35:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 5), oCollection.count)
 
-        def action23():
+        def action31():
             oCollection.add("1 Jul 1999 00:20:00.000", "1 Jul 1999 00:25:00.000")
 
-        TryCatchAssertBlock.ExpectedException("already exists", action23)
+        TryCatchAssertBlock.ExpectedException("already exists", action31)
 
         # Item
         self.m_logger.WriteLine3("\tThe new IntervalCollection contain: {0} elements", oCollection.count)
@@ -789,10 +895,10 @@ class GfxElevationContoursHelper(object):
         self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertEqual(False, oContours.is_fill_visible)
 
-        def action24():
+        def action32():
             oContours.fill_style = FILL_STYLE.HATCH
 
-        TryCatchAssertBlock.DoAssert("The FillStyle should be readonly when IsFillVisible flag is False.", action24)
+        TryCatchAssertBlock.DoAssert("The FillStyle should be readonly when IsFillVisible flag is False.", action32)
         oContours.is_fill_visible = True
         self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertEqual(True, oContours.is_fill_visible)
@@ -832,10 +938,10 @@ class GfxElevationContoursHelper(object):
         self.m_logger.WriteLine3("The new NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
         Assert.assertEqual(7, oContours.num_of_decimal_digits)
 
-        def action25():
+        def action33():
             oContours.num_of_decimal_digits = 123
 
-        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action25)
+        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action33)
 
         # set AngleUnit
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
@@ -940,22 +1046,22 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.label_angle,
             )
 
-            def action26():
+            def action34():
                 elevationsElement.label_angle = 1234
 
-            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action26)
+            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action34)
 
             iIndex += 1
 
-        def action27():
+        def action35():
             oElevations.add_level_range(12.34, 34.12, 0.2)
 
-        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action27)
+        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action35)
 
-        def action28():
+        def action36():
             oElevations.add_level_range(1.0, 200.0, 1.0)
 
-        TryCatchAssertBlock.DoAssert("Cannot have in excess of 100 levels", action28)
+        TryCatchAssertBlock.DoAssert("Cannot have in excess of 100 levels", action36)
 
         # RemoveAll
         oElevations.remove_all()
@@ -999,10 +1105,10 @@ class GfxRangeContoursHelper(object):
         self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertFalse(oContours.is_fill_visible)
 
-        def action29():
+        def action37():
             oContours.fill_style = FILL_STYLE.HATCH
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action29)
+        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action37)
         oContours.is_fill_visible = True
         self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertTrue(oContours.is_fill_visible)
@@ -1038,15 +1144,15 @@ class GfxRangeContoursHelper(object):
         self.m_logger.WriteLine3("\tThe new NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
         Assert.assertEqual(7, oContours.num_of_decimal_digits)
 
-        def action30():
+        def action38():
             oContours.num_of_decimal_digits = 123
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action30)
+        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action38)
 
-        def action31():
+        def action39():
             oContours.label_unit = "test"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action31)
+        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action39)
 
         oContours.fill_translucency = 55.0
         Assert.assertAlmostEqual(55.0, oContours.fill_translucency, delta=Math2.Epsilon12)
@@ -1163,15 +1269,15 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.label_angle,
             )
 
-            def action32():
+            def action40():
                 levelAttribute.label_angle = 1234
 
-            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action32)
+            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action40)
 
-        def action33():
+        def action41():
             oLevels.add_level_range(12.34, 34.12, 0.2)
 
-        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action33)
+        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action41)
 
         # RemoveAll
         oLevels.remove_all()
@@ -1235,10 +1341,10 @@ class GfxSAAContoursHelper(object):
         self.m_logger.WriteLine4("The new UseVehicleAltitude flag is: {0}", oContours.use_vehicle_altitude)
         Assert.assertEqual(True, oContours.use_vehicle_altitude)
 
-        def action34():
+        def action42():
             oContours.altitude = 123.456
 
-        TryCatchAssertBlock.ExpectedException("read only", action34)
+        TryCatchAssertBlock.ExpectedException("read only", action42)
 
         # UseVehicleAlt (false)
         oContours.use_vehicle_altitude = False
@@ -1250,10 +1356,10 @@ class GfxSAAContoursHelper(object):
         self.m_logger.WriteLine6("The new Altitude is: {0}", oContours.altitude)
         Assert.assertEqual(345.678, oContours.altitude)
 
-        def action35():
+        def action43():
             oContours.altitude = 1234.56
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action35)
+        TryCatchAssertBlock.ExpectedException("is invalid", action43)
 
         # restore DistanceUnit
         self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
@@ -1406,25 +1512,25 @@ class GfxLightingHelper(object):
         self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oVeGfxLightingElement.visible)
         Assert.assertEqual(False, oVeGfxLightingElement.visible)
 
-        def action36():
+        def action44():
             oVeGfxLightingElement.color = Color.FromArgb(12632256)
 
-        TryCatchAssertBlock.ExpectedException("read-only", action36)
+        TryCatchAssertBlock.ExpectedException("read-only", action44)
 
-        def action37():
+        def action45():
             oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
 
-        TryCatchAssertBlock.ExpectedException("read-only", action37)
+        TryCatchAssertBlock.ExpectedException("read-only", action45)
 
-        def action38():
+        def action46():
             oVeGfxLightingElement.line_width = LINE_WIDTH.WIDTH1
 
-        TryCatchAssertBlock.ExpectedException("read-only", action38)
+        TryCatchAssertBlock.ExpectedException("read-only", action46)
 
-        def action39():
+        def action47():
             oVeGfxLightingElement.marker_style = "Circle"
 
-        TryCatchAssertBlock.ExpectedException("read-only", action39)
+        TryCatchAssertBlock.ExpectedException("read-only", action47)
 
         # Visible (true)
         oVeGfxLightingElement.visible = True
@@ -1447,21 +1553,76 @@ class GfxLightingHelper(object):
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oVeGfxLightingElement.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH3, oVeGfxLightingElement.line_width)
 
-        def action40():
+        def action48():
             oVeGfxLightingElement.line_width = clr.Convert((-1), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action40)
+        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action48)
 
-        def action41():
+        def action49():
             oVeGfxLightingElement.line_width = clr.Convert((11), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action41)
+        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action49)
 
         # MarkerStyle
         self.m_logger.WriteLine5("\tThe current MarkerStyle is: {0}", oVeGfxLightingElement.marker_style)
         oVeGfxLightingElement.marker_style = "X"
         self.m_logger.WriteLine5("\tThe new MarkerStyle is: {0}", oVeGfxLightingElement.marker_style)
         Assert.assertEqual("X", oVeGfxLightingElement.marker_style)
+
+
+# endregion
+
+
+# region GfxTrajectoryResolutionHelper
+class GfxTrajectoryResolutionHelper(object):
+    def __init__(self, *args, **kwargs):
+        self.m_logger = Logger.Instance
+
+    # endregion
+
+    # region Run method
+    def Run(self, oResolution: "IVehicleGraphics2DTrajectoryResolution"):
+        self.m_logger.WriteLine("----- THE GRAPHICS RESOLUTION TEST ----- BEGIN -----")
+        Assert.assertIsNotNone(oResolution)
+        # GroundTrack
+        self.m_logger.WriteLine6("The current GroundTrack is: {0}", oResolution.ground_track)
+        oResolution.ground_track = 12345.6789
+        self.m_logger.WriteLine6("The new GroundTrack is: {0}", oResolution.ground_track)
+        Assert.assertEqual(12345.6789, oResolution.ground_track)
+
+        oResolution.min_ground_track = 1
+        Assert.assertEqual(1, oResolution.min_ground_track)
+
+        def action50():
+            oResolution.min_ground_track = -1
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action50)
+
+        def action51():
+            oResolution.ground_track = -12345.6789
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action51)
+
+        # Trajectory
+        self.m_logger.WriteLine6("The current Trajectory is: {0}", oResolution.trajectory)
+        oResolution.trajectory = 6789.12345
+        self.m_logger.WriteLine6("The new Trajectory is: {0}", oResolution.trajectory)
+        Assert.assertEqual(6789.12345, oResolution.trajectory)
+
+        oResolution.min_trajectory = 1
+        Assert.assertEqual(1, oResolution.min_trajectory)
+
+        def action52():
+            oResolution.min_trajectory = -1
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action52)
+
+        def action53():
+            oResolution.trajectory = -12345.6789
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action53)
+
+        self.m_logger.WriteLine("----- THE GRAPHICS RESOLUTION TEST ----- END -----")
 
 
 # endregion
@@ -1487,15 +1648,15 @@ class GfxPassResolutionHelper(object):
         oResolution.min_ground_track = 1
         Assert.assertEqual(1, oResolution.min_ground_track)
 
-        def action42():
+        def action54():
             oResolution.min_ground_track = -1
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action42)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action54)
 
-        def action43():
+        def action55():
             oResolution.ground_track = -12345.6789
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action43)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action55)
 
         # Orbit
         self.m_logger.WriteLine6("The current Orbit is: {0}", oResolution.orbit)
@@ -1506,15 +1667,15 @@ class GfxPassResolutionHelper(object):
         oResolution.min_orbit = 1
         Assert.assertEqual(1, oResolution.min_orbit)
 
-        def action44():
+        def action56():
             oResolution.min_orbit = -1
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action44)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action56)
 
-        def action45():
+        def action57():
             oResolution.orbit = -12345.6789
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action45)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action57)
 
         self.m_logger.WriteLine("----- THE GRAPHICS RESOLUTION TEST ----- END -----")
 
@@ -1577,11 +1738,11 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Fraction is: {0}", oFraction.fraction)
                     Assert.assertEqual(12.3456, oFraction.fraction)
 
-                    def action46():
+                    def action58():
                         oFraction.fraction = -56.34
 
                     # range test
-                    TryCatchAssertBlock.ExpectedException("is invalid", action46)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action58)
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # LeadData
                     oTime: "IVehicleLeadTrailDataTime" = clr.Convert(leadTrailData.lead_data, IVehicleLeadTrailDataTime)
@@ -1600,11 +1761,11 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Time is: {0}", oTime.time)
                     Assert.assertEqual(123.456, oTime.time)
 
-                    def action47():
+                    def action59():
                         oTime.time = 56340000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
                     # range test
-                    TryCatchAssertBlock.ExpectedException("is invalid", action47)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action59)
                     # restore TimeUnit
                     self.m_oUnits.set_current_unit("TimeUnit", strUnit)
                     self.m_logger.WriteLine5("\tThe new TimeUnit (restored) is: {0}", strUnit)
@@ -1658,12 +1819,12 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Fraction is: {0}", oFraction.fraction)
                     Assert.assertEqual(12.3456, oFraction.fraction)
 
-                    def action48():
+                    def action60():
                         oFraction.fraction = -56.34
 
                     # range test
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action48)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action60)
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # TrailData
                     oTime: "IVehicleLeadTrailDataTime" = clr.Convert(
@@ -1684,12 +1845,12 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Time is: {0}", oTime.time)
                     Assert.assertEqual(123.456, oTime.time)
 
-                    def action49():
+                    def action61():
                         oTime.time = 56340000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
                     # range test
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action49)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action61)
 
                     # restore TimeUnit
                     self.m_oUnits.set_current_unit("TimeUnit", strUnit)
@@ -1778,10 +1939,10 @@ class GfxSwathHelper(object):
                 )
                 Assert.assertEqual(12.34, gfxElevationGroundElevation.angle)
 
-                def action50():
+                def action62():
                     gfxElevationGroundElevation.angle = -56.34
 
-                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action50)
+                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action62)
                 # restore AngleUnit
                 self.m_oUnits.set_current_unit("AngleUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
@@ -1810,10 +1971,10 @@ class GfxSwathHelper(object):
                 )
                 Assert.assertEqual(56.78, gfxElevationSwathHalfWidth.distance)
 
-                def action51():
+                def action63():
                     gfxElevationSwathHalfWidth.distance = -56.34
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action51)
+                TryCatchAssertBlock.ExpectedException("is invalid", action63)
 
                 # restore DistanceUnit
                 self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
@@ -1844,10 +2005,10 @@ class GfxSwathHelper(object):
                 )
                 Assert.assertEqual(78.9, gfxElevationVehicleHalfAngle.angle)
 
-                def action52():
+                def action64():
                     gfxElevationVehicleHalfAngle.angle = -56.34
 
-                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action52)
+                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action64)
                 # restore AngleUnit
                 self.m_oUnits.set_current_unit("AngleUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
@@ -1857,11 +2018,13 @@ class GfxSwathHelper(object):
 
             iIndex += 1
 
-        def action53():
+        def action65():
             oSwath.set_elevation_type(VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_UNKNOWN)
 
         # SetElevationType(eElevationUnknown)
-        TryCatchAssertBlock.ExpectedException("must be in", action53)
+        TryCatchAssertBlock.ExpectedException("must be in", action65)
+
+        oSwath.set_elevation_type(VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_GROUND_ELEVATION)
 
         # Options
         self.m_logger.WriteLine6("The current Options is: {0}", oSwath.options)
@@ -1916,10 +2079,10 @@ class GfxTimeEventsHelper(object):
         self.m_logger.WriteLine4("The new IsVisible flag is: {0}", timeEventsElement.is_visible)
         Assert.assertEqual(False, timeEventsElement.is_visible)
 
-        def action54():
+        def action66():
             timeEventsElement.set_time_event_type(VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE)
 
-        TryCatchAssertBlock.ExpectedException("read-only", action54)
+        TryCatchAssertBlock.ExpectedException("read-only", action66)
 
         # IsVisible (true)
         timeEventsElement.is_visible = True
@@ -2016,10 +2179,10 @@ class GfxTimeEventsHelper(object):
                     self.m_logger.WriteLine3("\t\t\t\tThe new OffsetPixels is: {0}", oLine.offset_pixels)
                     Assert.assertEqual(17, oLine.offset_pixels)
 
-                    def action55():
+                    def action67():
                         oLine.offset_pixels = 123
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action55)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action67)
 
                     i += 1
 
@@ -2138,10 +2301,10 @@ class GfxTimeEventsHelper(object):
                     self.m_logger.WriteLine3("\t\t\t\tThe new OffsetPixels is: {0}", oText.offset_pixels)
                     Assert.assertEqual(17, oText.offset_pixels)
 
-                    def action56():
+                    def action68():
                         oText.offset_pixels = 123
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action56)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action68)
 
                     i += 1
 
@@ -2238,10 +2401,10 @@ class GfxLabelNoteHelper(object):
         self.m_logger.WriteLine3("After  Remove() the LabelNotes collection contains: {0} elements", oCollection.count)
         Assert.assertEqual((iCount + 1), oCollection.count)
 
-        def action57():
+        def action69():
             oCollection.remove((oCollection.count + 1))
 
-        TryCatchAssertBlock.DoAssert("Remove() should not allow to remove invalid elements.", action57)
+        TryCatchAssertBlock.DoAssert("Remove() should not allow to remove invalid elements.", action69)
         self.m_logger.WriteLine3("The LabelNotes collection contains: {0} elements.", oCollection.count)
         labelNote: "ILabelNote"
         for labelNote in oCollection:
