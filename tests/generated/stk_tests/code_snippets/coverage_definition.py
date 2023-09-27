@@ -75,7 +75,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         cvGrid: "ICoverageGrid" = coverageDefinition.grid
 
         # Define custom region
-        cvGrid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        cvGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         oBoundsCustom: "ICoverageBoundsCustomRegions" = clr.CastAs(cvGrid.bounds, ICoverageBoundsCustomRegions)
         oBoundsCustom.region_files.add(regionFilePath)
         oBoundsCustom.area_targets.add("AreaTarget/AreaTarget1")
@@ -107,7 +107,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         cvGrid: "ICoverageGrid" = coverageDefinition.grid
 
         # Set bound region type to use custom regions
-        cvGrid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        cvGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
 
         # Get ICoverageBoundsCustomRegions interface
         boundRegion: "ICoverageBoundsCustomRegions" = clr.CastAs(cvGrid.bounds, ICoverageBoundsCustomRegions)
@@ -127,7 +127,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         grid: "ICoverageGrid" = coverageDefinition.grid
 
         # Set resolution type
-        grid.resolution_type = CV_RESOLUTION.RESOLUTION_LAT_LON
+        grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
 
         # Get the resolution interface
         resolution: "ICoverageResolution" = grid.resolution
@@ -150,14 +150,14 @@ class CoverageDefinition(CodeSnippetsTestBase):
         pointDefinition: "ICoveragePointDefinition" = coverageDefinition.point_definition
 
         # Set facility as object seed instance
-        pointDefinition.grid_class = CV_GRID_CLASS.GRID_CLASS_FACILITY
+        pointDefinition.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_FACILITY
         pointDefinition.use_grid_seed = True
         pointDefinition.seed_instance = "Facility/North"
 
         # Configure Altitude
-        pointDefinition.altitude_method = CV_ALTITUDE_METHOD.ALTITUDE
+        pointDefinition.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE
         pointDefinition.altitude = 0.0
-        coverageDefinition.point_definition.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.USE_POINT_ALT
+        coverageDefinition.point_definition.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
 
     # endregion
 
@@ -198,17 +198,17 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
     def ConfigureCoverageDefinitionGraphics(self, cvGraphics: "ICoverageGraphics"):
         # Configure animation
-        cvAnimation: "ICoverageGfxAnimation" = cvGraphics.animation
+        cvAnimation: "ICoverageGraphics2DAnimation" = cvGraphics.animation
         cvAnimation.is_satisfaction_visible = True
         cvAnimation.color = Color.Green
 
         # Configure progress
-        cvProgress: "ICoverageGfxProgress" = cvGraphics.progress
+        cvProgress: "ICoverageGraphics2DProgress" = cvGraphics.progress
         cvProgress.is_visible = True
         cvProgress.color = Color.Red
 
         # Configure static
-        cvStatic: "ICoverageGfxStatic" = cvGraphics.static
+        cvStatic: "ICoverageGraphics2DStatic" = cvGraphics.static
         cvStatic.color = Color.Blue
         cvStatic.marker_style = "Star"
 
@@ -263,7 +263,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
             (clr.Convert(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft1"), IAircraft
         )
         (clr.Convert(aircraft, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "AircraftSensor1")
-        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         greatArc: "IVehiclePropagatorGreatArc" = clr.Convert(aircraft.route, IVehiclePropagatorGreatArc)
 
         waypoints = [

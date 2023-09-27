@@ -15,17 +15,17 @@ from ansys.stk.core.stkobjects import (
     LINE_WIDTH,
     ORIENTATION_ASC_NODE,
     ORIENTATION_TYPE,
-    SN_PATTERN,
-    SN_POINTING,
-    SN_PROJECTION_DISTANCE_TYPE,
-    SN_PT_TRGT_BSIGHT_TYPE,
+    SENSOR_PATTERN,
+    SENSOR_POINTING,
+    SENSOR_PROJECTION_DISTANCE_TYPE,
+    SENSOR_POINTING_TARGETED_BORESIGHT_TYPE,
     STK_OBJECT_TYPE,
-    VE_ATTITUDE,
-    VE_GFX_ATTRIBUTES,
-    VE_GFX_VISIBLE_SIDES,
-    VE_PROFILE,
-    VE_PROPAGATOR_TYPE,
-    VE_WAY_PT_COMP_METHOD,
+    VEHICLE_ATTITUDE,
+    VEHICLE_GRAPHICS2_D_ATTRIBUTES,
+    VEHICLE_GRAPHICS2_D_VISIBLE_SIDES,
+    VEHICLE_PROFILE,
+    VEHICLE_PROPAGATOR_TYPE,
+    VEHICLE_WAYPOINT_COMP_METHOD,
 )
 from ansys.stk.core.stkutil import (
     COORDINATE_SYSTEM,
@@ -340,13 +340,13 @@ class STKTutorial:
         cruise = self.root.current_scenario.children.new(
             STK_OBJECT_TYPE.SHIP, "Cruise"
         )
-        cruise.SetRouteType(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        cruise.SetRouteType(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         greatArc = cruise.Route
         interval = greatArc.EphemerisInterval
         interval.SetExplicitInterval(
             "1 Jul 2023 00:00:00.00", interval.FindStopTime()
         )
-        greatArc.Method = VE_WAY_PT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        greatArc.Method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
 
         self._add_waypoint(greatArc.Waypoints, 44.1, -8.5, 0.0, 0.015, 0.0)
         self._add_waypoint(greatArc.Waypoints, 51.0, -26.6, 0.0, 0.015, 0.0)
@@ -356,10 +356,10 @@ class STKTutorial:
         self._add_waypoint(greatArc.Waypoints, 72.5, -70.1, 0.0, 0.015, 0.0)
         self._add_waypoint(greatArc.Waypoints, 74.9, -74.5, 0.0, 0.015, 0.0)
 
-        cruise.SetAttitudeType(VE_ATTITUDE.ATTITUDE_STANDARD)
+        cruise.SetAttitudeType(VEHICLE_ATTITUDE.ATTITUDE_STANDARD)
         attitude = cruise.Attitude
         attitude.Basic.SetProfileType(
-            VE_PROFILE.PROFILE_ECF_VELOCITY_ALIGNMENT_WITH_RADIAL_CONSTRAINT
+            VEHICLE_PROFILE.PROFILE_ECF_VELOCITY_ALIGNMENT_WITH_RADIAL_CONSTRAINT
         )
         cruise.Graphics.WaypointMarker.IsWaypointMarkersVisible = True
         cruise.Graphics.WaypointMarker.IsTurnMarkersVisible = True
@@ -372,7 +372,7 @@ class STKTutorial:
         tdrs = self.root.current_scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, "TDRS"
         )
-        tdrs.SetPropagatorType(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        tdrs.SetPropagatorType(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twobody = tdrs.Propagator
 
         classical = twobody.InitialState.Representation.ConvertTo(
@@ -423,7 +423,7 @@ class STKTutorial:
             STK_OBJECT_TYPE.SATELLITE, "ERS1"
         )
         self.ers1.SetPropagatorType(
-            VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION
+            VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION
         )
         j4 = self.ers1.Propagator
         interval = j4.EphemerisInterval
@@ -457,16 +457,16 @@ class STKTutorial:
         j4.Propagate()
         self.root.rewind()
         self.ers1.Graphics.Passes.VisibleSides = (
-            VE_GFX_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING
+            VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING
         )
         self.ers1.Graphics.Passes.VisibleSides = (
-            VE_GFX_VISIBLE_SIDES.VISIBLE_SIDES_BOTH
+            VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_BOTH
         )
         self.shuttle = self.root.current_scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, "Shuttle"
         )
         self.shuttle.SetPropagatorType(
-            VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION
+            VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION
         )
         j4 = self.shuttle.Propagator
         interval = j4.EphemerisInterval
@@ -504,7 +504,7 @@ class STKTutorial:
 
     def _configure_shuttle_contours(self):
         self.shuttle.Graphics.SetAttributesType(
-            VE_GFX_ATTRIBUTES.ATTRIBUTES_BASIC
+            VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC
         )
         orbitgfx = self.shuttle.Graphics.Attributes
         orbitgfx.Line.Style = LINE_STYLE.DASHED
@@ -580,10 +580,10 @@ class STKTutorial:
         self.horizon = self.root.current_scenario.children["ERS1"].children.new(
             STK_OBJECT_TYPE.SENSOR, "Horizon"
         )
-        self.horizon.SetPatternType(SN_PATTERN.SIMPLE_CONIC)
+        self.horizon.SetPatternType(SENSOR_PATTERN.SIMPLE_CONIC)
         simpleConic = self.horizon.Pattern
         simpleConic.ConeAngle = 90
-        self.horizon.SetPointingType(SN_POINTING.PT_FIXED)
+        self.horizon.SetPointingType(SENSOR_POINTING.POINT_FIXED)
         fixedPt = self.horizon.Pointing
         azEl = fixedPt.Orientation.ConvertTo(ORIENTATION_TYPE.AZ_EL)
         azEl.Elevation = 90
@@ -595,14 +595,14 @@ class STKTutorial:
         downlink = self.root.current_scenario.children["ERS1"].children.new(
             STK_OBJECT_TYPE.SENSOR, "Downlink"
         )
-        downlink.SetPatternType(SN_PATTERN.HALF_POWER)
+        downlink.SetPatternType(SENSOR_PATTERN.HALF_POWER)
         halfpower = downlink.Pattern
         halfpower.Frequency = 0.85
         halfpower.AntennaDiameter = 1.0
 
-        downlink.SetPointingType(SN_POINTING.PT_TARGETED)
+        downlink.SetPointingType(SENSOR_POINTING.POINT_TARGETED)
         targeted = downlink.Pointing
-        targeted.Boresight = SN_PT_TRGT_BSIGHT_TYPE.TRACKING
+        targeted.Boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING
         targets = targeted.Targets
         targets.Add("Facility/Baikonur")
         targets.Add("Facility/WhiteSands")
@@ -619,14 +619,14 @@ class STKTutorial:
             "Wallops"
         ].children.new(STK_OBJECT_TYPE.SENSOR, "FiveDegElev")
 
-        fiveDegElev.SetPatternType(SN_PATTERN.COMPLEX_CONIC)
+        fiveDegElev.SetPatternType(SENSOR_PATTERN.COMPLEX_CONIC)
         complexConic = fiveDegElev.Pattern
         complexConic.InnerConeHalfAngle = 0
         complexConic.OuterConeHalfAngle = 85
         complexConic.MinimumClockAngle = 0
         complexConic.MaximumClockAngle = 360
 
-        fiveDegElev.SetPointingType(SN_POINTING.PT_FIXED)
+        fiveDegElev.SetPointingType(SENSOR_POINTING.POINT_FIXED)
         fixedPt = fiveDegElev.Pointing
         azEl = fixedPt.Orientation.ConvertTo(ORIENTATION_TYPE.AZ_EL)
         azEl.Elevation = 90
@@ -634,7 +634,7 @@ class STKTutorial:
         fixedPt.Orientation.Assign(azEl)
 
         fiveDegElev.Graphics.Projection.DistanceType = (
-            SN_PROJECTION_DISTANCE_TYPE.CONSTANT_ALT
+            SENSOR_PROJECTION_DISTANCE_TYPE.CONSTANT_ALTITUDE
         )
         dispDistance = fiveDegElev.Graphics.Projection.DistanceData
         dispDistance.Max = 785.248
@@ -653,7 +653,7 @@ class STKTutorial:
         j4.Propagate()
 
         self.ers1.Graphics.SetAttributesType(
-            VE_GFX_ATTRIBUTES.ATTRIBUTES_CUSTOM
+            VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_CUSTOM
         )
         customAtt = self.ers1.Graphics.Attributes
         gfxInterval = customAtt.Intervals.Add(
@@ -675,7 +675,7 @@ class STKTutorial:
 
     def _configure_access_intervals(self):
         self.ers1.Graphics.SetAttributesType(
-            VE_GFX_ATTRIBUTES.ATTRIBUTES_ACCESS
+            VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_ACCESS
         )
         gfxAccess = self.ers1.Graphics.Attributes
 

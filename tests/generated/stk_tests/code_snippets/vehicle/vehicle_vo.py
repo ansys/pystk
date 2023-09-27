@@ -40,10 +40,10 @@ class VehicleVO(CodeSnippetsTestBase):
         sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), ISatellite
         )
-        self.ConfigureVeVOPass(sat.vo.pass_method)
+        self.ConfigureVeVOPass(sat.graphics3_d.pass_method)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
-    def ConfigureVeVOPass(self, veVoPass: "IVehicleVOPass"):
+    def ConfigureVeVOPass(self, veVoPass: "IVehicleGraphics3DPass"):
         # Set lead data type to fraction, retrieved IAgVeGfxLeadData implementation
         veVoPass.track_data.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.DATA_QUARTER)
 
@@ -65,10 +65,10 @@ class VehicleVO(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
             ISatellite,
         )
-        self.ConfigureVeVODropline(satellite.vo.drop_lines.orbit[0])
+        self.ConfigureVeVODropline(satellite.graphics3_d.drop_lines.orbit[0])
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite1")
 
-    def ConfigureVeVODropline(self, dropLine: "IVehicleVODropLinePathItem"):
+    def ConfigureVeVODropline(self, dropLine: "IVehicleGraphics3DDropLinePathItem"):
         dropLine.is_visible = True
         dropLine.use2_d_color = False
         dropLine.color = Color.Red

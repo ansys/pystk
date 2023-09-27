@@ -23,11 +23,11 @@ Interfaces
     IDrawElemLine
     IExecCmdResult
     IExecMultiCmdResult
-    IUiAxVOCntrl
+    IUiAxGraphics3DCntrl
     IUiAx2DCntrl
     ISTKXApplicationPartnerAccess
     IDataObjectFiles
-    IUiAxGfxAnalysisCntrl
+    IUiAxGraphics2DAnalysisCntrl
 
 
 Enumerations
@@ -44,8 +44,8 @@ Enumerations
     OLE_DROP_MODE
     MOUSE_MODE
     LOGGING_MODE
-    GFX_ANALYSIS_MODE
-    GFX_DRAW_COORDS
+    GRAPHICS2_D_ANALYSIS_MODE
+    GRAPHICS2_D_DRAW_COORDS
     SHOW_PROGRESS_IMAGE
     FEATURE_CODES
     PROGRESS_IMAGE_X_ORIGIN
@@ -57,9 +57,9 @@ Classes
 
 .. autosummary::
 
-    AgExecCmdResult
-    AgExecMultiCmdResult
-    UiAxVOCntrl
+    ExecCmdResult
+    ExecMultiCmdResult
+    UiAxGraphics3DCntrl
     UiAx2DCntrl
     PickInfoData
     STKXApplication
@@ -72,7 +72,7 @@ Classes
     DrawElemCollection
     Draw2DElemRect
     Draw2DElemCollection
-    UiAxGfxAnalysisCntrl
+    UiAxGraphics2DAnalysisCntrl
     WinProjectionPosition
     DrawElemLine
     STKXSSLCertificateErrorEventArgs
@@ -127,7 +127,7 @@ Interfaces
 .. autoclass:: IExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IUiAxVOCntrl
+.. autoclass:: IUiAxGraphics3DCntrl
     :members:
     :exclude-members: __init__
 .. autoclass:: IUiAx2DCntrl
@@ -139,7 +139,7 @@ Interfaces
 .. autoclass:: IDataObjectFiles
     :members:
     :exclude-members: __init__
-.. autoclass:: IUiAxGfxAnalysisCntrl
+.. autoclass:: IUiAxGraphics2DAnalysisCntrl
     :members:
     :exclude-members: __init__
 
@@ -165,9 +165,9 @@ Enumerations
     :members:
 .. autoenum:: LOGGING_MODE
     :members:
-.. autoenum:: GFX_ANALYSIS_MODE
+.. autoenum:: GRAPHICS2_D_ANALYSIS_MODE
     :members:
-.. autoenum:: GFX_DRAW_COORDS
+.. autoenum:: GRAPHICS2_D_DRAW_COORDS
     :members:
 .. autoenum:: SHOW_PROGRESS_IMAGE
     :members:
@@ -182,13 +182,13 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgExecCmdResult
+.. autoclass:: ExecCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgExecMultiCmdResult
+.. autoclass:: ExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: UiAxVOCntrl
+.. autoclass:: UiAxGraphics3DCntrl
     :members:
     :exclude-members: __init__
 .. autoclass:: UiAx2DCntrl
@@ -227,7 +227,7 @@ Classes
 .. autoclass:: Draw2DElemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: UiAxGfxAnalysisCntrl
+.. autoclass:: UiAxGraphics2DAnalysisCntrl
     :members:
     :exclude-members: __init__
 .. autoclass:: WinProjectionPosition

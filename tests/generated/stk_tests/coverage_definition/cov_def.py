@@ -71,8 +71,8 @@ class EarlyBoundTests(TestBase):
     # region STKObject
     @category("Basic Tests")
     def test_STKObject(self):
-        bounds: "CV_BOUNDS" = EarlyBoundTests.AG_COV.grid.bounds_type
-        EarlyBoundTests.AG_COV.grid.bounds_type = CV_BOUNDS.BOUNDS_LAT
+        bounds: "COVERAGE_BOUNDS" = EarlyBoundTests.AG_COV.grid.bounds_type
+        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
         oHelper = STKObjectHelper()
         oCov: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
         oHelper.Run(oCov)
@@ -87,7 +87,7 @@ class EarlyBoundTests(TestBase):
         polarSat: "ISatellite" = clr.Convert(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "PolarSat"), ISatellite
         )
-        polarSat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
+        polarSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
         j4: "IVehiclePropagatorJ4Perturbation" = clr.Convert(polarSat.propagator, IVehiclePropagatorJ4Perturbation)
         classical: "IOrbitStateClassical" = clr.Convert(
             j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), IOrbitStateClassical
@@ -108,16 +108,16 @@ class EarlyBoundTests(TestBase):
         j4.initial_state.representation.assign(classical)
         j4.propagate()
         if not TestBase.NoGraphicsMode:
-            polarSat.graphics.set_attributes_type(VE_GFX_ATTRIBUTES.ATTRIBUTES_BASIC)
-            basicAtt: "IVehicleGfxAttributesBasic" = clr.Convert(
-                polarSat.graphics.attributes, IVehicleGfxAttributesBasic
+            polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+            basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
+                polarSat.graphics.attributes, IVehicleGraphics2DAttributesBasic
             )
             basicAtt.color = Color.Yellow
 
         else:
 
             def action1():
-                polarSat.graphics.set_attributes_type(VE_GFX_ATTRIBUTES.ATTRIBUTES_BASIC)
+                polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action1)
 
@@ -125,7 +125,7 @@ class EarlyBoundTests(TestBase):
         shuttle: "ISatellite" = clr.Convert(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Shuttle"), ISatellite
         )
-        shuttle.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
+        shuttle.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
         j4 = clr.Convert(shuttle.propagator, IVehiclePropagatorJ4Perturbation)
         classical = clr.Convert(
             j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), IOrbitStateClassical
@@ -146,16 +146,16 @@ class EarlyBoundTests(TestBase):
         j4.initial_state.representation.assign(classical)
         j4.propagate()
         if not TestBase.NoGraphicsMode:
-            shuttle.graphics.set_attributes_type(VE_GFX_ATTRIBUTES.ATTRIBUTES_BASIC)
-            basicAtt: "IVehicleGfxAttributesBasic" = clr.Convert(
-                shuttle.graphics.attributes, IVehicleGfxAttributesBasic
+            shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+            basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
+                shuttle.graphics.attributes, IVehicleGraphics2DAttributesBasic
             )
             basicAtt.color = Color.Cyan
 
         else:
 
             def action2():
-                shuttle.graphics.set_attributes_type(VE_GFX_ATTRIBUTES.ATTRIBUTES_BASIC)
+                shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action2)
 
@@ -178,26 +178,26 @@ class EarlyBoundTests(TestBase):
         sat: "ICoverageAssetListElement"
 
         for sat in assets:
-            sat.asset_status = CV_ASSET_STATUS.ACTIVE
+            sat.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
 
         if not TestBase.NoGraphicsMode:
             # Set graphics properties for CoverageDefinition object
-            covStatGfx: "ICoverageGfxStatic" = tropics.graphics.static
+            covStatGfx: "ICoverageGraphics2DStatic" = tropics.graphics.static
             covStatGfx.is_region_visible = True
             covStatGfx.is_labels_visible = True
             covStatGfx.is_points_visible = True
             covStatGfx.fill_points = True
 
-            covProgGfx: "ICoverageGfxProgress" = tropics.graphics.progress
+            covProgGfx: "ICoverageGraphics2DProgress" = tropics.graphics.progress
             covProgGfx.is_visible = True
 
-            covAnimGfx: "ICoverageGfxAnimation" = tropics.graphics.animation
+            covAnimGfx: "ICoverageGraphics2DAnimation" = tropics.graphics.animation
             covAnimGfx.is_satisfaction_visible = False
 
         else:
 
             def action3():
-                covStatGfx: "ICoverageGfxStatic" = tropics.graphics.static
+                covStatGfx: "ICoverageGraphics2DStatic" = tropics.graphics.static
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action3)
 
@@ -212,10 +212,10 @@ class EarlyBoundTests(TestBase):
         )
 
         # Set type to N Asset Coverage and compute option to Maximum
-        twoEyes.set_definition_type(FM_DEFINITION_TYPE.N_ASSET_COVERAGE)
+        twoEyes.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
         compute: "IFigureOfMeritDefinitionCompute" = clr.Convert(twoEyes.definition, IFigureOfMeritDefinitionCompute)
 
-        compute.set_compute_type(FM_COMPUTE.MAXIMUM)
+        compute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
         if not TestBase.NoGraphicsMode:
             # Turn off display of CoverageDefinition graphics
             tropics.graphics.static.is_region_visible = False
@@ -226,7 +226,7 @@ class EarlyBoundTests(TestBase):
             twoEyes.graphics.static.fill_points = False
             twoEyes.graphics.static.marker_style = "Circle"
             twoEyes.graphics.animation.is_visible = True
-            twoEyes.graphics.animation.accumulation = FM_GFX_ACCUMULATION.CURRENT_TIME
+            twoEyes.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.CURRENT_TIME
             twoEyes.graphics.animation.fill_points = False
             twoEyes.graphics.animation.marker_style = "Star"
 
@@ -240,13 +240,13 @@ class EarlyBoundTests(TestBase):
         compute = clr.Convert(twoEyes.definition, IFigureOfMeritDefinitionCompute)
 
         compute.satisfaction.enable_satisfaction = True
-        compute.satisfaction.satisfaction_type = FM_SATISFACTION_TYPE.AT_LEAST
+        compute.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
         compute.satisfaction.satisfaction_threshold = 2
         if not TestBase.NoGraphicsMode:
             twoEyes.graphics.static.is_visible = False
             twoEyes.graphics.animation.contours.is_visible = True
-            twoEyes.graphics.animation.contours.color_method = FM_GFX_COLOR_METHOD.EXPLICIT
-            element: "IFigureOfMeritGfxLevelAttributesElement" = (
+            twoEyes.graphics.animation.contours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT
+            element: "IFigureOfMeritGraphics2DLevelAttributesElement" = (
                 twoEyes.graphics.animation.contours.level_attributes.add_level(1)
             )
             element.color = Color.Pink
@@ -280,40 +280,40 @@ class EarlyBoundTests(TestBase):
 
         # BoundsType (eBoundsGlobal)
         TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", oGrid.bounds_type)
-        oGrid.bounds_type = CV_BOUNDS.BOUNDS_GLOBAL
+        oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_GLOBAL
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_GLOBAL, oGrid.bounds_type)
-        self.Bounds(oGrid.bounds, CV_BOUNDS.BOUNDS_GLOBAL)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_GLOBAL, oGrid.bounds_type)
+        self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_GLOBAL)
 
         # BoundsType (eBoundsLat)
-        oGrid.bounds_type = CV_BOUNDS.BOUNDS_LAT
+        oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_LAT, oGrid.bounds_type)
-        self.Bounds(oGrid.bounds, CV_BOUNDS.BOUNDS_LAT)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT, oGrid.bounds_type)
+        self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LAT)
 
         # BoundsType (eBoundsLatLine)
-        oGrid.bounds_type = CV_BOUNDS.BOUNDS_LAT_LINE
+        oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT_LINE
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_LAT_LINE, oGrid.bounds_type)
-        self.Bounds(oGrid.bounds, CV_BOUNDS.BOUNDS_LAT_LINE)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT_LINE, oGrid.bounds_type)
+        self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LAT_LINE)
 
         # BoundsType (eBoundsLonLine)
-        oGrid.bounds_type = CV_BOUNDS.BOUNDS_LON_LINE
+        oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LON_LINE
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_LON_LINE, oGrid.bounds_type)
-        self.Bounds(oGrid.bounds, CV_BOUNDS.BOUNDS_LON_LINE)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LON_LINE, oGrid.bounds_type)
+        self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LON_LINE)
 
         # BoundsType (eBoundsLatLonRegion)
-        oGrid.bounds_type = CV_BOUNDS.BOUNDS_LAT_LON_REGION
+        oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_LAT_LON_REGION, oGrid.bounds_type)
-        self.Bounds(oGrid.bounds, CV_BOUNDS.BOUNDS_LAT_LON_REGION)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION, oGrid.bounds_type)
+        self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION)
 
         # BoundsType (eBoundsCustomRegions)
-        oGrid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_CUSTOM_REGIONS, oGrid.bounds_type)
-        self.Bounds(oGrid.bounds, CV_BOUNDS.BOUNDS_CUSTOM_REGIONS)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, oGrid.bounds_type)
+        self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS)
 
         oCustomGridBounds: "ICoverageBoundsCustomRegions" = clr.CastAs(oGrid.bounds, ICoverageBoundsCustomRegions)
         oCustomGridBounds.check_for_holes = True
@@ -321,45 +321,45 @@ class EarlyBoundTests(TestBase):
         oCustomGridBounds.check_for_holes = False
         Assert.assertFalse(oCustomGridBounds.check_for_holes)
 
-        oCustomGridBounds.small_region_algorithm = CV_CUSTOM_REGION_ALGORITHM.DISABLED
-        Assert.assertEqual(CV_CUSTOM_REGION_ALGORITHM.DISABLED, oCustomGridBounds.small_region_algorithm)
-        oCustomGridBounds.small_region_algorithm = CV_CUSTOM_REGION_ALGORITHM.ISOTROPIC
-        Assert.assertEqual(CV_CUSTOM_REGION_ALGORITHM.ISOTROPIC, oCustomGridBounds.small_region_algorithm)
-        oCustomGridBounds.small_region_algorithm = CV_CUSTOM_REGION_ALGORITHM.ANISOTROPIC
-        Assert.assertEqual(CV_CUSTOM_REGION_ALGORITHM.ANISOTROPIC, oCustomGridBounds.small_region_algorithm)
+        oCustomGridBounds.small_region_algorithm = COVERAGE_CUSTOM_REGION_ALGORITHM.DISABLED
+        Assert.assertEqual(COVERAGE_CUSTOM_REGION_ALGORITHM.DISABLED, oCustomGridBounds.small_region_algorithm)
+        oCustomGridBounds.small_region_algorithm = COVERAGE_CUSTOM_REGION_ALGORITHM.ISOTROPIC
+        Assert.assertEqual(COVERAGE_CUSTOM_REGION_ALGORITHM.ISOTROPIC, oCustomGridBounds.small_region_algorithm)
+        oCustomGridBounds.small_region_algorithm = COVERAGE_CUSTOM_REGION_ALGORITHM.ANISOTROPIC
+        Assert.assertEqual(COVERAGE_CUSTOM_REGION_ALGORITHM.ANISOTROPIC, oCustomGridBounds.small_region_algorithm)
 
         # BoundsType (eBoundsCustomBoundary)
-        oGrid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_BOUNDARY
+        oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_CUSTOM_BOUNDARY, oGrid.bounds_type)
-        self.Bounds(oGrid.bounds, CV_BOUNDS.BOUNDS_CUSTOM_BOUNDARY)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY, oGrid.bounds_type)
+        self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY)
 
         # ResolutionType (eResolutionArea)
         TestBase.logger.WriteLine6("\tThe current ResolutionType is: {0}", oGrid.resolution_type)
-        oGrid.resolution_type = CV_RESOLUTION.RESOLUTION_AREA
+        oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_AREA
         TestBase.logger.WriteLine6("\tThe new ResolutionType is: {0}", oGrid.resolution_type)
-        Assert.assertEqual(CV_RESOLUTION.RESOLUTION_AREA, oGrid.resolution_type)
-        self.Resolution(oGrid.resolution, CV_RESOLUTION.RESOLUTION_AREA)
+        Assert.assertEqual(COVERAGE_RESOLUTION.RESOLUTION_AREA, oGrid.resolution_type)
+        self.Resolution(oGrid.resolution, COVERAGE_RESOLUTION.RESOLUTION_AREA)
 
         # ResolutionType (eResolutionDistance)
-        oGrid.resolution_type = CV_RESOLUTION.RESOLUTION_DISTANCE
+        oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_DISTANCE
         TestBase.logger.WriteLine6("\tThe new ResolutionType is: {0}", oGrid.resolution_type)
-        Assert.assertEqual(CV_RESOLUTION.RESOLUTION_DISTANCE, oGrid.resolution_type)
-        self.Resolution(oGrid.resolution, CV_RESOLUTION.RESOLUTION_DISTANCE)
+        Assert.assertEqual(COVERAGE_RESOLUTION.RESOLUTION_DISTANCE, oGrid.resolution_type)
+        self.Resolution(oGrid.resolution, COVERAGE_RESOLUTION.RESOLUTION_DISTANCE)
 
         # ResolutionType (eResolutionLatLon)
-        oGrid.resolution_type = CV_RESOLUTION.RESOLUTION_LAT_LON
+        oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
         TestBase.logger.WriteLine6("\tThe new ResolutionType is: {0}", oGrid.resolution_type)
-        Assert.assertEqual(CV_RESOLUTION.RESOLUTION_LAT_LON, oGrid.resolution_type)
-        self.Resolution(oGrid.resolution, CV_RESOLUTION.RESOLUTION_LAT_LON)
+        Assert.assertEqual(COVERAGE_RESOLUTION.RESOLUTION_LAT_LON, oGrid.resolution_type)
+        self.Resolution(oGrid.resolution, COVERAGE_RESOLUTION.RESOLUTION_LAT_LON)
         TestBase.logger.WriteLine("----- COVERAGE DEFINITION GRID TEST ----- END -----")
 
     # endregion
 
     # region Bounds
-    def Bounds(self, oBounds: "ICoverageBounds", eType: "CV_BOUNDS"):
+    def Bounds(self, oBounds: "ICoverageBounds", eType: "COVERAGE_BOUNDS"):
         Assert.assertIsNotNone(oBounds)
-        if eType == CV_BOUNDS.BOUNDS_CUSTOM_REGIONS:
+        if eType == COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS:
             boundsCustomRegions: "ICoverageBoundsCustomRegions" = clr.CastAs(oBounds, ICoverageBoundsCustomRegions)
             Assert.assertIsNotNone(boundsCustomRegions)
 
@@ -540,10 +540,10 @@ class EarlyBoundTests(TestBase):
             oLTMoon = None
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AREA_TARGET, "MarsAreaTarget")
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.LINE_TARGET, "MoonLineTarget")
-        elif eType == CV_BOUNDS.BOUNDS_GLOBAL:
+        elif eType == COVERAGE_BOUNDS.BOUNDS_GLOBAL:
             oGlobal: "ICoverageBoundsGlobal" = clr.CastAs(oBounds, ICoverageBoundsGlobal)
             Assert.assertIsNotNone(oGlobal)
-        elif eType == CV_BOUNDS.BOUNDS_LAT:
+        elif eType == COVERAGE_BOUNDS.BOUNDS_LAT:
             boundsLat: "ICoverageBoundsLat" = clr.CastAs(oBounds, ICoverageBoundsLat)
             Assert.assertIsNotNone(boundsLat)
             # MaxLatitude
@@ -576,7 +576,7 @@ class EarlyBoundTests(TestBase):
                 boundsLat.min_latitude = 65
 
             TryCatchAssertBlock.DoAssert("", action19)
-        elif eType == CV_BOUNDS.BOUNDS_LAT_LON_REGION:
+        elif eType == COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION:
             oLatLonRegion: "ICoverageBoundsLatLonRegion" = clr.CastAs(oBounds, ICoverageBoundsLatLonRegion)
             Assert.assertIsNotNone(oLatLonRegion)
             # MaxLatitude
@@ -624,7 +624,7 @@ class EarlyBoundTests(TestBase):
                 oLatLonRegion.min_latitude = 65
 
             TryCatchAssertBlock.DoAssert("", action24)
-        elif eType == CV_BOUNDS.BOUNDS_LAT_LINE:
+        elif eType == COVERAGE_BOUNDS.BOUNDS_LAT_LINE:
             boundsLatLine: "ICoverageBoundsLatLine" = clr.CastAs(oBounds, ICoverageBoundsLatLine)
             Assert.assertIsNotNone(boundsLatLine)
             # StopLongitude
@@ -657,7 +657,7 @@ class EarlyBoundTests(TestBase):
                 boundsLatLine.latitude = 123.4
 
             TryCatchAssertBlock.DoAssert("", action27)
-        elif eType == CV_BOUNDS.BOUNDS_LON_LINE:
+        elif eType == COVERAGE_BOUNDS.BOUNDS_LON_LINE:
             boundsLonLine: "ICoverageBoundsLonLine" = clr.CastAs(oBounds, ICoverageBoundsLonLine)
             Assert.assertIsNotNone(boundsLonLine)
             # MaxLatitude
@@ -700,7 +700,7 @@ class EarlyBoundTests(TestBase):
                 boundsLonLine.min_latitude = 67
 
             TryCatchAssertBlock.DoAssert("", action32)
-        elif eType == CV_BOUNDS.BOUNDS_CUSTOM_BOUNDARY:
+        elif eType == COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY:
             boundsCustomBoundary: "ICoverageBoundsCustomBoundary" = clr.CastAs(oBounds, ICoverageBoundsCustomBoundary)
             Assert.assertIsNotNone(boundsCustomBoundary)
 
@@ -811,9 +811,9 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Resolution
-    def Resolution(self, oResolution: "ICoverageResolution", eType: "CV_RESOLUTION"):
+    def Resolution(self, oResolution: "ICoverageResolution", eType: "COVERAGE_RESOLUTION"):
         Assert.assertIsNotNone(oResolution)
-        if eType == CV_RESOLUTION.RESOLUTION_AREA:
+        if eType == COVERAGE_RESOLUTION.RESOLUTION_AREA:
             oArea: "ICoverageResolutionArea" = clr.CastAs(oResolution, ICoverageResolutionArea)
             Assert.assertIsNotNone(oArea)
             # Area
@@ -826,7 +826,7 @@ class EarlyBoundTests(TestBase):
                 oArea.area = -123
 
             TryCatchAssertBlock.DoAssert("", action38)
-        elif eType == CV_RESOLUTION.RESOLUTION_DISTANCE:
+        elif eType == COVERAGE_RESOLUTION.RESOLUTION_DISTANCE:
             oDistance: "ICoverageResolutionDistance" = clr.CastAs(oResolution, ICoverageResolutionDistance)
             Assert.assertIsNotNone(oDistance)
             # Distance
@@ -839,7 +839,7 @@ class EarlyBoundTests(TestBase):
                 oDistance.distance = -123
 
             TryCatchAssertBlock.DoAssert("", action39)
-        elif eType == CV_RESOLUTION.RESOLUTION_LAT_LON:
+        elif eType == COVERAGE_RESOLUTION.RESOLUTION_LAT_LON:
             oLat: "ICoverageResolutionLatLon" = clr.CastAs(oResolution, ICoverageResolutionLatLon)
             Assert.assertIsNotNone(oLat)
             # LatLon
@@ -883,39 +883,39 @@ class EarlyBoundTests(TestBase):
 
         # PointLocationMethod (eComputeBasedOnResolution)
         TestBase.logger.WriteLine6("\tThe current PointLocationMethod is: {0}", oPD.point_location_method)
-        oPD.point_location_method = CV_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION
+        oPD.point_location_method = COVERAGE_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION
         TestBase.logger.WriteLine6("\tThe new PointLocationMethod is: {0}", oPD.point_location_method)
-        Assert.assertEqual(CV_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION, oPD.point_location_method)
+        Assert.assertEqual(COVERAGE_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION, oPD.point_location_method)
         # PointFileList (readonly)
         self.PointFileListCollection(oPD.point_file_list, True)
         # PointLocationMethod (eSpecifyCustomLocations)
-        oPD.point_location_method = CV_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS
+        oPD.point_location_method = COVERAGE_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS
         TestBase.logger.WriteLine6("\tThe new PointLocationMethod is: {0}", oPD.point_location_method)
-        Assert.assertEqual(CV_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS, oPD.point_location_method)
+        Assert.assertEqual(COVERAGE_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS, oPD.point_location_method)
         # PointFileList
         self.PointFileListCollection(oPD.point_file_list, False)
 
         def action41():
-            oPD.point_location_method = CV_POINT_LOC_METHOD.POINT_LOC_METHOD_UNKNOWN
+            oPD.point_location_method = COVERAGE_POINT_LOC_METHOD.POINT_LOC_METHOD_UNKNOWN
 
         # PointLocationMethod (ePointLocMethodUnknown)
         TryCatchAssertBlock.DoAssert("", action41)
 
         def action42():
-            oPD.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.UNKNOWN
+            oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.UNKNOWN
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodUnknown)
         TryCatchAssertBlock.DoAssert("", action42)
 
         def action43():
-            oPD.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.DEPTH
+            oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.DEPTH
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodDepth)
         TryCatchAssertBlock.DoAssert("", action43)
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodAltitude)
-        oPD.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.ALTITUDE
-        Assert.assertEqual(CV_GROUND_ALTITUDE_METHOD.ALTITUDE, oPD.ground_altitude_method)
+        oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE
+        Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE, oPD.ground_altitude_method)
         oPD.ground_altitude = 123.456
         Assert.assertEqual(123.456, oPD.ground_altitude)
 
@@ -925,14 +925,14 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.DoAssert("", action44)
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodAltAboveMSL)
-        oPD.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.ALT_ABOVE_MSL
-        Assert.assertEqual(CV_GROUND_ALTITUDE_METHOD.ALT_ABOVE_MSL, oPD.ground_altitude_method)
+        oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL
+        Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL, oPD.ground_altitude_method)
         oPD.ground_altitude = 456.123
         Assert.assertEqual(456.123, oPD.ground_altitude)
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodUsePointAlt)
-        oPD.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.USE_POINT_ALT
-        Assert.assertEqual(CV_GROUND_ALTITUDE_METHOD.USE_POINT_ALT, oPD.ground_altitude_method)
+        oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
+        Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE, oPD.ground_altitude_method)
 
         def action45():
             oPD.ground_altitude = 123.456
@@ -940,17 +940,17 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.DoAssert("", action45)
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodAltAtTerrain)
-        oPD.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.ALT_AT_TERRAIN
-        Assert.assertEqual(CV_GROUND_ALTITUDE_METHOD.ALT_AT_TERRAIN, oPD.ground_altitude_method)
+        oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_AT_TERRAIN
+        Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_AT_TERRAIN, oPD.ground_altitude_method)
 
         def action46():
             oPD.ground_altitude = 123.456
 
         TryCatchAssertBlock.DoAssert("", action46)
 
-        gridClass: "CV_GRID_CLASS"
+        gridClass: "COVERAGE_GRID_CLASS"
 
-        for gridClass in Enum.GetValues(clr.TypeOf(CV_GRID_CLASS)):
+        for gridClass in Enum.GetValues(clr.TypeOf(COVERAGE_GRID_CLASS)):
             self.GridClass(oPD, gridClass)
 
         TestBase.logger.WriteLine("----- POINT DEFINITION TEST ----- END -----")
@@ -1063,11 +1063,11 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region GridClass
-    def GridClass(self, oPD: "ICoveragePointDefinition", eClass: "CV_GRID_CLASS"):
+    def GridClass(self, oPD: "ICoveragePointDefinition", eClass: "COVERAGE_GRID_CLASS"):
         Assert.assertIsNotNone(oPD)
         # GridClass
         TestBase.logger.WriteLine6("\tThe current GridClass is: {0}", oPD.grid_class)
-        if (eClass == CV_GRID_CLASS.GRID_CLASS_UNKNOWN) or (eClass == CV_GRID_CLASS.GRID_CLASS_SUBMARINE):
+        if (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_UNKNOWN) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_SUBMARINE):
 
             def action55():
                 oPD.grid_class = eClass
@@ -1077,15 +1077,15 @@ class EarlyBoundTests(TestBase):
 
         oPD.grid_class = eClass
         Console.WriteLine("\tThe new GridClass is: {0}", oPD.grid_class)
-        eClass2: "CV_GRID_CLASS" = oPD.grid_class
+        eClass2: "COVERAGE_GRID_CLASS" = oPD.grid_class
         Assert.assertEqual(eClass, eClass2)
 
         # UseGridSeed
         TestBase.logger.WriteLine4("\t\tThe current UseGridSeed is: {0}", oPD.use_grid_seed)
         if (
-            ((eClass == CV_GRID_CLASS.GRID_CLASS_RADAR) or (eClass == CV_GRID_CLASS.GRID_CLASS_RECEIVER))
-            or (eClass == CV_GRID_CLASS.GRID_CLASS_TRANSMITTER)
-        ) or (eClass == CV_GRID_CLASS.GRID_CLASS_SENSOR):
+            ((eClass == COVERAGE_GRID_CLASS.GRID_CLASS_RADAR) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_RECEIVER))
+            or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_TRANSMITTER)
+        ) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_SENSOR):
 
             def action56():
                 oPD.use_grid_seed = True
@@ -1125,9 +1125,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\t\tThe current AltitudeMethod is: {0}", oPD.altitude_method)
 
         # AltitudeMethod (eAltitude) == Depth for Submarine
-        oPD.altitude_method = CV_ALTITUDE_METHOD.ALTITUDE
+        oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE
         TestBase.logger.WriteLine6("\t\tThe new AltitudeMethod is: {0}", oPD.altitude_method)
-        Assert.assertEqual(CV_ALTITUDE_METHOD.ALTITUDE, oPD.altitude_method)
+        Assert.assertEqual(COVERAGE_ALTITUDE_METHOD.ALTITUDE, oPD.altitude_method)
         # Altitude
         TestBase.logger.WriteLine6("\t\t\tThe current Altitude is: {0}", oPD.altitude)
         oPD.altitude = 123.456
@@ -1140,9 +1140,9 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.DoAssert("", action58)
         # AltitudeMethod (eAltitudeAboveMSL)
 
-        oPD.altitude_method = CV_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL
+        oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL
         TestBase.logger.WriteLine6("\t\tThe new AltitudeMethod is: {0}", oPD.altitude_method)
-        Assert.assertEqual(CV_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL, oPD.altitude_method)
+        Assert.assertEqual(COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL, oPD.altitude_method)
         # Altitude
         TestBase.logger.WriteLine6("\t\t\tThe current Altitude is: {0}", oPD.altitude)
         oPD.altitude = 123.456
@@ -1156,12 +1156,12 @@ class EarlyBoundTests(TestBase):
 
         # AltitudeMethod (eAltAboveTerrain)
         TestBase.logger.WriteLine6("\t\tThe current AltitudeMethod is: {0}", oPD.altitude_method)
-        oPD.altitude_method = CV_ALTITUDE_METHOD.ALT_ABOVE_TERRAIN
+        oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_TERRAIN
         TestBase.logger.WriteLine6("\t\tThe new AltitudeMethod is: {0}", oPD.altitude_method)
-        Assert.assertEqual(CV_ALTITUDE_METHOD.ALT_ABOVE_TERRAIN, oPD.altitude_method)
+        Assert.assertEqual(COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_TERRAIN, oPD.altitude_method)
         # Altitude
         TestBase.logger.WriteLine6("\t\t\tThe current Altitude is: {0}", oPD.altitude)
-        if (eClass != CV_GRID_CLASS.GRID_CLASS_FACILITY) and (eClass != CV_GRID_CLASS.GRID_CLASS_TARGET):
+        if (eClass != COVERAGE_GRID_CLASS.GRID_CLASS_FACILITY) and (eClass != COVERAGE_GRID_CLASS.GRID_CLASS_TARGET):
             oPD.altitude = 1234.56
             TestBase.logger.WriteLine6("\t\t\tThe new Altitude is: {0}", oPD.altitude)
             Assert.assertEqual(1234.56, oPD.altitude)
@@ -1171,11 +1171,11 @@ class EarlyBoundTests(TestBase):
 
             TryCatchAssertBlock.DoAssert("", action60)
 
-        if (eClass == CV_GRID_CLASS.GRID_CLASS_AIRCRAFT) or (eClass == CV_GRID_CLASS.GRID_CLASS_SATELLITE):
+        if (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_AIRCRAFT) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_SATELLITE):
             TestBase.logger.WriteLine6("\t\tThe current AltitudeMethod is: {0}", oPD.altitude_method)
-            oPD.altitude_method = CV_ALTITUDE_METHOD.RADIUS
+            oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.RADIUS
             TestBase.logger.WriteLine6("\t\tThe new AltitudeMethod is: {0}", oPD.altitude_method)
-            Assert.assertEqual(CV_ALTITUDE_METHOD.RADIUS, oPD.altitude_method)
+            Assert.assertEqual(COVERAGE_ALTITUDE_METHOD.RADIUS, oPD.altitude_method)
             # Altitude
             TestBase.logger.WriteLine6("\t\t\tThe current Altitude is: {0}", oPD.altitude)
             oPD.altitude = 12345.6
@@ -1188,7 +1188,7 @@ class EarlyBoundTests(TestBase):
             TryCatchAssertBlock.DoAssert("", action61)
 
         def action62():
-            oPD.altitude_method = CV_ALTITUDE_METHOD.ALTITUDE_METHOD_UNKNOWN
+            oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_METHOD_UNKNOWN
 
         # AltitudeMethod (eAltitudeMethodUnknown)
         TryCatchAssertBlock.DoAssert("", action62)
@@ -1282,12 +1282,12 @@ class EarlyBoundTests(TestBase):
 
             # AssetStatus
             TestBase.logger.WriteLine6("\t\t\tThe current AssetStatus is: {0}", assetListElement.asset_status)
-            assetListElement.asset_status = CV_ASSET_STATUS.ACTIVE
+            assetListElement.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
             TestBase.logger.WriteLine6("\t\t\tThe new AssetStatus is: {0}", assetListElement.asset_status)
-            Assert.assertEqual(CV_ASSET_STATUS.ACTIVE, assetListElement.asset_status)
-            assetListElement.asset_status = CV_ASSET_STATUS.INACTIVE
+            Assert.assertEqual(COVERAGE_ASSET_STATUS.ACTIVE, assetListElement.asset_status)
+            assetListElement.asset_status = COVERAGE_ASSET_STATUS.INACTIVE
             TestBase.logger.WriteLine6("\t\t\tThe new AssetStatus is: {0}", assetListElement.asset_status)
-            Assert.assertEqual(CV_ASSET_STATUS.INACTIVE, assetListElement.asset_status)
+            Assert.assertEqual(COVERAGE_ASSET_STATUS.INACTIVE, assetListElement.asset_status)
 
             # Required
             TestBase.logger.WriteLine4("\t\t\tThe current Required is: {0}", assetListElement.required)
@@ -1314,12 +1314,12 @@ class EarlyBoundTests(TestBase):
             if assetListElement.object_name == "Constellation/Constellation1":
                 # Grouping
                 TestBase.logger.WriteLine6("\t\t\tThe current Grouping is: {0}", assetListElement.grouping)
-                assetListElement.grouping = CV_ASSET_GROUPING.GROUPED
+                assetListElement.grouping = COVERAGE_ASSET_GROUPING.GROUPED
                 TestBase.logger.WriteLine6("\t\t\tThe new Grouping is: {0}", assetListElement.grouping)
-                Assert.assertEqual(CV_ASSET_GROUPING.GROUPED, assetListElement.grouping)
-                assetListElement.grouping = CV_ASSET_GROUPING.SEPARATE
+                Assert.assertEqual(COVERAGE_ASSET_GROUPING.GROUPED, assetListElement.grouping)
+                assetListElement.grouping = COVERAGE_ASSET_GROUPING.SEPARATE
                 TestBase.logger.WriteLine6("\t\t\tThe new Grouping is: {0}", assetListElement.grouping)
-                Assert.assertEqual(CV_ASSET_GROUPING.SEPARATE, assetListElement.grouping)
+                Assert.assertEqual(COVERAGE_ASSET_GROUPING.SEPARATE, assetListElement.grouping)
 
                 def action67():
                     oCollection.remove("Constellation/Constellation1/Satellite/Satellite1")
@@ -1466,9 +1466,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- GRID INSPECTOR TEST ----- BEGIN -----")
         # BoundsType (eBoundsLat)
         TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        EarlyBoundTests.AG_COV.grid.bounds_type = CV_BOUNDS.BOUNDS_LAT
+        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_LAT, EarlyBoundTests.AG_COV.grid.bounds_type)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
         lat: "ICoverageBoundsLat" = clr.Convert(EarlyBoundTests.AG_COV.grid.bounds, ICoverageBoundsLat)
         Assert.assertIsNotNone(lat)
@@ -1542,9 +1542,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("", oInspector.message)
 
         # BoundsType (eBoundsCustomRegions)
-        EarlyBoundTests.AG_COV.grid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        Assert.assertEqual(CV_BOUNDS.BOUNDS_CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
+        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
         boundsCustomRegions: "ICoverageBoundsCustomRegions" = clr.Convert(
             EarlyBoundTests.AG_COV.grid.bounds, ICoverageBoundsCustomRegions
@@ -1677,9 +1677,9 @@ class EarlyBoundTests(TestBase):
             ),
             IAircraft,
         )
-        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, IVehiclePropagatorGreatArc)
-        propagator.method = VE_WAY_PT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
         point1: "IVehicleWaypointsElement" = propagator.waypoints.add()
         point1.latitude = 40.51368327
         point1.longitude = -77.44344965
@@ -1692,7 +1692,7 @@ class EarlyBoundTests(TestBase):
         point2.speed = 0.07716667
         propagator.propagate()
 
-        EarlyBoundTests.AG_COV.grid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         boundRegion: "ICoverageBoundsCustomRegions" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.bounds, ICoverageBoundsCustomRegions
         )
@@ -1700,7 +1700,7 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_COV.asset_list.add((clr.Convert(aircraft, IStkObject)).path)
 
-        EarlyBoundTests.AG_COV.grid.resolution_type = CV_RESOLUTION.RESOLUTION_LAT_LON
+        EarlyBoundTests.AG_COV.grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
         latLonResolution: "ICoverageResolutionLatLon" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.resolution, ICoverageResolutionLatLon
         )
@@ -1964,9 +1964,9 @@ class EarlyBoundTests(TestBase):
             ),
             IAircraft,
         )
-        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, IVehiclePropagatorGreatArc)
-        propagator.method = VE_WAY_PT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
         point1: "IVehicleWaypointsElement" = propagator.waypoints.add()
         point1.latitude = 40.51368327
         point1.longitude = -77.44344965
@@ -1979,7 +1979,7 @@ class EarlyBoundTests(TestBase):
         point2.speed = 0.07716667
         propagator.propagate()
 
-        EarlyBoundTests.AG_COV.grid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         boundRegion: "ICoverageBoundsCustomRegions" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.bounds, ICoverageBoundsCustomRegions
         )
@@ -1987,7 +1987,7 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_COV.asset_list.add((clr.Convert(aircraft, IStkObject)).path)
 
-        EarlyBoundTests.AG_COV.grid.resolution_type = CV_RESOLUTION.RESOLUTION_LAT_LON
+        EarlyBoundTests.AG_COV.grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
         latLonResolution: "ICoverageResolutionLatLon" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.resolution, ICoverageResolutionLatLon
         )
@@ -2008,23 +2008,23 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children["CoverageDefinition1"], ICoverageDefinition
         )
 
-        self.CompareGridPointsByBoundsType(covDef, CV_BOUNDS.BOUNDS_LAT)  # original
-        self.CompareGridPointsByBoundsType(covDef, CV_BOUNDS.BOUNDS_CUSTOM_BOUNDARY)
-        self.CompareGridPointsByBoundsType(covDef, CV_BOUNDS.BOUNDS_CUSTOM_REGIONS)
-        self.CompareGridPointsByBoundsType(covDef, CV_BOUNDS.BOUNDS_GLOBAL)
-        self.CompareGridPointsByBoundsType(covDef, CV_BOUNDS.BOUNDS_LAT_LINE)
-        self.CompareGridPointsByBoundsType(covDef, CV_BOUNDS.BOUNDS_LON_LINE)
-        self.CompareGridPointsByBoundsType(covDef, CV_BOUNDS.BOUNDS_LAT_LON_REGION)
+        self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_LAT)  # original
+        self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY)
+        self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS)
+        self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_GLOBAL)
+        self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_LAT_LINE)
+        self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_LON_LINE)
+        self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION)
 
         # restore to original
-        covDef.grid.bounds_type = CV_BOUNDS.BOUNDS_LAT
+        covDef.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
         bounds: "ICoverageBoundsLat" = clr.Convert(covDef.grid.bounds, ICoverageBoundsLat)
         bounds.min_latitude = TestBase.Application.conversion_utility.convert_quantity("AngleUnit", "deg", "rad", -70.0)
         bounds.max_latitude = TestBase.Application.conversion_utility.convert_quantity("AngleUnit", "deg", "rad", 60.0)
 
         TestBase.logger.WriteLine("----- GRID INSPECTOR ALL TYPES TEST ----- END -----")
 
-    def CompareGridPointsByBoundsType(self, covDef: "ICoverageDefinition", eBounds: "CV_BOUNDS"):
+    def CompareGridPointsByBoundsType(self, covDef: "ICoverageDefinition", eBounds: "COVERAGE_BOUNDS"):
         def generated1(a, b):
             return (cmp(a[0], b[0]) * 10) + cmp(a[1], b[1])
 
@@ -2086,15 +2086,15 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(oAdvanced.auto_recompute)
         # DataRetention
         TestBase.logger.WriteLine6("\tThe current DataRetention is: {0}", oAdvanced.data_retention)
-        oAdvanced.data_retention = CV_DATA_RETENTION.ALL_DATA
+        oAdvanced.data_retention = COVERAGE_DATA_RETENTION.ALL_DATA
         TestBase.logger.WriteLine6("\tThe new DataRetention is: {0}", oAdvanced.data_retention)
-        Assert.assertEqual(CV_DATA_RETENTION.ALL_DATA, oAdvanced.data_retention)
-        oAdvanced.data_retention = CV_DATA_RETENTION.STATIC_DATA_ONLY
+        Assert.assertEqual(COVERAGE_DATA_RETENTION.ALL_DATA, oAdvanced.data_retention)
+        oAdvanced.data_retention = COVERAGE_DATA_RETENTION.STATIC_DATA_ONLY
         TestBase.logger.WriteLine6("\tThe new DataRetention is: {0}", oAdvanced.data_retention)
-        Assert.assertEqual(CV_DATA_RETENTION.STATIC_DATA_ONLY, oAdvanced.data_retention)
+        Assert.assertEqual(COVERAGE_DATA_RETENTION.STATIC_DATA_ONLY, oAdvanced.data_retention)
 
         def action81():
-            oAdvanced.data_retention = CV_DATA_RETENTION.DATA_RETENTION_UNKNOWN
+            oAdvanced.data_retention = COVERAGE_DATA_RETENTION.DATA_RETENTION_UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action81)
         # SaveMode
@@ -2117,15 +2117,15 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6(
             "\tThe current RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration
         )
-        oAdvanced.region_access_acceleration = CV_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC
+        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC
         TestBase.logger.WriteLine6("\tThe new RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration)
-        Assert.assertEqual(CV_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC, oAdvanced.region_access_acceleration)
-        oAdvanced.region_access_acceleration = CV_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF
+        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC, oAdvanced.region_access_acceleration)
+        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF
         TestBase.logger.WriteLine6("\tThe new RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration)
-        Assert.assertEqual(CV_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF, oAdvanced.region_access_acceleration)
+        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF, oAdvanced.region_access_acceleration)
 
         def action83():
-            oAdvanced.region_access_acceleration = CV_REGION_ACCESS_ACCEL.REGION_ACCESS_UNKNOWN
+            oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action83)
 
@@ -2169,15 +2169,15 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6(
             "\tThe current NAssetsSatisfactionType is: {0}", oAdvanced.n_assets_satisfaction_type
         )
-        oAdvanced.n_assets_satisfaction_type = CV_SATISFACTION_TYPE.AT_LEAST
+        oAdvanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.AT_LEAST
         TestBase.logger.WriteLine6("\tThe new NAssetsSatisfactionType is: {0}", oAdvanced.n_assets_satisfaction_type)
-        Assert.assertEqual(CV_SATISFACTION_TYPE.AT_LEAST, oAdvanced.n_assets_satisfaction_type)
-        oAdvanced.n_assets_satisfaction_type = CV_SATISFACTION_TYPE.EQUAL_TO
+        Assert.assertEqual(COVERAGE_SATISFACTION_TYPE.AT_LEAST, oAdvanced.n_assets_satisfaction_type)
+        oAdvanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.EQUAL_TO
         TestBase.logger.WriteLine6("\tThe new NAssetsSatisfactionType is: {0}", oAdvanced.n_assets_satisfaction_type)
-        Assert.assertEqual(CV_SATISFACTION_TYPE.EQUAL_TO, oAdvanced.n_assets_satisfaction_type)
+        Assert.assertEqual(COVERAGE_SATISFACTION_TYPE.EQUAL_TO, oAdvanced.n_assets_satisfaction_type)
 
         def action85():
-            oAdvanced.n_assets_satisfaction_type = CV_SATISFACTION_TYPE.UNKNOWN
+            oAdvanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.UNKNOWN
 
         TryCatchAssertBlock.DoAssert("", action85)
         TestBase.logger.WriteLine("----- ADVANCED TEST ----- END -----")
@@ -2203,7 +2203,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(oGraphics.is_object_graphics_visible)
 
         # Static
-        oStatic: "ICoverageGfxStatic" = oGraphics.static
+        oStatic: "ICoverageGraphics2DStatic" = oGraphics.static
         Assert.assertIsNotNone(oStatic)
         # IsRegionVisible
         TestBase.logger.WriteLine4("\tThe current IsRegionVisible is: {0}", oStatic.is_region_visible)
@@ -2275,7 +2275,7 @@ class EarlyBoundTests(TestBase):
         AssertEx.AreEqual(Color.FromArgb(1122867), oStatic.color)
 
         # Animation
-        oAnimation: "ICoverageGfxAnimation" = oGraphics.animation
+        oAnimation: "ICoverageGraphics2DAnimation" = oGraphics.animation
         Assert.assertIsNotNone(oAnimation)
         # IsSatisfactionVisible
         TestBase.logger.WriteLine4("\tThe current IsSatisfactionVisible is: {0}", oAnimation.is_satisfaction_visible)
@@ -2302,7 +2302,7 @@ class EarlyBoundTests(TestBase):
         oStatic.fill_points = False
 
         # Progress
-        oProgress: "ICoverageGfxProgress" = oGraphics.progress
+        oProgress: "ICoverageGraphics2DProgress" = oGraphics.progress
         Assert.assertIsNotNone(oProgress)
         # IsVisible
         TestBase.logger.WriteLine4("\tThe current IsVisible is: {0}", oProgress.is_visible)
@@ -2331,26 +2331,26 @@ class EarlyBoundTests(TestBase):
     def test_VO(self):
         TestBase.logger.WriteLine("----- VO TEST ----- BEGIN -----")
 
-        oVO: "ICoverageVO" = EarlyBoundTests.AG_COV.vo
+        oVO: "ICoverageGraphics3D" = EarlyBoundTests.AG_COV.graphics3_d
         Assert.assertIsNotNone(oVO)
 
-        oVO.show_at_alt = False
-        Assert.assertFalse(oVO.show_at_alt)
+        oVO.show_at_altitude = False
+        Assert.assertFalse(oVO.show_at_altitude)
 
         def action92():
-            oVO.draw_at_alt_mode = CV3_D_DRAW_AT_ALT_MODE.BACK_FACING
+            oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.BACK_FACING
 
         TryCatchAssertBlock.DoAssert("read only property", action92)
 
-        oVO.show_at_alt = True
-        Assert.assertTrue(oVO.show_at_alt)
+        oVO.show_at_altitude = True
+        Assert.assertTrue(oVO.show_at_altitude)
 
-        oVO.draw_at_alt_mode = CV3_D_DRAW_AT_ALT_MODE.BACK_FACING
-        Assert.assertEqual(CV3_D_DRAW_AT_ALT_MODE.BACK_FACING, oVO.draw_at_alt_mode)
-        oVO.draw_at_alt_mode = CV3_D_DRAW_AT_ALT_MODE.FRONT_AND_BACK_FACING
-        Assert.assertEqual(CV3_D_DRAW_AT_ALT_MODE.FRONT_AND_BACK_FACING, oVO.draw_at_alt_mode)
-        oVO.draw_at_alt_mode = CV3_D_DRAW_AT_ALT_MODE.FRONT_FACING
-        Assert.assertEqual(CV3_D_DRAW_AT_ALT_MODE.FRONT_FACING, oVO.draw_at_alt_mode)
+        oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.BACK_FACING
+        Assert.assertEqual(COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.BACK_FACING, oVO.draw_at_altitude_mode)
+        oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_AND_BACK_FACING
+        Assert.assertEqual(COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_AND_BACK_FACING, oVO.draw_at_altitude_mode)
+        oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_FACING
+        Assert.assertEqual(COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_FACING, oVO.draw_at_altitude_mode)
 
         oVO.auto_granularity = True
         Assert.assertTrue(oVO.auto_granularity)
@@ -2379,7 +2379,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region TestVO
-    def TestVO(self, oAttributes: "ICoverageVOAttributes"):
+    def TestVO(self, oAttributes: "ICoverageGraphics3DAttributes"):
         Assert.assertIsNotNone(oAttributes)
         # IsVisible
         TestBase.logger.WriteLine4("\tThe current IsVisible is: {0}", oAttributes.is_visible)
@@ -2486,12 +2486,12 @@ class EarlyBoundTests(TestBase):
 
             # AssetStatus
             TestBase.logger.WriteLine6("\t\t\tThe current AssetStatus is: {0}", assetListElement.asset_status)
-            assetListElement.asset_status = CV_ASSET_STATUS.ACTIVE
+            assetListElement.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
             TestBase.logger.WriteLine6("\t\t\tThe new AssetStatus is: {0}", assetListElement.asset_status)
-            Assert.assertEqual(CV_ASSET_STATUS.ACTIVE, assetListElement.asset_status)
-            assetListElement.asset_status = CV_ASSET_STATUS.INACTIVE
+            Assert.assertEqual(COVERAGE_ASSET_STATUS.ACTIVE, assetListElement.asset_status)
+            assetListElement.asset_status = COVERAGE_ASSET_STATUS.INACTIVE
             TestBase.logger.WriteLine6("\t\t\tThe new AssetStatus is: {0}", assetListElement.asset_status)
-            Assert.assertEqual(CV_ASSET_STATUS.INACTIVE, assetListElement.asset_status)
+            Assert.assertEqual(COVERAGE_ASSET_STATUS.INACTIVE, assetListElement.asset_status)
 
             # Required
             TestBase.logger.WriteLine4("\t\t\tThe current Required is: {0}", assetListElement.required)
@@ -2519,12 +2519,12 @@ class EarlyBoundTests(TestBase):
             if assetListElement.object_name == "Constellation/Constellation1":
                 # Grouping
                 TestBase.logger.WriteLine6("\t\t\tThe current Grouping is: {0}", assetListElement.grouping)
-                assetListElement.grouping = CV_ASSET_GROUPING.GROUPED
+                assetListElement.grouping = COVERAGE_ASSET_GROUPING.GROUPED
                 TestBase.logger.WriteLine6("\t\t\tThe new Grouping is: {0}", assetListElement.grouping)
-                Assert.assertEqual(CV_ASSET_GROUPING.GROUPED, assetListElement.grouping)
-                assetListElement.grouping = CV_ASSET_GROUPING.SEPARATE
+                Assert.assertEqual(COVERAGE_ASSET_GROUPING.GROUPED, assetListElement.grouping)
+                assetListElement.grouping = COVERAGE_ASSET_GROUPING.SEPARATE
                 TestBase.logger.WriteLine6("\t\t\tThe new Grouping is: {0}", assetListElement.grouping)
-                Assert.assertEqual(CV_ASSET_GROUPING.SEPARATE, assetListElement.grouping)
+                Assert.assertEqual(COVERAGE_ASSET_GROUPING.SEPARATE, assetListElement.grouping)
 
                 def action100():
                     oCollection.remove("Constellation/Constellation1/Satellite/Satellite1")
@@ -2618,7 +2618,7 @@ class EarlyBoundTests(TestBase):
 
         # DefinitionType
         helper = FOMHelper(TestBase.Application)
-        fom: "IObjectCoverageFigureOfMerit" = sat2.object_coverage.fom
+        fom: "IObjectCoverageFigureOfMerit" = sat2.object_coverage.figure_of_merit
         TestBase.logger.WriteLine6("\tThe current DefinitionType is: {0}", fom.definition_type)
 
         # DefinitionSupportedTypes
@@ -2627,13 +2627,15 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "FM_DEFINITION_TYPE" = clr.Convert(int(arTypes[iIndex][0]), FM_DEFINITION_TYPE)
+            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = clr.Convert(
+                int(arTypes[iIndex][0]), FIGURE_OF_MERIT_DEFINITION_TYPE
+            )
             if not fom.is_definition_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
-            if eType == FM_DEFINITION_TYPE.ACCESS_CONSTRAINT:
+            if eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_CONSTRAINT:
                 # SetAccessConstraintDefinition
-                fom.set_access_constraint_definition(FM_CONSTRAINT_NAME.AZIMUTH_ANGLE)
+                fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.AZIMUTH_ANGLE)
                 fom.set_access_constraint_definition_name("AzimuthAngle")
 
                 def action108():
@@ -2644,14 +2646,14 @@ class EarlyBoundTests(TestBase):
             else:
                 # SetDefinitionType
                 fom.set_definition_type(eType)
-                if FM_DEFINITION_TYPE.SCALAR_CALCULATION == eType:
+                if FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION == eType:
                     sd: "IFigureOfMeritDefinitionScalarCalculation" = clr.CastAs(
                         fom.definition, IFigureOfMeritDefinitionScalarCalculation
                     )
                     sd.calc_scalar = "CentralBody/Earth ElapsedTimeFromStart"
 
             TestBase.logger.WriteLine6("\t\tThe new DefinitionType is: {0}", fom.definition_type)
-            eType2: "FM_DEFINITION_TYPE" = fom.definition_type
+            eType2: "FIGURE_OF_MERIT_DEFINITION_TYPE" = fom.definition_type
             Assert.assertEqual(eType, eType2)
 
             # Definition
@@ -2664,23 +2666,23 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- GRAPHICS TEST ----- BEGIN -----")
         if not TestBase.NoGraphicsMode:
             # Graphics
-            oGraphics: "IFigureOfMeritGraphics" = sat2.object_coverage.fom.graphics
+            oGraphics: "IFigureOfMeritGraphics" = sat2.object_coverage.figure_of_merit.graphics
             Assert.assertIsNotNone(oGraphics)
 
             # Static
             helper.GfxAttributes(oGraphics.static, False)
 
             # Contours (readonly)
-            fom.set_definition_type(FM_DEFINITION_TYPE.ACCESS_SEPARATION)
-            Assert.assertEqual(FM_DEFINITION_TYPE.ACCESS_SEPARATION, fom.definition_type)
+            fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION)
+            Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION, fom.definition_type)
             helper.GfxContours(oGraphics.static.contours, True, True)
 
             # Contour Lines (readonly) (fill is set to false)
             helper.GfxContourLines(oGraphics.static.contours, True)
 
             # Contours
-            fom.set_definition_type(FM_DEFINITION_TYPE.TIME_AVERAGE_GAP)
-            Assert.assertEqual(FM_DEFINITION_TYPE.TIME_AVERAGE_GAP, fom.definition_type)
+            fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP)
+            Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP, fom.definition_type)
             helper.GfxContours(oGraphics.static.contours, False, False)
 
             # Contour Lines
@@ -2693,16 +2695,16 @@ class EarlyBoundTests(TestBase):
             helper.GfxAnimationAttributes(oGraphics.animation, True)
 
             # Animation
-            fom.set_definition_type(FM_DEFINITION_TYPE.SIMPLE_COVERAGE)
-            Assert.assertEqual(FM_DEFINITION_TYPE.SIMPLE_COVERAGE, fom.definition_type)
+            fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE)
+            Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE, fom.definition_type)
             helper.GfxAnimationAttributes(oGraphics.animation, False)
 
             # Contours (readonly)
             helper.GfxAnimationContours(oGraphics.animation.contours, True, True)
 
             # Contours
-            fom.set_definition_type(FM_DEFINITION_TYPE.REVISIT_TIME)
-            Assert.assertEqual(FM_DEFINITION_TYPE.REVISIT_TIME, fom.definition_type)
+            fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME)
+            Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME, fom.definition_type)
             fom.graphics.animation.contours.is_visible = True
             helper.GfxAnimationContours(oGraphics.animation.contours, False, False)
 
@@ -2717,7 +2719,7 @@ class EarlyBoundTests(TestBase):
         else:
 
             def action109():
-                oGraphics: "IFigureOfMeritGraphics" = sat2.object_coverage.fom.graphics
+                oGraphics: "IFigureOfMeritGraphics" = sat2.object_coverage.figure_of_merit.graphics
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action109)
 
@@ -2745,20 +2747,20 @@ class EarlyBoundTests(TestBase):
             ICoverageDefinition,
         )
         pointDef: "ICoveragePointDefinition" = covDef.point_definition
-        pointDef.altitude_method = CV_ALTITUDE_METHOD.ALT_ABOVE_TERRAIN
+        pointDef.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_TERRAIN
 
         fac: "IFacility" = clr.Convert(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Fac_PointAltitude"), IFacility
         )
         constraint: "IAccessConstraint" = fac.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LIGHTING)
         cnstrCondition: "IAccessConstraintCondition" = clr.Convert(constraint, IAccessConstraintCondition)
-        cnstrCondition.condition = CNSTR_LIGHTING.DIRECT_SUN
+        cnstrCondition.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
 
-        pointDef.grid_class = CV_GRID_CLASS.GRID_CLASS_FACILITY
+        pointDef.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_FACILITY
         pointDef.use_grid_seed = True
         pointDef.seed_instance = "Facility/Fac_PointAltitude"
 
-        Assert.assertEqual(CV_ALTITUDE_METHOD.ALT_ABOVE_TERRAIN, pointDef.altitude_method)
+        Assert.assertEqual(COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_TERRAIN, pointDef.altitude_method)
 
         TestBase.logger.WriteLine("----- PointAltitude TEST ----- END -----")
 
@@ -2766,11 +2768,11 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            (CV_POINT_ALTITUDE_METHOD.POINT_ALTITUDE_METHOD_FILE_VALUES,),
-            (CV_POINT_ALTITUDE_METHOD.POINT_ALTITUDE_METHOD_OVERRIDE,),
+            (COVERAGE_POINT_ALTITUDE_METHOD.POINT_ALTITUDE_METHOD_FILE_VALUES,),
+            (COVERAGE_POINT_ALTITUDE_METHOD.POINT_ALTITUDE_METHOD_OVERRIDE,),
         ]
     )
-    def test_CustomPointAltitudeMethod(self, method: "CV_POINT_ALTITUDE_METHOD"):
+    def test_CustomPointAltitudeMethod(self, method: "COVERAGE_POINT_ALTITUDE_METHOD"):
         covDef: "ICoverageDefinition" = clr.Convert(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef_PointAltitude"
@@ -2779,10 +2781,10 @@ class EarlyBoundTests(TestBase):
         )
         try:
             pointDef: "ICoveragePointDefinition" = covDef.point_definition
-            pointDef.point_location_method = CV_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS
+            pointDef.point_location_method = COVERAGE_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS
 
             pointDef.point_altitude_method = method
-            method2: "CV_POINT_ALTITUDE_METHOD" = pointDef.point_altitude_method
+            method2: "COVERAGE_POINT_ALTITUDE_METHOD" = pointDef.point_altitude_method
             Assert.assertEqual(method, method2)
 
         finally:
@@ -2798,9 +2800,9 @@ class EarlyBoundTests(TestBase):
             )
             try:
                 pointDef: "ICoveragePointDefinition" = covDef.point_definition
-                pointDef.point_location_method = CV_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION
+                pointDef.point_location_method = COVERAGE_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION
 
-                pointDef.point_altitude_method = CV_POINT_ALTITUDE_METHOD.POINT_ALTITUDE_METHOD_FILE_VALUES
+                pointDef.point_altitude_method = COVERAGE_POINT_ALTITUDE_METHOD.POINT_ALTITUDE_METHOD_FILE_VALUES
 
             finally:
                 (clr.Convert(covDef, IStkObject)).unload()
@@ -2823,7 +2825,7 @@ class EarlyBoundTests(TestBase):
             ICoverageDefinition,
         )
 
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)).propagate()
 
         covdef.asset_list.add("Satellite/Satellite1")

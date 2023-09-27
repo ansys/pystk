@@ -95,10 +95,10 @@ class AccessConstraintHelper(object):
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_TERRAIN_MASK)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR3_D_TILES_MASK)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_FOREGROUND)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SEET_MAG_FIELD_LSHELL)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SEET_MAGNITUDE_FIELD_LSHELL)
 
         typesMinMaxSetSeparate = []
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_AT_CENTROID_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_AREA_TARGET_CENTROID_ELEVATION_ANGLE)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_BETA_ANGLE)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_DOPPLER_CONE_ANGLE)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_GRAZING_ANGLE)
@@ -108,7 +108,7 @@ class AccessConstraintHelper(object):
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SUN_GROUND_ELEV_ANGLE)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_ANGLE_OFF_BORESIGHT)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_BORESIGHT_GRAZING_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SEET_MAG_FIELD_LINE_SEPARATION)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SEET_MAGNITUDE_FIELD_LINE_SEPARATION)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_LUNAR_ELEVATION_ANGLE)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE)
         typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_TERRAIN_GRAZING_ANGLE)
@@ -147,7 +147,7 @@ class AccessConstraintHelper(object):
         typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_CENTROID_RANGE)
         typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_HEIGHT_ABOVE_HORIZON)
         typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_CENTRAL_DISTANCE)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_DISTANCE_FROM_AT_BOUNDARY)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_DISTANCE_FROM_AREA_TARGET_BOUNDARY)
 
         typesMinMaxTime = []
         typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_DURATION)
@@ -230,14 +230,14 @@ class AccessConstraintHelper(object):
         typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_POWER_FLUX_DENSITY)
         typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_RCVD_ISOTROPIC_POWER)
         typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TOTAL_PWR_AT_RCVR_INPUT)
-        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TOTAL_RCVD_RF_POWER)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TOTAL_RCVD_REFRACTION_POWER)
         # Receiver
         typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_COMM_PLUGIN)
         # Sensor
-        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_CENTER)
-        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_HORIZON_REFINE)
-        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_OBSTRUCTION_CROSS_IN)
-        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_OBSTRUCTION_CROSS_OUT)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CENTRAL_BODY_CENTER)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CENTRAL_BODY_HORIZON_REFINE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CENTRAL_BODY_OBSTRUCTION_CROSS_IN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CENTRAL_BODY_OBSTRUCTION_CROSS_OUT)
         typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_SENSOR_RANGE_MASK)
         # Launch Vehicle and Missile
         typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TIME_SLIP_SURFACE_RANGE)
@@ -277,11 +277,14 @@ class AccessConstraintHelper(object):
             self.TestConstraintBackground(oConstraint)
 
         elif (
-            ((eType == ACCESS_CONSTRAINTS.CSTR_CRDN_ANGLE) or (eType == ACCESS_CONSTRAINTS.CSTR_CRDN_CALC_SCALAR))
-            or (eType == ACCESS_CONSTRAINTS.CSTR_CRDN_VECTOR_MAG)
+            (
+                (eType == ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_ANGLE)
+                or (eType == ACCESS_CONSTRAINTS.CSTR_CRDN_CALC_SCALAR)
+            )
+            or (eType == ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE)
         ) or (eType == ACCESS_CONSTRAINTS.CSTR_CRDN_CONDITION):
             self.TestConstraintCrdnCn(oConstraint)
-            self.TestConstraintAWBCollection(oCollection.awb_constraints, int(eType))
+            self.TestConstraintAWBCollection(oCollection.analysis_workbench_constraints, int(eType))
 
         elif eType == ACCESS_CONSTRAINTS.CSTR_LIGHTING:
             self.TestConstraintCondition(oConstraint)
@@ -375,7 +378,7 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDistance(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINTS.CSTR_GRAZING_ALT:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_GRAZING_ALTITUDE:
             oGrazingAlt: "IAccessConstraintGrazingAltitude" = clr.Convert(oConstraint, IAccessConstraintGrazingAltitude)
             Assert.assertIsNotNone(oGrazingAlt)
             self.TestConstraintMinMaxGrazingAlt(oGrazingAlt)
@@ -423,7 +426,7 @@ class AccessConstraintHelper(object):
                 Assert.assertIsNotNone(oAngle)
                 self.TestConstraintAngle(oConstraint, "LatitudeUnit")
 
-        elif eType == ACCESS_CONSTRAINTS.CSTR_CB_OBSTRUCTION:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_CENTRAL_BODY_OBSTRUCTION:
             oCb: "IAccessConstraintCentralBodyObstruction" = clr.Convert(
                 oConstraint, IAccessConstraintCentralBodyObstruction
             )
@@ -1920,23 +1923,23 @@ class AccessConstraintHelper(object):
         oCondition: "IAccessConstraintCondition" = clr.Convert(oConstraint, IAccessConstraintCondition)
         Assert.assertIsNotNone(oCondition)
         # eDirectSun
-        oCondition.condition = CNSTR_LIGHTING.DIRECT_SUN
-        Assert.assertEqual(CNSTR_LIGHTING.DIRECT_SUN, oCondition.condition)
+        oCondition.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
+        Assert.assertEqual(CONSTRAINT_LIGHTING.DIRECT_SUN, oCondition.condition)
         # ePenumbra
-        oCondition.condition = CNSTR_LIGHTING.PENUMBRA
-        Assert.assertEqual(CNSTR_LIGHTING.PENUMBRA, oCondition.condition)
+        oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA
+        Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA, oCondition.condition)
         # ePenumbraOrDirectSun
-        oCondition.condition = CNSTR_LIGHTING.PENUMBRA_OR_DIRECT_SUN
-        Assert.assertEqual(CNSTR_LIGHTING.PENUMBRA_OR_DIRECT_SUN, oCondition.condition)
+        oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
+        Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN, oCondition.condition)
         # ePenumbraOrUmbra
-        oCondition.condition = CNSTR_LIGHTING.PENUMBRA_OR_UMBRA
-        Assert.assertEqual(CNSTR_LIGHTING.PENUMBRA_OR_UMBRA, oCondition.condition)
+        oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_UMBRA
+        Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA_OR_UMBRA, oCondition.condition)
         # eUmbra
-        oCondition.condition = CNSTR_LIGHTING.UMBRA
-        Assert.assertEqual(CNSTR_LIGHTING.UMBRA, oCondition.condition)
+        oCondition.condition = CONSTRAINT_LIGHTING.UMBRA
+        Assert.assertEqual(CONSTRAINT_LIGHTING.UMBRA, oCondition.condition)
         # eUmbraOrDirectSun
-        oCondition.condition = CNSTR_LIGHTING.UMBRA_OR_DIRECT_SUN
-        Assert.assertEqual(CNSTR_LIGHTING.UMBRA_OR_DIRECT_SUN, oCondition.condition)
+        oCondition.condition = CONSTRAINT_LIGHTING.UMBRA_OR_DIRECT_SUN
+        Assert.assertEqual(CONSTRAINT_LIGHTING.UMBRA_OR_DIRECT_SUN, oCondition.condition)
 
     # endregion
 
@@ -2160,24 +2163,24 @@ class AccessConstraintHelper(object):
     # region TestConstraintAWBCollection
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintAWBCollection(self, awbCol: "IAccessConstraintAnalysisWorkbenchCollection", eType: int):
-        arReferences = awbCol.get_available_references(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS))
+        arReferences = awbCol.get_available_references(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS))
         Assert.assertTrue((Array.Length(arReferences) > 0))
 
         origCount: int = awbCol.count
         reference: str = str(arReferences[1])
 
         accConstraint: "IAccessConstraint" = awbCol.add_constraint(
-            clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference
+            clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference
         )
 
         Assert.assertIsNotNone(accConstraint)
         Assert.assertEqual((origCount + 1), awbCol.count)
-        if clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_CRDN_VECTOR_MAG:
+        if clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE:
             self.TestAWBConstraintMinMaxUnitLess(
                 clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), 0.0, 2000.0
             )
 
-        elif clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_CRDN_ANGLE:
+        elif clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_ANGLE:
             self.TestAWBConstraintMinMaxAngle(clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench))
 
         elif clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_CRDN_CALC_SCALAR:
@@ -2188,23 +2191,23 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(reference, (clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench)).reference)
 
         def action125():
-            awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), "Bogus")
+            awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), "Bogus")
 
         TryCatchAssertBlock.ExpectedException("Specified reference cannot be found", action125)
 
-        awbCol.remove_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
+        awbCol.remove_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
+        awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
         Assert.assertEqual((origCount + 1), awbCol.count)
 
         awbCol.remove_index(origCount)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
+        awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
 
         def action126():
-            awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
+            awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
 
         TryCatchAssertBlock.ExpectedException("Constraint already active", action126)
 
@@ -2437,11 +2440,11 @@ class AccessConstraintHelper(object):
         oBackground: "IAccessConstraintBackground" = clr.Convert(oConstraint, IAccessConstraintBackground)
         Assert.assertIsNotNone(oBackground)
         # eBackgroundGround
-        oBackground.background = CNSTR_BACKGROUND.BACKGROUND_GROUND
-        Assert.assertEqual(CNSTR_BACKGROUND.BACKGROUND_GROUND, oBackground.background)
+        oBackground.background = CONSTRAINT_BACKGROUND.BACKGROUND_GROUND
+        Assert.assertEqual(CONSTRAINT_BACKGROUND.BACKGROUND_GROUND, oBackground.background)
         # eBackgroundSpace
-        oBackground.background = CNSTR_BACKGROUND.BACKGROUND_SPACE
-        Assert.assertEqual(CNSTR_BACKGROUND.BACKGROUND_SPACE, oBackground.background)
+        oBackground.background = CONSTRAINT_BACKGROUND.BACKGROUND_SPACE
+        Assert.assertEqual(CONSTRAINT_BACKGROUND.BACKGROUND_SPACE, oBackground.background)
 
     # endregion
 
@@ -2452,11 +2455,11 @@ class AccessConstraintHelper(object):
         oGroundTrack: "IAccessConstraintGroundTrack" = clr.Convert(oConstraint, IAccessConstraintGroundTrack)
         Assert.assertIsNotNone(oGroundTrack)
         # eDirectionAscending
-        oGroundTrack.direction = CNSTR_GROUND_TRACK.DIRECTION_ASCENDING
-        Assert.assertEqual(CNSTR_GROUND_TRACK.DIRECTION_ASCENDING, oGroundTrack.direction)
+        oGroundTrack.direction = CONSTRAINT_GROUND_TRACK.DIRECTION_ASCENDING
+        Assert.assertEqual(CONSTRAINT_GROUND_TRACK.DIRECTION_ASCENDING, oGroundTrack.direction)
         # eDirectionDescending
-        oGroundTrack.direction = CNSTR_GROUND_TRACK.DIRECTION_DESCENDING
-        Assert.assertEqual(CNSTR_GROUND_TRACK.DIRECTION_DESCENDING, oGroundTrack.direction)
+        oGroundTrack.direction = CONSTRAINT_GROUND_TRACK.DIRECTION_DESCENDING
+        Assert.assertEqual(CONSTRAINT_GROUND_TRACK.DIRECTION_DESCENDING, oGroundTrack.direction)
 
     # endregion
 

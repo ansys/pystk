@@ -53,7 +53,7 @@ class J2Perturbation(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "ISatellite"):
         # Set propagator to SGP4
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
 
         # J2 Perturbation propagator
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
@@ -68,7 +68,7 @@ class J2Perturbation(CodeSnippetsTestBase):
         initial.representation.assign_cartesian(
             COORDINATE_SYSTEM.FIXED, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414
         )  # in km/sec
-        initial.ellipse_options = VE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING
+        initial.ellipse_options = VEHICLE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING
 
         # Propagate
         j2prop.propagate()

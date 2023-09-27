@@ -62,14 +62,14 @@ class ExportDataFileHelper(object):
             attitude.version_format = eFormat
             self.m_logger.WriteLine6("Version Format: {0}", attitude.version_format)
             if eFormat == EXPORT_TOOL_VERSION_FORMAT.CURRENT:
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.J2000)
-                Assert.assertEqual(ATT_COORDINATE_AXES.J2000, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.FIXED)
-                Assert.assertEqual(ATT_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.ICRF)
-                Assert.assertEqual(ATT_COORDINATE_AXES.ICRF, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.CUSTOM)
-                Assert.assertEqual(ATT_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.J2000)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.J2000, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.FIXED)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.ICRF)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.ICRF, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
                 customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 Assert.assertEqual("CentralBody/Sun J2000 Axes", customAxes.reference_axes_name)
@@ -79,80 +79,88 @@ class ExportDataFileHelper(object):
 
                 TryCatchAssertBlock.DoAssert("IVehicleCoordinateAxesCustom.ReferenceAxesName - invalid choice", action4)
                 if attitude.central_body_name != "Earth":
-                    attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.INERTIAL)
-                    Assert.assertEqual(ATT_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
+                    attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
+                    Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
 
             elif eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT800:
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.FIXED)
-                Assert.assertEqual(ATT_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.CUSTOM)
-                Assert.assertEqual(ATT_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.FIXED)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
                 customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 if attitude.central_body_name == "Earth":
-                    attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.J2000)
-                    Assert.assertEqual(ATT_COORDINATE_AXES.J2000, attitude.coordinate_axes_type)
+                    attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.J2000)
+                    Assert.assertEqual(ATTITUDE_COORDINATE_AXES.J2000, attitude.coordinate_axes_type)
 
                 else:
-                    attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.INERTIAL)
-                    Assert.assertEqual(ATT_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
+                    attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
+                    Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
 
             else:
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.INERTIAL)
-                Assert.assertEqual(ATT_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.FIXED)
-                Assert.assertEqual(ATT_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.CUSTOM)
-                Assert.assertEqual(ATT_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.FIXED)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
+                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
                 customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
             supportedCoordinateAxes = attitude.supported_coordinate_axes
             ocoordAxis: typing.Any
             for ocoordAxis in supportedCoordinateAxes:
-                coordAxis: "ATT_COORDINATE_AXES" = clr.Convert(int(ocoordAxis), ATT_COORDINATE_AXES)
+                coordAxis: "ATTITUDE_COORDINATE_AXES" = clr.Convert(int(ocoordAxis), ATTITUDE_COORDINATE_AXES)
                 self.m_logger.WriteLine6("Supported coordinate axes: {0}", coordAxis)
                 if eFormat == EXPORT_TOOL_VERSION_FORMAT.CURRENT:
                     if (
-                        (((coordAxis == ATT_COORDINATE_AXES.FIXED)) or ((coordAxis == ATT_COORDINATE_AXES.ICRF)))
-                        or ((coordAxis == ATT_COORDINATE_AXES.J2000))
-                    ) or ((coordAxis == ATT_COORDINATE_AXES.CUSTOM)):
+                        (
+                            ((coordAxis == ATTITUDE_COORDINATE_AXES.FIXED))
+                            or ((coordAxis == ATTITUDE_COORDINATE_AXES.ICRF))
+                        )
+                        or ((coordAxis == ATTITUDE_COORDINATE_AXES.J2000))
+                    ) or ((coordAxis == ATTITUDE_COORDINATE_AXES.CUSTOM)):
                         pass
                     else:
                         if attitude.central_body_name == "Earth":
                             Assert.fail("Coordinate axis should not be supported.")
 
                 elif eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT800:
-                    if ((coordAxis == ATT_COORDINATE_AXES.FIXED)) or ((coordAxis == ATT_COORDINATE_AXES.CUSTOM)):
+                    if ((coordAxis == ATTITUDE_COORDINATE_AXES.FIXED)) or (
+                        (coordAxis == ATTITUDE_COORDINATE_AXES.CUSTOM)
+                    ):
                         pass
                     else:
-                        if (attitude.central_body_name == "Earth") and (coordAxis != ATT_COORDINATE_AXES.J2000):
+                        if (attitude.central_body_name == "Earth") and (coordAxis != ATTITUDE_COORDINATE_AXES.J2000):
                             Assert.fail("Coordinate axis should not be supported.")
 
-                        elif (attitude.central_body_name != "Earth") and (coordAxis != ATT_COORDINATE_AXES.INERTIAL):
+                        elif (attitude.central_body_name != "Earth") and (
+                            coordAxis != ATTITUDE_COORDINATE_AXES.INERTIAL
+                        ):
                             Assert.fail("Coordinate axis should not be supported.")
 
                 elif ((eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT600)) or (
                     (eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT430)
                 ):
                     if (
-                        ((coordAxis == ATT_COORDINATE_AXES.FIXED)) or ((coordAxis == ATT_COORDINATE_AXES.INERTIAL))
-                    ) or ((coordAxis == ATT_COORDINATE_AXES.CUSTOM)):
+                        ((coordAxis == ATTITUDE_COORDINATE_AXES.FIXED))
+                        or ((coordAxis == ATTITUDE_COORDINATE_AXES.INERTIAL))
+                    ) or ((coordAxis == ATTITUDE_COORDINATE_AXES.CUSTOM)):
                         pass
                     else:
                         Assert.fail("Coordinate axis should not be supported.")
 
         # Restore the version format and the coordinate axes
         attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        attitude.set_coordinate_axes_type(ATT_COORDINATE_AXES.CUSTOM)
-        Assert.assertEqual(ATT_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+        attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
+        Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
         customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
         customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
-        attitude.include = ATT_INCLUDE.QUATERNIONS
-        Assert.assertEqual(ATT_INCLUDE.QUATERNIONS, attitude.include)
-        attitude.include = ATT_INCLUDE.QUATERNIONS_ANGULAR_VELOCITY
-        Assert.assertEqual(ATT_INCLUDE.QUATERNIONS_ANGULAR_VELOCITY, attitude.include)
+        attitude.include = ATTITUDE_INCLUDE.QUATERNIONS
+        Assert.assertEqual(ATTITUDE_INCLUDE.QUATERNIONS, attitude.include)
+        attitude.include = ATTITUDE_INCLUDE.QUATERNIONS_ANGULAR_VELOCITY
+        Assert.assertEqual(ATTITUDE_INCLUDE.QUATERNIONS_ANGULAR_VELOCITY, attitude.include)
 
         attitude.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, attitude.time_period.time_period_type)
@@ -1650,57 +1658,61 @@ class BasicPropagatorHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, obj: "IStkObject", oPropagator: "IVehiclePropagator", eType: "VE_PROPAGATOR_TYPE", EarthGravModel):
+    def Run(
+        self, obj: "IStkObject", oPropagator: "IVehiclePropagator", eType: "VEHICLE_PROPAGATOR_TYPE", EarthGravModel
+    ):
         self.m_logger.WriteLine6("----- THE BASIC PROPAGATOR TEST ({0})----- BEGIN -----", eType)
         Assert.assertIsNotNone(oPropagator)
-        if eType == VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC:
+        if eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC:
             oHelper = PropagatorGreatArcHelper(obj, self.m_oUnits)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorGreatArc))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL:
             oHelper = PropagatorStkExternalHelper(self.m_oUnits)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorStkExternal))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT:
             oHelper = PropagatorSimpleAscentHelper(obj, self.m_oUnits)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorSimpleAscent))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY:
             oHelper = PropagatorTwoBodyHelper(self.m_oApplication)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorTwoBody))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_LOP:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_LOP:
             oHelper = PropagatorLOPHelper(self.m_oApplication)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorLOP))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION:
             oHelper = PropagatorJ2PerturbationHelper(self.m_oApplication)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorJ2Perturbation))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION:
             oHelper = PropagatorJ4PerturbationHelper(self.m_oApplication)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorJ4Perturbation))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_SGP4:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4:
             oHelper = PropagatorSGP4Helper(self.m_oApplication)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorSGP4))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_SPICE:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE:
             oHelper = PropagatorSPICEHelper(self.m_oApplication)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorSPICE))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_USER_EXTERNAL:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_USER_EXTERNAL:
             oHelper = PropagatorUserExternalHelper(self.m_oApplication)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorUserExternal))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_HPOP:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP:
             oHelper = PropagatorHPOPHelper(self.m_oApplication, obj, EarthGravModel)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorHPOP), False)
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC:
             oHelper = PropagatorBallisticHelper(obj, self.m_oUnits)
             oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorBallistic))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR:
             pass
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME:
             helper = PropagatorRealtimeHelper()
             helper.Run(obj, clr.CastAs(oPropagator, IVehiclePropagatorRealtime))
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_GPS:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GPS:
             helper = PropagatorGPSHelper(TestBase.GetSTKDBDir())
             helper.Run(obj, clr.CastAs(oPropagator, IVehiclePropagatorGPS))
 
-        elif ((eType == VE_PROPAGATOR_TYPE.PROPAGATOR11_PARAM)) or ((eType == VE_PROPAGATOR_TYPE.PROPAGATOR_SP3)):
+        elif ((eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR11_PARAM)) or (
+            (eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SP3)
+        ):
             pass
-        elif eType == VE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR:
+        elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR:
             pass
         else:
             Assert.fail("Invalid propagator type: {0}", eType)
@@ -1964,7 +1976,7 @@ class BasicAttitudeStandardHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VE_PROFILE" = clr.Convert(int(arTypes[iIndex][0]), VE_PROFILE)
+            eType: "VEHICLE_PROFILE" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_PROFILE)
             self.m_logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oBasic.is_profile_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -1972,7 +1984,7 @@ class BasicAttitudeStandardHelper(object):
             # SetProfileType
             oBasic.set_profile_type(eType)
             self.m_logger.WriteLine6("\t\tThe new Profile type is: {0}", oBasic.profile_type)
-            veProfile: "VE_PROFILE" = oBasic.profile_type
+            veProfile: "VEHICLE_PROFILE" = oBasic.profile_type
             Assert.assertEqual(eType, veProfile)
             # Profile
             self.Profile(oBasic.profile)
@@ -2219,18 +2231,18 @@ class BasicAttitudeStandardHelper(object):
             Assert.assertIsNotNone(oGPS)
             # ModelType
             self.m_logger.WriteLine6("\t\t\t\tThe current ModelType is: {0}", oGPS.model_type)
-            oGPS.model_type = GPS_ATT_MODEL_TYPE.GSP_MODEL_BLOCK_IIA_NOMINAL
+            oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_BLOCK_IIA_NOMINAL
             self.m_logger.WriteLine6("\t\t\t\tThe new ModelType is: {0}", oGPS.model_type)
-            Assert.assertEqual(GPS_ATT_MODEL_TYPE.GSP_MODEL_BLOCK_IIA_NOMINAL, oGPS.model_type)
-            oGPS.model_type = GPS_ATT_MODEL_TYPE.GSP_MODEL_BLOCK_IIR_NOMINAL
+            Assert.assertEqual(GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_BLOCK_IIA_NOMINAL, oGPS.model_type)
+            oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_BLOCK_IIR_NOMINAL
             self.m_logger.WriteLine6("\t\t\t\tThe new ModelType is: {0}", oGPS.model_type)
-            Assert.assertEqual(GPS_ATT_MODEL_TYPE.GSP_MODEL_BLOCK_IIR_NOMINAL, oGPS.model_type)
-            oGPS.model_type = GPS_ATT_MODEL_TYPE.GSP_MODEL_GYM95
+            Assert.assertEqual(GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_BLOCK_IIR_NOMINAL, oGPS.model_type)
+            oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_GYM95
             self.m_logger.WriteLine6("\t\t\t\tThe new ModelType is: {0}", oGPS.model_type)
-            Assert.assertEqual(GPS_ATT_MODEL_TYPE.GSP_MODEL_GYM95, oGPS.model_type)
+            Assert.assertEqual(GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_GYM95, oGPS.model_type)
 
             def action72():
-                oGPS.model_type = GPS_ATT_MODEL_TYPE.MODEL_TYPE_UNKNOWN
+                oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.MODEL_TYPE_UNKNOWN
 
             TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action72)
 
@@ -2958,7 +2970,7 @@ class BasicAttitudeStandardHelper(object):
         oAttitude.save_to_file("Satellite2.a")
 
         # InitFromAtt
-        oAttitude.init_from_att()
+        oAttitude.init_from_attitude()
 
         oAttitude.save_to_file("Satellite2.a")
 
@@ -3200,7 +3212,7 @@ class BasicAttitudeRealTimeHelper(object):
         dtSpan: "IQuantity" = dtStop.span(dtStart)
         dtSpan.convert_to_unit("sec")
 
-        ga.method = VE_WAY_PT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         # ga.StartTime = startTime;
         # ga.StopTime = stopTime;
         increment: float = dtSpan.value / MAX_POINTS
@@ -3350,7 +3362,7 @@ class BasicAttitudeRealTimeHelper(object):
         if self._obj.class_type == STK_OBJECT_TYPE.SATELLITE:
             # Re-propagate the satellite
             AG_SAT: "ISatellite" = clr.Convert(self._obj, ISatellite)
-            AG_SAT.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+            AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
             tb: "IVehiclePropagatorTwoBody" = clr.CastAs(AG_SAT.propagator, IVehiclePropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             tb.propagate()
@@ -3359,7 +3371,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         elif self._obj.class_type == STK_OBJECT_TYPE.SHIP:
             AG_SH: "IShip" = clr.Convert(self._obj, IShip)
-            AG_SH.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+            AG_SH.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
             ga: "IVehiclePropagatorGreatArc" = clr.CastAs(AG_SH.route, IVehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
@@ -3367,7 +3379,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         elif self._obj.class_type == STK_OBJECT_TYPE.AIRCRAFT:
             AG_AC: "IAircraft" = clr.Convert(self._obj, IAircraft)
-            AG_AC.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+            AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
             ga: "IVehiclePropagatorGreatArc" = clr.CastAs(AG_AC.route, IVehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
@@ -3375,7 +3387,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         elif self._obj.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE:
             AG_GV: "IGroundVehicle" = clr.Convert(self._obj, IGroundVehicle)
-            AG_GV.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+            AG_GV.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
             ga: "IVehiclePropagatorGreatArc" = clr.CastAs(AG_GV.route, IVehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
@@ -3383,7 +3395,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         elif self._obj.class_type == STK_OBJECT_TYPE.MISSILE:
             AG_MS: "IMissile" = clr.Convert(self._obj, IMissile)
-            AG_MS.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+            AG_MS.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
             tb: "IVehiclePropagatorTwoBody" = clr.CastAs(AG_MS.trajectory, IVehiclePropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             tb.propagate()
@@ -3392,7 +3404,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         elif self._obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
             AG_LV: "ILaunchVehicle" = clr.Convert(self._obj, ILaunchVehicle)
-            AG_LV.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
+            AG_LV.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
             sa: "IVehiclePropagatorSimpleAscent" = clr.CastAs(AG_LV.trajectory, IVehiclePropagatorSimpleAscent)
             sa.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             sa.propagate()
@@ -3404,13 +3416,13 @@ class BasicAttitudeRealTimeHelper(object):
         Assert.assertIsNotNone(oAttitude)
         # LookAheadMethod (eExtrapolate)
         self.m_logger.WriteLine6("\tThe current LookAheadMethod is: {0}", oAttitude.look_ahead_method)
-        oAttitude.look_ahead_method = VE_LOOK_AHEAD_METHOD.EXTRAPOLATE
+        oAttitude.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE
         self.m_logger.WriteLine6("\tThe new LookAheadMethod is: {0}", oAttitude.look_ahead_method)
-        Assert.assertEqual(VE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oAttitude.look_ahead_method)
+        Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oAttitude.look_ahead_method)
         # LookAheadMethod (eHold)
-        oAttitude.look_ahead_method = VE_LOOK_AHEAD_METHOD.HOLD
+        oAttitude.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.HOLD
         self.m_logger.WriteLine6("\tThe new LookAheadMethod is: {0}", oAttitude.look_ahead_method)
-        Assert.assertEqual(VE_LOOK_AHEAD_METHOD.HOLD, oAttitude.look_ahead_method)
+        Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.HOLD, oAttitude.look_ahead_method)
         # Duration
         oDuration: "IVehicleDuration" = oAttitude.duration
         Assert.assertIsNotNone(oDuration)
@@ -3445,7 +3457,7 @@ class BasicAttitudeRealTimeHelper(object):
             oAttitude.block_factor = 19
 
         TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action117)
-        if oAttitude.data_reference.profile_type == VE_PROFILE.PROFILE_UNKNOWN:
+        if oAttitude.data_reference.profile_type == VEHICLE_PROFILE.PROFILE_UNKNOWN:
             Assert.assertIsNone(oAttitude.data_reference.profile)
 
         # Enumerate supported profiles and verify each one by setting it
@@ -3454,7 +3466,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         i: int = 0
         while i < len(supportedProfileTypes):
-            profileid: "VE_PROFILE" = clr.Convert(int(supportedProfileTypes[i][0]), VE_PROFILE)
+            profileid: "VEHICLE_PROFILE" = clr.Convert(int(supportedProfileTypes[i][0]), VEHICLE_PROFILE)
             self.m_logger.WriteLine6("DataReference: {0}", profileid)
             oAttitude.data_reference.set_profile_type(profileid)
             Assert.assertIsNotNone(oAttitude.data_reference.profile)
@@ -3465,7 +3477,7 @@ class BasicAttitudeRealTimeHelper(object):
         oAttitude.clear_all()
 
         Assert.assertIsNone(oAttitude.data_reference.profile)
-        Assert.assertEqual(oAttitude.data_reference.profile_type, VE_PROFILE.PROFILE_UNKNOWN)
+        Assert.assertEqual(oAttitude.data_reference.profile_type, VEHICLE_PROFILE.PROFILE_UNKNOWN)
 
         pos: int = 0
         while pos < Array.Length(data):
@@ -3515,8 +3527,8 @@ class BasicAttitudeRealTimeHelper(object):
             reportedStopTime = str(times[(Array.Length(times) - 1)])[0 : len(str(stopTime))]
             Assert.assertEqual(reportedStartTime, startTime)
             Assert.assertEqual(reportedStopTime, stopTime)
-            if oAttitude.data_reference.is_profile_type_supported(VE_PROFILE.PROFILE_FIXED_IN_AXES):
-                oAttitude.data_reference.set_profile_type(VE_PROFILE.PROFILE_FIXED_IN_AXES)
+            if oAttitude.data_reference.is_profile_type_supported(VEHICLE_PROFILE.PROFILE_FIXED_IN_AXES):
+                oAttitude.data_reference.set_profile_type(VEHICLE_PROFILE.PROFILE_FIXED_IN_AXES)
                 fixed: "IVehicleProfileFixedInAxes" = clr.CastAs(
                     oAttitude.data_reference.profile, IVehicleProfileFixedInAxes
                 )
@@ -3576,7 +3588,7 @@ class BasicAttitudeDifferenceHelper(object):
 
         oRealTime: "IVehicleAttitudeRealTime" = clr.CastAs(self.GetAttitude(oAny), IVehicleAttitudeRealTime)
         Assert.assertIsNotNone(oRealTime)
-        Assert.assertEqual(VE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oRealTime.look_ahead_method)
+        Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oRealTime.look_ahead_method)
         Assert.assertEqual(300, oRealTime.duration.look_ahead)
         Assert.assertEqual(120, oRealTime.duration.look_behind)
 
@@ -3587,8 +3599,8 @@ class BasicAttitudeDifferenceHelper(object):
         Assert.assertIsNotNone(oStandard)
 
         self.m_oApplication.execute_command((("SetAttitude " + strObject) + " Profile ECFVelNadir Offset 12.5"))
-        veProfile: "VE_PROFILE" = self.GetCurrentBasicProfileType(oStandard)
-        Assert.assertEqual(VE_PROFILE.PROFILE_ECF_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT, veProfile)
+        veProfile: "VEHICLE_PROFILE" = self.GetCurrentBasicProfileType(oStandard)
+        Assert.assertEqual(VEHICLE_PROFILE.PROFILE_ECF_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT, veProfile)
         Assert.assertEqual(
             12.5,
             (clr.Convert(self.GetCurrentBasicProfile(oStandard), IVehicleProfileConstraintOffset)).constraint_offset,
@@ -3640,7 +3652,7 @@ class BasicAttitudeDifferenceHelper(object):
             traj: "IVehicleTrajectoryAttitudeStandard" = clr.Convert(oStandard, IVehicleTrajectoryAttitudeStandard)
             return traj.basic.profile_type
         else:
-            return VE_PROFILE.PROFILE_UNKNOWN
+            return VEHICLE_PROFILE.PROFILE_UNKNOWN
 
     # endregion
 
@@ -3966,7 +3978,7 @@ class SpatialInfoHelper(object):
             Assert.assertFalse(spatialState.is_available)
             objTypeToPropagate = oObj.class_type
             if objTypeToPropagate == STK_OBJECT_TYPE.AIRCRAFT:
-                (clr.Convert(oParentObj, IAircraft)).set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                (clr.Convert(oParentObj, IAircraft)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
                 ga = clr.Convert((clr.Convert(oParentObj, IAircraft)).route, IVehiclePropagatorGreatArc)
                 wpe = ga.waypoints.add()
                 wpe.latitude = 10
@@ -3979,7 +3991,7 @@ class SpatialInfoHelper(object):
                 wpe.longitude = 14
                 ga.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.GROUND_VEHICLE:
-                (clr.Convert(oParentObj, IGroundVehicle)).set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                (clr.Convert(oParentObj, IGroundVehicle)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
                 ga = clr.Convert((clr.Convert(oParentObj, IGroundVehicle)).route, IVehiclePropagatorGreatArc)
                 wpe = ga.waypoints.add()
                 wpe.latitude = 16
@@ -3993,7 +4005,7 @@ class SpatialInfoHelper(object):
                 ga.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
                 (clr.Convert(oParentObj, ILaunchVehicle)).set_trajectory_type(
-                    VE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT
+                    VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT
                 )
                 ascent: "IVehiclePropagatorSimpleAscent" = clr.CastAs(
                     (clr.Convert(oParentObj, ILaunchVehicle)).trajectory, IVehiclePropagatorSimpleAscent
@@ -4001,14 +4013,14 @@ class SpatialInfoHelper(object):
                 Assert.assertIsNotNone(ascent)
                 ascent.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.MISSILE:
-                (clr.Convert(oParentObj, IMissile)).set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+                (clr.Convert(oParentObj, IMissile)).set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
                 ballistic: "IVehiclePropagatorTwoBody" = clr.CastAs(
                     (clr.Convert(oParentObj, IMissile)).trajectory, IVehiclePropagatorTwoBody
                 )
                 Assert.assertIsNotNone(ballistic)
                 ballistic.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.SATELLITE:
-                (clr.Convert(oParentObj, ISatellite)).set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+                (clr.Convert(oParentObj, ISatellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
                 tb: "IVehiclePropagatorTwoBody" = clr.CastAs(
                     (clr.Convert(oParentObj, ISatellite)).propagator, IVehiclePropagatorTwoBody
                 )
@@ -4016,7 +4028,7 @@ class SpatialInfoHelper(object):
                 tb.step = 120
                 tb.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.SHIP:
-                (clr.Convert(oParentObj, IShip)).set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                (clr.Convert(oParentObj, IShip)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
                 ga = clr.Convert((clr.Convert(oParentObj, IShip)).route, IVehiclePropagatorGreatArc)
                 wpe = ga.waypoints.add()
                 wpe.latitude = 22

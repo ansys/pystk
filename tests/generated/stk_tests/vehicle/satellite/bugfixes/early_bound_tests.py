@@ -20,7 +20,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SAT = clr.Convert(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite2"), ISatellite
         )
-        EarlyBoundTests.AG_SAT.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.Convert(EarlyBoundTests.AG_SAT.propagator, IVehiclePropagatorTwoBody)).propagate()
 
     @staticmethod
@@ -45,7 +45,7 @@ class EarlyBoundTests(TestBase):
     def test_BUG63355_ExceptionOnBreakAngleTypeUnknown(self):
         def code1():
             EarlyBoundTests.AG_SAT.pass_break.definition.set_break_angle_type(
-                VE_BREAK_ANGLE_TYPE.BREAK_ANGLE_TYPE_UNKNOWN
+                VEHICLE_BREAK_ANGLE_TYPE.BREAK_ANGLE_TYPE_UNKNOWN
             )
 
         ex = ExceptionAssert.Throws(code1)
@@ -57,7 +57,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "StkExternalSatellite1"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
         prop: "IVehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, IVehiclePropagatorStkExternal)
         prop.filename = TestBase.GetScenarioFile("External", "Satellite1.e")
         prop.propagate()
@@ -70,7 +70,7 @@ class EarlyBoundTests(TestBase):
         sat2: "ISatellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), ISatellite
         )
-        sat2.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+        sat2.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
         prop2: "IVehiclePropagatorSGP4" = clr.CastAs(sat2.propagator, IVehiclePropagatorSGP4)
         prop2.propagate()
         scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
@@ -82,13 +82,13 @@ class EarlyBoundTests(TestBase):
         sat: "ISatellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG65831"), ISatellite
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
         sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(sat.propagator, IVehiclePropagatorSGP4)
         sgp4.propagate()
         scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
 
         cnstrAngle: "IAccessConstraintCrdnConstellation" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_CRDN_ANGLE),
+            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_ANGLE),
             IAccessConstraintCrdnConstellation,
         )
         Assert.assertEqual("Satellite/BUG65831 VelocityAzimuth Angle", cnstrAngle.reference)
@@ -100,7 +100,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Satellite/BUG65831 AfterStart Condition", cnstrCondition.reference)
 
         cnstrVectorMag: "IAccessConstraintCrdnConstellation" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_CRDN_VECTOR_MAG),
+            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE),
             IAccessConstraintCrdnConstellation,
         )
         Assert.assertEqual("Satellite/BUG65831 Velocity Vector", cnstrVectorMag.reference)
@@ -130,26 +130,26 @@ class EarlyBoundTests(TestBase):
 
     @category("Graphics Tests")
     def test_BUG86580_AddSingleGfxTimeEvent(self):
-        timeEvent: "IVehicleGfxTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
+        timeEvent: "IVehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
-        Assert.assertEqual(timeEvent.time_event_type, VE_GFX_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "IVehicleGfxTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, IVehicleGfxTimeEventTypeMarker
+        data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
+            timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
         )
         Assert.assertEqual("TimeEvent1", data.unique_id)
 
     @category("Graphics Tests")
     def test_BUG86580_AddTwoGfxTimeEvents(self):
         EarlyBoundTests.AG_SAT.graphics.time_events.add()
-        timeEvent: "IVehicleGfxTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
+        timeEvent: "IVehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
         Assert.assertEqual(2, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
-        Assert.assertEqual(timeEvent.time_event_type, VE_GFX_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "IVehicleGfxTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, IVehicleGfxTimeEventTypeMarker
+        data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
+            timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
         )
         Assert.assertEqual("TimeEvent2", data.unique_id)
 
@@ -160,27 +160,27 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SAT.graphics.time_events.add()
         EarlyBoundTests.AG_SAT.graphics.time_events.remove_at(0)
 
-        timeEvent: "IVehicleGfxTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
+        timeEvent: "IVehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
         Assert.assertEqual(3, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
-        Assert.assertEqual(timeEvent.time_event_type, VE_GFX_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "IVehicleGfxTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, IVehicleGfxTimeEventTypeMarker
+        data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
+            timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
         )
         Assert.assertEqual("TimeEvent1", data.unique_id)
 
     @category("Graphics Tests")
     def test_BUG112927_IAgVORefCrdnAngle_ShowDihedralAngleSupportingArcs(self):
         TestBase.Application.vgt_root.get_provider("Satellite/Satellite1").angles.factory.create(
-            "BUG112927_Dihedral", "", CRDN_ANGLE_TYPE.DIHEDRAL_ANGLE
+            "BUG112927_Dihedral", "", VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.DIHEDRAL_ANGLE
         )
-        dihedral: "IVOReferenceVectorGeometryToolAngle" = clr.CastAs(
-            EarlyBoundTests.AG_SAT.vo.vector.ref_crdns.add(
+        dihedral: "IGraphics3DReferenceVectorGeometryToolAngle" = clr.CastAs(
+            EarlyBoundTests.AG_SAT.graphics3_d.vector.reference_crdns.add(
                 GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "Satellite/Satellite1 BUG112927_Dihedral Angle"
             ),
-            IVOReferenceVectorGeometryToolAngle,
+            IGraphics3DReferenceVectorGeometryToolAngle,
         )
 
         dihedral.visible = False
@@ -207,7 +207,7 @@ class EarlyBoundTests(TestBase):
         sat: "ISatellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG119916"), ISatellite
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
 
         mcs: "IDriverMissionControlSequence" = clr.CastAs(sat.propagator, IDriverMissionControlSequence)
         propagate: "IMissionControlSequencePropagate" = clr.CastAs(
@@ -234,7 +234,7 @@ class EarlyBoundTests(TestBase):
         sat: "ISatellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119646"), ISatellite
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twoBody: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         twoBody.propagate()
 
@@ -438,7 +438,7 @@ class EarlyBoundTests(TestBase):
         sat: "ISatellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119465"), ISatellite
         )
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twoBody: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         twoBody.propagate()
 

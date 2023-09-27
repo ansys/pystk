@@ -2,21 +2,21 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AZ_EL_ABOUT_BORESIGHT", "AgExecCmdResult", "AgExecMultiCmdResult", "COORDINATE_SYSTEM", "CROrientationAzEl", 
-"CROrientationEulerAngles", "CROrientationOffsetCart", "CROrientationQuaternion", "CROrientationYPRAngles", "Cartesian", 
-"Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", "Cylindrical", "DIRECTION_TYPE", "Date", "Direction", "DirectionEuler", 
-"DirectionPR", "DirectionRADec", "DirectionXYZ", "DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", 
-"EXEC_MULTI_CMD_RESULT_ACTION", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian", "ICartesian2Vector", "ICartesian3Vector", 
-"IConversionUtility", "ICylindrical", "IDate", "IDirection", "IDirectionEuler", "IDirectionPR", "IDirectionRADec", "IDirectionXYZ", 
-"IDoublesCollection", "IExecCmdResult", "IExecMultiCmdResult", "IGeocentric", "IGeodetic", "ILocationData", "IOrbitState", 
-"IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", "IOrientationYPRAngles", 
-"IPlanetocentric", "IPlanetodetic", "IPosition", "IPropertyInfo", "IPropertyInfoCollection", "IQuantity", "IRuntimeTypeInfo", 
-"IRuntimeTypeInfoProvider", "ISpherical", "IUnitPreferencesDimension", "IUnitPreferencesDimensionCollection", "IUnitPreferencesUnit", 
-"IUnitPreferencesUnitCollection", "LINE_STYLE", "LOG_MSG_DISP_ID", "LOG_MSG_TYPE", "ORBIT_STATE_TYPE", "ORIENTATION_TYPE", 
-"Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", "POSITION_TYPE", 
-"PROPERTY_INFO_VALUE_TYPE", "PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", 
-"Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", "UnitPreferencesUnit", 
-"UnitPreferencesUnitCollection", "YPR_ANGLES_SEQUENCE"]
+__all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "CROrientationEulerAngles", "CROrientationOffsetCart", 
+"CROrientationQuaternion", "CROrientationYPRAngles", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
+"Cylindrical", "DIRECTION_TYPE", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", 
+"DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", 
+"ExecMultiCmdResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian", "ICartesian2Vector", "ICartesian3Vector", "IConversionUtility", 
+"ICylindrical", "IDate", "IDirection", "IDirectionEuler", "IDirectionPR", "IDirectionRADec", "IDirectionXYZ", "IDoublesCollection", 
+"IExecCmdResult", "IExecMultiCmdResult", "IGeocentric", "IGeodetic", "ILocationData", "IOrbitState", "IOrientation", "IOrientationAzEl", 
+"IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", "IOrientationYPRAngles", "IPlanetocentric", 
+"IPlanetodetic", "IPosition", "IPropertyInfo", "IPropertyInfoCollection", "IQuantity", "IRuntimeTypeInfo", "IRuntimeTypeInfoProvider", 
+"ISpherical", "IUnitPreferencesDimension", "IUnitPreferencesDimensionCollection", "IUnitPreferencesUnit", "IUnitPreferencesUnitCollection", 
+"LINE_STYLE", "LOG_MSG_DISP_ID", "LOG_MSG_TYPE", "ORBIT_STATE_TYPE", "ORIENTATION_TYPE", "Orientation", "OrientationAzEl", 
+"OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", "POSITION_TYPE", "PROPERTY_INFO_VALUE_TYPE", 
+"PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", 
+"Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", "UnitPreferencesUnit", "UnitPreferencesUnitCollection", 
+"YPR_ANGLES_SEQUENCE"]
 
 import typing
 
@@ -265,7 +265,7 @@ class COORDINATE_SYSTEM(IntEnum):
     # True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch.
     TRUE_OF_EPOCH = 9
     # True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties.
-    TRUE_OF_REF_DATE = 10
+    TRUE_OF_REFERENCE_DATE = 10
     # ICRF: International Celestial Reference Frame.
     ICRF = 11
     # Mean Earth
@@ -302,7 +302,7 @@ COORDINATE_SYSTEM.TEME_OF_DATE.__doc__ = "TEME of Date: X points toward the mean
 COORDINATE_SYSTEM.TEME_OF_EPOCH.__doc__ = "TEME of Epoch: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
 COORDINATE_SYSTEM.TRUE_OF_DATE.__doc__ = "True of Date: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."
 COORDINATE_SYSTEM.TRUE_OF_EPOCH.__doc__ = "True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
-COORDINATE_SYSTEM.TRUE_OF_REF_DATE.__doc__ = "True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties."
+COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE.__doc__ = "True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties."
 COORDINATE_SYSTEM.ICRF.__doc__ = "ICRF: International Celestial Reference Frame."
 COORDINATE_SYSTEM.MEAN_EARTH.__doc__ = "Mean Earth"
 COORDINATE_SYSTEM.FIXED_NO_LIBRATION.__doc__ = "uses an analytic formula not modeling lunar libration"
@@ -536,7 +536,7 @@ class IPosition(object):
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_convert_to"] = _raise_uninitialized_error
-        self.__dict__["_get_pos_type"] = _raise_uninitialized_error
+        self.__dict__["_get_position_type"] = _raise_uninitialized_error
         self.__dict__["_assign"] = _raise_uninitialized_error
         self.__dict__["_assign_geocentric"] = _raise_uninitialized_error
         self.__dict__["_assign_geodetic"] = _raise_uninitialized_error
@@ -568,7 +568,7 @@ class IPosition(object):
         IID_IPosition = agcom.GUID(IPosition._uuid)
         vtable_offset_local = IPosition._vtable_offset - 1
         self.__dict__["_convert_to"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_get_pos_type"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_get_position_type"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+2, POINTER(agcom.LONG))
         self.__dict__["_assign"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+3, agcom.PVOID)
         self.__dict__["_assign_geocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
         self.__dict__["_assign_geodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
@@ -609,10 +609,10 @@ class IPosition(object):
             return arg_ppIAgPosition.python_val
 
     @property
-    def pos_type(self) -> "POSITION_TYPE":
+    def position_type(self) -> "POSITION_TYPE":
         """Gets the type of position currently being used."""
         with agmarshall.AgEnum_arg(POSITION_TYPE) as arg_pType:
-            agcls.evaluate_hresult(self.__dict__["_get_pos_type"](byref(arg_pType.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_position_type"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
     def assign(self, pPosition:"IPosition") -> None:
@@ -761,8 +761,8 @@ class IPlanetocentric(IPosition):
         self.__dict__["_set_lat"] = _raise_uninitialized_error
         self.__dict__["_get_lon"] = _raise_uninitialized_error
         self.__dict__["_set_lon"] = _raise_uninitialized_error
-        self.__dict__["_get_alt"] = _raise_uninitialized_error
-        self.__dict__["_set_alt"] = _raise_uninitialized_error
+        self.__dict__["_get_altitude"] = _raise_uninitialized_error
+        self.__dict__["_set_altitude"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPlanetocentric._uuid))
             if pUnk is not None:
@@ -779,8 +779,8 @@ class IPlanetocentric(IPosition):
         self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+2, agcom.VARIANT)
         self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
         self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_altitude"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_altitude"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -819,16 +819,16 @@ class IPlanetocentric(IPosition):
             agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pVal.COM_val))
 
     @property
-    def alt(self) -> float:
+    def altitude(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_altitude"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @alt.setter
-    def alt(self, pVal:float) -> None:
+    @altitude.setter
+    def altitude(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_pVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}", IPlanetocentric)
@@ -845,8 +845,8 @@ class IGeocentric(IPosition):
         self.__dict__["_set_lat"] = _raise_uninitialized_error
         self.__dict__["_get_lon"] = _raise_uninitialized_error
         self.__dict__["_set_lon"] = _raise_uninitialized_error
-        self.__dict__["_get_alt"] = _raise_uninitialized_error
-        self.__dict__["_set_alt"] = _raise_uninitialized_error
+        self.__dict__["_get_altitude"] = _raise_uninitialized_error
+        self.__dict__["_set_altitude"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IGeocentric._uuid))
             if pUnk is not None:
@@ -863,8 +863,8 @@ class IGeocentric(IPosition):
         self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+2, agcom.VARIANT)
         self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
         self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_altitude"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_altitude"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -903,16 +903,16 @@ class IGeocentric(IPosition):
             agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pVal.COM_val))
 
     @property
-    def alt(self) -> float:
+    def altitude(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_altitude"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @alt.setter
-    def alt(self, pVal:float) -> None:
+    @altitude.setter
+    def altitude(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_pVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}", IGeocentric)
@@ -1181,8 +1181,8 @@ class IGeodetic(IPosition):
         self.__dict__["_set_lat"] = _raise_uninitialized_error
         self.__dict__["_get_lon"] = _raise_uninitialized_error
         self.__dict__["_set_lon"] = _raise_uninitialized_error
-        self.__dict__["_get_alt"] = _raise_uninitialized_error
-        self.__dict__["_set_alt"] = _raise_uninitialized_error
+        self.__dict__["_get_altitude"] = _raise_uninitialized_error
+        self.__dict__["_set_altitude"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IGeodetic._uuid))
             if pUnk is not None:
@@ -1199,8 +1199,8 @@ class IGeodetic(IPosition):
         self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+2, agcom.VARIANT)
         self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
         self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_altitude"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_altitude"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1239,16 +1239,16 @@ class IGeodetic(IPosition):
             agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pLon.COM_val))
 
     @property
-    def alt(self) -> float:
+    def altitude(self) -> float:
         """Altitude. Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pAlt.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_altitude"](byref(arg_pAlt.COM_val)))
             return arg_pAlt.python_val
 
-    @alt.setter
-    def alt(self, pAlt:float) -> None:
+    @altitude.setter
+    def altitude(self, pAlt:float) -> None:
         with agmarshall.DOUBLE_arg(pAlt) as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pAlt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_pAlt.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}", IGeodetic)
@@ -1265,8 +1265,8 @@ class IPlanetodetic(IPosition):
         self.__dict__["_set_lat"] = _raise_uninitialized_error
         self.__dict__["_get_lon"] = _raise_uninitialized_error
         self.__dict__["_set_lon"] = _raise_uninitialized_error
-        self.__dict__["_get_alt"] = _raise_uninitialized_error
-        self.__dict__["_set_alt"] = _raise_uninitialized_error
+        self.__dict__["_get_altitude"] = _raise_uninitialized_error
+        self.__dict__["_set_altitude"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPlanetodetic._uuid))
             if pUnk is not None:
@@ -1283,8 +1283,8 @@ class IPlanetodetic(IPosition):
         self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+2, agcom.VARIANT)
         self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
         self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_altitude"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_altitude"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1323,16 +1323,16 @@ class IPlanetodetic(IPosition):
             agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pLon.COM_val))
 
     @property
-    def alt(self) -> float:
+    def altitude(self) -> float:
         """Altitude. Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pAlt.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_altitude"](byref(arg_pAlt.COM_val)))
             return arg_pAlt.python_val
 
-    @alt.setter
-    def alt(self, pAlt:float) -> None:
+    @altitude.setter
+    def altitude(self, pAlt:float) -> None:
         with agmarshall.DOUBLE_arg(pAlt) as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pAlt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_pAlt.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}", IPlanetodetic)
@@ -4301,7 +4301,7 @@ agcls.AgTypeNameMap["IDoublesCollection"] = IDoublesCollection
 
 
 
-class AgExecCmdResult(IExecCmdResult):
+class ExecCmdResult(IExecCmdResult):
     """Collection of strings returned by the ExecuteCommand."""
     def __init__(self, sourceObject=None):
         IExecCmdResult.__init__(self, sourceObject)
@@ -4317,12 +4317,12 @@ class AgExecCmdResult(IExecCmdResult):
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgExecCmdResult.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ExecCmdResult.")
         
-agcls.AgClassCatalog.add_catalog_entry("{92FE4418-FBA3-4D69-8F6E-9F600A1BA5E0}", AgExecCmdResult)
+agcls.AgClassCatalog.add_catalog_entry("{92FE4418-FBA3-4D69-8F6E-9F600A1BA5E0}", ExecCmdResult)
 
 
-class AgExecMultiCmdResult(IExecMultiCmdResult):
+class ExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
     def __init__(self, sourceObject=None):
         IExecMultiCmdResult.__init__(self, sourceObject)
@@ -4338,9 +4338,9 @@ class AgExecMultiCmdResult(IExecMultiCmdResult):
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgExecMultiCmdResult.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ExecMultiCmdResult.")
         
-agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", AgExecMultiCmdResult)
+agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", ExecMultiCmdResult)
 
 
 class UnitPreferencesUnit(IUnitPreferencesUnit):

@@ -95,7 +95,7 @@ class OrbitStateHelper(object):
                 )
                 or ((oSystem.type == COORDINATE_SYSTEM.TRUE_OF_DATE))
             )
-            or ((oSystem.type == COORDINATE_SYSTEM.TRUE_OF_REF_DATE))
+            or ((oSystem.type == COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE))
         ) or ((oSystem.type == COORDINATE_SYSTEM.ICRF)):
             bCaught: bool = False
             try:
@@ -444,7 +444,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+            self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
@@ -569,7 +569,7 @@ class OrbitStateHelper(object):
                     try:
                         bCaught = False
                         self.CoordinateSystemTest(
-                            self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE
+                            self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE
                         )
 
                     except Exception as e:
@@ -581,7 +581,9 @@ class OrbitStateHelper(object):
 
                 else:
                     # License available
-                    self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+                    self.CoordinateSystemTest(
+                        self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE
+                    )
 
                 break
 
@@ -1457,7 +1459,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except Exception as e:
             bCaught = True
@@ -1706,7 +1708,9 @@ class OrbitStateHelper(object):
                     # No License
                     try:
                         bCaught = False
-                        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+                        self.CoordinateSystemTest(
+                            self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE
+                        )
 
                     except Exception as e:
                         bCaught = True
@@ -1717,7 +1721,9 @@ class OrbitStateHelper(object):
 
                 else:
                     # License available
-                    self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+                    self.CoordinateSystemTest(
+                        self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE
+                    )
 
                 break
 
@@ -1981,7 +1987,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+            self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
@@ -2249,7 +2255,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+            self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
@@ -2459,7 +2465,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
+            self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")

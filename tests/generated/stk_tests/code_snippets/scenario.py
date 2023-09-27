@@ -151,10 +151,10 @@ class Scenario(CodeSnippetsTestBase):
 
         animation.start_time = "1 Jun 2004 12:00:00.00"
         animation.enable_anim_cycle_time = True
-        animation.anim_cycle_type = SC_END_LOOP_TYPE.END_TIME
+        animation.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
         animation.anim_cycle_time = "2 Jun 2004 12:00:00.00"
         animation.anim_step_value = 1000
-        animation.refresh_delta_type = SC_REFRESH_DELTA_TYPE.REFRESH_DELTA
+        animation.refresh_delta_type = SCENARIO_REFRESH_DELTA_TYPE.REFRESH_DELTA
         animation.refresh_delta = 0.02
 
     # endregion
@@ -165,11 +165,11 @@ class Scenario(CodeSnippetsTestBase):
         self.ConfigureScenarioTextFont(clr.CastAs(CodeSnippetsTestBase.m_Root.current_scenario, IScenario))
 
     def ConfigureScenarioTextFont(self, scenario: "IScenario"):
-        fonts: "IScenario3dFont" = scenario.vo.large_font
+        fonts: "IScenario3dFont" = scenario.graphics3_d.large_font
 
         fonts.bold = True
         fonts.italic = True
-        fonts.pt_size = SC3_D_PT_SIZE.FONT_SIZE36
+        fonts.point_size = SCENARIO3_D_POINT_SIZE.FONT_SIZE36
         if fonts.is_font_available("Impact"):
             fonts.name = "Impact"
 
@@ -200,7 +200,7 @@ class Scenario(CodeSnippetsTestBase):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
         satellite: "ISatellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeoEye"), ISatellite)
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.Convert(satellite.propagator, IVehiclePropagatorTwoBody)).propagate()
 
         try:

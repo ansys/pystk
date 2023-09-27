@@ -64,7 +64,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseGreatArcPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to great arc
-        groundVehicle.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(groundVehicle.route, IVehiclePropagatorGreatArc)
@@ -77,7 +77,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseStkExternalPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set groundVehicle route to STK External propagator
-        groundVehicle.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(groundVehicle.route, IVehiclePropagatorStkExternal)
@@ -90,7 +90,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseRealtimePropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to STK External propagator
-        groundVehicle.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorRealtime" = clr.CastAs(groundVehicle.route, IVehiclePropagatorRealtime)
@@ -135,6 +135,6 @@ class GroundVehicle(CodeSnippetsTestBase):
         (clr.Convert(gv, IStkObject)).unload()
 
     def GetExportPropDefTool(self, groundVehicle: "IGroundVehicle"):
-        attExTool: "IVehiclePropDefinitionExportTool" = groundVehicle.export_tools.get_prop_def_export_tool()
+        attExTool: "IVehiclePropDefinitionExportTool" = groundVehicle.export_tools.get_prop_definition_export_tool()
 
     # endregion

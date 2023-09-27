@@ -64,6 +64,6 @@ class LaunchVehicle(CodeSnippetsTestBase):
         self.DetermineIfTrajectoryIsSupported(LaunchVehicle.m_Object)
 
     def DetermineIfTrajectoryIsSupported(self, launchVehicle: "ILaunchVehicle"):
-        supported: bool = launchVehicle.is_trajectory_type_supported(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        supported: bool = launchVehicle.is_trajectory_type_supported(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
 
     # endregion

@@ -79,13 +79,13 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureAccessDurationFigureOfMerit(self, fom: "IFigureOfMerit"):
         # Set figure of merit definition to eFmAccessDuration
-        fom.set_definition_type(FM_DEFINITION_TYPE.ACCESS_DURATION)
+        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION)
 
         # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
-        if defComp.is_compute_type_supported(FM_COMPUTE.PERCENT_ABOVE):
+        if defComp.is_compute_type_supported(FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE):
             # Set Compute type to supported compute option
-            defComp.set_compute_type(FM_COMPUTE.PERCENT_ABOVE)
+            defComp.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE)
 
             # Get compute option compute interface
             fomData: "IFigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
@@ -101,13 +101,13 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureCoverageTimeFigureOfMerit(self, fom: "IFigureOfMerit"):
         # Set figure of merit definition to eFmCoverageTime
-        fom.set_definition_type(FM_DEFINITION_TYPE.COVERAGE_TIME)
+        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.COVERAGE_TIME)
 
         # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
-        if defComp.is_compute_type_supported(FM_COMPUTE.TOTAL_TIME_ABOVE):
+        if defComp.is_compute_type_supported(FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE):
             # Set Compute type to supported compute option
-            defComp.set_compute_type(FM_COMPUTE.TOTAL_TIME_ABOVE)
+            defComp.set_compute_type(FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
 
             # Get compute option compute interface
             fomData: "IFigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
@@ -123,7 +123,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def SetFigureOfMeritDefToAccessConstraintByEnum(self, fom: "IFigureOfMerit"):
         acd: "IFigureOfMeritDefinitionAccessConstraint" = fom.set_access_constraint_definition(
-            FM_CONSTRAINT_NAME.AZIMUTH_RATE
+            FIGURE_OF_MERIT_CONSTRAINT_NAME.AZIMUTH_RATE
         )
 
     # endregion
@@ -138,8 +138,8 @@ class FigureOfMerit(CodeSnippetsTestBase):
         )
 
         # Confiure access constraint properties
-        defAccessCnstr.set_compute_type(FM_COMPUTE.MAXIMUM)
-        defAccessCnstr.across_assets = FM_ACROSS_ASSETS.MINIMUM
+        defAccessCnstr.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        defAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
         defAccessCnstr.time_step = 60.0
 
     # endregion
@@ -150,7 +150,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureFigureOfMeritDefToAccessConstraint(self, fom: "IFigureOfMerit"):
         # Set access constraint definition to altitude
-        fom.set_access_constraint_definition(FM_CONSTRAINT_NAME.ALTITUDE)
+        fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
 
         # Get IFigureOfMeritDefinitionAccessConstraint interface
         defAccessCnstr: "IFigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
@@ -158,8 +158,8 @@ class FigureOfMerit(CodeSnippetsTestBase):
         )
 
         # Confiure access constraint properties
-        defAccessCnstr.set_compute_type(FM_COMPUTE.MAXIMUM)
-        defAccessCnstr.across_assets = FM_ACROSS_ASSETS.MINIMUM
+        defAccessCnstr.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        defAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
         defAccessCnstr.time_step = 60.0
 
     # endregion
@@ -172,7 +172,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         gridInspector: "IFigureOfMeritGridInspector" = fom.grid_inspector
         gridInspector.select_point(-13.864, -51.088)
 
-        pointFom: "IDataProviderTimeVarying" = clr.CastAs(gridInspector.point_fom, IDataProviderTimeVarying)
+        pointFom: "IDataProviderTimeVarying" = clr.CastAs(gridInspector.point_figure_of_merit, IDataProviderTimeVarying)
         pointFomResult: "IDataProviderResult" = pointFom.exec_single("1 Jan 2012 12:00:00.00")
 
         pointSatisfaction: "IDataProviderInterval" = clr.CastAs(gridInspector.point_satisfaction, IDataProviderInterval)
@@ -180,7 +180,9 @@ class FigureOfMerit(CodeSnippetsTestBase):
             "1 Jan 2012 12:00:00.00", "2 Jan 2012 12:00:00.00"
         )
 
-        regionFom: "IDataProviderTimeVarying" = clr.CastAs(gridInspector.region_fom, IDataProviderTimeVarying)
+        regionFom: "IDataProviderTimeVarying" = clr.CastAs(
+            gridInspector.region_figure_of_merit, IDataProviderTimeVarying
+        )
         regionFomResult: "IDataProviderResult" = regionFom.exec_single("1 Jan 2012 12:00:00.00")
 
         regionSatisfaction: "IDataProviderInterval" = clr.CastAs(
@@ -198,18 +200,18 @@ class FigureOfMerit(CodeSnippetsTestBase):
         FigureOfMerit.m_Object.set_access_constraint_definition_name("AzimuthRate")
         self.ConfigureFigureOfMeritContours(FigureOfMerit.m_Object.graphics.static.contours)
 
-    def ConfigureFigureOfMeritContours(self, contours: "IFigureOfMeritGfxContours"):
+    def ConfigureFigureOfMeritContours(self, contours: "IFigureOfMeritGraphics2DContours"):
         contours.is_visible = True
-        contours.contour_type = FM_GFX_CONTOUR_TYPE.SMOOTH_FILL
-        contours.color_method = FM_GFX_COLOR_METHOD.EXPLICIT
+        contours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.SMOOTH_FILL
+        contours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT
 
         # Add level ranges (batch)
         contours.level_attributes.add_level_range(25, 35, 1)
-        firstLevel: "IFigureOfMeritGfxLevelAttributesElement" = contours.level_attributes[0]
+        firstLevel: "IFigureOfMeritGraphics2DLevelAttributesElement" = contours.level_attributes[0]
         firstLevel.color = Color.Blue
 
         # Add one level (individually)
-        level: "IFigureOfMeritGfxLevelAttributesElement" = contours.level_attributes.add_level(55)
+        level: "IFigureOfMeritGraphics2DLevelAttributesElement" = contours.level_attributes.add_level(55)
         level.color = Color.Red
 
     # endregion
@@ -220,7 +222,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionAgeOfData(self, fom: "IFigureOfMerit"):
         # Get the IFigureOfMeritDefinitionAgeOfData interface
-        fom.set_definition_type(FM_DEFINITION_TYPE.AGE_OF_DATA)
+        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.AGE_OF_DATA)
         ageOfData: "IFigureOfMeritDefinitionAgeOfData" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionAgeOfData)
 
         # Set the minimum number of assets for computing
@@ -265,7 +267,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.FigureOfMeritDefinitionSystemResponseTime(FigureOfMerit.m_Object)
 
     def FigureOfMeritDefinitionSystemResponseTime(self, fom: "IFigureOfMerit"):
-        fom.set_definition_type(FM_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
+        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
         systemResponseTime: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.definition, IFigureOfMeritDefinitionSystemResponseTime
         )
@@ -280,7 +282,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.FigureOfMeritDefinitionSystemResponseTimeReset(FigureOfMerit.m_Object)
 
     def FigureOfMeritDefinitionSystemResponseTimeReset(self, fom: "IFigureOfMerit"):
-        fom.set_definition_type(FM_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
+        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
         systemResponseTime: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.definition, IFigureOfMeritDefinitionSystemResponseTime
         )

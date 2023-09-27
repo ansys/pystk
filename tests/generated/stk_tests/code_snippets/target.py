@@ -76,7 +76,7 @@ class Target(CodeSnippetsTestBase):
         # the second parameter is ignored.
         target.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, maskfile)
         target.terrain_norm = TERRAIN_NORM_TYPE.SLOPE_AZIMUTH
-        target.alt_ref = ALT_REF_TYPE.MSL
+        target.altitude_reference = ALTITUDE_REFERENCE_TYPE.MSL
         target.height_above_ground = 1472.0
 
     # endregion

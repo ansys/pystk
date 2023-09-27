@@ -112,7 +112,7 @@ class Chain(CodeSnippetsTestBase):
         chain.data_save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
 
         # Specify our own time period
-        chain.set_time_period_type(CH_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
+        chain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
 
         # Get chain time period interface
         chainUserTimePeriod: "IChainUserSpecifiedTimePeriod" = clr.CastAs(
@@ -130,7 +130,7 @@ class Chain(CodeSnippetsTestBase):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
         satellite: "ISatellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"), ISatellite)
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(satellite.propagator, IVehiclePropagatorTwoBody)
         twoBody.ephemeris_interval.set_start_time_and_duration("1 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()
@@ -151,7 +151,7 @@ class Chain(CodeSnippetsTestBase):
             (clr.Convert(chain, IStkObject)).unload()
 
     def ConfigureChainComputeTimePeriod(self, chain: "IChain"):
-        chain.set_time_period_type(CH_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
+        chain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
         userSpecifiedTimePeriod: "IChainUserSpecifiedTimePeriod" = clr.CastAs(
             chain.time_period, IChainUserSpecifiedTimePeriod
         )
@@ -166,7 +166,7 @@ class Chain(CodeSnippetsTestBase):
         scenario: "IStkObject" = clr.Convert(TestBase.Application.current_scenario, IStkObject)
 
         satellite: "ISatellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"), ISatellite)
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(satellite.propagator, IVehiclePropagatorTwoBody)
         twoBody.ephemeris_interval.set_start_time_and_duration("2 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()

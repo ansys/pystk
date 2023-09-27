@@ -249,7 +249,7 @@ class EarlyBoundTests(TestBase):
     def test_VOBorderWall(self):
         TestBase.logger.WriteLine("----- THE VO BORDER WALL TEST ----- BEGIN -----")
         oHelper = VOBorderWallHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_LT.vo.border_wall, False)
+        oHelper.Run(EarlyBoundTests.AG_LT.graphics3_d.border_wall, False)
         TestBase.logger.WriteLine("----- THE VO BORDER WALL TEST ----- END -----")
 
     # endregion
@@ -258,7 +258,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVectors(self):
         oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
-        oHelper.Run(EarlyBoundTests.AG_LT.vo.vector, True)
+        oHelper.Run(EarlyBoundTests.AG_LT.graphics3_d.vector, True)
 
     # endregion
 
@@ -266,7 +266,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
-        vo: "ILineTargetVO" = clr.Convert(EarlyBoundTests.AG_LT.vo, ILineTargetVO)
+        vo: "ILineTargetGraphics3D" = clr.Convert(EarlyBoundTests.AG_LT.graphics3_d, ILineTargetGraphics3D)
         Assert.assertIsNotNone(vo)
         # set DistanceUnit
         TestBase.logger.WriteLine5(
@@ -339,8 +339,8 @@ class EarlyBoundTests(TestBase):
         # test Access VO DataDisplays
         oSatellite: "ISatellite" = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], ISatellite)
         Assert.assertNotEqual(None, oSatellite)
-        oSatellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        Assert.assertEqual(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
         oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, IVehiclePropagatorTwoBody)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()

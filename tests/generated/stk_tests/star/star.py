@@ -155,7 +155,7 @@ class EarlyBoundTests(TestBase):
         AssertEx.AreEqual(Color.FromArgb(6636321), gfx.color)
         # Marker Style
         scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
-        arMarkers = scenario.vo.available_marker_types()
+        arMarkers = scenario.graphics3_d.available_marker_types()
         TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.marker_style)
         gfx.marker_style = str(arMarkers[1])
         TestBase.logger.WriteLine5("The new MarkerStyle is: {0}", gfx.marker_style)
@@ -195,7 +195,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
-        vo: "IStarVO" = EarlyBoundTests.AG_SR.vo
+        vo: "IStarGraphics3D" = EarlyBoundTests.AG_SR.graphics3_d
         Assert.assertIsNotNone(vo)
         # InertialPositionVisible
         TestBase.logger.WriteLine4("The current InertialPositionVisible flag is: {0}", vo.inertial_position_visible)
@@ -214,10 +214,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("The new SubStarPointVisible flag is: {0}", vo.sub_star_point_visible)
         Assert.assertEqual(True, vo.sub_star_point_visible)
         # InheritFrom2dGfx
-        TestBase.logger.WriteLine4("The current InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_gfx)
-        vo.inherit_from2_d_gfx = True
-        TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_gfx)
-        Assert.assertEqual(True, vo.inherit_from2_d_gfx)
+        TestBase.logger.WriteLine4("The current InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_graphics2_d)
+        vo.inherit_from2_d_graphics2_d = True
+        TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_graphics2_d)
+        Assert.assertEqual(True, vo.inherit_from2_d_graphics2_d)
         bCaught: bool = False
         try:
             bCaught = False
@@ -241,9 +241,9 @@ class EarlyBoundTests(TestBase):
         if not bCaught:
             Assert.fail("The property should be read-only.")
 
-        vo.inherit_from2_d_gfx = False
-        TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_gfx)
-        Assert.assertEqual(False, vo.inherit_from2_d_gfx)
+        vo.inherit_from2_d_graphics2_d = False
+        TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_graphics2_d)
+        Assert.assertEqual(False, vo.inherit_from2_d_graphics2_d)
         # SubStarLabelVisible
         TestBase.logger.WriteLine4("The current SubStarLabelVisible flag is: {0}", vo.sub_star_label_visible)
         vo.sub_star_label_visible = False

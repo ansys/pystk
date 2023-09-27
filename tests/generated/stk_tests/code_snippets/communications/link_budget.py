@@ -40,7 +40,7 @@ class LinkBudget(CodeSnippetsTestBase):
         LinkBudget.m_Satellite = scenario.children.new(STK_OBJECT_TYPE.SATELLITE, LinkBudget.m_DefaultSatName)
 
         sat: "ISatellite" = clr.Convert(LinkBudget.m_Satellite, ISatellite)
-        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(sat.propagator, IVehiclePropagatorTwoBody)
         twoBody.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         twoBody.initial_state.representation.epoch = "1 Jan 2012 12:00:00.000"
@@ -201,7 +201,7 @@ class LinkBudget(CodeSnippetsTestBase):
         complexRcvr: "IReceiverModelComplex" = clr.CastAs(facilityReceiver.model, IReceiverModelComplex)
 
         # Configure the complex receiver to use the antenna object on the same parent facility, by linking
-        complexRcvr.antenna_control.reference_type = ANTENNA_CONTROL_REF_TYPE.LINK
+        complexRcvr.antenna_control.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.LINK
         complexRcvr.antenna_control.linked_antenna_object = "Antenna/FacilityDish"
 
         # Enable rain loss computation on the receiver

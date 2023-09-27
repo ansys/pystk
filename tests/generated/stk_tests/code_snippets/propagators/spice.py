@@ -45,7 +45,7 @@ class SPICE(CodeSnippetsTestBase):
 
     # region ConfigureSPICEPropagator
     def test_ConfigureSPICEPropagator(self):
-        SPICE.m_Object.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SPICE)
+        SPICE.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE)
         spiceProp: "IVehiclePropagatorSPICE" = clr.CastAs(SPICE.m_Object.propagator, IVehiclePropagatorSPICE)
         self.ConfigureSPICEPropagator(
             spiceProp, TestBase.GetScenarioFile("CodeSnippetsTests", "External", "Satellite1.bsp")

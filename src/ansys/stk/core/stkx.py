@@ -2,16 +2,16 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgExecCmdResult", "AgExecMultiCmdResult", "BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", 
-"Draw2DElemRect", "DrawElemCollection", "DrawElemLine", "DrawElemRect", "EXEC_MULTI_CMD_RESULT_ACTION", "FEATURE_CODES", 
-"GFX_ANALYSIS_MODE", "GFX_DRAW_COORDS", "IDataObject", "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", "IDrawElemLine", 
-"IDrawElemRect", "IExecCmdResult", "IExecMultiCmdResult", "IObjPathCollection", "IPickInfoData", "IRubberBandPickInfoData", 
+__all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", 
+"DrawElemLine", "DrawElemRect", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", "ExecMultiCmdResult", "FEATURE_CODES", 
+"GRAPHICS2_D_ANALYSIS_MODE", "GRAPHICS2_D_DRAW_COORDS", "IDataObject", "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", 
+"IDrawElemLine", "IDrawElemRect", "IExecCmdResult", "IExecMultiCmdResult", "IObjPathCollection", "IPickInfoData", "IRubberBandPickInfoData", 
 "ISTKXApplication", "ISTKXApplicationPartnerAccess", "ISTKXConControlQuitReceivedEventArgs", "ISTKXSSLCertificateErrorEventArgs", 
-"IUiAx2DCntrl", "IUiAxGfxAnalysisCntrl", "IUiAxVOCntrl", "IWinProjectionPosition", "LINE_STYLE", "LOGGING_MODE", "LOG_MSG_DISP_ID", 
-"LOG_MSG_TYPE", "MOUSE_MODE", "OLE_DROP_MODE", "ObjPathCollection", "PROGRESS_IMAGE_X_ORIGIN", "PROGRESS_IMAGE_Y_ORIGIN", 
+"IUiAx2DCntrl", "IUiAxGraphics2DAnalysisCntrl", "IUiAxGraphics3DCntrl", "IWinProjectionPosition", "LINE_STYLE", "LOGGING_MODE", 
+"LOG_MSG_DISP_ID", "LOG_MSG_TYPE", "MOUSE_MODE", "OLE_DROP_MODE", "ObjPathCollection", "PROGRESS_IMAGE_X_ORIGIN", "PROGRESS_IMAGE_Y_ORIGIN", 
 "PickInfoData", "RubberBandPickInfoData", "SHIFT_VALUES", "SHOW_PROGRESS_IMAGE", "STKXApplication", "STKXApplicationPartnerAccess", 
-"STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGfxAnalysisCntrl", "UiAxVOCntrl", 
-"WinProjectionPosition"]
+"STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGraphics2DAnalysisCntrl", 
+"UiAxGraphics3DCntrl", "WinProjectionPosition"]
 
 import typing
 
@@ -167,11 +167,11 @@ class SHIFT_VALUES(IntEnum):
     # The Ctrl key was pressed.
     CTRL_PRESSED = 2
     # The ALT key was pressed.
-    ALT_PRESSED = 4
+    ALTITUDE_PRESSED = 4
 
 SHIFT_VALUES.PRESSED.__doc__ = "The Shift key was pressed."
 SHIFT_VALUES.CTRL_PRESSED.__doc__ = "The Ctrl key was pressed."
-SHIFT_VALUES.ALT_PRESSED.__doc__ = "The ALT key was pressed."
+SHIFT_VALUES.ALTITUDE_PRESSED.__doc__ = "The ALT key was pressed."
 
 agcls.AgTypeNameMap["SHIFT_VALUES"] = SHIFT_VALUES
 
@@ -232,7 +232,7 @@ LOGGING_MODE.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even a
 
 agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
 
-class GFX_ANALYSIS_MODE(IntEnum):
+class GRAPHICS2_D_ANALYSIS_MODE(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
     # The Solar Panel Tool mode.
     SOLAR_PANEL_TOOL = 1
@@ -243,24 +243,24 @@ class GFX_ANALYSIS_MODE(IntEnum):
     # The AzElMask Tool mode.
     AZ_EL_MASK_TOOL = 4
 
-GFX_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
-GFX_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
-GFX_ANALYSIS_MODE.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
-GFX_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
+GRAPHICS2_D_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
+GRAPHICS2_D_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
+GRAPHICS2_D_ANALYSIS_MODE.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
+GRAPHICS2_D_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
 
-agcls.AgTypeNameMap["GFX_ANALYSIS_MODE"] = GFX_ANALYSIS_MODE
+agcls.AgTypeNameMap["GRAPHICS2_D_ANALYSIS_MODE"] = GRAPHICS2_D_ANALYSIS_MODE
 
-class GFX_DRAW_COORDS(IntEnum):
+class GRAPHICS2_D_DRAW_COORDS(IntEnum):
     """Specifies the draw coordinates for Map Control."""
     # The draw coordinates values in pixels.
     PIXEL_DRAW_COORDS = 1
     # The draw coordinates values in screen coordinates.
     SCREEN_DRAW_COORDS = 2
 
-GFX_DRAW_COORDS.PIXEL_DRAW_COORDS.__doc__ = "The draw coordinates values in pixels."
-GFX_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates values in screen coordinates."
+GRAPHICS2_D_DRAW_COORDS.PIXEL_DRAW_COORDS.__doc__ = "The draw coordinates values in pixels."
+GRAPHICS2_D_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates values in screen coordinates."
 
-agcls.AgTypeNameMap["GFX_DRAW_COORDS"] = GFX_DRAW_COORDS
+agcls.AgTypeNameMap["GRAPHICS2_D_DRAW_COORDS"] = GRAPHICS2_D_DRAW_COORDS
 
 class SHOW_PROGRESS_IMAGE(IntEnum):
     """Specifies to show progress image."""
@@ -520,9 +520,9 @@ class IPickInfoData(object):
         self.__dict__["_get_obj_path"] = _raise_uninitialized_error
         self.__dict__["_get_lat"] = _raise_uninitialized_error
         self.__dict__["_get_lon"] = _raise_uninitialized_error
-        self.__dict__["_get_alt"] = _raise_uninitialized_error
+        self.__dict__["_get_altitude"] = _raise_uninitialized_error
         self.__dict__["_get_is_obj_path_valid"] = _raise_uninitialized_error
-        self.__dict__["_get_is_lat_lon_alt_valid"] = _raise_uninitialized_error
+        self.__dict__["_get_is_lat_lon_altitude_valid"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPickInfoData._uuid))
             if pUnk is not None:
@@ -537,9 +537,9 @@ class IPickInfoData(object):
         self.__dict__["_get_obj_path"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+1, POINTER(agcom.BSTR))
         self.__dict__["_get_lat"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+2, POINTER(agcom.DOUBLE))
         self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_altitude"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+4, POINTER(agcom.DOUBLE))
         self.__dict__["_get_is_obj_path_valid"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_get_is_lat_lon_alt_valid"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_is_lat_lon_altitude_valid"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -575,10 +575,10 @@ class IPickInfoData(object):
             return arg_pVal.python_val
 
     @property
-    def alt(self) -> float:
+    def altitude(self) -> float:
         """Altitude of point clicked (if available)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_altitude"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
@@ -589,10 +589,10 @@ class IPickInfoData(object):
             return arg_pIsValid.python_val
 
     @property
-    def is_lat_lon_alt_valid(self) -> bool:
+    def is_lat_lon_altitude_valid(self) -> bool:
         """Indicate if the Lat/Lon/Alt properties are valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
-            agcls.evaluate_hresult(self.__dict__["_get_is_lat_lon_alt_valid"](byref(arg_pIsValid.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_lat_lon_altitude_valid"](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
 
 
@@ -1352,9 +1352,9 @@ class IWinProjectionPosition(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_get_x_pos"] = _raise_uninitialized_error
-        self.__dict__["_get_y_pos"] = _raise_uninitialized_error
-        self.__dict__["_get_is_win_proj_pos_valid"] = _raise_uninitialized_error
+        self.__dict__["_get_x_position"] = _raise_uninitialized_error
+        self.__dict__["_get_y_position"] = _raise_uninitialized_error
+        self.__dict__["_get_is_win_projection_position_valid"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IWinProjectionPosition._uuid))
             if pUnk is not None:
@@ -1366,9 +1366,9 @@ class IWinProjectionPosition(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IWinProjectionPosition = agcom.GUID(IWinProjectionPosition._uuid)
         vtable_offset_local = IWinProjectionPosition._vtable_offset - 1
-        self.__dict__["_get_x_pos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_get_y_pos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+2, POINTER(agcom.DOUBLE))
-        self.__dict__["_get_is_win_proj_pos_valid"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_x_position"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_y_position"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+2, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_is_win_projection_position_valid"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1383,24 +1383,24 @@ class IWinProjectionPosition(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IWinProjectionPosition.")
     
     @property
-    def x_pos(self) -> float:
+    def x_position(self) -> float:
         """Projected window X position."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_x_pos"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_x_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def y_pos(self) -> float:
+    def y_position(self) -> float:
         """Projected window Y position."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_y_pos"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_y_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def is_win_proj_pos_valid(self) -> bool:
+    def is_win_projection_position_valid(self) -> bool:
         """Indicates if the returned projected position is valid or not."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
-            agcls.evaluate_hresult(self.__dict__["_get_is_win_proj_pos_valid"](byref(arg_pIsValid.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_win_projection_position_valid"](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
 
 
@@ -1710,7 +1710,7 @@ class IExecMultiCmdResult(object):
 agcls.AgClassCatalog.add_catalog_entry("{0558BE8E-AF66-4F52-9C6D-76962FC52577}", IExecMultiCmdResult)
 agcls.AgTypeNameMap["IExecMultiCmdResult"] = IExecMultiCmdResult
 
-class IUiAxVOCntrl(object):
+class IUiAxGraphics3DCntrl(object):
     """AGI Globe control."""
     _uuid = "{0975BA23-E273-4B8F-BA8D-32ECB328C092}"
     _num_methods = 48
@@ -1720,7 +1720,7 @@ class IUiAxVOCntrl(object):
         self.__dict__["_get_back_color"] = _raise_uninitialized_error
         self.__dict__["_set_back_color"] = _raise_uninitialized_error
         self.__dict__["_get_picture"] = _raise_uninitialized_error
-        self.__dict__["_picture_put_ref"] = _raise_uninitialized_error
+        self.__dict__["_picture_put_reference"] = _raise_uninitialized_error
         self.__dict__["_set_picture"] = _raise_uninitialized_error
         self.__dict__["_pick_info"] = _raise_uninitialized_error
         self.__dict__["_get_win_id"] = _raise_uninitialized_error
@@ -1766,79 +1766,79 @@ class IUiAxVOCntrl(object):
         self.__dict__["_get_picture_from_file"] = _raise_uninitialized_error
         self.__dict__["_set_picture_from_file"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiAxVOCntrl._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiAxGraphics3DCntrl._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IUiAxVOCntrl from source object.")
+                raise STKInvalidCastError("Failed to create IUiAxGraphics3DCntrl from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IUiAxVOCntrl = agcom.GUID(IUiAxVOCntrl._uuid)
-        vtable_offset_local = IUiAxVOCntrl._vtable_offset - 1
-        self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
-        self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
-        self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_picture_put_ref"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+4, agcom.PVOID)
-        self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+5, agcom.PVOID)
-        self.__dict__["_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+6, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
-        self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+7, POINTER(agcom.LONG))
-        self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+8, agcom.LONG)
-        self.__dict__["_get_application"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+9, POINTER(agcom.PVOID))
-        self.__dict__["_zoom_in"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+10, )
-        self.__dict__["_get_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+12, agcom.VARIANT_BOOL)
-        self.__dict__["_get_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+13, POINTER(agcom.LONG))
-        self.__dict__["_set_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+14, agcom.LONG)
-        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+15, POINTER(agcom.BSTR))
-        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+16, agcom.BSTR)
-        self.__dict__["_rubber_band_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+17, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
-        self.__dict__["_get_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+18, POINTER(agcom.LONG))
-        self.__dict__["_set_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+19, agcom.LONG)
-        self.__dict__["_get_draw_elements"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+20, POINTER(agcom.PVOID))
-        self.__dict__["_get_ready_state"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+21, POINTER(agcom.LONG))
-        self.__dict__["_get_ppt_preload_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+22, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_ppt_preload_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+23, agcom.VARIANT_BOOL)
-        self.__dict__["_get_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+24, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+25, agcom.VARIANT_BOOL)
-        self.__dict__["_copy_from_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+26, agcom.LONG)
-        self.__dict__["_start_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+27, agcom.BSTR)
-        self.__dict__["_apply_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+28, )
-        self.__dict__["_stop_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+29, agcom.VARIANT_BOOL)
-        self.__dict__["_get_is_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+30, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_get_in_zoom_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+31, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_mouse_cursor_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+32, agcom.BSTR)
-        self.__dict__["_restore_mouse_cursor"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+33, )
-        self.__dict__["_set_mouse_cursor_from_handle"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+34, agcom.OLE_HANDLE)
-        self.__dict__["_get_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+35, POINTER(agcom.LONG))
-        self.__dict__["_set_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+36, agcom.LONG)
-        self.__dict__["_get_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+37, POINTER(agcom.LONG))
-        self.__dict__["_set_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+38, agcom.LONG)
-        self.__dict__["_get_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+39, POINTER(agcom.LONG))
-        self.__dict__["_set_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+40, agcom.LONG)
-        self.__dict__["_get_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+41, POINTER(agcom.BSTR))
-        self.__dict__["_set_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+42, agcom.BSTR)
-        self.__dict__["_get_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+43, POINTER(agcom.LONG))
-        self.__dict__["_set_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+44, agcom.LONG)
-        self.__dict__["_get_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+45, POINTER(agcom.LONG))
-        self.__dict__["_set_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+46, agcom.LONG)
-        self.__dict__["_get_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+47, POINTER(agcom.BSTR))
-        self.__dict__["_set_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+48, agcom.BSTR)
+        IID_IUiAxGraphics3DCntrl = agcom.GUID(IUiAxGraphics3DCntrl._uuid)
+        vtable_offset_local = IUiAxGraphics3DCntrl._vtable_offset - 1
+        self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
+        self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
+        self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_picture_put_reference"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+5, agcom.PVOID)
+        self.__dict__["_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+6, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
+        self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+7, POINTER(agcom.LONG))
+        self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+8, agcom.LONG)
+        self.__dict__["_get_application"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+9, POINTER(agcom.PVOID))
+        self.__dict__["_zoom_in"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+10, )
+        self.__dict__["_get_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+12, agcom.VARIANT_BOOL)
+        self.__dict__["_get_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+13, POINTER(agcom.LONG))
+        self.__dict__["_set_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+14, agcom.LONG)
+        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+15, POINTER(agcom.BSTR))
+        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+16, agcom.BSTR)
+        self.__dict__["_rubber_band_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+17, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
+        self.__dict__["_get_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+18, POINTER(agcom.LONG))
+        self.__dict__["_set_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+19, agcom.LONG)
+        self.__dict__["_get_draw_elements"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+20, POINTER(agcom.PVOID))
+        self.__dict__["_get_ready_state"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+21, POINTER(agcom.LONG))
+        self.__dict__["_get_ppt_preload_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+22, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_ppt_preload_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+23, agcom.VARIANT_BOOL)
+        self.__dict__["_get_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+24, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+25, agcom.VARIANT_BOOL)
+        self.__dict__["_copy_from_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+26, agcom.LONG)
+        self.__dict__["_start_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+27, agcom.BSTR)
+        self.__dict__["_apply_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+28, )
+        self.__dict__["_stop_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+29, agcom.VARIANT_BOOL)
+        self.__dict__["_get_is_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+30, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_in_zoom_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+31, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_mouse_cursor_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+32, agcom.BSTR)
+        self.__dict__["_restore_mouse_cursor"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+33, )
+        self.__dict__["_set_mouse_cursor_from_handle"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+34, agcom.OLE_HANDLE)
+        self.__dict__["_get_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+35, POINTER(agcom.LONG))
+        self.__dict__["_set_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+36, agcom.LONG)
+        self.__dict__["_get_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+37, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+38, agcom.LONG)
+        self.__dict__["_get_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+39, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+40, agcom.LONG)
+        self.__dict__["_get_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+41, POINTER(agcom.BSTR))
+        self.__dict__["_set_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+42, agcom.BSTR)
+        self.__dict__["_get_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+43, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+44, agcom.LONG)
+        self.__dict__["_get_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+45, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+46, agcom.LONG)
+        self.__dict__["_get_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+47, POINTER(agcom.BSTR))
+        self.__dict__["_set_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics3DCntrl, vtable_offset_local+48, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiAxVOCntrl.__dict__ and type(IUiAxVOCntrl.__dict__[attrname]) == property:
-            return IUiAxVOCntrl.__dict__[attrname]
+        if attrname in IUiAxGraphics3DCntrl.__dict__ and type(IUiAxGraphics3DCntrl.__dict__[attrname]) == property:
+            return IUiAxGraphics3DCntrl.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiAxVOCntrl.")
-    def Subscribe(self) -> IUiAxVOCntrlEventHandler:
-        """Returns an IUiAxVOCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxVOCntrl."""
-        return IUiAxVOCntrlEventHandler(self._pUnk)    
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUiAxGraphics3DCntrl.")
+    def Subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
+        """Returns an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
+        return IUiAxGraphics3DCntrlEventHandler(self._pUnk)    
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
@@ -1858,9 +1858,9 @@ class IUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_get_picture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def picture_put_ref(self, pPicture:"IPictureDisp") -> None:
+    def picture_put_reference(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_picture_put_ref"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_picture_put_reference"](arg_pPicture.COM_val))
 
     @picture.setter
     def picture(self, pPicture:"IPictureDisp") -> None:
@@ -2127,8 +2127,8 @@ class IUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_picture_from_file"](arg_pictureFile.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{0975BA23-E273-4B8F-BA8D-32ECB328C092}", IUiAxVOCntrl)
-agcls.AgTypeNameMap["IUiAxVOCntrl"] = IUiAxVOCntrl
+agcls.AgClassCatalog.add_catalog_entry("{0975BA23-E273-4B8F-BA8D-32ECB328C092}", IUiAxGraphics3DCntrl)
+agcls.AgTypeNameMap["IUiAxGraphics3DCntrl"] = IUiAxGraphics3DCntrl
 
 class IUiAx2DCntrl(object):
     """AGI Map control."""
@@ -2140,7 +2140,7 @@ class IUiAx2DCntrl(object):
         self.__dict__["_get_back_color"] = _raise_uninitialized_error
         self.__dict__["_set_back_color"] = _raise_uninitialized_error
         self.__dict__["_get_picture"] = _raise_uninitialized_error
-        self.__dict__["_picture_put_ref"] = _raise_uninitialized_error
+        self.__dict__["_picture_put_reference"] = _raise_uninitialized_error
         self.__dict__["_set_picture"] = _raise_uninitialized_error
         self.__dict__["_get_win_id"] = _raise_uninitialized_error
         self.__dict__["_set_win_id"] = _raise_uninitialized_error
@@ -2196,7 +2196,7 @@ class IUiAx2DCntrl(object):
         self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
         self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
         self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_picture_put_ref"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_picture_put_reference"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+4, agcom.PVOID)
         self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+5, agcom.PVOID)
         self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+6, POINTER(agcom.LONG))
         self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+7, agcom.LONG)
@@ -2250,9 +2250,9 @@ class IUiAx2DCntrl(object):
             self._get_property(attrname).__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiAx2DCntrl.")
-    def Subscribe(self) -> IUiAx2DCntrlEventHandler:
-        """Returns an IUiAx2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
-        return IUiAx2DCntrlEventHandler(self._pUnk)    
+    def Subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
+        """Returns an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
+        return IUiAxGraphics2DCntrlEventHandler(self._pUnk)    
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
@@ -2272,9 +2272,9 @@ class IUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_get_picture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def picture_put_ref(self, pPicture:"IPictureDisp") -> None:
+    def picture_put_reference(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_picture_put_ref"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_picture_put_reference"](arg_pPicture.COM_val))
 
     @picture.setter
     def picture(self, pPicture:"IPictureDisp") -> None:
@@ -2398,12 +2398,12 @@ class IUiAx2DCntrl(object):
         with agmarshall.VARIANT_BOOL_arg(bAdvancePickMode) as arg_bAdvancePickMode:
             agcls.evaluate_hresult(self.__dict__["_set_advanced_pick_mode"](arg_bAdvancePickMode.COM_val))
 
-    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GFX_DRAW_COORDS") -> "IWinProjectionPosition":
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS2_D_DRAW_COORDS") -> "IWinProjectionPosition":
         """Get the window projected position for given values."""
         with agmarshall.DOUBLE_arg(lat) as arg_lat, \
              agmarshall.DOUBLE_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt, \
-             agmarshall.AgEnum_arg(GFX_DRAW_COORDS, drawCoords) as arg_drawCoords, \
+             agmarshall.AgEnum_arg(GRAPHICS2_D_DRAW_COORDS, drawCoords) as arg_drawCoords, \
              agmarshall.AgInterface_out_arg() as arg_ppWinProjPos:
             agcls.evaluate_hresult(self.__dict__["_get_window_projected_position"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val, arg_drawCoords.COM_val, byref(arg_ppWinProjPos.COM_val)))
             return arg_ppWinProjPos.python_val
@@ -2653,7 +2653,7 @@ class IDataObjectFiles(object):
 agcls.AgClassCatalog.add_catalog_entry("{C4428821-C59F-45B1-9747-0AD1F988317E}", IDataObjectFiles)
 agcls.AgTypeNameMap["IDataObjectFiles"] = IDataObjectFiles
 
-class IUiAxGfxAnalysisCntrl(object):
+class IUiAxGraphics2DAnalysisCntrl(object):
     """AGI Gfx Analysis control."""
     _uuid = "{5933D068-12E5-4B73-96A3-E06CC3ACC05A}"
     _num_methods = 17
@@ -2663,7 +2663,7 @@ class IUiAxGfxAnalysisCntrl(object):
         self.__dict__["_get_back_color"] = _raise_uninitialized_error
         self.__dict__["_set_back_color"] = _raise_uninitialized_error
         self.__dict__["_get_picture"] = _raise_uninitialized_error
-        self.__dict__["_picture_put_ref"] = _raise_uninitialized_error
+        self.__dict__["_picture_put_reference"] = _raise_uninitialized_error
         self.__dict__["_set_picture"] = _raise_uninitialized_error
         self.__dict__["_get_no_logo"] = _raise_uninitialized_error
         self.__dict__["_set_no_logo"] = _raise_uninitialized_error
@@ -2678,45 +2678,45 @@ class IUiAxGfxAnalysisCntrl(object):
         self.__dict__["_get_win_id"] = _raise_uninitialized_error
         self.__dict__["_set_win_id"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiAxGfxAnalysisCntrl._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiAxGraphics2DAnalysisCntrl._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IUiAxGfxAnalysisCntrl from source object.")
+                raise STKInvalidCastError("Failed to create IUiAxGraphics2DAnalysisCntrl from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IUiAxGfxAnalysisCntrl = agcom.GUID(IUiAxGfxAnalysisCntrl._uuid)
-        vtable_offset_local = IUiAxGfxAnalysisCntrl._vtable_offset - 1
-        self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
-        self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
-        self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_picture_put_ref"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+4, agcom.PVOID)
-        self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+5, agcom.PVOID)
-        self.__dict__["_get_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+7, agcom.VARIANT_BOOL)
-        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+8, POINTER(agcom.BSTR))
-        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+9, agcom.BSTR)
-        self.__dict__["_get_ready_state"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_get_application"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+11, POINTER(agcom.PVOID))
-        self.__dict__["_get_control_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+12, POINTER(agcom.LONG))
-        self.__dict__["_set_control_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+13, agcom.LONG)
-        self.__dict__["_get_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+14, POINTER(agcom.BSTR))
-        self.__dict__["_set_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+15, agcom.BSTR)
-        self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+16, POINTER(agcom.LONG))
-        self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+17, agcom.LONG)
+        IID_IUiAxGraphics2DAnalysisCntrl = agcom.GUID(IUiAxGraphics2DAnalysisCntrl._uuid)
+        vtable_offset_local = IUiAxGraphics2DAnalysisCntrl._vtable_offset - 1
+        self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
+        self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
+        self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_picture_put_reference"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+5, agcom.PVOID)
+        self.__dict__["_get_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+8, POINTER(agcom.BSTR))
+        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+9, agcom.BSTR)
+        self.__dict__["_get_ready_state"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_get_application"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+11, POINTER(agcom.PVOID))
+        self.__dict__["_get_control_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+12, POINTER(agcom.LONG))
+        self.__dict__["_set_control_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+13, agcom.LONG)
+        self.__dict__["_get_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+14, POINTER(agcom.BSTR))
+        self.__dict__["_set_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+15, agcom.BSTR)
+        self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+16, POINTER(agcom.LONG))
+        self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGraphics2DAnalysisCntrl, vtable_offset_local+17, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiAxGfxAnalysisCntrl.__dict__ and type(IUiAxGfxAnalysisCntrl.__dict__[attrname]) == property:
-            return IUiAxGfxAnalysisCntrl.__dict__[attrname]
+        if attrname in IUiAxGraphics2DAnalysisCntrl.__dict__ and type(IUiAxGraphics2DAnalysisCntrl.__dict__[attrname]) == property:
+            return IUiAxGraphics2DAnalysisCntrl.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiAxGfxAnalysisCntrl.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUiAxGraphics2DAnalysisCntrl.")
     
     @property
     def back_color(self) -> agcolor.Color:
@@ -2737,9 +2737,9 @@ class IUiAxGfxAnalysisCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_get_picture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def picture_put_ref(self, pPicture:"IPictureDisp") -> None:
+    def picture_put_reference(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_picture_put_ref"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_picture_put_reference"](arg_pPicture.COM_val))
 
     @picture.setter
     def picture(self, pPicture:"IPictureDisp") -> None:
@@ -2785,15 +2785,15 @@ class IUiAxGfxAnalysisCntrl(object):
             return arg_pVal.python_val
 
     @property
-    def control_mode(self) -> "GFX_ANALYSIS_MODE":
+    def control_mode(self) -> "GRAPHICS2_D_ANALYSIS_MODE":
         """The Graphics control mode."""
-        with agmarshall.AgEnum_arg(GFX_ANALYSIS_MODE) as arg_peGfxAnalysisMode:
+        with agmarshall.AgEnum_arg(GRAPHICS2_D_ANALYSIS_MODE) as arg_peGfxAnalysisMode:
             agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_peGfxAnalysisMode.COM_val)))
             return arg_peGfxAnalysisMode.python_val
 
     @control_mode.setter
-    def control_mode(self, eGfxAnalysisMode:"GFX_ANALYSIS_MODE") -> None:
-        with agmarshall.AgEnum_arg(GFX_ANALYSIS_MODE, eGfxAnalysisMode) as arg_eGfxAnalysisMode:
+    def control_mode(self, eGfxAnalysisMode:"GRAPHICS2_D_ANALYSIS_MODE") -> None:
+        with agmarshall.AgEnum_arg(GRAPHICS2_D_ANALYSIS_MODE, eGfxAnalysisMode) as arg_eGfxAnalysisMode:
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_eGfxAnalysisMode.COM_val))
 
     @property
@@ -2822,12 +2822,12 @@ class IUiAxGfxAnalysisCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_win_id"](arg_newVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{5933D068-12E5-4B73-96A3-E06CC3ACC05A}", IUiAxGfxAnalysisCntrl)
-agcls.AgTypeNameMap["IUiAxGfxAnalysisCntrl"] = IUiAxGfxAnalysisCntrl
+agcls.AgClassCatalog.add_catalog_entry("{5933D068-12E5-4B73-96A3-E06CC3ACC05A}", IUiAxGraphics2DAnalysisCntrl)
+agcls.AgTypeNameMap["IUiAxGraphics2DAnalysisCntrl"] = IUiAxGraphics2DAnalysisCntrl
 
 
 
-class AgExecCmdResult(IExecCmdResult):
+class ExecCmdResult(IExecCmdResult):
     """Collection of strings returned by the ExecuteCommand."""
     def __init__(self, sourceObject=None):
         IExecCmdResult.__init__(self, sourceObject)
@@ -2843,12 +2843,12 @@ class AgExecCmdResult(IExecCmdResult):
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgExecCmdResult.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ExecCmdResult.")
         
-agcls.AgClassCatalog.add_catalog_entry("{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}", AgExecCmdResult)
+agcls.AgClassCatalog.add_catalog_entry("{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}", ExecCmdResult)
 
 
-class AgExecMultiCmdResult(IExecMultiCmdResult):
+class ExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
     def __init__(self, sourceObject=None):
         IExecMultiCmdResult.__init__(self, sourceObject)
@@ -2864,30 +2864,30 @@ class AgExecMultiCmdResult(IExecMultiCmdResult):
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgExecMultiCmdResult.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ExecMultiCmdResult.")
         
-agcls.AgClassCatalog.add_catalog_entry("{3849A604-DEB9-428C-8A72-D879719277E5}", AgExecMultiCmdResult)
+agcls.AgClassCatalog.add_catalog_entry("{3849A604-DEB9-428C-8A72-D879719277E5}", ExecMultiCmdResult)
 
 
-class UiAxVOCntrl(IUiAxVOCntrl):
+class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
     """AGI Globe control."""
     def __init__(self, sourceObject=None):
-        IUiAxVOCntrl.__init__(self, sourceObject)
+        IUiAxGraphics3DCntrl.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IUiAxVOCntrl._private_init(self, pUnk)
+        IUiAxGraphics3DCntrl._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IUiAxVOCntrl._get_property(self, attrname) is not None: found_prop = IUiAxVOCntrl._get_property(self, attrname)
+        if IUiAxGraphics3DCntrl._get_property(self, attrname) is not None: found_prop = IUiAxGraphics3DCntrl._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiAxVOCntrl.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UiAxGraphics3DCntrl.")
         
-agcls.AgClassCatalog.add_catalog_entry("{0E939AC2-43D9-456E-9FE7-4C3C687BCDF2}", UiAxVOCntrl)
+agcls.AgClassCatalog.add_catalog_entry("{0E939AC2-43D9-456E-9FE7-4C3C687BCDF2}", UiAxGraphics3DCntrl)
 
 
 class UiAx2DCntrl(IUiAx2DCntrl):
@@ -3142,25 +3142,25 @@ class Draw2DElemCollection(IDrawElemCollection):
 agcls.AgClassCatalog.add_catalog_entry("{D6B1A826-3ABB-49FD-8C9F-F49ADBE6D2B8}", Draw2DElemCollection)
 
 
-class UiAxGfxAnalysisCntrl(IUiAxGfxAnalysisCntrl):
+class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
     """AGI Graphics Analysis Control"""
     def __init__(self, sourceObject=None):
-        IUiAxGfxAnalysisCntrl.__init__(self, sourceObject)
+        IUiAxGraphics2DAnalysisCntrl.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IUiAxGfxAnalysisCntrl._private_init(self, pUnk)
+        IUiAxGraphics2DAnalysisCntrl._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IUiAxGfxAnalysisCntrl._get_property(self, attrname) is not None: found_prop = IUiAxGfxAnalysisCntrl._get_property(self, attrname)
+        if IUiAxGraphics2DAnalysisCntrl._get_property(self, attrname) is not None: found_prop = IUiAxGraphics2DAnalysisCntrl._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiAxGfxAnalysisCntrl.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UiAxGraphics2DAnalysisCntrl.")
         
-agcls.AgClassCatalog.add_catalog_entry("{600541C4-8B16-47AD-ABA4-EE8BC5E9FD5F}", UiAxGfxAnalysisCntrl)
+agcls.AgClassCatalog.add_catalog_entry("{600541C4-8B16-47AD-ABA4-EE8BC5E9FD5F}", UiAxGraphics2DAnalysisCntrl)
 
 
 class WinProjectionPosition(IWinProjectionPosition):

@@ -51,15 +51,15 @@ class RealTime(CodeSnippetsTestBase):
 
         scenAnim: "IScenarioAnimation" = None
         anim: "IAnimation" = None
-        holdTimeStepType: "SC_TIME_STEP_TYPE" = SC_TIME_STEP_TYPE.REAL_TIME
+        holdTimeStepType: "SCENARIO_TIME_STEP_TYPE" = SCENARIO_TIME_STEP_TYPE.REAL_TIME
         if not TestBase.NoGraphicsMode:
             scenAnim = scenario.animation
             holdTimeStepType = scenAnim.anim_step_type
-            scenAnim.anim_step_type = SC_TIME_STEP_TYPE.REAL_TIME
+            scenAnim.anim_step_type = SCENARIO_TIME_STEP_TYPE.REAL_TIME
             anim = clr.CastAs(CodeSnippetsTestBase.m_Root, IAnimation)
             anim.play_forward()
 
-        RealTime.m_Object.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        RealTime.m_Object.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
         prop: "IVehiclePropagator" = RealTime.m_Object.trajectory
         propRealtime: "IVehiclePropagatorRealtime" = clr.CastAs(prop, IVehiclePropagatorRealtime)
 
@@ -96,7 +96,7 @@ class RealTime(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             IGroundVehicle,
         )
-        gv.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        gv.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
         (clr.Convert(gv.route, IVehiclePropagatorRealtime)).propagate()
         realtime: "IVehiclePropagatorRealtime" = clr.CastAs(gv.route, IVehiclePropagatorRealtime)
         self.AddRealtimeLLAPositions(realtime)
@@ -114,7 +114,7 @@ class RealTime(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             IGroundVehicle,
         )
-        gv.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        gv.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
         (clr.Convert(gv.route, IVehiclePropagatorRealtime)).propagate()
         realtime: "IVehiclePropagatorRealtime" = clr.CastAs(gv.route, IVehiclePropagatorRealtime)
         self.AddRealtimeLLAPositionsInBatches(realtime)
