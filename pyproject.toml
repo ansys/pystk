@@ -35,7 +35,7 @@ tests = [
     "parameterized==0.9.0",
 ]
 doc = [
-    "ansys-sphinx-theme==0.11.2",
+    "ansys-sphinx-theme==0.12.0",
     "enum-tools[sphinx]==0.11.0",
     "numpydoc==1.5.0",
     "sphinx==7.2.6",
