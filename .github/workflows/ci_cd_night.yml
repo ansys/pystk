@@ -4,6 +4,23 @@ on:
   schedule: # UTC at 0000
     - cron: "0 0 * * *"
 
+inputs:
+
+  run-doc-build:
+    description: 'Wether to build or not the latest documentation'
+    required: false
+    default: true
+
+  run-tests:
+    description: 'Wether to run or not the latest test suite'
+    required: false
+    default: true
+
+  deploy-doc:
+    description: 'Wether to deploy or not the latest documentation'
+    required: false
+    default: true
+
 env:
   MAIN_PYTHON_VERSION: '3.10'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -20,6 +37,7 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ubuntu-latest
+    if: run-doc-build == 'true'
     steps:
       - name: "Building project documentation"
         uses: ansys/actions/doc-build@v4
@@ -32,6 +50,7 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
+    if: run-tests == 'true'
     strategy:
       matrix:
         python: ["3.8", "3.9", "3.10"]
@@ -127,6 +146,7 @@ jobs:
   doc-deploy-dev:
     name: "Deploy dev docs"
     runs-on: ubuntu-latest
+    if: deploy-doc == 'true'
     needs: [tests, doc-build]
     steps:
       - uses: ansys/actions/doc-deploy-dev@v4
