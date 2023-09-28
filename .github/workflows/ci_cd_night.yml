@@ -40,7 +40,7 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ubuntu-latest
-    if: run-doc-build == 'true'
+    if: inputs.run-doc-build == 'true'
     steps:
       - name: "Building project documentation"
         uses: ansys/actions/doc-build@v4
@@ -53,7 +53,7 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: run-tests == 'true'
+    if: inputs.run-tests == 'true'
     strategy:
       matrix:
         python: ["3.8", "3.9", "3.10"]
@@ -149,7 +149,7 @@ jobs:
   doc-deploy-dev:
     name: "Deploy dev docs"
     runs-on: ubuntu-latest
-    if: deploy-doc == 'true'
+    if: inputs.deploy-doc == 'true'
     needs: [tests, doc-build]
     steps:
       - uses: ansys/actions/doc-deploy-dev@v4
