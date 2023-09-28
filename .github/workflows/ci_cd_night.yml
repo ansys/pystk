@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
     inputs:
     
-      run-doc-build:
-        description: 'Build documentation'
+      run-doc:
+        description: 'Build and deploy documentation'
         required: true
         default: true
         type: boolean
@@ -15,12 +15,6 @@ on:
         default: true
         type: boolean
     
-      deploy-doc:
-        description: 'Deploy documentation'
-        required: true
-        default: true
-        type: boolean
-
   schedule: # UTC at 0000
     - cron: "0 0 * * *"
 
@@ -40,7 +34,7 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ubuntu-latest
-    if: inputs.run-doc-build == 'true'
+    if: inputs.run-doc == 'true'
     steps:
       - name: "Building project documentation"
         uses: ansys/actions/doc-build@v4
@@ -149,8 +143,7 @@ jobs:
   doc-deploy-dev:
     name: "Deploy dev docs"
     runs-on: ubuntu-latest
-    if: inputs.deploy-doc == 'true'
-    needs: [tests, doc-build]
+    needs: doc-build
     steps:
       - uses: ansys/actions/doc-deploy-dev@v4
         with:
