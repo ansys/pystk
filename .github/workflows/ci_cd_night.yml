@@ -1,25 +1,28 @@
 name: night
 on:
   workflow_dispatch:
+    inputs:
+    
+      run-doc-build:
+        description: 'Build documentation'
+        required: true
+        default: true
+        type: boolean
+    
+      run-tests:
+        description: 'Run tests'
+        required: true
+        default: true
+        type: boolean
+    
+      deploy-doc:
+        description: 'Deploy documentation'
+        required: true
+        default: true
+        type: boolean
+
   schedule: # UTC at 0000
     - cron: "0 0 * * *"
-
-inputs:
-
-  run-doc-build:
-    description: 'Wether to build or not the latest documentation'
-    required: false
-    default: true
-
-  run-tests:
-    description: 'Wether to run or not the latest test suite'
-    required: false
-    default: true
-
-  deploy-doc:
-    description: 'Wether to deploy or not the latest documentation'
-    required: false
-    default: true
 
 env:
   MAIN_PYTHON_VERSION: '3.10'
