@@ -95,14 +95,14 @@ class Vehicle(CodeSnippetsTestBase):
 
     def ExportVehicleToAttitudeFile(self, scenario: "IScenario", attitudeExport: "IVehicleAttitudeExportTool"):
         # Set and configure attitude coordinate axes
-        attitudeExport.set_coordinate_axes_type(ATT_COORDINATE_AXES.CUSTOM)
+        attitudeExport.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
         customAxes: "IVehicleCoordinateAxesCustom" = clr.CastAs(
             attitudeExport.coordinate_axes, IVehicleCoordinateAxesCustom
         )
         customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
         attitudeExport.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        attitudeExport.include = ATT_INCLUDE.QUATERNIONS_ANGULAR_VELOCITY
+        attitudeExport.include = ATTITUDE_INCLUDE.QUATERNIONS_ANGULAR_VELOCITY
 
         # Set the attitude file to use Scenario start and stop time
         attitudeExport.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY

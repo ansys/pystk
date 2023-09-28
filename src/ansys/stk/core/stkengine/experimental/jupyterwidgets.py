@@ -15,8 +15,8 @@ from jupyter_rfb import RemoteFrameBuffer
 from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
     addressof, Structure, cast, pointer
 
-from ...stkx import IUiAxVOCntrl, IUiAx2DCntrl, \
-    IUiAxGfxAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
+from ...stkx import IUiAxGraphics3DCntrl, IUiAx2DCntrl, \
+    IUiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import ole32lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
@@ -301,7 +301,7 @@ class WidgetBase(RemoteFrameBuffer):
         if "Ctrl" in modifiers:
             result = result | SHIFT_VALUES.CTRL_PRESSED
         if "Alt" in modifiers:
-            result = result | SHIFT_VALUES.ALT_PRESSED
+            result = result | SHIFT_VALUES.ALTITUDE_PRESSED
         return result
 
     def __get_position(self, event):
@@ -351,7 +351,7 @@ class WidgetBase(RemoteFrameBuffer):
         return self.frame
 
 
-class GlobeWidget(IUiAxVOCntrl, WidgetBase):
+class GlobeWidget(IUiAxGraphics3DCntrl, WidgetBase):
     '''
     The 3D Globe widget for jupyter.
     '''
@@ -368,7 +368,7 @@ class GlobeWidget(IUiAxVOCntrl, WidgetBase):
     #   g
 
     _progid = "STKX12.VOControl.1"
-    _interface = IUiAxVOCntrl
+    _interface = IUiAxGraphics3DCntrl
 
     def __init__(self, stk: STKEngineApplication, w: int, h: int):
         WidgetBase.__init__(self, stk, w, h)
@@ -391,12 +391,12 @@ class MapWidget(IUiAx2DCntrl, WidgetBase):
         WidgetBase.__setattr__(self, attrname, value)
 
 
-class GfxAnalysisWidget(IUiAxGfxAnalysisCntrl, WidgetBase):
+class GfxAnalysisWidget(IUiAxGraphics2DAnalysisCntrl, WidgetBase):
     '''
     The Graphics Analysis widget for jupyter.
     '''
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = IUiAxGfxAnalysisCntrl
+    _interface = IUiAxGraphics2DAnalysisCntrl
 
     def __init__(self, stk: STKEngineApplication, w: int, h: int):
         WidgetBase.__init__(self, stk, w, h)

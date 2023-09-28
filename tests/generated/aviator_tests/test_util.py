@@ -1063,9 +1063,9 @@ class TestBase(unittest.TestCase):
         TestBase.LoadTestScenario("Scenario1.sc")
 
         ac1: IAircraft = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], IAircraft)
-        ac1.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        ac1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         ga: IVehiclePropagatorGreatArc = clr.CastAs(ac1.route, IVehiclePropagatorGreatArc)
-        ga.method = VE_WAY_PT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1078,9 +1078,9 @@ class TestBase(unittest.TestCase):
         gv1: IGroundVehicle = clr.CastAs(
             TestBase.Application.current_scenario.children["GroundVehicle1"], IGroundVehicle
         )
-        gv1.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        gv1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         ga: IVehiclePropagatorGreatArc = clr.CastAs(gv1.route, IVehiclePropagatorGreatArc)
-        ga.method = VE_WAY_PT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1091,9 +1091,9 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         sh1: IShip = clr.CastAs(TestBase.Application.current_scenario.children["Ship1"], IShip)
-        sh1.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        sh1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         ga: IVehiclePropagatorGreatArc = clr.CastAs(sh1.route, IVehiclePropagatorGreatArc)
-        ga.method = VE_WAY_PT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1104,7 +1104,7 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         ms1: IMissile = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], IMissile)
-        ms1.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
+        ms1.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
         ballistic: IVehiclePropagatorBallistic = clr.CastAs(ms1.trajectory, IVehiclePropagatorBallistic)
         ballistic.step = 59
         ballistic.propagate()
@@ -1539,11 +1539,11 @@ class DataProviderResultWriter(object):
         self.WriteLine(0, "Result Info")
         self.WriteLine(0, "-----------")
         self.WriteLine(0, ("Category:" + str(self._result.category)))
-        if self._result.category == DR_CATEGORIES.INTERVAL_LIST:
+        if self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.INTERVAL_LIST:
             self.DumpDPIntervalList(clr.Convert(self._result.value, IDataProviderResultIntervalCollection), 1)
-        elif self._result.category == DR_CATEGORIES.SUB_SECTION_LIST:
+        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.SUB_SECTION_LIST:
             self.DumpDPSubSectionList(clr.Convert(self._result.value, IDataProviderResultSubSectionCollection), 1)
-        elif self._result.category == DR_CATEGORIES.MESSAGE:
+        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.MESSAGE:
             self.DumpDPMessage(clr.Convert(self._result.value, IDataProviderResultTextMessage), 1)
         return Regex.Replace(self.outStr, "\n", "")
 

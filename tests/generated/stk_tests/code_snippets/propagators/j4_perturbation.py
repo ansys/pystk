@@ -53,7 +53,7 @@ class J4Perturbation(CodeSnippetsTestBase):
 
     # This code snippet is taken from SatelliteOrbitWizard.cs in the test suite
     def ConfigureJ4PerturbationPropagatorOrbitToCircular(self, satellite: "ISatellite", incl: float, altitude: float):
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
         prop: "IVehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ4Perturbation)
 
         keplerian: "IOrbitStateClassical" = clr.CastAs(
@@ -87,7 +87,7 @@ class J4Perturbation(CodeSnippetsTestBase):
     def ConfigureJ4PerturbationPropagatorOrbitToCritcallyInclined(
         self, satellite: "ISatellite", apogeeAlt: float, perigeeAlt: float, ascNodeLon: float
     ):
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
         prop: "IVehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ4Perturbation)
 
         keplerian: "IOrbitStateClassical" = clr.CastAs(

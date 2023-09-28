@@ -17,7 +17,7 @@ class GfxAttributesBasicHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oBasic: "IVehicleGfxAttributesBasic"):
+    def Run(self, oBasic: "IVehicleGraphics2DAttributesBasic"):
         Assert.assertIsNotNone(oBasic)
         self.m_logger.WriteLine("GfxAttributesBasicHelper test:")
         # IsVisible (false)
@@ -116,12 +116,12 @@ class GfxAttributesOrbitHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oOrbit: "IVehicleGfxAttributesOrbit"):
+    def Run(self, oOrbit: "IVehicleGraphics2DAttributesOrbit"):
         Assert.assertIsNotNone(oOrbit)
 
         # Basic
         oHelper = GfxAttributesBasicHelper()
-        oHelper.Run(clr.Convert(oOrbit, IVehicleGfxAttributesBasic))
+        oHelper.Run(clr.Convert(oOrbit, IVehicleGraphics2DAttributesBasic))
 
         self.m_logger.WriteLine("GfxAttributesOrbitHelper test:")
 
@@ -210,6 +210,112 @@ class GfxAttributesOrbitHelper(object):
 # endregion
 
 
+# region GfxAttributesTrajectoryHelper
+class GfxAttributesTrajectoryHelper(object):
+    def __init__(self, *args, **kwargs):
+        self.m_logger = Logger.Instance
+
+    # endregion
+
+    # region Run method
+    def Run(self, oTrajectory: "IVehicleGraphics2DAttributesTrajectory"):
+        Assert.assertIsNotNone(oTrajectory)
+
+        # Basic
+        oHelper = GfxAttributesBasicHelper()
+        oHelper.Run(clr.Convert(oTrajectory, IVehicleGraphics2DAttributesBasic))
+
+        self.m_logger.WriteLine("GfxAttributesTrajectoryHelper test:")
+
+        # IsVisible (false)
+        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oTrajectory.is_visible)
+        oTrajectory.is_visible = False
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.is_visible)
+        Assert.assertEqual(False, oTrajectory.is_visible)
+
+        def action16():
+            oTrajectory.is_ground_track_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action16)
+
+        def action17():
+            oTrajectory.is_ground_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action17)
+
+        def action18():
+            oTrajectory.is_trajectory_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action18)
+
+        def action19():
+            oTrajectory.is_trajectory_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action19)
+
+        # IsVisible (true)
+        oTrajectory.is_visible = True
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.is_visible)
+        Assert.assertEqual(True, oTrajectory.is_visible)
+        # Inherit (true)
+        self.m_logger.WriteLine4("\t\tCurrent Inherit flag is: {0}", oTrajectory.inherit)
+        oTrajectory.inherit = True
+        self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oTrajectory.inherit)
+        Assert.assertEqual(True, oTrajectory.inherit)
+
+        def action20():
+            oTrajectory.is_ground_track_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action20)
+
+        def action21():
+            oTrajectory.is_ground_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action21)
+
+        def action22():
+            oTrajectory.is_trajectory_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action22)
+
+        def action23():
+            oTrajectory.is_trajectory_marker_visible = False
+
+        TryCatchAssertBlock.ExpectedException("read-only", action23)
+
+        # Inherit (false)
+        oTrajectory.inherit = False
+        self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oTrajectory.inherit)
+        Assert.assertEqual(False, oTrajectory.inherit)
+        # IsGroundTrackVisible
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundTrackVisible flag is: {0}", oTrajectory.is_ground_track_visible)
+        oTrajectory.is_ground_track_visible = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundTrackVisible flag is: {0}", oTrajectory.is_ground_track_visible)
+        Assert.assertEqual(True, oTrajectory.is_ground_track_visible)
+        # IsGroundMarkerVisible
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundMarkerVisible flag is: {0}", oTrajectory.is_ground_marker_visible)
+        oTrajectory.is_ground_marker_visible = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundMarkerVisible flag is: {0}", oTrajectory.is_ground_marker_visible)
+        Assert.assertEqual(True, oTrajectory.is_ground_marker_visible)
+        # IsTrajectoryVisible
+        self.m_logger.WriteLine4("\t\tCurrent IsTrajectoryVisible flag is: {0}", oTrajectory.is_trajectory_visible)
+        oTrajectory.is_trajectory_visible = True
+        self.m_logger.WriteLine4("\t\tNew IsTrajectoryVisible flag is: {0}", oTrajectory.is_trajectory_visible)
+        Assert.assertEqual(True, oTrajectory.is_trajectory_visible)
+        # IsTrajectoryMarkerVisible
+        self.m_logger.WriteLine4(
+            "\t\tCurrent IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.is_trajectory_marker_visible
+        )
+        oTrajectory.is_trajectory_marker_visible = True
+        self.m_logger.WriteLine4(
+            "\t\tNew IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.is_trajectory_marker_visible
+        )
+        Assert.assertEqual(True, oTrajectory.is_trajectory_marker_visible)
+
+
+# endregion
+
+
 # region GfxAttributesType enum
 class GfxAttributesType:
     eOrbit = 0
@@ -228,7 +334,7 @@ class GfxAttributesAccessHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oAccess: "IVehicleGfxAttributesAccess", eType, oRoot: "IStkObjectRoot"):
+    def Run(self, oAccess: "IVehicleGraphics2DAttributesAccess", eType, oRoot: "IStkObjectRoot"):
         Assert.assertIsNotNone(oAccess)
 
         # AccessObjects
@@ -238,22 +344,22 @@ class GfxAttributesAccessHelper(object):
         oOLCHelper.Run(oLinkCollection, oRoot)
         if oLinkCollection.count == 0:
             # DuringAccess (readonly)
-            oBasic: "IVehicleGfxAttributesBasic" = oAccess.during_access
+            oBasic: "IVehicleGraphics2DAttributesBasic" = oAccess.during_access
             Assert.assertIsNotNone(oBasic)
 
-            def action16():
+            def action24():
                 oBasic.is_visible = False
 
-            TryCatchAssertBlock.ExpectedException("read-only", action16)
+            TryCatchAssertBlock.ExpectedException("read-only", action24)
 
             # NoAccess (readonly)
             oBasic = oAccess.no_access
             Assert.assertIsNotNone(oBasic)
 
-            def action17():
+            def action25():
                 oBasic.is_visible = False
 
-            TryCatchAssertBlock.ExpectedException("read-only", action17)
+            TryCatchAssertBlock.ExpectedException("read-only", action25)
 
         if oLinkCollection.count == 0:
             arObjects = oLinkCollection.available_objects
@@ -267,24 +373,24 @@ class GfxAttributesAccessHelper(object):
         if eType == GfxAttributesType.eOrbit:
             # DuringAccess
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oAccess.during_access, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oAccess.during_access, IVehicleGraphics2DAttributesOrbit))
 
             # NoAccess
-            oHelper.Run(clr.Convert(oAccess.no_access, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oAccess.no_access, IVehicleGraphics2DAttributesOrbit))
         elif eType == GfxAttributesType.eRoute:
             # DuringAccess
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oAccess.during_access, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oAccess.during_access, IVehicleGraphics2DAttributesRoute))
 
             # NoAccess
-            oHelper.Run(clr.Convert(oAccess.no_access, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oAccess.no_access, IVehicleGraphics2DAttributesRoute))
         elif eType == GfxAttributesType.eTrajectory:
             # DuringAccess
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oAccess.during_access, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oAccess.during_access, IVehicleGraphics2DAttributesTrajectory))
 
             # NoAccess
-            oHelper.Run(clr.Convert(oAccess.no_access, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oAccess.no_access, IVehicleGraphics2DAttributesTrajectory))
         else:
             Assert.fail("Invalid type!")
 
@@ -300,7 +406,7 @@ class GfxAttributesCustomHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCustom: "IVehicleGfxAttributesCustom", eType):
+    def Run(self, oCustom: "IVehicleGraphics2DAttributesCustom", eType):
         Assert.assertIsNotNone(oCustom)
 
         # PreemptiveIntervals
@@ -313,13 +419,13 @@ class GfxAttributesCustomHelper(object):
         Assert.assertTrue(oCustom.preemptive_intervals)
         if eType == GfxAttributesType.eOrbit:
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oCustom.default, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oCustom.default, IVehicleGraphics2DAttributesOrbit))
         elif eType == GfxAttributesType.eRoute:
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oCustom.default, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oCustom.default, IVehicleGraphics2DAttributesRoute))
         elif eType == GfxAttributesType.eTrajectory:
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oCustom.default, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oCustom.default, IVehicleGraphics2DAttributesTrajectory))
         else:
             Assert.fail("Invalid type!")
 
@@ -342,39 +448,39 @@ class GfxAttributesTimeComponentsHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oTimeComponents: "IVehicleGfxAttributesTimeComponents", eType, oRoot: "IStkObjectRoot"):
+    def Run(self, oTimeComponents: "IVehicleGraphics2DAttributesTimeComponents", eType, oRoot: "IStkObjectRoot"):
         Assert.assertIsNotNone(oTimeComponents)
 
-        tcColl: "IVehicleGfxTimeComponentsCollection" = oTimeComponents.time_components
+        tcColl: "IVehicleGraphics2DTimeComponentsCollection" = oTimeComponents.time_components
         Assert.assertIsNotNone(tcColl)
 
         tcColl.remove_all()
         Assert.assertEqual(0, tcColl.count)
 
-        def action18():
+        def action26():
             tcColl.add((("Scenario/" + oRoot.current_scenario.instance_name) + " AnalysisStartTime Event"))
 
         # Should not be able to add Event, EventArray, or invalid components
-        TryCatchAssertBlock.DoAssert("Added Event", action18)
+        TryCatchAssertBlock.DoAssert("Added Event", action26)
 
-        def action19():
+        def action27():
             tcColl.add((("Scenario/" + oRoot.current_scenario.instance_name) + " OneMinuteSampleTimes EventArray"))
 
-        TryCatchAssertBlock.DoAssert("Added EventArray", action19)
+        TryCatchAssertBlock.DoAssert("Added EventArray", action27)
 
-        def action20():
+        def action28():
             tcColl.add("Scenario/Scenario1 Bogus EventInterval")
 
-        TryCatchAssertBlock.DoAssert("Added invalid component", action20)
+        TryCatchAssertBlock.DoAssert("Added invalid component", action28)
 
         # Should be able to add EventInterval, EventIntervalList, or EventIntervalCollection
-        tcElement1: "IVehicleGfxTimeComponentsElement" = tcColl.add(
+        tcElement1: "IVehicleGraphics2DTimeComponentsElement" = tcColl.add(
             (("Scenario/" + oRoot.current_scenario.instance_name) + " AnalysisInterval EventInterval")
         )
-        tcElement2: "IVehicleGfxTimeComponentsElement" = tcColl.add(
+        tcElement2: "IVehicleGraphics2DTimeComponentsElement" = tcColl.add(
             (("Scenario/" + oRoot.current_scenario.instance_name) + " AvailabilityIntervals EventIntervalList")
         )
-        tcElement3: "IVehicleGfxTimeComponentsElement" = tcColl.add(
+        tcElement3: "IVehicleGraphics2DTimeComponentsElement" = tcColl.add(
             "Aircraft/Boing737 LightingIntervals EventIntervalCollection"
         )
         Assert.assertEqual(3, tcColl.count)
@@ -426,23 +532,25 @@ class GfxAttributesTimeComponentsHelper(object):
         )
         Assert.assertEqual("Aircraft/Boing737 LightingIntervals EventIntervalCollection", tcColl[2].qualified_path)
 
-        def action21():
+        def action29():
             Console.WriteLine(tcColl[3].qualified_path)
 
-        TryCatchAssertBlock.DoAssert("bad index", action21)
+        TryCatchAssertBlock.DoAssert("bad index", action29)
 
         # enumerate
-        ele: "IVehicleGfxTimeComponentsElement"
+        ele: "IVehicleGraphics2DTimeComponentsElement"
 
         # enumerate
         for ele in tcColl:
             Console.WriteLine(ele.qualified_path)
 
-        evCollEle1: "IVehicleGfxTimeComponentsEventCollectionElement" = clr.CastAs(
-            tcElement1, IVehicleGfxTimeComponentsEventCollectionElement
+        evCollEle1: "IVehicleGraphics2DTimeComponentsEventCollectionElement" = clr.CastAs(
+            tcElement1, IVehicleGraphics2DTimeComponentsEventCollectionElement
         )
         Assert.assertIsNone(evCollEle1)  # should not support this interface
-        evEle1: "IVehicleGfxTimeComponentsEventElement" = clr.CastAs(tcElement1, IVehicleGfxTimeComponentsEventElement)
+        evEle1: "IVehicleGraphics2DTimeComponentsEventElement" = clr.CastAs(
+            tcElement1, IVehicleGraphics2DTimeComponentsEventElement
+        )
         Assert.assertIsNotNone(evEle1)
 
         crdn: "IAnalysisWorkbenchComponent" = evEle1.get_time_component()
@@ -454,19 +562,23 @@ class GfxAttributesTimeComponentsHelper(object):
         oHelper1 = GfxAttributesBasicHelper()
         oHelper1.Run(evEle1.attributes)
 
-        evCollEle2: "IVehicleGfxTimeComponentsEventCollectionElement" = clr.CastAs(
-            tcElement2, IVehicleGfxTimeComponentsEventCollectionElement
+        evCollEle2: "IVehicleGraphics2DTimeComponentsEventCollectionElement" = clr.CastAs(
+            tcElement2, IVehicleGraphics2DTimeComponentsEventCollectionElement
         )
         Assert.assertIsNone(evCollEle2)  # should not support this interface
-        evEle2: "IVehicleGfxTimeComponentsEventElement" = clr.CastAs(tcElement2, IVehicleGfxTimeComponentsEventElement)
+        evEle2: "IVehicleGraphics2DTimeComponentsEventElement" = clr.CastAs(
+            tcElement2, IVehicleGraphics2DTimeComponentsEventElement
+        )
         Assert.assertIsNotNone(evEle2)
         oHelper2 = GfxAttributesBasicHelper()
         oHelper2.Run(evEle2.attributes)
 
-        evEle3: "IVehicleGfxTimeComponentsEventElement" = clr.CastAs(tcElement3, IVehicleGfxTimeComponentsEventElement)
+        evEle3: "IVehicleGraphics2DTimeComponentsEventElement" = clr.CastAs(
+            tcElement3, IVehicleGraphics2DTimeComponentsEventElement
+        )
         Assert.assertIsNone(evEle3)  # should not support this interface
-        evCollEle3: "IVehicleGfxTimeComponentsEventCollectionElement" = clr.CastAs(
-            tcElement3, IVehicleGfxTimeComponentsEventCollectionElement
+        evCollEle3: "IVehicleGraphics2DTimeComponentsEventCollectionElement" = clr.CastAs(
+            tcElement3, IVehicleGraphics2DTimeComponentsEventCollectionElement
         )
         Assert.assertIsNotNone(evCollEle3)
 
@@ -493,11 +605,11 @@ class GfxAttributesTimeComponentsHelper(object):
         oBasicHelper.Run(evCollEle3.penumbra)
         oBasicHelper.Run(evCollEle3.sunlight)
 
-        def action22():
+        def action30():
             tcColl.remove_at(3)
 
         # RemoveAt
-        TryCatchAssertBlock.DoAssert("RemoveAt bad index", action22)
+        TryCatchAssertBlock.DoAssert("RemoveAt bad index", action30)
 
         tcColl.remove_at(1)
         Assert.assertEqual(2, tcColl.count)
@@ -516,13 +628,13 @@ class GfxAttributesTimeComponentsHelper(object):
         Assert.assertEqual(0, tcColl.count)
         if eType == GfxAttributesType.eOrbit:
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oTimeComponents.default, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oTimeComponents.default, IVehicleGraphics2DAttributesOrbit))
         elif eType == GfxAttributesType.eRoute:
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oTimeComponents.default, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oTimeComponents.default, IVehicleGraphics2DAttributesRoute))
         elif eType == GfxAttributesType.eTrajectory:
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oTimeComponents.default, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oTimeComponents.default, IVehicleGraphics2DAttributesTrajectory))
         else:
             Assert.fail("Invalid type!")
 
@@ -538,7 +650,7 @@ class GfxIntervalsCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IVehicleGfxIntervalsCollection", eType):
+    def Run(self, oCollection: "IVehicleGraphics2DIntervalsCollection", eType):
         Assert.assertIsNotNone(oCollection)
 
         self.m_logger.WriteLine("GfxIntervalsCollectionHelper test:")
@@ -547,7 +659,7 @@ class GfxIntervalsCollectionHelper(object):
         iCount: int = oCollection.count
         self.m_logger.WriteLine3("\tThe current IntervalCollection contain: {0} elements", iCount)
         # _NewEnum
-        gfxInterval: "IVehicleGfxInterval"
+        gfxInterval: "IVehicleGraphics2DInterval"
         # _NewEnum
         for gfxInterval in oCollection:
             self.m_logger.WriteLine7(
@@ -555,7 +667,7 @@ class GfxIntervalsCollectionHelper(object):
             )
 
         # Add
-        oInterval: "IVehicleGfxInterval" = oCollection.add("1 Jul 1999 01:00:00.000", "1 Jul 1999 03:00:00.000")
+        oInterval: "IVehicleGraphics2DInterval" = oCollection.add("1 Jul 1999 01:00:00.000", "1 Jul 1999 03:00:00.000")
         Assert.assertIsNotNone(oInterval)
         Assert.assertEqual("1 Jul 1999 01:00:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 03:00:00.000", oInterval.stop_time)
@@ -564,7 +676,7 @@ class GfxIntervalsCollectionHelper(object):
             "\tAdded element: {0} - {1} (Color = {2})",
             oInterval.start_time,
             oInterval.stop_time,
-            oInterval.gfx_attributes.color,
+            oInterval.graphics2_d_attributes.color,
         )
         # StartTime
         oInterval.start_time = "1 Jul 1999 01:12:34.000"
@@ -576,50 +688,50 @@ class GfxIntervalsCollectionHelper(object):
             "\tModified element: {0} - {1} (Color = {2})",
             oInterval.start_time,
             oInterval.stop_time,
-            oInterval.gfx_attributes.color,
+            oInterval.graphics2_d_attributes.color,
         )
         if eType == GfxAttributesType.eOrbit:
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oInterval.gfx_attributes, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oInterval.graphics2_d_attributes, IVehicleGraphics2DAttributesOrbit))
         elif eType == GfxAttributesType.eRoute:
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oInterval.gfx_attributes, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oInterval.graphics2_d_attributes, IVehicleGraphics2DAttributesRoute))
         elif eType == GfxAttributesType.eTrajectory:
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oInterval.gfx_attributes, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oInterval.graphics2_d_attributes, IVehicleGraphics2DAttributesTrajectory))
         else:
             Assert.fail("Invalid type!")
 
         # Add additional elements
         oInterval = oCollection.add("1 Jul 1999 00:00:00.000", "1 Jul 1999 00:04:00.000")
-        oInterval.gfx_attributes.color = Color.Yellow
+        oInterval.graphics2_d_attributes.color = Color.Yellow
         Assert.assertIsNotNone(oInterval)
         Assert.assertEqual("1 Jul 1999 00:00:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:04:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 2), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:20:00.000", "1 Jul 1999 00:25:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.gfx_attributes.color = Color.Red
+        oInterval.graphics2_d_attributes.color = Color.Red
         Assert.assertEqual("1 Jul 1999 00:20:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:25:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 3), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:10:00.000", "1 Jul 1999 00:15:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.gfx_attributes.color = Color.RoyalBlue
+        oInterval.graphics2_d_attributes.color = Color.RoyalBlue
         Assert.assertEqual("1 Jul 1999 00:10:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:15:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 4), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:30:00.000", "1 Jul 1999 00:35:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.gfx_attributes.color = Color.Yellow
+        oInterval.graphics2_d_attributes.color = Color.Yellow
         Assert.assertEqual("1 Jul 1999 00:30:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:35:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 5), oCollection.count)
 
-        def action23():
+        def action31():
             oCollection.add("1 Jul 1999 00:20:00.000", "1 Jul 1999 00:25:00.000")
 
-        TryCatchAssertBlock.ExpectedException("already exists", action23)
+        TryCatchAssertBlock.ExpectedException("already exists", action31)
 
         # Item
         self.m_logger.WriteLine3("\tThe new IntervalCollection contain: {0} elements", oCollection.count)
@@ -633,7 +745,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.gfx_attributes.color,
+                oInterval.graphics2_d_attributes.color,
             )
 
             iIndex += 1
@@ -654,7 +766,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.gfx_attributes.color,
+                oInterval.graphics2_d_attributes.color,
             )
 
             iIndex += 1
@@ -674,7 +786,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.gfx_attributes.color,
+                oInterval.graphics2_d_attributes.color,
             )
 
             iIndex += 1
@@ -694,7 +806,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.gfx_attributes.color,
+                oInterval.graphics2_d_attributes.color,
             )
 
             iIndex += 1
@@ -716,38 +828,38 @@ class GfxAttributesRealTimeHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oRealTime: "IVehicleGfxAttributesRealtime", eType):
+    def Run(self, oRealTime: "IVehicleGraphics2DAttributesRealtime", eType):
         Assert.assertIsNotNone(oRealTime)
         if eType == GfxAttributesType.eOrbit:
             # DropOut
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oRealTime.drop_out, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oRealTime.drop_out, IVehicleGraphics2DAttributesOrbit))
             # History
-            oHelper.Run(clr.Convert(oRealTime.history, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oRealTime.history, IVehicleGraphics2DAttributesOrbit))
             # LookAhead
-            oHelper.Run(clr.Convert(oRealTime.look_ahead, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oRealTime.look_ahead, IVehicleGraphics2DAttributesOrbit))
             # Spline
-            oHelper.Run(clr.Convert(oRealTime.spline, IVehicleGfxAttributesOrbit))
+            oHelper.Run(clr.Convert(oRealTime.spline, IVehicleGraphics2DAttributesOrbit))
         elif eType == GfxAttributesType.eRoute:
             # DropOut
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oRealTime.drop_out, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oRealTime.drop_out, IVehicleGraphics2DAttributesRoute))
             # History
-            oHelper.Run(clr.Convert(oRealTime.history, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oRealTime.history, IVehicleGraphics2DAttributesRoute))
             # LookAhead
-            oHelper.Run(clr.Convert(oRealTime.look_ahead, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oRealTime.look_ahead, IVehicleGraphics2DAttributesRoute))
             # Spline
-            oHelper.Run(clr.Convert(oRealTime.spline, IVehicleGfxAttributesRoute))
+            oHelper.Run(clr.Convert(oRealTime.spline, IVehicleGraphics2DAttributesRoute))
         elif eType == GfxAttributesType.eTrajectory:
             # DropOut
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oRealTime.drop_out, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oRealTime.drop_out, IVehicleGraphics2DAttributesTrajectory))
             # History
-            oHelper.Run(clr.Convert(oRealTime.history, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oRealTime.history, IVehicleGraphics2DAttributesTrajectory))
             # LookAhead
-            oHelper.Run(clr.Convert(oRealTime.look_ahead, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oRealTime.look_ahead, IVehicleGraphics2DAttributesTrajectory))
             # Spline
-            oHelper.Run(clr.Convert(oRealTime.spline, IVehicleGfxAttributesTrajectory))
+            oHelper.Run(clr.Convert(oRealTime.spline, IVehicleGraphics2DAttributesTrajectory))
         else:
             Assert.fail("Invalid type!")
 
@@ -765,7 +877,7 @@ class GfxElevationContoursHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oContours: "IVehicleGfxElevContours"):
+    def Run(self, oContours: "IVehicleGraphics2DElevContours"):
         self.m_logger.WriteLine("----- THE GRAPHICS ELEVATION CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         self.m_oUnits.reset_units()
@@ -783,10 +895,10 @@ class GfxElevationContoursHelper(object):
         self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertEqual(False, oContours.is_fill_visible)
 
-        def action24():
+        def action32():
             oContours.fill_style = FILL_STYLE.HATCH
 
-        TryCatchAssertBlock.DoAssert("The FillStyle should be readonly when IsFillVisible flag is False.", action24)
+        TryCatchAssertBlock.DoAssert("The FillStyle should be readonly when IsFillVisible flag is False.", action32)
         oContours.is_fill_visible = True
         self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertEqual(True, oContours.is_fill_visible)
@@ -826,10 +938,10 @@ class GfxElevationContoursHelper(object):
         self.m_logger.WriteLine3("The new NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
         Assert.assertEqual(7, oContours.num_of_decimal_digits)
 
-        def action25():
+        def action33():
             oContours.num_of_decimal_digits = 123
 
-        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action25)
+        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action33)
 
         # set AngleUnit
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
@@ -839,12 +951,12 @@ class GfxElevationContoursHelper(object):
         Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
         # Elevations
-        oElevations: "IVehicleGfxElevationsCollection" = oContours.elevations
+        oElevations: "IVehicleGraphics2DElevationsCollection" = oContours.elevations
         Assert.assertIsNotNone(oElevations)
         # Count
         self.m_logger.WriteLine3("The Elevations Collection contains: {0} elements.", oElevations.count)
         # _NewEnum
-        elevationsElement: "IVehicleGfxElevationsElement"
+        elevationsElement: "IVehicleGraphics2DElevationsElement"
         # _NewEnum
         for elevationsElement in oElevations:
             self.m_logger.WriteLine10(
@@ -863,12 +975,12 @@ class GfxElevationContoursHelper(object):
         self.m_logger.WriteLine3(
             "Before AddLevel() the Elevations Collection contains: {0} elements.", oElevations.count
         )
-        oAdded: "IVehicleGfxElevationsElement" = oElevations.add_level(123.456)
+        oAdded: "IVehicleGraphics2DElevationsElement" = oElevations.add_level(123.456)
         Assert.assertIsNotNone(oAdded)
         self.m_logger.WriteLine3(
             "After AddLevel() the Elevations Collection contains: {0} elements.", oElevations.count
         )
-        elevationsElement: "IVehicleGfxElevationsElement"
+        elevationsElement: "IVehicleGraphics2DElevationsElement"
         for elevationsElement in oElevations:
             self.m_logger.WriteLine10(
                 "\tElement: Elevation = {0}, Color = {1}, LineStyle = {2}, LineWidth = {3}, DistanceVisible = {4}, UserTextVisible = {5}, UserText = {6}, LabelAngle = {7}",
@@ -899,7 +1011,7 @@ class GfxElevationContoursHelper(object):
         iIndex: int = 0
         while iIndex < oElevations.count:
             # Item
-            elevationsElement: "IVehicleGfxElevationsElement" = oElevations[iIndex]
+            elevationsElement: "IVehicleGraphics2DElevationsElement" = oElevations[iIndex]
             Assert.assertIsNotNone(elevationsElement)
             self.m_logger.WriteLine10(
                 "\tElement {0} (Before): Elevation = {1}, Color = {2}, LineStyle = {3}, LineWidth = {4}, DistanceVisible = {5}, UserTextVisible = {6}, UserText = {7}, LabelAngle = {8}",
@@ -934,22 +1046,22 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.label_angle,
             )
 
-            def action26():
+            def action34():
                 elevationsElement.label_angle = 1234
 
-            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action26)
+            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action34)
 
             iIndex += 1
 
-        def action27():
+        def action35():
             oElevations.add_level_range(12.34, 34.12, 0.2)
 
-        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action27)
+        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action35)
 
-        def action28():
+        def action36():
             oElevations.add_level_range(1.0, 200.0, 1.0)
 
-        TryCatchAssertBlock.DoAssert("Cannot have in excess of 100 levels", action28)
+        TryCatchAssertBlock.DoAssert("Cannot have in excess of 100 levels", action36)
 
         # RemoveAll
         oElevations.remove_all()
@@ -976,7 +1088,7 @@ class GfxRangeContoursHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oContours: "IGfxRangeContours"):
+    def Run(self, oContours: "IGraphics2DRangeContours"):
         self.m_logger.WriteLine("----- THE GRAPHICS RANGE CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         # IsVisible
@@ -993,10 +1105,10 @@ class GfxRangeContoursHelper(object):
         self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertFalse(oContours.is_fill_visible)
 
-        def action29():
+        def action37():
             oContours.fill_style = FILL_STYLE.HATCH
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action29)
+        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action37)
         oContours.is_fill_visible = True
         self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.is_fill_visible)
         Assert.assertTrue(oContours.is_fill_visible)
@@ -1032,15 +1144,15 @@ class GfxRangeContoursHelper(object):
         self.m_logger.WriteLine3("\tThe new NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
         Assert.assertEqual(7, oContours.num_of_decimal_digits)
 
-        def action30():
+        def action38():
             oContours.num_of_decimal_digits = 123
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action30)
+        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action38)
 
-        def action31():
+        def action39():
             oContours.label_unit = "test"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action31)
+        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action39)
 
         oContours.fill_translucency = 55.0
         Assert.assertAlmostEqual(55.0, oContours.fill_translucency, delta=Math2.Epsilon12)
@@ -1157,15 +1269,15 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.label_angle,
             )
 
-            def action32():
+            def action40():
                 levelAttribute.label_angle = 1234
 
-            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action32)
+            TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action40)
 
-        def action33():
+        def action41():
             oLevels.add_level_range(12.34, 34.12, 0.2)
 
-        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action33)
+        TryCatchAssertBlock.DoAssert("Cannot set value out-of-range.", action41)
 
         # RemoveAll
         oLevels.remove_all()
@@ -1187,7 +1299,7 @@ class GfxSAAContoursHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oContours: "IVehicleGfxSAA"):
+    def Run(self, oContours: "IVehicleGraphics2DSAA"):
         self.m_logger.WriteLine("----- THE GRAPHICS SAA CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         # IsVisible
@@ -1224,30 +1336,30 @@ class GfxSAAContoursHelper(object):
         self.m_logger.WriteLine5("The new DistanceUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
         Assert.assertEqual("nm", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
         # UseVehicleAlt (true)
-        self.m_logger.WriteLine4("The current UseVehicleAltitude flag is: {0}", oContours.use_vehicle_alt)
-        oContours.use_vehicle_alt = True
-        self.m_logger.WriteLine4("The new UseVehicleAltitude flag is: {0}", oContours.use_vehicle_alt)
-        Assert.assertEqual(True, oContours.use_vehicle_alt)
+        self.m_logger.WriteLine4("The current UseVehicleAltitude flag is: {0}", oContours.use_vehicle_altitude)
+        oContours.use_vehicle_altitude = True
+        self.m_logger.WriteLine4("The new UseVehicleAltitude flag is: {0}", oContours.use_vehicle_altitude)
+        Assert.assertEqual(True, oContours.use_vehicle_altitude)
 
-        def action34():
+        def action42():
             oContours.altitude = 123.456
 
-        TryCatchAssertBlock.ExpectedException("read only", action34)
+        TryCatchAssertBlock.ExpectedException("read only", action42)
 
         # UseVehicleAlt (false)
-        oContours.use_vehicle_alt = False
-        self.m_logger.WriteLine4("The new UseVehicleAltitude flag is: {0}", oContours.use_vehicle_alt)
-        Assert.assertEqual(False, oContours.use_vehicle_alt)
+        oContours.use_vehicle_altitude = False
+        self.m_logger.WriteLine4("The new UseVehicleAltitude flag is: {0}", oContours.use_vehicle_altitude)
+        Assert.assertEqual(False, oContours.use_vehicle_altitude)
         # Altitude
         self.m_logger.WriteLine6("The current Altitude is: {0}", oContours.altitude)
         oContours.altitude = 345.678
         self.m_logger.WriteLine6("The new Altitude is: {0}", oContours.altitude)
         Assert.assertEqual(345.678, oContours.altitude)
 
-        def action35():
+        def action43():
             oContours.altitude = 1234.56
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action35)
+        TryCatchAssertBlock.ExpectedException("is invalid", action43)
 
         # restore DistanceUnit
         self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
@@ -1267,7 +1379,7 @@ class GfxGroundEllipsesHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IVehicleGfxGroundEllipsesCollection"):
+    def Run(self, oCollection: "IVehicleGraphics2DGroundEllipsesCollection"):
         self.m_logger.WriteLine("----- THE GRAPHICS GROUND ELLIPSES TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         # Count
@@ -1275,13 +1387,13 @@ class GfxGroundEllipsesHelper(object):
 
         iIndex: int = 0
         while iIndex < oCollection.count:
-            oEllipse: "IVehicleGfxGroundEllipsesElement" = oCollection[iIndex]
+            oEllipse: "IVehicleGraphics2DGroundEllipsesElement" = oCollection[iIndex]
             self.m_logger.WriteLine10(
                 "\t\tEllipse {0}: EllipseSetName = {1}, Color = {7}, LineWidth = {8}, StaticGfx = {2}, DynamicGfx = {3}, Interpolate = {4}, IsNameVisible = {5}, IsCenterVisible = {6}",
                 iIndex,
                 oEllipse.ellipse_set_name,
-                oEllipse.static_gfx,
-                oEllipse.dynamic_gfx,
+                oEllipse.static_graphics2_d,
+                oEllipse.dynamic_graphics2_d,
                 oEllipse.interpolate,
                 oEllipse.is_name_visible,
                 oEllipse.is_center_visible,
@@ -1292,12 +1404,12 @@ class GfxGroundEllipsesHelper(object):
             iIndex += 1
 
         # _NewEnum
-        groundEllipsesElement: "IVehicleGfxGroundEllipsesElement"
+        groundEllipsesElement: "IVehicleGraphics2DGroundEllipsesElement"
         # _NewEnum
         for groundEllipsesElement in oCollection:
             # modify properties
-            groundEllipsesElement.static_gfx = True
-            groundEllipsesElement.dynamic_gfx = True
+            groundEllipsesElement.static_graphics2_d = True
+            groundEllipsesElement.dynamic_graphics2_d = True
             groundEllipsesElement.interpolate = True
             groundEllipsesElement.is_name_visible = True
             groundEllipsesElement.is_center_visible = True
@@ -1306,13 +1418,13 @@ class GfxGroundEllipsesHelper(object):
 
         iIndex: int = 0
         while iIndex < oCollection.count:
-            oEllipse: "IVehicleGfxGroundEllipsesElement" = oCollection[iIndex]
+            oEllipse: "IVehicleGraphics2DGroundEllipsesElement" = oCollection[iIndex]
             self.m_logger.WriteLine10(
                 "\t\tModified Ellipse {0}: EllipseSetName = {1}, Color = {7}, LineWidth = {8}, StaticGfx = {2}, DynamicGfx = {3}, Interpolate = {4}, IsNameVisible = {5}, IsCenterVisible = {6}",
                 iIndex,
                 oEllipse.ellipse_set_name,
-                oEllipse.static_gfx,
-                oEllipse.dynamic_gfx,
+                oEllipse.static_graphics2_d,
+                oEllipse.dynamic_graphics2_d,
                 oEllipse.interpolate,
                 oEllipse.is_name_visible,
                 oEllipse.is_center_visible,
@@ -1336,7 +1448,7 @@ class GfxLightingHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oLighting: "IVehicleGfxLighting"):
+    def Run(self, oLighting: "IVehicleGraphics2DLighting"):
         self.m_logger.WriteLine("----- THE GRAPHICS LIGHTING TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oLighting)
         # IsSunLightPenumbraVisible
@@ -1392,7 +1504,7 @@ class GfxLightingHelper(object):
     # endregion
 
     # region LightingElement method
-    def LightingElement(self, oVeGfxLightingElement: "IVehicleGfxLightingElement"):
+    def LightingElement(self, oVeGfxLightingElement: "IVehicleGraphics2DLightingElement"):
         Assert.assertIsNotNone(oVeGfxLightingElement)
         # Visible (false)
         self.m_logger.WriteLine4("\tThe current Visible flag is: {0}", oVeGfxLightingElement.visible)
@@ -1400,25 +1512,25 @@ class GfxLightingHelper(object):
         self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oVeGfxLightingElement.visible)
         Assert.assertEqual(False, oVeGfxLightingElement.visible)
 
-        def action36():
+        def action44():
             oVeGfxLightingElement.color = Color.FromArgb(12632256)
 
-        TryCatchAssertBlock.ExpectedException("read-only", action36)
+        TryCatchAssertBlock.ExpectedException("read-only", action44)
 
-        def action37():
+        def action45():
             oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
 
-        TryCatchAssertBlock.ExpectedException("read-only", action37)
+        TryCatchAssertBlock.ExpectedException("read-only", action45)
 
-        def action38():
+        def action46():
             oVeGfxLightingElement.line_width = LINE_WIDTH.WIDTH1
 
-        TryCatchAssertBlock.ExpectedException("read-only", action38)
+        TryCatchAssertBlock.ExpectedException("read-only", action46)
 
-        def action39():
+        def action47():
             oVeGfxLightingElement.marker_style = "Circle"
 
-        TryCatchAssertBlock.ExpectedException("read-only", action39)
+        TryCatchAssertBlock.ExpectedException("read-only", action47)
 
         # Visible (true)
         oVeGfxLightingElement.visible = True
@@ -1441,21 +1553,76 @@ class GfxLightingHelper(object):
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oVeGfxLightingElement.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH3, oVeGfxLightingElement.line_width)
 
-        def action40():
+        def action48():
             oVeGfxLightingElement.line_width = clr.Convert((-1), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action40)
+        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action48)
 
-        def action41():
+        def action49():
             oVeGfxLightingElement.line_width = clr.Convert((11), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action41)
+        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action49)
 
         # MarkerStyle
         self.m_logger.WriteLine5("\tThe current MarkerStyle is: {0}", oVeGfxLightingElement.marker_style)
         oVeGfxLightingElement.marker_style = "X"
         self.m_logger.WriteLine5("\tThe new MarkerStyle is: {0}", oVeGfxLightingElement.marker_style)
         Assert.assertEqual("X", oVeGfxLightingElement.marker_style)
+
+
+# endregion
+
+
+# region GfxTrajectoryResolutionHelper
+class GfxTrajectoryResolutionHelper(object):
+    def __init__(self, *args, **kwargs):
+        self.m_logger = Logger.Instance
+
+    # endregion
+
+    # region Run method
+    def Run(self, oResolution: "IVehicleGraphics2DTrajectoryResolution"):
+        self.m_logger.WriteLine("----- THE GRAPHICS RESOLUTION TEST ----- BEGIN -----")
+        Assert.assertIsNotNone(oResolution)
+        # GroundTrack
+        self.m_logger.WriteLine6("The current GroundTrack is: {0}", oResolution.ground_track)
+        oResolution.ground_track = 12345.6789
+        self.m_logger.WriteLine6("The new GroundTrack is: {0}", oResolution.ground_track)
+        Assert.assertEqual(12345.6789, oResolution.ground_track)
+
+        oResolution.min_ground_track = 1
+        Assert.assertEqual(1, oResolution.min_ground_track)
+
+        def action50():
+            oResolution.min_ground_track = -1
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action50)
+
+        def action51():
+            oResolution.ground_track = -12345.6789
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action51)
+
+        # Trajectory
+        self.m_logger.WriteLine6("The current Trajectory is: {0}", oResolution.trajectory)
+        oResolution.trajectory = 6789.12345
+        self.m_logger.WriteLine6("The new Trajectory is: {0}", oResolution.trajectory)
+        Assert.assertEqual(6789.12345, oResolution.trajectory)
+
+        oResolution.min_trajectory = 1
+        Assert.assertEqual(1, oResolution.min_trajectory)
+
+        def action52():
+            oResolution.min_trajectory = -1
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action52)
+
+        def action53():
+            oResolution.trajectory = -12345.6789
+
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action53)
+
+        self.m_logger.WriteLine("----- THE GRAPHICS RESOLUTION TEST ----- END -----")
 
 
 # endregion
@@ -1469,7 +1636,7 @@ class GfxPassResolutionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oResolution: "IVehicleGfxPassResolution"):
+    def Run(self, oResolution: "IVehicleGraphics2DPassResolution"):
         self.m_logger.WriteLine("----- THE GRAPHICS RESOLUTION TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oResolution)
         # GroundTrack
@@ -1481,15 +1648,15 @@ class GfxPassResolutionHelper(object):
         oResolution.min_ground_track = 1
         Assert.assertEqual(1, oResolution.min_ground_track)
 
-        def action42():
+        def action54():
             oResolution.min_ground_track = -1
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action42)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action54)
 
-        def action43():
+        def action55():
             oResolution.ground_track = -12345.6789
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action43)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action55)
 
         # Orbit
         self.m_logger.WriteLine6("The current Orbit is: {0}", oResolution.orbit)
@@ -1500,15 +1667,15 @@ class GfxPassResolutionHelper(object):
         oResolution.min_orbit = 1
         Assert.assertEqual(1, oResolution.min_orbit)
 
-        def action44():
+        def action56():
             oResolution.min_orbit = -1
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action44)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action56)
 
-        def action45():
+        def action57():
             oResolution.orbit = -12345.6789
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action45)
+        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action57)
 
         self.m_logger.WriteLine("----- THE GRAPHICS RESOLUTION TEST ----- END -----")
 
@@ -1526,7 +1693,7 @@ class GfxLeadTrailDataHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, leadTrailData: "IVehicleGfxLeadTrailData"):
+    def Run(self, leadTrailData: "IVehicleGraphics2DLeadTrailData"):
         Assert.assertIsNotNone(leadTrailData)
         self.m_logger.WriteLine("GfxLeadTrailData test:")
 
@@ -1571,11 +1738,11 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Fraction is: {0}", oFraction.fraction)
                     Assert.assertEqual(12.3456, oFraction.fraction)
 
-                    def action46():
+                    def action58():
                         oFraction.fraction = -56.34
 
                     # range test
-                    TryCatchAssertBlock.ExpectedException("is invalid", action46)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action58)
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # LeadData
                     oTime: "IVehicleLeadTrailDataTime" = clr.Convert(leadTrailData.lead_data, IVehicleLeadTrailDataTime)
@@ -1594,11 +1761,11 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Time is: {0}", oTime.time)
                     Assert.assertEqual(123.456, oTime.time)
 
-                    def action47():
+                    def action59():
                         oTime.time = 56340000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
                     # range test
-                    TryCatchAssertBlock.ExpectedException("is invalid", action47)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action59)
                     # restore TimeUnit
                     self.m_oUnits.set_current_unit("TimeUnit", strUnit)
                     self.m_logger.WriteLine5("\tThe new TimeUnit (restored) is: {0}", strUnit)
@@ -1652,12 +1819,12 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Fraction is: {0}", oFraction.fraction)
                     Assert.assertEqual(12.3456, oFraction.fraction)
 
-                    def action48():
+                    def action60():
                         oFraction.fraction = -56.34
 
                     # range test
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action48)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action60)
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # TrailData
                     oTime: "IVehicleLeadTrailDataTime" = clr.Convert(
@@ -1678,12 +1845,12 @@ class GfxLeadTrailDataHelper(object):
                     self.m_logger.WriteLine6("\t\tThe new Time is: {0}", oTime.time)
                     Assert.assertEqual(123.456, oTime.time)
 
-                    def action49():
+                    def action61():
                         oTime.time = 56340000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
                     # range test
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action49)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action61)
 
                     # restore TimeUnit
                     self.m_oUnits.set_current_unit("TimeUnit", strUnit)
@@ -1726,7 +1893,7 @@ class GfxSwathHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oSwath: "IVehicleGfxSwath"):
+    def Run(self, oSwath: "IVehicleGraphics2DSwath"):
         self.m_logger.WriteLine("----- THE GRAPHICS SWATH TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oSwath)
 
@@ -1738,7 +1905,7 @@ class GfxSwathHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VE_GFX_ELEVATION" = clr.Convert(int(arTypes[iIndex][0]), VE_GFX_ELEVATION)
+            eType: "VEHICLE_GRAPHICS2_D_ELEVATION" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_GRAPHICS2_D_ELEVATION)
             self.m_logger.WriteLine8("\tElevation type {0}: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oSwath.is_elevation_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -1746,12 +1913,12 @@ class GfxSwathHelper(object):
             oSwath.set_elevation_type(eType)
             self.m_logger.WriteLine6("\t\tThe new Elevation type is: {0}", oSwath.elevation_type)
             Assert.assertEqual(eType, oSwath.elevation_type)
-            if ((oSwath.elevation_type == VE_GFX_ELEVATION.ELEVATION_GROUND_ELEVATION)) or (
-                (oSwath.elevation_type == VE_GFX_ELEVATION.ELEVATION_GROUND_ELEVATION_ENVELOPE)
+            if ((oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_GROUND_ELEVATION)) or (
+                (oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_GROUND_ELEVATION_ENVELOPE)
             ):
                 # Elevation
-                gfxElevationGroundElevation: "IVehicleGfxElevationGroundElevation" = clr.Convert(
-                    oSwath.elevation, IVehicleGfxElevationGroundElevation
+                gfxElevationGroundElevation: "IVehicleGraphics2DElevationGroundElevation" = clr.Convert(
+                    oSwath.elevation, IVehicleGraphics2DElevationGroundElevation
                 )
                 Assert.assertIsNotNone(gfxElevationGroundElevation)
                 # set AngleUnit
@@ -1772,18 +1939,18 @@ class GfxSwathHelper(object):
                 )
                 Assert.assertEqual(12.34, gfxElevationGroundElevation.angle)
 
-                def action50():
+                def action62():
                     gfxElevationGroundElevation.angle = -56.34
 
-                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action50)
+                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action62)
                 # restore AngleUnit
                 self.m_oUnits.set_current_unit("AngleUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-            elif oSwath.elevation_type == VE_GFX_ELEVATION.ELEVATION_SWATH_HALF_WIDTH:
+            elif oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_SWATH_HALF_WIDTH:
                 # Elevation
-                gfxElevationSwathHalfWidth: "IVehicleGfxElevationSwathHalfWidth" = clr.Convert(
-                    oSwath.elevation, IVehicleGfxElevationSwathHalfWidth
+                gfxElevationSwathHalfWidth: "IVehicleGraphics2DElevationSwathHalfWidth" = clr.Convert(
+                    oSwath.elevation, IVehicleGraphics2DElevationSwathHalfWidth
                 )
                 Assert.assertIsNotNone(gfxElevationSwathHalfWidth)
                 # set DistanceUnit
@@ -1804,20 +1971,20 @@ class GfxSwathHelper(object):
                 )
                 Assert.assertEqual(56.78, gfxElevationSwathHalfWidth.distance)
 
-                def action51():
+                def action63():
                     gfxElevationSwathHalfWidth.distance = -56.34
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action51)
+                TryCatchAssertBlock.ExpectedException("is invalid", action63)
 
                 # restore DistanceUnit
                 self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new DistanceUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
-            elif ((oSwath.elevation_type == VE_GFX_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE)) or (
-                (oSwath.elevation_type == VE_GFX_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
+            elif ((oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE)) or (
+                (oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
             ):
-                gfxElevationVehicleHalfAngle: "IVehicleGfxElevationVehicleHalfAngle" = clr.Convert(
-                    oSwath.elevation, IVehicleGfxElevationVehicleHalfAngle
+                gfxElevationVehicleHalfAngle: "IVehicleGraphics2DElevationVehicleHalfAngle" = clr.Convert(
+                    oSwath.elevation, IVehicleGraphics2DElevationVehicleHalfAngle
                 )
                 Assert.assertIsNotNone(gfxElevationVehicleHalfAngle)
                 # set AngleUnit
@@ -1838,10 +2005,10 @@ class GfxSwathHelper(object):
                 )
                 Assert.assertEqual(78.9, gfxElevationVehicleHalfAngle.angle)
 
-                def action52():
+                def action64():
                     gfxElevationVehicleHalfAngle.angle = -56.34
 
-                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action52)
+                TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action64)
                 # restore AngleUnit
                 self.m_oUnits.set_current_unit("AngleUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
@@ -1851,23 +2018,25 @@ class GfxSwathHelper(object):
 
             iIndex += 1
 
-        def action53():
-            oSwath.set_elevation_type(VE_GFX_ELEVATION.ELEVATION_UNKNOWN)
+        def action65():
+            oSwath.set_elevation_type(VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_UNKNOWN)
 
         # SetElevationType(eElevationUnknown)
-        TryCatchAssertBlock.ExpectedException("must be in", action53)
+        TryCatchAssertBlock.ExpectedException("must be in", action65)
+
+        oSwath.set_elevation_type(VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_GROUND_ELEVATION)
 
         # Options
         self.m_logger.WriteLine6("The current Options is: {0}", oSwath.options)
-        oSwath.options = VE_GFX_OPTIONS.OPTIONS_EDGE_LIMITS
+        oSwath.options = VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_EDGE_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VE_GFX_OPTIONS.OPTIONS_EDGE_LIMITS, oSwath.options)
-        oSwath.options = VE_GFX_OPTIONS.OPTIONS_FILLED_LIMITS
+        Assert.assertEqual(VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_EDGE_LIMITS, oSwath.options)
+        oSwath.options = VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_FILLED_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VE_GFX_OPTIONS.OPTIONS_FILLED_LIMITS, oSwath.options)
-        oSwath.options = VE_GFX_OPTIONS.OPTIONS_NO_GRAPHICS
+        Assert.assertEqual(VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_FILLED_LIMITS, oSwath.options)
+        oSwath.options = VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_NO_GRAPHICS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VE_GFX_OPTIONS.OPTIONS_NO_GRAPHICS, oSwath.options)
+        Assert.assertEqual(VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_NO_GRAPHICS, oSwath.options)
         self.m_logger.WriteLine("----- THE GRAPHICS SWATH TEST ----- END -----")
 
 
@@ -1882,13 +2051,13 @@ class GfxTimeEventsHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, AG_SAT: "ISatellite", oCollection: "IVehicleGfxTimeEventsCollection"):
+    def Run(self, AG_SAT: "ISatellite", oCollection: "IVehicleGraphics2DTimeEventsCollection"):
         self.m_logger.WriteLine("----- THE GRAPHICS TIME EVENTS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("The TimeEvents collection contains: {0} elements.", oCollection.count)
         # Add
-        timeEventsElement: "IVehicleGfxTimeEventsElement" = oCollection.add()
+        timeEventsElement: "IVehicleGraphics2DTimeEventsElement" = oCollection.add()
         Assert.assertIsNotNone(timeEventsElement)
         self.m_logger.WriteLine3("After Add() the Time Events collection contains: {0} elements.", oCollection.count)
         Assert.assertEqual(1, oCollection.count)
@@ -1910,10 +2079,10 @@ class GfxTimeEventsHelper(object):
         self.m_logger.WriteLine4("The new IsVisible flag is: {0}", timeEventsElement.is_visible)
         Assert.assertEqual(False, timeEventsElement.is_visible)
 
-        def action54():
-            timeEventsElement.set_time_event_type(VE_GFX_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE)
+        def action66():
+            timeEventsElement.set_time_event_type(VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE)
 
-        TryCatchAssertBlock.ExpectedException("read-only", action54)
+        TryCatchAssertBlock.ExpectedException("read-only", action66)
 
         # IsVisible (true)
         timeEventsElement.is_visible = True
@@ -1925,7 +2094,9 @@ class GfxTimeEventsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VE_GFX_TIME_EVENT_TYPE" = clr.Convert(int(arTypes[iIndex][0]), VE_GFX_TIME_EVENT_TYPE)
+            eType: "VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE" = clr.Convert(
+                int(arTypes[iIndex][0]), VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE
+            )
             if not timeEventsElement.is_time_event_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -1935,10 +2106,10 @@ class GfxTimeEventsHelper(object):
             # TimeEventType
             self.m_logger.WriteLine6("\t\tThe new TimeEvent type is: {0}", timeEventsElement.time_event_type)
             Assert.assertEqual(eType, timeEventsElement.time_event_type)
-            if eType == VE_GFX_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE:
+            if eType == VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE:
                 # TimeEventTypeData
-                oLine: "IVehicleGfxTimeEventTypeLine" = clr.Convert(
-                    timeEventsElement.time_event_type_data, IVehicleGfxTimeEventTypeLine
+                oLine: "IVehicleGraphics2DTimeEventTypeLine" = clr.Convert(
+                    timeEventsElement.time_event_type_data, IVehicleGraphics2DTimeEventTypeLine
                 )
                 Assert.assertIsNotNone(oLine)
 
@@ -1991,7 +2162,9 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VE_GFX_OFFSET" = clr.Convert(int(arOffsetTypes[i][0]), VE_GFX_OFFSET)
+                    eOffset: "VEHICLE_GRAPHICS2_D_OFFSET" = clr.Convert(
+                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS2_D_OFFSET
+                    )
                     if not oLine.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 
@@ -2006,17 +2179,17 @@ class GfxTimeEventsHelper(object):
                     self.m_logger.WriteLine3("\t\t\t\tThe new OffsetPixels is: {0}", oLine.offset_pixels)
                     Assert.assertEqual(17, oLine.offset_pixels)
 
-                    def action55():
+                    def action67():
                         oLine.offset_pixels = 123
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action55)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action67)
 
                     i += 1
 
-            elif eType == VE_GFX_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER:
+            elif eType == VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER:
                 # TimeEventTypeData
-                oMarker: "IVehicleGfxTimeEventTypeMarker" = clr.Convert(
-                    timeEventsElement.time_event_type_data, IVehicleGfxTimeEventTypeMarker
+                oMarker: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
+                    timeEventsElement.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
                 )
                 Assert.assertIsNotNone(oMarker)
                 # StartTime
@@ -2057,10 +2230,10 @@ class GfxTimeEventsHelper(object):
                 oMarker.unique_id = "Howdy"
                 self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oMarker.unique_id)
                 Assert.assertEqual("Howdy", oMarker.unique_id)
-            elif eType == VE_GFX_TIME_EVENT_TYPE.TIME_EVENT_TYPE_TEXT:
+            elif eType == VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_TEXT:
                 # TimeEventTypeData
-                oText: "IVehicleGfxTimeEventTypeText" = clr.Convert(
-                    timeEventsElement.time_event_type_data, IVehicleGfxTimeEventTypeText
+                oText: "IVehicleGraphics2DTimeEventTypeText" = clr.Convert(
+                    timeEventsElement.time_event_type_data, IVehicleGraphics2DTimeEventTypeText
                 )
                 Assert.assertIsNotNone(oText)
                 # StartTime
@@ -2111,7 +2284,9 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VE_GFX_OFFSET" = clr.Convert(int(arOffsetTypes[i][0]), VE_GFX_OFFSET)
+                    eOffset: "VEHICLE_GRAPHICS2_D_OFFSET" = clr.Convert(
+                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS2_D_OFFSET
+                    )
                     if not oText.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 
@@ -2126,10 +2301,10 @@ class GfxTimeEventsHelper(object):
                     self.m_logger.WriteLine3("\t\t\t\tThe new OffsetPixels is: {0}", oText.offset_pixels)
                     Assert.assertEqual(17, oText.offset_pixels)
 
-                    def action56():
+                    def action68():
                         oText.offset_pixels = 123
 
-                    TryCatchAssertBlock.ExpectedException("is invalid", action56)
+                    TryCatchAssertBlock.ExpectedException("is invalid", action68)
 
                     i += 1
 
@@ -2147,7 +2322,7 @@ class GfxTimeEventsHelper(object):
         oCollection.add()
         self.m_logger.WriteLine3("After Add() the TimeEvents collection contains: {0} elements.", oCollection.count)
         Assert.assertEqual(1, oCollection.count)
-        oEvent: "IVehicleGfxTimeEventsElement"
+        oEvent: "IVehicleGraphics2DTimeEventsElement"
         for oEvent in oCollection:
             self.m_logger.WriteLine7(
                 "\tElement: TimeEventType = {0}, IsVisible = {1}", oEvent.time_event_type, oEvent.is_visible
@@ -2226,10 +2401,10 @@ class GfxLabelNoteHelper(object):
         self.m_logger.WriteLine3("After  Remove() the LabelNotes collection contains: {0} elements", oCollection.count)
         Assert.assertEqual((iCount + 1), oCollection.count)
 
-        def action57():
+        def action69():
             oCollection.remove((oCollection.count + 1))
 
-        TryCatchAssertBlock.DoAssert("Remove() should not allow to remove invalid elements.", action57)
+        TryCatchAssertBlock.DoAssert("Remove() should not allow to remove invalid elements.", action69)
         self.m_logger.WriteLine3("The LabelNotes collection contains: {0} elements.", oCollection.count)
         labelNote: "ILabelNote"
         for labelNote in oCollection:

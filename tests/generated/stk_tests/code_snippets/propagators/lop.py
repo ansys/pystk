@@ -49,7 +49,7 @@ class LOP(CodeSnippetsTestBase):
 
     def ConfigureLOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to LOP
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_LOP)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_LOP)
 
         # Get IVehiclePropagatorLOP interface
         lopProp: "IVehiclePropagatorLOP" = clr.CastAs(satellite.propagator, IVehiclePropagatorLOP)

@@ -52,7 +52,7 @@ class Missile(CodeSnippetsTestBase):
 
     def DefineMissileTrajectory(self, missile: "IMissile"):
         # Set missile trajectory type
-        missile.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
+        missile.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
 
         # Retrieve the Propagator interface
         trajectory: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
@@ -62,20 +62,20 @@ class Missile(CodeSnippetsTestBase):
         trajectory.step = 60.0
 
         # Set flight parameters
-        trajectory.set_launch_type(VE_LAUNCH.LAUNCH_LLA)
+        trajectory.set_launch_type(VEHICLE_LAUNCH.LAUNCH_LLA)
         launch: "IVehicleLaunchLLA" = clr.CastAs(trajectory.launch, IVehicleLaunchLLA)
         launch.lat = 0.0
         launch.lon = 0.0
-        launch.alt = 0.0
+        launch.altitude = 0.0
 
         # Set impact location type
-        trajectory.set_impact_location_type(VE_IMPACT_LOCATION.IMPACT_LOCATION_POINT)
+        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_POINT)
 
         # Retrieve the impact point interface
         impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(
             trajectory.impact_location, IVehicleImpactLocationPoint
         )
-        impactLocation.set_launch_control_type(VE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT)
+        impactLocation.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT)
 
         # Retrieve the launch flight interface
         launchControl: "IVehicleLaunchControlFixedTimeOfFlight" = clr.CastAs(
@@ -84,11 +84,11 @@ class Missile(CodeSnippetsTestBase):
         launchControl.time_of_flight = 9000.0
 
         # Configure missile Impact parameters
-        impactLocation.set_impact_type(VE_IMPACT.IMPACT_LLA)
+        impactLocation.set_impact_type(VEHICLE_IMPACT.IMPACT_LLA)
         impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
         impact.lat = -20.0
         impact.lon = -20.0
-        impact.alt = 0.0
+        impact.altitude = 0.0
 
         # Propagate Missile
         trajectory.propagate()

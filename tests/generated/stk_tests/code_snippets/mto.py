@@ -94,13 +94,13 @@ class Mto(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
     def ConfigureMtoGraphics(self, mto: "IMto"):
-        tracks: "IMtoVOTrackCollection" = mto.vo.tracks
-        element: "IMtoVOTrack"
+        tracks: "IMtoGraphics3DTrackCollection" = mto.graphics3_d.tracks
+        element: "IMtoGraphics3DTrack"
         for element in tracks:
             element.marker.pixel_size = 12
-            element.marker.orientation_mode = VO_MARKER_ORIENTATION.ANGLE
-            element.marker.x_origin = VO_MARKER_ORIGIN_TYPE.RIGHT
-            element.marker.y_origin = VO_MARKER_ORIGIN_TYPE.BOTTOM
+            element.marker.orientation_mode = GRAPHICS3_D_MARKER_ORIENTATION.ANGLE
+            element.marker.x_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.RIGHT
+            element.marker.y_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.BOTTOM
             element.marker.angle = 1.23
 
             element.marker.marker_type = MARKER_TYPE.IMAGE_FILE
@@ -125,11 +125,11 @@ class Mto(CodeSnippetsTestBase):
     def test_ConfigureMtoTrackModel(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
         self.ConfigureMtos(CodeSnippetsTestBase.m_Root, Mto.m_Object)
-        self.ConfigureMtoTrackModel(Mto.m_Object.vo.tracks[0])
+        self.ConfigureMtoTrackModel(Mto.m_Object.graphics3_d.tracks[0])
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
-    def ConfigureMtoTrackModel(self, track: "IMtoVOTrack"):
-        model: "IMtoVOModel" = track.model
+    def ConfigureMtoTrackModel(self, track: "IMtoGraphics3DTrack"):
+        model: "IMtoGraphics3DModel" = track.model
         model.is_visible = True
         model.filename = r"STKData\VO\Models\Land\ariane-lp.mdl"
         model.initial_bearing = 3.0
@@ -143,15 +143,15 @@ class Mto(CodeSnippetsTestBase):
     def test_ConfigureMtoTrackMarker(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
         self.ConfigureMtos(CodeSnippetsTestBase.m_Root, Mto.m_Object)
-        self.ConfigureMtoTrackMarker(Mto.m_Object.vo.tracks[0])
+        self.ConfigureMtoTrackMarker(Mto.m_Object.graphics3_d.tracks[0])
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
-    def ConfigureMtoTrackMarker(self, track: "IMtoVOTrack"):
-        marker: "IMtoVOMarker" = track.marker
+    def ConfigureMtoTrackMarker(self, track: "IMtoGraphics3DTrack"):
+        marker: "IMtoGraphics3DMarker" = track.marker
         marker.pixel_size = 12
-        marker.orientation_mode = VO_MARKER_ORIENTATION.ANGLE
-        marker.x_origin = VO_MARKER_ORIGIN_TYPE.RIGHT
-        marker.y_origin = VO_MARKER_ORIGIN_TYPE.BOTTOM
+        marker.orientation_mode = GRAPHICS3_D_MARKER_ORIENTATION.ANGLE
+        marker.x_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.RIGHT
+        marker.y_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.BOTTOM
         marker.angle = 1.23
         marker.marker_type = MARKER_TYPE.IMAGE_FILE
         marker.set_marker_image_file(r"STKData\VO\Markers\Fire.ppm")
@@ -176,7 +176,7 @@ class Mto(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "J2Satellite"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60
@@ -221,7 +221,7 @@ class Mto(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "J2Satellite"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60
@@ -273,7 +273,7 @@ class Mto(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "J2Satellite"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60
@@ -306,7 +306,7 @@ class Mto(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "J2Satellite"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60
@@ -333,7 +333,7 @@ class Mto(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "J2Satellite"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60
@@ -444,7 +444,7 @@ class Mto(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "J2Satellite"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60
@@ -480,7 +480,7 @@ class Mto(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "J2Satellite"),
             ISatellite,
         )
-        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60

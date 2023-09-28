@@ -45,21 +45,21 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         SearchTrackPDet.m_TargetAircraft = clr.CastAs(
             scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, SearchTrackPDet.m_DefaultTargetName), IAircraft
         )
-        SearchTrackPDet.m_TargetAircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        SearchTrackPDet.m_TargetAircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(
             SearchTrackPDet.m_TargetAircraft.route, IVehiclePropagatorGreatArc
         )
         propagator.arc_granularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive IVehicleWaypointAltitudeReferenceTerrain interface
-        propagator.set_altitude_ref_type(VE_ALTITUDE_REF.WAY_PT_ALT_REF_TERRAIN)
+        propagator.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN)
         altRef: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
-            propagator.altitude_ref, IVehicleWaypointAltitudeReferenceTerrain
+            propagator.altitude_reference, IVehicleWaypointAltitudeReferenceTerrain
         )
         altRef.granularity = 51.33
-        altRef.interp_method = VE_WAY_PT_INTERP_METHOD.WAY_PT_ELLIPSOID_HEIGHT
+        altRef.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
 
-        propagator.method = VE_WAY_PT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
 
         # Add waypoints
         point1: "IVehicleWaypointsElement" = propagator.waypoints.add()

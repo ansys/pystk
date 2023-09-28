@@ -22,7 +22,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_satellite = clr.Convert(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CopyPasteTest"), ISatellite
         )
-        EarlyBoundTests.m_satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        EarlyBoundTests.m_satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
         EarlyBoundTests.m_driver = clr.Convert(EarlyBoundTests.m_satellite.propagator, IDriverMissionControlSequence)
 
     # endregion
@@ -39,19 +39,19 @@ class EarlyBoundTests(TestBase):
     # region CutPropagateControlTest
     def test_CutPropagateControlTest(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
         targSeq: "IMissionControlSequenceTargetSequence" = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
         targSeq2: "IMissionControlSequenceTargetSequence" = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
         prop: "IMissionControlSequencePropagate" = clr.Convert(
-            targSeq2.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
-        prop.stopping_conditions["Duration"].enable_control_parameter(VA_CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
         (clr.Convert(prop, IMissionControlSequenceSegment)).results.add("Keplerian Elems/Inclination")
         diffCorr: "IProfileDifferentialCorrector" = clr.Convert(
             targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector
@@ -67,7 +67,7 @@ class EarlyBoundTests(TestBase):
         constraint.enable = True
         constraint.desired_value = 45
         targSeq2.segments.cut("Propagate")
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "TargetSequence")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "TargetSequence")
         targSeq2.segments.paste("-")
         control = diffCorr.control_parameters.get_control_by_paths(
             "TargetSequence.Propagate", "StoppingConditions.Duration.TripValue"
@@ -85,17 +85,17 @@ class EarlyBoundTests(TestBase):
     # region ChangeResultStayActive
     def test_ChangeResultStayActive(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
         targSeq: "IMissionControlSequenceTargetSequence" = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
         targSeq2: "IMissionControlSequenceTargetSequence" = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
         prop: "IMissionControlSequencePropagate" = clr.Convert(
-            targSeq2.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
         result: "IComponentInfo" = (clr.Convert(prop, IMissionControlSequenceSegment)).results.add(
             "Keplerian Elems/Inclination"
@@ -124,7 +124,7 @@ class EarlyBoundTests(TestBase):
         #    optEqConst.Enable = true;
 
         #    targSeq2.Segments.Cut("Propagate");
-        #    m_driver.MainSequence.Insert(VA_SEGMENT_TYPE.eVASegmentTypePropagate,
+        #    m_driver.MainSequence.Insert(SEGMENT_TYPE.eVASegmentTypePropagate,
         #        "Propagate", "-");
         #    targSeq2.Segments.Paste("-");
 
@@ -147,39 +147,39 @@ class EarlyBoundTests(TestBase):
     # region ChangeProfilesHoldReference
     def test_ChangeProfilesHoldReference(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "IMissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         man: "IMissionControlSequenceManeuver" = None
         man = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
         )
-        man.set_maneuver_type(VA_MANEUVER_TYPE.FINITE)
+        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
         ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(targSeq.segments.insert(VA_SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
+        ret = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
 
         stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(targSeq.segments.insert(VA_SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
 
         sequence: "IMissionControlSequenceSequence" = None
         sequence = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
+            targSeq.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
         )
         propInsideSequence: "IMissionControlSequencePropagate" = None
         propInsideSequence = clr.Convert(
-            sequence.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         sequence.scripting_tool.enable = True
@@ -256,7 +256,7 @@ class EarlyBoundTests(TestBase):
 
         #    targSeq.Segments.Cut("Propagate");
 
-        #    m_driver.MainSequence.Insert(VA_SEGMENT_TYPE.eVASegmentTypePropagate, "Propagate", "-");
+        #    m_driver.MainSequence.Insert(SEGMENT_TYPE.eVASegmentTypePropagate, "Propagate", "-");
 
         #    targSeq.Segments.Paste("-");
         #    prop = (IMissionControlSequencePropagate)targSeq.Segments["Propagate"];
@@ -270,7 +270,7 @@ class EarlyBoundTests(TestBase):
 
         #    targSeq.Segments.Cut("Maneuver");
 
-        #    m_driver.MainSequence.Insert(VA_SEGMENT_TYPE.eVASegmentTypeManeuver, "Maneuver", "-");
+        #    m_driver.MainSequence.Insert(SEGMENT_TYPE.eVASegmentTypeManeuver, "Maneuver", "-");
 
         #    targSeq.Segments.Paste("-");
         #    man = (IMissionControlSequenceManeuver)targSeq.Segments["Maneuver"];
@@ -280,21 +280,21 @@ class EarlyBoundTests(TestBase):
         #    Assert.AreEqual("RenamedManeuver", changePropMan.SegmentName);
 
         #    sequence.Segments.Cut("Propagate");
-        #    m_driver.MainSequence.Insert(VA_SEGMENT_TYPE.eVASegmentTypePropagate, "Propagate", "-");
+        #    m_driver.MainSequence.Insert(SEGMENT_TYPE.eVASegmentTypePropagate, "Propagate", "-");
         #    propInsideSequence = (IMissionControlSequencePropagate)sequence.Segments.Paste("-");
         #    ((IComponentInfo)propInsideSequence).Name = "RenamedPropagate";
 
         #    Assert.AreEqual("RenamedPropagate", seqAttr.SegmentName);
 
         #    targSeq.Segments.Cut("Return");
-        #    m_driver.MainSequence.Insert(VA_SEGMENT_TYPE.eVASegmentTypeReturn, "Return", "-");
+        #    m_driver.MainSequence.Insert(SEGMENT_TYPE.eVASegmentTypeReturn, "Return", "-");
         #    ret = (IMissionControlSequenceReturn)targSeq.Segments.Paste("-");
         #    ((IComponentInfo)ret).Name = "RenamedReturn";
 
         #    Assert.AreEqual("RenamedReturn", changeReturn.SegmentName);
 
         #    targSeq.Segments.Cut("Stop");
-        #    m_driver.MainSequence.Insert(VA_SEGMENT_TYPE.eVASegmentTypeStop, "Stop", "-");
+        #    m_driver.MainSequence.Insert(SEGMENT_TYPE.eVASegmentTypeStop, "Stop", "-");
         #    stop = (IMissionControlSequenceStop)targSeq.Segments.Paste("-");
         #    ((IComponentInfo)stop).Name = "RenamedStop";
 
@@ -308,38 +308,36 @@ class EarlyBoundTests(TestBase):
     # region ChangeProfilesHoldReferenceNested
     def test_ChangeProfilesHoldReferenceNested(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "IMissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         sequence: "IMissionControlSequenceSequence" = None
         sequence = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
+            targSeq.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            sequence.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         man: "IMissionControlSequenceManeuver" = None
         man = clr.Convert(
-            sequence.segments.insert(VA_SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
         )
-        man.set_maneuver_type(VA_MANEUVER_TYPE.FINITE)
+        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
         ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(
-            sequence.segments.insert(VA_SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn
-        )
+        ret = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
 
         stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(sequence.segments.insert(VA_SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
 
         diffCorr: "IProfileDifferentialCorrector" = None
         diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
@@ -469,7 +467,7 @@ class EarlyBoundTests(TestBase):
         #    // i.e. segment ->segment1
 
         #    sequence.Segments.Cut("Propagate");
-        #    targSeq.Segments.Insert(VA_SEGMENT_TYPE.eVASegmentTypePropagate, "Propagate", "-");
+        #    targSeq.Segments.Insert(SEGMENT_TYPE.eVASegmentTypePropagate, "Propagate", "-");
         #    targSeq.Segments.Paste("-");
 
         #    Assert.AreEqual("Propagate1", optAttr.SegmentName);
@@ -479,20 +477,20 @@ class EarlyBoundTests(TestBase):
         #    Assert.AreEqual("Propagate1", dcAttribute.SegmentName);
 
         #    sequence.Segments.Cut("Maneuver");
-        #    targSeq.Segments.Insert(VA_SEGMENT_TYPE.eVASegmentTypeManeuver, "Maneuver", "-");
+        #    targSeq.Segments.Insert(SEGMENT_TYPE.eVASegmentTypeManeuver, "Maneuver", "-");
         #    targSeq.Segments.Paste("-");
 
         #    Assert.AreEqual("Maneuver1", changeStopConditionMan.SegmentName);
         #    Assert.AreEqual("Maneuver1", changePropMan.SegmentName);
 
         #    sequence.Segments.Cut("Return");
-        #    targSeq.Segments.Insert(VA_SEGMENT_TYPE.eVASegmentTypeReturn, "Return", "-");
+        #    targSeq.Segments.Insert(SEGMENT_TYPE.eVASegmentTypeReturn, "Return", "-");
         #    targSeq.Segments.Paste("-");
 
         #    Assert.AreEqual("Return1", changeReturn.SegmentName);
 
         #    sequence.Segments.Cut("Stop");
-        #    targSeq.Segments.Insert(VA_SEGMENT_TYPE.eVASegmentTypeStop, "Stop", "-");
+        #    targSeq.Segments.Insert(SEGMENT_TYPE.eVASegmentTypeStop, "Stop", "-");
         #    targSeq.Segments.Paste("-");
 
         #    Assert.AreEqual("Stop1", changeStopSegment.SegmentName);
@@ -505,31 +503,31 @@ class EarlyBoundTests(TestBase):
     # region ChangeProfilesHoldReferenceCopyTargSeq
     def test_ChangeProfilesHoldReferenceCopyTargSeq(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "IMissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         man: "IMissionControlSequenceManeuver" = None
         man = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
         )
-        man.set_maneuver_type(VA_MANEUVER_TYPE.FINITE)
+        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
         ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(targSeq.segments.insert(VA_SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
+        ret = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
 
         stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(targSeq.segments.insert(VA_SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
 
         diffCorr: "IProfileDifferentialCorrector" = None
         diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
@@ -697,25 +695,25 @@ class EarlyBoundTests(TestBase):
     # region RenameActiveControl
     def test_RenameActiveControl(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "IMissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         targSeq2: "IMissionControlSequenceTargetSequence" = None
 
         targSeq2 = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"),
+            targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
         prop: "IMissionControlSequencePropagate" = None
 
         prop = clr.Convert(
-            targSeq2.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         diffCorr: "IProfileDifferentialCorrector" = None
@@ -726,65 +724,61 @@ class EarlyBoundTests(TestBase):
     # region CutNestedSequences
     def test_CutNestedSequences(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeqOuter: "IMissionControlSequenceTargetSequence" = None
 
         targSeqOuter = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         sequence: "IMissionControlSequenceSequence" = None
         sequence = clr.Convert(
-            targSeqOuter.segments.insert(VA_SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
+            targSeqOuter.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            sequence.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         man: "IMissionControlSequenceManeuver" = None
         man = clr.Convert(
-            sequence.segments.insert(VA_SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
         )
-        man.set_maneuver_type(VA_MANEUVER_TYPE.FINITE)
+        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
         ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(
-            sequence.segments.insert(VA_SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn
-        )
+        ret = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
 
         stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(sequence.segments.insert(VA_SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
 
         targSeqInner: "IMissionControlSequenceTargetSequence" = None
         targSeqInner = clr.Convert(
-            targSeqOuter.segments.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"),
+            targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop2: "IMissionControlSequencePropagate" = None
         prop2 = clr.Convert(
-            targSeqInner.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         man2: "IMissionControlSequenceManeuver" = None
         man2 = clr.Convert(
-            targSeqInner.segments.insert(VA_SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            targSeqInner.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
         )
-        man2.set_maneuver_type(VA_MANEUVER_TYPE.FINITE)
+        man2.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
         ret2: "IMissionControlSequenceReturn" = None
         ret2 = clr.Convert(
-            targSeqInner.segments.insert(VA_SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn
+            targSeqInner.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn
         )
 
         stop2: "IMissionControlSequenceStop" = None
-        stop2 = clr.Convert(
-            targSeqInner.segments.insert(VA_SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop
-        )
+        stop2 = clr.Convert(targSeqInner.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
 
         diffCorr: "IProfileDifferentialCorrector" = None
         diffCorr = clr.Convert(targSeqOuter.profiles["Differential Corrector"], IProfileDifferentialCorrector)
@@ -907,17 +901,17 @@ class EarlyBoundTests(TestBase):
     # region ParameterStaysEnabled
     def test_ParameterStaysEnabled(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "IMissionControlSequenceTargetSequence" = None
         targSeq = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         diffCorr: "IProfileDifferentialCorrector" = None
@@ -940,23 +934,23 @@ class EarlyBoundTests(TestBase):
     # region NestedParameterStaysEnabled
     def test_NestedParameterStaysEnabled(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeqOuter: "IMissionControlSequenceTargetSequence" = None
         targSeqOuter = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         targSeqInner: "IMissionControlSequenceTargetSequence" = None
         targSeqInner = clr.Convert(
-            targSeqOuter.segments.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeqInner.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         diffCorrOuter: "IProfileDifferentialCorrector" = None
@@ -976,25 +970,25 @@ class EarlyBoundTests(TestBase):
     # region SimilarNamesStayEnabled
     def test_SimilarNamesStayEnabled(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "IMissionControlSequenceTargetSequence" = None
         targSeq = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         durationControl: "IStoppingConditionElement" = prop.stopping_conditions["Duration"]
 
         duration2Control: "IStoppingConditionElement" = prop.stopping_conditions.add("Duration")
 
-        durationControl.enable_control_parameter(VA_CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        duration2Control.enable_control_parameter(VA_CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        durationControl.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        duration2Control.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
 
         durationResult: "IComponentInfo" = (clr.Convert(prop, IMissionControlSequenceSegment)).results.add(
             "Time/Duration"
@@ -1072,23 +1066,23 @@ class EarlyBoundTests(TestBase):
     # region NestedParameterStaysEnabledCutPaste
     def test_NestedParameterStaysEnabledCutPaste(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeqOuter: "IMissionControlSequenceTargetSequence" = None
         targSeqOuter = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         targSeqInner: "IMissionControlSequenceTargetSequence" = None
         targSeqInner = clr.Convert(
-            targSeqOuter.segments.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeqInner.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         diffCorrOuter: "IProfileDifferentialCorrector" = None
@@ -1175,22 +1169,22 @@ class EarlyBoundTests(TestBase):
     # Perhaps test 42791 also?
     def test_MaintainSegmentLinkThroughCutPaste(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "IMissionControlSequenceTargetSequence" = None
         targSeq = clr.Convert(
-            EarlyBoundTests.m_driver.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
+            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
             IMissionControlSequenceTargetSequence,
         )
 
         prop: "IMissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         prop2: "IMissionControlSequencePropagate" = None
         prop2 = clr.Convert(
-            targSeq.segments.insert(VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
         )
 
         result: "IComponentInfo" = (clr.Convert(prop2, IMissionControlSequenceSegment)).results.add(

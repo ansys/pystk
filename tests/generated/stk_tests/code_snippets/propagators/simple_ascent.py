@@ -45,7 +45,7 @@ class SimpleAscent(CodeSnippetsTestBase):
     # region ConfigureSimpleAscentPropagator
     def test_ConfigureSimpleAscentPropagator(self):
         # Set launch vehicle propagator to Simple Ascent
-        self.m_Object.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
+        self.m_Object.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
 
         # Get J2 IVehiclePropagatorSimpleAscent interface
         propagator: "IVehiclePropagatorSimpleAscent" = clr.CastAs(

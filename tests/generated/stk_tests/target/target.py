@@ -114,23 +114,23 @@ class EarlyBoundTests(TestBase):
         azel: "IBasicAzElMask" = clr.Convert(EarlyBoundTests.AG_TG.graphics.az_el_mask, IBasicAzElMask)
         azel.range_visible = True
         Assert.assertEqual(True, azel.range_visible)
-        azel.alt_visible = True
-        Assert.assertEqual(True, azel.alt_visible)
-        azel.number_of_alt_steps = 3
-        Assert.assertEqual(3, azel.number_of_alt_steps)
+        azel.altitude_visible = True
+        Assert.assertEqual(True, azel.altitude_visible)
+        azel.number_of_altitude_steps = 3
+        Assert.assertEqual(3, azel.number_of_altitude_steps)
         azel.number_of_range_steps = 4
         Assert.assertEqual(4, azel.number_of_range_steps)
-        azel.display_alt_maximum = 10
-        Assert.assertEqual(10, azel.display_alt_maximum)
-        azel.display_alt_minimum = 3
-        Assert.assertEqual(3, azel.display_alt_minimum)
+        azel.display_altitude_maximum = 10
+        Assert.assertEqual(10, azel.display_altitude_maximum)
+        azel.display_altitude_minimum = 3
+        Assert.assertEqual(3, azel.display_altitude_minimum)
         azel.display_range_maximum = 20
         Assert.assertEqual(20, azel.display_range_maximum)
         azel.display_range_minimum = 10
         Assert.assertEqual(10, azel.display_range_minimum)
 
         def action1():
-            azel.alt_color = Color.Yellow
+            azel.altitude_color = Color.Yellow
 
         TryCatchAssertBlock.DoAssert("Can not modify read only property.", action1)
 
@@ -138,10 +138,10 @@ class EarlyBoundTests(TestBase):
             azel.range_color = Color.Yellow
 
         TryCatchAssertBlock.DoAssert("Can not modify read only property.", action2)
-        azel.alt_color_visible = True
-        Assert.assertTrue(azel.alt_color_visible)
-        azel.alt_color = Color.Yellow
-        AssertEx.AreEqual(Color.Yellow, azel.alt_color)
+        azel.altitude_color_visible = True
+        Assert.assertTrue(azel.altitude_color_visible)
+        azel.altitude_color = Color.Yellow
+        AssertEx.AreEqual(Color.Yellow, azel.altitude_color)
         azel.range_color_visible = True
         Assert.assertTrue(azel.range_color_visible)
         azel.range_color = Color.Yellow
@@ -153,7 +153,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOAzElMask(self):
         oHelper = VOAzElMaskHelper()
-        oHelper.Run(EarlyBoundTests.AG_TG.vo.az_el_mask)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.az_el_mask)
 
     # endregion
 
@@ -161,7 +161,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOAOULabelSwapDistance(self):
         oLabelSwapHelper = VOLabelSwapDistanceHelper()
-        oLabelSwapHelper.Run(EarlyBoundTests.AG_TG.vo.aou_label_swap_distance)
+        oLabelSwapHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.aou_label_swap_distance)
 
     # endregion
 
@@ -169,7 +169,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVectors(self):
         oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
-        oHelper.Run(EarlyBoundTests.AG_TG.vo.vector, False)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.vector, False)
 
     # endregion
 
@@ -179,7 +179,7 @@ class EarlyBoundTests(TestBase):
     def test_VODataDisplay(self):
         # test VO DataDisplay
         helper = VODataDisplayHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_TG.vo.data_displays, False, False)
+        helper.Run(EarlyBoundTests.AG_TG.graphics3_d.data_displays, False, False)
 
     # endregion
 
@@ -187,7 +187,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VORangeContours(self):
         oHelper = VORangeContoursHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.vo.range_contours)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.range_contours)
 
     # endregion
 
@@ -195,7 +195,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOOffsets(self):
         oHelper = VOOffsetsHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.vo.offsets)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.offsets)
 
     # endregion
 
@@ -203,7 +203,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModel(self):
         oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.vo.model)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.model)
 
     # endregion
 
@@ -211,26 +211,26 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModelMarker(self):
         oHelper = VOMarkerHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.vo.model.marker, False)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.model.marker, False)
 
     # endregion
 
     # region VOModelPointing
     @category("VO Tests")
     def test_VOModelPointing(self):
-        oModel: "IVOModel" = EarlyBoundTests.AG_TG.vo.model
+        oModel: "IGraphics3DModel" = EarlyBoundTests.AG_TG.graphics3_d.model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
         oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
-        oModelFile: "IVOModelFile" = clr.Convert(oModel.model_data, IVOModelFile)
+        oModelFile: "IGraphics3DModelFile" = clr.Convert(oModel.model_data, IGraphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
         TestBase.logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.filename)
 
         oHelper = VOModelPointingHelper()
-        oHelper.Run(EarlyBoundTests.AG_TG.vo.model_pointing)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.model_pointing)
 
     # endregion
 
@@ -239,8 +239,8 @@ class EarlyBoundTests(TestBase):
     def test_VOVaporTrail(self):
         oHelper = VOVaporTrailHelper()
         oHelper.Run(
-            EarlyBoundTests.AG_TG.vo.vapor_trail,
-            clr.CastAs(EarlyBoundTests.AG_TG.vo.model, IVOModel),
+            EarlyBoundTests.AG_TG.graphics3_d.vapor_trail,
+            clr.CastAs(EarlyBoundTests.AG_TG.graphics3_d.model, IGraphics3DModel),
             TestBase.GetSTKHomeDir(),
         )
 

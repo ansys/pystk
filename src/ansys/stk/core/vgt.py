@@ -6,19 +6,18 @@ __all__ = ["AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollecti
 "AnalysisWorkbenchCollection", "AnalysisWorkbenchConverge", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchGeneric", "AnalysisWorkbenchInstance", 
 "AnalysisWorkbenchIntegral", "AnalysisWorkbenchInterp", "AnalysisWorkbenchLLAPosition", "AnalysisWorkbenchMethodCallResult", 
 "AnalysisWorkbenchProvider", "AnalysisWorkbenchRoot", "AnalysisWorkbenchSampling", "AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchTemplate", 
-"AnalysisWorkbenchTypeInfo", "CRDN_ANGLE_TYPE", "CRDN_AXES_TYPE", "CRDN_CALC_SCALAR_TYPE", "CRDN_CONDITION_COMBINED_OPERATION_TYPE", 
-"CRDN_CONDITION_SET_TYPE", "CRDN_CONDITION_THRESHOLD_OPTION", "CRDN_CONDITION_TYPE", "CRDN_DIMENSION_INHERITANCE", "CRDN_DIRECTION_TYPE", 
-"CRDN_DISPLAY_AXIS_SELECTOR", "CRDN_EVENT_ARRAY_FILTER_TYPE", "CRDN_EVENT_ARRAY_TYPE", "CRDN_EVENT_INTERVAL_COLLECTION_TYPE", 
-"CRDN_EVENT_INTERVAL_LIST_TYPE", "CRDN_EVENT_INTERVAL_TYPE", "CRDN_EVENT_LIST_MERGE_OPERATION", "CRDN_EVENT_TYPE", "CRDN_EXTREMUM_CONSTANTS", 
-"CRDN_FILE_INTERPOLATOR_TYPE", "CRDN_INTEGRAL_TYPE", "CRDN_INTEGRATION_WINDOW_TYPE", "CRDN_INTERPOLATOR_TYPE", "CRDN_INTERSECTION_SURFACE", 
-"CRDN_INTERVAL_DURATION_KIND", "CRDN_INTERVAL_SELECTION", "CRDN_KIND", "CRDN_LAGRANGE_LIBRATION_POINT_TYPE", "CRDN_MEAN_ELEMENT_THEORY", 
-"CRDN_PARAMETER_SET_TYPE", "CRDN_PLANE_TYPE", "CRDN_POINT_B_PLANE_TYPE", "CRDN_POINT_TYPE", "CRDN_PRUNE_FILTER", "CRDN_QUADRANT_TYPE", 
-"CRDN_REFERENCE_SHAPE_TYPE", "CRDN_SAMPLED_REFERENCE_TIME", "CRDN_SAMPLING_METHOD", "CRDN_SATISFACTION_CROSSING", "CRDN_SAVE_DATA_OPTION", 
-"CRDN_SIGNAL_PATH_REFERENCE_SYSTEM", "CRDN_SIGNAL_SENSE", "CRDN_SIGNED_ANGLE_TYPE", "CRDN_SMART_EPOCH_STATE", "CRDN_SMART_INTERVAL_STATE", 
-"CRDN_SPEED_OPTIONS", "CRDN_START_STOP_OPTION", "CRDN_SURFACE_TYPE", "CRDN_SWEEP_MODE", "CRDN_SYSTEM_TYPE", "CRDN_THRESH_CONVERGE_SENSE", 
-"CRDN_TRAJECTORY_AXES_TYPE", "CRDN_VECTOR_COMPONENT_TYPE", "CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE", "CRDN_VECTOR_TYPE", 
-"CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE", "CRDN_VOLUME_ABERRATION_TYPE", "CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE", "CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE", 
-"CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE", "CRDN_VOLUME_CALC_RANGE_SPEED_TYPE", "CRDN_VOLUME_CALC_TYPE", "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE", 
+"AnalysisWorkbenchTypeInfo", "CRDN_CALC_SCALAR_TYPE", "CRDN_CONDITION_COMBINED_OPERATION_TYPE", "CRDN_CONDITION_SET_TYPE", 
+"CRDN_CONDITION_THRESHOLD_OPTION", "CRDN_CONDITION_TYPE", "CRDN_DIMENSION_INHERITANCE", "CRDN_DIRECTION_TYPE", "CRDN_DISPLAY_AXIS_SELECTOR", 
+"CRDN_EVENT_ARRAY_FILTER_TYPE", "CRDN_EVENT_ARRAY_TYPE", "CRDN_EVENT_INTERVAL_COLLECTION_TYPE", "CRDN_EVENT_INTERVAL_LIST_TYPE", 
+"CRDN_EVENT_INTERVAL_TYPE", "CRDN_EVENT_LIST_MERGE_OPERATION", "CRDN_EVENT_TYPE", "CRDN_EXTREMUM_CONSTANTS", "CRDN_FILE_INTERPOLATOR_TYPE", 
+"CRDN_INTEGRAL_TYPE", "CRDN_INTEGRATION_WINDOW_TYPE", "CRDN_INTERPOLATOR_TYPE", "CRDN_INTERSECTION_SURFACE", "CRDN_INTERVAL_DURATION_KIND", 
+"CRDN_INTERVAL_SELECTION", "CRDN_KIND", "CRDN_LAGRANGE_LIBRATION_POINT_TYPE", "CRDN_MEAN_ELEMENT_THEORY", "CRDN_PARAMETER_SET_TYPE", 
+"CRDN_PRUNE_FILTER", "CRDN_QUADRANT_TYPE", "CRDN_REFERENCE_SHAPE_TYPE", "CRDN_SAMPLED_REFERENCE_TIME", "CRDN_SAMPLING_METHOD", 
+"CRDN_SATISFACTION_CROSSING", "CRDN_SAVE_DATA_OPTION", "CRDN_SIGNAL_PATH_REFERENCE_SYSTEM", "CRDN_SIGNAL_SENSE", "CRDN_SIGNED_ANGLE_TYPE", 
+"CRDN_SMART_EPOCH_STATE", "CRDN_SMART_INTERVAL_STATE", "CRDN_SPEED_OPTIONS", "CRDN_START_STOP_OPTION", "CRDN_SURFACE_TYPE", 
+"CRDN_SWEEP_MODE", "CRDN_SYSTEM_TYPE", "CRDN_THRESH_CONVERGE_SENSE", "CRDN_TRAJECTORY_AXES_TYPE", "CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE", 
+"CRDN_VOLUME_ABERRATION_TYPE", "CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE", "CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE", "CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE", 
+"CRDN_VOLUME_CALC_RANGE_SPEED_TYPE", "CRDN_VOLUME_CALC_TYPE", "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE", 
 "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE", "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE", "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE", 
 "CRDN_VOLUME_CLOCK_HOST_TYPE", "CRDN_VOLUME_COMBINED_OPERATION_TYPE", "CRDN_VOLUME_FROM_GRID_EDGE_TYPE", "CRDN_VOLUME_GRID_TYPE", 
 "CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE", "CRDN_VOLUME_OVER_TIME_DURATION_TYPE", "CRDN_VOLUME_RESULT_VECTOR_REQUEST", "CRDN_VOLUME_TIME_SENSE_TYPE", 
@@ -147,21 +146,23 @@ __all__ = ["AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollecti
 "TimeToolIntervalVectorCollection", "TimeToolIntervalsFilter", "TimeToolIntervalsVectorResult", "TimeToolLastIntervalsFilter", 
 "TimeToolLightTimeDelay", "TimeToolPointSamplingInterval", "TimeToolPointSamplingIntervalCollection", "TimeToolPointSamplingResult", 
 "TimeToolPruneFilter", "TimeToolPruneFilterFactory", "TimeToolRelativeSatisfactionConditionFilter", "TimeToolSatisfactionConditionFilter", 
-"TimeToolSignalDelayBasic", "VectorGeometryToolAngle", "VectorGeometryToolAngleBetweenPlanes", "VectorGeometryToolAngleBetweenVectors", 
-"VectorGeometryToolAngleDihedral", "VectorGeometryToolAngleFactory", "VectorGeometryToolAngleGroup", "VectorGeometryToolAngleRefTo", 
-"VectorGeometryToolAngleRotation", "VectorGeometryToolAngleToPlane", "VectorGeometryToolAxes", "VectorGeometryToolAxesAlignedAndConstrained", 
-"VectorGeometryToolAxesAngularOffset", "VectorGeometryToolAxesAtTimeInstant", "VectorGeometryToolAxesAttitudeFile", "VectorGeometryToolAxesBPlane", 
-"VectorGeometryToolAxesCommonTasks", "VectorGeometryToolAxesCustomScript", "VectorGeometryToolAxesFactory", "VectorGeometryToolAxesFixed", 
-"VectorGeometryToolAxesFixedAtEpoch", "VectorGeometryToolAxesGroup", "VectorGeometryToolAxesLabels", "VectorGeometryToolAxesLagrangeLibration", 
-"VectorGeometryToolAxesModelAttach", "VectorGeometryToolAxesOnSurface", "VectorGeometryToolAxesPlugin", "VectorGeometryToolAxesRefTo", 
-"VectorGeometryToolAxesSpinning", "VectorGeometryToolAxesTrajectory", "VectorGeometryToolPlane", "VectorGeometryToolPlaneFactory", 
-"VectorGeometryToolPlaneGroup", "VectorGeometryToolPlaneLabels", "VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant", 
-"VectorGeometryToolPlaneRefTo", "VectorGeometryToolPlaneTrajectory", "VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector", 
-"VectorGeometryToolPoint", "VectorGeometryToolPointAtTimeInstant", "VectorGeometryToolPointBPlane", "VectorGeometryToolPointCBFixedOffset", 
-"VectorGeometryToolPointCentBodyIntersect", "VectorGeometryToolPointCommonTasks", "VectorGeometryToolPointCovarianceGrazing", 
-"VectorGeometryToolPointFactory", "VectorGeometryToolPointFile", "VectorGeometryToolPointFixedInSystem", "VectorGeometryToolPointGlint", 
-"VectorGeometryToolPointGrazing", "VectorGeometryToolPointGroup", "VectorGeometryToolPointLagrangeLibration", "VectorGeometryToolPointModelAttach", 
-"VectorGeometryToolPointOnSurface", "VectorGeometryToolPointPlaneIntersection", "VectorGeometryToolPointPlaneProjection", 
+"TimeToolSignalDelayBasic", "VECTOR_GEOMETRY_TOOL_ANGLE_TYPE", "VECTOR_GEOMETRY_TOOL_AXES_TYPE", "VECTOR_GEOMETRY_TOOL_PLANE_TYPE", 
+"VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE", "VECTOR_GEOMETRY_TOOL_POINT_TYPE", "VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE", 
+"VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE", "VECTOR_GEOMETRY_TOOL_VECTOR_TYPE", "VectorGeometryToolAngle", 
+"VectorGeometryToolAngleBetweenPlanes", "VectorGeometryToolAngleBetweenVectors", "VectorGeometryToolAngleDihedral", "VectorGeometryToolAngleFactory", 
+"VectorGeometryToolAngleGroup", "VectorGeometryToolAngleRefTo", "VectorGeometryToolAngleRotation", "VectorGeometryToolAngleToPlane", 
+"VectorGeometryToolAxes", "VectorGeometryToolAxesAlignedAndConstrained", "VectorGeometryToolAxesAngularOffset", "VectorGeometryToolAxesAtTimeInstant", 
+"VectorGeometryToolAxesAttitudeFile", "VectorGeometryToolAxesBPlane", "VectorGeometryToolAxesCommonTasks", "VectorGeometryToolAxesCustomScript", 
+"VectorGeometryToolAxesFactory", "VectorGeometryToolAxesFixed", "VectorGeometryToolAxesFixedAtEpoch", "VectorGeometryToolAxesGroup", 
+"VectorGeometryToolAxesLabels", "VectorGeometryToolAxesLagrangeLibration", "VectorGeometryToolAxesModelAttach", "VectorGeometryToolAxesOnSurface", 
+"VectorGeometryToolAxesPlugin", "VectorGeometryToolAxesRefTo", "VectorGeometryToolAxesSpinning", "VectorGeometryToolAxesTrajectory", 
+"VectorGeometryToolPlane", "VectorGeometryToolPlaneFactory", "VectorGeometryToolPlaneGroup", "VectorGeometryToolPlaneLabels", 
+"VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant", "VectorGeometryToolPlaneRefTo", "VectorGeometryToolPlaneTrajectory", 
+"VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector", "VectorGeometryToolPoint", "VectorGeometryToolPointAtTimeInstant", 
+"VectorGeometryToolPointBPlane", "VectorGeometryToolPointCBFixedOffset", "VectorGeometryToolPointCentBodyIntersect", "VectorGeometryToolPointCommonTasks", 
+"VectorGeometryToolPointCovarianceGrazing", "VectorGeometryToolPointFactory", "VectorGeometryToolPointFile", "VectorGeometryToolPointFixedInSystem", 
+"VectorGeometryToolPointGlint", "VectorGeometryToolPointGrazing", "VectorGeometryToolPointGroup", "VectorGeometryToolPointLagrangeLibration", 
+"VectorGeometryToolPointModelAttach", "VectorGeometryToolPointOnSurface", "VectorGeometryToolPointPlaneIntersection", "VectorGeometryToolPointPlaneProjection", 
 "VectorGeometryToolPointPlugin", "VectorGeometryToolPointRefTo", "VectorGeometryToolPointSatelliteCollectionEntry", "VectorGeometryToolSystem", 
 "VectorGeometryToolSystemAssembled", "VectorGeometryToolSystemCommonTasks", "VectorGeometryToolSystemFactory", "VectorGeometryToolSystemGroup", 
 "VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemRefTo", "VectorGeometryToolVector", "VectorGeometryToolVectorAngleRate", 
@@ -857,7 +858,7 @@ CRDN_THRESH_CONVERGE_SENSE.BELOW.__doc__ = "Result below or at threshold."
 
 agcls.AgTypeNameMap["CRDN_THRESH_CONVERGE_SENSE"] = CRDN_THRESH_CONVERGE_SENSE
 
-class CRDN_VECTOR_COMPONENT_TYPE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE(IntEnum):
     """Defines component directions for a vector."""
     # X component.
     X = 0
@@ -872,14 +873,14 @@ class CRDN_VECTOR_COMPONENT_TYPE(IntEnum):
     # -Z component.
     MINUS_Z = 5
 
-CRDN_VECTOR_COMPONENT_TYPE.X.__doc__ = "X component."
-CRDN_VECTOR_COMPONENT_TYPE.Y.__doc__ = "Y component."
-CRDN_VECTOR_COMPONENT_TYPE.Z.__doc__ = "Z component."
-CRDN_VECTOR_COMPONENT_TYPE.MINUS_X.__doc__ = "-X component."
-CRDN_VECTOR_COMPONENT_TYPE.MINUS_Y.__doc__ = "-Y component."
-CRDN_VECTOR_COMPONENT_TYPE.MINUS_Z.__doc__ = "-Z component."
+VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.X.__doc__ = "X component."
+VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.Y.__doc__ = "Y component."
+VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.Z.__doc__ = "Z component."
+VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.MINUS_X.__doc__ = "-X component."
+VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.MINUS_Y.__doc__ = "-Y component."
+VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.MINUS_Z.__doc__ = "-Z component."
 
-agcls.AgTypeNameMap["CRDN_VECTOR_COMPONENT_TYPE"] = CRDN_VECTOR_COMPONENT_TYPE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE"] = VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE
 
 class CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE(IntEnum):
     """Defines volume calc altitude reference types."""
@@ -1074,26 +1075,26 @@ class CRDN_VOLUME_GRID_TYPE(IntEnum):
     # volume grid type Constrained.
     CONSTRAINED = 3
     # volume grid type LatLonAlt (Cartographic).
-    LAT_LON_ALT = 4
+    LAT_LON_ALTITUDE = 4
     # volume grid type BearingAlt (Surface Bearing).
-    BEARING_ALT = 5
+    BEARING_ALTITUDE = 5
 
 CRDN_VOLUME_GRID_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume grid."
 CRDN_VOLUME_GRID_TYPE.CARTESIAN.__doc__ = "volume grid type cartesian."
 CRDN_VOLUME_GRID_TYPE.CYLINDRICAL.__doc__ = "volume grid type Cylindrical."
 CRDN_VOLUME_GRID_TYPE.SPHERICAL.__doc__ = "volume grid type Spherical."
 CRDN_VOLUME_GRID_TYPE.CONSTRAINED.__doc__ = "volume grid type Constrained."
-CRDN_VOLUME_GRID_TYPE.LAT_LON_ALT.__doc__ = "volume grid type LatLonAlt (Cartographic)."
-CRDN_VOLUME_GRID_TYPE.BEARING_ALT.__doc__ = "volume grid type BearingAlt (Surface Bearing)."
+CRDN_VOLUME_GRID_TYPE.LAT_LON_ALTITUDE.__doc__ = "volume grid type LatLonAlt (Cartographic)."
+CRDN_VOLUME_GRID_TYPE.BEARING_ALTITUDE.__doc__ = "volume grid type BearingAlt (Surface Bearing)."
 
 agcls.AgTypeNameMap["CRDN_VOLUME_GRID_TYPE"] = CRDN_VOLUME_GRID_TYPE
 
 class CRDN_VOLUME_RESULT_VECTOR_REQUEST(IntEnum):
     """Defines volume result vector request types."""
     # volume result vector request pos type
-    POS = 1
+    POSITION = 1
     # volume result vector request native pos type
-    NATIVE_POS = 2
+    NATIVE_POSITION = 2
     # volume result vector request metric type
     METRIC = 16
     # volume result vector request satisfaction type
@@ -1101,8 +1102,8 @@ class CRDN_VOLUME_RESULT_VECTOR_REQUEST(IntEnum):
     # volume result vector request gradient type
     GRADIENT = 256
 
-CRDN_VOLUME_RESULT_VECTOR_REQUEST.POS.__doc__ = "volume result vector request pos type"
-CRDN_VOLUME_RESULT_VECTOR_REQUEST.NATIVE_POS.__doc__ = "volume result vector request native pos type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.POSITION.__doc__ = "volume result vector request pos type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.NATIVE_POSITION.__doc__ = "volume result vector request native pos type"
 CRDN_VOLUME_RESULT_VECTOR_REQUEST.METRIC.__doc__ = "volume result vector request metric type"
 CRDN_VOLUME_RESULT_VECTOR_REQUEST.SATISFACTION.__doc__ = "volume result vector request satisfaction type"
 CRDN_VOLUME_RESULT_VECTOR_REQUEST.GRADIENT.__doc__ = "volume result vector request gradient type"
@@ -1340,7 +1341,7 @@ CRDN_KIND.VOLUME_CALC.__doc__ = "A volume calc."
 
 agcls.AgTypeNameMap["CRDN_KIND"] = CRDN_KIND
 
-class CRDN_ANGLE_TYPE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_ANGLE_TYPE(IntEnum):
     """Represents angle types."""
     # Unknown or unsupported type.
     UNKNOWN = -1
@@ -1357,17 +1358,17 @@ class CRDN_ANGLE_TYPE(IntEnum):
     # Represents a VGT angle created from a template. This type of angle is not creatable.
     TEMPLATE = 5
 
-CRDN_ANGLE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-CRDN_ANGLE_TYPE.BETWEEN_VECTORS.__doc__ = "An angle between two vectors."
-CRDN_ANGLE_TYPE.BETWEEN_PLANES.__doc__ = "An angle between two planes."
-CRDN_ANGLE_TYPE.DIHEDRAL_ANGLE.__doc__ = "An angle between two vectors about an axis."
-CRDN_ANGLE_TYPE.ROTATION.__doc__ = "Angle of the shortest rotation between the two specified axes."
-CRDN_ANGLE_TYPE.TO_PLANE.__doc__ = "An angle between a vector and a plane."
-CRDN_ANGLE_TYPE.TEMPLATE.__doc__ = "Represents a VGT angle created from a template. This type of angle is not creatable."
+VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.BETWEEN_VECTORS.__doc__ = "An angle between two vectors."
+VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.BETWEEN_PLANES.__doc__ = "An angle between two planes."
+VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.DIHEDRAL_ANGLE.__doc__ = "An angle between two vectors about an axis."
+VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.ROTATION.__doc__ = "Angle of the shortest rotation between the two specified axes."
+VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.TO_PLANE.__doc__ = "An angle between a vector and a plane."
+VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.TEMPLATE.__doc__ = "Represents a VGT angle created from a template. This type of angle is not creatable."
 
-agcls.AgTypeNameMap["CRDN_ANGLE_TYPE"] = CRDN_ANGLE_TYPE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_ANGLE_TYPE"] = VECTOR_GEOMETRY_TOOL_ANGLE_TYPE
 
-class CRDN_AXES_TYPE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_AXES_TYPE(IntEnum):
     """Represents vector types."""
     # Unknown or unsupported type.
     UNKNOWN = -1
@@ -1402,26 +1403,26 @@ class CRDN_AXES_TYPE(IntEnum):
     # Axes specified by data from a file.
     FILE = 5
 
-CRDN_AXES_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-CRDN_AXES_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
-CRDN_AXES_TYPE.ANGULAR_OFFSET.__doc__ = "Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."
-CRDN_AXES_TYPE.FIXED_AT_EPOCH.__doc__ = "Axes based on another set fixed at a specified epoch."
-CRDN_AXES_TYPE.B_PLANE.__doc__ = "B-Plane axes using the selected target body and reference vector."
-CRDN_AXES_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized axes offset with respect to a set of reference Axes."
-CRDN_AXES_TYPE.FIXED.__doc__ = "Axes fixed in reference axes."
-CRDN_AXES_TYPE.ALIGNED_AND_CONSTRAINED.__doc__ = "Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."
-CRDN_AXES_TYPE.MODEL_ATTACHMENT.__doc__ = "Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."
-CRDN_AXES_TYPE.SPINNING.__doc__ = "Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."
-CRDN_AXES_TYPE.ON_SURFACE.__doc__ = "Projection of the reference point onto the central body."
-CRDN_AXES_TYPE.TRAJECTORY.__doc__ = "Axes based on trajectory of the point relative to the reference coordinate system."
-CRDN_AXES_TYPE.TEMPLATE.__doc__ = "Represents a VGT axes created from a template. This type of axes is not creatable."
-CRDN_AXES_TYPE.AT_TIME_INSTANT.__doc__ = "Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."
-CRDN_AXES_TYPE.PLUGIN.__doc__ = "An axes plugin point."
-CRDN_AXES_TYPE.FILE.__doc__ = "Axes specified by data from a file."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.ANGULAR_OFFSET.__doc__ = "Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.FIXED_AT_EPOCH.__doc__ = "Axes based on another set fixed at a specified epoch."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.B_PLANE.__doc__ = "B-Plane axes using the selected target body and reference vector."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized axes offset with respect to a set of reference Axes."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.FIXED.__doc__ = "Axes fixed in reference axes."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.ALIGNED_AND_CONSTRAINED.__doc__ = "Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.MODEL_ATTACHMENT.__doc__ = "Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.SPINNING.__doc__ = "Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.ON_SURFACE.__doc__ = "Projection of the reference point onto the central body."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.TRAJECTORY.__doc__ = "Axes based on trajectory of the point relative to the reference coordinate system."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.TEMPLATE.__doc__ = "Represents a VGT axes created from a template. This type of axes is not creatable."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.AT_TIME_INSTANT.__doc__ = "Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.PLUGIN.__doc__ = "An axes plugin point."
+VECTOR_GEOMETRY_TOOL_AXES_TYPE.FILE.__doc__ = "Axes specified by data from a file."
 
-agcls.AgTypeNameMap["CRDN_AXES_TYPE"] = CRDN_AXES_TYPE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_AXES_TYPE"] = VECTOR_GEOMETRY_TOOL_AXES_TYPE
 
-class CRDN_PLANE_TYPE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_PLANE_TYPE(IntEnum):
     """Represents plane types."""
     # Unknown or unsupported type.
     UNKNOWN = -1
@@ -1438,17 +1439,17 @@ class CRDN_PLANE_TYPE(IntEnum):
     # A plane passing through point and containing two given vectors.
     TWO_VECTOR = 5
 
-CRDN_PLANE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-CRDN_PLANE_TYPE.NORMAL.__doc__ = "A plane normal to a vector at a given point."
-CRDN_PLANE_TYPE.QUADRANT.__doc__ = "A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."
-CRDN_PLANE_TYPE.TRAJECTORY.__doc__ = "A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."
-CRDN_PLANE_TYPE.TRIAD.__doc__ = "A plane is defined by the three points."
-CRDN_PLANE_TYPE.TEMPLATE.__doc__ = "Represents a VGT plane created from a template. This type of plane is not creatable."
-CRDN_PLANE_TYPE.TWO_VECTOR.__doc__ = "A plane passing through point and containing two given vectors."
+VECTOR_GEOMETRY_TOOL_PLANE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+VECTOR_GEOMETRY_TOOL_PLANE_TYPE.NORMAL.__doc__ = "A plane normal to a vector at a given point."
+VECTOR_GEOMETRY_TOOL_PLANE_TYPE.QUADRANT.__doc__ = "A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."
+VECTOR_GEOMETRY_TOOL_PLANE_TYPE.TRAJECTORY.__doc__ = "A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."
+VECTOR_GEOMETRY_TOOL_PLANE_TYPE.TRIAD.__doc__ = "A plane is defined by the three points."
+VECTOR_GEOMETRY_TOOL_PLANE_TYPE.TEMPLATE.__doc__ = "Represents a VGT plane created from a template. This type of plane is not creatable."
+VECTOR_GEOMETRY_TOOL_PLANE_TYPE.TWO_VECTOR.__doc__ = "A plane passing through point and containing two given vectors."
 
-agcls.AgTypeNameMap["CRDN_PLANE_TYPE"] = CRDN_PLANE_TYPE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_PLANE_TYPE"] = VECTOR_GEOMETRY_TOOL_PLANE_TYPE
 
-class CRDN_POINT_TYPE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_POINT_TYPE(IntEnum):
     """Represents point types."""
     # Unknown or unsupported type.
     UNKNOWN = -1
@@ -1487,26 +1488,26 @@ class CRDN_POINT_TYPE(IntEnum):
     # A point placed at the center of mass of a specified satellite of the satellite collection.
     SATELLITE_COLLECTION_ENTRY = 16
 
-CRDN_POINT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-CRDN_POINT_TYPE.B_PLANE.__doc__ = "B-Plane point using the selected target body."
-CRDN_POINT_TYPE.GRAZING.__doc__ = "The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."
-CRDN_POINT_TYPE.COVARIANCE_GRAZING.__doc__ = "The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."
-CRDN_POINT_TYPE.FIXED_IN_SYSTEM.__doc__ = "Point fixed in a reference coordinate system."
-CRDN_POINT_TYPE.GLINT.__doc__ = "Point on central body surface that reflects from source to observer."
-CRDN_POINT_TYPE.PLANE_INTERSECTION.__doc__ = "Point on a plane located along a given direction looking from a given origin."
-CRDN_POINT_TYPE.MODEL_ATTACHMENT.__doc__ = "Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."
-CRDN_POINT_TYPE.PLANE_PROJECTION.__doc__ = "The projection of a point onto a reference plane."
-CRDN_POINT_TYPE.ON_SURFACE.__doc__ = "The detic subpoint of the reference point as projected onto the central body."
-CRDN_POINT_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point using one primary and multiple secondary central bodies."
-CRDN_POINT_TYPE.TEMPLATE.__doc__ = "Represents a VGT point created from a template. This type of point is not creatable."
-CRDN_POINT_TYPE.CENTRAL_BODY_INTERSECT.__doc__ = "Point on central body surface along direction vector originating at source point."
-CRDN_POINT_TYPE.AT_TIME_INSTANT.__doc__ = "Point fixed relative to reference system based on another point evaluated at specified time instant."
-CRDN_POINT_TYPE.PLUGIN.__doc__ = "A point plugin point."
-CRDN_POINT_TYPE.FILE.__doc__ = "Point specified by data from a file."
-CRDN_POINT_TYPE.FIXED_ON_CENTRAL_BODY.__doc__ = "Point fixed on a central body."
-CRDN_POINT_TYPE.SATELLITE_COLLECTION_ENTRY.__doc__ = "A point placed at the center of mass of a specified satellite of the satellite collection."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.B_PLANE.__doc__ = "B-Plane point using the selected target body."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.GRAZING.__doc__ = "The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.COVARIANCE_GRAZING.__doc__ = "The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.FIXED_IN_SYSTEM.__doc__ = "Point fixed in a reference coordinate system."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.GLINT.__doc__ = "Point on central body surface that reflects from source to observer."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.PLANE_INTERSECTION.__doc__ = "Point on a plane located along a given direction looking from a given origin."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.MODEL_ATTACHMENT.__doc__ = "Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.PLANE_PROJECTION.__doc__ = "The projection of a point onto a reference plane."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.ON_SURFACE.__doc__ = "The detic subpoint of the reference point as projected onto the central body."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point using one primary and multiple secondary central bodies."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.TEMPLATE.__doc__ = "Represents a VGT point created from a template. This type of point is not creatable."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.CENTRAL_BODY_INTERSECT.__doc__ = "Point on central body surface along direction vector originating at source point."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.AT_TIME_INSTANT.__doc__ = "Point fixed relative to reference system based on another point evaluated at specified time instant."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.PLUGIN.__doc__ = "A point plugin point."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.FILE.__doc__ = "Point specified by data from a file."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.FIXED_ON_CENTRAL_BODY.__doc__ = "Point fixed on a central body."
+VECTOR_GEOMETRY_TOOL_POINT_TYPE.SATELLITE_COLLECTION_ENTRY.__doc__ = "A point placed at the center of mass of a specified satellite of the satellite collection."
 
-agcls.AgTypeNameMap["CRDN_POINT_TYPE"] = CRDN_POINT_TYPE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_POINT_TYPE"] = VECTOR_GEOMETRY_TOOL_POINT_TYPE
 
 class CRDN_SYSTEM_TYPE(IntEnum):
     """Represents system types."""
@@ -1526,7 +1527,7 @@ CRDN_SYSTEM_TYPE.TEMPLATE.__doc__ = "Represents a VGT system created from a temp
 
 agcls.AgTypeNameMap["CRDN_SYSTEM_TYPE"] = CRDN_SYSTEM_TYPE
 
-class CRDN_VECTOR_TYPE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_VECTOR_TYPE(IntEnum):
     """Represents vector types."""
     # Unknown or unsupported vector type.
     UNKNOWN = -1
@@ -1593,40 +1594,40 @@ class CRDN_VECTOR_TYPE(IntEnum):
     # Displacement between origin and destination points using surface distance and altitude difference.
     DISPLACEMENT_ON_SURFACE = 31
 
-CRDN_VECTOR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
-CRDN_VECTOR_TYPE.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
-CRDN_VECTOR_TYPE.APOAPSIS.__doc__ = "Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."
-CRDN_VECTOR_TYPE.FIXED_AT_EPOCH.__doc__ = "Based on another vector fixed at a specified epoch."
-CRDN_VECTOR_TYPE.ANGULAR_VELOCITY.__doc__ = "Angular velocity vector of one set of axes computed with respect to the reference set."
-CRDN_VECTOR_TYPE.CONING.__doc__ = "Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."
-CRDN_VECTOR_TYPE.CROSS_PRODUCT.__doc__ = "The vector cross product of two vectors."
-CRDN_VECTOR_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized vector components defined with respect to reference axes."
-CRDN_VECTOR_TYPE.DERIVATIVE.__doc__ = "Derivative of a vector computed with respect to specified axes."
-CRDN_VECTOR_TYPE.ANGLE_RATE.__doc__ = "Angle rate vector perpendicular to the plane in which the angle is defined."
-CRDN_VECTOR_TYPE.ECCENTRICITY.__doc__ = "Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."
-CRDN_VECTOR_TYPE.FIXED_IN_AXES.__doc__ = "Vector fixed in reference axes."
-CRDN_VECTOR_TYPE.TWO_PLANES_INTERSECTION.__doc__ = "Defined along the intersection of two planes."
-CRDN_VECTOR_TYPE.LINE_OF_NODES.__doc__ = "Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."
-CRDN_VECTOR_TYPE.MODEL_ATTACHMENT.__doc__ = "Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."
-CRDN_VECTOR_TYPE.ORBIT_ANGULAR_MOMENTUM.__doc__ = "Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
-CRDN_VECTOR_TYPE.ORBIT_NORMAL.__doc__ = "Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
-CRDN_VECTOR_TYPE.PERIAPSIS.__doc__ = "Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."
-CRDN_VECTOR_TYPE.PROJECTION.__doc__ = "A projection of a vector computed with respect to a reference plane."
-CRDN_VECTOR_TYPE.REFLECTION.__doc__ = "Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."
-CRDN_VECTOR_TYPE.SCALED.__doc__ = "Scaled version of the input vector."
-CRDN_VECTOR_TYPE.DIRECTION_TO_STAR.__doc__ = "Defined with respect to a star object."
-CRDN_VECTOR_TYPE.TEMPLATE.__doc__ = "Represents a VGT vector created from a template. This type of vector is not creatable."
-CRDN_VECTOR_TYPE.AT_TIME_INSTANT.__doc__ = "Vector fixed relative to reference axes based on another vector evaluated at specified time instant."
-CRDN_VECTOR_TYPE.LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors."
-CRDN_VECTOR_TYPE.PROJECT_ALONG.__doc__ = "A projection of a source vector in the direction of another vector."
-CRDN_VECTOR_TYPE.SCALAR_LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors using scalars."
-CRDN_VECTOR_TYPE.SCALAR_SCALED.__doc__ = "Scaled version of the input vector using scalar."
-CRDN_VECTOR_TYPE.VELOCITY.__doc__ = "Velocity vector of a point in a coordinate system."
-CRDN_VECTOR_TYPE.PLUGIN.__doc__ = "A vector plugin point."
-CRDN_VECTOR_TYPE.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
-CRDN_VECTOR_TYPE.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.APOAPSIS.__doc__ = "Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.FIXED_AT_EPOCH.__doc__ = "Based on another vector fixed at a specified epoch."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.ANGULAR_VELOCITY.__doc__ = "Angular velocity vector of one set of axes computed with respect to the reference set."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.CONING.__doc__ = "Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.CROSS_PRODUCT.__doc__ = "The vector cross product of two vectors."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized vector components defined with respect to reference axes."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DERIVATIVE.__doc__ = "Derivative of a vector computed with respect to specified axes."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.ANGLE_RATE.__doc__ = "Angle rate vector perpendicular to the plane in which the angle is defined."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.ECCENTRICITY.__doc__ = "Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.FIXED_IN_AXES.__doc__ = "Vector fixed in reference axes."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.TWO_PLANES_INTERSECTION.__doc__ = "Defined along the intersection of two planes."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.LINE_OF_NODES.__doc__ = "Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.MODEL_ATTACHMENT.__doc__ = "Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.ORBIT_ANGULAR_MOMENTUM.__doc__ = "Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.ORBIT_NORMAL.__doc__ = "Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.PERIAPSIS.__doc__ = "Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.PROJECTION.__doc__ = "A projection of a vector computed with respect to a reference plane."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.REFLECTION.__doc__ = "Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.SCALED.__doc__ = "Scaled version of the input vector."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DIRECTION_TO_STAR.__doc__ = "Defined with respect to a star object."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.TEMPLATE.__doc__ = "Represents a VGT vector created from a template. This type of vector is not creatable."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.AT_TIME_INSTANT.__doc__ = "Vector fixed relative to reference axes based on another vector evaluated at specified time instant."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.PROJECT_ALONG.__doc__ = "A projection of a source vector in the direction of another vector."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.SCALAR_LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors using scalars."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.SCALAR_SCALED.__doc__ = "Scaled version of the input vector using scalar."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.VELOCITY.__doc__ = "Velocity vector of a point in a coordinate system."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.PLUGIN.__doc__ = "A vector plugin point."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
+VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
 
-agcls.AgTypeNameMap["CRDN_VECTOR_TYPE"] = CRDN_VECTOR_TYPE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_TYPE"] = VECTOR_GEOMETRY_TOOL_VECTOR_TYPE
 
 class CRDN_MEAN_ELEMENT_THEORY(IntEnum):
     """Mean element theory types for approximating motion."""
@@ -1763,17 +1764,17 @@ CRDN_SIGNED_ANGLE_TYPE.NEGATIVE.__doc__ = "Choose the option to measure angles a
 
 agcls.AgTypeNameMap["CRDN_SIGNED_ANGLE_TYPE"] = CRDN_SIGNED_ANGLE_TYPE
 
-class CRDN_POINT_B_PLANE_TYPE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE(IntEnum):
     """B-Plane point types."""
     # Asymptote.
     ASYMPTOTE = 1
     # Two body.
     A_TWO_BODY = 2
 
-CRDN_POINT_B_PLANE_TYPE.ASYMPTOTE.__doc__ = "Asymptote."
-CRDN_POINT_B_PLANE_TYPE.A_TWO_BODY.__doc__ = "Two body."
+VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE.ASYMPTOTE.__doc__ = "Asymptote."
+VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE.A_TWO_BODY.__doc__ = "Two body."
 
-agcls.AgTypeNameMap["CRDN_POINT_B_PLANE_TYPE"] = CRDN_POINT_B_PLANE_TYPE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE"] = VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE
 
 class CRDN_REFERENCE_SHAPE_TYPE(IntEnum):
     """Surface shape types."""
@@ -1841,7 +1842,7 @@ CRDN_INTERSECTION_SURFACE.AT_TERRAIN.__doc__ = "Use terrain as intersection surf
 
 agcls.AgTypeNameMap["CRDN_INTERSECTION_SURFACE"] = CRDN_INTERSECTION_SURFACE
 
-class CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE(IntEnum):
+class VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
     # Do not inherit dimension.
     NONE = 0
@@ -1850,11 +1851,11 @@ class CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE(IntEnum):
     # Inherit dimension from vector.
     FROM_VECTOR = 2
 
-CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE.NONE.__doc__ = "Do not inherit dimension."
-CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE.FROM_SCALAR.__doc__ = "Inherit dimension from scalar."
-CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE.FROM_VECTOR.__doc__ = "Inherit dimension from vector."
+VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE.NONE.__doc__ = "Do not inherit dimension."
+VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE.FROM_SCALAR.__doc__ = "Inherit dimension from scalar."
+VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE.FROM_VECTOR.__doc__ = "Inherit dimension from vector."
 
-agcls.AgTypeNameMap["CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE"] = CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE
+agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE"] = VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE
 
 
 class ITimeToolIntervalCollection(object):
@@ -2025,9 +2026,9 @@ class IVectorGeometryToolPoint(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPoint.")
     
     @property
-    def type(self) -> "CRDN_POINT_TYPE":
+    def type(self) -> "VECTOR_GEOMETRY_TOOL_POINT_TYPE":
         """Returns a type of the point object."""
-        with agmarshall.AgEnum_arg(CRDN_POINT_TYPE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2089,9 +2090,9 @@ class IVectorGeometryToolVector(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVector.")
     
     @property
-    def type(self) -> "CRDN_VECTOR_TYPE":
+    def type(self) -> "VECTOR_GEOMETRY_TOOL_VECTOR_TYPE":
         """Returns a type of the vector object."""
-        with agmarshall.AgEnum_arg(CRDN_VECTOR_TYPE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2242,9 +2243,9 @@ class IVectorGeometryToolAxes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxes.")
     
     @property
-    def type(self) -> "CRDN_AXES_TYPE":
+    def type(self) -> "VECTOR_GEOMETRY_TOOL_AXES_TYPE":
         """Returns a type of the axes object."""
-        with agmarshall.AgEnum_arg(CRDN_AXES_TYPE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_AXES_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2357,9 +2358,9 @@ class IVectorGeometryToolAngle(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngle.")
     
     @property
-    def type(self) -> "CRDN_ANGLE_TYPE":
+    def type(self) -> "VECTOR_GEOMETRY_TOOL_ANGLE_TYPE":
         """Returns a type of the angle object."""
-        with agmarshall.AgEnum_arg(CRDN_ANGLE_TYPE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_ANGLE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2441,9 +2442,9 @@ class IVectorGeometryToolPlane(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlane.")
     
     @property
-    def type(self) -> "CRDN_PLANE_TYPE":
+    def type(self) -> "VECTOR_GEOMETRY_TOOL_PLANE_TYPE":
         """Returns a type of the plane object."""
-        with agmarshall.AgEnum_arg(CRDN_PLANE_TYPE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_PLANE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -7080,15 +7081,15 @@ class ICalculationToolScalarVectorComponent(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_axes"](arg_referenceAxes.COM_val))
 
     @property
-    def component(self) -> "CRDN_VECTOR_COMPONENT_TYPE":
+    def component(self) -> "VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE":
         """The component of the vector to return as the value of the scalar."""
-        with agmarshall.AgEnum_arg(CRDN_VECTOR_COMPONENT_TYPE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_component"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @component.setter
-    def component(self, component:"CRDN_VECTOR_COMPONENT_TYPE") -> None:
-        with agmarshall.AgEnum_arg(CRDN_VECTOR_COMPONENT_TYPE, component) as arg_component:
+    def component(self, component:"VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE, component) as arg_component:
             agcls.evaluate_hresult(self.__dict__["_set_component"](arg_component.COM_val))
 
 
@@ -14529,8 +14530,8 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
         self.__dict__["_create_volume_grid_cylindrical"] = _raise_uninitialized_error
         self.__dict__["_create_volume_grid_spherical"] = _raise_uninitialized_error
         self.__dict__["_create_volume_grid_constrained"] = _raise_uninitialized_error
-        self.__dict__["_create_volume_grid_lat_lon_alt"] = _raise_uninitialized_error
-        self.__dict__["_create_volume_grid_bearing_alt"] = _raise_uninitialized_error
+        self.__dict__["_create_volume_grid_lat_lon_altitude"] = _raise_uninitialized_error
+        self.__dict__["_create_volume_grid_bearing_altitude"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISpatialAnalysisToolVolumeGridFactory._uuid))
             if pUnk is not None:
@@ -14548,8 +14549,8 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
         self.__dict__["_create_volume_grid_cylindrical"] = IAGFUNCTYPE(pUnk, IID_ISpatialAnalysisToolVolumeGridFactory, vtable_offset_local+4, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
         self.__dict__["_create_volume_grid_spherical"] = IAGFUNCTYPE(pUnk, IID_ISpatialAnalysisToolVolumeGridFactory, vtable_offset_local+5, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
         self.__dict__["_create_volume_grid_constrained"] = IAGFUNCTYPE(pUnk, IID_ISpatialAnalysisToolVolumeGridFactory, vtable_offset_local+6, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_create_volume_grid_lat_lon_alt"] = IAGFUNCTYPE(pUnk, IID_ISpatialAnalysisToolVolumeGridFactory, vtable_offset_local+7, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_create_volume_grid_bearing_alt"] = IAGFUNCTYPE(pUnk, IID_ISpatialAnalysisToolVolumeGridFactory, vtable_offset_local+8, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_create_volume_grid_lat_lon_altitude"] = IAGFUNCTYPE(pUnk, IID_ISpatialAnalysisToolVolumeGridFactory, vtable_offset_local+7, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_create_volume_grid_bearing_altitude"] = IAGFUNCTYPE(pUnk, IID_ISpatialAnalysisToolVolumeGridFactory, vtable_offset_local+8, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -14611,20 +14612,20 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_volume_grid_constrained"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_volume_grid_lat_lon_alt(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
+    def create_volume_grid_lat_lon_altitude(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
         """Creates and registers cartographic volume grid type using specified name and description."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_create_volume_grid_lat_lon_alt"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_create_volume_grid_lat_lon_altitude"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_volume_grid_bearing_alt(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
+    def create_volume_grid_bearing_altitude(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
         """Creates and registers a volume grid of type surface bearing using specified name and description."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_create_volume_grid_bearing_alt"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_create_volume_grid_bearing_altitude"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -20000,15 +20001,15 @@ class IVectorGeometryToolPointBPlane(object):
             return arg_ppRetVal.python_val
 
     @property
-    def point_type(self) -> "CRDN_POINT_B_PLANE_TYPE":
+    def point_type(self) -> "VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE":
         """Specify a point type."""
-        with agmarshall.AgEnum_arg(CRDN_POINT_B_PLANE_TYPE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @point_type.setter
-    def point_type(self, pointType:"CRDN_POINT_B_PLANE_TYPE") -> None:
-        with agmarshall.AgEnum_arg(CRDN_POINT_B_PLANE_TYPE, pointType) as arg_pointType:
+    def point_type(self, pointType:"VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE, pointType) as arg_pointType:
             agcls.evaluate_hresult(self.__dict__["_set_point_type"](arg_pointType.COM_val))
 
     @property
@@ -23840,15 +23841,15 @@ class IVectorGeometryToolVectorScalarScaled(object):
             agcls.evaluate_hresult(self.__dict__["_set_normalize"](arg_normalize.COM_val))
 
     @property
-    def dimension_inheritance(self) -> "CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE":
+    def dimension_inheritance(self) -> "VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE":
         """Whether or not to inherit dimension from the input vector or the scalar."""
-        with agmarshall.AgEnum_arg(CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_dimension_inheritance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @dimension_inheritance.setter
-    def dimension_inheritance(self, dimensionInheritance:"CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE") -> None:
-        with agmarshall.AgEnum_arg(CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE, dimensionInheritance) as arg_dimensionInheritance:
+    def dimension_inheritance(self, dimensionInheritance:"VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE") -> None:
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE, dimensionInheritance) as arg_dimensionInheritance:
             agcls.evaluate_hresult(self.__dict__["_set_dimension_inheritance"](arg_dimensionInheritance.COM_val))
 
     @property
@@ -24177,18 +24178,18 @@ class IVectorGeometryToolVectorFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFactory.")
     
-    def create(self, vectorName:str, description:str, vectorType:"CRDN_VECTOR_TYPE") -> "IVectorGeometryToolVector":
+    def create(self, vectorName:str, description:str, vectorType:"VECTOR_GEOMETRY_TOOL_VECTOR_TYPE") -> "IVectorGeometryToolVector":
         """Creates a VGT vector using specified name, description and type."""
         with agmarshall.BSTR_arg(vectorName) as arg_vectorName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(CRDN_VECTOR_TYPE, vectorType) as arg_vectorType, \
+             agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_TYPE, vectorType) as arg_vectorType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_vectorName.COM_val, arg_description.COM_val, arg_vectorType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"CRDN_VECTOR_TYPE") -> bool:
+    def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_VECTOR_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(CRDN_VECTOR_TYPE, type) as arg_type, \
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24270,18 +24271,18 @@ class IVectorGeometryToolAxesFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFactory.")
     
-    def create(self, axesName:str, description:str, axesType:"CRDN_AXES_TYPE") -> "IVectorGeometryToolAxes":
+    def create(self, axesName:str, description:str, axesType:"VECTOR_GEOMETRY_TOOL_AXES_TYPE") -> "IVectorGeometryToolAxes":
         """Creates a VGT axes using specified name, description and type."""
         with agmarshall.BSTR_arg(axesName) as arg_axesName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(CRDN_AXES_TYPE, axesType) as arg_axesType, \
+             agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_AXES_TYPE, axesType) as arg_axesType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_axesName.COM_val, arg_description.COM_val, arg_axesType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"CRDN_AXES_TYPE") -> bool:
+    def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_AXES_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(CRDN_AXES_TYPE, type) as arg_type, \
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_AXES_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24402,18 +24403,18 @@ class IVectorGeometryToolPointFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointFactory.")
     
-    def create(self, pointName:str, description:str, pointType:"CRDN_POINT_TYPE") -> "IVectorGeometryToolPoint":
+    def create(self, pointName:str, description:str, pointType:"VECTOR_GEOMETRY_TOOL_POINT_TYPE") -> "IVectorGeometryToolPoint":
         """Creates a VGT point using the specified name, description and type."""
         with agmarshall.BSTR_arg(pointName) as arg_pointName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(CRDN_POINT_TYPE, pointType) as arg_pointType, \
+             agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_TYPE, pointType) as arg_pointType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_pointName.COM_val, arg_description.COM_val, arg_pointType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"CRDN_POINT_TYPE") -> bool:
+    def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_POINT_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(CRDN_POINT_TYPE, type) as arg_type, \
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24485,18 +24486,18 @@ class IVectorGeometryToolPlaneFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneFactory.")
     
-    def create(self, planeName:str, description:str, planeType:"CRDN_PLANE_TYPE") -> "IVectorGeometryToolPlane":
+    def create(self, planeName:str, description:str, planeType:"VECTOR_GEOMETRY_TOOL_PLANE_TYPE") -> "IVectorGeometryToolPlane":
         """Creates a VGT plane using the specified name, description and type."""
         with agmarshall.BSTR_arg(planeName) as arg_planeName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(CRDN_PLANE_TYPE, planeType) as arg_planeType, \
+             agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_PLANE_TYPE, planeType) as arg_planeType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_planeName.COM_val, arg_description.COM_val, arg_planeType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"CRDN_PLANE_TYPE") -> bool:
+    def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_PLANE_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(CRDN_PLANE_TYPE, type) as arg_type, \
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_PLANE_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24540,18 +24541,18 @@ class IVectorGeometryToolAngleFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleFactory.")
     
-    def create(self, angleName:str, description:str, angleType:"CRDN_ANGLE_TYPE") -> "IVectorGeometryToolAngle":
+    def create(self, angleName:str, description:str, angleType:"VECTOR_GEOMETRY_TOOL_ANGLE_TYPE") -> "IVectorGeometryToolAngle":
         """Creates a VGT angle using specified name, description and type."""
         with agmarshall.BSTR_arg(angleName) as arg_angleName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(CRDN_ANGLE_TYPE, angleType) as arg_angleType, \
+             agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_ANGLE_TYPE, angleType) as arg_angleType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_angleName.COM_val, arg_description.COM_val, arg_angleType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"CRDN_ANGLE_TYPE") -> bool:
+    def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_ANGLE_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(CRDN_ANGLE_TYPE, type) as arg_type, \
+        with agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_ANGLE_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
