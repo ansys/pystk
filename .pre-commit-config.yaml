@@ -33,4 +33,4 @@ repos:
   rev: v1.6.0
   hooks:
   - id: numpydoc-validation
-    exclude: "src/ansys/stk/core/internal/"
+    exclude: "^(src/ansys/stk/internal/|tests/)"
