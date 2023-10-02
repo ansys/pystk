@@ -94,13 +94,13 @@ class Mto(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
     def ConfigureMtoGraphics(self, mto: "IMto"):
-        tracks: "IMtoGraphics3DTrackCollection" = mto.graphics3_d.tracks
+        tracks: "IMtoGraphics3DTrackCollection" = mto.graphics_3d.tracks
         element: "IMtoGraphics3DTrack"
         for element in tracks:
             element.marker.pixel_size = 12
-            element.marker.orientation_mode = GRAPHICS3_D_MARKER_ORIENTATION.ANGLE
-            element.marker.x_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.RIGHT
-            element.marker.y_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.BOTTOM
+            element.marker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.ANGLE
+            element.marker.x_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.RIGHT
+            element.marker.y_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.BOTTOM
             element.marker.angle = 1.23
 
             element.marker.marker_type = MARKER_TYPE.IMAGE_FILE
@@ -125,7 +125,7 @@ class Mto(CodeSnippetsTestBase):
     def test_ConfigureMtoTrackModel(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
         self.ConfigureMtos(CodeSnippetsTestBase.m_Root, Mto.m_Object)
-        self.ConfigureMtoTrackModel(Mto.m_Object.graphics3_d.tracks[0])
+        self.ConfigureMtoTrackModel(Mto.m_Object.graphics_3d.tracks[0])
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
     def ConfigureMtoTrackModel(self, track: "IMtoGraphics3DTrack"):
@@ -143,15 +143,15 @@ class Mto(CodeSnippetsTestBase):
     def test_ConfigureMtoTrackMarker(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
         self.ConfigureMtos(CodeSnippetsTestBase.m_Root, Mto.m_Object)
-        self.ConfigureMtoTrackMarker(Mto.m_Object.graphics3_d.tracks[0])
+        self.ConfigureMtoTrackMarker(Mto.m_Object.graphics_3d.tracks[0])
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
     def ConfigureMtoTrackMarker(self, track: "IMtoGraphics3DTrack"):
         marker: "IMtoGraphics3DMarker" = track.marker
         marker.pixel_size = 12
-        marker.orientation_mode = GRAPHICS3_D_MARKER_ORIENTATION.ANGLE
-        marker.x_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.RIGHT
-        marker.y_origin = GRAPHICS3_D_MARKER_ORIGIN_TYPE.BOTTOM
+        marker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.ANGLE
+        marker.x_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.RIGHT
+        marker.y_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.BOTTOM
         marker.angle = 1.23
         marker.marker_type = MARKER_TYPE.IMAGE_FILE
         marker.set_marker_image_file(r"STKData\VO\Markers\Fire.ppm")

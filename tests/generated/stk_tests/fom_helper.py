@@ -1157,7 +1157,7 @@ class FOMHelper(object):
             self.GfxAttributes(clr.CastAs(oAttributes, IFigureOfMeritGraphics2DAttributes), bReadOnly)
 
             def action68():
-                oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.NOT_CURRENT
+                oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
 
             # Accumulation (readonly)
             TryCatchAssertBlock.DoAssert("", action68)
@@ -1177,18 +1177,18 @@ class FOMHelper(object):
             self.GfxAttributes(clr.CastAs(oAttributes, IFigureOfMeritGraphics2DAttributes), bReadOnly)
             # Accumulation
             self.m_logger.WriteLine6("\tThe current Accumulation is: {0}", oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.CURRENT_TIME
+            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.CURRENT_TIME, oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.NOT_CURRENT
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME, oAttributes.accumulation)
+            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.NOT_CURRENT, oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.NOT_UP_TO_CURRENT
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT, oAttributes.accumulation)
+            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_UP_TO_CURRENT
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.NOT_UP_TO_CURRENT, oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.UP_TO_CURRENT
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_UP_TO_CURRENT, oAttributes.accumulation)
+            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.UP_TO_CURRENT
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.UP_TO_CURRENT, oAttributes.accumulation)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.UP_TO_CURRENT, oAttributes.accumulation)
 
             oAttributes.fill_points = True
             oAttributes.fill_translucency = 55.0
@@ -1211,13 +1211,13 @@ class FOMHelper(object):
                 TryCatchAssertBlock.DoAssert("", action69)
 
             def action70():
-                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.BLOCK_FILL
+                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
 
             # ContourType (readonly)
             TryCatchAssertBlock.DoAssert("", action70)
 
             def action71():
-                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT
+                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
 
             # ColorMethod (readonly)
             TryCatchAssertBlock.DoAssert("", action71)
@@ -1236,13 +1236,13 @@ class FOMHelper(object):
             Assert.assertFalse(oContours.is_visible)
 
             def action72():
-                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.BLOCK_FILL
+                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
 
             # ContourType (readonly)
             TryCatchAssertBlock.DoAssert("", action72)
 
             def action73():
-                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT
+                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
 
             # ColorMethod (readonly)
             TryCatchAssertBlock.DoAssert("", action73)
@@ -1252,22 +1252,22 @@ class FOMHelper(object):
             Assert.assertTrue(oContours.is_visible)
             # ContourType
             self.m_logger.WriteLine6("\tThe current ContourType is: {0}", oContours.contour_type)
-            oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.BLOCK_FILL
+            oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
             self.m_logger.WriteLine6("\tThe new ContourType is: {0}", oContours.contour_type)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.BLOCK_FILL, oContours.contour_type)
-            oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.SMOOTH_FILL
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL, oContours.contour_type)
+            oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
             self.m_logger.WriteLine6("\tThe new ContourType is: {0}", oContours.contour_type)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.SMOOTH_FILL, oContours.contour_type)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL, oContours.contour_type)
             # ColorMethod
             self.m_logger.WriteLine6("\tThe current ColorMethod is: {0}", oContours.color_method)
-            oContours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT
+            oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
             self.m_logger.WriteLine6("\tThe new ColorMethod is: {0}", oContours.color_method)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT, oContours.color_method)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT, oContours.color_method)
             # LevelAttributes
             self.GfxLevelAttributes(oContours.level_attributes, oContours.color_method, bReadOnly)
-            oContours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.COLOR_RAMP
+            oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
             self.m_logger.WriteLine6("\tThe new ColorMethod is: {0}", oContours.color_method)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.COLOR_RAMP, oContours.color_method)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP, oContours.color_method)
             # RampColor
             self.GfxRampColor(oContours.ramp_color, bReadOnly)
             # LevelAttributes
@@ -1398,7 +1398,7 @@ class FOMHelper(object):
     def GfxLevelAttributes(
         self,
         oCollection: "IFigureOfMeritGraphics2DLevelAttributesCollection",
-        eMethod: "FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD",
+        eMethod: "FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD",
         bReadOnly: bool,
     ):
         self.m_logger.WriteLine("----- GRAPHICS LEVEL ATTRIBUTES TEST ----- BEGIN -----")
@@ -1473,7 +1473,7 @@ class FOMHelper(object):
             Assert.assertEqual(47, gfxLevelAttributesElement.level)
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: 0x{0:X}", gfxLevelAttributesElement.color)
-            if eMethod == FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT:
+            if eMethod == FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT:
                 gfxLevelAttributesElement.color = Color.FromArgb(13426158)
                 self.m_logger.WriteLine6("\tThe new Color is: 0x{0:X}", gfxLevelAttributesElement.color)
                 AssertEx.AreEqual(Color.FromArgb(13426158), gfxLevelAttributesElement.color)
@@ -1537,9 +1537,9 @@ class FOMHelper(object):
             # RangeColorOptions
             self.GfxLegendRangeColorOptions(oLegend.range_color_options, bReadOnly, bIsVisibleReadOnly)
             # GfxWindow
-            self.GfxLegend2DWindowLayout(oLegend.graphics2_d_window, bReadOnly, bIsVisibleReadOnly)
+            self.GfxLegend2DWindowLayout(oLegend.graphics_2d_window, bReadOnly, bIsVisibleReadOnly)
             # VOWindow
-            self.GfxLegend3DWindowLayout(oLegend.graphics3_d_window, bReadOnly, bIsVisibleReadOnly)
+            self.GfxLegend3DWindowLayout(oLegend.graphics_3d_window, bReadOnly, bIsVisibleReadOnly)
 
         else:
             # ColorOptions
@@ -1549,9 +1549,9 @@ class FOMHelper(object):
             # RangeColorOptions
             self.GfxLegendRangeColorOptions(oLegend.range_color_options, bReadOnly, bIsVisibleReadOnly)
             # GfxWindow
-            self.GfxLegend2DWindowLayout(oLegend.graphics2_d_window, bReadOnly, bIsVisibleReadOnly)
+            self.GfxLegend2DWindowLayout(oLegend.graphics_2d_window, bReadOnly, bIsVisibleReadOnly)
             # VOWindow
-            self.GfxLegend3DWindowLayout(oLegend.graphics3_d_window, bReadOnly, bIsVisibleReadOnly)
+            self.GfxLegend3DWindowLayout(oLegend.graphics_3d_window, bReadOnly, bIsVisibleReadOnly)
 
         self.m_logger.WriteLine("----- GRAPHICS LEGENT TEST ----- END -----")
 
@@ -1614,7 +1614,7 @@ class FOMHelper(object):
             TryCatchAssertBlock.DoAssert("", action89)
 
             def action90():
-                oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS2_D_FLOATING_POINT_FORMAT.FLOATING_POINT
+                oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
 
             # FloatingPointFormat
             TryCatchAssertBlock.DoAssert("", action90)
@@ -1640,20 +1640,20 @@ class FOMHelper(object):
             TryCatchAssertBlock.DoAssert("", action91)
             # FloatingPointFormat
             self.m_logger.WriteLine6("\tThe current FloatingPointFormat is: {0}", oOptions.floating_point_format)
-            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS2_D_FLOATING_POINT_FORMAT.FLOATING_POINT
+            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
             self.m_logger.WriteLine6("\tThe new FloatingPointFormat is: {0}", oOptions.floating_point_format)
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS2_D_FLOATING_POINT_FORMAT.FLOATING_POINT, oOptions.floating_point_format
+                FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT, oOptions.floating_point_format
             )
-            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS2_D_FLOATING_POINT_FORMAT.SCIENTIFIC_LOWERCASE_E
+            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_LOWERCASE_E
             self.m_logger.WriteLine6("\tThe new FloatingPointFormat is: {0}", oOptions.floating_point_format)
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS2_D_FLOATING_POINT_FORMAT.SCIENTIFIC_LOWERCASE_E, oOptions.floating_point_format
+                FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_LOWERCASE_E, oOptions.floating_point_format
             )
-            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS2_D_FLOATING_POINT_FORMAT.SCIENTIFIC_UPPERCASE_E
+            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_UPPERCASE_E
             self.m_logger.WriteLine6("\tThe new FloatingPointFormat is: {0}", oOptions.floating_point_format)
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS2_D_FLOATING_POINT_FORMAT.SCIENTIFIC_UPPERCASE_E, oOptions.floating_point_format
+                FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_UPPERCASE_E, oOptions.floating_point_format
             )
 
     # endregion
@@ -1678,7 +1678,7 @@ class FOMHelper(object):
             TryCatchAssertBlock.DoAssert("", action93)
 
             def action94():
-                oOptions.direction = FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.HORIZONTAL_MAX_TO_MIN
+                oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
 
             # Direction
             TryCatchAssertBlock.DoAssert("", action94)
@@ -1718,9 +1718,9 @@ class FOMHelper(object):
             TryCatchAssertBlock.DoAssert("", action98)
             # Direction (eHorizontalMaxToMin)
             self.m_logger.WriteLine6("\tThe current Direction is: {0}", oOptions.direction)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.HORIZONTAL_MAX_TO_MIN
+            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.HORIZONTAL_MAX_TO_MIN, oOptions.direction)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN, oOptions.direction)
             # MaxSquaresPerRow
             self.m_logger.WriteLine3("\tThe current MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
             oOptions.max_squares_per_row = 34
@@ -1738,9 +1738,9 @@ class FOMHelper(object):
             # MaxSquaresPerColumn
             TryCatchAssertBlock.DoAssert("", action100)
             # Direction (eHorizontalMinToMax)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.HORIZONTAL_MIN_TO_MAX
+            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.HORIZONTAL_MIN_TO_MAX, oOptions.direction)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX, oOptions.direction)
             # MaxSquaresPerRow
             self.m_logger.WriteLine3("\tThe current MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
             oOptions.max_squares_per_row = 56
@@ -1758,9 +1758,9 @@ class FOMHelper(object):
             # MaxSquaresPerColumn
             TryCatchAssertBlock.DoAssert("", action102)
             # Direction (eVerticalMaxToMin)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.VERTICAL_MAX_TO_MIN
+            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.VERTICAL_MAX_TO_MIN, oOptions.direction)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN, oOptions.direction)
             # MaxSquaresPerColumn
             self.m_logger.WriteLine3("\tThe current MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
             oOptions.max_squares_per_column = 56
@@ -1778,9 +1778,9 @@ class FOMHelper(object):
             # MaxSquaresPerRow
             TryCatchAssertBlock.DoAssert("", action104)
             # Direction (eVerticalMinToMax)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.VERTICAL_MIN_TO_MAX
+            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS2_D_DIRECTION.VERTICAL_MIN_TO_MAX, oOptions.direction)
+            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX, oOptions.direction)
             # MaxSquaresPerColumn
             self.m_logger.WriteLine3("\tThe current MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
             oOptions.max_squares_per_column = 32

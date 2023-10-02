@@ -202,8 +202,8 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureFigureOfMeritContours(self, contours: "IFigureOfMeritGraphics2DContours"):
         contours.is_visible = True
-        contours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.SMOOTH_FILL
-        contours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT
+        contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
+        contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
 
         # Add level ranges (batch)
         contours.level_attributes.add_level_range(25, 35, 1)

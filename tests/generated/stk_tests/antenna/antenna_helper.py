@@ -424,7 +424,7 @@ class AtmosphereHelper(object):
             aaModel: "IAtmosphericAbsorptionModel" = atmosphere.local_atmos_absorption_model
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-9":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.I_T_U_R_P_676_9, aaModel.type)
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
                     clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
@@ -859,7 +859,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action74)
 
             elif rainLossModelName == "ITU-R P618-10":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_10, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_10, rainLossModel.type)
                 itu618_10: "IRainLossModelITURP618_10" = clr.CastAs(rainLossModel, IRainLossModelITURP618_10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
@@ -881,7 +881,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_10.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-12":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_12, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_12, rainLossModel.type)
                 itu618_12: "IRainLossModelITURP618_12" = clr.CastAs(rainLossModel, IRainLossModelITURP618_12)
 
                 itu618_12.surface_temperature = -100
@@ -905,11 +905,11 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_12.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-13":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_13, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_13, rainLossModel.type)
                 itu618_13: "IRainLossModelITURP618_13" = clr.CastAs(rainLossModel, IRainLossModelITURP618_13)
 
-                itu618_13.enable_itu1510 = False
-                Assert.assertFalse(itu618_13.enable_itu1510)
+                itu618_13.enable_itu_1510 = False
+                Assert.assertFalse(itu618_13.enable_itu_1510)
 
                 itu618_13.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_13.surface_temperature)
@@ -927,46 +927,46 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action80)
 
                 def action81():
-                    itu618_13.use_annual_itu1510 = True
+                    itu618_13.use_annual_itu_1510 = True
 
                 TryCatchAssertBlock.ExpectedException("read-only", action81)
 
                 def action82():
-                    itu618_13.itu1510_month = 1
+                    itu618_13.itu_1510_month = 1
 
                 TryCatchAssertBlock.ExpectedException("read-only", action82)
 
-                itu618_13.enable_itu1510 = True
-                Assert.assertTrue(itu618_13.enable_itu1510)
+                itu618_13.enable_itu_1510 = True
+                Assert.assertTrue(itu618_13.enable_itu_1510)
 
                 def action83():
                     itu618_13.surface_temperature = 100
 
                 TryCatchAssertBlock.ExpectedException("read only", action83)
 
-                itu618_13.use_annual_itu1510 = False
-                Assert.assertFalse(itu618_13.use_annual_itu1510)
+                itu618_13.use_annual_itu_1510 = False
+                Assert.assertFalse(itu618_13.use_annual_itu_1510)
 
-                itu618_13.itu1510_month = 1
-                Assert.assertEqual(1, itu618_13.itu1510_month)
-                itu618_13.itu1510_month = 12
-                Assert.assertEqual(12, itu618_13.itu1510_month)
+                itu618_13.itu_1510_month = 1
+                Assert.assertEqual(1, itu618_13.itu_1510_month)
+                itu618_13.itu_1510_month = 12
+                Assert.assertEqual(12, itu618_13.itu_1510_month)
 
                 def action84():
-                    itu618_13.itu1510_month = 0
+                    itu618_13.itu_1510_month = 0
 
                 TryCatchAssertBlock.ExpectedException("must be in", action84)
 
                 def action85():
-                    itu618_13.itu1510_month = 13
+                    itu618_13.itu_1510_month = 13
 
                 TryCatchAssertBlock.ExpectedException("must be in", action85)
 
-                itu618_13.use_annual_itu1510 = True
-                Assert.assertTrue(itu618_13.use_annual_itu1510)
+                itu618_13.use_annual_itu_1510 = True
+                Assert.assertTrue(itu618_13.use_annual_itu_1510)
 
                 def action86():
-                    itu618_13.itu1510_month = 1
+                    itu618_13.itu_1510_month = 1
 
                 TryCatchAssertBlock.ExpectedException("read-only", action86)
 
@@ -1392,7 +1392,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
             aaModel: "IAtmosphericAbsorptionModel" = propChan.atmos_absorption_model
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-9":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.I_T_U_R_P_676_9, aaModel.type)
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
                     clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )

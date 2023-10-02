@@ -21,8 +21,8 @@ from ansys.stk.core.stkobjects import (
     SENSOR_POINTING_TARGETED_BORESIGHT_TYPE,
     STK_OBJECT_TYPE,
     VEHICLE_ATTITUDE,
-    VEHICLE_GRAPHICS2_D_ATTRIBUTES,
-    VEHICLE_GRAPHICS2_D_VISIBLE_SIDES,
+    VEHICLE_GRAPHICS_2D_ATTRIBUTES,
+    VEHICLE_GRAPHICS_2D_VISIBLE_SIDES,
     VEHICLE_PROFILE,
     VEHICLE_PROPAGATOR_TYPE,
     VEHICLE_WAYPOINT_COMP_METHOD,
@@ -457,10 +457,10 @@ class STKTutorial:
         j4.Propagate()
         self.root.rewind()
         self.ers1.Graphics.Passes.VisibleSides = (
-            VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING
+            VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING
         )
         self.ers1.Graphics.Passes.VisibleSides = (
-            VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_BOTH
+            VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_BOTH
         )
         self.shuttle = self.root.current_scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, "Shuttle"
@@ -504,7 +504,7 @@ class STKTutorial:
 
     def _configure_shuttle_contours(self):
         self.shuttle.Graphics.SetAttributesType(
-            VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC
+            VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC
         )
         orbitgfx = self.shuttle.Graphics.Attributes
         orbitgfx.Line.Style = LINE_STYLE.DASHED
@@ -653,7 +653,7 @@ class STKTutorial:
         j4.Propagate()
 
         self.ers1.Graphics.SetAttributesType(
-            VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_CUSTOM
+            VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_CUSTOM
         )
         customAtt = self.ers1.Graphics.Attributes
         gfxInterval = customAtt.Intervals.Add(
@@ -675,7 +675,7 @@ class STKTutorial:
 
     def _configure_access_intervals(self):
         self.ers1.Graphics.SetAttributesType(
-            VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_ACCESS
+            VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_ACCESS
         )
         gfxAccess = self.ers1.Graphics.Attributes
 

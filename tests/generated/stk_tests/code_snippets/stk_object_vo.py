@@ -42,7 +42,7 @@ class StkObjectVO(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
             ISatellite,
         )
-        model: "IGraphics3DModel" = satellite.graphics3_d.model
+        model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         self.ConfigureVOModelFile(model)
 
@@ -66,7 +66,7 @@ class StkObjectVO(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
             ISatellite,
         )
-        model: "IGraphics3DModel" = satellite.graphics3_d.model
+        model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         # Set new ModelFile.Filename
         model.model_type = MODEL_TYPE.FILE
@@ -106,7 +106,7 @@ class StkObjectVO(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
             ISatellite,
         )
-        model: "IGraphics3DModel" = satellite.graphics3_d.model
+        model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         self.ListVOModelArticulations(satellite, model)
 
@@ -155,7 +155,7 @@ class StkObjectVO(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
             ISatellite,
         )
-        model: "IGraphics3DModel" = satellite.graphics3_d.model
+        model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         self.ConfigureVOModelLevelOfDetail(model)
 
@@ -182,7 +182,7 @@ class StkObjectVO(CodeSnippetsTestBase):
             IGroundVehicle,
         )
 
-        self.ConfigureVOVector(vehicle.graphics3_d.vector)
+        self.ConfigureVOVector(vehicle.graphics_3d.vector)
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
 
@@ -247,7 +247,7 @@ class StkObjectVO(CodeSnippetsTestBase):
             (clr.Convert(sat, ISatellite)).propagator, IVehiclePropagatorTwoBody
         )
         tb.propagate()
-        ddc: "IGraphics3DDataDisplayCollection" = sat.graphics3_d.data_display
+        ddc: "IGraphics3DDataDisplayCollection" = sat.graphics_3d.data_display
         self.ConfigureVODataDisplay(ddc)
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
@@ -260,9 +260,9 @@ class StkObjectVO(CodeSnippetsTestBase):
         # Configure data display as needed
         displayElement.title_text = "Sol. Intensity"
         displayElement.is_visible = True
-        displayElement.location = GRAPHICS3_D_LOCATION.WINDOW_3D
+        displayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
         displayElement.font_color = Color.White
-        displayElement.font_size = GRAPHICS3_D_FONT_SIZE.SMALL
+        displayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
         displayElement.use_background = True
         displayElement.bg_color = Color.Orange
         displayElement.use_auto_size_width = False

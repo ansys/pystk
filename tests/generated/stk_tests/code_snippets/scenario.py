@@ -165,11 +165,11 @@ class Scenario(CodeSnippetsTestBase):
         self.ConfigureScenarioTextFont(clr.CastAs(CodeSnippetsTestBase.m_Root.current_scenario, IScenario))
 
     def ConfigureScenarioTextFont(self, scenario: "IScenario"):
-        fonts: "IScenario3dFont" = scenario.graphics3_d.large_font
+        fonts: "IScenario3dFont" = scenario.graphics_3d.large_font
 
         fonts.bold = True
         fonts.italic = True
-        fonts.point_size = SCENARIO3_D_POINT_SIZE.FONT_SIZE36
+        fonts.point_size = SCENARIO_3D_POINT_SIZE.FONT_SIZE36
         if fonts.is_font_available("Impact"):
             fonts.name = "Impact"
 

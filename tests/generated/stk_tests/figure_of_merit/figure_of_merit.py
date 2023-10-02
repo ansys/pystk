@@ -424,7 +424,7 @@ class EarlyBoundTests(TestBase):
     def test_VO(self):
         TestBase.logger.WriteLine("----- VO TEST ----- BEGIN -----")
         # VO
-        oVO: "IFigureOfMeritGraphics3D" = EarlyBoundTests.AG_FOM.graphics3_d
+        oVO: "IFigureOfMeritGraphics3D" = EarlyBoundTests.AG_FOM.graphics_3d
         Assert.assertIsNotNone(oVO)
 
         # Granularity
@@ -615,17 +615,17 @@ class EarlyBoundTests(TestBase):
         if not bIsSmoothFillSupported:
 
             def action14():
-                fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.SMOOTH_FILL
+                fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
 
             TryCatchAssertBlock.DoAssert("", action14)
 
         else:
-            fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.SMOOTH_FILL
+            fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
             TestBase.logger.WriteLine6(
                 "\t\tThe new Graphics.Static.Contours.ContourType is: {0}", fom.graphics.static.contours.contour_type
             )
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS2_D_CONTOUR_TYPE.SMOOTH_FILL, fom.graphics.static.contours.contour_type
+                FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL, fom.graphics.static.contours.contour_type
             )
 
     # endregion

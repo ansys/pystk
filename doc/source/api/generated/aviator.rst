@@ -281,7 +281,7 @@ Enumerations
     ACCEL_MANEUVER_MODE
     AIRCRAFT_AERO_STRATEGY
     AIRCRAFT_PROP_STRATEGY
-    AGLMSL
+    AGL_MSL
     LANDING_APPROACH_FIX_RANGE_MODE
     ACCELERATION_ADV_ACCEL_MODE
     ACCEL_MANEUVER_AERO_PROP_MODE
@@ -382,12 +382,12 @@ Enumerations
     RAMJET_MODE
     SCRAMJET_MODE
     NUMERICAL_INTEGRATOR
-    BALLISTIC3_D_CONTROL_MODE
+    BALLISTIC_3D_CONTROL_MODE
     LAUNCH_DYN_STATE_COORD_FRAME
     LAUNCH_DYN_STATE_BEARING_REFERENCE
     ALTITUDE_REFERENCE
     SMOOTH_TURN_FPA_MODE
-    PITCH3_D_CONTROL_MODE
+    PITCH_3D_CONTROL_MODE
     REFUEL_DUMP_MODE
     BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
 
@@ -1418,7 +1418,7 @@ Enumerations
     :members:
 .. autoenum:: AIRCRAFT_PROP_STRATEGY
     :members:
-.. autoenum:: AGLMSL
+.. autoenum:: AGL_MSL
     :members:
 .. autoenum:: LANDING_APPROACH_FIX_RANGE_MODE
     :members:
@@ -1620,7 +1620,7 @@ Enumerations
     :members:
 .. autoenum:: NUMERICAL_INTEGRATOR
     :members:
-.. autoenum:: BALLISTIC3_D_CONTROL_MODE
+.. autoenum:: BALLISTIC_3D_CONTROL_MODE
     :members:
 .. autoenum:: LAUNCH_DYN_STATE_COORD_FRAME
     :members:
@@ -1630,7 +1630,7 @@ Enumerations
     :members:
 .. autoenum:: SMOOTH_TURN_FPA_MODE
     :members:
-.. autoenum:: PITCH3_D_CONTROL_MODE
+.. autoenum:: PITCH_3D_CONTROL_MODE
     :members:
 .. autoenum:: REFUEL_DUMP_MODE
     :members:

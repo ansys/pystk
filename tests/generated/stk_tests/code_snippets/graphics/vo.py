@@ -43,7 +43,7 @@ class VO(CodeSnippetsTestBase):
 
     def DelayGraphicsUpdates(self, root: "IStkObjectRoot"):
         satellite: "ISatellite" = clr.CastAs(root.current_scenario.children["Satellite1"], ISatellite)
-        voElt: "IGraphics3DDataDisplayElement" = satellite.graphics3_d.data_display[0]
+        voElt: "IGraphics3DDataDisplayElement" = satellite.graphics_3d.data_display[0]
 
         root.begin_update()  # Suspend updates
 

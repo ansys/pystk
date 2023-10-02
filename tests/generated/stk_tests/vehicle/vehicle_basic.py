@@ -3496,7 +3496,7 @@ class PropagatorUserExternalHelper(object):
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action131)
 
         # AvailableVehicleIDs
-        arIDs = oUser.available_vehicle_i_ds
+        arIDs = oUser.available_vehicle_ids
         self.m_logger.WriteLine("\tAvailable {0} VehicleIDs:")
 
         iIndex: int = 0
@@ -3879,16 +3879,13 @@ class PropagatorHPOPHelper(object):
             elif (
                 (
                     (
-                        (
-                            ((eModel == SRP_MODEL.G_P_S_BLK_I_I_A_AERO_T20))
-                            or ((eModel == SRP_MODEL.G_P_S_BLK_I_I_A_G_S_P_M_04_A))
-                        )
-                        or ((eModel == SRP_MODEL.G_P_S_BLK_I_I_A_G_S_P_M_04_AE))
+                        (((eModel == SRP_MODEL.GPS_BLKIIA_AERO_T20)) or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_A)))
+                        or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_AE))
                     )
-                    or ((eModel == SRP_MODEL.G_P_S_BLK_I_I_R_AERO_T30))
+                    or ((eModel == SRP_MODEL.GPS_BLKIIR_AERO_T30))
                 )
-                or ((eModel == SRP_MODEL.G_P_S_BLK_I_I_R_G_S_P_M_04_A))
-            ) or ((eModel == SRP_MODEL.G_P_S_BLK_I_I_R_G_S_P_M_04_AE)):
+                or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_A))
+            ) or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_AE)):
                 oGPSSRP: "ISRPModelGPS" = clr.CastAs(oSrpModel.model, ISRPModelGPS)
                 Assert.assertIsNotNone(oGPSSRP)
                 oGPSSRP.scale = -100
@@ -5245,18 +5242,18 @@ class PropagatorHPOPHelper(object):
 
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action226)
         # UseVOP (false)
-        self.m_logger.WriteLine4("\tThe current UseVOP is: {0}", oIntegrator.use_graphics3_dp)
-        oIntegrator.use_graphics3_dp = False
-        self.m_logger.WriteLine4("\tThe new UseVOP is: {0}", oIntegrator.use_graphics3_dp)
-        Assert.assertEqual(False, oIntegrator.use_graphics3_dp)
+        self.m_logger.WriteLine4("\tThe current UseVOP is: {0}", oIntegrator.use_graphics_3d_p)
+        oIntegrator.use_graphics_3d_p = False
+        self.m_logger.WriteLine4("\tThe new UseVOP is: {0}", oIntegrator.use_graphics_3d_p)
+        Assert.assertEqual(False, oIntegrator.use_graphics_3d_p)
         # Interpolation
-        self.Interpolation(oIntegrator.interpolation, oIntegrator.use_graphics3_dp)
+        self.Interpolation(oIntegrator.interpolation, oIntegrator.use_graphics_3d_p)
         # UseVOP (true)
-        oIntegrator.use_graphics3_dp = True
-        self.m_logger.WriteLine4("\tThe new UseVOP is: {0}", oIntegrator.use_graphics3_dp)
-        Assert.assertEqual(True, oIntegrator.use_graphics3_dp)
+        oIntegrator.use_graphics_3d_p = True
+        self.m_logger.WriteLine4("\tThe new UseVOP is: {0}", oIntegrator.use_graphics_3d_p)
+        Assert.assertEqual(True, oIntegrator.use_graphics_3d_p)
         # Interpolation
-        self.Interpolation(oIntegrator.interpolation, oIntegrator.use_graphics3_dp)
+        self.Interpolation(oIntegrator.interpolation, oIntegrator.use_graphics_3d_p)
 
         # IntegrationModel (eBulirschStoer)
         self.m_logger.WriteLine6("\tThe current IntegrationModel is: {0}", oIntegrator.integration_model)
@@ -5407,7 +5404,7 @@ class PropagatorHPOPHelper(object):
             TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action237)
 
             def action238():
-                oInterpolation.graphics3_d_pmu = 12.34
+                oInterpolation.graphics_3d_pmu = 12.34
 
             # VOPmu
             TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action238)
@@ -5427,14 +5424,14 @@ class PropagatorHPOPHelper(object):
             TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action239)
 
             def action240():
-                oInterpolation.graphics3_d_pmu = 12.34
+                oInterpolation.graphics_3d_pmu = 12.34
 
             # VOPmu
             TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action240)
             # Method (eVOP)
-            oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.GRAPHICS3_DP
+            oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.GRAPHICS_3D_P
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
-            Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.GRAPHICS3_DP, oInterpolation.method)
+            Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.GRAPHICS_3D_P, oInterpolation.method)
 
         # Order
         self.m_logger.WriteLine3("\t\tThe current Order is: {0}", oInterpolation.order)
@@ -5447,30 +5444,30 @@ class PropagatorHPOPHelper(object):
 
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action241)
         # VOPmu
-        self.m_logger.WriteLine6("\t\tThe current VOPmu is: {0}", oInterpolation.graphics3_d_pmu)
+        self.m_logger.WriteLine6("\t\tThe current VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
         if self.m_EarthGravModel == TestBase.GravModel.EGM2008:
-            oInterpolation.graphics3_d_pmu = 199300220750000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics3_d_pmu)
-            Assert.assertEqual(199300220750000, oInterpolation.graphics3_d_pmu)
-            oInterpolation.graphics3_d_pmu = 797200883000000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics3_d_pmu)
-            Assert.assertEqual(797200883000000, oInterpolation.graphics3_d_pmu)
+            oInterpolation.graphics_3d_pmu = 199300220750000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
+            Assert.assertEqual(199300220750000, oInterpolation.graphics_3d_pmu)
+            oInterpolation.graphics_3d_pmu = 797200883000000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
+            Assert.assertEqual(797200883000000, oInterpolation.graphics_3d_pmu)
 
         else:
-            oInterpolation.graphics3_d_pmu = 199300220900000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics3_d_pmu)
-            Assert.assertEqual(199300220900000, oInterpolation.graphics3_d_pmu)
-            oInterpolation.graphics3_d_pmu = 797200883600000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics3_d_pmu)
-            Assert.assertEqual(797200883600000, oInterpolation.graphics3_d_pmu)
+            oInterpolation.graphics_3d_pmu = 199300220900000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
+            Assert.assertEqual(199300220900000, oInterpolation.graphics_3d_pmu)
+            oInterpolation.graphics_3d_pmu = 797200883600000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
+            Assert.assertEqual(797200883600000, oInterpolation.graphics_3d_pmu)
 
         def action242():
-            oInterpolation.graphics3_d_pmu = 199300220749999
+            oInterpolation.graphics_3d_pmu = 199300220749999
 
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action242)
 
         def action243():
-            oInterpolation.graphics3_d_pmu = 797200883600001
+            oInterpolation.graphics_3d_pmu = 797200883600001
 
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action243)
 
@@ -7025,7 +7022,7 @@ class PropagatorGPSHelper(object):
         Assert.assertEqual("GPSAlmanac.al3", gps.specify_catalog.filename)
         Assert.assertEqual(gps.specify_catalog.properties.type, VEHICLE_GPS_ALMANAC_TYPE.GPS_ALMANAC_TYPE_SEM)
 
-        availPRNs = gps.available_pr_ns
+        availPRNs = gps.available_prns
         Assert.assertIsNotNone(availPRNs)
 
         i: int = 0
@@ -7104,7 +7101,7 @@ class PropagatorGPSHelper(object):
         gps.auto_update_enabled = True
         Assert.assertTrue(gps.auto_update_enabled)
 
-        availPRNs = gps.available_pr_ns
+        availPRNs = gps.available_prns
         Assert.assertIsNotNone(availPRNs)
 
         i: int = 0
@@ -9873,7 +9870,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
         laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
         Assert.assertEqual("ITU-R P1814", laserPropChan.tropospheric_scintillation_loss_model.name)
         Assert.assertEqual(
-            LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE.ITURP1814,
+            LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE.ITURP_1814,
             laserPropChan.tropospheric_scintillation_loss_model.type,
         )
 
@@ -9913,10 +9910,10 @@ class PlatformRF_Environment_EnvironmentalDataHelper(object):
     def Run(self, rfEnv: "IPlatformRFEnvironment"):
         propChan: "IPropagationChannel" = rfEnv.propagation_channel
 
-        propChan.enable_itu618_section2_p5 = False
-        Assert.assertFalse(propChan.enable_itu618_section2_p5)
-        propChan.enable_itu618_section2_p5 = True
-        Assert.assertTrue(propChan.enable_itu618_section2_p5)
+        propChan.enable_itu_618_section2_p5 = False
+        Assert.assertFalse(propChan.enable_itu_618_section2_p5)
+        propChan.enable_itu_618_section2_p5 = True
+        Assert.assertTrue(propChan.enable_itu_618_section2_p5)
 
 
 # endregion
@@ -10021,7 +10018,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action419)
 
             elif rainLossModelName == "ITU-R P618-10":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_10, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_10, rainLossModel.type)
                 itu618_10: "IRainLossModelITURP618_10" = clr.CastAs(rainLossModel, IRainLossModelITURP618_10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
@@ -10043,7 +10040,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_10.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-12":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_12, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_12, rainLossModel.type)
                 itu618_12: "IRainLossModelITURP618_12" = clr.CastAs(rainLossModel, IRainLossModelITURP618_12)
                 itu618_12.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
@@ -10065,11 +10062,11 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_12.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-13":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_13, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_13, rainLossModel.type)
                 itu618_13: "IRainLossModelITURP618_13" = clr.CastAs(rainLossModel, IRainLossModelITURP618_13)
 
-                itu618_13.enable_itu1510 = False
-                Assert.assertFalse(itu618_13.enable_itu1510)
+                itu618_13.enable_itu_1510 = False
+                Assert.assertFalse(itu618_13.enable_itu_1510)
 
                 itu618_13.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_13.surface_temperature)
@@ -10087,46 +10084,46 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action425)
 
                 def action426():
-                    itu618_13.use_annual_itu1510 = True
+                    itu618_13.use_annual_itu_1510 = True
 
                 TryCatchAssertBlock.ExpectedException("read-only", action426)
 
                 def action427():
-                    itu618_13.itu1510_month = 1
+                    itu618_13.itu_1510_month = 1
 
                 TryCatchAssertBlock.ExpectedException("read-only", action427)
 
-                itu618_13.enable_itu1510 = True
-                Assert.assertTrue(itu618_13.enable_itu1510)
+                itu618_13.enable_itu_1510 = True
+                Assert.assertTrue(itu618_13.enable_itu_1510)
 
                 def action428():
                     itu618_13.surface_temperature = 100
 
                 TryCatchAssertBlock.ExpectedException("read only", action428)
 
-                itu618_13.use_annual_itu1510 = False
-                Assert.assertFalse(itu618_13.use_annual_itu1510)
+                itu618_13.use_annual_itu_1510 = False
+                Assert.assertFalse(itu618_13.use_annual_itu_1510)
 
-                itu618_13.itu1510_month = 1
-                Assert.assertEqual(1, itu618_13.itu1510_month)
-                itu618_13.itu1510_month = 12
-                Assert.assertEqual(12, itu618_13.itu1510_month)
+                itu618_13.itu_1510_month = 1
+                Assert.assertEqual(1, itu618_13.itu_1510_month)
+                itu618_13.itu_1510_month = 12
+                Assert.assertEqual(12, itu618_13.itu_1510_month)
 
                 def action429():
-                    itu618_13.itu1510_month = 0
+                    itu618_13.itu_1510_month = 0
 
                 TryCatchAssertBlock.ExpectedException("must be in", action429)
 
                 def action430():
-                    itu618_13.itu1510_month = 13
+                    itu618_13.itu_1510_month = 13
 
                 TryCatchAssertBlock.ExpectedException("must be in", action430)
 
-                itu618_13.use_annual_itu1510 = True
-                Assert.assertTrue(itu618_13.use_annual_itu1510)
+                itu618_13.use_annual_itu_1510 = True
+                Assert.assertTrue(itu618_13.use_annual_itu_1510)
 
                 def action431():
-                    itu618_13.itu1510_month = 1
+                    itu618_13.itu_1510_month = 1
 
                 TryCatchAssertBlock.ExpectedException("read-only", action431)
 
@@ -10552,7 +10549,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             aaModel: "IAtmosphericAbsorptionModel" = propChan.atmos_absorption_model
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-9":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.I_T_U_R_P_676_9, aaModel.type)
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
                     clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )

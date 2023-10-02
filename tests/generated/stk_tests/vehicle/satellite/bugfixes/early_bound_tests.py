@@ -132,7 +132,7 @@ class EarlyBoundTests(TestBase):
     def test_BUG86580_AddSingleGfxTimeEvent(self):
         timeEvent: "IVehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
-        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
         data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
             timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
@@ -146,7 +146,7 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(2, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
-        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
         data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
             timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
@@ -164,7 +164,7 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(3, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
-        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
         data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
             timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
@@ -177,7 +177,7 @@ class EarlyBoundTests(TestBase):
             "BUG112927_Dihedral", "", VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.DIHEDRAL_ANGLE
         )
         dihedral: "IGraphics3DReferenceVectorGeometryToolAngle" = clr.CastAs(
-            EarlyBoundTests.AG_SAT.graphics3_d.vector.reference_crdns.add(
+            EarlyBoundTests.AG_SAT.graphics_3d.vector.reference_crdns.add(
                 GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "Satellite/Satellite1 BUG112927_Dihedral Angle"
             ),
             IGraphics3DReferenceVectorGeometryToolAngle,

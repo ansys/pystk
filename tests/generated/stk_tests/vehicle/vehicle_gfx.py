@@ -676,7 +676,7 @@ class GfxIntervalsCollectionHelper(object):
             "\tAdded element: {0} - {1} (Color = {2})",
             oInterval.start_time,
             oInterval.stop_time,
-            oInterval.graphics2_d_attributes.color,
+            oInterval.graphics_2d_attributes.color,
         )
         # StartTime
         oInterval.start_time = "1 Jul 1999 01:12:34.000"
@@ -688,42 +688,42 @@ class GfxIntervalsCollectionHelper(object):
             "\tModified element: {0} - {1} (Color = {2})",
             oInterval.start_time,
             oInterval.stop_time,
-            oInterval.graphics2_d_attributes.color,
+            oInterval.graphics_2d_attributes.color,
         )
         if eType == GfxAttributesType.eOrbit:
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oInterval.graphics2_d_attributes, IVehicleGraphics2DAttributesOrbit))
+            oHelper.Run(clr.Convert(oInterval.graphics_2d_attributes, IVehicleGraphics2DAttributesOrbit))
         elif eType == GfxAttributesType.eRoute:
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oInterval.graphics2_d_attributes, IVehicleGraphics2DAttributesRoute))
+            oHelper.Run(clr.Convert(oInterval.graphics_2d_attributes, IVehicleGraphics2DAttributesRoute))
         elif eType == GfxAttributesType.eTrajectory:
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oInterval.graphics2_d_attributes, IVehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(clr.Convert(oInterval.graphics_2d_attributes, IVehicleGraphics2DAttributesTrajectory))
         else:
             Assert.fail("Invalid type!")
 
         # Add additional elements
         oInterval = oCollection.add("1 Jul 1999 00:00:00.000", "1 Jul 1999 00:04:00.000")
-        oInterval.graphics2_d_attributes.color = Color.Yellow
+        oInterval.graphics_2d_attributes.color = Color.Yellow
         Assert.assertIsNotNone(oInterval)
         Assert.assertEqual("1 Jul 1999 00:00:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:04:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 2), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:20:00.000", "1 Jul 1999 00:25:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.graphics2_d_attributes.color = Color.Red
+        oInterval.graphics_2d_attributes.color = Color.Red
         Assert.assertEqual("1 Jul 1999 00:20:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:25:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 3), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:10:00.000", "1 Jul 1999 00:15:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.graphics2_d_attributes.color = Color.RoyalBlue
+        oInterval.graphics_2d_attributes.color = Color.RoyalBlue
         Assert.assertEqual("1 Jul 1999 00:10:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:15:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 4), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:30:00.000", "1 Jul 1999 00:35:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.graphics2_d_attributes.color = Color.Yellow
+        oInterval.graphics_2d_attributes.color = Color.Yellow
         Assert.assertEqual("1 Jul 1999 00:30:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:35:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 5), oCollection.count)
@@ -745,7 +745,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.graphics2_d_attributes.color,
+                oInterval.graphics_2d_attributes.color,
             )
 
             iIndex += 1
@@ -766,7 +766,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.graphics2_d_attributes.color,
+                oInterval.graphics_2d_attributes.color,
             )
 
             iIndex += 1
@@ -786,7 +786,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.graphics2_d_attributes.color,
+                oInterval.graphics_2d_attributes.color,
             )
 
             iIndex += 1
@@ -806,7 +806,7 @@ class GfxIntervalsCollectionHelper(object):
                 iIndex,
                 oInterval.start_time,
                 oInterval.stop_time,
-                oInterval.graphics2_d_attributes.color,
+                oInterval.graphics_2d_attributes.color,
             )
 
             iIndex += 1
@@ -1392,8 +1392,8 @@ class GfxGroundEllipsesHelper(object):
                 "\t\tEllipse {0}: EllipseSetName = {1}, Color = {7}, LineWidth = {8}, StaticGfx = {2}, DynamicGfx = {3}, Interpolate = {4}, IsNameVisible = {5}, IsCenterVisible = {6}",
                 iIndex,
                 oEllipse.ellipse_set_name,
-                oEllipse.static_graphics2_d,
-                oEllipse.dynamic_graphics2_d,
+                oEllipse.static_graphics_2d,
+                oEllipse.dynamic_graphics_2d,
                 oEllipse.interpolate,
                 oEllipse.is_name_visible,
                 oEllipse.is_center_visible,
@@ -1408,8 +1408,8 @@ class GfxGroundEllipsesHelper(object):
         # _NewEnum
         for groundEllipsesElement in oCollection:
             # modify properties
-            groundEllipsesElement.static_graphics2_d = True
-            groundEllipsesElement.dynamic_graphics2_d = True
+            groundEllipsesElement.static_graphics_2d = True
+            groundEllipsesElement.dynamic_graphics_2d = True
             groundEllipsesElement.interpolate = True
             groundEllipsesElement.is_name_visible = True
             groundEllipsesElement.is_center_visible = True
@@ -1423,8 +1423,8 @@ class GfxGroundEllipsesHelper(object):
                 "\t\tModified Ellipse {0}: EllipseSetName = {1}, Color = {7}, LineWidth = {8}, StaticGfx = {2}, DynamicGfx = {3}, Interpolate = {4}, IsNameVisible = {5}, IsCenterVisible = {6}",
                 iIndex,
                 oEllipse.ellipse_set_name,
-                oEllipse.static_graphics2_d,
-                oEllipse.dynamic_graphics2_d,
+                oEllipse.static_graphics_2d,
+                oEllipse.dynamic_graphics_2d,
                 oEllipse.interpolate,
                 oEllipse.is_name_visible,
                 oEllipse.is_center_visible,
@@ -1905,7 +1905,7 @@ class GfxSwathHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS2_D_ELEVATION" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_GRAPHICS2_D_ELEVATION)
+            eType: "VEHICLE_GRAPHICS_2D_ELEVATION" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_GRAPHICS_2D_ELEVATION)
             self.m_logger.WriteLine8("\tElevation type {0}: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oSwath.is_elevation_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -1913,8 +1913,8 @@ class GfxSwathHelper(object):
             oSwath.set_elevation_type(eType)
             self.m_logger.WriteLine6("\t\tThe new Elevation type is: {0}", oSwath.elevation_type)
             Assert.assertEqual(eType, oSwath.elevation_type)
-            if ((oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_GROUND_ELEVATION)) or (
-                (oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_GROUND_ELEVATION_ENVELOPE)
+            if ((oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION)) or (
+                (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION_ENVELOPE)
             ):
                 # Elevation
                 gfxElevationGroundElevation: "IVehicleGraphics2DElevationGroundElevation" = clr.Convert(
@@ -1947,7 +1947,7 @@ class GfxSwathHelper(object):
                 self.m_oUnits.set_current_unit("AngleUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-            elif oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_SWATH_HALF_WIDTH:
+            elif oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_SWATH_HALF_WIDTH:
                 # Elevation
                 gfxElevationSwathHalfWidth: "IVehicleGraphics2DElevationSwathHalfWidth" = clr.Convert(
                     oSwath.elevation, IVehicleGraphics2DElevationSwathHalfWidth
@@ -1980,8 +1980,8 @@ class GfxSwathHelper(object):
                 self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new DistanceUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
-            elif ((oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE)) or (
-                (oSwath.elevation_type == VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
+            elif ((oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE)) or (
+                (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
             ):
                 gfxElevationVehicleHalfAngle: "IVehicleGraphics2DElevationVehicleHalfAngle" = clr.Convert(
                     oSwath.elevation, IVehicleGraphics2DElevationVehicleHalfAngle
@@ -2019,24 +2019,24 @@ class GfxSwathHelper(object):
             iIndex += 1
 
         def action65():
-            oSwath.set_elevation_type(VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_UNKNOWN)
+            oSwath.set_elevation_type(VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_UNKNOWN)
 
         # SetElevationType(eElevationUnknown)
         TryCatchAssertBlock.ExpectedException("must be in", action65)
 
-        oSwath.set_elevation_type(VEHICLE_GRAPHICS2_D_ELEVATION.ELEVATION_GROUND_ELEVATION)
+        oSwath.set_elevation_type(VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION)
 
         # Options
         self.m_logger.WriteLine6("The current Options is: {0}", oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_EDGE_LIMITS
+        oSwath.options = VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_EDGE_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_EDGE_LIMITS, oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_FILLED_LIMITS
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_EDGE_LIMITS, oSwath.options)
+        oSwath.options = VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_FILLED_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_FILLED_LIMITS, oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_NO_GRAPHICS
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_FILLED_LIMITS, oSwath.options)
+        oSwath.options = VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_NO_GRAPHICS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_OPTIONS.OPTIONS_NO_GRAPHICS, oSwath.options)
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_NO_GRAPHICS, oSwath.options)
         self.m_logger.WriteLine("----- THE GRAPHICS SWATH TEST ----- END -----")
 
 
@@ -2080,7 +2080,7 @@ class GfxTimeEventsHelper(object):
         Assert.assertEqual(False, timeEventsElement.is_visible)
 
         def action66():
-            timeEventsElement.set_time_event_type(VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE)
+            timeEventsElement.set_time_event_type(VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE)
 
         TryCatchAssertBlock.ExpectedException("read-only", action66)
 
@@ -2094,8 +2094,8 @@ class GfxTimeEventsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE" = clr.Convert(
-                int(arTypes[iIndex][0]), VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE
+            eType: "VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE" = clr.Convert(
+                int(arTypes[iIndex][0]), VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE
             )
             if not timeEventsElement.is_time_event_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -2106,7 +2106,7 @@ class GfxTimeEventsHelper(object):
             # TimeEventType
             self.m_logger.WriteLine6("\t\tThe new TimeEvent type is: {0}", timeEventsElement.time_event_type)
             Assert.assertEqual(eType, timeEventsElement.time_event_type)
-            if eType == VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE:
+            if eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE:
                 # TimeEventTypeData
                 oLine: "IVehicleGraphics2DTimeEventTypeLine" = clr.Convert(
                     timeEventsElement.time_event_type_data, IVehicleGraphics2DTimeEventTypeLine
@@ -2162,8 +2162,8 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS2_D_OFFSET" = clr.Convert(
-                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS2_D_OFFSET
+                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = clr.Convert(
+                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS_2D_OFFSET
                     )
                     if not oLine.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
@@ -2186,7 +2186,7 @@ class GfxTimeEventsHelper(object):
 
                     i += 1
 
-            elif eType == VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER:
+            elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER:
                 # TimeEventTypeData
                 oMarker: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
                     timeEventsElement.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
@@ -2230,7 +2230,7 @@ class GfxTimeEventsHelper(object):
                 oMarker.unique_id = "Howdy"
                 self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oMarker.unique_id)
                 Assert.assertEqual("Howdy", oMarker.unique_id)
-            elif eType == VEHICLE_GRAPHICS2_D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_TEXT:
+            elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_TEXT:
                 # TimeEventTypeData
                 oText: "IVehicleGraphics2DTimeEventTypeText" = clr.Convert(
                     timeEventsElement.time_event_type_data, IVehicleGraphics2DTimeEventTypeText
@@ -2284,8 +2284,8 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS2_D_OFFSET" = clr.Convert(
-                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS2_D_OFFSET
+                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = clr.Convert(
+                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS_2D_OFFSET
                     )
                     if not oText.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")

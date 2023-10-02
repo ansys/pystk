@@ -780,13 +780,13 @@ class JPEG2000_COMPRESSION_PROFILE(IntEnum):
     # This is the default profile, which is recommended for those unfamiliar with the others.
     DEFAULT = 0
     # This profile is designed for U.S. and NATO military applications.
-    N_I_T_F_B_I_I_F_NPJE = 1
+    NITF_BIIF_NPJE = 1
     # This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE.
-    N_I_T_F_B_I_I_F_EPJE = 2
+    NITF_BIIF_EPJE = 2
 
 JPEG2000_COMPRESSION_PROFILE.DEFAULT.__doc__ = "This is the default profile, which is recommended for those unfamiliar with the others."
-JPEG2000_COMPRESSION_PROFILE.N_I_T_F_B_I_I_F_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
-JPEG2000_COMPRESSION_PROFILE.N_I_T_F_B_I_I_F_EPJE.__doc__ = "This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."
+JPEG2000_COMPRESSION_PROFILE.NITF_BIIF_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
+JPEG2000_COMPRESSION_PROFILE.NITF_BIIF_EPJE.__doc__ = "This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."
 
 agcls.AgTypeNameMap["JPEG2000_COMPRESSION_PROFILE"] = JPEG2000_COMPRESSION_PROFILE
 
@@ -2854,7 +2854,7 @@ class IFactoryAndInitializers(object):
         self.__dict__["_get_time_interval_display_condition"] = _raise_uninitialized_error
         self.__dict__["_get_triangle_mesh_primitive"] = _raise_uninitialized_error
         self.__dict__["_get_triangle_mesh_primitive_optional_parameters"] = _raise_uninitialized_error
-        self.__dict__["_get_texture_filter2_d"] = _raise_uninitialized_error
+        self.__dict__["_get_texture_filter_2d"] = _raise_uninitialized_error
         self.__dict__["_get_bounding_sphere"] = _raise_uninitialized_error
         self.__dict__["_get_path_point"] = _raise_uninitialized_error
         self.__dict__["_get_text_overlay"] = _raise_uninitialized_error
@@ -2948,7 +2948,7 @@ class IFactoryAndInitializers(object):
         self.__dict__["_get_time_interval_display_condition"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+72, POINTER(agcom.PVOID))
         self.__dict__["_get_triangle_mesh_primitive"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+73, POINTER(agcom.PVOID))
         self.__dict__["_get_triangle_mesh_primitive_optional_parameters"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+74, POINTER(agcom.PVOID))
-        self.__dict__["_get_texture_filter2_d"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+75, POINTER(agcom.PVOID))
+        self.__dict__["_get_texture_filter_2d"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+75, POINTER(agcom.PVOID))
         self.__dict__["_get_bounding_sphere"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+76, POINTER(agcom.PVOID))
         self.__dict__["_get_path_point"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+77, POINTER(agcom.PVOID))
         self.__dict__["_get_text_overlay"] = IAGFUNCTYPE(pUnk, IID_IFactoryAndInitializers, vtable_offset_local+78, POINTER(agcom.PVOID))
@@ -3489,10 +3489,10 @@ class IFactoryAndInitializers(object):
             return arg_ppRetVal.python_val
 
     @property
-    def texture_filter2_d(self) -> "ITextureFilter2DFactory":
+    def texture_filter_2d(self) -> "ITextureFilter2DFactory":
         """Factory creates texture filters."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_get_texture_filter2_d"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_texture_filter_2d"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
@@ -21382,7 +21382,7 @@ class ITextBatchPrimitiveFactory(object):
         self.__dict__["_pUnk"] = None
         self.__dict__["_initialize_with_graphics_font"] = _raise_uninitialized_error
         self.__dict__["_initialize_with_graphics_font_and_set_hint"] = _raise_uninitialized_error
-        self.__dict__["_initialize_with_graphics_font_and_set_hint2_d"] = _raise_uninitialized_error
+        self.__dict__["_initialize_with_graphics_font_and_set_hint_2d"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ITextBatchPrimitiveFactory._uuid))
             if pUnk is not None:
@@ -21396,7 +21396,7 @@ class ITextBatchPrimitiveFactory(object):
         vtable_offset_local = ITextBatchPrimitiveFactory._vtable_offset - 1
         self.__dict__["_initialize_with_graphics_font"] = IAGFUNCTYPE(pUnk, IID_ITextBatchPrimitiveFactory, vtable_offset_local+1, agcom.PVOID, POINTER(agcom.PVOID))
         self.__dict__["_initialize_with_graphics_font_and_set_hint"] = IAGFUNCTYPE(pUnk, IID_ITextBatchPrimitiveFactory, vtable_offset_local+2, agcom.PVOID, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_initialize_with_graphics_font_and_set_hint2_d"] = IAGFUNCTYPE(pUnk, IID_ITextBatchPrimitiveFactory, vtable_offset_local+3, agcom.PVOID, agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID))
+        self.__dict__["_initialize_with_graphics_font_and_set_hint_2d"] = IAGFUNCTYPE(pUnk, IID_ITextBatchPrimitiveFactory, vtable_offset_local+3, agcom.PVOID, agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -21425,13 +21425,13 @@ class ITextBatchPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font_and_set_hint"](arg_font.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_graphics_font_and_set_hint2_d(self, font:"IGraphicsFont", setHint:"SET_HINT", renderInScreenSpace:bool) -> "ITextBatchPrimitive":
+    def initialize_with_graphics_font_and_set_hint_2d(self, font:"IGraphicsFont", setHint:"SET_HINT", renderInScreenSpace:bool) -> "ITextBatchPrimitive":
         """Initializes a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.VARIANT_BOOL_arg(renderInScreenSpace) as arg_renderInScreenSpace, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font_and_set_hint2_d"](arg_font.COM_val, arg_setHint.COM_val, arg_renderInScreenSpace.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font_and_set_hint_2d"](arg_font.COM_val, arg_setHint.COM_val, arg_renderInScreenSpace.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 

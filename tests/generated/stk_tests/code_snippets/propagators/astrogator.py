@@ -60,7 +60,7 @@ class Astrogator(CodeSnippetsTestBase):
         driver.main_sequence.remove_all()
 
         # Configure properties as necessarily
-        driver.options.draw_trajectory_in3_d = True
+        driver.options.draw_trajectory_in_3d = True
         driver.options.graphics_update_rate = 0.9
         driver.options.update_animation_time_for_all_objects = False
         driver.options.stopping_condition_time_tolerance = 5e-08

@@ -443,15 +443,15 @@ class EarlyBoundTests(TestBase):
         options.clear_dwc_graphics_before_each_run = True
         Assert.assertTrue(options.clear_dwc_graphics_before_each_run)
 
-        options.draw_trajectory_in2_d = True
-        Assert.assertTrue(options.draw_trajectory_in2_d)
-        options.draw_trajectory_in2_d = False
-        Assert.assertFalse(options.draw_trajectory_in2_d)
+        options.draw_trajectory_in_2d = True
+        Assert.assertTrue(options.draw_trajectory_in_2d)
+        options.draw_trajectory_in_2d = False
+        Assert.assertFalse(options.draw_trajectory_in_2d)
 
-        options.draw_trajectory_in3_d = False
-        Assert.assertFalse(options.draw_trajectory_in3_d)
-        options.draw_trajectory_in3_d = True
-        Assert.assertTrue(options.draw_trajectory_in3_d)
+        options.draw_trajectory_in_3d = False
+        Assert.assertFalse(options.draw_trajectory_in_3d)
+        options.draw_trajectory_in_3d = True
+        Assert.assertTrue(options.draw_trajectory_in_3d)
 
         options.enable_logging = True
         Assert.assertTrue(options.enable_logging)
@@ -1673,33 +1673,33 @@ class EarlyBoundTests(TestBase):
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
         driver: "IDriverMissionControlSequence" = clr.Convert(sat.propagator, IDriverMissionControlSequence)
-        driver.options.draw_trajectory_in2_d = True
-        driver.options.draw_trajectory_in3_d = True
+        driver.options.draw_trajectory_in_2d = True
+        driver.options.draw_trajectory_in_3d = True
         driver.options.update_animation_time_for_all_objects = True
         if not TestBase.NoGraphicsMode:
-            sat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+            sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
             sat.graphics.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.DATA_NONE)
             sat.graphics.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.DATA_ALL)
-            sat.graphics3_d.pass_method.track_data.inherit_from2_d = True
-            sat.graphics3_d.model.orbit_marker.marker_type = MARKER_TYPE.SHAPE
+            sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
+            sat.graphics_3d.model.orbit_marker.marker_type = MARKER_TYPE.SHAPE
             markerData: "IGraphics3DMarkerShape" = clr.Convert(
-                sat.graphics3_d.model.orbit_marker.marker_data, IGraphics3DMarkerShape
+                sat.graphics_3d.model.orbit_marker.marker_data, IGraphics3DMarkerShape
             )
             markerData.style = MARKER_SHAPE_3D.SHAPE_POINT
-            sat.graphics3_d.model.orbit_marker.pixel_size = 7
-            sat.graphics3_d.model.detail_threshold.marker_label = 1000000000000.0
-            sat.graphics3_d.model.detail_threshold.marker = 1000000000000.0
-            sat.graphics3_d.model.detail_threshold.point = 1000000000000.0
+            sat.graphics_3d.model.orbit_marker.pixel_size = 7
+            sat.graphics_3d.model.detail_threshold.marker_label = 1000000000000.0
+            sat.graphics_3d.model.detail_threshold.marker = 1000000000000.0
+            sat.graphics_3d.model.detail_threshold.point = 1000000000000.0
 
         else:
 
             def action47():
-                sat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+                sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action47)
 
             def action48():
-                sat.graphics3_d.pass_method.track_data.inherit_from2_d = True
+                sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action48)
 
@@ -1967,13 +1967,13 @@ class EarlyBoundTests(TestBase):
         dcCopy.results.get_result_by_paths("ToPersilene", "Epoch").desired_value = "4 Jan 1993 00:00:00.00"
         if not TestBase.NoGraphicsMode:
             template: "IVehicleGraphics3DBPlaneTemplate" = clr.Convert(
-                sat.graphics3_d.b_planes.templates.add(), IVehicleGraphics3DBPlaneTemplate
+                sat.graphics_3d.b_planes.templates.add(), IVehicleGraphics3DBPlaneTemplate
             )
             template.name = "Lunar_B-Plane"
             template.central_body = "Moon"
             template.reference_vector = "CentralBody/Moon Orbit_Normal Vector"
             bPlane: "IVehicleGraphics3DBPlaneInstance" = clr.Convert(
-                sat.graphics3_d.b_planes.instances.add("Lunar_B-Plane"), IVehicleGraphics3DBPlaneInstance
+                sat.graphics_3d.b_planes.instances.add("Lunar_B-Plane"), IVehicleGraphics3DBPlaneInstance
             )
             bPlane.name = "LunarBPlane"
             (clr.Convert(toPersilene, IMissionControlSequenceSegment)).properties.b_planes.add("LunarBPlane")
@@ -1982,7 +1982,7 @@ class EarlyBoundTests(TestBase):
 
             def action52():
                 template: "IVehicleGraphics3DBPlaneTemplate" = clr.Convert(
-                    sat.graphics3_d.b_planes.templates.add(), IVehicleGraphics3DBPlaneTemplate
+                    sat.graphics_3d.b_planes.templates.add(), IVehicleGraphics3DBPlaneTemplate
                 )
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action52)
