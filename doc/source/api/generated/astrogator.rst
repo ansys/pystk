@@ -562,7 +562,7 @@ Enumerations
     ERROR_CONTROL
     PREDICTOR_CORRECTOR
     NUMERICAL_INTEGRATOR
-    COEFF_RUNGE_KUTTA_V_8TH9_TH
+    COEFF_RUNGE_KUTTA_V_8TH_9TH
 
 
 Classes
@@ -2484,7 +2484,7 @@ Enumerations
     :members:
 .. autoenum:: NUMERICAL_INTEGRATOR
     :members:
-.. autoenum:: COEFF_RUNGE_KUTTA_V_8TH9_TH
+.. autoenum:: COEFF_RUNGE_KUTTA_V_8TH_9TH
     :members:
 
 

@@ -437,8 +437,8 @@ class SEETHelper(object):
         magField.external_field = SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.NONE
         Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.NONE, magField.external_field)
 
-        magField.i_g_r_f_update_rate = 2.0
-        Assert.assertEqual(2.0, magField.i_g_r_f_update_rate)
+        magField.igrf_update_rate = 2.0
+        Assert.assertEqual(2.0, magField.igrf_update_rate)
 
     @staticmethod
     def Test_IAgSpEnvSAAContour(saaContour: "ISpaceEnvironmentSAAContour"):
@@ -573,15 +573,15 @@ class SEETHelper(object):
 
     @staticmethod
     def Test_IAgVeSpEnvMagFieldLine(magFieldLine: "IVehicleSpaceEnvironmentMagnitudeFieldLine"):
-        magFieldLine.is2_d_visible = False
-        Assert.assertFalse(magFieldLine.is2_d_visible)
-        magFieldLine.is2_d_visible = True
-        Assert.assertTrue(magFieldLine.is2_d_visible)
+        magFieldLine.is_2d_visible = False
+        Assert.assertFalse(magFieldLine.is_2d_visible)
+        magFieldLine.is_2d_visible = True
+        Assert.assertTrue(magFieldLine.is_2d_visible)
 
-        magFieldLine.is3_d_visible = False
-        Assert.assertFalse(magFieldLine.is3_d_visible)
-        magFieldLine.is3_d_visible = True
-        Assert.assertTrue(magFieldLine.is3_d_visible)
+        magFieldLine.is_3d_visible = False
+        Assert.assertFalse(magFieldLine.is_3d_visible)
+        magFieldLine.is_3d_visible = True
+        Assert.assertTrue(magFieldLine.is_3d_visible)
 
         magFieldLine.color = Color.FromArgb(100)
         AssertEx.AreEqual(Color.FromArgb(100), magFieldLine.color)
@@ -860,13 +860,13 @@ class SEETHelper(object):
             pBy: float = 0
             pBz: float = 0
 
-            startOM = scenSpEnv.graphics3_d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.0125, startOM, delta=0.0001)
-            stopOM = scenSpEnv.graphics3_d.magnetic_field.compute_b_beq(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_b_beq(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.0125, stopOM, delta=0.0001)
-            bFieldArray = scenSpEnv.graphics3_d.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
+            bFieldArray = scenSpEnv.graphics_3d.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
             pBx = float(bFieldArray[0])
             pBy = float(bFieldArray[1])
             pBz = float(bFieldArray[2])
@@ -876,7 +876,7 @@ class SEETHelper(object):
             Assert.assertAlmostEqual(-1911.277, pBy, delta=0.001)
             Console.WriteLine(pBz)
             Assert.assertAlmostEqual(20328.957, pBz, delta=0.001)
-            arStart = scenSpEnv.graphics3_d.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
+            arStart = scenSpEnv.graphics_3d.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
             Console.WriteLine(arStart[0])
             Assert.assertAlmostEqual(-3668.952, float(arStart[0]), delta=0.001)
             Console.WriteLine(arStart[1])
@@ -884,7 +884,7 @@ class SEETHelper(object):
             Console.WriteLine(arStart[2])
             Assert.assertAlmostEqual(20328.957, float(arStart[2]), delta=0.001)
 
-            arStop = scenSpEnv.graphics3_d.magnetic_field.compute_b_field_as_array(stopTime, 10, 20, 1000)
+            arStop = scenSpEnv.graphics_3d.magnetic_field.compute_b_field_as_array(stopTime, 10, 20, 1000)
             Console.WriteLine(arStop[0])
             Assert.assertAlmostEqual(-3668.952, float(arStop[0]), delta=0.001)
             Console.WriteLine(arStop[1])
@@ -892,24 +892,24 @@ class SEETHelper(object):
             Console.WriteLine(arStop[2])
             Assert.assertAlmostEqual(20328.957, float(arStop[2]), delta=0.001)
 
-            startOM = scenSpEnv.graphics3_d.magnetic_field.compute_dipole_l(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_dipole_l(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.1913, startOM, delta=0.0001)
-            stopOM = scenSpEnv.graphics3_d.magnetic_field.compute_dipole_l(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_dipole_l(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.1914, stopOM, delta=0.0001)
 
-            startOM = scenSpEnv.graphics3_d.magnetic_field.compute_mc_ilwain_l(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_mc_ilwain_l(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.1498, startOM, delta=0.0001)
-            stopOM = scenSpEnv.graphics3_d.magnetic_field.compute_mc_ilwain_l(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_mc_ilwain_l(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.1498, stopOM, delta=0.0001)
 
         else:
 
             def action39():
-                startOM: float = scenSpEnv.graphics3_d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
+                startOM: float = scenSpEnv.graphics_3d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action39)
 

@@ -249,7 +249,7 @@ class EarlyBoundTests(TestBase):
     def test_VOBorderWall(self):
         TestBase.logger.WriteLine("----- THE VO BORDER WALL TEST ----- BEGIN -----")
         oHelper = VOBorderWallHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_LT.graphics3_d.border_wall, False)
+        oHelper.Run(EarlyBoundTests.AG_LT.graphics_3d.border_wall, False)
         TestBase.logger.WriteLine("----- THE VO BORDER WALL TEST ----- END -----")
 
     # endregion
@@ -258,7 +258,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVectors(self):
         oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
-        oHelper.Run(EarlyBoundTests.AG_LT.graphics3_d.vector, True)
+        oHelper.Run(EarlyBoundTests.AG_LT.graphics_3d.vector, True)
 
     # endregion
 
@@ -266,7 +266,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
-        vo: "ILineTargetGraphics3D" = clr.Convert(EarlyBoundTests.AG_LT.graphics3_d, ILineTargetGraphics3D)
+        vo: "ILineTargetGraphics3D" = clr.Convert(EarlyBoundTests.AG_LT.graphics_3d, ILineTargetGraphics3D)
         Assert.assertIsNotNone(vo)
         # set DistanceUnit
         TestBase.logger.WriteLine5(

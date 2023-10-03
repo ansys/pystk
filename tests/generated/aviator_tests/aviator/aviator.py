@@ -3252,8 +3252,8 @@ class EarlyBoundTests(TestBase):
 
         toHover.altitude = 600
         Assert.assertEqual(600, toHover.altitude)
-        toHover.altitude_reference = AGLMSL.ALTITUDE_AGL
-        Assert.assertEqual(AGLMSL.ALTITUDE_AGL, toHover.altitude_reference)
+        toHover.altitude_reference = AGL_MSL.ALTITUDE_AGL
+        Assert.assertEqual(AGL_MSL.ALTITUDE_AGL, toHover.altitude_reference)
 
         enrouteOpts: "IEnrouteOptions" = toHover.enroute_options
         self.EnrouteOptions(enrouteOpts)
@@ -3778,8 +3778,8 @@ class EarlyBoundTests(TestBase):
             basicManeuver.navigation, IBasicManeuverStrategyBallistic3D
         )
 
-        ballistic.control_mode = BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_COMPENSATE_FOR_WIND
-        Assert.assertEqual(BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_COMPENSATE_FOR_WIND, ballistic.control_mode)
+        ballistic.control_mode = BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_COMPENSATE_FOR_WIND
+        Assert.assertEqual(BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_COMPENSATE_FOR_WIND, ballistic.control_mode)
 
         self.BasicManeuverAirspeedOptions(ballistic.airspeed_options)
 
@@ -3798,8 +3798,8 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("must be", action212)
 
-        ballistic.control_mode = BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_WIND_PUSHES_VEHICLE
-        Assert.assertEqual(BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_WIND_PUSHES_VEHICLE, ballistic.control_mode)
+        ballistic.control_mode = BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_WIND_PUSHES_VEHICLE
+        Assert.assertEqual(BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_WIND_PUSHES_VEHICLE, ballistic.control_mode)
 
         self.BasicManeuverAirspeedOptions(ballistic.airspeed_options)
 
@@ -3816,8 +3816,8 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("must be", action214)
 
-        ballistic.control_mode = BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_PARACHUTE_MODE
-        Assert.assertEqual(BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_PARACHUTE_MODE, ballistic.control_mode)
+        ballistic.control_mode = BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_PARACHUTE_MODE
+        Assert.assertEqual(BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_PARACHUTE_MODE, ballistic.control_mode)
 
         ballistic.parachute_area = 5
         Assert.assertEqual(5, ballistic.parachute_area)
@@ -4587,8 +4587,8 @@ class EarlyBoundTests(TestBase):
         basicManeuver.navigation_strategy_type = "Pitch3D"
         pitch3D: "IBasicManeuverStrategyPitch3D" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyPitch3D)
 
-        pitch3D.control_mode = PITCH3_D_CONTROL_MODE.PITCH3_D_WIND_PUSHES_VEHICLE
-        Assert.assertEqual(PITCH3_D_CONTROL_MODE.PITCH3_D_WIND_PUSHES_VEHICLE, pitch3D.control_mode)
+        pitch3D.control_mode = PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE
+        Assert.assertEqual(PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE, pitch3D.control_mode)
 
         pitch3D.command_fpa = 59
         fpa: typing.Any = pitch3D.command_fpa
@@ -4606,8 +4606,8 @@ class EarlyBoundTests(TestBase):
         pitch3D.wind_force_effective_area = 11
         Assert.assertEqual(11, pitch3D.wind_force_effective_area)
 
-        pitch3D.control_mode = PITCH3_D_CONTROL_MODE.PITCH3_D_COMPENSATE_FOR_WIND
-        Assert.assertEqual(PITCH3_D_CONTROL_MODE.PITCH3_D_COMPENSATE_FOR_WIND, pitch3D.control_mode)
+        pitch3D.control_mode = PITCH_3D_CONTROL_MODE.PITCH_3D_COMPENSATE_FOR_WIND
+        Assert.assertEqual(PITCH_3D_CONTROL_MODE.PITCH_3D_COMPENSATE_FOR_WIND, pitch3D.control_mode)
 
         def action257():
             pitch3D.wind_force_effective_area = 10
@@ -5722,8 +5722,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(2, float(lon))
         runway.altitude = 5
         Assert.assertEqual(5, runway.altitude)
-        runway.altitude_reference = AGLMSL.ALTITUDE_MSL
-        Assert.assertEqual(AGLMSL.ALTITUDE_MSL, runway.altitude_reference)
+        runway.altitude_reference = AGL_MSL.ALTITUDE_MSL
+        Assert.assertEqual(AGL_MSL.ALTITUDE_MSL, runway.altitude_reference)
 
         runway.high_end_heading = 195
         highEndHeading: typing.Any = runway.high_end_heading
@@ -6125,8 +6125,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(2, float(lon))
         vtolSite.altitude = 101
         Assert.assertEqual(101, vtolSite.altitude)
-        vtolSite.altitude_reference = AGLMSL.ALTITUDE_AGL
-        Assert.assertEqual(AGLMSL.ALTITUDE_AGL, vtolSite.altitude_reference)
+        vtolSite.altitude_reference = AGL_MSL.ALTITUDE_AGL
+        Assert.assertEqual(AGL_MSL.ALTITUDE_AGL, vtolSite.altitude_reference)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
 
@@ -9834,9 +9834,9 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.ExpectedException("must be ", action423)
 
         alt.use_default_cruise_altitude = False
-        alt.altitude_reference = AGLMSL.ALTITUDE_AGL
+        alt.altitude_reference = AGL_MSL.ALTITUDE_AGL
         alt.altitude = 5000
-        Assert.assertEqual(AGLMSL.ALTITUDE_AGL, alt.altitude_reference)
+        Assert.assertEqual(AGL_MSL.ALTITUDE_AGL, alt.altitude_reference)
         Assert.assertEqual(5000, alt.altitude)
 
     def AltitudeMSLOptions(self, altitudeOpts: "IAltitudeMSLOptions"):
@@ -9911,8 +9911,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(10002, alt.stop_arc_altitude)
 
     def HoverAltitudeOptions(self, alt: "IHoverAltitudeOptions"):
-        alt.altitude_reference = AGLMSL.ALTITUDE_AGL
-        Assert.assertEqual(AGLMSL.ALTITUDE_AGL, alt.altitude_reference)
+        alt.altitude_reference = AGL_MSL.ALTITUDE_AGL
+        Assert.assertEqual(AGL_MSL.ALTITUDE_AGL, alt.altitude_reference)
 
         alt.altitude = 5000
         Assert.assertEqual(5000, alt.altitude)

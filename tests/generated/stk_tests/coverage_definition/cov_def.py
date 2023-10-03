@@ -108,7 +108,7 @@ class EarlyBoundTests(TestBase):
         j4.initial_state.representation.assign(classical)
         j4.propagate()
         if not TestBase.NoGraphicsMode:
-            polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+            polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
             basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
                 polarSat.graphics.attributes, IVehicleGraphics2DAttributesBasic
             )
@@ -117,7 +117,7 @@ class EarlyBoundTests(TestBase):
         else:
 
             def action1():
-                polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+                polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action1)
 
@@ -146,7 +146,7 @@ class EarlyBoundTests(TestBase):
         j4.initial_state.representation.assign(classical)
         j4.propagate()
         if not TestBase.NoGraphicsMode:
-            shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+            shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
             basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
                 shuttle.graphics.attributes, IVehicleGraphics2DAttributesBasic
             )
@@ -155,7 +155,7 @@ class EarlyBoundTests(TestBase):
         else:
 
             def action2():
-                shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+                shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action2)
 
@@ -226,7 +226,7 @@ class EarlyBoundTests(TestBase):
             twoEyes.graphics.static.fill_points = False
             twoEyes.graphics.static.marker_style = "Circle"
             twoEyes.graphics.animation.is_visible = True
-            twoEyes.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS2_D_ACCUMULATION.CURRENT_TIME
+            twoEyes.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
             twoEyes.graphics.animation.fill_points = False
             twoEyes.graphics.animation.marker_style = "Star"
 
@@ -245,7 +245,7 @@ class EarlyBoundTests(TestBase):
         if not TestBase.NoGraphicsMode:
             twoEyes.graphics.static.is_visible = False
             twoEyes.graphics.animation.contours.is_visible = True
-            twoEyes.graphics.animation.contours.color_method = FIGURE_OF_MERIT_GRAPHICS2_D_COLOR_METHOD.EXPLICIT
+            twoEyes.graphics.animation.contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
             element: "IFigureOfMeritGraphics2DLevelAttributesElement" = (
                 twoEyes.graphics.animation.contours.level_attributes.add_level(1)
             )
@@ -2331,26 +2331,26 @@ class EarlyBoundTests(TestBase):
     def test_VO(self):
         TestBase.logger.WriteLine("----- VO TEST ----- BEGIN -----")
 
-        oVO: "ICoverageGraphics3D" = EarlyBoundTests.AG_COV.graphics3_d
+        oVO: "ICoverageGraphics3D" = EarlyBoundTests.AG_COV.graphics_3d
         Assert.assertIsNotNone(oVO)
 
         oVO.show_at_altitude = False
         Assert.assertFalse(oVO.show_at_altitude)
 
         def action92():
-            oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.BACK_FACING
+            oVO.draw_at_altitude_mode = COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.BACK_FACING
 
         TryCatchAssertBlock.DoAssert("read only property", action92)
 
         oVO.show_at_altitude = True
         Assert.assertTrue(oVO.show_at_altitude)
 
-        oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.BACK_FACING
-        Assert.assertEqual(COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.BACK_FACING, oVO.draw_at_altitude_mode)
-        oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_AND_BACK_FACING
-        Assert.assertEqual(COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_AND_BACK_FACING, oVO.draw_at_altitude_mode)
-        oVO.draw_at_altitude_mode = COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_FACING
-        Assert.assertEqual(COVERAGE3_D_DRAW_AT_ALTITUDE_MODE.FRONT_FACING, oVO.draw_at_altitude_mode)
+        oVO.draw_at_altitude_mode = COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.BACK_FACING
+        Assert.assertEqual(COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.BACK_FACING, oVO.draw_at_altitude_mode)
+        oVO.draw_at_altitude_mode = COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.FRONT_AND_BACK_FACING
+        Assert.assertEqual(COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.FRONT_AND_BACK_FACING, oVO.draw_at_altitude_mode)
+        oVO.draw_at_altitude_mode = COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.FRONT_FACING
+        Assert.assertEqual(COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.FRONT_FACING, oVO.draw_at_altitude_mode)
 
         oVO.auto_granularity = True
         Assert.assertTrue(oVO.auto_granularity)

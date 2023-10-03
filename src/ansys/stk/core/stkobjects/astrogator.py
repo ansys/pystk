@@ -14,7 +14,7 @@ __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CON
 "CALC_OBJECT_DIRECTION", "CALC_OBJECT_ELEM", "CALC_OBJECT_LOCATION_SOURCE", "CALC_OBJECT_ORBIT_PLANE_SOURCE", "CALC_OBJECT_REFERENCE", 
 "CALC_OBJECT_REFERENCE_DIRECTION", "CALC_OBJECT_REFERENCE_ELLIPSE", "CALC_OBJECT_RELATIVE_POSITION", "CALC_OBJECT_SUN_POSITION", 
 "CENTRAL_BODY_ATTITUDE", "CENTRAL_BODY_EPHEMERIS", "CENTRAL_BODY_GRAVITY_MODEL", "CENTRAL_BODY_SHAPE", "CLEAR_EPHEMERIS_DIRECTION", 
-"COEFF_RUNGE_KUTTA_V_8TH9_TH", "COMPLEX_NUMBER", "CONSTRAINT_SIGN", "CONTROL_ADVANCED", "CONTROL_ENGINE_CONSTANT", "CONTROL_ENGINE_CONST_ACC", 
+"COEFF_RUNGE_KUTTA_V_8TH_9TH", "COMPLEX_NUMBER", "CONSTRAINT_SIGN", "CONTROL_ADVANCED", "CONTROL_ENGINE_CONSTANT", "CONTROL_ENGINE_CONST_ACC", 
 "CONTROL_ENGINE_CUSTOM", "CONTROL_ENGINE_ION", "CONTROL_ENGINE_MODEL_POLY", "CONTROL_ENGINE_THROTTLE_TABLE", "CONTROL_FOLLOW", 
 "CONTROL_INIT_STATE", "CONTROL_LAUNCH", "CONTROL_MANEUVER", "CONTROL_ORBIT_STATE_VALUE", "CONTROL_POWER_INTERNAL", "CONTROL_POWER_PROCESSED", 
 "CONTROL_POWER_SOLAR_ARRAY", "CONTROL_REPEATING_GROUND_TRACK_ERR", "CONTROL_STOPPING_CONDITION", "CONTROL_THRUSTERS", "CONTROL_UPDATE", 
@@ -2281,24 +2281,24 @@ agcls.AgTypeNameMap["GEO_STATIONARY_DRIFT_RATE_MODEL"] = GEO_STATIONARY_DRIFT_RA
 class GEO_STATIONARY_INCLINATION_MAGNITUDE(IntEnum):
     """Magnitude to use when computing the inclination vector."""
     # Computes inclination vector magnitude as the inclination angle itself (in radins).
-    inclination_angle = 0
+    INCLINATION_ANGLE = 0
     # Computes inclination vector magnitude as sin(inclination).
-    sin_inclination = 1
+    SIN_INCLINATION = 1
     # Computes inclination vector magnitude as sin(0.5*inclination).
-    sin_half_inclination = 2
+    SIN_HALF_INCLINATION = 2
     # Computes inclination vector magnitude as 2*sin(0.5*inclination).
-    twice_sin_half_inclination = 3
+    TWICE_SIN_HALF_INCLINATION = 3
     # Computes inclination vector magnitude as tan(0.5*inclination).
-    tan_half_inclination = 4
+    TAN_HALF_INCLINATION = 4
     # Computes inclination vector magnitude as 2*tan(0.5*inclination).
-    twice_tan_half_inclination = 5
+    TWICE_TAN_HALF_INCLINATION = 5
 
-GEO_STATIONARY_INCLINATION_MAGNITUDE.inclination_angle.__doc__ = "Computes inclination vector magnitude as the inclination angle itself (in radins)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.sin_inclination.__doc__ = "Computes inclination vector magnitude as sin(inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.sin_half_inclination.__doc__ = "Computes inclination vector magnitude as sin(0.5*inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.twice_sin_half_inclination.__doc__ = "Computes inclination vector magnitude as 2*sin(0.5*inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.tan_half_inclination.__doc__ = "Computes inclination vector magnitude as tan(0.5*inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.twice_tan_half_inclination.__doc__ = "Computes inclination vector magnitude as 2*tan(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.INCLINATION_ANGLE.__doc__ = "Computes inclination vector magnitude as the inclination angle itself (in radins)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.SIN_INCLINATION.__doc__ = "Computes inclination vector magnitude as sin(inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.SIN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as sin(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.TWICE_SIN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as 2*sin(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.TAN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as tan(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.TWICE_TAN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as 2*tan(0.5*inclination)."
 
 agcls.AgTypeNameMap["GEO_STATIONARY_INCLINATION_MAGNITUDE"] = GEO_STATIONARY_INCLINATION_MAGNITUDE
 
@@ -3114,9 +3114,9 @@ class NUMERICAL_INTEGRATOR(IntEnum):
     # A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison.
     RUNGE_KUTTA4_TH_ADAPT = 0
     # A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator.
-    RUNGE_KUTTA_F_7TH8_TH = 1
+    RUNGE_KUTTA_F_7TH_8TH = 1
     # A 9th order Runge-Kutta-Verner integrator with 8th order error control.
-    RUNGE_KUTTA_V_8TH9_TH = 2
+    RUNGE_KUTTA_V_8TH_9TH = 2
     # An integrator based on Richardson extrapolation with automatic step size control.
     BULIRSCH_STOER = 3
     # A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used.
@@ -3129,8 +3129,8 @@ class NUMERICAL_INTEGRATOR(IntEnum):
     RUNGE_KUTTA4_TH = 7
 
 NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH_ADAPT.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH8_TH.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH9_TH.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH_8TH.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH_9TH.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
 NUMERICAL_INTEGRATOR.BULIRSCH_STOER.__doc__ = "An integrator based on Richardson extrapolation with automatic step size control."
 NUMERICAL_INTEGRATOR.GAUSS_JACKSON.__doc__ = "A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."
 NUMERICAL_INTEGRATOR.RUNGE_KUTTA2_ND3_RD.__doc__ = "A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."
@@ -3139,17 +3139,17 @@ NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH.__doc__ = "A 4th order Runge-Kutta integrat
 
 agcls.AgTypeNameMap["NUMERICAL_INTEGRATOR"] = NUMERICAL_INTEGRATOR
 
-class COEFF_RUNGE_KUTTA_V_8TH9_TH(IntEnum):
+class COEFF_RUNGE_KUTTA_V_8TH_9TH(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
     # SIAM 1978.
-    TH1978 = 0
+    COEFF_1978 = 0
     # Efficient.
     EFFICIENT = 1
 
-COEFF_RUNGE_KUTTA_V_8TH9_TH.TH1978.__doc__ = "SIAM 1978."
-COEFF_RUNGE_KUTTA_V_8TH9_TH.EFFICIENT.__doc__ = "Efficient."
+COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFF_1978.__doc__ = "SIAM 1978."
+COEFF_RUNGE_KUTTA_V_8TH_9TH.EFFICIENT.__doc__ = "Efficient."
 
-agcls.AgTypeNameMap["COEFF_RUNGE_KUTTA_V_8TH9_TH"] = COEFF_RUNGE_KUTTA_V_8TH9_TH
+agcls.AgTypeNameMap["COEFF_RUNGE_KUTTA_V_8TH_9TH"] = COEFF_RUNGE_KUTTA_V_8TH_9TH
 
 
 class IUserVariableDefinitionCollection(object):
@@ -9994,10 +9994,10 @@ class IMissionControlSequenceOptions(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_get_draw_trajectory_in2_d"] = _raise_uninitialized_error
-        self.__dict__["_set_draw_trajectory_in2_d"] = _raise_uninitialized_error
-        self.__dict__["_get_draw_trajectory_in3_d"] = _raise_uninitialized_error
-        self.__dict__["_set_draw_trajectory_in3_d"] = _raise_uninitialized_error
+        self.__dict__["_get_draw_trajectory_in_2d"] = _raise_uninitialized_error
+        self.__dict__["_set_draw_trajectory_in_2d"] = _raise_uninitialized_error
+        self.__dict__["_get_draw_trajectory_in_3d"] = _raise_uninitialized_error
+        self.__dict__["_set_draw_trajectory_in_3d"] = _raise_uninitialized_error
         self.__dict__["_get_update_animation_time_for_all_objects"] = _raise_uninitialized_error
         self.__dict__["_set_update_animation_time_for_all_objects"] = _raise_uninitialized_error
         self.__dict__["_get_clear_dwc_graphics_before_each_run"] = _raise_uninitialized_error
@@ -10042,10 +10042,10 @@ class IMissionControlSequenceOptions(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IMissionControlSequenceOptions = agcom.GUID(IMissionControlSequenceOptions._uuid)
         vtable_offset_local = IMissionControlSequenceOptions._vtable_offset - 1
-        self.__dict__["_get_draw_trajectory_in2_d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_draw_trajectory_in2_d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+2, agcom.VARIANT_BOOL)
-        self.__dict__["_get_draw_trajectory_in3_d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_draw_trajectory_in3_d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+4, agcom.VARIANT_BOOL)
+        self.__dict__["_get_draw_trajectory_in_2d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_draw_trajectory_in_2d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+2, agcom.VARIANT_BOOL)
+        self.__dict__["_get_draw_trajectory_in_3d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_draw_trajectory_in_3d"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+4, agcom.VARIANT_BOOL)
         self.__dict__["_get_update_animation_time_for_all_objects"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
         self.__dict__["_set_update_animation_time_for_all_objects"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+6, agcom.VARIANT_BOOL)
         self.__dict__["_get_clear_dwc_graphics_before_each_run"] = IAGFUNCTYPE(pUnk, IID_IMissionControlSequenceOptions, vtable_offset_local+7, POINTER(agcom.VARIANT_BOOL))
@@ -10093,28 +10093,28 @@ class IMissionControlSequenceOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissionControlSequenceOptions.")
     
     @property
-    def draw_trajectory_in2_d(self) -> bool:
+    def draw_trajectory_in_2d(self) -> bool:
         """If true, Astrogator will draw the trajectory in the 2D Graphics windows as the ephemeris is calculated during the current run."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_draw_trajectory_in2_d"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_draw_trajectory_in_2d"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @draw_trajectory_in2_d.setter
-    def draw_trajectory_in2_d(self, newVal:bool) -> None:
+    @draw_trajectory_in_2d.setter
+    def draw_trajectory_in_2d(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_draw_trajectory_in2_d"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_draw_trajectory_in_2d"](arg_newVal.COM_val))
 
     @property
-    def draw_trajectory_in3_d(self) -> bool:
+    def draw_trajectory_in_3d(self) -> bool:
         """If true, Astrogator will draw the trajectory in the 3D Graphics windows as the ephemeris is calculated during the current run."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_draw_trajectory_in3_d"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_draw_trajectory_in_3d"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @draw_trajectory_in3_d.setter
-    def draw_trajectory_in3_d(self, newVal:bool) -> None:
+    @draw_trajectory_in_3d.setter
+    def draw_trajectory_in_3d(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_draw_trajectory_in3_d"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_draw_trajectory_in_3d"](arg_newVal.COM_val))
 
     @property
     def update_animation_time_for_all_objects(self) -> bool:
@@ -49356,15 +49356,15 @@ class IRungeKuttaV8th9th(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_iterations"](arg_inVal.COM_val))
 
     @property
-    def coeff_type(self) -> "COEFF_RUNGE_KUTTA_V_8TH9_TH":
+    def coeff_type(self) -> "COEFF_RUNGE_KUTTA_V_8TH_9TH":
         """The set of coefficients to use."""
-        with agmarshall.AgEnum_arg(COEFF_RUNGE_KUTTA_V_8TH9_TH) as arg_pVal:
+        with agmarshall.AgEnum_arg(COEFF_RUNGE_KUTTA_V_8TH_9TH) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_coeff_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @coeff_type.setter
-    def coeff_type(self, inVal:"COEFF_RUNGE_KUTTA_V_8TH9_TH") -> None:
-        with agmarshall.AgEnum_arg(COEFF_RUNGE_KUTTA_V_8TH9_TH, inVal) as arg_inVal:
+    def coeff_type(self, inVal:"COEFF_RUNGE_KUTTA_V_8TH_9TH") -> None:
+        with agmarshall.AgEnum_arg(COEFF_RUNGE_KUTTA_V_8TH_9TH, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_coeff_type"](arg_inVal.COM_val))
 
 

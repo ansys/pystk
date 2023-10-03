@@ -1769,20 +1769,20 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set L out of bounds")
 
-        self.m_oDelaunay.l_type = DELAUNAY_L_TYPE.L_OVER_SQR_TMU
+        self.m_oDelaunay.l_type = DELAUNAY_L_TYPE.L_OVER_SQRT_MU
         self.m_logger.WriteLine6("\t\tNew LType is: {0}", self.m_oDelaunay.l_type)
-        Assert.assertEqual(DELAUNAY_L_TYPE.L_OVER_SQR_TMU, self.m_oDelaunay.l_type)
+        Assert.assertEqual(DELAUNAY_L_TYPE.L_OVER_SQRT_MU, self.m_oDelaunay.l_type)
         oLOver: "IDelaunayLOverSQRTmu" = clr.Convert(self.m_oDelaunay.l, IDelaunayLOverSQRTmu)
         Assert.assertIsNotNone(oLOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
-        self.m_logger.WriteLine6("\t\t\t\t LOverSQRTmu is: {0}", oLOver.l_over_sqr_tmu)
-        oLOver.l_over_sqr_tmu = 12345678.9
+        self.m_logger.WriteLine6("\t\t\t\t LOverSQRTmu is: {0}", oLOver.l_over_sqrt_mu)
+        oLOver.l_over_sqrt_mu = 12345678.9
         self.m_logger.WriteLine("\t\t\tNew values:")
-        self.m_logger.WriteLine6("\t\t\t\t LOverSQRTmu is: {0}", oLOver.l_over_sqr_tmu)
-        Assert.assertAlmostEqual(12345678.9, oLOver.l_over_sqr_tmu, delta=0.01)
+        self.m_logger.WriteLine6("\t\t\t\t LOverSQRTmu is: {0}", oLOver.l_over_sqrt_mu)
+        Assert.assertAlmostEqual(12345678.9, oLOver.l_over_sqrt_mu, delta=0.01)
         try:
             bCaught = False
-            oLOver.l_over_sqr_tmu = -12.34
+            oLOver.l_over_sqrt_mu = -12.34
 
         except Exception as e:
             bCaught = True
@@ -1831,20 +1831,20 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set H out of bounds")
 
-        self.m_oDelaunay.h_type = DELAUNAY_H_TYPE.H_OVER_SQR_TMU
+        self.m_oDelaunay.h_type = DELAUNAY_H_TYPE.H_OVER_SQRT_MU
         self.m_logger.WriteLine6("\t\tNew HType is: {0}", self.m_oDelaunay.h_type)
-        Assert.assertEqual(DELAUNAY_H_TYPE.H_OVER_SQR_TMU, self.m_oDelaunay.h_type)
+        Assert.assertEqual(DELAUNAY_H_TYPE.H_OVER_SQRT_MU, self.m_oDelaunay.h_type)
         oHOver: "IDelaunayHOverSQRTmu" = clr.Convert(self.m_oDelaunay.h, IDelaunayHOverSQRTmu)
         Assert.assertIsNotNone(oHOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
-        self.m_logger.WriteLine6("\t\t\t\t HOverSQRTmu is: {0}", oHOver.h_over_sqr_tmu)
-        oHOver.h_over_sqr_tmu = 12.3456789
+        self.m_logger.WriteLine6("\t\t\t\t HOverSQRTmu is: {0}", oHOver.h_over_sqrt_mu)
+        oHOver.h_over_sqrt_mu = 12.3456789
         self.m_logger.WriteLine("\t\t\tNew values:")
-        self.m_logger.WriteLine6("\t\t\t\t HOverSQRTmu is: {0}", oHOver.h_over_sqr_tmu)
-        Assert.assertAlmostEqual(12.3456789, oHOver.h_over_sqr_tmu, delta=1e-08)
+        self.m_logger.WriteLine6("\t\t\t\t HOverSQRTmu is: {0}", oHOver.h_over_sqrt_mu)
+        Assert.assertAlmostEqual(12.3456789, oHOver.h_over_sqrt_mu, delta=1e-08)
         try:
             bCaught = False
-            oHOver.h_over_sqr_tmu = -12.34
+            oHOver.h_over_sqrt_mu = -12.34
 
         except Exception as e:
             bCaught = True
@@ -1893,20 +1893,20 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set G out of bounds")
 
-        self.m_oDelaunay.g_type = DELAUNAY_G_TYPE.G_OVER_SQR_TMU
+        self.m_oDelaunay.g_type = DELAUNAY_G_TYPE.G_OVER_SQRT_MU
         self.m_logger.WriteLine6("\t\tNew GType is: {0}", self.m_oDelaunay.g_type)
-        Assert.assertEqual(DELAUNAY_G_TYPE.G_OVER_SQR_TMU, self.m_oDelaunay.g_type)
+        Assert.assertEqual(DELAUNAY_G_TYPE.G_OVER_SQRT_MU, self.m_oDelaunay.g_type)
         oGOver: "IDelaunayGOverSQRTmu" = clr.Convert(self.m_oDelaunay.g, IDelaunayGOverSQRTmu)
         Assert.assertIsNotNone(oGOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
-        self.m_logger.WriteLine6("\t\t\t\t GOverSQRTmu is: {0}", oGOver.g_over_sqr_tmu)
-        oGOver.g_over_sqr_tmu = 12345.6789
+        self.m_logger.WriteLine6("\t\t\t\t GOverSQRTmu is: {0}", oGOver.g_over_sqrt_mu)
+        oGOver.g_over_sqrt_mu = 12345.6789
         self.m_logger.WriteLine("\t\t\tNew values:")
-        self.m_logger.WriteLine6("\t\t\t\t GOverSQRTmu is: {0}", oGOver.g_over_sqr_tmu)
-        Assert.assertAlmostEqual(12345.6789, oGOver.g_over_sqr_tmu, delta=0.0001)
+        self.m_logger.WriteLine6("\t\t\t\t GOverSQRTmu is: {0}", oGOver.g_over_sqrt_mu)
+        Assert.assertAlmostEqual(12345.6789, oGOver.g_over_sqrt_mu, delta=0.0001)
         try:
             bCaught = False
-            oGOver.g_over_sqr_tmu = -12.34
+            oGOver.g_over_sqrt_mu = -12.34
 
         except Exception as e:
             bCaught = True

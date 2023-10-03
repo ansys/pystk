@@ -93,7 +93,7 @@ class AccessConstraintHelper(object):
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_UNAMBIG_DOPPLER)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_UNAMBIG_RANGE)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_TERRAIN_MASK)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR3_D_TILES_MASK)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_3D_TILES_MASK)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_FOREGROUND)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SEET_MAGNITUDE_FIELD_LSHELL)
 

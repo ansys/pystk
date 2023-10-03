@@ -40,7 +40,7 @@ class VehicleVO(CodeSnippetsTestBase):
         sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), ISatellite
         )
-        self.ConfigureVeVOPass(sat.graphics3_d.pass_method)
+        self.ConfigureVeVOPass(sat.graphics_3d.pass_method)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
     def ConfigureVeVOPass(self, veVoPass: "IVehicleGraphics3DPass"):
@@ -65,12 +65,12 @@ class VehicleVO(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
             ISatellite,
         )
-        self.ConfigureVeVODropline(satellite.graphics3_d.drop_lines.orbit[0])
+        self.ConfigureVeVODropline(satellite.graphics_3d.drop_lines.orbit[0])
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite1")
 
     def ConfigureVeVODropline(self, dropLine: "IVehicleGraphics3DDropLinePathItem"):
         dropLine.is_visible = True
-        dropLine.use2_d_color = False
+        dropLine.use_2d_color = False
         dropLine.color = Color.Red
         dropLine.line_style = LINE_STYLE.DASHED
         dropLine.line_width = LINE_WIDTH.WIDTH4

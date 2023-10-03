@@ -663,7 +663,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         runway.altitude = 5
 
         # Set the altitude reference
-        runway.altitude_reference = AGLMSL.ALTITUDE_MSL
+        runway.altitude_reference = AGL_MSL.ALTITUDE_MSL
 
         # Set the heading
         runway.high_end_heading = 195

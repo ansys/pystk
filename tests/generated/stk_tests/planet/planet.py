@@ -183,7 +183,7 @@ class EarlyBoundTests(TestBase):
         AssertEx.AreEqual(Color.FromArgb(1193046), gfx.color)
         # Marker Style
         scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
-        arMarkers = scenario.graphics3_d.available_marker_types()
+        arMarkers = scenario.graphics_3d.available_marker_types()
         TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.marker_style)
         gfx.marker_style = str(arMarkers[0])
         TestBase.logger.WriteLine5("The new MarkerStyle is: {0}", gfx.marker_style)
@@ -366,13 +366,13 @@ class EarlyBoundTests(TestBase):
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
         # VO
-        vo: "IPlanetGraphics3D" = EarlyBoundTests.AG_PL.graphics3_d
+        vo: "IPlanetGraphics3D" = EarlyBoundTests.AG_PL.graphics_3d
         Assert.assertIsNotNone(vo)
         # InheritFrom2dGfx (true)
-        TestBase.logger.WriteLine4("\tThe current InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_graphics2_d)
-        vo.inherit_from2_d_graphics2_d = True
-        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_graphics2_d)
-        Assert.assertTrue(vo.inherit_from2_d_graphics2_d)
+        TestBase.logger.WriteLine4("\tThe current InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
+        vo.inherit_from_2d_graphics_2d = True
+        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
+        Assert.assertTrue(vo.inherit_from_2d_graphics_2d)
 
         def action3():
             vo.inertial_position_visible = False
@@ -404,9 +404,9 @@ class EarlyBoundTests(TestBase):
         # OrbitVisible (readonly)
         TryCatchAssertBlock.DoAssert("The property should be read-only.", action7)
         # InheritFrom2dGfx (false)
-        vo.inherit_from2_d_graphics2_d = False
-        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_graphics2_d)
-        Assert.assertFalse(vo.inherit_from2_d_graphics2_d)
+        vo.inherit_from_2d_graphics_2d = False
+        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
+        Assert.assertFalse(vo.inherit_from_2d_graphics_2d)
         # OrbitVisible
         TestBase.logger.WriteLine4("\tThe current OrbitVisible flag is: {0}", vo.orbit_visible)
         vo.orbit_visible = True

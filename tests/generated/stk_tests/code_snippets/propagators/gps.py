@@ -61,7 +61,7 @@ class GPS(CodeSnippetsTestBase):
         propagator.ephemeris_interval.set_implicit_interval(scenario.vgt.event_intervals["AnalysisInterval"])
 
         # PRN must be set before configuring GPS almanac
-        propagator.prn = int(clr.Convert(propagator.available_pr_ns[0], str))
+        propagator.prn = int(clr.Convert(propagator.available_prns[0], str))
 
         # Turn the Auto-update off
         propagator.auto_update_enabled = False

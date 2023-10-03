@@ -44,8 +44,8 @@ Enumerations
     OLE_DROP_MODE
     MOUSE_MODE
     LOGGING_MODE
-    GRAPHICS2_D_ANALYSIS_MODE
-    GRAPHICS2_D_DRAW_COORDS
+    GRAPHICS_2D_ANALYSIS_MODE
+    GRAPHICS_2D_DRAW_COORDS
     SHOW_PROGRESS_IMAGE
     FEATURE_CODES
     PROGRESS_IMAGE_X_ORIGIN
@@ -165,9 +165,9 @@ Enumerations
     :members:
 .. autoenum:: LOGGING_MODE
     :members:
-.. autoenum:: GRAPHICS2_D_ANALYSIS_MODE
+.. autoenum:: GRAPHICS_2D_ANALYSIS_MODE
     :members:
-.. autoenum:: GRAPHICS2_D_DRAW_COORDS
+.. autoenum:: GRAPHICS_2D_DRAW_COORDS
     :members:
 .. autoenum:: SHOW_PROGRESS_IMAGE
     :members:

@@ -4,7 +4,7 @@
 
 __all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", 
 "DrawElemLine", "DrawElemRect", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", "ExecMultiCmdResult", "FEATURE_CODES", 
-"GRAPHICS2_D_ANALYSIS_MODE", "GRAPHICS2_D_DRAW_COORDS", "IDataObject", "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", 
+"GRAPHICS_2D_ANALYSIS_MODE", "GRAPHICS_2D_DRAW_COORDS", "IDataObject", "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", 
 "IDrawElemLine", "IDrawElemRect", "IExecCmdResult", "IExecMultiCmdResult", "IObjPathCollection", "IPickInfoData", "IRubberBandPickInfoData", 
 "ISTKXApplication", "ISTKXApplicationPartnerAccess", "ISTKXConControlQuitReceivedEventArgs", "ISTKXSSLCertificateErrorEventArgs", 
 "IUiAx2DCntrl", "IUiAxGraphics2DAnalysisCntrl", "IUiAxGraphics3DCntrl", "IWinProjectionPosition", "LINE_STYLE", "LOGGING_MODE", 
@@ -232,7 +232,7 @@ LOGGING_MODE.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even a
 
 agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
 
-class GRAPHICS2_D_ANALYSIS_MODE(IntEnum):
+class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
     # The Solar Panel Tool mode.
     SOLAR_PANEL_TOOL = 1
@@ -243,24 +243,24 @@ class GRAPHICS2_D_ANALYSIS_MODE(IntEnum):
     # The AzElMask Tool mode.
     AZ_EL_MASK_TOOL = 4
 
-GRAPHICS2_D_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
-GRAPHICS2_D_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
-GRAPHICS2_D_ANALYSIS_MODE.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
-GRAPHICS2_D_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
+GRAPHICS_2D_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
+GRAPHICS_2D_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
+GRAPHICS_2D_ANALYSIS_MODE.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
+GRAPHICS_2D_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
 
-agcls.AgTypeNameMap["GRAPHICS2_D_ANALYSIS_MODE"] = GRAPHICS2_D_ANALYSIS_MODE
+agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"] = GRAPHICS_2D_ANALYSIS_MODE
 
-class GRAPHICS2_D_DRAW_COORDS(IntEnum):
+class GRAPHICS_2D_DRAW_COORDS(IntEnum):
     """Specifies the draw coordinates for Map Control."""
     # The draw coordinates values in pixels.
     PIXEL_DRAW_COORDS = 1
     # The draw coordinates values in screen coordinates.
     SCREEN_DRAW_COORDS = 2
 
-GRAPHICS2_D_DRAW_COORDS.PIXEL_DRAW_COORDS.__doc__ = "The draw coordinates values in pixels."
-GRAPHICS2_D_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates values in screen coordinates."
+GRAPHICS_2D_DRAW_COORDS.PIXEL_DRAW_COORDS.__doc__ = "The draw coordinates values in pixels."
+GRAPHICS_2D_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates values in screen coordinates."
 
-agcls.AgTypeNameMap["GRAPHICS2_D_DRAW_COORDS"] = GRAPHICS2_D_DRAW_COORDS
+agcls.AgTypeNameMap["GRAPHICS_2D_DRAW_COORDS"] = GRAPHICS_2D_DRAW_COORDS
 
 class SHOW_PROGRESS_IMAGE(IntEnum):
     """Specifies to show progress image."""
@@ -2398,12 +2398,12 @@ class IUiAx2DCntrl(object):
         with agmarshall.VARIANT_BOOL_arg(bAdvancePickMode) as arg_bAdvancePickMode:
             agcls.evaluate_hresult(self.__dict__["_set_advanced_pick_mode"](arg_bAdvancePickMode.COM_val))
 
-    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS2_D_DRAW_COORDS") -> "IWinProjectionPosition":
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS_2D_DRAW_COORDS") -> "IWinProjectionPosition":
         """Get the window projected position for given values."""
         with agmarshall.DOUBLE_arg(lat) as arg_lat, \
              agmarshall.DOUBLE_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt, \
-             agmarshall.AgEnum_arg(GRAPHICS2_D_DRAW_COORDS, drawCoords) as arg_drawCoords, \
+             agmarshall.AgEnum_arg(GRAPHICS_2D_DRAW_COORDS, drawCoords) as arg_drawCoords, \
              agmarshall.AgInterface_out_arg() as arg_ppWinProjPos:
             agcls.evaluate_hresult(self.__dict__["_get_window_projected_position"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val, arg_drawCoords.COM_val, byref(arg_ppWinProjPos.COM_val)))
             return arg_ppWinProjPos.python_val
@@ -2785,15 +2785,15 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             return arg_pVal.python_val
 
     @property
-    def control_mode(self) -> "GRAPHICS2_D_ANALYSIS_MODE":
+    def control_mode(self) -> "GRAPHICS_2D_ANALYSIS_MODE":
         """The Graphics control mode."""
-        with agmarshall.AgEnum_arg(GRAPHICS2_D_ANALYSIS_MODE) as arg_peGfxAnalysisMode:
+        with agmarshall.AgEnum_arg(GRAPHICS_2D_ANALYSIS_MODE) as arg_peGfxAnalysisMode:
             agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_peGfxAnalysisMode.COM_val)))
             return arg_peGfxAnalysisMode.python_val
 
     @control_mode.setter
-    def control_mode(self, eGfxAnalysisMode:"GRAPHICS2_D_ANALYSIS_MODE") -> None:
-        with agmarshall.AgEnum_arg(GRAPHICS2_D_ANALYSIS_MODE, eGfxAnalysisMode) as arg_eGfxAnalysisMode:
+    def control_mode(self, eGfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None:
+        with agmarshall.AgEnum_arg(GRAPHICS_2D_ANALYSIS_MODE, eGfxAnalysisMode) as arg_eGfxAnalysisMode:
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_eGfxAnalysisMode.COM_val))
 
     @property

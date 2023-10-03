@@ -934,7 +934,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnNewGfxAnalysisCtrlRequest(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GRAPHICS2_D_ANALYSIS_MODE") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None]"""
         return self._OnNewGfxAnalysisCtrlRequestEvent
         
     @OnNewGfxAnalysisCtrlRequest.setter
@@ -1006,7 +1006,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     def _OnNewGfxAnalysisCtrlRequest(self, pThis:PVOID, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._OnNewGfxAnalysisCtrlRequestEvent._callbacks:
-            callback(SceneID, agcls.AgTypeNameMap["GRAPHICS2_D_ANALYSIS_MODE"](GfxAnalysisMode))
+            callback(SceneID, agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"](GfxAnalysisMode))
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnSSLCertificateServerErrorEvent._callbacks:

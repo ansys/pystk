@@ -283,7 +283,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region SetAttributesType
-    def SetAttributesType(self, eType: "VEHICLE_GRAPHICS2_D_ATTRIBUTES"):
+    def SetAttributesType(self, eType: "VEHICLE_GRAPHICS_2D_ATTRIBUTES"):
         oGfx: "IMissileGraphics" = EarlyBoundTests.AG_MSL.graphics
         Assert.assertIsNotNone(oGfx)
 
@@ -296,7 +296,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                clr.Convert(int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS2_D_ATTRIBUTES),
+                clr.Convert(int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS_2D_ATTRIBUTES),
             )
 
             iIndex += 1
@@ -307,7 +307,7 @@ class EarlyBoundTests(TestBase):
 
         oGfx.set_attributes_type(eType)
         TestBase.logger.WriteLine6("The new Attributes type is: {0}", oGfx.attributes_type)
-        eType2: "VEHICLE_GRAPHICS2_D_ATTRIBUTES" = oGfx.attributes_type
+        eType2: "VEHICLE_GRAPHICS_2D_ATTRIBUTES" = oGfx.attributes_type
         Assert.assertEqual(eType, eType2)
 
     # endregion
@@ -318,7 +318,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesBasic(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES BASIC TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
         oHelper = GfxAttributesTrajectoryHelper()
         oHelper.Run(clr.Convert(EarlyBoundTests.AG_MSL.graphics.attributes, IVehicleGraphics2DAttributesTrajectory))
@@ -359,7 +359,7 @@ class EarlyBoundTests(TestBase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_ACCESS)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_ACCESS)
 
         oHelper = GfxAttributesAccessHelper()
         oHelper.Run(
@@ -386,7 +386,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesCustom(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES CUSTOM TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_CUSTOM)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_CUSTOM)
 
         # Custom Intervals
         oHelper = GfxAttributesCustomHelper()
@@ -418,7 +418,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesTimeComponents(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES ACCESS TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_TIME_COMPONENTS)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_TIME_COMPONENTS)
 
         oHelper = GfxAttributesTimeComponentsHelper()
         oHelper.Run(
@@ -453,7 +453,7 @@ class EarlyBoundTests(TestBase):
             bCaught: bool = False
             try:
                 bCaught = False
-                self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_REALTIME)
+                self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
 
             except Exception as e:
                 bCaught = True
@@ -464,7 +464,7 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_MSL.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
         (clr.CastAs(EarlyBoundTests.AG_MSL.trajectory, IVehiclePropagatorRealtime)).propagate()
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_REALTIME)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
 
         oHelper = GfxAttributesRealTimeHelper()
         oHelper.Run(
@@ -557,7 +557,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModel(self):
         oHelper = VOTrajectoryModelHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.model, False)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.model, False)
 
     # endregion
 
@@ -565,8 +565,8 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModelMarker(self):
         oHelper = VOMarkerHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.model.ground_marker, True)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.model.trajectory_marker, True)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.model.ground_marker, True)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.model.trajectory_marker, True)
 
     # endregion
 
@@ -574,7 +574,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOProximity(self):
         oHelper = VOTrajectoryProximityHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.proximity)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.proximity)
 
     # endregion
 
@@ -582,7 +582,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOElevationContours(self):
         oHelper = VOElevationContoursHelper()
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.elev_contours)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.elev_contours)
 
     # endregion
 
@@ -590,7 +590,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOCovariancePointingContour(self):
         oHelper = VOCovariancePointingContourHelper()
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.covariance_pointing_contour)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.covariance_pointing_contour)
 
     # endregion
 
@@ -598,7 +598,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VORangeContours(self):
         oHelper = VORangeContoursHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.range_contours)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.range_contours)
 
     # endregion
 
@@ -606,7 +606,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOOffsets(self):
         oHelper = VOOffsetsHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.offsets)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.offsets)
 
     # endregion
 
@@ -614,7 +614,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOCovariance(self):
         oHelper = VOCovarianceHelper()
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.covariance)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.covariance)
 
     # endregion
 
@@ -622,7 +622,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVelocityCovariance(self):
         oHelper = VOVelocityCovarianceHelper()
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.velocity_covariance)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.velocity_covariance)
 
     # endregion
 
@@ -630,7 +630,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVectors(self):
         oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.vector, False)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.vector, False)
 
     # endregion
 
@@ -640,7 +640,7 @@ class EarlyBoundTests(TestBase):
     def test_VODataDisplay(self):
         # test VO DataDisplay
         oHelper = VODataDisplayHelper(TestBase.Application)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.data_display, False, False)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.data_display, False, False)
 
     # endregion
 
@@ -648,7 +648,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModelPointing(self):
         # set VO.Model type to eModelFile
-        oModel: "IGraphics3DModel" = EarlyBoundTests.AG_MSL.graphics3_d.model
+        oModel: "IGraphics3DModel" = EarlyBoundTests.AG_MSL.graphics_3d.model
         TestBase.logger.WriteLine6("The current ModelType is: {0}", oModel.model_type)
         oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("The new ModelType is: {0}", oModel.model_type)
@@ -661,7 +661,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\tThe new Filename is: {0}", oModelFile.filename)
         # test ModelPointing
         oHelper = VOModelPointingHelper()
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.model_pointing)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.model_pointing)
 
     # endregion
 
@@ -669,7 +669,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VODropLines(self):
         TestBase.logger.WriteLine("----- THE VO DROP LINES TEST ----- BEGIN -----")
-        oVO: "IMissileGraphics3D" = EarlyBoundTests.AG_MSL.graphics3_d
+        oVO: "IMissileGraphics3D" = EarlyBoundTests.AG_MSL.graphics_3d
         Assert.assertIsNotNone(oVO)
         oDropLines: "IVehicleGraphics3DTrajectoryDropLines" = oVO.drop_lines
         Assert.assertIsNotNone(oDropLines)
@@ -691,7 +691,7 @@ class EarlyBoundTests(TestBase):
     @category("Trail/Lead (3D)")
     def test_VOTrajectory(self):
         oHelper = VOTrajectoryHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.trajectory)
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.trajectory)
 
     # endregion
 
@@ -700,10 +700,10 @@ class EarlyBoundTests(TestBase):
     def test_VOTrajectorySystems(self):
         oHelper = VOSystemsHelper()
         if TestBase.ApplicationProvider.Target == TestTarget.eStk:
-            oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.trajectory_systems, TestBase.Application)
+            oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.trajectory_systems, TestBase.Application)
 
         else:
-            oHelper.Run(EarlyBoundTests.AG_MSL.graphics3_d.trajectory_systems, None)
+            oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.trajectory_systems, None)
 
     # endregion
 
@@ -712,8 +712,8 @@ class EarlyBoundTests(TestBase):
     def test_VOVaporTrail(self):
         oHelper = VOVaporTrailHelper()
         oHelper.Run(
-            EarlyBoundTests.AG_MSL.graphics3_d.vapor_trail,
-            clr.CastAs(EarlyBoundTests.AG_MSL.graphics3_d.model, IGraphics3DModel),
+            EarlyBoundTests.AG_MSL.graphics_3d.vapor_trail,
+            clr.CastAs(EarlyBoundTests.AG_MSL.graphics_3d.model, IGraphics3DModel),
             TestBase.GetSTKHomeDir(),
         )
 
@@ -779,7 +779,7 @@ class EarlyBoundTests(TestBase):
         SEETHelper.TestEnvironment_2D(
             EarlyBoundTests.AG_MSL.space_environment,
             EarlyBoundTests.AG_MSL.graphics.saa,
-            EarlyBoundTests.AG_MSL.graphics3_d.saa,
+            EarlyBoundTests.AG_MSL.graphics_3d.saa,
         )
 
     # endregion

@@ -153,7 +153,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOAzElMask(self):
         oHelper = VOAzElMaskHelper()
-        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.az_el_mask)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.az_el_mask)
 
     # endregion
 
@@ -161,7 +161,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOAOULabelSwapDistance(self):
         oLabelSwapHelper = VOLabelSwapDistanceHelper()
-        oLabelSwapHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.aou_label_swap_distance)
+        oLabelSwapHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.aou_label_swap_distance)
 
     # endregion
 
@@ -169,7 +169,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVectors(self):
         oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
-        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.vector, False)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.vector, False)
 
     # endregion
 
@@ -179,7 +179,7 @@ class EarlyBoundTests(TestBase):
     def test_VODataDisplay(self):
         # test VO DataDisplay
         helper = VODataDisplayHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_TG.graphics3_d.data_displays, False, False)
+        helper.Run(EarlyBoundTests.AG_TG.graphics_3d.data_displays, False, False)
 
     # endregion
 
@@ -187,7 +187,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VORangeContours(self):
         oHelper = VORangeContoursHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.range_contours)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.range_contours)
 
     # endregion
 
@@ -195,7 +195,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOOffsets(self):
         oHelper = VOOffsetsHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.offsets)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.offsets)
 
     # endregion
 
@@ -203,7 +203,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModel(self):
         oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.model)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.model)
 
     # endregion
 
@@ -211,14 +211,14 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModelMarker(self):
         oHelper = VOMarkerHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.model.marker, False)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.model.marker, False)
 
     # endregion
 
     # region VOModelPointing
     @category("VO Tests")
     def test_VOModelPointing(self):
-        oModel: "IGraphics3DModel" = EarlyBoundTests.AG_TG.graphics3_d.model
+        oModel: "IGraphics3DModel" = EarlyBoundTests.AG_TG.graphics_3d.model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
         oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
@@ -230,7 +230,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.filename)
 
         oHelper = VOModelPointingHelper()
-        oHelper.Run(EarlyBoundTests.AG_TG.graphics3_d.model_pointing)
+        oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.model_pointing)
 
     # endregion
 
@@ -239,8 +239,8 @@ class EarlyBoundTests(TestBase):
     def test_VOVaporTrail(self):
         oHelper = VOVaporTrailHelper()
         oHelper.Run(
-            EarlyBoundTests.AG_TG.graphics3_d.vapor_trail,
-            clr.CastAs(EarlyBoundTests.AG_TG.graphics3_d.model, IGraphics3DModel),
+            EarlyBoundTests.AG_TG.graphics_3d.vapor_trail,
+            clr.CastAs(EarlyBoundTests.AG_TG.graphics_3d.model, IGraphics3DModel),
             TestBase.GetSTKHomeDir(),
         )
 

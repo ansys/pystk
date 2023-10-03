@@ -35,12 +35,12 @@ def _raise_uninitialized_error(*args):
 class WINDOW_SERVICE(IntEnum):
     """Well-known types of services."""
     # A 2D window.
-    SERVICE2_D_WINDOW = 1
+    WINDOW_2D = 1
     # A 3D window.
-    SERVICE3_D_WINDOW = 2
+    WINDOW_3D = 2
 
-WINDOW_SERVICE.SERVICE2_D_WINDOW.__doc__ = "A 2D window."
-WINDOW_SERVICE.SERVICE3_D_WINDOW.__doc__ = "A 3D window."
+WINDOW_SERVICE.WINDOW_2D.__doc__ = "A 2D window."
+WINDOW_SERVICE.WINDOW_3D.__doc__ = "A 3D window."
 
 agcls.AgTypeNameMap["WINDOW_SERVICE"] = WINDOW_SERVICE
 

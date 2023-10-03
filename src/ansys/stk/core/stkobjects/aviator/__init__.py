@@ -5,7 +5,7 @@
 __all__ = ["ACCELERATION_ADV_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCEL_MANEUVER_MODE", "ACCEL_MODE", "ACCEL_PERF_MODEL_OVERRIDE", 
 "ADDSMessage", "ADDSMessageCollection", "ADDS_FORECAST_TYPE", "ADDS_MISSING_MSG_TYPE", "ADDS_MSG_EXTRAP_TYPE", "ADDS_MSG_INTERP_TYPE", 
 "ADV_FIXED_WING_AERO_STRATEGY", "ADV_FIXED_WING_GEOMETRY", "ADV_FIXED_WING_POWERPLANT_STRATEGY", "AERO_PROP_FLIGHT_MODE", 
-"AERO_PROP_SIMPLE_MODE", "AFPROP_FUEL_TYPE", "AGLMSL", "AILERON_ROLL_FLIGHT_PATH", "AILERON_ROLL_MODE", "AIRCRAFT_AERO_STRATEGY", 
+"AERO_PROP_SIMPLE_MODE", "AFPROP_FUEL_TYPE", "AGL_MSL", "AILERON_ROLL_FLIGHT_PATH", "AILERON_ROLL_MODE", "AIRCRAFT_AERO_STRATEGY", 
 "AIRCRAFT_PROP_STRATEGY", "AIRSPEED_TYPE", "ALTITUDE_CONSTRAINT_MANEUVER_MODE", "ALTITUDE_REFERENCE", "AND_OR", "ANGLE_MODE", 
 "APPROACH_MODE", "ARINC424Airport", "ARINC424Helipad", "ARINC424Navaid", "ARINC424Runway", "ARINC424Source", "ARINC424Waypoint", 
 "ATMOSPHERE_MODEL", "AUTOPILOT_ALTITUDE_CONTROL_MODE", "AUTOPILOT_ALTITUDE_MODE", "AUTOPILOT_HORIZ_PLANE_MODE", "AdvFixedWingElectricPowerplant", 
@@ -21,7 +21,7 @@ __all__ = ["ACCELERATION_ADV_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCE
 "AircraftModels", "AircraftProp", "AircraftSimpleAero", "AircraftSimpleProp", "AircraftTakeoff", "AircraftTerrainFollow", 
 "AircraftTerrainFollowModel", "AircraftVTOL", "AircraftVTOLModel", "AirportCategory", "AltitudeMSLAndLevelOffOptions", "AltitudeMSLOptions", 
 "AltitudeOptions", "ArcAltitudeAndDelayOptions", "ArcAltitudeOptions", "ArcOptions", "ArcVerticalPlaneOptions", "AtmosphereModel", 
-"AtmosphereModelBasic", "AttitudeTransitions", "AviatorPropagator", "BALLISTIC3_D_CONTROL_MODE", "BASIC_FIXED_WING_PROP_MODE", 
+"AtmosphereModelBasic", "AttitudeTransitions", "AviatorPropagator", "BALLISTIC_3D_CONTROL_MODE", "BASIC_FIXED_WING_PROP_MODE", 
 "BASIC_MANEUVER_AIRSPEED_MODE", "BASIC_MANEUVER_ALTITUDE_LIMIT", "BASIC_MANEUVER_FUEL_FLOW_TYPE", "BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", 
 "BASIC_MANEUVER_REFERENCE_FRAME", "BASIC_MANEUVER_STRATEGY", "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS", "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", 
 "BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE", "BasicFixedWingFwdFlightLiftHelper", "BasicManeuverAirspeedOptions", "BasicManeuverStrategyAileronRoll", 
@@ -92,7 +92,7 @@ __all__ = ["ACCELERATION_ADV_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCE
 "LandingVerticalPlaneOptions", "LevelTurns", "MINIMIZE_SITE_PROC_TIME_DIFF", "MISSILE_AERO_STRATEGY", "MISSILE_PROP_STRATEGY", 
 "MissileAdvancedAero", "MissileAero", "MissileExternalAero", "MissileExternalProp", "MissileModel", "MissileModels", "MissileProp", 
 "MissileRamjetProp", "MissileRocketProp", "MissileSimpleAero", "MissileSimpleProp", "MissileTurbojetProp", "Mission", "NAVIGATOR_TURN_DIRECTION", 
-"NUMERICAL_INTEGRATOR", "NavaidCategory", "NavigationOptions", "PERF_MODEL_OVERRIDE", "PHASE_OF_FLIGHT", "PITCH3_D_CONTROL_MODE", 
+"NUMERICAL_INTEGRATOR", "NavaidCategory", "NavigationOptions", "PERF_MODEL_OVERRIDE", "PHASE_OF_FLIGHT", "PITCH_3D_CONTROL_MODE", 
 "POINT_TO_POINT_MODE", "PROCEDURE_TYPE", "PROFILE_CONTROL_LIMIT", "PULL_MODE", "PUSH_PULL", "PayloadStation", "PerformanceModel", 
 "PerformanceModelOptions", "Phase", "PhaseCollection", "Procedure", "ProcedureAirway", "ProcedureAirwayRouter", "ProcedureArcEnroute", 
 "ProcedureArcPointToPoint", "ProcedureAreaTargetSearch", "ProcedureBasicManeuver", "ProcedureBasicPointToPoint", "ProcedureCollection", 
@@ -715,17 +715,17 @@ AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_TURBOJET.__doc__ = "Missile - Turbo
 
 agcls.AgTypeNameMap["AIRCRAFT_PROP_STRATEGY"] = AIRCRAFT_PROP_STRATEGY
 
-class AGLMSL(IntEnum):
+class AGL_MSL(IntEnum):
     """The altitude mode."""
     # AGl altitude. ALtitude above local terrain
     ALTITUDE_AGL = 0
     # MSL altitude. Altitude above sea level.
     ALTITUDE_MSL = 1
 
-AGLMSL.ALTITUDE_AGL.__doc__ = "AGl altitude. ALtitude above local terrain"
-AGLMSL.ALTITUDE_MSL.__doc__ = "MSL altitude. Altitude above sea level."
+AGL_MSL.ALTITUDE_AGL.__doc__ = "AGl altitude. ALtitude above local terrain"
+AGL_MSL.ALTITUDE_MSL.__doc__ = "MSL altitude. Altitude above sea level."
 
-agcls.AgTypeNameMap["AGLMSL"] = AGLMSL
+agcls.AgTypeNameMap["AGL_MSL"] = AGL_MSL
 
 class LANDING_APPROACH_FIX_RANGE_MODE(IntEnum):
     """The reference point on the runway for the Approach Fix Range."""
@@ -2392,20 +2392,20 @@ NUMERICAL_INTEGRATOR.RUNGE_KUTTA45.__doc__ = "Runge-Kutta 4th Order Adpative Tim
 
 agcls.AgTypeNameMap["NUMERICAL_INTEGRATOR"] = NUMERICAL_INTEGRATOR
 
-class BALLISTIC3_D_CONTROL_MODE(IntEnum):
+class BALLISTIC_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the ballistic 3D strategy of the basic maneuver procedure."""
     # The vehicle will compensate for the wind along its ballistic trajectory.
-    BALLISTIC3_D_COMPENSATE_FOR_WIND = 0
+    BALLISTIC_3D_COMPENSATE_FOR_WIND = 0
     # Allow the wind to affect the ballistic trajectory.
-    BALLISTIC3_D_WIND_PUSHES_VEHICLE = 1
+    BALLISTIC_3D_WIND_PUSHES_VEHICLE = 1
     # Model the vehicle as a parachute.
-    BALLISTIC3_D_PARACHUTE_MODE = 2
+    BALLISTIC_3D_PARACHUTE_MODE = 2
 
-BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its ballistic trajectory."
-BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the ballistic trajectory."
-BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_PARACHUTE_MODE.__doc__ = "Model the vehicle as a parachute."
+BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its ballistic trajectory."
+BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the ballistic trajectory."
+BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_PARACHUTE_MODE.__doc__ = "Model the vehicle as a parachute."
 
-agcls.AgTypeNameMap["BALLISTIC3_D_CONTROL_MODE"] = BALLISTIC3_D_CONTROL_MODE
+agcls.AgTypeNameMap["BALLISTIC_3D_CONTROL_MODE"] = BALLISTIC_3D_CONTROL_MODE
 
 class LAUNCH_DYN_STATE_COORD_FRAME(IntEnum):
     """The coordinate frame used for a LaunchDynState procedure."""
@@ -2461,17 +2461,17 @@ SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF.__doc__ = "Levell off the flight 
 
 agcls.AgTypeNameMap["SMOOTH_TURN_FPA_MODE"] = SMOOTH_TURN_FPA_MODE
 
-class PITCH3_D_CONTROL_MODE(IntEnum):
+class PITCH_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the pitch 3D strategy of the basic maneuver procedure."""
     # The vehicle will compensate for the wind along its trajectory.
-    PITCH3_D_COMPENSATE_FOR_WIND = 0
+    PITCH_3D_COMPENSATE_FOR_WIND = 0
     # Allow the wind to affect the trajectory.
-    PITCH3_D_WIND_PUSHES_VEHICLE = 1
+    PITCH_3D_WIND_PUSHES_VEHICLE = 1
 
-PITCH3_D_CONTROL_MODE.PITCH3_D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its trajectory."
-PITCH3_D_CONTROL_MODE.PITCH3_D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the trajectory."
+PITCH_3D_CONTROL_MODE.PITCH_3D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its trajectory."
+PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the trajectory."
 
-agcls.AgTypeNameMap["PITCH3_D_CONTROL_MODE"] = PITCH3_D_CONTROL_MODE
+agcls.AgTypeNameMap["PITCH_3D_CONTROL_MODE"] = PITCH_3D_CONTROL_MODE
 
 class REFUEL_DUMP_MODE(IntEnum):
     """The modes used to define procedure refuel/dump modes."""
@@ -17888,16 +17888,16 @@ class IAltitudeOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_default_cruise_altitude"](arg_newVal.COM_val))
 
     @property
-    def altitude_reference(self) -> "AGLMSL":
+    def altitude_reference(self) -> "AGL_MSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AGL_MSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AGLMSL") -> None:
+    def altitude_reference(self, newVal:"AGL_MSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AGL_MSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     @property
@@ -17961,16 +17961,16 @@ class IHoverAltitudeOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IHoverAltitudeOptions.")
     
     @property
-    def altitude_reference(self) -> "AGLMSL":
+    def altitude_reference(self) -> "AGL_MSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AGL_MSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AGLMSL") -> None:
+    def altitude_reference(self, newVal:"AGL_MSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AGL_MSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     @property
@@ -26259,16 +26259,16 @@ class IBasicManeuverStrategyBallistic3D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyBallistic3D.")
     
     @property
-    def control_mode(self) -> "BALLISTIC3_D_CONTROL_MODE":
+    def control_mode(self) -> "BALLISTIC_3D_CONTROL_MODE":
         """The control mode for the ballistic 3D strategy."""
-        with agmarshall.AgEnum_arg(BALLISTIC3_D_CONTROL_MODE) as arg_pVal:
+        with agmarshall.AgEnum_arg(BALLISTIC_3D_CONTROL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @control_mode.setter
-    def control_mode(self, newVal:"BALLISTIC3_D_CONTROL_MODE") -> None:
+    def control_mode(self, newVal:"BALLISTIC_3D_CONTROL_MODE") -> None:
         """The control mode for the ballistic 3D strategy."""
-        with agmarshall.AgEnum_arg(BALLISTIC3_D_CONTROL_MODE, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(BALLISTIC_3D_CONTROL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_newVal.COM_val))
 
     @property
@@ -26375,16 +26375,16 @@ class IBasicManeuverStrategyPitch3D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyPitch3D.")
     
     @property
-    def control_mode(self) -> "PITCH3_D_CONTROL_MODE":
+    def control_mode(self) -> "PITCH_3D_CONTROL_MODE":
         """The control mode for the pitch 3D strategy."""
-        with agmarshall.AgEnum_arg(PITCH3_D_CONTROL_MODE) as arg_pVal:
+        with agmarshall.AgEnum_arg(PITCH_3D_CONTROL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @control_mode.setter
-    def control_mode(self, newVal:"PITCH3_D_CONTROL_MODE") -> None:
+    def control_mode(self, newVal:"PITCH_3D_CONTROL_MODE") -> None:
         """The control mode for the pitch 3D strategy."""
-        with agmarshall.AgEnum_arg(PITCH3_D_CONTROL_MODE, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(PITCH_3D_CONTROL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_newVal.COM_val))
 
     @property
@@ -28911,16 +28911,16 @@ class ISiteVTOLPoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_newVal.COM_val))
 
     @property
-    def altitude_reference(self) -> "AGLMSL":
+    def altitude_reference(self) -> "AGL_MSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AGL_MSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AGLMSL") -> None:
+    def altitude_reference(self, newVal:"AGL_MSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AGL_MSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     def get_as_site(self) -> "ISite":
@@ -29768,16 +29768,16 @@ class ISiteRunway(object):
             agcls.evaluate_hresult(self.__dict__["_set_length"](arg_newVal.COM_val))
 
     @property
-    def altitude_reference(self) -> "AGLMSL":
+    def altitude_reference(self) -> "AGL_MSL":
         """The altitude reference for the runway."""
-        with agmarshall.AgEnum_arg(AGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AGL_MSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AGLMSL") -> None:
+    def altitude_reference(self, newVal:"AGL_MSL") -> None:
         """The altitude reference for the runway."""
-        with agmarshall.AgEnum_arg(AGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AGL_MSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     @property
@@ -31949,16 +31949,16 @@ class IProcedureTransitionToHover(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTransitionToHover.")
     
     @property
-    def altitude_reference(self) -> "AGLMSL":
+    def altitude_reference(self) -> "AGL_MSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AGL_MSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AGLMSL") -> None:
+    def altitude_reference(self, newVal:"AGL_MSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AGL_MSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     @property

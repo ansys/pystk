@@ -1244,7 +1244,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region SetAttributesType
-    def SetAttributesType(self, eType: "VEHICLE_GRAPHICS2_D_ATTRIBUTES"):
+    def SetAttributesType(self, eType: "VEHICLE_GRAPHICS_2D_ATTRIBUTES"):
         oGfx: "ISatelliteGraphics" = EarlyBoundTests.AG_SAT.graphics
         Assert.assertIsNotNone(oGfx)
 
@@ -1257,7 +1257,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                clr.Convert(int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS2_D_ATTRIBUTES),
+                clr.Convert(int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS_2D_ATTRIBUTES),
             )
 
             iIndex += 1
@@ -1278,7 +1278,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesBasic(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES BASIC TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_BASIC)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
         oHelper = GfxAttributesOrbitHelper()
         oHelper.Run(clr.Convert(EarlyBoundTests.AG_SAT.graphics.attributes, IVehicleGraphics2DAttributesOrbit))
@@ -1304,7 +1304,7 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.InitHelper()
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_ACCESS)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_ACCESS)
 
         oHelper = GfxAttributesAccessHelper()
         oHelper.Run(
@@ -1329,7 +1329,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesCustom(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES CUSTOM TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_CUSTOM)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_CUSTOM)
 
         # Custom Intervals
         oHelper = GfxAttributesCustomHelper()
@@ -1361,7 +1361,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesTimeComponents(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES ACCESS TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_TIME_COMPONENTS)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_TIME_COMPONENTS)
 
         oHelper = GfxAttributesTimeComponentsHelper()
         oHelper.Run(
@@ -1396,7 +1396,7 @@ class EarlyBoundTests(TestBase):
             bCaught: bool = False
             try:
                 bCaught = False
-                self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_REALTIME)
+                self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
 
             except Exception as e:
                 bCaught = True
@@ -1407,7 +1407,7 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
         (clr.CastAs(EarlyBoundTests.AG_SAT.propagator, IVehiclePropagatorRealtime)).propagate()
-        self.SetAttributesType(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_REALTIME)
+        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
 
         oHelper = GfxAttributesRealTimeHelper()
         oHelper.Run(
@@ -1475,18 +1475,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oPasses)
         # VisibleSides
         TestBase.logger.WriteLine6("The current VisibleSides type is: {0}", oPasses.visible_sides)
-        oPasses.visible_sides = VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_NONE
+        oPasses.visible_sides = VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_NONE
         TestBase.logger.WriteLine6("The new VisibleSides type is: {0}", oPasses.visible_sides)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_NONE, oPasses.visible_sides)
-        oPasses.visible_sides = VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_ASCENDING
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_NONE, oPasses.visible_sides)
+        oPasses.visible_sides = VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_ASCENDING
         TestBase.logger.WriteLine6("The new VisibleSides type is: {0}", oPasses.visible_sides)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_ASCENDING, oPasses.visible_sides)
-        oPasses.visible_sides = VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_BOTH
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_ASCENDING, oPasses.visible_sides)
+        oPasses.visible_sides = VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_BOTH
         TestBase.logger.WriteLine6("The new VisibleSides type is: {0}", oPasses.visible_sides)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_BOTH, oPasses.visible_sides)
-        oPasses.visible_sides = VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_BOTH, oPasses.visible_sides)
+        oPasses.visible_sides = VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING
         TestBase.logger.WriteLine6("The new VisibleSides type is: {0}", oPasses.visible_sides)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING, oPasses.visible_sides)
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING, oPasses.visible_sides)
         # IsPassLabelsVisible
         TestBase.logger.WriteLine4("The current IsPassLabelsVisible flag is: {0}", oPasses.is_pass_labels_visible)
         oPasses.is_pass_labels_visible = True
@@ -1507,28 +1507,28 @@ class EarlyBoundTests(TestBase):
                 "\tPass type {0}: {1} ({2})",
                 i,
                 arSupportedTypes[i][1],
-                clr.Convert(int(arSupportedTypes[i][0]), VEHICLE_GRAPHICS2_D_PASS),
+                clr.Convert(int(arSupportedTypes[i][0]), VEHICLE_GRAPHICS_2D_PASS),
             )
 
             i += 1
 
-        if not oPasses.is_pass_type_supported(VEHICLE_GRAPHICS2_D_PASS.PASS_SHOW_ALL):
+        if not oPasses.is_pass_type_supported(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL):
             Assert.fail("The ePassShowAll type should be supported!")
 
-        if not oPasses.is_pass_type_supported(VEHICLE_GRAPHICS2_D_PASS.PASS_SHOW_PASSES):
+        if not oPasses.is_pass_type_supported(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES):
             Assert.fail("The ePassShowPasses type should be supported!")
 
         # PassType
         TestBase.logger.WriteLine6("The current PassType is: {0}", oPasses.pass_type)
         # SetPassType
-        oPasses.set_pass_type(VEHICLE_GRAPHICS2_D_PASS.PASS_SHOW_ALL)
+        oPasses.set_pass_type(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL)
         TestBase.logger.WriteLine6("The new PassType is: {0}", oPasses.pass_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_PASS.PASS_SHOW_ALL, oPasses.pass_type)
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL, oPasses.pass_type)
         Assert.assertIsNone(oPasses.pass_method)
         # SetPassType
-        oPasses.set_pass_type(VEHICLE_GRAPHICS2_D_PASS.PASS_SHOW_PASSES)
+        oPasses.set_pass_type(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES)
         TestBase.logger.WriteLine6("The new PassType is: {0}", oPasses.pass_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS2_D_PASS.PASS_SHOW_PASSES, oPasses.pass_type)
+        Assert.assertEqual(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES, oPasses.pass_type)
         # Pass
         oShow: "IVehicleGraphics2DPassShowPasses" = clr.Convert(oPasses.pass_method, IVehicleGraphics2DPassShowPasses)
         Assert.assertIsNotNone(oShow)
@@ -1759,7 +1759,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOCovariance(self):
         oHelper = VOCovarianceHelper()
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.covariance)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.covariance)
 
     # endregion
 
@@ -1767,7 +1767,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVelocityCovariance(self):
         oHelper = VOVelocityCovarianceHelper()
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.velocity_covariance)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.velocity_covariance)
 
     # endregion
 
@@ -1775,7 +1775,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VORangeContours(self):
         oHelper = VORangeContoursHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.range_contours)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.range_contours)
 
     # endregion
 
@@ -1783,7 +1783,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOOffsets(self):
         oHelper = VOOffsetsHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.offsets)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.offsets)
 
     # endregion
 
@@ -1792,7 +1792,7 @@ class EarlyBoundTests(TestBase):
     @category("Trail/Lead (3D)")
     def test_VOPass(self):
         oHelper = VOPassHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.pass_method)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.pass_method)
 
     # endregion
 
@@ -1800,7 +1800,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOElevationContours(self):
         oHelper = VOElevationContoursHelper()
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.elev_contours)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.elev_contours)
 
     # endregion
 
@@ -1810,7 +1810,7 @@ class EarlyBoundTests(TestBase):
     @category("Excluded From RegFree")
     def test_VOSAAContours(self):
         oHelper = VOSAAContoursHelper()
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.saa)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.saa)
 
     # endregion
 
@@ -1818,7 +1818,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOCovariancePointingContour(self):
         oHelper = VOCovariancePointingContourHelper()
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.covariance_pointing_contour)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.covariance_pointing_contour)
 
     # endregion
 
@@ -1827,7 +1827,7 @@ class EarlyBoundTests(TestBase):
     def test_VODropLines(self):
         TestBase.logger.WriteLine("----- THE VO DROP LINES TEST ----- BEGIN -----")
 
-        oDropLines: "IVehicleGraphics3DOrbitDropLines" = EarlyBoundTests.AG_SAT.graphics3_d.drop_lines
+        oDropLines: "IVehicleGraphics3DOrbitDropLines" = EarlyBoundTests.AG_SAT.graphics_3d.drop_lines
         Assert.assertIsNotNone(oDropLines)
 
         # Orbit test
@@ -1846,7 +1846,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOProximity(self):
         oHelper = VOOrbitProximityHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.proximity)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.proximity)
 
     # endregion
 
@@ -1854,7 +1854,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModelPointing(self):
         # set VO.Model type to eModelFile
-        oModel: "IGraphics3DModel" = EarlyBoundTests.AG_SAT.graphics3_d.model
+        oModel: "IGraphics3DModel" = EarlyBoundTests.AG_SAT.graphics_3d.model
         TestBase.logger.WriteLine6("The current ModelType is: {0}", oModel.model_type)
         oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("The new ModelType is: {0}", oModel.model_type)
@@ -1867,7 +1867,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\tThe new Filename is: {0}", oModelFile.filename)
         # test ModelPointing
         oHelper = VOModelPointingHelper()
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.model_pointing)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.model_pointing)
 
     # endregion
 
@@ -1875,7 +1875,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModel(self):
         oHelper = VOSatelliteModelHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.model)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.model)
 
     # endregion
 
@@ -1883,8 +1883,8 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModelMarker(self):
         oHelper = VOMarkerHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.model.ground_marker, True)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.model.orbit_marker, True)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.model.ground_marker, True)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.model.orbit_marker, True)
 
     # endregion
 
@@ -1892,18 +1892,18 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVectors(self):
         oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.vector, False)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.vector, False)
         sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
 
-        origCount: int = sat.graphics3_d.vector.reference_crdns.count
-        sat.graphics3_d.vector.reference_crdns.add(
+        origCount: int = sat.graphics_3d.vector.reference_crdns.count
+        sat.graphics_3d.vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 Earth(True) Vector"
         )
-        sat.graphics3_d.vector.reference_crdns.add(
+        sat.graphics_3d.vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 MagField(IGRF) Vector"
         )
 
-        Assert.assertEqual((origCount + 2), sat.graphics3_d.vector.reference_crdns.count)
+        Assert.assertEqual((origCount + 2), sat.graphics_3d.vector.reference_crdns.count)
 
     # endregion
 
@@ -1936,7 +1936,7 @@ class EarlyBoundTests(TestBase):
     def test_VOVectorsInvalidChoiceException(self, invalidElementName: str, elementType: "GEOMETRIC_ELEM_TYPE"):
         def code2():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
-            sat.graphics3_d.vector.reference_crdns.add(elementType, invalidElementName)
+            sat.graphics_3d.vector.reference_crdns.add(elementType, invalidElementName)
 
         ex = ExceptionAssert.Throws(code2)
         StringAssert.Contains("not a valid choice", str(ex), "Exception message mismatch")
@@ -1955,7 +1955,7 @@ class EarlyBoundTests(TestBase):
         def code3():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
             vector: "IGraphics3DReferenceVectorGeometryToolVector" = clr.CastAs(
-                sat.graphics3_d.vector.reference_crdns.add(
+                sat.graphics_3d.vector.reference_crdns.add(
                     GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 North Vector"
                 ),
                 IGraphics3DReferenceVectorGeometryToolVector,
@@ -1966,7 +1966,7 @@ class EarlyBoundTests(TestBase):
 
             finally:
                 # Clean up so the test can be multiple times
-                sat.graphics3_d.vector.reference_crdns.remove_by_name(
+                sat.graphics_3d.vector.reference_crdns.remove_by_name(
                     GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 North Vector"
                 )
 
@@ -1987,7 +1987,7 @@ class EarlyBoundTests(TestBase):
         def code4():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
             vector: "IGraphics3DReferenceVectorGeometryToolVector" = clr.CastAs(
-                sat.graphics3_d.vector.reference_crdns.add(
+                sat.graphics_3d.vector.reference_crdns.add(
                     GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 North Vector"
                 ),
                 IGraphics3DReferenceVectorGeometryToolVector,
@@ -1999,7 +1999,7 @@ class EarlyBoundTests(TestBase):
 
             finally:
                 # Clean up so the test can be multiple times
-                sat.graphics3_d.vector.reference_crdns.remove_by_name(
+                sat.graphics_3d.vector.reference_crdns.remove_by_name(
                     GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 North Vector"
                 )
 
@@ -2020,7 +2020,7 @@ class EarlyBoundTests(TestBase):
         def code5():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
             axes: "IGraphics3DReferenceVectorGeometryToolAxes" = clr.CastAs(
-                sat.graphics3_d.vector.reference_crdns.add(
+                sat.graphics_3d.vector.reference_crdns.add(
                     GEOMETRIC_ELEM_TYPE.AXES_ELEM, "Satellite/Satellite1 ICRF Axes"
                 ),
                 IGraphics3DReferenceVectorGeometryToolAxes,
@@ -2031,7 +2031,7 @@ class EarlyBoundTests(TestBase):
 
             finally:
                 # Clean up so the test can be multiple times
-                sat.graphics3_d.vector.reference_crdns.remove_by_name(
+                sat.graphics_3d.vector.reference_crdns.remove_by_name(
                     GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 ICRF Axes"
                 )
 
@@ -2052,7 +2052,7 @@ class EarlyBoundTests(TestBase):
         def code6():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
             point: "IGraphics3DReferenceVectorGeometryToolPoint" = clr.CastAs(
-                sat.graphics3_d.vector.reference_crdns.add(
+                sat.graphics_3d.vector.reference_crdns.add(
                     GEOMETRIC_ELEM_TYPE.AXES_ELEM, "Satellite/Satellite1 L1 Point"
                 ),
                 IGraphics3DReferenceVectorGeometryToolPoint,
@@ -2063,7 +2063,7 @@ class EarlyBoundTests(TestBase):
 
             finally:
                 # Clean up so the test can be multiple times
-                sat.graphics3_d.vector.reference_crdns.remove_by_name(
+                sat.graphics_3d.vector.reference_crdns.remove_by_name(
                     GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 L2 Point"
                 )
 
@@ -2076,7 +2076,7 @@ class EarlyBoundTests(TestBase):
     def test_VODataDisplay(self):
         # test VO DataDisplay
         oHelper = VODataDisplayHelper(TestBase.Application)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.data_display, False, False)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.data_display, False, False)
 
     # endregion
 
@@ -2085,10 +2085,10 @@ class EarlyBoundTests(TestBase):
     def test_VOOrbitSystems(self):
         oHelper = VOSystemsHelper()
         if TestBase.ApplicationProvider.Target == TestTarget.eStk:
-            oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.orbit_systems, TestBase.Application)
+            oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.orbit_systems, TestBase.Application)
 
         else:
-            oHelper.Run(EarlyBoundTests.AG_SAT.graphics3_d.orbit_systems, None)
+            oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.orbit_systems, None)
 
     # endregion
 
@@ -2096,7 +2096,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOBPlane(self):
         # BPlanes
-        oBPlanes: "IVehicleGraphics3DBPlanes" = EarlyBoundTests.AG_SAT.graphics3_d.b_planes
+        oBPlanes: "IVehicleGraphics3DBPlanes" = EarlyBoundTests.AG_SAT.graphics_3d.b_planes
         Assert.assertIsNotNone(oBPlanes)
 
         # Templates collection test
@@ -2453,7 +2453,7 @@ class EarlyBoundTests(TestBase):
                 oCollection[iIndex].description,
                 oCollection[iIndex].definition,
                 oCollection[iIndex].event_name,
-                oCollection[iIndex].graphics3_d_window,
+                oCollection[iIndex].graphics_3d_window,
             )
 
             iIndex += 1
@@ -2481,7 +2481,7 @@ class EarlyBoundTests(TestBase):
                 oCollection[iIndex].description,
                 oCollection[iIndex].definition,
                 oCollection[iIndex].event_name,
-                oCollection[iIndex].graphics3_d_window,
+                oCollection[iIndex].graphics_3d_window,
             )
 
             iIndex += 1
@@ -2501,7 +2501,7 @@ class EarlyBoundTests(TestBase):
                 bPlaneInstance.description,
                 bPlaneInstance.definition,
                 bPlaneInstance.event_name,
-                bPlaneInstance.graphics3_d_window,
+                bPlaneInstance.graphics_3d_window,
             )
 
         def action25():
@@ -2524,7 +2524,7 @@ class EarlyBoundTests(TestBase):
                 bPlaneInstance.description,
                 bPlaneInstance.definition,
                 bPlaneInstance.event_name,
-                bPlaneInstance.graphics3_d_window,
+                bPlaneInstance.graphics_3d_window,
             )
 
         def action26():
@@ -2610,7 +2610,7 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.DoAssert("Property should be readonly!", action36)
 
         def action37():
-            oInstance.graphics3_d_window = "All"
+            oInstance.graphics_3d_window = "All"
 
         # VOWindow
         TryCatchAssertBlock.DoAssert("Property should be readonly!", action37)
@@ -2711,17 +2711,17 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\t\tThe new ConnectPointLineWidth is: {0}", oInstance.connect_point_line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH1, oInstance.connect_point_line_width)
         # VOWindow
-        TestBase.logger.WriteLine5("\t\tThe current VOWindow is: {0}", oInstance.graphics3_d_window)
+        TestBase.logger.WriteLine5("\t\tThe current VOWindow is: {0}", oInstance.graphics_3d_window)
         # AvailableVOWindows
-        arWindows = oInstance.available_graphics3_d_windows
+        arWindows = oInstance.available_graphics_3d_windows
         TestBase.logger.WriteLine3("\t\tAvailable: {0} VO windows.", Array.Length(arWindows))
 
         iIndex: int = 0
         while iIndex < Array.Length(arWindows):
             TestBase.logger.WriteLine7("\t\t\tWindow {0}: {1}", iIndex, arWindows[iIndex])
-            oInstance.graphics3_d_window = str(arWindows[iIndex])
-            TestBase.logger.WriteLine5("\t\t\t\tThe new VOWindow is: {0}", oInstance.graphics3_d_window)
-            Assert.assertEqual(arWindows[iIndex], oInstance.graphics3_d_window)
+            oInstance.graphics_3d_window = str(arWindows[iIndex])
+            TestBase.logger.WriteLine5("\t\t\t\tThe new VOWindow is: {0}", oInstance.graphics_3d_window)
+            Assert.assertEqual(arWindows[iIndex], oInstance.graphics_3d_window)
 
             iIndex += 1
 
@@ -2858,14 +2858,14 @@ class EarlyBoundTests(TestBase):
 
             # SetPositionType
             TryCatchAssertBlock.DoAssert("Property should be readonly!", action52)
-            if oPoint.position_type == VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
+            if oPoint.position_type == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
                 # Position
                 oCartesian: "IVehicleGraphics3DBPlaneTargetPointPositionCartesian" = clr.Convert(
                     oPoint.position, IVehicleGraphics3DBPlaneTargetPointPositionCartesian
                 )
                 Assert.assertIsNotNone(oCartesian)
                 self.VOBPlaneTargetPointPositionCartesianTest(oCartesian, True)
-            elif oPoint.position_type == VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION.POSITION_POLAR:
+            elif oPoint.position_type == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_POLAR:
                 # Position
                 oPolar: "IVehicleGraphics3DBPlaneTargetPointPositionPolar" = clr.Convert(
                     oPoint.position, IVehicleGraphics3DBPlaneTargetPointPositionPolar
@@ -2893,14 +2893,14 @@ class EarlyBoundTests(TestBase):
 
             # SetPositionType
             TryCatchAssertBlock.DoAssert("Property should be readonly!", action54)
-            if oPoint.position_type == VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
+            if oPoint.position_type == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
                 # Position
                 oCartesian: "IVehicleGraphics3DBPlaneTargetPointPositionCartesian" = clr.Convert(
                     oPoint.position, IVehicleGraphics3DBPlaneTargetPointPositionCartesian
                 )
                 Assert.assertIsNotNone(oCartesian)
                 self.VOBPlaneTargetPointPositionCartesianTest(oCartesian, True)
-            elif oPoint.position_type == VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION.POSITION_POLAR:
+            elif oPoint.position_type == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_POLAR:
                 # Position
                 oPolar: "IVehicleGraphics3DBPlaneTargetPointPositionPolar" = clr.Convert(
                     oPoint.position, IVehicleGraphics3DBPlaneTargetPointPositionPolar
@@ -2927,8 +2927,8 @@ class EarlyBoundTests(TestBase):
 
             iIndex: int = 0
             while iIndex < len(arTypes):
-                ePosition: "VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION" = clr.Convert(
-                    int(arTypes[iIndex][0]), VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION
+                ePosition: "VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION" = clr.Convert(
+                    int(arTypes[iIndex][0]), VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION
                 )
                 TestBase.logger.WriteLine7("\t\t\tType {0}: {1}", iIndex, ePosition)
                 if not oPoint.is_position_type_supported(ePosition):
@@ -2938,14 +2938,14 @@ class EarlyBoundTests(TestBase):
                 oPoint.set_position_type(ePosition)
                 TestBase.logger.WriteLine6("\t\t\t\tThe new PositionType is: {0}", oPoint.position_type)
                 Assert.assertEqual(ePosition, oPoint.position_type)
-                if ePosition == VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
+                if ePosition == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
                     # Position
                     oCartesian: "IVehicleGraphics3DBPlaneTargetPointPositionCartesian" = clr.Convert(
                         oPoint.position, IVehicleGraphics3DBPlaneTargetPointPositionCartesian
                     )
                     Assert.assertIsNotNone(oCartesian)
                     self.VOBPlaneTargetPointPositionCartesianTest(oCartesian, False)
-                elif ePosition == VEHICLE_GRAPHICS3_DB_PLANE_TARGET_POINT_POSITION.POSITION_POLAR:
+                elif ePosition == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_POLAR:
                     # Position
                     oPolar: "IVehicleGraphics3DBPlaneTargetPointPositionPolar" = clr.Convert(
                         oPoint.position, IVehicleGraphics3DBPlaneTargetPointPositionPolar
@@ -3324,8 +3324,8 @@ class EarlyBoundTests(TestBase):
     def test_VOVaporTrail(self):
         oHelper = VOVaporTrailHelper()
         oHelper.Run(
-            EarlyBoundTests.AG_SAT.graphics3_d.vapor_trail,
-            clr.CastAs(EarlyBoundTests.AG_SAT.graphics3_d.model, IGraphics3DModel),
+            EarlyBoundTests.AG_SAT.graphics_3d.vapor_trail,
+            clr.CastAs(EarlyBoundTests.AG_SAT.graphics_3d.model, IGraphics3DModel),
             TestBase.GetSTKHomeDir(),
         )
 
@@ -3841,7 +3841,7 @@ class EarlyBoundTests(TestBase):
             newsat,
             (
                 clr.Convert((clr.Convert(newsat, ISatellite)).propagator, IVehiclePropagatorRealtime)
-            ).point_builder.m_s_l_lla,
+            ).point_builder.msl_lla,
         )
         TestBase.logger.WriteLine6(
             "Time taken to populate ephemeris using Boosted OM with velocity info: {0}", DateTime.Now.Subtract(t1)
@@ -3856,7 +3856,7 @@ class EarlyBoundTests(TestBase):
             newsat,
             (
                 clr.Convert((clr.Convert(newsat, ISatellite)).propagator, IVehiclePropagatorRealtime)
-            ).point_builder.a_g_l_lla,
+            ).point_builder.agl_lla,
         )
         TestBase.logger.WriteLine6(
             "Time taken to populate ephemeris using Boosted OM with velocity info: {0}", DateTime.Now.Subtract(t1)
@@ -3896,7 +3896,7 @@ class EarlyBoundTests(TestBase):
             newsat,
             (
                 clr.Convert((clr.Convert(newsat, ISatellite)).propagator, IVehiclePropagatorRealtime)
-            ).point_builder.m_s_l_lla,
+            ).point_builder.msl_lla,
         )
         TestBase.logger.WriteLine6(
             "Time taken to populate ephemeris using Boosted OM w/o velocity info: {0}", DateTime.Now.Subtract(t1)
@@ -3912,7 +3912,7 @@ class EarlyBoundTests(TestBase):
             newsat,
             (
                 clr.Convert((clr.Convert(newsat, ISatellite)).propagator, IVehiclePropagatorRealtime)
-            ).point_builder.a_g_l_lla,
+            ).point_builder.agl_lla,
         )
         TestBase.logger.WriteLine6(
             "Time taken to populate ephemeris using Boosted OM w/o velocity info: {0}", DateTime.Now.Subtract(t1)
@@ -4110,19 +4110,19 @@ class EarlyBoundTests(TestBase):
     def AddAGL_LLAPoint(self, template, point):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
-            ptBuilder.a_g_l_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
+            ptBuilder.agl_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
 
             def action92():
-                ptBuilder.a_g_l_lla.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
+                ptBuilder.agl_lla.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
 
             TryCatchAssertBlock.DoAssert("bogus", action92)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
-            ptBuilder.a_g_l_lla.add_position(point[0], point[1], point[2], point[3])
+            ptBuilder.agl_lla.add_position(point[0], point[1], point[2], point[3])
 
             def action93():
-                ptBuilder.a_g_l_lla.add_position("bogus", point[1], point[2], point[3])
+                ptBuilder.agl_lla.add_position("bogus", point[1], point[2], point[3])
 
             TryCatchAssertBlock.DoAssert("bogus", action93)
 
@@ -4139,19 +4139,19 @@ class EarlyBoundTests(TestBase):
     def AddMSL_LLAPoint(self, template, point):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
-            ptBuilder.m_s_l_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
+            ptBuilder.msl_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
 
             def action95():
-                ptBuilder.m_s_l_lla.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
+                ptBuilder.msl_lla.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
 
             TryCatchAssertBlock.DoAssert("bogus", action95)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
-            ptBuilder.m_s_l_lla.add_position(point[0], point[1], point[2], point[3])
+            ptBuilder.msl_lla.add_position(point[0], point[1], point[2], point[3])
 
             def action96():
-                ptBuilder.m_s_l_lla.add_position("bogus", point[1], point[2], point[3])
+                ptBuilder.msl_lla.add_position("bogus", point[1], point[2], point[3])
 
             TryCatchAssertBlock.DoAssert("bogus", action96)
 
@@ -4272,14 +4272,14 @@ class EarlyBoundTests(TestBase):
         pb: "IVehicleRealtimePointBuilder" = (clr.CastAs(sat.propagator, IVehiclePropagatorRealtime)).point_builder
         Assert.assertIsNotNone(pb)
         if not TestBase.NoGraphicsMode:
-            sat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_REALTIME)
+            sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
             (clr.CastAs(sat.graphics.attributes, IVehicleGraphics2DAttributesRealtime)).history.is_visible = True
             (clr.CastAs(sat.graphics.attributes, IVehicleGraphics2DAttributesRealtime)).spline.is_visible = True
 
         else:
 
             def action106():
-                sat.graphics.set_attributes_type(VEHICLE_GRAPHICS2_D_ATTRIBUTES.ATTRIBUTES_REALTIME)
+                sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action106)
 
@@ -4378,7 +4378,7 @@ class EarlyBoundTests(TestBase):
         SEETHelper.TestEnvironment_2D(
             EarlyBoundTests.AG_SAT.space_environment,
             EarlyBoundTests.AG_SAT.graphics.saa,
-            EarlyBoundTests.AG_SAT.graphics3_d.saa,
+            EarlyBoundTests.AG_SAT.graphics_3d.saa,
         )
 
     # endregion

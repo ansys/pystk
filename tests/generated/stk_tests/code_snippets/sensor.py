@@ -263,16 +263,16 @@ class Sensor(CodeSnippetsTestBase):
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses VO)")
 
         satellite: "ISatellite" = clr.CastAs(Sensor.m_Satellite, ISatellite)
-        modelFile: "IGraphics3DModelFile" = clr.CastAs(satellite.graphics3_d.model.model_data, IGraphics3DModelFile)
+        modelFile: "IGraphics3DModelFile" = clr.CastAs(satellite.graphics_3d.model.model_data, IGraphics3DModelFile)
         modelFile.filename = r"\STKData\VO\Models\Space\satellite.dae"
         self.DefineLocationOn3DModel(Sensor.m_Object)
 
     def DefineLocationOn3DModel(self, sensor: "ISensor"):
         # Set pointing type to 3d model
-        sensor.set_pointing_type(SENSOR_POINTING.POINT3_D_MODEL)
+        sensor.set_pointing_type(SENSOR_POINTING.POINT_3D_MODEL)
 
         # Point to model attach point (in this example: "SolarArrays-000000")
-        model: "ISensorPointing3DModel" = sensor.common_tasks.set_pointing3_d_model("Solar_PanelsNode")
+        model: "ISensorPointing3DModel" = sensor.common_tasks.set_pointing_3d_model("Solar_PanelsNode")
 
     # endregion
 
@@ -352,11 +352,11 @@ class Sensor(CodeSnippetsTestBase):
         if TestBase.NoGraphicsMode:
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses VO)")
 
-        self.ConfigureSensorVOProjection(Sensor.m_Object.graphics3_d)
+        self.ConfigureSensorVOProjection(Sensor.m_Object.graphics_3d)
 
     def ConfigureSensorVOProjection(self, sensorVo: "ISensorGraphics3D"):
-        sensorVo.projection_type = SENSOR_GRAPHICS3_D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
-        sensorVo.inherit_from2_d = SENSOR_GRAPHICS3_D_INHERIT_FROM2_D.EXTENT_ONLY
+        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
+        sensorVo.inherit_from_2d = SENSOR_GRAPHICS_3D_INHERIT_FROM_2D.EXTENT_ONLY
         sensorVo.space_projection = 2000.0
 
     # endregion
@@ -367,11 +367,11 @@ class Sensor(CodeSnippetsTestBase):
         if TestBase.NoGraphicsMode:
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses VO)")
 
-        self.ConfigureSensorVOProjectionTimeVarying(Sensor.m_Object.graphics3_d)
+        self.ConfigureSensorVOProjectionTimeVarying(Sensor.m_Object.graphics_3d)
 
     def ConfigureSensorVOProjectionTimeVarying(self, sensorVo: "ISensorGraphics3D"):
-        sensorVo.projection_type = SENSOR_GRAPHICS3_D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
-        sensorVo.projection_time_dependency = SENSOR_GRAPHICS3_D_PROJECTION_TIME_DEPENDENCY_TYPE.TIME_VARYING
+        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
+        sensorVo.projection_time_dependency = SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE.TIME_VARYING
         elem1: "ISensorGraphics3DProjectionElement" = sensorVo.space_projection_intervals.add()
         elem1.distance = 5000.0
         elem1.time = "1 Jan 2012 12:00:00.000"

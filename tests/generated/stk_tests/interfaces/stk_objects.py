@@ -991,7 +991,7 @@ class StkAccessHelper(object):
         Assert.assertTrue(oGraphics.inherit)
 
         def action19():
-            oGraphics.animate_graphics2_d = True
+            oGraphics.animate_graphics_2d = True
 
         # AnimateGfx (readonly)
         TryCatchAssertBlock.DoAssert("", action19)
@@ -1003,7 +1003,7 @@ class StkAccessHelper(object):
         TryCatchAssertBlock.DoAssert("", action20)
 
         def action21():
-            oGraphics.static_graphics2_d = True
+            oGraphics.static_graphics_2d = True
 
         # StaticGfx (readonly)
         TryCatchAssertBlock.DoAssert("", action21)
@@ -1024,13 +1024,13 @@ class StkAccessHelper(object):
         self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.inherit)
         Assert.assertFalse(oGraphics.inherit)
         # AnimateGfx
-        self.m_logger.WriteLine4("\tThe current AnimateGfx is: {0}", oGraphics.animate_graphics2_d)
-        oGraphics.animate_graphics2_d = True
-        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_graphics2_d)
-        Assert.assertTrue(oGraphics.animate_graphics2_d)
-        oGraphics.animate_graphics2_d = False
-        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_graphics2_d)
-        Assert.assertFalse(oGraphics.animate_graphics2_d)
+        self.m_logger.WriteLine4("\tThe current AnimateGfx is: {0}", oGraphics.animate_graphics_2d)
+        oGraphics.animate_graphics_2d = True
+        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_graphics_2d)
+        Assert.assertTrue(oGraphics.animate_graphics_2d)
+        oGraphics.animate_graphics_2d = False
+        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_graphics_2d)
+        Assert.assertFalse(oGraphics.animate_graphics_2d)
         # LineVisible
         self.m_logger.WriteLine4("\tThe current LineVisible is: {0}", oGraphics.line_visible)
         oGraphics.line_visible = True
@@ -1075,13 +1075,13 @@ class StkAccessHelper(object):
         oGraphics.line_visible = False
 
         # StaticGfx
-        self.m_logger.WriteLine4("\tThe current StaticGfx is: {0}", oGraphics.static_graphics2_d)
-        oGraphics.static_graphics2_d = True
-        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_graphics2_d)
-        Assert.assertTrue(oGraphics.static_graphics2_d)
-        oGraphics.static_graphics2_d = False
-        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_graphics2_d)
-        Assert.assertFalse(oGraphics.static_graphics2_d)
+        self.m_logger.WriteLine4("\tThe current StaticGfx is: {0}", oGraphics.static_graphics_2d)
+        oGraphics.static_graphics_2d = True
+        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_graphics_2d)
+        Assert.assertTrue(oGraphics.static_graphics_2d)
+        oGraphics.static_graphics_2d = False
+        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_graphics_2d)
+        Assert.assertFalse(oGraphics.static_graphics_2d)
 
     # endregion
 
@@ -1488,7 +1488,7 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
         def action47():
-            oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.WINDOW_3D
+            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
 
         # Location
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action47)
@@ -1500,13 +1500,13 @@ class VODataDisplayHelper(object):
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action48)
 
         def action49():
-            oVODataDisplayElement.x_origin = GRAPHICS3_DX_ORIGIN.X_ORIGIN_LEFT
+            oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
 
         # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action49)
 
         def action50():
-            oVODataDisplayElement.y_origin = GRAPHICS3_DY_ORIGIN.Y_ORIGIN_BOTTOM
+            oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM
 
         # YOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action50)
@@ -1530,13 +1530,13 @@ class VODataDisplayHelper(object):
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action53)
 
         def action54():
-            oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.SMALL
+            oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
 
         # FontSize
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action54)
 
         def action55():
-            oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.HORIZONTAL
+            oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.HORIZONTAL
 
         # Format
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action55)
@@ -1579,35 +1579,35 @@ class VODataDisplayHelper(object):
         # Location
         self.m_logger.WriteLine6("\t\t\tThe current Location is: {0}", oVODataDisplayElement.location)
         if self.m_bIsAccessRequired:
-            oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
+            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(GRAPHICS3_D_LOCATION.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
+            Assert.assertEqual(GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
 
         else:
 
             def action61():
-                oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
+                oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
 
             TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action61)
 
         if self.m_bIsChain:
 
             def action62():
-                oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_OBJECT
+                oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT
 
             TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action62)
 
         else:
-            oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.OFFSET_FROM_OBJECT
+            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(GRAPHICS3_D_LOCATION.OFFSET_FROM_OBJECT, oVODataDisplayElement.location)
+            Assert.assertEqual(GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT, oVODataDisplayElement.location)
 
-        oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.DATA_DISPLAY_AREA
+        oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.DATA_DISPLAY_AREA
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(GRAPHICS3_D_LOCATION.DATA_DISPLAY_AREA, oVODataDisplayElement.location)
-        oVODataDisplayElement.location = GRAPHICS3_D_LOCATION.WINDOW_3D
+        Assert.assertEqual(GRAPHICS_3D_LOCATION.DATA_DISPLAY_AREA, oVODataDisplayElement.location)
+        oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(GRAPHICS3_D_LOCATION.WINDOW_3D, oVODataDisplayElement.location)
+        Assert.assertEqual(GRAPHICS_3D_LOCATION.WINDOW_3D, oVODataDisplayElement.location)
         # Font Color
         self.m_logger.WriteLine6("\t\t\tThe current Font Color is: {0}", oVODataDisplayElement.font_color)
         oVODataDisplayElement.font_color = Color.FromArgb(65280)
@@ -1615,20 +1615,20 @@ class VODataDisplayHelper(object):
         AssertEx.AreEqual(Color.FromArgb(65280), oVODataDisplayElement.font_color)
         # XOrigin
         self.m_logger.WriteLine6("\t\t\tThe current X Origin is: {0}", oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = GRAPHICS3_DX_ORIGIN.X_ORIGIN_LEFT
+        oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(GRAPHICS3_DX_ORIGIN.X_ORIGIN_LEFT, oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = GRAPHICS3_DX_ORIGIN.X_ORIGIN_RIGHT
+        Assert.assertEqual(GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT, oVODataDisplayElement.x_origin)
+        oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_RIGHT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(GRAPHICS3_DX_ORIGIN.X_ORIGIN_RIGHT, oVODataDisplayElement.x_origin)
+        Assert.assertEqual(GRAPHICS_3D_X_ORIGIN.X_ORIGIN_RIGHT, oVODataDisplayElement.x_origin)
         # YOrigin
         self.m_logger.WriteLine6("\t\t\tThe current Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = GRAPHICS3_DY_ORIGIN.Y_ORIGIN_TOP
+        oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_TOP
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(GRAPHICS3_DY_ORIGIN.Y_ORIGIN_TOP, oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = GRAPHICS3_DY_ORIGIN.Y_ORIGIN_BOTTOM
+        Assert.assertEqual(GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_TOP, oVODataDisplayElement.y_origin)
+        oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(GRAPHICS3_DY_ORIGIN.Y_ORIGIN_BOTTOM, oVODataDisplayElement.y_origin)
+        Assert.assertEqual(GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM, oVODataDisplayElement.y_origin)
         # X
         self.m_logger.WriteLine3("\t\t\tThe current X is: {0}", oVODataDisplayElement.x)
         oVODataDisplayElement.x = 12
@@ -1649,26 +1649,26 @@ class VODataDisplayHelper(object):
         Assert.assertEqual(True, oVODataDisplayElement.title)
         # FontSize
         self.m_logger.WriteLine6("\t\t\tThe current Font Size is: {0}", oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.LARGE
+        oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.LARGE
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(GRAPHICS3_D_FONT_SIZE.LARGE, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.SMALL
+        Assert.assertEqual(GRAPHICS_3D_FONT_SIZE.LARGE, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(GRAPHICS3_D_FONT_SIZE.SMALL, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = GRAPHICS3_D_FONT_SIZE.MEDIUM
+        Assert.assertEqual(GRAPHICS_3D_FONT_SIZE.SMALL, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.MEDIUM
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(GRAPHICS3_D_FONT_SIZE.MEDIUM, oVODataDisplayElement.font_size)
+        Assert.assertEqual(GRAPHICS_3D_FONT_SIZE.MEDIUM, oVODataDisplayElement.font_size)
         # Format
         self.m_logger.WriteLine6("\t\t\tThe current Font Format is: {0}", oVODataDisplayElement.format)
-        oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.HORIZONTAL
+        oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.HORIZONTAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(GRAPHICS3_D_FORMAT.HORIZONTAL, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.NO_LABELS
+        Assert.assertEqual(GRAPHICS_3D_FORMAT.HORIZONTAL, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.NO_LABELS
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(GRAPHICS3_D_FORMAT.NO_LABELS, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = GRAPHICS3_D_FORMAT.VERTICAL
+        Assert.assertEqual(GRAPHICS_3D_FORMAT.NO_LABELS, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.VERTICAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(GRAPHICS3_D_FORMAT.VERTICAL, oVODataDisplayElement.format)
+        Assert.assertEqual(GRAPHICS_3D_FORMAT.VERTICAL, oVODataDisplayElement.format)
 
     # endregion
 
