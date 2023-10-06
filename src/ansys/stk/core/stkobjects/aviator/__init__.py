@@ -147,50 +147,50 @@ def _raise_uninitialized_error(*args):
 
 class ERROR_CODES(IntEnum):
     """Error Codes."""
-    # Object not found.
     OBJECT_NOT_FOUND = (((1 << 31) | (4 << 16)) | (0x200 + 1))
-    # Index out of range.
+    """Object not found."""
     INDEX_OUT_OF_RANGE = (((1 << 31) | (4 << 16)) | (0x200 + 2))
-    # The attribute is invalid.
+    """Index out of range."""
     INVALID_ATTRIBUTE = (((1 << 31) | (4 << 16)) | (0x200 + 3))
-    # The command failed.
+    """The attribute is invalid."""
     COMMAND_FAILED = (((1 << 31) | (4 << 16)) | (0x200 + 4))
-    # Invalid argument.
+    """The command failed."""
     AVTR_ERROR_INVALID_ARG = (((1 << 31) | (4 << 16)) | (0x200 + 5))
-    # Empty argument.
+    """Invalid argument."""
     EMPTY_ARG = (((1 << 31) | (4 << 16)) | (0x200 + 6))
-    # Object was not removed.
+    """Empty argument."""
     OBJECT_NOT_REMOVED = (((1 << 31) | (4 << 16)) | (0x200 + 7))
-    # Error renaming object.
+    """Object was not removed."""
     FAILED_TO_RENAME_OBJECT = (((1 << 31) | (4 << 16)) | (0x200 + 8))
-    # Unknown class type.
+    """Error renaming object."""
     UNKNOWN_CLASS_TYPE = (((1 << 31) | (4 << 16)) | (0x200 + 9))
-    # Failed to create the object.
+    """Unknown class type."""
     FAILED_TO_CREATE_OBJECT = (((1 << 31) | (4 << 16)) | (0x200 + 10))
-    # Invalid choice for object link.
+    """Failed to create the object."""
     OBJECT_LINK_INVALID_CHOICE = (((1 << 31) | (4 << 16)) | (0x200 + 11))
-    # No choices available.
+    """Invalid choice for object link."""
     OBJECT_LINK_NO_CHOICES = (((1 << 31) | (4 << 16)) | (0x200 + 12))
-    # Read only attribute.
+    """No choices available."""
     READ_ONLY_ATTRIBUTE = (((1 << 31) | (4 << 16)) | (0x200 + 13))
-    # Invalid constraint list.
+    """Read only attribute."""
     CSTR_INVALID_CSTR_LIST = (((1 << 31) | (4 << 16)) | (0x200 + 14))
-    # InvalidConstraint.
+    """Invalid constraint list."""
     CSTR_INVALID_CONSTRAINT = (((1 << 31) | (4 << 16)) | (0x200 + 15))
-    # List if read only.
+    """InvalidConstraint."""
     LIST_READ_ONLY = (((1 << 31) | (4 << 16)) | (0x200 + 16))
-    # Failed to insert the item into the list.
+    """List if read only."""
     LIST_INSERT_FAILED = (((1 << 31) | (4 << 16)) | (0x200 + 17))
-    # Length is invalid.
+    """Failed to insert the item into the list."""
     INVALID_LENGTH = (((1 << 31) | (4 << 16)) | (0x200 + 18))
-    # Error loading a file.
+    """Length is invalid."""
     FAILED_TO_LOAD_FILE = (((1 << 31) | (4 << 16)) | (0x200 + 19))
-    # Invalid operation.
+    """Error loading a file."""
     INVALID_OPERATION = (((1 << 31) | (4 << 16)) | (0x200 + 20))
-    # Method failed.
+    """Invalid operation."""
     METHOD_INVOKE_FAILED = (((1 << 31) | (4 << 16)) | (0x200 + 21))
-    # Deprecated property or method.
+    """Method failed."""
     DEPRECATED = (((1 << 31) | (4 << 16)) | (0x200 + 22))
+    """Deprecated property or method."""
 
 ERROR_CODES.OBJECT_NOT_FOUND.__doc__ = "Object not found."
 ERROR_CODES.INDEX_OUT_OF_RANGE.__doc__ = "Index out of range."
@@ -219,12 +219,12 @@ agcls.AgTypeNameMap["ERROR_CODES"] = ERROR_CODES
 
 class CLOSURE_VALUE(IntEnum):
     """The closure value."""
-    # The closure mode
     CLOSURE_MODE = 0
-    # The HOBS max angle offset
+    """The closure mode"""
     MAX_ANGLE = 1
-    # The HOBS angle tolerance
+    """The HOBS max angle offset"""
     ANGLE_TOL = 2
+    """The HOBS angle tolerance"""
 
 CLOSURE_VALUE.CLOSURE_MODE.__doc__ = "The closure mode"
 CLOSURE_VALUE.MAX_ANGLE.__doc__ = "The HOBS max angle offset"
@@ -234,72 +234,72 @@ agcls.AgTypeNameMap["CLOSURE_VALUE"] = CLOSURE_VALUE
 
 class PROCEDURE_TYPE(IntEnum):
     """Aviator procedure types."""
-    # Airway procedure.
     PROC_AIRWAY = 0
-    # Airway Router procedure.
+    """Airway procedure."""
     PROC_AIRWAY_ROUTER = 1
-    # ArcEnroute procedure.
+    """Airway Router procedure."""
     PROC_ARC_ENROUTE = 2
-    # ArcPointToPoint procedure.
+    """ArcEnroute procedure."""
     PROC_ARC_POINT_TO_POINT = 3
-    # Area Target Search procedure.
+    """ArcPointToPoint procedure."""
     PROC_AREA_TARGET_SEARCH = 4
-    # Basic Maneuver procedure.
+    """Area Target Search procedure."""
     PROC_BASIC_MANEUVER = 5
-    # Basic Point to Point procedure.
+    """Basic Maneuver procedure."""
     PROC_BASIC_POINT_TO_POINT = 6
-    # Delay procedure.
+    """Basic Point to Point procedure."""
     PROC_DELAY = 7
-    # Enroute procedure.
+    """Delay procedure."""
     PROC_ENROUTE = 8
-    # Flight Line procedure.
+    """Enroute procedure."""
     PROC_FLIGHT_LINE = 9
-    # Formation Recover procedure.
+    """Flight Line procedure."""
     PROC_FORMATION_RECOVER = 10
-    # Holding Circular procedure.
+    """Formation Recover procedure."""
     PROC_HOLDING_CIRCULAR = 11
-    # Holding Figure 8 procedure.
+    """Holding Circular procedure."""
     PROC_HOLDING_FIGURE8 = 12
-    # Holding Racetrack procedure.
+    """Holding Figure 8 procedure."""
     PROC_HOLDING_RACETRACK = 13
-    # Hover procedure.
+    """Holding Racetrack procedure."""
     PROC_HOVER = 14
-    # Hover Translate procedure.
+    """Hover procedure."""
     PROC_HOVER_TRANSLATE = 15
-    # In Formation procedure.
+    """Hover Translate procedure."""
     PROC_IN_FORMATION = 16
-    # Landing procedure.
+    """In Formation procedure."""
     PROC_LANDING = 17
-    # Launch procedure.
+    """Landing procedure."""
     PROC_LAUNCH = 18
-    # Parallel Flight Line procedure.
+    """Launch procedure."""
     PROC_PARALLEL_FLIGHT_LINE = 19
-    # Reference State procedure.
+    """Parallel Flight Line procedure."""
     PROC_REFERENCE_STATE = 20
-    # Super Procedure procedure.
+    """Reference State procedure."""
     PROC_SUPER_PROCEDURE = 21
-    # Takeoff procedure.
+    """Super Procedure procedure."""
     PROC_TAKEOFF = 22
-    # Terrain Following procedure.
+    """Takeoff procedure."""
     PROC_TERRAIN_FOLLOWING = 23
-    # Transition to Forward Flight procedure.
+    """Terrain Following procedure."""
     PROC_TRANSITION_TO_FORWARD_FLIGHT = 24
-    # Transition To Hover procedure.
+    """Transition to Forward Flight procedure."""
     PROC_TRANSITION_TO_HOVER = 25
-    # Vertical Landing procedure.
+    """Transition To Hover procedure."""
     PROC_VERTICAL_LANDING = 26
-    # Vertical Takeoff procedure.
+    """Vertical Landing procedure."""
     PROC_VERTICAL_TAKEOFF = 27
-    # VGT Point procedure.
+    """Vertical Takeoff procedure."""
     PROC_VGT_POINT = 28
-    # LaunchDynState procedure.
+    """VGT Point procedure."""
     PROC_LAUNCH_DYN_STATE = 29
-    # LaunchWaypoint procedure.
+    """LaunchDynState procedure."""
     PROC_LAUNCH_WAYPOINT = 30
-    # FormationFlyer procedure.
+    """LaunchWaypoint procedure."""
     PROC_FORMATION_FLYER = 31
-    # ExtEphem procedure.
+    """FormationFlyer procedure."""
     PROC_EXT_EPHEM = 32
+    """ExtEphem procedure."""
 
 PROCEDURE_TYPE.PROC_AIRWAY.__doc__ = "Airway procedure."
 PROCEDURE_TYPE.PROC_AIRWAY_ROUTER.__doc__ = "Airway Router procedure."
@@ -339,42 +339,42 @@ agcls.AgTypeNameMap["PROCEDURE_TYPE"] = PROCEDURE_TYPE
 
 class SITE_TYPE(IntEnum):
     """Aviator site types."""
-    # Airport from Catalog site.
     SITE_AIRPORT_FROM_CATALOG = 0
-    # End of Previous Procedure site.
+    """Airport from Catalog site."""
     SITE_END_OF_PREV_PROCEDURE = 1
-    # Navaid from Catalog site.
+    """End of Previous Procedure site."""
     SITE_NAVAID_FROM_CATALOG = 2
-    # Reference State site.
+    """Navaid from Catalog site."""
     SITE_REFERENCE_STATE = 3
-    # Relative to Previous Procedure site.
+    """Reference State site."""
     SITE_RELATIVE_TO_PREV_PROCEDURE = 4
-    # Relative to Stationary STK Object site.
+    """Relative to Previous Procedure site."""
     SITE_RELATIVE_TO_STATIONARY_STK_OBJECT = 5
-    # Runway site.
+    """Relative to Stationary STK Object site."""
     SITE_RUNWAY = 6
-    # Runway from Catalog site.
+    """Runway site."""
     SITE_RUNWAY_FROM_CATALOG = 7
-    # STK Area Target site.
+    """Runway from Catalog site."""
     SITE_STK_AREA_TARGET = 8
-    # STK Object Waypoint site.
+    """STK Area Target site."""
     SITE_STK_OBJECT_WAYPOINT = 9
-    # STK STatic Object site.
+    """STK Object Waypoint site."""
     SITE_STK_STATIC_OBJECT = 10
-    # STK Vehicle site.
+    """STK STatic Object site."""
     SITE_STK_VEHICLE = 11
-    # Super Procedure site.
+    """STK Vehicle site."""
     SITE_SUPER_PROCEDURE = 12
-    # VTOL Point site.
+    """Super Procedure site."""
     SITE_VTOL_POINT = 13
-    # VTOL Point from Catalog site.
+    """VTOL Point site."""
     SITE_VTOL_POINT_FROM_CATALOG = 14
-    # Waypoint site.
+    """VTOL Point from Catalog site."""
     SITE_WAYPOINT = 15
-    # Waypoint from Catalog site.
+    """Waypoint site."""
     SITE_WAYPOINT_FROM_CATALOG = 16
-    # DynState site.
+    """Waypoint from Catalog site."""
     SITE_DYN_STATE = 17
+    """DynState site."""
 
 SITE_TYPE.SITE_AIRPORT_FROM_CATALOG.__doc__ = "Airport from Catalog site."
 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE.__doc__ = "End of Previous Procedure site."
@@ -399,10 +399,10 @@ agcls.AgTypeNameMap["SITE_TYPE"] = SITE_TYPE
 
 class BASIC_MANEUVER_STRATEGY(IntEnum):
     """Basic maneuver strategy types."""
-    # Straight Ahead strategy.
     STRAIGHT_AHEAD = 0
-    # Weave strategy.
+    """Straight Ahead strategy."""
     WEAVE = 1
+    """Weave strategy."""
 
 BASIC_MANEUVER_STRATEGY.STRAIGHT_AHEAD.__doc__ = "Straight Ahead strategy."
 BASIC_MANEUVER_STRATEGY.WEAVE.__doc__ = "Weave strategy."
@@ -411,14 +411,14 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY"] = BASIC_MANEUVER_STRATEGY
 
 class STRAIGHT_AHEAD_REFERENCE_FRAME(IntEnum):
     """Straight Ahead basic maneuver Reference Frame."""
-    # Maintain Course.
     MAINTAIN_COURSE = 0
-    # Maintain Heading.
+    """Maintain Course."""
     MAINTAIN_HEADING = 1
-    # No Lateral Accelerations.
+    """Maintain Heading."""
     NO_LATERAL_ACC = 2
-    # Compensate For Coriolis
+    """No Lateral Accelerations."""
     COMPENSATE_CORIOLIS = 3
+    """Compensate For Coriolis"""
 
 STRAIGHT_AHEAD_REFERENCE_FRAME.MAINTAIN_COURSE.__doc__ = "Maintain Course."
 STRAIGHT_AHEAD_REFERENCE_FRAME.MAINTAIN_HEADING.__doc__ = "Maintain Heading."
@@ -429,14 +429,14 @@ agcls.AgTypeNameMap["STRAIGHT_AHEAD_REFERENCE_FRAME"] = STRAIGHT_AHEAD_REFERENCE
 
 class AIRSPEED_TYPE(IntEnum):
     """Airspeed types."""
-    # Mach number.
     MACH = 0
-    # Equivalent airspeed.
+    """Mach number."""
     EAS = 1
-    # Calibrated airspeed.
+    """Equivalent airspeed."""
     CAS = 2
-    # True airspeed.
+    """Calibrated airspeed."""
     TAS = 3
+    """True airspeed."""
 
 AIRSPEED_TYPE.MACH.__doc__ = "Mach number."
 AIRSPEED_TYPE.EAS.__doc__ = "Equivalent airspeed."
@@ -447,10 +447,10 @@ agcls.AgTypeNameMap["AIRSPEED_TYPE"] = AIRSPEED_TYPE
 
 class AERO_PROP_SIMPLE_MODE(IntEnum):
     """Aircraft operating mode for basic acceleration models with aerodynamics set to Simple."""
-    # Fixed wing operatiog mode.
     FIXED_WING = 0
-    # Helicopter operating mode.
+    """Fixed wing operatiog mode."""
     HELICOPTER = 1
+    """Helicopter operating mode."""
 
 AERO_PROP_SIMPLE_MODE.FIXED_WING.__doc__ = "Fixed wing operatiog mode."
 AERO_PROP_SIMPLE_MODE.HELICOPTER.__doc__ = "Helicopter operating mode."
@@ -459,16 +459,16 @@ agcls.AgTypeNameMap["AERO_PROP_SIMPLE_MODE"] = AERO_PROP_SIMPLE_MODE
 
 class AERO_PROP_FLIGHT_MODE(IntEnum):
     """Flight mode for the Aero/Prop maneuver mode helper in aircraft acceleration models."""
-    # Forward Flight mode.
     FLIGHT_PERF_FORWARD_FLIGHT = 0
-    # Hover mode.
+    """Forward Flight mode."""
     FLIGHT_PERF_HOVER = 1
-    # Takeoff mode.
+    """Hover mode."""
     FLIGHT_PERF_TAKEOFF = 2
-    # Landing mode.
+    """Takeoff mode."""
     FLIGHT_PERF_LANDING = 3
-    # Weight on wheels mode.
+    """Landing mode."""
     FLIGHT_PERF_WEIGHT_ON_WHEELS = 4
+    """Weight on wheels mode."""
 
 AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_FORWARD_FLIGHT.__doc__ = "Forward Flight mode."
 AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_HOVER.__doc__ = "Hover mode."
@@ -480,18 +480,18 @@ agcls.AgTypeNameMap["AERO_PROP_FLIGHT_MODE"] = AERO_PROP_FLIGHT_MODE
 
 class PHASE_OF_FLIGHT(IntEnum):
     """Flight mode for basic maneuver procedures."""
-    # Takeoff flight mode.
     FLIGHT_PHASE_TAKEOFF = 1
-    # Forward flight climb flight mode.
+    """Takeoff flight mode."""
     FLIGHT_PHASE_CLIMB = 2
-    # Forward flight - cruise flight mode.
+    """Forward flight climb flight mode."""
     FLIGHT_PHASE_CRUISE = 3
-    # Forward flight descend flight mode.
+    """Forward flight - cruise flight mode."""
     FLIGHT_PHASE_DESCEND = 4
-    # Landing flight mode.
+    """Forward flight descend flight mode."""
     FLIGHT_PHASE_LANDING = 5
-    # Rotary wing / hover flight mode
+    """Landing flight mode."""
     FLIGHT_PHASE_VTOL = 6
+    """Rotary wing / hover flight mode"""
 
 PHASE_OF_FLIGHT.FLIGHT_PHASE_TAKEOFF.__doc__ = "Takeoff flight mode."
 PHASE_OF_FLIGHT.FLIGHT_PHASE_CLIMB.__doc__ = "Forward flight climb flight mode."
@@ -504,18 +504,18 @@ agcls.AgTypeNameMap["PHASE_OF_FLIGHT"] = PHASE_OF_FLIGHT
 
 class CRUISE_SPEED(IntEnum):
     """Cruise airspeed type for the procedure."""
-    # Minimum airspeed.
     MIN_AIRSPEED = 0
-    # Maximum endurance airspeed.
+    """Minimum airspeed."""
     MAX_ENDURANCE_AIRSPEED = 1
-    # Maximum range airspeed.
+    """Maximum endurance airspeed."""
     MAX_RANGE_AIRSPEED = 2
-    # Other airspeed.
+    """Maximum range airspeed."""
     OTHER_AIRSPEED = 3
-    # Maximum airspeed.
+    """Other airspeed."""
     MAX_AIRSPEED = 4
-    # Maximum performance airspeed.
+    """Maximum airspeed."""
     MAX_PERF_AIRSPEED = 6
+    """Maximum performance airspeed."""
 
 CRUISE_SPEED.MIN_AIRSPEED.__doc__ = "Minimum airspeed."
 CRUISE_SPEED.MAX_ENDURANCE_AIRSPEED.__doc__ = "Maximum endurance airspeed."
@@ -528,12 +528,12 @@ agcls.AgTypeNameMap["CRUISE_SPEED"] = CRUISE_SPEED
 
 class TAKEOFF_MODE(IntEnum):
     """Takeoff procedure mode."""
-    # Normal takeoff mode.
     TAKEOFF_NORMAL = 0
-    # Fly to departure point takeoff mode.
+    """Normal takeoff mode."""
     TAKEOFF_FLY_TO_DEPARTURE_POINT = 1
-    # Low transition takeoff.
+    """Fly to departure point takeoff mode."""
     TAKEOFF_LOW_TRANSITION = 2
+    """Low transition takeoff."""
 
 TAKEOFF_MODE.TAKEOFF_NORMAL.__doc__ = "Normal takeoff mode."
 TAKEOFF_MODE.TAKEOFF_FLY_TO_DEPARTURE_POINT.__doc__ = "Fly to departure point takeoff mode."
@@ -543,12 +543,12 @@ agcls.AgTypeNameMap["TAKEOFF_MODE"] = TAKEOFF_MODE
 
 class APPROACH_MODE(IntEnum):
     """Landing procedure approach mode."""
-    # Standard instrument approach mode.
     STANDARD_INSTRUMENT_APPROACH = 0
-    # Intercept Glideslope approach mode.
+    """Standard instrument approach mode."""
     INTERCEPT_GLIDESLOPE = 1
-    # Enter downwind pattern approach mode.
+    """Intercept Glideslope approach mode."""
     ENTER_DOWNWIND_PATTERN = 2
+    """Enter downwind pattern approach mode."""
 
 APPROACH_MODE.STANDARD_INSTRUMENT_APPROACH.__doc__ = "Standard instrument approach mode."
 APPROACH_MODE.INTERCEPT_GLIDESLOPE.__doc__ = "Intercept Glideslope approach mode."
@@ -558,12 +558,12 @@ agcls.AgTypeNameMap["APPROACH_MODE"] = APPROACH_MODE
 
 class NAVIGATOR_TURN_DIRECTION(IntEnum):
     """Turn mode for procedures with Enroute Turn Direction options."""
-    # Automatic turn. Aviator will determine the direction of the turn.
     NAVIGATOR_TURN_AUTO = 0
-    # Left turn.
+    """Automatic turn. Aviator will determine the direction of the turn."""
     NAVIGATOR_TURN_LEFT = 1
-    # Right turn.
+    """Left turn."""
     NAVIGATOR_TURN_RIGHT = 2
+    """Right turn."""
 
 NAVIGATOR_TURN_DIRECTION.NAVIGATOR_TURN_AUTO.__doc__ = "Automatic turn. Aviator will determine the direction of the turn."
 NAVIGATOR_TURN_DIRECTION.NAVIGATOR_TURN_LEFT.__doc__ = "Left turn."
@@ -573,20 +573,20 @@ agcls.AgTypeNameMap["NAVIGATOR_TURN_DIRECTION"] = NAVIGATOR_TURN_DIRECTION
 
 class BASIC_MANEUVER_FUEL_FLOW_TYPE(IntEnum):
     """Fuel flow type for basic maneuver procedures."""
-    # Fuel flow defined for the current Takeoff performance model.
     BASIC_MANEUVER_FUEL_FLOW_TAKEOFF = 0
-    # Fuel flow defined for the current Cruise performance model.
+    """Fuel flow defined for the current Takeoff performance model."""
     BASIC_MANEUVER_FUEL_FLOW_CRUISE = 1
-    # Fuel flow defined for the current Landing performance model.
+    """Fuel flow defined for the current Cruise performance model."""
     BASIC_MANEUVER_FUEL_FLOW_LANDING = 2
-    # Fuel flow defined for the current VTOL performance model.
+    """Fuel flow defined for the current Landing performance model."""
     BASIC_MANEUVER_FUEL_FLOW_VTOL = 3
-    # Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model.
+    """Fuel flow defined for the current VTOL performance model."""
     BASIC_MANEUVER_FUEL_FLOW_AERO_PROP = 4
-    # Fuel flow defined manually.
+    """Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."""
     BASIC_MANEUVER_FUEL_FLOW_OVERRIDE = 5
-    # Fuel flow defined using the thrust model for this maneuver.
+    """Fuel flow defined manually."""
     BASIC_MANEUVER_FUEL_FLOW_THRUST_MODEL = 6
+    """Fuel flow defined using the thrust model for this maneuver."""
 
 BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_TAKEOFF.__doc__ = "Fuel flow defined for the current Takeoff performance model."
 BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE.__doc__ = "Fuel flow defined for the current Cruise performance model."
@@ -600,12 +600,12 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_FUEL_FLOW_TYPE"] = BASIC_MANEUVER_FUEL_FLOW_
 
 class BASIC_MANEUVER_ALTITUDE_LIMIT(IntEnum):
     """The type of response Aviator will have if the maneuver attempts to exceed the altitude limit."""
-    # Error when altitude limit exceeded.
     BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR = 0
-    # Stop when altitude limit exceeded.
+    """Error when altitude limit exceeded."""
     BASIC_MANEUVER_ALTITUDE_LIMIT_STOP = 1
-    # Continue when altitude limit exceeded.
+    """Stop when altitude limit exceeded."""
     BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE = 2
+    """Continue when altitude limit exceeded."""
 
 BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR.__doc__ = "Error when altitude limit exceeded."
 BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_STOP.__doc__ = "Stop when altitude limit exceeded."
@@ -615,12 +615,12 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_ALTITUDE_LIMIT"] = BASIC_MANEUVER_ALTITUDE_L
 
 class RUNWAY_HIGH_LOW_END(IntEnum):
     """Runway heading that the aircraft will use."""
-    # High end.
     HIGH_END = 0
-    # Low end.
+    """High end."""
     LOW_END = 1
-    # Headwind.
+    """Low end."""
     HEADWIND = 2
+    """Headwind."""
 
 RUNWAY_HIGH_LOW_END.HIGH_END.__doc__ = "High end."
 RUNWAY_HIGH_LOW_END.LOW_END.__doc__ = "Low end."
@@ -630,10 +630,10 @@ agcls.AgTypeNameMap["RUNWAY_HIGH_LOW_END"] = RUNWAY_HIGH_LOW_END
 
 class BASIC_MANEUVER_REFERENCE_FRAME(IntEnum):
     """Reference frame for the basic maneuver strategy."""
-    # Earth frame.
     EARTH_FRAME = 0
-    # Wind frame.
+    """Earth frame."""
     WIND_FRAME = 1
+    """Wind frame."""
 
 BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME.__doc__ = "Earth frame."
 BASIC_MANEUVER_REFERENCE_FRAME.WIND_FRAME.__doc__ = "Wind frame."
@@ -642,14 +642,14 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_REFERENCE_FRAME"] = BASIC_MANEUVER_REFERENCE
 
 class BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT(IntEnum):
     """Method to define the control limits for the aircraft during the maneuver."""
-    # Use Accel Perf Model.
     NAV_USE_ACCEL_PERF_MODEL = 0
-    # Specify min turn radius.
+    """Use Accel Perf Model."""
     NAV_MIN_TURN_RADIUS = 1
-    # Specify max turn rate.
+    """Specify min turn radius."""
     NAV_MAX_TURN_RATE = 2
-    # Specify max horiz accel.
+    """Specify max turn rate."""
     NAV_MAX_HORIZ_ACCEL = 3
+    """Specify max horiz accel."""
 
 BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model."
 BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS.__doc__ = "Specify min turn radius."
@@ -660,12 +660,12 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"] = BASIC_MANEUVE
 
 class ACCEL_MANEUVER_MODE(IntEnum):
     """The mode that the aircraft will adhere to the specified acceleration parameters."""
-    # Constant value (default).
     ACCEL_MANEUVER_MODE_NORMAL = 0
-    # Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius.
+    """Constant value (default)."""
     ACCEL_MANEUVER_MODE_DENSITY_SCALE = 1
-    # Aero/Prop maneuver mode.
+    """Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius."""
     ACCEL_MANEUVER_MODE_AERO_PROP = 2
+    """Aero/Prop maneuver mode."""
 
 ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_NORMAL.__doc__ = "Constant value (default)."
 ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE.__doc__ = "Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius."
@@ -675,14 +675,14 @@ agcls.AgTypeNameMap["ACCEL_MANEUVER_MODE"] = ACCEL_MANEUVER_MODE
 
 class AIRCRAFT_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
-    # Simple aerodynamics.
     AIRCRAFT_AERO_SIMPLE = 0
-    # External file aerodynamics.
+    """Simple aerodynamics."""
     AIRCRAFT_AERO_EXTERNAL_FILE = 1
-    # Basic fixed wing aerodynamics.
+    """External file aerodynamics."""
     AIRCRAFT_AERO_BASIC_FIXED_WING = 2
-    # Advanced missile aerodynamics.
+    """Basic fixed wing aerodynamics."""
     AIRCRAFT_AERO_ADVANCED_MISSILE = 3
+    """Advanced missile aerodynamics."""
 
 AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE.__doc__ = "Simple aerodynamics."
 AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
@@ -693,18 +693,18 @@ agcls.AgTypeNameMap["AIRCRAFT_AERO_STRATEGY"] = AIRCRAFT_AERO_STRATEGY
 
 class AIRCRAFT_PROP_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
-    # Simple propulsion.
     AIRCRAFT_PROP_SIMPLE = 0
-    # External file propulsion.
+    """Simple propulsion."""
     AIRCRAFT_PROP_EXTERNAL_FILE = 1
-    # Basic fixed wing propulsion.
+    """External file propulsion."""
     AIRCRAFT_PROP_BASIC_FIXED_WING = 2
-    # Missile - Ramjet propulsion.
+    """Basic fixed wing propulsion."""
     AIRCRAFT_PROP_MISSILE_RAMJET = 3
-    # Missile - Rocket propulsion.
+    """Missile - Ramjet propulsion."""
     AIRCRAFT_PROP_MISSILE_ROCKET = 4
-    # Missile - Turbojet propulsion.
+    """Missile - Rocket propulsion."""
     AIRCRAFT_PROP_MISSILE_TURBOJET = 5
+    """Missile - Turbojet propulsion."""
 
 AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE.__doc__ = "Simple propulsion."
 AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_EXTERNAL_FILE.__doc__ = "External file propulsion."
@@ -717,10 +717,10 @@ agcls.AgTypeNameMap["AIRCRAFT_PROP_STRATEGY"] = AIRCRAFT_PROP_STRATEGY
 
 class AGL_MSL(IntEnum):
     """The altitude mode."""
-    # AGl altitude. ALtitude above local terrain
     ALTITUDE_AGL = 0
-    # MSL altitude. Altitude above sea level.
+    """AGl altitude. ALtitude above local terrain"""
     ALTITUDE_MSL = 1
+    """MSL altitude. Altitude above sea level."""
 
 AGL_MSL.ALTITUDE_AGL.__doc__ = "AGl altitude. ALtitude above local terrain"
 AGL_MSL.ALTITUDE_MSL.__doc__ = "MSL altitude. Altitude above sea level."
@@ -729,10 +729,10 @@ agcls.AgTypeNameMap["AGL_MSL"] = AGL_MSL
 
 class LANDING_APPROACH_FIX_RANGE_MODE(IntEnum):
     """The reference point on the runway for the Approach Fix Range."""
-    # Runway center.
     REL_TO_RUNWAY_CENTER = 0
-    # Runway end.
+    """Runway center."""
     REL_TO_RUNWAY_END = 1
+    """Runway end."""
 
 LANDING_APPROACH_FIX_RANGE_MODE.REL_TO_RUNWAY_CENTER.__doc__ = "Runway center."
 LANDING_APPROACH_FIX_RANGE_MODE.REL_TO_RUNWAY_END.__doc__ = "Runway end."
@@ -741,10 +741,10 @@ agcls.AgTypeNameMap["LANDING_APPROACH_FIX_RANGE_MODE"] = LANDING_APPROACH_FIX_RA
 
 class ACCELERATION_ADV_ACCEL_MODE(IntEnum):
     """Acceleration mode for aircraft advanced acceleration models."""
-    # Max acceleration.
     ACCEL_MODE_MAX_ACCEL = 0
-    # Manually override the acceleration.
+    """Max acceleration."""
     ACCEL_MODE_OVERRIDE_ACCEL = 1
+    """Manually override the acceleration."""
 
 ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL.__doc__ = "Max acceleration."
 ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_OVERRIDE_ACCEL.__doc__ = "Manually override the acceleration."
@@ -753,10 +753,10 @@ agcls.AgTypeNameMap["ACCELERATION_ADV_ACCEL_MODE"] = ACCELERATION_ADV_ACCEL_MODE
 
 class ACCEL_MANEUVER_AERO_PROP_MODE(IntEnum):
     """The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models."""
-    # Use Thrust and Lift Coefficient
     USE_THRUST_AND_LIFT_COEFFICIENT = 0
-    # Use Lift Coefficient only.
+    """Use Thrust and Lift Coefficient"""
     USE_LIFT_COEFFICIENT_ONLY = 1
+    """Use Lift Coefficient only."""
 
 ACCEL_MANEUVER_AERO_PROP_MODE.USE_THRUST_AND_LIFT_COEFFICIENT.__doc__ = "Use Thrust and Lift Coefficient"
 ACCEL_MANEUVER_AERO_PROP_MODE.USE_LIFT_COEFFICIENT_ONLY.__doc__ = "Use Lift Coefficient only."
@@ -765,14 +765,14 @@ agcls.AgTypeNameMap["ACCEL_MANEUVER_AERO_PROP_MODE"] = ACCEL_MANEUVER_AERO_PROP_
 
 class BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS(IntEnum):
     """The type of response Aviator will have if the basic maneuver attempts to exceed the airspeed limit."""
-    # Constrain the aircraft to not exceed the airspeed limit.
     CONSTRAIN_IF_VIOLATED = 0
-    # Stop when airspeed limit exceeded..
+    """Constrain the aircraft to not exceed the airspeed limit."""
     STOP_IF_VIOLATED = 1
-    # Error when airspeed limit exceeded.
+    """Stop when airspeed limit exceeded.."""
     ERROR_IF_VIOLATED = 2
-    # Ignore when airspeed limit exceeded.
+    """Error when airspeed limit exceeded."""
     IGNORE_IF_VIOLATED = 3
+    """Ignore when airspeed limit exceeded."""
 
 BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED.__doc__ = "Constrain the aircraft to not exceed the airspeed limit."
 BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED.__doc__ = "Stop when airspeed limit exceeded.."
@@ -783,12 +783,12 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS"] = BASIC_MANE
 
 class BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE(IntEnum):
     """Powered Cruise Options."""
-    # The mode selected is unpowered options.
     GLIDE_SPECIFY_UN_POWERED_CRUISE = 0
-    # The mode selected is specifiy throttle.
+    """The mode selected is unpowered options."""
     GLIDE_SPECIFY_THROTTLE = 1
-    # The mode selected is thrust model.
+    """The mode selected is specifiy throttle."""
     GLIDE_SPECIFY_THRUST_MODEL = 2
+    """The mode selected is thrust model."""
 
 BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE.GLIDE_SPECIFY_UN_POWERED_CRUISE.__doc__ = "The mode selected is unpowered options."
 BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE.GLIDE_SPECIFY_THROTTLE.__doc__ = "The mode selected is specifiy throttle."
@@ -798,16 +798,16 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE"] = BASIC_MANEU
 
 class TURN_MODE(IntEnum):
     """The mode to specify an aircraft's level turn performance for acceleration performance models."""
-    # Turn G. The standard G force of the aircraft in a turn.
     TURN_MODE_TURN_G = 0
-    # Bank angle.
+    """Turn G. The standard G force of the aircraft in a turn."""
     TURN_MODE_BANK_ANGLE = 1
-    # Turn acceleration.
+    """Bank angle."""
     TURN_MODE_ACCEL = 2
-    # Turn radius.
+    """Turn acceleration."""
     TURN_MODE_RADIUS = 3
-    # Turn rate.
+    """Turn radius."""
     TURN_MODE_RATE = 4
+    """Turn rate."""
 
 TURN_MODE.TURN_MODE_TURN_G.__doc__ = "Turn G. The standard G force of the aircraft in a turn."
 TURN_MODE.TURN_MODE_BANK_ANGLE.__doc__ = "Bank angle."
@@ -819,16 +819,16 @@ agcls.AgTypeNameMap["TURN_MODE"] = TURN_MODE
 
 class POINT_TO_POINT_MODE(IntEnum):
     """The heading or course of the aircraft at the beginning of the procedure."""
-    # Fly direct.
     FLY_DIRECT = 0
-    # Arrive on course for next procedure.
+    """Fly direct."""
     ARRIVE_ON_COURSE_FOR_NEXT = 1
-    # Arrive on course.
+    """Arrive on course for next procedure."""
     ARRIVE_ON_COURSE = 2
-    # Inscribed turn.
+    """Arrive on course."""
     INSCRIBED_TURN = 3
-    # Arrive on heading into wind.
+    """Inscribed turn."""
     ARRIVE_ON_HDG_INTO_WIND = 4
+    """Arrive on heading into wind."""
 
 POINT_TO_POINT_MODE.FLY_DIRECT.__doc__ = "Fly direct."
 POINT_TO_POINT_MODE.ARRIVE_ON_COURSE_FOR_NEXT.__doc__ = "Arrive on course for next procedure."
@@ -840,14 +840,14 @@ agcls.AgTypeNameMap["POINT_TO_POINT_MODE"] = POINT_TO_POINT_MODE
 
 class ALTITUDE_CONSTRAINT_MANEUVER_MODE(IntEnum):
     """Turn mode for procedures that may require a level off maneuver."""
-    # Automatic turn.Aviator will determine the direction of the turn.
     LEVEL_OFF_AUTOMATIC_MANEUVER = 0
-    # Left turn.
+    """Automatic turn.Aviator will determine the direction of the turn."""
     LEVEL_OFF_LEFT_TURN_MANEUVER = 1
-    # Right turn.
+    """Left turn."""
     LEVEL_OFF_RIGHT_TURN_MANEUVER = 2
-    # No turn. A level off maneuver will not be performed.
+    """Right turn."""
     LEVEL_OFF_NO_MANEUVER = 3
+    """No turn. A level off maneuver will not be performed."""
 
 ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_AUTOMATIC_MANEUVER.__doc__ = "Automatic turn.Aviator will determine the direction of the turn."
 ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER.__doc__ = "Left turn."
@@ -858,12 +858,12 @@ agcls.AgTypeNameMap["ALTITUDE_CONSTRAINT_MANEUVER_MODE"] = ALTITUDE_CONSTRAINT_M
 
 class WIND_MODEL_TYPE(IntEnum):
     """The wind model type."""
-    # Constant Wind/Speed.
     CONSTANT_WIND = 0
-    # NOAA ADDS Service.
+    """Constant Wind/Speed."""
     ADDS = 1
-    # Disabled wind model.
+    """NOAA ADDS Service."""
     DISABLED = 2
+    """Disabled wind model."""
 
 WIND_MODEL_TYPE.CONSTANT_WIND.__doc__ = "Constant Wind/Speed."
 WIND_MODEL_TYPE.ADDS.__doc__ = "NOAA ADDS Service."
@@ -873,12 +873,12 @@ agcls.AgTypeNameMap["WIND_MODEL_TYPE"] = WIND_MODEL_TYPE
 
 class WIND_ATMOS_MODEL_SOURCE(IntEnum):
     """The source for the wind or atmosphere model."""
-    # Scenario Model.
     SCENARIO_MODEL = 0
-    # Mission Model.
+    """Scenario Model."""
     MISSION_MODEL = 1
-    # Procedure Model.
+    """Mission Model."""
     PROCEDURE_MODEL = 2
+    """Procedure Model."""
 
 WIND_ATMOS_MODEL_SOURCE.SCENARIO_MODEL.__doc__ = "Scenario Model."
 WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL.__doc__ = "Mission Model."
@@ -888,10 +888,10 @@ agcls.AgTypeNameMap["WIND_ATMOS_MODEL_SOURCE"] = WIND_ATMOS_MODEL_SOURCE
 
 class ADDS_MSG_INTERP_TYPE(IntEnum):
     """The interpolation method for the wind conditions."""
-    # One Point Interpolation.
     INTERP_ONE_POINT = 0
-    # Two Point Interpolation.
+    """One Point Interpolation."""
     INTERP_TWO_POINT = 1
+    """Two Point Interpolation."""
 
 ADDS_MSG_INTERP_TYPE.INTERP_ONE_POINT.__doc__ = "One Point Interpolation."
 ADDS_MSG_INTERP_TYPE.INTERP_TWO_POINT.__doc__ = "Two Point Interpolation."
@@ -900,10 +900,10 @@ agcls.AgTypeNameMap["ADDS_MSG_INTERP_TYPE"] = ADDS_MSG_INTERP_TYPE
 
 class ADDS_MISSING_MSG_TYPE(IntEnum):
     """The wind effect to apply if there is an interval gap between messages."""
-    # Zero Wind.
     MISSING_MSG_ZERO_WIND = 0
-    # Interpolate End Points.
+    """Zero Wind."""
     MISSING_MSG_INTERP_END_POINTS = 1
+    """Interpolate End Points."""
 
 ADDS_MISSING_MSG_TYPE.MISSING_MSG_ZERO_WIND.__doc__ = "Zero Wind."
 ADDS_MISSING_MSG_TYPE.MISSING_MSG_INTERP_END_POINTS.__doc__ = "Interpolate End Points."
@@ -912,10 +912,10 @@ agcls.AgTypeNameMap["ADDS_MISSING_MSG_TYPE"] = ADDS_MISSING_MSG_TYPE
 
 class ADDS_MSG_EXTRAP_TYPE(IntEnum):
     """The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages."""
-    # Zero Wind.
     EXTRAP_MSG_ZERO_WIND = 0
-    # Hold End Point Wind.
+    """Zero Wind."""
     EXTRAP_MSG_HOLD_END_POINTS = 1
+    """Hold End Point Wind."""
 
 ADDS_MSG_EXTRAP_TYPE.EXTRAP_MSG_ZERO_WIND.__doc__ = "Zero Wind."
 ADDS_MSG_EXTRAP_TYPE.EXTRAP_MSG_HOLD_END_POINTS.__doc__ = "Hold End Point Wind."
@@ -924,12 +924,12 @@ agcls.AgTypeNameMap["ADDS_MSG_EXTRAP_TYPE"] = ADDS_MSG_EXTRAP_TYPE
 
 class ADDS_FORECAST_TYPE(IntEnum):
     """The forecast type for the NOAA ADDS message."""
-    # 6 hour forecast
     HOUR_6 = 0
-    # 12 hour forecast
+    """6 hour forecast"""
     HOUR_12 = 1
-    # 24 hour forecast
+    """12 hour forecast"""
     HOUR_24 = 2
+    """24 hour forecast"""
 
 ADDS_FORECAST_TYPE.HOUR_6.__doc__ = "6 hour forecast"
 ADDS_FORECAST_TYPE.HOUR_12.__doc__ = "12 hour forecast"
@@ -939,18 +939,18 @@ agcls.AgTypeNameMap["ADDS_FORECAST_TYPE"] = ADDS_FORECAST_TYPE
 
 class ATMOSPHERE_MODEL(IntEnum):
     """The basic atmosphere model type."""
-    # 1976 U.S. Standard Atmosphere
     STANDARD1976 = 0
-    # U.S. MIL HDBK 310 - Hot
+    """1976 U.S. Standard Atmosphere"""
     MIL_HOT = 1
-    # U.S. MIL HDBK 310 - Cold
+    """U.S. MIL HDBK 310 - Hot"""
     MIL_COLD = 2
-    # U.S. MIL HDBK 310 - Low Density
+    """U.S. MIL HDBK 310 - Cold"""
     MIL_LOW_DENSITY = 3
-    # U.S. MIL HDBK 310 - High Density
+    """U.S. MIL HDBK 310 - Low Density"""
     MIL_HIGH_DENSITY = 4
-    # Interpolate MIL HDBK 310 Data
+    """U.S. MIL HDBK 310 - High Density"""
     MIL_INTERPOLATE = 5
+    """Interpolate MIL HDBK 310 Data"""
 
 ATMOSPHERE_MODEL.STANDARD1976.__doc__ = "1976 U.S. Standard Atmosphere"
 ATMOSPHERE_MODEL.MIL_HOT.__doc__ = "U.S. MIL HDBK 310 - Hot"
@@ -963,10 +963,10 @@ agcls.AgTypeNameMap["ATMOSPHERE_MODEL"] = ATMOSPHERE_MODEL
 
 class SMOOTH_TURN_MODE(IntEnum):
     """The basic maneuver smooth turn mode."""
-    # Specify the load factor of the smooth turn
     SMOOTH_TURN_LOAD_FACTOR = 0
-    # Specify the roll angle of the smooth turn
+    """Specify the load factor of the smooth turn"""
     SMOOTH_TURN_ROLL_ANGLE = 1
+    """Specify the roll angle of the smooth turn"""
 
 SMOOTH_TURN_MODE.SMOOTH_TURN_LOAD_FACTOR.__doc__ = "Specify the load factor of the smooth turn"
 SMOOTH_TURN_MODE.SMOOTH_TURN_ROLL_ANGLE.__doc__ = "Specify the roll angle of the smooth turn"
@@ -975,10 +975,10 @@ agcls.AgTypeNameMap["SMOOTH_TURN_MODE"] = SMOOTH_TURN_MODE
 
 class PERF_MODEL_OVERRIDE(IntEnum):
     """The performance model override mode."""
-    # Use the performance model value
     PERF_MODEL_VALUE = 0
-    # Override the performance model value
+    """Use the performance model value"""
     OVERRIDE = 1
+    """Override the performance model value"""
 
 PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE.__doc__ = "Use the performance model value"
 PERF_MODEL_OVERRIDE.OVERRIDE.__doc__ = "Override the performance model value"
@@ -987,32 +987,32 @@ agcls.AgTypeNameMap["PERF_MODEL_OVERRIDE"] = PERF_MODEL_OVERRIDE
 
 class BASIC_MANEUVER_AIRSPEED_MODE(IntEnum):
     """The basic maneuver airspeed mode."""
-    # Maintain the current airspeed
     MAINTAIN_CURRENT_AIRSPEED = 0
-    # Maintain the specified airspeed
+    """Maintain the current airspeed"""
     MAINTAIN_SPECIFIED_AIRSPEED = 1
-    # Maintain the minimum airspeed for the aircraft
+    """Maintain the specified airspeed"""
     MAINTAIN_MIN_AIRSPEED = 2
-    # Maintain the maximum endurance airspeed for the aircraft
+    """Maintain the minimum airspeed for the aircraft"""
     MAINTAIN_MAX_ENDURANCE_AIRSPEED = 3
-    # Maintain the maximum range airspeed for the aircraft
+    """Maintain the maximum endurance airspeed for the aircraft"""
     MAINTAIN_MAX_RANGE_AIRSPEED = 4
-    # Maintain the maximum airspeed for the aircraft
+    """Maintain the maximum range airspeed for the aircraft"""
     MAINTAIN_MAX_AIRSPEED = 5
-    # Maintain the maximum performance airspeed for the aircraft
+    """Maintain the maximum airspeed for the aircraft"""
     MAINTAIN_MAX_PERFORMANCE_AIRSPEED = 6
-    # Accelerate at the specified rate
+    """Maintain the maximum performance airspeed for the aircraft"""
     ACCEL_AT_G = 7
-    # Decelerate at the specified rate
+    """Accelerate at the specified rate"""
     DECEL_AT_G = 8
-    # Accel/Decel at the force of gravity (no drag, no thrust)
+    """Decelerate at the specified rate"""
     ACCEL_DECEL_UNDER_GRAVITY = 9
-    # Accel/Decel using Aero/Propulsion with throttle setting
+    """Accel/Decel at the force of gravity (no drag, no thrust)"""
     ACCEL_DECEL_AERO_PROP = 10
-    # Specify thrust (using drag from Aerodynamics model)
+    """Accel/Decel using Aero/Propulsion with throttle setting"""
     THRUST = 11
-    # Interpolate Accelerate/Decelerate over interval
+    """Specify thrust (using drag from Aerodynamics model)"""
     INTERPOLATE_ACCEL_DECEL = 12
+    """Interpolate Accelerate/Decelerate over interval"""
 
 BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_CURRENT_AIRSPEED.__doc__ = "Maintain the current airspeed"
 BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_SPECIFIED_AIRSPEED.__doc__ = "Maintain the specified airspeed"
@@ -1032,10 +1032,10 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_AIRSPEED_MODE"] = BASIC_MANEUVER_AIRSPEED_MO
 
 class AILERON_ROLL_FLIGHT_PATH(IntEnum):
     """The flight path option for an aileron roll strategy for a basic maneuver procedure."""
-    # Fly a straight line flight path
     STRAIGHT_LINE_FLIGHT_PATH = 0
-    # Fly a zero G flight path
+    """Fly a straight line flight path"""
     ZERO_G_FLIGHT_PATH = 1
+    """Fly a zero G flight path"""
 
 AILERON_ROLL_FLIGHT_PATH.STRAIGHT_LINE_FLIGHT_PATH.__doc__ = "Fly a straight line flight path"
 AILERON_ROLL_FLIGHT_PATH.ZERO_G_FLIGHT_PATH.__doc__ = "Fly a zero G flight path"
@@ -1044,10 +1044,10 @@ agcls.AgTypeNameMap["AILERON_ROLL_FLIGHT_PATH"] = AILERON_ROLL_FLIGHT_PATH
 
 class ROLL_LEFT_RIGHT(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
-    # Roll left
     ROLL_LEFT = 0
-    # Roll right
+    """Roll left"""
     ROLL_RIGHT = 1
+    """Roll right"""
 
 ROLL_LEFT_RIGHT.ROLL_LEFT.__doc__ = "Roll left"
 ROLL_LEFT_RIGHT.ROLL_RIGHT.__doc__ = "Roll right"
@@ -1056,10 +1056,10 @@ agcls.AgTypeNameMap["ROLL_LEFT_RIGHT"] = ROLL_LEFT_RIGHT
 
 class ROLL_UPRIGHT_INVERTED(IntEnum):
     """The orientation for an aileron roll strategy for a basic maneuver procedure."""
-    # Upright roll
     ROLL_UPRIGHT = 0
-    # Inverted roll
+    """Upright roll"""
     ROLL_INVERTED = 1
+    """Inverted roll"""
 
 ROLL_UPRIGHT_INVERTED.ROLL_UPRIGHT.__doc__ = "Upright roll"
 ROLL_UPRIGHT_INVERTED.ROLL_INVERTED.__doc__ = "Inverted roll"
@@ -1068,10 +1068,10 @@ agcls.AgTypeNameMap["ROLL_UPRIGHT_INVERTED"] = ROLL_UPRIGHT_INVERTED
 
 class AILERON_ROLL_MODE(IntEnum):
     """The roll mode aileron roll strategy for a basic maneuver procedure."""
-    # Specify the angle to roll
     ROLL_TO_ANGLE = 0
-    # Specify the orientation to roll to
+    """Specify the angle to roll"""
     ROLL_TO_ORIENTATION = 1
+    """Specify the orientation to roll to"""
 
 AILERON_ROLL_MODE.ROLL_TO_ANGLE.__doc__ = "Specify the angle to roll"
 AILERON_ROLL_MODE.ROLL_TO_ORIENTATION.__doc__ = "Specify the orientation to roll to"
@@ -1080,12 +1080,12 @@ agcls.AgTypeNameMap["AILERON_ROLL_MODE"] = AILERON_ROLL_MODE
 
 class FLY_AOA_LEFT_RIGHT(IntEnum):
     """The roll direction for a Fly AOA strategy for a basic maneuver procedure."""
-    # Roll left
     FLY_AOA_LEFT = 0
-    # Roll right
+    """Roll left"""
     FLY_AOA_RIGHT = 1
-    # No roll
+    """Roll right"""
     FLY_AOA_NO_ROLL = 2
+    """No roll"""
 
 FLY_AOA_LEFT_RIGHT.FLY_AOA_LEFT.__doc__ = "Roll left"
 FLY_AOA_LEFT_RIGHT.FLY_AOA_RIGHT.__doc__ = "Roll right"
@@ -1095,12 +1095,12 @@ agcls.AgTypeNameMap["FLY_AOA_LEFT_RIGHT"] = FLY_AOA_LEFT_RIGHT
 
 class SMOOTH_ACCEL_LEFT_RIGHT(IntEnum):
     """The roll direction for a smooth acceleration strategy for a basic maneuver procedure."""
-    # Roll left
     SMOOTH_ACCEL_LEFT = 0
-    # Roll right
+    """Roll left"""
     SMOOTH_ACCEL_RIGHT = 1
-    # No roll
+    """Roll right"""
     SMOOTH_ACCEL_NO_ROLL = 2
+    """No roll"""
 
 SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_LEFT.__doc__ = "Roll left"
 SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_RIGHT.__doc__ = "Roll right"
@@ -1110,10 +1110,10 @@ agcls.AgTypeNameMap["SMOOTH_ACCEL_LEFT_RIGHT"] = SMOOTH_ACCEL_LEFT_RIGHT
 
 class PULL_MODE(IntEnum):
     """The pull mode for a pull strategy of a basic maneuver procedure."""
-    # Pull to the specified angle
     PULL_TO_ANGLE = 0
-    # Pull to the horizon plus the additional angle
+    """Pull to the specified angle"""
     PULL_TO_HORIZON = 1
+    """Pull to the horizon plus the additional angle"""
 
 PULL_MODE.PULL_TO_ANGLE.__doc__ = "Pull to the specified angle"
 PULL_MODE.PULL_TO_HORIZON.__doc__ = "Pull to the horizon plus the additional angle"
@@ -1122,14 +1122,14 @@ agcls.AgTypeNameMap["PULL_MODE"] = PULL_MODE
 
 class ROLLING_PULL_MODE(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
-    # Roll to the specified angle
     ROLL_TO_ANGLE_MODE = 0
-    # Roll to the specified orientaiton plus additional angle
+    """Roll to the specified angle"""
     ROLL_TO_ORIENTATION_MODE = 1
-    # Pull to the specified angle
+    """Roll to the specified orientaiton plus additional angle"""
     PULL_TO_ANGLE_MODE = 2
-    # Pull to the horizon plus the additional angle
+    """Pull to the specified angle"""
     PULL_TO_HORIZON_MODE = 3
+    """Pull to the horizon plus the additional angle"""
 
 ROLLING_PULL_MODE.ROLL_TO_ANGLE_MODE.__doc__ = "Roll to the specified angle"
 ROLLING_PULL_MODE.ROLL_TO_ORIENTATION_MODE.__doc__ = "Roll to the specified orientaiton plus additional angle"
@@ -1140,12 +1140,12 @@ agcls.AgTypeNameMap["ROLLING_PULL_MODE"] = ROLLING_PULL_MODE
 
 class SMOOTH_ACCEL_STOP_CONDITIONS(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
-    # Roll rate and load factor rate achieved
     ROLL_RATE_AND_LOAD_FACTOR = 0
-    # Roll rate or load factor rate achieved
+    """Roll rate and load factor rate achieved"""
     ROLL_RATE_OR_LOAD_FACTOR = 1
-    # Basic stop conditions
+    """Roll rate or load factor rate achieved"""
     SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS = 2
+    """Basic stop conditions"""
 
 SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_AND_LOAD_FACTOR.__doc__ = "Roll rate and load factor rate achieved"
 SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_OR_LOAD_FACTOR.__doc__ = "Roll rate or load factor rate achieved"
@@ -1155,18 +1155,18 @@ agcls.AgTypeNameMap["SMOOTH_ACCEL_STOP_CONDITIONS"] = SMOOTH_ACCEL_STOP_CONDITIO
 
 class AUTOPILOT_HORIZ_PLANE_MODE(IntEnum):
     """The autopilot mode for an autopilot - horizontal plane strategy of a basic maneuver procedure."""
-    # The absolute heading mode
     AUTOPILOT_ABSOLUTE_HEADING = 0
-    # The absolute course mode
+    """The absolute heading mode"""
     AUTOPILOT_ABSOLUTE_COURSE = 1
-    # The relative heading change mode
+    """The absolute course mode"""
     AUTOPILOT_RELATIVE_HEADING = 2
-    # The relative course change mode
+    """The relative heading change mode"""
     AUTOPILOT_RELATIVE_COURSE = 3
-    # The set heading rate mode
+    """The relative course change mode"""
     AUTOPILOT_HEADING_RATE = 4
-    # The set heading rate  mode
+    """The set heading rate mode"""
     AUTOPILOT_COURSE_RATE = 5
+    """The set heading rate  mode"""
 
 AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_HEADING.__doc__ = "The absolute heading mode"
 AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE.__doc__ = "The absolute course mode"
@@ -1179,10 +1179,10 @@ agcls.AgTypeNameMap["AUTOPILOT_HORIZ_PLANE_MODE"] = AUTOPILOT_HORIZ_PLANE_MODE
 
 class ANGLE_MODE(IntEnum):
     """The angle mode for a barrel roll strategy of a basic maneuver procedure."""
-    # The absolute angle option
     RELATIVE_ANGLE = 0
-    # The relative angle option
+    """The absolute angle option"""
     ABSOLUTE_ANGLE = 1
+    """The relative angle option"""
 
 ANGLE_MODE.RELATIVE_ANGLE.__doc__ = "The absolute angle option"
 ANGLE_MODE.ABSOLUTE_ANGLE.__doc__ = "The relative angle option"
@@ -1191,18 +1191,18 @@ agcls.AgTypeNameMap["ANGLE_MODE"] = ANGLE_MODE
 
 class HOVER_ALTITUDE_MODE(IntEnum):
     """The altitude mode for the lighter than air hover strategy of a basic maneuver procedure."""
-    # The hold initial altitude mode
     HOVER_HOLD_INIT_ALTITUDE = 0
-    # The specify altitude mode
+    """The hold initial altitude mode"""
     HOVER_SPECIFY_ALTITUDE = 1
-    # The specify altitude change mode
+    """The specify altitude mode"""
     HOVER_SPECIFY_ALTITUDE_CHANGE = 2
-    # The specify altitude rate mode
+    """The specify altitude change mode"""
     HOVER_SPECIFY_ALTITUDE_RATE = 3
-    # The hold initial altitude rate mode
+    """The specify altitude rate mode"""
     HOVER_HOLD_INIT_ALTITUDE_RATE = 4
-    # The parachute mode
+    """The hold initial altitude rate mode"""
     HOVER_PARACHUTE = 5
+    """The parachute mode"""
 
 HOVER_ALTITUDE_MODE.HOVER_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode"
 HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode"
@@ -1215,14 +1215,14 @@ agcls.AgTypeNameMap["HOVER_ALTITUDE_MODE"] = HOVER_ALTITUDE_MODE
 
 class HOVER_HEADING_MODE(IntEnum):
     """The heading mode for the lighter than air hover strategy of a basic maneuver procedure."""
-    # The relative to start heading mode
     HOVER_RELATIVE = 0
-    # The absolute heading mode
+    """The relative to start heading mode"""
     HOVER_ABSOLUTE = 1
-    # The align into wind heading mode
+    """The absolute heading mode"""
     HOVER_INTO_WIND = 2
-    # The align opposite wind heading mode
+    """The align into wind heading mode"""
     HOVER_OPPOSITE_WIND = 3
+    """The align opposite wind heading mode"""
 
 HOVER_HEADING_MODE.HOVER_RELATIVE.__doc__ = "The relative to start heading mode"
 HOVER_HEADING_MODE.HOVER_ABSOLUTE.__doc__ = "The absolute heading mode"
@@ -1233,22 +1233,22 @@ agcls.AgTypeNameMap["HOVER_HEADING_MODE"] = HOVER_HEADING_MODE
 
 class AUTOPILOT_ALTITUDE_MODE(IntEnum):
     """The altitude mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
-    # The hold initial altitude mode
     AUTOPILOT_HOLD_INIT_ALTITUDE = 0
-    # The specify altitude mode
+    """The hold initial altitude mode"""
     AUTOPILOT_SPECIFY_ALTITUDE = 1
-    # The specify altitude change mode
+    """The specify altitude mode"""
     AUTOPILOT_SPECIFY_ALTITUDE_CHANGE = 2
-    # The specify altitude rate mode
+    """The specify altitude change mode"""
     AUTOPILOT_SPECIFY_ALTITUDE_RATE = 3
-    # The hold initial altitude rate mode
+    """The specify altitude rate mode"""
     AUTOPILOT_HOLD_INIT_ALTITUDE_RATE = 4
-    # The specify wind fram eflight path angle mode
+    """The hold initial altitude rate mode"""
     AUTOPILOT_SPECIFY_FPA = 5
-    # The hold initial wind frame flight path angle mode
+    """The specify wind fram eflight path angle mode"""
     AUTOPILOT_HOLD_INIT_FPA = 6
-    # The ballistic flight path mode
+    """The hold initial wind frame flight path angle mode"""
     AUTOPILOT_BALLISTIC = 7
+    """The ballistic flight path mode"""
 
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode"
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode"
@@ -1263,12 +1263,12 @@ agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_MODE"] = AUTOPILOT_ALTITUDE_MODE
 
 class AUTOPILOT_ALTITUDE_CONTROL_MODE(IntEnum):
     """The altitude control mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
-    # The control altitude rate mode
     AUTOPILOT_ALTITUDE_RATE = 0
-    # The control flight path angle mode
+    """The control altitude rate mode"""
     AUTOPILOT_FPA = 1
-    # The climb/descent performance models mode
+    """The control flight path angle mode"""
     AUTOPILOT_PERF_MODELS = 2
+    """The climb/descent performance models mode"""
 
 AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE.__doc__ = "The control altitude rate mode"
 AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA.__doc__ = "The control flight path angle mode"
@@ -1278,12 +1278,12 @@ agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_CONTROL_MODE"] = AUTOPILOT_ALTITUDE_CONT
 
 class CLOSURE_MODE(IntEnum):
     """The closure mode for guidance strategies of the basic maneuver procedure."""
-    # The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target
     CLOSURE_NOT_SET = 0
-    # The closure is required
+    """The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target"""
     CLOSURE_REQUIRED = 1
-    # The high off boresight mode
+    """The closure is required"""
     HOBS = 2
+    """The high off boresight mode"""
 
 CLOSURE_MODE.CLOSURE_NOT_SET.__doc__ = "The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target"
 CLOSURE_MODE.CLOSURE_REQUIRED.__doc__ = "The closure is required"
@@ -1293,10 +1293,10 @@ agcls.AgTypeNameMap["CLOSURE_MODE"] = CLOSURE_MODE
 
 class INTERCEPT_MODE(IntEnum):
     """The intercept mode for the intercept strategy of the basic maneuver procedure."""
-    # The target aspect mode. The aircraft will maintain an approach angle with the target.
     TARGET_ASPECT = 0
-    # The lateral separation mode. The aircraft will guide to a specific distance from the target
+    """The target aspect mode. The aircraft will maintain an approach angle with the target."""
     LATERAL_SEPARATION = 1
+    """The lateral separation mode. The aircraft will guide to a specific distance from the target"""
 
 INTERCEPT_MODE.TARGET_ASPECT.__doc__ = "The target aspect mode. The aircraft will maintain an approach angle with the target."
 INTERCEPT_MODE.LATERAL_SEPARATION.__doc__ = "The lateral separation mode. The aircraft will guide to a specific distance from the target"
@@ -1305,16 +1305,16 @@ agcls.AgTypeNameMap["INTERCEPT_MODE"] = INTERCEPT_MODE
 
 class RENDEZVOUS_STOP_CONDITION(IntEnum):
     """The stop condition options for a rendezvous formation strategy of the basic maneuver procedure."""
-    # The basic stopping conditions will be used.
     STOP_NORMAL = 0
-    # Stop after the target completes the current procedure.
+    """The basic stopping conditions will be used."""
     STOP_AFTER_TARGET_CURRENT_PROCEDURE = 1
-    # Stop after the target completes the current phase.
+    """Stop after the target completes the current procedure."""
     STOP_AFTER_TARGET_CURRENT_PHASE = 2
-    # Stop when the target enters a new mode of flight.
+    """Stop after the target completes the current phase."""
     STOP_WHEN_TARGET_PERF_MODE_CHANGES = 3
-    # Stop when the target enters a new performance phase.
+    """Stop when the target enters a new mode of flight."""
     STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 4
+    """Stop when the target enters a new performance phase."""
 
 RENDEZVOUS_STOP_CONDITION.STOP_NORMAL.__doc__ = "The basic stopping conditions will be used."
 RENDEZVOUS_STOP_CONDITION.STOP_AFTER_TARGET_CURRENT_PROCEDURE.__doc__ = "Stop after the target completes the current procedure."
@@ -1326,22 +1326,22 @@ agcls.AgTypeNameMap["RENDEZVOUS_STOP_CONDITION"] = RENDEZVOUS_STOP_CONDITION
 
 class FORMATION_FLYER_STOP_CONDITION(IntEnum):
     """The stop condition options for a Formation Flyer procedure."""
-    # Stop After FullMission.
     FORMATION_FLYER_STOP_AFTER_FULL_MISSION = 0
-    # Stop After Time.
+    """Stop After FullMission."""
     FORMATION_FLYER_STOP_AFTER_TIME = 1
-    # Stop After FuelState.
+    """Stop After Time."""
     FORMATION_FLYER_STOP_AFTER_FUEL_STATE = 2
-    # Stop After DownRange.
+    """Stop After FuelState."""
     FORMATION_FLYER_STOP_AFTER_DOWN_RANGE = 3
-    # Stop When TargetProcedure Changes.
+    """Stop After DownRange."""
     FORMATION_FLYER_STOP_WHEN_TARGET_PROCEDURE_CHANGES = 4
-    # Stop When Target Mission Changes.
+    """Stop When TargetProcedure Changes."""
     FORMATION_FLYER_STOP_WHEN_TARGET_MISSION_CHANGES = 5
-    # Stop When Target PhaseOfFlight Changes.
+    """Stop When Target Mission Changes."""
     FORMATION_FLYER_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 6
-    # Stop When Target PerfMode Changes.
+    """Stop When Target PhaseOfFlight Changes."""
     FORMATION_FLYER_STOP_WHEN_TARGET_PERF_MODE_CHANGES = 7
+    """Stop When Target PerfMode Changes."""
 
 FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_FULL_MISSION.__doc__ = "Stop After FullMission."
 FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_TIME.__doc__ = "Stop After Time."
@@ -1356,22 +1356,22 @@ agcls.AgTypeNameMap["FORMATION_FLYER_STOP_CONDITION"] = FORMATION_FLYER_STOP_CON
 
 class EXT_EPHEM_FLIGHT_MODE(IntEnum):
     """Flight mode enums for ExtEphem."""
-    # ForwardFlightClimb.
     EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB = 0
-    # ForwardFlightCruise.
+    """ForwardFlightClimb."""
     EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE = 1
-    # ForwardFlightDescend.
+    """ForwardFlightCruise."""
     EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_DESCEND = 2
-    # Landing.
+    """ForwardFlightDescend."""
     EXT_EPHEM_FLIGHT_MODE_LANDING = 3
-    # LandingWOW.
+    """Landing."""
     EXT_EPHEM_FLIGHT_MODE_LANDING_WOW = 4
-    # Takeoff.
+    """LandingWOW."""
     EXT_EPHEM_FLIGHT_MODE_TAKEOFF = 5
-    # TakeoffWOW.
+    """Takeoff."""
     EXT_EPHEM_FLIGHT_MODE_TAKEOFF_WOW = 6
-    # VTOLHover .
+    """TakeoffWOW."""
     EXT_EPHEM_FLIGHT_MODE_VTOL_HOVER = 7
+    """VTOLHover ."""
 
 EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB.__doc__ = "ForwardFlightClimb."
 EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE.__doc__ = "ForwardFlightCruise."
@@ -1386,12 +1386,12 @@ agcls.AgTypeNameMap["EXT_EPHEM_FLIGHT_MODE"] = EXT_EPHEM_FLIGHT_MODE
 
 class ACCEL_PERF_MODEL_OVERRIDE(IntEnum):
     """The acceleration performance model override mode."""
-    # Use the acceleration performanc model value.
     ACCEL_PERF_MODEL_VALUE = 0
-    # Override the performanc model value.
+    """Use the acceleration performanc model value."""
     ACCEL_OVERRIDE = 1
-    # Set no limit on the acceleration.
+    """Override the performanc model value."""
     ACCEL_NO_LIMIT = 2
+    """Set no limit on the acceleration."""
 
 ACCEL_PERF_MODEL_OVERRIDE.ACCEL_PERF_MODEL_VALUE.__doc__ = "Use the acceleration performanc model value."
 ACCEL_PERF_MODEL_OVERRIDE.ACCEL_OVERRIDE.__doc__ = "Override the performanc model value."
@@ -1401,14 +1401,14 @@ agcls.AgTypeNameMap["ACCEL_PERF_MODEL_OVERRIDE"] = ACCEL_PERF_MODEL_OVERRIDE
 
 class STATIONKEEPING_STOP_CONDITION(IntEnum):
     """The stop condition options for a stationkeeping strategy."""
-    # The basic stopping conditions will be used.
     STOP_CONDITION_NOT_SET = 0
-    # Stop after a specified number of turns.
+    """The basic stopping conditions will be used."""
     STOP_AFTER_TURN_COUNT = 1
-    # Stop after a specified duration.
+    """Stop after a specified number of turns."""
     STOP_AFTER_DURATION = 2
-    # Stop at the specified time.
+    """Stop after a specified duration."""
     STOP_AFTER_TIME = 3
+    """Stop at the specified time."""
 
 STATIONKEEPING_STOP_CONDITION.STOP_CONDITION_NOT_SET.__doc__ = "The basic stopping conditions will be used."
 STATIONKEEPING_STOP_CONDITION.STOP_AFTER_TURN_COUNT.__doc__ = "Stop after a specified number of turns."
@@ -1419,10 +1419,10 @@ agcls.AgTypeNameMap["STATIONKEEPING_STOP_CONDITION"] = STATIONKEEPING_STOP_CONDI
 
 class TURN_DIRECTION(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
-    # Turn left
     TURN_LEFT = 0
-    # Turn right
+    """Turn left"""
     TURN_RIGHT = 2
+    """Turn right"""
 
 TURN_DIRECTION.TURN_LEFT.__doc__ = "Turn left"
 TURN_DIRECTION.TURN_RIGHT.__doc__ = "Turn right"
@@ -1431,10 +1431,10 @@ agcls.AgTypeNameMap["TURN_DIRECTION"] = TURN_DIRECTION
 
 class PROFILE_CONTROL_LIMIT(IntEnum):
     """Method to define the control limits for a profile strategy of a basic maneuver procedure."""
-    # Use Accel Perf Model
     PROFILE_ACCEL_PERF_MODEL = 0
-    # Specify the pitch rate
+    """Use Accel Perf Model"""
     PROFILE_PITCH_RATE = 1
+    """Specify the pitch rate"""
 
 PROFILE_CONTROL_LIMIT.PROFILE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model"
 PROFILE_CONTROL_LIMIT.PROFILE_PITCH_RATE.__doc__ = "Specify the pitch rate"
@@ -1443,20 +1443,20 @@ agcls.AgTypeNameMap["PROFILE_CONTROL_LIMIT"] = PROFILE_CONTROL_LIMIT
 
 class REL_SPEED_ALTITUDE_STOP_CONDITION(IntEnum):
     """The stop condition options for a relative speed/altitude strategy."""
-    # The basic stopping conditions will be used.
     REL_SPEED_ALTITUDE_STOP_NORMAL = 0
-    # Stop when the aircraft achieves the range for equal speed.
+    """The basic stopping conditions will be used."""
     REL_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED = 1
-    # Stop when the aircraft achieves the range to transition speed.
+    """Stop when the aircraft achieves the range for equal speed."""
     REL_SPEED_ALTITUDE_STOP_TRANSITION_SPEED_RANGE = 2
-    # Stop after the target completes the current procedure.
+    """Stop when the aircraft achieves the range to transition speed."""
     REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE = 3
-    # Stop after the target completes the current phase.
+    """Stop after the target completes the current procedure."""
     REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PHASE = 4
-    # Stop when the target enters a new mode of flight.
+    """Stop after the target completes the current phase."""
     REL_SPEED_ALTITUDE_STOP_WHEN_TARGET_PERF_MODE_CHANGES = 5
-    # Stop when the target enters a new performance phase.
+    """Stop when the target enters a new mode of flight."""
     REL_SPEED_ALTITUDE_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 6
+    """Stop when the target enters a new performance phase."""
 
 REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_NORMAL.__doc__ = "The basic stopping conditions will be used."
 REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED.__doc__ = "Stop when the aircraft achieves the range for equal speed."
@@ -1470,14 +1470,14 @@ agcls.AgTypeNameMap["REL_SPEED_ALTITUDE_STOP_CONDITION"] = REL_SPEED_ALTITUDE_ST
 
 class RELATIVE_ALTITUDE_MODE(IntEnum):
     """The relative altitude mode for a relative speed/altitude strategy."""
-    # Maintain the specified altitude offset from the target.
     HOLD_OFFSET_ALTITUDE = 0
-    # Maintain the altitude offset at the beginning of the maneuver.
+    """Maintain the specified altitude offset from the target."""
     HOLD_INIT_ALTITUDE_OFFSET = 1
-    # Maintain the specified elevation angle from the target.
+    """Maintain the altitude offset at the beginning of the maneuver."""
     HOLD_ELEVATION_ANGLE = 2
-    # Maintain the elevation angle at the beginning of the maneuver.
+    """Maintain the specified elevation angle from the target."""
     HOLD_INIT_ELEVATION_ANGLE = 3
+    """Maintain the elevation angle at the beginning of the maneuver."""
 
 RELATIVE_ALTITUDE_MODE.HOLD_OFFSET_ALTITUDE.__doc__ = "Maintain the specified altitude offset from the target."
 RELATIVE_ALTITUDE_MODE.HOLD_INIT_ALTITUDE_OFFSET.__doc__ = "Maintain the altitude offset at the beginning of the maneuver."
@@ -1488,10 +1488,10 @@ agcls.AgTypeNameMap["RELATIVE_ALTITUDE_MODE"] = RELATIVE_ALTITUDE_MODE
 
 class FLY_TO_FLIGHT_PATH_ANGLE_MODE(IntEnum):
     """The flight path angle mode mode for a bezier profile strategy."""
-    # Fly to a specified altitude rate.
     FLY_TO_ALTITUDE_RATE = 0
-    # Fly to a specified flight path angle.
+    """Fly to a specified altitude rate."""
     FLY_TO_FLIGHT_PATH_ANGLE = 1
+    """Fly to a specified flight path angle."""
 
 FLY_TO_FLIGHT_PATH_ANGLE_MODE.FLY_TO_ALTITUDE_RATE.__doc__ = "Fly to a specified altitude rate."
 FLY_TO_FLIGHT_PATH_ANGLE_MODE.FLY_TO_FLIGHT_PATH_ANGLE.__doc__ = "Fly to a specified flight path angle."
@@ -1500,10 +1500,10 @@ agcls.AgTypeNameMap["FLY_TO_FLIGHT_PATH_ANGLE_MODE"] = FLY_TO_FLIGHT_PATH_ANGLE_
 
 class PUSH_PULL(IntEnum):
     """The option to pull up or push over for a push/pull profile strategy."""
-    # Pull up.
     PULL_UP = 0
-    # Push over.
+    """Pull up."""
     PUSH_OVER = 1
+    """Push over."""
 
 PUSH_PULL.PULL_UP.__doc__ = "Pull up."
 PUSH_PULL.PUSH_OVER.__doc__ = "Push over."
@@ -1512,12 +1512,12 @@ agcls.AgTypeNameMap["PUSH_PULL"] = PUSH_PULL
 
 class ACCEL_MODE(IntEnum):
     """The acceleration/decelation option for a push/pull profile strategy."""
-    # Accelerate at specified G.
     ACCEL = 0
-    # Decelerate at specified G.
+    """Accelerate at specified G."""
     DECEL = 1
-    # Maintain the initial airspeed.
+    """Decelerate at specified G."""
     MAINTAIN_SPEED = 2
+    """Maintain the initial airspeed."""
 
 ACCEL_MODE.ACCEL.__doc__ = "Accelerate at specified G."
 ACCEL_MODE.DECEL.__doc__ = "Decelerate at specified G."
@@ -1527,12 +1527,12 @@ agcls.AgTypeNameMap["ACCEL_MODE"] = ACCEL_MODE
 
 class DELAY_ALTITUDE_MODE(IntEnum):
     """The altitude options for a delay procedure."""
-    # Use a level off maneuver to fly to the default altitude.
     DELAY_LEVEL_OFF = 0
-    # The default cruise altitude.
+    """Use a level off maneuver to fly to the default altitude."""
     DELAY_DEFAULT_CRUISE_ALTITUDE = 1
-    # Override the default altitude.
+    """The default cruise altitude."""
     DELAY_OVERRIDE = 2
+    """Override the default altitude."""
 
 DELAY_ALTITUDE_MODE.DELAY_LEVEL_OFF.__doc__ = "Use a level off maneuver to fly to the default altitude."
 DELAY_ALTITUDE_MODE.DELAY_DEFAULT_CRUISE_ALTITUDE.__doc__ = "The default cruise altitude."
@@ -1542,12 +1542,12 @@ agcls.AgTypeNameMap["DELAY_ALTITUDE_MODE"] = DELAY_ALTITUDE_MODE
 
 class JOIN_EXIT_ARC_METHOD(IntEnum):
     """The options to join or exit an arc."""
-    # The aircraft begins/ends the procedure on a course away from the site.
     JOIN_EXIT_OUTBOUND = 0
-    # The aircraft begins/ends the procedure at the start bearing.
+    """The aircraft begins/ends the procedure on a course away from the site."""
     JOIN_EXIT_ON = 1
-    # The aircraft begins/ends on a course towards the site.
+    """The aircraft begins/ends the procedure at the start bearing."""
     JOIN_EXIT_INBOUND = 2
+    """The aircraft begins/ends on a course towards the site."""
 
 JOIN_EXIT_ARC_METHOD.JOIN_EXIT_OUTBOUND.__doc__ = "The aircraft begins/ends the procedure on a course away from the site."
 JOIN_EXIT_ARC_METHOD.JOIN_EXIT_ON.__doc__ = "The aircraft begins/ends the procedure at the start bearing."
@@ -1557,12 +1557,12 @@ agcls.AgTypeNameMap["JOIN_EXIT_ARC_METHOD"] = JOIN_EXIT_ARC_METHOD
 
 class FLIGHT_LINE_PROC_TYPE(IntEnum):
     """The procedure methodology used to calculate the flight line."""
-    # An enroute procedure type.
     PROC_TYPE_ENROUTE = 0
-    # A basic point to point procedure type.
+    """An enroute procedure type."""
     PROC_TYPE_BASIC_POINT_TO_POINT = 1
-    # A terrain follow procedure type.
+    """A basic point to point procedure type."""
     PROC_TYPE_TERRAIN_FOLLOW = 2
+    """A terrain follow procedure type."""
 
 FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE.__doc__ = "An enroute procedure type."
 FLIGHT_LINE_PROC_TYPE.PROC_TYPE_BASIC_POINT_TO_POINT.__doc__ = "A basic point to point procedure type."
@@ -1572,12 +1572,12 @@ agcls.AgTypeNameMap["FLIGHT_LINE_PROC_TYPE"] = FLIGHT_LINE_PROC_TYPE
 
 class TRANSITION_TO_HOVER_MODE(IntEnum):
     """The type of hover to transition to."""
-    # Transition to a full stop hover.
     FULL_STOP = 0
-    # Transition to a hover with a constant translation rate.
+    """Transition to a full stop hover."""
     TRANSLATION_ONLY = 1
-    # Transition to a hover with a constant translation and altitude rate.
+    """Transition to a hover with a constant translation rate."""
     TRANSLATION_AND_ALTITUDE = 2
+    """Transition to a hover with a constant translation and altitude rate."""
 
 TRANSITION_TO_HOVER_MODE.FULL_STOP.__doc__ = "Transition to a full stop hover."
 TRANSITION_TO_HOVER_MODE.TRANSLATION_ONLY.__doc__ = "Transition to a hover with a constant translation rate."
@@ -1587,10 +1587,10 @@ agcls.AgTypeNameMap["TRANSITION_TO_HOVER_MODE"] = TRANSITION_TO_HOVER_MODE
 
 class VTOL_RATE_MODE(IntEnum):
     """The rate mode for the VTOL procedure."""
-    # The rate during the procedure will be maintained.
     HALT_AUTOMATIC = 0
-    # The rate will be set to zero.
+    """The rate during the procedure will be maintained."""
     ALWAYS_STOP = 1
+    """The rate will be set to zero."""
 
 VTOL_RATE_MODE.HALT_AUTOMATIC.__doc__ = "The rate during the procedure will be maintained."
 VTOL_RATE_MODE.ALWAYS_STOP.__doc__ = "The rate will be set to zero."
@@ -1599,12 +1599,12 @@ agcls.AgTypeNameMap["VTOL_RATE_MODE"] = VTOL_RATE_MODE
 
 class HOLDING_PROFILE_MODE(IntEnum):
     """How the aircraft will perform during the holding pattern with respect to airspeed and altitude."""
-    # The aircraft will fly the pattern at the speed at which it arrived at the entry point.
     STK8_COMPATIBLE = 0
-    # The aircraft will level off and fly at the cruise speed
+    """The aircraft will fly the pattern at the speed at which it arrived at the entry point."""
     LEVEL_OFF_CRUISE_SPEED = 1
-    # The aircraft will climb or descend to the specified altitude.
+    """The aircraft will level off and fly at the cruise speed"""
     CLIMB_DESCENT_ON_STATION = 2
+    """The aircraft will climb or descend to the specified altitude."""
 
 HOLDING_PROFILE_MODE.STK8_COMPATIBLE.__doc__ = "The aircraft will fly the pattern at the speed at which it arrived at the entry point."
 HOLDING_PROFILE_MODE.LEVEL_OFF_CRUISE_SPEED.__doc__ = "The aircraft will level off and fly at the cruise speed"
@@ -1614,14 +1614,14 @@ agcls.AgTypeNameMap["HOLDING_PROFILE_MODE"] = HOLDING_PROFILE_MODE
 
 class HOLDING_DIRECTION(IntEnum):
     """The turn direction for the aircraft to enter the holding pattern."""
-    # Turn left on the way inbound to the site.
     INBOUND_LEFT_TURN = 0
-    # Turn right on the way inbound to the site.
+    """Turn left on the way inbound to the site."""
     INBOUND_RIGHT_TURN = 1
-    # Turn left on the way outbound from the site.
+    """Turn right on the way inbound to the site."""
     OUTBOUND_LEFT_TURN = 2
-    # Turn right on the way outbound from the site.
+    """Turn left on the way outbound from the site."""
     OUTBOUND_RIGHT_TURN = 3
+    """Turn right on the way outbound from the site."""
 
 HOLDING_DIRECTION.INBOUND_LEFT_TURN.__doc__ = "Turn left on the way inbound to the site."
 HOLDING_DIRECTION.INBOUND_RIGHT_TURN.__doc__ = "Turn right on the way inbound to the site."
@@ -1632,12 +1632,12 @@ agcls.AgTypeNameMap["HOLDING_DIRECTION"] = HOLDING_DIRECTION
 
 class HOLD_REFUEL_DUMP_MODE(IntEnum):
     """Defines when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel."""
-    # Turn left on the way inbound to the site.
     FULL_NUMER_OF_TURNS = 0
-    # Turn right on the way inbound to the site.
+    """Turn left on the way inbound to the site."""
     EXIT_AT_END_OF_TURN = 1
-    # Turn left on the way outbound from the site.
+    """Turn right on the way inbound to the site."""
     IMMEDIATE_EXIT = 2
+    """Turn left on the way outbound from the site."""
 
 HOLD_REFUEL_DUMP_MODE.FULL_NUMER_OF_TURNS.__doc__ = "Turn left on the way inbound to the site."
 HOLD_REFUEL_DUMP_MODE.EXIT_AT_END_OF_TURN.__doc__ = "Turn right on the way inbound to the site."
@@ -1647,12 +1647,12 @@ agcls.AgTypeNameMap["HOLD_REFUEL_DUMP_MODE"] = HOLD_REFUEL_DUMP_MODE
 
 class HOLDING_ENTRY_MANEUVER(IntEnum):
     """Defines how the aircraft will enter the holding pattern."""
-    # The aircraft will enter the holding pattern at the normal holding point.
     HOLD_ENTRY_NO_MANEUVER = 0
-    # The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook
+    """The aircraft will enter the holding pattern at the normal holding point."""
     USE_STANDARD_ENTRY_TURNS = 1
-    # The aircraft will enter the holding pattern at an alternate entry point.
+    """The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook"""
     USE_ALTERNATE_ENTRY_POINTS = 2
+    """The aircraft will enter the holding pattern at an alternate entry point."""
 
 HOLDING_ENTRY_MANEUVER.HOLD_ENTRY_NO_MANEUVER.__doc__ = "The aircraft will enter the holding pattern at the normal holding point."
 HOLDING_ENTRY_MANEUVER.USE_STANDARD_ENTRY_TURNS.__doc__ = "The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook"
@@ -1662,12 +1662,12 @@ agcls.AgTypeNameMap["HOLDING_ENTRY_MANEUVER"] = HOLDING_ENTRY_MANEUVER
 
 class VTOL_TRANSITION_MODE(IntEnum):
     """The mode to specify the course of the transition maneuver."""
-    # Specify a heading relative to the previous procedure.
     TRANSITION_RELATIVE_HDG = 0
-    # Specify an absolute heading.
+    """Specify a heading relative to the previous procedure."""
     TRANSITION_ABSOLUTE_HDG = 1
-    # Transition into the wind direction.
+    """Specify an absolute heading."""
     TRANSITION_INTO_WIND = 2
+    """Transition into the wind direction."""
 
 VTOL_TRANSITION_MODE.TRANSITION_RELATIVE_HDG.__doc__ = "Specify a heading relative to the previous procedure."
 VTOL_TRANSITION_MODE.TRANSITION_ABSOLUTE_HDG.__doc__ = "Specify an absolute heading."
@@ -1677,12 +1677,12 @@ agcls.AgTypeNameMap["VTOL_TRANSITION_MODE"] = VTOL_TRANSITION_MODE
 
 class VTOL_FINAL_HEADING_MODE(IntEnum):
     """The mode to specify the heading at the end of the maneuver."""
-    # Specify a heading relative to the previous procedure.
     FINAL_HEADING_RELATIVE = 0
-    # Specify an absolute heading.
+    """Specify a heading relative to the previous procedure."""
     FINAL_HEADING_ABSOLUTE = 1
-    # The aircraft have the same heading as the translation bearing.
+    """Specify an absolute heading."""
     FINAL_HEADING_TRANSLATION_COURSE = 2
+    """The aircraft have the same heading as the translation bearing."""
 
 VTOL_FINAL_HEADING_MODE.FINAL_HEADING_RELATIVE.__doc__ = "Specify a heading relative to the previous procedure."
 VTOL_FINAL_HEADING_MODE.FINAL_HEADING_ABSOLUTE.__doc__ = "Specify an absolute heading."
@@ -1692,12 +1692,12 @@ agcls.AgTypeNameMap["VTOL_FINAL_HEADING_MODE"] = VTOL_FINAL_HEADING_MODE
 
 class VTOL_TRANSLATION_MODE(IntEnum):
     """The mode to specify the translation of the VTOL maneuver."""
-    # The aircraft will translate on a specific bearing and range.
     SET_BEARING_AND_RANGE = 0
-    # The aircraft will come to a complete stop.
+    """The aircraft will translate on a specific bearing and range."""
     COME_TO_STOP = 1
-    # The aircraft will continue to translate with the same rate and direction as it began the procedure.
+    """The aircraft will come to a complete stop."""
     MAINTAIN_RATE = 2
+    """The aircraft will continue to translate with the same rate and direction as it began the procedure."""
 
 VTOL_TRANSLATION_MODE.SET_BEARING_AND_RANGE.__doc__ = "The aircraft will translate on a specific bearing and range."
 VTOL_TRANSLATION_MODE.COME_TO_STOP.__doc__ = "The aircraft will come to a complete stop."
@@ -1707,12 +1707,12 @@ agcls.AgTypeNameMap["VTOL_TRANSLATION_MODE"] = VTOL_TRANSLATION_MODE
 
 class VTOL_TRANSLATION_FINAL_COURSE_MODE(IntEnum):
     """The mode to specify the final course of the VTOL maneuver."""
-    # The aircraft will translate directly along the specified bearing and range.
     TRANSLATE_DIRECT = 0
-    # The aircraft will translate along a bisecting line between the inbound and outbound course.
+    """The aircraft will translate directly along the specified bearing and range."""
     BISECT_INBOUND_OUTBOUND = 1
-    # The aircraft will evaluate the procedure ahead to determine the translation bearing and rate.
+    """The aircraft will translate along a bisecting line between the inbound and outbound course."""
     ANTICIPATE_NEXT_TRANSLATION = 2
+    """The aircraft will evaluate the procedure ahead to determine the translation bearing and rate."""
 
 VTOL_TRANSLATION_FINAL_COURSE_MODE.TRANSLATE_DIRECT.__doc__ = "The aircraft will translate directly along the specified bearing and range."
 VTOL_TRANSLATION_FINAL_COURSE_MODE.BISECT_INBOUND_OUTBOUND.__doc__ = "The aircraft will translate along a bisecting line between the inbound and outbound course."
@@ -1722,10 +1722,10 @@ agcls.AgTypeNameMap["VTOL_TRANSLATION_FINAL_COURSE_MODE"] = VTOL_TRANSLATION_FIN
 
 class HOVER_MODE(IntEnum):
     """The hover mode."""
-    # Hover in place for a fixed time.
     HOVER_MODE_FIXED_TIME = 0
-    # Perform a hovering maneuver.
+    """Hover in place for a fixed time."""
     HOVER_MODE_MANEUVER = 1
+    """Perform a hovering maneuver."""
 
 HOVER_MODE.HOVER_MODE_FIXED_TIME.__doc__ = "Hover in place for a fixed time."
 HOVER_MODE.HOVER_MODE_MANEUVER.__doc__ = "Perform a hovering maneuver."
@@ -1734,12 +1734,12 @@ agcls.AgTypeNameMap["HOVER_MODE"] = HOVER_MODE
 
 class VTOL_HEADING_MODE(IntEnum):
     """The heading mode for the hover maneuver."""
-    # The aircraft's heading is independent of its translation.
     HEADING_INDEPENDENT = 0
-    # The aircraft will align its heading with the translation course.
+    """The aircraft's heading is independent of its translation."""
     HEADING_ALIGN_TRANSLATION_COURSE = 1
-    # The aircraft will set its heading into the wind.
+    """The aircraft will align its heading with the translation course."""
     HEADING_INTO_WIND = 2
+    """The aircraft will set its heading into the wind."""
 
 VTOL_HEADING_MODE.HEADING_INDEPENDENT.__doc__ = "The aircraft's heading is independent of its translation."
 VTOL_HEADING_MODE.HEADING_ALIGN_TRANSLATION_COURSE.__doc__ = "The aircraft will align its heading with the translation course."
@@ -1749,14 +1749,14 @@ agcls.AgTypeNameMap["VTOL_HEADING_MODE"] = VTOL_HEADING_MODE
 
 class VERT_LANDING_MODE(IntEnum):
     """The heading mode for a vertical landing maneuver."""
-    # The aircraft's heading is independent of its translation.
     VERT_LANDING_INDEPENDENT = 0
-    # The aircraft will align its heading with the translation course.
+    """The aircraft's heading is independent of its translation."""
     VERT_LANDING_ALIGN_TRANSLATION_COURSE = 1
-    # The aircraft will set its heading into the wind.
+    """The aircraft will align its heading with the translation course."""
     VERT_LANDING_INTO_WIND = 2
-    # The aircraft will align its heading with the translation course  will achieve the specified heading upon arriving.
+    """The aircraft will set its heading into the wind."""
     VERT_LANDING_ALIGN_TRANSLATION_COURSE_OVERRIDE = 3
+    """The aircraft will align its heading with the translation course  will achieve the specified heading upon arriving."""
 
 VERT_LANDING_MODE.VERT_LANDING_INDEPENDENT.__doc__ = "The aircraft's heading is independent of its translation."
 VERT_LANDING_MODE.VERT_LANDING_ALIGN_TRANSLATION_COURSE.__doc__ = "The aircraft will align its heading with the translation course."
@@ -1767,12 +1767,12 @@ agcls.AgTypeNameMap["VERT_LANDING_MODE"] = VERT_LANDING_MODE
 
 class LAUNCH_ATTITUDE_MODE(IntEnum):
     """The attitude mode for the launch procedure."""
-    # The aircraft's attitude is aligned with the specified direction vector.
     LAUNCH_ALIGN_DIRECTION_VECTOR = 0
-    # The aircraft will maintain the parent vehicle's attiude at the time of launch.
+    """The aircraft's attitude is aligned with the specified direction vector."""
     LAUNCH_HOLD_PARENT_ATTITUDE = 1
-    # The aircraft launches in level flight
+    """The aircraft will maintain the parent vehicle's attiude at the time of launch."""
     LAUNCH_VTOL = 2
+    """The aircraft launches in level flight"""
 
 LAUNCH_ATTITUDE_MODE.LAUNCH_ALIGN_DIRECTION_VECTOR.__doc__ = "The aircraft's attitude is aligned with the specified direction vector."
 LAUNCH_ATTITUDE_MODE.LAUNCH_HOLD_PARENT_ATTITUDE.__doc__ = "The aircraft will maintain the parent vehicle's attiude at the time of launch."
@@ -1782,18 +1782,18 @@ agcls.AgTypeNameMap["LAUNCH_ATTITUDE_MODE"] = LAUNCH_ATTITUDE_MODE
 
 class FUEL_FLOW_TYPE(IntEnum):
     """The fuel flow type to use for the procedure."""
-    # Fuel flow defined for the current Takeoff performance model.
     FUEL_FLOW_TAKEOFF = 0
-    # Fuel flow defined for the current Cruise performance model.
+    """Fuel flow defined for the current Takeoff performance model."""
     FUEL_FLOW_CRUISE = 1
-    # Fuel flow defined for the current Landing performance model.
+    """Fuel flow defined for the current Cruise performance model."""
     FUEL_FLOW_LANDING = 2
-    # Fuel flow defined for the current VTOL performance model.
+    """Fuel flow defined for the current Landing performance model."""
     FUEL_FLOW_VTOL = 3
-    # Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model.
+    """Fuel flow defined for the current VTOL performance model."""
     FUEL_FLOW_AERO_PROP = 4
-    # Fuel flow defined manually.
+    """Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."""
     FUEL_FLOW_OVERRIDE = 5
+    """Fuel flow defined manually."""
 
 FUEL_FLOW_TYPE.FUEL_FLOW_TAKEOFF.__doc__ = "Fuel flow defined for the current Takeoff performance model."
 FUEL_FLOW_TYPE.FUEL_FLOW_CRUISE.__doc__ = "Fuel flow defined for the current Cruise performance model."
@@ -1806,10 +1806,10 @@ agcls.AgTypeNameMap["FUEL_FLOW_TYPE"] = FUEL_FLOW_TYPE
 
 class LINE_ORIENTATION(IntEnum):
     """The orientation for a parallel flight line procedure."""
-    # Left of the previous flight line.
     FLIGHT_LINE_TO_LEFT = 0
-    # Right of the previous flight line.
+    """Left of the previous flight line."""
     FLIGHT_LINE_TO_RIGHT = 1
+    """Right of the previous flight line."""
 
 LINE_ORIENTATION.FLIGHT_LINE_TO_LEFT.__doc__ = "Left of the previous flight line."
 LINE_ORIENTATION.FLIGHT_LINE_TO_RIGHT.__doc__ = "Right of the previous flight line."
@@ -1818,12 +1818,12 @@ agcls.AgTypeNameMap["LINE_ORIENTATION"] = LINE_ORIENTATION
 
 class REL_ABS_BEARING(IntEnum):
     """The options for a bearing that can be relative or absolute."""
-    # A bearing relative to the previous course.
     RELATIVE_BEARING = 0
-    # A bearing using true north.
+    """A bearing relative to the previous course."""
     TRUE_BEARING = 1
-    # A bearing using magnetic north.
+    """A bearing using true north."""
     MAGNETIC_BEARING = 2
+    """A bearing using magnetic north."""
 
 REL_ABS_BEARING.RELATIVE_BEARING.__doc__ = "A bearing relative to the previous course."
 REL_ABS_BEARING.TRUE_BEARING.__doc__ = "A bearing using true north."
@@ -1833,10 +1833,10 @@ agcls.AgTypeNameMap["REL_ABS_BEARING"] = REL_ABS_BEARING
 
 class BASIC_FIXED_WING_PROP_MODE(IntEnum):
     """The option to specify the thrust (jet engines) or power (propellers)."""
-    # Jet - Specify net thrust.
     SPECIFY_THRUST = 0
-    # Propeller - Specify net power.
+    """Jet - Specify net thrust."""
     SPECIFY_POWER = 1
+    """Propeller - Specify net power."""
 
 BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST.__doc__ = "Jet - Specify net thrust."
 BASIC_FIXED_WING_PROP_MODE.SPECIFY_POWER.__doc__ = "Propeller - Specify net power."
@@ -1845,14 +1845,14 @@ agcls.AgTypeNameMap["BASIC_FIXED_WING_PROP_MODE"] = BASIC_FIXED_WING_PROP_MODE
 
 class CLIMB_SPEED_TYPE(IntEnum):
     """The mode to calculate the aircraft's airspeed while climbing for an advanced climb performance model."""
-    # The speed at which the aircraft's rate of climb is maximized.
     CLIMB_SPEED_BEST_RATE = 0
-    # The speed at which the aircraft will gain the most altitude over downrange distance.
+    """The speed at which the aircraft's rate of climb is maximized."""
     CLIMB_SPEED_BEST_ANGLE = 1
-    # The speed at which the aircraft's fuel consumption is minimized.
+    """The speed at which the aircraft will gain the most altitude over downrange distance."""
     CLIMB_SPEED_MIN_FUEL = 2
-    # Manually specify the speed.
+    """The speed at which the aircraft's fuel consumption is minimized."""
     CLIMB_SPEED_OVERRIDE = 3
+    """Manually specify the speed."""
 
 CLIMB_SPEED_TYPE.CLIMB_SPEED_BEST_RATE.__doc__ = "The speed at which the aircraft's rate of climb is maximized."
 CLIMB_SPEED_TYPE.CLIMB_SPEED_BEST_ANGLE.__doc__ = "The speed at which the aircraft will gain the most altitude over downrange distance."
@@ -1863,16 +1863,16 @@ agcls.AgTypeNameMap["CLIMB_SPEED_TYPE"] = CLIMB_SPEED_TYPE
 
 class CRUISE_MAX_PERF_SPEED_TYPE(IntEnum):
     """The method for defining the maximum performance airspeed of the aircraft for an advanced cruise model."""
-    # The lowest speed at which the aircraft can generate lift while pulling maximum Gs.
     CORNER_SPEED = 0
-    # The maximum specific excess power without afterburning.
+    """The lowest speed at which the aircraft can generate lift while pulling maximum Gs."""
     MAX_PS_DRY_THRUST = 1
-    # The maximum specific excess power while afterburning.
+    """The maximum specific excess power without afterburning."""
     MAX_PS_AFTERBURNER = 2
-    # The maximum speed without afterburning.
+    """The maximum specific excess power while afterburning."""
     MAX_SPEED_DRY_THRUST = 3
-    # The speed which maximizes the aircraft range while afterburning.
+    """The maximum speed without afterburning."""
     MAX_RANGE_AFTERBURNER = 4
+    """The speed which maximizes the aircraft range while afterburning."""
 
 CRUISE_MAX_PERF_SPEED_TYPE.CORNER_SPEED.__doc__ = "The lowest speed at which the aircraft can generate lift while pulling maximum Gs."
 CRUISE_MAX_PERF_SPEED_TYPE.MAX_PS_DRY_THRUST.__doc__ = "The maximum specific excess power without afterburning."
@@ -1884,16 +1884,16 @@ agcls.AgTypeNameMap["CRUISE_MAX_PERF_SPEED_TYPE"] = CRUISE_MAX_PERF_SPEED_TYPE
 
 class DESCENT_SPEED_TYPE(IntEnum):
     """The method for calculating the aircraft's airspeed while descending."""
-    # A variable airspeed that maximizes the distance that the aircraft can fly.
     DESCENT_MAX_RANGE_CRUISE = 0
-    # The speed at which the aircraft's glide ratio is maximized.
+    """A variable airspeed that maximizes the distance that the aircraft can fly."""
     DESCENT_MAX_GLIDE_RATIO = 1
-    # The speed at which the aircraft's rate of descent is minimized.
+    """The speed at which the aircraft's glide ratio is maximized."""
     DESCENT_MIN_SINK_RATE = 2
-    # A speed relative to the aircraft's stall speed..
+    """The speed at which the aircraft's rate of descent is minimized."""
     DESCENT_STALL_SPEED_RATIO = 3
-    # Manually define the airspeed.
+    """A speed relative to the aircraft's stall speed.."""
     DESCENT_SPEED_OVERRIDE = 4
+    """Manually define the airspeed."""
 
 DESCENT_SPEED_TYPE.DESCENT_MAX_RANGE_CRUISE.__doc__ = "A variable airspeed that maximizes the distance that the aircraft can fly."
 DESCENT_SPEED_TYPE.DESCENT_MAX_GLIDE_RATIO.__doc__ = "The speed at which the aircraft's glide ratio is maximized."
@@ -1905,10 +1905,10 @@ agcls.AgTypeNameMap["DESCENT_SPEED_TYPE"] = DESCENT_SPEED_TYPE
 
 class TAKEOFF_LANDING_SPEED_MODE(IntEnum):
     """The method for calculating the aircraft's speed upon leaving the ground or at wheels down."""
-    # A multiple of the aircraft's stall speed.
     TAKEOFF_LANDING_STALL_SPEED_RATIO = 0
-    # The speed needed to achieve lift at the specified Angle of Attack.
+    """A multiple of the aircraft's stall speed."""
     TAKEOFF_LANDING_ANGLE_OF_ATTACK = 1
+    """The speed needed to achieve lift at the specified Angle of Attack."""
 
 TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_STALL_SPEED_RATIO.__doc__ = "A multiple of the aircraft's stall speed."
 TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK.__doc__ = "The speed needed to achieve lift at the specified Angle of Attack."
@@ -1917,12 +1917,12 @@ agcls.AgTypeNameMap["TAKEOFF_LANDING_SPEED_MODE"] = TAKEOFF_LANDING_SPEED_MODE
 
 class DEPARTURE_SPEED_MODE(IntEnum):
     """The method for calculating the aircraft's airspeed upon leaving the ground."""
-    # The aircraft will fly at the max climb angle.
     MAX_CLIMB_ANGLE = 0
-    # The aircraft will fly at the max climb rate.
+    """The aircraft will fly at the max climb angle."""
     MAX_CLIMB_RATE = 1
-    # The aircraft will fly at the airspeed defined in the Climb performance model.
+    """The aircraft will fly at the max climb rate."""
     USE_CLIMB_MODEL = 2
+    """The aircraft will fly at the airspeed defined in the Climb performance model."""
 
 DEPARTURE_SPEED_MODE.MAX_CLIMB_ANGLE.__doc__ = "The aircraft will fly at the max climb angle."
 DEPARTURE_SPEED_MODE.MAX_CLIMB_RATE.__doc__ = "The aircraft will fly at the max climb rate."
@@ -1932,14 +1932,14 @@ agcls.AgTypeNameMap["DEPARTURE_SPEED_MODE"] = DEPARTURE_SPEED_MODE
 
 class ADV_FIXED_WING_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy for the Advanced Fixed Wing Tool."""
-    # Define the aerodynamics using an external .aero file.
     EXTERNAL_AERO_FILE = 0
-    # Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft.
+    """Define the aerodynamics using an external .aero file."""
     SUB_SUPER_HYPER_AERO = 1
-    # Define the aerodynamics for an aircraft that generally travels at subsonic speeds.
+    """Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."""
     SUBSONIC_AERO = 2
-    # Define the aerodynamics for an aircraft that generally travels at supersonic speeds.
+    """Define the aerodynamics for an aircraft that generally travels at subsonic speeds."""
     SUPERSONIC_AERO = 3
+    """Define the aerodynamics for an aircraft that generally travels at supersonic speeds."""
 
 ADV_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE.__doc__ = "Define the aerodynamics using an external .aero file."
 ADV_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
@@ -1950,10 +1950,10 @@ agcls.AgTypeNameMap["ADV_FIXED_WING_AERO_STRATEGY"] = ADV_FIXED_WING_AERO_STRATE
 
 class ADV_FIXED_WING_GEOMETRY(IntEnum):
     """The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool."""
-    # Define the static properties of an immovable wing.
     BASIC_GEOMETRY = 0
-    # Define the minimum and maximum properties of an adjustable wing.
+    """Define the static properties of an immovable wing."""
     VARIABLE_GEOMETRY = 1
+    """Define the minimum and maximum properties of an adjustable wing."""
 
 ADV_FIXED_WING_GEOMETRY.BASIC_GEOMETRY.__doc__ = "Define the static properties of an immovable wing."
 ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY.__doc__ = "Define the minimum and maximum properties of an adjustable wing."
@@ -1962,30 +1962,30 @@ agcls.AgTypeNameMap["ADV_FIXED_WING_GEOMETRY"] = ADV_FIXED_WING_GEOMETRY
 
 class ADV_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
     """The powerplant strategy for the Advanced Fixed Wing Tool."""
-    # An electric engine.
     ELECTRIC_POWERPLANT = 0
-    # Define the powerplant using an external .prop file.
+    """An electric engine."""
     EXTERNAL_PROP_FILE = 1
-    # A piston, or reciprocating, engine.
+    """Define the powerplant using an external .prop file."""
     PISTON_POWERPLANT = 2
-    # A thermodynamic model that includes turbine, ramjet, and scramjet performance modes.
+    """A piston, or reciprocating, engine."""
     SUB_SUPER_HYPER_POWERPLANT = 3
-    # A thermodynamic model of a dual-spool turbofan engine that has an afterburner.
+    """A thermodynamic model that includes turbine, ramjet, and scramjet performance modes."""
     TURBOFAN_BASIC_AB = 4
-    # An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust.
+    """A thermodynamic model of a dual-spool turbofan engine that has an afterburner."""
     TURBOFAN_HIGH_BYPASS = 5
-    # An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust.
+    """An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust."""
     TURBOFAN_LOW_BYPASS = 6
-    # An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust.
+    """An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust."""
     TURBOFAN_LOW_BYPASS_AFTERBURNING = 7
-    # An empirical model that models a turbojet engine that has an afterburner.
+    """An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust."""
     TURBOJET_AFTERBURNING = 8
-    # An empirical model that models a turbojet engine.
+    """An empirical model that models a turbojet engine that has an afterburner."""
     TURBOJET_BASIC_AB = 9
-    # An empirical model that models a turbojet engine.
+    """An empirical model that models a turbojet engine."""
     TURBOJET = 10
-    # An empirical model that models a turboprop engine.
+    """An empirical model that models a turbojet engine."""
     TURBOPROP = 11
+    """An empirical model that models a turboprop engine."""
 
 ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT.__doc__ = "An electric engine."
 ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE.__doc__ = "Define the powerplant using an external .prop file."
@@ -2004,12 +2004,12 @@ agcls.AgTypeNameMap["ADV_FIXED_WING_POWERPLANT_STRATEGY"] = ADV_FIXED_WING_POWER
 
 class MISSILE_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
-    # Simple aerodynamics.
     MISSILE_AERO_SIMPLE = 0
-    # External file aerodynamics.
+    """Simple aerodynamics."""
     MISSILE_AERO_EXTERNAL_FILE = 1
-    # Advanced missile aerodynamics.
+    """External file aerodynamics."""
     MISSILE_AERO_ADVANCED = 2
+    """Advanced missile aerodynamics."""
 
 MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE.__doc__ = "Simple aerodynamics."
 MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
@@ -2019,16 +2019,16 @@ agcls.AgTypeNameMap["MISSILE_AERO_STRATEGY"] = MISSILE_AERO_STRATEGY
 
 class MISSILE_PROP_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
-    # Simple propulsion.
     MISSILE_PROP_SIMPLE = 0
-    # External file propulsion.
+    """Simple propulsion."""
     MISSILE_PROP_EXTERNAL_FILE = 1
-    # Ramjet propulsion.
+    """External file propulsion."""
     MISSILE_PROP_RAMJET = 2
-    # Rocket propulsion.
+    """Ramjet propulsion."""
     MISSILE_PROP_ROCKET = 3
-    # Turbojet propulsion.
+    """Rocket propulsion."""
     MISSILE_PROP_TURBOJET = 4
+    """Turbojet propulsion."""
 
 MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE.__doc__ = "Simple propulsion."
 MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE.__doc__ = "External file propulsion."
@@ -2040,12 +2040,12 @@ agcls.AgTypeNameMap["MISSILE_PROP_STRATEGY"] = MISSILE_PROP_STRATEGY
 
 class ROTORCRAFT_POWERPLANT_TYPE(IntEnum):
     """The powerplant type for a rotorcraft."""
-    # Electric propulsion.
     ROTORCRAFT_ELECTRIC = 0
-    # Turboshaft propulsion.
+    """Electric propulsion."""
     ROTORCRAFT_TURBOSHAFT = 1
-    # Piston propulsion.
+    """Turboshaft propulsion."""
     ROTORCRAFT_PISTON = 2
+    """Piston propulsion."""
 
 ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_ELECTRIC.__doc__ = "Electric propulsion."
 ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_TURBOSHAFT.__doc__ = "Turboshaft propulsion."
@@ -2055,12 +2055,12 @@ agcls.AgTypeNameMap["ROTORCRAFT_POWERPLANT_TYPE"] = ROTORCRAFT_POWERPLANT_TYPE
 
 class MINIMIZE_SITE_PROC_TIME_DIFF(IntEnum):
     """Options for minimizing the time difference between the procedure and site times."""
-    # Do not converge the procedure and site times.
     MINIMIZE_TIME_DIFFERENCE_OFF = 0
-    # Always recalculate.
+    """Do not converge the procedure and site times."""
     MINIMIZE_TIME_DIFFERENCE_ALWAYS = 1
-    # Only recalculate when updated.
+    """Always recalculate."""
     MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE = 2
+    """Only recalculate when updated."""
 
 MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF.__doc__ = "Do not converge the procedure and site times."
 MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS.__doc__ = "Always recalculate."
@@ -2070,14 +2070,14 @@ agcls.AgTypeNameMap["MINIMIZE_SITE_PROC_TIME_DIFF"] = MINIMIZE_SITE_PROC_TIME_DI
 
 class STK_OBJECT_WAYPOINT_OFFSET_MODE(IntEnum):
     """The options to offset the site location relative to the STK Object."""
-    # No offset.
     OFFSET_NONE = 0
-    # Bearing/Range (relative to North).
+    """No offset."""
     OFFSET_BEARING_RANGE = 1
-    # VGT Point.
+    """Bearing/Range (relative to North)."""
     OFFSET_VGT_POINT = 2
-    # Bearing/Reange relative to Vehicle course.
+    """VGT Point."""
     OFFSET_RELATIVE_BEARING_RANGE = 3
+    """Bearing/Reange relative to Vehicle course."""
 
 STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_NONE.__doc__ = "No offset."
 STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_BEARING_RANGE.__doc__ = "Bearing/Range (relative to North)."
@@ -2088,12 +2088,12 @@ agcls.AgTypeNameMap["STK_OBJECT_WAYPOINT_OFFSET_MODE"] = STK_OBJECT_WAYPOINT_OFF
 
 class SEARCH_PATTERN_COURSE_MODE(IntEnum):
     """The mode to determine the course of the search pattern."""
-    # Automatically begin the search pattern within 0 - 180 degrees.
     COURSE_MODE_LOW = 0
-    # Automatically begin the search pattern within 180 - 360 degrees.
+    """Automatically begin the search pattern within 0 - 180 degrees."""
     COURSE_MODE_HIGH = 1
-    # Manually define the course of the search pattern.
+    """Automatically begin the search pattern within 180 - 360 degrees."""
     COURSE_MODE_OVERRIDE = 2
+    """Manually define the course of the search pattern."""
 
 SEARCH_PATTERN_COURSE_MODE.COURSE_MODE_LOW.__doc__ = "Automatically begin the search pattern within 0 - 180 degrees."
 SEARCH_PATTERN_COURSE_MODE.COURSE_MODE_HIGH.__doc__ = "Automatically begin the search pattern within 180 - 360 degrees."
@@ -2103,12 +2103,12 @@ agcls.AgTypeNameMap["SEARCH_PATTERN_COURSE_MODE"] = SEARCH_PATTERN_COURSE_MODE
 
 class DELAY_TURN_DIRECTION(IntEnum):
     """Turn mode for procedures with Delay options."""
-    # Automatic turn. Aviator will determine the direction of the turn.
     DELAY_TURN_AUTO = 0
-    # Left turn.
+    """Automatic turn. Aviator will determine the direction of the turn."""
     DELAY_TURN_LEFT = 1
-    # Right turn.
+    """Left turn."""
     DELAY_TURN_RIGHT = 2
+    """Right turn."""
 
 DELAY_TURN_DIRECTION.DELAY_TURN_AUTO.__doc__ = "Automatic turn. Aviator will determine the direction of the turn."
 DELAY_TURN_DIRECTION.DELAY_TURN_LEFT.__doc__ = "Left turn."
@@ -2118,18 +2118,18 @@ agcls.AgTypeNameMap["DELAY_TURN_DIRECTION"] = DELAY_TURN_DIRECTION
 
 class TRAJECTORY_BLEND_MODE(IntEnum):
     """The interpolation mode to determine the aircraft's position and velocity."""
-    # Quadratic interpolation using the body frame.
     BLEND_BODY_QUADRATIC = 0
-    # Cubic interpolation using the body frame.
+    """Quadratic interpolation using the body frame."""
     BLEND_BODY_CUBIC = 1
-    # Quadratic interpolation using the local horizontal frame.
+    """Cubic interpolation using the body frame."""
     BLEND_LH_QUADRATIC = 2
-    # Cubic interpolation using the local horizontal frame.
+    """Quadratic interpolation using the local horizontal frame."""
     BLEND_LH_CUBIC = 3
-    # Quadratic interpolation using the Earth-Centered Fixed frame.
+    """Cubic interpolation using the local horizontal frame."""
     BLEND_ECF_QUADRATIC = 4
-    # Cubic interpolation using the Earth-Centered Fixed frame.
+    """Quadratic interpolation using the Earth-Centered Fixed frame."""
     BLEND_ECF_CUBIC = 5
+    """Cubic interpolation using the Earth-Centered Fixed frame."""
 
 TRAJECTORY_BLEND_MODE.BLEND_BODY_QUADRATIC.__doc__ = "Quadratic interpolation using the body frame."
 TRAJECTORY_BLEND_MODE.BLEND_BODY_CUBIC.__doc__ = "Cubic interpolation using the body frame."
@@ -2142,22 +2142,22 @@ agcls.AgTypeNameMap["TRAJECTORY_BLEND_MODE"] = TRAJECTORY_BLEND_MODE
 
 class REFERENCE_STATE_PERF_MODE(IntEnum):
     """The type of motion the aircraft is engaged in at the reference state."""
-    # Forward Flight - Climb performance mode.
     REFERENCE_STATE_CLIMB = 0
-    # Forward Flight - Cruise performance mode.
+    """Forward Flight - Climb performance mode."""
     REFERENCE_STATE_CRUISE = 1
-    # Forward Flight - Descend performance mode.
+    """Forward Flight - Cruise performance mode."""
     REFERENCE_STATE_DESCEND = 2
-    # Hover performance mode.
+    """Forward Flight - Descend performance mode."""
     REFERENCE_STATE_HOVER = 3
-    # Landing performance mode.
+    """Hover performance mode."""
     REFERENCE_STATE_LANDING = 4
-    # Takeoff performance mode.
+    """Landing performance mode."""
     REFERENCE_STATE_TAKEOFF = 5
-    # Weight On Wheels - Landing Rollout performance mode
+    """Takeoff performance mode."""
     REFERENCE_STATE_LANDING_ROLLOUT = 6
-    # Weight On Wheels - Takeoff Run performance mode
+    """Weight On Wheels - Landing Rollout performance mode"""
     REFERENCE_STATE_TAKEOFF_RUN = 7
+    """Weight On Wheels - Takeoff Run performance mode"""
 
 REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB.__doc__ = "Forward Flight - Climb performance mode."
 REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CRUISE.__doc__ = "Forward Flight - Cruise performance mode."
@@ -2172,10 +2172,10 @@ agcls.AgTypeNameMap["REFERENCE_STATE_PERF_MODE"] = REFERENCE_STATE_PERF_MODE
 
 class REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE(IntEnum):
     """The mode to specify the longitudinal acceleration of the aircraft."""
-    # Specify the true airspeed acceleration.
     SPECIFY_TAS_DOT = 0
-    # Specify the groundspeed acceleration.
+    """Specify the true airspeed acceleration."""
     SPECIFY_GROUND_SPEED_DOT = 1
+    """Specify the groundspeed acceleration."""
 
 REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT.__doc__ = "Specify the true airspeed acceleration."
 REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT.__doc__ = "Specify the groundspeed acceleration."
@@ -2184,10 +2184,10 @@ agcls.AgTypeNameMap["REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE"] = REFERENCE_STATE
 
 class REFERENCE_STATE_LATERAL_ACCEL_MODE(IntEnum):
     """The mode to specify the lateral acceleration of the aircraft."""
-    # Specify the heading rate of change.
     SPECIFY_HEADING_DOT = 0
-    # Specify the course rate of change.
+    """Specify the heading rate of change."""
     SPECIFY_COURSE_DOT = 1
+    """Specify the course rate of change."""
 
 REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT.__doc__ = "Specify the heading rate of change."
 REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT.__doc__ = "Specify the course rate of change."
@@ -2196,10 +2196,10 @@ agcls.AgTypeNameMap["REFERENCE_STATE_LATERAL_ACCEL_MODE"] = REFERENCE_STATE_LATE
 
 class REFERENCE_STATE_ATTITUDE_MODE(IntEnum):
     """The mode to specify the attitude rate of change."""
-    # Specify the push/pull G.
     SPECIFY_PUSH_PULL_G = 0
-    # Specify the pitch rate of change.
+    """Specify the push/pull G."""
     SPECIFY_PITCH_RATE = 1
+    """Specify the pitch rate of change."""
 
 REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PUSH_PULL_G.__doc__ = "Specify the push/pull G."
 REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PITCH_RATE.__doc__ = "Specify the pitch rate of change."
@@ -2208,10 +2208,10 @@ agcls.AgTypeNameMap["REFERENCE_STATE_ATTITUDE_MODE"] = REFERENCE_STATE_ATTITUDE_
 
 class AND_OR(IntEnum):
     """The option to specify AND or OR."""
-    # And option.
     AND = 0
-    # Or option.
+    """And option."""
     OR = 1
+    """Or option."""
 
 AND_OR.AND.__doc__ = "And option."
 AND_OR.OR.__doc__ = "Or option."
@@ -2220,18 +2220,18 @@ agcls.AgTypeNameMap["AND_OR"] = AND_OR
 
 class JET_ENGINE_TECHNOLOGY_LEVEL(IntEnum):
     """The technology level of the jet engine."""
-    # Ideal (perfect efficiencies).
     IDEAL = 0
-    # Level 1 (1945-1965).
+    """Ideal (perfect efficiencies)."""
     LEVEL1 = 1
-    # Level 2 (1965-1985).
+    """Level 1 (1945-1965)."""
     LEVEL2 = 2
-    # Level 3 (1985-2005).
+    """Level 2 (1965-1985)."""
     LEVEL3 = 3
-    # Level 4 (2005-2025).
+    """Level 3 (1985-2005)."""
     LEVEL4 = 4
-    # Level 5 (2025-2045).
+    """Level 4 (2005-2025)."""
     LEVEL5 = 5
+    """Level 5 (2025-2045)."""
 
 JET_ENGINE_TECHNOLOGY_LEVEL.IDEAL.__doc__ = "Ideal (perfect efficiencies)."
 JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL1.__doc__ = "Level 1 (1945-1965)."
@@ -2244,12 +2244,12 @@ agcls.AgTypeNameMap["JET_ENGINE_TECHNOLOGY_LEVEL"] = JET_ENGINE_TECHNOLOGY_LEVEL
 
 class JET_ENGINE_INTAKE_TYPE(IntEnum):
     """The intake type of the jet engine."""
-    # Subsonic nacelles.
     SUBSONIC_NACELLES = 0
-    # Subsonic embedded.
+    """Subsonic nacelles."""
     SUBSONIC_EMBEDDED = 1
-    # Supersonic embedded.
+    """Subsonic embedded."""
     SUPERSONIC_EMBEDDED = 2
+    """Supersonic embedded."""
 
 JET_ENGINE_INTAKE_TYPE.SUBSONIC_NACELLES.__doc__ = "Subsonic nacelles."
 JET_ENGINE_INTAKE_TYPE.SUBSONIC_EMBEDDED.__doc__ = "Subsonic embedded."
@@ -2259,10 +2259,10 @@ agcls.AgTypeNameMap["JET_ENGINE_INTAKE_TYPE"] = JET_ENGINE_INTAKE_TYPE
 
 class JET_ENGINE_TURBINE_TYPE(IntEnum):
     """The turbine type of the jet engine."""
-    # Uncooled turbine.
     UNCOOLED = 0
-    # Cooled turbine.
+    """Uncooled turbine."""
     COOLED = 1
+    """Cooled turbine."""
 
 JET_ENGINE_TURBINE_TYPE.UNCOOLED.__doc__ = "Uncooled turbine."
 JET_ENGINE_TURBINE_TYPE.COOLED.__doc__ = "Cooled turbine."
@@ -2271,12 +2271,12 @@ agcls.AgTypeNameMap["JET_ENGINE_TURBINE_TYPE"] = JET_ENGINE_TURBINE_TYPE
 
 class JET_ENGINE_EXHAUST_NOZZLE_TYPE(IntEnum):
     """The exhaust nozzle type of the jet engine."""
-    # Fixed Area Convergent.
     FIXED_AREA_CONVERGENT = 0
-    # Variable Area Convergent.
+    """Fixed Area Convergent."""
     VARIABLE_AREA_CONVERGENT = 1
-    # Variable Area Convergent - Divergent.
+    """Variable Area Convergent."""
     VARIABLE_AREA_CONVERGENT_DIVERGENT = 2
+    """Variable Area Convergent - Divergent."""
 
 JET_ENGINE_EXHAUST_NOZZLE_TYPE.FIXED_AREA_CONVERGENT.__doc__ = "Fixed Area Convergent."
 JET_ENGINE_EXHAUST_NOZZLE_TYPE.VARIABLE_AREA_CONVERGENT.__doc__ = "Variable Area Convergent."
@@ -2286,12 +2286,12 @@ agcls.AgTypeNameMap["JET_ENGINE_EXHAUST_NOZZLE_TYPE"] = JET_ENGINE_EXHAUST_NOZZL
 
 class JET_FUEL_TYPE(IntEnum):
     """The jet fuel type."""
-    # A kerosene fuel model based on AFPROP.
     KEROSENE_AFPROP = 0
-    # A kerosene fuel model based on NASA CEA.
+    """A kerosene fuel model based on AFPROP."""
     KEROSENE_CEA = 1
-    # A hydrogen fuel model based on NASA CEA.
+    """A kerosene fuel model based on NASA CEA."""
     HYDROGEN = 2
+    """A hydrogen fuel model based on NASA CEA."""
 
 JET_FUEL_TYPE.KEROSENE_AFPROP.__doc__ = "A kerosene fuel model based on AFPROP."
 JET_FUEL_TYPE.KEROSENE_CEA.__doc__ = "A kerosene fuel model based on NASA CEA."
@@ -2301,16 +2301,16 @@ agcls.AgTypeNameMap["JET_FUEL_TYPE"] = JET_FUEL_TYPE
 
 class AFPROP_FUEL_TYPE(IntEnum):
     """The AFPROP fuel type."""
-    # Override the specific energy.
     AFPROP_OVERRIDE = 0
-    # Jet A fuel model based on AFPROP.
+    """Override the specific energy."""
     AFPROP_JET_A = 1
-    # Jet A-1 fuel model based on AFPROP.
+    """Jet A fuel model based on AFPROP."""
     AFPROP_JET_A1 = 2
-    # JP-5 fuel model based on AFPROP.
+    """Jet A-1 fuel model based on AFPROP."""
     AFPROPJP5 = 3
-    # JP-7 fuel model based on AFPROP.
+    """JP-5 fuel model based on AFPROP."""
     AFPROPJP7 = 4
+    """JP-7 fuel model based on AFPROP."""
 
 AFPROP_FUEL_TYPE.AFPROP_OVERRIDE.__doc__ = "Override the specific energy."
 AFPROP_FUEL_TYPE.AFPROP_JET_A.__doc__ = "Jet A fuel model based on AFPROP."
@@ -2322,16 +2322,16 @@ agcls.AgTypeNameMap["AFPROP_FUEL_TYPE"] = AFPROP_FUEL_TYPE
 
 class CEA_FUEL_TYPE(IntEnum):
     """The CEA fuel type."""
-    # Override the specific energy.
     CEA_OVERRIDE = 0
-    # Jet A fuel model based on NASA CEA.
+    """Override the specific energy."""
     CEA_JET_A = 1
-    # Jet A-1 fuel model based on NASA CEA.
+    """Jet A fuel model based on NASA CEA."""
     CEA_JET_A1 = 2
-    # JP-5 fuel model based on NASA CEA.
+    """Jet A-1 fuel model based on NASA CEA."""
     CEAJP5 = 3
-    # JP-7 fuel model based on NASA CEA.
+    """JP-5 fuel model based on NASA CEA."""
     CEAJP7 = 4
+    """JP-7 fuel model based on NASA CEA."""
 
 CEA_FUEL_TYPE.CEA_OVERRIDE.__doc__ = "Override the specific energy."
 CEA_FUEL_TYPE.CEA_JET_A.__doc__ = "Jet A fuel model based on NASA CEA."
@@ -2343,12 +2343,12 @@ agcls.AgTypeNameMap["CEA_FUEL_TYPE"] = CEA_FUEL_TYPE
 
 class TURBINE_MODE(IntEnum):
     """The turbine mode for a Sub/Super/Hypersonic powerplant."""
-    # Disabled turbine mode.
     TURBINE_MODE_DISABLED = 0
-    # Turbojet - Basic w/AB (Thermodynamic model).
+    """Disabled turbine mode."""
     TURBINE_MODE_TURBOJET_BASIC_AB = 1
-    # Turbofan - Basic w/AB (Thermodynamic model).
+    """Turbojet - Basic w/AB (Thermodynamic model)."""
     TURBINE_MODE_TURBOFAN_BASIC_AB = 2
+    """Turbofan - Basic w/AB (Thermodynamic model)."""
 
 TURBINE_MODE.TURBINE_MODE_DISABLED.__doc__ = "Disabled turbine mode."
 TURBINE_MODE.TURBINE_MODE_TURBOJET_BASIC_AB.__doc__ = "Turbojet - Basic w/AB (Thermodynamic model)."
@@ -2358,10 +2358,10 @@ agcls.AgTypeNameMap["TURBINE_MODE"] = TURBINE_MODE
 
 class RAMJET_MODE(IntEnum):
     """The ramjet mode for a Sub/Super/Hypersonic powerplant."""
-    # Disabled ramjet mode.
     RAMJET_MODE_DISABLED = 0
-    # Ramjet - Basic mode.
+    """Disabled ramjet mode."""
     RAMJET_MODE_BASIC = 1
+    """Ramjet - Basic mode."""
 
 RAMJET_MODE.RAMJET_MODE_DISABLED.__doc__ = "Disabled ramjet mode."
 RAMJET_MODE.RAMJET_MODE_BASIC.__doc__ = "Ramjet - Basic mode."
@@ -2370,10 +2370,10 @@ agcls.AgTypeNameMap["RAMJET_MODE"] = RAMJET_MODE
 
 class SCRAMJET_MODE(IntEnum):
     """The scramjet mode for a Sub/Super/Hypersonic powerplant."""
-    # Disabled scramjet mode.
     SCRAMJET_MODE_DISABLED = 0
-    # Scramjet - Basic mode.
+    """Disabled scramjet mode."""
     SCRAMJET_MODE_BASIC = 1
+    """Scramjet - Basic mode."""
 
 SCRAMJET_MODE.SCRAMJET_MODE_DISABLED.__doc__ = "Disabled scramjet mode."
 SCRAMJET_MODE.SCRAMJET_MODE_BASIC.__doc__ = "Scramjet - Basic mode."
@@ -2382,10 +2382,10 @@ agcls.AgTypeNameMap["SCRAMJET_MODE"] = SCRAMJET_MODE
 
 class NUMERICAL_INTEGRATOR(IntEnum):
     """The numerical integrator to be used for the procedure."""
-    # Runge-Kutta 4th Order Fixed Time Step Integrator
     RUNGE_KUTTA4 = 0
-    # Runge-Kutta 4th Order Adpative Time Step Integrator.
+    """Runge-Kutta 4th Order Fixed Time Step Integrator"""
     RUNGE_KUTTA45 = 1
+    """Runge-Kutta 4th Order Adpative Time Step Integrator."""
 
 NUMERICAL_INTEGRATOR.RUNGE_KUTTA4.__doc__ = "Runge-Kutta 4th Order Fixed Time Step Integrator"
 NUMERICAL_INTEGRATOR.RUNGE_KUTTA45.__doc__ = "Runge-Kutta 4th Order Adpative Time Step Integrator."
@@ -2394,12 +2394,12 @@ agcls.AgTypeNameMap["NUMERICAL_INTEGRATOR"] = NUMERICAL_INTEGRATOR
 
 class BALLISTIC_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the ballistic 3D strategy of the basic maneuver procedure."""
-    # The vehicle will compensate for the wind along its ballistic trajectory.
     BALLISTIC_3D_COMPENSATE_FOR_WIND = 0
-    # Allow the wind to affect the ballistic trajectory.
+    """The vehicle will compensate for the wind along its ballistic trajectory."""
     BALLISTIC_3D_WIND_PUSHES_VEHICLE = 1
-    # Model the vehicle as a parachute.
+    """Allow the wind to affect the ballistic trajectory."""
     BALLISTIC_3D_PARACHUTE_MODE = 2
+    """Model the vehicle as a parachute."""
 
 BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its ballistic trajectory."
 BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the ballistic trajectory."
@@ -2409,10 +2409,10 @@ agcls.AgTypeNameMap["BALLISTIC_3D_CONTROL_MODE"] = BALLISTIC_3D_CONTROL_MODE
 
 class LAUNCH_DYN_STATE_COORD_FRAME(IntEnum):
     """The coordinate frame used for a LaunchDynState procedure."""
-    # The object's body frame.
     LAUNCH_DYN_STATE_COORD_FRAME_BODY = 0
-    # The object's local horizontal frame.
+    """The object's body frame."""
     LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL = 1
+    """The object's local horizontal frame."""
 
 LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_BODY.__doc__ = "The object's body frame."
 LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL.__doc__ = "The object's local horizontal frame."
@@ -2421,12 +2421,12 @@ agcls.AgTypeNameMap["LAUNCH_DYN_STATE_COORD_FRAME"] = LAUNCH_DYN_STATE_COORD_FRA
 
 class LAUNCH_DYN_STATE_BEARING_REFERENCE(IntEnum):
     """The vector used as a bearing reference for a LaunchDynState procedure."""
-    # The object's velocity vector.
     LAUNCH_DYN_STATE_BEARING_REFERENCE_VELOCITY = 0
-    # The X vector of the object's coordinate frame.
+    """The object's velocity vector."""
     LAUNCH_DYN_STATE_BEARING_REFERENCE_COORD_FRAME_X = 1
-    # The object's vector to North.
+    """The X vector of the object's coordinate frame."""
     LAUNCH_DYN_STATE_BEARING_REFERENCE_NORTH = 2
+    """The object's vector to North."""
 
 LAUNCH_DYN_STATE_BEARING_REFERENCE.LAUNCH_DYN_STATE_BEARING_REFERENCE_VELOCITY.__doc__ = "The object's velocity vector."
 LAUNCH_DYN_STATE_BEARING_REFERENCE.LAUNCH_DYN_STATE_BEARING_REFERENCE_COORD_FRAME_X.__doc__ = "The X vector of the object's coordinate frame."
@@ -2436,12 +2436,12 @@ agcls.AgTypeNameMap["LAUNCH_DYN_STATE_BEARING_REFERENCE"] = LAUNCH_DYN_STATE_BEA
 
 class ALTITUDE_REFERENCE(IntEnum):
     """The altitude reference."""
-    # Altitude above WGS84 ground reference.
     ALTITUDE_REFERENCE_WGS84 = 0
-    # Altitude above Mean Sea Level (MSL).
+    """Altitude above WGS84 ground reference."""
     ALTITUDE_REFERENCE_MSL = 1
-    # ALtitude above terrain.
+    """Altitude above Mean Sea Level (MSL)."""
     ALTITUDE_REFERENCE_TERRAIN = 2
+    """ALtitude above terrain."""
 
 ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_WGS84.__doc__ = "Altitude above WGS84 ground reference."
 ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_MSL.__doc__ = "Altitude above Mean Sea Level (MSL)."
@@ -2451,10 +2451,10 @@ agcls.AgTypeNameMap["ALTITUDE_REFERENCE"] = ALTITUDE_REFERENCE
 
 class SMOOTH_TURN_FPA_MODE(IntEnum):
     """The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure."""
-    # Hold the initial flight path angle.
     SMOOTH_TURN_FPA_HOLD_INITIAL = 0
-    # Levell off the flight path angle.
+    """Hold the initial flight path angle."""
     SMOOTH_TURN_FPA_LEVEL_OFF = 1
+    """Levell off the flight path angle."""
 
 SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_HOLD_INITIAL.__doc__ = "Hold the initial flight path angle."
 SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF.__doc__ = "Levell off the flight path angle."
@@ -2463,10 +2463,10 @@ agcls.AgTypeNameMap["SMOOTH_TURN_FPA_MODE"] = SMOOTH_TURN_FPA_MODE
 
 class PITCH_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the pitch 3D strategy of the basic maneuver procedure."""
-    # The vehicle will compensate for the wind along its trajectory.
     PITCH_3D_COMPENSATE_FOR_WIND = 0
-    # Allow the wind to affect the trajectory.
+    """The vehicle will compensate for the wind along its trajectory."""
     PITCH_3D_WIND_PUSHES_VEHICLE = 1
+    """Allow the wind to affect the trajectory."""
 
 PITCH_3D_CONTROL_MODE.PITCH_3D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its trajectory."
 PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the trajectory."
@@ -2475,22 +2475,22 @@ agcls.AgTypeNameMap["PITCH_3D_CONTROL_MODE"] = PITCH_3D_CONTROL_MODE
 
 class REFUEL_DUMP_MODE(IntEnum):
     """The modes used to define procedure refuel/dump modes."""
-    # RefuelDump Disabled.
     REFUEL_DUMP_DISABLED = 0
-    # Refuel Top Off.
+    """RefuelDump Disabled."""
     REFUEL_TOP_OFF = 1
-    # Refuel to specified fuel state.
+    """Refuel Top Off."""
     REFUEL_TO_FUEL_STATE = 2
-    # Refuel to specified weight.
+    """Refuel to specified fuel state."""
     REFUEL_TO_WEIGHT = 3
-    # Refuel specified quantity.
+    """Refuel to specified weight."""
     REFUEL_QUANTITY = 4
-    # Dump to specified fuel state.
+    """Refuel specified quantity."""
     DUMP_TO_FUEL_STATE = 5
-    # Dump to specified weight.
+    """Dump to specified fuel state."""
     DUMP_TO_WEIGHT = 6
-    # Dump specified quantity.
+    """Dump to specified weight."""
     DUMP_QUANTITY = 7
+    """Dump specified quantity."""
 
 REFUEL_DUMP_MODE.REFUEL_DUMP_DISABLED.__doc__ = "RefuelDump Disabled."
 REFUEL_DUMP_MODE.REFUEL_TOP_OFF.__doc__ = "Refuel Top Off."
@@ -2505,10 +2505,10 @@ agcls.AgTypeNameMap["REFUEL_DUMP_MODE"] = REFUEL_DUMP_MODE
 
 class BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE(IntEnum):
     """The modes used to define basic maneuver glide speed control modes."""
-    # Immediate speed change.
     GLIDE_SPEED_IMMEDIATE_CHANGE = 0
-    # Achieve speed at altitude.
+    """Immediate speed change."""
     GLIDE_SPEED_AT_ALTITUDE = 1
+    """Achieve speed at altitude."""
 
 BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE.GLIDE_SPEED_IMMEDIATE_CHANGE.__doc__ = "Immediate speed change."
 BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE.GLIDE_SPEED_AT_ALTITUDE.__doc__ = "Achieve speed at altitude."

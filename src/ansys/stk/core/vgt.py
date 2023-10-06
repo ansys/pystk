@@ -209,40 +209,40 @@ def _raise_uninitialized_error(*args):
 
 class CRDN_CALC_SCALAR_TYPE(IntEnum):
     """Defines available calculation scalar types."""
-    # Unknown or unsupported calculation scalar types
     UNKNOWN = -1
-    # Scalar equal to angular displacement obtained from any angle in VGT.
+    """Unknown or unsupported calculation scalar types"""
     ANGLE = 0
-    # Constant scalar created by evaluating input scalar calculation at specified reference time instant.
+    """Scalar equal to angular displacement obtained from any angle in VGT."""
     FIXED_AT_TIME_INSTANT = 1
-    # Constant scalar value of specified dimension.
+    """Constant scalar created by evaluating input scalar calculation at specified reference time instant."""
     CONSTANT = 2
-    # Any time-dependent data element from STK data providers available for parent STK object.
+    """Constant scalar value of specified dimension."""
     DATA_ELEMENT = 3
-    # Derivative of input scalar calculation.
+    """Any time-dependent data element from STK data providers available for parent STK object."""
     DERIVATIVE = 4
-    # Time elapsed since reference time instant.
+    """Derivative of input scalar calculation."""
     ELAPSED_TIME = 5
-    # Tabulated scalar calculation data loaded from specified file.
+    """Time elapsed since reference time instant."""
     FILE = 6
-    # Defined by performing one of specified functions on input scalar.
+    """Tabulated scalar calculation data loaded from specified file."""
     FUNCTION = 7
-    # Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types.
+    """Defined by performing one of specified functions on input scalar."""
     INTEGRAL = 8
-    # Defined by performing one of specified binary operations on two scalar arguments.
+    """Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."""
     FUNCTION2_VAR = 9
-    # Scalar equal to magnitude of specified vector.
+    """Defined by performing one of specified binary operations on two scalar arguments."""
     VECTOR_MAGNITUDE = 10
-    # A calc scalar plugin based on a COM object.
+    """Scalar equal to magnitude of specified vector."""
     PLUGIN = 11
-    # A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
+    """A calc scalar plugin based on a COM object."""
     CUSTOM_SCRIPT = 12
-    # Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
+    """A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
     SURFACE_DISTANCE_BETWEEN_POINTS = 13
-    # Scalar equal to the dot product between two vectors.
+    """Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."""
     DOT_PRODUCT = 14
-    # Scalar equal to the specified component of a vector when resolved in the specified axes.
+    """Scalar equal to the dot product between two vectors."""
     VECTOR_COMPONENT = 15
+    """Scalar equal to the specified component of a vector when resolved in the specified axes."""
 
 CRDN_CALC_SCALAR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported calculation scalar types"
 CRDN_CALC_SCALAR_TYPE.ANGLE.__doc__ = "Scalar equal to angular displacement obtained from any angle in VGT."
@@ -266,14 +266,14 @@ agcls.AgTypeNameMap["CRDN_CALC_SCALAR_TYPE"] = CRDN_CALC_SCALAR_TYPE
 
 class CRDN_CONDITION_COMBINED_OPERATION_TYPE(IntEnum):
     """Defines scalar condition combined operation types."""
-    # Scalar condition combined AND operation.
     AND = 1
-    # Scalar condition combined OR operation.
+    """Scalar condition combined AND operation."""
     OR = 2
-    # Scalar condition combined XOR operation.
+    """Scalar condition combined OR operation."""
     XOR = 3
-    # Scalar condition combined MINUS operation.
+    """Scalar condition combined XOR operation."""
     MINUS = 4
+    """Scalar condition combined MINUS operation."""
 
 CRDN_CONDITION_COMBINED_OPERATION_TYPE.AND.__doc__ = "Scalar condition combined AND operation."
 CRDN_CONDITION_COMBINED_OPERATION_TYPE.OR.__doc__ = "Scalar condition combined OR operation."
@@ -284,10 +284,10 @@ agcls.AgTypeNameMap["CRDN_CONDITION_COMBINED_OPERATION_TYPE"] = CRDN_CONDITION_C
 
 class CRDN_CONDITION_SET_TYPE(IntEnum):
     """Defines available condition set types."""
-    # Unknown or unsupported condition set types.
     UNKNOWN = -1
-    # Condition set placing multiple thresholds on specified scalar.
+    """Unknown or unsupported condition set types."""
     SCALAR_THRESHOLDS = 0
+    """Condition set placing multiple thresholds on specified scalar."""
 
 CRDN_CONDITION_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition set types."
 CRDN_CONDITION_SET_TYPE.SCALAR_THRESHOLDS.__doc__ = "Condition set placing multiple thresholds on specified scalar."
@@ -296,14 +296,14 @@ agcls.AgTypeNameMap["CRDN_CONDITION_SET_TYPE"] = CRDN_CONDITION_SET_TYPE
 
 class CRDN_CONDITION_THRESHOLD_OPTION(IntEnum):
     """Operations for Scalar Bounds Condition"""
-    # Bound is above a minimum value
     ABOVE_MIN = 1
-    # Bound is below a maximum value
+    """Bound is above a minimum value"""
     BELOW_MAX = 2
-    # Bound is between a minimum and maximum value
+    """Bound is below a maximum value"""
     INSIDE_MIN_MAX = 3
-    # Bound is outside a minimum and maximum value
+    """Bound is between a minimum and maximum value"""
     OUTSIDE_MIN_MAX = 4
+    """Bound is outside a minimum and maximum value"""
 
 CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN.__doc__ = "Bound is above a minimum value"
 CRDN_CONDITION_THRESHOLD_OPTION.BELOW_MAX.__doc__ = "Bound is below a maximum value"
@@ -314,14 +314,14 @@ agcls.AgTypeNameMap["CRDN_CONDITION_THRESHOLD_OPTION"] = CRDN_CONDITION_THRESHOL
 
 class CRDN_CONDITION_TYPE(IntEnum):
     """Defines available condition types."""
-    # Unknown or unsupported condition type
     UNKNOWN = -1
-    # Condition placing bounds on specified scalar.
+    """Unknown or unsupported condition type"""
     SCALAR_BOUNDS = 0
-    # Multiple conditiones on specified scalar.
+    """Condition placing bounds on specified scalar."""
     COMBINED = 1
-    # Condition placing point in volume.
+    """Multiple conditiones on specified scalar."""
     POINT_IN_VOLUME = 2
+    """Condition placing point in volume."""
 
 CRDN_CONDITION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition type"
 CRDN_CONDITION_TYPE.SCALAR_BOUNDS.__doc__ = "Condition placing bounds on specified scalar."
@@ -332,12 +332,12 @@ agcls.AgTypeNameMap["CRDN_CONDITION_TYPE"] = CRDN_CONDITION_TYPE
 
 class CRDN_DIMENSION_INHERITANCE(IntEnum):
     """Defines how dimension is inherited"""
-    # Do not inherit dimension.
     NONE = 0
-    # Inherit dimension from X scalar.
+    """Do not inherit dimension."""
     FROM_X = 1
-    # Inherit dimension from Y scalar.
+    """Inherit dimension from X scalar."""
     FROM_Y = 2
+    """Inherit dimension from Y scalar."""
 
 CRDN_DIMENSION_INHERITANCE.NONE.__doc__ = "Do not inherit dimension."
 CRDN_DIMENSION_INHERITANCE.FROM_X.__doc__ = "Inherit dimension from X scalar."
@@ -347,12 +347,12 @@ agcls.AgTypeNameMap["CRDN_DIMENSION_INHERITANCE"] = CRDN_DIMENSION_INHERITANCE
 
 class CRDN_EVENT_ARRAY_FILTER_TYPE(IntEnum):
     """Event array filter types."""
-    # Skip time step
     SKIP_TIME_STEP = 0
-    # Skip count
+    """Skip time step"""
     SKIP_COUNT = 1
-    # Intervals
+    """Skip count"""
     INTERVALS = 2
+    """Intervals"""
 
 CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_TIME_STEP.__doc__ = "Skip time step"
 CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_COUNT.__doc__ = "Skip count"
@@ -362,24 +362,24 @@ agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_FILTER_TYPE"] = CRDN_EVENT_ARRAY_FILTER_TY
 
 class CRDN_EVENT_ARRAY_TYPE(IntEnum):
     """Defines available time array types."""
-    # Unknown or unsupported time array types
     UNKNOWN = -1
-    # Determines time of local minimum and/or maximum of specified scalar calculation.
+    """Unknown or unsupported time array types"""
     EXTREMA = 0
-    # Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array.
+    """Determines time of local minimum and/or maximum of specified scalar calculation."""
     START_STOP_TIMES = 1
-    # Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays.
+    """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."""
     MERGED = 2
-    # Defined by filtering times from original time array according to specified filtering method.
+    """Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."""
     FILTERED = 3
-    # Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
+    """Defined by filtering times from original time array according to specified filtering method."""
     FIXED_STEP = 4
-    # Time array containing times at which specified condition changes its satisfaction status.
+    """Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."""
     CONDITION_CROSSINGS = 5
-    # Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations.
+    """Time array containing times at which specified condition changes its satisfaction status."""
     SIGNALED = 6
-    # Time array containing specific times.
+    """Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."""
     FIXED_TIMES = 7
+    """Time array containing specific times."""
 
 CRDN_EVENT_ARRAY_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time array types"
 CRDN_EVENT_ARRAY_TYPE.EXTREMA.__doc__ = "Determines time of local minimum and/or maximum of specified scalar calculation."
@@ -395,14 +395,14 @@ agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_TYPE"] = CRDN_EVENT_ARRAY_TYPE
 
 class CRDN_EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
     """Defines available interval collection types."""
-    # Unknown or unsupported interval collection types
     UNKNOWN = -1
-    # Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
+    """Unknown or unsupported interval collection types"""
     LIGHTING = 0
-    # Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations.
+    """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
     SIGNALED = 1
-    # Interval collection containing intervals during which condition set is satisfied.
+    """Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."""
     CONDITION = 2
+    """Interval collection containing intervals during which condition set is satisfied."""
 
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval collection types"
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.LIGHTING.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
@@ -413,24 +413,24 @@ agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_COLLECTION_TYPE"] = CRDN_EVENT_INTERVAL
 
 class CRDN_EVENT_INTERVAL_LIST_TYPE(IntEnum):
     """Defines available interval list types."""
-    # Unknown or unsupported interval list types
     UNKNOWN = -1
-    # Interval list created by merging two constituent interval lists using specified logical operation.
+    """Unknown or unsupported interval list types"""
     MERGED = 1
-    # Defined by filtering intervals from original interval list using specified filtering method.
+    """Interval list created by merging two constituent interval lists using specified logical operation."""
     FILTERED = 2
-    # Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction).
+    """Defined by filtering intervals from original interval list using specified filtering method."""
     CONDITION = 3
-    # Interval List defined by scaling every interval in original interval list using either absolute or relative scale.
+    """Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."""
     SCALED = 4
-    # Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations.
+    """Interval List defined by scaling every interval in original interval list using either absolute or relative scale."""
     SIGNALED = 5
-    # Interval List defined by shifting specified reference interval list by fixed time offset.
+    """Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."""
     TIME_OFFSET = 6
-    # Interval list loaded from specified interval file
+    """Interval List defined by shifting specified reference interval list by fixed time offset."""
     FILE = 0
-    # Interval list with individual intervals defined between explicitly specified start and stop times.
+    """Interval list loaded from specified interval file"""
     FIXED = 7
+    """Interval list with individual intervals defined between explicitly specified start and stop times."""
 
 CRDN_EVENT_INTERVAL_LIST_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval list types"
 CRDN_EVENT_INTERVAL_LIST_TYPE.MERGED.__doc__ = "Interval list created by merging two constituent interval lists using specified logical operation."
@@ -446,24 +446,24 @@ agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_LIST_TYPE"] = CRDN_EVENT_INTERVAL_LIST_
 
 class CRDN_EVENT_INTERVAL_TYPE(IntEnum):
     """Defines available interval types."""
-    # Unknown or unsupported interval types
     UNKNOWN = -1
-    # Interval defined between two explicitly specified start and stop times.
+    """Unknown or unsupported interval types"""
     FIXED = 0
-    # Interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
+    """Interval defined between two explicitly specified start and stop times."""
     FIXED_DURATION = 1
-    # Interval between specified start and stop time instants.
+    """Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."""
     BETWEEN_TIME_INSTANTS = 2
-    # Interval created from specified interval list by using one of several selection methods.
+    """Interval between specified start and stop time instants."""
     FROM_INTERVAL_LIST = 3
-    # Interval defined by scaling original interval using either absolute or relative scale.
+    """Interval created from specified interval list by using one of several selection methods."""
     SCALED = 4
-    # Determines an interval recorded at a target clock location by performing signal transmission.
+    """Interval defined by scaling original interval using either absolute or relative scale."""
     SIGNALED = 5
-    # Interval defined by shifting specified reference interval by fixed time offset.
+    """Determines an interval recorded at a target clock location by performing signal transmission."""
     TIME_OFFSET = 6
-    # A smart interval.
+    """Interval defined by shifting specified reference interval by fixed time offset."""
     SMART_INTERVAL = 7
+    """A smart interval."""
 
 CRDN_EVENT_INTERVAL_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval types"
 CRDN_EVENT_INTERVAL_TYPE.FIXED.__doc__ = "Interval defined between two explicitly specified start and stop times."
@@ -479,14 +479,14 @@ agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_TYPE"] = CRDN_EVENT_INTERVAL_TYPE
 
 class CRDN_EVENT_LIST_MERGE_OPERATION(IntEnum):
     """Defines merge operations for interval lists."""
-    # Intervals both in A and B
     AND = 0
-    # Intervals in A or B
+    """Intervals both in A and B"""
     OR = 1
-    # Intervals in A or B but not in both
+    """Intervals in A or B"""
     XOR = 2
-    # Intervals in A and not in B
+    """Intervals in A or B but not in both"""
     MINUS = 3
+    """Intervals in A and not in B"""
 
 CRDN_EVENT_LIST_MERGE_OPERATION.AND.__doc__ = "Intervals both in A and B"
 CRDN_EVENT_LIST_MERGE_OPERATION.OR.__doc__ = "Intervals in A or B"
@@ -497,20 +497,20 @@ agcls.AgTypeNameMap["CRDN_EVENT_LIST_MERGE_OPERATION"] = CRDN_EVENT_LIST_MERGE_O
 
 class CRDN_EVENT_TYPE(IntEnum):
     """Defines available time instant types."""
-    # Unknown or unsupported time instant types
     UNKNOWN = -1
-    # Time instant set at specified date/time
+    """Unknown or unsupported time instant types"""
     EPOCH = 0
-    # Determines time of global minimum or maximum of specified scalar calculation.
+    """Time instant set at specified date/time"""
     EXTREMUM = 1
-    # Start or stop time of selected reference interval
+    """Determines time of global minimum or maximum of specified scalar calculation."""
     FROM_INTERVAL = 2
-    # Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations.
+    """Start or stop time of selected reference interval"""
     SIGNALED = 3
-    # Time instant at fixed offset from specified reference time instant
+    """Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."""
     TIME_OFFSET = 4
-    # A smart epoch.
+    """Time instant at fixed offset from specified reference time instant"""
     SMART_EPOCH = 5
+    """A smart epoch."""
 
 CRDN_EVENT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time instant types"
 CRDN_EVENT_TYPE.EPOCH.__doc__ = "Time instant set at specified date/time"
@@ -524,10 +524,10 @@ agcls.AgTypeNameMap["CRDN_EVENT_TYPE"] = CRDN_EVENT_TYPE
 
 class CRDN_EXTREMUM_CONSTANTS(IntFlag):
     """These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing."""
-    # Find the minimum value
     MINIMUM = 1
-    # Find the maximum value
+    """Find the minimum value"""
     MAXIMUM = 2
+    """Find the maximum value"""
 
 CRDN_EXTREMUM_CONSTANTS.MINIMUM.__doc__ = "Find the minimum value"
 CRDN_EXTREMUM_CONSTANTS.MAXIMUM.__doc__ = "Find the maximum value"
@@ -536,18 +536,18 @@ agcls.AgTypeNameMap["CRDN_EXTREMUM_CONSTANTS"] = CRDN_EXTREMUM_CONSTANTS
 
 class CRDN_FILE_INTERPOLATOR_TYPE(IntEnum):
     """Interpolator types."""
-    # Unknown or invalid interpolator.
     INVALID = -1
-    # Lagrange interpolation.
+    """Unknown or invalid interpolator."""
     LAGRANGE = 1
-    # Hermite interpolation.
+    """Lagrange interpolation."""
     HERMITE = 2
-    # Holds the value at the closest previous sample time to any requested time.
+    """Hermite interpolation."""
     HOLD_PREVIOUS = 3
-    # Holds the value at the closest next sample time to any requested time.
+    """Holds the value at the closest previous sample time to any requested time."""
     HOLD_NEXT = 4
-    # Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time.
+    """Holds the value at the closest next sample time to any requested time."""
     HOLD_NEAREST = 5
+    """Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time."""
 
 CRDN_FILE_INTERPOLATOR_TYPE.INVALID.__doc__ = "Unknown or invalid interpolator."
 CRDN_FILE_INTERPOLATOR_TYPE.LAGRANGE.__doc__ = "Lagrange interpolation."
@@ -560,12 +560,12 @@ agcls.AgTypeNameMap["CRDN_FILE_INTERPOLATOR_TYPE"] = CRDN_FILE_INTERPOLATOR_TYPE
 
 class CRDN_INTEGRAL_TYPE(IntEnum):
     """Integral types."""
-    # Simpson integral method
     FIXED_STEP_SIMPSON = 2
-    # Trapezoidal integral method
+    """Simpson integral method"""
     FIXED_STEP_TRAPZ = 1
-    # Adaptive Lobatto integral method
+    """Trapezoidal integral method"""
     ADAPTIVE_STEP = 3
+    """Adaptive Lobatto integral method"""
 
 CRDN_INTEGRAL_TYPE.FIXED_STEP_SIMPSON.__doc__ = "Simpson integral method"
 CRDN_INTEGRAL_TYPE.FIXED_STEP_TRAPZ.__doc__ = "Trapezoidal integral method"
@@ -575,14 +575,14 @@ agcls.AgTypeNameMap["CRDN_INTEGRAL_TYPE"] = CRDN_INTEGRAL_TYPE
 
 class CRDN_INTEGRATION_WINDOW_TYPE(IntEnum):
     """Defines the interval of times during which an integral is evaluated."""
-    # Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant.
     TOTAL = 0
-    # Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time.
+    """Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant."""
     CUMULATIVE_TO_CURRENT = 1
-    # Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time.
+    """Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."""
     CUMULATIVE_FROM_CURRENT = 2
-    # Defines the integral's window as the interval of times centered around the current time with the specified front and back durations.
+    """Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."""
     SLIDING_WINDOW = 3
+    """Defines the integral's window as the interval of times centered around the current time with the specified front and back durations."""
 
 CRDN_INTEGRATION_WINDOW_TYPE.TOTAL.__doc__ = "Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant."
 CRDN_INTEGRATION_WINDOW_TYPE.CUMULATIVE_TO_CURRENT.__doc__ = "Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
@@ -593,12 +593,12 @@ agcls.AgTypeNameMap["CRDN_INTEGRATION_WINDOW_TYPE"] = CRDN_INTEGRATION_WINDOW_TY
 
 class CRDN_INTERPOLATOR_TYPE(IntEnum):
     """Interpolator types."""
-    # Unknown or invalid interpolator.
     INVALID = -1
-    # Lagrange interpolation.
+    """Unknown or invalid interpolator."""
     LAGRANGE = 1
-    # Hermite interpolation.
+    """Lagrange interpolation."""
     HERMITE = 2
+    """Hermite interpolation."""
 
 CRDN_INTERPOLATOR_TYPE.INVALID.__doc__ = "Unknown or invalid interpolator."
 CRDN_INTERPOLATOR_TYPE.LAGRANGE.__doc__ = "Lagrange interpolation."
@@ -608,10 +608,10 @@ agcls.AgTypeNameMap["CRDN_INTERPOLATOR_TYPE"] = CRDN_INTERPOLATOR_TYPE
 
 class CRDN_INTERVAL_DURATION_KIND(IntEnum):
     """Duration for filtering intervals or gaps from interval lists or time arrays"""
-    # Filter by at least a specified number of seconds
     AT_LEAST = 0
-    # Filter by at most a specified number of seconds
+    """Filter by at least a specified number of seconds"""
     AT_MOST = 1
+    """Filter by at most a specified number of seconds"""
 
 CRDN_INTERVAL_DURATION_KIND.AT_LEAST.__doc__ = "Filter by at least a specified number of seconds"
 CRDN_INTERVAL_DURATION_KIND.AT_MOST.__doc__ = "Filter by at most a specified number of seconds"
@@ -620,20 +620,20 @@ agcls.AgTypeNameMap["CRDN_INTERVAL_DURATION_KIND"] = CRDN_INTERVAL_DURATION_KIND
 
 class CRDN_INTERVAL_SELECTION(IntEnum):
     """Select the method to choose an interval from an interval list"""
-    # Select an interval by counting a specified number from the first interval
     FROM_START = 1
-    # Select an interval by counting a specified number back from the last interval
+    """Select an interval by counting a specified number from the first interval"""
     FROM_END = 2
-    # Select the interval with the largest duration
+    """Select an interval by counting a specified number back from the last interval"""
     MAX_DURATION = 4
-    # Select the interval with the smallest duration
+    """Select the interval with the largest duration"""
     MIN_DURATION = 5
-    # Select the largest gap between intervals
+    """Select the interval with the smallest duration"""
     MAX_GAP = 9
-    # Select the largest gap between intervals
+    """Select the largest gap between intervals"""
     MIN_GAP = 10
-    # Select the interval that is the span of the interval list
+    """Select the largest gap between intervals"""
     SPAN = 100
+    """Select the interval that is the span of the interval list"""
 
 CRDN_INTERVAL_SELECTION.FROM_START.__doc__ = "Select an interval by counting a specified number from the first interval"
 CRDN_INTERVAL_SELECTION.FROM_END.__doc__ = "Select an interval by counting a specified number back from the last interval"
@@ -647,18 +647,18 @@ agcls.AgTypeNameMap["CRDN_INTERVAL_SELECTION"] = CRDN_INTERVAL_SELECTION
 
 class CRDN_PARAMETER_SET_TYPE(IntEnum):
     """Defines parameter set types."""
-    # Unknown or unsupported parameter set
     UNKNOWN = -1
-    # A parameter set type is defined by identifying one set of axes in reference to another.
+    """Unknown or unsupported parameter set"""
     ATTITUDE = 0
-    # A parameter set type is defined by identifying location in reference central body.
+    """A parameter set type is defined by identifying one set of axes in reference to another."""
     GROUND_TRAJECTORY = 1
-    # A parameter set type is defined by identifying location in reference coordinate system.
+    """A parameter set type is defined by identifying location in reference central body."""
     TRAJECTORY = 2
-    # A parameter set type is defined by identifying orbiting point and its central body.
+    """A parameter set type is defined by identifying location in reference coordinate system."""
     ORBIT = 3
-    # A parameter set type is defined by identifying vector in reference axes.
+    """A parameter set type is defined by identifying orbiting point and its central body."""
     VECTOR = 4
+    """A parameter set type is defined by identifying vector in reference axes."""
 
 CRDN_PARAMETER_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported parameter set"
 CRDN_PARAMETER_SET_TYPE.ATTITUDE.__doc__ = "A parameter set type is defined by identifying one set of axes in reference to another."
@@ -671,20 +671,20 @@ agcls.AgTypeNameMap["CRDN_PARAMETER_SET_TYPE"] = CRDN_PARAMETER_SET_TYPE
 
 class CRDN_PRUNE_FILTER(IntEnum):
     """Specify the filter for filtering interval lists or time arrays"""
-    # Unknown or unsupported prune filter
     UNKNOWN = 0
-    # Selects specified number of first intervals from original list
+    """Unknown or unsupported prune filter"""
     FIRST_INTERVALS = 1
-    # Selects specified number of last intervals from original list
+    """Selects specified number of first intervals from original list"""
     LAST_INTERVALS = 2
-    # Selects intervals which satisfy additional duration condition.
+    """Selects specified number of last intervals from original list"""
     INTERVALS = 3
-    # Selects gaps between intervals which satisfy additional duration condition.
+    """Selects intervals which satisfy additional duration condition."""
     GAPS = 4
-    # Satisfaction Intervals selects intervals which satisfy additional condition and duration.
+    """Selects gaps between intervals which satisfy additional duration condition."""
     SATISFACTION_INTERVALS = 5
-    # Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration.
+    """Satisfaction Intervals selects intervals which satisfy additional condition and duration."""
     RELATIVE_SATISFACTION_INTERVALS = 6
+    """Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."""
 
 CRDN_PRUNE_FILTER.UNKNOWN.__doc__ = "Unknown or unsupported prune filter"
 CRDN_PRUNE_FILTER.FIRST_INTERVALS.__doc__ = "Selects specified number of first intervals from original list"
@@ -698,16 +698,16 @@ agcls.AgTypeNameMap["CRDN_PRUNE_FILTER"] = CRDN_PRUNE_FILTER
 
 class CRDN_SAMPLED_REFERENCE_TIME(IntEnum):
     """Event array reference type."""
-    # Use a Time Instant as the reference time
     REFERENCE_EVENT = 0
-    # Use the start of each interval as the reference time
+    """Use a Time Instant as the reference time"""
     START_OF_EACH_INTERVAL = 1
-    # Use the stop of each interval as the reference time
+    """Use the start of each interval as the reference time"""
     STOP_OF_EACH_INTERVAL = 2
-    # Use the start of each interval list as the reference time
+    """Use the stop of each interval as the reference time"""
     START_OF_INTERVAL_LIST = 3
-    # Use the stop of each interval list as the reference time
+    """Use the start of each interval list as the reference time"""
     STOP_OF_INTERVAL_LIST = 4
+    """Use the stop of each interval list as the reference time"""
 
 CRDN_SAMPLED_REFERENCE_TIME.REFERENCE_EVENT.__doc__ = "Use a Time Instant as the reference time"
 CRDN_SAMPLED_REFERENCE_TIME.START_OF_EACH_INTERVAL.__doc__ = "Use the start of each interval as the reference time"
@@ -719,14 +719,14 @@ agcls.AgTypeNameMap["CRDN_SAMPLED_REFERENCE_TIME"] = CRDN_SAMPLED_REFERENCE_TIME
 
 class CRDN_SAMPLING_METHOD(IntEnum):
     """Defines the Sampling Method"""
-    # Unknown or unsupported sampling method
     UNKNOWN = 0
-    # Fixed step sampling method
+    """Unknown or unsupported sampling method"""
     FIXED_STEP = 1
-    # Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples.
+    """Fixed step sampling method"""
     RELATIVE_TOLERANCE = 2
-    # Curvature tolerance also uses changes in slope between samples
+    """Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."""
     CURVATURE_TOLERANCE = 3
+    """Curvature tolerance also uses changes in slope between samples"""
 
 CRDN_SAMPLING_METHOD.UNKNOWN.__doc__ = "Unknown or unsupported sampling method"
 CRDN_SAMPLING_METHOD.FIXED_STEP.__doc__ = "Fixed step sampling method"
@@ -737,12 +737,12 @@ agcls.AgTypeNameMap["CRDN_SAMPLING_METHOD"] = CRDN_SAMPLING_METHOD
 
 class CRDN_SATISFACTION_CROSSING(IntEnum):
     """Direction crossing flags."""
-    # Use either off-to-on or on-to-off condition to determine satisfaction
     NONE = 0
-    # Satisfaction occurs when crossing from off to on condition
+    """Use either off-to-on or on-to-off condition to determine satisfaction"""
     IN = 1
-    # Satisfaction occurs when crossing from on to off condition
+    """Satisfaction occurs when crossing from off to on condition"""
     OUT = 2
+    """Satisfaction occurs when crossing from on to off condition"""
 
 CRDN_SATISFACTION_CROSSING.NONE.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction"
 CRDN_SATISFACTION_CROSSING.IN.__doc__ = "Satisfaction occurs when crossing from off to on condition"
@@ -752,12 +752,12 @@ agcls.AgTypeNameMap["CRDN_SATISFACTION_CROSSING"] = CRDN_SATISFACTION_CROSSING
 
 class CRDN_SAVE_DATA_OPTION(IntEnum):
     """Method for saving computed data"""
-    # Use the application setting to determine whether computed data should be saved/loaded.
     APPLICATION_SETTINGS = -1
-    # Save/load computed data.
+    """Use the application setting to determine whether computed data should be saved/loaded."""
     YES = 100
-    # Don't save computed data, recompute data on load.
+    """Save/load computed data."""
     NO = 10
+    """Don't save computed data, recompute data on load."""
 
 CRDN_SAVE_DATA_OPTION.APPLICATION_SETTINGS.__doc__ = "Use the application setting to determine whether computed data should be saved/loaded."
 CRDN_SAVE_DATA_OPTION.YES.__doc__ = "Save/load computed data."
@@ -767,14 +767,14 @@ agcls.AgTypeNameMap["CRDN_SAVE_DATA_OPTION"] = CRDN_SAVE_DATA_OPTION
 
 class CRDN_SIGNAL_PATH_REFERENCE_SYSTEM(IntEnum):
     """Signal path reference system types."""
-    # Use Access default system
     USE_ACCESS_DEFAULT = -1
-    # Use central body inertial system
+    """Use Access default system"""
     CENTRAL_BODY_INERTIAL = 0
-    # Use solar system barycenter system
+    """Use central body inertial system"""
     SOLAR_SYSTEM_BARYCENTER = 1
-    # User will specify a system
+    """Use solar system barycenter system"""
     CUSTOM = 2
+    """User will specify a system"""
 
 CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.USE_ACCESS_DEFAULT.__doc__ = "Use Access default system"
 CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.CENTRAL_BODY_INERTIAL.__doc__ = "Use central body inertial system"
@@ -785,10 +785,10 @@ agcls.AgTypeNameMap["CRDN_SIGNAL_PATH_REFERENCE_SYSTEM"] = CRDN_SIGNAL_PATH_REFE
 
 class CRDN_SMART_EPOCH_STATE(IntEnum):
     """Smart epoch states."""
-    # Smart epoch is specified explicitly using a time.
     EXPLICIT = 0
-    # Smart epoch is specified implicitly.
+    """Smart epoch is specified explicitly using a time."""
     IMPLICIT = 3
+    """Smart epoch is specified implicitly."""
 
 CRDN_SMART_EPOCH_STATE.EXPLICIT.__doc__ = "Smart epoch is specified explicitly using a time."
 CRDN_SMART_EPOCH_STATE.IMPLICIT.__doc__ = "Smart epoch is specified implicitly."
@@ -797,16 +797,16 @@ agcls.AgTypeNameMap["CRDN_SMART_EPOCH_STATE"] = CRDN_SMART_EPOCH_STATE
 
 class CRDN_SMART_INTERVAL_STATE(IntEnum):
     """Smart interval states."""
-    # Smart interval is specified explicitly using start/stop times.
     EXPLICIT = 0
-    # Smart interval is specified implicitly using start/stop times.
+    """Smart interval is specified explicitly using start/stop times."""
     IMPLICIT = 1
-    # Smart interval is specified using smart epochs.
+    """Smart interval is specified implicitly using start/stop times."""
     START_STOP = 2
-    # Smart interval is specified using a start epoch and duration.
+    """Smart interval is specified using smart epochs."""
     START_DURATION = 4
-    # Smart interval is specified using a start time and explicit duration.
+    """Smart interval is specified using a start epoch and duration."""
     EXPLICIT_DURATION = 3
+    """Smart interval is specified using a start time and explicit duration."""
 
 CRDN_SMART_INTERVAL_STATE.EXPLICIT.__doc__ = "Smart interval is specified explicitly using start/stop times."
 CRDN_SMART_INTERVAL_STATE.IMPLICIT.__doc__ = "Smart interval is specified implicitly using start/stop times."
@@ -818,10 +818,10 @@ agcls.AgTypeNameMap["CRDN_SMART_INTERVAL_STATE"] = CRDN_SMART_INTERVAL_STATE
 
 class CRDN_SPEED_OPTIONS(IntEnum):
     """Defines various speed options."""
-    # Light transmission speed.
     LIGHT_TRANSMISSION_SPEED = 1
-    # Custom transmission speed.
+    """Light transmission speed."""
     CUSTOM_TRANSMISSION_SPEED = 2
+    """Custom transmission speed."""
 
 CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED.__doc__ = "Light transmission speed."
 CRDN_SPEED_OPTIONS.CUSTOM_TRANSMISSION_SPEED.__doc__ = "Custom transmission speed."
@@ -830,12 +830,12 @@ agcls.AgTypeNameMap["CRDN_SPEED_OPTIONS"] = CRDN_SPEED_OPTIONS
 
 class CRDN_START_STOP_OPTION(IntEnum):
     """Start/stop options."""
-    # Use the start time of the interval
     COUNT_START_ONLY = 1
-    # Use the stop time of the interval
+    """Use the start time of the interval"""
     COUNT_STOP_ONLY = 2
-    # Use the start time and stop time of the interval
+    """Use the stop time of the interval"""
     COUNT_START_STOP = 3
+    """Use the start time and stop time of the interval"""
 
 CRDN_START_STOP_OPTION.COUNT_START_ONLY.__doc__ = "Use the start time of the interval"
 CRDN_START_STOP_OPTION.COUNT_STOP_ONLY.__doc__ = "Use the stop time of the interval"
@@ -845,12 +845,12 @@ agcls.AgTypeNameMap["CRDN_START_STOP_OPTION"] = CRDN_START_STOP_OPTION
 
 class CRDN_THRESH_CONVERGE_SENSE(IntEnum):
     """Specifies the desired sense of the results from threshold crossing computations."""
-    # Just converge within tolerance.
     SIMPLE = 0
-    # Result above or at threshold.
+    """Just converge within tolerance."""
     ABOVE = 1
-    # Result below or at threshold.
+    """Result above or at threshold."""
     BELOW = 2
+    """Result below or at threshold."""
 
 CRDN_THRESH_CONVERGE_SENSE.SIMPLE.__doc__ = "Just converge within tolerance."
 CRDN_THRESH_CONVERGE_SENSE.ABOVE.__doc__ = "Result above or at threshold."
@@ -860,18 +860,18 @@ agcls.AgTypeNameMap["CRDN_THRESH_CONVERGE_SENSE"] = CRDN_THRESH_CONVERGE_SENSE
 
 class VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE(IntEnum):
     """Defines component directions for a vector."""
-    # X component.
     X = 0
-    # Y component.
+    """X component."""
     Y = 1
-    # Z component.
+    """Y component."""
     Z = 2
-    # -X component.
+    """Z component."""
     MINUS_X = 3
-    # -Y component.
+    """-X component."""
     MINUS_Y = 4
-    # -Z component.
+    """-Y component."""
     MINUS_Z = 5
+    """-Z component."""
 
 VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.X.__doc__ = "X component."
 VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.Y.__doc__ = "Y component."
@@ -884,12 +884,12 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE"] = VECTOR_GEOME
 
 class CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE(IntEnum):
     """Defines volume calc altitude reference types."""
-    # Volume calc altitude above reference ellipsoid.
     ELLIPSOID = 0
-    # Volume calc altitude reference above terrain.
+    """Volume calc altitude above reference ellipsoid."""
     TERRAIN = 1
-    # Volume calc altitude reference above mean sea level.
+    """Volume calc altitude reference above terrain."""
     MSL = 2
+    """Volume calc altitude reference above mean sea level."""
 
 CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE.ELLIPSOID.__doc__ = "Volume calc altitude above reference ellipsoid."
 CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE.TERRAIN.__doc__ = "Volume calc altitude reference above terrain."
@@ -899,16 +899,16 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE"] = CRDN_VOLUME_CA
 
 class CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE(IntEnum):
     """Defines volume calc angle off vector reference types."""
-    # Volume calc angle off plane signed.
     PLANE_SIGNED = 1
-    # Volume calc angle off plane unsigned.
+    """Volume calc angle off plane signed."""
     PLANE_UNSIGNED = 2
-    # Volume calc angle about vector signed.
+    """Volume calc angle off plane unsigned."""
     ABOUT_VECTOR_SIGNED = 4
-    # Volume calc angle about vector unsigned.
+    """Volume calc angle about vector signed."""
     ABOUT_VECTOR_UNSIGNED = 8
-    # Volume calc angle off vector.
+    """Volume calc angle about vector unsigned."""
     VECTOR = 16
+    """Volume calc angle off vector."""
 
 CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.PLANE_SIGNED.__doc__ = "Volume calc angle off plane signed."
 CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.PLANE_UNSIGNED.__doc__ = "Volume calc angle off plane unsigned."
@@ -920,16 +920,16 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE"] = CRDN_VOLUME_CALC
 
 class CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE(IntEnum):
     """Defines volume calc range distance types."""
-    # Volume calc range distance type from point.
     FROM_POINT = 0
-    # Volume calc range distance type from point.
+    """Volume calc range distance type from point."""
     ALONG_VECTOR_SIGNED = 1
-    # Volume calc range distance type along vector unsigned
+    """Volume calc range distance type from point."""
     ALONG_VECTOR_UNSIGNED = 2
-    # Volume calc range distance type plane signed
+    """Volume calc range distance type along vector unsigned"""
     PLANE_SIGNED = 4
-    # Volume calc range distance type plane signed
+    """Volume calc range distance type plane signed"""
     PLANE_UNSIGNED = 8
+    """Volume calc range distance type plane signed"""
 
 CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.FROM_POINT.__doc__ = "Volume calc range distance type from point."
 CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.ALONG_VECTOR_SIGNED.__doc__ = "Volume calc range distance type from point."
@@ -941,10 +941,10 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE"] = CRDN_VOLUME_CALC_R
 
 class CRDN_VOLUME_CALC_RANGE_SPEED_TYPE(IntEnum):
     """Defines volume calc range distance types."""
-    # Volume calc range distance type from point.
     LIGHT = 1
-    # Volume calc range distance type from point.
+    """Volume calc range distance type from point."""
     CUSTOM = 2
+    """Volume calc range distance type from point."""
 
 CRDN_VOLUME_CALC_RANGE_SPEED_TYPE.LIGHT.__doc__ = "Volume calc range distance type from point."
 CRDN_VOLUME_CALC_RANGE_SPEED_TYPE.CUSTOM.__doc__ = "Volume calc range distance type from point."
@@ -953,24 +953,24 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_SPEED_TYPE"] = CRDN_VOLUME_CALC_RANG
 
 class CRDN_VOLUME_CALC_TYPE(IntEnum):
     """Defines volume calc types."""
-    # Unknown or unsupported volume calc.
     UNKNOWN = -1
-    # volume calc type altitude to location.
+    """Unknown or unsupported volume calc."""
     ALTITUDE = 0
-    # volume calc type angle to location.
+    """volume calc type altitude to location."""
     ANGLE_OFF_VECTOR = 1
-    # volume calc type File.
+    """volume calc type angle to location."""
     FILE = 2
-    # volume calc type scalar at location.
+    """volume calc type File."""
     FROM_SCALAR = 3
-    # volume calc type Solar Intensity.
+    """volume calc type scalar at location."""
     SOLAR_INTENSITY = 4
-    # volume calc type Spatial Condition Satisfaction Metric.
+    """volume calc type Solar Intensity."""
     VOLUME_SATISFACTION_METRIC = 5
-    # volume calc type Distance to Location.
+    """volume calc type Spatial Condition Satisfaction Metric."""
     RANGE = 6
-    # volume calc type Propagation Delay to Location.
+    """volume calc type Distance to Location."""
     DELAY_RANGE = 7
+    """volume calc type Propagation Delay to Location."""
 
 CRDN_VOLUME_CALC_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume calc."
 CRDN_VOLUME_CALC_TYPE.ALTITUDE.__doc__ = "volume calc type altitude to location."
@@ -986,14 +986,14 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_TYPE"] = CRDN_VOLUME_CALC_TYPE
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE(IntEnum):
     """Defines volume calc spatial condition accumulation types."""
-    # Volume calc spatial condition satisfaction accumulation type up to current time.
     UP_TO_CURRENT_TIME = -1
-    # Volume calc spatial condition satisfaction accumulation type current time.
+    """Volume calc spatial condition satisfaction accumulation type up to current time."""
     CURRENT_TIME = 0
-    # Volume calc spatial condition satisfaction accumulation type from current time.
+    """Volume calc spatial condition satisfaction accumulation type current time."""
     FROM_CURRENT_TIME = 1
-    # Volume calc spatial condition satisfaction accumulation type total.
+    """Volume calc spatial condition satisfaction accumulation type from current time."""
     TOTAL = 10
+    """Volume calc spatial condition satisfaction accumulation type total."""
 
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE.UP_TO_CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type up to current time."
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE.CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type current time."
@@ -1004,12 +1004,12 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE"] = 
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE(IntEnum):
     """Defines volume calc spatial condition duration types."""
-    # Volume calc spatial condition satisfaction duration type minimum.
     MIN = -1
-    # Volume calc spatial condition satisfaction duration type sum.
+    """Volume calc spatial condition satisfaction duration type minimum."""
     SUM = 0
-    # Volume calc spatial condition satisfaction duration type maximum.
+    """Volume calc spatial condition satisfaction duration type sum."""
     MAX = 1
+    """Volume calc spatial condition satisfaction duration type maximum."""
 
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE.MIN.__doc__ = "Volume calc spatial condition satisfaction duration type minimum."
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE.SUM.__doc__ = "Volume calc spatial condition satisfaction duration type sum."
@@ -1019,16 +1019,16 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE"] = CRDN
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE(IntEnum):
     """Defines volume calc spatial condition filter types."""
-    # Volume calc spatial condition satisfaction filter type first intervals.
     FIRST_INTERVALS = -10
-    # Volume calc spatial condition satisfaction filter type last intervals.
+    """Volume calc spatial condition satisfaction filter type first intervals."""
     LAST_INTERVALS = -20
-    # Volume calc spatial condition satisfaction filter type none.
+    """Volume calc spatial condition satisfaction filter type last intervals."""
     NONE = 0
-    # Volume calc spatial condition satisfaction filter type gap duration.
+    """Volume calc spatial condition satisfaction filter type none."""
     GAP_DURATION = 1
-    # Volume calc spatial condition satisfaction filter type interval duration.
+    """Volume calc spatial condition satisfaction filter type gap duration."""
     INTERVAL_DURATION = 2
+    """Volume calc spatial condition satisfaction filter type interval duration."""
 
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.FIRST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type first intervals."
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.LAST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type last intervals."
@@ -1040,18 +1040,18 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE"] = CRDN_V
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE(IntEnum):
     """Defines volume calc spatial condition satisfaction metric types."""
-    # Volume calc spatial condition satisfaction metric type number of gaps.
     NUMBER_OF_GAPS = -2
-    # Volume calc spatial condition satisfaction metric type number of intervals.
+    """Volume calc spatial condition satisfaction metric type number of gaps."""
     NUMBER_OF_INTERVALS = -1
-    # Volume calc spatial condition satisfaction metric type time since last satisfaction.
+    """Volume calc spatial condition satisfaction metric type number of intervals."""
     TIME_SINCE_LAST_SATISFACTION = 1
-    # Volume calc spatial condition satisfaction metric type time until next satisfaction.
+    """Volume calc spatial condition satisfaction metric type time since last satisfaction."""
     TIME_UNTIL_NEXT_SATISFACTION = 2
-    # Volume calc spatial condition satisfaction metric type interbnal duration.
+    """Volume calc spatial condition satisfaction metric type time until next satisfaction."""
     INTERVAL_DURATION = 10
-    # Volume calc spatial condition satisfaction metric type gap duration.
+    """Volume calc spatial condition satisfaction metric type interbnal duration."""
     GAP_DURATION = 20
+    """Volume calc spatial condition satisfaction metric type gap duration."""
 
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.NUMBER_OF_GAPS.__doc__ = "Volume calc spatial condition satisfaction metric type number of gaps."
 CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.NUMBER_OF_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction metric type number of intervals."
@@ -1064,20 +1064,20 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE"] = CRDN_V
 
 class CRDN_VOLUME_GRID_TYPE(IntEnum):
     """Defines volume grid types."""
-    # Unknown or unsupported volume grid.
     UNKNOWN = -1
-    # volume grid type cartesian.
+    """Unknown or unsupported volume grid."""
     CARTESIAN = 0
-    # volume grid type Cylindrical.
+    """volume grid type cartesian."""
     CYLINDRICAL = 1
-    # volume grid type Spherical.
+    """volume grid type Cylindrical."""
     SPHERICAL = 2
-    # volume grid type Constrained.
+    """volume grid type Spherical."""
     CONSTRAINED = 3
-    # volume grid type LatLonAlt (Cartographic).
+    """volume grid type Constrained."""
     LAT_LON_ALTITUDE = 4
-    # volume grid type BearingAlt (Surface Bearing).
+    """volume grid type LatLonAlt (Cartographic)."""
     BEARING_ALTITUDE = 5
+    """volume grid type BearingAlt (Surface Bearing)."""
 
 CRDN_VOLUME_GRID_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume grid."
 CRDN_VOLUME_GRID_TYPE.CARTESIAN.__doc__ = "volume grid type cartesian."
@@ -1091,16 +1091,16 @@ agcls.AgTypeNameMap["CRDN_VOLUME_GRID_TYPE"] = CRDN_VOLUME_GRID_TYPE
 
 class CRDN_VOLUME_RESULT_VECTOR_REQUEST(IntEnum):
     """Defines volume result vector request types."""
-    # volume result vector request pos type
     POSITION = 1
-    # volume result vector request native pos type
+    """volume result vector request pos type"""
     NATIVE_POSITION = 2
-    # volume result vector request metric type
+    """volume result vector request native pos type"""
     METRIC = 16
-    # volume result vector request satisfaction type
+    """volume result vector request metric type"""
     SATISFACTION = 32
-    # volume result vector request gradient type
+    """volume result vector request satisfaction type"""
     GRADIENT = 256
+    """volume result vector request gradient type"""
 
 CRDN_VOLUME_RESULT_VECTOR_REQUEST.POSITION.__doc__ = "volume result vector request pos type"
 CRDN_VOLUME_RESULT_VECTOR_REQUEST.NATIVE_POSITION.__doc__ = "volume result vector request native pos type"
@@ -1112,24 +1112,24 @@ agcls.AgTypeNameMap["CRDN_VOLUME_RESULT_VECTOR_REQUEST"] = CRDN_VOLUME_RESULT_VE
 
 class CRDN_VOLUME_TYPE(IntEnum):
     """Defines volume grid types."""
-    # Unknown or unsupported volume.
     UNKNOWN = -1
-    # volume type combined.
+    """Unknown or unsupported volume."""
     COMBINED = 0
-    # volume type lighting.
+    """volume type combined."""
     LIGHTING = 1
-    # volume type over time.
+    """volume type lighting."""
     OVER_TIME = 2
-    # volume type from grid (Grid Bounding Volume).
+    """volume type over time."""
     FROM_GRID = 3
-    # volume type from calc (Spatial Calculation Bounds).
+    """volume type from grid (Grid Bounding Volume)."""
     FROM_CALC = 4
-    # volume type from time satisfaction (Valid Time At Location).
+    """volume type from calc (Spatial Calculation Bounds)."""
     FROM_TIME_SATISFACTION = 5
-    # volume type from condition (Condition At Location).
+    """volume type from time satisfaction (Valid Time At Location)."""
     FROM_CONDITION = 6
-    # volume type Inview (Access To Location).
+    """volume type from condition (Condition At Location)."""
     INVIEW = 7
+    """volume type Inview (Access To Location)."""
 
 CRDN_VOLUME_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume."
 CRDN_VOLUME_TYPE.COMBINED.__doc__ = "volume type combined."
@@ -1145,14 +1145,14 @@ agcls.AgTypeNameMap["CRDN_VOLUME_TYPE"] = CRDN_VOLUME_TYPE
 
 class CRDN_VOLUME_ABERRATION_TYPE(IntEnum):
     """Defines the model of aberration to use."""
-    # Aberration type unknown.
     UNKNOWN = -1
-    # Aberration type total.
+    """Aberration type unknown."""
     TOTAL = 0
-    # SAberration type annual.
+    """Aberration type total."""
     ANNUAL = 1
-    # Aberration type none.
+    """SAberration type annual."""
     NONE = 2
+    """Aberration type none."""
 
 CRDN_VOLUME_ABERRATION_TYPE.UNKNOWN.__doc__ = "Aberration type unknown."
 CRDN_VOLUME_ABERRATION_TYPE.TOTAL.__doc__ = "Aberration type total."
@@ -1163,12 +1163,12 @@ agcls.AgTypeNameMap["CRDN_VOLUME_ABERRATION_TYPE"] = CRDN_VOLUME_ABERRATION_TYPE
 
 class CRDN_VOLUME_CLOCK_HOST_TYPE(IntEnum):
     """Defines whether base or target of an Access instance holds the clock for Access times."""
-    # Unknown
     UNKNOWN = -1
-    # Base object holds time instance.
+    """Unknown"""
     BASE = 0
-    # Target object holds time instance.
+    """Base object holds time instance."""
     TARGET = 1
+    """Target object holds time instance."""
 
 CRDN_VOLUME_CLOCK_HOST_TYPE.UNKNOWN.__doc__ = "Unknown"
 CRDN_VOLUME_CLOCK_HOST_TYPE.BASE.__doc__ = "Base object holds time instance."
@@ -1178,14 +1178,14 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CLOCK_HOST_TYPE"] = CRDN_VOLUME_CLOCK_HOST_TYPE
 
 class CRDN_VOLUME_COMBINED_OPERATION_TYPE(IntEnum):
     """Defines spatial condition combined operation types."""
-    # Spatial condition combined AND operation.
     AND = 1
-    # Spatial condition combined OR operation.
+    """Spatial condition combined AND operation."""
     OR = 2
-    # Spatial condition combined XOR operation.
+    """Spatial condition combined OR operation."""
     XOR = 3
-    # Spatial condition combined MINUS operation.
+    """Spatial condition combined XOR operation."""
     MINUS = 4
+    """Spatial condition combined MINUS operation."""
 
 CRDN_VOLUME_COMBINED_OPERATION_TYPE.AND.__doc__ = "Spatial condition combined AND operation."
 CRDN_VOLUME_COMBINED_OPERATION_TYPE.OR.__doc__ = "Spatial condition combined OR operation."
@@ -1196,10 +1196,10 @@ agcls.AgTypeNameMap["CRDN_VOLUME_COMBINED_OPERATION_TYPE"] = CRDN_VOLUME_COMBINE
 
 class CRDN_VOLUME_FROM_GRID_EDGE_TYPE(IntEnum):
     """Defines spatial condition from grid edge type."""
-    # Spatial condition over time from grid edge type mask points.
     MASK_POINTS = 16
-    # Spatial condition over time from grid edge type mask voxels.
+    """Spatial condition over time from grid edge type mask points."""
     MASK_VOXELS = 32
+    """Spatial condition over time from grid edge type mask voxels."""
 
 CRDN_VOLUME_FROM_GRID_EDGE_TYPE.MASK_POINTS.__doc__ = "Spatial condition over time from grid edge type mask points."
 CRDN_VOLUME_FROM_GRID_EDGE_TYPE.MASK_VOXELS.__doc__ = "Spatial condition over time from grid edge type mask voxels."
@@ -1208,14 +1208,14 @@ agcls.AgTypeNameMap["CRDN_VOLUME_FROM_GRID_EDGE_TYPE"] = CRDN_VOLUME_FROM_GRID_E
 
 class CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE(IntFlag):
     """Defines spatial condition lighting conditions types."""
-    # Spatial condition lighting undefined.
     TYPE_UNDEFINED = 0
-    # Spatial condition lighting sun light.
+    """Spatial condition lighting undefined."""
     TYPE_SUNLIGHT = 1
-    # Spatial condition lighting penumbra.
+    """Spatial condition lighting sun light."""
     TYPE_PENUMBRA = 2
-    # Spatial condition lighting umbra.
+    """Spatial condition lighting penumbra."""
     TYPE_UMBRA = 4
+    """Spatial condition lighting umbra."""
 
 CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE.TYPE_UNDEFINED.__doc__ = "Spatial condition lighting undefined."
 CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE.TYPE_SUNLIGHT.__doc__ = "Spatial condition lighting sun light."
@@ -1226,14 +1226,14 @@ agcls.AgTypeNameMap["CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE"] = CRDN_VOLUME_LIGHTI
 
 class CRDN_VOLUME_OVER_TIME_DURATION_TYPE(IntEnum):
     """Defines spatial condition over time duration type."""
-    # Spatial condition over time duration type Static.
     STATIC = 0
-    # Spatial condition over time duration type CumulativeToCurrent.
+    """Spatial condition over time duration type Static."""
     CUMULATIVE_TO_CURRENT = 1
-    # Spatial condition over time duration type CumulativeFromCurrent.
+    """Spatial condition over time duration type CumulativeToCurrent."""
     CUMULATIVE_FROM_CURRENT = 2
-    # Spatial condition over time duration type SlidingWindow.
+    """Spatial condition over time duration type CumulativeFromCurrent."""
     SLIDING_WINDOW = 3
+    """Spatial condition over time duration type SlidingWindow."""
 
 CRDN_VOLUME_OVER_TIME_DURATION_TYPE.STATIC.__doc__ = "Spatial condition over time duration type Static."
 CRDN_VOLUME_OVER_TIME_DURATION_TYPE.CUMULATIVE_TO_CURRENT.__doc__ = "Spatial condition over time duration type CumulativeToCurrent."
@@ -1244,12 +1244,12 @@ agcls.AgTypeNameMap["CRDN_VOLUME_OVER_TIME_DURATION_TYPE"] = CRDN_VOLUME_OVER_TI
 
 class CRDN_VOLUME_TIME_SENSE_TYPE(IntEnum):
     """Defines whether object1 or object2 of an Access instance holds the clock for Access times."""
-    # Unklnown
     UNKNOWN = -1
-    # Position is computed in Time Sense
+    """Unklnown"""
     TRANSMIT = 0
-    # Position is computed in Receive Sense
+    """Position is computed in Time Sense"""
     RECEIVE = 1
+    """Position is computed in Receive Sense"""
 
 CRDN_VOLUME_TIME_SENSE_TYPE.UNKNOWN.__doc__ = "Unklnown"
 CRDN_VOLUME_TIME_SENSE_TYPE.TRANSMIT.__doc__ = "Position is computed in Time Sense"
@@ -1259,14 +1259,14 @@ agcls.AgTypeNameMap["CRDN_VOLUME_TIME_SENSE_TYPE"] = CRDN_VOLUME_TIME_SENSE_TYPE
 
 class CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE(IntEnum):
     """Defines volumetric grid values method types."""
-    # Unknown or unsupportedgrid values method.
     METHOD_UNKNOWN = -1
-    # Fixed number steps grid values method for volumetric grid.
+    """Unknown or unsupportedgrid values method."""
     METHOD_FIXED_NUM_STEPS = 0
-    # Fixed step size grid values method for volumetric grid.
+    """Fixed number steps grid values method for volumetric grid."""
     METHOD_FIXED_STEP_SIZE = 1
-    # Custom grid values method for volumetric grid.
+    """Fixed step size grid values method for volumetric grid."""
     METHOD_CUSTOM_VALUES = 2
+    """Custom grid values method for volumetric grid."""
 
 CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE.METHOD_UNKNOWN.__doc__ = "Unknown or unsupportedgrid values method."
 CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE.METHOD_FIXED_NUM_STEPS.__doc__ = "Fixed number steps grid values method for volumetric grid."
@@ -1277,46 +1277,46 @@ agcls.AgTypeNameMap["CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE"] = CRDN_VOLUMETRIC
 
 class CRDN_KIND(IntEnum):
     """Represents kinds of vectory geometry components."""
-    # Unsupported component kind.
     UNKNOWN = -1
-    # Invalid component.
+    """Unsupported component kind."""
     INVALID = 0
-    # Axes component.
+    """Invalid component."""
     AXES = 1
-    # Angle component.
+    """Axes component."""
     ANGLE = 2
-    # Vector component.
+    """Angle component."""
     VECTOR = 3
-    # Point component.
+    """Vector component."""
     POINT = 4
-    # Plane component.
+    """Point component."""
     PLANE = 5
-    # System component.
+    """Plane component."""
     SYSTEM = 6
-    # An event.
+    """System component."""
     EVENT = 7
-    # An event array.
+    """An event."""
     EVENT_ARRAY = 8
-    # An event interval.
+    """An event array."""
     EVENT_INTERVAL = 9
-    # An event interval collection.
+    """An event interval."""
     EVENT_INTERVAL_COLLECTION = 10
-    # A list of event intervals.
+    """An event interval collection."""
     EVENT_INTERVAL_LIST = 11
-    # A parameter set.
+    """A list of event intervals."""
     PARAMETER_SET = 12
-    # A scalar.
+    """A parameter set."""
     CALC_SCALAR = 13
-    # A condition.
+    """A scalar."""
     CONDITION = 14
-    # A condition set.
+    """A condition."""
     CONDITION_SET = 15
-    # A volume grid.
+    """A condition set."""
     VOLUME_GRID = 16
-    # A volume.
+    """A volume grid."""
     VOLUME = 17
-    # A volume calc.
+    """A volume."""
     VOLUME_CALC = 18
+    """A volume calc."""
 
 CRDN_KIND.UNKNOWN.__doc__ = "Unsupported component kind."
 CRDN_KIND.INVALID.__doc__ = "Invalid component."
@@ -1343,20 +1343,20 @@ agcls.AgTypeNameMap["CRDN_KIND"] = CRDN_KIND
 
 class VECTOR_GEOMETRY_TOOL_ANGLE_TYPE(IntEnum):
     """Represents angle types."""
-    # Unknown or unsupported type.
     UNKNOWN = -1
-    # An angle between two vectors.
+    """Unknown or unsupported type."""
     BETWEEN_VECTORS = 0
-    # An angle between two planes.
+    """An angle between two vectors."""
     BETWEEN_PLANES = 1
-    # An angle between two vectors about an axis.
+    """An angle between two planes."""
     DIHEDRAL_ANGLE = 2
-    # Angle of the shortest rotation between the two specified axes.
+    """An angle between two vectors about an axis."""
     ROTATION = 3
-    # An angle between a vector and a plane.
+    """Angle of the shortest rotation between the two specified axes."""
     TO_PLANE = 4
-    # Represents a VGT angle created from a template. This type of angle is not creatable.
+    """An angle between a vector and a plane."""
     TEMPLATE = 5
+    """Represents a VGT angle created from a template. This type of angle is not creatable."""
 
 VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
 VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.BETWEEN_VECTORS.__doc__ = "An angle between two vectors."
@@ -1370,38 +1370,38 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_ANGLE_TYPE"] = VECTOR_GEOMETRY_TOOL_AN
 
 class VECTOR_GEOMETRY_TOOL_AXES_TYPE(IntEnum):
     """Represents vector types."""
-    # Unknown or unsupported type.
     UNKNOWN = -1
-    # Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type.
+    """Unknown or unsupported type."""
     LAGRANGE_LIBRATION = 0
-    # Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset.
+    """Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."""
     ANGULAR_OFFSET = 1
-    # Axes based on another set fixed at a specified epoch.
+    """Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."""
     FIXED_AT_EPOCH = 2
-    # B-Plane axes using the selected target body and reference vector.
+    """Axes based on another set fixed at a specified epoch."""
     B_PLANE = 3
-    # Customized axes offset with respect to a set of reference Axes.
+    """B-Plane axes using the selected target body and reference vector."""
     CUSTOM_SCRIPT = 4
-    # Axes fixed in reference axes.
+    """Customized axes offset with respect to a set of reference Axes."""
     FIXED = 6
-    # Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference.
+    """Axes fixed in reference axes."""
     ALIGNED_AND_CONSTRAINED = 7
-    # Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element.
+    """Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."""
     MODEL_ATTACHMENT = 8
-    # Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset.
+    """Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."""
     SPINNING = 9
-    # Projection of the reference point onto the central body.
+    """Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."""
     ON_SURFACE = 10
-    # Axes based on trajectory of the point relative to the reference coordinate system.
+    """Projection of the reference point onto the central body."""
     TRAJECTORY = 11
-    # Represents a VGT axes created from a template. This type of axes is not creatable.
+    """Axes based on trajectory of the point relative to the reference coordinate system."""
     TEMPLATE = 12
-    # Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant.
+    """Represents a VGT axes created from a template. This type of axes is not creatable."""
     AT_TIME_INSTANT = 13
-    # An axes plugin point.
+    """Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."""
     PLUGIN = 14
-    # Axes specified by data from a file.
+    """An axes plugin point."""
     FILE = 5
+    """Axes specified by data from a file."""
 
 VECTOR_GEOMETRY_TOOL_AXES_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
 VECTOR_GEOMETRY_TOOL_AXES_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
@@ -1424,20 +1424,20 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_AXES_TYPE"] = VECTOR_GEOMETRY_TOOL_AXE
 
 class VECTOR_GEOMETRY_TOOL_PLANE_TYPE(IntEnum):
     """Represents plane types."""
-    # Unknown or unsupported type.
     UNKNOWN = -1
-    # A plane normal to a vector at a given point.
+    """Unknown or unsupported type."""
     NORMAL = 0
-    # A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system.
+    """A plane normal to a vector at a given point."""
     QUADRANT = 1
-    # A plane is defined on the basis of a trajectory of a selected point with respect to a reference point.
+    """A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."""
     TRAJECTORY = 2
-    # A plane is defined by the three points.
+    """A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."""
     TRIAD = 3
-    # Represents a VGT plane created from a template. This type of plane is not creatable.
+    """A plane is defined by the three points."""
     TEMPLATE = 4
-    # A plane passing through point and containing two given vectors.
+    """Represents a VGT plane created from a template. This type of plane is not creatable."""
     TWO_VECTOR = 5
+    """A plane passing through point and containing two given vectors."""
 
 VECTOR_GEOMETRY_TOOL_PLANE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
 VECTOR_GEOMETRY_TOOL_PLANE_TYPE.NORMAL.__doc__ = "A plane normal to a vector at a given point."
@@ -1451,42 +1451,42 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_PLANE_TYPE"] = VECTOR_GEOMETRY_TOOL_PL
 
 class VECTOR_GEOMETRY_TOOL_POINT_TYPE(IntEnum):
     """Represents point types."""
-    # Unknown or unsupported type.
     UNKNOWN = -1
-    # B-Plane point using the selected target body.
+    """Unknown or unsupported type."""
     B_PLANE = 0
-    # The grazing point is the point of closest approach to the surface of the selected central body along a defined direction.
+    """B-Plane point using the selected target body."""
     GRAZING = 1
-    # The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option.
+    """The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."""
     COVARIANCE_GRAZING = 2
-    # Point fixed in a reference coordinate system.
+    """The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."""
     FIXED_IN_SYSTEM = 4
-    # Point on central body surface that reflects from source to observer.
+    """Point fixed in a reference coordinate system."""
     GLINT = 5
-    # Point on a plane located along a given direction looking from a given origin.
+    """Point on central body surface that reflects from source to observer."""
     PLANE_INTERSECTION = 6
-    # Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point.
+    """Point on a plane located along a given direction looking from a given origin."""
     MODEL_ATTACHMENT = 7
-    # The projection of a point onto a reference plane.
+    """Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."""
     PLANE_PROJECTION = 8
-    # The detic subpoint of the reference point as projected onto the central body.
+    """The projection of a point onto a reference plane."""
     ON_SURFACE = 9
-    # Libration point using one primary and multiple secondary central bodies.
+    """The detic subpoint of the reference point as projected onto the central body."""
     LAGRANGE_LIBRATION = 10
-    # Represents a VGT point created from a template. This type of point is not creatable.
+    """Libration point using one primary and multiple secondary central bodies."""
     TEMPLATE = 11
-    # Point on central body surface along direction vector originating at source point.
+    """Represents a VGT point created from a template. This type of point is not creatable."""
     CENTRAL_BODY_INTERSECT = 12
-    # Point fixed relative to reference system based on another point evaluated at specified time instant.
+    """Point on central body surface along direction vector originating at source point."""
     AT_TIME_INSTANT = 13
-    # A point plugin point.
+    """Point fixed relative to reference system based on another point evaluated at specified time instant."""
     PLUGIN = 14
-    # Point specified by data from a file.
+    """A point plugin point."""
     FILE = 3
-    # Point fixed on a central body.
+    """Point specified by data from a file."""
     FIXED_ON_CENTRAL_BODY = 15
-    # A point placed at the center of mass of a specified satellite of the satellite collection.
+    """Point fixed on a central body."""
     SATELLITE_COLLECTION_ENTRY = 16
+    """A point placed at the center of mass of a specified satellite of the satellite collection."""
 
 VECTOR_GEOMETRY_TOOL_POINT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
 VECTOR_GEOMETRY_TOOL_POINT_TYPE.B_PLANE.__doc__ = "B-Plane point using the selected target body."
@@ -1511,14 +1511,14 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_POINT_TYPE"] = VECTOR_GEOMETRY_TOOL_PO
 
 class CRDN_SYSTEM_TYPE(IntEnum):
     """Represents system types."""
-    # Unknown or unsupported system type.
     UNKNOWN = -1
-    # A system assembled from an origin point and a set of reference axes.
+    """Unknown or unsupported system type."""
     ASSEMBLED = 0
-    # A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle.
+    """A system assembled from an origin point and a set of reference axes."""
     ON_SURFACE = 1
-    # Represents a VGT system created from a template. This type of system is not creatable.
+    """A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle."""
     TEMPLATE = 2
+    """Represents a VGT system created from a template. This type of system is not creatable."""
 
 CRDN_SYSTEM_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported system type."
 CRDN_SYSTEM_TYPE.ASSEMBLED.__doc__ = "A system assembled from an origin point and a set of reference axes."
@@ -1529,70 +1529,70 @@ agcls.AgTypeNameMap["CRDN_SYSTEM_TYPE"] = CRDN_SYSTEM_TYPE
 
 class VECTOR_GEOMETRY_TOOL_VECTOR_TYPE(IntEnum):
     """Represents vector types."""
-    # Unknown or unsupported vector type.
     UNKNOWN = -1
-    # Vector defined by its start and end points.
+    """Unknown or unsupported vector type."""
     DISPLACEMENT = 0
-    # Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point.
+    """Vector defined by its start and end points."""
     APOAPSIS = 1
-    # Based on another vector fixed at a specified epoch.
+    """Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."""
     FIXED_AT_EPOCH = 2
-    # Angular velocity vector of one set of axes computed with respect to the reference set.
+    """Based on another vector fixed at a specified epoch."""
     ANGULAR_VELOCITY = 3
-    # Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode.
+    """Angular velocity vector of one set of axes computed with respect to the reference set."""
     CONING = 4
-    # The vector cross product of two vectors.
+    """Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."""
     CROSS_PRODUCT = 5
-    # Customized vector components defined with respect to reference axes.
+    """The vector cross product of two vectors."""
     CUSTOM_SCRIPT = 6
-    # Derivative of a vector computed with respect to specified axes.
+    """Customized vector components defined with respect to reference axes."""
     DERIVATIVE = 7
-    # Angle rate vector perpendicular to the plane in which the angle is defined.
+    """Derivative of a vector computed with respect to specified axes."""
     ANGLE_RATE = 8
-    # Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point.
+    """Angle rate vector perpendicular to the plane in which the angle is defined."""
     ECCENTRICITY = 9
-    # Vector fixed in reference axes.
+    """Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."""
     FIXED_IN_AXES = 10
-    # Defined along the intersection of two planes.
+    """Vector fixed in reference axes."""
     TWO_PLANES_INTERSECTION = 12
-    # Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body.
+    """Defined along the intersection of two planes."""
     LINE_OF_NODES = 13
-    # Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element.
+    """Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."""
     MODEL_ATTACHMENT = 14
-    # Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
+    """Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."""
     ORBIT_ANGULAR_MOMENTUM = 15
-    # Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
+    """Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
     ORBIT_NORMAL = 16
-    # Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point.
+    """Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
     PERIAPSIS = 17
-    # A projection of a vector computed with respect to a reference plane.
+    """Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."""
     PROJECTION = 18
-    # Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane.
+    """A projection of a vector computed with respect to a reference plane."""
     REFLECTION = 19
-    # Scaled version of the input vector.
+    """Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."""
     SCALED = 20
-    # Defined with respect to a star object.
+    """Scaled version of the input vector."""
     DIRECTION_TO_STAR = 21
-    # Represents a VGT vector created from a template. This type of vector is not creatable.
+    """Defined with respect to a star object."""
     TEMPLATE = 22
-    # Vector fixed relative to reference axes based on another vector evaluated at specified time instant.
+    """Represents a VGT vector created from a template. This type of vector is not creatable."""
     AT_TIME_INSTANT = 23
-    # Linear combination of two input vectors.
+    """Vector fixed relative to reference axes based on another vector evaluated at specified time instant."""
     LINEAR_COMBINATION = 24
-    # A projection of a source vector in the direction of another vector.
+    """Linear combination of two input vectors."""
     PROJECT_ALONG = 25
-    # Linear combination of two input vectors using scalars.
+    """A projection of a source vector in the direction of another vector."""
     SCALAR_LINEAR_COMBINATION = 26
-    # Scaled version of the input vector using scalar.
+    """Linear combination of two input vectors using scalars."""
     SCALAR_SCALED = 27
-    # Velocity vector of a point in a coordinate system.
+    """Scaled version of the input vector using scalar."""
     VELOCITY = 28
-    # A vector plugin point.
+    """Velocity vector of a point in a coordinate system."""
     PLUGIN = 29
-    # Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis.
+    """A vector plugin point."""
     ROTATION_VECTOR = 30
-    # Displacement between origin and destination points using surface distance and altitude difference.
+    """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
     DISPLACEMENT_ON_SURFACE = 31
+    """Displacement between origin and destination points using surface distance and altitude difference."""
 
 VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
 VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
@@ -1631,14 +1631,14 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_TYPE"] = VECTOR_GEOMETRY_TOOL_V
 
 class CRDN_MEAN_ELEMENT_THEORY(IntEnum):
     """Mean element theory types for approximating motion."""
-    # Osculating elements (six standard Keplerian orbital elements).
     OSCULATING = 1
-    # The Kozai-Iszak (KI) mean elements are based upon the paper \"The Motion of a Close earth satellite,\" Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377.
+    """Osculating elements (six standard Keplerian orbital elements)."""
     KOZAI = 2
-    # Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2.
+    """The Kozai-Iszak (KI) mean elements are based upon the paper \"The Motion of a Close earth satellite,\" Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."""
     BROUWER_LYDDANE_LONG = 3
-    # Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term.
+    """Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."""
     BROUWER_LYDDANE_SHORT = 4
+    """Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."""
 
 CRDN_MEAN_ELEMENT_THEORY.OSCULATING.__doc__ = "Osculating elements (six standard Keplerian orbital elements)."
 CRDN_MEAN_ELEMENT_THEORY.KOZAI.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper ``The Motion of a Close earth satellite,`` Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
@@ -1649,10 +1649,10 @@ agcls.AgTypeNameMap["CRDN_MEAN_ELEMENT_THEORY"] = CRDN_MEAN_ELEMENT_THEORY
 
 class CRDN_DIRECTION_TYPE(IntEnum):
     """Direction options."""
-    # Incoming direction.
     INCOMING_ASYMPTOTE = 1
-    # Outgoing direction.
+    """Incoming direction."""
     OUTGOING_ASYMPTOTE = 2
+    """Outgoing direction."""
 
 CRDN_DIRECTION_TYPE.INCOMING_ASYMPTOTE.__doc__ = "Incoming direction."
 CRDN_DIRECTION_TYPE.OUTGOING_ASYMPTOTE.__doc__ = "Outgoing direction."
@@ -1661,16 +1661,16 @@ agcls.AgTypeNameMap["CRDN_DIRECTION_TYPE"] = CRDN_DIRECTION_TYPE
 
 class CRDN_LAGRANGE_LIBRATION_POINT_TYPE(IntEnum):
     """Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other."""
-    # A point between the Sun and Earth.
     L1 = 1
-    # Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth.
+    """A point between the Sun and Earth."""
     L2 = 2
-    # L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times.
+    """Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."""
     L3 = 3
-    # The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points.
+    """L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times."""
     L4 = 4
-    # The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points.
+    """The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points."""
     L5 = 5
+    """The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points."""
 
 CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L1.__doc__ = "A point between the Sun and Earth."
 CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L2.__doc__ = "Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."
@@ -1682,18 +1682,18 @@ agcls.AgTypeNameMap["CRDN_LAGRANGE_LIBRATION_POINT_TYPE"] = CRDN_LAGRANGE_LIBRAT
 
 class CRDN_QUADRANT_TYPE(IntEnum):
     """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY),"""
-    # XY quadrant.
     XY = 1
-    # YX quadrant.
+    """XY quadrant."""
     YX = 2
-    # XZ quadrant.
+    """YX quadrant."""
     XZ = 3
-    # ZX quadrant.
+    """XZ quadrant."""
     ZX = 4
-    # YZ quadrant.
+    """ZX quadrant."""
     YZ = 5
-    # ZY quadrant.
+    """YZ quadrant."""
     ZY = 6
+    """ZY quadrant."""
 
 CRDN_QUADRANT_TYPE.XY.__doc__ = "XY quadrant."
 CRDN_QUADRANT_TYPE.YX.__doc__ = "YX quadrant."
@@ -1706,22 +1706,22 @@ agcls.AgTypeNameMap["CRDN_QUADRANT_TYPE"] = CRDN_QUADRANT_TYPE
 
 class CRDN_TRAJECTORY_AXES_TYPE(IntEnum):
     """Trajectory axes coordinate types."""
-    # Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack).
     ICR = 0
-    # Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal).
+    """Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."""
     VNC = 1
-    # Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack).
+    """Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal)."""
     RIC = 2
-    # Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal).
+    """Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack)."""
     LVLH = 3
-    # Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity).
+    """Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal)."""
     VVLH = 4
-    # Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X.
+    """Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity)."""
     BBR = 5
-    # Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X.
+    """Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X."""
     EQUINOCTIAL = 6
-    # Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal).
+    """Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X."""
     NTC = 7
+    """Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal)."""
 
 CRDN_TRAJECTORY_AXES_TYPE.ICR.__doc__ = "Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."
 CRDN_TRAJECTORY_AXES_TYPE.VNC.__doc__ = "Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal)."
@@ -1736,12 +1736,12 @@ agcls.AgTypeNameMap["CRDN_TRAJECTORY_AXES_TYPE"] = CRDN_TRAJECTORY_AXES_TYPE
 
 class CRDN_DISPLAY_AXIS_SELECTOR(IntEnum):
     """Rotation directions."""
-    # Rotate about Axis X.
     X = 0
-    # Rotate about Axis Y.
+    """Rotate about Axis X."""
     Y = 1
-    # Rotate about Axis Z.
+    """Rotate about Axis Y."""
     Z = 2
+    """Rotate about Axis Z."""
 
 CRDN_DISPLAY_AXIS_SELECTOR.X.__doc__ = "Rotate about Axis X."
 CRDN_DISPLAY_AXIS_SELECTOR.Y.__doc__ = "Rotate about Axis Y."
@@ -1751,12 +1751,12 @@ agcls.AgTypeNameMap["CRDN_DISPLAY_AXIS_SELECTOR"] = CRDN_DISPLAY_AXIS_SELECTOR
 
 class CRDN_SIGNED_ANGLE_TYPE(IntEnum):
     """Defines options for computing an angle."""
-    # Choose the option to use unsigned angle.
     NONE = 0
-    # Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal.
+    """Choose the option to use unsigned angle."""
     POSITIVE = 1
-    # Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal.
+    """Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal."""
     NEGATIVE = 2
+    """Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal."""
 
 CRDN_SIGNED_ANGLE_TYPE.NONE.__doc__ = "Choose the option to use unsigned angle."
 CRDN_SIGNED_ANGLE_TYPE.POSITIVE.__doc__ = "Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal."
@@ -1766,10 +1766,10 @@ agcls.AgTypeNameMap["CRDN_SIGNED_ANGLE_TYPE"] = CRDN_SIGNED_ANGLE_TYPE
 
 class VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE(IntEnum):
     """B-Plane point types."""
-    # Asymptote.
     ASYMPTOTE = 1
-    # Two body.
+    """Asymptote."""
     A_TWO_BODY = 2
+    """Two body."""
 
 VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE.ASYMPTOTE.__doc__ = "Asymptote."
 VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE.A_TWO_BODY.__doc__ = "Two body."
@@ -1778,12 +1778,12 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE"] = VECTOR_GEOMETRY
 
 class CRDN_REFERENCE_SHAPE_TYPE(IntEnum):
     """Surface shape types."""
-    # An ellipsoid reference shape as defined by the central body (by default, it is WSG84).
     ELLIPSOID = 1
-    # Terrain as the terrain reference.
+    """An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."""
     TERRAIN = 2
-    # Mean Sea Level as the terrain reference.
+    """Terrain as the terrain reference."""
     MSL = 3
+    """Mean Sea Level as the terrain reference."""
 
 CRDN_REFERENCE_SHAPE_TYPE.ELLIPSOID.__doc__ = "An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."
 CRDN_REFERENCE_SHAPE_TYPE.TERRAIN.__doc__ = "Terrain as the terrain reference."
@@ -1793,10 +1793,10 @@ agcls.AgTypeNameMap["CRDN_REFERENCE_SHAPE_TYPE"] = CRDN_REFERENCE_SHAPE_TYPE
 
 class CRDN_SURFACE_TYPE(IntEnum):
     """Surface types."""
-    # Detic surface model.
     DETIC = 1
-    # Centric surface model.
+    """Detic surface model."""
     CENTRIC = 2
+    """Centric surface model."""
 
 CRDN_SURFACE_TYPE.DETIC.__doc__ = "Detic surface model."
 CRDN_SURFACE_TYPE.CENTRIC.__doc__ = "Centric surface model."
@@ -1805,10 +1805,10 @@ agcls.AgTypeNameMap["CRDN_SURFACE_TYPE"] = CRDN_SURFACE_TYPE
 
 class CRDN_SWEEP_MODE(IntEnum):
     """The rotation sweeping modes."""
-    # Bidirectional sweeping mode.
     BIDIRECTIONAL = 1
-    # Unidirectional sweeping mode.
+    """Bidirectional sweeping mode."""
     UNIDIRECTIONAL = 2
+    """Unidirectional sweeping mode."""
 
 CRDN_SWEEP_MODE.BIDIRECTIONAL.__doc__ = "Bidirectional sweeping mode."
 CRDN_SWEEP_MODE.UNIDIRECTIONAL.__doc__ = "Unidirectional sweeping mode."
@@ -1817,10 +1817,10 @@ agcls.AgTypeNameMap["CRDN_SWEEP_MODE"] = CRDN_SWEEP_MODE
 
 class CRDN_SIGNAL_SENSE(IntEnum):
     """Signal sense transmission options."""
-    # Signal receive.
     RECEIVE = 1
-    # Signal transmit.
+    """Signal receive."""
     TRANSMIT = 2
+    """Signal transmit."""
 
 CRDN_SIGNAL_SENSE.RECEIVE.__doc__ = "Signal receive."
 CRDN_SIGNAL_SENSE.TRANSMIT.__doc__ = "Signal transmit."
@@ -1829,12 +1829,12 @@ agcls.AgTypeNameMap["CRDN_SIGNAL_SENSE"] = CRDN_SIGNAL_SENSE
 
 class CRDN_INTERSECTION_SURFACE(IntEnum):
     """Intersection surface flags."""
-    # Intersection with central body ellipsoid.
     AT_CENTRAL_BODY_ELLIPSOID = 0
-    # Intersection at altitude.
+    """Intersection with central body ellipsoid."""
     AT_ALTITUDE_ABOVE_ELLIPSOID = 1
-    # Use terrain as intersection surface.
+    """Intersection at altitude."""
     AT_TERRAIN = 2
+    """Use terrain as intersection surface."""
 
 CRDN_INTERSECTION_SURFACE.AT_CENTRAL_BODY_ELLIPSOID.__doc__ = "Intersection with central body ellipsoid."
 CRDN_INTERSECTION_SURFACE.AT_ALTITUDE_ABOVE_ELLIPSOID.__doc__ = "Intersection at altitude."
@@ -1844,12 +1844,12 @@ agcls.AgTypeNameMap["CRDN_INTERSECTION_SURFACE"] = CRDN_INTERSECTION_SURFACE
 
 class VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
-    # Do not inherit dimension.
     NONE = 0
-    # Inherit dimension from scalar.
+    """Do not inherit dimension."""
     FROM_SCALAR = 1
-    # Inherit dimension from vector.
+    """Inherit dimension from scalar."""
     FROM_VECTOR = 2
+    """Inherit dimension from vector."""
 
 VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE.NONE.__doc__ = "Do not inherit dimension."
 VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE.FROM_SCALAR.__doc__ = "Inherit dimension from scalar."

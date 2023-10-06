@@ -45,16 +45,16 @@ def _raise_uninitialized_error(*args):
 
 class LOG_MSG_TYPE(IntEnum):
     """Log message types."""
-    # Debugging message.
     DEBUG = 0
-    # Informational message.
+    """Debugging message."""
     INFO = 1
-    # Informational message.
+    """Informational message."""
     FORCE_INFO = 2
-    # Warning message.
+    """Informational message."""
     WARNING = 3
-    # Alarm message.
+    """Warning message."""
     ALARM = 4
+    """Alarm message."""
 
 LOG_MSG_TYPE.DEBUG.__doc__ = "Debugging message."
 LOG_MSG_TYPE.INFO.__doc__ = "Informational message."
@@ -66,14 +66,14 @@ agcls.AgTypeNameMap["LOG_MSG_TYPE"] = LOG_MSG_TYPE
 
 class LOG_MSG_DISP_ID(IntEnum):
     """Log message destination options."""
-    # STK displays the message in all the log destination.
     ALL = -1
-    # STK displays the message in the default log destination.
+    """STK displays the message in all the log destination."""
     DEFAULT = 0
-    # STK displays the message in the message window.
+    """STK displays the message in the default log destination."""
     MSG_WIN = 1
-    # STK displays the message in the status bar.
+    """STK displays the message in the message window."""
     STATUS_BAR = 2
+    """STK displays the message in the status bar."""
 
 LOG_MSG_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
 LOG_MSG_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
@@ -84,42 +84,42 @@ agcls.AgTypeNameMap["LOG_MSG_DISP_ID"] = LOG_MSG_DISP_ID
 
 class LINE_STYLE(IntEnum):
     """Line Style"""
-    # Specifies a solid line.
     SOLID = 0
-    # Specifies a dashed line.
+    """Specifies a solid line."""
     DASHED = 1
-    # Specifies a dotted line.
+    """Specifies a dashed line."""
     DOTTED = 2
-    # Dot-dashed line.
+    """Specifies a dotted line."""
     DOT_DASHED = 3
-    # Specifies a long dashed line.
+    """Dot-dashed line."""
     LONG_DASHED = 4
-    # Specifies an alternating dash-dot-dot line.
+    """Specifies a long dashed line."""
     DASH_DOT_DOTTED = 5
-    # Specifies a user configurable medium dashed line.
+    """Specifies an alternating dash-dot-dot line."""
     M_DASH = 6
-    # Specifies a user configurable long dashed line.
+    """Specifies a user configurable medium dashed line."""
     L_DASH = 7
-    # Specifies a user configurable small dash-dotted line.
+    """Specifies a user configurable long dashed line."""
     S_DASH_DOT = 8
-    # Specifies a user configurable medium dash-dotted line.
+    """Specifies a user configurable small dash-dotted line."""
     M_DASH_DOT = 9
-    # Specifies a user configurable long dash-dotted line.
+    """Specifies a user configurable medium dash-dotted line."""
     DASH_DOT = 10
-    # Specifies a user configurable medium followed by small dashed line.
+    """Specifies a user configurable long dash-dotted line."""
     MS_DASH = 11
-    # Specifies a user configurable long followed by small dashed line.
+    """Specifies a user configurable medium followed by small dashed line."""
     LS_DASH = 12
-    # Specifies a user configurable long followed by medium dashed line.
+    """Specifies a user configurable long followed by small dashed line."""
     LM_DASH = 13
-    # Specifies a user configurable medium followed by small dashed line.
+    """Specifies a user configurable long followed by medium dashed line."""
     LMS_DASH = 14
-    # Specifies a dotted line.
+    """Specifies a user configurable medium followed by small dashed line."""
     DOT = 15
-    # Specifies a long dashed line.
+    """Specifies a dotted line."""
     LONG_DASH = 16
-    # Specifies an alternating dash-dot line.
+    """Specifies a long dashed line."""
     S_DASH = 17
+    """Specifies an alternating dash-dot line."""
 
 LINE_STYLE.SOLID.__doc__ = "Specifies a solid line."
 LINE_STYLE.DASHED.__doc__ = "Specifies a dashed line."
@@ -144,14 +144,14 @@ agcls.AgTypeNameMap["LINE_STYLE"] = LINE_STYLE
 
 class EXEC_MULTI_CMD_RESULT_ACTION(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
-    # Continue executing the remaining commands in the command batch.
     CONTINUE_ON_ERROR = 0
-    # Terminate the execution of the command batch but do not throw an exception.
+    """Continue executing the remaining commands in the command batch."""
     STOP_ON_ERROR = 1
-    # Terminate the execution of the command batch and throw an exception.
+    """Terminate the execution of the command batch but do not throw an exception."""
     EXCEPTION_ON_ERROR = 2
-    # Ignore results returned by individual commands. The option must be used in combination with other flags.
+    """Terminate the execution of the command batch and throw an exception."""
     IGNORE_EXEC_CMD_RESULT = 0x8000
+    """Ignore results returned by individual commands. The option must be used in combination with other flags."""
 
 EXEC_MULTI_CMD_RESULT_ACTION.CONTINUE_ON_ERROR.__doc__ = "Continue executing the remaining commands in the command batch."
 EXEC_MULTI_CMD_RESULT_ACTION.STOP_ON_ERROR.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
@@ -162,12 +162,12 @@ agcls.AgTypeNameMap["EXEC_MULTI_CMD_RESULT_ACTION"] = EXEC_MULTI_CMD_RESULT_ACTI
 
 class SHIFT_VALUES(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
-    # The Shift key was pressed.
     PRESSED = 1
-    # The Ctrl key was pressed.
+    """The Shift key was pressed."""
     CTRL_PRESSED = 2
-    # The ALT key was pressed.
+    """The Ctrl key was pressed."""
     ALTITUDE_PRESSED = 4
+    """The ALT key was pressed."""
 
 SHIFT_VALUES.PRESSED.__doc__ = "The Shift key was pressed."
 SHIFT_VALUES.CTRL_PRESSED.__doc__ = "The Ctrl key was pressed."
@@ -177,12 +177,12 @@ agcls.AgTypeNameMap["SHIFT_VALUES"] = SHIFT_VALUES
 
 class BUTTON_VALUES(IntEnum):
     """Numeric value of the mouse button pressed."""
-    # The left button is pressed.
     LEFT_PRESSED = 1
-    # The right button is pressed.
+    """The left button is pressed."""
     RIGHT_PRESSED = 2
-    # The middle button is pressed.
+    """The right button is pressed."""
     MIDDLE_PRESSED = 4
+    """The middle button is pressed."""
 
 BUTTON_VALUES.LEFT_PRESSED.__doc__ = "The left button is pressed."
 BUTTON_VALUES.RIGHT_PRESSED.__doc__ = "The right button is pressed."
@@ -192,12 +192,12 @@ agcls.AgTypeNameMap["BUTTON_VALUES"] = BUTTON_VALUES
 
 class OLE_DROP_MODE(IntEnum):
     """Specifies how to handle OLE drop operations."""
-    # None. The control does not accept OLE drops and displays the No Drop cursor.
     NONE = 0
-    # Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code.
+    """None. The control does not accept OLE drops and displays the No Drop cursor."""
     MANUAL = 1
-    # Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic.
+    """Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."""
     AUTOMATIC = 2
+    """Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."""
 
 OLE_DROP_MODE.NONE.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
 OLE_DROP_MODE.MANUAL.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
@@ -207,10 +207,10 @@ agcls.AgTypeNameMap["OLE_DROP_MODE"] = OLE_DROP_MODE
 
 class MOUSE_MODE(IntEnum):
     """Mouse modes."""
-    # Automatic. The control handles the mouse events and then fires the events to the container for additional processing.
     AUTOMATIC = 0
-    # None. No default action happens on mouse events. Events are fired to the container.
+    """Automatic. The control handles the mouse events and then fires the events to the container for additional processing."""
     MANUAL = 1
+    """None. No default action happens on mouse events. Events are fired to the container."""
 
 MOUSE_MODE.AUTOMATIC.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
 MOUSE_MODE.MANUAL.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
@@ -219,12 +219,12 @@ agcls.AgTypeNameMap["MOUSE_MODE"] = MOUSE_MODE
 
 class LOGGING_MODE(IntEnum):
     """Specifies the state of the log file."""
-    # The log file is not created.
     INACTIVE = 0
-    # The log file is created but deleted upon application termination.
+    """The log file is not created."""
     ACTIVE = 1
-    # The log file is created and kept even after application is terminated.
+    """The log file is created but deleted upon application termination."""
     ACTIVE_KEEP_FILE = 2
+    """The log file is created and kept even after application is terminated."""
 
 LOGGING_MODE.INACTIVE.__doc__ = "The log file is not created."
 LOGGING_MODE.ACTIVE.__doc__ = "The log file is created but deleted upon application termination."
@@ -234,14 +234,14 @@ agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
 
 class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
-    # The Solar Panel Tool mode.
     SOLAR_PANEL_TOOL = 1
-    # The Area Tool mode.
+    """The Solar Panel Tool mode."""
     AREA_TOOL = 2
-    # The Obscuration Tool mode.
+    """The Area Tool mode."""
     OBSCURATION_TOOL = 3
-    # The AzElMask Tool mode.
+    """The Obscuration Tool mode."""
     AZ_EL_MASK_TOOL = 4
+    """The AzElMask Tool mode."""
 
 GRAPHICS_2D_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
 GRAPHICS_2D_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
@@ -252,10 +252,10 @@ agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"] = GRAPHICS_2D_ANALYSIS_MODE
 
 class GRAPHICS_2D_DRAW_COORDS(IntEnum):
     """Specifies the draw coordinates for Map Control."""
-    # The draw coordinates values in pixels.
     PIXEL_DRAW_COORDS = 1
-    # The draw coordinates values in screen coordinates.
+    """The draw coordinates values in pixels."""
     SCREEN_DRAW_COORDS = 2
+    """The draw coordinates values in screen coordinates."""
 
 GRAPHICS_2D_DRAW_COORDS.PIXEL_DRAW_COORDS.__doc__ = "The draw coordinates values in pixels."
 GRAPHICS_2D_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates values in screen coordinates."
@@ -264,12 +264,12 @@ agcls.AgTypeNameMap["GRAPHICS_2D_DRAW_COORDS"] = GRAPHICS_2D_DRAW_COORDS
 
 class SHOW_PROGRESS_IMAGE(IntEnum):
     """Specifies to show progress image."""
-    # Do not show any progress Image.
     NONE = 1
-    # Show the default progress image.
+    """Do not show any progress Image."""
     DEFAULT = 2
-    # Show the user specified progress image.
+    """Show the default progress image."""
     USER = 3
+    """Show the user specified progress image."""
 
 SHOW_PROGRESS_IMAGE.NONE.__doc__ = "Do not show any progress Image."
 SHOW_PROGRESS_IMAGE.DEFAULT.__doc__ = "Show the default progress image."
@@ -279,10 +279,10 @@ agcls.AgTypeNameMap["SHOW_PROGRESS_IMAGE"] = SHOW_PROGRESS_IMAGE
 
 class FEATURE_CODES(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
-    # The enumeration is used to check whether the engine runtime is available.
     ENGINE_RUNTIME = 1
-    # The enumeration is used to check whether the globe is available.
+    """The enumeration is used to check whether the engine runtime is available."""
     GLOBE_CONTROL = 2
+    """The enumeration is used to check whether the globe is available."""
 
 FEATURE_CODES.ENGINE_RUNTIME.__doc__ = "The enumeration is used to check whether the engine runtime is available."
 FEATURE_CODES.GLOBE_CONTROL.__doc__ = "The enumeration is used to check whether the globe is available."
@@ -291,12 +291,12 @@ agcls.AgTypeNameMap["FEATURE_CODES"] = FEATURE_CODES
 
 class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
     """Specifies to align progress image X origin."""
-    # Align progress Image from X left.
     LEFT = 1
-    # Align progress Image from X right.
+    """Align progress Image from X left."""
     RIGHT = 2
-    # Align progress Image from X center.
+    """Align progress Image from X right."""
     CENTER = 3
+    """Align progress Image from X center."""
 
 PROGRESS_IMAGE_X_ORIGIN.LEFT.__doc__ = "Align progress Image from X left."
 PROGRESS_IMAGE_X_ORIGIN.RIGHT.__doc__ = "Align progress Image from X right."
@@ -306,12 +306,12 @@ agcls.AgTypeNameMap["PROGRESS_IMAGE_X_ORIGIN"] = PROGRESS_IMAGE_X_ORIGIN
 
 class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
     """Specifies to align progress image Y origin."""
-    # Align progress Image from Y top.
     TOP = 1
-    # Align progress Image from Y bottom.
+    """Align progress Image from Y top."""
     BOTTOM = 2
-    # Align progress Image from Y center.
+    """Align progress Image from Y bottom."""
     CENTER = 3
+    """Align progress Image from Y center."""
 
 PROGRESS_IMAGE_Y_ORIGIN.TOP.__doc__ = "Align progress Image from Y top."
 PROGRESS_IMAGE_Y_ORIGIN.BOTTOM.__doc__ = "Align progress Image from Y bottom."
