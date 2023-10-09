@@ -347,17 +347,7 @@ class EarlyBoundTests(TestBase):
 
         ac1: "IAircraft" = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], IAircraft)
         ac1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: "IVehiclePropagatorGreatArc" = clr.CastAs(ac1.route, IVehiclePropagatorGreatArc)
-        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
-        wpe: "IVehicleWaypointsElement" = ga.waypoints.add()
-        wpe.latitude = 0
-        wpe.longitude = 0
-        wpe.time = "1 Jul 1999 00:00:00.000"
-        wpe = ga.waypoints.add()
-        wpe.latitude = -20
-        wpe.longitude = -20
-        wpe.time = "1 Jul 1999 00:55:00.000"
-        ga.propagate()
+        TestBase.PropagateGreatArc(clr.CastAs(ac1.route, IVehiclePropagatorGreatArc))
 
         self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_ACCESS)
 
