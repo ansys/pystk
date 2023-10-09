@@ -135,14 +135,14 @@ def _raise_uninitialized_error(*args):
 
 class CYLINDER_FILL(IntFlag):
     """Cylinder faces that can be filled."""
-    # Fill the cylinder's wall.
     WALL = 1
-    # Fill the cylinder's bottom cap.
+    """Fill the cylinder's wall."""
     BOTTOM_CAP = 2
-    # Fill the cylinder's top cap.
+    """Fill the cylinder's bottom cap."""
     TOP_CAP = 4
-    # Completely fill the cylinder, including its wall, bottom, and top cap.
+    """Fill the cylinder's top cap."""
     ALL = 7
+    """Completely fill the cylinder, including its wall, bottom, and top cap."""
 
 CYLINDER_FILL.WALL.__doc__ = "Fill the cylinder's wall."
 CYLINDER_FILL.BOTTOM_CAP.__doc__ = "Fill the cylinder's bottom cap."
@@ -153,12 +153,12 @@ agcls.AgTypeNameMap["CYLINDER_FILL"] = CYLINDER_FILL
 
 class WINDING_ORDER(IntEnum):
     """Specifies the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
-    # Positions or triangles are defined in counter-clockwise order.
     COUNTER_CLOCKWISE = 0
-    # Positions or triangles are defined in clockwise order.
+    """Positions or triangles are defined in counter-clockwise order."""
     CLOCKWISE = 1
-    # The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order.
+    """Positions or triangles are defined in clockwise order."""
     COMPUTE = 2
+    """The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order."""
 
 WINDING_ORDER.COUNTER_CLOCKWISE.__doc__ = "Positions or triangles are defined in counter-clockwise order."
 WINDING_ORDER.CLOCKWISE.__doc__ = "Positions or triangles are defined in clockwise order."
@@ -168,14 +168,14 @@ agcls.AgTypeNameMap["WINDING_ORDER"] = WINDING_ORDER
 
 class CAMERA_SNAPSHOT_FILE_FORMAT(IntEnum):
     """When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format."""
-    # BMP file format
     BMP = 0
-    # TIFF file format
+    """BMP file format"""
     TIFF = 2
-    # JPEG file format
+    """TIFF file format"""
     JPEG = 3
-    # PNG file format
+    """JPEG file format"""
     PNG = 4
+    """PNG file format"""
 
 CAMERA_SNAPSHOT_FILE_FORMAT.BMP.__doc__ = "BMP file format"
 CAMERA_SNAPSHOT_FILE_FORMAT.TIFF.__doc__ = "TIFF file format"
@@ -186,10 +186,10 @@ agcls.AgTypeNameMap["CAMERA_SNAPSHOT_FILE_FORMAT"] = CAMERA_SNAPSHOT_FILE_FORMAT
 
 class CAMERA_VIDEO_FORMAT(IntEnum):
     """When using camera video recording to record a video, this specifies the file format."""
-    # H.264 file format
     H264 = 0
-    # Windows Media Video (WMV) file format
+    """H.264 file format"""
     WMV = 1
+    """Windows Media Video (WMV) file format"""
 
 CAMERA_VIDEO_FORMAT.H264.__doc__ = "H.264 file format"
 CAMERA_VIDEO_FORMAT.WMV.__doc__ = "Windows Media Video (WMV) file format"
@@ -198,20 +198,20 @@ agcls.AgTypeNameMap["CAMERA_VIDEO_FORMAT"] = CAMERA_VIDEO_FORMAT
 
 class CONSTRAINED_UP_AXIS(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
-    # The X axis is constrained.
     X = 0
-    # The Y axis is constrained.
+    """The X axis is constrained."""
     Y = 1
-    # The Z axis is constrained.
+    """The Y axis is constrained."""
     Z = 2
-    # The negative X axis is constrained.
+    """The Z axis is constrained."""
     NEGATIVE_X = 3
-    # The negative Y axis is constrained.
+    """The negative X axis is constrained."""
     NEGATIVE_Y = 4
-    # The negative Z axis is constrained.
+    """The negative Y axis is constrained."""
     NEGATIVE_Z = 5
-    # No axis is contained.
+    """The negative Z axis is constrained."""
     NONE = 6
+    """No axis is contained."""
 
 CONSTRAINED_UP_AXIS.X.__doc__ = "The X axis is constrained."
 CONSTRAINED_UP_AXIS.Y.__doc__ = "The Y axis is constrained."
@@ -225,16 +225,16 @@ agcls.AgTypeNameMap["CONSTRAINED_UP_AXIS"] = CONSTRAINED_UP_AXIS
 
 class GLOBE_OVERLAY_ROLE(IntEnum):
     """The role of a globe overlay."""
-    # The globe overlay is a base image.
     BASE = 0
-    # The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun.
+    """The globe overlay is a base image."""
     NIGHT = 1
-    # The globe overlay is a base image that shows the glint of the sun on the central body.
+    """The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."""
     SPECULAR = 2
-    # The globe overlay is a normal overlay without a special role.
+    """The globe overlay is a base image that shows the glint of the sun on the central body."""
     NORMAL = 4
-    # The role of the globe overlay isn't set.
+    """The globe overlay is a normal overlay without a special role."""
     NONE = 5
+    """The role of the globe overlay isn't set."""
 
 GLOBE_OVERLAY_ROLE.BASE.__doc__ = "The globe overlay is a base image."
 GLOBE_OVERLAY_ROLE.NIGHT.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
@@ -246,10 +246,10 @@ agcls.AgTypeNameMap["GLOBE_OVERLAY_ROLE"] = GLOBE_OVERLAY_ROLE
 
 class INDICES_ORDER_HINT(IntEnum):
     """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
-    # The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory.
     NOT_SORTED = 0
-    # The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order...
+    """The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."""
     SORTED_ASCENDING = 1
+    """The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."""
 
 INDICES_ORDER_HINT.NOT_SORTED.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
 INDICES_ORDER_HINT.SORTED_ASCENDING.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
@@ -258,12 +258,12 @@ agcls.AgTypeNameMap["INDICES_ORDER_HINT"] = INDICES_ORDER_HINT
 
 class MAINTAIN_ASPECT_RATIO(IntEnum):
     """Specifies whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
-    # The aspect ratio of the texture is not maintained during sizing of the screen overlay.
     NONE = 0
-    # The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property.
+    """The aspect ratio of the texture is not maintained during sizing of the screen overlay."""
     WIDTH = 1
-    # The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property.
+    """The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."""
     HEIGHT = 2
+    """The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."""
 
 MAINTAIN_ASPECT_RATIO.NONE.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
 MAINTAIN_ASPECT_RATIO.WIDTH.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
@@ -273,10 +273,10 @@ agcls.AgTypeNameMap["MAINTAIN_ASPECT_RATIO"] = MAINTAIN_ASPECT_RATIO
 
 class MAP_PROJECTION(IntEnum):
     """The projection of the pixel data returned from a custom image globe overlay."""
-    # Mercator projection
     MERCATOR = 0
-    # Equidistant Cylindrical projection
+    """Mercator projection"""
     EQUIDISTANT_CYLINDRICAL = 1
+    """Equidistant Cylindrical projection"""
 
 MAP_PROJECTION.MERCATOR.__doc__ = "Mercator projection"
 MAP_PROJECTION.EQUIDISTANT_CYLINDRICAL.__doc__ = "Equidistant Cylindrical projection"
@@ -285,14 +285,14 @@ agcls.AgTypeNameMap["MAP_PROJECTION"] = MAP_PROJECTION
 
 class MARKER_BATCH_RENDERING_METHOD(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
-    # Render the marker batch using a geometry shader.
     GEOMETRY_SHADER = 0
-    # Render the marker batch using a vertex shader.
+    """Render the marker batch using a geometry shader."""
     VERTEX_SHADER = 1
-    # Render the marker batch using an automatically selected method based on the capabilities of the video card.
+    """Render the marker batch using a vertex shader."""
     AUTOMATIC = 2
-    # Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards.
+    """Render the marker batch using an automatically selected method based on the capabilities of the video card."""
     FIXED_FUNCTION = 3
+    """Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."""
 
 MARKER_BATCH_RENDERING_METHOD.GEOMETRY_SHADER.__doc__ = "Render the marker batch using a geometry shader."
 MARKER_BATCH_RENDERING_METHOD.VERTEX_SHADER.__doc__ = "Render the marker batch using a vertex shader."
@@ -303,12 +303,12 @@ agcls.AgTypeNameMap["MARKER_BATCH_RENDERING_METHOD"] = MARKER_BATCH_RENDERING_ME
 
 class MARKER_BATCH_RENDER_PASS(IntEnum):
     """The pass during which the marker batch is rendered."""
-    # The marker batch contains all opaque textures and therefore should be rendered using the opaque pass.
     OPAQUE = 0
-    # The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front.
+    """The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."""
     TRANSLUCENT = 1
-    # The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used.
+    """The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front."""
     BASED_ON_TRANSLUCENCY = 2
+    """The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used."""
 
 MARKER_BATCH_RENDER_PASS.OPAQUE.__doc__ = "The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."
 MARKER_BATCH_RENDER_PASS.TRANSLUCENT.__doc__ = "The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front."
@@ -318,10 +318,10 @@ agcls.AgTypeNameMap["MARKER_BATCH_RENDER_PASS"] = MARKER_BATCH_RENDER_PASS
 
 class MARKER_BATCH_SIZE_SOURCE(IntEnum):
     """Determines which marker batch property is used to size each marker in a marker batch."""
-    # The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead.
     FROM_TEXTURE = 0
-    # The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes).
+    """The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."""
     USER_DEFINED = 1
+    """The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."""
 
 MARKER_BATCH_SIZE_SOURCE.FROM_TEXTURE.__doc__ = "The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."
 MARKER_BATCH_SIZE_SOURCE.USER_DEFINED.__doc__ = "The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."
@@ -330,12 +330,12 @@ agcls.AgTypeNameMap["MARKER_BATCH_SIZE_SOURCE"] = MARKER_BATCH_SIZE_SOURCE
 
 class MARKER_BATCH_SORT_ORDER(IntEnum):
     """The order in which markers in a marker batch are sorted before rendering."""
-    # The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results...
     BACK_TO_FRONT = 0
-    # The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers...
+    """The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."""
     FRONT_TO_BACK = 1
-    # The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position.
+    """The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers..."""
     BY_TEXTURE = 2
+    """The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position."""
 
 MARKER_BATCH_SORT_ORDER.BACK_TO_FRONT.__doc__ = "The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."
 MARKER_BATCH_SORT_ORDER.FRONT_TO_BACK.__doc__ = "The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers..."
@@ -345,10 +345,10 @@ agcls.AgTypeNameMap["MARKER_BATCH_SORT_ORDER"] = MARKER_BATCH_SORT_ORDER
 
 class MARKER_BATCH_UNIT(IntEnum):
     """The unit for marker sizes in a marker batch."""
-    # The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change.
     PIXELS = 0
-    # The size of a marker is defined in meters.
+    """The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."""
     METERS = 1
+    """The size of a marker is defined in meters."""
 
 MARKER_BATCH_UNIT.PIXELS.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
 MARKER_BATCH_UNIT.METERS.__doc__ = "The size of a marker is defined in meters."
@@ -357,52 +357,52 @@ agcls.AgTypeNameMap["MARKER_BATCH_UNIT"] = MARKER_BATCH_UNIT
 
 class MODEL_TRANSFORMATION_TYPE(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
-    # Translates the geometry along the X axis.
     TRANSLATE_X = 0
-    # Translates the geometry along the Y axis.
+    """Translates the geometry along the X axis."""
     TRANSLATE_Y = 1
-    # Translates the geometry along the Z axis.
+    """Translates the geometry along the Y axis."""
     TRANSLATE_Z = 2
-    # Rotates the geometry about the X axis.
+    """Translates the geometry along the Z axis."""
     ROTATE_X = 3
-    # Rotates the geometry about the Y axis.
+    """Rotates the geometry about the X axis."""
     ROTATE_Y = 4
-    # Rotates the geometry about the Z axis.
+    """Rotates the geometry about the Y axis."""
     ROTATE_Z = 5
-    # Scales the geometry along the X axis.
+    """Rotates the geometry about the Z axis."""
     SCALE_X = 6
-    # Scales the geometry along the Y axis.
+    """Scales the geometry along the X axis."""
     SCALE_Y = 7
-    # Scales the geometry along the Z axis.
+    """Scales the geometry along the Y axis."""
     SCALE_Z = 8
-    # Scales the geometry uniformly along the X, Y, and Z axes.
+    """Scales the geometry along the Z axis."""
     SCALE_UNIFORM = 9
-    # Translates the texture associated with the geometry along the X axis.
+    """Scales the geometry uniformly along the X, Y, and Z axes."""
     TEXTURE_TRANSLATE_X = 10
-    # Translates the texture associated with the geometry along the Y axis.
+    """Translates the texture associated with the geometry along the X axis."""
     TEXTURE_TRANSLATE_Y = 11
-    # Translates the texture associated with the geometry along the Z axis.
+    """Translates the texture associated with the geometry along the Y axis."""
     TEXTURE_TRANSLATE_Z = 12
-    # Rotates the texture associated with the geometry about the X axis.
+    """Translates the texture associated with the geometry along the Z axis."""
     TEXTURE_ROTATE_X = 13
-    # Rotates the texture associated with the geometry about the Y axis.
+    """Rotates the texture associated with the geometry about the X axis."""
     TEXTURE_ROTATE_Y = 14
-    # Rotates the texture associated with the geometry about the Z axis.
+    """Rotates the texture associated with the geometry about the Y axis."""
     TEXTURE_ROTATE_Z = 15
-    # Scales the texture associated with the geometry along the X axis.
+    """Rotates the texture associated with the geometry about the Z axis."""
     TEXTURE_SCALE_X = 16
-    # Scales the texture associated with the geometry along the Y axis.
+    """Scales the texture associated with the geometry along the X axis."""
     TEXTURE_SCALE_Y = 17
-    # Scales the texture associated with the geometry along the Z axis.
+    """Scales the texture associated with the geometry along the Y axis."""
     TEXTURE_SCALE_Z = 18
-    # Scales the texture associated with the geometry uniformly along the X, Y, and Z axes.
+    """Scales the texture associated with the geometry along the Z axis."""
     TEXTURE_SCALE_UNIFORM = 19
-    # Translates the red band of color associated with the geometry.
+    """Scales the texture associated with the geometry uniformly along the X, Y, and Z axes."""
     TRANSLATE_RED = 20
-    # Translates the green band of color associated with the geometry.
+    """Translates the red band of color associated with the geometry."""
     TRANSLATE_GREEN = 21
-    # Translates the blue band of color associated with the geometry.
+    """Translates the green band of color associated with the geometry."""
     TRANSLATE_BLUE = 22
+    """Translates the blue band of color associated with the geometry."""
 
 MODEL_TRANSFORMATION_TYPE.TRANSLATE_X.__doc__ = "Translates the geometry along the X axis."
 MODEL_TRANSFORMATION_TYPE.TRANSLATE_Y.__doc__ = "Translates the geometry along the Y axis."
@@ -432,24 +432,24 @@ agcls.AgTypeNameMap["MODEL_TRANSFORMATION_TYPE"] = MODEL_TRANSFORMATION_TYPE
 
 class ORIGIN(IntEnum):
     """Vertical and horizontal origin."""
-    # The object's origin is its bottom, left corner.
     BOTTOM_LEFT = 0
-    # The object's origin is its bottom, center point.
+    """The object's origin is its bottom, left corner."""
     BOTTOM_CENTER = 1
-    # The object's origin is its bottom, right corner.
+    """The object's origin is its bottom, center point."""
     BOTTOM_RIGHT = 2
-    # The object's origin is its center, left point.
+    """The object's origin is its bottom, right corner."""
     CENTER_LEFT = 3
-    # The object's origin is its center.
+    """The object's origin is its center, left point."""
     CENTER = 4
-    # The object's origin is its center, right point.
+    """The object's origin is its center."""
     CENTER_RIGHT = 5
-    # The object's origin is its top, left corner.
+    """The object's origin is its center, right point."""
     TOP_LEFT = 6
-    # The object's origin is its top, center point.
+    """The object's origin is its top, left corner."""
     TOP_CENTER = 7
-    # The object's origin is its top, right corner.
+    """The object's origin is its top, center point."""
     TOP_RIGHT = 8
+    """The object's origin is its top, right corner."""
 
 ORIGIN.BOTTOM_LEFT.__doc__ = "The object's origin is its bottom, left corner."
 ORIGIN.BOTTOM_CENTER.__doc__ = "The object's origin is its bottom, center point."
@@ -465,10 +465,10 @@ agcls.AgTypeNameMap["ORIGIN"] = ORIGIN
 
 class PATH_PRIMITIVE_REMOVE_LOCATION(IntEnum):
     """Represents the location of a point to be removed."""
-    # Remove from the front of the line.
     REMOVE_LOCATION_FRONT = 0
-    # Remove from the back of the line.
+    """Remove from the front of the line."""
     REMOVE_LOCATION_BACK = 1
+    """Remove from the back of the line."""
 
 PATH_PRIMITIVE_REMOVE_LOCATION.REMOVE_LOCATION_FRONT.__doc__ = "Remove from the front of the line."
 PATH_PRIMITIVE_REMOVE_LOCATION.REMOVE_LOCATION_BACK.__doc__ = "Remove from the back of the line."
@@ -477,10 +477,10 @@ agcls.AgTypeNameMap["PATH_PRIMITIVE_REMOVE_LOCATION"] = PATH_PRIMITIVE_REMOVE_LO
 
 class PRIMITIVES_SORT_ORDER(IntEnum):
     """The order in which primitives are sorted before rendering."""
-    # Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight.
     BY_STATE = 0
-    # Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering.
+    """Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."""
     BACK_TO_FRONT = 1
+    """Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."""
 
 PRIMITIVES_SORT_ORDER.BY_STATE.__doc__ = "Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."
 PRIMITIVES_SORT_ORDER.BACK_TO_FRONT.__doc__ = "Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."
@@ -489,10 +489,10 @@ agcls.AgTypeNameMap["PRIMITIVES_SORT_ORDER"] = PRIMITIVES_SORT_ORDER
 
 class REFRESH_RATE(IntEnum):
     """The rate at which animation frames will occur."""
-    # The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off.
     FASTEST = 0
-    # The animation will target a specified frame rate.
+    """The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."""
     TARGETED_FRAMES_PER_SECOND = 1
+    """The animation will target a specified frame rate."""
 
 REFRESH_RATE.FASTEST.__doc__ = "The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."
 REFRESH_RATE.TARGETED_FRAMES_PER_SECOND.__doc__ = "The animation will target a specified frame rate."
@@ -501,18 +501,18 @@ agcls.AgTypeNameMap["REFRESH_RATE"] = REFRESH_RATE
 
 class RENDER_PASS(IntFlag):
     """Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending..."""
-    # Render during the opaque rendering pass.
     OPAQUE = 1
-    # Render during the translucent rendering pass.
+    """Render during the opaque rendering pass."""
     TRANSLUCENT = 2
-    # Render before the central body is rendered.
+    """Render during the translucent rendering pass."""
     CENTRAL_BODY_CLIPPED = 4
-    # Rendered in an ordered composite before all other primitives and before the central body is rendered.
+    """Render before the central body is rendered."""
     ORDERED_COMPOSITE_CENTRAL_BODY_CLIPPED = 8
-    # Rendered in an ordered composite before all primitives but after the central body is rendered.
+    """Rendered in an ordered composite before all other primitives and before the central body is rendered."""
     ORDERED_COMPOSITE = 16
-    # Render after the terrain is rendered.
+    """Rendered in an ordered composite before all primitives but after the central body is rendered."""
     TERRAIN = 32
+    """Render after the terrain is rendered."""
 
 RENDER_PASS.OPAQUE.__doc__ = "Render during the opaque rendering pass."
 RENDER_PASS.TRANSLUCENT.__doc__ = "Render during the translucent rendering pass."
@@ -525,12 +525,12 @@ agcls.AgTypeNameMap["RENDER_PASS"] = RENDER_PASS
 
 class RENDER_PASS_HINT(IntEnum):
     """An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used."""
-    # The collection of colors contains only opaque colors. This implies that each color's alpha component is 255.
     OPAQUE = 0
-    # The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255.
+    """The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."""
     TRANSLUCENT = 1
-    # It is unknown if the collection of colors contains opaque or translucent colors.
+    """The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255."""
     UNKNOWN = 2
+    """It is unknown if the collection of colors contains opaque or translucent colors."""
 
 RENDER_PASS_HINT.OPAQUE.__doc__ = "The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."
 RENDER_PASS_HINT.TRANSLUCENT.__doc__ = "The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255."
@@ -540,24 +540,24 @@ agcls.AgTypeNameMap["RENDER_PASS_HINT"] = RENDER_PASS_HINT
 
 class SCREEN_OVERLAY_ORIGIN(IntEnum):
     """Specifies the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
-    # When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up.
     BOTTOM_LEFT = 0
-    # When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent...
+    """When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."""
     BOTTOM_CENTER = 1
-    # When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up.
+    """When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent..."""
     BOTTOM_RIGHT = 2
-    # When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent...
+    """When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up."""
     CENTER_LEFT = 3
-    # When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up.
+    """When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent..."""
     CENTER = 4
-    # When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent...
+    """When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up."""
     CENTER_RIGHT = 5
-    # When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down.
+    """When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent..."""
     TOP_LEFT = 6
-    # When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent...
+    """When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down."""
     TOP_CENTER = 7
-    # When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down.
+    """When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent..."""
     TOP_RIGHT = 8
+    """When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down."""
 
 SCREEN_OVERLAY_ORIGIN.BOTTOM_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."
 SCREEN_OVERLAY_ORIGIN.BOTTOM_CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent..."
@@ -573,26 +573,26 @@ agcls.AgTypeNameMap["SCREEN_OVERLAY_ORIGIN"] = SCREEN_OVERLAY_ORIGIN
 
 class SCREEN_OVERLAY_PINNING_ORIGIN(IntEnum):
     """Specifies the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
-    # When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up.
     BOTTOM_LEFT = 0
-    # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay...
+    """When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."""
     BOTTOM_CENTER = 1
-    # When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up.
+    """When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay..."""
     BOTTOM_RIGHT = 2
-    # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay...
+    """When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up."""
     CENTER_LEFT = 3
-    # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up.
+    """When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay..."""
     CENTER = 4
-    # When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay...
+    """When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up."""
     CENTER_RIGHT = 5
-    # When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down.
+    """When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay..."""
     TOP_LEFT = 6
-    # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay...
+    """When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down."""
     TOP_CENTER = 7
-    # When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down.
+    """When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay..."""
     TOP_RIGHT = 8
-    # The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft.
+    """When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down."""
     AUTOMATIC = 9
+    """The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft."""
 
 SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."
 SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay..."
@@ -609,10 +609,10 @@ agcls.AgTypeNameMap["SCREEN_OVERLAY_PINNING_ORIGIN"] = SCREEN_OVERLAY_PINNING_OR
 
 class SCREEN_OVERLAY_UNIT(IntEnum):
     """A unit specifying how a screen overlay is sized and positioned relative to its parent."""
-    # The value is specified in pixels.
     PIXELS = 0
-    # The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%.
+    """The value is specified in pixels."""
     FRACTION = 1
+    """The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."""
 
 SCREEN_OVERLAY_UNIT.PIXELS.__doc__ = "The value is specified in pixels."
 SCREEN_OVERLAY_UNIT.FRACTION.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
@@ -621,12 +621,12 @@ agcls.AgTypeNameMap["SCREEN_OVERLAY_UNIT"] = SCREEN_OVERLAY_UNIT
 
 class SURFACE_MESH_RENDERING_METHOD(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
-    # Render the surface mesh using a geometry shader.
     GEOMETRY_SHADER = 0
-    # Render the surface mesh using a vertex shader.
+    """Render the surface mesh using a geometry shader."""
     VERTEX_SHADER = 1
-    # Render the surface mesh using an automatically selected method based on the capabilities of the video card.
+    """Render the surface mesh using a vertex shader."""
     AUTOMATIC = 2
+    """Render the surface mesh using an automatically selected method based on the capabilities of the video card."""
 
 SURFACE_MESH_RENDERING_METHOD.GEOMETRY_SHADER.__doc__ = "Render the surface mesh using a geometry shader."
 SURFACE_MESH_RENDERING_METHOD.VERTEX_SHADER.__doc__ = "Render the surface mesh using a vertex shader."
@@ -636,12 +636,12 @@ agcls.AgTypeNameMap["SURFACE_MESH_RENDERING_METHOD"] = SURFACE_MESH_RENDERING_ME
 
 class VISIBILITY(IntEnum):
     """Result of a visibility test, such as testing if a sphere intersects a frustum."""
-    # The object is not visible.
     NONE = 0
-    # The object is partially visible.
+    """The object is not visible."""
     PARTIAL = 1
-    # The object is completely visible.
+    """The object is partially visible."""
     ALL = 2
+    """The object is completely visible."""
 
 VISIBILITY.NONE.__doc__ = "The object is not visible."
 VISIBILITY.PARTIAL.__doc__ = "The object is partially visible."
@@ -651,22 +651,22 @@ agcls.AgTypeNameMap["VISIBILITY"] = VISIBILITY
 
 class ANTI_ALIASING(IntEnum):
     """The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
-    # No anti-aliasing
     OFF = 0
-    # Fast Approximate Anti aliasing
+    """No anti-aliasing"""
     FXAA = 1
-    # Anti-aliasing at 2x
+    """Fast Approximate Anti aliasing"""
     TWO_X = 2
-    # Anti-aliasing at 4x
+    """Anti-aliasing at 2x"""
     FOUR_X = 4
-    # Anti-aliasing at 8x
+    """Anti-aliasing at 4x"""
     EIGHT_X = 8
-    # Anti-aliasing at 16x
+    """Anti-aliasing at 8x"""
     SIXTEEN_X = 16
-    # Anti-aliasing at 32x
+    """Anti-aliasing at 16x"""
     THIRTY_TWO_X = 32
-    # Anti-aliasing at 64x
+    """Anti-aliasing at 32x"""
     SIXTY_FOUR_X = 64
+    """Anti-aliasing at 64x"""
 
 ANTI_ALIASING.OFF.__doc__ = "No anti-aliasing"
 ANTI_ALIASING.FXAA.__doc__ = "Fast Approximate Anti aliasing"
@@ -681,10 +681,10 @@ agcls.AgTypeNameMap["ANTI_ALIASING"] = ANTI_ALIASING
 
 class BINARY_LOGIC_OPERATION(IntEnum):
     """Binary logic operations that can be used by composite display condition."""
-    # Logically and together display conditions in the composite.
     AND = 0
-    # Logically or together display conditions in the composite.
+    """Logically and together display conditions in the composite."""
     OR = 1
+    """Logically or together display conditions in the composite."""
 
 BINARY_LOGIC_OPERATION.AND.__doc__ = "Logically and together display conditions in the composite."
 BINARY_LOGIC_OPERATION.OR.__doc__ = "Logically or together display conditions in the composite."
@@ -693,10 +693,10 @@ agcls.AgTypeNameMap["BINARY_LOGIC_OPERATION"] = BINARY_LOGIC_OPERATION
 
 class BLUR_METHOD(IntEnum):
     """The method used to blur or smooth a raster."""
-    # Provides smoothing and noise reduction through mean filtering.
     MEAN = 0
-    # Provides basic blurring.
+    """Provides smoothing and noise reduction through mean filtering."""
     BASIC = 1
+    """Provides basic blurring."""
 
 BLUR_METHOD.MEAN.__doc__ = "Provides smoothing and noise reduction through mean filtering."
 BLUR_METHOD.BASIC.__doc__ = "Provides basic blurring."
@@ -705,22 +705,22 @@ agcls.AgTypeNameMap["BLUR_METHOD"] = BLUR_METHOD
 
 class EDGE_DETECT_METHOD(IntEnum):
     """The method used to detect edges in a raster."""
-    # Detects vertical edges.
     VERTICAL = 0
-    # Detects horizontal edges.
+    """Detects vertical edges."""
     HORIZONTAL = 1
-    # Detects left diagonal edges.
+    """Detects horizontal edges."""
     LEFT_DIAGONAL = 2
-    # Detects right diagonal edges.
+    """Detects left diagonal edges."""
     RIGHT_DIAGONAL = 3
-    # Detects edges using the Laplacian method.
+    """Detects right diagonal edges."""
     LAPLACIAN = 4
-    # Detects edges using the Prewitt-Laplacian method.
+    """Detects edges using the Laplacian method."""
     PREWITT_LAPLACIAN = 5
-    # Detects vertical edges using the Sobel method.
+    """Detects edges using the Prewitt-Laplacian method."""
     SOBEL_VERTICAL = 6
-    # Detects horizontal edges using the Sobel method.
+    """Detects vertical edges using the Sobel method."""
     SOBEL_HORIZONTAL = 7
+    """Detects horizontal edges using the Sobel method."""
 
 EDGE_DETECT_METHOD.VERTICAL.__doc__ = "Detects vertical edges."
 EDGE_DETECT_METHOD.HORIZONTAL.__doc__ = "Detects horizontal edges."
@@ -735,10 +735,10 @@ agcls.AgTypeNameMap["EDGE_DETECT_METHOD"] = EDGE_DETECT_METHOD
 
 class FLIP_AXIS(IntEnum):
     """The axis on which a raster will be flipped."""
-    # The horizontal axis.
     HORIZONTAL = 0
-    # The vertical axis.
+    """The horizontal axis."""
     VERTICAL = 1
+    """The vertical axis."""
 
 FLIP_AXIS.HORIZONTAL.__doc__ = "The horizontal axis."
 FLIP_AXIS.VERTICAL.__doc__ = "The vertical axis."
@@ -747,22 +747,22 @@ agcls.AgTypeNameMap["FLIP_AXIS"] = FLIP_AXIS
 
 class GRADIENT_DETECT_METHOD(IntEnum):
     """The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing."""
-    # Detects east gradients.
     EAST = 0
-    # Detects north gradients.
+    """Detects east gradients."""
     NORTH = 1
-    # Detects west gradients.
+    """Detects north gradients."""
     WEST = 2
-    # Detects south gradients.
+    """Detects west gradients."""
     SOUTH = 3
-    # Detects north east gradients.
+    """Detects south gradients."""
     NORTH_EAST = 4
-    # Detects north west gradients.
+    """Detects north east gradients."""
     NORTH_WEST = 5
-    # Detects south east gradients.
+    """Detects north west gradients."""
     SOUTH_EAST = 6
-    # Detects south west gradients.
+    """Detects south east gradients."""
     SOUTH_WEST = 7
+    """Detects south west gradients."""
 
 GRADIENT_DETECT_METHOD.EAST.__doc__ = "Detects east gradients."
 GRADIENT_DETECT_METHOD.NORTH.__doc__ = "Detects north gradients."
@@ -777,12 +777,12 @@ agcls.AgTypeNameMap["GRADIENT_DETECT_METHOD"] = GRADIENT_DETECT_METHOD
 
 class JPEG2000_COMPRESSION_PROFILE(IntEnum):
     """Defines the profile used when encoding a JPEG 2000 file."""
-    # This is the default profile, which is recommended for those unfamiliar with the others.
     DEFAULT = 0
-    # This profile is designed for U.S. and NATO military applications.
+    """This is the default profile, which is recommended for those unfamiliar with the others."""
     NITF_BIIF_NPJE = 1
-    # This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE.
+    """This profile is designed for U.S. and NATO military applications."""
     NITF_BIIF_EPJE = 2
+    """This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."""
 
 JPEG2000_COMPRESSION_PROFILE.DEFAULT.__doc__ = "This is the default profile, which is recommended for those unfamiliar with the others."
 JPEG2000_COMPRESSION_PROFILE.NITF_BIIF_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
@@ -792,16 +792,16 @@ agcls.AgTypeNameMap["JPEG2000_COMPRESSION_PROFILE"] = JPEG2000_COMPRESSION_PROFI
 
 class RASTER_BAND(IntEnum):
     """Common band types that may be contained within a raster dataset. Each band can be thought of as a set of values, which are most commonly associated with colors when the raster represents an image..."""
-    # A band containing red values.
     RED = 0
-    # A band containing green values.
+    """A band containing red values."""
     GREEN = 1
-    # A band containing blue values.
+    """A band containing green values."""
     BLUE = 2
-    # A band containing alpha values.
+    """A band containing blue values."""
     ALPHA = 3
-    # A band containing luminance values.
+    """A band containing alpha values."""
     LUMINANCE = 4
+    """A band containing luminance values."""
 
 RASTER_BAND.RED.__doc__ = "A band containing red values."
 RASTER_BAND.GREEN.__doc__ = "A band containing green values."
@@ -813,26 +813,26 @@ agcls.AgTypeNameMap["RASTER_BAND"] = RASTER_BAND
 
 class RASTER_FORMAT(IntEnum):
     """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format."""
-    # The format of the raster is a single band consisting of red values.
     RED = 0
-    # The format of the raster is a single band consisting of green values.
+    """The format of the raster is a single band consisting of red values."""
     GREEN = 1
-    # The format of the raster is a single band consisting of blue values.
+    """The format of the raster is a single band consisting of green values."""
     BLUE = 2
-    # The format of the raster is a single band consisting of alpha values.
+    """The format of the raster is a single band consisting of blue values."""
     ALPHA = 3
-    # The format of the raster is three bands consisting of red, green, and blue values.
+    """The format of the raster is a single band consisting of alpha values."""
     RGB = 4
-    # The format of the raster is three bands consisting of blue, green, and red values.
+    """The format of the raster is three bands consisting of red, green, and blue values."""
     BGR = 5
-    # The format of the raster is four bands consisting of red, green, blue, and alpha values.
+    """The format of the raster is three bands consisting of blue, green, and red values."""
     RGBA = 6
-    # The format of the raster is four bands consisting of blue, green, red, and alpha values.
+    """The format of the raster is four bands consisting of red, green, blue, and alpha values."""
     BGRA = 7
-    # The format of the raster is a single band consisting of luminance values.
+    """The format of the raster is four bands consisting of blue, green, red, and alpha values."""
     LUMINANCE = 8
-    # The format of the raster is two bands consisting of luminance and alpha values.
+    """The format of the raster is a single band consisting of luminance values."""
     LUMINANCE_ALPHA = 9
+    """The format of the raster is two bands consisting of luminance and alpha values."""
 
 RASTER_FORMAT.RED.__doc__ = "The format of the raster is a single band consisting of red values."
 RASTER_FORMAT.GREEN.__doc__ = "The format of the raster is a single band consisting of green values."
@@ -849,10 +849,10 @@ agcls.AgTypeNameMap["RASTER_FORMAT"] = RASTER_FORMAT
 
 class RASTER_ORIENTATION(IntEnum):
     """The vertical orientation of the raster."""
-    # The raster has a top to bottom orientation.
     TOP_TO_BOTTOM = 0
-    # The raster has a bottom to top orientation.
+    """The raster has a top to bottom orientation."""
     BOTTOM_TO_TOP = 1
+    """The raster has a bottom to top orientation."""
 
 RASTER_ORIENTATION.TOP_TO_BOTTOM.__doc__ = "The raster has a top to bottom orientation."
 RASTER_ORIENTATION.BOTTOM_TO_TOP.__doc__ = "The raster has a bottom to top orientation."
@@ -861,22 +861,22 @@ agcls.AgTypeNameMap["RASTER_ORIENTATION"] = RASTER_ORIENTATION
 
 class RASTER_TYPE(IntEnum):
     """The type of data contained within each band of a raster dataset."""
-    # Each value contained within a band can be represented with an unsigned byte.
     UNSIGNED_BYTE = 0
-    # Each value contained within a band can be represented with a byte.
+    """Each value contained within a band can be represented with an unsigned byte."""
     BYTE = 1
-    # Each value contained within a band can be represented with an unsigned short.
+    """Each value contained within a band can be represented with a byte."""
     UNSIGNED_SHORT = 2
-    # Each value contained within a band can be represented with a short.
+    """Each value contained within a band can be represented with an unsigned short."""
     SHORT = 3
-    # Each value contained within a band can be represented with an unsigned int.
+    """Each value contained within a band can be represented with a short."""
     UNSIGNED_INT = 4
-    # Each value contained within a band can be represented with an int.
+    """Each value contained within a band can be represented with an unsigned int."""
     INT = 5
-    # Each value contained within a band can be represented with a float.
+    """Each value contained within a band can be represented with an int."""
     FLOAT = 6
-    # Each value contained within a band can be represented with a double.
+    """Each value contained within a band can be represented with a float."""
     DOUBLE = 7
+    """Each value contained within a band can be represented with a double."""
 
 RASTER_TYPE.UNSIGNED_BYTE.__doc__ = "Each value contained within a band can be represented with an unsigned byte."
 RASTER_TYPE.BYTE.__doc__ = "Each value contained within a band can be represented with a byte."
@@ -891,10 +891,10 @@ agcls.AgTypeNameMap["RASTER_TYPE"] = RASTER_TYPE
 
 class SHARPEN_METHOD(IntEnum):
     """The method used to sharpen a raster."""
-    # Provides sharpening through mean removal.
     MEAN_REMOVAL = 0
-    # Provides basic sharpening.
+    """Provides sharpening through mean removal."""
     BASIC = 1
+    """Provides basic sharpening."""
 
 SHARPEN_METHOD.MEAN_REMOVAL.__doc__ = "Provides sharpening through mean removal."
 SHARPEN_METHOD.BASIC.__doc__ = "Provides basic sharpening."
@@ -903,10 +903,10 @@ agcls.AgTypeNameMap["SHARPEN_METHOD"] = SHARPEN_METHOD
 
 class VIDEO_PLAYBACK(IntEnum):
     """Specifies how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
-    # The video will playback in realtime.
     REAL_TIME = 0
-    # The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time.
+    """The video will playback in realtime."""
     TIME_INTERVAL = 1
+    """The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."""
 
 VIDEO_PLAYBACK.REAL_TIME.__doc__ = "The video will playback in realtime."
 VIDEO_PLAYBACK.TIME_INTERVAL.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
@@ -915,12 +915,12 @@ agcls.AgTypeNameMap["VIDEO_PLAYBACK"] = VIDEO_PLAYBACK
 
 class KML_NETWORK_LINK_REFRESH_MODE(IntEnum):
     """Defines the options available for a KmlNetworkLink's RefreshMode property."""
-    # Refresh when the document is loaded and whenever the Link parameters change (the default).
     ON_CHANGE = 0
-    # Refresh the network link at the duration specified by refresh interval.
+    """Refresh when the document is loaded and whenever the Link parameters change (the default)."""
     ON_INTERVAL = 1
-    # Refresh the network link when the expiration time is reached.
+    """Refresh the network link at the duration specified by refresh interval."""
     ON_EXPIRE = 2
+    """Refresh the network link when the expiration time is reached."""
 
 KML_NETWORK_LINK_REFRESH_MODE.ON_CHANGE.__doc__ = "Refresh when the document is loaded and whenever the Link parameters change (the default)."
 KML_NETWORK_LINK_REFRESH_MODE.ON_INTERVAL.__doc__ = "Refresh the network link at the duration specified by refresh interval."
@@ -930,14 +930,14 @@ agcls.AgTypeNameMap["KML_NETWORK_LINK_REFRESH_MODE"] = KML_NETWORK_LINK_REFRESH_
 
 class KML_NETWORK_LINK_VIEW_REFRESH_MODE(IntEnum):
     """Defines the options available for a KmlNetworkLink's ViewRefreshMode property."""
-    # Do not refresh the network link when the camera's view changes.
     NEVER = 0
-    # Only refresh the network link when it is explicitly refreshed by calling the refresh method.
+    """Do not refresh the network link when the camera's view changes."""
     ON_REQUEST = 1
-    # Refresh the network link after camera view movement stops for the duration specified by view refresh time.
+    """Only refresh the network link when it is explicitly refreshed by calling the refresh method."""
     ON_STOP = 2
-    # Refreshes the network link when the region associated with this link becomes active.
+    """Refresh the network link after camera view movement stops for the duration specified by view refresh time."""
     ON_REGION = 3
+    """Refreshes the network link when the region associated with this link becomes active."""
 
 KML_NETWORK_LINK_VIEW_REFRESH_MODE.NEVER.__doc__ = "Do not refresh the network link when the camera's view changes."
 KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REQUEST.__doc__ = "Only refresh the network link when it is explicitly refreshed by calling the refresh method."
@@ -948,18 +948,18 @@ agcls.AgTypeNameMap["KML_NETWORK_LINK_VIEW_REFRESH_MODE"] = KML_NETWORK_LINK_VIE
 
 class MODEL_UP_AXIS(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
-    # The positive X axis.
     X = 0
-    # The positive Y axis.
+    """The positive X axis."""
     Y = 1
-    # The positive Z axis.
+    """The positive Y axis."""
     Z = 2
-    # The negative X axis.
+    """The positive Z axis."""
     NEGATIVE_X = 3
-    # The negative Y axis.
+    """The negative X axis."""
     NEGATIVE_Y = 4
-    # The negative Z axis.
+    """The negative Y axis."""
     NEGATIVE_Z = 5
+    """The negative Z axis."""
 
 MODEL_UP_AXIS.X.__doc__ = "The positive X axis."
 MODEL_UP_AXIS.Y.__doc__ = "The positive Y axis."
@@ -972,12 +972,12 @@ agcls.AgTypeNameMap["MODEL_UP_AXIS"] = MODEL_UP_AXIS
 
 class OUTLINE_APPEARANCE(IntEnum):
     """Possible appearances of an outline. Front lines are lines on front facing geometry and back lines are lines on back facing geometry."""
-    # Both the front and back lines are displayed.
     FRONT_AND_BACK_LINES = 0
-    # Only the front lines are displayed. This can be used to declutter the outline.
+    """Both the front and back lines are displayed."""
     FRONT_LINES_ONLY = 1
-    # Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry.
+    """Only the front lines are displayed. This can be used to declutter the outline."""
     STYLIZE_BACK_LINES = 2
+    """Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry."""
 
 OUTLINE_APPEARANCE.FRONT_AND_BACK_LINES.__doc__ = "Both the front and back lines are displayed."
 OUTLINE_APPEARANCE.FRONT_LINES_ONLY.__doc__ = "Only the front lines are displayed. This can be used to declutter the outline."
@@ -987,12 +987,12 @@ agcls.AgTypeNameMap["OUTLINE_APPEARANCE"] = OUTLINE_APPEARANCE
 
 class POLYLINE_TYPE(IntEnum):
     """Describes how to interpret positions defining a polyline."""
-    # Every two positions define a line segment. Line segments are not required to be connected to each other.
     LINES = 0
-    # After the first position, each additional position defines a line segment from the previous position to the current position.
+    """Every two positions define a line segment. Line segments are not required to be connected to each other."""
     LINE_STRIP = 1
-    # Lines are drawn as points.
+    """After the first position, each additional position defines a line segment from the previous position to the current position."""
     POINTS = 2
+    """Lines are drawn as points."""
 
 POLYLINE_TYPE.LINES.__doc__ = "Every two positions define a line segment. Line segments are not required to be connected to each other."
 POLYLINE_TYPE.LINE_STRIP.__doc__ = "After the first position, each additional position defines a line segment from the previous position to the current position."
@@ -1002,14 +1002,14 @@ agcls.AgTypeNameMap["POLYLINE_TYPE"] = POLYLINE_TYPE
 
 class CULL_FACE(IntEnum):
     """Identifies whether front- and/or back-facing triangles are culled."""
-    # Front-facing triangles are culled.
     E_CULL_FACE_FRONT = 0
-    # Back-facing triangles are culled.
+    """Front-facing triangles are culled."""
     E_CULL_FACE_BACK = 1
-    # Both front- and back-facing triangles are culled. Therefore, no triangles are rendered.
+    """Back-facing triangles are culled."""
     E_CULL_FACE_FRONT_AND_BACK = 2
-    # No triangles are culled.
+    """Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."""
     E_CULL_FACE_NEITHER = 3
+    """No triangles are culled."""
 
 CULL_FACE.E_CULL_FACE_FRONT.__doc__ = "Front-facing triangles are culled."
 CULL_FACE.E_CULL_FACE_BACK.__doc__ = "Back-facing triangles are culled."
@@ -1020,78 +1020,78 @@ agcls.AgTypeNameMap["CULL_FACE"] = CULL_FACE
 
 class INTERNAL_TEXTURE_FORMAT(IntEnum):
     """The format of individual texels in a texture."""
-    # Each texel is an 4-bit alpha component.
     ALPHA4 = 0
-    # Each texel is an 8-bit alpha component.
+    """Each texel is an 4-bit alpha component."""
     ALPHA8 = 1
-    # Each texel is an 12-bit alpha component.
+    """Each texel is an 8-bit alpha component."""
     ALPHA12 = 2
-    # Each texel is an 16-bit alpha component.
+    """Each texel is an 12-bit alpha component."""
     ALPHA16 = 3
-    # Each texel contains 3-bit red and green components and 2-bit blue component.
+    """Each texel is an 16-bit alpha component."""
     R3G3B2 = 4
-    # Each texel contains 4-bit red, green, and blue components.
+    """Each texel contains 3-bit red and green components and 2-bit blue component."""
     RGB4 = 5
-    # Each texel contains 5-bit red, green, and blue components.
+    """Each texel contains 4-bit red, green, and blue components."""
     RGB5 = 6
-    # Each texel contains 8-bit red, green, and blue components.
+    """Each texel contains 5-bit red, green, and blue components."""
     RGB8 = 7
-    # Each texel contains 10-bit red, green, and blue components.
+    """Each texel contains 8-bit red, green, and blue components."""
     RGB10 = 8
-    # Each texel contains 12-bit red, green, and blue components.
+    """Each texel contains 10-bit red, green, and blue components."""
     RGB12 = 9
-    # Each texel contains 16-bit red, green, and blue components.
+    """Each texel contains 12-bit red, green, and blue components."""
     RGB16 = 10
-    # Each texel contains 16-bit red, green, and blue floating point components.
+    """Each texel contains 16-bit red, green, and blue components."""
     RGB16_F = 11
-    # Each texel contains 32-bit red, green, and blue floating point components.
+    """Each texel contains 16-bit red, green, and blue floating point components."""
     RGB32_F = 12
-    # Each texel contains 2-bit red, green, blue, and alpha components.
+    """Each texel contains 32-bit red, green, and blue floating point components."""
     RGBA2 = 13
-    # Each texel contains 4-bit red, green, blue, and alpha components.
+    """Each texel contains 2-bit red, green, blue, and alpha components."""
     RGBA4 = 14
-    # Each texel contains 5-bit red, green, blue components and 1-bit alpha component.
+    """Each texel contains 4-bit red, green, blue, and alpha components."""
     RGB5_A1 = 15
-    # Each texel contains 8-bit red, green, blue, and alpha components.
+    """Each texel contains 5-bit red, green, blue components and 1-bit alpha component."""
     RGBA8 = 16
-    # Each texel contains 10-bit red, green, blue components and 2-bit alpha component.
+    """Each texel contains 8-bit red, green, blue, and alpha components."""
     RGB10_A2 = 17
-    # Each texel contains 12-bit red, green, blue, and alpha components.
+    """Each texel contains 10-bit red, green, blue components and 2-bit alpha component."""
     RGBA12 = 18
-    # Each texel contains 16-bit red, green, blue, and alpha components.
+    """Each texel contains 12-bit red, green, blue, and alpha components."""
     RGBA16 = 19
-    # Each texel contains 16-bit red, green, blue, and alpha floating point components.
+    """Each texel contains 16-bit red, green, blue, and alpha components."""
     RGBA16_F = 20
-    # Each texel contains 32-bit red, green, blue, and alpha floating point components.
+    """Each texel contains 16-bit red, green, blue, and alpha floating point components."""
     RGBA32_F = 21
-    # Each texel is an 4-bit luminance, e.g. intensity, component.
+    """Each texel contains 32-bit red, green, blue, and alpha floating point components."""
     LUMINANCE4 = 22
-    # Each texel is an 8-bit luminance, e.g. intensity, component.
+    """Each texel is an 4-bit luminance, e.g. intensity, component."""
     LUMINANCE8 = 23
-    # Each texel is an 12-bit luminance, e.g. intensity, component.
+    """Each texel is an 8-bit luminance, e.g. intensity, component."""
     LUMINANCE12 = 24
-    # Each texel is an 16-bit luminance, e.g. intensity, component.
+    """Each texel is an 12-bit luminance, e.g. intensity, component."""
     LUMINANCE16 = 25
-    # Each texel is an 16-bit luminance, e.g. intensity, floating point component.
+    """Each texel is an 16-bit luminance, e.g. intensity, component."""
     LUMINANCE16_F = 26
-    # Each texel is an 32-bit luminance, e.g. intensity, floating point component.
+    """Each texel is an 16-bit luminance, e.g. intensity, floating point component."""
     LUMINANCE32_F = 27
-    # Each texel contains an 4-bit luminance and 4-bit alpha component.
+    """Each texel is an 32-bit luminance, e.g. intensity, floating point component."""
     LUMINANCE4_ALPHA4 = 28
-    # Each texel contains an 6-bit luminance and 2-bit alpha component.
+    """Each texel contains an 4-bit luminance and 4-bit alpha component."""
     LUMINANCE6_ALPHA2 = 29
-    # Each texel contains an 8-bit luminance and 8-bit alpha component.
+    """Each texel contains an 6-bit luminance and 2-bit alpha component."""
     LUMINANCE8_ALPHA8 = 30
-    # Each texel contains an 12-bit luminance and 4-bit alpha component.
+    """Each texel contains an 8-bit luminance and 8-bit alpha component."""
     LUMINANCE12_ALPHA4 = 31
-    # Each texel contains an 12-bit luminance and 12-bit alpha component.
+    """Each texel contains an 12-bit luminance and 4-bit alpha component."""
     LUMINANCE12_ALPHA12 = 32
-    # Each texel contains an 16-bit luminance and 16-bit alpha component.
+    """Each texel contains an 12-bit luminance and 12-bit alpha component."""
     LUMINANCE16_ALPHA16 = 33
-    # Each texel contains an 16-bit luminance and 16-bit alpha floating point component.
+    """Each texel contains an 16-bit luminance and 16-bit alpha component."""
     LUMINANCE16_ALPHA16_F = 34
-    # Each texel contains an 32-bit luminance and 32-bit alpha floating point component.
+    """Each texel contains an 16-bit luminance and 16-bit alpha floating point component."""
     LUMINANCE32_ALPHA32_F = 35
+    """Each texel contains an 32-bit luminance and 32-bit alpha floating point component."""
 
 INTERNAL_TEXTURE_FORMAT.ALPHA4.__doc__ = "Each texel is an 4-bit alpha component."
 INTERNAL_TEXTURE_FORMAT.ALPHA8.__doc__ = "Each texel is an 8-bit alpha component."
@@ -1134,10 +1134,10 @@ agcls.AgTypeNameMap["INTERNAL_TEXTURE_FORMAT"] = INTERNAL_TEXTURE_FORMAT
 
 class MAGNIFICATION_FILTER(IntEnum):
     """The filter used when the pixel being textured maps to an area less than or equal to one texel."""
-    # Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges.
     NEAREST = 0
-    # Use the weighted average of the four texels that are closest to the center of the pixel being textured.
+    """Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."""
     LINEAR = 1
+    """Use the weighted average of the four texels that are closest to the center of the pixel being textured."""
 
 MAGNIFICATION_FILTER.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."
 MAGNIFICATION_FILTER.LINEAR.__doc__ = "Use the weighted average of the four texels that are closest to the center of the pixel being textured."
@@ -1146,18 +1146,18 @@ agcls.AgTypeNameMap["MAGNIFICATION_FILTER"] = MAGNIFICATION_FILTER
 
 class MINIFICATION_FILTER(IntEnum):
     """The filter used when the pixel being textured maps to an area greater than one texel."""
-    # Use the texel that is closest to the center of the pixel being textured.
     NEAREST = 0
-    # Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured.
+    """Use the texel that is closest to the center of the pixel being textured."""
     LINEAR = 1
-    # Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured.
+    """Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured."""
     NEAREST_MIP_MAP_NEAREST = 2
-    # Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured.
+    """Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured."""
     LINEAR_MIP_MAP_NEAREST = 3
-    # Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels.
+    """Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured."""
     NEAREST_MIP_MAP_LINEAR = 4
-    # Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap...
+    """Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels."""
     LINEAR_MIP_MAP_LINEAR = 5
+    """Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap..."""
 
 MINIFICATION_FILTER.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured."
 MINIFICATION_FILTER.LINEAR.__doc__ = "Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured."
@@ -1170,10 +1170,10 @@ agcls.AgTypeNameMap["MINIFICATION_FILTER"] = MINIFICATION_FILTER
 
 class RENDERER_SHADE_MODEL(IntEnum):
     """Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors."""
-    # Flat shading renders the primitive with one color across all of the vertices.
     FLAT = 0
-    # Gouraud shading renders the primitive by interpolating the color between the vertices.
+    """Flat shading renders the primitive with one color across all of the vertices."""
     GOURAUD = 1
+    """Gouraud shading renders the primitive by interpolating the color between the vertices."""
 
 RENDERER_SHADE_MODEL.FLAT.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
 RENDERER_SHADE_MODEL.GOURAUD.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
@@ -1182,16 +1182,16 @@ agcls.AgTypeNameMap["RENDERER_SHADE_MODEL"] = RENDERER_SHADE_MODEL
 
 class TEXTURE_WRAP(IntEnum):
     """Determine how to handle textures coordinates that fall outside of the range [0, 1]."""
-    # Clamp the texture coordinate to the range [0, 1].
     CLAMP = 0
-    # Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping.
+    """Clamp the texture coordinate to the range [0, 1]."""
     CLAMP_TO_BORDER = 1
-    # Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping.
+    """Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping."""
     CLAMP_TO_EDGE = 2
-    # If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate.
+    """Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping."""
     MIRRORED_REPEAT = 3
-    # Ignore the integer part of the texture coordinate.
+    """If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate."""
     REPEAT = 4
+    """Ignore the integer part of the texture coordinate."""
 
 TEXTURE_WRAP.CLAMP.__doc__ = "Clamp the texture coordinate to the range [0, 1]."
 TEXTURE_WRAP.CLAMP_TO_BORDER.__doc__ = "Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping."
@@ -1203,12 +1203,12 @@ agcls.AgTypeNameMap["TEXTURE_WRAP"] = TEXTURE_WRAP
 
 class SET_HINT(IntEnum):
     """An optimization hint optionally provided to primitives to enhance performance for static or dynamic primitives. See the Set Hint Performance Overview for selecting an appropriate value."""
-    # Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent.
     INFREQUENT = 0
-    # Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not.
+    """Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."""
     PARTIAL = 1
-    # Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail.
+    """Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not."""
     FREQUENT = 2
+    """Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail."""
 
 SET_HINT.INFREQUENT.__doc__ = "Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."
 SET_HINT.PARTIAL.__doc__ = "Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not."
@@ -1218,12 +1218,12 @@ agcls.AgTypeNameMap["SET_HINT"] = SET_HINT
 
 class STEREO_PROJECTION_MODE(IntEnum):
     """The stereoscopic projection mode used for the left and right eye scenes."""
-    # Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen...
     PARALLEL = 0
-    # Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen.
+    """Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."""
     FIXED_DISTANCE = 1
-    # Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene.
+    """Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen."""
     AUTOMATIC = 2
+    """Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene."""
 
 STEREO_PROJECTION_MODE.PARALLEL.__doc__ = "Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."
 STEREO_PROJECTION_MODE.FIXED_DISTANCE.__doc__ = "Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen."
@@ -1233,18 +1233,18 @@ agcls.AgTypeNameMap["STEREO_PROJECTION_MODE"] = STEREO_PROJECTION_MODE
 
 class STEREOSCOPIC_DISPLAY_MODE(IntEnum):
     """The stereoscopic display mode. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
-    # No stereoscopic
     OFF = 0
-    # OpenGL Quad-buffer stereoscopic
+    """No stereoscopic"""
     QUAD_BUFFER = 1
-    # Anaglyph or two-color stereoscopic
+    """OpenGL Quad-buffer stereoscopic"""
     ANAGLYPH = 2
-    # Left eye view of the stereoscopic scene
+    """Anaglyph or two-color stereoscopic"""
     LEFT_EYE = 3
-    # Right eye view of the stereoscopic scene
+    """Left eye view of the stereoscopic scene"""
     RIGHT_EYE = 4
-    # Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window.
+    """Right eye view of the stereoscopic scene"""
     SIDE_BY_SIDE = 5
+    """Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."""
 
 STEREOSCOPIC_DISPLAY_MODE.OFF.__doc__ = "No stereoscopic"
 STEREOSCOPIC_DISPLAY_MODE.QUAD_BUFFER.__doc__ = "OpenGL Quad-buffer stereoscopic"
@@ -1257,16 +1257,16 @@ agcls.AgTypeNameMap["STEREOSCOPIC_DISPLAY_MODE"] = STEREOSCOPIC_DISPLAY_MODE
 
 class FONT_STYLE(IntEnum):
     """Font styles."""
-    # Regular font.
     REGULAR = 0x0
-    # Bold font.
+    """Regular font."""
     BOLD = 0x1
-    # Italic font.
+    """Bold font."""
     ITALIC = 0x2
-    # Underlined font.
+    """Italic font."""
     UNDERLINE = 0x4
-    # Strike-out style.
+    """Underlined font."""
     STRIKEOUT = 0x8
+    """Strike-out style."""
 
 FONT_STYLE.REGULAR.__doc__ = "Regular font."
 FONT_STYLE.BOLD.__doc__ = "Bold font."
