@@ -2190,6 +2190,86 @@ class PropagatorStkExternalHelper(object):
 
 # endregion
 
+#region PropagatorSimpleAscentHelper
+class PropagatorSimpleAscentHelper(object):
+    def __init__(self, owner: "IStkObject", oUnits: "IUnitPreferencesDimensionCollection"):
+        self.m_logger = Logger.Instance
+        self._owner: "IStkObject" = owner
+        Assert.assertIsNotNone(oUnits)
+        oUnits.reset_units()
+    #endregion
+
+    #region Run method
+    def Run(self, oSimple: "IVehiclePropagatorSimpleAscent"):
+        self.m_logger.WriteLine("----- SIMPLE ASCENT PROPAGATOR TEST ----- BEGIN -----")
+        Assert.assertIsNotNone(oSimple)
+        # EphemerisInterval
+        self.m_logger.WriteLine6("\tThe current StartTime is: {0}", oSimple.ephemeris_interval.find_start_time())
+        self.m_logger.WriteLine6("\tThe current StopTime is:  {0}", oSimple.ephemeris_interval.find_stop_time())
+        oSimple.ephemeris_interval.set_explicit_interval("18 Jan 2003 01:23:45.678", "28 Jan 2003 02:46:24.680")
+        self.m_logger.WriteLine6("\tThe new StartTime is: {0}", oSimple.ephemeris_interval.find_start_time())
+        Assert.assertEqual("18 Jan 2003 01:23:45.678", oSimple.ephemeris_interval.find_start_time())
+        self.m_logger.WriteLine6("\tThe new StopTime is:  {0}", oSimple.ephemeris_interval.find_stop_time())
+        Assert.assertEqual("28 Jan 2003 02:46:24.680", oSimple.ephemeris_interval.find_stop_time())
+        # Step
+        self.m_logger.WriteLine6("\tThe current Step is:  {0}", oSimple.step)
+        oSimple.step = 12
+        self.m_logger.WriteLine6("\tThe new Step is:  {0}", oSimple.step)
+        Assert.assertEqual(12, oSimple.step)
+
+        def action81():
+            oSimple.step = 12345
+        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action81)
+        # InitialState
+        oInitState: "IVehicleLaunchVehicleInitialState" = oSimple.initial_state
+        Assert.assertIsNotNone(oInitState)
+        # Epoch
+        self.m_logger.WriteLine6("\tThe current Epoch is:  {0}", oInitState.trajectory_epoch.time_instant)
+        # BurnoutVel
+        self.m_logger.WriteLine6("\tThe current BurnoutVel is:  {0}", oInitState.burnout_vel)
+        oInitState.burnout_vel = 12
+        self.m_logger.WriteLine6("\tThe new BurnoutVel is:  {0}", oInitState.burnout_vel)
+        Assert.assertEqual(12, oInitState.burnout_vel)
+
+        def action82():
+            oInitState.burnout_vel = -21
+        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action82)
+
+        # Burnout
+        oHelper = LLAPositionTest()
+        oHelper.Run(oInitState.burnout)
+
+        # Launch
+        oHelper.Run(oInitState.launch)
+        oInitState.launch.assign_geodetic(14.3456, -54.321, 123.456)
+
+        # Propagate
+        oSimple.propagate()
+
+        # Verify "Use Scenario Analysis Time" to make sure it works as expected
+        # By setting UseScenarioAnalysisTime the propagator's 
+        # start/stop times are overriden with the scenario's start/stop times.
+        sc: "IScenario" = clr.Convert(self._owner.root.current_scenario, IScenario)
+        oSimple.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
+        Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
+        Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
+
+        Assert.assertNotEqual(sc.start_time, oSimple.ephemeris_interval.find_start_time())
+        Assert.assertNotEqual(sc.stop_time, oSimple.ephemeris_interval.find_stop_time())
+
+        oSimple.propagate()
+
+        Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
+        Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
+
+        oSimple.ephemeris_interval.set_implicit_interval((clr.Convert(sc, IStkObject)).vgt.event_intervals["AnalysisInterval"])
+        oSimple.propagate()
+
+        Assert.assertEqual(sc.start_time, oSimple.ephemeris_interval.find_start_time())
+        Assert.assertEqual(sc.stop_time, oSimple.ephemeris_interval.find_stop_time())
+
+        self.m_logger.WriteLine("----- SIMPLE ASCENT PROPAGATOR TEST ----- END -----")
+#endregion
 
 # region PropagatorTwoBodyHelper
 class PropagatorTwoBodyHelper(object):
