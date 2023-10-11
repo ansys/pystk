@@ -36,10 +36,10 @@ def _raise_uninitialized_error(*args):
 
 class OPEN_LOG_FILE_MODE(IntEnum):
     """Log file open modes."""
-    # Open log file in write file mode.
     FOR_WRITING = 2
-    # Open log file in append file mode.
+    """Open log file in write file mode."""
     FOR_APPENDING = 8
+    """Open log file in append file mode."""
 
 OPEN_LOG_FILE_MODE.FOR_WRITING.__doc__ = "Open log file in write file mode."
 OPEN_LOG_FILE_MODE.FOR_APPENDING.__doc__ = "Open log file in append file mode."
@@ -48,16 +48,16 @@ agcls.AgTypeNameMap["OPEN_LOG_FILE_MODE"] = OPEN_LOG_FILE_MODE
 
 class UI_LOG_MSG_TYPE(IntEnum):
     """Log message types."""
-    # Log messages that provide Debug text.
     DEBUG = 0
-    # Log messages that provide information text.
+    """Log messages that provide Debug text."""
     INFO = 1
-    # Log messages that provide forceful information text.
+    """Log messages that provide information text."""
     FORCE_INFO = 2
-    # Log messages that provide warning text.
+    """Log messages that provide forceful information text."""
     WARNING = 3
-    # Log messages that provide alarm text.
+    """Log messages that provide warning text."""
     ALARM = 4
+    """Log messages that provide alarm text."""
 
 UI_LOG_MSG_TYPE.DEBUG.__doc__ = "Log messages that provide Debug text."
 UI_LOG_MSG_TYPE.INFO.__doc__ = "Log messages that provide information text."
@@ -69,8 +69,8 @@ agcls.AgTypeNameMap["UI_LOG_MSG_TYPE"] = UI_LOG_MSG_TYPE
 
 class APP_CONSTANTS(IntEnum):
     """APP_CONSTANTS contains base IDs for various structures."""
-    # Error base.
     APP_ERROR_BASE = 0x200
+    """Error base."""
 
 APP_CONSTANTS.APP_ERROR_BASE.__doc__ = "Error base."
 
@@ -78,16 +78,16 @@ agcls.AgTypeNameMap["APP_CONSTANTS"] = APP_CONSTANTS
 
 class APP_ERROR_CODES(IntEnum):
     """App error codes."""
-    # Failed to load personality.
     PERS_LOAD_FAIL = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 1))
-    # Personality already loaded.
+    """Failed to load personality."""
     ALREADY_LOAD_FAIL = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 2))
-    # No personality is loaded.
+    """Personality already loaded."""
     PERS_LOAD_FIRST = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 3))
-    # You do not have the required license to connect externally to the application.
+    """No personality is loaded."""
     PERS_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 4))
-    # No license could be found.
+    """You do not have the required license to connect externally to the application."""
     NO_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 5))
+    """No license could be found."""
 
 APP_ERROR_CODES.PERS_LOAD_FAIL.__doc__ = "Failed to load personality."
 APP_ERROR_CODES.ALREADY_LOAD_FAIL.__doc__ = "Personality already loaded."

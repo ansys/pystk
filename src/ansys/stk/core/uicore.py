@@ -34,10 +34,10 @@ def _raise_uninitialized_error(*args):
 
 class WINDOW_SERVICE(IntEnum):
     """Well-known types of services."""
-    # A 2D window.
     WINDOW_2D = 1
-    # A 3D window.
+    """A 2D window."""
     WINDOW_3D = 2
+    """A 3D window."""
 
 WINDOW_SERVICE.WINDOW_2D.__doc__ = "A 2D window."
 WINDOW_SERVICE.WINDOW_3D.__doc__ = "A 3D window."
@@ -46,12 +46,12 @@ agcls.AgTypeNameMap["WINDOW_SERVICE"] = WINDOW_SERVICE
 
 class WINDOW_STATE(IntEnum):
     """Window states."""
-    # Window is maximized.
     MAXIMIZED = 1
-    # Window is minimized.
+    """Window is maximized."""
     MINIMIZED = 2
-    # Normal window state.
+    """Window is minimized."""
     NORMAL = 3
+    """Normal window state."""
 
 WINDOW_STATE.MAXIMIZED.__doc__ = "Window is maximized."
 WINDOW_STATE.MINIMIZED.__doc__ = "Window is minimized."
@@ -61,12 +61,12 @@ agcls.AgTypeNameMap["WINDOW_STATE"] = WINDOW_STATE
 
 class ARRANGE_STYLE(IntEnum):
     """Window layout styles."""
-    # Child windows are cascaded within the main window.
     CASCADE = 1
-    # Child windows are tiled horizontally within the main window.
+    """Child windows are cascaded within the main window."""
     TILED_HORIZONTAL = 2
-    # Child windows are tiled vertically within the main window.
+    """Child windows are tiled horizontally within the main window."""
     TILED_VERTICAL = 3
+    """Child windows are tiled vertically within the main window."""
 
 ARRANGE_STYLE.CASCADE.__doc__ = "Child windows are cascaded within the main window."
 ARRANGE_STYLE.TILED_HORIZONTAL.__doc__ = "Child windows are tiled horizontally within the main window."
@@ -76,18 +76,18 @@ agcls.AgTypeNameMap["ARRANGE_STYLE"] = ARRANGE_STYLE
 
 class DOCK_STYLE(IntEnum):
     """Window docking styles."""
-    # Child window is integrated into the main window.
     INTEGRATED = 1
-    # Child window is docked to the left side of the within the main window.
+    """Child window is integrated into the main window."""
     DOCKED_LEFT = 2
-    # Child window is docked to the right side of the main window.
+    """Child window is docked to the left side of the within the main window."""
     DOCKED_RIGHT = 3
-    # Child window is docked to the top of the main window.
+    """Child window is docked to the right side of the main window."""
     DOCKED_TOP = 4
-    # Child window is docked to the bottom of the main window.
+    """Child window is docked to the top of the main window."""
     DOCKED_BOTTOM = 5
-    # Child window is not docked or integrated.
+    """Child window is docked to the bottom of the main window."""
     FLOATING = 6
+    """Child window is not docked or integrated."""
 
 DOCK_STYLE.INTEGRATED.__doc__ = "Child window is integrated into the main window."
 DOCK_STYLE.DOCKED_LEFT.__doc__ = "Child window is docked to the left side of the within the main window."
@@ -100,10 +100,10 @@ agcls.AgTypeNameMap["DOCK_STYLE"] = DOCK_STYLE
 
 class FLOAT_STATE(IntEnum):
     """Floating state."""
-    # The UI element is floated.
     FLOATED = 1
-    # The UI element is docked.
+    """The UI element is floated."""
     DOCKED = 2
+    """The UI element is docked."""
 
 FLOAT_STATE.FLOATED.__doc__ = "The UI element is floated."
 FLOAT_STATE.DOCKED.__doc__ = "The UI element is docked."

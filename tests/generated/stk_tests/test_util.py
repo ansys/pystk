@@ -1212,6 +1212,19 @@ class TestBase(unittest.TestCase):
     def IsPythonLanguage():
         return True
 
+    @staticmethod
+    def PropagateGreatArc(ga: "IVehiclePropagatorGreatArc"):
+        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        wpe: "IVehicleWaypointsElement" = ga.waypoints.add()
+        wpe.latitude = 0
+        wpe.longitude = 0
+        wpe.time = "1 Jul 1999 00:00:00.000"
+        wpe = ga.waypoints.add()
+        wpe.latitude = -20
+        wpe.longitude = -20
+        wpe.time = "1 Jul 1999 00:55:00.000"
+        ga.propagate()
+
 
 class Stopwatch:
     def __init__(self):

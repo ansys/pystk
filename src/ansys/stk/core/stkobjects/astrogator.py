@@ -222,12 +222,12 @@ def _raise_uninitialized_error(*args):
 
 class GRAPH_OPTION(IntEnum):
     """Mode that the mcs will run in."""
-    # Don't graph.
     NO_GRAPH = 0
-    # Graph the difference.
+    """Don't graph."""
     GRAPH_DIFFERENCE = 1
-    # Graph the value.
+    """Graph the difference."""
     GRAPH_VALUE = 2
+    """Graph the value."""
 
 GRAPH_OPTION.NO_GRAPH.__doc__ = "Don't graph."
 GRAPH_OPTION.GRAPH_DIFFERENCE.__doc__ = "Graph the difference."
@@ -237,10 +237,10 @@ agcls.AgTypeNameMap["GRAPH_OPTION"] = GRAPH_OPTION
 
 class SMART_RUN_MODE(IntEnum):
     """Mode that the mcs will run in."""
-    # Run Entire Mission Control Sequence
     ENTIRE_MISSION_CONTROL_SEQUENCE = 0
-    # Run Only Changed Segments
+    """Run Entire Mission Control Sequence"""
     ONLY_CHANGED = 1
+    """Run Only Changed Segments"""
 
 SMART_RUN_MODE.ENTIRE_MISSION_CONTROL_SEQUENCE.__doc__ = "Run Entire Mission Control Sequence"
 SMART_RUN_MODE.ONLY_CHANGED.__doc__ = "Run Only Changed Segments"
@@ -249,10 +249,10 @@ agcls.AgTypeNameMap["SMART_RUN_MODE"] = SMART_RUN_MODE
 
 class FORMULATION(IntEnum):
     """Equinoctial Formulation."""
-    # Posigrade.
     POSIGRADE = 0
-    # Retrograde.
+    """Posigrade."""
     RETROGRADE = 1
+    """Retrograde."""
 
 FORMULATION.POSIGRADE.__doc__ = "Posigrade."
 FORMULATION.RETROGRADE.__doc__ = "Retrograde."
@@ -261,14 +261,14 @@ agcls.AgTypeNameMap["FORMULATION"] = FORMULATION
 
 class LIGHTING_CONDITION(IntEnum):
     """The criteria of a Lighting stopping condition."""
-    # The Enter Direct Sun criterion.
     CRITERION_ENTER_DIRECT_SUN = 0
-    # The Exit Direct Sun criterion.
+    """The Enter Direct Sun criterion."""
     CRITERION_EXIT_DIRECT_SUN = 1
-    # The Enter Umbra criterion.
+    """The Exit Direct Sun criterion."""
     CRITERION_ENTER_UMBRA = 2
-    # The Exit Umbra criterion.
+    """The Enter Umbra criterion."""
     CRITERION_EXIT_UMBRA = 3
+    """The Exit Umbra criterion."""
 
 LIGHTING_CONDITION.CRITERION_ENTER_DIRECT_SUN.__doc__ = "The Enter Direct Sun criterion."
 LIGHTING_CONDITION.CRITERION_EXIT_DIRECT_SUN.__doc__ = "The Exit Direct Sun criterion."
@@ -279,40 +279,40 @@ agcls.AgTypeNameMap["LIGHTING_CONDITION"] = LIGHTING_CONDITION
 
 class PROFILE(IntEnum):
     """Type of profile."""
-    # Plugin search profile.
     SEARCH_PLUGIN = 0
-    # Differential corrector profile.
+    """Plugin search profile."""
     DIFFERENTIAL_CORRECTOR = 2
-    # Change maneuver type profile.
+    """Differential corrector profile."""
     CHANGE_MANEUVER_TYPE = 3
-    # Scripting tool profile.
+    """Change maneuver type profile."""
     SCRIPTING_TOOL = 4
-    # Change return segment profile.
+    """Scripting tool profile."""
     CHANGE_RETURN_SEGMENT = 5
-    # Change propagator profile.
+    """Change return segment profile."""
     CHANGE_PROPAGATOR = 6
-    # Change stop segment profile.
+    """Change propagator profile."""
     CHANGE_STOP_SEGMENT = 7
-    # Change stopping condition state profile.
+    """Change stop segment profile."""
     CHANGE_STOPPING_CONDITION_STATE = 8
-    # Change seed finite maneuver profile.
+    """Change stopping condition state profile."""
     SEED_FINITE_MANEUVER = 9
-    # Run once profile.
+    """Change seed finite maneuver profile."""
     RUN_ONCE = 10
-    # SNOPT Optimizer profile.
+    """Run once profile."""
     SNOPT_OPTIMIZER = 11
-    # IPOPT Optimizer profile.
+    """SNOPT Optimizer profile."""
     IPOPT_OPTIMIZER = 12
-    # Lambert profile.
+    """IPOPT Optimizer profile."""
     LAMBERT_PROFILE = 13
-    # Lambert Search profile.
+    """Lambert profile."""
     LAMBERT_SEARCH_PROFILE = 14
-    # Golden Section profile.
+    """Lambert Search profile."""
     GOLDEN_SECTION = 15
-    # grid Search profile.
+    """Golden Section profile."""
     GRID_SEARCH = 16
-    # Single Parameter Bisection profile.
+    """grid Search profile."""
     BISECTION = 17
+    """Single Parameter Bisection profile."""
 
 PROFILE.SEARCH_PLUGIN.__doc__ = "Plugin search profile."
 PROFILE.DIFFERENTIAL_CORRECTOR.__doc__ = "Differential corrector profile."
@@ -336,12 +336,12 @@ agcls.AgTypeNameMap["PROFILE"] = PROFILE
 
 class ACCESS_CRITERION(IntEnum):
     """The criteria of an Access stopping condition."""
-    # The Gain Access criterion.
     GAIN = 0
-    # The Lose Access criterion.
+    """The Gain Access criterion."""
     LOSE = 1
-    # The Either criterion.
+    """The Lose Access criterion."""
     EITHER = 2
+    """The Either criterion."""
 
 ACCESS_CRITERION.GAIN.__doc__ = "The Gain Access criterion."
 ACCESS_CRITERION.LOSE.__doc__ = "The Lose Access criterion."
@@ -351,14 +351,14 @@ agcls.AgTypeNameMap["ACCESS_CRITERION"] = ACCESS_CRITERION
 
 class ECLIPSING_BODIES_SOURCE(IntEnum):
     """The source types of the eclipsing bodies list."""
-    # The eclipsing bodies list of the propagator's central body.
     PROPAGATOR_CENTRAL_BODY = 0
-    # A user-defined eclipsing bodies list related to the propagator's central body.
+    """The eclipsing bodies list of the propagator's central body."""
     USER_DEFINED = 1
-    # The eclipsing bodies list of the vehicle's central body.
+    """A user-defined eclipsing bodies list related to the propagator's central body."""
     VEHICLE_CENTRAL_BODY = 2
-    # A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list.
+    """The eclipsing bodies list of the vehicle's central body."""
     VEHICLE_USER_DEFINED = 3
+    """A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list."""
 
 ECLIPSING_BODIES_SOURCE.PROPAGATOR_CENTRAL_BODY.__doc__ = "The eclipsing bodies list of the propagator's central body."
 ECLIPSING_BODIES_SOURCE.USER_DEFINED.__doc__ = "A user-defined eclipsing bodies list related to the propagator's central body."
@@ -369,12 +369,12 @@ agcls.AgTypeNameMap["ECLIPSING_BODIES_SOURCE"] = ECLIPSING_BODIES_SOURCE
 
 class CRITERION(IntEnum):
     """The stopping condition criterion types."""
-    # The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing.
     CROSS_DECREASING = 0
-    # The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs.
+    """The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing."""
     CROSS_EITHER = 1
-    # The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing.
+    """The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs."""
     CROSS_INCREASING = 2
+    """The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing."""
 
 CRITERION.CROSS_DECREASING.__doc__ = "The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing."
 CRITERION.CROSS_EITHER.__doc__ = "The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs."
@@ -384,10 +384,10 @@ agcls.AgTypeNameMap["CRITERION"] = CRITERION
 
 class CALC_OBJECT_REFERENCE(IntEnum):
     """The calculation object Reference Selection types."""
-    # The Use Basic Reference type - uses the current satellite as the reference vehicle.
     BASIC = 0
-    # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
+    """The Use Basic Reference type - uses the current satellite as the reference vehicle."""
     SPECIFIED = 1
+    """The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."""
 
 CALC_OBJECT_REFERENCE.BASIC.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
 CALC_OBJECT_REFERENCE.SPECIFIED.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
@@ -396,10 +396,10 @@ agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE"] = CALC_OBJECT_REFERENCE
 
 class CALC_OBJECT_CENTRAL_BODY_REFERENCE(IntEnum):
     """The calculation object Central Body Reference Selection types."""
-    # The Use Basic Reference type - uses the current satellite as the reference vehicle.
     SPECIFIED = 0
-    # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
+    """The Use Basic Reference type - uses the current satellite as the reference vehicle."""
     PARENT = 1
+    """The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."""
 
 CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
 CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
@@ -408,14 +408,14 @@ agcls.AgTypeNameMap["CALC_OBJECT_CENTRAL_BODY_REFERENCE"] = CALC_OBJECT_CENTRAL_
 
 class CALC_OBJECT_ELEM(IntEnum):
     """The calculation object Element Types."""
-    # Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2.
     BROUWER_LYDDANE_MEAN_LONG = 0
-    # Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term.
+    """Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."""
     BROUWER_LYDDANE_MEAN_SHORT = 1
-    # Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term.
+    """Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."""
     KOZAI_IZSAK_MEAN = 2
-    # Osculating.
+    """Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term."""
     OSCULATING = 3
+    """Osculating."""
 
 CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG.__doc__ = "Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
 CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT.__doc__ = "Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
@@ -426,14 +426,14 @@ agcls.AgTypeNameMap["CALC_OBJECT_ELEM"] = CALC_OBJECT_ELEM
 
 class PROFILE_MODE(IntEnum):
     """The Target Sequence profile modes."""
-    # Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution.
     ITERATE = 0
-    # Not Active - the Target Sequence will ignore the profile when running.
+    """Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."""
     NOT_ACTIVE = 1
-    # Run Once - the Target Sequence will run the profile once according to its current configuration.
+    """Not Active - the Target Sequence will ignore the profile when running."""
     RUN_ONCE = 2
-    # Active - the Target Sequence will apply the change that the profile passes when running.
+    """Run Once - the Target Sequence will run the profile once according to its current configuration."""
     ACTIVE = 3
+    """Active - the Target Sequence will apply the change that the profile passes when running."""
 
 PROFILE_MODE.ITERATE.__doc__ = "Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."
 PROFILE_MODE.NOT_ACTIVE.__doc__ = "Not Active - the Target Sequence will ignore the profile when running."
@@ -444,8 +444,8 @@ agcls.AgTypeNameMap["PROFILE_MODE"] = PROFILE_MODE
 
 class CONTROL_STOPPING_CONDITION(IntEnum):
     """The stopping condition control types."""
-    # Trip - the value at which the stopping condition will be satisfied.
     TRIP_VALUE = 0
+    """Trip - the value at which the stopping condition will be satisfied."""
 
 CONTROL_STOPPING_CONDITION.TRIP_VALUE.__doc__ = "Trip - the value at which the stopping condition will be satisfied."
 
@@ -453,10 +453,10 @@ agcls.AgTypeNameMap["CONTROL_STOPPING_CONDITION"] = CONTROL_STOPPING_CONDITION
 
 class STATE(IntEnum):
     """The Stop segment state types."""
-    # Enabled - the segment stops the run of the MCS.
     ENABLED = 0
-    # Disabled - the MCS ignores this segment and continues to run.
+    """Enabled - the segment stops the run of the MCS."""
     DISABLED = 1
+    """Disabled - the MCS ignores this segment and continues to run."""
 
 STATE.ENABLED.__doc__ = "Enabled - the segment stops the run of the MCS."
 STATE.DISABLED.__doc__ = "Disabled - the MCS ignores this segment and continues to run."
@@ -465,12 +465,12 @@ agcls.AgTypeNameMap["STATE"] = STATE
 
 class RETURN_CONTROL(IntEnum):
     """The Return segment control types"""
-    # Enable - returns control of the MCS run to the parent segment.
     ENABLE = 0
-    # Disable - the MCS ignores this segment and continues to run.
+    """Enable - returns control of the MCS run to the parent segment."""
     DISABLE = 1
-    # Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it.
+    """Disable - the MCS ignores this segment and continues to run."""
     ENABLE_EXCEPT_PROFILES_BYPASS = 2
+    """Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it."""
 
 RETURN_CONTROL.ENABLE.__doc__ = "Enable - returns control of the MCS run to the parent segment."
 RETURN_CONTROL.DISABLE.__doc__ = "Disable - the MCS ignores this segment and continues to run."
@@ -480,12 +480,12 @@ agcls.AgTypeNameMap["RETURN_CONTROL"] = RETURN_CONTROL
 
 class DRAW_PERTURBATION(IntEnum):
     """The Draw Perturbation types for a Differential Corrector profile."""
-    # Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence.
     SEGMENT_COLOR = 0
-    # Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence.
+    """Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence."""
     DONT_DRAW = 1
-    # Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence.
+    """Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence."""
     TARGETER_COLOR = 2
+    """Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence."""
 
 DRAW_PERTURBATION.SEGMENT_COLOR.__doc__ = "Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence."
 DRAW_PERTURBATION.DONT_DRAW.__doc__ = "Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence."
@@ -495,12 +495,12 @@ agcls.AgTypeNameMap["DRAW_PERTURBATION"] = DRAW_PERTURBATION
 
 class DERIVE_CALC_METHOD(IntEnum):
     """The Derivative Calculation method types for a Differential Corrector profile."""
-    # Forward Difference - (f(x + delta) - f(x))/ delta
     FORWARD = 0
-    # Central Difference - (f(x + delta) - f(x - delta)) / 2delta
+    """Forward Difference - (f(x + delta) - f(x))/ delta"""
     CENTRAL = 1
-    # Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference.
+    """Central Difference - (f(x + delta) - f(x - delta)) / 2delta"""
     SIGNED = 2
+    """Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."""
 
 DERIVE_CALC_METHOD.FORWARD.__doc__ = "Forward Difference - (f(x + delta) - f(x))/ delta"
 DERIVE_CALC_METHOD.CENTRAL.__doc__ = "Central Difference - (f(x + delta) - f(x - delta)) / 2delta"
@@ -510,10 +510,10 @@ agcls.AgTypeNameMap["DERIVE_CALC_METHOD"] = DERIVE_CALC_METHOD
 
 class CONVERGENCE_CRITERIA(IntEnum):
     """The Convergence Criteria types for a Differential Corrector profile."""
-    # Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence.
     EQUALITY_CONSTRAINT_WITHIN_TOLERANCE = 0
-    # Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence.
+    """Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."""
     CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS = 1
+    """Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."""
 
 CONVERGENCE_CRITERIA.EQUALITY_CONSTRAINT_WITHIN_TOLERANCE.__doc__ = "Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."
 CONVERGENCE_CRITERIA.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS.__doc__ = "Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."
@@ -522,14 +522,14 @@ agcls.AgTypeNameMap["CONVERGENCE_CRITERIA"] = CONVERGENCE_CRITERIA
 
 class DIFFERENTIAL_CORRECTOR_SCALING_METHOD(IntEnum):
     """The Scaling Method types for a Differential Corrector profile."""
-    # By initial value.
     INITIAL_VALUE = 0
-    # By one (no scaling).
+    """By initial value."""
     ONE_NO_SCALING = 1
-    # By specified value.
+    """By one (no scaling)."""
     SPECIFIED_VALUE = 2
-    # By tolerance.
+    """By specified value."""
     TOLERANCE = 3
+    """By tolerance."""
 
 DIFFERENTIAL_CORRECTOR_SCALING_METHOD.INITIAL_VALUE.__doc__ = "By initial value."
 DIFFERENTIAL_CORRECTOR_SCALING_METHOD.ONE_NO_SCALING.__doc__ = "By one (no scaling)."
@@ -540,28 +540,28 @@ agcls.AgTypeNameMap["DIFFERENTIAL_CORRECTOR_SCALING_METHOD"] = DIFFERENTIAL_CORR
 
 class CONTROL_UPDATE(IntEnum):
     """Update segment properties that can be selected as control parameters for a Target Sequence."""
-    # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
     CD_VAL = 100
-    # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
     CR_VAL = 101
-    # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
+    """Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     DRAG_AREA_VAL = 102
-    # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
+    """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."""
     DRY_MASS_VAL = 103
-    # Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3).
+    """Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."""
     FUEL_DENSITY_VAL = 104
-    # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
+    """Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."""
     FUEL_MASS_VAL = 105
-    # The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared.
+    """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
     RADIATION_PRESSURE_AREA_VAL = 106
-    # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."""
     RADIATION_PRESSURE_COEFFICIENT_VAL = 107
-    # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared.
+    """Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     SRP_AREA_VAL = 108
-    # Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
+    """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."""
     TANK_PRESSURE_VAL = 109
-    # Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
+    """Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."""
     TANK_TEMP_VAL = 110
+    """Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."""
 
 CONTROL_UPDATE.CD_VAL.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
 CONTROL_UPDATE.CR_VAL.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
@@ -579,42 +579,42 @@ agcls.AgTypeNameMap["CONTROL_UPDATE"] = CONTROL_UPDATE
 
 class CONTROL_FOLLOW(IntEnum):
     """Follow segment properties that can be selected as control parameters for a Target Sequence."""
-    # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
     FUEL_MASS = 200
-    # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
+    """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
     CD = 201
-    # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
     CR = 202
-    # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
+    """Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     DRAG_AREA = 203
-    # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
+    """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."""
     DRY_MASS = 204
-    # Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3).
+    """Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."""
     FUEL_DENSITY = 205
-    # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
+    """Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."""
     K1 = 206
-    # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value.
+    """GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."""
     K2 = 207
-    # The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared.
+    """GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."""
     RADIATION_PRESSURE_AREA = 208
-    # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."""
     CK = 209
-    # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared.
+    """Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     SRP_AREA = 210
-    # Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
+    """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."""
     TANK_PRESSURE = 211
-    # Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
+    """Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."""
     TANK_TEMP = 212
-    # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg).
+    """Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."""
     MAX_FUEL_MASS = 213
-    # Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3.
+    """Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg)."""
     TANK_VOLUME = 214
-    # X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis.
+    """Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3."""
     X_OFFSET = 215
-    # Y Offset - the distance that the spacecraft will be offset from the leader's body frame along the Y axis.
+    """X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis."""
     Y_OFFSET = 216
-    # Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis.
+    """Y Offset - the distance that the spacecraft will be offset from the leader's body frame along the Y axis."""
     Z_OFFSET = 217
+    """Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis."""
 
 CONTROL_FOLLOW.FUEL_MASS.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
 CONTROL_FOLLOW.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
@@ -639,178 +639,178 @@ agcls.AgTypeNameMap["CONTROL_FOLLOW"] = CONTROL_FOLLOW
 
 class CONTROL_INIT_STATE(IntEnum):
     """Initial State segment properties that can be selected as control parameters for a Target Sequence."""
-    # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
     FUEL_MASS = 300
-    # Vx Component - the X component of the spacecraft velocity vector.
+    """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
     CARTESIAN_VX = 301
-    # Vy Component - the Y component of the spacecraft velocity vector.
+    """Vx Component - the X component of the spacecraft velocity vector."""
     CARTESIAN_VY = 302
-    # Vz Component - the Z component of the spacecraft velocity vector.
+    """Vy Component - the Y component of the spacecraft velocity vector."""
     CARTESIAN_VZ = 303
-    # X Component - the X component of the spacecraft position vector.
+    """Vz Component - the Z component of the spacecraft velocity vector."""
     CARTESIAN_X = 304
-    # Y Component - the Y component of the spacecraft position vector.
+    """X Component - the X component of the spacecraft position vector."""
     CARTESIAN_Y = 305
-    # Z Component - the Z component of the spacecraft position vector.
+    """Y Component - the Y component of the spacecraft position vector."""
     CARTESIAN_Z = 306
-    # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
+    """Z Component - the Z component of the spacecraft position vector."""
     CD = 307
-    # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
     CR = 308
-    # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
+    """Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     DRAG_AREA = 309
-    # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
+    """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."""
     DRY_MASS = 310
-    # Epoch - the orbit epoch.
+    """Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."""
     EPOCH = 311
-    # Fuel Density - the density of the fuel tank.
+    """Epoch - the orbit epoch."""
     FUEL_DENSITY = 312
-    # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
+    """Fuel Density - the density of the fuel tank."""
     K1 = 313
-    # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value.
+    """GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."""
     K2 = 314
-    # Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless.
+    """GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."""
     KEPLERIAN_ECCENTRICITY = 315
-    # Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit.
+    """Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless."""
     KEPLERIAN_INC = 316
-    # Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction.
+    """Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit."""
     KEPLERIAN_RAAN = 317
-    # Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse.
+    """Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction."""
     KEPLERIAN_SMA = 318
-    # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
+    """Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse."""
     KEPLERIAN_TA = 319
-    # Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit.
+    """True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."""
     KEPLERIAN_W = 320
-    # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
+    """Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit."""
     RADIATION_PRESSURE_AREA = 327
-    # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."""
     CK = 328
-    # Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north.
+    """Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     SPHERICAL_AZ = 329
-    # Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector.
+    """Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north."""
     SPHERICAL_DEC = 330
-    # Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle).
+    """Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."""
     SPHERICAL_HORIZ_FPA = 331
-    # Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector.
+    """Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle)."""
     SPHERICAL_RA = 332
-    # Radius Magnitude - the magnitude of the spacecraft position vector.
+    """Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."""
     SPHERICAL_R_MAGNITUDE = 333
-    # Velocity Magnitude - the magnitude of the spacecraft velocity vector.
+    """Radius Magnitude - the magnitude of the spacecraft position vector."""
     SPHERICAL_V_MAGNITUDE = 334
-    # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
+    """Velocity Magnitude - the magnitude of the spacecraft velocity vector."""
     SRP_AREA = 335
-    # Tank Pressure - the fuel tank pressure.
+    """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."""
     TANK_PRESSURE = 336
-    # Tank Temperature - the temperature of the fuel tank.
+    """Tank Pressure - the fuel tank pressure."""
     TANK_TEMP = 337
-    # Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system.
+    """Tank Temperature - the temperature of the fuel tank."""
     TARGET_VEC_IN_ASYMP_DEC = 338
-    # Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system.
+    """Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system."""
     TARGET_VEC_IN_ASYMP_RA = 339
-    # Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
+    """Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system."""
     TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS = 340
-    # C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
+    """Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."""
     TARGET_VEC_IN_C3 = 341
-    # Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
+    """C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."""
     TARGET_VEC_IN_RAD_OF_PERIAPSIS = 342
-    # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
+    """Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."""
     TARGET_VEC_IN_TRUE_ANOMALY = 343
-    # Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system.
+    """True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."""
     TARGET_VEC_OUT_ASYMP_DEC = 344
-    # Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system.
+    """Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system."""
     TARGET_VEC_OUT_ASYMP_RA = 345
-    # Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
+    """Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system."""
     TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS = 346
-    # C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
+    """Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."""
     TARGET_VEC_OUT_C3 = 347
-    # Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
+    """C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."""
     TARGET_VEC_OUT_RAD_OF_PERIAPSIS = 348
-    # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
+    """Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."""
     TARGET_VEC_OUT_TRUE_ANOMALY = 349
-    # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences.
+    """True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."""
     MAX_FUEL_MASS = 350
-    # Tank Volume - the volume of the fuel tank.
+    """Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."""
     TANK_VOLUME = 351
-    # G - Magnitude of orbital angular momentum, sqrt(GM * p).
+    """Tank Volume - the volume of the fuel tank."""
     DELAUNAY_G = 352
-    # H - Z component of orbital angular momentum, G cos(inc).
+    """G - Magnitude of orbital angular momentum, sqrt(GM * p)."""
     DELAUNAY_H = 353
-    # Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis.
+    """H - Z component of orbital angular momentum, G cos(inc)."""
     DELAUNAY_INC = 354
-    # L - Related to two-body orbital energy, sqrt(GM * a)
+    """Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."""
     DELAUNAY_L = 355
-    # Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate.
+    """L - Related to two-body orbital energy, sqrt(GM * a)"""
     DELAUNAY_MEAN_ANOMALY = 356
-    # Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane.
+    """Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."""
     DELAUNAY_RAAN = 357
-    # Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees
+    """Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."""
     DELAUNAY_SEMI_LATUS_RECTUM = 358
-    # Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
+    """Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees"""
     DELAUNAY_SMA = 359
-    # Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane.
+    """Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."""
     DELAUNAY_W = 360
-    # H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)
+    """Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."""
     EQUINOCTIAL_H = 361
-    # K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)
+    """H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)"""
     EQUINOCTIAL_K = 362
-    # Mean Longitude - RAAN + w + M
+    """K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)"""
     EQUINOCTIAL_MEAN_LONGITUDE = 363
-    # Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion.
+    """Mean Longitude - RAAN + w + M"""
     EQUINOCTIAL_MEAN_MOTION = 364
-    # P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)
+    """Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."""
     EQUINOCTIAL_P = 365
-    # Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)
+    """P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)"""
     EQUINOCTIAL_Q = 366
-    # Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
+    """Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)"""
     EQUINOCTIAL_SMA = 367
-    # Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid.
+    """Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."""
     MIXED_SPHERICAL_ALTITUDE = 368
-    # Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction.
+    """Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid."""
     MIXED_SPHERICAL_AZIMUTH = 369
-    # Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector.
+    """Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction."""
     MIXED_SPHERICAL_HORIZ_FPA = 370
-    # Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane.
+    """Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."""
     MIXED_SPHERICAL_LATITUDE = 371
-    # Longitude
+    """Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."""
     MIXED_SPHERICAL_LONGITUDE = 372
-    # Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
+    """Longitude"""
     MIXED_SPHERICAL_VERTICAL_FPA = 373
-    # Velocity Magnitude - The magnitude of the inertial velocity vector.
+    """Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."""
     MIXED_SPHERICAL_V_MAGNITUDE = 374
-    # Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
+    """Velocity Magnitude - The magnitude of the inertial velocity vector."""
     SPHERICAL_VERTICAL_FPA = 375
-    # Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit.
+    """Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."""
     KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE = 376
-    # Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit.
+    """Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."""
     KEPLERIAN_APOAPSIS_ALTITUDE_SIZE = 377
-    # Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
+    """Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."""
     KEPLERIAN_APOAPSIS_RAD_SHAPE = 378
-    # Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
+    """Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."""
     KEPLERIAN_APOAPSIS_RAD_SIZE = 379
-    # Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee.
+    """Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."""
     KEPLERIAN_ARG_LAT = 380
-    # Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse.
+    """Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee."""
     KEPLERIAN_ECCENTRICITY_ANOMALY = 381
-    # Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion.
+    """Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse."""
     KEPLERIAN_LAN = 382
-    # Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate.
+    """Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion."""
     KEPLERIAN_MEAN_ANOMALY = 383
-    # Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion.
+    """Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."""
     KEPLERIAN_MEAN_MOTION = 384
-    # Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
+    """Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."""
     KEPLERIAN_PERIAPSIS_ALTITUDE_SHAPE = 385
-    # Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
+    """Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."""
     KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE = 386
-    # Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit.
+    """Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."""
     KEPLERIAN_PERIAPSIS_RAD_SHAPE = 387
-    # Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
+    """Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit."""
     KEPLERIAN_PERIAPSIS_RAD_SIZE = 388
-    # Period - The duration of one orbit, based on assumed two-body motion.
+    """Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."""
     KEPLERIAN_PERIOD = 389
-    # Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion.
+    """Period - The duration of one orbit, based on assumed two-body motion."""
     KEPLERIAN_TIME_PAST_AN = 390
-    # Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion.
+    """Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion."""
     KEPLERIAN_TIME_PAST_PERIAPSIS = 391
+    """Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion."""
 
 CONTROL_INIT_STATE.FUEL_MASS.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
 CONTROL_INIT_STATE.CARTESIAN_VX.__doc__ = "Vx Component - the X component of the spacecraft velocity vector."
@@ -903,76 +903,76 @@ agcls.AgTypeNameMap["CONTROL_INIT_STATE"] = CONTROL_INIT_STATE
 
 class CONTROL_MANEUVER(IntEnum):
     """Maneuver segment properties that can be selected as control parameters for a Target Sequence."""
-    # The Cartesian X component of the thrust vector.
     FINITE_CARTESIAN_X = 400
-    # The Cartesian Y component of the thrust vector.
+    """The Cartesian X component of the thrust vector."""
     FINITE_CARTESIAN_Y = 401
-    # The Cartesian Z component of the thrust vector.
+    """The Cartesian Y component of the thrust vector."""
     FINITE_CARTESIAN_Z = 402
-    # The Euler A (Phi) component of the rotation from the reference axes to the body frame.
+    """The Cartesian Z component of the thrust vector."""
     FINITE_EULER_ANGLES1 = 403
-    # The Euler B (Theta) component of the rotation from the reference axes to the body frame.
+    """The Euler A (Phi) component of the rotation from the reference axes to the body frame."""
     FINITE_EULER_ANGLES2 = 404
-    # The Euler C (Psi) component of the rotation from the reference axes to the body frame.
+    """The Euler B (Theta) component of the rotation from the reference axes to the body frame."""
     FINITE_EULER_ANGLES3 = 405
-    # The spherical azimuth component of the thrust vector.
+    """The Euler C (Psi) component of the rotation from the reference axes to the body frame."""
     FINITE_SPHERICAL_AZ = 406
-    # The spherical elevation component of the thrust vector.
+    """The spherical azimuth component of the thrust vector."""
     FINITE_SPHERICAL_ELEV = 407
-    # The Cartesian X component of the thrust vector.
+    """The spherical elevation component of the thrust vector."""
     IMPULSIVE_CARTESIAN_X = 408
-    # The Cartesian Y component of the thrust vector.
+    """The Cartesian X component of the thrust vector."""
     IMPULSIVE_CARTESIAN_Y = 409
-    # The Cartesian Z component of the thrust vector.
+    """The Cartesian Y component of the thrust vector."""
     IMPULSIVE_CARTESIAN_Z = 410
-    # The Euler A (Phi) component of the rotation from the reference axes to the body frame.
+    """The Cartesian Z component of the thrust vector."""
     IMPULSIVE_EULER_ANGLES1 = 411
-    # The Euler B (Theta) component of the rotation from the reference axes to the body frame.
+    """The Euler A (Phi) component of the rotation from the reference axes to the body frame."""
     IMPULSIVE_EULER_ANGLES2 = 412
-    # The Euler C (Psi) component of the rotation from the reference axes to the body frame.
+    """The Euler B (Theta) component of the rotation from the reference axes to the body frame."""
     IMPULSIVE_EULER_ANGLES3 = 413
-    # The spherical azimuth component of the thrust vector.
+    """The Euler C (Psi) component of the rotation from the reference axes to the body frame."""
     IMPULSIVE_SPHERICAL_AZ = 414
-    # The spherical elevation component of the thrust vector.
+    """The spherical azimuth component of the thrust vector."""
     IMPULSIVE_SPHERICAL_ELEV = 415
-    # The spherical magnitude component of the thrust vector.
+    """The spherical elevation component of the thrust vector."""
     IMPULSIVE_SPHERICAL_MAGNITUDE = 416
-    # The burn center bias of the thrust.
+    """The spherical magnitude component of the thrust vector."""
     FINITE_BURN_CENTER_BIAS = 417
-    # The thrust efficiency value.
+    """The burn center bias of the thrust."""
     FINITE_THRUST_EFFICIENCY = 418
-    # The time varying azimuth polynomial constant term.
+    """The thrust efficiency value."""
     FINITE_AZ0 = 419
-    # The time varying azimuth polynomial linear term.
+    """The time varying azimuth polynomial constant term."""
     FINITE_AZ1 = 420
-    # The time varying azimuth polynomial quadratic term.
+    """The time varying azimuth polynomial linear term."""
     FINITE_AZ2 = 421
-    # The time varying azimuth polynomial cubic term.
+    """The time varying azimuth polynomial quadratic term."""
     FINITE_AZ3 = 422
-    # The time varying azimuth polynomial quartic term.
+    """The time varying azimuth polynomial cubic term."""
     FINITE_AZ4 = 423
-    # The time varying azimuth sine amplitude term.
+    """The time varying azimuth polynomial quartic term."""
     FINITE_AZ_A = 424
-    # The time varying azimuth sine frequency term.
+    """The time varying azimuth sine amplitude term."""
     FINITE_AZ_F = 425
-    # The time varying azimuth sine phase term.
+    """The time varying azimuth sine frequency term."""
     FINITE_AZ_P = 426
-    # The time varying elevation polynomial constant term.
+    """The time varying azimuth sine phase term."""
     FINITE_EL0 = 427
-    # The time varying elevation polynomial linear term.
+    """The time varying elevation polynomial constant term."""
     FINITE_EL1 = 428
-    # The time varying elevation polynomial quadratic term.
+    """The time varying elevation polynomial linear term."""
     FINITE_EL2 = 429
-    # The time varying elevation polynomial cubic term.
+    """The time varying elevation polynomial quadratic term."""
     FINITE_EL3 = 430
-    # The time varying elevation polynomial quartic term.
+    """The time varying elevation polynomial cubic term."""
     FINITE_EL4 = 431
-    # The time varying elevation sine amplitude term.
+    """The time varying elevation polynomial quartic term."""
     FINITE_EL_A = 432
-    # The time varying elevation sine frequency term.
+    """The time varying elevation sine amplitude term."""
     FINITE_EL_F = 433
-    # The time varying elevation sine phase term.
+    """The time varying elevation sine frequency term."""
     FINITE_EL_P = 434
+    """The time varying elevation sine phase term."""
 
 CONTROL_MANEUVER.FINITE_CARTESIAN_X.__doc__ = "The Cartesian X component of the thrust vector."
 CONTROL_MANEUVER.FINITE_CARTESIAN_Y.__doc__ = "The Cartesian Y component of the thrust vector."
@@ -1014,84 +1014,84 @@ agcls.AgTypeNameMap["CONTROL_MANEUVER"] = CONTROL_MANEUVER
 
 class CONTROL_LAUNCH(IntEnum):
     """Launch segment properties that can be selected as control parameters for a Target Sequence."""
-    # The date and time of the launch.
     EPOCH = 500
-    # The geodetic latitude of the launch location.
+    """The date and time of the launch."""
     GEODETIC_LAT = 501
-    # The geodetic longitude of the launch location.
+    """The geodetic latitude of the launch location."""
     GEODETIC_LON = 502
-    # The geodetic altitude of the launch location.
+    """The geodetic longitude of the launch location."""
     GEODETIC_ALTITUDE = 503
-    # The geocentric latitude of the launch location.
+    """The geodetic altitude of the launch location."""
     GEOCENTRIC_LAT = 504
-    # The geocentric longitude of the launch location.
+    """The geocentric latitude of the launch location."""
     GEOCENTRIC_LON = 505
-    # The geocentric radius of the launch location.
+    """The geocentric longitude of the launch location."""
     GEOCENTRIC_RAD = 506
-    # The time of flight, from launch until burnout.
+    """The geocentric radius of the launch location."""
     TIME_OF_FLIGHT = 507
-    # The geocentric latitude of the burnout point.
+    """The time of flight, from launch until burnout."""
     BURNOUT_GEOCENTRIC_LAT = 508
-    # The geocentric longitude of the burnout point.
+    """The geocentric latitude of the burnout point."""
     BURNOUT_GEOCENTRIC_LON = 509
-    # The geocentric radius of the burnout point.
+    """The geocentric longitude of the burnout point."""
     BURNOUT_GEOCENTRIC_RAD = 510
-    # The geodetic latitude of the burnout point.
+    """The geocentric radius of the burnout point."""
     BURNOUT_GEODETIC_LAT = 511
-    # The geodetic longitude of the burnout point.
+    """The geodetic latitude of the burnout point."""
     BURNOUT_GEODETIC_LON = 512
-    # The geodetic altitude of the burnout point.
+    """The geodetic longitude of the burnout point."""
     BURNOUT_GEODETIC_ALTITUDE = 513
-    # The geodetic azimuth of the launch trajectory.
+    """The geodetic altitude of the burnout point."""
     BURNOUT_AZ_ALTITUDE_AZ = 514
-    # The geodetic downrange distance of the burnout point.
+    """The geodetic azimuth of the launch trajectory."""
     BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST = 515
-    # The geodetic altitude of the burnout point.
+    """The geodetic downrange distance of the burnout point."""
     BURNOUT_AZ_ALTITUDE_ALTITUDE = 516
-    # The geocentric azimuth of the launch trajectory.
+    """The geodetic altitude of the burnout point."""
     BURNOUT_AZ_RAD_AZ = 517
-    # The geocentric downrange distance of the burnout point.
+    """The geocentric azimuth of the launch trajectory."""
     BURNOUT_AZ_RAD_DOWNRANGE_DIST = 518
-    # The geocentric radius of the burnout point.
+    """The geocentric downrange distance of the burnout point."""
     BURNOUT_AZ_RAD_RAD = 519
-    # The burnout velocity in the fixed frame.
+    """The geocentric radius of the burnout point."""
     BURNOUT_FIXED_VELOCITY = 520
-    # The burnout velocity in the inertial frame.
+    """The burnout velocity in the fixed frame."""
     BURNOUT_INERTIAL_VELOCITY = 521
-    # Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed.
+    """The burnout velocity in the inertial frame."""
     BURNOUT_INERTIAL_VELOCITY_AZIMUTH = 522
-    # Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle.
+    """Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed."""
     BURNOUT_INERTIAL_HORIZONTAL_FPA = 523
-    # Dry Mass - the mass of the spacecraft exclusive of propellant.
+    """Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle."""
     DRY_MASS = 524
-    # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
+    """Dry Mass - the mass of the spacecraft exclusive of propellant."""
     CD = 525
-    # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations.
+    """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
     DRAG_AREA = 526
-    # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."""
     CR = 527
-    # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
+    """Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     SRP_AREA = 528
-    # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."""
     CK = 529
-    # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
+    """Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     RADIATION_PRESSURE_AREA = 530
-    # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
+    """Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."""
     K1 = 531
-    # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (scale) value.
+    """GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."""
     K2 = 532
-    # The fuel tank pressure.
+    """GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (scale) value."""
     TANK_PRESSURE = 533
-    # The volume of the fuel tank.
+    """The fuel tank pressure."""
     TANK_VOLUME = 534
-    # The fuel tank temperature.
+    """The volume of the fuel tank."""
     TANK_TEMP = 535
-    # The density of the fuel tank.
+    """The fuel tank temperature."""
     FUEL_DENSITY = 536
-    # The mass of the spacecraft propellant.
+    """The density of the fuel tank."""
     FUEL_MASS = 537
-    # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences.
+    """The mass of the spacecraft propellant."""
     MAX_FUEL_MASS = 538
+    """Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."""
 
 CONTROL_LAUNCH.EPOCH.__doc__ = "The date and time of the launch."
 CONTROL_LAUNCH.GEODETIC_LAT.__doc__ = "The geodetic latitude of the launch location."
@@ -1137,10 +1137,10 @@ agcls.AgTypeNameMap["CONTROL_LAUNCH"] = CONTROL_LAUNCH
 
 class CONTROL_ADVANCED(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
-    # The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied.
     PROPAGATE_MAX_PROP_TIME = 600
-    # The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction.
+    """The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."""
     PROPAGATE_MIN_PROP_TIME = 601
+    """The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."""
 
 CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
 CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
@@ -1149,12 +1149,12 @@ agcls.AgTypeNameMap["CONTROL_ADVANCED"] = CONTROL_ADVANCED
 
 class TARGET_SEQ_ACTION(IntEnum):
     """Action options for Target Sequence profiles."""
-    # Run Nominal Sequence - runs the mission control sequence.
     RUN_NOMINAL_SEQ = 0
-    # Run Active Profiles - runs the mission control sequence allowing the active profiles to operate.
+    """Run Nominal Sequence - runs the mission control sequence."""
     RUN_ACTIVE_PROFILES = 1
-    # Run Active Profiles Once - runs the profile with corrections applied to control parameters.
+    """Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."""
     RUN_ACTIVE_PROFILES_ONCE = 2
+    """Run Active Profiles Once - runs the profile with corrections applied to control parameters."""
 
 TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ.__doc__ = "Run Nominal Sequence - runs the mission control sequence."
 TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES.__doc__ = "Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."
@@ -1164,12 +1164,12 @@ agcls.AgTypeNameMap["TARGET_SEQ_ACTION"] = TARGET_SEQ_ACTION
 
 class PROFILES_FINISH(IntEnum):
     """Action options for Target Sequence profiles convergence."""
-    # Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence.
     RUN_TO_RETURN_AND_CONTINUE = 0
-    # Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether.
+    """Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence."""
     RUN_TO_RETURN_AND_STOP = 1
-    # Stop - stop the MCS as soon as the target sequence has converged.
+    """Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether."""
     STOP = 2
+    """Stop - stop the MCS as soon as the target sequence has converged."""
 
 PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE.__doc__ = "Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence."
 PROFILES_FINISH.RUN_TO_RETURN_AND_STOP.__doc__ = "Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether."
@@ -1179,28 +1179,28 @@ agcls.AgTypeNameMap["PROFILES_FINISH"] = PROFILES_FINISH
 
 class UPDATE_PARAM(IntEnum):
     """Spacecraft parameters that can be modified by an Update segment."""
-    # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations.
     DRAG_AREA = 0
-    # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
+    """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."""
     SRP_AREA = 1
-    # Dry Mass - the mass of the spacecraft exclusive of propellant.
+    """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."""
     DRY_MASS = 2
-    # The mass of the spacecraft propellant.
+    """Dry Mass - the mass of the spacecraft exclusive of propellant."""
     FUEL_MASS = 3
-    # The density of the fuel tank.
+    """The mass of the spacecraft propellant."""
     FUEL_DENSITY = 4
-    # The fuel tank pressure.
+    """The density of the fuel tank."""
     TANK_PRESSURE = 5
-    # The temperature of the fuel tank.
+    """The fuel tank pressure."""
     TANK_TEMP = 6
-    # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """The temperature of the fuel tank."""
     CR = 7
-    # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
+    """Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     CD = 8
-    # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+    """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
     CK = 9
-    # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
+    """Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
     RADIATION_PRESSURE_AREA = 10
+    """Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."""
 
 UPDATE_PARAM.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
 UPDATE_PARAM.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
@@ -1218,14 +1218,14 @@ agcls.AgTypeNameMap["UPDATE_PARAM"] = UPDATE_PARAM
 
 class UPDATE_ACTION(IntEnum):
     """Actions for the Update segment."""
-    # No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column).
     NO_CHANGE = 0
-    # Add value - add the quantity entered in the Value column to the current value for this parameter.
+    """No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column)."""
     ADD_VALUE = 1
-    # Subtract value - subtract the quantity entered in the Value column from the current value for this parameter.
+    """Add value - add the quantity entered in the Value column to the current value for this parameter."""
     SUBTRACT_VALUE = 2
-    # Set to new value - replace the current value for this parameter with the quantity entered in the Value column.
+    """Subtract value - subtract the quantity entered in the Value column from the current value for this parameter."""
     SET_TO_NEW_VALUE = 3
+    """Set to new value - replace the current value for this parameter with the quantity entered in the Value column."""
 
 UPDATE_ACTION.NO_CHANGE.__doc__ = "No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column)."
 UPDATE_ACTION.ADD_VALUE.__doc__ = "Add value - add the quantity entered in the Value column to the current value for this parameter."
@@ -1236,10 +1236,10 @@ agcls.AgTypeNameMap["UPDATE_ACTION"] = UPDATE_ACTION
 
 class PRESSURE_MODE(IntEnum):
     """Pressure Mode options."""
-    # Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law.
     BLOW_DOWN = 0
-    # Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases.
+    """Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law."""
     PRESSURE_REGULATED = 1
+    """Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases."""
 
 PRESSURE_MODE.BLOW_DOWN.__doc__ = "Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law."
 PRESSURE_MODE.PRESSURE_REGULATED.__doc__ = "Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases."
@@ -1248,10 +1248,10 @@ agcls.AgTypeNameMap["PRESSURE_MODE"] = PRESSURE_MODE
 
 class THRUST_TYPE(IntEnum):
     """Thrust options."""
-    # Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines.
     AFFECTS_ACCEL_AND_MASS_FLOW = 0
-    # Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber.
+    """Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."""
     AFFECTS_ACCEL_ONLY = 1
+    """Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."""
 
 THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW.__doc__ = "Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."
 THRUST_TYPE.AFFECTS_ACCEL_ONLY.__doc__ = "Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."
@@ -1260,12 +1260,12 @@ agcls.AgTypeNameMap["THRUST_TYPE"] = THRUST_TYPE
 
 class ATTITUDE_UPDATE(IntEnum):
     """Attitude Update."""
-    # Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn.
     DURING_BURN = 0
-    # Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft.
+    """Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn."""
     INERTIAL_AT_IGNITION = 1
-    # Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver.
+    """Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft."""
     INERTIAL_AT_START = 2
+    """Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver."""
 
 ATTITUDE_UPDATE.DURING_BURN.__doc__ = "Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn."
 ATTITUDE_UPDATE.INERTIAL_AT_IGNITION.__doc__ = "Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft."
@@ -1275,10 +1275,10 @@ agcls.AgTypeNameMap["ATTITUDE_UPDATE"] = ATTITUDE_UPDATE
 
 class PROPULSION_METHOD(IntEnum):
     """Propulsion method options."""
-    # Engine Model - can be used to quickly model the firing of a single engine.
     ENGINE_MODEL = 0
-    # Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing.
+    """Engine Model - can be used to quickly model the firing of a single engine."""
     THRUSTER_SET = 1
+    """Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing."""
 
 PROPULSION_METHOD.ENGINE_MODEL.__doc__ = "Engine Model - can be used to quickly model the firing of a single engine."
 PROPULSION_METHOD.THRUSTER_SET.__doc__ = "Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing."
@@ -1287,10 +1287,10 @@ agcls.AgTypeNameMap["PROPULSION_METHOD"] = PROPULSION_METHOD
 
 class CUSTOM_FUNCTION(IntEnum):
     """Attitude definition options for other STK functions."""
-    # Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK.
     ENABLE_PAGE_DEFINITION = 0
-    # Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window.
+    """Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK."""
     ENABLE_MANEUVER_ATTITUDE = 1
+    """Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window."""
 
 CUSTOM_FUNCTION.ENABLE_PAGE_DEFINITION.__doc__ = "Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK."
 CUSTOM_FUNCTION.ENABLE_MANEUVER_ATTITUDE.__doc__ = "Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window."
@@ -1299,18 +1299,18 @@ agcls.AgTypeNameMap["CUSTOM_FUNCTION"] = CUSTOM_FUNCTION
 
 class BODY_AXIS(IntEnum):
     """Attitude body axis options."""
-    # The positive X engine acceleration direction.
     PLUS_X = 0
-    # The positive Y engine acceleration direction.
+    """The positive X engine acceleration direction."""
     PLUS_Y = 1
-    # The positive Z engine acceleration direction.
+    """The positive Y engine acceleration direction."""
     PLUS_Z = 2
-    # The negative X engine acceleration direction.
+    """The positive Z engine acceleration direction."""
     MINUS_X = 3
-    # The negative Y engine acceleration direction.
+    """The negative X engine acceleration direction."""
     MINUS_Y = 4
-    # The negative Z engine acceleration direction.
+    """The negative Y engine acceleration direction."""
     MINUS_Z = 5
+    """The negative Z engine acceleration direction."""
 
 BODY_AXIS.PLUS_X.__doc__ = "The positive X engine acceleration direction."
 BODY_AXIS.PLUS_Y.__doc__ = "The positive Y engine acceleration direction."
@@ -1323,10 +1323,10 @@ agcls.AgTypeNameMap["BODY_AXIS"] = BODY_AXIS
 
 class CONSTRAINT_SIGN(IntEnum):
     """Constraint vector sign options."""
-    # Positive.
     PLUS = 0
-    # Negative.
+    """Positive."""
     MINUS = 1
+    """Negative."""
 
 CONSTRAINT_SIGN.PLUS.__doc__ = "Positive."
 CONSTRAINT_SIGN.MINUS.__doc__ = "Negative."
@@ -1335,22 +1335,22 @@ agcls.AgTypeNameMap["CONSTRAINT_SIGN"] = CONSTRAINT_SIGN
 
 class ATTITUDE_CONTROL(IntEnum):
     """Attitude Control options."""
-    # Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector.
     VELOCITY_VECTOR = 0
-    # Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector.
+    """Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."""
     ANTI_VELOCITY_VECTOR = 1
-    # Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. 
+    """Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector."""
     ATTITUDE = 2
-    # File (impulsive/finite) - uses an attitude file to set the thrust vector direction.
+    """Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. """
     FILE = 3
-    # Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes.
+    """File (impulsive/finite) - uses an attitude file to set the thrust vector direction."""
     THRUST_VECTOR = 4
-    # Plugin (finite) - thrust vector direction is defined using a COM plugin.
+    """Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes."""
     PLUGIN = 5
-    # Time Varying (finite) - polynomial and sine representations for the azimuth and elevation of the thrust vector.
+    """Plugin (finite) - thrust vector direction is defined using a COM plugin."""
     TIME_VARYING = 6
-    # Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver.
+    """Time Varying (finite) - polynomial and sine representations for the azimuth and elevation of the thrust vector."""
     LAGRANGE_INTERPOLATION = 7
+    """Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver."""
 
 ATTITUDE_CONTROL.VELOCITY_VECTOR.__doc__ = "Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."
 ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR.__doc__ = "Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector."
@@ -1365,14 +1365,14 @@ agcls.AgTypeNameMap["ATTITUDE_CONTROL"] = ATTITUDE_CONTROL
 
 class FOLLOW_JOIN(IntEnum):
     """Joining options for the Follow segment."""
-    # Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining.
     SPECIFY = 0
-    # Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris.
+    """Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining."""
     AT_BEGINNING = 1
-    # Join at End of Leader's Ephemeris - the spacecraft will use the leader's final ephemeris point as the initial and final state of the Follow segment; the separation parameter will automatically be set to 'Separate at End of Leader's Ephemeris'.
+    """Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris."""
     AT_END = 2
-    # Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment.
+    """Join at End of Leader's Ephemeris - the spacecraft will use the leader's final ephemeris point as the initial and final state of the Follow segment; the separation parameter will automatically be set to 'Separate at End of Leader's Ephemeris'."""
     AT_FINAL_EPOCH_OF_PREVIOUS_SEG = 3
+    """Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment."""
 
 FOLLOW_JOIN.SPECIFY.__doc__ = "Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining."
 FOLLOW_JOIN.AT_BEGINNING.__doc__ = "Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris."
@@ -1383,10 +1383,10 @@ agcls.AgTypeNameMap["FOLLOW_JOIN"] = FOLLOW_JOIN
 
 class FOLLOW_SEPARATION(IntEnum):
     """Separation options for the Follow segment."""
-    # Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation.
     SPECIFY = 0
-    # Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate.
+    """Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."""
     AT_END_OF_LEADERS_EPHEM = 1
+    """Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."""
 
 FOLLOW_SEPARATION.SPECIFY.__doc__ = "Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."
 FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEM.__doc__ = "Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."
@@ -1395,12 +1395,12 @@ agcls.AgTypeNameMap["FOLLOW_SEPARATION"] = FOLLOW_SEPARATION
 
 class FOLLOW_SPACECRAFT_AND_FUEL_TANK(IntEnum):
     """Spacecraft parameter options for the Follow segment."""
-    # Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank.
     SPECIFY = 0
-    # Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment.
+    """Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank."""
     INHERIT = 1
-    # Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration.
+    """Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment."""
     LEADER = 2
+    """Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration."""
 
 FOLLOW_SPACECRAFT_AND_FUEL_TANK.SPECIFY.__doc__ = "Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank."
 FOLLOW_SPACECRAFT_AND_FUEL_TANK.INHERIT.__doc__ = "Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment."
@@ -1410,10 +1410,10 @@ agcls.AgTypeNameMap["FOLLOW_SPACECRAFT_AND_FUEL_TANK"] = FOLLOW_SPACECRAFT_AND_F
 
 class BURNOUT_OPTIONS(IntEnum):
     """Burnout options for the Launch segment."""
-    # Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero.
     FIXED_VELOCITY = 0
-    # Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity.
+    """Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero."""
     INERTIAL_VELOCITY = 1
+    """Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity."""
 
 BURNOUT_OPTIONS.FIXED_VELOCITY.__doc__ = "Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero."
 BURNOUT_OPTIONS.INERTIAL_VELOCITY.__doc__ = "Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity."
@@ -1422,16 +1422,16 @@ agcls.AgTypeNameMap["BURNOUT_OPTIONS"] = BURNOUT_OPTIONS
 
 class BURNOUT_TYPE(IntEnum):
     """Burnout point definition types for the Launch segment."""
-    # Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body.
     GEOCENTRIC = 0
-    # Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
+    """Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."""
     GEODETIC = 1
-    # Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body.
+    """Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."""
     LAUNCH_AZ_RAD = 2
-    # Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body.
+    """Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body."""
     LAUNCH_AZ_ALTITUDE = 3
-    # Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system.
+    """Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body."""
     CBF_CARTESIAN = 4
+    """Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system."""
 
 BURNOUT_TYPE.GEOCENTRIC.__doc__ = "Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."
 BURNOUT_TYPE.GEODETIC.__doc__ = "Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
@@ -1443,10 +1443,10 @@ agcls.AgTypeNameMap["BURNOUT_TYPE"] = BURNOUT_TYPE
 
 class ASCENT_TYPE(IntEnum):
     """Ascent types for the Launch segment."""
-    # Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities.
     ELLIPSE_CUBIC_MOTION = 0
-    # Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration.
+    """Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities."""
     ELLIPSE_QUARTIC_MOTION = 1
+    """Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration."""
 
 ASCENT_TYPE.ELLIPSE_CUBIC_MOTION.__doc__ = "Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities."
 ASCENT_TYPE.ELLIPSE_QUARTIC_MOTION.__doc__ = "Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration."
@@ -1455,10 +1455,10 @@ agcls.AgTypeNameMap["ASCENT_TYPE"] = ASCENT_TYPE
 
 class LAUNCH_DISPLAY_SYSTEM(IntEnum):
     """Launch location coordinate types for the Launch segment."""
-    # Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body.
     DISPLAY_SYSTEM_GEODETIC = 0
-    # Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
+    """Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body."""
     DISPLAY_SYSTEM_GEOCENTRIC = 1
+    """Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."""
 
 LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEODETIC.__doc__ = "Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body."
 LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEOCENTRIC.__doc__ = "Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
@@ -1467,20 +1467,20 @@ agcls.AgTypeNameMap["LAUNCH_DISPLAY_SYSTEM"] = LAUNCH_DISPLAY_SYSTEM
 
 class RUN_CODE(IntEnum):
     """The run code returned after the MCS is run."""
-    # Marching - a segment has run successfully.
     MARCHING = 0
-    # Profile Failure - a search profile failed to converge.
+    """Marching - a segment has run successfully."""
     PROFILE_FAILURE = 1
-    # Error - encountered an error.
+    """Profile Failure - a search profile failed to converge."""
     ERROR = 2
-    # Stopped - encountered a stop segment.
+    """Error - encountered an error."""
     STOPPED = 3
-    # Returned - encountered a return segment.
+    """Stopped - encountered a stop segment."""
     RETURNED = 4
-    # Cancelled - cancelled by user.
+    """Returned - encountered a return segment."""
     CANCELLED = 5
-    # Global Stop - hit a global stopping condition.
+    """Cancelled - cancelled by user."""
     HIT_GLOBAL_STOP = 6
+    """Global Stop - hit a global stopping condition."""
 
 RUN_CODE.MARCHING.__doc__ = "Marching - a segment has run successfully."
 RUN_CODE.PROFILE_FAILURE.__doc__ = "Profile Failure - a search profile failed to converge."
@@ -1494,10 +1494,10 @@ agcls.AgTypeNameMap["RUN_CODE"] = RUN_CODE
 
 class SEQUENCE_STATE_TO_PASS(IntEnum):
     """State To Pass options for the Sequence segment."""
-    # The initial state of the sequence.
     INITIAL = 0
-    # The final state of the sequence.
+    """The initial state of the sequence."""
     FINAL = 1
+    """The final state of the sequence."""
 
 SEQUENCE_STATE_TO_PASS.INITIAL.__doc__ = "The initial state of the sequence."
 SEQUENCE_STATE_TO_PASS.FINAL.__doc__ = "The final state of the sequence."
@@ -1506,12 +1506,12 @@ agcls.AgTypeNameMap["SEQUENCE_STATE_TO_PASS"] = SEQUENCE_STATE_TO_PASS
 
 class MANEUVER_TYPE(IntEnum):
     """Maneuver types for the maneuver segment."""
-    # Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment.
     IMPULSIVE = 0
-    # Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met.
+    """Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."""
     FINITE = 1
-    # Optimal Finite
+    """Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met."""
     OPTIMAL_FINITE = 2
+    """Optimal Finite"""
 
 MANEUVER_TYPE.IMPULSIVE.__doc__ = "Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."
 MANEUVER_TYPE.FINITE.__doc__ = "Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met."
@@ -1521,32 +1521,32 @@ agcls.AgTypeNameMap["MANEUVER_TYPE"] = MANEUVER_TYPE
 
 class SEGMENT_TYPE(IntEnum):
     """Segment types."""
-    # Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS.
     INITIAL_STATE = 0
-    # Launch - can be used to model a simple spacecraft launch from Earth or another central body.
+    """Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS."""
     LAUNCH = 1
-    # Maneuver - can be used to model a spacecraft maneuver.
+    """Launch - can be used to model a simple spacecraft launch from Earth or another central body."""
     MANEUVER = 2
-    # Follow - can be used to set the spacecraft to follow another vehicle (Satellite, Launch Vehicle, Missile, Aircraft, Ship, or Ground Vehicle) at a specified offset, and to separate from that vehicle upon meeting specified conditions.
+    """Maneuver - can be used to model a spacecraft maneuver."""
     FOLLOW = 3
-    # Hold - can be used to model landing or rendezvous operations by setting the spacecraft to maintain a fixed position in reference to another object or body, until meeting specified conditions.
+    """Follow - can be used to set the spacecraft to follow another vehicle (Satellite, Launch Vehicle, Missile, Aircraft, Ship, or Ground Vehicle) at a specified offset, and to separate from that vehicle upon meeting specified conditions."""
     HOLD = 4
-    # Propagate - can be used to model the movement of the spacecraft along its current trajectory until meeting specified stopping conditions.
+    """Hold - can be used to model landing or rendezvous operations by setting the spacecraft to maintain a fixed position in reference to another object or body, until meeting specified conditions."""
     PROPAGATE = 5
-    # Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS.
+    """Propagate - can be used to model the movement of the spacecraft along its current trajectory until meeting specified stopping conditions."""
     SEQUENCE = 6
-    # Return - can be used to control the execution of the Mission Control Sequence by returning control to its parent segment.
+    """Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."""
     RETURN = 7
-    # Target Sequence - can be used to define maneuvers and propagations in terms of the goals they are intended to achieve.
+    """Return - can be used to control the execution of the Mission Control Sequence by returning control to its parent segment."""
     TARGET_SEQUENCE = 8
-    # Stop - can be used to control the execution of the Mission Control Sequence by halting execution of the MCS.
+    """Target Sequence - can be used to define maneuvers and propagations in terms of the goals they are intended to achieve."""
     STOP = 9
-    # Update - can be used to modify some of the satellite properties to reflect changes that occur during the mission.
+    """Stop - can be used to control the execution of the Mission Control Sequence by halting execution of the MCS."""
     UPDATE = 10
-    # Backward Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS.
+    """Update - can be used to modify some of the satellite properties to reflect changes that occur during the mission."""
     BACKWARD_SEQUENCE = 11
-    # End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it.
+    """Backward Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."""
     END = 12
+    """End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it."""
 
 SEGMENT_TYPE.INITIAL_STATE.__doc__ = "Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS."
 SEGMENT_TYPE.LAUNCH.__doc__ = "Launch - can be used to model a simple spacecraft launch from Earth or another central body."
@@ -1566,26 +1566,26 @@ agcls.AgTypeNameMap["SEGMENT_TYPE"] = SEGMENT_TYPE
 
 class ELEMENT_TYPE(IntEnum):
     """Types of orbit element sets."""
-    # Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system.
     CARTESIAN = 0
-    # Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space.
+    """Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."""
     KEPLERIAN = 1
-    # Spherical - a system in which positions are specified as a radial distance from the origin and two angles relative to a fundamental plane.
+    """Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."""
     SPHERICAL = 3
-    # Target Vector Incoming Asymptote - used for hyperbolic arrival trajectories.
+    """Spherical - a system in which positions are specified as a radial distance from the origin and two angles relative to a fundamental plane."""
     TARGET_VECTOR_INCOMING_ASYMPTOTE = 4
-    # Target Vector Outgoing Asymptote - used for hyperbolic departure trajectories.
+    """Target Vector Incoming Asymptote - used for hyperbolic arrival trajectories."""
     TARGET_VECTOR_OUTGOING_ASYMPTOTE = 5
-    # Mixed Spherical.
+    """Target Vector Outgoing Asymptote - used for hyperbolic departure trajectories."""
     MIXED_SPHERICAL = 6
-    # Delaunay.
+    """Mixed Spherical."""
     DELAUNAY = 7
-    # Equinoctial.
+    """Delaunay."""
     EQUINOCTIAL = 8
-    # Geodetic.
+    """Equinoctial."""
     GEODETIC = 9
-    # BPlane.
+    """Geodetic."""
     B_PLANE = 10
+    """BPlane."""
 
 ELEMENT_TYPE.CARTESIAN.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
 ELEMENT_TYPE.KEPLERIAN.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
@@ -1602,12 +1602,12 @@ agcls.AgTypeNameMap["ELEMENT_TYPE"] = ELEMENT_TYPE
 
 class LANGUAGE(IntEnum):
     """Scripting language types for the Scripting Tool."""
-    # VBScript.
     VB_SCRIPT = 0
-    # JScript.
+    """VBScript."""
     J_SCRIPT = 1
-    # MATLAB.
+    """JScript."""
     MATLAB = 2
+    """MATLAB."""
 
 LANGUAGE.VB_SCRIPT.__doc__ = "VBScript."
 LANGUAGE.J_SCRIPT.__doc__ = "JScript."
@@ -1617,14 +1617,14 @@ agcls.AgTypeNameMap["LANGUAGE"] = LANGUAGE
 
 class STOPPING_CONDITION(IntEnum):
     """Type of stopping condition."""
-    # Basic Stopping Condition.
     BASIC = 0
-    # Before Stopping Condition.
+    """Basic Stopping Condition."""
     BEFORE = 1
-    # One Point Access Stopping Condition.
+    """Before Stopping Condition."""
     ONE_POINT_ACCESS = 2
-    # Lighting Stopping Condition.
+    """One Point Access Stopping Condition."""
     LIGHTING = 3
+    """Lighting Stopping Condition."""
 
 STOPPING_CONDITION.BASIC.__doc__ = "Basic Stopping Condition."
 STOPPING_CONDITION.BEFORE.__doc__ = "Before Stopping Condition."
@@ -1635,12 +1635,12 @@ agcls.AgTypeNameMap["STOPPING_CONDITION"] = STOPPING_CONDITION
 
 class CLEAR_EPHEMERIS_DIRECTION(IntEnum):
     """Direction in which to clear ephemeris."""
-    # Clear ephemeris before selected time or state.
     BEFORE = -1
-    # Do not clear ephemeris.
+    """Clear ephemeris before selected time or state."""
     NO_CLEAR = 0
-    # Clear ephemeris after selected time or state.
+    """Do not clear ephemeris."""
     AFTER = 1
+    """Clear ephemeris after selected time or state."""
 
 CLEAR_EPHEMERIS_DIRECTION.BEFORE.__doc__ = "Clear ephemeris before selected time or state."
 CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR.__doc__ = "Do not clear ephemeris."
@@ -1650,10 +1650,10 @@ agcls.AgTypeNameMap["CLEAR_EPHEMERIS_DIRECTION"] = CLEAR_EPHEMERIS_DIRECTION
 
 class PROFILE_INSERT_DIRECTION(IntEnum):
     """Direction to insert profile."""
-    # Insert profile before reference profile.
     BEFORE = 0
-    # Insert profile after reference profile.
+    """Insert profile before reference profile."""
     AFTER = 1
+    """Insert profile after reference profile."""
 
 PROFILE_INSERT_DIRECTION.BEFORE.__doc__ = "Insert profile before reference profile."
 PROFILE_INSERT_DIRECTION.AFTER.__doc__ = "Insert profile after reference profile."
@@ -1662,10 +1662,10 @@ agcls.AgTypeNameMap["PROFILE_INSERT_DIRECTION"] = PROFILE_INSERT_DIRECTION
 
 class ROOT_FINDING_ALGORITHM(IntEnum):
     """Root-finding algorithms."""
-    # Secant method.
     SECANT_METHOD = 0
-    # Newton-Raphson method.
+    """Secant method."""
     NEWTON_RAPHSON_METHOD = 1
+    """Newton-Raphson method."""
 
 ROOT_FINDING_ALGORITHM.SECANT_METHOD.__doc__ = "Secant method."
 ROOT_FINDING_ALGORITHM.NEWTON_RAPHSON_METHOD.__doc__ = "Newton-Raphson method."
@@ -1674,20 +1674,20 @@ agcls.AgTypeNameMap["ROOT_FINDING_ALGORITHM"] = ROOT_FINDING_ALGORITHM
 
 class SCRIPTING_PARAMETER_TYPE(IntEnum):
     """Scripting Tool parameter type."""
-    # Double.
     DOUBLE = 0
-    # Quantity.
+    """Double."""
     QUANTITY = 1
-    # Date.
+    """Quantity."""
     DATE = 2
-    # String.
+    """Date."""
     STRING = 3
-    # Boolean.
+    """String."""
     BOOLEAN = 4
-    # Integer.
+    """Boolean."""
     INTEGER = 5
-    # Enumeration.
+    """Integer."""
     ENUMERATION = 6
+    """Enumeration."""
 
 SCRIPTING_PARAMETER_TYPE.DOUBLE.__doc__ = "Double."
 SCRIPTING_PARAMETER_TYPE.QUANTITY.__doc__ = "Quantity."
@@ -1701,10 +1701,10 @@ agcls.AgTypeNameMap["SCRIPTING_PARAMETER_TYPE"] = SCRIPTING_PARAMETER_TYPE
 
 class SNOPT_GOAL(IntEnum):
     """The Goal types for a SNOPT profile."""
-    # Minimize
     MINIMIZE = 0
-    # Bound
+    """Minimize"""
     BOUND = 1
+    """Bound"""
 
 SNOPT_GOAL.MINIMIZE.__doc__ = "Minimize"
 SNOPT_GOAL.BOUND.__doc__ = "Bound"
@@ -1713,10 +1713,10 @@ agcls.AgTypeNameMap["SNOPT_GOAL"] = SNOPT_GOAL
 
 class IPOPT_GOAL(IntEnum):
     """The Goal types for a IPOPT profile."""
-    # Minimize
     MINIMIZE = 0
-    # Bound
+    """Minimize"""
     BOUND = 1
+    """Bound"""
 
 IPOPT_GOAL.MINIMIZE.__doc__ = "Minimize"
 IPOPT_GOAL.BOUND.__doc__ = "Bound"
@@ -1725,10 +1725,10 @@ agcls.AgTypeNameMap["IPOPT_GOAL"] = IPOPT_GOAL
 
 class OPTIMAL_FINITE_SEED_METHOD(IntEnum):
     """Seed methods."""
-    # Seed initial guess from file.
     INITIAL_GUESS_FILE = 0
-    # Seed initial guess from finite maneuver.
+    """Seed initial guess from file."""
     FINITE_MANEUVER = 1
+    """Seed initial guess from finite maneuver."""
 
 OPTIMAL_FINITE_SEED_METHOD.INITIAL_GUESS_FILE.__doc__ = "Seed initial guess from file."
 OPTIMAL_FINITE_SEED_METHOD.FINITE_MANEUVER.__doc__ = "Seed initial guess from finite maneuver."
@@ -1737,10 +1737,10 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SEED_METHOD"] = OPTIMAL_FINITE_SEED_METHOD
 
 class OPTIMAL_FINITE_RUN_MODE(IntEnum):
     """Run modes."""
-    # Run current nodes.
     RUN_CURRENT_NODES = 0
-    # Optimize via direct transcription.
+    """Run current nodes."""
     OPTIMIZE_VIA_DIRECT_TRANSCRIPTION = 1
+    """Optimize via direct transcription."""
 
 OPTIMAL_FINITE_RUN_MODE.RUN_CURRENT_NODES.__doc__ = "Run current nodes."
 OPTIMAL_FINITE_RUN_MODE.OPTIMIZE_VIA_DIRECT_TRANSCRIPTION.__doc__ = "Optimize via direct transcription."
@@ -1749,10 +1749,10 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_RUN_MODE"] = OPTIMAL_FINITE_RUN_MODE
 
 class OPTIMAL_FINITE_DISCRETIZATION_STRATEGY(IntEnum):
     """Discretization Strategy."""
-    # The Legendre-Gauss-Lobatto quadrature rule
     LEGENDRE_GAUSS_LOBATTO = 0
-    # The Legendre-Gauss-Radau quadrature rule.
+    """The Legendre-Gauss-Lobatto quadrature rule"""
     LEGENDRE_GAUSS_RADAU = 1
+    """The Legendre-Gauss-Radau quadrature rule."""
 
 OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_LOBATTO.__doc__ = "The Legendre-Gauss-Lobatto quadrature rule"
 OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_RADAU.__doc__ = "The Legendre-Gauss-Radau quadrature rule."
@@ -1761,10 +1761,10 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_DISCRETIZATION_STRATEGY"] = OPTIMAL_FINITE_D
 
 class OPTIMAL_FINITE_WORKING_VARIABLES(IntEnum):
     """Working Variables."""
-    # Standard inertial equinoctial coordinates.
     EQUINOCTIAL = 0
-    # Use semi-latus rectum instead of SMA and true longitude instead of mean longitude.
+    """Standard inertial equinoctial coordinates."""
     MODIFIED_EQUINOCTIAL = 1
+    """Use semi-latus rectum instead of SMA and true longitude instead of mean longitude."""
 
 OPTIMAL_FINITE_WORKING_VARIABLES.EQUINOCTIAL.__doc__ = "Standard inertial equinoctial coordinates."
 OPTIMAL_FINITE_WORKING_VARIABLES.MODIFIED_EQUINOCTIAL.__doc__ = "Use semi-latus rectum instead of SMA and true longitude instead of mean longitude."
@@ -1773,12 +1773,12 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_WORKING_VARIABLES"] = OPTIMAL_FINITE_WORKING
 
 class OPTIMAL_FINITE_SCALING_OPTIONS(IntEnum):
     """Scaling Options."""
-    # No scaling.
     NO_SCALING = 0
-    # Scale based on canonical units.
+    """No scaling."""
     CANONICAL_UNITS = 1
-    # Scale based on the initial state.
+    """Scale based on canonical units."""
     INITIAL_STATE_BASED = 2
+    """Scale based on the initial state."""
 
 OPTIMAL_FINITE_SCALING_OPTIONS.NO_SCALING.__doc__ = "No scaling."
 OPTIMAL_FINITE_SCALING_OPTIONS.CANONICAL_UNITS.__doc__ = "Scale based on canonical units."
@@ -1788,12 +1788,12 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SCALING_OPTIONS"] = OPTIMAL_FINITE_SCALING_O
 
 class OPTIMAL_FINITE_SNOPT_OBJECTIVE(IntEnum):
     """Optimal Finite SNOPT objective."""
-    # Minimize the total TOF along the collocation arc.
     MINIMIZE_TOF = 0
-    # Minimize the total calculated DeltaV along the collocation arc.
+    """Minimize the total TOF along the collocation arc."""
     MAXIMIZE_FINAL_RAD = 1
-    # Maximize the final mass after the collocation arc.
+    """Minimize the total calculated DeltaV along the collocation arc."""
     MINIMIZE_PROPELLANT_USE = 2
+    """Maximize the final mass after the collocation arc."""
 
 OPTIMAL_FINITE_SNOPT_OBJECTIVE.MINIMIZE_TOF.__doc__ = "Minimize the total TOF along the collocation arc."
 OPTIMAL_FINITE_SNOPT_OBJECTIVE.MAXIMIZE_FINAL_RAD.__doc__ = "Minimize the total calculated DeltaV along the collocation arc."
@@ -1803,12 +1803,12 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SNOPT_OBJECTIVE"] = OPTIMAL_FINITE_SNOPT_OBJ
 
 class OPTIMAL_FINITE_SNOPT_SCALING(IntEnum):
     """Optimal Finite SNOPT scaling option."""
-    # No scaling.
     NONE = 0
-    # Scale linear constraints and variables.
+    """No scaling."""
     LINEAR = 1
-    # Scale all constraints and variables.
+    """Scale linear constraints and variables."""
     ALL = 2
+    """Scale all constraints and variables."""
 
 OPTIMAL_FINITE_SNOPT_SCALING.NONE.__doc__ = "No scaling."
 OPTIMAL_FINITE_SNOPT_SCALING.LINEAR.__doc__ = "Scale linear constraints and variables."
@@ -1818,10 +1818,10 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SNOPT_SCALING"] = OPTIMAL_FINITE_SNOPT_SCALI
 
 class OPTIMAL_FINITE_EXPORT_NODES_FORMAT(IntEnum):
     """Steering nodes export format."""
-    # Export controls as Az/El = Ra/Dec angles.
     AZIMUTH_ELEVATION = 0
-    # Export controls as unit vectors = direction cosines.
+    """Export controls as Az/El = Ra/Dec angles."""
     UNIT_VECTOR = 1
+    """Export controls as unit vectors = direction cosines."""
 
 OPTIMAL_FINITE_EXPORT_NODES_FORMAT.AZIMUTH_ELEVATION.__doc__ = "Export controls as Az/El = Ra/Dec angles."
 OPTIMAL_FINITE_EXPORT_NODES_FORMAT.UNIT_VECTOR.__doc__ = "Export controls as unit vectors = direction cosines."
@@ -1830,10 +1830,10 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_EXPORT_NODES_FORMAT"] = OPTIMAL_FINITE_EXPOR
 
 class OPTIMAL_FINITE_GUESS_METHOD(IntEnum):
     """Guess interpolation method."""
-    # Lagrange polynomial method.
     LAGRANGE_POLYNOMIAL = 0
-    # Piecewise linear method.
+    """Lagrange polynomial method."""
     PIECEWISE_LINEAR = 1
+    """Piecewise linear method."""
 
 OPTIMAL_FINITE_GUESS_METHOD.LAGRANGE_POLYNOMIAL.__doc__ = "Lagrange polynomial method."
 OPTIMAL_FINITE_GUESS_METHOD.PIECEWISE_LINEAR.__doc__ = "Piecewise linear method."
@@ -1842,10 +1842,10 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_GUESS_METHOD"] = OPTIMAL_FINITE_GUESS_METHOD
 
 class IMP_DELTA_V_REP(IntEnum):
     """Vector representations for impulsive DeltaV specification"""
-    # Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z).
     CARTESIAN_IMP_DELTA_V = 0
-    # Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude).
+    """Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."""
     SPHERICAL_IMP_DELTA_V = 1
+    """Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."""
 
 IMP_DELTA_V_REP.CARTESIAN_IMP_DELTA_V.__doc__ = "Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."
 IMP_DELTA_V_REP.SPHERICAL_IMP_DELTA_V.__doc__ = "Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."
@@ -1854,10 +1854,10 @@ agcls.AgTypeNameMap["IMP_DELTA_V_REP"] = IMP_DELTA_V_REP
 
 class LAMBERT_TARGET_COORD_TYPE(IntEnum):
     """Lambert Target CoordType."""
-    # Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system.
     CARTESIAN = 0
-    # Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space.
+    """Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."""
     KEPLERIAN = 1
+    """Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."""
 
 LAMBERT_TARGET_COORD_TYPE.CARTESIAN.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
 LAMBERT_TARGET_COORD_TYPE.KEPLERIAN.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
@@ -1866,12 +1866,12 @@ agcls.AgTypeNameMap["LAMBERT_TARGET_COORD_TYPE"] = LAMBERT_TARGET_COORD_TYPE
 
 class LAMBERT_SOLUTION_OPTION_TYPE(IntEnum):
     """Lambert Solution Option Type."""
-    # Fixed time - The type of Lambert solution to calculate.
     FIXED_TIME = 0
-    # Minimum Eccentricity - The type of Lambert solution to calculate.
+    """Fixed time - The type of Lambert solution to calculate."""
     MIN_ECCENTRICITY = 1
-    # Minimum Energy - The type of Lambert solution to calculate.
+    """Minimum Eccentricity - The type of Lambert solution to calculate."""
     MIN_ENERGY = 2
+    """Minimum Energy - The type of Lambert solution to calculate."""
 
 LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME.__doc__ = "Fixed time - The type of Lambert solution to calculate."
 LAMBERT_SOLUTION_OPTION_TYPE.MIN_ECCENTRICITY.__doc__ = "Minimum Eccentricity - The type of Lambert solution to calculate."
@@ -1881,10 +1881,10 @@ agcls.AgTypeNameMap["LAMBERT_SOLUTION_OPTION_TYPE"] = LAMBERT_SOLUTION_OPTION_TY
 
 class LAMBERT_ORBITAL_ENERGY_TYPE(IntEnum):
     """Lambert Orbital Energy Type."""
-    # Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution.
     LOW = 0
-    # High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution.
+    """Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution."""
     HIGH = 1
+    """High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution."""
 
 LAMBERT_ORBITAL_ENERGY_TYPE.LOW.__doc__ = "Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution."
 LAMBERT_ORBITAL_ENERGY_TYPE.HIGH.__doc__ = "High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution."
@@ -1893,10 +1893,10 @@ agcls.AgTypeNameMap["LAMBERT_ORBITAL_ENERGY_TYPE"] = LAMBERT_ORBITAL_ENERGY_TYPE
 
 class LAMBERT_DIRECTION_OF_MOTION_TYPE(IntEnum):
     """Lambert Direction Of Motion Type."""
-    # The short direction of motion for the Lambert solution.
     SHORT = 0
-    # The long direction of motion for the Lambert solution.
+    """The short direction of motion for the Lambert solution."""
     LONG = 1
+    """The long direction of motion for the Lambert solution."""
 
 LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT.__doc__ = "The short direction of motion for the Lambert solution."
 LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG.__doc__ = "The long direction of motion for the Lambert solution."
@@ -1905,10 +1905,10 @@ agcls.AgTypeNameMap["LAMBERT_DIRECTION_OF_MOTION_TYPE"] = LAMBERT_DIRECTION_OF_M
 
 class GOLDEN_SECTION_DESIRED_OPERATION(IntEnum):
     """The types for Desired Operation/Objective of golden section profile."""
-    # Minimize value
     MINIMIZE_VALUE = 0
-    # Maximize value
+    """Minimize value"""
     MAXIMIZE_VALUE = 1
+    """Maximize value"""
 
 GOLDEN_SECTION_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value"
 GOLDEN_SECTION_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value"
@@ -1917,10 +1917,10 @@ agcls.AgTypeNameMap["GOLDEN_SECTION_DESIRED_OPERATION"] = GOLDEN_SECTION_DESIRED
 
 class GRID_SEARCH_DESIRED_OPERATION(IntEnum):
     """The types for Desired Operation/Objective of Grid Search profile."""
-    # Minimize value
     MINIMIZE_VALUE = 0
-    # Maximize value
+    """Minimize value"""
     MAXIMIZE_VALUE = 1
+    """Maximize value"""
 
 GRID_SEARCH_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value"
 GRID_SEARCH_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value"
@@ -1929,14 +1929,14 @@ agcls.AgTypeNameMap["GRID_SEARCH_DESIRED_OPERATION"] = GRID_SEARCH_DESIRED_OPERA
 
 class ELEMENT(IntEnum):
     """Which type of elements (osculating or mean)"""
-    # Osculating.
     OSCULATING = 0
-    # Kozai-Izsak Mean.
+    """Osculating."""
     KOZAI_IZSAK_MEAN = 1
-    # Brouwer-Lyddane Mean Long.
+    """Kozai-Izsak Mean."""
     BROUWER_LYDDANE_MEAN_LONG = 2
-    # Brouwer-Lyddane Mean Short.
+    """Brouwer-Lyddane Mean Long."""
     BROUWER_LYDDANE_MEAN_SHORT = 3
+    """Brouwer-Lyddane Mean Short."""
 
 ELEMENT.OSCULATING.__doc__ = "Osculating."
 ELEMENT.KOZAI_IZSAK_MEAN.__doc__ = "Kozai-Izsak Mean."
@@ -1947,10 +1947,10 @@ agcls.AgTypeNameMap["ELEMENT"] = ELEMENT
 
 class BASE_SELECTION(IntEnum):
     """Access base object selections types."""
-    # An object in the current scenario.
     SPECIFY = 0
-    # The current satellite.
+    """An object in the current scenario."""
     CURRENT_SATELLITE = 1
+    """The current satellite."""
 
 BASE_SELECTION.SPECIFY.__doc__ = "An object in the current scenario."
 BASE_SELECTION.CURRENT_SATELLITE.__doc__ = "The current satellite."
@@ -1959,18 +1959,18 @@ agcls.AgTypeNameMap["BASE_SELECTION"] = BASE_SELECTION
 
 class CONTROL_ORBIT_STATE_VALUE(IntEnum):
     """Orbit State Value properties that can be selected as control parameters for a Target Sequence."""
-    # The Vx velocity component of the orbit state.
     VX = 0
-    # The Vy velocity component of the orbit state.
+    """The Vx velocity component of the orbit state."""
     VY = 1
-    # The Vz velocity component of the orbit state.
+    """The Vy velocity component of the orbit state."""
     VZ = 2
-    # The x position component of the orbit state.
+    """The Vz velocity component of the orbit state."""
     X = 3
-    # The y position component of the orbit state.
+    """The x position component of the orbit state."""
     Y = 4
-    # The z position component of the orbit state.
+    """The y position component of the orbit state."""
     Z = 5
+    """The z position component of the orbit state."""
 
 CONTROL_ORBIT_STATE_VALUE.VX.__doc__ = "The Vx velocity component of the orbit state."
 CONTROL_ORBIT_STATE_VALUE.VY.__doc__ = "The Vy velocity component of the orbit state."
@@ -1983,10 +1983,10 @@ agcls.AgTypeNameMap["CONTROL_ORBIT_STATE_VALUE"] = CONTROL_ORBIT_STATE_VALUE
 
 class SEGMENT_STATE(IntEnum):
     """Segment state to use types."""
-    # The segment initial state.
     INITIAL = 0
-    # The segment final state.
+    """The segment initial state."""
     FINAL = 1
+    """The segment final state."""
 
 SEGMENT_STATE.INITIAL.__doc__ = "The segment initial state."
 SEGMENT_STATE.FINAL.__doc__ = "The segment final state."
@@ -1995,10 +1995,10 @@ agcls.AgTypeNameMap["SEGMENT_STATE"] = SEGMENT_STATE
 
 class DIFFERENCE_ORDER(IntEnum):
     """The Difference order types."""
-    # The initial minus current difference.
     INITIAL_MINUS_CURRENT = 0
-    # The current minus initial difference.
+    """The initial minus current difference."""
     CURRENT_MINUS_INITIAL = 1
+    """The current minus initial difference."""
 
 DIFFERENCE_ORDER.INITIAL_MINUS_CURRENT.__doc__ = "The initial minus current difference."
 DIFFERENCE_ORDER.CURRENT_MINUS_INITIAL.__doc__ = "The current minus initial difference."
@@ -2007,10 +2007,10 @@ agcls.AgTypeNameMap["DIFFERENCE_ORDER"] = DIFFERENCE_ORDER
 
 class SEGMENT_DIFFERENCE_ORDER(IntEnum):
     """The Difference Across Segments order types."""
-    # The current minus segment difference.
     CURRENT_MINUS_SEGMENT = 0
-    # The segment minus current difference.
+    """The current minus segment difference."""
     SEGMENT_MINUS_CURRENT = 1
+    """The segment minus current difference."""
 
 SEGMENT_DIFFERENCE_ORDER.CURRENT_MINUS_SEGMENT.__doc__ = "The current minus segment difference."
 SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT.__doc__ = "The segment minus current difference."
@@ -2019,10 +2019,10 @@ agcls.AgTypeNameMap["SEGMENT_DIFFERENCE_ORDER"] = SEGMENT_DIFFERENCE_ORDER
 
 class CONTROL_REPEATING_GROUND_TRACK_ERR(IntEnum):
     """Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence."""
-    # The reference longitude.
     REFERENCE_LON = 0
-    # The repeat count.
+    """The reference longitude."""
     REPEAT_COUNT = 1
+    """The repeat count."""
 
 CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON.__doc__ = "The reference longitude."
 CONTROL_REPEATING_GROUND_TRACK_ERR.REPEAT_COUNT.__doc__ = "The repeat count."
@@ -2031,10 +2031,10 @@ agcls.AgTypeNameMap["CONTROL_REPEATING_GROUND_TRACK_ERR"] = CONTROL_REPEATING_GR
 
 class CALC_OBJECT_DIRECTION(IntEnum):
     """The direction to search for a desired value."""
-    # Search in the direction of the next calculation object.
     NEXT = 0
-    # Search in the direction of the previous calculation object.
+    """Search in the direction of the next calculation object."""
     PREVIOUS = 1
+    """Search in the direction of the previous calculation object."""
 
 CALC_OBJECT_DIRECTION.NEXT.__doc__ = "Search in the direction of the next calculation object."
 CALC_OBJECT_DIRECTION.PREVIOUS.__doc__ = "Search in the direction of the previous calculation object."
@@ -2043,10 +2043,10 @@ agcls.AgTypeNameMap["CALC_OBJECT_DIRECTION"] = CALC_OBJECT_DIRECTION
 
 class CALC_OBJECT_ORBIT_PLANE_SOURCE(IntEnum):
     """The calculation object orbit plane source Types."""
-    # Use the reference satellite to generate the orbit plane.
     REFERENCE_SATELLITE = 0
-    # Use the satellite to generate the orbit plane.
+    """Use the reference satellite to generate the orbit plane."""
     SATELLITE = 1
+    """Use the satellite to generate the orbit plane."""
 
 CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE.__doc__ = "Use the reference satellite to generate the orbit plane."
 CALC_OBJECT_ORBIT_PLANE_SOURCE.SATELLITE.__doc__ = "Use the satellite to generate the orbit plane."
@@ -2055,14 +2055,14 @@ agcls.AgTypeNameMap["CALC_OBJECT_ORBIT_PLANE_SOURCE"] = CALC_OBJECT_ORBIT_PLANE_
 
 class CALC_OBJECT_SUN_POSITION(IntEnum):
     """The calculation object sun location Types."""
-    # Use the sun location apparent from satellite.
     APPARENT_FROM_SATELLITE = 0
-    # Use the sun location apparent from reference satellite.
+    """Use the sun location apparent from satellite."""
     APPARENT_FROM_REFERENCE_SATELLITE = 1
-    # Use the sun location true from satellite.
+    """Use the sun location apparent from reference satellite."""
     TRUE_FROM_SATELLITE = 2
-    # Use the sun location true from reference satellite.
+    """Use the sun location true from satellite."""
     TRUE_FROM_REFERENCE_SATELLITE = 3
+    """Use the sun location true from reference satellite."""
 
 CALC_OBJECT_SUN_POSITION.APPARENT_FROM_SATELLITE.__doc__ = "Use the sun location apparent from satellite."
 CALC_OBJECT_SUN_POSITION.APPARENT_FROM_REFERENCE_SATELLITE.__doc__ = "Use the sun location apparent from reference satellite."
@@ -2073,10 +2073,10 @@ agcls.AgTypeNameMap["CALC_OBJECT_SUN_POSITION"] = CALC_OBJECT_SUN_POSITION
 
 class CALC_OBJECT_ANGLE_SIGN(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
-    # Use the positive sign for the angle when the relative position has a positive component along the orbit normal.
     POSITIVE = 0
-    # Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal.
+    """Use the positive sign for the angle when the relative position has a positive component along the orbit normal."""
     NEGATIVE = 1
+    """Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."""
 
 CALC_OBJECT_ANGLE_SIGN.POSITIVE.__doc__ = "Use the positive sign for the angle when the relative position has a positive component along the orbit normal."
 CALC_OBJECT_ANGLE_SIGN.NEGATIVE.__doc__ = "Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."
@@ -2085,14 +2085,14 @@ agcls.AgTypeNameMap["CALC_OBJECT_ANGLE_SIGN"] = CALC_OBJECT_ANGLE_SIGN
 
 class CALC_OBJECT_REFERENCE_DIRECTION(IntEnum):
     """Direction that establishes the zero value when projected into the orbit plane."""
-    # Use the reference satellite position when projected into the orbit plane.
     REFERENCE_SATELLITE_POSITION = 0
-    # Use the satellite position when projected into the orbit plane.
+    """Use the reference satellite position when projected into the orbit plane."""
     SATELLITE_POSITION = 1
-    # Use the reference satellite nadir (centric) when projected into the orbit plane.
+    """Use the satellite position when projected into the orbit plane."""
     REFERENCE_SATELLITE_NADIR = 2
-    # Use the satellite nadir (centric) position when projected into the orbit plane.
+    """Use the reference satellite nadir (centric) when projected into the orbit plane."""
     SATELLITE_NADIR = 3
+    """Use the satellite nadir (centric) position when projected into the orbit plane."""
 
 CALC_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_POSITION.__doc__ = "Use the reference satellite position when projected into the orbit plane."
 CALC_OBJECT_REFERENCE_DIRECTION.SATELLITE_POSITION.__doc__ = "Use the satellite position when projected into the orbit plane."
@@ -2103,10 +2103,10 @@ agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE_DIRECTION"] = CALC_OBJECT_REFERENCE_D
 
 class CALC_OBJECT_RELATIVE_POSITION(IntEnum):
     """The calculation object relative position Types."""
-    # Use the relative position satellite to reference satellite.
     SATELLITE_TO_REFERENCE_SATELLITE = 0
-    # Use the relative position reference satellite to satellite.
+    """Use the relative position satellite to reference satellite."""
     REFERENCE_SATELLITE_TO_SATELLITE = 1
+    """Use the relative position reference satellite to satellite."""
 
 CALC_OBJECT_RELATIVE_POSITION.SATELLITE_TO_REFERENCE_SATELLITE.__doc__ = "Use the relative position satellite to reference satellite."
 CALC_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE.__doc__ = "Use the relative position reference satellite to satellite."
@@ -2115,10 +2115,10 @@ agcls.AgTypeNameMap["CALC_OBJECT_RELATIVE_POSITION"] = CALC_OBJECT_RELATIVE_POSI
 
 class CALC_OBJECT_REFERENCE_ELLIPSE(IntEnum):
     """The calculation object reference ellipse Types."""
-    # Use the reference satellite orbit.
     REFERENCE_SAT_ORBIT = 0
-    # Use the satellite orbit.
+    """Use the reference satellite orbit."""
     SATELLITE_ORBIT = 1
+    """Use the satellite orbit."""
 
 CALC_OBJECT_REFERENCE_ELLIPSE.REFERENCE_SAT_ORBIT.__doc__ = "Use the reference satellite orbit."
 CALC_OBJECT_REFERENCE_ELLIPSE.SATELLITE_ORBIT.__doc__ = "Use the satellite orbit."
@@ -2127,10 +2127,10 @@ agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE_ELLIPSE"] = CALC_OBJECT_REFERENCE_ELL
 
 class CALC_OBJECT_LOCATION_SOURCE(IntEnum):
     """The calculation object location source Types."""
-    # Use the reference satellite.
     REFERENCE_SAT = 0
-    # Use the satellite.
+    """Use the reference satellite."""
     SATELLITE = 1
+    """Use the satellite."""
 
 CALC_OBJECT_LOCATION_SOURCE.REFERENCE_SAT.__doc__ = "Use the reference satellite."
 CALC_OBJECT_LOCATION_SOURCE.SATELLITE.__doc__ = "Use the satellite."
@@ -2139,14 +2139,14 @@ agcls.AgTypeNameMap["CALC_OBJECT_LOCATION_SOURCE"] = CALC_OBJECT_LOCATION_SOURCE
 
 class GRAVITATIONAL_PARAMETER_SOURCE(IntEnum):
     """The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object."""
-    # Cb File.
     CENTRAL_BODY_FILE = 0
-    # Cb File -  System.
+    """Cb File."""
     CENTRAL_BODY_FILE_SYSTEM = 1
-    # DE File.
+    """Cb File -  System."""
     DESIGN_EXPLORER_OPTIMIZER_FILE = 2
-    # Gravity File.
+    """DE File."""
     GRAVITY_FILE = 3
+    """Gravity File."""
 
 GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE.__doc__ = "Cb File."
 GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE_SYSTEM.__doc__ = "Cb File -  System."
@@ -2157,10 +2157,10 @@ agcls.AgTypeNameMap["GRAVITATIONAL_PARAMETER_SOURCE"] = GRAVITATIONAL_PARAMETER_
 
 class REFERENCE_RADIUS_SOURCE(IntEnum):
     """The source of the reference radius for a CStateCalcReferenceRadius calculation object."""
-    # Cb File.
     CENTRAL_BODY_FILE = 0
-    # Gravity File.
+    """Cb File."""
     GRAVITY_FILE = 1
+    """Gravity File."""
 
 REFERENCE_RADIUS_SOURCE.CENTRAL_BODY_FILE.__doc__ = "Cb File."
 REFERENCE_RADIUS_SOURCE.GRAVITY_FILE.__doc__ = "Gravity File."
@@ -2169,10 +2169,10 @@ agcls.AgTypeNameMap["REFERENCE_RADIUS_SOURCE"] = REFERENCE_RADIUS_SOURCE
 
 class GRAV_COEFF_NORMALIZATION_TYPE(IntEnum):
     """The normalization type for the CStateCalcGravCoeff calculation object."""
-    # Normalized.
     NORMALIZED = 0
-    # Unnormalized.
+    """Normalized."""
     UNNORMALIZED = 1
+    """Unnormalized."""
 
 GRAV_COEFF_NORMALIZATION_TYPE.NORMALIZED.__doc__ = "Normalized."
 GRAV_COEFF_NORMALIZATION_TYPE.UNNORMALIZED.__doc__ = "Unnormalized."
@@ -2181,12 +2181,12 @@ agcls.AgTypeNameMap["GRAV_COEFF_NORMALIZATION_TYPE"] = GRAV_COEFF_NORMALIZATION_
 
 class GRAV_COEFF_COEFFICIENT_TYPE(IntEnum):
     """The coefficient type for the CStateCalcGravCoeff calculation object."""
-    # Zonal.
     ZONAL = 0
-    # Cosine.
+    """Zonal."""
     COSINE = 1
-    # Sine.
+    """Cosine."""
     SINE = 2
+    """Sine."""
 
 GRAV_COEFF_COEFFICIENT_TYPE.ZONAL.__doc__ = "Zonal."
 GRAV_COEFF_COEFFICIENT_TYPE.COSINE.__doc__ = "Cosine."
@@ -2196,18 +2196,18 @@ agcls.AgTypeNameMap["GRAV_COEFF_COEFFICIENT_TYPE"] = GRAV_COEFF_COEFFICIENT_TYPE
 
 class STM_PERT_VARIABLES(IntEnum):
     """The initial and final Cartesian variational variables that describe an STM element."""
-    # Designates the initial or final variation in the 'x' component of position.
     POSITION_X = 0
-    # Designates the initial or final variation in the 'y' component of position.
+    """Designates the initial or final variation in the 'x' component of position."""
     POSITION_Y = 1
-    # Designates the initial or final variation in the 'z' component of position.
+    """Designates the initial or final variation in the 'y' component of position."""
     POSITION_Z = 2
-    # Designates the initial or final variation in the 'x' component of velocity.
+    """Designates the initial or final variation in the 'z' component of position."""
     VEL_X = 3
-    # Designates the initial or final variation in the 'y' component of velocity.
+    """Designates the initial or final variation in the 'x' component of velocity."""
     VEL_Y = 4
-    # Designates the initial or final variation in the 'z' component of velocity.
+    """Designates the initial or final variation in the 'y' component of velocity."""
     VEL_Z = 5
+    """Designates the initial or final variation in the 'z' component of velocity."""
 
 STM_PERT_VARIABLES.POSITION_X.__doc__ = "Designates the initial or final variation in the 'x' component of position."
 STM_PERT_VARIABLES.POSITION_Y.__doc__ = "Designates the initial or final variation in the 'y' component of position."
@@ -2220,18 +2220,18 @@ agcls.AgTypeNameMap["STM_PERT_VARIABLES"] = STM_PERT_VARIABLES
 
 class STM_EIGEN_NUMBER(IntEnum):
     """The number that describes one of the 6 STM Eigenvalues or Eigenvectors."""
-    # Designates the first Eigenvalue or Eigenvector.
     NUMBER1 = 0
-    # Designates the second Eigenvalue or Eigenvector.
+    """Designates the first Eigenvalue or Eigenvector."""
     NUMBER2 = 1
-    # Designates the third Eigenvalue or Eigenvector.
+    """Designates the second Eigenvalue or Eigenvector."""
     NUMBER3 = 2
-    # Designates the fourth Eigenvalue or Eigenvector.
+    """Designates the third Eigenvalue or Eigenvector."""
     NUMBER4 = 3
-    # Designates the fifth Eigenvalue or Eigenvector.
+    """Designates the fourth Eigenvalue or Eigenvector."""
     NUMBER5 = 4
-    # Designates the sixth Eigenvalue or Eigenvector.
+    """Designates the fifth Eigenvalue or Eigenvector."""
     NUMBER6 = 5
+    """Designates the sixth Eigenvalue or Eigenvector."""
 
 STM_EIGEN_NUMBER.NUMBER1.__doc__ = "Designates the first Eigenvalue or Eigenvector."
 STM_EIGEN_NUMBER.NUMBER2.__doc__ = "Designates the second Eigenvalue or Eigenvector."
@@ -2244,10 +2244,10 @@ agcls.AgTypeNameMap["STM_EIGEN_NUMBER"] = STM_EIGEN_NUMBER
 
 class COMPLEX_NUMBER(IntEnum):
     """Whether a value represents the real or imaginary portion of a number."""
-    # Designates the value as the real part.
     REAL = 0
-    # Designates the value as the imaginary part.
+    """Designates the value as the real part."""
     IMAGINARY = 1
+    """Designates the value as the imaginary part."""
 
 COMPLEX_NUMBER.REAL.__doc__ = "Designates the value as the real part."
 COMPLEX_NUMBER.IMAGINARY.__doc__ = "Designates the value as the imaginary part."
@@ -2256,10 +2256,10 @@ agcls.AgTypeNameMap["COMPLEX_NUMBER"] = COMPLEX_NUMBER
 
 class SQUARED_TYPE(IntEnum):
     """Whether to calculate the value as the square of the sum of each component or the sum of the squares."""
-    # Designates the calculation to be the sum of the squares.
     SUM_OF_SQUARES = 0
-    # Designates the calculation to be the square of the sum.
+    """Designates the calculation to be the sum of the squares."""
     OF_SUM = 1
+    """Designates the calculation to be the square of the sum."""
 
 SQUARED_TYPE.SUM_OF_SQUARES.__doc__ = "Designates the calculation to be the sum of the squares."
 SQUARED_TYPE.OF_SUM.__doc__ = "Designates the calculation to be the square of the sum."
@@ -2268,10 +2268,10 @@ agcls.AgTypeNameMap["SQUARED_TYPE"] = SQUARED_TYPE
 
 class GEO_STATIONARY_DRIFT_RATE_MODEL(IntEnum):
     """Gravity models used to compute geostationary drift rate."""
-    # Computes drift rate using two-body point mass gravity model.
     POINT_MASS = 0
-    # Computes drift rate using gravity model that includes point mass plus secular effect of J2.
+    """Computes drift rate using two-body point mass gravity model."""
     POINT_MASS_PLUS_J2 = 1
+    """Computes drift rate using gravity model that includes point mass plus secular effect of J2."""
 
 GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS.__doc__ = "Computes drift rate using two-body point mass gravity model."
 GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS_PLUS_J2.__doc__ = "Computes drift rate using gravity model that includes point mass plus secular effect of J2."
@@ -2280,18 +2280,18 @@ agcls.AgTypeNameMap["GEO_STATIONARY_DRIFT_RATE_MODEL"] = GEO_STATIONARY_DRIFT_RA
 
 class GEO_STATIONARY_INCLINATION_MAGNITUDE(IntEnum):
     """Magnitude to use when computing the inclination vector."""
-    # Computes inclination vector magnitude as the inclination angle itself (in radins).
     INCLINATION_ANGLE = 0
-    # Computes inclination vector magnitude as sin(inclination).
+    """Computes inclination vector magnitude as the inclination angle itself (in radins)."""
     SIN_INCLINATION = 1
-    # Computes inclination vector magnitude as sin(0.5*inclination).
+    """Computes inclination vector magnitude as sin(inclination)."""
     SIN_HALF_INCLINATION = 2
-    # Computes inclination vector magnitude as 2*sin(0.5*inclination).
+    """Computes inclination vector magnitude as sin(0.5*inclination)."""
     TWICE_SIN_HALF_INCLINATION = 3
-    # Computes inclination vector magnitude as tan(0.5*inclination).
+    """Computes inclination vector magnitude as 2*sin(0.5*inclination)."""
     TAN_HALF_INCLINATION = 4
-    # Computes inclination vector magnitude as 2*tan(0.5*inclination).
+    """Computes inclination vector magnitude as tan(0.5*inclination)."""
     TWICE_TAN_HALF_INCLINATION = 5
+    """Computes inclination vector magnitude as 2*tan(0.5*inclination)."""
 
 GEO_STATIONARY_INCLINATION_MAGNITUDE.INCLINATION_ANGLE.__doc__ = "Computes inclination vector magnitude as the inclination angle itself (in radins)."
 GEO_STATIONARY_INCLINATION_MAGNITUDE.SIN_INCLINATION.__doc__ = "Computes inclination vector magnitude as sin(inclination)."
@@ -2304,66 +2304,66 @@ agcls.AgTypeNameMap["GEO_STATIONARY_INCLINATION_MAGNITUDE"] = GEO_STATIONARY_INC
 
 class CENTRAL_BODY_GRAVITY_MODEL(IntEnum):
     """The gravity model."""
-    # ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon.
     ZONALS_TO_J4 = 0
-    # Earth Simple gravity model.
+    """ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."""
     EARTH_SIMPLE = 1
-    # WGS84 - (Earth) World Geodetic System 1984; WGS 84 was created by the Defense Mapping Agency (DMA).
+    """Earth Simple gravity model."""
     WGS84 = 2
-    # EGM96 - (Earth) Earth Gravity Model 1996, a geopotential model of the Earth consisting of spherical harmonic coefficients complete to degree and order 360. Developed jointly by NGA (formerly known as NIMA), NASA Goddard and Ohio State University.
+    """WGS84 - (Earth) World Geodetic System 1984; WGS 84 was created by the Defense Mapping Agency (DMA)."""
     EGM96 = 3
-    # GEMT1 - (Earth) Goddard Earth Model T1.
+    """EGM96 - (Earth) Earth Gravity Model 1996, a geopotential model of the Earth consisting of spherical harmonic coefficients complete to degree and order 360. Developed jointly by NGA (formerly known as NIMA), NASA Goddard and Ohio State University."""
     GEMT1 = 4
-    # JGM2 - (Earth) Joint Gravity Model version 2, a model that describes the Earth gravity field up to degree and order 70, developed by NASA/GSFC Space Geodesy Branch, the University of Texas Center for Space Research and CNES.
+    """GEMT1 - (Earth) Goddard Earth Model T1."""
     JGM2 = 5
-    # JGM3 - (Earth) Joint Gravity Model version 3, a model that describes the Earth gravity field up to degree and order 70, developed by the University of Texas and NASA/GSFC.
+    """JGM2 - (Earth) Joint Gravity Model version 2, a model that describes the Earth gravity field up to degree and order 70, developed by NASA/GSFC Space Geodesy Branch, the University of Texas Center for Space Research and CNES."""
     JGM3 = 6
-    # WGS84 EGM96 - (Earth) Uses the coefficients from EGM96 with the shape model of WGS84. This model is the recommended gravity model of the WGS84 definition document: NIMA TR8350.2, Third Edition, 4 July 1997.
+    """JGM3 - (Earth) Joint Gravity Model version 3, a model that describes the Earth gravity field up to degree and order 70, developed by the University of Texas and NASA/GSFC."""
     WSG84EGM96 = 7
-    # WGS84 old - (Earth) Old version of WGS84.
+    """WGS84 EGM96 - (Earth) Uses the coefficients from EGM96 with the shape model of WGS84. This model is the recommended gravity model of the WGS84 definition document: NIMA TR8350.2, Third Edition, 4 July 1997."""
     WGS84_OLD = 8
-    # GLGM2 - (Moon) GM = 4.9028029535968e+12, reference distance = 1,738,000 m.
+    """WGS84 old - (Earth) Old version of WGS84."""
     GLGM2 = 9
-    # LP165P - (Moon) GM = 4.902801056E+12, reference distance = 1,738,000.0 m.
+    """GLGM2 - (Moon) GM = 4.9028029535968e+12, reference distance = 1,738,000 m."""
     LP165P = 10
-    # Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987.
+    """LP165P - (Moon) GM = 4.902801056E+12, reference distance = 1,738,000.0 m."""
     ICARUS1987 = 11
-    # MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m.
+    """Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987."""
     MGNP180U = 12
-    # GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m.
+    """MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m."""
     GMM1 = 13
-    # GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at `NASA <https://www.nasa.gov/>`_ and were gotten from Journal of Geophysical Research, November 2000.
+    """GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m."""
     GMM2B = 14
-    # Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m.
+    """GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at `NASA <https://www.nasa.gov/>`_ and were gotten from Journal of Geophysical Research, November 2000."""
     MARS50_C = 15
-    # JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003.
+    """Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m."""
     JUP230 = 16
-    # Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m.
+    """JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003."""
     ASTRON2004 = 17
-    # AstronAstro1991 - (Neptune) GM = 6.835107e+015, reference distance = 25,225,000 m.
+    """Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m."""
     ASTRON_ASTRO1991 = 18
-    # Icarus2001 - (Callisto) GM = 7.179292e+12, reference distance = 2,410,300 m.
+    """AstronAstro1991 - (Neptune) GM = 6.835107e+015, reference distance = 25,225,000 m."""
     ICARUS2001 = 19
-    # Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m.
+    """Icarus2001 - (Callisto) GM = 7.179292e+12, reference distance = 2,410,300 m."""
     SCIENCE1998 = 20
-    # Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m.
+    """Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m."""
     NATURE1996 = 21
-    # JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m.
+    """Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m."""
     J_GEO_RES2001 = 22
-    # GGM01C - (Earth)
+    """JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m."""
     GGM01C = 23
-    # GGM02C - (Earth)
+    """GGM01C - (Earth)"""
     GGM02C = 24
-    # WGS72 ZonalsToJ4 - (Earth)
+    """GGM02C - (Earth)"""
     WGS72_ZONALS_TO_J4 = 25
-    # LP100J - (Moon)
+    """WGS72 ZonalsToJ4 - (Earth)"""
     LP100J = 26
-    # LP100K - (Moon)
+    """LP100J - (Moon)"""
     LP100K = 27
-    # LP150Q - (Moon)
+    """LP100K - (Moon)"""
     LP150Q = 28
-    # LP75G - (Moon)
+    """LP150Q - (Moon)"""
     LP75G = 29
+    """LP75G - (Moon)"""
 
 CENTRAL_BODY_GRAVITY_MODEL.ZONALS_TO_J4.__doc__ = "ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."
 CENTRAL_BODY_GRAVITY_MODEL.EARTH_SIMPLE.__doc__ = "Earth Simple gravity model."
@@ -2400,12 +2400,12 @@ agcls.AgTypeNameMap["CENTRAL_BODY_GRAVITY_MODEL"] = CENTRAL_BODY_GRAVITY_MODEL
 
 class CENTRAL_BODY_SHAPE(IntEnum):
     """The central body shape types."""
-    # A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis.
     TRIAXIAL_ELLIPSOID = 0
-    # An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient.
+    """A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis."""
     OBLATE_SPHEROID = 1
-    # A sphere defined by a radius.
+    """An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient."""
     SPHERE = 2
+    """A sphere defined by a radius."""
 
 CENTRAL_BODY_SHAPE.TRIAXIAL_ELLIPSOID.__doc__ = "A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis."
 CENTRAL_BODY_SHAPE.OBLATE_SPHEROID.__doc__ = "An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient."
@@ -2415,10 +2415,10 @@ agcls.AgTypeNameMap["CENTRAL_BODY_SHAPE"] = CENTRAL_BODY_SHAPE
 
 class CENTRAL_BODY_ATTITUDE(IntEnum):
     """The central body attitude types."""
-    # An IAU 1994 attitude definition.
     IAU1994 = 0
-    # A rotation coefficient file.
+    """An IAU 1994 attitude definition."""
     ROTATION_COEFFICIENTS_FILE = 1
+    """A rotation coefficient file."""
 
 CENTRAL_BODY_ATTITUDE.IAU1994.__doc__ = "An IAU 1994 attitude definition."
 CENTRAL_BODY_ATTITUDE.ROTATION_COEFFICIENTS_FILE.__doc__ = "A rotation coefficient file."
@@ -2427,16 +2427,16 @@ agcls.AgTypeNameMap["CENTRAL_BODY_ATTITUDE"] = CENTRAL_BODY_ATTITUDE
 
 class CENTRAL_BODY_EPHEMERIS(IntEnum):
     """The central body ephemeris types."""
-    # Specified values and rates of change for the classical orbital elements.
     ANALYTIC_ORBIT = 0
-    # An external ephemeris (.e) file.
+    """Specified values and rates of change for the classical orbital elements."""
     FILE = 1
-    # Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used.
+    """An external ephemeris (.e) file."""
     JPLDE = 2
-    # The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft.
+    """Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used."""
     JPLSPICE = 3
-    # A planetary ephemeris (.pe) file.
+    """The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft."""
     PLANETARY = 4
+    """A planetary ephemeris (.pe) file."""
 
 CENTRAL_BODY_EPHEMERIS.ANALYTIC_ORBIT.__doc__ = "Specified values and rates of change for the classical orbital elements."
 CENTRAL_BODY_EPHEMERIS.FILE.__doc__ = "An external ephemeris (.e) file."
@@ -2448,12 +2448,12 @@ agcls.AgTypeNameMap["CENTRAL_BODY_EPHEMERIS"] = CENTRAL_BODY_EPHEMERIS
 
 class CONTROL_POWER_INTERNAL(IntEnum):
     """Internal Power properties that can be selected as control parameters for a Target Sequence."""
-    # The power generated by the spacecraft from internal sources.
     GENERATED_POWER = 0
-    # The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch.
+    """The power generated by the spacecraft from internal sources."""
     PERCENT_DEGRADATION = 1
-    # The date and time used as a reference epoch for degradation.
+    """The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."""
     EPOCH = 2
+    """The date and time used as a reference epoch for degradation."""
 
 CONTROL_POWER_INTERNAL.GENERATED_POWER.__doc__ = "The power generated by the spacecraft from internal sources."
 CONTROL_POWER_INTERNAL.PERCENT_DEGRADATION.__doc__ = "The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."
@@ -2463,10 +2463,10 @@ agcls.AgTypeNameMap["CONTROL_POWER_INTERNAL"] = CONTROL_POWER_INTERNAL
 
 class CONTROL_POWER_PROCESSED(IntEnum):
     """Processed Power properties that can be selected as control parameters for a Target Sequence."""
-    # The efficiency of the power processing unit(PPU).
     EFFICIENCY = 0
-    # The power diverted from the power source and unavailable to the power processing unit(PPU).
+    """The efficiency of the power processing unit(PPU)."""
     LOAD = 1
+    """The power diverted from the power source and unavailable to the power processing unit(PPU)."""
 
 CONTROL_POWER_PROCESSED.EFFICIENCY.__doc__ = "The efficiency of the power processing unit(PPU)."
 CONTROL_POWER_PROCESSED.LOAD.__doc__ = "The power diverted from the power source and unavailable to the power processing unit(PPU)."
@@ -2475,30 +2475,30 @@ agcls.AgTypeNameMap["CONTROL_POWER_PROCESSED"] = CONTROL_POWER_PROCESSED
 
 class CONTROL_POWER_SOLAR_ARRAY(IntEnum):
     """Solar Array Power properties that can be selected as control parameters for a Target Sequence."""
-    # The ThermalModel.C0 coefficient.
     C0 = 0
-    # The ThermalModel.C1 coefficient.
+    """The ThermalModel.C0 coefficient."""
     C1 = 1
-    # The ThermalModel.C2 coefficient.
+    """The ThermalModel.C1 coefficient."""
     C2 = 2
-    # The ThermalModel.C3 coefficient.
+    """The ThermalModel.C2 coefficient."""
     C3 = 3
-    # The ThermalModel.C4 coefficient.
+    """The ThermalModel.C3 coefficient."""
     C4 = 4
-    # The solar array panel area.
+    """The ThermalModel.C4 coefficient."""
     AREA = 5
-    # The array efficiency in producing output power from a collection of cells.
+    """The solar array panel area."""
     EFFICIENCY = 6
-    # The cell efficiency in producing output power from incident sunlight.
+    """The array efficiency in producing output power from a collection of cells."""
     CELL_EFFICIENCY = 7
-    # The solar array concentration factor.
+    """The cell efficiency in producing output power from incident sunlight."""
     CONCENTRATION = 8
-    # The angle from the panel normal vector to the apparent sun line.
+    """The solar array concentration factor."""
     INCLINATION_TO_SUN_LINE = 9
-    # The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch.
+    """The angle from the panel normal vector to the apparent sun line."""
     PERCENT_DEGRADATION = 10
-    # The date and time used as a reference epoch for degradation.
+    """The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."""
     EPOCH = 11
+    """The date and time used as a reference epoch for degradation."""
 
 CONTROL_POWER_SOLAR_ARRAY.C0.__doc__ = "The ThermalModel.C0 coefficient."
 CONTROL_POWER_SOLAR_ARRAY.C1.__doc__ = "The ThermalModel.C1 coefficient."
@@ -2517,10 +2517,10 @@ agcls.AgTypeNameMap["CONTROL_POWER_SOLAR_ARRAY"] = CONTROL_POWER_SOLAR_ARRAY
 
 class THIRD_BODY_MODE(IntEnum):
     """The third body gravity mode."""
-    # Defines the gravitational effect as a full Gravitational Force model
     GRAVITY_FIELD = 0
-    # Defines the gravitational effect as a third body point mass effect.
+    """Defines the gravitational effect as a full Gravitational Force model"""
     POINT_MASS = 1
+    """Defines the gravitational effect as a third body point mass effect."""
 
 THIRD_BODY_MODE.GRAVITY_FIELD.__doc__ = "Defines the gravitational effect as a full Gravitational Force model"
 THIRD_BODY_MODE.POINT_MASS.__doc__ = "Defines the gravitational effect as a third body point mass effect."
@@ -2529,14 +2529,14 @@ agcls.AgTypeNameMap["THIRD_BODY_MODE"] = THIRD_BODY_MODE
 
 class GRAV_PARAM_SOURCE(IntEnum):
     """The gravity parameter source."""
-    # The Cb file provided with STK; uses the default, body centered gravity source for the central body.
     CENTRAL_BODY_FILE = 0
-    # A DE file; body centered for the inner planets and barycentered for the outer planets.
+    """The Cb file provided with STK; uses the default, body centered gravity source for the central body."""
     DESIGN_EXPLORER_OPTIMIZER_FILE = 1
-    # User defined; requires you to specify the mu value of the Gravitational Parameter.
+    """A DE file; body centered for the inner planets and barycentered for the outer planets."""
     USER = 2
-    # The Cb file provided with STK; uses the default, barycentered gravity source for the central body.
+    """User defined; requires you to specify the mu value of the Gravitational Parameter."""
     CENTRAL_BODY_FILE_SYSTEM = 3
+    """The Cb file provided with STK; uses the default, barycentered gravity source for the central body."""
 
 GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE.__doc__ = "The Cb file provided with STK; uses the default, body centered gravity source for the central body."
 GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
@@ -2547,14 +2547,14 @@ agcls.AgTypeNameMap["GRAV_PARAM_SOURCE"] = GRAV_PARAM_SOURCE
 
 class EPHEM_SOURCE(IntEnum):
     """The ephemeris source type."""
-    # The Cb file provided with STK; uses the default ephemeris source for that central body.
     CENTRAL_BODY_FILE = 0
-    # A DE file; body centered for the inner planets and barycentered for the outer planets.
+    """The Cb file provided with STK; uses the default ephemeris source for that central body."""
     DESIGN_EXPLORER_OPTIMIZER_FILE = 1
-    # A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass.
+    """A DE file; body centered for the inner planets and barycentered for the outer planets."""
     SPICE_BARY = 2
-    # A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass.
+    """A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass."""
     SPICE_BODY = 3
+    """A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass."""
 
 EPHEM_SOURCE.CENTRAL_BODY_FILE.__doc__ = "The Cb file provided with STK; uses the default ephemeris source for that central body."
 EPHEM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
@@ -2565,10 +2565,10 @@ agcls.AgTypeNameMap["EPHEM_SOURCE"] = EPHEM_SOURCE
 
 class SOLAR_FORCE_METHOD(IntEnum):
     """The solar force method type for a spherical or N-plate SRP model."""
-    # Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation.
     LUMINOSITY = 0
-    # Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation.
+    """Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation."""
     MEAN_FLUX = 1
+    """Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation."""
 
 SOLAR_FORCE_METHOD.LUMINOSITY.__doc__ = "Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation."
 SOLAR_FORCE_METHOD.MEAN_FLUX.__doc__ = "Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation."
@@ -2577,12 +2577,12 @@ agcls.AgTypeNameMap["SOLAR_FORCE_METHOD"] = SOLAR_FORCE_METHOD
 
 class SHADOW_MODEL(IntEnum):
     """The shadow model type."""
-    # Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector.
     CYLINDRICAL = 0
-    # Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra.
+    """Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."""
     DUAL_CONE = 1
-    # None - turns off all shadowing of the satellite.
+    """Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra."""
     NONE = 2
+    """None - turns off all shadowing of the satellite."""
 
 SHADOW_MODEL.CYLINDRICAL.__doc__ = "Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."
 SHADOW_MODEL.DUAL_CONE.__doc__ = "Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra."
@@ -2592,12 +2592,12 @@ agcls.AgTypeNameMap["SHADOW_MODEL"] = SHADOW_MODEL
 
 class SUN_POSITION(IntEnum):
     """The sun position type."""
-    # Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft.
     APPARENT = 0
-    # Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body.
+    """Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft."""
     APPARENT_TO_TRUE_CENTRAL_BODY = 1
-    # True - assumes that light from the sun reaches the spacecraft instantaneously.
+    """Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body."""
     TRUE = 2
+    """True - assumes that light from the sun reaches the spacecraft instantaneously."""
 
 SUN_POSITION.APPARENT.__doc__ = "Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft."
 SUN_POSITION.APPARENT_TO_TRUE_CENTRAL_BODY.__doc__ = "Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body."
@@ -2607,10 +2607,10 @@ agcls.AgTypeNameMap["SUN_POSITION"] = SUN_POSITION
 
 class ATMOS_DATA_SOURCE(IntEnum):
     """The Atmospheric data source type."""
-    # Constant Atmospheric data source.
     CONSTANT = 0
-    # Atmopsheric data source from file.
+    """Constant Atmospheric data source."""
     FILE = 1
+    """Atmopsheric data source from file."""
 
 ATMOS_DATA_SOURCE.CONSTANT.__doc__ = "Constant Atmospheric data source."
 ATMOS_DATA_SOURCE.FILE.__doc__ = "Atmopsheric data source from file."
@@ -2619,10 +2619,10 @@ agcls.AgTypeNameMap["ATMOS_DATA_SOURCE"] = ATMOS_DATA_SOURCE
 
 class GEO_MAGNETIC_FLUX_SOURCE(IntEnum):
     """Whether to use Kp or Ap data from the flux file."""
-    # Read Ap from file.
     AP = 0
-    # Read Kp from file.
+    """Read Ap from file."""
     KP = 1
+    """Read Kp from file."""
 
 GEO_MAGNETIC_FLUX_SOURCE.AP.__doc__ = "Read Ap from file."
 GEO_MAGNETIC_FLUX_SOURCE.KP.__doc__ = "Read Kp from file."
@@ -2631,14 +2631,14 @@ agcls.AgTypeNameMap["GEO_MAGNETIC_FLUX_SOURCE"] = GEO_MAGNETIC_FLUX_SOURCE
 
 class GEO_MAGNETIC_FLUX_UPDATE_RATE(IntEnum):
     """Method for using geomagnetic flux values from the flux file."""
-    # Three hourly
     RATE3_HOURLY = 0
-    # Three hourly cubic spline
+    """Three hourly"""
     RATE3_HOURLY_CUBIC_SPLINE = 1
-    # Three hourly interpolated
+    """Three hourly cubic spline"""
     RATE3_HOURLY_INTERPOLATED = 2
-    # Daily
+    """Three hourly interpolated"""
     DAILY = 3
+    """Daily"""
 
 GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY.__doc__ = "Three hourly"
 GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY_CUBIC_SPLINE.__doc__ = "Three hourly cubic spline"
@@ -2649,14 +2649,14 @@ agcls.AgTypeNameMap["GEO_MAGNETIC_FLUX_UPDATE_RATE"] = GEO_MAGNETIC_FLUX_UPDATE_
 
 class DRAG_MODEL_TYPE(IntEnum):
     """Type of Drag Model."""
-    # Spherical
     SPHERICAL = 0
-    # Plugin
+    """Spherical"""
     PLUGIN = 1
-    # Variable Area
+    """Plugin"""
     VARIABLE_AREA = 2
-    # N-Plate
+    """Variable Area"""
     N_PLATE = 3
+    """N-Plate"""
 
 DRAG_MODEL_TYPE.SPHERICAL.__doc__ = "Spherical"
 DRAG_MODEL_TYPE.PLUGIN.__doc__ = "Plugin"
@@ -2667,14 +2667,14 @@ agcls.AgTypeNameMap["DRAG_MODEL_TYPE"] = DRAG_MODEL_TYPE
 
 class MARS_GRAM_DENSITY_TYPE(IntEnum):
     """Density Type for MarsGRAM Density Models"""
-    # Low density
     LOW = 0
-    # Mean density
+    """Low density"""
     MEAN = 1
-    # High density
+    """Mean density"""
     HIGH = 2
-    # Randomly perturbed density
+    """High density"""
     RANDOMLY_PERTURBED = 3
+    """Randomly perturbed density"""
 
 MARS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density"
 MARS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density"
@@ -2685,14 +2685,14 @@ agcls.AgTypeNameMap["MARS_GRAM_DENSITY_TYPE"] = MARS_GRAM_DENSITY_TYPE
 
 class VENUS_GRAM_DENSITY_TYPE(IntEnum):
     """Density Type for VenusGRAM Density Models"""
-    # Low density
     LOW = 0
-    # Mean density
+    """Low density"""
     MEAN = 1
-    # High density
+    """Mean density"""
     HIGH = 2
-    # Randomly perturbed density
+    """High density"""
     RANDOMLY_PERTURBED = 3
+    """Randomly perturbed density"""
 
 VENUS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density"
 VENUS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density"
@@ -2703,10 +2703,10 @@ agcls.AgTypeNameMap["VENUS_GRAM_DENSITY_TYPE"] = VENUS_GRAM_DENSITY_TYPE
 
 class TAB_VEC_INTERP_METHOD(IntEnum):
     """The interpolation method for tabulated area vector file."""
-    # Bilinear interpolation on the Cartesian grid.
     CARTESIAN_INTERPOLATION = 0
-    # Bilinear interpolation in magnitude and direction space.
+    """Bilinear interpolation on the Cartesian grid."""
     MAGNITUDE_DIRECTION_INTERPOLATION = 1
+    """Bilinear interpolation in magnitude and direction space."""
 
 TAB_VEC_INTERP_METHOD.CARTESIAN_INTERPOLATION.__doc__ = "Bilinear interpolation on the Cartesian grid."
 TAB_VEC_INTERP_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION.__doc__ = "Bilinear interpolation in magnitude and direction space."
@@ -2715,12 +2715,12 @@ agcls.AgTypeNameMap["TAB_VEC_INTERP_METHOD"] = TAB_VEC_INTERP_METHOD
 
 class CONTROL_ENGINE_CONST_ACC(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
-    # The gravitational acceleration constant at sea level on the Earth.
     GRAV = 0
-    # The acceleration for the engine.
+    """The gravitational acceleration constant at sea level on the Earth."""
     ACCELERATION = 1
-    # The specific impulse for the engine.
+    """The acceleration for the engine."""
     ISP = 2
+    """The specific impulse for the engine."""
 
 CONTROL_ENGINE_CONST_ACC.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
 CONTROL_ENGINE_CONST_ACC.ACCELERATION.__doc__ = "The acceleration for the engine."
@@ -2730,12 +2730,12 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_CONST_ACC"] = CONTROL_ENGINE_CONST_ACC
 
 class CONTROL_ENGINE_CONSTANT(IntEnum):
     """Constant Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
-    # The gravitational acceleration constant at sea level on the Earth.
     GRAV = 0
-    # The thrust for the engine.
+    """The gravitational acceleration constant at sea level on the Earth."""
     THRUST = 1
-    # The specific impulse for the engine.
+    """The thrust for the engine."""
     ISP = 2
+    """The specific impulse for the engine."""
 
 CONTROL_ENGINE_CONSTANT.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
 CONTROL_ENGINE_CONSTANT.THRUST.__doc__ = "The thrust for the engine."
@@ -2745,8 +2745,8 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_CONSTANT"] = CONTROL_ENGINE_CONSTANT
 
 class CONTROL_ENGINE_CUSTOM(IntEnum):
     """Custom engine model properties that can be selected as control parameters for a Target Sequence."""
-    # Earth surface gravity acceleration for Isp conversions.
     GRAV = 0
+    """Earth surface gravity acceleration for Isp conversions."""
 
 CONTROL_ENGINE_CUSTOM.GRAV.__doc__ = "Earth surface gravity acceleration for Isp conversions."
 
@@ -2754,12 +2754,12 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_CUSTOM"] = CONTROL_ENGINE_CUSTOM
 
 class CONTROL_ENGINE_THROTTLE_TABLE(IntEnum):
     """Throttle table engine model properties that can be selected as control parameters for a Target Sequence."""
-    # Gravitational acceleration constant at sea level on the Earth.
     GRAV = 0
-    # The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year.
+    """Gravitational acceleration constant at sea level on the Earth."""
     PERCENT_DEGRADATION_PER_YEAR = 1
-    # The date and time used as a reference epoch for degradation.
+    """The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."""
     REFERENCE_EPOCH = 2
+    """The date and time used as a reference epoch for degradation."""
 
 CONTROL_ENGINE_THROTTLE_TABLE.GRAV.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
 CONTROL_ENGINE_THROTTLE_TABLE.PERCENT_DEGRADATION_PER_YEAR.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
@@ -2769,50 +2769,50 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_THROTTLE_TABLE"] = CONTROL_ENGINE_THROTTLE_T
 
 class CONTROL_ENGINE_ION(IntEnum):
     """Ion engine model properties that can be selected as control parameters for a Target Sequence."""
-    # FlowRateModel.C0 - the constant coefficient.
     FLOW_RATE_C0 = 0
-    # FlowRateModel.C1 - the linear coefficient.
+    """FlowRateModel.C0 - the constant coefficient."""
     FLOW_RATE_C1 = 1
-    # FlowRateModel.C2 - the quadratic coefficient.
+    """FlowRateModel.C1 - the linear coefficient."""
     FLOW_RATE_C2 = 2
-    # FlowRateModel.C3 - the cubic coefficient.
+    """FlowRateModel.C2 - the quadratic coefficient."""
     FLOW_RATE_C3 = 3
-    # Gravitational acceleration constant at sea level on the Earth.
+    """FlowRateModel.C3 - the cubic coefficient."""
     GRAV = 4
-    # IspModel.C0 - the constant coefficient.
+    """Gravitational acceleration constant at sea level on the Earth."""
     ISP_C0 = 5
-    # IspModel.C1 - the linear coefficient.
+    """IspModel.C0 - the constant coefficient."""
     ISP_C1 = 6
-    # IspModel.C2 - the quadratic coefficient.
+    """IspModel.C1 - the linear coefficient."""
     ISP_C2 = 7
-    # IspModel.C3 - the cubic coefficient.
+    """IspModel.C2 - the quadratic coefficient."""
     ISP_C3 = 8
-    # MassFlowEfficiencyModel.C0 - the constant coefficient.
+    """IspModel.C3 - the cubic coefficient."""
     MASS_FLOW_EFFICIENCY_C0 = 9
-    # MassFlowEfficiencyModel.C1 - the linear coefficient.
+    """MassFlowEfficiencyModel.C0 - the constant coefficient."""
     MASS_FLOW_EFFICIENCY_C1 = 10
-    # MassFlowEfficiencyModel.C2 - the quadratic coefficient.
+    """MassFlowEfficiencyModel.C1 - the linear coefficient."""
     MASS_FLOW_EFFICIENCY_C2 = 11
-    # MassFlowEfficiencyModel.C3 - the cubic coefficient.
+    """MassFlowEfficiencyModel.C2 - the quadratic coefficient."""
     MASS_FLOW_EFFICIENCY_C3 = 12
-    # Minimum power required for the engine to produce thrust. 
+    """MassFlowEfficiencyModel.C3 - the cubic coefficient."""
     MAX_INPUT_POWER = 13
-    # Maximum power that can be used by the engine to produce thrust.
+    """Minimum power required for the engine to produce thrust. """
     MIN_REQUIRED_POWER = 14
-    # The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year.
+    """Maximum power that can be used by the engine to produce thrust."""
     PERCENT_DEGRADATION_PER_YEAR = 15
-    # Percentage of available thrust to use (100 is full on, 0 is off).
+    """The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."""
     PERCENT_THROTTLE = 16
-    # PowerEfficiencyModel.C0 - the constant coefficient.
+    """Percentage of available thrust to use (100 is full on, 0 is off)."""
     POWER_EFFICIENCY_C0 = 17
-    # PowerEfficiencyModel.C1 - the linear coefficient.
+    """PowerEfficiencyModel.C0 - the constant coefficient."""
     POWER_EFFICIENCY_C1 = 18
-    # PowerEfficiencyModel.C2 - the quadratic coefficient.
+    """PowerEfficiencyModel.C1 - the linear coefficient."""
     POWER_EFFICIENCY_C2 = 19
-    # PowerEfficiencyModel.C3 - the cubic coefficient.
+    """PowerEfficiencyModel.C2 - the quadratic coefficient."""
     POWER_EFFICIENCY_C3 = 20
-    # The date and time used as a reference epoch for degradation.
+    """PowerEfficiencyModel.C3 - the cubic coefficient."""
     REFERENCE_EPOCH = 21
+    """The date and time used as a reference epoch for degradation."""
 
 CONTROL_ENGINE_ION.FLOW_RATE_C0.__doc__ = "FlowRateModel.C0 - the constant coefficient."
 CONTROL_ENGINE_ION.FLOW_RATE_C1.__doc__ = "FlowRateModel.C1 - the linear coefficient."
@@ -2841,72 +2841,72 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_ION"] = CONTROL_ENGINE_ION
 
 class CONTROL_ENGINE_MODEL_POLY(IntEnum):
     """Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
-    # The thrust C0 coefficient.
     THRUST_C0 = 0
-    # The thrust C1 coefficient.
+    """The thrust C0 coefficient."""
     THRUST_C1 = 1
-    # The thrust C2 coefficient.
+    """The thrust C1 coefficient."""
     THRUST_C2 = 2
-    # The thrust C3 coefficient.
+    """The thrust C2 coefficient."""
     THRUST_C3 = 3
-    # The thrust C4 coefficient.
+    """The thrust C3 coefficient."""
     THRUST_C4 = 4
-    # The thrust C5 coefficient.
+    """The thrust C4 coefficient."""
     THRUST_C5 = 5
-    # The thrust C6 coefficient.
+    """The thrust C5 coefficient."""
     THRUST_C6 = 6
-    # The thrust C7 coefficient.
+    """The thrust C6 coefficient."""
     THRUST_C7 = 7
-    # The thrust B7 coefficient.
+    """The thrust C7 coefficient."""
     THRUST_B7 = 8
-    # The thrust E4 coefficient.
+    """The thrust B7 coefficient."""
     THRUST_E4 = 9
-    # The thrust E5 coefficient.
+    """The thrust E4 coefficient."""
     THRUST_E5 = 10
-    # The thrust E6 coefficient.
+    """The thrust E5 coefficient."""
     THRUST_E6 = 11
-    # The thrust E7 coefficient.
+    """The thrust E6 coefficient."""
     THRUST_E7 = 12
-    # The thrust K0 coefficient.
+    """The thrust E7 coefficient."""
     THRUST_K0 = 13
-    # The thrust K1 coefficient.
+    """The thrust K0 coefficient."""
     THRUST_K1 = 14
-    # The thrust reference temperature, Tr.
+    """The thrust K1 coefficient."""
     THRUST_REFERENCE_TEMP = 15
-    # The specific impulse C0 coefficient.
+    """The thrust reference temperature, Tr."""
     ISP_C0 = 16
-    # The specific impulse C1 coefficient.
+    """The specific impulse C0 coefficient."""
     ISP_C1 = 17
-    # The specific impulse C2 coefficient.
+    """The specific impulse C1 coefficient."""
     ISP_C2 = 18
-    # The specific impulse C3 coefficient.
+    """The specific impulse C2 coefficient."""
     ISP_C3 = 19
-    # The specific impulse C4 coefficient.
+    """The specific impulse C3 coefficient."""
     ISP_C4 = 20
-    # The specific impulse C5 coefficient.
+    """The specific impulse C4 coefficient."""
     ISP_C5 = 21
-    # The specific impulse C6 coefficient.
+    """The specific impulse C5 coefficient."""
     ISP_C6 = 22
-    # The specific impulse C7 coefficient.
+    """The specific impulse C6 coefficient."""
     ISP_C7 = 23
-    # The specific impulse B7 coefficient.
+    """The specific impulse C7 coefficient."""
     ISP_B7 = 24
-    # The specific impulse E4 coefficient.
+    """The specific impulse B7 coefficient."""
     ISP_E4 = 25
-    # The specific impulse E5 coefficient.
+    """The specific impulse E4 coefficient."""
     ISP_E5 = 26
-    # The specific impulse E6 coefficient.
+    """The specific impulse E5 coefficient."""
     ISP_E6 = 27
-    # The specific impulse E7 coefficient.
+    """The specific impulse E6 coefficient."""
     ISP_E7 = 28
-    # The specific impulse K0 coefficient.
+    """The specific impulse E7 coefficient."""
     ISP_K0 = 29
-    # The specific impulse K1 coefficient.
+    """The specific impulse K0 coefficient."""
     ISP_K1 = 30
-    # The specific impulse reference temperature, Tr.
+    """The specific impulse K1 coefficient."""
     ISP_REFERENCE_TEMP = 31
-    # The gravitational acceleration constant at sea level on the Earth.
+    """The specific impulse reference temperature, Tr."""
     GRAV = 32
+    """The gravitational acceleration constant at sea level on the Earth."""
 
 CONTROL_ENGINE_MODEL_POLY.THRUST_C0.__doc__ = "The thrust C0 coefficient."
 CONTROL_ENGINE_MODEL_POLY.THRUST_C1.__doc__ = "The thrust C1 coefficient."
@@ -2946,12 +2946,12 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_MODEL_POLY"] = CONTROL_ENGINE_MODEL_POLY
 
 class ENGINE_MODEL_FUNCTION(IntEnum):
     """The engine model function types."""
-    # Isp as an independent variable of an equation.
     ISP = 0
-    # Power as an independent variable of an equation.
+    """Isp as an independent variable of an equation."""
     POWER = 1
-    # Isp and Power as independent variables of an equation.
+    """Power as an independent variable of an equation."""
     ISP_AND_POWER = 2
+    """Isp and Power as independent variables of an equation."""
 
 ENGINE_MODEL_FUNCTION.ISP.__doc__ = "Isp as an independent variable of an equation."
 ENGINE_MODEL_FUNCTION.POWER.__doc__ = "Power as an independent variable of an equation."
@@ -2961,12 +2961,12 @@ agcls.AgTypeNameMap["ENGINE_MODEL_FUNCTION"] = ENGINE_MODEL_FUNCTION
 
 class THROTTLE_TABLE_OPERATION_MODE(IntEnum):
     """Engine operation mode."""
-    # Interpolation of engine performance data based on a regression polynomial model.
     ENGINE_OPERATION_REG_POLY = 0
-    # Interpolation of engine performance data based on a piecewise linear model.
+    """Interpolation of engine performance data based on a regression polynomial model."""
     ENGINE_OPERATION_PIECEWISE_LINEAR = 1
-    # Discrete engine operation: piecewise constant engine performance as a function of available power.
+    """Interpolation of engine performance data based on a piecewise linear model."""
     ENGINE_OPERATION_DISCRETE = 2
+    """Discrete engine operation: piecewise constant engine performance as a function of available power."""
 
 THROTTLE_TABLE_OPERATION_MODE.ENGINE_OPERATION_REG_POLY.__doc__ = "Interpolation of engine performance data based on a regression polynomial model."
 THROTTLE_TABLE_OPERATION_MODE.ENGINE_OPERATION_PIECEWISE_LINEAR.__doc__ = "Interpolation of engine performance data based on a piecewise linear model."
@@ -2976,10 +2976,10 @@ agcls.AgTypeNameMap["THROTTLE_TABLE_OPERATION_MODE"] = THROTTLE_TABLE_OPERATION_
 
 class IDEAL_ORBIT_RADIUS(IntEnum):
     """Ideal Orbit Radius."""
-    # Epoch centered average source radius.
     EPOCH_CENTERED_AVG_SOURCE_RADIUS = 0
-    # Instantanous characteristic distance.
+    """Epoch centered average source radius."""
     INSTANT_CHAR_DISTANCE = 1
+    """Instantanous characteristic distance."""
 
 IDEAL_ORBIT_RADIUS.EPOCH_CENTERED_AVG_SOURCE_RADIUS.__doc__ = "Epoch centered average source radius."
 IDEAL_ORBIT_RADIUS.INSTANT_CHAR_DISTANCE.__doc__ = "Instantanous characteristic distance."
@@ -2988,22 +2988,22 @@ agcls.AgTypeNameMap["IDEAL_ORBIT_RADIUS"] = IDEAL_ORBIT_RADIUS
 
 class ROTATING_COORDINATE_SYSTEM(IntEnum):
     """Barycenter centered rotating system."""
-    # Barycenter centered rotating system.
     BARYCENTER_CENTERED = 0
-    # Primary centered rotating system.
+    """Barycenter centered rotating system."""
     PRIMARY_CENTERED = 1
-    # Secondary centered rotating system.
+    """Primary centered rotating system."""
     SECONDARY_CENTERED = 2
-    # L1 centered rotating system.
+    """Secondary centered rotating system."""
     L1_CENTERED = 3
-    # L2 centered rotating system.
+    """L1 centered rotating system."""
     L2_CENTERED = 4
-    # L3 centered rotating system.
+    """L2 centered rotating system."""
     L3_CENTERED = 5
-    # L4 centered rotating system.
+    """L3 centered rotating system."""
     L4_CENTERED = 6
-    # L5 centered rotating system.
+    """L4 centered rotating system."""
     L5_CENTERED = 7
+    """L5 centered rotating system."""
 
 ROTATING_COORDINATE_SYSTEM.BARYCENTER_CENTERED.__doc__ = "Barycenter centered rotating system."
 ROTATING_COORDINATE_SYSTEM.PRIMARY_CENTERED.__doc__ = "Primary centered rotating system."
@@ -3018,20 +3018,20 @@ agcls.AgTypeNameMap["ROTATING_COORDINATE_SYSTEM"] = ROTATING_COORDINATE_SYSTEM
 
 class CONTROL_THRUSTERS(IntEnum):
     """Thruster properties that can be selected as control parameters for a Target Sequence."""
-    # The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced.
     EQUIV_ON_TIME = 0
-    # The thruster efficiency.
+    """The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."""
     THRUST_EFFICIENCY = 1
-    # Thruster direction defined as a vector in the body frame. Spherical azimuth value.
+    """The thruster efficiency."""
     SPHERICAL_AZIMUTH = 2
-    # Thruster direction defined as a vector in the body frame. Spherical elevation value.
+    """Thruster direction defined as a vector in the body frame. Spherical azimuth value."""
     SPHERICAL_ELEVATION = 3
-    # Thruster direction defined as a vector in the body frame. Cartesian X value.
+    """Thruster direction defined as a vector in the body frame. Spherical elevation value."""
     CARTESIAN_X = 4
-    # Thruster direction defined as a vector in the body frame. Cartesian Y value.
+    """Thruster direction defined as a vector in the body frame. Cartesian X value."""
     CARTESIAN_Y = 5
-    # Thruster direction defined as a vector in the body frame. Cartesian Z value.
+    """Thruster direction defined as a vector in the body frame. Cartesian Y value."""
     CARTESIAN_Z = 6
+    """Thruster direction defined as a vector in the body frame. Cartesian Z value."""
 
 CONTROL_THRUSTERS.EQUIV_ON_TIME.__doc__ = "The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."
 CONTROL_THRUSTERS.THRUST_EFFICIENCY.__doc__ = "The thruster efficiency."
@@ -3045,10 +3045,10 @@ agcls.AgTypeNameMap["CONTROL_THRUSTERS"] = CONTROL_THRUSTERS
 
 class THRUSTER_DIRECTION(IntEnum):
     """The thruster direction type."""
-    # The direction that is opposite the direction of the exhaust.
     ACCELERATION = 0
-    # The direction of engine exhaust.
+    """The direction that is opposite the direction of the exhaust."""
     EXHAUST = 1
+    """The direction of engine exhaust."""
 
 THRUSTER_DIRECTION.ACCELERATION.__doc__ = "The direction that is opposite the direction of the exhaust."
 THRUSTER_DIRECTION.EXHAUST.__doc__ = "The direction of engine exhaust."
@@ -3057,18 +3057,18 @@ agcls.AgTypeNameMap["THRUSTER_DIRECTION"] = THRUSTER_DIRECTION
 
 class CRITERIA(IntEnum):
     """The criteria type."""
-    # The test parameter must be equal (within the specified tolerance) to the specified value.
     EQUALS = 0
-    # The test parameter must be greater than the specified value.
+    """The test parameter must be equal (within the specified tolerance) to the specified value."""
     GREATER_THAN = 1
-    # The current value for the calculation object is greater by the specified tolerance than the minimum reached by that object during the segment.
+    """The test parameter must be greater than the specified value."""
     GREATER_THAN_MINIMUM = 2
-    # The test parameter must be less than the specified value.
+    """The current value for the calculation object is greater by the specified tolerance than the minimum reached by that object during the segment."""
     LESS_THAN = 3
-    # The current value for the calculation object is less by the specified tolerance than the maximum reached by that object during the segment.
+    """The test parameter must be less than the specified value."""
     LESS_THAN_MAXIMUM = 4
-    # The test parameter must be not equal (within the specified tolerance) to the specified value.
+    """The current value for the calculation object is less by the specified tolerance than the maximum reached by that object during the segment."""
     NOT_EQUAL_TO = 5
+    """The test parameter must be not equal (within the specified tolerance) to the specified value."""
 
 CRITERIA.EQUALS.__doc__ = "The test parameter must be equal (within the specified tolerance) to the specified value."
 CRITERIA.GREATER_THAN.__doc__ = "The test parameter must be greater than the specified value."
@@ -3081,14 +3081,14 @@ agcls.AgTypeNameMap["CRITERIA"] = CRITERIA
 
 class ERROR_CONTROL(IntEnum):
     """Error Control for the numerical integrator."""
-    # The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc.
     ABSOLUTE = 0
-    # The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance.
+    """The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc."""
     RELATIVE_BY_COMPONENT = 1
-    # Relative to State error control.
+    """The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance."""
     RELATIVE_TO_STATE = 2
-    # Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance.
+    """Relative to State error control."""
     RELATIVE_TO_STEP = 3
+    """Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance."""
 
 ERROR_CONTROL.ABSOLUTE.__doc__ = "The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc."
 ERROR_CONTROL.RELATIVE_BY_COMPONENT.__doc__ = "The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance."
@@ -3099,10 +3099,10 @@ agcls.AgTypeNameMap["ERROR_CONTROL"] = ERROR_CONTROL
 
 class PREDICTOR_CORRECTOR(IntEnum):
     """Predictor corrector scheme for the numerical integrator."""
-    # All force models are re-evaluated at each corrector step.
     FULL = 0
-    # Only the two-body acceleration is re-evaluated at each corrector step.
+    """All force models are re-evaluated at each corrector step."""
     PSEUDO = 1
+    """Only the two-body acceleration is re-evaluated at each corrector step."""
 
 PREDICTOR_CORRECTOR.FULL.__doc__ = "All force models are re-evaluated at each corrector step."
 PREDICTOR_CORRECTOR.PSEUDO.__doc__ = "Only the two-body acceleration is re-evaluated at each corrector step."
@@ -3111,22 +3111,22 @@ agcls.AgTypeNameMap["PREDICTOR_CORRECTOR"] = PREDICTOR_CORRECTOR
 
 class NUMERICAL_INTEGRATOR(IntEnum):
     """Numerical integrator type."""
-    # A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison.
     RUNGE_KUTTA4_TH_ADAPT = 0
-    # A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator.
+    """A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."""
     RUNGE_KUTTA_F_7TH_8TH = 1
-    # A 9th order Runge-Kutta-Verner integrator with 8th order error control.
+    """A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."""
     RUNGE_KUTTA_V_8TH_9TH = 2
-    # An integrator based on Richardson extrapolation with automatic step size control.
+    """A 9th order Runge-Kutta-Verner integrator with 8th order error control."""
     BULIRSCH_STOER = 3
-    # A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used.
+    """An integrator based on Richardson extrapolation with automatic step size control."""
     GAUSS_JACKSON = 4
-    # A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients.
+    """A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."""
     RUNGE_KUTTA2_ND3_RD = 5
-    # A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients.
+    """A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."""
     RUNGE_KUTTA4_TH5_TH = 6
-    # A 4th order Runge-Kutta integrator that does not employ error control.
+    """A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."""
     RUNGE_KUTTA4_TH = 7
+    """A 4th order Runge-Kutta integrator that does not employ error control."""
 
 NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH_ADAPT.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
 NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH_8TH.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
@@ -3141,10 +3141,10 @@ agcls.AgTypeNameMap["NUMERICAL_INTEGRATOR"] = NUMERICAL_INTEGRATOR
 
 class COEFF_RUNGE_KUTTA_V_8TH_9TH(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
-    # SIAM 1978.
     COEFF_1978 = 0
-    # Efficient.
+    """SIAM 1978."""
     EFFICIENT = 1
+    """Efficient."""
 
 COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFF_1978.__doc__ = "SIAM 1978."
 COEFF_RUNGE_KUTTA_V_8TH_9TH.EFFICIENT.__doc__ = "Efficient."

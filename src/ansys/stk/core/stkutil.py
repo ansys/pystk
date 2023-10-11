@@ -47,20 +47,20 @@ def _raise_uninitialized_error(*args):
 
 class POSITION_TYPE(IntEnum):
     """Facility/place/target position types."""
-    # Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude.
     CARTESIAN = 0x0
-    # Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector.
+    """Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude."""
     CYLINDRICAL = 0x1
-    # Geocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude.
+    """Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector."""
     GEOCENTRIC = 0x2
-    # Geodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude.
+    """Geocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."""
     GEODETIC = 0x3
-    # Spherical: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and radius (distance of the object from the center of the Earth).
+    """Geodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."""
     SPHERICAL = 0x4
-    # Planetocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude.
+    """Spherical: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and radius (distance of the object from the center of the Earth)."""
     PLANETOCENTRIC = 0x5
-    # Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude.
+    """Planetocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."""
     PLANETODETIC = 0x6
+    """Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."""
 
 POSITION_TYPE.CARTESIAN.__doc__ = "Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude."
 POSITION_TYPE.CYLINDRICAL.__doc__ = "Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector."
@@ -74,14 +74,14 @@ agcls.AgTypeNameMap["POSITION_TYPE"] = POSITION_TYPE
 
 class EULER_DIRECTION_SEQUENCE(IntEnum):
     """Euler direction sequences."""
-    # 12 sequence.
     SEQUENCE_12 = 0
-    # 21 sequence.
+    """12 sequence."""
     SEQUENCE_21 = 1
-    # 31 sequence.
+    """21 sequence."""
     SEQUENCE_31 = 2
-    # 32 sequence.
+    """31 sequence."""
     SEQUENCE_32 = 3
+    """32 sequence."""
 
 EULER_DIRECTION_SEQUENCE.SEQUENCE_12.__doc__ = "12 sequence."
 EULER_DIRECTION_SEQUENCE.SEQUENCE_21.__doc__ = "21 sequence."
@@ -92,14 +92,14 @@ agcls.AgTypeNameMap["EULER_DIRECTION_SEQUENCE"] = EULER_DIRECTION_SEQUENCE
 
 class DIRECTION_TYPE(IntEnum):
     """Direction options for aligned and constrained vectors."""
-    # Euler B and C angles.
     EULER = 0
-    # Pitch and Roll angles.
+    """Euler B and C angles."""
     PR = 1
-    # Spherical elements: Right Ascension and Declination.
+    """Pitch and Roll angles."""
     RA_DEC = 2
-    # Cartesian elements.
+    """Spherical elements: Right Ascension and Declination."""
     XYZ = 3
+    """Cartesian elements."""
 
 DIRECTION_TYPE.EULER.__doc__ = "Euler B and C angles."
 DIRECTION_TYPE.PR.__doc__ = "Pitch and Roll angles."
@@ -110,8 +110,8 @@ agcls.AgTypeNameMap["DIRECTION_TYPE"] = DIRECTION_TYPE
 
 class PR_SEQUENCE(IntEnum):
     """Pitch-Roll (PR) direction sequences."""
-    # PR sequence.
     PR = 0
+    """PR sequence."""
 
 PR_SEQUENCE.PR.__doc__ = "PR sequence."
 
@@ -119,14 +119,14 @@ agcls.AgTypeNameMap["PR_SEQUENCE"] = PR_SEQUENCE
 
 class ORIENTATION_TYPE(IntEnum):
     """Orientation methods."""
-    # AzEl (azimuth-elevation) method.
     AZ_EL = 0
-    # Euler angles method.
+    """AzEl (azimuth-elevation) method."""
     EULER_ANGLES = 1
-    # Quaternion method.
+    """Euler angles method."""
     QUATERNION = 2
-    # YPR (yaw-pitch-roll) method.
+    """Quaternion method."""
     YPR_ANGLES = 3
+    """YPR (yaw-pitch-roll) method."""
 
 ORIENTATION_TYPE.AZ_EL.__doc__ = "AzEl (azimuth-elevation) method."
 ORIENTATION_TYPE.EULER_ANGLES.__doc__ = "Euler angles method."
@@ -137,10 +137,10 @@ agcls.AgTypeNameMap["ORIENTATION_TYPE"] = ORIENTATION_TYPE
 
 class AZ_EL_ABOUT_BORESIGHT(IntEnum):
     """About Boresight options for AzEl orientation method."""
-    # Hold: rotation about the Y axis followed by rotation about the new X-axis.
     HOLD = 0
-    # Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle.
+    """Hold: rotation about the Y axis followed by rotation about the new X-axis."""
     ROTATE = 1
+    """Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle."""
 
 AZ_EL_ABOUT_BORESIGHT.HOLD.__doc__ = "Hold: rotation about the Y axis followed by rotation about the new X-axis."
 AZ_EL_ABOUT_BORESIGHT.ROTATE.__doc__ = "Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle."
@@ -149,30 +149,30 @@ agcls.AgTypeNameMap["AZ_EL_ABOUT_BORESIGHT"] = AZ_EL_ABOUT_BORESIGHT
 
 class EULER_ORIENTATION_SEQUENCE(IntEnum):
     """Euler rotation sequence options:"""
-    # 121 rotation.
     SEQUENCE_121 = 0
-    # 123 rotation.
+    """121 rotation."""
     SEQUENCE_123 = 1
-    # 131 rotation.
+    """123 rotation."""
     SEQUENCE_131 = 2
-    # 132 rotation.
+    """131 rotation."""
     SEQUENCE_132 = 3
-    # 212 rotation.
+    """132 rotation."""
     SEQUENCE_212 = 4
-    # 213 rotation.
+    """212 rotation."""
     SEQUENCE_213 = 5
-    # 231 rotation.
+    """213 rotation."""
     SEQUENCE_231 = 6
-    # 232 rotation.
+    """231 rotation."""
     SEQUENCE_232 = 7
-    # 312 rotation.
+    """232 rotation."""
     SEQUENCE_312 = 8
-    # 313 rotation.
+    """312 rotation."""
     SEQUENCE_313 = 9
-    # 321 rotation.
+    """313 rotation."""
     SEQUENCE_321 = 10
-    # 323 rotation.
+    """321 rotation."""
     SEQUENCE_323 = 11
+    """323 rotation."""
 
 EULER_ORIENTATION_SEQUENCE.SEQUENCE_121.__doc__ = "121 rotation."
 EULER_ORIENTATION_SEQUENCE.SEQUENCE_123.__doc__ = "123 rotation."
@@ -191,18 +191,18 @@ agcls.AgTypeNameMap["EULER_ORIENTATION_SEQUENCE"] = EULER_ORIENTATION_SEQUENCE
 
 class YPR_ANGLES_SEQUENCE(IntEnum):
     """Yaw-Pitch-Roll (YPR) sequences."""
-    # PRY sequence.
     PRY = 0
-    # PYR sequence.
+    """PRY sequence."""
     PYR = 1
-    # RPY sequence.
+    """PYR sequence."""
     RPY = 2
-    # RYP sequence.
+    """RPY sequence."""
     RYP = 3
-    # YPR sequence.
+    """RYP sequence."""
     YPR = 4
-    # YRP sequence.
+    """YPR sequence."""
     YRP = 5
+    """YRP sequence."""
 
 YPR_ANGLES_SEQUENCE.PRY.__doc__ = "PRY sequence."
 YPR_ANGLES_SEQUENCE.PYR.__doc__ = "PYR sequence."
@@ -215,20 +215,20 @@ agcls.AgTypeNameMap["YPR_ANGLES_SEQUENCE"] = YPR_ANGLES_SEQUENCE
 
 class ORBIT_STATE_TYPE(IntEnum):
     """Coordinate types used in specifying orbit state."""
-    # Cartesian coordinate type.
     CARTESIAN = 0
-    # Classical (Keplerian) coordinate type.
+    """Cartesian coordinate type."""
     CLASSICAL = 1
-    # Equinoctial coordinate type.
+    """Classical (Keplerian) coordinate type."""
     EQUINOCTIAL = 2
-    # Delaunay variables coordinate type.
+    """Equinoctial coordinate type."""
     DELAUNAY = 3
-    # Spherical coordinate type.
+    """Delaunay variables coordinate type."""
     SPHERICAL = 4
-    # Mixed spherical coordinate type.
+    """Spherical coordinate type."""
     MIXED_SPHERICAL = 5
-    # Geodetic coordinate type.
+    """Mixed spherical coordinate type."""
     GEODETIC = 6
+    """Geodetic coordinate type."""
 
 ORBIT_STATE_TYPE.CARTESIAN.__doc__ = "Cartesian coordinate type."
 ORBIT_STATE_TYPE.CLASSICAL.__doc__ = "Classical (Keplerian) coordinate type."
@@ -242,54 +242,54 @@ agcls.AgTypeNameMap["ORBIT_STATE_TYPE"] = ORBIT_STATE_TYPE
 
 class COORDINATE_SYSTEM(IntEnum):
     """Earth-centered coordinate systems for defining certain propagators."""
-    # Represents coordinate system not supported by the Object Model
     UNKNOWN = -1
-    # Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories.
+    """Represents coordinate system not supported by the Object Model"""
     ALIGNMENT_AT_EPOCH = 0
-    # B1950: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the beginning of the Besselian year 1950 and corresponds to 31 December 1949 22:09:07.2 or JD 2433282.423.
+    """Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories."""
     B1950 = 1
-    # Fixed: X is fixed at 0 deg longitude, Y is fixed at 90 deg longitude, and Z is directed toward the north pole.
+    """B1950: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the beginning of the Besselian year 1950 and corresponds to 31 December 1949 22:09:07.2 or JD 2433282.423."""
     FIXED = 2
-    # J2000: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth on 1 Jan 2000 at 12:00:00.00 TDB, which corresponds to JD 2451545.0 TDB.
+    """Fixed: X is fixed at 0 deg longitude, Y is fixed at 90 deg longitude, and Z is directed toward the north pole."""
     J2000 = 3
-    # Mean of Date: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Orbit Epoch.
+    """J2000: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth on 1 Jan 2000 at 12:00:00.00 TDB, which corresponds to JD 2451545.0 TDB."""
     MEAN_OF_DATE = 4
-    # Mean of Epoch: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Coord Epoch.
+    """Mean of Date: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Orbit Epoch."""
     MEAN_OF_EPOCH = 5
-    # TEME of Date: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch.
+    """Mean of Epoch: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Coord Epoch."""
     TEME_OF_DATE = 6
-    # TEME of Epoch: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch.
+    """TEME of Date: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."""
     TEME_OF_EPOCH = 7
-    # True of Date: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch.
+    """TEME of Epoch: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."""
     TRUE_OF_DATE = 8
-    # True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch.
+    """True of Date: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."""
     TRUE_OF_EPOCH = 9
-    # True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties.
+    """True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."""
     TRUE_OF_REFERENCE_DATE = 10
-    # ICRF: International Celestial Reference Frame.
+    """True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties."""
     ICRF = 11
-    # Mean Earth
+    """ICRF: International Celestial Reference Frame."""
     MEAN_EARTH = 13
-    # uses an analytic formula not modeling lunar libration
+    """Mean Earth"""
     FIXED_NO_LIBRATION = 14
-    # Fixed_IAU2003
+    """uses an analytic formula not modeling lunar libration"""
     FIXED_IAU2003 = 15
-    # PrincipalAxes_421
+    """Fixed_IAU2003"""
     PRINCIPAL_AXES421 = 16
-    # PrincipalAxes_403
+    """PrincipalAxes_421"""
     PRINCIPAL_AXES403 = 17
-    # Inertial
+    """PrincipalAxes_403"""
     INERTIAL = 18
-    # The mean ecliptic system evaluated at the J2000 epoch. The mean ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the mean obliquity defined using FK5 IAU76 theory.
+    """Inertial"""
     J2000_ECLIPTIC = 19
-    # The true ecliptic system, evaluated at each given time. The true ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the true obliquity defined using FK5 IAU76 theory.
+    """The mean ecliptic system evaluated at the J2000 epoch. The mean ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the mean obliquity defined using FK5 IAU76 theory."""
     TRUE_ECLIPTIC_OF_DATE = 21
-    # PrincipalAxes_430
+    """The true ecliptic system, evaluated at each given time. The true ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the true obliquity defined using FK5 IAU76 theory."""
     PRINCIPAL_AXES430 = 22
-    # TrueOfDateRotating: Like the Fixed system, but ignores pole wander. The XY plane is the same as the XY plane of the TrueOfDate system, and the system rotates about the TrueOfDate Z-axis.
+    """PrincipalAxes_430"""
     TRUE_OF_DATE_ROTATING = 23
-    # EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system.
+    """TrueOfDateRotating: Like the Fixed system, but ignores pole wander. The XY plane is the same as the XY plane of the TrueOfDate system, and the system rotates about the TrueOfDate Z-axis."""
     ECLIPTIC_J2000ICRF = 24
+    """EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system."""
 
 COORDINATE_SYSTEM.UNKNOWN.__doc__ = "Represents coordinate system not supported by the Object Model"
 COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH.__doc__ = "Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories."
@@ -320,16 +320,16 @@ agcls.AgTypeNameMap["COORDINATE_SYSTEM"] = COORDINATE_SYSTEM
 
 class LOG_MSG_TYPE(IntEnum):
     """Log message types."""
-    # Debugging message.
     DEBUG = 0
-    # Informational message.
+    """Debugging message."""
     INFO = 1
-    # Informational message.
+    """Informational message."""
     FORCE_INFO = 2
-    # Warning message.
+    """Informational message."""
     WARNING = 3
-    # Alarm message.
+    """Warning message."""
     ALARM = 4
+    """Alarm message."""
 
 LOG_MSG_TYPE.DEBUG.__doc__ = "Debugging message."
 LOG_MSG_TYPE.INFO.__doc__ = "Informational message."
@@ -341,14 +341,14 @@ agcls.AgTypeNameMap["LOG_MSG_TYPE"] = LOG_MSG_TYPE
 
 class LOG_MSG_DISP_ID(IntEnum):
     """Log message destination options."""
-    # STK displays the message in all the log destination.
     ALL = -1
-    # STK displays the message in the default log destination.
+    """STK displays the message in all the log destination."""
     DEFAULT = 0
-    # STK displays the message in the message window.
+    """STK displays the message in the default log destination."""
     MSG_WIN = 1
-    # STK displays the message in the status bar.
+    """STK displays the message in the message window."""
     STATUS_BAR = 2
+    """STK displays the message in the status bar."""
 
 LOG_MSG_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
 LOG_MSG_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
@@ -359,42 +359,42 @@ agcls.AgTypeNameMap["LOG_MSG_DISP_ID"] = LOG_MSG_DISP_ID
 
 class LINE_STYLE(IntEnum):
     """Line Style"""
-    # Specifies a solid line.
     SOLID = 0
-    # Specifies a dashed line.
+    """Specifies a solid line."""
     DASHED = 1
-    # Specifies a dotted line.
+    """Specifies a dashed line."""
     DOTTED = 2
-    # Dot-dashed line.
+    """Specifies a dotted line."""
     DOT_DASHED = 3
-    # Specifies a long dashed line.
+    """Dot-dashed line."""
     LONG_DASHED = 4
-    # Specifies an alternating dash-dot-dot line.
+    """Specifies a long dashed line."""
     DASH_DOT_DOTTED = 5
-    # Specifies a user configurable medium dashed line.
+    """Specifies an alternating dash-dot-dot line."""
     M_DASH = 6
-    # Specifies a user configurable long dashed line.
+    """Specifies a user configurable medium dashed line."""
     L_DASH = 7
-    # Specifies a user configurable small dash-dotted line.
+    """Specifies a user configurable long dashed line."""
     S_DASH_DOT = 8
-    # Specifies a user configurable medium dash-dotted line.
+    """Specifies a user configurable small dash-dotted line."""
     M_DASH_DOT = 9
-    # Specifies a user configurable long dash-dotted line.
+    """Specifies a user configurable medium dash-dotted line."""
     DASH_DOT = 10
-    # Specifies a user configurable medium followed by small dashed line.
+    """Specifies a user configurable long dash-dotted line."""
     MS_DASH = 11
-    # Specifies a user configurable long followed by small dashed line.
+    """Specifies a user configurable medium followed by small dashed line."""
     LS_DASH = 12
-    # Specifies a user configurable long followed by medium dashed line.
+    """Specifies a user configurable long followed by small dashed line."""
     LM_DASH = 13
-    # Specifies a user configurable medium followed by small dashed line.
+    """Specifies a user configurable long followed by medium dashed line."""
     LMS_DASH = 14
-    # Specifies a dotted line.
+    """Specifies a user configurable medium followed by small dashed line."""
     DOT = 15
-    # Specifies a long dashed line.
+    """Specifies a dotted line."""
     LONG_DASH = 16
-    # Specifies an alternating dash-dot line.
+    """Specifies a long dashed line."""
     S_DASH = 17
+    """Specifies an alternating dash-dot line."""
 
 LINE_STYLE.SOLID.__doc__ = "Specifies a solid line."
 LINE_STYLE.DASHED.__doc__ = "Specifies a dashed line."
@@ -419,14 +419,14 @@ agcls.AgTypeNameMap["LINE_STYLE"] = LINE_STYLE
 
 class EXEC_MULTI_CMD_RESULT_ACTION(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
-    # Continue executing the remaining commands in the command batch.
     CONTINUE_ON_ERROR = 0
-    # Terminate the execution of the command batch but do not throw an exception.
+    """Continue executing the remaining commands in the command batch."""
     STOP_ON_ERROR = 1
-    # Terminate the execution of the command batch and throw an exception.
+    """Terminate the execution of the command batch but do not throw an exception."""
     EXCEPTION_ON_ERROR = 2
-    # Ignore results returned by individual commands. The option must be used in combination with other flags.
+    """Terminate the execution of the command batch and throw an exception."""
     IGNORE_EXEC_CMD_RESULT = 0x8000
+    """Ignore results returned by individual commands. The option must be used in combination with other flags."""
 
 EXEC_MULTI_CMD_RESULT_ACTION.CONTINUE_ON_ERROR.__doc__ = "Continue executing the remaining commands in the command batch."
 EXEC_MULTI_CMD_RESULT_ACTION.STOP_ON_ERROR.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
@@ -437,22 +437,22 @@ agcls.AgTypeNameMap["EXEC_MULTI_CMD_RESULT_ACTION"] = EXEC_MULTI_CMD_RESULT_ACTI
 
 class FILL_STYLE(IntEnum):
     """Fill Style"""
-    # Specifies a solid fill style.
     SOLID = 0
-    # Specifies a horizontally striped fill style.
+    """Specifies a solid fill style."""
     HORIZONTAL_STRIPE = 1
-    # Specifies a diagonally striped fill style.
+    """Specifies a horizontally striped fill style."""
     DIAGONAL_STRIPE1 = 2
-    # Specifies a diagonally striped fill style.
+    """Specifies a diagonally striped fill style."""
     DIAGONAL_STRIPE2 = 3
-    # Specifies a hatched fill style.
+    """Specifies a diagonally striped fill style."""
     HATCH = 4
-    # Specifies a diagonally hatched fill style.
+    """Specifies a hatched fill style."""
     DIAGONAL_HATCH = 5
-    # Specifies a special fill style where every other pixel is drawn.
+    """Specifies a diagonally hatched fill style."""
     SCREEN = 6
-    # Specifies a vertically striped fill style.
+    """Specifies a special fill style where every other pixel is drawn."""
     VERTICAL_STRIPE = 7
+    """Specifies a vertically striped fill style."""
 
 FILL_STYLE.SOLID.__doc__ = "Specifies a solid fill style."
 FILL_STYLE.HORIZONTAL_STRIPE.__doc__ = "Specifies a horizontally striped fill style."
@@ -467,20 +467,20 @@ agcls.AgTypeNameMap["FILL_STYLE"] = FILL_STYLE
 
 class PROPERTY_INFO_VALUE_TYPE(IntEnum):
     """The enumeration used to determine what type of property is being used."""
-    # Property is of type int.
     INT = 0
-    # Property is of type real.
+    """Property is of type int."""
     REAL = 1
-    # Property is of type IAgQuantity.
+    """Property is of type real."""
     QUANTITY = 2
-    # Property is of type IAgDate.
+    """Property is of type IQuantity."""
     DATE = 3
-    # Property is of type string.
+    """Property is of type IDate."""
     STRING = 4
-    # Property is of type bool.
+    """Property is of type string."""
     BOOL = 5
-    # Property is an interface.
+    """Property is of type bool."""
     INTERFACE = 6
+    """Property is an interface."""
 
 PROPERTY_INFO_VALUE_TYPE.INT.__doc__ = "Property is of type int."
 PROPERTY_INFO_VALUE_TYPE.REAL.__doc__ = "Property is of type real."
