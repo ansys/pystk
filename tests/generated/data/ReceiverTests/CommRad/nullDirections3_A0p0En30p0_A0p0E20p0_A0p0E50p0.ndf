@@ -1,0 +1,12 @@
+# File format is as follows:
+# If first character of a line is '#' the entire line is treated as a comment line.
+# First non-comment line is file format version.  Tells STK the format of the remaining file.
+# Second non-comment line is a sampling mode.  Only "SampleAndHold" is supported (future will bring more options).
+# Third non-comment line is a metric scale.  Can be "Logorithmic" or "Linear".
+# Remaining non-comment lines are time specified pointing directions with the following format:
+#   <time>  <number of directions>  <direction 1 Az>  <direction l El>  <direction 1 metric>  ... <direction n Az>  <direction n El>  <direction n metric> where Az/El are in degrees and in Antenna's body reference frame.
+NullAsciiDataDirectionProvider   v1
+SampleAndHold
+Logarithmic
+-1e300   3  0.0  -30.0  10.0    0.0  20.0  10.0   0.0  50.0  10.0 
+1e300    3  0.0  -30.0  10.0    0.0  20.0  10.0   0.0  50.0  10.0

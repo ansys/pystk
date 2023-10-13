@@ -1,0 +1,14 @@
+Description     NFSK demodulator and EbNo vs BER for BCH block decoder transforming a 385 bit code word to 511 information bits.
+ModulationName  NFSK-BCH-511-385
+BERPoints
+9.35	5.0e-3
+9.45	3.0e-3
+9.6	    1.0e-3
+9.8	    3.0e-4
+9.95	1.0e-4
+10.1	3.0e-5
+10.2	1.0e-5
+10.35	3.0e-6
+10.45	1.0e-6
+10.55	3.0e-7
+10.6	1.0e-7
