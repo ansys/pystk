@@ -1,0 +1,17 @@
+stk.v.8.0
+
+BEGIN IntervalList
+
+DateUnitAbrv UTCG
+
+BEGIN Intervals
+
+    "1 Jul 2007 12:00:00.000000000" "1 Jul 2007 13:54:15.261618646" Sun
+    "1 Jul 2007 16:12:15.079015486" "1 Jul 2007 18:32:21.721869287" Viewer
+    "1 Jul 2007 20:44:05.326773339" "1 Jul 2007 22:52:47.112232494" None
+    "2 Jul 2007 01:15:07.664755258" "2 Jul 2007 02:21:38.579066836" Earth
+    "2 Jul 2007 11:21:47.041087041" "2 Jul 2007 12:00:00.000000000" Satellite/Satellite1
+
+END Intervals
+
+END IntervalList

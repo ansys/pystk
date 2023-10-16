@@ -1,0 +1,16 @@
+# File format is as follows:
+# If first character of a line is '#' the entire line is treated as a comment line.
+# First non-comment line is file format version.  Tells STK the format of the remaining file.
+# Remaining non-comment lines are positions of the elements with following format:
+#   <x0> <y0>  where xi yi represent position of ith element in wavelenghts (lambdas) and 0,0
+#   <x1> <y1>        is at mechanical boresight.
+#   ...   ...
+#   <xi>  <yi>
+AsciiDataElementPattern    v1
+-1.5 0.0
+-1.0 0.0
+-0.5 0.0
+0.0 0.0
+0.5 0.0
+1.0 0.0
+1.5 0.0
