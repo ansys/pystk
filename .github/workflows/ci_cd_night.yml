@@ -34,7 +34,7 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ubuntu-latest
-    if: inputs.run-doc
+    if: inputs.run-doc || github.event_name == 'schedule'
     steps:
       - name: "Building project documentation"
         uses: ansys/actions/doc-build@v4
@@ -47,7 +47,7 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: inputs.run-tests
+    if: inputs.run-tests || github.event_name == 'schedule'
     strategy:
       matrix:
         python: ["3.8", "3.9", "3.10"]
