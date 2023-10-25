@@ -60,12 +60,12 @@ Running STK containers with Tox
 Once the images are built, you can create a new container using the following
 command:
 
-======== ===============================================
-Platform Command                                        
-======== ===============================================
-Linux    ``tox -e docker-run-linux-{py38,py39,py310}``
-Windows  ``tox -e docker-run-windows-{py38,py39,py310}``
-======== ===============================================
++==========+=================================================+
+| Platform | Command                                         |
++==========+=================================================+
+| Linux    | ``tox -e docker-run-linux-{py38,py39,py310}``   |
+| Windows  | ``tox -e docker-run-windows-{py38,py39,py310}`` |
++==========+=================================================+
 
 In previous command, you need to select the Python version you want to
 use.
