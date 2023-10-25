@@ -37,12 +37,16 @@ tests = [
 doc = [
     "ansys-sphinx-theme==0.13.1",
     "enum-tools[sphinx]==0.11.0",
+    "jupyterlab==4.0.9",
+    "myst-parser==2.0.0",
+    "nbsphinx==0.9.3",
     "numpydoc==1.5.0",
     "sphinx==7.2.6",
     "sphinx-design==0.5.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "jupyterlab==4.0.10",
+    "sphinx-gallery<=0.7.0",
 ]
 
 [tool.flit.module]

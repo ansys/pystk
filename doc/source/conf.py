@@ -98,8 +98,12 @@ templates_path = ["_templates"]
 # Directories excluded when looking for source files
 exclude_patterns = ["api/generated", "links.rst"]
 
-# The suffix(es) of source filenames.
-source_suffix = ".rst"
+# The suffix(es) of source filenames
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".mystnb": "jupyter_notebook",
+    ".md": "markdown",
+}
 
 # The master toctree document.
 master_doc = "index"
@@ -138,8 +142,15 @@ BUILD_EXAMPLES = (
     True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 )
 if not BUILD_EXAMPLES:
-    exclude_patterns.append("examples.rst")
+    exclude_patterns.append("examples/**")
+else:
+    extensions.extend(["myst_parser", "nbsphinx"])
+    nbsphinx_execute = "always"
+    nbsphinx_custom_formats = {
+        ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
+    }
 
+# -- Jinja context configuration ---------------------------------------------
 jinja_contexts = {
     "docker_images": {
         "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
