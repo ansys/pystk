@@ -47,12 +47,12 @@ Building STK images with Tox
 You can build all the Docker images for STK. Two platforms are supported, Linux
 and Windows. Use the following command according to your platform:
 
-+----------+---------------------------------+
-| Platform | Command                         |
-+==========+=================================+
-| Linux    | ``tox -e docker-build-linux``   |
-| Windows  | ``tox -e docker-build-windows`` |
-+----------+---------------------------------+
+========== ===============================
+Platform   Command                        
+========== ===============================
+Linux      ``tox -e docker-build-linux``  
+Windows    ``tox -e docker-build-windows``
+========== ===============================
 
 Running STK containers with Tox
 -------------------------------
@@ -60,12 +60,12 @@ Running STK containers with Tox
 Once the images are built, you can create a new container using the following
 command:
 
-+----------+------------------------------------------------+
-| Platform | Command                                        |
-+==========+================================================+
-| Linux    | ``tox -e docker-run-linux-{py38,py39,py310}``  |
-| Windows  | `tox -e docker-run-windows-{py38,py39,py310}`` |
-+----------+------------------------------------------------+
+======== ===============================================
+Platform Command                                        
+======== ===============================================
+Linux    ``tox -e docker-run-linux-{py38,py39,py310}``
+Windows  ``tox -e docker-run-windows-{py38,py39,py310}``
+======== ===============================================
 
 In previous command, you need to select the Python version you want to
 use.
@@ -73,12 +73,17 @@ use.
 Launching Jupyter Lab with Tox
 ------------------------------
 
+TODO
+
 Stopping STK containers with Tox
------------------------------------
+--------------------------------
+
+TODO
 
 Removing STK containers with Tox
------------------------------------
+--------------------------------
 
+TODO
 
 
 Additional documentation
