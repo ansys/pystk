@@ -53,10 +53,6 @@ Documentation = "https://stk.docs.pyansys.com/"
 Source = "https://github.com/pyansys/pystk"
 Tracker = "https://github.com/pyansys/pystk/issues"
 
-[tool.black]
-line-length = 120
-extend-exclude = ["tests"]
-
 [tool.ruff]
 line-length = 120
 select = [
@@ -68,7 +64,7 @@ select = [
     "PTH",  # flake8-use-pathlib, https://beta.ruff.rs/docs/rules/#flake8-use-pathlib-pth
 ]
 ignore = [
-    "E501",  # Line too long. Ignoring this so "black" manages line length.
+    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
     "D203",  # One blank line required before class docstring.
     "D204"  # One blank line required after class docstring.
 ]
@@ -76,6 +72,10 @@ extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
     "tests/**/*.py",
 ]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "tab"
 
 [tool.ruff.isort]
 combine-as-imports = true
