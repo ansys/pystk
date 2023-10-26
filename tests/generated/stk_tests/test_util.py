@@ -1,5 +1,6 @@
 import enum
 import math
+import inspect
 import os
 import pytz
 import re
@@ -180,19 +181,12 @@ class GC:
 class Assert:
     @staticmethod
     def _getTestCaseFromStack():
-        import gc
-        gc.collect()
-        
-        import inspect
-
-        frameinfos = inspect.getouterframes(inspect.currentframe())
-        for frameinfo in frameinfos:
-            frame = frameinfo[0]
-            locals = frame.f_locals
-            if "self" in locals:
-                candidate = locals["self"]
-                if isinstance(candidate, unittest.TestCase):
-                    return candidate
+        frame = inspect.currentframe()
+        while frame:
+            candidate = frame.f_locals.get('self', None)
+            if candidate and isinstance(candidate, unittest.TestCase):
+                return candidate
+            frame = frame.f_back
         return None
 
     @staticmethod
