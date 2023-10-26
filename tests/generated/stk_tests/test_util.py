@@ -180,6 +180,9 @@ class GC:
 class Assert:
     @staticmethod
     def _getTestCaseFromStack():
+        import gc
+        gc.collect()
+        
         import inspect
 
         frameinfos = inspect.getouterframes(inspect.currentframe())
