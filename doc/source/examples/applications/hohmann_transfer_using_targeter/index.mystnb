@@ -11,9 +11,25 @@ kernelspec:
   name: python3
 ---
 
-```{code-cell} ipython3
-"""Demonstrates how to use Hohmann Transfer using Targeter with STK Engine."""
+# Hohmann trasfer using targeter
 
+This example provides a practical example of how to leverage STK with [Tkinter](https://docs.python.org/es/3/library/tkinter.html), a Python library for creating graphical user interfaces, to solve a Hohmann transfer problem.
+
++++
+
+## What is a Hohmann transfer?
+
+A Hohmann transfer is a fuel-efficient orbital maneuver used in spaceflight to transfer a spacecraft from one circular orbit to another circular orbit at a different altitude or around a different celestial body. It was developed by German engineer Walter Hohmann in 1925 and is often referred to as the Hohmann transfer orbit or Hohmann ellipse. This maneuver is commonly used for missions within our solar system, including transfers between planets or moons.
+
+The transfer is typically modeled under the two-body assumption. This means that it assumes a simplified scenario where only two significant gravitational bodies are considered: the spacecraft and the central body (e.g., a planet or a moon).
+
++++
+
+## Creating the application
+
+To create a class for hosting the application and define various methods linked to buttons for executing different steps of solving the Hohmann transfer, you can use the following cell. This class will serve as the backbone of your Tkinter application and encapsulate the functionality:
+
+```{code-cell} ipython3
 import os
 import tkinter as tk
 
@@ -40,8 +56,8 @@ class HohmannTransferUsingTargeter:
 
     def __init__(self):
         """Create a new instance and initialize the user interface."""
-        self.stk = STKEngine.start_application(noGraphics=False)
-        self.root = self.stk.new_object_root()
+        self.stk = STKEngine.StartApplication(noGraphics=False)
+        self.root = self.stk.NewObjectRoot()
         self.window = tk.Tk()
         self.window.title("Hohmann Transfer Using Targeter")
         self.window.protocol("WM_DELETE_WINDOW", self._exit)
@@ -111,7 +127,7 @@ class HohmannTransferUsingTargeter:
     def _exit(self):
         self.root.close_scenario()
         self.window.destroy()
-        self.stk.shutdown()
+        self.stk.ShutDown()
 
     def _new_scenario(self):
         self.root.new_scenario("HohmannTransfer")
@@ -253,8 +269,31 @@ class HohmannTransferUsingTargeter:
         self.reportText["state"] = "disabled"
         self.reportWindow.update()
 
-
-if __name__ == "__main__":
-    hohmannTransferUsingTargeter = HohmannTransferUsingTargeter()
-    hohmannTransferUsingTargeter._run()
+# Instantiate and run the application
+hohmannTransferUsingTargeter = HohmannTransferUsingTargeter()
+hohmannTransferUsingTargeter._run()
 ```
+
+## Results
+
+The application launches showing an empty scene. To create a new scenario click on the ``New Scenario`` button. Once created, the application displays a new scene focused on the Earth:
+
++++
+
+![Window state when after launching the application](img/new_scenario.png)
+
++++
+
+Finally, you can run your through the different steps of the application. The final results after running the mission control sequence look like this:
+
++++
+
+![Computed Hohmann transfer](img/run_mcs.png)
+
++++
+
+You can get a summary of the results by clicking on the ``Display Results`` button. This action triggers a small window containing different numerical values computed during the simulation:
+
++++
+
+![Summary of the results](img/mcs_summary.png)
