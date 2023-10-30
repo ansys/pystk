@@ -1,5 +1,6 @@
 from test_util import *
 from assertion_harness import *
+from pytest import *
 from parameterized import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -36,11 +37,8 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_SAT.graphics.time_events.remove_all()
 
         else:
-
-            def action1():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 EarlyBoundTests.AG_SAT.graphics.time_events.remove_all()
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action1)
 
     def test_BUG63355_ExceptionOnBreakAngleTypeUnknown(self):
         def code1():
@@ -217,11 +215,8 @@ class EarlyBoundTests(TestBase):
         stopCond: "IStoppingCondition" = clr.CastAs(
             propagate.stopping_conditions["Duration"].properties, IStoppingCondition
         )
-
-        def action2():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # read-only without a Sequence set
             stopCond.max_trip_times = 10001
-
-        TryCatchAssertBlock.ExpectedException("read-only", action2)  # read-only without a Sequence set
 
         mcs.auto_sequence.add("AutoSeq1")
         stopCond.sequence = "AutoSeq1"
@@ -264,10 +259,8 @@ class EarlyBoundTests(TestBase):
             exportTool.reference_frame = refFrame
             exportTool.export(outputFile)
 
-        def action3():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             exportTool.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
-
-        TryCatchAssertBlock.ExpectedException("must be in", action3)
 
         exportTool.central_body_name = "Moon"
 
@@ -295,11 +288,8 @@ class EarlyBoundTests(TestBase):
             CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
             CCSDS_REFERENCE_FRAME.GCRF,
         ]:
-
-            def action4():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.reference_frame = refFrame
-
-            TryCatchAssertBlock.ExpectedException("must be in", action4)
 
         exportTool.central_body_name = "Mars"
 
@@ -327,11 +317,8 @@ class EarlyBoundTests(TestBase):
             CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
             CCSDS_REFERENCE_FRAME.GCRF,
         ]:
-
-            def action5():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.reference_frame = refFrame
-
-            TryCatchAssertBlock.ExpectedException("must be in", action5)
 
         #
         # Do the same as above with CCSDSv2
@@ -363,10 +350,8 @@ class EarlyBoundTests(TestBase):
             exportToolv2.reference_frame = refFrame
             exportToolv2.export(outputFile)
 
-        def action6():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             exportToolv2.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
-
-        TryCatchAssertBlock.ExpectedException("must be in", action6)
 
         exportToolv2.central_body_name = "Moon"
 
@@ -394,11 +379,8 @@ class EarlyBoundTests(TestBase):
             CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
             CCSDS_REFERENCE_FRAME.GCRF,
         ]:
-
-            def action7():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportToolv2.reference_frame = refFrame
-
-            TryCatchAssertBlock.ExpectedException("must be in", action7)
 
         exportToolv2.central_body_name = "Mars"
 
@@ -426,11 +408,8 @@ class EarlyBoundTests(TestBase):
             CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
             CCSDS_REFERENCE_FRAME.GCRF,
         ]:
-
-            def action8():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportToolv2.reference_frame = refFrame
-
-            TryCatchAssertBlock.ExpectedException("must be in", action8)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "FEA119646")
 
@@ -472,11 +451,8 @@ class EarlyBoundTests(TestBase):
         coordSys: "STK_EPHEM_COORDINATE_SYSTEM"
 
         for coordSys in [STK_EPHEM_COORDINATE_SYSTEM.MEAN_EARTH]:
-
-            def action9():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
-
-            TryCatchAssertBlock.ExpectedException("must be in", action9)
 
         exportTool.central_body_name = "Moon"
 
@@ -503,11 +479,8 @@ class EarlyBoundTests(TestBase):
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2014,
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2020,
         ]:
-
-            def action10():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
-
-            TryCatchAssertBlock.ExpectedException("must be in", action10)
 
         exportTool.central_body_name = "Mars"
 
@@ -534,11 +507,8 @@ class EarlyBoundTests(TestBase):
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2014,
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2020,
         ]:
-
-            def action11():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
-
-            TryCatchAssertBlock.ExpectedException("must be in", action11)
 
         #
         # Do the same with STK Binary Ephemeris
@@ -570,11 +540,8 @@ class EarlyBoundTests(TestBase):
         coordSys: "STK_EPHEM_COORDINATE_SYSTEM"
 
         for coordSys in [STK_EPHEM_COORDINATE_SYSTEM.MEAN_EARTH]:
-
-            def action12():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool2.coordinate_system = coordSys
-
-            TryCatchAssertBlock.ExpectedException("must be in", action12)
 
         exportTool.central_body_name = "Moon"
 
@@ -601,11 +568,8 @@ class EarlyBoundTests(TestBase):
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2014,
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2020,
         ]:
-
-            def action13():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
-
-            TryCatchAssertBlock.ExpectedException("must be in", action13)
 
         exportTool.central_body_name = "Mars"
 
@@ -632,10 +596,7 @@ class EarlyBoundTests(TestBase):
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2014,
             STK_EPHEM_COORDINATE_SYSTEM.ITRF2020,
         ]:
-
-            def action14():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
-
-            TryCatchAssertBlock.ExpectedException("must be in", action14)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "FEA119465")

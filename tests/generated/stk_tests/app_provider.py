@@ -1,6 +1,3 @@
-# AGI STK .NET API
-
-
 class TestTarget:
     eStk = 0
     eStkX = 1

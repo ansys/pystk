@@ -1,4 +1,5 @@
 from test_util import *
+from pytest import *
 from ansys.stk.core.stkobjects import *
 
 
@@ -10,7 +11,7 @@ class Unit(object):
 
 class TryCatchAssertBlock(object):
     @staticmethod
-    def DoAssert(message: str, action):
+    def DoAssert(action):
         TryCatchAssertBlock.ExpectedException("", action)
 
     @staticmethod
@@ -42,10 +43,6 @@ class TryCatchAssertBlock(object):
             return
 
         Assert.fail("Expected exception: {0}", message)
-
-    @staticmethod
-    def DoAssert2(action):
-        TryCatchAssertBlock.ExpectedException("", action)
 
     @staticmethod
     def DoActionRunFinalize(action, finalizer):

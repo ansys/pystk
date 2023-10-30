@@ -3,6 +3,7 @@ from assert_extension import *
 from assertion_harness import *
 from logger import *
 from math2 import *
+from pytest import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -43,11 +44,8 @@ class FOMHelper(object):
             oConstraint.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
             self.m_logger.WriteLine6("\t\t\tThe new AcrossAssets is: {0}", oConstraint.across_assets)
             Assert.assertEqual(FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM, oConstraint.across_assets)
-
-            def action1():
+            with pytest.raises(Exception):
                 oConstraint.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.UNKNOWN
-
-            TryCatchAssertBlock.DoAssert("", action1)
 
             # TimeStep
             self.m_logger.WriteLine6("\t\t\tThe current TimeStep is: {0}", oConstraint.time_step)
@@ -55,17 +53,11 @@ class FOMHelper(object):
             self.m_logger.WriteLine6("\t\t\tThe new TimeStep is: {0}", oConstraint.time_step)
             Assert.assertEqual(123.456, oConstraint.time_step)
             oConstraint.time_step = 315576000  # max. 10 years
-
-            def action2():
+            with pytest.raises(Exception):
                 oConstraint.time_step = 315576001
-
-            TryCatchAssertBlock.DoAssert("", action2)
             oConstraint.time_step = 0.1  # min. 0.1
-
-            def action3():
+            with pytest.raises(Exception):
                 oConstraint.time_step = 0.099
-
-            TryCatchAssertBlock.DoAssert("", action3)
 
             # ConstraintName and Constraint
             oConstraint.constraint = "AngularRate"
@@ -74,11 +66,8 @@ class FOMHelper(object):
             oConstraint.constraint_name = FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE
             self.m_logger.WriteLine6("\t\t\tThe new ConstraintName is: {0}", oConstraint.constraint_name)
             Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE, oConstraint.constraint_name)
-
-            def action4():
+            with pytest.raises(Exception):
                 oConstraint.constraint_name = FIGURE_OF_MERIT_CONSTRAINT_NAME.UNKNOWN
-
-            TryCatchAssertBlock.DoAssert("", action4)
         elif (
             (
                 (
@@ -121,11 +110,8 @@ class FOMHelper(object):
             oUncertainties.receiver_range = 123.456
             self.m_logger.WriteLine6("\t\t\tThe new ReceiverRange is: {0}", oUncertainties.receiver_range)
             Assert.assertEqual(123.456, oUncertainties.receiver_range)
-
-            def action5():
+            with pytest.raises(Exception):
                 oUncertainties.receiver_range = -1.2
-
-            TryCatchAssertBlock.DoAssert("", action5)
             # AssetList (empty)
             assets.remove_all()
             Assert.assertEqual(0, assets.count)
@@ -170,11 +156,8 @@ class FOMHelper(object):
             oMC.value = 12.34
             self.m_logger.WriteLine6("\t\t\t\tThe new Value is: {0}", oMC.value)
             Assert.assertEqual(12.34, oMC.value)
-
-            def action6():
+            with pytest.raises(Exception):
                 oMC.value = -1.2
-
-            TryCatchAssertBlock.DoAssert("", action6)
             # SetMethodType (eFmNAConstant)
             assetListElement.method_type = FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.ELEVATION_ANGLE
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
@@ -192,16 +175,10 @@ class FOMHelper(object):
             self.m_logger.WriteLine5("\t\t\t\tThe new Filename is: {0}", oMEA.filename)
             Assert.assertEqual("fom.re", oMEA.filename)
             Assert.assertEqual(TestBase.GetScenarioFile(oMEA.filename), oMEA.file_path)
-
-            def action7():
+            with pytest.raises(Exception):
                 oMEA.filename = ""
-
-            TryCatchAssertBlock.DoAssert("", action7)
-
-            def action8():
+            with pytest.raises(Exception):
                 oMEA.filename = "InvalidFile.Name"
-
-            TryCatchAssertBlock.DoAssert("", action8)
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.RESPONSE_TIME:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
@@ -255,27 +232,18 @@ class FOMHelper(object):
 
             srt.collection_time = 10
             Assert.assertEqual(10, srt.collection_time)
-
-            def action9():
+            with pytest.raises(Exception):
                 srt.collection_time = -10
-
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action9)
 
             srt.commanding_time = 20
             Assert.assertEqual(20, srt.commanding_time)
-
-            def action10():
+            with pytest.raises(Exception):
                 srt.commanding_time = -10
-
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action10)
 
             srt.command_perp_time = 30
             Assert.assertEqual(30, srt.command_perp_time)
-
-            def action11():
+            with pytest.raises(Exception):
                 srt.command_perp_time = -10
-
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action11)
 
             srt.command_station_path = (
                 r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
@@ -291,34 +259,23 @@ class FOMHelper(object):
             srt.command_station_path = r"NONE"
             Assert.assertEqual(r"", srt.command_station_path)
 
-            def action12():
+            with pytest.raises(Exception):
                 srt.command_station_path = r"bogus"
-
-            TryCatchAssertBlock.DoAssert("bogus CommandStationPath", action12)
 
             srt.downlink_time = 40
             Assert.assertEqual(40, srt.downlink_time)
-
-            def action13():
+            with pytest.raises(Exception):
                 srt.downlink_time = -10
-
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action13)
 
             srt.post_collection_time = 50
             Assert.assertEqual(50, srt.post_collection_time)
-
-            def action14():
+            with pytest.raises(Exception):
                 srt.post_collection_time = -10
-
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action14)
 
             srt.pre_collection_time = 60
             Assert.assertEqual(60, srt.pre_collection_time)
-
-            def action15():
+            with pytest.raises(Exception):
                 srt.pre_collection_time = -10
-
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action15)
 
             srt.receive_station_path = (
                 r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
@@ -334,18 +291,13 @@ class FOMHelper(object):
             srt.receive_station_path = r"NONE"
             Assert.assertEqual(r"", srt.receive_station_path)
 
-            def action16():
+            with pytest.raises(Exception):
                 srt.receive_station_path = r"bogus"
-
-            TryCatchAssertBlock.DoAssert("bogus ReceiveStationPath", action16)
 
             srt.time_step = 60
             Assert.assertEqual(60, srt.time_step)
-
-            def action17():
+            with pytest.raises(Exception):
                 srt.time_step = -10
-
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action17)
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.AGE_OF_DATA:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionAgeOfData))
@@ -358,16 +310,10 @@ class FOMHelper(object):
             Assert.assertEqual(1, aod.min_assets)
             aod.min_assets = 9999
             Assert.assertEqual(9999, aod.min_assets)
-
-            def action18():
+            with pytest.raises(Exception):
                 aod.min_assets = 0
-
-            TryCatchAssertBlock.DoAssert("MinAssets below min", action18)
-
-            def action19():
+            with pytest.raises(Exception):
                 aod.min_assets = 10000
-
-            TryCatchAssertBlock.DoAssert("MinAssets above max", action19)
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionScalarCalculation))
@@ -380,11 +326,8 @@ class FOMHelper(object):
 
             sd.calc_scalar = "CentralBody/Earth ElapsedTimeFromStart"
             Assert.assertEqual("CentralBody/Earth ElapsedTimeFromStart", sd.calc_scalar)
-
-            def action20():
+            with pytest.raises(Exception):
                 sd.calc_scalar = "Bogus"
-
-            TryCatchAssertBlock.DoAssert("bogus calcscalar", action20)
 
             sd.should_update_accesses = True
             Assert.assertTrue(sd.should_update_accesses)
@@ -412,13 +355,10 @@ class FOMHelper(object):
             )
             saod.command_station_path = r"NONE"
             Assert.assertEqual(r"", saod.command_station_path)
-
-            def action21():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 saod.command_station_path = (
                     r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
                 ) + "/Satellite/Bogus"
-
-            TryCatchAssertBlock.ExpectedException("must be in", action21)
 
             saod.receive_station_path = (
                 r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
@@ -432,73 +372,52 @@ class FOMHelper(object):
             )
             saod.receive_station_path = r"NONE"
             Assert.assertEqual(r"", saod.receive_station_path)
-
-            def action22():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 saod.receive_station_path = (
                     r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
                 ) + "/Satellite/Bogus"
-
-            TryCatchAssertBlock.ExpectedException("must be in", action22)
 
             saod.command_prep_time = 0
             Assert.assertEqual(0, saod.command_prep_time)
             saod.command_prep_time = 10
             Assert.assertEqual(10, saod.command_prep_time)
-
-            def action23():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.command_prep_time = -10
-
-            TryCatchAssertBlock.ExpectedException("invalid", action23)
 
             saod.commanding_time = 0
             Assert.assertEqual(0, saod.commanding_time)
             saod.commanding_time = 20
             Assert.assertEqual(20, saod.commanding_time)
-
-            def action24():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.commanding_time = -10
-
-            TryCatchAssertBlock.ExpectedException("invalid", action24)
 
             saod.pre_collection_time = 0
             Assert.assertEqual(0, saod.pre_collection_time)
             saod.pre_collection_time = 30
             Assert.assertEqual(30, saod.pre_collection_time)
-
-            def action25():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.pre_collection_time = -10
-
-            TryCatchAssertBlock.ExpectedException("invalid", action25)
 
             saod.collection_time = 0
             Assert.assertEqual(0, saod.collection_time)
             saod.collection_time = 40
             Assert.assertEqual(40, saod.collection_time)
-
-            def action26():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.collection_time = -10
-
-            TryCatchAssertBlock.ExpectedException("invalid", action26)
 
             saod.post_collection_time = 0
             Assert.assertEqual(0, saod.post_collection_time)
             saod.post_collection_time = 50
             Assert.assertEqual(50, saod.post_collection_time)
-
-            def action27():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.post_collection_time = -10
-
-            TryCatchAssertBlock.ExpectedException("invalid", action27)
 
             saod.downlink_time = 0
             Assert.assertEqual(0, saod.downlink_time)
             saod.downlink_time = 60
             Assert.assertEqual(60, saod.downlink_time)
-
-            def action28():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.downlink_time = -10
-
-            TryCatchAssertBlock.ExpectedException("invalid", action28)
 
             saod.allow_forward_crosslink = False
             Assert.assertFalse(saod.allow_forward_crosslink)
@@ -509,16 +428,10 @@ class FOMHelper(object):
             Assert.assertEqual(1, saod.time_step)
             saod.time_step = 3600
             Assert.assertEqual(3600, saod.time_step)
-
-            def action29():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.time_step = 0
-
-            TryCatchAssertBlock.ExpectedException("invalid", action29)
-
-            def action30():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 saod.time_step = 3601
-
-            TryCatchAssertBlock.ExpectedException("invalid", action30)
         else:
             Assert.fail("Invalid definition type - {0}", eType)
 
@@ -614,11 +527,8 @@ class FOMHelper(object):
                 )
                 or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.SUM))
             ) or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.UNIQUE)):
-
-                def action31():
+                with pytest.raises(Exception):
                     definitionData: "IFigureOfMeritDefinitionData" = oCompute.compute
-
-                TryCatchAssertBlock.DoAssert("", action31)
             elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_TIME_ABOVE)) or (
                 (eComputeType == FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
             ):
@@ -632,11 +542,8 @@ class FOMHelper(object):
                 dataMinAssets.min_assets = 123
                 self.m_logger.WriteLine3("\t\t\t\t\tThe new MinAssets is: {0}", dataMinAssets.min_assets)
                 Assert.assertEqual(123, dataMinAssets.min_assets)
-
-                def action32():
+                with pytest.raises(Exception):
                     dataMinAssets.min_assets = 1234
-
-                TryCatchAssertBlock.DoAssert("", action32)
             elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN)) or (
                 (eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN_PER_DAY)
             ):
@@ -657,11 +564,8 @@ class FOMHelper(object):
                 dataPercentLevel.percent_level = 23.45
                 self.m_logger.WriteLine6("\t\t\t\t\tThe new PercentLevel is: {0}", dataPercentLevel.percent_level)
                 Assert.assertEqual(23.45, dataPercentLevel.percent_level)
-
-                def action33():
+                with pytest.raises(Exception):
                     dataPercentLevel.percent_level = 123.456
-
-                TryCatchAssertBlock.DoAssert("", action33)
             else:
                 Assert.fail("Invalid definition type - {0}", eComputeType)
 
@@ -680,54 +584,30 @@ class FOMHelper(object):
             bReadOnly = True
 
         if bReadOnly:
-
-            def action34():
-                oSatisfaction.enable_satisfaction = True
-
             # EnableSatisfaction
-            TryCatchAssertBlock.DoAssert("", action34)
-
-            def action35():
-                oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
-
+            with pytest.raises(Exception):
+                oSatisfaction.enable_satisfaction = True
             # SatisfactionType
-            TryCatchAssertBlock.DoAssert("", action35)
-
-            def action36():
-                oSatisfaction.satisfaction_threshold = 123.456
-
+            with pytest.raises(Exception):
+                oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
             # SatisfactionThreshold
-            TryCatchAssertBlock.DoAssert("", action36)
-
-            def action37():
-                oSatisfaction.invalid_data_indicator = 1.2
-
+            with pytest.raises(Exception):
+                oSatisfaction.satisfaction_threshold = 123.456
             # InvalidDataIndicator
-            TryCatchAssertBlock.DoAssert("", action37)
-
-            def action38():
-                oSatisfaction.use_value_range_check = True
-
+            with pytest.raises(Exception):
+                oSatisfaction.invalid_data_indicator = 1.2
             # UseValueRangeCheck
-            TryCatchAssertBlock.DoAssert("", action38)
-
-            def action39():
-                oSatisfaction.min_value_range = 1.2
-
+            with pytest.raises(Exception):
+                oSatisfaction.use_value_range_check = True
             # MinValueRange
-            TryCatchAssertBlock.DoAssert("", action39)
-
-            def action40():
-                oSatisfaction.max_value_range = 1.2
-
+            with pytest.raises(Exception):
+                oSatisfaction.min_value_range = 1.2
             # MaxValueRange
-            TryCatchAssertBlock.DoAssert("", action40)
-
-            def action41():
-                oSatisfaction.exclude_value_range = True
-
+            with pytest.raises(Exception):
+                oSatisfaction.max_value_range = 1.2
             # ExcludeValueRange
-            TryCatchAssertBlock.DoAssert("", action41)
+            with pytest.raises(Exception):
+                oSatisfaction.exclude_value_range = True
 
         else:
             # EnableSatisfaction (false)
@@ -735,18 +615,12 @@ class FOMHelper(object):
             oSatisfaction.enable_satisfaction = False
             self.m_logger.WriteLine4("\t\t\tThe new EnableSatisfaction is: {0}", oSatisfaction.enable_satisfaction)
             Assert.assertFalse(oSatisfaction.enable_satisfaction)
-
-            def action42():
-                oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
-
             # SatisfactionType
-            TryCatchAssertBlock.DoAssert("", action42)
-
-            def action43():
-                oSatisfaction.satisfaction_threshold = 123.456
-
+            with pytest.raises(Exception):
+                oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
             # SatisfactionThreshold
-            TryCatchAssertBlock.DoAssert("", action43)
+            with pytest.raises(Exception):
+                oSatisfaction.satisfaction_threshold = 123.456
             # EnableSatisfaction (true)
             oSatisfaction.enable_satisfaction = True
             self.m_logger.WriteLine4("\t\t\tThe new EnableSatisfaction is: {0}", oSatisfaction.enable_satisfaction)
@@ -778,11 +652,8 @@ class FOMHelper(object):
                 Assert.assertEqual(12.34, oSatisfaction.satisfaction_threshold)
 
             if eType == FIGURE_OF_MERIT_DEFINITION_TYPE.COVERAGE_TIME:
-
-                def action44():
+                with pytest.raises(Exception):
                     oSatisfaction.satisfaction_threshold = 123.456
-
-                TryCatchAssertBlock.DoAssert("", action44)
 
             # InvalidDataIndicator
             self.m_logger.WriteLine6(
@@ -815,24 +686,15 @@ class FOMHelper(object):
                     "\t\t\t\tThe new UseValueRangeCheck is: {0}", oSatisfaction.use_value_range_check
                 )
                 Assert.assertFalse(oSatisfaction.use_value_range_check)
-
-                def action45():
-                    oSatisfaction.min_value_range = 1.2
-
                 # MinValueRange
-                TryCatchAssertBlock.DoAssert("", action45)
-
-                def action46():
-                    oSatisfaction.max_value_range = 1.2
-
+                with pytest.raises(Exception):
+                    oSatisfaction.min_value_range = 1.2
                 # MaxValueRange
-                TryCatchAssertBlock.DoAssert("", action46)
-
-                def action47():
-                    oSatisfaction.exclude_value_range = True
-
+                with pytest.raises(Exception):
+                    oSatisfaction.max_value_range = 1.2
                 # ExcludeValueRange
-                TryCatchAssertBlock.DoAssert("", action47)
+                with pytest.raises(Exception):
+                    oSatisfaction.exclude_value_range = True
                 # UseValueRangeCheck (true)
                 oSatisfaction.use_value_range_check = True
                 self.m_logger.WriteLine4(
@@ -861,35 +723,20 @@ class FOMHelper(object):
                 Assert.assertFalse(oSatisfaction.exclude_value_range)
 
             else:
-
-                def action48():
+                with pytest.raises(Exception):
                     oSatisfaction.invalid_data_indicator = 1.2
-
-                TryCatchAssertBlock.DoAssert("", action48)
-
-                def action49():
-                    oSatisfaction.use_value_range_check = True
-
                 # UseValueRangeCheck
-                TryCatchAssertBlock.DoAssert("", action49)
-
-                def action50():
-                    oSatisfaction.min_value_range = 1.2
-
+                with pytest.raises(Exception):
+                    oSatisfaction.use_value_range_check = True
                 # MinValueRange
-                TryCatchAssertBlock.DoAssert("", action50)
-
-                def action51():
-                    oSatisfaction.max_value_range = 1.2
-
+                with pytest.raises(Exception):
+                    oSatisfaction.min_value_range = 1.2
                 # MaxValueRange
-                TryCatchAssertBlock.DoAssert("", action51)
-
-                def action52():
-                    oSatisfaction.exclude_value_range = True
-
+                with pytest.raises(Exception):
+                    oSatisfaction.max_value_range = 1.2
                 # ExcludeValueRange
-                TryCatchAssertBlock.DoAssert("", action52)
+                with pytest.raises(Exception):
+                    oSatisfaction.exclude_value_range = True
 
     # endregion
 
@@ -912,16 +759,10 @@ class FOMHelper(object):
         dataMinMax.max_value = 456.123
         self.m_logger.WriteLine6("\t\t\tThe new MaxValue is: {0}", dataMinMax.max_value)
         Assert.assertEqual(456.123, dataMinMax.max_value)
-
-        def action53():
+        with pytest.raises(Exception):
             dataMinMax.min_value = 1234.56
-
-        TryCatchAssertBlock.DoAssert("", action53)
-
-        def action54():
+        with pytest.raises(Exception):
             dataMinMax.max_value = 45.6123
-
-        TryCatchAssertBlock.DoAssert("", action54)
 
     # endregion
 
@@ -966,11 +807,8 @@ class FOMHelper(object):
             if ((eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_FOUR_ACC)) or (
                 (eType == FIGURE_OF_MERIT_COMPUTE_TYPE.OVER_DETERMINED)
             ):
-
-                def action55():
+                with pytest.raises(Exception):
                     definitionData: "IFigureOfMeritDefinitionData" = oDOP.type_data
-
-                TryCatchAssertBlock.DoAssert("", action55)
             elif eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST4:
                 definitionData: "IFigureOfMeritDefinitionData" = clr.CastAs(
                     oDOP.type_data, IFigureOfMeritDefinitionData
@@ -992,11 +830,8 @@ class FOMHelper(object):
                     Assert.assertEqual(method, oBest4.best4_metric)
 
                 Assert.assertFalse(oBest4.is_best4_metric_supported(FIGURE_OF_MERIT_METHOD.HDOP3))
-
-                def action56():
+                with pytest.raises(Exception):
                     oBest4.best4_metric = FIGURE_OF_MERIT_METHOD.HDOP3
-
-                TryCatchAssertBlock.DoAssert("Best 4 metric is not supported", action56)
             elif ((eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N)) or (
                 (eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N_ACC)
             ):
@@ -1009,11 +844,8 @@ class FOMHelper(object):
                 oBestN.best_n = 12
                 self.m_logger.WriteLine3("\t\t\t\t\tThe new BestN is: {0}", oBestN.best_n)
                 Assert.assertEqual(12, oBestN.best_n)
-
-                def action57():
+                with pytest.raises(Exception):
                     oBestN.best_n = 123
-
-                TryCatchAssertBlock.DoAssert("", action57)
                 supportedTypes = oBestN.best_n_metric_supported_types
                 omethod: typing.Any
                 for omethod in supportedTypes:
@@ -1023,11 +855,8 @@ class FOMHelper(object):
                     Assert.assertEqual(method, oBestN.best_n_metric)
 
                 Assert.assertFalse(oBestN.is_best_n_metric_supported(FIGURE_OF_MERIT_METHOD.HDOP3))
-
-                def action58():
+                with pytest.raises(Exception):
                     oBestN.best_n_metric = FIGURE_OF_MERIT_METHOD.HDOP3
-
-                TryCatchAssertBlock.DoAssert("Best N metric is not supported", action58)
             else:
                 Assert.fail("Invalid Type - {0}!", eType)
 
@@ -1048,11 +877,8 @@ class FOMHelper(object):
         oDOP.time_step = 12.34
         self.m_logger.WriteLine6("\t\t\tThe new TimeStep is: {0}", oDOP.time_step)
         Assert.assertEqual(12.34, oDOP.time_step)
-
-        def action59():
+        with pytest.raises(Exception):
             oDOP.time_step = 12345.67
-
-        TryCatchAssertBlock.DoAssert("", action59)
 
     # endregion
 
@@ -1061,30 +887,18 @@ class FOMHelper(object):
         self.m_logger.WriteLine4("----- GRAPHICS ATTRIBUTES TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly)
         Assert.assertIsNotNone(oAttributes)
         if bReadOnly:
-
-            def action60():
-                oAttributes.is_visible = True
-
             # IsVisible
-            TryCatchAssertBlock.DoAssert("", action60)
-
-            def action61():
-                oAttributes.fill_points = True
-
+            with pytest.raises(Exception):
+                oAttributes.is_visible = True
             # FillPoints
-            TryCatchAssertBlock.DoAssert("", action61)
-
-            def action62():
-                oAttributes.marker_style = "X"
-
+            with pytest.raises(Exception):
+                oAttributes.fill_points = True
             # MarkerStyle
-            TryCatchAssertBlock.DoAssert("", action62)
-
-            def action63():
-                oAttributes.color = Color.FromArgb(1122867)
-
+            with pytest.raises(Exception):
+                oAttributes.marker_style = "X"
             # Color
-            TryCatchAssertBlock.DoAssert("", action63)
+            with pytest.raises(Exception):
+                oAttributes.color = Color.FromArgb(1122867)
 
         else:
             # IsVisible (false)
@@ -1092,24 +906,15 @@ class FOMHelper(object):
             oAttributes.is_visible = False
             self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
             Assert.assertFalse(oAttributes.is_visible)
-
-            def action64():
-                oAttributes.fill_points = True
-
             # FillPoints (readonly)
-            TryCatchAssertBlock.DoAssert("", action64)
-
-            def action65():
-                oAttributes.marker_style = "X"
-
+            with pytest.raises(Exception):
+                oAttributes.fill_points = True
             # MarkerStyle (readonly)
-            TryCatchAssertBlock.DoAssert("", action65)
-
-            def action66():
-                oAttributes.color = Color.FromArgb(1122867)
-
+            with pytest.raises(Exception):
+                oAttributes.marker_style = "X"
             # Color (readonly)
-            TryCatchAssertBlock.DoAssert("", action66)
+            with pytest.raises(Exception):
+                oAttributes.color = Color.FromArgb(1122867)
             # IsVisible (true)
             oAttributes.is_visible = True
             self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
@@ -1123,10 +928,8 @@ class FOMHelper(object):
             oAttributes.fill_translucency = 55.0
             Assert.assertAlmostEqual(55.0, oAttributes.fill_translucency, delta=Math2.Epsilon12)
 
-            def action67():
+            with pytest.raises(Exception):
                 oAttributes.marker_style = "X"
-
-            TryCatchAssertBlock.DoAssert("", action67)
             oAttributes.fill_points = False
             self.m_logger.WriteLine4("\tThe new FillPoints is: {0}", oAttributes.fill_points)
             Assert.assertFalse(oAttributes.fill_points)
@@ -1155,12 +958,9 @@ class FOMHelper(object):
         if bReadOnly:
             # base class properties test
             self.GfxAttributes(clr.CastAs(oAttributes, IFigureOfMeritGraphics2DAttributes), bReadOnly)
-
-            def action68():
-                oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
-
             # Accumulation (readonly)
-            TryCatchAssertBlock.DoAssert("", action68)
+            with pytest.raises(Exception):
+                oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
 
         else:
             klass: "IFigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
@@ -1204,23 +1004,15 @@ class FOMHelper(object):
         Assert.assertIsNotNone(oContours)
         if bReadOnly:
             if bIsVisibleReadOnly:
-
-                def action69():
+                with pytest.raises(Exception):
                     oContours.is_visible = True
 
-                TryCatchAssertBlock.DoAssert("", action69)
-
-            def action70():
-                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
-
             # ContourType (readonly)
-            TryCatchAssertBlock.DoAssert("", action70)
-
-            def action71():
-                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
-
+            with pytest.raises(Exception):
+                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
             # ColorMethod (readonly)
-            TryCatchAssertBlock.DoAssert("", action71)
+            with pytest.raises(Exception):
+                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
             # RampColor (readonly)
             self.GfxRampColor(oContours.ramp_color, bReadOnly)
             # LevelAttributes (readonly)
@@ -1234,18 +1026,12 @@ class FOMHelper(object):
             oContours.is_visible = False
             self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oContours.is_visible)
             Assert.assertFalse(oContours.is_visible)
-
-            def action72():
-                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
-
             # ContourType (readonly)
-            TryCatchAssertBlock.DoAssert("", action72)
-
-            def action73():
-                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
-
+            with pytest.raises(Exception):
+                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
             # ColorMethod (readonly)
-            TryCatchAssertBlock.DoAssert("", action73)
+            with pytest.raises(Exception):
+                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
             # IsVisible (true)
             oContours.is_visible = True
             self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oContours.is_visible)
@@ -1290,18 +1076,12 @@ class FOMHelper(object):
         self.m_logger.WriteLine4("----- GRAPHICS CONTOUR LiNES TEST (ReadOnly = {0})----- BEGIN -----", bReadOnly)
         Assert.assertIsNotNone(oContours)
         if bReadOnly:
-
-            def action74():
-                oContours.show_contour_lines = True
-
             # ShowContourLines (readonly)
-            TryCatchAssertBlock.DoAssert("", action74)
-
-            def action75():
-                oContours.line_width = 3
-
+            with pytest.raises(Exception):
+                oContours.show_contour_lines = True
             # LineWidth (readonly)
-            TryCatchAssertBlock.DoAssert("", action75)
+            with pytest.raises(Exception):
+                oContours.line_width = 3
 
         else:
             # Show contour lines
@@ -1334,12 +1114,9 @@ class FOMHelper(object):
         if bReadOnly:
             # base class properties test
             self.GfxContours(oContours, bReadOnly, bIsVisibleReadOnly)
-
-            def action76():
-                oContours.use_static_contours = True
-
             # UseStaticContours (readonly)
-            TryCatchAssertBlock.DoAssert("", action76)
+            with pytest.raises(Exception):
+                oContours.use_static_contours = True
 
         else:
             # UseStaticContours (false)
@@ -1365,18 +1142,12 @@ class FOMHelper(object):
         self.m_logger.WriteLine("----- GRAPHICS RAMP COLOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oColor)
         if bReadOnly:
-
-            def action77():
-                oColor.start_color = Color.FromArgb(10061943)
-
             # StartColor
-            TryCatchAssertBlock.DoAssert("", action77)
-
-            def action78():
-                oColor.end_color = Color.FromArgb(13426158)
-
+            with pytest.raises(Exception):
+                oColor.start_color = Color.FromArgb(10061943)
             # EndColor
-            TryCatchAssertBlock.DoAssert("", action78)
+            with pytest.raises(Exception):
+                oColor.end_color = Color.FromArgb(13426158)
 
         else:
             # StartColor
@@ -1404,30 +1175,19 @@ class FOMHelper(object):
         self.m_logger.WriteLine("----- GRAPHICS LEVEL ATTRIBUTES TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         if bReadOnly:
-
-            def action79():
-                oCollection.add_level(123)
-
             # AddLevel
-            TryCatchAssertBlock.DoAssert("", action79)
-
-            def action80():
-                oCollection.add_level_range(1, 25, 5)
-
+            with pytest.raises(Exception):
+                oCollection.add_level(123)
             # AddLevelRange
-            TryCatchAssertBlock.DoAssert("", action80)
+            with pytest.raises(Exception):
+                oCollection.add_level_range(1, 25, 5)
             if oCollection.count > 0:
-
-                def action81():
+                with pytest.raises(Exception):
                     oCollection.remove_at(0)
 
-                TryCatchAssertBlock.DoAssert("", action81)
-
-            def action82():
-                oCollection.remove_all()
-
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("", action82)
+            with pytest.raises(Exception):
+                oCollection.remove_all()
 
         else:
             # Count
@@ -1441,16 +1201,10 @@ class FOMHelper(object):
             # AddLevelRange
             oCollection.add_level_range(20, 40, 5)
             Assert.assertEqual(5, oCollection.count)
-
-            def action83():
+            with pytest.raises(Exception):
                 oCollection.add_level_range(50, 10, 5)
-
-            TryCatchAssertBlock.DoAssert("", action83)
-
-            def action84():
+            with pytest.raises(Exception):
                 oCollection.add_level_range(10, 20, -5)
-
-            TryCatchAssertBlock.DoAssert("", action84)
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
             oElem: "IFigureOfMeritGraphics2DLevelAttributesElement"
             for oElem in oCollection:
@@ -1479,11 +1233,8 @@ class FOMHelper(object):
                 AssertEx.AreEqual(Color.FromArgb(13426158), gfxLevelAttributesElement.color)
 
             else:
-
-                def action85():
+                with pytest.raises(Exception):
                     gfxLevelAttributesElement.color = Color.FromArgb(13426158)
-
-                TryCatchAssertBlock.DoAssert("", action85)
 
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
 
@@ -1563,18 +1314,12 @@ class FOMHelper(object):
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
-
-            def action86():
-                oOptions.background = 3430008
-
             # Background
-            TryCatchAssertBlock.DoAssert("", action86)
-
-            def action87():
-                oOptions.text = 5666960
-
+            with pytest.raises(Exception):
+                oOptions.background = 3430008
             # Text
-            TryCatchAssertBlock.DoAssert("", action87)
+            with pytest.raises(Exception):
+                oOptions.text = 5666960
 
         else:
             # BackgroundColor
@@ -1600,24 +1345,15 @@ class FOMHelper(object):
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
-
-            def action88():
-                oOptions.title = "Text Options ReadOnly Title"
-
             # Title
-            TryCatchAssertBlock.DoAssert("", action88)
-
-            def action89():
-                oOptions.num_decimal_digits = 12
-
+            with pytest.raises(Exception):
+                oOptions.title = "Text Options ReadOnly Title"
             # NumDecimalDigits
-            TryCatchAssertBlock.DoAssert("", action89)
-
-            def action90():
-                oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
-
+            with pytest.raises(Exception):
+                oOptions.num_decimal_digits = 12
             # FloatingPointFormat
-            TryCatchAssertBlock.DoAssert("", action90)
+            with pytest.raises(Exception):
+                oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
 
         else:
             # Title
@@ -1633,11 +1369,8 @@ class FOMHelper(object):
             oOptions.num_decimal_digits = 12
             self.m_logger.WriteLine3("\tThe new NumDecimalDigits is: {0}", oOptions.num_decimal_digits)
             Assert.assertEqual(12, oOptions.num_decimal_digits)
-
-            def action91():
+            with pytest.raises(Exception):
                 oOptions.num_decimal_digits = 123
-
-            TryCatchAssertBlock.DoAssert("", action91)
             # FloatingPointFormat
             self.m_logger.WriteLine6("\tThe current FloatingPointFormat is: {0}", oOptions.floating_point_format)
             oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
@@ -1664,36 +1397,21 @@ class FOMHelper(object):
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
-
-            def action92():
-                oOptions.color_square_height = 12
-
             # ColorSquareHeight
-            TryCatchAssertBlock.DoAssert("", action92)
-
-            def action93():
-                oOptions.color_square_width = 34
-
+            with pytest.raises(Exception):
+                oOptions.color_square_height = 12
             # ColorSquareWidth
-            TryCatchAssertBlock.DoAssert("", action93)
-
-            def action94():
-                oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
-
+            with pytest.raises(Exception):
+                oOptions.color_square_width = 34
             # Direction
-            TryCatchAssertBlock.DoAssert("", action94)
-
-            def action95():
-                oOptions.max_squares_per_row = 12
-
+            with pytest.raises(Exception):
+                oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
             # MaxSquaresPerRow
-            TryCatchAssertBlock.DoAssert("", action95)
-
-            def action96():
-                oOptions.max_squares_per_column = 34
-
+            with pytest.raises(Exception):
+                oOptions.max_squares_per_row = 12
             # MaxSquaresPerColumn
-            TryCatchAssertBlock.DoAssert("", action96)
+            with pytest.raises(Exception):
+                oOptions.max_squares_per_column = 34
 
         else:
             # ColorSquareHeight
@@ -1701,21 +1419,15 @@ class FOMHelper(object):
             oOptions.color_square_height = 12
             self.m_logger.WriteLine3("\tThe new ColorSquareHeight is: {0}", oOptions.color_square_height)
             Assert.assertEqual(12, oOptions.color_square_height)
-
-            def action97():
+            with pytest.raises(Exception):
                 oOptions.color_square_height = 123
-
-            TryCatchAssertBlock.DoAssert("", action97)
             # ColorSquareWidth
             self.m_logger.WriteLine3("\tThe current ColorSquareWidth is: {0}", oOptions.color_square_width)
             oOptions.color_square_width = 34
             self.m_logger.WriteLine3("\tThe new ColorSquareWidth is: {0}", oOptions.color_square_width)
             Assert.assertEqual(34, oOptions.color_square_width)
-
-            def action98():
+            with pytest.raises(Exception):
                 oOptions.color_square_width = 123
-
-            TryCatchAssertBlock.DoAssert("", action98)
             # Direction (eHorizontalMaxToMin)
             self.m_logger.WriteLine6("\tThe current Direction is: {0}", oOptions.direction)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
@@ -1726,17 +1438,11 @@ class FOMHelper(object):
             oOptions.max_squares_per_row = 34
             self.m_logger.WriteLine3("\tThe new MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
             Assert.assertEqual(34, oOptions.max_squares_per_row)
-
-            def action99():
+            with pytest.raises(Exception):
                 oOptions.max_squares_per_row = 123456
-
-            TryCatchAssertBlock.DoAssert("", action99)
-
-            def action100():
-                oOptions.max_squares_per_column = 34
-
             # MaxSquaresPerColumn
-            TryCatchAssertBlock.DoAssert("", action100)
+            with pytest.raises(Exception):
+                oOptions.max_squares_per_column = 34
             # Direction (eHorizontalMinToMax)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
@@ -1746,17 +1452,11 @@ class FOMHelper(object):
             oOptions.max_squares_per_row = 56
             self.m_logger.WriteLine3("\tThe new MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
             Assert.assertEqual(56, oOptions.max_squares_per_row)
-
-            def action101():
+            with pytest.raises(Exception):
                 oOptions.max_squares_per_row = 12345
-
-            TryCatchAssertBlock.DoAssert("", action101)
-
-            def action102():
-                oOptions.max_squares_per_column = 12
-
             # MaxSquaresPerColumn
-            TryCatchAssertBlock.DoAssert("", action102)
+            with pytest.raises(Exception):
+                oOptions.max_squares_per_column = 12
             # Direction (eVerticalMaxToMin)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
@@ -1766,17 +1466,11 @@ class FOMHelper(object):
             oOptions.max_squares_per_column = 56
             self.m_logger.WriteLine3("\tThe new MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
             Assert.assertEqual(56, oOptions.max_squares_per_column)
-
-            def action103():
+            with pytest.raises(Exception):
                 oOptions.max_squares_per_column = 12345
-
-            TryCatchAssertBlock.DoAssert("", action103)
-
-            def action104():
-                oOptions.max_squares_per_row = 12
-
             # MaxSquaresPerRow
-            TryCatchAssertBlock.DoAssert("", action104)
+            with pytest.raises(Exception):
+                oOptions.max_squares_per_row = 12
             # Direction (eVerticalMinToMax)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
@@ -1786,17 +1480,11 @@ class FOMHelper(object):
             oOptions.max_squares_per_column = 32
             self.m_logger.WriteLine3("\tThe new MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
             Assert.assertEqual(32, oOptions.max_squares_per_column)
-
-            def action105():
+            with pytest.raises(Exception):
                 oOptions.max_squares_per_column = 12345
-
-            TryCatchAssertBlock.DoAssert("", action105)
-
-            def action106():
-                oOptions.max_squares_per_row = 34
-
             # MaxSquaresPerRow
-            TryCatchAssertBlock.DoAssert("", action106)
+            with pytest.raises(Exception):
+                oOptions.max_squares_per_row = 34
 
     # endregion
 
@@ -1806,12 +1494,9 @@ class FOMHelper(object):
     ):
         Assert.assertIsNotNone(oWindow)
         if bReadOnly and bIsVisibleReadOnly:
-
-            def action107():
-                oWindow.is_visible_on_map = True
-
             # IsVisibleOnMap (readonly)
-            TryCatchAssertBlock.DoAssert("", action107)
+            with pytest.raises(Exception):
+                oWindow.is_visible_on_map = True
             # PositionOnMap (readonly)
             self.GfxLegendPositionOnMap(oWindow.position_on_map, bReadOnly)
 
@@ -1838,18 +1523,12 @@ class FOMHelper(object):
     ):
         Assert.assertIsNotNone(oWindow)
         if bReadOnly and bIsVisibleReadOnly:
-
-            def action108():
-                oWindow.is_visible_on_map = True
-
             # IsVisibleOnMap (readonly)
-            TryCatchAssertBlock.DoAssert("", action108)
-
-            def action109():
-                oWindow.translucency = 67.89
-
+            with pytest.raises(Exception):
+                oWindow.is_visible_on_map = True
             # Translucency (readonly)
-            TryCatchAssertBlock.DoAssert("", action109)
+            with pytest.raises(Exception):
+                oWindow.translucency = 67.89
             # PositionOnMap (readonly)
             self.GfxLegendPositionOnMap(oWindow.position_on_map, bReadOnly)
 
@@ -1872,11 +1551,8 @@ class FOMHelper(object):
             oWindow.translucency = 23.456
             self.m_logger.WriteLine6("\tThe new Translucency is: {0}", oWindow.translucency)
             Assert.assertEqual(23.456, oWindow.translucency)
-
-            def action110():
+            with pytest.raises(Exception):
                 oWindow.translucency = 123.456
-
-            TryCatchAssertBlock.DoAssert("", action110)
 
     # endregion
 
@@ -1884,18 +1560,12 @@ class FOMHelper(object):
     def GfxLegendPositionOnMap(self, oPosition: "IFigureOfMeritGraphics2DPositionOnMap", bReadOnly: bool):
         Assert.assertIsNotNone(oPosition)
         if bReadOnly:
-
-            def action111():
-                oPosition.x = 123
-
             # X (readonly)
-            TryCatchAssertBlock.DoAssert("", action111)
-
-            def action112():
-                oPosition.y = 123
-
+            with pytest.raises(Exception):
+                oPosition.x = 123
             # Y (readonly)
-            TryCatchAssertBlock.DoAssert("", action112)
+            with pytest.raises(Exception):
+                oPosition.y = 123
 
         else:
             # X
@@ -1903,21 +1573,15 @@ class FOMHelper(object):
             oPosition.x = 123
             self.m_logger.WriteLine3("\tThe new X is: {0}", oPosition.x)
             Assert.assertEqual(123, oPosition.x)
-
-            def action113():
+            with pytest.raises(Exception):
                 oPosition.x = -123
-
-            TryCatchAssertBlock.DoAssert("", action113)
             # Y
             self.m_logger.WriteLine3("\tThe current Y is: {0}", oPosition.y)
             oPosition.y = 234
             self.m_logger.WriteLine3("\tThe new Y is: {0}", oPosition.y)
             Assert.assertEqual(234, oPosition.y)
-
-            def action114():
+            with pytest.raises(Exception):
                 oPosition.y = -123
-
-            TryCatchAssertBlock.DoAssert("", action114)
 
     # endregion
 

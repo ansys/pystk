@@ -32,7 +32,8 @@ class UnitPreferenceState(IDisposable):
             abrv: str = dimension.current_unit.abbrv
             self._state[dim] = abrv
 
-    cstopy_failure = "<<< Node type DestructorDeclarationSyntax not implemented yet. >>>"
+    def __del__(self):
+        pass
 
     def Dispose(self):
         self.Dispose2(True)

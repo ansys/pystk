@@ -6,6 +6,7 @@ from display_times_helper import *
 from interfaces.stk_objects import *
 from orientation_helper import *
 from vehicle.vehicle_vo import *
+from pytest import *
 from parameterized import *
 
 from ansys.stk.core.stkobjects import *
@@ -63,13 +64,6 @@ class EarlyBoundTests(TestBase):
                 EarlyBoundTests.VOVector = EarlyBoundTests.transmitterVO.vector
                 EarlyBoundTests.antennaVolumeGraphics = EarlyBoundTests.transmitterVO.volume
 
-            else:
-
-                def action1():
-                    EarlyBoundTests.transmitterVO = EarlyBoundTests.transmitter.graphics_3d
-
-                TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action1)
-
         except Exception as e:
             raise e
 
@@ -90,11 +84,8 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.antennaContourLevelCollection = EarlyBoundTests.antennaContour.levels
 
         else:
-
-            def action2():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 EarlyBoundTests.transmitterGraphics = EarlyBoundTests.transmitter.graphics
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action2)
 
     # endregion
 
@@ -145,18 +136,14 @@ class EarlyBoundTests(TestBase):
         antennaContour.altitude = 100
         Assert.assertEqual(100, antennaContour.altitude)
 
-        def action3():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             antennaContour.altitude = -100
-
-        TryCatchAssertBlock.ExpectedException("invalid", action3)
 
         antennaContour.show_at_altitude = False
         Assert.assertFalse(antennaContour.show_at_altitude)
 
-        def action4():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             antennaContour.altitude = 100
-
-        TryCatchAssertBlock.ExpectedException("read only", action4)
 
     # endregion
 
@@ -173,15 +160,10 @@ class EarlyBoundTests(TestBase):
         antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
         Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT, antennaContour.color_method)
 
-        def action5():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             antennaContour.start_color = Color.Red
-
-        TryCatchAssertBlock.ExpectedException("read-only", action5)
-
-        def action6():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             antennaContour.stop_color = Color.Red
-
-        TryCatchAssertBlock.ExpectedException("read-only", action6)
 
     # endregion
 
@@ -210,10 +192,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(levelCollection.contains(4.0))
         Assert.assertTrue(levelCollection.contains(6.0))
 
-        def action7():
+        with pytest.raises(Exception, match=RegexSubstringMatch("already exists")):
             levelCollection.add(4.0)
-
-        TryCatchAssertBlock.ExpectedException("already exists", action7)
 
         level: "IAntennaContourLevel"
 
@@ -227,10 +207,8 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        def action8():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             level: "IAntennaContourLevel" = levelCollection[5]
-
-        TryCatchAssertBlock.ExpectedException("out of range", action8)
 
         level4: "IAntennaContourLevel" = levelCollection.get_level(4.0)
         Assert.assertEqual(4.0, level4.value)
@@ -241,16 +219,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(Color.Red, level4.color)
         antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
         color = level4.color
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             level4.color = Color.Red
-
-        TryCatchAssertBlock.ExpectedException("read-only", action9)
-
-        def action10():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unable to find")):
             level8: "IAntennaContourLevel" = levelCollection.get_level(8.0)
-
-        TryCatchAssertBlock.ExpectedException("Unable to find", action10)
 
         levelCollection.remove_at(1)
         Assert.assertEqual(2, levelCollection.count)
@@ -291,23 +263,16 @@ class EarlyBoundTests(TestBase):
         antennaContour.num_label_dec_digits = 12
         Assert.assertEqual(12, antennaContour.num_label_dec_digits)
 
-        def action11():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             antennaContour.num_label_dec_digits = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action11)
-
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             antennaContour.num_label_dec_digits = 13
-
-        TryCatchAssertBlock.ExpectedException("invalid", action12)
 
         antennaContour.show_labels = False
         Assert.assertFalse(antennaContour.show_labels)
 
-        def action13():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             antennaContour.num_label_dec_digits = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action13)
 
     # endregion
 
@@ -318,10 +283,8 @@ class EarlyBoundTests(TestBase):
         antennaContour.line_width = LINE_WIDTH.WIDTH5
         Assert.assertEqual(LINE_WIDTH.WIDTH5, antennaContour.line_width)
 
-        def action14():
+        with pytest.raises(Exception, match=RegexSubstringMatch("maximum value")):
             antennaContour.line_width = LINE_WIDTH.WIDTH6
-
-        TryCatchAssertBlock.ExpectedException("maximum value", action14)
 
     # endregion
     # endregion
@@ -740,11 +703,8 @@ class EarlyBoundTests(TestBase):
                 Assert.assertEqual(contourType, EarlyBoundTests.antennaContourGraphics.contour.type)
 
             else:
-
-                def action15():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is not supported")):
                     EarlyBoundTests.antennaContourGraphics.set_contour_type(contourType)
-
-                TryCatchAssertBlock.ExpectedException("is not supported", action15)
 
     # endregion
 
@@ -772,11 +732,8 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_IAgAntennaVolumeGraphics_Wireframe(self, bWireframe: bool):
         EarlyBoundTests.antennaVolumeGraphics.show = False
-
-        def action16():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             EarlyBoundTests.antennaVolumeGraphics.wireframe = bWireframe
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action16)
 
         EarlyBoundTests.antennaVolumeGraphics.show = True
         EarlyBoundTests.antennaVolumeGraphics.wireframe = bWireframe
@@ -799,11 +756,8 @@ class EarlyBoundTests(TestBase):
     ):
         def code1():
             EarlyBoundTests.antennaVolumeGraphics.show = False
-
-            def action17():
+            with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
                 EarlyBoundTests.antennaVolumeGraphics.gain_scale = gainScale
-
-            TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action17)
 
             EarlyBoundTests.antennaVolumeGraphics.show = True
             EarlyBoundTests.antennaVolumeGraphics.gain_scale = gainScale
@@ -828,11 +782,8 @@ class EarlyBoundTests(TestBase):
     ):
         def code2():
             EarlyBoundTests.antennaVolumeGraphics.show = False
-
-            def action18():
+            with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
                 EarlyBoundTests.antennaVolumeGraphics.gain_offset = gainOffset
-
-            TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action18)
 
             EarlyBoundTests.antennaVolumeGraphics.show = True
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = gainOffset
@@ -1050,36 +1001,24 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.1, EffectiveRadiusMethod.eff_rad)
         EffectiveRadiusMethod.eff_rad = 100
         Assert.assertEqual(100, EffectiveRadiusMethod.eff_rad)
-
-        def action19():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.eff_rad = 0.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action19)
-
-        def action20():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.eff_rad = 101.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action20)
 
         EffectiveRadiusMethod.ceiling = 0.0
         Assert.assertEqual(0.0, EffectiveRadiusMethod.ceiling)
         EffectiveRadiusMethod.ceiling = 1000000000
         Assert.assertEqual(1000000000, EffectiveRadiusMethod.ceiling)
-
-        def action21():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.ceiling = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action21)
 
         EffectiveRadiusMethod.max_target_altitude = 0.0
         Assert.assertEqual(0.0, EffectiveRadiusMethod.max_target_altitude)
         EffectiveRadiusMethod.max_target_altitude = 1000000000
         Assert.assertEqual(1000000000, EffectiveRadiusMethod.max_target_altitude)
-
-        def action22():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.max_target_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action22)
 
         EffectiveRadiusMethod.use_extrapolation = True
         Assert.assertTrue(EffectiveRadiusMethod.use_extrapolation)
@@ -1091,36 +1030,24 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.0, ITURP8344.ceiling)
         ITURP8344.ceiling = 1000000000
         Assert.assertEqual(1000000000, ITURP8344.ceiling)
-
-        def action23():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.ceiling = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action23)
 
         ITURP8344.atmos_altitude = 0.0
         Assert.assertEqual(0.0, ITURP8344.atmos_altitude)
         ITURP8344.atmos_altitude = 1000000000
         Assert.assertEqual(1000000000, ITURP8344.atmos_altitude)
-
-        def action24():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.atmos_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action24)
 
         ITURP8344.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, ITURP8344.knee_bend_factor)
         ITURP8344.knee_bend_factor = 1.0
         Assert.assertEqual(1.0, ITURP8344.knee_bend_factor)
-
-        def action25():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.knee_bend_factor = -0.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action25)
-
-        def action26():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.knee_bend_factor = 1.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action26)
 
     def Test_IAgRfModelSCFMethod(self, SCFMethod: "IRefractionModelSCFMethod"):
         SCFMethod.use_refraction_index = True
@@ -1130,79 +1057,39 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1.0, SCFMethod.refraction_index)
         SCFMethod.refraction_index = 10000.0
         Assert.assertEqual(10000.0, SCFMethod.refraction_index)
-
-        def action27():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.refraction_index = 0.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action27)
-
-        def action28():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.refraction_index = 10001.0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action28)
-
-        def action29():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c0 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action29)
-
-        def action30():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c1 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action30)
-
-        def action31():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c2 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action31)
-
-        def action32():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c3 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action32)
-
-        def action33():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c4 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action33)
-
-        def action34():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c5 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action34)
-
-        def action35():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c6 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action35)
-
-        def action36():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c7 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action36)
-
-        def action37():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c8 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action37)
-
-        def action38():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c9 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action38)
-
-        def action39():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c10 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action39)
 
         SCFMethod.use_refraction_index = False
         Assert.assertFalse(SCFMethod.use_refraction_index)
 
-        def action40():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.refraction_index = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action40)
 
         SCFMethod.coefficients.c0 = 1.0
         Assert.assertEqual(1.0, SCFMethod.coefficients.c0)
@@ -1231,46 +1118,31 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.0, SCFMethod.ceiling)
         SCFMethod.ceiling = 1000000000
         Assert.assertEqual(1000000000, SCFMethod.ceiling)
-
-        def action41():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.ceiling = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action41)
 
         SCFMethod.atmos_altitude = 0.0
         Assert.assertEqual(0.0, SCFMethod.atmos_altitude)
         SCFMethod.atmos_altitude = 1000000000
         Assert.assertEqual(1000000000, SCFMethod.atmos_altitude)
-
-        def action42():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.atmos_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action42)
 
         SCFMethod.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, SCFMethod.knee_bend_factor)
         SCFMethod.knee_bend_factor = 1.0
         Assert.assertEqual(1.0, SCFMethod.knee_bend_factor)
-
-        def action43():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.knee_bend_factor = -0.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action43)
-
-        def action44():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.knee_bend_factor = 1.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action44)
 
         SCFMethod.min_target_altitude = 0.0
         Assert.assertEqual(0.0, SCFMethod.min_target_altitude)
         SCFMethod.min_target_altitude = 1000000000
         Assert.assertEqual(1000000000, SCFMethod.min_target_altitude)
-
-        def action45():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.min_target_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action45)
 
         SCFMethod.use_extrapolation = True
         Assert.assertTrue(SCFMethod.use_extrapolation)
@@ -1305,11 +1177,8 @@ class EarlyBoundTests(TestBase):
                 )
 
         else:
-
-            def action46():
+            with pytest.raises(Exception, match=RegexSubstringMatch("deprecated")):
                 EarlyBoundTests.transmitter.refraction = eSnRefractionType
-
-            TryCatchAssertBlock.ExpectedException("deprecated", action46)
 
     # endregion
 
@@ -1343,10 +1212,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.transmitterGraphics.boresight_marker_style = "Square"
         Assert.assertEqual("Square", EarlyBoundTests.transmitterGraphics.boresight_marker_style)
 
-        def action47():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             EarlyBoundTests.transmitterGraphics.boresight_marker_style = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("must be in", action47)
 
     # endregion
 
@@ -1368,10 +1235,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.transmitter.set_model("Simple Transmitter Model")
         Assert.assertEqual(TRANSMITTER_MODEL_TYPE.SIMPLE, EarlyBoundTests.transmitter.model.type)
 
-        def action48():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.transmitterGraphics.show = True
-
-        TryCatchAssertBlock.ExpectedException("read only", action48)
 
     # endregion
 
@@ -1447,20 +1312,12 @@ class EarlyBoundTests(TestBase):
     # region Model Tests - Helper Functions
     # region Test_IAgTransferFunctionPolynomialCollection
     def Test_IAgTransferFunctionPolynomialCollection(self, transFuncPolyColl: "ITransferFunctionPolynomialCollection"):
-        def action49():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             transFuncPolyColl.remove_at(0)
-
-        TryCatchAssertBlock.ExpectedException("Cannot erase elements", action49)
-
-        def action50():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             transFuncPolyColl.remove_at(1)
-
-        TryCatchAssertBlock.ExpectedException("Cannot erase elements", action50)
-
-        def action51():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             transFuncPolyColl.remove_at(2)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action51)
 
         Assert.assertEqual(2, transFuncPolyColl.count)  # initial value, always at least 2
         transFuncPolyColl.add(10)
@@ -1495,20 +1352,12 @@ class EarlyBoundTests(TestBase):
     def Test_IAgTransferFunctionInputBackOffOutputBackOffTable(
         self, table: "ITransferFunctionInputBackOffOutputBackOffTable"
     ):
-        def action52():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             table.remove_at(0)
-
-        TryCatchAssertBlock.ExpectedException("Cannot erase elements", action52)
-
-        def action53():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             table.remove_at(1)
-
-        TryCatchAssertBlock.ExpectedException("Cannot erase elements", action53)
-
-        def action54():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             table.remove_at(2)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action54)
 
         Assert.assertEqual(2, table.count)  # initial value, always at least 2
         row: "ITransferFunctionInputBackOffOutputBackOffTableRow" = None
@@ -1562,20 +1411,12 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgTransferFunctionInputBackOffCOverImTable
     def Test_IAgTransferFunctionInputBackOffCOverImTable(self, table: "ITransferFunctionInputBackOffCOverImTable"):
-        def action55():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             table.remove_at(0)
-
-        TryCatchAssertBlock.ExpectedException("Cannot erase elements", action55)
-
-        def action56():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             table.remove_at(1)
-
-        TryCatchAssertBlock.ExpectedException("Cannot erase elements", action56)
-
-        def action57():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             table.remove_at(2)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action57)
 
         Assert.assertEqual(2, table.count)  # initial value, always at least 2
         row: "ITransferFunctionInputBackOffCOverImTableRow" = None
@@ -1640,15 +1481,10 @@ class EarlyBoundTests(TestBase):
             reTransmitterModel.saturated_flux_density = 999
             Assert.assertEqual(999, reTransmitterModel.saturated_flux_density)
 
-        def action58():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             reTransmitterModel.saturated_flux_density = -1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action58)
-
-        def action59():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             reTransmitterModel.saturated_flux_density = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action59)
 
         reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.CONSTANT_OUTPUT_POWER
         Assert.assertEqual(RE_TRANSMITTER_OP_MODE.CONSTANT_OUTPUT_POWER, reTransmitterModel.operational_mode)
@@ -1686,25 +1522,14 @@ class EarlyBoundTests(TestBase):
         reTransmitterModel.enable_c_over_im = False
         Assert.assertFalse(reTransmitterModel.enable_c_over_im)
 
-        def action60():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             reTransmitterModel.c_over_im_linear_scale = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action60)
-
-        def action61():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             reTransmitterModel.c_over_im_transfer_function_type = TRANSFER_FUNCTION_TYPE.TABLE_DATA
-
-        TryCatchAssertBlock.ExpectedException("read only", action61)
-
-        def action62():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             self.Test_IAgTransferFunctionPolynomialCollection(reTransmitterModel.c_over_im_transfer_function_polynomial)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action62)
-
-        def action63():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             self.Test_IAgTransferFunctionInputBackOffCOverImTable(reTransmitterModel.c_over_im_transfer_function_table)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action63)
 
         reTransmitterModel.enable_c_over_im = True
         Assert.assertTrue(reTransmitterModel.enable_c_over_im)
@@ -1731,31 +1556,19 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1e-07, cable.data_rate)
         cable.data_rate = 1000000
         Assert.assertEqual(1000000, cable.data_rate)
-
-        def action64():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cable.data_rate = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action64)
-
-        def action65():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cable.data_rate = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action65)
 
         cable.chips_per_bit = 1
         Assert.assertEqual(1, cable.chips_per_bit)
         cable.chips_per_bit = 1000000
         Assert.assertEqual(1000000, cable.chips_per_bit)
-
-        def action66():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cable.chips_per_bit = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action66)
-
-        def action67():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cable.chips_per_bit = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action67)
 
         Assert.assertEqual(60, cable.spreading_gain)
 
@@ -1769,16 +1582,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1e-07, complex.frequency)
         complex.frequency = 1000000
         Assert.assertEqual(1000000, complex.frequency)
-
-        def action68():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.frequency = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action68)
-
-        def action69():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.frequency = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action69)
 
         complex.frequency = 1.0  # RESTORE TO THIS VALUE TO BE CONSISTENT WITH ANTENNA TESTS. IMPORTANT SO THAT OTHER TEST VALUES ARE CONSISTENT.
 
@@ -1793,30 +1600,19 @@ class EarlyBoundTests(TestBase):
             complex.power = 2889
             Assert.assertEqual(2889, complex.power)
 
-        def action70():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.power = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action70)
-
-        def action71():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.power = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action71)
 
         complex.data_rate = 1e-07
         Assert.assertEqual(1e-07, complex.data_rate)
         complex.data_rate = 1000000
         Assert.assertEqual(1000000, complex.data_rate)
-
-        def action72():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.data_rate = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action72)
-
-        def action73():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.data_rate = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action73)
 
         # Antenna tab (Embed or Link)          tested in the call below
         # Antenna tab - Model Specs sub-tab    tested in the call below
@@ -1828,21 +1624,15 @@ class EarlyBoundTests(TestBase):
 
         complex.enable_polarization = False
         Assert.assertFalse(complex.enable_polarization)
-
-        def action74():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             complex.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action74)
         complex.enable_polarization = True
         Assert.assertTrue(complex.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action75():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     complex.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action75)
                 continue
 
             else:
@@ -1872,10 +1662,8 @@ class EarlyBoundTests(TestBase):
             complex.set_modulator(modulatorName)
             self.Test_IAgModulatorModel2(complex.modulator, modulatorName)
 
-        def action76():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             complex.set_modulator("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action76)
 
         # Filter tab
 
@@ -1919,15 +1707,10 @@ class EarlyBoundTests(TestBase):
             complexRe.saturated_power = 2889
             Assert.assertEqual(2889, complexRe.saturated_power)
 
-        def action77():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complexRe.saturated_power = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action77)
-
-        def action78():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complexRe.saturated_power = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action78)
 
         # Sat. Flux Density and Operational Mode are tested in Test_IAgReTransmitterModel
 
@@ -1941,21 +1724,15 @@ class EarlyBoundTests(TestBase):
 
         complexRe.enable_polarization = False
         Assert.assertFalse(complexRe.enable_polarization)
-
-        def action79():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             complexRe.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action79)
         complexRe.enable_polarization = True
         Assert.assertTrue(complexRe.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action80():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     complexRe.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action80)
                 continue
 
             else:
@@ -2014,16 +1791,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1000, laser.frequency)
         laser.frequency = 100000000
         Assert.assertEqual(100000000, laser.frequency)
-
-        def action81():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             laser.frequency = 999
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action81)
-
-        def action82():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             laser.frequency = 100000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action82)
 
         laser.frequency = 375000.0  # default   // ??RESTORE TO THIS VALUE TO (1.0) TO BE CONSISTENT WITH ANTENNA TESTS. IMPORTANT SO THAT OTHER TEST VALUES ARE CONSISTENT.
 
@@ -2038,39 +1809,26 @@ class EarlyBoundTests(TestBase):
             laser.power = 2889
             Assert.assertEqual(2889, laser.power)
 
-        def action83():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             laser.power = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action83)
-
-        def action84():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             laser.power = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action84)
 
         laser.data_rate = 1e-07
         Assert.assertEqual(1e-07, laser.data_rate)
         laser.data_rate = 1000000
         Assert.assertEqual(1000000, laser.data_rate)
-
-        def action85():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             laser.data_rate = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action85)
-
-        def action86():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             laser.data_rate = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action86)
 
         # Antenna tab (Embed only for Laser)
 
         antennaControl: "IAntennaControl" = laser.antenna_control
 
-        def action87():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.EMBED
-
-        TryCatchAssertBlock.ExpectedException("read only", action87)
 
         arSupportedEmbeddedModels = antennaControl.supported_embedded_models
         Assert.assertEqual(2, len(arSupportedEmbeddedModels))
@@ -2079,23 +1837,16 @@ class EarlyBoundTests(TestBase):
             antennaControl.set_embedded_model(modelName)
             Assert.assertEqual(modelName, antennaControl.embedded_model.name)
 
-        def action88():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             antennaControl.set_embedded_model("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action88)
 
         arSupportedLinkedAntennaObjects = antennaControl.supported_linked_antenna_objects
         Assert.assertTrue((len(arSupportedLinkedAntennaObjects) == 0))
-
-        def action89():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             antennaControl.linked_antenna_object = "Antenna/Antenna1Test"
 
-        TryCatchAssertBlock.ExpectedException("Invalid", action89)
-
-        def action90():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.LINK
-
-        TryCatchAssertBlock.ExpectedException("read only", action90)
 
         # Antenna tab - Model Specs sub-tab
 
@@ -2114,21 +1865,15 @@ class EarlyBoundTests(TestBase):
 
         laser.enable_polarization = False
         Assert.assertFalse(laser.enable_polarization)
-
-        def action91():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             laser.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action91)
         laser.enable_polarization = True
         Assert.assertTrue(laser.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action92():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     laser.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action92)
                 continue
 
             else:
@@ -2157,10 +1902,8 @@ class EarlyBoundTests(TestBase):
             laser.set_modulator(modulatorName)
             self.Test_IAgModulatorModel2(laser.modulator, modulatorName)
 
-        def action93():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             laser.set_modulator("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action93)
 
         # Filter tab
 
@@ -2197,16 +1940,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1e-07, medium.frequency)
         medium.frequency = 1000000
         Assert.assertEqual(1000000, medium.frequency)
-
-        def action94():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.frequency = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action94)
-
-        def action95():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.frequency = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action95)
 
         medium.frequency = 1.0  # RESTORE TO THIS VALUE TO BE CONSISTENT WITH ANTENNA TESTS. IMPORTANT SO THAT OTHER TEST VALUES ARE CONSISTENT.
 
@@ -2221,15 +1958,10 @@ class EarlyBoundTests(TestBase):
             medium.power = 2889
             Assert.assertEqual(2889, medium.power)
 
-        def action96():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.power = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action96)
-
-        def action97():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.power = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action97)
 
         medium.antenna_gain = -2890
         Assert.assertEqual(-2890, medium.antenna_gain)
@@ -2242,30 +1974,19 @@ class EarlyBoundTests(TestBase):
             medium.antenna_gain = 2889
             Assert.assertEqual(2889, medium.antenna_gain)
 
-        def action98():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.antenna_gain = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action98)
-
-        def action99():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.antenna_gain = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action99)
 
         medium.data_rate = 1e-07
         Assert.assertEqual(1e-07, medium.data_rate)
         medium.data_rate = 1000000
         Assert.assertEqual(1000000, medium.data_rate)
-
-        def action100():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.data_rate = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action100)
-
-        def action101():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.data_rate = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action101)
 
         # Antenna tab (Embed or Link)
 
@@ -2279,21 +2000,15 @@ class EarlyBoundTests(TestBase):
 
         medium.enable_polarization = False
         Assert.assertFalse(medium.enable_polarization)
-
-        def action102():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             medium.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action102)
         medium.enable_polarization = True
         Assert.assertTrue(medium.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action103():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     medium.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action103)
                 continue
 
             else:
@@ -2321,10 +2036,8 @@ class EarlyBoundTests(TestBase):
             medium.set_modulator(modulatorName)
             self.Test_IAgModulatorModel2(medium.modulator, modulatorName)
 
-        def action104():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             medium.set_modulator("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action104)
 
         # Filter tab
 
@@ -2368,15 +2081,10 @@ class EarlyBoundTests(TestBase):
             mediumRe.saturated_power = 2889
             Assert.assertEqual(2889, mediumRe.saturated_power)
 
-        def action105():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mediumRe.saturated_power = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action105)
-
-        def action106():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mediumRe.saturated_power = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action106)
 
         mediumRe.antenna_gain = -2890
         Assert.assertEqual(-2890, mediumRe.antenna_gain)
@@ -2389,15 +2097,10 @@ class EarlyBoundTests(TestBase):
             mediumRe.antenna_gain = 2889
             Assert.assertEqual(2889, mediumRe.antenna_gain)
 
-        def action107():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mediumRe.antenna_gain = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action107)
-
-        def action108():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mediumRe.antenna_gain = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action108)
 
         # Sat. Flux Density and Operational Mode are tested in Test_IAgReTransmitterModel
 
@@ -2413,21 +2116,15 @@ class EarlyBoundTests(TestBase):
 
         mediumRe.enable_polarization = False
         Assert.assertFalse(mediumRe.enable_polarization)
-
-        def action109():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mediumRe.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action109)
         mediumRe.enable_polarization = True
         Assert.assertTrue(mediumRe.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action110():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     mediumRe.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action110)
                 continue
 
             else:
@@ -2476,15 +2173,10 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgTransmitterModelScriptPlugin
     def Test_IAgTransmitterModelScriptPlugin(self, scriptPlugin: "ITransmitterModelScriptPlugin"):
-        def action111():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action111)
-
-        def action112():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             scriptPlugin.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action112)
 
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_TransmitterModel.vbs")
         Assert.assertEqual(r"CommRad\VB_TransmitterModel.vbs", scriptPlugin.filename)
@@ -2499,16 +2191,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1e-07, simple.frequency)
         simple.frequency = 1000000
         Assert.assertEqual(1000000, simple.frequency)
-
-        def action113():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simple.frequency = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action113)
-
-        def action114():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simple.frequency = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action114)
 
         simple.frequency = 1.0  # RESTORE TO THIS VALUE TO BE CONSISTENT WITH ANTENNA TESTS. IMPORTANT SO THAT OTHER TEST VALUES ARE CONSISTENT.
 
@@ -2516,16 +2202,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1e-07, simple.data_rate)
         simple.data_rate = 1000000
         Assert.assertEqual(1000000, simple.data_rate)
-
-        def action115():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simple.data_rate = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action115)
-
-        def action116():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simple.data_rate = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action116)
 
         # Antenna tab (Embed or Link)
 
@@ -2539,21 +2219,15 @@ class EarlyBoundTests(TestBase):
 
         simple.enable_polarization = False
         Assert.assertFalse(simple.enable_polarization)
-
-        def action117():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             simple.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action117)
         simple.enable_polarization = True
         Assert.assertTrue(simple.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action118():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     simple.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action118)
                 continue
 
             else:
@@ -2581,10 +2255,8 @@ class EarlyBoundTests(TestBase):
             simple.set_modulator(modulatorName)
             self.Test_IAgModulatorModel2(simple.modulator, modulatorName)
 
-        def action119():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             simple.set_modulator("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action119)
 
         # Filter tab
 
@@ -2628,15 +2300,10 @@ class EarlyBoundTests(TestBase):
             simpleRe.saturated_eirp = 2889
             Assert.assertEqual(2889, simpleRe.saturated_eirp)
 
-        def action120():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleRe.saturated_eirp = -2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action120)
-
-        def action121():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleRe.saturated_eirp = 2891
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action121)
 
         # Antenna tab (Embed or Link)
 
@@ -2650,21 +2317,15 @@ class EarlyBoundTests(TestBase):
 
         simpleRe.enable_polarization = False
         Assert.assertFalse(simpleRe.enable_polarization)
-
-        def action122():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             simpleRe.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action122)
         simpleRe.enable_polarization = True
         Assert.assertTrue(simpleRe.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action123():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     simpleRe.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action123)
                 continue
 
             else:
@@ -2717,10 +2378,8 @@ class EarlyBoundTests(TestBase):
 
         antennaSystem: "IAntennaSystem" = multibeam.antenna_system
 
-        def action124():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.UNKNOWN)
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action124)
 
         antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.AGGREGATE)
         Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.AGGREGATE, antennaSystem.beam_selection_strategy.type)
@@ -2746,16 +2405,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1e-07, multibeam.data_rate)
         multibeam.data_rate = 1000000
         Assert.assertEqual(1000000, multibeam.data_rate)
-
-        def action125():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             multibeam.data_rate = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action125)
-
-        def action126():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             multibeam.data_rate = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action126)
 
         # Modulator tab
 
@@ -2773,10 +2426,8 @@ class EarlyBoundTests(TestBase):
             multibeam.set_modulator(modulatorName)
             self.Test_IAgModulatorModel2(multibeam.modulator, modulatorName)
 
-        def action127():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             multibeam.set_modulator("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action127)
 
         # Filter tab
 
@@ -2825,11 +2476,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.transmitter.set_model(modelName)
         transmitterModel: "ITransmitterModel" = EarlyBoundTests.transmitter.model
         Assert.assertEqual(modelName, transmitterModel.name)
-
-        def action128():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             EarlyBoundTests.transmitter.set_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action128)
         if modelName == "Cable Transmitter Model":
             Assert.assertEqual(TRANSMITTER_MODEL_TYPE.CABLE, transmitterModel.type)
             self.Test_IAgTransmitterModelCable(clr.CastAs(transmitterModel, ITransmitterModelCable))
@@ -2889,41 +2537,25 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, mm.psd_limit_multiplier)
         mm.psd_limit_multiplier = 1000
         Assert.assertEqual(1000, mm.psd_limit_multiplier)
-
-        def action129():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.psd_limit_multiplier = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action129)
-
-        def action130():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.psd_limit_multiplier = 1001
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action130)
-
-        def action131():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.auto_scale_bandwidth = True
 
-        TryCatchAssertBlock.ExpectedException("read-only", action131)
-
-        def action132():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
 
-        TryCatchAssertBlock.ExpectedException("read-only", action132)
-
-        def action133():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.upper_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action133)
-
-        def action134():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.lower_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action134)
-
-        def action135():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action135)
 
         mm.enable_cdma_spread = True
         Assert.assertTrue(mm.enable_cdma_spread)
@@ -2932,59 +2564,41 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, mm.chips_per_bit)
         mm.chips_per_bit = 1000000000
         Assert.assertEqual(1000000000, mm.chips_per_bit)
-
-        def action136():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.chips_per_bit = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action136)
-
-        def action137():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.chips_per_bit = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action137)
 
         Assert.assertEqual(90, mm.spreading_gain)
 
         mm.enable_cdma_spread = False
         Assert.assertFalse(mm.enable_cdma_spread)
 
-        def action138():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.chips_per_bit = 0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action138)
 
         Assert.assertEqual(90, mm.spreading_gain)
 
         mm.enable_signal_psd = False
         Assert.assertFalse(mm.enable_signal_psd)
 
-        def action139():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.psd_limit_multiplier = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action139)
 
         mm.auto_scale_bandwidth = True
         Assert.assertTrue(mm.auto_scale_bandwidth)
 
-        def action140():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
 
-        TryCatchAssertBlock.ExpectedException("read-only", action140)
-
-        def action141():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.upper_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action141)
-
-        def action142():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.lower_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action142)
-
-        def action143():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action143)
 
         mm.enable_cdma_spread = True
         Assert.assertTrue(mm.enable_cdma_spread)
@@ -2993,26 +2607,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, mm.chips_per_bit)
         mm.chips_per_bit = 1000000000
         Assert.assertEqual(1000000000, mm.chips_per_bit)
-
-        def action144():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.chips_per_bit = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action144)
-
-        def action145():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.chips_per_bit = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action145)
 
         Assert.assertEqual(90, mm.spreading_gain)
 
         mm.enable_cdma_spread = False
         Assert.assertFalse(mm.enable_cdma_spread)
 
-        def action146():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.chips_per_bit = 0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action146)
 
         Assert.assertEqual(90, mm.spreading_gain)
 
@@ -3022,40 +2628,26 @@ class EarlyBoundTests(TestBase):
         mm.symmetric_bandwidth = True
         Assert.assertTrue(mm.symmetric_bandwidth)
 
-        def action147():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.upper_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action147)
-
-        def action148():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.lower_bandwidth_limit = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action148)
 
         mm.bandwidth = 1e-06
         Assert.assertEqual(1e-06, mm.bandwidth)
         mm.bandwidth = 1000000000
         Assert.assertEqual(1000000000, mm.bandwidth)
-
-        def action149():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.bandwidth = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action149)
-
-        def action150():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.bandwidth = 1000000001
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action150)
-
-        def action151():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.enable_cdma_spread = True
 
-        TryCatchAssertBlock.ExpectedException("read-only", action151)
-
-        def action152():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.chips_per_bit = 0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action152)
 
         Assert.assertEqual(90, mm.spreading_gain)
 
@@ -3066,46 +2658,28 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, mm.upper_bandwidth_limit)
         mm.upper_bandwidth_limit = 1000000000
         Assert.assertEqual(1000000000, mm.upper_bandwidth_limit)
-
-        def action153():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.upper_bandwidth_limit = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action153)
-
-        def action154():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.upper_bandwidth_limit = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action154)
 
         mm.lower_bandwidth_limit = -1000000000
         Assert.assertEqual(-1000000000, mm.lower_bandwidth_limit)
         mm.lower_bandwidth_limit = -1
         Assert.assertEqual(-1, mm.lower_bandwidth_limit)
-
-        def action155():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.lower_bandwidth_limit = -1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action155)
-
-        def action156():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.lower_bandwidth_limit = 0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action156)
-
-        def action157():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1000000000
 
-        TryCatchAssertBlock.ExpectedException("read only", action157)
-
-        def action158():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.enable_cdma_spread = True
 
-        TryCatchAssertBlock.ExpectedException("read-only", action158)
-
-        def action159():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.chips_per_bit = 0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action159)
 
         Assert.assertEqual(90, mm.spreading_gain)
 
@@ -3245,25 +2819,17 @@ class EarlyBoundTests(TestBase):
         mm.auto_scale_bandwidth = True
         Assert.assertTrue(mm.auto_scale_bandwidth)
 
-        def action160():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
 
-        TryCatchAssertBlock.ExpectedException("read-only", action160)
-
-        def action161():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.upper_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action161)
-
-        def action162():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.lower_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action162)
-
-        def action163():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action163)
 
         mm.auto_scale_bandwidth = False
         Assert.assertFalse(mm.auto_scale_bandwidth)
@@ -3271,30 +2837,20 @@ class EarlyBoundTests(TestBase):
         mm.symmetric_bandwidth = True
         Assert.assertTrue(mm.symmetric_bandwidth)
 
-        def action164():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.upper_bandwidth_limit = 1
 
-        TryCatchAssertBlock.ExpectedException("read only", action164)
-
-        def action165():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.lower_bandwidth_limit = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action165)
 
         mm.bandwidth = 1e-06
         Assert.assertEqual(1e-06, mm.bandwidth)
         mm.bandwidth = 1000000000
         Assert.assertEqual(1000000000, mm.bandwidth)
-
-        def action166():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.bandwidth = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action166)
-
-        def action167():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.bandwidth = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action167)
 
         mm.symmetric_bandwidth = False
         Assert.assertFalse(mm.symmetric_bandwidth)
@@ -3303,63 +2859,38 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, mm.upper_bandwidth_limit)
         mm.upper_bandwidth_limit = 1000000000
         Assert.assertEqual(1000000000, mm.upper_bandwidth_limit)
-
-        def action168():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.upper_bandwidth_limit = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action168)
-
-        def action169():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.upper_bandwidth_limit = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action169)
 
         mm.lower_bandwidth_limit = -1000000000
         Assert.assertEqual(-1000000000, mm.lower_bandwidth_limit)
         mm.lower_bandwidth_limit = -1
         Assert.assertEqual(-1, mm.lower_bandwidth_limit)
-
-        def action170():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.lower_bandwidth_limit = -1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action170)
-
-        def action171():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             mm.lower_bandwidth_limit = 0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action171)
-
-        def action172():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1000000000
-
-        TryCatchAssertBlock.ExpectedException("read only", action172)
 
     def Test_IAgModulatorModelBoc(self, boc: "IModulatorModelBoc"):
         boc.subcarrier_frequency = 0
         Assert.assertEqual(0, boc.subcarrier_frequency)
         boc.subcarrier_frequency = 1000000000
         Assert.assertEqual(1000000000, boc.subcarrier_frequency)
-
-        def action173():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             boc.subcarrier_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action173)
-
-        def action174():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             boc.subcarrier_frequency = 1000000001
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action174)
-
     def Test_IAgModulatorModelExternal(self, external: "IModulatorModelExternal"):
-        def action175():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             external.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action175)
-
-        def action176():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid file format")):
             external.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Invalid file format", action176)
         external.filename = TestBase.GetScenarioFile("CommRad", "MIL-STD-188-165B_QPSK_8_7_7.mod")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "MIL-STD-188-165B_QPSK_8_7_7.mod"), external.filename)
 
@@ -3368,57 +2899,34 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1e-10, pulsedSignal.pulse_width)
         pulsedSignal.pulse_width = 1e-06
         Assert.assertEqual(1e-06, pulsedSignal.pulse_width)
-
-        def action177():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pulsedSignal.pulse_width = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action177)
-
-        def action178():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pulsedSignal.pulse_width = 2e-06
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action178)
 
         pulsedSignal.pulse_period = 1e-05
         Assert.assertEqual(1e-05, pulsedSignal.pulse_period)
         pulsedSignal.pulse_period = 0.1
         Assert.assertEqual(0.1, pulsedSignal.pulse_period)
-
-        def action179():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pulsedSignal.pulse_period = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action179)
-
-        def action180():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pulsedSignal.pulse_period = 0.11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action180)
 
         pulsedSignal.number_of_pulses = 1
         Assert.assertEqual(1, pulsedSignal.number_of_pulses)
         pulsedSignal.number_of_pulses = 10000
         Assert.assertEqual(10000, pulsedSignal.number_of_pulses)
-
-        def action181():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pulsedSignal.number_of_pulses = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action181)
-
-        def action182():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pulsedSignal.number_of_pulses = 10001
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action182)
-
     def Test_IAgModulatorModelScriptPlugin(self, scriptPlugin: "IModulatorModelScriptPlugin", isCustomPSD: bool):
-        def action183():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action183)
-
-        def action184():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             scriptPlugin.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action184)
         if isCustomPSD:
             scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_DynamicModulator_CustomPSD.vbs")
             Assert.assertEqual(r"CommRad\VB_DynamicModulator_CustomPSD.vbs", scriptPlugin.filename)

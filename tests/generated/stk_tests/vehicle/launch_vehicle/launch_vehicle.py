@@ -9,6 +9,7 @@ from seet_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from pytest import *
 from ansys.stk.core.stkobjects import *
 
 
@@ -169,10 +170,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_LV.use_terrain_in_lighting_computations = False
         Assert.assertFalse(EarlyBoundTests.AG_LV.use_terrain_in_lighting_computations)
 
-        def action1():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_LV.lighting_max_step = 0
-
-        TryCatchAssertBlock.ExpectedException("read only", action1)
 
         EarlyBoundTests.AG_LV.use_terrain_in_lighting_computations = True
         Assert.assertTrue(EarlyBoundTests.AG_LV.use_terrain_in_lighting_computations)
@@ -182,44 +181,26 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, EarlyBoundTests.AG_LV.lighting_max_step)
         EarlyBoundTests.AG_LV.lighting_max_step = 31557600
         Assert.assertEqual(31557600, EarlyBoundTests.AG_LV.lighting_max_step)
-
-        def action2():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_LV.lighting_max_step = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action2)
-
-        def action3():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_LV.lighting_max_step = 31557601
-
-        TryCatchAssertBlock.ExpectedException("invalid", action3)
 
         EarlyBoundTests.AG_LV.lighting_max_step_terrain = 10
         Assert.assertEqual(10, EarlyBoundTests.AG_LV.lighting_max_step_terrain)
-
-        def action4():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_LV.lighting_max_step_terrain = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action4)
-
-        def action5():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_LV.lighting_max_step_terrain = 31557601
-
-        TryCatchAssertBlock.ExpectedException("invalid", action5)
 
         EarlyBoundTests.AG_LV.use_terrain_in_lighting_computations = False
         Assert.assertFalse(EarlyBoundTests.AG_LV.use_terrain_in_lighting_computations)
         EarlyBoundTests.AG_LV.lighting_max_step_central_body_shape = 3600
         Assert.assertEqual(3600, EarlyBoundTests.AG_LV.lighting_max_step_central_body_shape)
-
-        def action6():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_LV.lighting_max_step_central_body_shape = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action6)
-
-        def action7():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_LV.lighting_max_step_central_body_shape = 31557601
-
-        TryCatchAssertBlock.ExpectedException("invalid", action7)
 
         Assert.assertEqual(
             10, EarlyBoundTests.AG_LV.lighting_max_step_terrain
@@ -809,11 +790,8 @@ class EarlyBoundTests(TestBase):
     # region RF_Radar_Clutter
     def test_RF_Radar_Clutter(self):
         helper = RadarClutterMapInheritableHelper()
-
-        def action8():
+        with pytest.raises(Exception, match=RegexSubstringMatch("obsolete")):
             helper.Run(EarlyBoundTests.AG_LV.radar_clutter_map)
-
-        TryCatchAssertBlock.ExpectedException("obsolete", action8)
 
     # endregion
 

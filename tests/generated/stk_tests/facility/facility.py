@@ -10,6 +10,7 @@ from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from pytest import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -148,26 +149,19 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual(None, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
-        def action1():
-            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
-
         # BUG120275 TryCatchAssertBlock.ExpectedException("read-only", delegate () { AG_FA.SaveTerrainMaskDataInBinary = true; });    // Undefined symbol - should be "read only"
-        TryCatchAssertBlock.ExpectedException("read only", action1)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
 
         EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile(r"maskfile.aem"))
         Assert.assertEqual(AZ_EL_MASK_TYPE.MASK_FILE, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual("maskfile.aem", EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
-        def action2():
-            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
-
         # BUG120275 TryCatchAssertBlock.ExpectedException("read-only", delegate () { AG_FA.SaveTerrainMaskDataInBinary = true; });    // Undefined symbol - should be "read only"
-        TryCatchAssertBlock.ExpectedException("read only", action2)
-
-        def action3():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action3)
 
         EarlyBoundTests.AG_FA.set_az_el_mask(
             AZ_EL_MASK_TYPE.TERRAIN_DATA, 22
@@ -184,16 +178,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.0, EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask)
         EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 1000.0
         Assert.assertEqual(1000.0, EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask)
-
-        def action4():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action4)
-
-        def action5():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action5)
 
         #  BUG120275 No OM property for "Use Mask for Access Constraint" checkbox
 
@@ -293,16 +281,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(20, azel.display_range_maximum)
         azel.display_range_minimum = 10
         Assert.assertEqual(10, azel.display_range_minimum)
-
-        def action6():
+        with pytest.raises(Exception):
             azel.altitude_color = Color.Yellow
-
-        TryCatchAssertBlock.DoAssert("", action6)
-
-        def action7():
+        with pytest.raises(Exception):
             azel.range_color = Color.Yellow
-
-        TryCatchAssertBlock.DoAssert("", action7)
         azel.altitude_color_visible = True
         Assert.assertTrue(azel.altitude_color_visible)
         azel.altitude_color = Color.Yellow
@@ -393,11 +375,8 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
         TestBase.logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.filename)
-
-        def action8():
+        with pytest.raises(Exception):
             oModelFile.filename = ""
-
-        TryCatchAssertBlock.DoAssert("", action8)
 
         oHelper = VOModelPointingHelper()
         oHelper.Run(EarlyBoundTests.AG_FA.graphics_3d.model_pointing)
@@ -494,11 +473,8 @@ class EarlyBoundTests(TestBase):
     # region RF_Radar_Clutter
     def test_RF_Radar_Clutter(self):
         helper = RadarClutterMapInheritableHelper()
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("obsolete")):
             helper.Run(EarlyBoundTests.AG_FA.radar_clutter_map)
-
-        TryCatchAssertBlock.ExpectedException("obsolete", action9)
 
     # endregion
 

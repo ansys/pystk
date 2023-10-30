@@ -7,6 +7,7 @@ from interfaces.stk_objects import *
 from logger import *
 from math2 import *
 from vehicle.vehicle_basic import *
+from pytest import *
 from parameterized import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -115,11 +116,8 @@ class EarlyBoundTests(TestBase):
             basicAtt.color = Color.Yellow
 
         else:
-
-            def action1():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action1)
 
         # Add a shuttle
         shuttle: "ISatellite" = clr.Convert(
@@ -153,11 +151,8 @@ class EarlyBoundTests(TestBase):
             basicAtt.color = Color.Cyan
 
         else:
-
-            def action2():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action2)
 
         tropics: "ICoverageDefinition" = clr.Convert(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Tropics"),
@@ -195,11 +190,8 @@ class EarlyBoundTests(TestBase):
             covAnimGfx.is_satisfaction_visible = False
 
         else:
-
-            def action3():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 covStatGfx: "ICoverageGraphics2DStatic" = tropics.graphics.static
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action3)
 
         # ComputeAccesses
         tropics.compute_accesses()
@@ -231,11 +223,8 @@ class EarlyBoundTests(TestBase):
             twoEyes.graphics.animation.marker_style = "Star"
 
         else:
-
-            def action4():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 tropics.graphics.static.is_region_visible = False
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action4)
 
         compute = clr.Convert(twoEyes.definition, IFigureOfMeritDefinitionCompute)
 
@@ -254,11 +243,8 @@ class EarlyBoundTests(TestBase):
             element.color = Color.Silver
 
         else:
-
-            def action5():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 twoEyes.graphics.static.is_visible = False
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action5)
 
         # ExportAccessesAsText
         tempFile: str = Path.Combine(Path.GetTempPath(), "Tropics.cvaa")
@@ -377,16 +363,10 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(1, oFiles.count)
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", oFiles[0])
-
-            def action6():
+            with pytest.raises(Exception):
                 oFiles.add("")
-
-            TryCatchAssertBlock.DoAssert("", action6)
-
-            def action7():
+            with pytest.raises(Exception):
                 oFiles.add("InvalidFile.Name")
-
-            TryCatchAssertBlock.DoAssert("", action7)
             # Add
             oFiles.add("usstates.rl")
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
@@ -409,24 +389,15 @@ class EarlyBoundTests(TestBase):
 
             # Add
             oFiles.add("usstates.rl")
-
-            def action8():
-                oFiles.remove("")
-
             # Remove
-            TryCatchAssertBlock.DoAssert("", action8)
+            with pytest.raises(Exception):
+                oFiles.remove("")
             oFiles.remove("usstates.rl")
             Assert.assertEqual(0, oFiles.count)
-
-            def action9():
+            with pytest.raises(Exception):
                 oFiles.remove("usstates.rl")
-
-            TryCatchAssertBlock.DoAssert("", action9)
-
-            def action10():
+            with pytest.raises(Exception):
                 oFiles.remove("")
-
-            TryCatchAssertBlock.DoAssert("", action10)
 
             # AreaTargets
             areaTargetsCollection: "ICoverageAreaTargetsCollection" = boundsCustomRegions.area_targets
@@ -455,17 +426,11 @@ class EarlyBoundTests(TestBase):
                 "\t\tThe new AreaTargets collection contains: {0} elements.", areaTargetsCollection.count
             )
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", areaTargetsCollection[0])
-
-            def action11():
+            with pytest.raises(Exception):
                 areaTargetsCollection.add("")
-
-            TryCatchAssertBlock.DoAssert("", action11)
             Assert.assertEqual(1, areaTargetsCollection.count)
-
-            def action12():
+            with pytest.raises(Exception):
                 areaTargetsCollection.add("InvalidAreaTarget.Name")
-
-            TryCatchAssertBlock.DoAssert("", action12)
             Assert.assertEqual(1, areaTargetsCollection.count)
             # RemoveAt
             areaTargetsCollection.remove_at(0)
@@ -484,26 +449,18 @@ class EarlyBoundTests(TestBase):
             for strName in areaTargetsCollection:
                 TestBase.logger.WriteLine5("\t\t\tElement: {0}", strName)
 
-            def action13():
-                areaTargetsCollection.remove("")
-
             # Remove
-            TryCatchAssertBlock.DoAssert("", action13)
+            with pytest.raises(Exception):
+                areaTargetsCollection.remove("")
             areaTargetsCollection.remove("AreaTarget/AreaTarget1")
             TestBase.logger.WriteLine3(
                 "\t\tThe new AreaTargets collection contains: {0} elements.", areaTargetsCollection.count
             )
             Assert.assertEqual(0, areaTargetsCollection.count)
-
-            def action14():
+            with pytest.raises(Exception):
                 areaTargetsCollection.remove("")
-
-            TryCatchAssertBlock.DoAssert("", action14)
-
-            def action15():
+            with pytest.raises(Exception):
                 areaTargetsCollection.remove("AreaTarget/AreaTarget1")
-
-            TryCatchAssertBlock.DoAssert("", action15)
             # RemoveAll
             areaTargetsCollection.add(str(arTargets[0]))
             Assert.assertEqual(1, areaTargetsCollection.count)
@@ -551,31 +508,19 @@ class EarlyBoundTests(TestBase):
             boundsLat.max_latitude = 54
             TestBase.logger.WriteLine6("\t\tThe new MaxLatitude is: {0}", boundsLat.max_latitude)
             Assert.assertEqual(54, boundsLat.max_latitude)
-
-            def action16():
+            with pytest.raises(Exception):
                 boundsLat.max_latitude = 123
-
-            TryCatchAssertBlock.DoAssert("", action16)
             # MinLatitude
             TestBase.logger.WriteLine6("\t\tThe current MinLatitude is: {0}", boundsLat.min_latitude)
             boundsLat.min_latitude = -12
             TestBase.logger.WriteLine6("\t\tThe new MinLatitude is: {0}", boundsLat.min_latitude)
             Assert.assertEqual(-12, boundsLat.min_latitude)
-
-            def action17():
+            with pytest.raises(Exception):
                 boundsLat.min_latitude = -123
-
-            TryCatchAssertBlock.DoAssert("", action17)
-
-            def action18():
+            with pytest.raises(Exception):
                 boundsLat.max_latitude = -54
-
-            TryCatchAssertBlock.DoAssert("", action18)
-
-            def action19():
+            with pytest.raises(Exception):
                 boundsLat.min_latitude = 65
-
-            TryCatchAssertBlock.DoAssert("", action19)
         elif eType == COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION:
             oLatLonRegion: "ICoverageBoundsLatLonRegion" = clr.CastAs(oBounds, ICoverageBoundsLatLonRegion)
             Assert.assertIsNotNone(oLatLonRegion)
@@ -584,11 +529,8 @@ class EarlyBoundTests(TestBase):
             oLatLonRegion.max_latitude = 54
             TestBase.logger.WriteLine6("\t\tThe new MaxLatitude is: {0}", oLatLonRegion.max_latitude)
             Assert.assertEqual(54, oLatLonRegion.max_latitude)
-
-            def action20():
+            with pytest.raises(Exception):
                 oLatLonRegion.max_latitude = 123
-
-            TryCatchAssertBlock.DoAssert("", action20)
             # MinLatitude
             TestBase.logger.WriteLine6("\t\tThe current MinLatitude is: {0}", oLatLonRegion.min_latitude)
             oLatLonRegion.min_latitude = -12
@@ -599,31 +541,19 @@ class EarlyBoundTests(TestBase):
             oLatLonRegion.max_longitude = 45
             TestBase.logger.WriteLine6("\t\tThe new MaxLongitude is: {0}", oLatLonRegion.max_longitude)
             Assert.assertEqual(45, oLatLonRegion.max_longitude)
-
-            def action21():
+            with pytest.raises(Exception):
                 oLatLonRegion.max_longitude = 400
-
-            TryCatchAssertBlock.DoAssert("", action21)
             # MinLongitude
             TestBase.logger.WriteLine6("\t\tThe current MinLongitude is: {0}", oLatLonRegion.min_longitude)
             oLatLonRegion.min_longitude = -45
             TestBase.logger.WriteLine6("\t\tThe new MinLongitude is: {0}", oLatLonRegion.min_longitude)
             Assert.assertEqual(-45, oLatLonRegion.min_longitude)
-
-            def action22():
+            with pytest.raises(Exception):
                 oLatLonRegion.min_latitude = -123
-
-            TryCatchAssertBlock.DoAssert("", action22)
-
-            def action23():
+            with pytest.raises(Exception):
                 oLatLonRegion.max_latitude = -54
-
-            TryCatchAssertBlock.DoAssert("", action23)
-
-            def action24():
+            with pytest.raises(Exception):
                 oLatLonRegion.min_latitude = 65
-
-            TryCatchAssertBlock.DoAssert("", action24)
         elif eType == COVERAGE_BOUNDS.BOUNDS_LAT_LINE:
             boundsLatLine: "ICoverageBoundsLatLine" = clr.CastAs(oBounds, ICoverageBoundsLatLine)
             Assert.assertIsNotNone(boundsLatLine)
@@ -632,31 +562,22 @@ class EarlyBoundTests(TestBase):
             boundsLatLine.stop_longitude = 123
             TestBase.logger.WriteLine6("\t\tThe new StopLongitude is: {0}", boundsLatLine.stop_longitude)
             Assert.assertEqual(123, boundsLatLine.stop_longitude)
-
-            def action25():
+            with pytest.raises(Exception):
                 boundsLatLine.stop_longitude = 456
-
-            TryCatchAssertBlock.DoAssert("", action25)
             # StartLongitude
             TestBase.logger.WriteLine6("\t\tThe current StartLongitude is: {0}", boundsLatLine.start_longitude)
             boundsLatLine.start_longitude = -123
             TestBase.logger.WriteLine6("\t\tThe new StartLongitude is: {0}", boundsLatLine.start_longitude)
             Assert.assertEqual(-123, boundsLatLine.start_longitude)
-
-            def action26():
+            with pytest.raises(Exception):
                 boundsLatLine.start_longitude = -456
-
-            TryCatchAssertBlock.DoAssert("", action26)
             # Latitude
             TestBase.logger.WriteLine6("\t\tThe current Latitude is: {0}", boundsLatLine.latitude)
             boundsLatLine.latitude = 12.34
             TestBase.logger.WriteLine6("\t\tThe new Latitude is: {0}", boundsLatLine.latitude)
             Assert.assertEqual(12.34, boundsLatLine.latitude)
-
-            def action27():
+            with pytest.raises(Exception):
                 boundsLatLine.latitude = 123.4
-
-            TryCatchAssertBlock.DoAssert("", action27)
         elif eType == COVERAGE_BOUNDS.BOUNDS_LON_LINE:
             boundsLonLine: "ICoverageBoundsLonLine" = clr.CastAs(oBounds, ICoverageBoundsLonLine)
             Assert.assertIsNotNone(boundsLonLine)
@@ -665,41 +586,26 @@ class EarlyBoundTests(TestBase):
             boundsLonLine.max_latitude = 56
             TestBase.logger.WriteLine6("\t\tThe new MaxLatitude is: {0}", boundsLonLine.max_latitude)
             Assert.assertEqual(56, boundsLonLine.max_latitude)
-
-            def action28():
+            with pytest.raises(Exception):
                 boundsLonLine.max_latitude = 123
-
-            TryCatchAssertBlock.DoAssert("", action28)
             # MinLatitude
             TestBase.logger.WriteLine6("\t\tThe current MinLatitude is: {0}", boundsLonLine.min_latitude)
             boundsLonLine.min_latitude = -56
             TestBase.logger.WriteLine6("\t\tThe new MinLatitude is: {0}", boundsLonLine.min_latitude)
             Assert.assertEqual(-56, boundsLonLine.min_latitude)
-
-            def action29():
+            with pytest.raises(Exception):
                 boundsLonLine.min_latitude = -123
-
-            TryCatchAssertBlock.DoAssert("", action29)
             # Longitude
             TestBase.logger.WriteLine6("\t\tThe current Longitude is: {0}", boundsLonLine.longitude)
             boundsLonLine.longitude = 12.34
             TestBase.logger.WriteLine6("\t\tThe new Longitude is: {0}", boundsLonLine.longitude)
             Assert.assertEqual(12.34, boundsLonLine.longitude)
-
-            def action30():
+            with pytest.raises(Exception):
                 boundsLonLine.longitude = 1234
-
-            TryCatchAssertBlock.DoAssert("", action30)
-
-            def action31():
+            with pytest.raises(Exception):
                 boundsLonLine.max_latitude = -67
-
-            TryCatchAssertBlock.DoAssert("", action31)
-
-            def action32():
+            with pytest.raises(Exception):
                 boundsLonLine.min_latitude = 67
-
-            TryCatchAssertBlock.DoAssert("", action32)
         elif eType == COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY:
             boundsCustomBoundary: "ICoverageBoundsCustomBoundary" = clr.CastAs(oBounds, ICoverageBoundsCustomBoundary)
             Assert.assertIsNotNone(boundsCustomBoundary)
@@ -718,16 +624,10 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(1, oFiles.count)
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", oFiles[0])
-
-            def action33():
+            with pytest.raises(Exception):
                 oFiles.add("")
-
-            TryCatchAssertBlock.DoAssert("", action33)
-
-            def action34():
+            with pytest.raises(Exception):
                 oFiles.add("InvalidFile.Name")
-
-            TryCatchAssertBlock.DoAssert("", action34)
             # Add
             oFiles.add("usstates.rl")
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
@@ -750,24 +650,15 @@ class EarlyBoundTests(TestBase):
 
             # Add
             oFiles.add("usstates.rl")
-
-            def action35():
-                oFiles.remove("")
-
             # Remove
-            TryCatchAssertBlock.DoAssert("", action35)
+            with pytest.raises(Exception):
+                oFiles.remove("")
             oFiles.remove("usstates.rl")
             Assert.assertEqual(0, oFiles.count)
-
-            def action36():
+            with pytest.raises(Exception):
                 oFiles.remove("usstates.rl")
-
-            TryCatchAssertBlock.DoAssert("", action36)
-
-            def action37():
+            with pytest.raises(Exception):
                 oFiles.remove("")
-
-            TryCatchAssertBlock.DoAssert("", action37)
 
             # BoundaryObjects
             oLinks: "IObjectLinkCollection" = boundsCustomBoundary.boundary_objects
@@ -821,11 +712,8 @@ class EarlyBoundTests(TestBase):
             oArea.area = 54
             TestBase.logger.WriteLine6("\t\tThe new Area is: {0}", oArea.area)
             Assert.assertEqual(54, oArea.area)
-
-            def action38():
+            with pytest.raises(Exception):
                 oArea.area = -123
-
-            TryCatchAssertBlock.DoAssert("", action38)
         elif eType == COVERAGE_RESOLUTION.RESOLUTION_DISTANCE:
             oDistance: "ICoverageResolutionDistance" = clr.CastAs(oResolution, ICoverageResolutionDistance)
             Assert.assertIsNotNone(oDistance)
@@ -834,11 +722,8 @@ class EarlyBoundTests(TestBase):
             oDistance.distance = 54
             TestBase.logger.WriteLine6("\t\tThe new Distance is: {0}", oDistance.distance)
             Assert.assertEqual(54, oDistance.distance)
-
-            def action39():
+            with pytest.raises(Exception):
                 oDistance.distance = -123
-
-            TryCatchAssertBlock.DoAssert("", action39)
         elif eType == COVERAGE_RESOLUTION.RESOLUTION_LAT_LON:
             oLat: "ICoverageResolutionLatLon" = clr.CastAs(oResolution, ICoverageResolutionLatLon)
             Assert.assertIsNotNone(oLat)
@@ -847,11 +732,8 @@ class EarlyBoundTests(TestBase):
             oLat.lat_lon = 12.3
             TestBase.logger.WriteLine6("\t\tThe new LatLon is: {0}", oLat.lat_lon)
             Assert.assertEqual(12.3, oLat.lat_lon)
-
-            def action40():
+            with pytest.raises(Exception):
                 oLat.lat_lon = 456
-
-            TryCatchAssertBlock.DoAssert("", action40)
         else:
             Assert.fail("{0} - Invalid type!", eType)
 
@@ -894,35 +776,25 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COVERAGE_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS, oPD.point_location_method)
         # PointFileList
         self.PointFileListCollection(oPD.point_file_list, False)
-
-        def action41():
+        # PointLocationMethod (ePointLocMethodUnknown)
+        with pytest.raises(Exception):
             oPD.point_location_method = COVERAGE_POINT_LOC_METHOD.POINT_LOC_METHOD_UNKNOWN
 
-        # PointLocationMethod (ePointLocMethodUnknown)
-        TryCatchAssertBlock.DoAssert("", action41)
-
-        def action42():
+        # GroundAltitudeMethod (eCvGroundAltitudeMethodUnknown)
+        with pytest.raises(Exception):
             oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.UNKNOWN
 
-        # GroundAltitudeMethod (eCvGroundAltitudeMethodUnknown)
-        TryCatchAssertBlock.DoAssert("", action42)
-
-        def action43():
-            oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.DEPTH
-
         # GroundAltitudeMethod (eCvGroundAltitudeMethodDepth)
-        TryCatchAssertBlock.DoAssert("", action43)
+        with pytest.raises(Exception):
+            oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.DEPTH
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodAltitude)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE
         Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE, oPD.ground_altitude_method)
         oPD.ground_altitude = 123.456
         Assert.assertEqual(123.456, oPD.ground_altitude)
-
-        def action44():
+        with pytest.raises(Exception):
             oPD.ground_altitude = -1.2
-
-        TryCatchAssertBlock.DoAssert("", action44)
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodAltAboveMSL)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL
@@ -933,20 +805,14 @@ class EarlyBoundTests(TestBase):
         # GroundAltitudeMethod (eCvGroundAltitudeMethodUsePointAlt)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
         Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE, oPD.ground_altitude_method)
-
-        def action45():
+        with pytest.raises(Exception):
             oPD.ground_altitude = 123.456
-
-        TryCatchAssertBlock.DoAssert("", action45)
 
         # GroundAltitudeMethod (eCvGroundAltitudeMethodAltAtTerrain)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_AT_TERRAIN
         Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_AT_TERRAIN, oPD.ground_altitude_method)
-
-        def action46():
+        with pytest.raises(Exception):
             oPD.ground_altitude = 123.456
-
-        TryCatchAssertBlock.DoAssert("", action46)
 
         gridClass: "COVERAGE_GRID_CLASS"
 
@@ -961,24 +827,15 @@ class EarlyBoundTests(TestBase):
     def PointFileListCollection(self, oCollection: "ICoveragePointFileListCollection", bReadOnly: bool):
         Assert.assertIsNotNone(oCollection)
         if bReadOnly:
-
-            def action47():
-                oCollection.remove_all()
-
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("", action47)
-
-            def action48():
-                oCollection.add("cov_pointlist.pnt")
-
+            with pytest.raises(Exception):
+                oCollection.remove_all()
             # Add
-            TryCatchAssertBlock.DoAssert("", action48)
+            with pytest.raises(Exception):
+                oCollection.add("cov_pointlist.pnt")
             if oCollection.count > 0:
-
-                def action49():
+                with pytest.raises(Exception):
                     oCollection.remove_at(0)
-
-                TryCatchAssertBlock.DoAssert("", action49)
 
         else:
             # Count
@@ -998,16 +855,10 @@ class EarlyBoundTests(TestBase):
                 "\t\tThe new PointFileList collection contains: {0} elements.", oCollection.count
             )
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", oCollection[0])
-
-            def action50():
+            with pytest.raises(Exception):
                 oCollection.add("")
-
-            TryCatchAssertBlock.DoAssert("", action50)
-
-            def action51():
+            with pytest.raises(Exception):
                 oCollection.add("InvalidFile.Name")
-
-            TryCatchAssertBlock.DoAssert("", action51)
             # Add
             oCollection.add(r"japan_shikoku.shp")
             TestBase.logger.WriteLine3(
@@ -1027,22 +878,13 @@ class EarlyBoundTests(TestBase):
                 "\t\tThe new PointFileList collection contains: {0} elements.", oCollection.count
             )
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", oCollection[0])
-
-            def action52():
+            with pytest.raises(Exception):
                 oCollection.remove_at(12)
-
-            TryCatchAssertBlock.DoAssert("", action52)
-
-            def action53():
-                oCollection.remove("")
-
             # Remove
-            TryCatchAssertBlock.DoAssert("", action53)
-
-            def action54():
+            with pytest.raises(Exception):
+                oCollection.remove("")
+            with pytest.raises(Exception):
                 oCollection.remove("InvalidFile.Name")
-
-            TryCatchAssertBlock.DoAssert("", action54)
             oCollection.remove(r"japan_shikoku.shp")
             Assert.assertEqual(0, oCollection.count)
             TestBase.logger.WriteLine3(
@@ -1068,11 +910,8 @@ class EarlyBoundTests(TestBase):
         # GridClass
         TestBase.logger.WriteLine6("\tThe current GridClass is: {0}", oPD.grid_class)
         if (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_UNKNOWN) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_SUBMARINE):
-
-            def action55():
+            with pytest.raises(Exception):
                 oPD.grid_class = eClass
-
-            TryCatchAssertBlock.DoAssert("", action55)
             return
 
         oPD.grid_class = eClass
@@ -1086,11 +925,8 @@ class EarlyBoundTests(TestBase):
             ((eClass == COVERAGE_GRID_CLASS.GRID_CLASS_RADAR) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_RECEIVER))
             or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_TRANSMITTER)
         ) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_SENSOR):
-
-            def action56():
+            with pytest.raises(Exception):
                 oPD.use_grid_seed = True
-
-            TryCatchAssertBlock.DoAssert("", action56)
             # UseObjectAsSeed
             TestBase.logger.WriteLine4("\t\tThe current UseObjectAsSeed is: {0}", oPD.use_object_as_seed)
             oPD.use_object_as_seed = False
@@ -1104,11 +940,8 @@ class EarlyBoundTests(TestBase):
             oPD.use_grid_seed = False
             TestBase.logger.WriteLine4("\t\tThe new UseGridSeed is: {0}", oPD.use_grid_seed)
             Assert.assertFalse(oPD.use_grid_seed)
-
-            def action57():
+            with pytest.raises(Exception):
                 oPD.use_object_as_seed = True
-
-            TryCatchAssertBlock.DoAssert("", action57)
             oPD.use_grid_seed = True
             TestBase.logger.WriteLine4("\t\tThe new UseGridSeed is: {0}", oPD.use_grid_seed)
             Assert.assertTrue(oPD.use_grid_seed)
@@ -1133,11 +966,8 @@ class EarlyBoundTests(TestBase):
         oPD.altitude = 123.456
         TestBase.logger.WriteLine6("\t\t\tThe new Altitude is: {0}", oPD.altitude)
         Assert.assertEqual(123.456, oPD.altitude)
-
-        def action58():
+        with pytest.raises(Exception):
             oPD.altitude = -1.2
-
-        TryCatchAssertBlock.DoAssert("", action58)
         # AltitudeMethod (eAltitudeAboveMSL)
 
         oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL
@@ -1148,11 +978,8 @@ class EarlyBoundTests(TestBase):
         oPD.altitude = 123.456
         TestBase.logger.WriteLine6("\t\t\tThe new Altitude is: {0}", oPD.altitude)
         Assert.assertEqual(123.456, oPD.altitude)
-
-        def action59():
+        with pytest.raises(Exception):
             oPD.altitude = -1.2
-
-        TryCatchAssertBlock.DoAssert("", action59)
 
         # AltitudeMethod (eAltAboveTerrain)
         TestBase.logger.WriteLine6("\t\tThe current AltitudeMethod is: {0}", oPD.altitude_method)
@@ -1165,11 +992,8 @@ class EarlyBoundTests(TestBase):
             oPD.altitude = 1234.56
             TestBase.logger.WriteLine6("\t\t\tThe new Altitude is: {0}", oPD.altitude)
             Assert.assertEqual(1234.56, oPD.altitude)
-
-            def action60():
+            with pytest.raises(Exception):
                 oPD.altitude = -1.2
-
-            TryCatchAssertBlock.DoAssert("", action60)
 
         if (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_AIRCRAFT) or (eClass == COVERAGE_GRID_CLASS.GRID_CLASS_SATELLITE):
             TestBase.logger.WriteLine6("\t\tThe current AltitudeMethod is: {0}", oPD.altitude_method)
@@ -1181,17 +1005,12 @@ class EarlyBoundTests(TestBase):
             oPD.altitude = 12345.6
             TestBase.logger.WriteLine6("\t\t\tThe new Altitude is: {0}", oPD.altitude)
             Assert.assertEqual(12345.6, oPD.altitude)
-
-            def action61():
+            with pytest.raises(Exception):
                 oPD.altitude = -1.2
 
-            TryCatchAssertBlock.DoAssert("", action61)
-
-        def action62():
-            oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_METHOD_UNKNOWN
-
         # AltitudeMethod (eAltitudeMethodUnknown)
-        TryCatchAssertBlock.DoAssert("", action62)
+        with pytest.raises(Exception):
+            oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_METHOD_UNKNOWN
 
         # AvailableSeeds
         arSeeds = oPD.available_seeds
@@ -1206,16 +1025,10 @@ class EarlyBoundTests(TestBase):
             oPD.seed_instance = str(arSeeds[0])
             TestBase.logger.WriteLine5("\t\tThe new SeedInstance is: {0}", oPD.seed_instance)
             Assert.assertEqual(str(arSeeds[0]), oPD.seed_instance)
-
-            def action63():
+            with pytest.raises(Exception):
                 oPD.seed_instance = ""
-
-            TryCatchAssertBlock.DoAssert("", action63)
-
-            def action64():
+            with pytest.raises(Exception):
                 oPD.seed_instance = "InvalidFileName"
-
-            TryCatchAssertBlock.DoAssert("", action64)
 
     # endregion
 
@@ -1248,10 +1061,8 @@ class EarlyBoundTests(TestBase):
             oDup: "ICoverageAssetListElement" = oCollection.get_asset_from_path(str(arAssets[iIndex]))
             Assert.assertIsNotNone(oDup)
 
-            def action65():
+            with pytest.raises(Exception):
                 badAsset: "ICoverageAssetListElement" = oCollection.get_asset_from_path("bogus")
-
-            TryCatchAssertBlock.DoAssert("", action65)
 
             Assert.assertEqual(oDup.object_name, assetListElement.object_name)
             Assert.assertTrue(oCollection.is_asset_assigned(oDup.object_name))
@@ -1274,11 +1085,8 @@ class EarlyBoundTests(TestBase):
                     TestBase.logger.WriteLine7("\t\t\t\tElement {0}: {1}", iIndex, oSubElement.object_name)
 
             else:
-
-                def action66():
+                with pytest.raises(Exception):
                     oSubCollection: "ICoverageAssetListCollection" = assetListElement.sub_asset_list
-
-                TryCatchAssertBlock.DoAssert("", action66)
 
             # AssetStatus
             TestBase.logger.WriteLine6("\t\t\tThe current AssetStatus is: {0}", assetListElement.asset_status)
@@ -1320,36 +1128,21 @@ class EarlyBoundTests(TestBase):
                 assetListElement.grouping = COVERAGE_ASSET_GROUPING.SEPARATE
                 TestBase.logger.WriteLine6("\t\t\tThe new Grouping is: {0}", assetListElement.grouping)
                 Assert.assertEqual(COVERAGE_ASSET_GROUPING.SEPARATE, assetListElement.grouping)
-
-                def action67():
-                    oCollection.remove("Constellation/Constellation1/Satellite/Satellite1")
-
                 # Remove
-                TryCatchAssertBlock.DoAssert("", action67)
-
-                def action68():
+                with pytest.raises(Exception):
+                    oCollection.remove("Constellation/Constellation1/Satellite/Satellite1")
+                with pytest.raises(Exception):
                     oCollection.remove("Satellite/Satellite2")
-
-                TryCatchAssertBlock.DoAssert("", action68)
                 oCollection.remove(assetListElement.object_name)
 
             else:
-
-                def action69():
-                    oCollection.add(str(arAssets[iIndex]))
-
                 # Add
-                TryCatchAssertBlock.DoAssert("", action69)
-
-                def action70():
+                with pytest.raises(Exception):
+                    oCollection.add(str(arAssets[iIndex]))
+                with pytest.raises(Exception):
                     oCollection.add("")
-
-                TryCatchAssertBlock.DoAssert("", action70)
-
-                def action71():
+                with pytest.raises(Exception):
                     oCollection.add("InvaliName")
-
-                TryCatchAssertBlock.DoAssert("", action71)
 
             iIndex += 1
 
@@ -1370,32 +1163,21 @@ class EarlyBoundTests(TestBase):
 
             iIndex += 1
 
-        def action72():
+        with pytest.raises(Exception):
             element2: "ICoverageAssetListElement" = oCollection[oCollection.count]
-
-        TryCatchAssertBlock.DoAssert("", action72)
 
         oCollection.remove("Satellite/Satellite1")
         TestBase.logger.WriteLine3("\tThe new AssetList collection contains: {0} elements.", oCollection.count)
         Assert.assertEqual((Array.Length(arAssets) - 2), oCollection.count)
-
-        def action73():
+        with pytest.raises(Exception):
             oCollection.remove("")
-
-        TryCatchAssertBlock.DoAssert("", action73)
-
-        def action74():
+        with pytest.raises(Exception):
             oCollection.remove("InvalidObject")
-
-        TryCatchAssertBlock.DoAssert("", action74)
         # RemoveAt
         oCollection.remove_at(1)
         Assert.assertEqual((Array.Length(arAssets) - 3), oCollection.count)
-
-        def action75():
+        with pytest.raises(Exception):
             oCollection.remove_at(123)
-
-        TryCatchAssertBlock.DoAssert("", action75)
         # _NewEnum
         TestBase.logger.WriteLine3("\tThe new AssetList collection contains: {0} elements.", oCollection.count)
         oElem: "ICoverageAssetListElement"
@@ -1450,11 +1232,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("1 Jul 1999 01:00:00.000", oInterval.analysis_interval.find_start_time())
         TestBase.logger.WriteLine6("\tThe new Stop is: {0}", oInterval.analysis_interval.find_stop_time())
         Assert.assertEqual("1 Jul 1999 04:00:00.000", oInterval.analysis_interval.find_stop_time())
-
-        def action76():
+        with pytest.raises(Exception, match=RegexSubstringMatch("")):
             oInterval.analysis_interval.set_explicit_interval("2 Jul 1999 01:00:00.000", "1 Jul 1999 00:01:00.000")
-
-        TryCatchAssertBlock.ExpectedException("", action76)
         TestBase.logger.WriteLine("----- INTERVAL TEST ----- END -----")
 
     # endregion
@@ -1489,16 +1268,10 @@ class EarlyBoundTests(TestBase):
         oInspector.select_point(0, 0)
         # Message
         TestBase.logger.WriteLine5("\tThe SelectPoint message:\n{0}", oInspector.message)
-
-        def action77():
+        with pytest.raises(Exception):
             oInspector.select_point("one", 0)
-
-        TryCatchAssertBlock.DoAssert("", action77)
-
-        def action78():
+        with pytest.raises(Exception):
             oInspector.select_point(-12, "two")
-
-        TryCatchAssertBlock.DoAssert("", action78)
         # PointCoverage
         oInterval: "IDataProviderInterval" = clr.Convert(oInspector.point_coverage, IDataProviderInterval)
         Assert.assertIsNotNone(oInterval)
@@ -1556,11 +1329,8 @@ class EarlyBoundTests(TestBase):
         oInspector.select_region("AreaTarget1")
         # Message
         TestBase.logger.WriteLine5("\tThe SelectRegion message:\n{0}", oInspector.message)
-
-        def action79():
+        with pytest.raises(Exception):
             oInspector.select_region("Invalid.Region")
-
-        TryCatchAssertBlock.DoAssert("", action79)
         # PointCoverage
         oInterval = clr.Convert(oInspector.point_coverage, IDataProviderInterval)
         Assert.assertIsNotNone(oInterval)
@@ -1636,10 +1406,8 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        def action80():
+        with pytest.raises(Exception):
             gpx: "ICoverageSelectedGridPoint" = gps[NUM_GRID_POINTS]
-
-        TryCatchAssertBlock.DoAssert("invalid index", action80)
 
         gp: "ICoverageSelectedGridPoint"
 
@@ -2092,11 +1860,8 @@ class EarlyBoundTests(TestBase):
         oAdvanced.data_retention = COVERAGE_DATA_RETENTION.STATIC_DATA_ONLY
         TestBase.logger.WriteLine6("\tThe new DataRetention is: {0}", oAdvanced.data_retention)
         Assert.assertEqual(COVERAGE_DATA_RETENTION.STATIC_DATA_ONLY, oAdvanced.data_retention)
-
-        def action81():
+        with pytest.raises(Exception):
             oAdvanced.data_retention = COVERAGE_DATA_RETENTION.DATA_RETENTION_UNKNOWN
-
-        TryCatchAssertBlock.DoAssert("", action81)
         # SaveMode
         TestBase.logger.WriteLine6("\tThe current SaveMode is: {0}", oAdvanced.save_mode)
         oAdvanced.save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
@@ -2108,11 +1873,8 @@ class EarlyBoundTests(TestBase):
         oAdvanced.save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
         TestBase.logger.WriteLine6("\tThe new SaveMode is: {0}", oAdvanced.save_mode)
         Assert.assertEqual(DATA_SAVE_MODE.SAVE_ACCESSES, oAdvanced.save_mode)
-
-        def action82():
+        with pytest.raises(Exception):
             oAdvanced.save_mode = DATA_SAVE_MODE.UNKNOWN
-
-        TryCatchAssertBlock.DoAssert("", action82)
         # RegionAccessAcceleration
         TestBase.logger.WriteLine6(
             "\tThe current RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration
@@ -2123,11 +1885,8 @@ class EarlyBoundTests(TestBase):
         oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF
         TestBase.logger.WriteLine6("\tThe new RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration)
         Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF, oAdvanced.region_access_acceleration)
-
-        def action83():
+        with pytest.raises(Exception):
             oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_UNKNOWN
-
-        TryCatchAssertBlock.DoAssert("", action83)
 
         # EnableLightTimeDelay
         TestBase.logger.WriteLine4("\tThe current EnableLightTimeDelay is: {0}", oAdvanced.enable_light_time_delay)
@@ -2160,11 +1919,8 @@ class EarlyBoundTests(TestBase):
             "\tThe new NAssetsSatisfactionThreshold is: {0}", oAdvanced.n_assets_satisfaction_threshold
         )
         Assert.assertEqual(100, oAdvanced.n_assets_satisfaction_threshold)
-
-        def action84():
+        with pytest.raises(Exception):
             oAdvanced.n_assets_satisfaction_threshold = 0
-
-        TryCatchAssertBlock.DoAssert("", action84)
         # NAssetsSatisfactionType
         TestBase.logger.WriteLine6(
             "\tThe current NAssetsSatisfactionType is: {0}", oAdvanced.n_assets_satisfaction_type
@@ -2175,11 +1931,8 @@ class EarlyBoundTests(TestBase):
         oAdvanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.EQUAL_TO
         TestBase.logger.WriteLine6("\tThe new NAssetsSatisfactionType is: {0}", oAdvanced.n_assets_satisfaction_type)
         Assert.assertEqual(COVERAGE_SATISFACTION_TYPE.EQUAL_TO, oAdvanced.n_assets_satisfaction_type)
-
-        def action85():
+        with pytest.raises(Exception):
             oAdvanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.UNKNOWN
-
-        TryCatchAssertBlock.DoAssert("", action85)
         TestBase.logger.WriteLine("----- ADVANCED TEST ----- END -----")
 
     # endregion
@@ -2210,11 +1963,8 @@ class EarlyBoundTests(TestBase):
         oStatic.is_region_visible = False
         TestBase.logger.WriteLine4("\tThe new IsRegionVisible is: {0}", oStatic.is_region_visible)
         Assert.assertFalse(oStatic.is_region_visible)
-
-        def action86():
+        with pytest.raises(Exception):
             oStatic.is_labels_visible = True
-
-        TryCatchAssertBlock.DoAssert("", action86)
         oStatic.is_region_visible = True
         TestBase.logger.WriteLine4("\tThe new IsRegionVisible is: {0}", oStatic.is_region_visible)
         Assert.assertTrue(oStatic.is_region_visible)
@@ -2231,16 +1981,10 @@ class EarlyBoundTests(TestBase):
         oStatic.is_points_visible = False
         TestBase.logger.WriteLine4("\tThe new IsPointsVisible is: {0}", oStatic.is_points_visible)
         Assert.assertFalse(oStatic.is_points_visible)
-
-        def action87():
+        with pytest.raises(Exception):
             oStatic.fill_points = True
-
-        TryCatchAssertBlock.DoAssert("", action87)
-
-        def action88():
+        with pytest.raises(Exception):
             oStatic.marker_style = "X"
-
-        TryCatchAssertBlock.DoAssert("", action88)
         oStatic.is_points_visible = True
         TestBase.logger.WriteLine4("\tThe new IsPointsVisible is: {0}", oStatic.is_points_visible)
         Assert.assertTrue(oStatic.is_points_visible)
@@ -2249,11 +1993,8 @@ class EarlyBoundTests(TestBase):
         oStatic.fill_points = True
         TestBase.logger.WriteLine4("\tThe new FillPoints is: {0}", oStatic.fill_points)
         Assert.assertTrue(oStatic.fill_points)
-
-        def action89():
+        with pytest.raises(Exception):
             oStatic.marker_style = "X"
-
-        TryCatchAssertBlock.DoAssert("", action89)
         oStatic.fill_points = False
         TestBase.logger.WriteLine4("\tThe new FillPoints is: {0}", oStatic.fill_points)
         Assert.assertFalse(oStatic.fill_points)
@@ -2282,11 +2023,8 @@ class EarlyBoundTests(TestBase):
         oAnimation.is_satisfaction_visible = False
         TestBase.logger.WriteLine4("\tThe new IsSatisfactionVisible is: {0}", oAnimation.is_satisfaction_visible)
         Assert.assertFalse(oAnimation.is_satisfaction_visible)
-
-        def action90():
+        with pytest.raises(Exception):
             oAnimation.color = Color.FromArgb(11189196)
-
-        TryCatchAssertBlock.DoAssert("", action90)
         oAnimation.is_satisfaction_visible = True
         TestBase.logger.WriteLine4("\tThe new IsSatisfactionVisible is: {0}", oAnimation.is_satisfaction_visible)
         Assert.assertTrue(oAnimation.is_satisfaction_visible)
@@ -2309,11 +2047,8 @@ class EarlyBoundTests(TestBase):
         oProgress.is_visible = False
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oProgress.is_visible)
         Assert.assertFalse(oProgress.is_visible)
-
-        def action91():
+        with pytest.raises(Exception):
             oProgress.color = Color.FromArgb(11189196)
-
-        TryCatchAssertBlock.DoAssert("", action91)
         oProgress.is_visible = True
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oProgress.is_visible)
         Assert.assertTrue(oProgress.is_visible)
@@ -2337,10 +2072,8 @@ class EarlyBoundTests(TestBase):
         oVO.show_at_altitude = False
         Assert.assertFalse(oVO.show_at_altitude)
 
-        def action92():
+        with pytest.raises(Exception):
             oVO.draw_at_altitude_mode = COVERAGE_3D_DRAW_AT_ALTITUDE_MODE.BACK_FACING
-
-        TryCatchAssertBlock.DoAssert("read only property", action92)
 
         oVO.show_at_altitude = True
         Assert.assertTrue(oVO.show_at_altitude)
@@ -2355,21 +2088,16 @@ class EarlyBoundTests(TestBase):
         oVO.auto_granularity = True
         Assert.assertTrue(oVO.auto_granularity)
 
-        def action93():
+        with pytest.raises(Exception):
             oVO.granularity = 1.23
-
-        TryCatchAssertBlock.DoAssert("read only property", action93)
 
         oVO.auto_granularity = False
         Assert.assertFalse(oVO.auto_granularity)
 
         oVO.granularity = 1.23
         Assert.assertEqual(1.23, oVO.granularity)
-
-        def action94():
+        with pytest.raises(Exception):
             oVO.granularity = 21.0
-
-        TryCatchAssertBlock.DoAssert("", action94)
 
         self.TestVO(oVO.static)
         self.TestVO(oVO.animation)
@@ -2386,16 +2114,10 @@ class EarlyBoundTests(TestBase):
         oAttributes.is_visible = False
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
         Assert.assertFalse(oAttributes.is_visible)
-
-        def action95():
+        with pytest.raises(Exception):
             oAttributes.point_size = 5.6
-
-        TryCatchAssertBlock.DoAssert("", action95)
-
-        def action96():
+        with pytest.raises(Exception):
             oAttributes.translucency = 56.78
-
-        TryCatchAssertBlock.DoAssert("", action96)
         oAttributes.is_visible = True
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
         Assert.assertTrue(oAttributes.is_visible)
@@ -2404,21 +2126,15 @@ class EarlyBoundTests(TestBase):
         oAttributes.point_size = 5.6
         TestBase.logger.WriteLine6("\tThe new PointSize is: {0}", oAttributes.point_size)
         Assert.assertEqual(5.6, oAttributes.point_size)
-
-        def action97():
+        with pytest.raises(Exception):
             oAttributes.point_size = 12.3
-
-        TryCatchAssertBlock.DoAssert("", action97)
         # Translucency
         TestBase.logger.WriteLine6("\tThe current Translucency is: {0}", oAttributes.translucency)
         oAttributes.translucency = 56.78
         TestBase.logger.WriteLine6("\tThe new Translucency is: {0}", oAttributes.translucency)
         Assert.assertAlmostEqual(56.78, oAttributes.translucency, delta=0.001)
-
-        def action98():
+        with pytest.raises(Exception):
             oAttributes.translucency = 123
-
-        TryCatchAssertBlock.DoAssert("", action98)
 
     # endregion
 
@@ -2478,11 +2194,8 @@ class EarlyBoundTests(TestBase):
                     TestBase.logger.WriteLine7("\t\t\t\tElement {0}: {1}", iIndex, oSubElement.object_name)
 
             else:
-
-                def action99():
+                with pytest.raises(Exception):
                     oSubCollection: "ICoverageAssetListCollection" = assetListElement.sub_asset_list
-
-                TryCatchAssertBlock.DoAssert("", action99)
 
             # AssetStatus
             TestBase.logger.WriteLine6("\t\t\tThe current AssetStatus is: {0}", assetListElement.asset_status)
@@ -2526,35 +2239,21 @@ class EarlyBoundTests(TestBase):
                 TestBase.logger.WriteLine6("\t\t\tThe new Grouping is: {0}", assetListElement.grouping)
                 Assert.assertEqual(COVERAGE_ASSET_GROUPING.SEPARATE, assetListElement.grouping)
 
-                def action100():
-                    oCollection.remove("Constellation/Constellation1/Satellite/Satellite1")
-
                 # Remove
-                TryCatchAssertBlock.DoAssert("", action100)
-
-                def action101():
+                with pytest.raises(Exception):
+                    oCollection.remove("Constellation/Constellation1/Satellite/Satellite1")
+                with pytest.raises(Exception):
                     oCollection.remove("Satellite/Satellite2")
-
-                TryCatchAssertBlock.DoAssert("", action101)
                 oCollection.remove(assetListElement.object_name)
 
             else:
-
-                def action102():
-                    oCollection.add(str(arAssets[iIndex]))
-
                 # Add
-                TryCatchAssertBlock.DoAssert("", action102)
-
-                def action103():
+                with pytest.raises(Exception):
+                    oCollection.add(str(arAssets[iIndex]))
+                with pytest.raises(Exception):
                     oCollection.add("")
-
-                TryCatchAssertBlock.DoAssert("", action103)
-
-                def action104():
+                with pytest.raises(Exception):
                     oCollection.add("InvaliName")
-
-                TryCatchAssertBlock.DoAssert("", action104)
 
             iIndex += 1
 
@@ -2577,25 +2276,16 @@ class EarlyBoundTests(TestBase):
         oCollection.remove("Satellite/Satellite1")
         TestBase.logger.WriteLine3("\tThe new AssetList collection contains: {0} elements.", oCollection.count)
         Assert.assertEqual((Array.Length(arAssets) - 1), oCollection.count)
-
-        def action105():
+        with pytest.raises(Exception):
             oCollection.remove("")
-
-        TryCatchAssertBlock.DoAssert("", action105)
-
-        def action106():
+        with pytest.raises(Exception):
             oCollection.remove("InvalidObject")
-
-        TryCatchAssertBlock.DoAssert("", action106)
 
         # RemoveAt
         oCollection.remove_at(1)
         Assert.assertEqual((Array.Length(arAssets) - 2), oCollection.count)
-
-        def action107():
+        with pytest.raises(Exception):
             oCollection.remove_at(123)
-
-        TryCatchAssertBlock.DoAssert("", action107)
 
         # _NewEnum
         TestBase.logger.WriteLine3("\tThe new AssetList collection contains: {0} elements.", oCollection.count)
@@ -2637,11 +2327,8 @@ class EarlyBoundTests(TestBase):
                 # SetAccessConstraintDefinition
                 fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.AZIMUTH_ANGLE)
                 fom.set_access_constraint_definition_name("AzimuthAngle")
-
-                def action108():
+                with pytest.raises(Exception):
                     fom.set_access_constraint_definition_name("BogusName")
-
-                TryCatchAssertBlock.DoAssert("", action108)
 
             else:
                 # SetDefinitionType
@@ -2717,11 +2404,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "ObjCovAircraft")
 
         else:
-
-            def action109():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 oGraphics: "IFigureOfMeritGraphics" = sat2.object_coverage.figure_of_merit.graphics
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action109)
 
         TestBase.logger.WriteLine("----- GRAPHICS TEST ----- END -----")
 

@@ -8,6 +8,7 @@ from logger import *
 from math2 import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from pytest import *
 from ansys.stk.core.stkobjects import *
 
 
@@ -204,10 +205,8 @@ class EarlyBoundTests(TestBase):
         st.get_access(areaTargetObject.path)
         st.get_access_to_object(clr.CastAs(EarlyBoundTests.AG_AT, IStkObject))
 
-        def action1():
+        with pytest.raises(Exception):
             areaTargetObject.get_access(TestBase.Application.current_scenario.path)
-
-        TryCatchAssertBlock.DoAssert("", action1)
 
         TestBase.logger.WriteLine("----- BASIC TEST ----- END -----")
 
@@ -321,12 +320,9 @@ class EarlyBoundTests(TestBase):
         vo.enable_label_max_viewing_dist = False
         TestBase.logger.WriteLine4("\tThe new EnableLabelMaxViewingDist is: {0}", vo.enable_label_max_viewing_dist)
         Assert.assertFalse(vo.enable_label_max_viewing_dist)
-
-        def action2():
-            vo.label_max_viewing_dist = 1000000000000.0
-
         # LabelMaxViewingDist
-        TryCatchAssertBlock.DoAssert("", action2)
+        with pytest.raises(Exception):
+            vo.label_max_viewing_dist = 1000000000000.0
         # EnableLabelMaxViewingDist (true)
         vo.enable_label_max_viewing_dist = True
         TestBase.logger.WriteLine4("\tThe new EnableLabelMaxViewingDist is: {0}", vo.enable_label_max_viewing_dist)
@@ -341,18 +337,12 @@ class EarlyBoundTests(TestBase):
         vo.fill_interior = False
         TestBase.logger.WriteLine4("\tThe new FillInterior is: {0}", vo.fill_interior)
         Assert.assertFalse(vo.fill_interior)
-
-        def action3():
-            vo.percent_translucency_interior = 34
-
         # LabelMaxViewingDist
-        TryCatchAssertBlock.DoAssert("", action3)
-
-        def action4():
-            vo.fill_granularity = 44
-
+        with pytest.raises(Exception):
+            vo.percent_translucency_interior = 34
         # FillGranularity
-        TryCatchAssertBlock.DoAssert("", action4)
+        with pytest.raises(Exception):
+            vo.fill_granularity = 44
         # FillInterior (true)
         vo.fill_interior = True
         TestBase.logger.WriteLine4("\tThe new FillInterior is: {0}", vo.fill_interior)
@@ -369,16 +359,10 @@ class EarlyBoundTests(TestBase):
         vo.fill_granularity = 0.345
         TestBase.logger.WriteLine6("\tThe new FillGranularity is: {0}", vo.fill_granularity)
         Assert.assertEqual(0.345, vo.fill_granularity)
-
-        def action5():
+        with pytest.raises(Exception):
             vo.fill_granularity = 0.001
-
-        TryCatchAssertBlock.DoAssert("", action5)
-
-        def action6():
+        with pytest.raises(Exception):
             vo.fill_granularity = 6.1
-
-        TryCatchAssertBlock.DoAssert("", action6)
         TestBase.logger.WriteLine("----- THE VO TEST ----- END -----")
 
     # endregion

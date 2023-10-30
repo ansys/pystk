@@ -10,6 +10,7 @@ from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from pytest import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -217,16 +218,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(20, azel.display_range_maximum)
         azel.display_range_minimum = 10
         Assert.assertEqual(10, azel.display_range_minimum)
-
-        def action1():
+        with pytest.raises(Exception):
             azel.altitude_color = Color.Yellow
-
-        TryCatchAssertBlock.DoAssert("", action1)
-
-        def action2():
+        with pytest.raises(Exception):
             azel.range_color = Color.Yellow
-
-        TryCatchAssertBlock.DoAssert("", action2)
         azel.altitude_color_visible = True
         Assert.assertTrue(azel.altitude_color_visible)
         azel.altitude_color = Color.Yellow
@@ -317,11 +312,8 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
         TestBase.logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.filename)
-
-        def action3():
+        with pytest.raises(Exception):
             oModelFile.filename = ""
-
-        TryCatchAssertBlock.DoAssert("", action3)
 
         oHelper = VOModelPointingHelper()
         oHelper.Run(EarlyBoundTests.AG_PLC.graphics_3d.model_pointing)
@@ -378,11 +370,8 @@ class EarlyBoundTests(TestBase):
     # region RF_Radar_Clutter
     def test_RF_Radar_Clutter(self):
         helper = RadarClutterMapInheritableHelper()
-
-        def action4():
+        with pytest.raises(Exception, match=RegexSubstringMatch("obsolete")):
             helper.Run(EarlyBoundTests.AG_PLC.radar_clutter_map)
-
-        TryCatchAssertBlock.ExpectedException("obsolete", action4)
 
     # endregion
 

@@ -4,6 +4,7 @@ from assert_extension import *
 from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
+from pytest import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -198,16 +199,10 @@ class EarlyBoundTests(TestBase):
         gfx.line_width = LINE_WIDTH.WIDTH4
         TestBase.logger.WriteLine6("The new LineWidth is: {0}", gfx.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH4, gfx.line_width)
-
-        def action1():
+        with pytest.raises(Exception):
             gfx.line_width = clr.Convert((-1), LINE_WIDTH)
-
-        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action1)
-
-        def action2():
+        with pytest.raises(Exception):
             gfx.line_width = clr.Convert((11), LINE_WIDTH)
-
-        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action2)
 
         # Inherit from 2D
         TestBase.logger.WriteLine4("The current Inherit is: {0}", gfx.inherit)
@@ -373,36 +368,21 @@ class EarlyBoundTests(TestBase):
         vo.inherit_from_2d_graphics_2d = True
         TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
         Assert.assertTrue(vo.inherit_from_2d_graphics_2d)
-
-        def action3():
-            vo.inertial_position_visible = False
-
         # InertialPositionVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action3)
-
-        def action4():
-            vo.position_label_visible = False
-
+        with pytest.raises(Exception):
+            vo.inertial_position_visible = False
         # PositionLabelVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action4)
-
-        def action5():
-            vo.sub_planet_label_visible = False
-
+        with pytest.raises(Exception):
+            vo.position_label_visible = False
         # SubPlanetLabelVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action5)
-
-        def action6():
-            vo.sub_planet_point_visible = False
-
+        with pytest.raises(Exception):
+            vo.sub_planet_label_visible = False
         # SubPlanetPointVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action6)
-
-        def action7():
-            vo.orbit_visible = False
-
+        with pytest.raises(Exception):
+            vo.sub_planet_point_visible = False
         # OrbitVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action7)
+        with pytest.raises(Exception):
+            vo.orbit_visible = False
         # InheritFrom2dGfx (false)
         vo.inherit_from_2d_graphics_2d = False
         TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
