@@ -11,8 +11,8 @@ FROM ${basePythonImage} as builder
 # This overrides the default Python 2.7 in CentOS7.
 USER root
 RUN cd /tmp && \
-    wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tgz && \
-    tar xzf Python-3.9.16.tgz && \
+    wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tar.xz && \
+    tar xf Python-3.9.16.tar.xz && \
     cd Python-3.9.16 && \
     ./configure --enable-optimizations && \
     make altinstall
