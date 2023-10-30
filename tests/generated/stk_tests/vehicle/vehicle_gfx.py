@@ -4,7 +4,7 @@ from assertion_harness import *
 from display_times_helper import *
 from logger import *
 from math2 import *
-from pytest import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *

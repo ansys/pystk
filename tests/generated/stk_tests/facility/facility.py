@@ -10,7 +10,7 @@ from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
-from pytest import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 

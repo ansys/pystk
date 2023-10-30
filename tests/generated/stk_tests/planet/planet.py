@@ -4,7 +4,7 @@ from assert_extension import *
 from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
-from pytest import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 

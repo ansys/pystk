@@ -3,7 +3,7 @@ from assertion_harness import *
 from fom_helper import *
 from interfaces.stk_objects import *
 from logger import *
-from pytest import *
+
 from ansys.stk.core.stkobjects import *
 
 

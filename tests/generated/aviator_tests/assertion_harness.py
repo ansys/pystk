@@ -1,5 +1,5 @@
 from test_util import *
-from pytest import *
+
 from ansys.stk.core.stkobjects import *
 
 

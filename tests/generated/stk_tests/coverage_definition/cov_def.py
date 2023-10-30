@@ -7,7 +7,7 @@ from interfaces.stk_objects import *
 from logger import *
 from math2 import *
 from vehicle.vehicle_basic import *
-from pytest import *
+
 from parameterized import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *

@@ -5,7 +5,7 @@ from interfaces.stk_objects import *
 from logger import *
 from orbit_state_helper import *
 from orientation_helper import *
-from pytest import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *

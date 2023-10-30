@@ -1,6 +1,6 @@
 from test_util import *
 from assertion_harness import *
-from pytest import *
+
 
 from ansys.stk.core.stkobjects.aviator import *
 from ansys.stk.core.stkobjects import *

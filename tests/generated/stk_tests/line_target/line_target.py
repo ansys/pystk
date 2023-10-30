@@ -7,7 +7,7 @@ from interfaces.stk_objects import *
 from logger import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
-from pytest import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 

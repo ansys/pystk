@@ -1,7 +1,7 @@
 from test_util import *
 from assertion_harness import *
 from logger import *
-from pytest import *
+
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *

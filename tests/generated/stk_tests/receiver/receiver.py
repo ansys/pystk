@@ -6,7 +6,7 @@ from display_times_helper import *
 from interfaces.stk_objects import *
 from orientation_helper import *
 from vehicle.vehicle_vo import *
-from pytest import *
+
 from parameterized import *
 
 from ansys.stk.core.stkobjects import *

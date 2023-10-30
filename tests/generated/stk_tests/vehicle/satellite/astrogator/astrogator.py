@@ -6,7 +6,7 @@ from gator_helper import *
 from logger import *
 from math2 import *
 from stk_util_helper import *
-from pytest import *
+
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
