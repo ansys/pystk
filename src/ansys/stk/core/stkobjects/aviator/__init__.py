@@ -2659,14 +2659,14 @@ class IWindModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_wind_model_source"](arg_pVal.COM_val))
 
     @property
-    def mode_as_constant(self) -> "IWindModelConstant":
+    def mode_as_constant(self) -> "WindModelConstant":
         """Get the options for a Constant Bearing/Speed wind model."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_constant"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_adds(self) -> "IWindModelADDS":
+    def mode_as_adds(self) -> "WindModelADDS":
         """Get the options for a NOAA ADDS Service wind model."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_adds"](byref(arg_ppRetVal.COM_val)))
@@ -3134,13 +3134,13 @@ class IPayloadStation(object):
         """Remove any sub item that may be attached to the payload station."""
         agcls.evaluate_hresult(self.__dict__["_remove_sub_item"]())
 
-    def add_external_fuel_tank(self) -> "IFuelTankExternal":
+    def add_external_fuel_tank(self) -> "FuelTankExternal":
         """Add an external fuel tank to the payload station."""
         with agmarshall.AgInterface_out_arg() as arg_ppFuelTank:
             agcls.evaluate_hresult(self.__dict__["_add_external_fuel_tank"](byref(arg_ppFuelTank.COM_val)))
             return arg_ppFuelTank.python_val
 
-    def get_external_fuel_tank(self) -> "IFuelTankExternal":
+    def get_external_fuel_tank(self) -> "FuelTankExternal":
         """Get the external fuel tank attached to the payload station."""
         with agmarshall.AgInterface_out_arg() as arg_ppFuelTank:
             agcls.evaluate_hresult(self.__dict__["_get_external_fuel_tank"](byref(arg_ppFuelTank.COM_val)))
@@ -3213,56 +3213,56 @@ class IAircraftModel(object):
             return arg_ppRetVal.python_val
 
     @property
-    def acceleration(self) -> "IAircraftAcceleration":
+    def acceleration(self) -> "AircraftAcceleration":
         """Get the acceleration interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppAcc:
             agcls.evaluate_hresult(self.__dict__["_get_acceleration"](byref(arg_ppAcc.COM_val)))
             return arg_ppAcc.python_val
 
     @property
-    def climb(self) -> "IAircraftClimb":
+    def climb(self) -> "AircraftClimb":
         """Get the climb interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppClimb:
             agcls.evaluate_hresult(self.__dict__["_get_climb"](byref(arg_ppClimb.COM_val)))
             return arg_ppClimb.python_val
 
     @property
-    def cruise(self) -> "IAircraftCruise":
+    def cruise(self) -> "AircraftCruise":
         """Get the cruise interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppCruise:
             agcls.evaluate_hresult(self.__dict__["_get_cruise"](byref(arg_ppCruise.COM_val)))
             return arg_ppCruise.python_val
 
     @property
-    def descent(self) -> "IAircraftDescent":
+    def descent(self) -> "AircraftDescent":
         """Get the descent interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppDescent:
             agcls.evaluate_hresult(self.__dict__["_get_descent"](byref(arg_ppDescent.COM_val)))
             return arg_ppDescent.python_val
 
     @property
-    def landing(self) -> "IAircraftLanding":
+    def landing(self) -> "AircraftLanding":
         """Get the landing interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppLanding:
             agcls.evaluate_hresult(self.__dict__["_get_landing"](byref(arg_ppLanding.COM_val)))
             return arg_ppLanding.python_val
 
     @property
-    def takeoff(self) -> "IAircraftTakeoff":
+    def takeoff(self) -> "AircraftTakeoff":
         """Get the takeoff interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppTakeoff:
             agcls.evaluate_hresult(self.__dict__["_get_takeoff"](byref(arg_ppTakeoff.COM_val)))
             return arg_ppTakeoff.python_val
 
     @property
-    def default_configuration(self) -> "IConfiguration":
+    def default_configuration(self) -> "Configuration":
         """The aircraft's default configuration as saved in the catalog."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrConfig:
             agcls.evaluate_hresult(self.__dict__["_get_default_configuration"](byref(arg_ppAvtrConfig.COM_val)))
             return arg_ppAvtrConfig.python_val
 
     @property
-    def adv_fixed_wing_tool(self) -> "IAdvFixedWingTool":
+    def adv_fixed_wing_tool(self) -> "AdvFixedWingTool":
         """Get the Advanced Fixed Wing Tool for the aircraft."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrAdvFWT:
             agcls.evaluate_hresult(self.__dict__["_get_adv_fixed_wing_tool"](byref(arg_ppAvtrAdvFWT.COM_val)))
@@ -3275,14 +3275,14 @@ class IAircraftModel(object):
             return arg_ppCatalogData.python_val
 
     @property
-    def vtol(self) -> "IAircraftVTOL":
+    def vtol(self) -> "AircraftVTOL":
         """Get the VTOL interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppVTOL:
             agcls.evaluate_hresult(self.__dict__["_get_vtol"](byref(arg_ppVTOL.COM_val)))
             return arg_ppVTOL.python_val
 
     @property
-    def terrain_follow(self) -> "IAircraftTerrainFollow":
+    def terrain_follow(self) -> "AircraftTerrainFollow":
         """Get the TerrainFollow interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppTerrainFollow:
             agcls.evaluate_hresult(self.__dict__["_get_terrain_follow"](byref(arg_ppTerrainFollow.COM_val)))
@@ -3508,7 +3508,7 @@ class ILevelTurns(object):
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_mode"](arg_newVal.COM_val))
 
     @property
-    def maneuver_mode_helper(self) -> "IAeroPropManeuverModeHelper":
+    def maneuver_mode_helper(self) -> "AeroPropManeuverModeHelper":
         """Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_mode_helper"](byref(arg_ppRetVal.COM_val)))
@@ -3706,7 +3706,7 @@ class IClimbAndDescentTransitions(object):
             agcls.evaluate_hresult(self.__dict__["_set_ignore_fpa"](arg_newVal.COM_val))
 
     @property
-    def maneuver_mode_helper(self) -> "IAeroPropManeuverModeHelper":
+    def maneuver_mode_helper(self) -> "AeroPropManeuverModeHelper":
         """Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_mode_helper"](byref(arg_ppRetVal.COM_val)))
@@ -4093,35 +4093,35 @@ class IAircraftBasicAccelerationModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicAccelerationModel.")
     
     @property
-    def level_turns(self) -> "ILevelTurns":
+    def level_turns(self) -> "LevelTurns":
         """Get the level turns interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_turns"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def attitude_transitions(self) -> "IAttitudeTransitions":
+    def attitude_transitions(self) -> "AttitudeTransitions":
         """Get the attitude transitions interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_transitions"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def climb_and_descent_transitions(self) -> "IClimbAndDescentTransitions":
+    def climb_and_descent_transitions(self) -> "ClimbAndDescentTransitions":
         """Get the climb and descent transitions interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_climb_and_descent_transitions"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def aerodynamics(self) -> "IAircraftAero":
+    def aerodynamics(self) -> "AircraftAero":
         """Get the aerodynamics interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aerodynamics"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def propulsion(self) -> "IAircraftProp":
+    def propulsion(self) -> "AircraftProp":
         """Get the propulsion interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_propulsion"](byref(arg_ppRetVal.COM_val)))
@@ -4175,21 +4175,21 @@ class IAircraftCategory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftCategory.")
     
     @property
-    def aircraft_models(self) -> "IAircraftModels":
+    def aircraft_models(self) -> "AircraftModels":
         """Get the user aircraft models."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aircraft_models"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def missile_models(self) -> "IMissileModels":
+    def missile_models(self) -> "MissileModels":
         """Get the user missile models."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_missile_models"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def rotorcraft_models(self) -> "IRotorcraftModels":
+    def rotorcraft_models(self) -> "RotorcraftModels":
         """Get the user rotorcraft models."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_rotorcraft_models"](byref(arg_ppRetVal.COM_val)))
@@ -4237,21 +4237,21 @@ class IRunwayCategory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRunwayCategory.")
     
     @property
-    def user_runways(self) -> "IUserRunwaySource":
+    def user_runways(self) -> "UserRunwaySource":
         """Get the user runways."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_runways"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def arinc424_runways(self) -> "IARINC424Source":
+    def arinc424_runways(self) -> "ARINC424Source":
         """Get the ARINC-424 runways."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_runways"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def dafif_runways(self) -> "IDAFIFSource":
+    def dafif_runways(self) -> "DAFIFSource":
         """Get the DAFIF runways."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_dafif_runways"](byref(arg_ppRetVal.COM_val)))
@@ -4331,7 +4331,7 @@ class IAircraftVTOL(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftVTOL.")
     
-    def get_vtol_by_name(self, name:str) -> "IAircraftVTOLModel":
+    def get_vtol_by_name(self, name:str) -> "AircraftVTOLModel":
         """Gets the VTOL model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVTOLModel:
@@ -6932,7 +6932,7 @@ class IAircraftTerrainFollow(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftTerrainFollow.")
     
-    def get_terrain_follow_by_name(self, name:str) -> "IAircraftTerrainFollowModel":
+    def get_terrain_follow_by_name(self, name:str) -> "AircraftTerrainFollowModel":
         """Gets the TerrainFollow model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppTerrainFollowModel:
@@ -7328,28 +7328,28 @@ class IAdvFixedWingTool(object):
             agcls.evaluate_hresult(self.__dict__["_set_aero_strategy"](arg_newVal.COM_val))
 
     @property
-    def aero_mode_as_external(self) -> "IAdvFixedWingExternalAero":
+    def aero_mode_as_external(self) -> "AdvFixedWingExternalAero":
         """Get the interface for an Extern File Aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aero_mode_as_external"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def aero_mode_as_subsonic(self) -> "IAdvFixedWingSubsonicAero":
+    def aero_mode_as_subsonic(self) -> "AdvFixedWingSubsonicAero":
         """Get the interface for a Subsonic Aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aero_mode_as_subsonic"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def aero_mode_as_sub_super_hypersonic(self) -> "IAdvFixedWingSubSuperHypersonicAero":
+    def aero_mode_as_sub_super_hypersonic(self) -> "AdvFixedWingSubSuperHypersonicAero":
         """Get the interface for a Sub/Super/Hypersonic Aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aero_mode_as_sub_super_hypersonic"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def aero_mode_as_supersonic(self) -> "IAdvFixedWingSupersonicAero":
+    def aero_mode_as_supersonic(self) -> "AdvFixedWingSupersonicAero":
         """Get the interface for a Supersonic Aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aero_mode_as_supersonic"](byref(arg_ppRetVal.COM_val)))
@@ -7369,35 +7369,35 @@ class IAdvFixedWingTool(object):
             agcls.evaluate_hresult(self.__dict__["_set_powerplant_strategy"](arg_newVal.COM_val))
 
     @property
-    def powerplant_mode_as_electric(self) -> "IAdvFixedWingElectricPowerplant":
+    def powerplant_mode_as_electric(self) -> "AdvFixedWingElectricPowerplant":
         """Get the interface for an Electric Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_electric"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def powerplant_mode_as_external(self) -> "IAdvFixedWingExternalProp":
+    def powerplant_mode_as_external(self) -> "AdvFixedWingExternalProp":
         """Get the interface for an External Prop File Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_external"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def powerplant_mode_as_piston(self) -> "IAdvFixedWingPistonPowerplant":
+    def powerplant_mode_as_piston(self) -> "AdvFixedWingPistonPowerplant":
         """Get the interface for a Piston Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_piston"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def powerplant_mode_as_turboprop(self) -> "IAdvFixedWingTurbopropPowerplant":
+    def powerplant_mode_as_turboprop(self) -> "AdvFixedWingTurbopropPowerplant":
         """Get the interface for a Turboprop Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_turboprop"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def powerplant_mode_as_empirical_jet_engine(self) -> "IAdvFixedWingEmpiricalJetEngine":
+    def powerplant_mode_as_empirical_jet_engine(self) -> "AdvFixedWingEmpiricalJetEngine":
         """Get the interface for an Empirical Jet Engine Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_empirical_jet_engine"](byref(arg_ppRetVal.COM_val)))
@@ -7411,21 +7411,21 @@ class IAdvFixedWingTool(object):
             agcls.evaluate_hresult(self.__dict__["_create_all_perf_models"](arg_name.COM_val, arg_overwrite.COM_val, arg_makeDefault.COM_val))
 
     @property
-    def powerplant_mode_as_basic_turbofan(self) -> "IAdvFixedWingTurbofanBasicABProp":
+    def powerplant_mode_as_basic_turbofan(self) -> "AdvFixedWingTurbofanBasicABProp":
         """Get the interface for a Turbofan - Basic w/ AB Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_basic_turbofan"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def powerplant_mode_as_basic_turbojet(self) -> "IAdvFixedWingTurbojetBasicABProp":
+    def powerplant_mode_as_basic_turbojet(self) -> "AdvFixedWingTurbojetBasicABProp":
         """Get the interface for a Turbojet - Basic w/ AB Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_basic_turbojet"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def powerplant_mode_as_sub_super_hypersonic(self) -> "IAdvFixedWingSubSuperHypersonicProp":
+    def powerplant_mode_as_sub_super_hypersonic(self) -> "AdvFixedWingSubSuperHypersonicProp":
         """Get the interface for a Sub/Super/Hypersoinc Powerplant strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_mode_as_sub_super_hypersonic"](byref(arg_ppRetVal.COM_val)))
@@ -7566,14 +7566,14 @@ class IAdvFixedWingSubsonicAero(object):
             agcls.evaluate_hresult(self.__dict__["_set_geometry_type"](arg_newVal.COM_val))
 
     @property
-    def geometry_mode_as_basic(self) -> "IAdvFixedWingGeometryBasic":
+    def geometry_mode_as_basic(self) -> "AdvFixedWingGeometryBasic":
         """The options for a basic geometry wing."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_geometry_mode_as_basic"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def geometry_mode_as_variable(self) -> "IAdvFixedWingGeometryVariable":
+    def geometry_mode_as_variable(self) -> "AdvFixedWingGeometryVariable":
         """The options for a variable geometry wing."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_geometry_mode_as_variable"](byref(arg_ppRetVal.COM_val)))
@@ -7901,14 +7901,14 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_turbine_mode"](arg_newVal.COM_val))
 
     @property
-    def turbine_mode_as_turbojet(self) -> "IAdvFixedWingTurbojetBasicABProp":
+    def turbine_mode_as_turbojet(self) -> "AdvFixedWingTurbojetBasicABProp":
         """Get the interface for a Turbojet Basic w/ AB tubrine mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_turbine_mode_as_turbojet"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def turbine_mode_as_turbofan(self) -> "IAdvFixedWingTurbofanBasicABProp":
+    def turbine_mode_as_turbofan(self) -> "AdvFixedWingTurbofanBasicABProp":
         """Get the interface for a Turbojet Basic w/ AB tubrine mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_turbine_mode_as_turbofan"](byref(arg_ppRetVal.COM_val)))
@@ -7928,7 +7928,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_ramjet_mode"](arg_newVal.COM_val))
 
     @property
-    def ramjet_mode_as_basic(self) -> "IAdvFixedWingRamjetBasic":
+    def ramjet_mode_as_basic(self) -> "AdvFixedWingRamjetBasic":
         """Get the interface for a Ramjet - Basic."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_ramjet_mode_as_basic"](byref(arg_ppRetVal.COM_val)))
@@ -7948,7 +7948,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_scramjet_mode"](arg_newVal.COM_val))
 
     @property
-    def scramjet_mode_as_basic(self) -> "IAdvFixedWingScramjetBasic":
+    def scramjet_mode_as_basic(self) -> "AdvFixedWingScramjetBasic":
         """Get the interface for a Scramjet - Basic."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scramjet_mode_as_basic"](byref(arg_ppRetVal.COM_val)))
@@ -8142,14 +8142,14 @@ class IAdvFixedWingSupersonicAero(object):
             agcls.evaluate_hresult(self.__dict__["_set_geometry_type"](arg_newVal.COM_val))
 
     @property
-    def geometry_mode_as_basic(self) -> "IAdvFixedWingGeometryBasic":
+    def geometry_mode_as_basic(self) -> "AdvFixedWingGeometryBasic":
         """The options for a basic geometry wing."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_geometry_mode_as_basic"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def geometry_mode_as_variable(self) -> "IAdvFixedWingGeometryVariable":
+    def geometry_mode_as_variable(self) -> "AdvFixedWingGeometryVariable":
         """The options for a variable geometry wing."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_geometry_mode_as_variable"](byref(arg_ppRetVal.COM_val)))
@@ -9136,7 +9136,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_lpc_pressure_ratio"](arg_newVal.COM_val))
 
     @property
-    def efficiencies_and_losses(self) -> "IPropulsionEfficiencies":
+    def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_efficiencies_and_losses"](byref(arg_ppRetVal.COM_val)))
@@ -9156,14 +9156,14 @@ class IAdvFixedWingTurbojetBasicABProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
-    def fuel_mode_as_afprop(self) -> "IFuelModelKeroseneAFPROP":
+    def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_afprop"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def fuel_mode_as_cea(self) -> "IFuelModelKeroseneCEA":
+    def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_cea"](byref(arg_ppRetVal.COM_val)))
@@ -9402,7 +9402,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_fan_pressure_ratio"](arg_newVal.COM_val))
 
     @property
-    def efficiencies_and_losses(self) -> "IPropulsionEfficiencies":
+    def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_efficiencies_and_losses"](byref(arg_ppRetVal.COM_val)))
@@ -9422,14 +9422,14 @@ class IAdvFixedWingTurbofanBasicABProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
-    def fuel_mode_as_afprop(self) -> "IFuelModelKeroseneAFPROP":
+    def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_afprop"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def fuel_mode_as_cea(self) -> "IFuelModelKeroseneCEA":
+    def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_cea"](byref(arg_ppRetVal.COM_val)))
@@ -9634,14 +9634,14 @@ class IMissileModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_mode"](arg_newVal.COM_val))
 
     @property
-    def maneuver_mode_helper(self) -> "IAeroPropManeuverModeHelper":
+    def maneuver_mode_helper(self) -> "AeroPropManeuverModeHelper":
         """Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_mode_helper"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def attitude_transitions(self) -> "IAttitudeTransitions":
+    def attitude_transitions(self) -> "AttitudeTransitions":
         """Get the attitude transitions interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_transitions"](byref(arg_ppRetVal.COM_val)))
@@ -9890,21 +9890,21 @@ class IMissileModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_eas_limit"](arg_pVal.COM_val))
 
     @property
-    def default_configuration(self) -> "IConfiguration":
+    def default_configuration(self) -> "Configuration":
         """The aircraft's default configuration as saved in the catalog."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrConfig:
             agcls.evaluate_hresult(self.__dict__["_get_default_configuration"](byref(arg_ppAvtrConfig.COM_val)))
             return arg_ppAvtrConfig.python_val
 
     @property
-    def aerodynamics(self) -> "IMissileAero":
+    def aerodynamics(self) -> "MissileAero":
         """Get the aerodynamics interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aerodynamics"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def propulsion(self) -> "IMissileProp":
+    def propulsion(self) -> "MissileProp":
         """Get the propulsion interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_propulsion"](byref(arg_ppRetVal.COM_val)))
@@ -9975,21 +9975,21 @@ class IMissileAero(object):
             agcls.evaluate_hresult(self.__dict__["_set_aero_strategy"](arg_newVal.COM_val))
 
     @property
-    def mode_as_simple(self) -> "IMissileSimpleAero":
+    def mode_as_simple(self) -> "MissileSimpleAero":
         """Get the interface for a simple aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_simple"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_external(self) -> "IMissileExternalAero":
+    def mode_as_external(self) -> "MissileExternalAero":
         """Get the interface for an external file aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_external"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_advanced(self) -> "IMissileAdvancedAero":
+    def mode_as_advanced(self) -> "MissileAdvancedAero":
         """Get the interface for an advanced aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_advanced"](byref(arg_ppRetVal.COM_val)))
@@ -10058,35 +10058,35 @@ class IMissileProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_prop_strategy"](arg_newVal.COM_val))
 
     @property
-    def mode_as_simple(self) -> "IMissileSimpleProp":
+    def mode_as_simple(self) -> "MissileSimpleProp":
         """Get the interface for a simple propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_simple"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_external(self) -> "IMissileExternalProp":
+    def mode_as_external(self) -> "MissileExternalProp":
         """Get the interface for an external file propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_external"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_ramjet(self) -> "IMissileRamjetProp":
+    def mode_as_ramjet(self) -> "MissileRamjetProp":
         """Get the interface for an Ramjet propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_ramjet"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_turbojet(self) -> "IMissileTurbojetProp":
+    def mode_as_turbojet(self) -> "MissileTurbojetProp":
         """Get the interface for an Turbojet propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_turbojet"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_rocket(self) -> "IMissileRocketProp":
+    def mode_as_rocket(self) -> "MissileRocketProp":
         """Get the interface for an Rocket propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_rocket"](byref(arg_ppRetVal.COM_val)))
@@ -12001,21 +12001,21 @@ class IRotorcraftModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_ignore_fpa_for_climb_descent_transitions"](arg_newVal.COM_val))
 
     @property
-    def default_configuration(self) -> "IConfiguration":
+    def default_configuration(self) -> "Configuration":
         """The aircraft's default configuration as saved in the catalog."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrConfig:
             agcls.evaluate_hresult(self.__dict__["_get_default_configuration"](byref(arg_ppAvtrConfig.COM_val)))
             return arg_ppAvtrConfig.python_val
 
     @property
-    def aerodynamics(self) -> "IRotorcraftAero":
+    def aerodynamics(self) -> "RotorcraftAero":
         """Get the aerodynamics interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aerodynamics"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def propulsion(self) -> "IRotorcraftProp":
+    def propulsion(self) -> "RotorcraftProp":
         """Get the propulsion interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_propulsion"](byref(arg_ppRetVal.COM_val)))
@@ -12376,14 +12376,14 @@ class IUserRunwaySource(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUserRunwaySource.")
     
-    def get_user_runway(self, name:str) -> "IUserRunway":
+    def get_user_runway(self, name:str) -> "UserRunway":
         """Gets the user runway with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUserRunway:
             agcls.evaluate_hresult(self.__dict__["_get_user_runway"](arg_name.COM_val, byref(arg_ppUserRunway.COM_val)))
             return arg_ppUserRunway.python_val
 
-    def add_user_runway(self, name:str) -> "IUserRunway":
+    def add_user_runway(self, name:str) -> "UserRunway":
         """Creates a new user runway with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUserRunway:
@@ -13006,14 +13006,14 @@ class IUserVTOLPointSource(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUserVTOLPointSource.")
     
-    def get_user_vtol_point(self, name:str) -> "IUserVTOLPoint":
+    def get_user_vtol_point(self, name:str) -> "UserVTOLPoint":
         """Gets the user VTOL Point with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUserVTOLPoint:
             agcls.evaluate_hresult(self.__dict__["_get_user_vtol_point"](arg_name.COM_val, byref(arg_ppUserVTOLPoint.COM_val)))
             return arg_ppUserVTOLPoint.python_val
 
-    def add_user_vtol_point(self, name:str) -> "IUserVTOLPoint":
+    def add_user_vtol_point(self, name:str) -> "UserVTOLPoint":
         """Creates a new user VTOL Point with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUserVTOLPoint:
@@ -13156,14 +13156,14 @@ class IUserWaypointSource(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUserWaypointSource.")
     
-    def get_user_waypoint(self, name:str) -> "IUserWaypoint":
+    def get_user_waypoint(self, name:str) -> "UserWaypoint":
         """Gets the user waypoint with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUserWaypoint:
             agcls.evaluate_hresult(self.__dict__["_get_user_waypoint"](arg_name.COM_val, byref(arg_ppUserWaypoint.COM_val)))
             return arg_ppUserWaypoint.python_val
 
-    def add_user_waypoint(self, name:str) -> "IUserWaypoint":
+    def add_user_waypoint(self, name:str) -> "UserWaypoint":
         """Creates a new user waypoint with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUserWaypoint:
@@ -13561,21 +13561,21 @@ class IAdvFixedWingRamjetBasic(object):
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
-    def fuel_mode_as_afprop(self) -> "IFuelModelKeroseneAFPROP":
+    def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_afprop"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def fuel_mode_as_cea(self) -> "IFuelModelKeroseneCEA":
+    def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_cea"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def efficiencies_and_losses(self) -> "IPropulsionEfficiencies":
+    def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_efficiencies_and_losses"](byref(arg_ppRetVal.COM_val)))
@@ -13725,21 +13725,21 @@ class IAdvFixedWingScramjetBasic(object):
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
-    def fuel_mode_as_afprop(self) -> "IFuelModelKeroseneAFPROP":
+    def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_afprop"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def fuel_mode_as_cea(self) -> "IFuelModelKeroseneCEA":
+    def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_mode_as_cea"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def efficiencies_and_losses(self) -> "IPropulsionEfficiencies":
+    def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_efficiencies_and_losses"](byref(arg_ppRetVal.COM_val)))
@@ -14145,7 +14145,7 @@ class IAtmosphereModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmosphere_model_source"](arg_pVal.COM_val))
 
     @property
-    def mode_as_basic(self) -> "IAtmosphereModelBasic":
+    def mode_as_basic(self) -> "AtmosphereModelBasic":
         """Get the options for a Basic Atmosphere model."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_basic"](byref(arg_ppRetVal.COM_val)))
@@ -14223,7 +14223,7 @@ class IADDSMessageCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IADDSMessage":
+    def item(self, index:int) -> "ADDSMessage":
         """Given an index, returns an element in the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -14397,7 +14397,7 @@ class IWindModelADDS(object):
             return arg_pRetVal.python_val
 
     @property
-    def messages(self) -> "IADDSMessageCollection":
+    def messages(self) -> "ADDSMessageCollection":
         """Get the messages from the current forecast."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_messages"](byref(arg_ppRetVal.COM_val)))
@@ -14631,27 +14631,27 @@ class IStationCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_internal_fuel_tank_by_name(self, name:str) -> "IFuelTankInternal":
+    def get_internal_fuel_tank_by_name(self, name:str) -> "FuelTankInternal":
         """Get the internal fuel tank with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppFuelTank:
             agcls.evaluate_hresult(self.__dict__["_get_internal_fuel_tank_by_name"](arg_name.COM_val, byref(arg_ppFuelTank.COM_val)))
             return arg_ppFuelTank.python_val
 
-    def add_internal_fuel_tank(self) -> "IFuelTankInternal":
+    def add_internal_fuel_tank(self) -> "FuelTankInternal":
         """Add an internal fuel tank"""
         with agmarshall.AgInterface_out_arg() as arg_ppFuelTankInternal:
             agcls.evaluate_hresult(self.__dict__["_add_internal_fuel_tank"](byref(arg_ppFuelTankInternal.COM_val)))
             return arg_ppFuelTankInternal.python_val
 
-    def get_payload_station_by_name(self, name:str) -> "IPayloadStation":
+    def get_payload_station_by_name(self, name:str) -> "PayloadStation":
         """Get the payload station with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppPayloadStation:
             agcls.evaluate_hresult(self.__dict__["_get_payload_station_by_name"](arg_name.COM_val, byref(arg_ppPayloadStation.COM_val)))
             return arg_ppPayloadStation.python_val
 
-    def add_payload_station(self) -> "IPayloadStation":
+    def add_payload_station(self) -> "PayloadStation":
         """Add a payload station"""
         with agmarshall.AgInterface_out_arg() as arg_ppNewPayloadStation:
             agcls.evaluate_hresult(self.__dict__["_add_payload_station"](byref(arg_ppNewPayloadStation.COM_val)))
@@ -14875,7 +14875,7 @@ class IConfiguration(object):
         with agmarshall.AgInterface_in_arg(otherConfiguration, IConfiguration) as arg_otherConfiguration:
             agcls.evaluate_hresult(self.__dict__["_paste_configuration"](arg_otherConfiguration.COM_val))
 
-    def get_stations(self) -> "IStationCollection":
+    def get_stations(self) -> "StationCollection":
         """Get a collection of the aircraft's payload stations."""
         with agmarshall.AgInterface_out_arg() as arg_ppStationList:
             agcls.evaluate_hresult(self.__dict__["_get_stations"](byref(arg_ppStationList.COM_val)))
@@ -15006,14 +15006,14 @@ class IAircraftModels(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftModels.")
     
-    def get_aircraft(self, aircraftName:str) -> "IAircraftModel":
+    def get_aircraft(self, aircraftName:str) -> "AircraftModel":
         """Gets the aircraft with the given name."""
         with agmarshall.BSTR_arg(aircraftName) as arg_aircraftName, \
              agmarshall.AgInterface_out_arg() as arg_ppAircraft:
             agcls.evaluate_hresult(self.__dict__["_get_aircraft"](arg_aircraftName.COM_val, byref(arg_ppAircraft.COM_val)))
             return arg_ppAircraft.python_val
 
-    def add_aircraft(self, aircraftName:str) -> "IAircraftModel":
+    def add_aircraft(self, aircraftName:str) -> "AircraftModel":
         """Creates a new aircraft with the given name."""
         with agmarshall.BSTR_arg(aircraftName) as arg_aircraftName, \
              agmarshall.AgInterface_out_arg() as arg_ppAircraft:
@@ -15067,14 +15067,14 @@ class IMissileModels(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissileModels.")
     
-    def get_missile(self, name:str) -> "IMissileModel":
+    def get_missile(self, name:str) -> "MissileModel":
         """Gets the missile with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppMissile:
             agcls.evaluate_hresult(self.__dict__["_get_missile"](arg_name.COM_val, byref(arg_ppMissile.COM_val)))
             return arg_ppMissile.python_val
 
-    def add_missile(self, name:str) -> "IMissileModel":
+    def add_missile(self, name:str) -> "MissileModel":
         """Creates a new missile with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppMissile:
@@ -15128,14 +15128,14 @@ class IRotorcraftModels(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IRotorcraftModels.")
     
-    def get_rotorcraft(self, name:str) -> "IRotorcraftModel":
+    def get_rotorcraft(self, name:str) -> "RotorcraftModel":
         """Gets the rotorcraft with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRotorcraft:
             agcls.evaluate_hresult(self.__dict__["_get_rotorcraft"](arg_name.COM_val, byref(arg_ppRotorcraft.COM_val)))
             return arg_ppRotorcraft.python_val
 
-    def add_rotorcraft(self, name:str) -> "IRotorcraftModel":
+    def add_rotorcraft(self, name:str) -> "RotorcraftModel":
         """Creates a new rotorcraft with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRotorcraft:
@@ -15559,28 +15559,28 @@ class IAircraftAero(object):
             agcls.evaluate_hresult(self.__dict__["_set_aero_strategy"](arg_newVal.COM_val))
 
     @property
-    def mode_as_simple(self) -> "IAircraftSimpleAero":
+    def mode_as_simple(self) -> "AircraftSimpleAero":
         """Get the interface for a simple aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_simple"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_basic_fixed_wing(self) -> "IAircraftBasicFixedWingAero":
+    def mode_as_basic_fixed_wing(self) -> "AircraftBasicFixedWingAero":
         """Get the interface for a basic fixed wing aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_basic_fixed_wing"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_external(self) -> "IAircraftExternalAero":
+    def mode_as_external(self) -> "AircraftExternalAero":
         """Get the interface for an external file aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_external"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_advanced_missile(self) -> "IMissileAdvancedAero":
+    def mode_as_advanced_missile(self) -> "MissileAdvancedAero":
         """Get the interface for an advanced missile aerodynamics strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_advanced_missile"](byref(arg_ppRetVal.COM_val)))
@@ -15685,21 +15685,21 @@ class IAircraftProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_prop_strategy"](arg_newVal.COM_val))
 
     @property
-    def mode_as_simple(self) -> "IAircraftSimpleProp":
+    def mode_as_simple(self) -> "AircraftSimpleProp":
         """Get the interface for a simple propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_simple"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_basic_fixed_wing(self) -> "IAircraftBasicFixedWingProp":
+    def mode_as_basic_fixed_wing(self) -> "AircraftBasicFixedWingProp":
         """Get the interface for a basic fixed wing propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_basic_fixed_wing"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_external(self) -> "IAircraftExternalProp":
+    def mode_as_external(self) -> "AircraftExternalProp":
         """Get the interface for an external file propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_external"](byref(arg_ppRetVal.COM_val)))
@@ -15732,21 +15732,21 @@ class IAircraftProp(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_factor"](arg_newVal.COM_val))
 
     @property
-    def mode_as_ramjet(self) -> "IMissileRamjetProp":
+    def mode_as_ramjet(self) -> "MissileRamjetProp":
         """Get the interface for a Ramjet propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_ramjet"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_turbojet(self) -> "IMissileTurbojetProp":
+    def mode_as_turbojet(self) -> "MissileTurbojetProp":
         """Get the interface for a Turbojet propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_turbojet"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def mode_as_rocket(self) -> "IMissileRocketProp":
+    def mode_as_rocket(self) -> "MissileRocketProp":
         """Get the interface for a Rocket propulsion strategy."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_rocket"](byref(arg_ppRetVal.COM_val)))
@@ -15867,28 +15867,28 @@ class IAircraftAdvAccelerationModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvAccelerationModel.")
     
     @property
-    def level_turns(self) -> "ILevelTurns":
+    def level_turns(self) -> "LevelTurns":
         """Get the level turns interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_turns"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def attitude_transitions(self) -> "IAttitudeTransitions":
+    def attitude_transitions(self) -> "AttitudeTransitions":
         """Get the attitude transitions interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_transitions"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def climb_and_descent_transitions(self) -> "IClimbAndDescentTransitions":
+    def climb_and_descent_transitions(self) -> "ClimbAndDescentTransitions":
         """Get the climb and descent transitions interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_climb_and_descent_transitions"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def acceleration_mode(self) -> "IAircraftAccelerationMode":
+    def acceleration_mode(self) -> "AircraftAccelerationMode":
         """Get the acceleration mode interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_acceleration_mode"](byref(arg_ppRetVal.COM_val)))
@@ -16471,7 +16471,7 @@ class IAirportCategory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAirportCategory.")
     
     @property
-    def arinc424_airports(self) -> "IARINC424Source":
+    def arinc424_airports(self) -> "ARINC424Source":
         """Get the ARINC-424 airports."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_airports"](byref(arg_ppRetVal.COM_val)))
@@ -16515,7 +16515,7 @@ class INavaidCategory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in INavaidCategory.")
     
     @property
-    def arinc424_navaids(self) -> "IARINC424Source":
+    def arinc424_navaids(self) -> "ARINC424Source":
         """Get the ARINC-424 navaids."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_navaids"](byref(arg_ppRetVal.COM_val)))
@@ -16563,21 +16563,21 @@ class IVTOLPointCategory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVTOLPointCategory.")
     
     @property
-    def user_vtol_points(self) -> "IUserVTOLPointSource":
+    def user_vtol_points(self) -> "UserVTOLPointSource":
         """Get the User VTOL Points."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_vtol_points"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def arinc424_helipads(self) -> "IARINC424Source":
+    def arinc424_helipads(self) -> "ARINC424Source":
         """Get the ARINC-424 helipads."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_helipads"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def dafif_helipads(self) -> "IDAFIFSource":
+    def dafif_helipads(self) -> "DAFIFSource":
         """Get the DAFIF helipads."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_dafif_helipads"](byref(arg_ppRetVal.COM_val)))
@@ -16641,77 +16641,77 @@ class IWaypointCategory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IWaypointCategory.")
     
     @property
-    def user_waypoints(self) -> "IUserWaypointSource":
+    def user_waypoints(self) -> "UserWaypointSource":
         """Get the User Waypoints."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_waypoints"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def user_runways(self) -> "IUserRunwaySource":
+    def user_runways(self) -> "UserRunwaySource":
         """Get the User Runways."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_runways"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def user_vtol_points(self) -> "IUserVTOLPointSource":
+    def user_vtol_points(self) -> "UserVTOLPointSource":
         """Get the User VTOL Points."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_vtol_points"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def arinc424_airports(self) -> "IARINC424Source":
+    def arinc424_airports(self) -> "ARINC424Source":
         """Get the ARINC-424 airports."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_airports"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def arinc424_helipads(self) -> "IARINC424Source":
+    def arinc424_helipads(self) -> "ARINC424Source":
         """Get the ARINC-424 helipads."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_helipads"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def arinc424_navaids(self) -> "IARINC424Source":
+    def arinc424_navaids(self) -> "ARINC424Source":
         """Get the ARINC-424 navaids."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_navaids"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def arinc424_runways(self) -> "IARINC424Source":
+    def arinc424_runways(self) -> "ARINC424Source":
         """Get the ARINC-424 runways."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_runways"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def arinc424_waypoints(self) -> "IARINC424Source":
+    def arinc424_waypoints(self) -> "ARINC424Source":
         """Get the ARINC-424 waypoints."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_arinc424_waypoints"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def dafif_helipads(self) -> "IDAFIFSource":
+    def dafif_helipads(self) -> "DAFIFSource":
         """Get the DAFIF helipads."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_dafif_helipads"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def dafif_runways(self) -> "IDAFIFSource":
+    def dafif_runways(self) -> "DAFIFSource":
         """Get the DAFIF runways."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_dafif_runways"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def dafif_waypoints(self) -> "IDAFIFSource":
+    def dafif_waypoints(self) -> "DAFIFSource":
         """Get the DAFIF waypoints."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_dafif_waypoints"](byref(arg_ppRetVal.COM_val)))
@@ -16760,20 +16760,20 @@ class IAircraftClimb(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftClimb.")
     
-    def get_built_in_model(self) -> "IAircraftBasicClimbModel":
+    def get_built_in_model(self) -> "AircraftBasicClimbModel":
         """Get the built-in model."""
         with agmarshall.AgInterface_out_arg() as arg_ppBasicClimb:
             agcls.evaluate_hresult(self.__dict__["_get_built_in_model"](byref(arg_ppBasicClimb.COM_val)))
             return arg_ppBasicClimb.python_val
 
-    def get_basic_climb_by_name(self, name:str) -> "IAircraftBasicClimbModel":
+    def get_basic_climb_by_name(self, name:str) -> "AircraftBasicClimbModel":
         """Gets the basic climb model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppBasicClimb:
             agcls.evaluate_hresult(self.__dict__["_get_basic_climb_by_name"](arg_name.COM_val, byref(arg_ppBasicClimb.COM_val)))
             return arg_ppBasicClimb.python_val
 
-    def get_adv_climb_by_name(self, name:str) -> "IAircraftAdvClimbModel":
+    def get_adv_climb_by_name(self, name:str) -> "AircraftAdvClimbModel":
         """Gets the advanced climb model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAdvClimb:
@@ -16829,20 +16829,20 @@ class IAircraftCruise(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftCruise.")
     
-    def get_built_in_model(self) -> "IAircraftBasicCruiseModel":
+    def get_built_in_model(self) -> "AircraftBasicCruiseModel":
         """Get the built-in model."""
         with agmarshall.AgInterface_out_arg() as arg_ppBasicCruise:
             agcls.evaluate_hresult(self.__dict__["_get_built_in_model"](byref(arg_ppBasicCruise.COM_val)))
             return arg_ppBasicCruise.python_val
 
-    def get_basic_cruise_by_name(self, name:str) -> "IAircraftBasicCruiseModel":
+    def get_basic_cruise_by_name(self, name:str) -> "AircraftBasicCruiseModel":
         """Gets the basic cruise model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppBasicCruise:
             agcls.evaluate_hresult(self.__dict__["_get_basic_cruise_by_name"](arg_name.COM_val, byref(arg_ppBasicCruise.COM_val)))
             return arg_ppBasicCruise.python_val
 
-    def get_adv_cruise_by_name(self, name:str) -> "IAircraftAdvCruiseModel":
+    def get_adv_cruise_by_name(self, name:str) -> "AircraftAdvCruiseModel":
         """Gets the advanced cruise model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAdvCruise:
@@ -16898,20 +16898,20 @@ class IAircraftDescent(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftDescent.")
     
-    def get_built_in_model(self) -> "IAircraftBasicDescentModel":
+    def get_built_in_model(self) -> "AircraftBasicDescentModel":
         """Get the built-in model."""
         with agmarshall.AgInterface_out_arg() as arg_ppBasicDescentModel:
             agcls.evaluate_hresult(self.__dict__["_get_built_in_model"](byref(arg_ppBasicDescentModel.COM_val)))
             return arg_ppBasicDescentModel.python_val
 
-    def get_basic_descent_by_name(self, name:str) -> "IAircraftBasicDescentModel":
+    def get_basic_descent_by_name(self, name:str) -> "AircraftBasicDescentModel":
         """Gets the basic descent model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppBasicDescentModel:
             agcls.evaluate_hresult(self.__dict__["_get_basic_descent_by_name"](arg_name.COM_val, byref(arg_ppBasicDescentModel.COM_val)))
             return arg_ppBasicDescentModel.python_val
 
-    def get_adv_descent_by_name(self, name:str) -> "IAircraftAdvDescentModel":
+    def get_adv_descent_by_name(self, name:str) -> "AircraftAdvDescentModel":
         """Gets the advanced descent model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAdvDescent:
@@ -16967,20 +16967,20 @@ class IAircraftLanding(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftLanding.")
     
-    def get_built_in_model(self) -> "IAircraftBasicLandingModel":
+    def get_built_in_model(self) -> "AircraftBasicLandingModel":
         """Get the built-in model."""
         with agmarshall.AgInterface_out_arg() as arg_ppBasicLandingModel:
             agcls.evaluate_hresult(self.__dict__["_get_built_in_model"](byref(arg_ppBasicLandingModel.COM_val)))
             return arg_ppBasicLandingModel.python_val
 
-    def get_basic_landing_by_name(self, name:str) -> "IAircraftBasicLandingModel":
+    def get_basic_landing_by_name(self, name:str) -> "AircraftBasicLandingModel":
         """Gets the basic Landing model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppBasicLandingModel:
             agcls.evaluate_hresult(self.__dict__["_get_basic_landing_by_name"](arg_name.COM_val, byref(arg_ppBasicLandingModel.COM_val)))
             return arg_ppBasicLandingModel.python_val
 
-    def get_adv_landing_by_name(self, name:str) -> "IAircraftAdvLandingModel":
+    def get_adv_landing_by_name(self, name:str) -> "AircraftAdvLandingModel":
         """Gets the advanced Landing model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAdvLanding:
@@ -17036,20 +17036,20 @@ class IAircraftTakeoff(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftTakeoff.")
     
-    def get_built_in_model(self) -> "IAircraftBasicTakeoffModel":
+    def get_built_in_model(self) -> "AircraftBasicTakeoffModel":
         """Get the built-in model."""
         with agmarshall.AgInterface_out_arg() as arg_ppBasicTakeoffModel:
             agcls.evaluate_hresult(self.__dict__["_get_built_in_model"](byref(arg_ppBasicTakeoffModel.COM_val)))
             return arg_ppBasicTakeoffModel.python_val
 
-    def get_basic_takeoff_by_name(self, name:str) -> "IAircraftBasicTakeoffModel":
+    def get_basic_takeoff_by_name(self, name:str) -> "AircraftBasicTakeoffModel":
         """Gets the basic Takeoff model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppBasicTakeoffModel:
             agcls.evaluate_hresult(self.__dict__["_get_basic_takeoff_by_name"](arg_name.COM_val, byref(arg_ppBasicTakeoffModel.COM_val)))
             return arg_ppBasicTakeoffModel.python_val
 
-    def get_adv_takeoff_by_name(self, name:str) -> "IAircraftAdvTakeoffModel":
+    def get_adv_takeoff_by_name(self, name:str) -> "AircraftAdvTakeoffModel":
         """Gets the advanced Takeoff model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAdvTakeoff:
@@ -17105,20 +17105,20 @@ class IAircraftAcceleration(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAcceleration.")
     
-    def get_built_in_model(self) -> "IAircraftBasicAccelerationModel":
+    def get_built_in_model(self) -> "AircraftBasicAccelerationModel":
         """Get the built-in model."""
         with agmarshall.AgInterface_out_arg() as arg_ppBasicAcc:
             agcls.evaluate_hresult(self.__dict__["_get_built_in_model"](byref(arg_ppBasicAcc.COM_val)))
             return arg_ppBasicAcc.python_val
 
-    def get_basic_acceleration_by_name(self, name:str) -> "IAircraftBasicAccelerationModel":
+    def get_basic_acceleration_by_name(self, name:str) -> "AircraftBasicAccelerationModel":
         """Get the basic acceleration model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppBasicAcc:
             agcls.evaluate_hresult(self.__dict__["_get_basic_acceleration_by_name"](arg_name.COM_val, byref(arg_ppBasicAcc.COM_val)))
             return arg_ppBasicAcc.python_val
 
-    def get_adv_acceleration_by_name(self, name:str) -> "IAircraftAdvAccelerationModel":
+    def get_adv_acceleration_by_name(self, name:str) -> "AircraftAdvAccelerationModel":
         """Get the advanced acceleration model with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAdvAcc:
@@ -17179,42 +17179,42 @@ class ICatalog(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICatalog.")
     
     @property
-    def aircraft_category(self) -> "IAircraftCategory":
+    def aircraft_category(self) -> "AircraftCategory":
         """Get the aircraft category."""
         with agmarshall.AgInterface_out_arg() as arg_ppCatalogItem:
             agcls.evaluate_hresult(self.__dict__["_get_aircraft_category"](byref(arg_ppCatalogItem.COM_val)))
             return arg_ppCatalogItem.python_val
 
     @property
-    def runway_category(self) -> "IRunwayCategory":
+    def runway_category(self) -> "RunwayCategory":
         """Get the runway category."""
         with agmarshall.AgInterface_out_arg() as arg_ppCatalogItem:
             agcls.evaluate_hresult(self.__dict__["_get_runway_category"](byref(arg_ppCatalogItem.COM_val)))
             return arg_ppCatalogItem.python_val
 
     @property
-    def airport_category(self) -> "IAirportCategory":
+    def airport_category(self) -> "AirportCategory":
         """Get the airport category."""
         with agmarshall.AgInterface_out_arg() as arg_ppCatalogItem:
             agcls.evaluate_hresult(self.__dict__["_get_airport_category"](byref(arg_ppCatalogItem.COM_val)))
             return arg_ppCatalogItem.python_val
 
     @property
-    def navaid_category(self) -> "INavaidCategory":
+    def navaid_category(self) -> "NavaidCategory":
         """Get the navaid category."""
         with agmarshall.AgInterface_out_arg() as arg_ppCatalogItem:
             agcls.evaluate_hresult(self.__dict__["_get_navaid_category"](byref(arg_ppCatalogItem.COM_val)))
             return arg_ppCatalogItem.python_val
 
     @property
-    def vtol_point_category(self) -> "IVTOLPointCategory":
+    def vtol_point_category(self) -> "VTOLPointCategory":
         """Get the vtol point category."""
         with agmarshall.AgInterface_out_arg() as arg_ppCatalogItem:
             agcls.evaluate_hresult(self.__dict__["_get_vtol_point_category"](byref(arg_ppCatalogItem.COM_val)))
             return arg_ppCatalogItem.python_val
 
     @property
-    def waypoint_category(self) -> "IWaypointCategory":
+    def waypoint_category(self) -> "WaypointCategory":
         """Get the waypoint category."""
         with agmarshall.AgInterface_out_arg() as arg_ppCatalogItem:
             agcls.evaluate_hresult(self.__dict__["_get_waypoint_category"](byref(arg_ppCatalogItem.COM_val)))
@@ -19316,28 +19316,28 @@ class IProcedure(object):
             return arg_ppSite.python_val
 
     @property
-    def time_options(self) -> "IProcedureTimeOptions":
+    def time_options(self) -> "ProcedureTimeOptions":
         """Get the time options for the current procedure."""
         with agmarshall.AgInterface_out_arg() as arg_ppTimeOptions:
             agcls.evaluate_hresult(self.__dict__["_get_time_options"](byref(arg_ppTimeOptions.COM_val)))
             return arg_ppTimeOptions.python_val
 
     @property
-    def wind_model(self) -> "IWindModel":
+    def wind_model(self) -> "WindModel":
         """Get the wind model for the current procedure."""
         with agmarshall.AgInterface_out_arg() as arg_ppWindModel:
             agcls.evaluate_hresult(self.__dict__["_get_wind_model"](byref(arg_ppWindModel.COM_val)))
             return arg_ppWindModel.python_val
 
     @property
-    def atmosphere_model(self) -> "IAtmosphereModel":
+    def atmosphere_model(self) -> "AtmosphereModel":
         """Get the mission atmosphere model."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrAtmos:
             agcls.evaluate_hresult(self.__dict__["_get_atmosphere_model"](byref(arg_ppAvtrAtmos.COM_val)))
             return arg_ppAvtrAtmos.python_val
 
     @property
-    def calculation_options(self) -> "ICalculationOptions":
+    def calculation_options(self) -> "CalculationOptions":
         """Get the calculation options for the current procedure."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrCalcOptions:
             agcls.evaluate_hresult(self.__dict__["_get_calculation_options"](byref(arg_ppAvtrCalcOptions.COM_val)))
@@ -19351,14 +19351,14 @@ class IProcedure(object):
             return arg_pRefuelDumpIsSupported.python_val
 
     @property
-    def refuel_dump_properties(self) -> "IRefuelDumpProperties":
+    def refuel_dump_properties(self) -> "RefuelDumpProperties":
         """Get the refuel/dump properties for the current procedure."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrRefuelDumpProperties:
             agcls.evaluate_hresult(self.__dict__["_get_refuel_dump_properties"](byref(arg_ppAvtrRefuelDumpProperties.COM_val)))
             return arg_ppAvtrRefuelDumpProperties.python_val
 
     @property
-    def fast_time_options(self) -> "IProcedureFastTimeOptions":
+    def fast_time_options(self) -> "ProcedureFastTimeOptions":
         """Get the fast time options (without validation or constraints) for the current procedure."""
         with agmarshall.AgInterface_out_arg() as arg_ppTimeOptions:
             agcls.evaluate_hresult(self.__dict__["_get_fast_time_options"](byref(arg_ppTimeOptions.COM_val)))
@@ -19538,7 +19538,7 @@ class IPhase(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPhase.")
     
     @property
-    def procedures(self) -> "IProcedureCollection":
+    def procedures(self) -> "ProcedureCollection":
         """Returns the procedure collection."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrProcedureCollection:
             agcls.evaluate_hresult(self.__dict__["_get_procedures"](byref(arg_ppAvtrProcedureCollection.COM_val)))
@@ -19557,7 +19557,7 @@ class IPhase(object):
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_name"](arg_newVal.COM_val))
 
-    def get_performance_model_by_type(self, type:str) -> "IPerformanceModelOptions":
+    def get_performance_model_by_type(self, type:str) -> "PerformanceModelOptions":
         """Get the active performance model for the given category type."""
         with agmarshall.BSTR_arg(type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppPerformanceModel:
@@ -19644,7 +19644,7 @@ class IPhaseCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IPhase":
+    def item(self, index:int) -> "Phase":
         """Given an index, returns an element in the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19658,13 +19658,13 @@ class IPhaseCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def add(self) -> "IPhase":
+    def add(self) -> "Phase":
         """Adds a phase at the end of the mission."""
         with agmarshall.AgInterface_out_arg() as arg_ppPhase:
             agcls.evaluate_hresult(self.__dict__["_add"](byref(arg_ppPhase.COM_val)))
             return arg_ppPhase.python_val
 
-    def add_at_index(self, index:int) -> "IPhase":
+    def add_at_index(self, index:int) -> "Phase":
         """Adds a phase at the given index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppPhase:
@@ -19736,7 +19736,7 @@ class IMission(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMission.")
     
     @property
-    def phases(self) -> "IPhaseCollection":
+    def phases(self) -> "PhaseCollection":
         """Get the mission phases."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrPhaseCollection:
             agcls.evaluate_hresult(self.__dict__["_get_phases"](byref(arg_ppAvtrPhaseCollection.COM_val)))
@@ -19756,21 +19756,21 @@ class IMission(object):
             agcls.evaluate_hresult(self.__dict__["_set_vehicle"](arg_pAvtrVehicle.COM_val))
 
     @property
-    def configuration(self) -> "IConfiguration":
+    def configuration(self) -> "Configuration":
         """The aircraft's configuration for the mission."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrConfig:
             agcls.evaluate_hresult(self.__dict__["_get_configuration"](byref(arg_ppAvtrConfig.COM_val)))
             return arg_ppAvtrConfig.python_val
 
     @property
-    def wind_model(self) -> "IWindModel":
+    def wind_model(self) -> "WindModel":
         """Get the mission wind model."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrW:
             agcls.evaluate_hresult(self.__dict__["_get_wind_model"](byref(arg_ppAvtrW.COM_val)))
             return arg_ppAvtrW.python_val
 
     @property
-    def atmosphere_model(self) -> "IAtmosphereModel":
+    def atmosphere_model(self) -> "AtmosphereModel":
         """Get the mission atmosphere model."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrAtmos:
             agcls.evaluate_hresult(self.__dict__["_get_atmosphere_model"](byref(arg_ppAvtrAtmos.COM_val)))
@@ -19835,7 +19835,7 @@ class IAviatorPropagator(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAviatorPropagator.")
     
     @property
-    def avtr_mission(self) -> "IMission":
+    def avtr_mission(self) -> "Mission":
         """The Aviator mission."""
         with agmarshall.AgInterface_out_arg() as arg_ppAvtrMission:
             agcls.evaluate_hresult(self.__dict__["_get_avtr_mission"](byref(arg_ppAvtrMission.COM_val)))
@@ -19859,7 +19859,7 @@ class IAviatorPropagator(object):
             agcls.evaluate_hresult(self.__dict__["_set_auto_recalculate"](arg_vbAutoRecalc.COM_val))
 
     @property
-    def avtr_catalog(self) -> "ICatalog":
+    def avtr_catalog(self) -> "Catalog":
         """The Aviator catalog."""
         with agmarshall.AgInterface_out_arg() as arg_ppCatalog:
             agcls.evaluate_hresult(self.__dict__["_get_avtr_catalog"](byref(arg_ppCatalog.COM_val)))
@@ -19940,7 +19940,7 @@ agcls.AgClassCatalog.add_catalog_entry("{d3b3af6e-7b5a-4491-aaca-c05eb901afa0}",
 agcls.AgTypeNameMap["IAdvFixedWingGeometry"] = IAdvFixedWingGeometry
 
 class IAdvFixedWingTurbofanBasicABPowerplant(object):
-    """This interface is deprecated. Use IAdvFixedWingTurbofanBasicABProp instead."""
+    """This interface is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
     _uuid = "{9bc7e978-48ec-487d-8460-014c8fe376bd}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19975,7 +19975,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9bc7e978-48ec-487d-8460-014c8fe376bd}",
 agcls.AgTypeNameMap["IAdvFixedWingTurbofanBasicABPowerplant"] = IAdvFixedWingTurbofanBasicABPowerplant
 
 class IAdvFixedWingTurbojetBasicABPowerplant(object):
-    """This interface is deprecated. Use IAdvFixedWingTurbojetBasicABProp instead."""
+    """This interface is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
     _uuid = "{552db5f4-fe5d-4709-80b4-7ba074c673ff}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -20890,7 +20890,7 @@ class IBasicManeuverAirspeedOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_interpolate_stop_at_end_time"](arg_newVal.COM_val))
 
     @property
-    def thrust(self) -> "IPropulsionThrust":
+    def thrust(self) -> "PropulsionThrust":
         """Get the thrust options for the Specify Thrust mode."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_thrust"](byref(arg_ppRetVal.COM_val)))
@@ -21053,7 +21053,7 @@ class IBasicManeuverStrategyAileronRoll(object):
             agcls.evaluate_hresult(self.__dict__["_set_override_roll_rate"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -21451,7 +21451,7 @@ class IBasicManeuverStrategyAutopilotProf(object):
             agcls.evaluate_hresult(self.__dict__["_set_damping_ratio"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -22211,7 +22211,7 @@ class IBasicManeuverStrategyFlyAOA(object):
             agcls.evaluate_hresult(self.__dict__["_set_aoa"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -22323,7 +22323,7 @@ class IBasicManeuverStrategyPull(object):
             agcls.evaluate_hresult(self.__dict__["_set_override_pull_g"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -22503,7 +22503,7 @@ class IBasicManeuverStrategyRollingPull(object):
             agcls.evaluate_hresult(self.__dict__["_set_override_pull_g"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -22785,7 +22785,7 @@ class IBasicManeuverStrategySmoothAccel(object):
             agcls.evaluate_hresult(self.__dict__["_set_stop_on_pitch_angle"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -22969,7 +22969,7 @@ class IBasicManeuverStrategySmoothTurn(object):
             agcls.evaluate_hresult(self.__dict__["_set_override_roll_rate"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -24715,7 +24715,7 @@ class IBasicManeuverStrategyRelativeFPA(object):
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -25829,7 +25829,7 @@ class IBasicManeuverStrategyGlideProfile(object):
             agcls.evaluate_hresult(self.__dict__["_set_powered_cruise_throttle"](arg_newVal.COM_val))
 
     @property
-    def powered_cruise_thrust_model(self) -> "IPropulsionThrust":
+    def powered_cruise_thrust_model(self) -> "PropulsionThrust":
         """The powered cruise thrust model"""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_powered_cruise_thrust_model"](byref(arg_ppVal.COM_val)))
@@ -25965,7 +25965,7 @@ class IBasicManeuverStrategyCruiseProfile(object):
             agcls.evaluate_hresult(self.__dict__["_set_requested_altitude"](arg_newVal.COM_val))
 
     @property
-    def cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the interface for the cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -26272,7 +26272,7 @@ class IBasicManeuverStrategyBallistic3D(object):
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -26427,7 +26427,7 @@ class IBasicManeuverStrategyPitch3D(object):
             agcls.evaluate_hresult(self.__dict__["_set_stop_when_fpa_achieved"](arg_newVal.COM_val))
 
     @property
-    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
@@ -29893,28 +29893,28 @@ class IProcedureLanding(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureLanding.")
     
     @property
-    def mode_as_standard_instrument_approach(self) -> "ILandingStandardInstrumentApproach":
+    def mode_as_standard_instrument_approach(self) -> "LandingStandardInstrumentApproach":
         """Get the interface for a standard instrument approach landing."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_standard_instrument_approach"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def mode_as_intercept_glideslope(self) -> "ILandingInterceptGlideslope":
+    def mode_as_intercept_glideslope(self) -> "LandingInterceptGlideslope":
         """Get the interface for an intercept glideslope landing."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_intercept_glideslope"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def mode_as_enter_downwind_pattern(self) -> "ILandingEnterDownwindPattern":
+    def mode_as_enter_downwind_pattern(self) -> "LandingEnterDownwindPattern":
         """Get the interface for a downwind pattern landing."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_enter_downwind_pattern"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def runway_heading_options(self) -> "IRunwayHeadingOptions":
+    def runway_heading_options(self) -> "RunwayHeadingOptions":
         """Get the runway heading options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_runway_heading_options"](byref(arg_ppVal.COM_val)))
@@ -29928,7 +29928,7 @@ class IProcedureLanding(object):
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
@@ -30013,14 +30013,14 @@ class IProcedureEnroute(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureEnroute.")
     
     @property
-    def altitude_msl_options(self) -> "IAltitudeMSLAndLevelOffOptions":
+    def altitude_msl_options(self) -> "AltitudeMSLAndLevelOffOptions":
         """Get the altitude MSL options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_msl_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def navigation_options(self) -> "INavigationOptions":
+    def navigation_options(self) -> "NavigationOptions":
         """Get the navigation options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_navigation_options"](byref(arg_ppVal.COM_val)))
@@ -30034,7 +30034,7 @@ class IProcedureEnroute(object):
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -30410,21 +30410,21 @@ class IProcedureBasicPointToPoint(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureBasicPointToPoint.")
     
     @property
-    def altitude_options(self) -> "IAltitudeOptions":
+    def altitude_options(self) -> "AltitudeOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def navigation_options(self) -> "INavigationOptions":
+    def navigation_options(self) -> "NavigationOptions":
         """Get the navigation options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_navigation_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
@@ -30438,7 +30438,7 @@ class IProcedureBasicPointToPoint(object):
             return arg_ppVal.python_val
 
     @property
-    def vertical_plane_options(self) -> "IVerticalPlaneAndFlightPathOptions":
+    def vertical_plane_options(self) -> "VerticalPlaneAndFlightPathOptions":
         """Get the vertical plane options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_vertical_plane_options"](byref(arg_ppVal.COM_val)))
@@ -30530,7 +30530,7 @@ class IProcedureDelay(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_newVal.COM_val))
 
     @property
-    def cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the interface for the cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -30612,28 +30612,28 @@ class IProcedureTakeoff(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTakeoff.")
     
     @property
-    def runway_heading_options(self) -> "IRunwayHeadingOptions":
+    def runway_heading_options(self) -> "RunwayHeadingOptions":
         """Get the runway heading options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_runway_heading_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def mode_as_normal(self) -> "ITakeoffNormal":
+    def mode_as_normal(self) -> "TakeoffNormal":
         """Get the interface for a normal takeoff."""
         with agmarshall.AgInterface_out_arg() as arg_ppTakeoffNormal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_normal"](byref(arg_ppTakeoffNormal.COM_val)))
             return arg_ppTakeoffNormal.python_val
 
     @property
-    def mode_as_departure_point(self) -> "ITakeoffDeparturePoint":
+    def mode_as_departure_point(self) -> "TakeoffDeparturePoint":
         """Get the interface for a departure point takeoff."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_departure_point"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def mode_as_low_transition(self) -> "ITakeoffLowTransition":
+    def mode_as_low_transition(self) -> "TakeoffLowTransition":
         """Get the interface for a low transition takeoff."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_low_transition"](byref(arg_ppVal.COM_val)))
@@ -30708,21 +30708,21 @@ class IProcedureArcEnroute(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureArcEnroute.")
     
     @property
-    def altitude_options(self) -> "IArcAltitudeAndDelayOptions":
+    def altitude_options(self) -> "ArcAltitudeAndDelayOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def arc_options(self) -> "IArcOptions":
+    def arc_options(self) -> "ArcOptions":
         """Get the arc options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_arc_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def arc_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def arc_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the arc cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_arc_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -30736,14 +30736,14 @@ class IProcedureArcEnroute(object):
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
@@ -30811,42 +30811,42 @@ class IProcedureArcPointToPoint(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureArcPointToPoint.")
     
     @property
-    def altitude_options(self) -> "IArcAltitudeOptions":
+    def altitude_options(self) -> "ArcAltitudeOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def arc_options(self) -> "IArcOptions":
+    def arc_options(self) -> "ArcOptions":
         """Get the arc options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_arc_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def arc_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def arc_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the arc cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_arc_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
@@ -30866,7 +30866,7 @@ class IProcedureArcPointToPoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_fly_cruise_airspeed_profile"](arg_pVal.COM_val))
 
     @property
-    def vertical_plane_options(self) -> "IArcVerticalPlaneOptions":
+    def vertical_plane_options(self) -> "ArcVerticalPlaneOptions":
         """Get the vertical plane options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_vertical_plane_options"](byref(arg_ppVal.COM_val)))
@@ -30954,7 +30954,7 @@ class IProcedureFlightLine(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureFlightLine.")
     
     @property
-    def altitude_options(self) -> "IAltitudeOptions":
+    def altitude_options(self) -> "AltitudeOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
@@ -30974,28 +30974,28 @@ class IProcedureFlightLine(object):
             agcls.evaluate_hresult(self.__dict__["_set_fly_cruise_airspeed_profile"](arg_pVal.COM_val))
 
     @property
-    def flight_line_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def flight_line_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the flight line airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_flight_line_airspeed_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -31175,7 +31175,7 @@ class IProcedureHoldingCircular(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoldingCircular.")
     
     @property
-    def altitude_options(self) -> "IAltitudeMSLOptions":
+    def altitude_options(self) -> "AltitudeMSLOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
@@ -31312,7 +31312,7 @@ class IProcedureHoldingCircular(object):
             agcls.evaluate_hresult(self.__dict__["_set_refuel_dump_mode"](arg_newVal.COM_val))
 
     @property
-    def hold_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def hold_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the hold cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_hold_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -31326,14 +31326,14 @@ class IProcedureHoldingCircular(object):
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
@@ -31441,7 +31441,7 @@ class IProcedureHoldingFigure8(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoldingFigure8.")
     
     @property
-    def altitude_options(self) -> "IAltitudeMSLOptions":
+    def altitude_options(self) -> "AltitudeMSLOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
@@ -31578,7 +31578,7 @@ class IProcedureHoldingFigure8(object):
             agcls.evaluate_hresult(self.__dict__["_set_refuel_dump_mode"](arg_newVal.COM_val))
 
     @property
-    def hold_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def hold_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the hold cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_hold_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -31592,14 +31592,14 @@ class IProcedureHoldingFigure8(object):
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
@@ -31707,7 +31707,7 @@ class IProcedureHoldingRacetrack(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoldingRacetrack.")
     
     @property
-    def altitude_options(self) -> "IAltitudeMSLOptions":
+    def altitude_options(self) -> "AltitudeMSLOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
@@ -31844,7 +31844,7 @@ class IProcedureHoldingRacetrack(object):
             agcls.evaluate_hresult(self.__dict__["_set_refuel_dump_mode"](arg_newVal.COM_val))
 
     @property
-    def hold_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def hold_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the hold cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_hold_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -31858,14 +31858,14 @@ class IProcedureHoldingRacetrack(object):
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
@@ -32006,21 +32006,21 @@ class IProcedureTransitionToHover(object):
         agcls.evaluate_hresult(self.__dict__["_set_transition_into_wind"]())
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def vertical_plane_options(self) -> "IVerticalPlaneAndFlightPathOptions":
+    def vertical_plane_options(self) -> "VerticalPlaneAndFlightPathOptions":
         """Get the vertical plane options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_vertical_plane_options"](byref(arg_ppVal.COM_val)))
@@ -32112,14 +32112,14 @@ class IProcedureTerrainFollow(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_agl"](arg_newVal.COM_val))
 
     @property
-    def navigation_options(self) -> "INavigationOptions":
+    def navigation_options(self) -> "NavigationOptions":
         """Get the navigation options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_navigation_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def terrain_following_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def terrain_following_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the terrain following airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_terrain_following_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -32255,7 +32255,7 @@ class IProcedureHover(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHover.")
     
     @property
-    def altitude_options(self) -> "IHoverAltitudeOptions":
+    def altitude_options(self) -> "HoverAltitudeOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
@@ -32527,7 +32527,7 @@ class IProcedureHoverTranslate(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoverTranslate.")
     
     @property
-    def altitude_options(self) -> "IHoverAltitudeOptions":
+    def altitude_options(self) -> "HoverAltitudeOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
@@ -33260,28 +33260,28 @@ class IProcedureReferenceState(object):
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow"](arg_newVal.COM_val))
 
     @property
-    def mode_as_forward_flight(self) -> "IReferenceStateForwardFlightOptions":
+    def mode_as_forward_flight(self) -> "ReferenceStateForwardFlightOptions":
         """Get the forward flight options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_forward_flight"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def mode_as_takeoff_landing(self) -> "IReferenceStateTakeoffLandingOptions":
+    def mode_as_takeoff_landing(self) -> "ReferenceStateTakeoffLandingOptions":
         """Get the takeoff and landing options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_takeoff_landing"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def mode_as_hover(self) -> "IReferenceStateHoverOptions":
+    def mode_as_hover(self) -> "ReferenceStateHoverOptions":
         """Get the hover options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_hover"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def mode_as_weight_on_wheels(self) -> "IReferenceStateWeightOnWheelsOptions":
+    def mode_as_weight_on_wheels(self) -> "ReferenceStateWeightOnWheelsOptions":
         """Get the weight on wheels options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_as_weight_on_wheels"](byref(arg_ppVal.COM_val)))
@@ -33643,21 +33643,21 @@ class IProcedureAirway(object):
             return arg_ppProcedure.python_val
 
     @property
-    def altitude_options(self) -> "IAltitudeMSLOptions":
+    def altitude_options(self) -> "AltitudeMSLOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -33830,21 +33830,21 @@ class IProcedureAirwayRouter(object):
             return arg_ppProcedure.python_val
 
     @property
-    def altitude_options(self) -> "IAltitudeMSLOptions":
+    def altitude_options(self) -> "AltitudeMSLOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -34026,21 +34026,21 @@ class IProcedureAreaTargetSearch(object):
             return arg_ppProcedure.python_val
 
     @property
-    def altitude_options(self) -> "IAltitudeOptions":
+    def altitude_options(self) -> "AltitudeOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def enroute_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the enroute cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -34272,14 +34272,14 @@ class IProcedureFormationRecover(object):
             return arg_ppProcedure.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def delay_cruise_airspeed_options(self) -> "ICruiseAirspeedOptions":
+    def delay_cruise_airspeed_options(self) -> "CruiseAirspeedOptions":
         """Get the delay cruise airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_delay_cruise_airspeed_options"](byref(arg_ppVal.COM_val)))
@@ -34786,14 +34786,14 @@ class IProcedureParallelFlightLine(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureParallelFlightLine.")
     
     @property
-    def altitude_options(self) -> "IAltitudeOptions":
+    def altitude_options(self) -> "AltitudeOptions":
         """Get the altitude options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_options"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def enroute_options(self) -> "IEnrouteOptions":
+    def enroute_options(self) -> "EnrouteOptions":
         """Get the enroute options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_options"](byref(arg_ppVal.COM_val)))
@@ -34807,7 +34807,7 @@ class IProcedureParallelFlightLine(object):
             return arg_ppVal.python_val
 
     @property
-    def enroute_turn_direction_options(self) -> "IEnrouteTurnDirectionOptions":
+    def enroute_turn_direction_options(self) -> "EnrouteTurnDirectionOptions":
         """Get the enroute turn direction options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_turn_direction_options"](byref(arg_ppVal.COM_val)))
@@ -35240,7 +35240,7 @@ class ISiteAirportFromCatalog(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISiteAirportFromCatalog.")
     
-    def get_catalog_airport(self) -> "ICatalogAirport":
+    def get_catalog_airport(self) -> "ARINC424Airport":
         """Get the catalog airport."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_catalog_airport"](byref(arg_ppVal.COM_val)))
@@ -35298,7 +35298,7 @@ class ISiteNavaidFromCatalog(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISiteNavaidFromCatalog.")
     
-    def get_catalog_navaid(self) -> "ICatalogNavaid":
+    def get_catalog_navaid(self) -> "ARINC424Navaid":
         """Get the catalog navaid."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_catalog_navaid"](byref(arg_ppVal.COM_val)))
@@ -35989,7 +35989,7 @@ class SiteWaypoint(ISiteWaypoint, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteWaypoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6d98e9b3-6766-46e5-98e2-b1f859b2ce92}", SiteWaypoint)
-
+agcls.AgTypeNameMap["SiteWaypoint"] = SiteWaypoint
 
 class SiteEndOfPrevProcedure(ISiteEndOfPrevProcedure, ISite):
     """Class defining an End of Previous Procedure site."""
@@ -36013,7 +36013,7 @@ class SiteEndOfPrevProcedure(ISiteEndOfPrevProcedure, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteEndOfPrevProcedure.")
         
 agcls.AgClassCatalog.add_catalog_entry("{24d8e613-5ce5-4e04-9251-fe44414caa14}", SiteEndOfPrevProcedure)
-
+agcls.AgTypeNameMap["SiteEndOfPrevProcedure"] = SiteEndOfPrevProcedure
 
 class SiteVTOLPoint(ISiteVTOLPoint, ISite):
     """Class defining a VTOL Point site."""
@@ -36037,7 +36037,7 @@ class SiteVTOLPoint(ISiteVTOLPoint, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteVTOLPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4f9d9e04-fa7e-4335-b1f4-15788a01c7ea}", SiteVTOLPoint)
-
+agcls.AgTypeNameMap["SiteVTOLPoint"] = SiteVTOLPoint
 
 class SiteReferenceState(ISiteReferenceState, ISite):
     """Class defining a Reference State site."""
@@ -36061,7 +36061,7 @@ class SiteReferenceState(ISiteReferenceState, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteReferenceState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{978180ff-3f87-4ead-9405-e12e915c27e1}", SiteReferenceState)
-
+agcls.AgTypeNameMap["SiteReferenceState"] = SiteReferenceState
 
 class SiteSTKVehicle(ISiteSTKVehicle, ISite):
     """Class defining a STK Vehicle site."""
@@ -36085,7 +36085,7 @@ class SiteSTKVehicle(ISiteSTKVehicle, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKVehicle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{01b272ac-3b19-4daf-825f-88c0ff0e10bb}", SiteSTKVehicle)
-
+agcls.AgTypeNameMap["SiteSTKVehicle"] = SiteSTKVehicle
 
 class SiteSuperProcedure(ISiteSuperProcedure, ISite):
     """Class defining a Super Procedure site."""
@@ -36109,7 +36109,7 @@ class SiteSuperProcedure(ISiteSuperProcedure, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteSuperProcedure.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0faf9c77-17bc-4a8d-b490-d4dcd2326ca9}", SiteSuperProcedure)
-
+agcls.AgTypeNameMap["SiteSuperProcedure"] = SiteSuperProcedure
 
 class SiteRelToPrevProcedure(ISiteRelToPrevProcedure, ISite):
     """Class defining a Relative to Previous Procedure site."""
@@ -36133,7 +36133,7 @@ class SiteRelToPrevProcedure(ISiteRelToPrevProcedure, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteRelToPrevProcedure.")
         
 agcls.AgClassCatalog.add_catalog_entry("{aa8dc548-3b50-44d0-b340-f1fca98283ee}", SiteRelToPrevProcedure)
-
+agcls.AgTypeNameMap["SiteRelToPrevProcedure"] = SiteRelToPrevProcedure
 
 class SiteSTKObjectWaypoint(ISiteSTKObjectWaypoint, ISite):
     """Class defining a STK Object Waypoint site."""
@@ -36157,7 +36157,7 @@ class SiteSTKObjectWaypoint(ISiteSTKObjectWaypoint, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKObjectWaypoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0b1f12ad-e7be-4158-abb4-39efb21a87d3}", SiteSTKObjectWaypoint)
-
+agcls.AgTypeNameMap["SiteSTKObjectWaypoint"] = SiteSTKObjectWaypoint
 
 class SiteSTKStaticObject(ISiteSTKStaticObject, ISite):
     """Class defining a STK Static Object site."""
@@ -36181,7 +36181,7 @@ class SiteSTKStaticObject(ISiteSTKStaticObject, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKStaticObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{16bc1a6a-6cf6-4e2a-b73f-82e6e0928c61}", SiteSTKStaticObject)
-
+agcls.AgTypeNameMap["SiteSTKStaticObject"] = SiteSTKStaticObject
 
 class SiteRelToSTKObject(ISiteRelToSTKObject, ISite):
     """Class defining a Relative to Stationary STK Object site."""
@@ -36205,7 +36205,7 @@ class SiteRelToSTKObject(ISiteRelToSTKObject, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteRelToSTKObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0c4677b4-f09b-4f8c-a170-3d4f0e1bf7f9}", SiteRelToSTKObject)
-
+agcls.AgTypeNameMap["SiteRelToSTKObject"] = SiteRelToSTKObject
 
 class SiteSTKAreaTarget(ISiteSTKAreaTarget, ISite):
     """Class defining a STK Area Target site."""
@@ -36229,7 +36229,7 @@ class SiteSTKAreaTarget(ISiteSTKAreaTarget, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKAreaTarget.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8ae70236-0185-4072-b230-da6e68e122f1}", SiteSTKAreaTarget)
-
+agcls.AgTypeNameMap["SiteSTKAreaTarget"] = SiteSTKAreaTarget
 
 class SiteRunway(ISiteRunway, ISite):
     """Class defining a runway site."""
@@ -36253,7 +36253,7 @@ class SiteRunway(ISiteRunway, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteRunway.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6bbd87f1-83bc-4750-8128-8ba51a48b4ed}", SiteRunway)
-
+agcls.AgTypeNameMap["SiteRunway"] = SiteRunway
 
 class Site(ISite, ISiteUnknown):
     """Class defining an unknown site type."""
@@ -36277,7 +36277,7 @@ class Site(ISite, ISiteUnknown):
             raise STKAttributeError(attrname + " is not a recognized attribute in Site.")
         
 agcls.AgClassCatalog.add_catalog_entry("{445bad6d-6125-446d-bce6-ac9233f11706}", Site)
-
+agcls.AgTypeNameMap["Site"] = Site
 
 class ProcedureLanding(IProcedureLanding, IProcedure):
     """Class defining a landing procedure."""
@@ -36301,7 +36301,7 @@ class ProcedureLanding(IProcedureLanding, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLanding.")
         
 agcls.AgClassCatalog.add_catalog_entry("{bde94020-cc95-4868-b5f1-da680baf4aeb}", ProcedureLanding)
-
+agcls.AgTypeNameMap["ProcedureLanding"] = ProcedureLanding
 
 class ProcedureEnroute(IProcedureEnroute, IProcedure):
     """Class defining an enroute procedure."""
@@ -36325,7 +36325,7 @@ class ProcedureEnroute(IProcedureEnroute, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureEnroute.")
         
 agcls.AgClassCatalog.add_catalog_entry("{f073011a-bfc1-4c9a-bd43-1a99bed41390}", ProcedureEnroute)
-
+agcls.AgTypeNameMap["ProcedureEnroute"] = ProcedureEnroute
 
 class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
     """Class defining an ExtEphem procedure."""
@@ -36349,7 +36349,7 @@ class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureExtEphem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F39A3ED-4A9E-4893-A061-F73A75ACF910}", ProcedureExtEphem)
-
+agcls.AgTypeNameMap["ProcedureExtEphem"] = ProcedureExtEphem
 
 class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
     """Class defining an formationflyer procedure."""
@@ -36373,7 +36373,7 @@ class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFormationFlyer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{678807EC-D03C-4E14-A068-3C0D14923D72}", ProcedureFormationFlyer)
-
+agcls.AgTypeNameMap["ProcedureFormationFlyer"] = ProcedureFormationFlyer
 
 class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
     """Class defining a basic point to point procedure."""
@@ -36397,7 +36397,7 @@ class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureBasicPointToPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{36ce90e9-da71-40a6-aff9-db4aecab63bd}", ProcedureBasicPointToPoint)
-
+agcls.AgTypeNameMap["ProcedureBasicPointToPoint"] = ProcedureBasicPointToPoint
 
 class ProcedureArcEnroute(IProcedureArcEnroute, IProcedure):
     """Class defining a arc enroute procedure."""
@@ -36421,7 +36421,7 @@ class ProcedureArcEnroute(IProcedureArcEnroute, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureArcEnroute.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7466bbc5-38eb-48ee-aec6-d45c69c562c1}", ProcedureArcEnroute)
-
+agcls.AgTypeNameMap["ProcedureArcEnroute"] = ProcedureArcEnroute
 
 class ProcedureArcPointToPoint(IProcedureArcPointToPoint, IProcedure):
     """Class defining a arc point to point procedure."""
@@ -36445,7 +36445,7 @@ class ProcedureArcPointToPoint(IProcedureArcPointToPoint, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureArcPointToPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c8026c77-0b69-413a-9903-bff5e40f44b8}", ProcedureArcPointToPoint)
-
+agcls.AgTypeNameMap["ProcedureArcPointToPoint"] = ProcedureArcPointToPoint
 
 class ProcedureFlightLine(IProcedureFlightLine, IProcedure):
     """Class defining a flight line procedure."""
@@ -36469,7 +36469,7 @@ class ProcedureFlightLine(IProcedureFlightLine, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFlightLine.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5079d60a-789b-489e-b1ba-749d7a888eba}", ProcedureFlightLine)
-
+agcls.AgTypeNameMap["ProcedureFlightLine"] = ProcedureFlightLine
 
 class ProcedureDelay(IProcedureDelay, IProcedure):
     """Class defining a delay procedure."""
@@ -36493,7 +36493,7 @@ class ProcedureDelay(IProcedureDelay, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureDelay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{bf773446-cf9e-4f29-8c9e-57d62abbdb09}", ProcedureDelay)
-
+agcls.AgTypeNameMap["ProcedureDelay"] = ProcedureDelay
 
 class ProcedureTakeoff(IProcedureTakeoff, IProcedure):
     """Class defining a takeoff procedure."""
@@ -36517,7 +36517,7 @@ class ProcedureTakeoff(IProcedureTakeoff, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTakeoff.")
         
 agcls.AgClassCatalog.add_catalog_entry("{52f322eb-31ca-4026-910d-ce46cc0830ee}", ProcedureTakeoff)
-
+agcls.AgTypeNameMap["ProcedureTakeoff"] = ProcedureTakeoff
 
 class ProcedureCollection(IProcedureCollection):
     """Class defining the collection of procedures in the phase of an Aviator mission."""
@@ -36538,7 +36538,7 @@ class ProcedureCollection(IProcedureCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{02be4f36-f12f-4df0-86f4-3740e53fafe9}", ProcedureCollection)
-
+agcls.AgTypeNameMap["ProcedureCollection"] = ProcedureCollection
 
 class Phase(IPhase):
     """Class defining a phase in an Aviator mission."""
@@ -36559,7 +36559,7 @@ class Phase(IPhase):
             raise STKAttributeError(attrname + " is not a recognized attribute in Phase.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ff7ca84a-39d9-49ee-9629-0e3d46183fbf}", Phase)
-
+agcls.AgTypeNameMap["Phase"] = Phase
 
 class PhaseCollection(IPhaseCollection):
     """Class defining the collection of phases."""
@@ -36580,7 +36580,7 @@ class PhaseCollection(IPhaseCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in PhaseCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6518b03b-1889-4b4e-86d0-403939b71a21}", PhaseCollection)
-
+agcls.AgTypeNameMap["PhaseCollection"] = PhaseCollection
 
 class Mission(IMission):
     """Class defining the Aviator mission."""
@@ -36601,7 +36601,7 @@ class Mission(IMission):
             raise STKAttributeError(attrname + " is not a recognized attribute in Mission.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26840b17-5789-4690-96be-c8637b15f434}", Mission)
-
+agcls.AgTypeNameMap["Mission"] = Mission
 
 class AviatorPropagator(IAviatorPropagator):
     """Class defining the Aviator propagator."""
@@ -36622,7 +36622,7 @@ class AviatorPropagator(IAviatorPropagator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AviatorPropagator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e20f6939-fe05-44eb-a175-d63fa503526f}", AviatorPropagator)
-
+agcls.AgTypeNameMap["AviatorPropagator"] = AviatorPropagator
 
 class ProcedureBasicManeuver(IProcedureBasicManeuver, IProcedure):
     """Class defining a Basic Maneuver procedure."""
@@ -36646,7 +36646,7 @@ class ProcedureBasicManeuver(IProcedureBasicManeuver, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureBasicManeuver.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7eb66528-bec8-4b78-a9c7-45333edbda52}", ProcedureBasicManeuver)
-
+agcls.AgTypeNameMap["ProcedureBasicManeuver"] = ProcedureBasicManeuver
 
 class BasicManeuverStrategyWeave(IBasicManeuverStrategyWeave, IBasicManeuverStrategy):
     """Class defining Weave strategy for a Basic Maneuver procedure."""
@@ -36670,7 +36670,7 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategyWeave, IBasicManeuverStra
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyWeave.")
         
 agcls.AgClassCatalog.add_catalog_entry("{46876894-f405-41cc-b071-9368b2d615f8}", BasicManeuverStrategyWeave)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyWeave"] = BasicManeuverStrategyWeave
 
 class ProcedureTimeOptions(IProcedureTimeOptions):
     """Class defining the time options for the current procedure."""
@@ -36691,7 +36691,7 @@ class ProcedureTimeOptions(IProcedureTimeOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTimeOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8f9d3e7e-4531-42b5-b066-44a87d6afc8c}", ProcedureTimeOptions)
-
+agcls.AgTypeNameMap["ProcedureTimeOptions"] = ProcedureTimeOptions
 
 class CalculationOptions(ICalculationOptions):
     """Class defining the calculation options for a procedure or phase."""
@@ -36712,7 +36712,7 @@ class CalculationOptions(ICalculationOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0538ece7-c599-4fc2-9d5b-3750f6712233}", CalculationOptions)
-
+agcls.AgTypeNameMap["CalculationOptions"] = CalculationOptions
 
 class AircraftCategory(IAircraftCategory):
     """Class defining the aircraft category in the Aviator catalog."""
@@ -36733,7 +36733,7 @@ class AircraftCategory(IAircraftCategory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftCategory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7c68c433-7123-45ec-9e3d-3bc4d999c6f3}", AircraftCategory)
-
+agcls.AgTypeNameMap["AircraftCategory"] = AircraftCategory
 
 class Catalog(ICatalog):
     """Class defining the Aviator Catalog."""
@@ -36754,7 +36754,7 @@ class Catalog(ICatalog):
             raise STKAttributeError(attrname + " is not a recognized attribute in Catalog.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3ac28f35-5412-4419-ac35-24dfd086a210}", Catalog)
-
+agcls.AgTypeNameMap["Catalog"] = Catalog
 
 class AircraftModel(IAircraftModel, IAviatorVehicle, ICatalogItem):
     """Class defining an aircraft in Aviator."""
@@ -36781,7 +36781,7 @@ class AircraftModel(IAircraftModel, IAviatorVehicle, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{063a922a-36a4-492c-8b6b-7b9cd7c29e8d}", AircraftModel)
-
+agcls.AgTypeNameMap["AircraftModel"] = AircraftModel
 
 class MissileModel(IMissileModel, IAviatorVehicle, ICatalogItem):
     """Class defining a missile in Aviator."""
@@ -36808,7 +36808,7 @@ class MissileModel(IMissileModel, IAviatorVehicle, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4b46d7a8-3e2b-4cd9-a927-2e49e1b9ab5c}", MissileModel)
-
+agcls.AgTypeNameMap["MissileModel"] = MissileModel
 
 class RotorcraftModel(IRotorcraftModel, IAviatorVehicle, ICatalogItem):
     """Class defining a rotorcraft in Aviator."""
@@ -36835,7 +36835,7 @@ class RotorcraftModel(IRotorcraftModel, IAviatorVehicle, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{a10ff662-0083-473b-90c7-5ff75d3144c9}", RotorcraftModel)
-
+agcls.AgTypeNameMap["RotorcraftModel"] = RotorcraftModel
 
 class RotorcraftAero(IRotorcraftAero):
     """Class defining the aerodynamic options for a rotorcraft."""
@@ -36856,7 +36856,7 @@ class RotorcraftAero(IRotorcraftAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{df267da7-689f-48eb-bd92-1bdfebc51435}", RotorcraftAero)
-
+agcls.AgTypeNameMap["RotorcraftAero"] = RotorcraftAero
 
 class RotorcraftProp(IRotorcraftProp):
     """Class defining the propulsion options for a rotorcraft."""
@@ -36877,7 +36877,7 @@ class RotorcraftProp(IRotorcraftProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c0734618-529f-4ff2-9a14-3e4bd14cd601}", RotorcraftProp)
-
+agcls.AgTypeNameMap["RotorcraftProp"] = RotorcraftProp
 
 class AircraftAcceleration(IAircraftAcceleration, ICatalogItem):
     """Class defining the aircraft acceleration category of an Aviator aircraft."""
@@ -36901,7 +36901,7 @@ class AircraftAcceleration(IAircraftAcceleration, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAcceleration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{574f37f4-4889-4c85-baf5-8359e847acfa}", AircraftAcceleration)
-
+agcls.AgTypeNameMap["AircraftAcceleration"] = AircraftAcceleration
 
 class AircraftBasicAccelerationModel(IAircraftBasicAccelerationModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic acceleration performance model for an Aviator aircraft."""
@@ -36928,7 +36928,7 @@ class AircraftBasicAccelerationModel(IAircraftBasicAccelerationModel, IPerforman
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicAccelerationModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e33469ad-d69d-48a2-9fc0-3fce97a2b98e}", AircraftBasicAccelerationModel)
-
+agcls.AgTypeNameMap["AircraftBasicAccelerationModel"] = AircraftBasicAccelerationModel
 
 class AircraftClimb(IAircraftClimb, ICatalogItem):
     """Class defining the aircraft climb category of an Aviator aircraft."""
@@ -36952,7 +36952,7 @@ class AircraftClimb(IAircraftClimb, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftClimb.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2f0086b2-66d4-4df6-9711-ee2524ba1ed0}", AircraftClimb)
-
+agcls.AgTypeNameMap["AircraftClimb"] = AircraftClimb
 
 class AircraftCruise(IAircraftCruise, ICatalogItem):
     """Class defining the aircraft cruise category of an Aviator aircraft."""
@@ -36976,7 +36976,7 @@ class AircraftCruise(IAircraftCruise, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftCruise.")
         
 agcls.AgClassCatalog.add_catalog_entry("{efe9b334-9261-44bb-9834-8e7207ca6e05}", AircraftCruise)
-
+agcls.AgTypeNameMap["AircraftCruise"] = AircraftCruise
 
 class AircraftDescent(IAircraftDescent, ICatalogItem):
     """Class defining the aircraft descent category of an Aviator aircraft."""
@@ -37000,7 +37000,7 @@ class AircraftDescent(IAircraftDescent, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftDescent.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d76fa881-77b3-486a-976c-8184e9cb91fd}", AircraftDescent)
-
+agcls.AgTypeNameMap["AircraftDescent"] = AircraftDescent
 
 class AircraftLanding(IAircraftLanding, ICatalogItem):
     """Class defining the aircraft landing category of an Aviator aircraft."""
@@ -37024,7 +37024,7 @@ class AircraftLanding(IAircraftLanding, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftLanding.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8371480b-53cf-41ca-b749-41623f6d380a}", AircraftLanding)
-
+agcls.AgTypeNameMap["AircraftLanding"] = AircraftLanding
 
 class AircraftTakeoff(IAircraftTakeoff, ICatalogItem):
     """Class defining the aircraft takeoff category of an Aviator aircraft."""
@@ -37048,7 +37048,7 @@ class AircraftTakeoff(IAircraftTakeoff, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftTakeoff.")
         
 agcls.AgClassCatalog.add_catalog_entry("{aeef7451-7456-4d8c-aabf-147a466149cd}", AircraftTakeoff)
-
+agcls.AgTypeNameMap["AircraftTakeoff"] = AircraftTakeoff
 
 class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic climb performance model for an Aviator aircraft."""
@@ -37075,7 +37075,7 @@ class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICata
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicClimbModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2950de29-1009-4c2a-8db5-378b41c6d48d}", AircraftBasicClimbModel)
-
+agcls.AgTypeNameMap["AircraftBasicClimbModel"] = AircraftBasicClimbModel
 
 class AircraftAdvClimbModel(IAircraftAdvClimbModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced climb performance model for an Aviator aircraft."""
@@ -37102,7 +37102,7 @@ class AircraftAdvClimbModel(IAircraftAdvClimbModel, IPerformanceModel, ICatalogI
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvClimbModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C1C87503-2B8E-41BC-8BA9-02B7CC1E02C2}", AircraftAdvClimbModel)
-
+agcls.AgTypeNameMap["AircraftAdvClimbModel"] = AircraftAdvClimbModel
 
 class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic cruise performance model for an Aviator aircraft."""
@@ -37129,7 +37129,7 @@ class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICa
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicCruiseModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c6090ace-e557-4bef-adf3-2e56387015a8}", AircraftBasicCruiseModel)
-
+agcls.AgTypeNameMap["AircraftBasicCruiseModel"] = AircraftBasicCruiseModel
 
 class AircraftAdvCruiseModel(IAircraftAdvCruiseModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced cruise performance model for an Aviator aircraft."""
@@ -37156,7 +37156,7 @@ class AircraftAdvCruiseModel(IAircraftAdvCruiseModel, IPerformanceModel, ICatalo
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvCruiseModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ead08117-2561-4bb7-a82b-86057f506090}", AircraftAdvCruiseModel)
-
+agcls.AgTypeNameMap["AircraftAdvCruiseModel"] = AircraftAdvCruiseModel
 
 class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic descent performance model for an Aviator aircraft."""
@@ -37183,7 +37183,7 @@ class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicDescentModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{30cb8d6f-afe5-4275-8479-4ce73b93a758}", AircraftBasicDescentModel)
-
+agcls.AgTypeNameMap["AircraftBasicDescentModel"] = AircraftBasicDescentModel
 
 class AircraftAdvDescentModel(IAircraftAdvDescentModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced descent performance model for an Aviator aircraft."""
@@ -37210,7 +37210,7 @@ class AircraftAdvDescentModel(IAircraftAdvDescentModel, IPerformanceModel, ICata
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvDescentModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{40ee1832-9491-49e5-bd27-40d40fefb326}", AircraftAdvDescentModel)
-
+agcls.AgTypeNameMap["AircraftAdvDescentModel"] = AircraftAdvDescentModel
 
 class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic takeoff performance model for an Aviator aircraft."""
@@ -37237,7 +37237,7 @@ class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicTakeoffModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3d9380c9-1aa0-4dcf-86bb-ded3b6b656e8}", AircraftBasicTakeoffModel)
-
+agcls.AgTypeNameMap["AircraftBasicTakeoffModel"] = AircraftBasicTakeoffModel
 
 class AircraftAdvTakeoffModel(IAircraftAdvTakeoffModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced takeoff performance model for an Aviator aircraft."""
@@ -37264,7 +37264,7 @@ class AircraftAdvTakeoffModel(IAircraftAdvTakeoffModel, IPerformanceModel, ICata
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvTakeoffModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{fc3190a3-fbeb-46bb-8395-22405fbf5b80}", AircraftAdvTakeoffModel)
-
+agcls.AgTypeNameMap["AircraftAdvTakeoffModel"] = AircraftAdvTakeoffModel
 
 class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic landing performance model for an Aviator aircraft."""
@@ -37291,7 +37291,7 @@ class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicLandingModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{bd4e5100-7e2c-40ca-815a-02a618a4321d}", AircraftBasicLandingModel)
-
+agcls.AgTypeNameMap["AircraftBasicLandingModel"] = AircraftBasicLandingModel
 
 class AircraftAdvLandingModel(IAircraftAdvLandingModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced landing performance model for an Aviator aircraft."""
@@ -37318,7 +37318,7 @@ class AircraftAdvLandingModel(IAircraftAdvLandingModel, IPerformanceModel, ICata
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvLandingModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{fb7534d7-1f9b-4133-9712-66728255532b}", AircraftAdvLandingModel)
-
+agcls.AgTypeNameMap["AircraftAdvLandingModel"] = AircraftAdvLandingModel
 
 class AirportCategory(IAirportCategory):
     """Class defining the airport category in the Aviator catalog."""
@@ -37339,7 +37339,7 @@ class AirportCategory(IAirportCategory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AirportCategory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d497aeeb-3c6a-44ad-9f1a-6af1504c9a99}", AirportCategory)
-
+agcls.AgTypeNameMap["AirportCategory"] = AirportCategory
 
 class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Airport."""
@@ -37369,7 +37369,7 @@ class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalog
             raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Airport.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1d942d58-5b4d-4784-8ec9-435008352423}", ARINC424Airport)
-
+agcls.AgTypeNameMap["ARINC424Airport"] = ARINC424Airport
 
 class ARINC424Runway(IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Runway."""
@@ -37402,7 +37402,7 @@ class ARINC424Runway(IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWay
             raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Runway.")
         
 agcls.AgClassCatalog.add_catalog_entry("{20c6f0ee-a2d5-4447-8d9a-3b67fe759266}", ARINC424Runway)
-
+agcls.AgTypeNameMap["ARINC424Runway"] = ARINC424Runway
 
 class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Runway."""
@@ -37432,7 +37432,7 @@ class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFRunway.")
         
 agcls.AgClassCatalog.add_catalog_entry("{95867fe1-39fa-41cf-aa24-c6068c2cd86a}", DAFIFRunway)
-
+agcls.AgTypeNameMap["DAFIFRunway"] = DAFIFRunway
 
 class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Helipad."""
@@ -37462,7 +37462,7 @@ class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem
             raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFHelipad.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6973673c-7c51-48c2-8931-614aa2ab1da5}", DAFIFHelipad)
-
+agcls.AgTypeNameMap["DAFIFHelipad"] = DAFIFHelipad
 
 class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Waypoint."""
@@ -37489,7 +37489,7 @@ class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFWaypoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{62195e59-a4fc-40f9-ab7d-4229c79c0e8f}", DAFIFWaypoint)
-
+agcls.AgTypeNameMap["DAFIFWaypoint"] = DAFIFWaypoint
 
 class RunwayCategory(IRunwayCategory):
     """Class defining the runway category in the Aviator catalog."""
@@ -37510,7 +37510,7 @@ class RunwayCategory(IRunwayCategory):
             raise STKAttributeError(attrname + " is not a recognized attribute in RunwayCategory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{69b1b664-f8d4-4be5-bfe9-8760573b2c72}", RunwayCategory)
-
+agcls.AgTypeNameMap["RunwayCategory"] = RunwayCategory
 
 class UserRunwaySource(IUserRunwaySource, ICatalogSource):
     """Class defining the user runways in the Aviator catalog."""
@@ -37534,7 +37534,7 @@ class UserRunwaySource(IUserRunwaySource, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserRunwaySource.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7b8c1764-ce59-4e35-940a-24d99c2953ef}", UserRunwaySource)
-
+agcls.AgTypeNameMap["UserRunwaySource"] = UserRunwaySource
 
 class UserRunway(IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint):
     """Class defining the user runway in the Aviator catalog."""
@@ -37564,7 +37564,7 @@ class UserRunway(IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserRunway.")
         
 agcls.AgClassCatalog.add_catalog_entry("{693bdacd-4c8d-4efd-bb23-3f14c83d3b04}", UserRunway)
-
+agcls.AgTypeNameMap["UserRunway"] = UserRunway
 
 class AltitudeMSLOptions(IAltitudeMSLOptions):
     """Class defining the altitude MSL options in a procedure."""
@@ -37585,7 +37585,7 @@ class AltitudeMSLOptions(IAltitudeMSLOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeMSLOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c866a6dd-1070-4162-bff2-4339ab28f6b2}", AltitudeMSLOptions)
-
+agcls.AgTypeNameMap["AltitudeMSLOptions"] = AltitudeMSLOptions
 
 class AltitudeOptions(IAltitudeOptions):
     """Class defining the altitude options in a procedure."""
@@ -37606,7 +37606,7 @@ class AltitudeOptions(IAltitudeOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4d5d82b7-e342-4dcb-9af1-7cbfa909fc23}", AltitudeOptions)
-
+agcls.AgTypeNameMap["AltitudeOptions"] = AltitudeOptions
 
 class ArcAltitudeOptions(IArcAltitudeOptions):
     """Class defining the altitude options for an arc procedure."""
@@ -37627,7 +37627,7 @@ class ArcAltitudeOptions(IArcAltitudeOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ArcAltitudeOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1c4f7491-db5d-4e52-ba8e-e64ddfc687fe}", ArcAltitudeOptions)
-
+agcls.AgTypeNameMap["ArcAltitudeOptions"] = ArcAltitudeOptions
 
 class ArcAltitudeAndDelayOptions(IArcAltitudeAndDelayOptions):
     """Class defining the altitude and delay options for an arc procedure."""
@@ -37648,7 +37648,7 @@ class ArcAltitudeAndDelayOptions(IArcAltitudeAndDelayOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ArcAltitudeAndDelayOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{fdf04fa7-1588-4e15-a0ab-37b9586c878f}", ArcAltitudeAndDelayOptions)
-
+agcls.AgTypeNameMap["ArcAltitudeAndDelayOptions"] = ArcAltitudeAndDelayOptions
 
 class ArcOptions(IArcOptions):
     """Class defining the arc options for a procedure."""
@@ -37669,7 +37669,7 @@ class ArcOptions(IArcOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ArcOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{41af67f7-489f-452e-858a-bd8cc0bf782d}", ArcOptions)
-
+agcls.AgTypeNameMap["ArcOptions"] = ArcOptions
 
 class AltitudeMSLAndLevelOffOptions(IAltitudeMSLAndLevelOffOptions):
     """Class defining the altitude MSL and Level off options in a procedure."""
@@ -37690,7 +37690,7 @@ class AltitudeMSLAndLevelOffOptions(IAltitudeMSLAndLevelOffOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeMSLAndLevelOffOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0a38e533-78b2-402b-aed6-0ff04a62fcce}", AltitudeMSLAndLevelOffOptions)
-
+agcls.AgTypeNameMap["AltitudeMSLAndLevelOffOptions"] = AltitudeMSLAndLevelOffOptions
 
 class CruiseAirspeedOptions(ICruiseAirspeedOptions):
     """Class defining the cruise airspeed options in a procedure."""
@@ -37711,7 +37711,7 @@ class CruiseAirspeedOptions(ICruiseAirspeedOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in CruiseAirspeedOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05251788-e43e-4d91-84ad-3d2bcfc2087a}", CruiseAirspeedOptions)
-
+agcls.AgTypeNameMap["CruiseAirspeedOptions"] = CruiseAirspeedOptions
 
 class CruiseAirspeedProfile(ICruiseAirspeedProfile):
     """Class defining the cruise profile options in a procedure."""
@@ -37732,7 +37732,7 @@ class CruiseAirspeedProfile(ICruiseAirspeedProfile):
             raise STKAttributeError(attrname + " is not a recognized attribute in CruiseAirspeedProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5afc99d6-3a02-45f9-b6f5-87690d8f9702}", CruiseAirspeedProfile)
-
+agcls.AgTypeNameMap["CruiseAirspeedProfile"] = CruiseAirspeedProfile
 
 class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
     """Class defining the cruise airspeed and profile options in a procedure."""
@@ -37753,7 +37753,7 @@ class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in CruiseAirspeedAndProfileOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ee439155-cd45-45b5-b7f8-eae4f5e51b8e}", CruiseAirspeedAndProfileOptions)
-
+agcls.AgTypeNameMap["CruiseAirspeedAndProfileOptions"] = CruiseAirspeedAndProfileOptions
 
 class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
     """Class defining the cruise airspeed and profile options for a landing procedure."""
@@ -37774,7 +37774,7 @@ class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in LandingCruiseAirspeedAndProfileOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{cb47399c-3316-494f-959c-4f84b4c4936c}", LandingCruiseAirspeedAndProfileOptions)
-
+agcls.AgTypeNameMap["LandingCruiseAirspeedAndProfileOptions"] = LandingCruiseAirspeedAndProfileOptions
 
 class EnrouteOptions(IEnrouteOptions):
     """Class defining the enroute options in a procedure."""
@@ -37795,7 +37795,7 @@ class EnrouteOptions(IEnrouteOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in EnrouteOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{cb708621-5036-4dbc-a900-a3b3a3fa7124}", EnrouteOptions)
-
+agcls.AgTypeNameMap["EnrouteOptions"] = EnrouteOptions
 
 class EnrouteAndDelayOptions(IEnrouteAndDelayOptions):
     """Class defining the enroute and delay options in a procedure."""
@@ -37816,7 +37816,7 @@ class EnrouteAndDelayOptions(IEnrouteAndDelayOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in EnrouteAndDelayOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{fc46b909-c927-4e2d-9d82-79c6980807d8}", EnrouteAndDelayOptions)
-
+agcls.AgTypeNameMap["EnrouteAndDelayOptions"] = EnrouteAndDelayOptions
 
 class LandingEnrouteOptions(IEnrouteAndDelayOptions):
     """Class defining the enroute options in a landing procedure."""
@@ -37837,7 +37837,7 @@ class LandingEnrouteOptions(IEnrouteAndDelayOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in LandingEnrouteOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{42ec119b-2661-4c68-b807-a5ed2a3af018}", LandingEnrouteOptions)
-
+agcls.AgTypeNameMap["LandingEnrouteOptions"] = LandingEnrouteOptions
 
 class EnrouteTurnDirectionOptions(IEnrouteTurnDirectionOptions):
     """Class defining the enroute turn direction options in a procedure."""
@@ -37858,7 +37858,7 @@ class EnrouteTurnDirectionOptions(IEnrouteTurnDirectionOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in EnrouteTurnDirectionOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{16e895f3-5a65-4caf-960e-691f904ca66c}", EnrouteTurnDirectionOptions)
-
+agcls.AgTypeNameMap["EnrouteTurnDirectionOptions"] = EnrouteTurnDirectionOptions
 
 class NavigationOptions(INavigationOptions):
     """Class defining the navigation options in a procedure."""
@@ -37879,7 +37879,7 @@ class NavigationOptions(INavigationOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in NavigationOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ce90add8-b152-4984-b864-0f6e61e680d4}", NavigationOptions)
-
+agcls.AgTypeNameMap["NavigationOptions"] = NavigationOptions
 
 class VerticalPlaneOptions(IVerticalPlaneOptions):
     """Class defining the vertical plane options in a procedure."""
@@ -37900,7 +37900,7 @@ class VerticalPlaneOptions(IVerticalPlaneOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in VerticalPlaneOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{a902b408-0141-4280-b6cf-e1cb18dae4f6}", VerticalPlaneOptions)
-
+agcls.AgTypeNameMap["VerticalPlaneOptions"] = VerticalPlaneOptions
 
 class ArcVerticalPlaneOptions(IArcVerticalPlaneOptions):
     """Class defining the vertical plane options in a procedure."""
@@ -37921,7 +37921,7 @@ class ArcVerticalPlaneOptions(IArcVerticalPlaneOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ArcVerticalPlaneOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{eae3a835-4897-408f-91dc-59b9a2fbcb5c}", ArcVerticalPlaneOptions)
-
+agcls.AgTypeNameMap["ArcVerticalPlaneOptions"] = ArcVerticalPlaneOptions
 
 class VerticalPlaneAndFlightPathOptions(IVerticalPlaneAndFlightPathOptions):
     """Class defining the vertical plane options for an arc procedure."""
@@ -37942,7 +37942,7 @@ class VerticalPlaneAndFlightPathOptions(IVerticalPlaneAndFlightPathOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in VerticalPlaneAndFlightPathOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7db61c31-a562-43b9-b3fa-76dc120bdd74}", VerticalPlaneAndFlightPathOptions)
-
+agcls.AgTypeNameMap["VerticalPlaneAndFlightPathOptions"] = VerticalPlaneAndFlightPathOptions
 
 class LandingVerticalPlaneOptions(IVerticalPlaneOptions):
     """Class defining the vertical plane options in a landing procedure."""
@@ -37963,7 +37963,7 @@ class LandingVerticalPlaneOptions(IVerticalPlaneOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in LandingVerticalPlaneOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{846a07a8-230c-4036-a43b-c61ccd1bde69}", LandingVerticalPlaneOptions)
-
+agcls.AgTypeNameMap["LandingVerticalPlaneOptions"] = LandingVerticalPlaneOptions
 
 class RunwayHeadingOptions(IRunwayHeadingOptions):
     """Class defining the runway heading options in a takeoff or landing procedure."""
@@ -37984,7 +37984,7 @@ class RunwayHeadingOptions(IRunwayHeadingOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in RunwayHeadingOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{167457be-4afe-477d-af6d-4e49413f4863}", RunwayHeadingOptions)
-
+agcls.AgTypeNameMap["RunwayHeadingOptions"] = RunwayHeadingOptions
 
 class LandingEnterDownwindPattern(ILandingEnterDownwindPattern):
     """Class defining the enter downwind pattern options for a landing procedure."""
@@ -38005,7 +38005,7 @@ class LandingEnterDownwindPattern(ILandingEnterDownwindPattern):
             raise STKAttributeError(attrname + " is not a recognized attribute in LandingEnterDownwindPattern.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7fd1f000-c683-490f-9eea-a30062392898}", LandingEnterDownwindPattern)
-
+agcls.AgTypeNameMap["LandingEnterDownwindPattern"] = LandingEnterDownwindPattern
 
 class LandingInterceptGlideslope(ILandingInterceptGlideslope):
     """Class defining the intercept glideslope options for a landing procedure."""
@@ -38026,7 +38026,7 @@ class LandingInterceptGlideslope(ILandingInterceptGlideslope):
             raise STKAttributeError(attrname + " is not a recognized attribute in LandingInterceptGlideslope.")
         
 agcls.AgClassCatalog.add_catalog_entry("{f9735637-159f-4a79-9b1c-05d88d8437ac}", LandingInterceptGlideslope)
-
+agcls.AgTypeNameMap["LandingInterceptGlideslope"] = LandingInterceptGlideslope
 
 class LandingStandardInstrumentApproach(ILandingStandardInstrumentApproach):
     """Class defining the standard instrument approach options for a landing procedure."""
@@ -38047,7 +38047,7 @@ class LandingStandardInstrumentApproach(ILandingStandardInstrumentApproach):
             raise STKAttributeError(attrname + " is not a recognized attribute in LandingStandardInstrumentApproach.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6463a94a-8a78-432d-b155-d9d6d436c748}", LandingStandardInstrumentApproach)
-
+agcls.AgTypeNameMap["LandingStandardInstrumentApproach"] = LandingStandardInstrumentApproach
 
 class TakeoffDeparturePoint(ITakeoffDeparturePoint):
     """Class defining the departure point options for a takeoff procedure."""
@@ -38068,7 +38068,7 @@ class TakeoffDeparturePoint(ITakeoffDeparturePoint):
             raise STKAttributeError(attrname + " is not a recognized attribute in TakeoffDeparturePoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59ebf9c6-d1de-47c0-bd56-b3d455c5c335}", TakeoffDeparturePoint)
-
+agcls.AgTypeNameMap["TakeoffDeparturePoint"] = TakeoffDeparturePoint
 
 class TakeoffLowTransition(ITakeoffLowTransition):
     """Class defining the low transition options for a takeoff procedure."""
@@ -38089,7 +38089,7 @@ class TakeoffLowTransition(ITakeoffLowTransition):
             raise STKAttributeError(attrname + " is not a recognized attribute in TakeoffLowTransition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c8f9161b-97e3-4eab-b5e9-6a5aebaddaea}", TakeoffLowTransition)
-
+agcls.AgTypeNameMap["TakeoffLowTransition"] = TakeoffLowTransition
 
 class TakeoffNormal(ITakeoffNormal):
     """Class defining the normal options for a takeoff procedure."""
@@ -38110,7 +38110,7 @@ class TakeoffNormal(ITakeoffNormal):
             raise STKAttributeError(attrname + " is not a recognized attribute in TakeoffNormal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4951950f-59cb-4524-a2c6-5d8b6f35922d}", TakeoffNormal)
-
+agcls.AgTypeNameMap["TakeoffNormal"] = TakeoffNormal
 
 class LevelTurns(ILevelTurns):
     """Class defining the level turns options for an acceleration performance model of an Aviator aircraft."""
@@ -38131,7 +38131,7 @@ class LevelTurns(ILevelTurns):
             raise STKAttributeError(attrname + " is not a recognized attribute in LevelTurns.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8c955be7-5999-4332-bb80-4151d864d1d4}", LevelTurns)
-
+agcls.AgTypeNameMap["LevelTurns"] = LevelTurns
 
 class AttitudeTransitions(IAttitudeTransitions):
     """Class defining the attitude transition options for an acceleration performance model of an Aviator aircraft."""
@@ -38152,7 +38152,7 @@ class AttitudeTransitions(IAttitudeTransitions):
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeTransitions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0fc49614-6fbf-4d80-94ae-f8a338d8e7ab}", AttitudeTransitions)
-
+agcls.AgTypeNameMap["AttitudeTransitions"] = AttitudeTransitions
 
 class ClimbAndDescentTransitions(IClimbAndDescentTransitions):
     """Class defining the climb and descent transition options for an Acceleration performance model of an Aviator aircraft."""
@@ -38173,7 +38173,7 @@ class ClimbAndDescentTransitions(IClimbAndDescentTransitions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ClimbAndDescentTransitions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c8d87c4a-ee0c-4a96-b7f4-9dbe84a7b2aa}", ClimbAndDescentTransitions)
-
+agcls.AgTypeNameMap["ClimbAndDescentTransitions"] = ClimbAndDescentTransitions
 
 class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
     """Class defining the The calculation mode for the Aero/Prop maneuver mode helper. Helper for a basic acceleration performance model of an Aviator aircraft."""
@@ -38194,7 +38194,7 @@ class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
             raise STKAttributeError(attrname + " is not a recognized attribute in AeroPropManeuverModeHelper.")
         
 agcls.AgClassCatalog.add_catalog_entry("{854b3e50-7d20-4d15-a58d-b1f36dac5c77}", AeroPropManeuverModeHelper)
-
+agcls.AgTypeNameMap["AeroPropManeuverModeHelper"] = AeroPropManeuverModeHelper
 
 class AircraftAdvAccelerationModel(IAircraftAdvAccelerationModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced acceleration performance model of an Aviator aircraft."""
@@ -38221,7 +38221,7 @@ class AircraftAdvAccelerationModel(IAircraftAdvAccelerationModel, IPerformanceMo
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvAccelerationModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e55e8521-3091-4a5d-afe0-57f7e7ee698e}", AircraftAdvAccelerationModel)
-
+agcls.AgTypeNameMap["AircraftAdvAccelerationModel"] = AircraftAdvAccelerationModel
 
 class AircraftAccelerationMode(IAircraftAccelerationMode):
     """Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft."""
@@ -38242,7 +38242,7 @@ class AircraftAccelerationMode(IAircraftAccelerationMode):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAccelerationMode.")
         
 agcls.AgClassCatalog.add_catalog_entry("{551999ee-51a5-4863-a244-0030899884ee}", AircraftAccelerationMode)
-
+agcls.AgTypeNameMap["AircraftAccelerationMode"] = AircraftAccelerationMode
 
 class AircraftSimpleAero(IAircraftSimpleAero):
     """Class defining the simple aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38263,7 +38263,7 @@ class AircraftSimpleAero(IAircraftSimpleAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftSimpleAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{54bb15cb-5b0e-44af-9605-0b646efebaeb}", AircraftSimpleAero)
-
+agcls.AgTypeNameMap["AircraftSimpleAero"] = AircraftSimpleAero
 
 class AircraftExternalAero(IAircraftExternalAero):
     """Class defining the external file aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38284,7 +38284,7 @@ class AircraftExternalAero(IAircraftExternalAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftExternalAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{f79db172-f8c6-4dc9-84c7-dfff374156bc}", AircraftExternalAero)
-
+agcls.AgTypeNameMap["AircraftExternalAero"] = AircraftExternalAero
 
 class AircraftAero(IAircraftAero):
     """Class defining the aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38305,7 +38305,7 @@ class AircraftAero(IAircraftAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6005f6fd-9923-4688-a60f-6179d5cec1f3}", AircraftAero)
-
+agcls.AgTypeNameMap["AircraftAero"] = AircraftAero
 
 class AircraftBasicFixedWingAero(IAircraftBasicFixedWingAero):
     """Class defining the basic fixed wing aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38326,7 +38326,7 @@ class AircraftBasicFixedWingAero(IAircraftBasicFixedWingAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicFixedWingAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3e05b32c-25ac-400d-ae1c-e1628b2e6ebb}", AircraftBasicFixedWingAero)
-
+agcls.AgTypeNameMap["AircraftBasicFixedWingAero"] = AircraftBasicFixedWingAero
 
 class AircraftProp(IAircraftProp):
     """Class defining the propulsion options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38347,7 +38347,7 @@ class AircraftProp(IAircraftProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8773e358-a871-4d66-b7b2-25a473f22bdb}", AircraftProp)
-
+agcls.AgTypeNameMap["AircraftProp"] = AircraftProp
 
 class AircraftSimpleProp(IAircraftSimpleProp):
     """Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38368,7 +38368,7 @@ class AircraftSimpleProp(IAircraftSimpleProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftSimpleProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{359cf55e-59da-4f34-93fe-010180c2a415}", AircraftSimpleProp)
-
+agcls.AgTypeNameMap["AircraftSimpleProp"] = AircraftSimpleProp
 
 class AircraftExternalProp(IAircraftExternalProp):
     """Class defining the external propulsion options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38389,7 +38389,7 @@ class AircraftExternalProp(IAircraftExternalProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftExternalProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9a59b51f-6133-446f-9f7c-04bfa1e8c69a}", AircraftExternalProp)
-
+agcls.AgTypeNameMap["AircraftExternalProp"] = AircraftExternalProp
 
 class AircraftBasicFixedWingProp(IAircraftBasicFixedWingProp):
     """Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft."""
@@ -38410,7 +38410,7 @@ class AircraftBasicFixedWingProp(IAircraftBasicFixedWingProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicFixedWingProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{b4158163-51d7-4eb6-956a-14740ae523b3}", AircraftBasicFixedWingProp)
-
+agcls.AgTypeNameMap["AircraftBasicFixedWingProp"] = AircraftBasicFixedWingProp
 
 class ARINC424Source(IARINC424Source, ICatalogSource):
     """Class defining an ARINC424 source in the Aviator catalog."""
@@ -38434,7 +38434,7 @@ class ARINC424Source(IARINC424Source, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Source.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e4f5b464-d93a-4541-8a1e-737ece8b120c}", ARINC424Source)
-
+agcls.AgTypeNameMap["ARINC424Source"] = ARINC424Source
 
 class DAFIFSource(IDAFIFSource, ICatalogSource):
     """Class defining an DAFIF source in the Aviator catalog."""
@@ -38458,7 +38458,7 @@ class DAFIFSource(IDAFIFSource, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFSource.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4325ae72-1155-40cd-a708-0cf4da0b653c}", DAFIFSource)
-
+agcls.AgTypeNameMap["DAFIFSource"] = DAFIFSource
 
 class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper):
     """Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
@@ -38479,7 +38479,7 @@ class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper):
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicFixedWingFwdFlightLiftHelper.")
         
 agcls.AgClassCatalog.add_catalog_entry("{507fa67b-cebe-431c-a109-fb6d77b6b026}", BasicFixedWingFwdFlightLiftHelper)
-
+agcls.AgTypeNameMap["BasicFixedWingFwdFlightLiftHelper"] = BasicFixedWingFwdFlightLiftHelper
 
 class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategyStraightAhead, IBasicManeuverStrategy):
     """Class defining the Straight Ahead strategy for a basic maneuver procedure."""
@@ -38503,7 +38503,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategyStraightAhead, IB
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyStraightAhead.")
         
 agcls.AgClassCatalog.add_catalog_entry("{beae703c-6b09-4ff9-a7d0-3e6513848c84}", BasicManeuverStrategyStraightAhead)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyStraightAhead"] = BasicManeuverStrategyStraightAhead
 
 class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategyCruiseProfile, IBasicManeuverStrategy):
     """Class defining the Cruise profile strategy for a basic maneuver procedure."""
@@ -38527,7 +38527,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategyCruiseProfile, IB
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyCruiseProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{00a0e796-7322-478b-9ad6-b8f1d6ef81e1}", BasicManeuverStrategyCruiseProfile)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyCruiseProfile"] = BasicManeuverStrategyCruiseProfile
 
 class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategyGlideProfile, IBasicManeuverStrategy):
     """Class defining the Glide profile strategy for a basic maneuver procedure."""
@@ -38551,7 +38551,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategyGlideProfile, IBas
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyGlideProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0e60df52-4bb8-40a1-90a8-ecf7a57bca0a}", BasicManeuverStrategyGlideProfile)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyGlideProfile"] = BasicManeuverStrategyGlideProfile
 
 class AircraftModels(IAircraftModels, ICatalogSource):
     """Class defining the User Aircraft Models in the Aviator Catalog."""
@@ -38575,7 +38575,7 @@ class AircraftModels(IAircraftModels, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftModels.")
         
 agcls.AgClassCatalog.add_catalog_entry("{47dd19b1-0ce7-458b-bdb2-2ec0d337231b}", AircraftModels)
-
+agcls.AgTypeNameMap["AircraftModels"] = AircraftModels
 
 class MissileModels(IMissileModels, ICatalogSource):
     """Class defining the User Missile Models in the Aviator Catalog."""
@@ -38599,7 +38599,7 @@ class MissileModels(IMissileModels, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileModels.")
         
 agcls.AgClassCatalog.add_catalog_entry("{038a565a-efe0-4bc0-8a22-eb1c2d88d87a}", MissileModels)
-
+agcls.AgTypeNameMap["MissileModels"] = MissileModels
 
 class RotorcraftModels(IRotorcraftModels, ICatalogSource):
     """Class defining the User Rotorcraft Models in the Aviator Catalog."""
@@ -38623,7 +38623,7 @@ class RotorcraftModels(IRotorcraftModels, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftModels.")
         
 agcls.AgClassCatalog.add_catalog_entry("{f85cc088-0dc1-4436-bc2e-a985bfd4dfb4}", RotorcraftModels)
-
+agcls.AgTypeNameMap["RotorcraftModels"] = RotorcraftModels
 
 class Configuration(IConfiguration):
     """Class defining the aircraft configuration for an Aviator mission."""
@@ -38644,7 +38644,7 @@ class Configuration(IConfiguration):
             raise STKAttributeError(attrname + " is not a recognized attribute in Configuration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{823e96a0-a485-4c5b-9abc-7d6658432f99}", Configuration)
-
+agcls.AgTypeNameMap["Configuration"] = Configuration
 
 class FuelTankInternal(IFuelTankInternal, IStation):
     """Class defining an internal fuel tank for an Aviator aircraft."""
@@ -38668,7 +38668,7 @@ class FuelTankInternal(IFuelTankInternal, IStation):
             raise STKAttributeError(attrname + " is not a recognized attribute in FuelTankInternal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64fd434a-e313-4f15-a236-f25f10461444}", FuelTankInternal)
-
+agcls.AgTypeNameMap["FuelTankInternal"] = FuelTankInternal
 
 class FuelTankExternal(IFuelTankExternal):
     """Class defining an external fuel tank for an Aviator aircraft."""
@@ -38689,7 +38689,7 @@ class FuelTankExternal(IFuelTankExternal):
             raise STKAttributeError(attrname + " is not a recognized attribute in FuelTankExternal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8037f407-784e-469e-b92d-2a0fff148e86}", FuelTankExternal)
-
+agcls.AgTypeNameMap["FuelTankExternal"] = FuelTankExternal
 
 class PayloadStation(IPayloadStation, IStation):
     """Class defining a payload station for an Aviator aircraft."""
@@ -38713,7 +38713,7 @@ class PayloadStation(IPayloadStation, IStation):
             raise STKAttributeError(attrname + " is not a recognized attribute in PayloadStation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{13423a45-1732-438b-a96a-502bc40f0827}", PayloadStation)
-
+agcls.AgTypeNameMap["PayloadStation"] = PayloadStation
 
 class StationCollection(IStationCollection):
     """Class defining a collection of payload stations for an Aviator aircraft."""
@@ -38734,7 +38734,7 @@ class StationCollection(IStationCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in StationCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e81ed53f-b172-46c4-85b1-e80fe06e211a}", StationCollection)
-
+agcls.AgTypeNameMap["StationCollection"] = StationCollection
 
 class WindModel(IWindModel):
     """Class defining the wind model for a mission, scenario, or procedure."""
@@ -38755,7 +38755,7 @@ class WindModel(IWindModel):
             raise STKAttributeError(attrname + " is not a recognized attribute in WindModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8c0e170c-1818-4bd9-8bbf-e578065ea2a8}", WindModel)
-
+agcls.AgTypeNameMap["WindModel"] = WindModel
 
 class WindModelConstant(IWindModelConstant):
     """Class defining a constant bearing/speed wind model for a mission."""
@@ -38776,7 +38776,7 @@ class WindModelConstant(IWindModelConstant):
             raise STKAttributeError(attrname + " is not a recognized attribute in WindModelConstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{079a1206-8ed3-423d-8f1d-855551f0435c}", WindModelConstant)
-
+agcls.AgTypeNameMap["WindModelConstant"] = WindModelConstant
 
 class WindModelADDS(IWindModelADDS):
     """Class defining a wind model using the NOAA ADDS service for a mission."""
@@ -38797,7 +38797,7 @@ class WindModelADDS(IWindModelADDS):
             raise STKAttributeError(attrname + " is not a recognized attribute in WindModelADDS.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1e2024ff-d594-49bf-8ea7-a110213078ba}", WindModelADDS)
-
+agcls.AgTypeNameMap["WindModelADDS"] = WindModelADDS
 
 class ADDSMessage(IADDSMessage):
     """Class defining a message from the NOAA ADDS service."""
@@ -38818,7 +38818,7 @@ class ADDSMessage(IADDSMessage):
             raise STKAttributeError(attrname + " is not a recognized attribute in ADDSMessage.")
         
 agcls.AgClassCatalog.add_catalog_entry("{22e44fa2-cfe7-456a-900c-0916f1d88cec}", ADDSMessage)
-
+agcls.AgTypeNameMap["ADDSMessage"] = ADDSMessage
 
 class ADDSMessageCollection(IADDSMessageCollection):
     """Class defining a collection of messages from the NOAA ADDS service."""
@@ -38839,7 +38839,7 @@ class ADDSMessageCollection(IADDSMessageCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ADDSMessageCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{f5e634eb-3433-4336-9c0d-73b3d0e9674a}", ADDSMessageCollection)
-
+agcls.AgTypeNameMap["ADDSMessageCollection"] = ADDSMessageCollection
 
 class Procedure(IProcedure, IConnect):
     """Class defining an unknown procedure type."""
@@ -38863,7 +38863,7 @@ class Procedure(IProcedure, IConnect):
             raise STKAttributeError(attrname + " is not a recognized attribute in Procedure.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c744fb3a-e51d-4b87-8006-ed9dd4d48495}", Procedure)
-
+agcls.AgTypeNameMap["Procedure"] = Procedure
 
 class AtmosphereModel(IAtmosphereModel):
     """Class defining the atmosphere model for a mission, scenario, or procedure."""
@@ -38884,7 +38884,7 @@ class AtmosphereModel(IAtmosphereModel):
             raise STKAttributeError(attrname + " is not a recognized attribute in AtmosphereModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{43ce46bb-52dc-42d7-818a-5bd4d13dd15d}", AtmosphereModel)
-
+agcls.AgTypeNameMap["AtmosphereModel"] = AtmosphereModel
 
 class AtmosphereModelBasic(IAtmosphereModelBasic):
     """Class defining the basic atmosphere model."""
@@ -38905,7 +38905,7 @@ class AtmosphereModelBasic(IAtmosphereModelBasic):
             raise STKAttributeError(attrname + " is not a recognized attribute in AtmosphereModelBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9c9a3976-e898-4e98-b2ce-26d045ab4d46}", AtmosphereModelBasic)
-
+agcls.AgTypeNameMap["AtmosphereModelBasic"] = AtmosphereModelBasic
 
 class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategySimpleTurn, IBasicManeuverStrategy):
     """Class defining the simple turn strategy for a basic maneuver procedure."""
@@ -38929,7 +38929,7 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategySimpleTurn, IBasicMa
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategySimpleTurn.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5a0fd768-cf78-47cb-8a85-ccb1fbe68cee}", BasicManeuverStrategySimpleTurn)
-
+agcls.AgTypeNameMap["BasicManeuverStrategySimpleTurn"] = BasicManeuverStrategySimpleTurn
 
 class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategyAileronRoll, IBasicManeuverStrategy):
     """Class defining the aileron roll strategy for a basic maneuver procedure."""
@@ -38953,7 +38953,7 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategyAileronRoll, IBasic
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyAileronRoll.")
         
 agcls.AgClassCatalog.add_catalog_entry("{b8979539-00bf-46af-a412-9a16ebb57ac7}", BasicManeuverStrategyAileronRoll)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyAileronRoll"] = BasicManeuverStrategyAileronRoll
 
 class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategyFlyAOA, IBasicManeuverStrategy):
     """Class defining the fly AOA strategy for a basic maneuver procedure."""
@@ -38977,7 +38977,7 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategyFlyAOA, IBasicManeuverSt
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyFlyAOA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{f3c56de2-f58f-4292-a05b-d6e8f2756a55}", BasicManeuverStrategyFlyAOA)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyFlyAOA"] = BasicManeuverStrategyFlyAOA
 
 class BasicManeuverStrategyPull(IBasicManeuverStrategyPull, IBasicManeuverStrategy):
     """Class defining the pull strategy for a basic maneuver procedure."""
@@ -39001,7 +39001,7 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategyPull, IBasicManeuverStrate
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyPull.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7f14c043-4c1d-46f2-a3fd-112b17a27e82}", BasicManeuverStrategyPull)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyPull"] = BasicManeuverStrategyPull
 
 class BasicManeuverStrategyRollingPull(IBasicManeuverStrategyRollingPull, IBasicManeuverStrategy):
     """Class defining the rolling pull strategy for a basic maneuver procedure."""
@@ -39025,7 +39025,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategyRollingPull, IBasic
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRollingPull.")
         
 agcls.AgClassCatalog.add_catalog_entry("{abb3d02b-ae1f-482e-a903-cdc6bcb7bde1}", BasicManeuverStrategyRollingPull)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyRollingPull"] = BasicManeuverStrategyRollingPull
 
 class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategySmoothAccel, IBasicManeuverStrategy):
     """Class defining the smooth accel strategy for a basic maneuver procedure."""
@@ -39049,7 +39049,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategySmoothAccel, IBasic
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategySmoothAccel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e5277844-1d1b-49ae-9a08-553e55823581}", BasicManeuverStrategySmoothAccel)
-
+agcls.AgTypeNameMap["BasicManeuverStrategySmoothAccel"] = BasicManeuverStrategySmoothAccel
 
 class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategySmoothTurn, IBasicManeuverStrategy):
     """Class defining the smooth turn strategy for a basic maneuver procedure."""
@@ -39073,7 +39073,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategySmoothTurn, IBasicMa
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategySmoothTurn.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d55e7e13-72e2-4046-b7c7-a0702d951b03}", BasicManeuverStrategySmoothTurn)
-
+agcls.AgTypeNameMap["BasicManeuverStrategySmoothTurn"] = BasicManeuverStrategySmoothTurn
 
 class BasicManeuverAirspeedOptions(IBasicManeuverAirspeedOptions):
     """Class defining the airspeed options for basic maneuver strategies."""
@@ -39094,7 +39094,7 @@ class BasicManeuverAirspeedOptions(IBasicManeuverAirspeedOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverAirspeedOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0eb776dc-78a8-42db-b8c0-8c62611d7e44}", BasicManeuverAirspeedOptions)
-
+agcls.AgTypeNameMap["BasicManeuverAirspeedOptions"] = BasicManeuverAirspeedOptions
 
 class PropulsionThrust(IPropulsionThrust):
     """Class defining the the thrust propulsion used in basic maneuver procedures."""
@@ -39115,7 +39115,7 @@ class PropulsionThrust(IPropulsionThrust):
             raise STKAttributeError(attrname + " is not a recognized attribute in PropulsionThrust.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50e5309a-e9f9-4dc0-8296-b3bf43a9b1a5}", PropulsionThrust)
-
+agcls.AgTypeNameMap["PropulsionThrust"] = PropulsionThrust
 
 class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategyAutopilotNav, IBasicManeuverStrategy):
     """Class defining the autopilot - horizontal plane strategy for a basic maneuver procedure."""
@@ -39139,7 +39139,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategyAutopilotNav, IBas
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyAutopilotNav.")
         
 agcls.AgClassCatalog.add_catalog_entry("{129c0672-05c6-41ae-ae30-3aa82d83783a}", BasicManeuverStrategyAutopilotNav)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotNav"] = BasicManeuverStrategyAutopilotNav
 
 class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategyAutopilotProf, IBasicManeuverStrategy):
     """Class defining the autopiloc - vertical plane strategy for a basic maneuver procedure."""
@@ -39163,7 +39163,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategyAutopilotProf, IB
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyAutopilotProf.")
         
 agcls.AgClassCatalog.add_catalog_entry("{a86d3f81-6bd4-4f3d-8747-c1b31d7b06e9}", BasicManeuverStrategyAutopilotProf)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotProf"] = BasicManeuverStrategyAutopilotProf
 
 class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategyBarrelRoll, IBasicManeuverStrategy):
     """Class defining the barrel roll strategy for a basic maneuver procedure."""
@@ -39187,7 +39187,7 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategyBarrelRoll, IBasicMa
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyBarrelRoll.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3ee92041-1fb9-4a53-ad71-9045d738fe7d}", BasicManeuverStrategyBarrelRoll)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyBarrelRoll"] = BasicManeuverStrategyBarrelRoll
 
 class BasicManeuverStrategyLoop(IBasicManeuverStrategyLoop, IBasicManeuverStrategy):
     """Class defining the loop strategy for a basic maneuver procedure."""
@@ -39211,7 +39211,7 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategyLoop, IBasicManeuverStrate
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyLoop.")
         
 agcls.AgClassCatalog.add_catalog_entry("{77780df4-1f0f-411c-a4eb-edfeb5d44d82}", BasicManeuverStrategyLoop)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyLoop"] = BasicManeuverStrategyLoop
 
 class BasicManeuverStrategyLTAHover(IBasicManeuverStrategyLTAHover, IBasicManeuverStrategy):
     """Class defining the lighter than air hover strategy for a basic maneuver procedure."""
@@ -39235,7 +39235,7 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategyLTAHover, IBasicManeuv
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyLTAHover.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5dfffe06-20ce-4e0e-903e-90ca3e60c273}", BasicManeuverStrategyLTAHover)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyLTAHover"] = BasicManeuverStrategyLTAHover
 
 class BasicManeuverStrategyIntercept(IBasicManeuverStrategyIntercept, IBasicManeuverStrategy):
     """Class defining the Intercept strategy for a basic maneuver procedure."""
@@ -39259,7 +39259,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategyIntercept, IBasicMane
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyIntercept.")
         
 agcls.AgClassCatalog.add_catalog_entry("{015abd40-d52a-479b-b9ef-92aadb650a42}", BasicManeuverStrategyIntercept)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyIntercept"] = BasicManeuverStrategyIntercept
 
 class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategyRelativeBearing, IBasicManeuverStrategy):
     """Class defining the Relative Bearing strategy for a basic maneuver procedure."""
@@ -39283,7 +39283,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategyRelativeBearing
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelativeBearing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e2ffd4c9-cab5-4e7d-972f-d7b0f6983a04}", BasicManeuverStrategyRelativeBearing)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyRelativeBearing"] = BasicManeuverStrategyRelativeBearing
 
 class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategyRelativeCourse, IBasicManeuverStrategy):
     """Class defining the Relative Course strategy for a basic maneuver procedure."""
@@ -39307,7 +39307,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategyRelativeCourse, 
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelativeCourse.")
         
 agcls.AgClassCatalog.add_catalog_entry("{b38ed3c1-d896-476f-8b6d-c5b6d72b4590}", BasicManeuverStrategyRelativeCourse)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyRelativeCourse"] = BasicManeuverStrategyRelativeCourse
 
 class BasicManeuverStrategyRendezvous(IBasicManeuverStrategyRendezvous, IBasicManeuverStrategy):
     """Class defining the Rendezvous/Formation strategy for a basic maneuver procedure."""
@@ -39331,7 +39331,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategyRendezvous, IBasicMa
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRendezvous.")
         
 agcls.AgClassCatalog.add_catalog_entry("{bb5fdd2b-8e95-40e1-8048-86547b0daff0}", BasicManeuverStrategyRendezvous)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyRendezvous"] = BasicManeuverStrategyRendezvous
 
 class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategyStationkeeping, IBasicManeuverStrategy):
     """Class defining the Stationkeeping strategy for a basic maneuver procedure."""
@@ -39355,7 +39355,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategyStationkeeping, 
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyStationkeeping.")
         
 agcls.AgClassCatalog.add_catalog_entry("{949ee147-7b1f-4f22-b721-aea0725b9116}", BasicManeuverStrategyStationkeeping)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyStationkeeping"] = BasicManeuverStrategyStationkeeping
 
 class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy):
     """Class defining the Relative Flight Path Angle strategy for a basic maneuver procedure."""
@@ -39379,7 +39379,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasic
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelativeFPA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{dd290505-55b9-48a9-a800-451bcc816dd6}", BasicManeuverStrategyRelativeFPA)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFPA"] = BasicManeuverStrategyRelativeFPA
 
 class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy):
     """Class defining the Relative Speed/Altitude strategy for a basic maneuver procedure."""
@@ -39403,7 +39403,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitu
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelSpeedAltitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{72d18bdd-ad36-43ed-a8d6-6c25a7d88078}", BasicManeuverStrategyRelSpeedAltitude)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyRelSpeedAltitude"] = BasicManeuverStrategyRelSpeedAltitude
 
 class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverStrategy):
     """Class defining the Bezier strategy for a basic maneuver procedure."""
@@ -39427,7 +39427,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverSt
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyBezier.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84f1131f-4e28-4879-902c-bf5c2cbfff5b}", BasicManeuverStrategyBezier)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyBezier"] = BasicManeuverStrategyBezier
 
 class BasicManeuverStrategyPushPull(IBasicManeuverStrategyPushPull, IBasicManeuverStrategy):
     """Class defining the Push/Pull strategy for a basic maneuver procedure."""
@@ -39451,7 +39451,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategyPushPull, IBasicManeuv
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyPushPull.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6184d781-4842-4e83-8211-fc4baab53395}", BasicManeuverStrategyPushPull)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyPushPull"] = BasicManeuverStrategyPushPull
 
 class ProcedureHoldingCircular(IProcedureHoldingCircular, IProcedure):
     """Class defining a holding circular procedure."""
@@ -39475,7 +39475,7 @@ class ProcedureHoldingCircular(IProcedureHoldingCircular, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoldingCircular.")
         
 agcls.AgClassCatalog.add_catalog_entry("{dec98be5-d1d2-4a97-bbcd-5a1f7ca5f158}", ProcedureHoldingCircular)
-
+agcls.AgTypeNameMap["ProcedureHoldingCircular"] = ProcedureHoldingCircular
 
 class ProcedureHoldingFigure8(IProcedureHoldingFigure8, IProcedure):
     """Class defining a holding figure 8 procedure."""
@@ -39499,7 +39499,7 @@ class ProcedureHoldingFigure8(IProcedureHoldingFigure8, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoldingFigure8.")
         
 agcls.AgClassCatalog.add_catalog_entry("{cdd17fce-e24c-45f4-8b7c-b313f490e124}", ProcedureHoldingFigure8)
-
+agcls.AgTypeNameMap["ProcedureHoldingFigure8"] = ProcedureHoldingFigure8
 
 class ProcedureHoldingRacetrack(IProcedureHoldingRacetrack, IProcedure):
     """Class defining a holding racetrack procedure."""
@@ -39523,7 +39523,7 @@ class ProcedureHoldingRacetrack(IProcedureHoldingRacetrack, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoldingRacetrack.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d2aa71dd-b167-4eea-be1d-665e4fd586da}", ProcedureHoldingRacetrack)
-
+agcls.AgTypeNameMap["ProcedureHoldingRacetrack"] = ProcedureHoldingRacetrack
 
 class ProcedureTransitionToHover(IProcedureTransitionToHover, IProcedure):
     """Class defining a transition to hover procedure."""
@@ -39547,7 +39547,7 @@ class ProcedureTransitionToHover(IProcedureTransitionToHover, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTransitionToHover.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4cc8f381-2118-4c51-a1f4-68db53833efc}", ProcedureTransitionToHover)
-
+agcls.AgTypeNameMap["ProcedureTransitionToHover"] = ProcedureTransitionToHover
 
 class ProcedureTerrainFollow(IProcedureTerrainFollow, IProcedure):
     """Class defining a terrain following procedure."""
@@ -39571,7 +39571,7 @@ class ProcedureTerrainFollow(IProcedureTerrainFollow, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTerrainFollow.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3ab3ca3e-70dd-405c-a470-9bfbdfa23734}", ProcedureTerrainFollow)
-
+agcls.AgTypeNameMap["ProcedureTerrainFollow"] = ProcedureTerrainFollow
 
 class ProcedureHover(IProcedureHover, IProcedure):
     """Class defining a hover procedure."""
@@ -39595,7 +39595,7 @@ class ProcedureHover(IProcedureHover, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHover.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2af73325-a00b-405c-987c-af5f4e7f60cf}", ProcedureHover)
-
+agcls.AgTypeNameMap["ProcedureHover"] = ProcedureHover
 
 class ProcedureHoverTranslate(IProcedureHoverTranslate, IProcedure):
     """Class defining a hover translate procedure."""
@@ -39619,7 +39619,7 @@ class ProcedureHoverTranslate(IProcedureHoverTranslate, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoverTranslate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{fde61d2d-7896-4b38-a0cb-f3a2776c8cfb}", ProcedureHoverTranslate)
-
+agcls.AgTypeNameMap["ProcedureHoverTranslate"] = ProcedureHoverTranslate
 
 class ProcedureTransitionToForwardFlight(IProcedureTransitionToForwardFlight, IProcedure):
     """Class defining a transition to forward flight procedure."""
@@ -39643,7 +39643,7 @@ class ProcedureTransitionToForwardFlight(IProcedureTransitionToForwardFlight, IP
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTransitionToForwardFlight.")
         
 agcls.AgClassCatalog.add_catalog_entry("{f4e5896e-1457-4909-8b6f-0740d9852278}", ProcedureTransitionToForwardFlight)
-
+agcls.AgTypeNameMap["ProcedureTransitionToForwardFlight"] = ProcedureTransitionToForwardFlight
 
 class HoverAltitudeOptions(IHoverAltitudeOptions):
     """Class defining the altitude options for a VTOL procedure."""
@@ -39664,7 +39664,7 @@ class HoverAltitudeOptions(IHoverAltitudeOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in HoverAltitudeOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{feb66c2d-f9c7-472d-a389-4764db1d37bf}", HoverAltitudeOptions)
-
+agcls.AgTypeNameMap["HoverAltitudeOptions"] = HoverAltitudeOptions
 
 class ProcedureVerticalTakeoff(IProcedureVerticalTakeoff, IProcedure):
     """Class defining a vertical takeoff procedure."""
@@ -39688,7 +39688,7 @@ class ProcedureVerticalTakeoff(IProcedureVerticalTakeoff, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureVerticalTakeoff.")
         
 agcls.AgClassCatalog.add_catalog_entry("{518b6d80-31d5-427e-b55f-8b299ba082b9}", ProcedureVerticalTakeoff)
-
+agcls.AgTypeNameMap["ProcedureVerticalTakeoff"] = ProcedureVerticalTakeoff
 
 class ProcedureVerticalLanding(IProcedureVerticalLanding, IProcedure):
     """Class defining a vertical landing procedure."""
@@ -39712,7 +39712,7 @@ class ProcedureVerticalLanding(IProcedureVerticalLanding, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureVerticalLanding.")
         
 agcls.AgClassCatalog.add_catalog_entry("{68401463-90f1-4a74-9346-6e1e99906906}", ProcedureVerticalLanding)
-
+agcls.AgTypeNameMap["ProcedureVerticalLanding"] = ProcedureVerticalLanding
 
 class ProcedureReferenceState(IProcedureReferenceState, IProcedure):
     """Class defining a reference state procedure."""
@@ -39736,7 +39736,7 @@ class ProcedureReferenceState(IProcedureReferenceState, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureReferenceState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{44f22ac8-6eec-42ca-a433-dbf8b9fdaabf}", ProcedureReferenceState)
-
+agcls.AgTypeNameMap["ProcedureReferenceState"] = ProcedureReferenceState
 
 class ProcedureSuperProcedure(IProcedureSuperProcedure, IProcedure):
     """Class defining a super procedure."""
@@ -39760,7 +39760,7 @@ class ProcedureSuperProcedure(IProcedureSuperProcedure, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureSuperProcedure.")
         
 agcls.AgClassCatalog.add_catalog_entry("{b49011b5-9b02-48df-9ddd-9936e7903017}", ProcedureSuperProcedure)
-
+agcls.AgTypeNameMap["ProcedureSuperProcedure"] = ProcedureSuperProcedure
 
 class ProcedureLaunch(IProcedureLaunch, IProcedure):
     """Class defining a launch procedure."""
@@ -39784,7 +39784,7 @@ class ProcedureLaunch(IProcedureLaunch, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLaunch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4121a688-337a-4436-999f-9e1de57aab96}", ProcedureLaunch)
-
+agcls.AgTypeNameMap["ProcedureLaunch"] = ProcedureLaunch
 
 class ProcedureAirway(IProcedureAirway, IProcedure):
     """Class defining an Airway procedure."""
@@ -39808,7 +39808,7 @@ class ProcedureAirway(IProcedureAirway, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureAirway.")
         
 agcls.AgClassCatalog.add_catalog_entry("{66c4d604-dac9-4eff-a18d-be1efb81f1f0}", ProcedureAirway)
-
+agcls.AgTypeNameMap["ProcedureAirway"] = ProcedureAirway
 
 class ProcedureAirwayRouter(IProcedureAirwayRouter, IProcedure):
     """Class defining an Airway Router procedure."""
@@ -39832,7 +39832,7 @@ class ProcedureAirwayRouter(IProcedureAirwayRouter, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureAirwayRouter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c240ee52-dee2-42e0-a8c1-17f52b665f39}", ProcedureAirwayRouter)
-
+agcls.AgTypeNameMap["ProcedureAirwayRouter"] = ProcedureAirwayRouter
 
 class ProcedureAreaTargetSearch(IProcedureAreaTargetSearch, IProcedure):
     """Class defining an Area Target Search procedure."""
@@ -39856,7 +39856,7 @@ class ProcedureAreaTargetSearch(IProcedureAreaTargetSearch, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureAreaTargetSearch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d065a50b-ba9e-4f25-831e-bb691df5cc71}", ProcedureAreaTargetSearch)
-
+agcls.AgTypeNameMap["ProcedureAreaTargetSearch"] = ProcedureAreaTargetSearch
 
 class ProcedureFormationRecover(IProcedureFormationRecover, IProcedure):
     """Class defining a Formation/Recover procedure."""
@@ -39880,7 +39880,7 @@ class ProcedureFormationRecover(IProcedureFormationRecover, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFormationRecover.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c3ca901a-fcb0-407b-a8d7-0f6972ebcd85}", ProcedureFormationRecover)
-
+agcls.AgTypeNameMap["ProcedureFormationRecover"] = ProcedureFormationRecover
 
 class ProcedureInFormation(IProcedureInFormation, IProcedure):
     """Class defining an In Formation procedure."""
@@ -39904,7 +39904,7 @@ class ProcedureInFormation(IProcedureInFormation, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureInFormation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5f09f987-b896-4cc7-b356-732d0c1500b8}", ProcedureInFormation)
-
+agcls.AgTypeNameMap["ProcedureInFormation"] = ProcedureInFormation
 
 class ProcedureParallelFlightLine(IProcedureParallelFlightLine, IProcedure):
     """Class defining a Parallel Flight Line procedure."""
@@ -39928,7 +39928,7 @@ class ProcedureParallelFlightLine(IProcedureParallelFlightLine, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureParallelFlightLine.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3d83878f-7cda-46e8-b93f-9cbdc117244b}", ProcedureParallelFlightLine)
-
+agcls.AgTypeNameMap["ProcedureParallelFlightLine"] = ProcedureParallelFlightLine
 
 class ProcedureVGTPoint(IProcedureVGTPoint, IProcedure):
     """Class defining a VGT Point procedure."""
@@ -39952,7 +39952,7 @@ class ProcedureVGTPoint(IProcedureVGTPoint, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureVGTPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c1c57b66-ecf6-47f5-be6a-36075f83917a}", ProcedureVGTPoint)
-
+agcls.AgTypeNameMap["ProcedureVGTPoint"] = ProcedureVGTPoint
 
 class PerformanceModelOptions(IPerformanceModelOptions):
     """Class defining the options for the active performance model in a phase."""
@@ -39973,7 +39973,7 @@ class PerformanceModelOptions(IPerformanceModelOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in PerformanceModelOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d37c0417-9eab-4d38-8a3f-a70e144b5368}", PerformanceModelOptions)
-
+agcls.AgTypeNameMap["PerformanceModelOptions"] = PerformanceModelOptions
 
 class AdvFixedWingTool(IAdvFixedWingTool):
     """Class defining the options for the Advanced Fixed Wing Tool of an aircraft."""
@@ -39994,7 +39994,7 @@ class AdvFixedWingTool(IAdvFixedWingTool):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTool.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e250469c-80a2-44d2-b53d-2712363d7b47}", AdvFixedWingTool)
-
+agcls.AgTypeNameMap["AdvFixedWingTool"] = AdvFixedWingTool
 
 class AdvFixedWingExternalAero(IAdvFixedWingExternalAero):
     """Class defining the External Aero File aerodynamic strategy in the Advanced Fixed Wing Tool."""
@@ -40015,7 +40015,7 @@ class AdvFixedWingExternalAero(IAdvFixedWingExternalAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingExternalAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0938800e-fa5d-446d-bf7b-3d79283da798}", AdvFixedWingExternalAero)
-
+agcls.AgTypeNameMap["AdvFixedWingExternalAero"] = AdvFixedWingExternalAero
 
 class AdvFixedWingSubsonicAero(IAdvFixedWingSubsonicAero):
     """Class defining the subsonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
@@ -40036,7 +40036,7 @@ class AdvFixedWingSubsonicAero(IAdvFixedWingSubsonicAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSubsonicAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ced4d6ca-5a7e-4640-936f-e0db35949454}", AdvFixedWingSubsonicAero)
-
+agcls.AgTypeNameMap["AdvFixedWingSubsonicAero"] = AdvFixedWingSubsonicAero
 
 class AdvFixedWingSubSuperHypersonicAero(IAdvFixedWingSubSuperHypersonicAero):
     """Class defining the Sub/Super/Hypersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
@@ -40057,7 +40057,7 @@ class AdvFixedWingSubSuperHypersonicAero(IAdvFixedWingSubSuperHypersonicAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSubSuperHypersonicAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{aa686d0d-7a40-44bb-b340-a5a5470ed81f}", AdvFixedWingSubSuperHypersonicAero)
-
+agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicAero"] = AdvFixedWingSubSuperHypersonicAero
 
 class AdvFixedWingSupersonicAero(IAdvFixedWingSupersonicAero):
     """Class defining the supersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
@@ -40078,7 +40078,7 @@ class AdvFixedWingSupersonicAero(IAdvFixedWingSupersonicAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSupersonicAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{00683dc3-fc6d-4ba2-9d0b-306363523e17}", AdvFixedWingSupersonicAero)
-
+agcls.AgTypeNameMap["AdvFixedWingSupersonicAero"] = AdvFixedWingSupersonicAero
 
 class PerformanceModel(IPerformanceModel, ICatalogItem):
     """Class defining an unknown performance model."""
@@ -40102,7 +40102,7 @@ class PerformanceModel(IPerformanceModel, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in PerformanceModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{07c21222-ddfa-4417-8739-aa7e41a6091a}", PerformanceModel)
-
+agcls.AgTypeNameMap["PerformanceModel"] = PerformanceModel
 
 class AdvFixedWingGeometryBasic(IAdvFixedWingGeometryBasic, IAdvFixedWingGeometry):
     """Class defining a basic geometry wing in the Advanced Fixed Wing Tool."""
@@ -40126,7 +40126,7 @@ class AdvFixedWingGeometryBasic(IAdvFixedWingGeometryBasic, IAdvFixedWingGeometr
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingGeometryBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3fccd7b1-9fd7-424e-a251-cadcc2d44a0a}", AdvFixedWingGeometryBasic)
-
+agcls.AgTypeNameMap["AdvFixedWingGeometryBasic"] = AdvFixedWingGeometryBasic
 
 class AdvFixedWingGeometryVariable(IAdvFixedWingGeometryVariable, IAdvFixedWingGeometry):
     """Class defining a variable geometry wing in the Advanced Fixed Wing Tool."""
@@ -40150,7 +40150,7 @@ class AdvFixedWingGeometryVariable(IAdvFixedWingGeometryVariable, IAdvFixedWingG
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingGeometryVariable.")
         
 agcls.AgClassCatalog.add_catalog_entry("{a7cb26ac-fa5b-416d-b81b-8a5975937740}", AdvFixedWingGeometryVariable)
-
+agcls.AgTypeNameMap["AdvFixedWingGeometryVariable"] = AdvFixedWingGeometryVariable
 
 class AdvFixedWingElectricPowerplant(IAdvFixedWingElectricPowerplant):
     """Class defining an Electric powerplant in the Advanced Fixed Wing Tool."""
@@ -40171,7 +40171,7 @@ class AdvFixedWingElectricPowerplant(IAdvFixedWingElectricPowerplant):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingElectricPowerplant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64f956f4-4b87-4b13-b459-efef51191309}", AdvFixedWingElectricPowerplant)
-
+agcls.AgTypeNameMap["AdvFixedWingElectricPowerplant"] = AdvFixedWingElectricPowerplant
 
 class AdvFixedWingExternalProp(IAdvFixedWingExternalProp):
     """Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool."""
@@ -40192,7 +40192,7 @@ class AdvFixedWingExternalProp(IAdvFixedWingExternalProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingExternalProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{86d612c4-8537-48d7-912b-931a2c939c8e}", AdvFixedWingExternalProp)
-
+agcls.AgTypeNameMap["AdvFixedWingExternalProp"] = AdvFixedWingExternalProp
 
 class AdvFixedWingSubSuperHypersonicProp(IAdvFixedWingSubSuperHypersonicProp):
     """Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool."""
@@ -40213,7 +40213,7 @@ class AdvFixedWingSubSuperHypersonicProp(IAdvFixedWingSubSuperHypersonicProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSubSuperHypersonicProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{15279d03-0f3b-458d-957c-2cdee97bc0a8}", AdvFixedWingSubSuperHypersonicProp)
-
+agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicProp"] = AdvFixedWingSubSuperHypersonicProp
 
 class AdvFixedWingPistonPowerplant(IAdvFixedWingPistonPowerplant):
     """Class defining a Piston powerplant in the Advanced Fixed Wing Tool."""
@@ -40234,7 +40234,7 @@ class AdvFixedWingPistonPowerplant(IAdvFixedWingPistonPowerplant):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingPistonPowerplant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{dd383e2b-f1e9-4afe-9241-4d89e95db034}", AdvFixedWingPistonPowerplant)
-
+agcls.AgTypeNameMap["AdvFixedWingPistonPowerplant"] = AdvFixedWingPistonPowerplant
 
 class AdvFixedWingEmpiricalJetEngine(IAdvFixedWingEmpiricalJetEngine):
     """Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool"""
@@ -40255,7 +40255,7 @@ class AdvFixedWingEmpiricalJetEngine(IAdvFixedWingEmpiricalJetEngine):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingEmpiricalJetEngine.")
         
 agcls.AgClassCatalog.add_catalog_entry("{cf86965f-eacf-47ca-a6b8-5c69a1f9612f}", AdvFixedWingEmpiricalJetEngine)
-
+agcls.AgTypeNameMap["AdvFixedWingEmpiricalJetEngine"] = AdvFixedWingEmpiricalJetEngine
 
 class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerplant):
     """This class is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
@@ -40276,7 +40276,7 @@ class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerpla
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbofanBasicABPowerplant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{27a6cd0b-bd9b-4af7-9367-9d2ce3fa39cd}", AdvFixedWingTurbofanBasicABPowerplant)
-
+agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABPowerplant"] = AdvFixedWingTurbofanBasicABPowerplant
 
 class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerplant):
     """This class is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
@@ -40297,7 +40297,7 @@ class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerpla
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbojetBasicABPowerplant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{65230337-ecdc-4b80-92aa-107af1bcfdbe}", AdvFixedWingTurbojetBasicABPowerplant)
-
+agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABPowerplant"] = AdvFixedWingTurbojetBasicABPowerplant
 
 class AdvFixedWingTurbofanBasicABProp(IAdvFixedWingTurbofanBasicABProp):
     """Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool"""
@@ -40318,7 +40318,7 @@ class AdvFixedWingTurbofanBasicABProp(IAdvFixedWingTurbofanBasicABProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbofanBasicABProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{327e3a7a-ecce-445e-b105-2dbec0239e6d}", AdvFixedWingTurbofanBasicABProp)
-
+agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABProp"] = AdvFixedWingTurbofanBasicABProp
 
 class AdvFixedWingTurbojetBasicABProp(IAdvFixedWingTurbojetBasicABProp):
     """Class defining the Turbojet - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool"""
@@ -40339,7 +40339,7 @@ class AdvFixedWingTurbojetBasicABProp(IAdvFixedWingTurbojetBasicABProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbojetBasicABProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c60f96fa-5802-4d89-b522-2a1dd5e03ca0}", AdvFixedWingTurbojetBasicABProp)
-
+agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABProp"] = AdvFixedWingTurbojetBasicABProp
 
 class AdvFixedWingTurbopropPowerplant(IAdvFixedWingTurbopropPowerplant):
     """Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool"""
@@ -40360,7 +40360,7 @@ class AdvFixedWingTurbopropPowerplant(IAdvFixedWingTurbopropPowerplant):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbopropPowerplant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7ac5402a-9b5d-4fc9-94b5-365e9bc1e25e}", AdvFixedWingTurbopropPowerplant)
-
+agcls.AgTypeNameMap["AdvFixedWingTurbopropPowerplant"] = AdvFixedWingTurbopropPowerplant
 
 class MissileSimpleAero(IMissileSimpleAero):
     """Class defining the simple aerodynamic options for a missile."""
@@ -40381,7 +40381,7 @@ class MissileSimpleAero(IMissileSimpleAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileSimpleAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{99dff5f7-c73c-414d-9c38-2e7b35c93f5e}", MissileSimpleAero)
-
+agcls.AgTypeNameMap["MissileSimpleAero"] = MissileSimpleAero
 
 class MissileExternalAero(IMissileExternalAero):
     """Class defining the external aerodynamic options for a missile."""
@@ -40402,7 +40402,7 @@ class MissileExternalAero(IMissileExternalAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileExternalAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92940e34-6d78-4e39-b774-4a865e9d0bc0}", MissileExternalAero)
-
+agcls.AgTypeNameMap["MissileExternalAero"] = MissileExternalAero
 
 class MissileAdvancedAero(IMissileAdvancedAero):
     """Class defining the advanced aerodynamic options for a missile."""
@@ -40423,7 +40423,7 @@ class MissileAdvancedAero(IMissileAdvancedAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileAdvancedAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{becfe264-7b70-461f-9f64-b0d23aa59f1e}", MissileAdvancedAero)
-
+agcls.AgTypeNameMap["MissileAdvancedAero"] = MissileAdvancedAero
 
 class MissileAero(IMissileAero):
     """Class defining the aerodynamic options for a missile."""
@@ -40444,7 +40444,7 @@ class MissileAero(IMissileAero):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileAero.")
         
 agcls.AgClassCatalog.add_catalog_entry("{bc518434-5a42-49e0-8a54-8212a797c728}", MissileAero)
-
+agcls.AgTypeNameMap["MissileAero"] = MissileAero
 
 class MissileProp(IMissileProp):
     """Class defining the propulsion options for a missile."""
@@ -40465,7 +40465,7 @@ class MissileProp(IMissileProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{544b60ce-22da-4e8b-a222-ffd4bc070a01}", MissileProp)
-
+agcls.AgTypeNameMap["MissileProp"] = MissileProp
 
 class MissileSimpleProp(IMissileSimpleProp):
     """Class defining the Simple propulsion options for a missile."""
@@ -40486,7 +40486,7 @@ class MissileSimpleProp(IMissileSimpleProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileSimpleProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e92e2a28-9614-4afe-97ee-8e0d90e4ee3b}", MissileSimpleProp)
-
+agcls.AgTypeNameMap["MissileSimpleProp"] = MissileSimpleProp
 
 class MissileExternalProp(IMissileExternalProp):
     """Class defining the External propulsion options for a missile."""
@@ -40507,7 +40507,7 @@ class MissileExternalProp(IMissileExternalProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileExternalProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4b7a80c7-e7a6-453b-a423-1c53ac68c0bc}", MissileExternalProp)
-
+agcls.AgTypeNameMap["MissileExternalProp"] = MissileExternalProp
 
 class MissileRamjetProp(IMissileRamjetProp):
     """Class defining the Ramjet propulsion options for a missile."""
@@ -40528,7 +40528,7 @@ class MissileRamjetProp(IMissileRamjetProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileRamjetProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0bef31b2-9f2c-4dea-b475-e2feeb55052e}", MissileRamjetProp)
-
+agcls.AgTypeNameMap["MissileRamjetProp"] = MissileRamjetProp
 
 class MissileRocketProp(IMissileRocketProp):
     """Class defining the Rocket propulsion options for a missile."""
@@ -40549,7 +40549,7 @@ class MissileRocketProp(IMissileRocketProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileRocketProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{68296bb7-edd5-4305-8b51-3f3d0c7d4428}", MissileRocketProp)
-
+agcls.AgTypeNameMap["MissileRocketProp"] = MissileRocketProp
 
 class MissileTurbojetProp(IMissileTurbojetProp):
     """Class defining the Turbojet propulsion options for a missile."""
@@ -40570,7 +40570,7 @@ class MissileTurbojetProp(IMissileTurbojetProp):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissileTurbojetProp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6024d1a7-768e-4015-abb3-e0539d431ff9}", MissileTurbojetProp)
-
+agcls.AgTypeNameMap["MissileTurbojetProp"] = MissileTurbojetProp
 
 class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
     """Class defining the Forward Flight options for a Reference State procedure."""
@@ -40591,7 +40591,7 @@ class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateForwardFlightOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6f60fd0b-6c79-48a5-908b-b5d697552b94}", ReferenceStateForwardFlightOptions)
-
+agcls.AgTypeNameMap["ReferenceStateForwardFlightOptions"] = ReferenceStateForwardFlightOptions
 
 class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
     """Class defining the Takeoff or Landing options for a Reference State procedure."""
@@ -40612,7 +40612,7 @@ class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateTakeoffLandingOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5a54840f-128e-411c-af24-2e2c49fbd922}", ReferenceStateTakeoffLandingOptions)
-
+agcls.AgTypeNameMap["ReferenceStateTakeoffLandingOptions"] = ReferenceStateTakeoffLandingOptions
 
 class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
     """Class defining the Hover options for a Reference State procedure."""
@@ -40633,7 +40633,7 @@ class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateHoverOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0767b34e-3bc9-447d-956e-5e0939cc9bfc}", ReferenceStateHoverOptions)
-
+agcls.AgTypeNameMap["ReferenceStateHoverOptions"] = ReferenceStateHoverOptions
 
 class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
     """Class defining the Weight on Wheels options for a Reference State procedure."""
@@ -40654,7 +40654,7 @@ class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateWeightOnWheelsOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{de32d95c-707b-41dd-a7de-072506f171b9}", ReferenceStateWeightOnWheelsOptions)
-
+agcls.AgTypeNameMap["ReferenceStateWeightOnWheelsOptions"] = ReferenceStateWeightOnWheelsOptions
 
 class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):
     """Class defining a runway from catalog site."""
@@ -40678,7 +40678,7 @@ class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteRunwayFromCatalog.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9220ceaa-69a7-4b64-8dfe-ec4ca0083d3e}", SiteRunwayFromCatalog)
-
+agcls.AgTypeNameMap["SiteRunwayFromCatalog"] = SiteRunwayFromCatalog
 
 class SiteAirportFromCatalog(ISiteAirportFromCatalog, ISite):
     """Class defining a airport from catalog site."""
@@ -40702,7 +40702,7 @@ class SiteAirportFromCatalog(ISiteAirportFromCatalog, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteAirportFromCatalog.")
         
 agcls.AgClassCatalog.add_catalog_entry("{b5a44f89-2af4-41bd-8ebc-8e503f43f912}", SiteAirportFromCatalog)
-
+agcls.AgTypeNameMap["SiteAirportFromCatalog"] = SiteAirportFromCatalog
 
 class SiteNavaidFromCatalog(ISiteNavaidFromCatalog, ISite):
     """Class defining a navaid from catalog site."""
@@ -40726,7 +40726,7 @@ class SiteNavaidFromCatalog(ISiteNavaidFromCatalog, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteNavaidFromCatalog.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59135b93-5164-4c35-8128-de6a6376a66f}", SiteNavaidFromCatalog)
-
+agcls.AgTypeNameMap["SiteNavaidFromCatalog"] = SiteNavaidFromCatalog
 
 class SiteVTOLPointFromCatalog(ISiteVTOLPointFromCatalog, ISite):
     """Class defining a VTOL point from catalog site."""
@@ -40750,7 +40750,7 @@ class SiteVTOLPointFromCatalog(ISiteVTOLPointFromCatalog, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteVTOLPointFromCatalog.")
         
 agcls.AgClassCatalog.add_catalog_entry("{189c8c0a-c6a4-424f-b2ff-b1e466c38cd4}", SiteVTOLPointFromCatalog)
-
+agcls.AgTypeNameMap["SiteVTOLPointFromCatalog"] = SiteVTOLPointFromCatalog
 
 class SiteWaypointFromCatalog(ISiteWaypointFromCatalog, ISite):
     """Class defining a waypoint from catalog site."""
@@ -40774,7 +40774,7 @@ class SiteWaypointFromCatalog(ISiteWaypointFromCatalog, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteWaypointFromCatalog.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d620651a-2526-43c8-8715-122ad6d6eb40}", SiteWaypointFromCatalog)
-
+agcls.AgTypeNameMap["SiteWaypointFromCatalog"] = SiteWaypointFromCatalog
 
 class NavaidCategory(INavaidCategory):
     """Class defining the navaid category in the Aviator catalog."""
@@ -40795,7 +40795,7 @@ class NavaidCategory(INavaidCategory):
             raise STKAttributeError(attrname + " is not a recognized attribute in NavaidCategory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9cab926c-f92d-4b63-9588-d5e849f047bf}", NavaidCategory)
-
+agcls.AgTypeNameMap["NavaidCategory"] = NavaidCategory
 
 class VTOLPointCategory(IVTOLPointCategory):
     """Class defining the VTOL point category in the Aviator catalog."""
@@ -40816,7 +40816,7 @@ class VTOLPointCategory(IVTOLPointCategory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VTOLPointCategory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{35a0a9ce-18bd-47b5-927a-1cb825edab22}", VTOLPointCategory)
-
+agcls.AgTypeNameMap["VTOLPointCategory"] = VTOLPointCategory
 
 class WaypointCategory(IWaypointCategory):
     """Class defining the waypoint category in the Aviator catalog."""
@@ -40837,7 +40837,7 @@ class WaypointCategory(IWaypointCategory):
             raise STKAttributeError(attrname + " is not a recognized attribute in WaypointCategory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{502442da-96cc-4a07-9124-9d4e4c287801}", WaypointCategory)
-
+agcls.AgTypeNameMap["WaypointCategory"] = WaypointCategory
 
 class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Navaid."""
@@ -40867,7 +40867,7 @@ class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogIt
             raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Navaid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{18308bdb-0318-4820-87c7-59e4ad432c0f}", ARINC424Navaid)
-
+agcls.AgTypeNameMap["ARINC424Navaid"] = ARINC424Navaid
 
 class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Helipad."""
@@ -40897,7 +40897,7 @@ class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatal
             raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Helipad.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6cf2bbc6-dcf3-493e-ad3d-bf58879edd2d}", ARINC424Helipad)
-
+agcls.AgTypeNameMap["ARINC424Helipad"] = ARINC424Helipad
 
 class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Waypoint."""
@@ -40924,7 +40924,7 @@ class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Waypoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{55d1b405-651f-4687-a34a-f0bb64ec8814}", ARINC424Waypoint)
-
+agcls.AgTypeNameMap["ARINC424Waypoint"] = ARINC424Waypoint
 
 class UserVTOLPointSource(IUserVTOLPointSource, ICatalogSource):
     """Class defining the user VTOL Point source in the Aviator catalog."""
@@ -40948,7 +40948,7 @@ class UserVTOLPointSource(IUserVTOLPointSource, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVTOLPointSource.")
         
 agcls.AgClassCatalog.add_catalog_entry("{dfc0b12b-f8c4-4d99-bb5c-6aecebe0ea7d}", UserVTOLPointSource)
-
+agcls.AgTypeNameMap["UserVTOLPointSource"] = UserVTOLPointSource
 
 class UserVTOLPoint(IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem):
     """Class defining the user VTOL Point in the Aviator catalog."""
@@ -40978,7 +40978,7 @@ class UserVTOLPoint(IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalo
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVTOLPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{748a44bd-4d22-4800-a311-fc8c95901638}", UserVTOLPoint)
-
+agcls.AgTypeNameMap["UserVTOLPoint"] = UserVTOLPoint
 
 class UserWaypointSource(IUserWaypointSource, ICatalogSource):
     """Class defining the user waypoint source in the Aviator catalog."""
@@ -41002,7 +41002,7 @@ class UserWaypointSource(IUserWaypointSource, ICatalogSource):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserWaypointSource.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7f85e32f-b5a1-4d12-b7ac-a817dd7162d0}", UserWaypointSource)
-
+agcls.AgTypeNameMap["UserWaypointSource"] = UserWaypointSource
 
 class UserWaypoint(IUserWaypoint, ICatalogWaypoint, ICatalogItem):
     """Class defining the user waypoint in the Aviator catalog."""
@@ -41029,7 +41029,7 @@ class UserWaypoint(IUserWaypoint, ICatalogWaypoint, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserWaypoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ca33c45d-2eba-409b-aa44-b57b5a57e3b3}", UserWaypoint)
-
+agcls.AgTypeNameMap["UserWaypoint"] = UserWaypoint
 
 class PropulsionEfficiencies(IPropulsionEfficiencies):
     """Class defining the Propulsion Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool."""
@@ -41050,7 +41050,7 @@ class PropulsionEfficiencies(IPropulsionEfficiencies):
             raise STKAttributeError(attrname + " is not a recognized attribute in PropulsionEfficiencies.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0af7363a-b62a-4eaf-a4b5-4103197bc6b1}", PropulsionEfficiencies)
-
+agcls.AgTypeNameMap["PropulsionEfficiencies"] = PropulsionEfficiencies
 
 class FuelModelKeroseneAFPROP(IFuelModelKeroseneAFPROP):
     """Class defining the Kerosense - AFPROP fuel type for a thermodynamic jet engine model."""
@@ -41071,7 +41071,7 @@ class FuelModelKeroseneAFPROP(IFuelModelKeroseneAFPROP):
             raise STKAttributeError(attrname + " is not a recognized attribute in FuelModelKeroseneAFPROP.")
         
 agcls.AgClassCatalog.add_catalog_entry("{fb23d809-5785-4a45-b914-415015e6d9eb}", FuelModelKeroseneAFPROP)
-
+agcls.AgTypeNameMap["FuelModelKeroseneAFPROP"] = FuelModelKeroseneAFPROP
 
 class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
     """Class defining the Kerosense - CEA fuel type for a thermodynamic jet engine model."""
@@ -41092,7 +41092,7 @@ class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
             raise STKAttributeError(attrname + " is not a recognized attribute in FuelModelKeroseneCEA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6df7fa84-6983-4ed2-9447-a11d0fbd0fac}", FuelModelKeroseneCEA)
-
+agcls.AgTypeNameMap["FuelModelKeroseneCEA"] = FuelModelKeroseneCEA
 
 class AdvFixedWingRamjetBasic(IAdvFixedWingRamjetBasic):
     """Class defining the basic Ramjet model."""
@@ -41113,7 +41113,7 @@ class AdvFixedWingRamjetBasic(IAdvFixedWingRamjetBasic):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingRamjetBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9f333e9b-3d22-429d-9880-940122216dde}", AdvFixedWingRamjetBasic)
-
+agcls.AgTypeNameMap["AdvFixedWingRamjetBasic"] = AdvFixedWingRamjetBasic
 
 class AdvFixedWingScramjetBasic(IAdvFixedWingScramjetBasic):
     """Class defining the basic Scramjet model."""
@@ -41134,7 +41134,7 @@ class AdvFixedWingScramjetBasic(IAdvFixedWingScramjetBasic):
             raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingScramjetBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6caec1e6-8cf4-4752-89c6-42b55473f144}", AdvFixedWingScramjetBasic)
-
+agcls.AgTypeNameMap["AdvFixedWingScramjetBasic"] = AdvFixedWingScramjetBasic
 
 class AircraftVTOLModel(IAircraftVTOLModel):
     """Class defining the VTOL performance model of an aircraft."""
@@ -41155,7 +41155,7 @@ class AircraftVTOLModel(IAircraftVTOLModel):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftVTOLModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5fb18d9d-20cb-408e-a0d0-60f5cdd9dc2c}", AircraftVTOLModel)
-
+agcls.AgTypeNameMap["AircraftVTOLModel"] = AircraftVTOLModel
 
 class AircraftVTOL(IAircraftVTOL, ICatalogItem):
     """Class defining the VTOL category of an Aviator aircraft."""
@@ -41179,7 +41179,7 @@ class AircraftVTOL(IAircraftVTOL, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftVTOL.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c1bd235a-6ffc-435c-900d-0ff6a7ca5422}", AircraftVTOL)
-
+agcls.AgTypeNameMap["AircraftVTOL"] = AircraftVTOL
 
 class AircraftTerrainFollowModel(IAircraftTerrainFollowModel):
     """Class defining the TerrainFollow performance model of an aircraft."""
@@ -41200,7 +41200,7 @@ class AircraftTerrainFollowModel(IAircraftTerrainFollowModel):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftTerrainFollowModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{27d2c971-cdce-4465-a3df-eaf526de6c01}", AircraftTerrainFollowModel)
-
+agcls.AgTypeNameMap["AircraftTerrainFollowModel"] = AircraftTerrainFollowModel
 
 class AircraftTerrainFollow(IAircraftTerrainFollow, ICatalogItem):
     """Class defining the TerrainFollow category of an Aviator aircraft."""
@@ -41224,7 +41224,7 @@ class AircraftTerrainFollow(IAircraftTerrainFollow, ICatalogItem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AircraftTerrainFollow.")
         
 agcls.AgClassCatalog.add_catalog_entry("{683bec0d-293d-4afa-a1ab-b23b123d62e4}", AircraftTerrainFollow)
-
+agcls.AgTypeNameMap["AircraftTerrainFollow"] = AircraftTerrainFollow
 
 class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategyBallistic3D, IBasicManeuverStrategy):
     """Class defining Ballistic 3D strategy for a Basic Maneuver procedure."""
@@ -41248,7 +41248,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategyBallistic3D, IBasic
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyBallistic3D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ec8f88ae-2944-459b-90aa-f8df3e74bf89}", BasicManeuverStrategyBallistic3D)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyBallistic3D"] = BasicManeuverStrategyBallistic3D
 
 class ProcedureLaunchDynState(IProcedureLaunchDynState, IProcedure):
     """Class defining a Launch Dyn State procedure."""
@@ -41272,7 +41272,7 @@ class ProcedureLaunchDynState(IProcedureLaunchDynState, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLaunchDynState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AA90861B-C8E1-46D1-BA87-47F27D731B84}", ProcedureLaunchDynState)
-
+agcls.AgTypeNameMap["ProcedureLaunchDynState"] = ProcedureLaunchDynState
 
 class ProcedureLaunchWaypoint(IProcedureLaunchWaypoint, IProcedure):
     """Class defining a Launch Waypoint procedure."""
@@ -41296,7 +41296,7 @@ class ProcedureLaunchWaypoint(IProcedureLaunchWaypoint, IProcedure):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLaunchWaypoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05730C66-FF4D-4A05-A821-C541134119CE}", ProcedureLaunchWaypoint)
-
+agcls.AgTypeNameMap["ProcedureLaunchWaypoint"] = ProcedureLaunchWaypoint
 
 class SiteDynState(ISiteDynState, ISite):
     """Class defining a Dyn State site."""
@@ -41320,7 +41320,7 @@ class SiteDynState(ISiteDynState, ISite):
             raise STKAttributeError(attrname + " is not a recognized attribute in SiteDynState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DF907297-E5CC-4346-9E97-95A3AFEE02FD}", SiteDynState)
-
+agcls.AgTypeNameMap["SiteDynState"] = SiteDynState
 
 class BasicManeuverStrategyPitch3D(IBasicManeuverStrategyPitch3D, IBasicManeuverStrategy):
     """Class defining Pitch 3D strategy for a Basic Maneuver procedure."""
@@ -41344,7 +41344,7 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategyPitch3D, IBasicManeuver
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyPitch3D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A10EDD83-CED6-4747-AFBA-948653338437}", BasicManeuverStrategyPitch3D)
-
+agcls.AgTypeNameMap["BasicManeuverStrategyPitch3D"] = BasicManeuverStrategyPitch3D
 
 class RefuelDumpProperties(IRefuelDumpProperties):
     """Class defining the refuel/dump properties for the current procedure."""
@@ -41365,7 +41365,7 @@ class RefuelDumpProperties(IRefuelDumpProperties):
             raise STKAttributeError(attrname + " is not a recognized attribute in RefuelDumpProperties.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9CB1E862-FDED-463D-B449-C39030B149D6}", RefuelDumpProperties)
-
+agcls.AgTypeNameMap["RefuelDumpProperties"] = RefuelDumpProperties
 
 class ProcedureFastTimeOptions(IProcedureFastTimeOptions):
     """Class defining fast operations (without error or constraint checks) for time options for the current procedure."""
@@ -41386,7 +41386,7 @@ class ProcedureFastTimeOptions(IProcedureFastTimeOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFastTimeOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D69CF956-3A04-48F1-B553-7A10412253A0}", ProcedureFastTimeOptions)
-
+agcls.AgTypeNameMap["ProcedureFastTimeOptions"] = ProcedureFastTimeOptions
 
 
 ################################################################################

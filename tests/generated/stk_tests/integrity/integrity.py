@@ -11,12 +11,12 @@ from ansys.stk.core.vgt import *
 
 
 class ReportComparison(object):
-    def __init__(self, Units: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, Units: "UnitPreferencesDimensionCollection"):
         Assert.assertIsNotNone(Units)
         self._reports = []
         self._omsnapshots = []
         self._cnsnapshots = []
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = Units
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = Units
 
     # endregion
 
@@ -40,7 +40,7 @@ class ReportComparison(object):
 
     # region TakeOMSnapshot
 
-    def TakeOMSnapshot(self, oRoot: "IStkObjectRoot"):
+    def TakeOMSnapshot(self, oRoot: "StkObjectRoot"):
         for report in self._reports:
             report.Execute(oRoot)
 
@@ -50,7 +50,7 @@ class ReportComparison(object):
 
     # region TakeConnectSnapshot
 
-    def TakeConnectSnapshot(self, oRoot: "IStkObjectRoot"):
+    def TakeConnectSnapshot(self, oRoot: "StkObjectRoot"):
         for report in self._reports:
             report.Execute(oRoot)
 
@@ -175,10 +175,10 @@ class ReportComparison(object):
 
         # region Execute
 
-        def Execute(self, oRoot: "IStkObjectRoot"):
+        def Execute(self, oRoot: "StkObjectRoot"):
             Assert.assertIsNotNone(oRoot)
             self._report.clear()
-            res: "IExecCmdResult" = oRoot.execute_command(self._name)
+            res: "ExecCmdResult" = oRoot.execute_command(self._name)
             row: str
             for row in res:
                 s = String.Split(row.replace('"', " "), ",")

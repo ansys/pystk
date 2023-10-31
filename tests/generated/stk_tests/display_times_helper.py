@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from logger import *
@@ -8,10 +9,10 @@ from ansys.stk.core.vgt import *
 
 # region DisplayTimesHelper
 class DisplayTimesHelper(object):
-    def __init__(self, oRoot: "IStkObjectRoot"):
+    def __init__(self, oRoot: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "IStkObjectRoot" = oRoot
+        self.m_oRoot: "StkObjectRoot" = oRoot
 
     # endregion
 
@@ -39,13 +40,13 @@ class DisplayTimesHelper(object):
             def action1():
                 oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
 
-            TryCatchAssertBlock.DoAssert("Cannot set eDuringChainAccess type!", action1)
+            TryCatchAssertBlock.DoAssert(action1)
 
         def action2():
             oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.TYPE_UNKNOWN)
 
         # eDisplayTypeUnknown
-        TryCatchAssertBlock.DoAssert("Cannot set eDisplayTypeUnknown type!", action2)
+        TryCatchAssertBlock.DoAssert(action2)
         # DisplayStatusType
         self.m_logger.WriteLine6("\tThe current DisplayStatusType is: {0}", oDisplay.display_status_type)
 
@@ -69,15 +70,15 @@ class DisplayTimesHelper(object):
                 Assert.assertIsNone(displayTimesData)
                 self.m_logger.WriteLine("\t\tNo DisplayTimesData available.")
             elif eType == DISPLAY_TIMES_TYPE.DURING_ACCESS:
-                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, IDuringAccess))
+                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, DuringAccess))
             elif eType == DISPLAY_TIMES_TYPE.USE_INTERVALS:
                 oHelper = IntervalCollectionHelper(self.m_oRoot.unit_preferences)
                 oHelper.Run(
-                    clr.Convert(oDisplay.display_times_data, IIntervalCollection),
+                    clr.Convert(oDisplay.display_times_data, IntervalCollection),
                     IntervalCollectionHelper.IntervalCollectionType.Intervals,
                 )
             elif eType == DISPLAY_TIMES_TYPE.USE_TIME_COMPONENT:
-                self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, IDisplayTimesTimeComponent))
+                self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, DisplayTimesTimeComponent))
             else:
                 Assert.fail("Unknown DISPLAY_TIMES_TYPE")
 
@@ -86,7 +87,7 @@ class DisplayTimesHelper(object):
     # endregion
 
     # region DuringAccess method
-    def DuringAccess(self, oAccess: "IDuringAccess"):
+    def DuringAccess(self, oAccess: "DuringAccess"):
         Assert.assertIsNotNone(oAccess)
         # AccessObjects
         oOLCHelper = ObjectLinkCollectionHelper()
@@ -99,7 +100,7 @@ class DisplayTimesHelper(object):
     # endregion
 
     # region DisplayTimesTimeComponent method
-    def DisplayTimesTimeComponent(self, dttc: "IDisplayTimesTimeComponent"):
+    def DisplayTimesTimeComponent(self, dttc: "DisplayTimesTimeComponent"):
         # Only Intervals and Interval Lists are supported.
 
         Assert.assertIsNotNone(dttc)
@@ -108,27 +109,27 @@ class DisplayTimesHelper(object):
         def action3():
             dttc.set_qualified_path("")
 
-        TryCatchAssertBlock.DoAssert("Setting blank component", action3)
+        TryCatchAssertBlock.DoAssert(action3)
 
         def action4():
             dttc.set_qualified_path("Scenario/Scenario1 Bogus Interval")
 
-        TryCatchAssertBlock.DoAssert("Setting bogus component", action4)
+        TryCatchAssertBlock.DoAssert(action4)
 
         def action5():
             dttc.set_qualified_path("Scenario/Scenario1 AnalysisStartTime Event")
 
-        TryCatchAssertBlock.DoAssert("Setting event component", action5)
+        TryCatchAssertBlock.DoAssert(action5)
 
         def action6():
             dttc.set_qualified_path("Facility/Facility1 LightingIntervals EventIntervalCollection")
 
-        TryCatchAssertBlock.DoAssert("Setting IntervalCollection component", action6)
+        TryCatchAssertBlock.DoAssert(action6)
 
         def action7():
             dttc.set_qualified_path("Scenario/Scenario1 OneMinuteSampleTimes EventArray")
 
-        TryCatchAssertBlock.DoAssert("Setting EventArray component", action7)
+        TryCatchAssertBlock.DoAssert(action7)
 
         dttc.set_qualified_path(
             (("Scenario/" + self.m_oRoot.current_scenario.instance_name) + " AnalysisInterval EventInterval")
@@ -152,7 +153,7 @@ class DisplayTimesHelper(object):
         def action8():
             dttc.set_time_component(crdn)
 
-        TryCatchAssertBlock.DoAssert("Setting event component", action8)
+        TryCatchAssertBlock.DoAssert(action8)
         crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
             self.m_oRoot.current_scenario.children["Facility1"].vgt.event_interval_collections["LightingIntervals"],
             IAnalysisWorkbenchComponent,
@@ -161,7 +162,7 @@ class DisplayTimesHelper(object):
         def action9():
             dttc.set_time_component(crdnFac)
 
-        TryCatchAssertBlock.DoAssert("Setting IntervalCollection component", action9)
+        TryCatchAssertBlock.DoAssert(action9)
         crdn = clr.CastAs(
             self.m_oRoot.current_scenario.vgt.event_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
         )
@@ -169,7 +170,7 @@ class DisplayTimesHelper(object):
         def action10():
             dttc.set_time_component(crdn)
 
-        TryCatchAssertBlock.DoAssert("Setting EventArray component", action10)
+        TryCatchAssertBlock.DoAssert(action10)
 
         crdn = clr.CastAs(
             self.m_oRoot.current_scenario.vgt.event_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
@@ -205,10 +206,10 @@ class IntervalCollectionHelper(object):
         LabelNotes = 2
         Constraint = 3
 
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
         self.m_bReadOnlyFile: bool = False
 
     # endregion
@@ -220,7 +221,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IIntervalCollection", eType):
+    def Run(self, oCollection: "IntervalCollection", eType):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine("IntervalCollection test:")
         # set DateFormat
@@ -261,14 +262,14 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region DuringAccess
-    def DuringAccess(self, oCollection: "IIntervalCollection"):
+    def DuringAccess(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
 
         def action11():
             oCollection.remove_all()
 
         # RemoveAll
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action11)
+        TryCatchAssertBlock.DoAssert(action11)
 
         oStart: typing.Any = None
         oStop: typing.Any = None
@@ -279,7 +280,7 @@ class IntervalCollectionHelper(object):
         def action12():
             iIndex: int = oCollection.add(oStart, oStop)
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action12)
+        TryCatchAssertBlock.DoAssert(action12)
         if oCollection.count > 0:
             # ToArray
             arIntervals = oCollection.to_array(0, -1)
@@ -307,42 +308,42 @@ class IntervalCollectionHelper(object):
                 oCollection.change_interval(0, oNewStart, oNewStop)
 
             # ChangeInterval
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action13)
+            TryCatchAssertBlock.DoAssert(action13)
 
             def action14():
                 oCollection.deconflict()
 
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action14)
+            TryCatchAssertBlock.DoAssert(action14)
 
             def action15():
                 oCollection.remove_interval(oStart, oStop)
 
             # RemoveInterval
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action15)
+            TryCatchAssertBlock.DoAssert(action15)
 
             def action16():
                 oCollection.remove_index(0)
 
             # RemoveIndex
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action16)
+            TryCatchAssertBlock.DoAssert(action16)
 
         def action17():
             oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
 
         # LoadIntervals
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action17)
+        TryCatchAssertBlock.DoAssert(action17)
 
         def action18():
             oCollection.deconflict()
 
         # Deconflict
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action18)
+        TryCatchAssertBlock.DoAssert(action18)
 
     # endregion
 
     # region Constraint
-    def Constraint(self, oCollection: "IIntervalCollection"):
+    def Constraint(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         if self.m_bReadOnlyFile:
 
@@ -350,7 +351,7 @@ class IntervalCollectionHelper(object):
                 oCollection.remove_all()
 
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action19)
+            TryCatchAssertBlock.DoAssert(action19)
 
             oStart: typing.Any = None
             oStop: typing.Any = None
@@ -361,7 +362,7 @@ class IntervalCollectionHelper(object):
             def action20():
                 iIndex: int = oCollection.add(oStart, oStop)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action20)
+            TryCatchAssertBlock.DoAssert(action20)
             # ToArray
             arIntervals = oCollection.to_array(0, -1)
             self.m_logger.WriteLine3(
@@ -389,25 +390,25 @@ class IntervalCollectionHelper(object):
                     oCollection.change_interval(0, oNewStart, oNewStop)
 
                 # ChangeInterval
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action21)
+                TryCatchAssertBlock.DoAssert(action21)
 
                 def action22():
                     oCollection.deconflict()
 
                 # Deconflict
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action22)
+                TryCatchAssertBlock.DoAssert(action22)
 
                 def action23():
                     oCollection.remove_interval(oStart, oStop)
 
                 # RemoveInterval
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action23)
+                TryCatchAssertBlock.DoAssert(action23)
 
                 def action24():
                     oCollection.remove_index(0)
 
                 # RemoveIndex
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action24)
+                TryCatchAssertBlock.DoAssert(action24)
 
             # LoadIntervals
             oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
@@ -433,7 +434,7 @@ class IntervalCollectionHelper(object):
                 oCollection.deconflict()
 
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action25)
+            TryCatchAssertBlock.DoAssert(action25)
 
         else:
             # RemoveAll
@@ -510,7 +511,7 @@ class IntervalCollectionHelper(object):
                 oCollection.deconflict()
 
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action26)
+            TryCatchAssertBlock.DoAssert(action26)
             # RemoveInterval
             (oStart, oStop) = oCollection.get_interval(0)
             oCollection.remove_interval(oStart, oStop)
@@ -601,12 +602,12 @@ class IntervalCollectionHelper(object):
                 oCollection.deconflict()
 
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action27)
+            TryCatchAssertBlock.DoAssert(action27)
 
     # endregion
 
     # region Intervals
-    def Intervals(self, oCollection: "IIntervalCollection"):
+    def Intervals(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
@@ -806,7 +807,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region LabelNotes
-    def LabelNotes(self, oCollection: "IIntervalCollection"):
+    def LabelNotes(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
@@ -894,7 +895,7 @@ class IntervalCollectionHelper(object):
             oCollection.deconflict()
 
         # Deconflict
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action28)
+        TryCatchAssertBlock.DoAssert(action28)
         # RemoveInterval
         oCollection.remove_interval(oStart, oStop)
         self.m_logger.WriteLine8(
@@ -952,13 +953,13 @@ class IntervalCollectionHelper(object):
             oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
 
         # LoadIntervals
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action29)
+        TryCatchAssertBlock.DoAssert(action29)
 
         def action30():
             oCollection.deconflict()
 
         # Deconflict
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action30)
+        TryCatchAssertBlock.DoAssert(action30)
 
 
 # endregion
@@ -972,7 +973,7 @@ class ObjectLinkCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IObjectLinkCollection", oRoot: "IStkObjectRoot"):
+    def Run(self, oCollection: "ObjectLinkCollection", oRoot: "StkObjectRoot"):
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oRoot)
         self.m_logger.WriteLine("ObjectLinkCollection test:")
@@ -1003,7 +1004,7 @@ class ObjectLinkCollectionHelper(object):
             def action31():
                 oCollection.add(str(arAvailable[0]))
 
-            TryCatchAssertBlock.DoAssert("Should not allow to add duplicated objects to collection.", action31)
+            TryCatchAssertBlock.DoAssert(action31)
             Assert.assertEqual(1, oCollection.count)
 
         else:
@@ -1019,7 +1020,7 @@ class ObjectLinkCollectionHelper(object):
         def action32():
             oCollection.add("InvalidObject")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to add invalid object to collection.", action32)
+        TryCatchAssertBlock.DoAssert(action32)
         Assert.assertEqual(1, oCollection.count)
         self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
         if self._bRestrictToOneElement:
@@ -1036,7 +1037,7 @@ class ObjectLinkCollectionHelper(object):
             self.m_logger.WriteLine6("\t\tObject {0} was added to collection.", arAvailable[1])
             Assert.assertEqual(2, oCollection.count)
             self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
-            oLink: "IObjectLink"
+            oLink: "ObjectLink"
             for oLink in oCollection:
                 Console.WriteLine(
                     "\t\tElement: Name = {0}, Path = {1}, Type = {2}, LinkedObject = {3}",
@@ -1111,12 +1112,12 @@ class ObjectLinkCollectionHelper(object):
         def action34():
             oCollection.remove_name(str(arAvailable[0]))
 
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid object from collection.", action34)
+        TryCatchAssertBlock.DoAssert(action34)
 
         def action35():
             oCollection.remove_name("InvalidObject")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid object from collection.", action35)
+        TryCatchAssertBlock.DoAssert(action35)
         self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
 
         # Remove
@@ -1130,7 +1131,7 @@ class ObjectLinkCollectionHelper(object):
             def action36():
                 oCollection.remove((Array.Length(arAvailable) + 1))
 
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid object from collection.", action36)
+            TryCatchAssertBlock.DoAssert(action36)
             Assert.assertEqual(0, oCollection.count)
             self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
 

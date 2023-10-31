@@ -1451,20 +1451,20 @@ class IPathPointFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPathPointFactory.")
     
-    def initialize(self) -> "IPathPoint":
+    def initialize(self) -> "PathPoint":
         """Initializes a new path point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_date(self, pathPointDate:"IDate") -> "IPathPoint":
+    def initialize_with_date(self, pathPointDate:"IDate") -> "PathPoint":
         """Initializes a new path point with the given date."""
         with agmarshall.AgInterface_in_arg(pathPointDate, IDate) as arg_pathPointDate, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_date"](arg_pathPointDate.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_date_and_position(self, pathPointDate:"IDate", position:list) -> "IPathPoint":
+    def initialize_with_date_and_position(self, pathPointDate:"IDate", position:list) -> "PathPoint":
         """Initializes a new path point with the given date and position."""
         with agmarshall.AgInterface_in_arg(pathPointDate, IDate) as arg_pathPointDate, \
              agmarshall.SAFEARRAY_arg(position) as arg_position, \
@@ -1472,7 +1472,7 @@ class IPathPointFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_date_and_position"](arg_pathPointDate.COM_val, byref(arg_position.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_date_position_and_color(self, pathPointDate:"IDate", position:list, color:agcolor.Color) -> "IPathPoint":
+    def initialize_with_date_position_and_color(self, pathPointDate:"IDate", position:list, color:agcolor.Color) -> "PathPoint":
         """Initializes a new path point with the given date, position and color."""
         with agmarshall.AgInterface_in_arg(pathPointDate, IDate) as arg_pathPointDate, \
              agmarshall.SAFEARRAY_arg(position) as arg_position, \
@@ -1481,7 +1481,7 @@ class IPathPointFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_date_position_and_color"](arg_pathPointDate.COM_val, byref(arg_position.COM_val), arg_color.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_date_position_color_and_translucency(self, pathPointDate:"IDate", position:list, color:agcolor.Color, translucency:float) -> "IPathPoint":
+    def initialize_with_date_position_color_and_translucency(self, pathPointDate:"IDate", position:list, color:agcolor.Color, translucency:float) -> "PathPoint":
         """Initializes a new path point with the given date, position, color and translucency."""
         with agmarshall.AgInterface_in_arg(pathPointDate, IDate) as arg_pathPointDate, \
              agmarshall.SAFEARRAY_arg(position) as arg_position, \
@@ -1583,7 +1583,7 @@ class IBoundingSphereFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IBoundingSphereFactory.")
     
-    def initialize(self, center:list, radius:float) -> "IBoundingSphere":
+    def initialize(self, center:list, radius:float) -> "BoundingSphere":
         """Create instances of BoundingSphere."""
         with agmarshall.SAFEARRAY_arg(center) as arg_center, \
              agmarshall.DOUBLE_arg(radius) as arg_radius, \
@@ -1592,7 +1592,7 @@ class IBoundingSphereFactory(object):
             return arg_ppRetVal.python_val
 
     @property
-    def maximum_radius_bounding_sphere(self) -> "IBoundingSphere":
+    def maximum_radius_bounding_sphere(self) -> "BoundingSphere":
         """Gets the bounding sphere of maximum possible radius."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_maximum_radius_bounding_sphere"](byref(arg_ppRetVal.COM_val)))
@@ -1678,28 +1678,28 @@ class ITextureFilter2D(object):
             return arg_pRetVal.python_val
 
     @property
-    def nearest_clamp_to_edge(self) -> "ITextureFilter2D":
+    def nearest_clamp_to_edge(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_nearest_clamp_to_edge"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def nearest_repeat(self) -> "ITextureFilter2D":
+    def nearest_repeat(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_nearest_repeat"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def linear_clamp_to_edge(self) -> "ITextureFilter2D":
+    def linear_clamp_to_edge(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_linear_clamp_to_edge"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def linear_repeat(self) -> "ITextureFilter2D":
+    def linear_repeat(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_linear_repeat"](byref(arg_ppRetVal.COM_val)))
@@ -1755,34 +1755,34 @@ class ITextureFilter2DFactory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextureFilter2DFactory.")
     
     @property
-    def nearest_clamp_to_edge(self) -> "ITextureFilter2D":
+    def nearest_clamp_to_edge(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_nearest_clamp_to_edge"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def nearest_repeat(self) -> "ITextureFilter2D":
+    def nearest_repeat(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_nearest_repeat"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def linear_clamp_to_edge(self) -> "ITextureFilter2D":
+    def linear_clamp_to_edge(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_linear_clamp_to_edge"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def linear_repeat(self) -> "ITextureFilter2D":
+    def linear_repeat(self) -> "TextureFilter2D":
         """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_linear_repeat"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize(self, minificationFilter:"MINIFICATION_FILTER", magnificationFilter:"MAGNIFICATION_FILTER", wrapS:"TEXTURE_WRAP", wrapT:"TEXTURE_WRAP") -> "ITextureFilter2D":
+    def initialize(self, minificationFilter:"MINIFICATION_FILTER", magnificationFilter:"MAGNIFICATION_FILTER", wrapS:"TEXTURE_WRAP", wrapT:"TEXTURE_WRAP") -> "TextureFilter2D":
         """Creates a texture filter using the specified minification/magnification options and texture wrap."""
         with agmarshall.AgEnum_arg(MINIFICATION_FILTER, minificationFilter) as arg_minificationFilter, \
              agmarshall.AgEnum_arg(MAGNIFICATION_FILTER, magnificationFilter) as arg_magnificationFilter, \
@@ -1792,7 +1792,7 @@ class ITextureFilter2DFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](arg_minificationFilter.COM_val, arg_magnificationFilter.COM_val, arg_wrapS.COM_val, arg_wrapT.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_texture_wrap(self, wrapS:"TEXTURE_WRAP", wrapT:"TEXTURE_WRAP") -> "ITextureFilter2D":
+    def initialize_with_texture_wrap(self, wrapS:"TEXTURE_WRAP", wrapT:"TEXTURE_WRAP") -> "TextureFilter2D":
         """Creates a texture filter using the specified texture wrap."""
         with agmarshall.AgEnum_arg(TEXTURE_WRAP, wrapS) as arg_wrapS, \
              agmarshall.AgEnum_arg(TEXTURE_WRAP, wrapT) as arg_wrapT, \
@@ -1800,7 +1800,7 @@ class ITextureFilter2DFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_texture_wrap"](arg_wrapS.COM_val, arg_wrapT.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_minification_and_magnification(self, minificationFilter:"MINIFICATION_FILTER", magnificationFilter:"MAGNIFICATION_FILTER") -> "ITextureFilter2D":
+    def initialize_with_minification_and_magnification(self, minificationFilter:"MINIFICATION_FILTER", magnificationFilter:"MAGNIFICATION_FILTER") -> "TextureFilter2D":
         """Creates a texture filter using the specified minification/magnification options."""
         with agmarshall.AgEnum_arg(MINIFICATION_FILTER, minificationFilter) as arg_minificationFilter, \
              agmarshall.AgEnum_arg(MAGNIFICATION_FILTER, magnificationFilter) as arg_magnificationFilter, \
@@ -1846,7 +1846,7 @@ class IRendererTexture2D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRendererTexture2D.")
     
     @property
-    def template(self) -> "IRendererTextureTemplate2D":
+    def template(self) -> "RendererTextureTemplate2D":
         """Gets a template from which the texture was created."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_template"](byref(arg_ppRetVal.COM_val)))
@@ -1974,7 +1974,7 @@ class IPathPointCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IPathPoint":
+    def item(self, index:int) -> "PathPoint":
         """Returns a path point at the specified position in the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -2126,7 +2126,7 @@ class ISceneCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IScene":
+    def item(self, index:int) -> "Scene":
         """A scene in the collection at a specified index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -2188,7 +2188,7 @@ class IScreenOverlayContainer(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IScreenOverlayContainer.")
     
     @property
-    def overlays(self) -> "IScreenOverlayCollection":
+    def overlays(self) -> "ScreenOverlayCollection":
         """Gets the collection of overlays that are contained within this overlay."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_overlays"](byref(arg_ppRetVal.COM_val)))
@@ -2278,7 +2278,7 @@ class IScreenOverlayPickResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IScreenOverlayPickResult":
+    def item(self, index:int) -> "ScreenOverlayPickResult":
         """Get an element at the specified position in the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -2442,7 +2442,7 @@ class IPickResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IPickResult":
+    def item(self, index:int) -> "PickResult":
         """Returns a picked object at the specified position in the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -2624,7 +2624,7 @@ class IKmlDocumentCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IKmlDocument":
+    def item(self, index:int) -> "KmlDocument":
         """Get an element at the specified position in the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -2756,7 +2756,7 @@ class IKmlDocumentLoadedEventArgs(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IKmlDocumentLoadedEventArgs.")
     
     @property
-    def document(self) -> "IKmlDocument":
+    def document(self) -> "KmlDocument":
         """Gets the KML document associated with the load event."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_document"](byref(arg_ppRetVal.COM_val)))
@@ -2971,581 +2971,581 @@ class IFactoryAndInitializers(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IFactoryAndInitializers.")
     
     @property
-    def box_triangulator(self) -> "IBoxTriangulatorInitializer":
+    def box_triangulator(self) -> "BoxTriangulatorInitializer":
         """Access global methods and properties of BoxTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_box_triangulator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def cylinder_triangulator(self) -> "ICylinderTriangulatorInitializer":
+    def cylinder_triangulator(self) -> "CylinderTriangulatorInitializer":
         """Access global methods and properties of CylinderTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_cylinder_triangulator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def ellipsoid_triangulator(self) -> "IEllipsoidTriangulatorInitializer":
+    def ellipsoid_triangulator(self) -> "EllipsoidTriangulatorInitializer":
         """Access global methods and properties of EllipsoidTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_ellipsoid_triangulator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def extruded_polyline_triangulator(self) -> "IExtrudedPolylineTriangulatorInitializer":
+    def extruded_polyline_triangulator(self) -> "ExtrudedPolylineTriangulatorInitializer":
         """Access global methods and properties of ExtrudedPolylineTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_extruded_polyline_triangulator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def surface_extent_triangulator(self) -> "ISurfaceExtentTriangulatorInitializer":
+    def surface_extent_triangulator(self) -> "SurfaceExtentTriangulatorInitializer":
         """Access global methods and properties of SurfaceExtentTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_surface_extent_triangulator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def surface_polygon_triangulator(self) -> "ISurfacePolygonTriangulatorInitializer":
+    def surface_polygon_triangulator(self) -> "SurfacePolygonTriangulatorInitializer":
         """Access global methods and properties of SurfacePolygonTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_surface_polygon_triangulator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def surface_shapes(self) -> "ISurfaceShapesInitializer":
+    def surface_shapes(self) -> "SurfaceShapesInitializer":
         """Access global methods and properties of SurfaceShapes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_surface_shapes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def agi_processed_image_globe_overlay(self) -> "IAGIProcessedImageGlobeOverlayFactory":
+    def agi_processed_image_globe_overlay(self) -> "AGIProcessedImageGlobeOverlayFactory":
         """Access global methods and properties of AGIProcessedImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_agi_processed_image_globe_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def agi_processed_terrain_overlay(self) -> "IAGIProcessedTerrainOverlayFactory":
+    def agi_processed_terrain_overlay(self) -> "AGIProcessedTerrainOverlayFactory":
         """Access global methods and properties of AGIProcessedTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_agi_processed_terrain_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def agi_roam_image_globe_overlay(self) -> "IAGIRoamImageGlobeOverlayFactory":
+    def agi_roam_image_globe_overlay(self) -> "AGIRoamImageGlobeOverlayFactory":
         """Access global methods and properties of AGIRoamImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_agi_roam_image_globe_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def custom_image_globe_overlay_plugin_activator(self) -> "ICustomImageGlobeOverlayPluginActivatorFactory":
+    def custom_image_globe_overlay_plugin_activator(self) -> "CustomImageGlobeOverlayPluginActivatorFactory":
         """Access global methods and properties of CustomImageGlobeOverlayPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_custom_image_globe_overlay_plugin_activator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def geospatial_image_globe_overlay(self) -> "IGeospatialImageGlobeOverlayFactory":
+    def geospatial_image_globe_overlay(self) -> "GeospatialImageGlobeOverlayFactory":
         """Access global methods and properties of GeospatialImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_geospatial_image_globe_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def projected_raster_overlay(self) -> "IProjectedRasterOverlayFactory":
+    def projected_raster_overlay(self) -> "ProjectedRasterOverlayFactory":
         """Access global methods and properties of ProjectedRasterOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_projected_raster_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def projection(self) -> "IProjectionFactory":
+    def projection(self) -> "ProjectionFactory":
         """Access global methods and properties of Projection (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_projection"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def altitude_display_condition(self) -> "IAltitudeDisplayConditionFactory":
+    def altitude_display_condition(self) -> "AltitudeDisplayConditionFactory":
         """Access global methods and properties of AltitudeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def composite_display_condition(self) -> "ICompositeDisplayConditionFactory":
+    def composite_display_condition(self) -> "CompositeDisplayConditionFactory":
         """Access global methods and properties of CompositeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_composite_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def composite_primitive(self) -> "ICompositePrimitiveFactory":
+    def composite_primitive(self) -> "CompositePrimitiveFactory":
         """Access global methods and properties of CompositePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_composite_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def constant_display_condition(self) -> "IConstantDisplayConditionFactory":
+    def constant_display_condition(self) -> "ConstantDisplayConditionFactory":
         """Access global methods and properties of ConstantDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_constant_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def distance_display_condition(self) -> "IDistanceDisplayConditionFactory":
+    def distance_display_condition(self) -> "DistanceDisplayConditionFactory":
         """Access global methods and properties of DistanceDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def distance_to_globe_overlay_display_condition(self) -> "IDistanceToGlobeOverlayDisplayConditionFactory":
+    def distance_to_globe_overlay_display_condition(self) -> "DistanceToGlobeOverlayDisplayConditionFactory":
         """Access global methods and properties of DistanceToGlobeOverlayDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance_to_globe_overlay_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def distance_to_position_display_condition(self) -> "IDistanceToPositionDisplayConditionFactory":
+    def distance_to_position_display_condition(self) -> "DistanceToPositionDisplayConditionFactory":
         """Access global methods and properties of DistanceToPositionDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance_to_position_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def distance_to_primitive_display_condition(self) -> "IDistanceToPrimitiveDisplayConditionFactory":
+    def distance_to_primitive_display_condition(self) -> "DistanceToPrimitiveDisplayConditionFactory":
         """Access global methods and properties of DistanceToPrimitiveDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance_to_primitive_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def duration_path_primitive_update_policy(self) -> "IDurationPathPrimitiveUpdatePolicyFactory":
+    def duration_path_primitive_update_policy(self) -> "DurationPathPrimitiveUpdatePolicyFactory":
         """Access global methods and properties of DurationPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_duration_path_primitive_update_policy"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def globe_image_overlay(self) -> "IGlobeImageOverlayInitializer":
+    def globe_image_overlay(self) -> "GlobeImageOverlayInitializer":
         """Access global methods and properties of GlobeImageOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_globe_image_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def graphics_font(self) -> "IGraphicsFontFactory":
+    def graphics_font(self) -> "GraphicsFontFactory":
         """Access global methods and properties of GraphicsFont (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_graphics_font"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def great_arc_interpolator(self) -> "IGreatArcInterpolatorFactory":
+    def great_arc_interpolator(self) -> "GreatArcInterpolatorFactory":
         """Access global methods and properties of GreatArcInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_great_arc_interpolator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def alpha_from_luminance_filter(self) -> "IAlphaFromLuminanceFilterFactory":
+    def alpha_from_luminance_filter(self) -> "AlphaFromLuminanceFilterFactory":
         """Access global methods and properties of AlphaFromLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_alpha_from_luminance_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def alpha_from_pixel_filter(self) -> "IAlphaFromPixelFilterFactory":
+    def alpha_from_pixel_filter(self) -> "AlphaFromPixelFilterFactory":
         """Access global methods and properties of AlphaFromPixelFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_alpha_from_pixel_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def alpha_from_raster_filter(self) -> "IAlphaFromRasterFilterFactory":
+    def alpha_from_raster_filter(self) -> "AlphaFromRasterFilterFactory":
         """Access global methods and properties of AlphaFromRasterFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_alpha_from_raster_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def band_extract_filter(self) -> "IBandExtractFilterFactory":
+    def band_extract_filter(self) -> "BandExtractFilterFactory":
         """Access global methods and properties of BandExtractFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_band_extract_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def band_order_filter(self) -> "IBandOrderFilterFactory":
+    def band_order_filter(self) -> "BandOrderFilterFactory":
         """Access global methods and properties of BandOrderFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_band_order_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def blur_filter(self) -> "IBlurFilterFactory":
+    def blur_filter(self) -> "BlurFilterFactory":
         """Access global methods and properties of BlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_blur_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def brightness_filter(self) -> "IBrightnessFilterFactory":
+    def brightness_filter(self) -> "BrightnessFilterFactory":
         """Access global methods and properties of BrightnessFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_brightness_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def color_to_luminance_filter(self) -> "IColorToLuminanceFilterFactory":
+    def color_to_luminance_filter(self) -> "ColorToLuminanceFilterFactory":
         """Access global methods and properties of ColorToLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_color_to_luminance_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def contrast_filter(self) -> "IContrastFilterFactory":
+    def contrast_filter(self) -> "ContrastFilterFactory":
         """Access global methods and properties of ContrastFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_contrast_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def convolution_filter(self) -> "IConvolutionFilterFactory":
+    def convolution_filter(self) -> "ConvolutionFilterFactory":
         """Access global methods and properties of ConvolutionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_convolution_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def edge_detect_filter(self) -> "IEdgeDetectFilterFactory":
+    def edge_detect_filter(self) -> "EdgeDetectFilterFactory":
         """Access global methods and properties of EdgeDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_edge_detect_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def filtering_raster_stream(self) -> "IFilteringRasterStreamFactory":
+    def filtering_raster_stream(self) -> "FilteringRasterStreamFactory":
         """Access global methods and properties of FilteringRasterStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_filtering_raster_stream"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def flip_filter(self) -> "IFlipFilterFactory":
+    def flip_filter(self) -> "FlipFilterFactory":
         """Access global methods and properties of FlipFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_flip_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def gamma_correction_filter(self) -> "IGammaCorrectionFilterFactory":
+    def gamma_correction_filter(self) -> "GammaCorrectionFilterFactory":
         """Access global methods and properties of GammaCorrectionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_gamma_correction_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def gaussian_blur_filter(self) -> "IGaussianBlurFilterFactory":
+    def gaussian_blur_filter(self) -> "GaussianBlurFilterFactory":
         """Access global methods and properties of GaussianBlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_gaussian_blur_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def gradient_detect_filter(self) -> "IGradientDetectFilterFactory":
+    def gradient_detect_filter(self) -> "GradientDetectFilterFactory":
         """Access global methods and properties of GradientDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_gradient_detect_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def jpeg2000_writer(self) -> "IJpeg2000WriterInitializer":
+    def jpeg2000_writer(self) -> "Jpeg2000WriterInitializer":
         """Access global methods and properties of Jpeg2000Writer (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_jpeg2000_writer"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def levels_filter(self) -> "ILevelsFilterFactory":
+    def levels_filter(self) -> "LevelsFilterFactory":
         """Access global methods and properties of LevelsFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_levels_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def projection_raster_stream_plugin_activator(self) -> "IProjectionRasterStreamPluginActivatorFactory":
+    def projection_raster_stream_plugin_activator(self) -> "ProjectionRasterStreamPluginActivatorFactory":
         """Access global methods and properties of ProjectionRasterStreamPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_projection_raster_stream_plugin_activator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def raster(self) -> "IRasterFactory":
+    def raster(self) -> "RasterFactory":
         """Access global methods and properties of Raster (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_raster"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def raster_attributes(self) -> "IRasterAttributesFactory":
+    def raster_attributes(self) -> "RasterAttributesFactory":
         """Access global methods and properties of RasterAttributes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_raster_attributes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def rotate_filter(self) -> "IRotateFilterFactory":
+    def rotate_filter(self) -> "RotateFilterFactory":
         """Access global methods and properties of RotateFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_rotate_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def sequence_filter(self) -> "ISequenceFilterFactory":
+    def sequence_filter(self) -> "SequenceFilterFactory":
         """Access global methods and properties of SequenceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_sequence_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def sharpen_filter(self) -> "ISharpenFilterFactory":
+    def sharpen_filter(self) -> "SharpenFilterFactory":
         """Access global methods and properties of SharpenFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_sharpen_filter"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def video_stream(self) -> "IVideoStreamFactory":
+    def video_stream(self) -> "VideoStreamFactory":
         """Access global methods and properties of VideoStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_video_stream"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def marker_batch_primitive(self) -> "IMarkerBatchPrimitiveFactory":
+    def marker_batch_primitive(self) -> "MarkerBatchPrimitiveFactory":
         """Access global methods and properties of MarkerBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_marker_batch_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def marker_batch_primitive_optional_parameters(self) -> "IMarkerBatchPrimitiveOptionalParametersFactory":
+    def marker_batch_primitive_optional_parameters(self) -> "MarkerBatchPrimitiveOptionalParametersFactory":
         """Access global methods and properties of MarkerBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_marker_batch_primitive_optional_parameters"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def maximum_count_path_primitive_update_policy(self) -> "IMaximumCountPathPrimitiveUpdatePolicyFactory":
+    def maximum_count_path_primitive_update_policy(self) -> "MaximumCountPathPrimitiveUpdatePolicyFactory":
         """Access global methods and properties of MaximumCountPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_maximum_count_path_primitive_update_policy"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def model_primitive(self) -> "IModelPrimitiveFactory":
+    def model_primitive(self) -> "ModelPrimitiveFactory":
         """Access global methods and properties of ModelPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_model_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def path_primitive(self) -> "IPathPrimitiveFactory":
+    def path_primitive(self) -> "PathPrimitiveFactory":
         """Access global methods and properties of PathPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_path_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def pixel_size_display_condition(self) -> "IPixelSizeDisplayConditionFactory":
+    def pixel_size_display_condition(self) -> "PixelSizeDisplayConditionFactory":
         """Access global methods and properties of PixelSizeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_pixel_size_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def point_batch_primitive(self) -> "IPointBatchPrimitiveFactory":
+    def point_batch_primitive(self) -> "PointBatchPrimitiveFactory":
         """Access global methods and properties of PointBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_batch_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def polyline_primitive(self) -> "IPolylinePrimitiveFactory":
+    def polyline_primitive(self) -> "PolylinePrimitiveFactory":
         """Access global methods and properties of PolylinePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_polyline_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def raster_image_globe_overlay(self) -> "IRasterImageGlobeOverlayFactory":
+    def raster_image_globe_overlay(self) -> "RasterImageGlobeOverlayFactory":
         """Access global methods and properties of RasterImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_raster_image_globe_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def rhumb_line_interpolator(self) -> "IRhumbLineInterpolatorFactory":
+    def rhumb_line_interpolator(self) -> "RhumbLineInterpolatorFactory":
         """Access global methods and properties of RhumbLineInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_rhumb_line_interpolator"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scene_display_condition(self) -> "ISceneDisplayConditionFactory":
+    def scene_display_condition(self) -> "SceneDisplayConditionFactory":
         """Access global methods and properties of SceneDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scene_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scene_manager(self) -> "ISceneManagerInitializer":
+    def scene_manager(self) -> "SceneManagerInitializer":
         """Access global methods and properties of SceneManager (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scene_manager"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def screen_overlay(self) -> "IScreenOverlayFactory":
+    def screen_overlay(self) -> "ScreenOverlayFactory":
         """Access global methods and properties of ScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_screen_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def solid_primitive(self) -> "ISolidPrimitiveFactory":
+    def solid_primitive(self) -> "SolidPrimitiveFactory":
         """Access global methods and properties of SolidPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_solid_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def surface_mesh_primitive(self) -> "ISurfaceMeshPrimitiveFactory":
+    def surface_mesh_primitive(self) -> "SurfaceMeshPrimitiveFactory":
         """Access global methods and properties of SurfaceMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_surface_mesh_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def terrain_overlay(self) -> "ITerrainOverlayInitializer":
+    def terrain_overlay(self) -> "TerrainOverlayInitializer":
         """Access global methods and properties of TerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_terrain_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def text_batch_primitive(self) -> "ITextBatchPrimitiveFactory":
+    def text_batch_primitive(self) -> "TextBatchPrimitiveFactory":
         """Access global methods and properties of TextBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_text_batch_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def text_batch_primitive_optional_parameters(self) -> "ITextBatchPrimitiveOptionalParametersFactory":
+    def text_batch_primitive_optional_parameters(self) -> "TextBatchPrimitiveOptionalParametersFactory":
         """Access global methods and properties of TextBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_text_batch_primitive_optional_parameters"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def texture_matrix(self) -> "ITextureMatrixFactory":
+    def texture_matrix(self) -> "TextureMatrixFactory":
         """Access global methods and properties of TextureMatrix (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_matrix"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def texture_screen_overlay(self) -> "ITextureScreenOverlayFactory":
+    def texture_screen_overlay(self) -> "TextureScreenOverlayFactory":
         """Access global methods and properties of TextureScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_screen_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def time_interval_display_condition(self) -> "ITimeIntervalDisplayConditionFactory":
+    def time_interval_display_condition(self) -> "TimeIntervalDisplayConditionFactory":
         """Access global methods and properties of TimeIntervalDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_time_interval_display_condition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def triangle_mesh_primitive(self) -> "ITriangleMeshPrimitiveFactory":
+    def triangle_mesh_primitive(self) -> "TriangleMeshPrimitiveFactory":
         """Access global methods and properties of TriangleMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_triangle_mesh_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def triangle_mesh_primitive_optional_parameters(self) -> "ITriangleMeshPrimitiveOptionalParametersFactory":
+    def triangle_mesh_primitive_optional_parameters(self) -> "TriangleMeshPrimitiveOptionalParametersFactory":
         """Access global methods and properties of TriangleMeshPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_triangle_mesh_primitive_optional_parameters"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def texture_filter_2d(self) -> "ITextureFilter2DFactory":
+    def texture_filter_2d(self) -> "TextureFilter2DFactory":
         """Factory creates texture filters."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_filter_2d"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def bounding_sphere(self) -> "IBoundingSphereFactory":
+    def bounding_sphere(self) -> "BoundingSphereFactory":
         """Factory creates bounding spheres."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_bounding_sphere"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def path_point(self) -> "IPathPointFactory":
+    def path_point(self) -> "PathPointFactory":
         """Factory creates path points."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_path_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def text_overlay(self) -> "ITextOverlayFactory":
+    def text_overlay(self) -> "TextOverlayFactory":
         """Access global methods and properties of TextOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_text_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def agi_custom_terrain_overlay(self) -> "IAGICustomTerrainOverlayFactory":
+    def agi_custom_terrain_overlay(self) -> "AGICustomTerrainOverlayFactory":
         """Access global methods and properties of AGICustomTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_agi_custom_terrain_overlay"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def axes_primitive(self) -> "IAxesPrimitiveFactory":
+    def axes_primitive(self) -> "AxesPrimitiveFactory":
         """Access global methods and properties of AxesPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_axes_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def vector_primitive(self) -> "IVectorPrimitiveFactory":
+    def vector_primitive(self) -> "VectorPrimitiveFactory":
         """Access global methods and properties of VectorPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_vector_primitive"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def polyline_primitive_optional_parameters(self) -> "IPolylinePrimitiveOptionalParametersFactory":
+    def polyline_primitive_optional_parameters(self) -> "PolylinePrimitiveOptionalParametersFactory":
         """Access global methods and properties of PolylinePrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_polyline_primitive_optional_parameters"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def point_batch_primitive_optional_parameters(self) -> "IPointBatchPrimitiveOptionalParametersFactory":
+    def point_batch_primitive_optional_parameters(self) -> "PointBatchPrimitiveOptionalParametersFactory":
         """Access global methods and properties of PointBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_batch_primitive_optional_parameters"](byref(arg_ppRetVal.COM_val)))
@@ -3900,7 +3900,7 @@ class ITriangulatorResult(object):
             return arg_pRetVal.python_val
 
     @property
-    def bounding_sphere(self) -> "IBoundingSphere":
+    def bounding_sphere(self) -> "BoundingSphere":
         """Gets the bounding sphere that encompasses the mesh."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_bounding_sphere"](byref(arg_ppRetVal.COM_val)))
@@ -4115,7 +4115,7 @@ class ICameraSnapshot(object):
             agcls.evaluate_hresult(self.__dict__["_save_to_raster"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def save_to_texture(self) -> "IRendererTexture2D":
+    def save_to_texture(self) -> "RendererTexture2D":
         """Saves a snapshot of the 3D window to a texture 2d."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_save_to_texture"](byref(arg_ppRetVal.COM_val)))
@@ -4248,34 +4248,34 @@ class ICentralBodyGraphicsIndexer(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICentralBodyGraphicsIndexer.")
     
     @property
-    def earth(self) -> "ICentralBodyGraphics":
+    def earth(self) -> "CentralBodyGraphics":
         """Gets the central body graphics for the planet Earth. This is equivalent to passing a central body equal to an instance of earth central body to the indexer."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_earth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def moon(self) -> "ICentralBodyGraphics":
+    def moon(self) -> "CentralBodyGraphics":
         """Gets the central body graphics for the Moon."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_moon"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def sun(self) -> "ICentralBodyGraphics":
+    def sun(self) -> "CentralBodyGraphics":
         """Gets the central body graphics for the Sun."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def item(self, centralBody:str) -> "ICentralBodyGraphics":
+    def item(self, centralBody:str) -> "CentralBodyGraphics":
         """Gets the central body graphics for the specified central body."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_centralBody.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_by_name(self, name:str) -> "ICentralBodyGraphics":
+    def get_by_name(self, name:str) -> "CentralBodyGraphics":
         """Returns the central body graphics for the central body with the given name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -4423,7 +4423,7 @@ class ICustomImageGlobeOverlayPluginActivator(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICustomImageGlobeOverlayPluginActivator.")
     
-    def create_from_display_name(self, displayName:str) -> "ICustomImageGlobeOverlayPluginProxy":
+    def create_from_display_name(self, displayName:str) -> "CustomImageGlobeOverlayPluginProxy":
         """Loads a custom image globe overlay COM plugin associated with the specified display name and returns a proxy object that allows accessing the custom image globe overlays implemented by the plugin."""
         with agmarshall.BSTR_arg(displayName) as arg_displayName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -4478,7 +4478,7 @@ class ICustomImageGlobeOverlayPluginProxy(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICustomImageGlobeOverlayPluginProxy.")
     
     @property
-    def custom_image_globe_overlay(self) -> "ICustomImageGlobeOverlay":
+    def custom_image_globe_overlay(self) -> "CustomImageGlobeOverlay":
         """Returns a custom image globe overlay."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_custom_image_globe_overlay"](byref(arg_ppRetVal.COM_val)))
@@ -5658,14 +5658,14 @@ class ITexture2DFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITexture2DFactory.")
     
-    def load_from_string_uri(self, uri:str) -> "IRendererTexture2D":
+    def load_from_string_uri(self, uri:str) -> "RendererTexture2D":
         """Creates a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_load_from_string_uri"](arg_uri.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def from_raster(self, raster:"IRaster") -> "IRendererTexture2D":
+    def from_raster(self, raster:"IRaster") -> "RendererTexture2D":
         """Creates a new texture from a raster."""
         with agmarshall.AgInterface_in_arg(raster, IRaster) as arg_raster, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -6362,14 +6362,14 @@ class ICamera(object):
             return arg_pRetVal.python_val
 
     @property
-    def snapshot(self) -> "ICameraSnapshot":
+    def snapshot(self) -> "CameraSnapshot":
         """Gets the camera snapshot settings."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_snapshot"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def video_recording(self) -> "ICameraVideoRecording":
+    def video_recording(self) -> "CameraVideoRecording":
         """Gets the camera video recorder."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_video_recording"](byref(arg_ppRetVal.COM_val)))
@@ -6719,21 +6719,21 @@ class ICentralBodyGraphics(object):
             agcls.evaluate_hresult(self.__dict__["_set_specular_overlay"](arg_specularOverlay.COM_val))
 
     @property
-    def terrain(self) -> "ITerrainOverlayCollection":
+    def terrain(self) -> "TerrainOverlayCollection":
         """Gets the collection of terrain overlay associated with the central body in the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_terrain"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def imagery(self) -> "IImageCollection":
+    def imagery(self) -> "ImageCollection":
         """Gets the collection of imagery associated with the central body in the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_imagery"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def kml(self) -> "IKmlGraphics":
+    def kml(self) -> "KmlGraphics":
         """Gets the kml graphics associated with the central body in the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_kml"](byref(arg_ppRetVal.COM_val)))
@@ -9205,7 +9205,7 @@ class IProjectionRasterStreamPluginActivator(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IProjectionRasterStreamPluginActivator.")
     
-    def create_from_display_name(self, displayName:str) -> "IProjectionRasterStreamPluginProxy":
+    def create_from_display_name(self, displayName:str) -> "ProjectionRasterStreamPluginProxy":
         """Loads a projection/raster COM plugin associated with the specified display name and returns a proxy object that allows accessing the raster and projection streams implemented by the plugin."""
         with agmarshall.BSTR_arg(displayName) as arg_displayName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -9271,7 +9271,7 @@ class IProjectionRasterStreamPluginProxy(object):
             return arg_ppRetVal.python_val
 
     @property
-    def projection_stream(self) -> "IProjectionStream":
+    def projection_stream(self) -> "ProjectionStream":
         """Returns a projection stream."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_projection_stream"](byref(arg_ppRetVal.COM_val)))
@@ -9354,7 +9354,7 @@ class IRaster(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRaster.")
     
     @property
-    def attributes(self) -> "IRasterAttributes":
+    def attributes(self) -> "RasterAttributes":
         """Gets the raster attributes that define the raster data."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_attributes"](byref(arg_ppRetVal.COM_val)))
@@ -10181,7 +10181,7 @@ class IKmlContainer(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IKmlContainer.")
     
     @property
-    def children(self) -> "IKmlFeatureCollection":
+    def children(self) -> "KmlFeatureCollection":
         """The collection of kml features that are children of this container."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_children"](byref(arg_ppRetVal.COM_val)))
@@ -10332,7 +10332,7 @@ class IKmlFeature(object):
             return arg_pRetVal.python_val
 
     @property
-    def bounding_sphere(self) -> "IBoundingSphere":
+    def bounding_sphere(self) -> "BoundingSphere":
         """The bounding sphere encompassing the area associated with this feature."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_bounding_sphere"](byref(arg_ppRetVal.COM_val)))
@@ -10433,27 +10433,27 @@ class IKmlGraphics(object):
         """Returns an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of IKmlGraphics."""
         return IKmlGraphicsEventHandler(self._pUnk)    
     @property
-    def documents(self) -> "IKmlDocumentCollection":
+    def documents(self) -> "KmlDocumentCollection":
         """The collection of kml documents that are currently loaded."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_documents"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def load_document(self, kmlUri:str) -> "IKmlDocument":
+    def load_document(self, kmlUri:str) -> "KmlDocument":
         """Loads a kml document from a uri."""
         with agmarshall.BSTR_arg(kmlUri) as arg_kmlUri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_load_document"](arg_kmlUri.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def load_document_string(self, kmlUri:str) -> "IKmlDocument":
+    def load_document_string(self, kmlUri:str) -> "KmlDocument":
         """Loads a kml document from a Uri."""
         with agmarshall.BSTR_arg(kmlUri) as arg_kmlUri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_load_document_string"](arg_kmlUri.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def load(self, kmlDocument:str) -> "IKmlDocument":
+    def load(self, kmlDocument:str) -> "KmlDocument":
         """Loads a kml document from a string containing the document."""
         with agmarshall.BSTR_arg(kmlDocument) as arg_kmlDocument, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -10855,7 +10855,7 @@ class IMarkerBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_bounding_sphere_scale"](arg_boundingSphereScale.COM_val))
 
     @property
-    def distance_display_condition_per_marker(self) -> "IDistanceDisplayCondition":
+    def distance_display_condition_per_marker(self) -> "DistanceDisplayCondition":
         """Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch..."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance_display_condition_per_marker"](byref(arg_ppRetVal.COM_val)))
@@ -10867,7 +10867,7 @@ class IMarkerBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_distance_display_condition_per_marker"](arg_distanceDisplayConditionPerMarker.COM_val))
 
     @property
-    def texture(self) -> "IRendererTexture2D":
+    def texture(self) -> "RendererTexture2D":
         """Gets or sets the per-batch texture, which is applied to each marker in the batch."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture"](byref(arg_ppRetVal.COM_val)))
@@ -10987,7 +10987,7 @@ class IMarkerBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_per_item_picking_enabled"](arg_perItemPickingEnabled.COM_val))
 
     @property
-    def texture_filter(self) -> "ITextureFilter2D":
+    def texture_filter(self) -> "TextureFilter2D":
         """Gets or sets the filter used for per-marker or per-batch textures."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_filter"](byref(arg_ppRetVal.COM_val)))
@@ -11392,21 +11392,21 @@ class IModelArticulation(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IModelTransformation":
+    def item(self, index:int) -> "ModelTransformation":
         """Gets the transformation at the given index. The index is zero-based."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_string(self, name:str) -> "IModelTransformation":
+    def get_item_by_string(self, name:str) -> "ModelTransformation":
         """Gets a transformation by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_string"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_by_name(self, name:str) -> "IModelTransformation":
+    def get_by_name(self, name:str) -> "ModelTransformation":
         """Gets a transformation by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -11496,21 +11496,21 @@ class IModelArticulationCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "IModelArticulation":
+    def item(self, index:int) -> "ModelArticulation":
         """Gets the articulation at the given index. The index is zero-based."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_string(self, name:str) -> "IModelArticulation":
+    def get_item_by_string(self, name:str) -> "ModelArticulation":
         """Gets an articulation by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_string"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_by_name(self, name:str) -> "IModelArticulation":
+    def get_by_name(self, name:str) -> "ModelArticulation":
         """Gets an articulation by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -11635,7 +11635,7 @@ class IModelPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_orientation"](arg_orientation.COM_val))
 
     @property
-    def articulations(self) -> "IModelArticulationCollection":
+    def articulations(self) -> "ModelArticulationCollection":
         """Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_articulations"](byref(arg_ppRetVal.COM_val)))
@@ -12358,7 +12358,7 @@ class IOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_display_condition"](arg_displayCondition.COM_val))
 
     @property
-    def overlays(self) -> "IScreenOverlayCollection":
+    def overlays(self) -> "ScreenOverlayCollection":
         """Gets the collection of overlays that are contained within this overlay."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_overlays"](byref(arg_ppRetVal.COM_val)))
@@ -12621,7 +12621,7 @@ class IPathPrimitive(object):
         with agmarshall.VARIANT_BOOL_arg(perItemPickingEnabled) as arg_perItemPickingEnabled:
             agcls.evaluate_hresult(self.__dict__["_set_per_item_picking_enabled"](arg_perItemPickingEnabled.COM_val))
 
-    def item(self, index:int) -> "IPathPoint":
+    def item(self, index:int) -> "PathPoint":
         """Returns the point at the given zero-based index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -12673,13 +12673,13 @@ class IPathPrimitive(object):
         with agmarshall.INT_arg(index) as arg_index:
             agcls.evaluate_hresult(self.__dict__["_remove_all_after"](arg_index.COM_val))
 
-    def front(self) -> "IPathPoint":
+    def front(self) -> "PathPoint":
         """Access the path point at the front of the line."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_front"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def back(self) -> "IPathPoint":
+    def back(self) -> "PathPoint":
         """Access the path point at the back of the line."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_back"](byref(arg_ppRetVal.COM_val)))
@@ -12746,7 +12746,7 @@ class IPickResult(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPickResult.")
     
     @property
-    def objects(self) -> "IObjectCollection":
+    def objects(self) -> "ObjectCollection":
         """Gets a collection of objects that were on the pick stack for the picked object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_objects"](byref(arg_ppRetVal.COM_val)))
@@ -13011,7 +13011,7 @@ class IPointBatchPrimitive(object):
             return arg_pRetVal.python_val
 
     @property
-    def distance_display_condition_per_point(self) -> "IDistanceDisplayCondition":
+    def distance_display_condition_per_point(self) -> "DistanceDisplayCondition":
         """Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch..."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance_display_condition_per_point"](byref(arg_ppRetVal.COM_val)))
@@ -13780,7 +13780,7 @@ class IPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_frame"](arg_referenceFrame.COM_val))
 
     @property
-    def bounding_sphere(self) -> "IBoundingSphere":
+    def bounding_sphere(self) -> "BoundingSphere":
         """Gets or sets the bounding sphere that encompasses the primitive. The center is defined in the primitive's reference frame."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_bounding_sphere"](byref(arg_ppRetVal.COM_val)))
@@ -14207,14 +14207,14 @@ class IScene(object):
         """Returns an ISceneEventHandler that is subscribed to handle events associated with this instance of IScene."""
         return ISceneEventHandler(self._pUnk)    
     @property
-    def camera(self) -> "ICamera":
+    def camera(self) -> "Camera":
         """Gets the camera associated with the scene, which affects the view that is rendered by the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_camera"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def lighting(self) -> "ILighting":
+    def lighting(self) -> "Lighting":
         """Gets the lighting associated with the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_lighting"](byref(arg_ppRetVal.COM_val)))
@@ -14233,7 +14233,7 @@ class IScene(object):
             agcls.evaluate_hresult(self.__dict__["_set_show_sunshine"](arg_showSunshine.COM_val))
 
     @property
-    def central_bodies(self) -> "ICentralBodyGraphicsIndexer":
+    def central_bodies(self) -> "CentralBodyGraphicsIndexer":
         """Gets the central body graphics for a specified central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_bodies"](byref(arg_ppRetVal.COM_val)))
@@ -14276,7 +14276,7 @@ class IScene(object):
             agcls.evaluate_hresult(self.__dict__["_set_show_stars"](arg_showStars.COM_val))
 
     @property
-    def globe_overlay_settings(self) -> "ISceneGlobeOverlaySettings":
+    def globe_overlay_settings(self) -> "SceneGlobeOverlaySettings":
         """Gets the scene globe overlay settings for the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_globe_overlay_settings"](byref(arg_ppRetVal.COM_val)))
@@ -14286,7 +14286,7 @@ class IScene(object):
         """Renders the scene. To render all the scenes within an application, use the Render method."""
         agcls.evaluate_hresult(self.__dict__["_render"]())
 
-    def pick(self, x:int, y:int) -> "IPickResultCollection":
+    def pick(self, x:int, y:int) -> "PickResultCollection":
         """Executes a pick at the given x, y and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method."""
         with agmarshall.INT_arg(x) as arg_x, \
              agmarshall.INT_arg(y) as arg_y, \
@@ -14294,7 +14294,7 @@ class IScene(object):
             agcls.evaluate_hresult(self.__dict__["_pick"](arg_x.COM_val, arg_y.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def pick_rectangular(self, left:int, bottom:int, right:int, top:int) -> "IPickResultCollection":
+    def pick_rectangular(self, left:int, bottom:int, right:int, top:int) -> "PickResultCollection":
         """Executes a pick in the given rectangular region and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method."""
         with agmarshall.INT_arg(left) as arg_left, \
              agmarshall.INT_arg(bottom) as arg_bottom, \
@@ -14304,7 +14304,7 @@ class IScene(object):
             agcls.evaluate_hresult(self.__dict__["_pick_rectangular"](arg_left.COM_val, arg_bottom.COM_val, arg_right.COM_val, arg_top.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def pick_screen_overlays(self, x:int, y:int) -> "IScreenOverlayPickResultCollection":
+    def pick_screen_overlays(self, x:int, y:int) -> "ScreenOverlayPickResultCollection":
         """Executes a pick on screen overlays at the given x, y and returns a front to back sorted collection of picked overlays. The coordinate origin is top, left. To pick other objects in the scene, use the Pick method."""
         with agmarshall.INT_arg(x) as arg_x, \
              agmarshall.INT_arg(y) as arg_y, \
@@ -14344,14 +14344,14 @@ class IScene(object):
             agcls.evaluate_hresult(self.__dict__["_set_anti_aliasing"](arg_antiAliasing.COM_val))
 
     @property
-    def visual_effects(self) -> "IVisualEffects":
+    def visual_effects(self) -> "VisualEffects":
         """Gets the visual  effects associated with the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_visual_effects"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def clouds(self) -> "IClouds":
+    def clouds(self) -> "Clouds":
         """Gets the clouds for the scene."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_clouds"](byref(arg_ppRetVal.COM_val)))
@@ -14468,35 +14468,35 @@ class ISceneManager(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISceneManager.")
     
     @property
-    def primitives(self) -> "IPrimitiveManager":
+    def primitives(self) -> "PrimitiveManager":
         """Gets the primitive manager, which is used to add primitives to your scenes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_primitives"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def screen_overlays(self) -> "IScreenOverlayManager":
+    def screen_overlays(self) -> "ScreenOverlayManager":
         """Gets the screen overlay manager, which is used to add screen overlays to your scenes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_screen_overlays"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def textures(self) -> "ITexture2DFactory":
+    def textures(self) -> "Texture2DFactory":
         """Gets the texture 2d factory, which can be used to create textures from various sources."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_textures"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def globe_overlay_settings(self) -> "IGlobeOverlaySettings":
+    def globe_overlay_settings(self) -> "GlobeOverlaySettings":
         """Gets the globe overlay settings, which are used to set global settings for all globe overlays."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_globe_overlay_settings"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scenes(self) -> "ISceneCollection":
+    def scenes(self) -> "SceneCollection":
         """Gets a read-only collection of scenes that are associated with the scene manager."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scenes"](byref(arg_ppRetVal.COM_val)))
@@ -14507,14 +14507,14 @@ class ISceneManager(object):
         agcls.evaluate_hresult(self.__dict__["_render"]())
 
     @property
-    def initializers(self) -> "IFactoryAndInitializers":
+    def initializers(self) -> "FactoryAndInitializers":
         """Allows the user to create or initialize primitives, display conditions, tringulators and other types of objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_initializers"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def frame_rate(self) -> "IFrameRate":
+    def frame_rate(self) -> "FrameRate":
         """Gets the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_frame_rate"](byref(arg_ppRetVal.COM_val)))
@@ -14645,7 +14645,7 @@ class IScreenOverlayManager(object):
             return arg_ppRetVal.python_val
 
     @property
-    def overlays(self) -> "IScreenOverlayCollection":
+    def overlays(self) -> "ScreenOverlayCollection":
         """Gets the collection of overlays that are contained within this manager."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_overlays"](byref(arg_ppRetVal.COM_val)))
@@ -15260,7 +15260,7 @@ class ISurfaceMeshPrimitive(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISurfaceMeshPrimitive.")
     
     @property
-    def texture(self) -> "IRendererTexture2D":
+    def texture(self) -> "RendererTexture2D":
         """Gets or sets the texture applied to this primitive when rendering."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture"](byref(arg_ppRetVal.COM_val)))
@@ -15305,7 +15305,7 @@ class ISurfaceMeshPrimitive(object):
             return arg_pRetVal.python_val
 
     @property
-    def texture_filter(self) -> "ITextureFilter2D":
+    def texture_filter(self) -> "TextureFilter2D":
         """Gets or sets the filter used when a texture is applied to this primitive."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_filter"](byref(arg_ppRetVal.COM_val)))
@@ -15317,7 +15317,7 @@ class ISurfaceMeshPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_texture_filter"](arg_textureFilter.COM_val))
 
     @property
-    def texture_matrix(self) -> "ITextureMatrix":
+    def texture_matrix(self) -> "TextureMatrix":
         """Gets or sets the matrix used to transform texture coordinates when a texture is applied to this primitive."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_matrix"](byref(arg_ppRetVal.COM_val)))
@@ -15775,7 +15775,7 @@ class ITextBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_bounding_sphere_scale"](arg_boundingSphereScale.COM_val))
 
     @property
-    def font(self) -> "IGraphicsFont":
+    def font(self) -> "GraphicsFont":
         """Gets the font used to render the text batch."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_font"](byref(arg_ppRetVal.COM_val)))
@@ -15818,7 +15818,7 @@ class ITextBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_align_to_pixel"](arg_alignToPixel.COM_val))
 
     @property
-    def distance_display_condition_per_string(self) -> "IDistanceDisplayCondition":
+    def distance_display_condition_per_string(self) -> "DistanceDisplayCondition":
         """Gets or sets a distance display condition that is evaluated per string in the text batch during rendering. This is different than display condition, which is evaluated once for the entire text batch..."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance_display_condition_per_string"](byref(arg_ppRetVal.COM_val)))
@@ -15842,7 +15842,7 @@ class ITextBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_per_item_picking_enabled"](arg_perItemPickingEnabled.COM_val))
 
     @property
-    def texture_filter(self) -> "ITextureFilter2D":
+    def texture_filter(self) -> "TextureFilter2D":
         """Gets or sets the filter used to filter the texture-based font."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_filter"](byref(arg_ppRetVal.COM_val)))
@@ -16195,7 +16195,7 @@ class ITextOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_outline_color"](arg_outlineColor.COM_val))
 
     @property
-    def font(self) -> "IGraphicsFont":
+    def font(self) -> "GraphicsFont":
         """Get the graphics font used to style the text."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_font"](byref(arg_ppRetVal.COM_val)))
@@ -16433,7 +16433,7 @@ class ITextureScreenOverlay(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextureScreenOverlay.")
     
     @property
-    def texture(self) -> "IRendererTexture2D":
+    def texture(self) -> "RendererTexture2D":
         """Gets or sets the texture (image) to be drawn on the overlay. Textures can be obtained from textures."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture"](byref(arg_ppRetVal.COM_val)))
@@ -16445,7 +16445,7 @@ class ITextureScreenOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_texture"](arg_texture.COM_val))
 
     @property
-    def texture_filter(self) -> "ITextureFilter2D":
+    def texture_filter(self) -> "TextureFilter2D":
         """Gets or sets the filter used for the texture associated with this overlay."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_filter"](byref(arg_ppRetVal.COM_val)))
@@ -16687,7 +16687,7 @@ class ITriangleMeshPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_shade_model"](arg_shadeModel.COM_val))
 
     @property
-    def texture(self) -> "IRendererTexture2D":
+    def texture(self) -> "RendererTexture2D":
         """Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture"](byref(arg_ppRetVal.COM_val)))
@@ -16699,7 +16699,7 @@ class ITriangleMeshPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_texture"](arg_texture.COM_val))
 
     @property
-    def texture_filter(self) -> "ITextureFilter2D":
+    def texture_filter(self) -> "TextureFilter2D":
         """Gets or sets the filter used for the texture associated with this triangle mesh."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_texture_filter"](byref(arg_ppRetVal.COM_val)))
@@ -17094,7 +17094,7 @@ class IBoxTriangulatorInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IBoxTriangulatorInitializer.")
     
-    def compute(self, size:list) -> "ISolidTriangulatorResult":
+    def compute(self, size:list) -> "SolidTriangulatorResult":
         """Computes the triangulation for a box of the specified size, centered at the origin."""
         with agmarshall.SAFEARRAY_arg(size) as arg_size, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -17140,7 +17140,7 @@ class ICylinderTriangulatorInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICylinderTriangulatorInitializer.")
     
-    def create_simple(self, length:float, radius:float) -> "ISolidTriangulatorResult":
+    def create_simple(self, length:float, radius:float) -> "SolidTriangulatorResult":
         """Computes the triangulation for a cylinder centered at the origin."""
         with agmarshall.DOUBLE_arg(length) as arg_length, \
              agmarshall.DOUBLE_arg(radius) as arg_radius, \
@@ -17148,7 +17148,7 @@ class ICylinderTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_create_simple"](arg_length.COM_val, arg_radius.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"CYLINDER_FILL") -> "ISolidTriangulatorResult":
+    def compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"CYLINDER_FILL") -> "SolidTriangulatorResult":
         """Computes the triangulation for a cylinder centered at the origin."""
         with agmarshall.DOUBLE_arg(length) as arg_length, \
              agmarshall.DOUBLE_arg(bottomRadius) as arg_bottomRadius, \
@@ -17198,14 +17198,14 @@ class IEllipsoidTriangulatorInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IEllipsoidTriangulatorInitializer.")
     
-    def compute_simple(self, radii:list) -> "ISolidTriangulatorResult":
+    def compute_simple(self, radii:list) -> "SolidTriangulatorResult":
         """Computes the triangulation for an ellipsoid with the specified radii, centered at the origin, using 32 slices and 16 stacks."""
         with agmarshall.SAFEARRAY_arg(radii) as arg_radii, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_simple"](byref(arg_radii.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute(self, radii:list, slices:int, stacks:int) -> "ISolidTriangulatorResult":
+    def compute(self, radii:list, slices:int, stacks:int) -> "SolidTriangulatorResult":
         """Computes the triangulation for an ellipsoid with the specified radii, centered at the origin."""
         with agmarshall.SAFEARRAY_arg(radii) as arg_radii, \
              agmarshall.INT_arg(slices) as arg_slices, \
@@ -17273,7 +17273,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IExtrudedPolylineTriangulatorInitializer.")
     
-    def compute(self, centralBody:str, bottomPositions:list, topPositions:list) -> "IExtrudedPolylineTriangulatorResult":
+    def compute(self, centralBody:str, bottomPositions:list, topPositions:list) -> "ExtrudedPolylineTriangulatorResult":
         """Computes an extrusion between bottomPositions and topPositions on the specified centralBody. This is equivalent to calling Compute with a positionsWindingOrder of compute."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(bottomPositions) as arg_bottomPositions, \
@@ -17282,7 +17282,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
         """Computes an extrusion between bottomPositions and topPositions on the specified centralBody."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(bottomPositions) as arg_bottomPositions, \
@@ -17292,7 +17292,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_winding_order"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic(self, centralBody:str, bottomPositions:list, topPositions:list) -> "IExtrudedPolylineTriangulatorResult":
+    def compute_cartographic(self, centralBody:str, bottomPositions:list, topPositions:list) -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(bottomPositions) as arg_bottomPositions, \
@@ -17301,7 +17301,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_cartographic_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(bottomPositions) as arg_bottomPositions, \
@@ -17311,7 +17311,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic_with_winding_order"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_altitudes(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float) -> "IExtrudedPolylineTriangulatorResult":
+    def compute_with_altitudes(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float) -> "ExtrudedPolylineTriangulatorResult":
         """Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude. This is equivalent to calling Compute with a positionsWindingOrder of compute."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17321,7 +17321,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_altitudes"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
         """Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17332,7 +17332,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_altitudes_and_winding_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic_with_altitudes(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float) -> "IExtrudedPolylineTriangulatorResult":
+    def compute_cartographic_with_altitudes(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float) -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17342,7 +17342,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic_with_altitudes"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_cartographic_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17353,7 +17353,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic_with_altitudes_and_winding_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_single_constant_altitude(self, centralBody:str, positions:list, altitude:float) -> "IExtrudedPolylineTriangulatorResult":
+    def compute_single_constant_altitude(self, centralBody:str, positions:list, altitude:float) -> "ExtrudedPolylineTriangulatorResult":
         """Computes an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions..."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17362,7 +17362,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_single_constant_altitude"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_single_constant_altitude_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_single_constant_altitude_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
         """Computes an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17372,7 +17372,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_single_constant_altitude_with_winding_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_single_constant_altitude_cartographic(self, centralBody:str, positions:list, altitude:float) -> "IExtrudedPolylineTriangulatorResult":
+    def compute_single_constant_altitude_cartographic(self, centralBody:str, positions:list, altitude:float) -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions..."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17381,7 +17381,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_single_constant_altitude_cartographic"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_single_constant_altitude_cartographic_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_single_constant_altitude_cartographic_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions..."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17430,7 +17430,7 @@ class ISurfaceExtentTriangulatorInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISurfaceExtentTriangulatorInitializer.")
     
-    def compute_simple(self, centralBody:str, extent:list) -> "ISurfaceTriangulatorResult":
+    def compute_simple(self, centralBody:str, extent:list) -> "SurfaceTriangulatorResult":
         """Computes a triangulation on the specified centralBody for the specified extent. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
@@ -17438,7 +17438,7 @@ class ISurfaceExtentTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_simple"](arg_centralBody.COM_val, byref(arg_extent.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute(self, centralBody:str, extent:list, altitude:float, granularity:float) -> "ISurfaceTriangulatorResult":
+    def compute(self, centralBody:str, extent:list, altitude:float, granularity:float) -> "SurfaceTriangulatorResult":
         """Computes a triangulation on the specified centralBody for the specified extent."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
@@ -17495,7 +17495,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISurfacePolygonTriangulatorInitializer.")
     
-    def compute(self, centralBody:str, positions:list) -> "ISurfaceTriangulatorResult":
+    def compute(self, centralBody:str, positions:list) -> "SurfaceTriangulatorResult":
         """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions. This is equivalent to calling Compute with an altitude of 0, a granularity of 1 degree, and a positionsWindingOrder of compute."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17503,7 +17503,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic(self, centralBody:str, positions:list) -> "ISurfaceTriangulatorResult":
+    def compute_cartographic(self, centralBody:str, positions:list) -> "SurfaceTriangulatorResult":
         """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17511,7 +17511,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_hole(self, centralBody:str, positions:list, holePositions:list) -> "ISurfaceTriangulatorResult":
+    def compute_with_hole(self, centralBody:str, positions:list, holePositions:list) -> "SurfaceTriangulatorResult":
         """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17520,7 +17520,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_hole"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_holePositions.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_hole_altitude_and_granularity(self, centralBody:str, positions:list, holePositions:list, altitude:float, granularity:float) -> "ISurfaceTriangulatorResult":
+    def compute_with_hole_altitude_and_granularity(self, centralBody:str, positions:list, holePositions:list, altitude:float, granularity:float) -> "SurfaceTriangulatorResult":
         """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17531,7 +17531,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_hole_altitude_and_granularity"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_holePositions.COM_val), arg_altitude.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"WINDING_ORDER") -> "ISurfaceTriangulatorResult":
+    def compute_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"WINDING_ORDER") -> "SurfaceTriangulatorResult":
         """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17542,7 +17542,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_altitude_and_granularity"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, arg_granularity.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"WINDING_ORDER") -> "ISurfaceTriangulatorResult":
+    def compute_cartographic_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"WINDING_ORDER") -> "SurfaceTriangulatorResult":
         """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
@@ -17612,7 +17612,7 @@ class ISurfaceShapesInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISurfaceShapesInitializer.")
     
-    def compute_circle_with_granularity(self, centralBody:str, center:list, radius:float, granularity:float) -> "ISurfaceShapesResult":
+    def compute_circle_with_granularity(self, centralBody:str, center:list, radius:float, granularity:float) -> "SurfaceShapesResult":
         """Computes boundary positions for a circle on the specified centralBody with the specified center, radius and granularity."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17622,7 +17622,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_circle_with_granularity"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_radius.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_circle(self, centralBody:str, center:list, radius:float) -> "ISurfaceShapesResult":
+    def compute_circle(self, centralBody:str, center:list, radius:float) -> "SurfaceShapesResult":
         """Computes boundary positions for a circle on the specified centralBody with the specified center and radius. This is equivalent to calling ComputeCircle with a granularity of 1 degree."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17631,7 +17631,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_circle"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_radius.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_circle_cartographic_with_granularity(self, centralBody:str, center:list, radius:float, granularity:float) -> "ISurfaceShapesResult":
+    def compute_circle_cartographic_with_granularity(self, centralBody:str, center:list, radius:float, granularity:float) -> "SurfaceShapesResult":
         """For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17641,7 +17641,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_circle_cartographic_with_granularity"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_radius.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_circle_cartographic(self, centralBody:str, center:list, radius:float) -> "ISurfaceShapesResult":
+    def compute_circle_cartographic(self, centralBody:str, center:list, radius:float) -> "SurfaceShapesResult":
         """For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17650,7 +17650,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_circle_cartographic"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_radius.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_ellipse_with_granularity(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float, granularity:float) -> "ISurfaceShapesResult":
+    def compute_ellipse_with_granularity(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float, granularity:float) -> "SurfaceShapesResult":
         """Computes boundary positions for an ellipse on the specified centralBody."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17662,7 +17662,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_ellipse_with_granularity"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_majorAxisRadius.COM_val, arg_minorAxisRadius.COM_val, arg_bearing.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_ellipse(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float) -> "ISurfaceShapesResult":
+    def compute_ellipse(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float) -> "SurfaceShapesResult":
         """Computes boundary positions for an ellipse on the specified centralBody This is equivalent to calling ComputeEllipse with a granularity of 1 degree."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17673,7 +17673,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_ellipse"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_majorAxisRadius.COM_val, arg_minorAxisRadius.COM_val, arg_bearing.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_ellipse_cartographic_with_granularity(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float, granularity:float) -> "ISurfaceShapesResult":
+    def compute_ellipse_cartographic_with_granularity(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float, granularity:float) -> "SurfaceShapesResult":
         """For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17685,7 +17685,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_ellipse_cartographic_with_granularity"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_majorAxisRadius.COM_val, arg_minorAxisRadius.COM_val, arg_bearing.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_ellipse_cartographic(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float) -> "ISurfaceShapesResult":
+    def compute_ellipse_cartographic(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float) -> "SurfaceShapesResult":
         """For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17696,7 +17696,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_ellipse_cartographic"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_majorAxisRadius.COM_val, arg_minorAxisRadius.COM_val, arg_bearing.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_sector_with_granularity(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float, granularity:float) -> "ISurfaceShapesResult":
+    def compute_sector_with_granularity(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float, granularity:float) -> "SurfaceShapesResult":
         """Computes boundary positions for a sector on the specified centralBody."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17709,7 +17709,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_sector_with_granularity"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_innerRadius.COM_val, arg_outerRadius.COM_val, arg_startBearing.COM_val, arg_endBearing.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_sector(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float) -> "ISurfaceShapesResult":
+    def compute_sector(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float) -> "SurfaceShapesResult":
         """Computes boundary positions for a sector on the specified centralBody This is equivalent to calling ComputeSector with a granularity of 1 degree."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17721,7 +17721,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_sector"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_innerRadius.COM_val, arg_outerRadius.COM_val, arg_startBearing.COM_val, arg_endBearing.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_sector_cartographic_with_granularity(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float, granularity:float) -> "ISurfaceShapesResult":
+    def compute_sector_cartographic_with_granularity(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float, granularity:float) -> "SurfaceShapesResult":
         """For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17734,7 +17734,7 @@ class ISurfaceShapesInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_sector_cartographic_with_granularity"](arg_centralBody.COM_val, byref(arg_center.COM_val), arg_innerRadius.COM_val, arg_outerRadius.COM_val, arg_startBearing.COM_val, arg_endBearing.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_sector_cartographic(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float) -> "ISurfaceShapesResult":
+    def compute_sector_cartographic(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float) -> "SurfaceShapesResult":
         """For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(center) as arg_center, \
@@ -17783,7 +17783,7 @@ class IAGICustomTerrainOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAGICustomTerrainOverlayFactory.")
     
-    def initialize_with_string(self, uri:str) -> "IAGICustomTerrainOverlay":
+    def initialize_with_string(self, uri:str) -> "AGICustomTerrainOverlay":
         """Initializes an agi custom terrain overlay with the provided values."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -17827,7 +17827,7 @@ class IAGIProcessedImageGlobeOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAGIProcessedImageGlobeOverlayFactory.")
     
-    def initialize_with_string(self, uri:str) -> "IAGIProcessedImageGlobeOverlay":
+    def initialize_with_string(self, uri:str) -> "AGIProcessedImageGlobeOverlay":
         """Initializes an agi processed image globe overlay with the provided values."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -17871,7 +17871,7 @@ class IAGIProcessedTerrainOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAGIProcessedTerrainOverlayFactory.")
     
-    def initialize_with_string(self, uri:str) -> "IAGIProcessedTerrainOverlay":
+    def initialize_with_string(self, uri:str) -> "AGIProcessedTerrainOverlay":
         """Initializes an agi processed terrain overlay with the provided values."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -17915,7 +17915,7 @@ class IAGIRoamImageGlobeOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAGIRoamImageGlobeOverlayFactory.")
     
-    def initialize_with_string(self, uri:str) -> "IAGIRoamImageGlobeOverlay":
+    def initialize_with_string(self, uri:str) -> "AGIRoamImageGlobeOverlay":
         """Initializes an agi roam image globe overlay with the provided values."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -17959,7 +17959,7 @@ class ICustomImageGlobeOverlayPluginActivatorFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICustomImageGlobeOverlayPluginActivatorFactory.")
     
-    def initialize(self) -> "ICustomImageGlobeOverlayPluginActivator":
+    def initialize(self) -> "CustomImageGlobeOverlayPluginActivator":
         """Initializes a new instance of the Activator type."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -18002,7 +18002,7 @@ class IGeospatialImageGlobeOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IGeospatialImageGlobeOverlayFactory.")
     
-    def initialize_with_string(self, uri:str) -> "IGeospatialImageGlobeOverlay":
+    def initialize_with_string(self, uri:str) -> "GeospatialImageGlobeOverlay":
         """Initializes a geospatial image globe overlay with the provided values."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -18048,7 +18048,7 @@ class IProjectedRasterOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IProjectedRasterOverlayFactory.")
     
-    def initialize(self, raster:"IRaster", projection:"IProjection") -> "IProjectedRasterOverlay":
+    def initialize(self, raster:"IRaster", projection:"IProjection") -> "ProjectedRasterOverlay":
         """Initializes a new instance."""
         with agmarshall.AgInterface_in_arg(raster, IRaster) as arg_raster, \
              agmarshall.AgInterface_in_arg(projection, IProjection) as arg_projection, \
@@ -18170,13 +18170,13 @@ class IAltitudeDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAltitudeDisplayConditionFactory.")
     
-    def initialize(self) -> "IAltitudeDisplayCondition":
+    def initialize(self) -> "AltitudeDisplayCondition":
         """Initializes a default altitude display condition. With this constructor, an object is always rendered regardless of the camera's altitude."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_altitudes(self, minimumAltitude:float, maximumAltitude:float) -> "IAltitudeDisplayCondition":
+    def initialize_with_altitudes(self, minimumAltitude:float, maximumAltitude:float) -> "AltitudeDisplayCondition":
         """Initializes an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]..."""
         with agmarshall.DOUBLE_arg(minimumAltitude) as arg_minimumAltitude, \
              agmarshall.DOUBLE_arg(maximumAltitude) as arg_maximumAltitude, \
@@ -18184,7 +18184,7 @@ class IAltitudeDisplayConditionFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_altitudes"](arg_minimumAltitude.COM_val, arg_maximumAltitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_central_body_and_altitudes(self, centralBody:str, minimumAltitude:float, maximumAltitude:float) -> "IAltitudeDisplayCondition":
+    def initialize_with_central_body_and_altitudes(self, centralBody:str, minimumAltitude:float, maximumAltitude:float) -> "AltitudeDisplayCondition":
         """Initializes an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]..."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.DOUBLE_arg(minimumAltitude) as arg_minimumAltitude, \
@@ -18230,7 +18230,7 @@ class IAxesPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAxesPrimitiveFactory.")
     
-    def initialize_with_direction(self, sys:"IVectorGeometryToolSystem", axes:"IVectorGeometryToolAxes", font:"IGraphicsFont") -> "IAxesPrimitive":
+    def initialize_with_direction(self, sys:"IVectorGeometryToolSystem", axes:"IVectorGeometryToolAxes", font:"IGraphicsFont") -> "AxesPrimitive":
         """Initializes an axes primitive with the specified ISystem sys as its source."""
         with agmarshall.AgInterface_in_arg(sys, IVectorGeometryToolSystem) as arg_sys, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -18276,7 +18276,7 @@ class ICompositeDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICompositeDisplayConditionFactory.")
     
-    def initialize(self) -> "ICompositeDisplayCondition":
+    def initialize(self) -> "CompositeDisplayCondition":
         """Initializes an empty composite display condition."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -18319,7 +18319,7 @@ class ICompositePrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICompositePrimitiveFactory.")
     
-    def initialize(self) -> "ICompositePrimitive":
+    def initialize(self) -> "CompositePrimitive":
         """Initializes a default composite primitive."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -18364,13 +18364,13 @@ class IConstantDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IConstantDisplayConditionFactory.")
     
-    def initialize(self) -> "IConstantDisplayCondition":
+    def initialize(self) -> "ConstantDisplayCondition":
         """Initializes a default constant display condition. display is set to false so when this display condition is assigned to an object, such as a primitive, the object is not rendered."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_display(self, display:bool) -> "IConstantDisplayCondition":
+    def initialize_display(self, display:bool) -> "ConstantDisplayCondition":
         """Initializes a constant display condition with the value the display condition evaluates to."""
         with agmarshall.VARIANT_BOOL_arg(display) as arg_display, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -18416,13 +18416,13 @@ class IDistanceDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IDistanceDisplayConditionFactory.")
     
-    def initialize(self) -> "IDistanceDisplayCondition":
+    def initialize(self) -> "DistanceDisplayCondition":
         """Initializes a default distance display condition. minimum distance is set to 0 and maximum distance is set to Double.MaxValue. With this interval, an object is always rendered regardless of its distance to the camera."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_distances(self, minimumDistance:float, maximumDistance:float) -> "IDistanceDisplayCondition":
+    def initialize_with_distances(self, minimumDistance:float, maximumDistance:float) -> "DistanceDisplayCondition":
         """Initializes a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         with agmarshall.DOUBLE_arg(minimumDistance) as arg_minimumDistance, \
              agmarshall.DOUBLE_arg(maximumDistance) as arg_maximumDistance, \
@@ -18469,13 +18469,13 @@ class IDistanceToGlobeOverlayDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IDistanceToGlobeOverlayDisplayConditionFactory.")
     
-    def initialize(self) -> "IDistanceToGlobeOverlayDisplayCondition":
+    def initialize(self) -> "DistanceToGlobeOverlayDisplayCondition":
         """Initializes a default distance to globe overlay display condition. With this constructor, an object is always rendered regardless of the camera's distance to the globe overlay."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_distances(self, globeOverlay:"IGlobeOverlay", minimumDistance:float, maximumDistance:float) -> "IDistanceToGlobeOverlayDisplayCondition":
+    def initialize_with_distances(self, globeOverlay:"IGlobeOverlay", minimumDistance:float, maximumDistance:float) -> "DistanceToGlobeOverlayDisplayCondition":
         """Initializes a distance display condition with the globe overlay and the inclusive distance interval [minimumDistance, maximumDistance]..."""
         with agmarshall.AgInterface_in_arg(globeOverlay, IGlobeOverlay) as arg_globeOverlay, \
              agmarshall.DOUBLE_arg(minimumDistance) as arg_minimumDistance, \
@@ -18525,13 +18525,13 @@ class IDistanceToPositionDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IDistanceToPositionDisplayConditionFactory.")
     
-    def initialize(self) -> "IDistanceToPositionDisplayCondition":
+    def initialize(self) -> "DistanceToPositionDisplayCondition":
         """Initializes a default distance to position display condition. With this constructor, an object is always rendered regardless of the camera's distance to the position."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_distances(self, position:list, minimumDistance:float, maximumDistance:float) -> "IDistanceToPositionDisplayCondition":
+    def initialize_with_distances(self, position:list, minimumDistance:float, maximumDistance:float) -> "DistanceToPositionDisplayCondition":
         """Initializes a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         with agmarshall.SAFEARRAY_arg(position) as arg_position, \
              agmarshall.DOUBLE_arg(minimumDistance) as arg_minimumDistance, \
@@ -18540,7 +18540,7 @@ class IDistanceToPositionDisplayConditionFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_distances"](byref(arg_position.COM_val), arg_minimumDistance.COM_val, arg_maximumDistance.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_reference_frame_and_distances(self, referenceFrame:"IVectorGeometryToolSystem", position:list, minimumDistance:float, maximumDistance:float) -> "IDistanceToPositionDisplayCondition":
+    def initialize_with_reference_frame_and_distances(self, referenceFrame:"IVectorGeometryToolSystem", position:list, minimumDistance:float, maximumDistance:float) -> "DistanceToPositionDisplayCondition":
         """Initializes a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         with agmarshall.AgInterface_in_arg(referenceFrame, IVectorGeometryToolSystem) as arg_referenceFrame, \
              agmarshall.SAFEARRAY_arg(position) as arg_position, \
@@ -18589,13 +18589,13 @@ class IDistanceToPrimitiveDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IDistanceToPrimitiveDisplayConditionFactory.")
     
-    def initialize(self) -> "IDistanceToPrimitiveDisplayCondition":
+    def initialize(self) -> "DistanceToPrimitiveDisplayCondition":
         """Initializes a default distance to primitive display condition. With this constructor, an object is always rendered regardless of the camera's distance to the primitive."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_distances(self, primitive:"IPrimitive", minimumDistance:float, maximumDistance:float) -> "IDistanceToPrimitiveDisplayCondition":
+    def initialize_with_distances(self, primitive:"IPrimitive", minimumDistance:float, maximumDistance:float) -> "DistanceToPrimitiveDisplayCondition":
         """Initializes a distance to primitive display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         with agmarshall.AgInterface_in_arg(primitive, IPrimitive) as arg_primitive, \
              agmarshall.DOUBLE_arg(minimumDistance) as arg_minimumDistance, \
@@ -18643,13 +18643,13 @@ class IDurationPathPrimitiveUpdatePolicyFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IDurationPathPrimitiveUpdatePolicyFactory.")
     
-    def initialize(self) -> "IDurationPathPrimitiveUpdatePolicy":
+    def initialize(self) -> "DurationPathPrimitiveUpdatePolicy":
         """Constructs a default update policy. This is equivalent to constructing a policy with duration set to 0 and a remove location of Front."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_parameters(self, duration:float, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "IDurationPathPrimitiveUpdatePolicy":
+    def initialize_with_parameters(self, duration:float, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "DurationPathPrimitiveUpdatePolicy":
         """Initializes a policy with the specified duration and removeLocation."""
         with agmarshall.DOUBLE_arg(duration) as arg_duration, \
              agmarshall.AgEnum_arg(PATH_PRIMITIVE_REMOVE_LOCATION, removeLocation) as arg_removeLocation, \
@@ -18740,7 +18740,7 @@ class IGraphicsFontFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IGraphicsFontFactory.")
     
-    def initialize_with_name_size_font_style_outline(self, name:str, size:int, fontStyle:"FONT_STYLE", outline:bool) -> "IGraphicsFont":
+    def initialize_with_name_size_font_style_outline(self, name:str, size:int, fontStyle:"FONT_STYLE", outline:bool) -> "GraphicsFont":
         """Initializes a graphics font with the given arguments."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.INT_arg(size) as arg_size, \
@@ -18750,7 +18750,7 @@ class IGraphicsFontFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_name_size_font_style_outline"](arg_name.COM_val, arg_size.COM_val, arg_fontStyle.COM_val, arg_outline.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_name_size(self, name:str, size:int) -> "IGraphicsFont":
+    def initialize_with_name_size(self, name:str, size:int) -> "GraphicsFont":
         """Initializes a graphics font with the typeface name and size."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.INT_arg(size) as arg_size, \
@@ -18799,20 +18799,20 @@ class IGreatArcInterpolatorFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IGreatArcInterpolatorFactory.")
     
-    def initialize(self) -> "IGreatArcInterpolator":
+    def initialize(self) -> "GreatArcInterpolator":
         """Initializes a default great arc interpolator. This is equivalent to constructing a great arc interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_central_body(self, centralBody:str) -> "IGreatArcInterpolator":
+    def initialize_with_central_body(self, centralBody:str) -> "GreatArcInterpolator":
         """Initializes a great arc interpolator with the specified centralBody and a granularity of 1 degree."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_central_body"](arg_centralBody.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_central_body_and_granularity(self, centralBody:str, granularity:float) -> "IGreatArcInterpolator":
+    def initialize_with_central_body_and_granularity(self, centralBody:str, granularity:float) -> "GreatArcInterpolator":
         """Initializes a great arc interpolator with the specified centralBody and granularity."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.DOUBLE_arg(granularity) as arg_granularity, \
@@ -18857,7 +18857,7 @@ class IAlphaFromLuminanceFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAlphaFromLuminanceFilterFactory.")
     
-    def initialize(self) -> "IAlphaFromLuminanceFilter":
+    def initialize(self) -> "AlphaFromLuminanceFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -18900,7 +18900,7 @@ class IAlphaFromPixelFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAlphaFromPixelFilterFactory.")
     
-    def initialize(self) -> "IAlphaFromPixelFilter":
+    def initialize(self) -> "AlphaFromPixelFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -18945,13 +18945,13 @@ class IAlphaFromRasterFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAlphaFromRasterFilterFactory.")
     
-    def initialize(self) -> "IAlphaFromRasterFilter":
+    def initialize(self) -> "AlphaFromRasterFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_raster(self, raster:"IRaster") -> "IAlphaFromRasterFilter":
+    def initialize_with_raster(self, raster:"IRaster") -> "AlphaFromRasterFilter":
         """Initializes a new instance with the raster that the source raster will use to derive an alpha band."""
         with agmarshall.AgInterface_in_arg(raster, IRaster) as arg_raster, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -18999,20 +18999,20 @@ class IBandExtractFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IBandExtractFilterFactory.")
     
-    def initialize(self) -> "IBandExtractFilter":
+    def initialize(self) -> "BandExtractFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_band(self, rasterBand:"RASTER_BAND") -> "IBandExtractFilter":
+    def initialize_with_band(self, rasterBand:"RASTER_BAND") -> "BandExtractFilter":
         """Initializes a new instance with the raster band to be extracted from the source raster."""
         with agmarshall.AgEnum_arg(RASTER_BAND, rasterBand) as arg_rasterBand, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_band"](arg_rasterBand.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format(self, rasterFormat:"RASTER_FORMAT") -> "IBandExtractFilter":
+    def initialize_with_format(self, rasterFormat:"RASTER_FORMAT") -> "BandExtractFilter":
         """Initializes a new instance with the raster format containing the bands to be extracted from the source raster."""
         with agmarshall.AgEnum_arg(RASTER_FORMAT, rasterFormat) as arg_rasterFormat, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19060,20 +19060,20 @@ class IBandOrderFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IBandOrderFilterFactory.")
     
-    def initialize(self) -> "IBandOrderFilter":
+    def initialize(self) -> "BandOrderFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_order(self, bandOrder:"RASTER_FORMAT") -> "IBandOrderFilter":
+    def initialize_with_order(self, bandOrder:"RASTER_FORMAT") -> "BandOrderFilter":
         """Initializes a new instance with a raster format indicating the desired order of the bands in the source raster."""
         with agmarshall.AgEnum_arg(RASTER_FORMAT, bandOrder) as arg_bandOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_order"](arg_bandOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_order_and_bool(self, bandOrder:"RASTER_FORMAT", maintainImageFormat:bool) -> "IBandOrderFilter":
+    def initialize_with_order_and_bool(self, bandOrder:"RASTER_FORMAT", maintainImageFormat:bool) -> "BandOrderFilter":
         """Initializes a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling."""
         with agmarshall.AgEnum_arg(RASTER_FORMAT, bandOrder) as arg_bandOrder, \
              agmarshall.VARIANT_BOOL_arg(maintainImageFormat) as arg_maintainImageFormat, \
@@ -19120,13 +19120,13 @@ class IBlurFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IBlurFilterFactory.")
     
-    def initialize(self) -> "IBlurFilter":
+    def initialize(self) -> "BlurFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"BLUR_METHOD") -> "IBlurFilter":
+    def initialize_with_method(self, method:"BLUR_METHOD") -> "BlurFilter":
         """Initialize a new instance with the specified blur method."""
         with agmarshall.AgEnum_arg(BLUR_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19172,13 +19172,13 @@ class IBrightnessFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IBrightnessFilterFactory.")
     
-    def initialize(self) -> "IBrightnessFilter":
+    def initialize(self) -> "BrightnessFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_adjustment(self, adjustment:float) -> "IBrightnessFilter":
+    def initialize_with_adjustment(self, adjustment:float) -> "BrightnessFilter":
         """Initializes a new instance with the adjustment to brightness."""
         with agmarshall.DOUBLE_arg(adjustment) as arg_adjustment, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19222,7 +19222,7 @@ class IColorToLuminanceFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IColorToLuminanceFilterFactory.")
     
-    def initialize(self) -> "IColorToLuminanceFilter":
+    def initialize(self) -> "ColorToLuminanceFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -19267,13 +19267,13 @@ class IContrastFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IContrastFilterFactory.")
     
-    def initialize(self) -> "IContrastFilter":
+    def initialize(self) -> "ContrastFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_adjustment(self, adjustment:float) -> "IContrastFilter":
+    def initialize_with_adjustment(self, adjustment:float) -> "ContrastFilter":
         """Initializes a new instance with the adjustment to contrast."""
         with agmarshall.DOUBLE_arg(adjustment) as arg_adjustment, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19392,13 +19392,13 @@ class IEdgeDetectFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IEdgeDetectFilterFactory.")
     
-    def initialize(self) -> "IEdgeDetectFilter":
+    def initialize(self) -> "EdgeDetectFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"EDGE_DETECT_METHOD") -> "IEdgeDetectFilter":
+    def initialize_with_method(self, method:"EDGE_DETECT_METHOD") -> "EdgeDetectFilter":
         """Initializes a new instance with the specified edge detect method."""
         with agmarshall.AgEnum_arg(EDGE_DETECT_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19442,7 +19442,7 @@ class IFilteringRasterStreamFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IFilteringRasterStreamFactory.")
     
-    def initialize(self, rasterStream:"IRasterStream", filter:"IRasterFilter") -> "IFilteringRasterStream":
+    def initialize(self, rasterStream:"IRasterStream", filter:"IRasterFilter") -> "FilteringRasterStream":
         """Initializes a new instance with a raster stream and the raster filter that will be applied to each update of that stream."""
         with agmarshall.AgInterface_in_arg(rasterStream, IRasterStream) as arg_rasterStream, \
              agmarshall.AgInterface_in_arg(filter, IRasterFilter) as arg_filter, \
@@ -19489,13 +19489,13 @@ class IFlipFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IFlipFilterFactory.")
     
-    def initialize(self) -> "IFlipFilter":
+    def initialize(self) -> "FlipFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_flip_axis(self, flipAxis:"FLIP_AXIS") -> "IFlipFilter":
+    def initialize_with_flip_axis(self, flipAxis:"FLIP_AXIS") -> "FlipFilter":
         """Initializes a new instance with the specified flip axis."""
         with agmarshall.AgEnum_arg(FLIP_AXIS, flipAxis) as arg_flipAxis, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19541,13 +19541,13 @@ class IGammaCorrectionFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IGammaCorrectionFilterFactory.")
     
-    def initialize(self) -> "IGammaCorrectionFilter":
+    def initialize(self) -> "GammaCorrectionFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_gamma(self, gamma:float) -> "IGammaCorrectionFilter":
+    def initialize_with_gamma(self, gamma:float) -> "GammaCorrectionFilter":
         """Initializes a new instance with the specified gamma."""
         with agmarshall.DOUBLE_arg(gamma) as arg_gamma, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19591,7 +19591,7 @@ class IGaussianBlurFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IGaussianBlurFilterFactory.")
     
-    def initialize(self) -> "IGaussianBlurFilter":
+    def initialize(self) -> "GaussianBlurFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -19636,13 +19636,13 @@ class IGradientDetectFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IGradientDetectFilterFactory.")
     
-    def initialize(self) -> "IGradientDetectFilter":
+    def initialize(self) -> "GradientDetectFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"GRADIENT_DETECT_METHOD") -> "IGradientDetectFilter":
+    def initialize_with_method(self, method:"GRADIENT_DETECT_METHOD") -> "GradientDetectFilter":
         """Initializes a new instance with specified gradient detect method."""
         with agmarshall.AgEnum_arg(GRADIENT_DETECT_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -19771,7 +19771,7 @@ class ILevelsFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ILevelsFilterFactory.")
     
-    def initialize(self) -> "ILevelsFilter":
+    def initialize(self) -> "LevelsFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -19814,7 +19814,7 @@ class IProjectionRasterStreamPluginActivatorFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IProjectionRasterStreamPluginActivatorFactory.")
     
-    def initialize(self) -> "IProjectionRasterStreamPluginActivator":
+    def initialize(self) -> "ProjectionRasterStreamPluginActivator":
         """Initializes a new instance of the Activator type."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -19933,7 +19933,7 @@ class IRasterAttributesFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IRasterAttributesFactory.")
     
-    def initialize_with_format(self, width:int, height:int, rasterFormat:"RASTER_FORMAT") -> "IRasterAttributes":
+    def initialize_with_format(self, width:int, height:int, rasterFormat:"RASTER_FORMAT") -> "RasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
@@ -19942,7 +19942,7 @@ class IRasterAttributesFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_and_type(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE") -> "IRasterAttributes":
+    def initialize_with_format_and_type(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE") -> "RasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format and raster type."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
@@ -19952,7 +19952,7 @@ class IRasterAttributesFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format_and_type"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, arg_rasterType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_type_and_orientation(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION") -> "IRasterAttributes":
+    def initialize_with_format_type_and_orientation(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION") -> "RasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, and raster orientation."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
@@ -19963,7 +19963,7 @@ class IRasterAttributesFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format_type_and_orientation"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, arg_rasterType.COM_val, arg_rasterOrientation.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_type_orientation_and_alignment(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION", rowAlignment:int) -> "IRasterAttributes":
+    def initialize_with_format_type_orientation_and_alignment(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION", rowAlignment:int) -> "RasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, and row alignment."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
@@ -19975,7 +19975,7 @@ class IRasterAttributesFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format_type_orientation_and_alignment"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, arg_rasterType.COM_val, arg_rasterOrientation.COM_val, arg_rowAlignment.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_type_orientation_alignment_and_ratio(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION", rowAlignment:int, pixelAspectRatio:float) -> "IRasterAttributes":
+    def initialize_with_format_type_orientation_alignment_and_ratio(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION", rowAlignment:int, pixelAspectRatio:float) -> "RasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, row alignment, and pixel aspect ratio."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
@@ -19988,7 +19988,7 @@ class IRasterAttributesFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format_type_orientation_alignment_and_ratio"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, arg_rasterType.COM_val, arg_rasterOrientation.COM_val, arg_rowAlignment.COM_val, arg_pixelAspectRatio.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_raster(self, raster:"IRaster") -> "IRasterAttributes":
+    def initialize_with_raster(self, raster:"IRaster") -> "RasterAttributes":
         """Initializes a new instance with the attributes of the specified raster"""
         with agmarshall.AgInterface_in_arg(raster, IRaster) as arg_raster, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -20034,13 +20034,13 @@ class IRotateFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IRotateFilterFactory.")
     
-    def initialize(self) -> "IRotateFilter":
+    def initialize(self) -> "RotateFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_angle(self, rotateAngle:float) -> "IRotateFilter":
+    def initialize_with_angle(self, rotateAngle:float) -> "RotateFilter":
         """Initializes a new instance with a counterclockwise rotation angle."""
         with agmarshall.DOUBLE_arg(rotateAngle) as arg_rotateAngle, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -20084,7 +20084,7 @@ class ISequenceFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISequenceFilterFactory.")
     
-    def initialize(self) -> "ISequenceFilter":
+    def initialize(self) -> "SequenceFilter":
         """Initializes a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -20129,13 +20129,13 @@ class ISharpenFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISharpenFilterFactory.")
     
-    def initialize(self) -> "ISharpenFilter":
+    def initialize(self) -> "SharpenFilter":
         """Initialize a new instance."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"SHARPEN_METHOD") -> "ISharpenFilter":
+    def initialize_with_method(self, method:"SHARPEN_METHOD") -> "SharpenFilter":
         """Initialize a new instance with the specified sharpen method."""
         with agmarshall.AgEnum_arg(SHARPEN_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -20183,14 +20183,14 @@ class IVideoStreamFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVideoStreamFactory.")
     
-    def initialize_with_string_uri(self, uri:str) -> "IVideoStream":
+    def initialize_with_string_uri(self, uri:str) -> "VideoStream":
         """Initializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_string_uri"](arg_uri.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_string_uri_and_audio(self, uri:str, loadAudio:bool) -> "IVideoStream":
+    def initialize_with_string_uri_and_audio(self, uri:str, loadAudio:bool) -> "VideoStream":
         """Initializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.VARIANT_BOOL_arg(loadAudio) as arg_loadAudio, \
@@ -20198,7 +20198,7 @@ class IVideoStreamFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_string_uri_and_audio"](arg_uri.COM_val, arg_loadAudio.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_audio_video_with_string_uri(self, uri:str, audioUri:str) -> "IVideoStream":
+    def initialize_audio_video_with_string_uri(self, uri:str, audioUri:str) -> "VideoStream":
         """Initializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.BSTR_arg(audioUri) as arg_audioUri, \
@@ -20255,27 +20255,27 @@ class IMarkerBatchPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IMarkerBatchPrimitiveFactory.")
     
-    def initialize(self) -> "IMarkerBatchPrimitive":
+    def initialize(self) -> "MarkerBatchPrimitive":
         """Initializes a default marker batch primitive..."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "IMarkerBatchPrimitive":
+    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "MarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified setHint..."""
         with agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_set_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_size_source(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE") -> "IMarkerBatchPrimitive":
+    def initialize_with_size_source(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE") -> "MarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified sizeSource..."""
         with agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_size_source"](arg_sizeSource.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_size_source_and_sort_order(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER") -> "IMarkerBatchPrimitive":
+    def initialize_with_size_source_and_sort_order(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER") -> "MarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified sizeSource and sortOrder..."""
         with agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
              agmarshall.AgEnum_arg(MARKER_BATCH_SORT_ORDER, sortOrder) as arg_sortOrder, \
@@ -20283,7 +20283,7 @@ class IMarkerBatchPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_size_source_and_sort_order"](arg_sizeSource.COM_val, arg_sortOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_size_source_sort_order_and_set_hint(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER", setHint:"SET_HINT") -> "IMarkerBatchPrimitive":
+    def initialize_size_source_sort_order_and_set_hint(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER", setHint:"SET_HINT") -> "MarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified sizeSource, sortOrder, and setHint. This is equivalent to constructing a marker batch with the specified arguments and a marker batch rendering method of Automatic."""
         with agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
              agmarshall.AgEnum_arg(MARKER_BATCH_SORT_ORDER, sortOrder) as arg_sortOrder, \
@@ -20292,7 +20292,7 @@ class IMarkerBatchPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_size_source_sort_order_and_set_hint"](arg_sizeSource.COM_val, arg_sortOrder.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_size_source_sort_order_set_hint_and_rendering_method(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER", setHint:"SET_HINT", renderingMethod:"MARKER_BATCH_RENDERING_METHOD") -> "IMarkerBatchPrimitive":
+    def initialize_size_source_sort_order_set_hint_and_rendering_method(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER", setHint:"SET_HINT", renderingMethod:"MARKER_BATCH_RENDERING_METHOD") -> "MarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified arguments."""
         with agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
              agmarshall.AgEnum_arg(MARKER_BATCH_SORT_ORDER, sortOrder) as arg_sortOrder, \
@@ -20346,7 +20346,7 @@ class IMarkerBatchPrimitiveOptionalParametersFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IMarkerBatchPrimitiveOptionalParametersFactory.")
     
-    def initialize(self) -> "IMarkerBatchPrimitiveOptionalParameters":
+    def initialize(self) -> "MarkerBatchPrimitiveOptionalParameters":
         """Initializes default marker batch primitive optional parameters. All per-marker parameters are initially empty."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -20391,13 +20391,13 @@ class IMaximumCountPathPrimitiveUpdatePolicyFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IMaximumCountPathPrimitiveUpdatePolicyFactory.")
     
-    def initialize(self) -> "IMaximumCountPathPrimitiveUpdatePolicy":
+    def initialize(self) -> "MaximumCountPathPrimitiveUpdatePolicy":
         """Constructs a default update policy. This is equivalent to constructing a policy with maximum count set to 0 and a remove location of Front."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_parameters(self, maximumCount:int, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "IMaximumCountPathPrimitiveUpdatePolicy":
+    def initialize_with_parameters(self, maximumCount:int, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "MaximumCountPathPrimitiveUpdatePolicy":
         """Initializes a policy with the specified maximumCount and removeLocation."""
         with agmarshall.INT_arg(maximumCount) as arg_maximumCount, \
              agmarshall.AgEnum_arg(PATH_PRIMITIVE_REMOVE_LOCATION, removeLocation) as arg_removeLocation, \
@@ -20446,20 +20446,20 @@ class IModelPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IModelPrimitiveFactory.")
     
-    def initialize(self) -> "IModelPrimitive":
+    def initialize(self) -> "ModelPrimitive":
         """Initializes a default model primitive."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_string_uri(self, uri:str) -> "IModelPrimitive":
+    def initialize_with_string_uri(self, uri:str) -> "ModelPrimitive":
         """For convenience. Initializes a model primitive with the specified file path."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_string_uri"](arg_uri.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_string_uri_and_up_axis(self, uri:str, upAxis:"MODEL_UP_AXIS") -> "IModelPrimitive":
+    def initialize_with_string_uri_and_up_axis(self, uri:str, upAxis:"MODEL_UP_AXIS") -> "ModelPrimitive":
         """For convenience. Initializes a model primitive with the specified file path and up axis."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgEnum_arg(MODEL_UP_AXIS, upAxis) as arg_upAxis, \
@@ -20510,13 +20510,13 @@ class IPathPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPathPrimitiveFactory.")
     
-    def initialize(self) -> "IPathPrimitive":
+    def initialize(self) -> "PathPrimitive":
         """Initializes a default path primitive. This is equivalent to constructing a path primitive with an initial capacity of 16."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_capacity(self, capacity:int) -> "IPathPrimitive":
+    def initialize_with_capacity(self, capacity:int) -> "PathPrimitive":
         """Initializes a path primitive with the specified capacity."""
         with agmarshall.INT_arg(capacity) as arg_capacity, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -20576,13 +20576,13 @@ class IPixelSizeDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPixelSizeDisplayConditionFactory.")
     
-    def initialize(self) -> "IPixelSizeDisplayCondition":
+    def initialize(self) -> "PixelSizeDisplayCondition":
         """Initializes a default pixel size display condition. minimum pixel size is set to 0 and maximum pixel size is set to Int32.MaxValue. With this interval, an object is always rendered regardless of how many pixels its bounding sphere or rectangle covers."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_pixel_sizes(self, minimumPixelSize:int, maximumPixelSize:int) -> "IPixelSizeDisplayCondition":
+    def initialize_with_pixel_sizes(self, minimumPixelSize:int, maximumPixelSize:int) -> "PixelSizeDisplayCondition":
         """Initializes a pixel size display condition with the inclusive interval [minimumPixelSize, maximumPixelSize]..."""
         with agmarshall.INT_arg(minimumPixelSize) as arg_minimumPixelSize, \
              agmarshall.INT_arg(maximumPixelSize) as arg_maximumPixelSize, \
@@ -20633,13 +20633,13 @@ class IPointBatchPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPointBatchPrimitiveFactory.")
     
-    def initialize(self) -> "IPointBatchPrimitive":
+    def initialize(self) -> "PointBatchPrimitive":
         """Initializes a default point batch primitive. This is equivalent to constructing a point batch with a set hint of Frequent."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "IPointBatchPrimitive":
+    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "PointBatchPrimitive":
         """Initializes a new instance of a point batch primitive with the specified set hint."""
         with agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -20697,7 +20697,7 @@ class IPointBatchPrimitiveOptionalParametersFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPointBatchPrimitiveOptionalParametersFactory.")
     
-    def initialize(self) -> "IPointBatchPrimitiveOptionalParameters":
+    def initialize(self) -> "PointBatchPrimitiveOptionalParameters":
         """Initializes a default point batch primitive optional parameters object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -20754,13 +20754,13 @@ class IPolylinePrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPolylinePrimitiveFactory.")
     
-    def initialize(self) -> "IPolylinePrimitive":
+    def initialize(self) -> "PolylinePrimitive":
         """Initializes a default polyline primitive. This is equivalent to constructing a polyline with a set hint of Frequent and a polyline type of LineStrip."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", setHint:"SET_HINT") -> "IPolylinePrimitive":
+    def initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", setHint:"SET_HINT") -> "PolylinePrimitive":
         """Initializes a polyline primitive with the specified interpolator and setHint."""
         with agmarshall.AgInterface_in_arg(interpolator, IPositionInterpolator) as arg_interpolator, \
              agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
@@ -20768,7 +20768,7 @@ class IPolylinePrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_interpolator_and_set_hint"](arg_interpolator.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_type_and_hint(self, polylineType:"POLYLINE_TYPE", setHint:"SET_HINT") -> "IPolylinePrimitive":
+    def initialize_with_type_and_hint(self, polylineType:"POLYLINE_TYPE", setHint:"SET_HINT") -> "PolylinePrimitive":
         """Initializes a new instance of a polyline primitive with the specified polylineType and setHint."""
         with agmarshall.AgEnum_arg(POLYLINE_TYPE, polylineType) as arg_polylineType, \
              agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
@@ -20776,21 +20776,21 @@ class IPolylinePrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_type_and_hint"](arg_polylineType.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_interpolator(self, interpolator:"IPositionInterpolator") -> "IPolylinePrimitive":
+    def initialize_with_interpolator(self, interpolator:"IPositionInterpolator") -> "PolylinePrimitive":
         """Initializes a polyline primitive with the specified interpolator. This is equivalent to constructing a polyline with the specified interpolator and a set hint of Frequent."""
         with agmarshall.AgInterface_in_arg(interpolator, IPositionInterpolator) as arg_interpolator, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_interpolator"](arg_interpolator.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_hint(self, setHint:"SET_HINT") -> "IPolylinePrimitive":
+    def initialize_with_hint(self, setHint:"SET_HINT") -> "PolylinePrimitive":
         """Initializes a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint."""
         with agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_type(self, polylineType:"POLYLINE_TYPE") -> "IPolylinePrimitive":
+    def initialize_with_type(self, polylineType:"POLYLINE_TYPE") -> "PolylinePrimitive":
         """Initializes a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent."""
         with agmarshall.AgEnum_arg(POLYLINE_TYPE, polylineType) as arg_polylineType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -20848,7 +20848,7 @@ class IPolylinePrimitiveOptionalParametersFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPolylinePrimitiveOptionalParametersFactory.")
     
-    def initialize(self) -> "IPolylinePrimitiveOptionalParameters":
+    def initialize(self) -> "PolylinePrimitiveOptionalParameters":
         """Initializes default polyline primitive optional parameters. All per-segment parameters are initially empty."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -20895,7 +20895,7 @@ class IRasterImageGlobeOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IRasterImageGlobeOverlayFactory.")
     
-    def initialize_with_string(self, uri:str, extent:list) -> "IRasterImageGlobeOverlay":
+    def initialize_with_string(self, uri:str, extent:list) -> "RasterImageGlobeOverlay":
         """Initializes a raster image globe overlay with the provided values."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
@@ -20903,7 +20903,7 @@ class IRasterImageGlobeOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_string"](arg_uri.COM_val, byref(arg_extent.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_color(self, color:agcolor.Color, extent:list) -> "IRasterImageGlobeOverlay":
+    def initialize_with_color(self, color:agcolor.Color, extent:list) -> "RasterImageGlobeOverlay":
         """Initializes a raster image globe overlay with the provided values."""
         with agmarshall.OLE_COLOR_arg(color) as arg_color, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
@@ -20911,7 +20911,7 @@ class IRasterImageGlobeOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_color"](arg_color.COM_val, byref(arg_extent.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_raster(self, raster:"IRaster", extent:list) -> "IRasterImageGlobeOverlay":
+    def initialize_with_raster(self, raster:"IRaster", extent:list) -> "RasterImageGlobeOverlay":
         """Initializes a raster image globe overlay with the provided values."""
         with agmarshall.AgInterface_in_arg(raster, IRaster) as arg_raster, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
@@ -20960,20 +20960,20 @@ class IRhumbLineInterpolatorFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IRhumbLineInterpolatorFactory.")
     
-    def initialize(self) -> "IRhumbLineInterpolator":
+    def initialize(self) -> "RhumbLineInterpolator":
         """Initializes a default rhumb line interpolator. This is equivalent to constructing a rhumb line interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_central_body(self, centralBody:str) -> "IRhumbLineInterpolator":
+    def initialize_with_central_body(self, centralBody:str) -> "RhumbLineInterpolator":
         """Initializes a rhumb line interpolator with the specified centralBody and a granularity of 1 degree."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_central_body"](arg_centralBody.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_central_body_and_granularity(self, centralBody:str, granularity:float) -> "IRhumbLineInterpolator":
+    def initialize_with_central_body_and_granularity(self, centralBody:str, granularity:float) -> "RhumbLineInterpolator":
         """Initializes a rhumb line interpolator with the specified centralBody and granularity."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.DOUBLE_arg(granularity) as arg_granularity, \
@@ -21018,7 +21018,7 @@ class ISceneDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISceneDisplayConditionFactory.")
     
-    def initialize(self) -> "ISceneDisplayCondition":
+    def initialize(self) -> "SceneDisplayCondition":
         """Initializes a default scene display condition. When this display condition is assigned to an object, such as a primitive, the object can be restricted to only render in certain scenes. Call set display in scene or display only in scene to limit the scenes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -21074,35 +21074,35 @@ class ISceneManagerInitializer(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISceneManagerInitializer.")
     
     @property
-    def primitives(self) -> "IPrimitiveManager":
+    def primitives(self) -> "PrimitiveManager":
         """Gets the primitive manager, which is used to add primitives to your scenes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_primitives"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def screen_overlays(self) -> "IScreenOverlayManager":
+    def screen_overlays(self) -> "ScreenOverlayManager":
         """Gets the screen overlay manager, which is used to add screen overlays to your scenes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_screen_overlays"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def textures(self) -> "ITexture2DFactory":
+    def textures(self) -> "Texture2DFactory":
         """Gets the texture 2d factory, which can be used to create textures from various sources."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_textures"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def globe_overlay_settings(self) -> "IGlobeOverlaySettings":
+    def globe_overlay_settings(self) -> "GlobeOverlaySettings":
         """Gets the globe overlay settings, which are used to set global settings for all globe overlays."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_globe_overlay_settings"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scenes(self) -> "ISceneCollection":
+    def scenes(self) -> "SceneCollection":
         """Gets a read-only collection of scenes that are associated with the scene manager."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scenes"](byref(arg_ppRetVal.COM_val)))
@@ -21113,7 +21113,7 @@ class ISceneManagerInitializer(object):
         agcls.evaluate_hresult(self.__dict__["_render"]())
 
     @property
-    def frame_rate(self) -> "IFrameRate":
+    def frame_rate(self) -> "FrameRate":
         """Gets the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_frame_rate"](byref(arg_ppRetVal.COM_val)))
@@ -21219,13 +21219,13 @@ class ISolidPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISolidPrimitiveFactory.")
     
-    def initialize(self) -> "ISolidPrimitive":
+    def initialize(self) -> "SolidPrimitive":
         """Initializes a default solid primitive. This is equivalent to constructing a solid primitive with a set hint of Frequent."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_hint(self, setHint:"SET_HINT") -> "ISolidPrimitive":
+    def initialize_with_hint(self, setHint:"SET_HINT") -> "SolidPrimitive":
         """Initializes a solid primitive with the specified setHint."""
         with agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -21291,20 +21291,20 @@ class ISurfaceMeshPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISurfaceMeshPrimitiveFactory.")
     
-    def initialize(self) -> "ISurfaceMeshPrimitive":
+    def initialize(self) -> "SurfaceMeshPrimitive":
         """Initializes a default surface mesh primitive. This is equivalent to constructing a surface mesh with a set hint of Frequent and a surface mesh rendering method of Automatic."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "ISurfaceMeshPrimitive":
+    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "SurfaceMeshPrimitive":
         """Initializes a surface mesh primitive with the specified setHint. This is equivalent to constructing a surface mesh with the specified setHint and a surface mesh rendering method of Automatic."""
         with agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_set_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint_and_rendering_method(self, setHint:"SET_HINT", renderingMethod:"SURFACE_MESH_RENDERING_METHOD") -> "ISurfaceMeshPrimitive":
+    def initialize_with_set_hint_and_rendering_method(self, setHint:"SET_HINT", renderingMethod:"SURFACE_MESH_RENDERING_METHOD") -> "SurfaceMeshPrimitive":
         """Initializes a surface mesh primitive with the specified setHint and renderingMethod."""
         with agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgEnum_arg(SURFACE_MESH_RENDERING_METHOD, renderingMethod) as arg_renderingMethod, \
@@ -21410,14 +21410,14 @@ class ITextBatchPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextBatchPrimitiveFactory.")
     
-    def initialize_with_graphics_font(self, font:"IGraphicsFont") -> "ITextBatchPrimitive":
+    def initialize_with_graphics_font(self, font:"IGraphicsFont") -> "TextBatchPrimitive":
         """Initializes a marker batch primitive with the specified font. This is equivalent to constructing a text batch with the specified font and a set hint of Frequent."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font"](arg_font.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_graphics_font_and_set_hint(self, font:"IGraphicsFont", setHint:"SET_HINT") -> "ITextBatchPrimitive":
+    def initialize_with_graphics_font_and_set_hint(self, font:"IGraphicsFont", setHint:"SET_HINT") -> "TextBatchPrimitive":
         """Initializes a marker batch primitive with the specified font and setHint."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
@@ -21425,7 +21425,7 @@ class ITextBatchPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font_and_set_hint"](arg_font.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_graphics_font_and_set_hint_2d(self, font:"IGraphicsFont", setHint:"SET_HINT", renderInScreenSpace:bool) -> "ITextBatchPrimitive":
+    def initialize_with_graphics_font_and_set_hint_2d(self, font:"IGraphicsFont", setHint:"SET_HINT", renderInScreenSpace:bool) -> "TextBatchPrimitive":
         """Initializes a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
@@ -21471,7 +21471,7 @@ class ITextBatchPrimitiveOptionalParametersFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextBatchPrimitiveOptionalParametersFactory.")
     
-    def initialize(self) -> "ITextBatchPrimitiveOptionalParameters":
+    def initialize(self) -> "TextBatchPrimitiveOptionalParameters":
         """Initializes default text batch primitive optional parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -21520,14 +21520,14 @@ class ITextOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextOverlayFactory.")
     
-    def initialize(self, font:"IGraphicsFont") -> "ITextOverlay":
+    def initialize(self, font:"IGraphicsFont") -> "TextOverlay":
         """Initializes the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels. <param name='font'>The graphics font that defines how text is drawn.</param>"""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](arg_font.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_xy_width_height(self, font:"IGraphicsFont", xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "ITextOverlay":
+    def initialize_with_xy_width_height(self, font:"IGraphicsFont", xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "TextOverlay":
         """Initializes the overlay with the specified x position, y position, width, and height, all specified in pixels."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.DOUBLE_arg(xPixels) as arg_xPixels, \
@@ -21538,7 +21538,7 @@ class ITextOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_xy_width_height"](arg_font.COM_val, arg_xPixels.COM_val, arg_yPixels.COM_val, arg_widthPixels.COM_val, arg_heightPixels.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_position_size(self, font:"IGraphicsFont", position:list, size:list) -> "ITextOverlay":
+    def initialize_with_position_size(self, font:"IGraphicsFont", position:list, size:list) -> "TextOverlay":
         """Initializes the overlay with the specified position and size."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.SAFEARRAY_arg(position) as arg_position, \
@@ -21547,7 +21547,7 @@ class ITextOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_position_size"](arg_font.COM_val, byref(arg_position.COM_val), byref(arg_size.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_width_height_units(self, font:"IGraphicsFont", width:float, widthUnit:"SCREEN_OVERLAY_UNIT", height:float, heightUnit:"SCREEN_OVERLAY_UNIT") -> "ITextOverlay":
+    def initialize_with_width_height_units(self, font:"IGraphicsFont", width:float, widthUnit:"SCREEN_OVERLAY_UNIT", height:float, heightUnit:"SCREEN_OVERLAY_UNIT") -> "TextOverlay":
         """Initializes the overlay with the specified position and size."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.DOUBLE_arg(width) as arg_width, \
@@ -21601,13 +21601,13 @@ class ITextureMatrixFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextureMatrixFactory.")
     
-    def initialize(self) -> "ITextureMatrix":
+    def initialize(self) -> "TextureMatrix":
         """Initializes a texture matrix to the identity matrix."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_by_values(self, m11:float, m12:float, m13:float, m14:float, m21:float, m22:float, m23:float, m24:float, m31:float, m32:float, m33:float, m34:float, m41:float, m42:float, m43:float, m44:float) -> "ITextureMatrix":
+    def initialize_by_values(self, m11:float, m12:float, m13:float, m14:float, m21:float, m22:float, m23:float, m24:float, m31:float, m32:float, m33:float, m34:float, m41:float, m42:float, m43:float, m44:float) -> "TextureMatrix":
         """Initializes a texture matrix. The subscripts define [row][column]."""
         with agmarshall.FLOAT_arg(m11) as arg_m11, \
              agmarshall.FLOAT_arg(m12) as arg_m12, \
@@ -21629,14 +21629,14 @@ class ITextureMatrixFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_by_values"](arg_m11.COM_val, arg_m12.COM_val, arg_m13.COM_val, arg_m14.COM_val, arg_m21.COM_val, arg_m22.COM_val, arg_m23.COM_val, arg_m24.COM_val, arg_m31.COM_val, arg_m32.COM_val, arg_m33.COM_val, arg_m34.COM_val, arg_m41.COM_val, arg_m42.COM_val, arg_m43.COM_val, arg_m44.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_affine_transform(self, matrix:list) -> "ITextureMatrix":
+    def initialize_with_affine_transform(self, matrix:list) -> "TextureMatrix":
         """Initializes a texture matrix from a matrix. The upper left 2x2 matrix defines rotation and scaling. The top two elements of the last column define translation."""
         with agmarshall.SAFEARRAY_arg(matrix) as arg_matrix, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_affine_transform"](byref(arg_matrix.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_rectangles(self, corner0:list, corner1:list, corner2:list, corner3:list) -> "ITextureMatrix":
+    def initialize_with_rectangles(self, corner0:list, corner1:list, corner2:list, corner3:list) -> "TextureMatrix":
         """Initializes a texture matrix from texture corner points. Normally, a texture is mapped such that the lower left corner is texture coordinate (0, 0), the lower right is (1, 0), the upper right is (1, 1), and the upper left is (0, 1)..."""
         with agmarshall.SAFEARRAY_arg(corner0) as arg_corner0, \
              agmarshall.SAFEARRAY_arg(corner1) as arg_corner1, \
@@ -21691,13 +21691,13 @@ class ITextureScreenOverlayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextureScreenOverlayFactory.")
     
-    def initialize(self) -> "ITextureScreenOverlay":
+    def initialize(self) -> "TextureScreenOverlay":
         """Initializes the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_xy_width_height(self, xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "ITextureScreenOverlay":
+    def initialize_with_xy_width_height(self, xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "TextureScreenOverlay":
         """Initializes the overlay with the specified x position, y position, width, and height, all specified in pixels."""
         with agmarshall.DOUBLE_arg(xPixels) as arg_xPixels, \
              agmarshall.DOUBLE_arg(yPixels) as arg_yPixels, \
@@ -21707,7 +21707,7 @@ class ITextureScreenOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_xy_width_height"](arg_xPixels.COM_val, arg_yPixels.COM_val, arg_widthPixels.COM_val, arg_heightPixels.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_position_size(self, position:list, size:list) -> "ITextureScreenOverlay":
+    def initialize_with_position_size(self, position:list, size:list) -> "TextureScreenOverlay":
         """Initializes the overlay with the specified position and size."""
         with agmarshall.SAFEARRAY_arg(position) as arg_position, \
              agmarshall.SAFEARRAY_arg(size) as arg_size, \
@@ -21715,7 +21715,7 @@ class ITextureScreenOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_position_size"](byref(arg_position.COM_val), byref(arg_size.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_xy_texture(self, xPixels:float, yPixels:float, texture:"IRendererTexture2D") -> "ITextureScreenOverlay":
+    def initialize_with_xy_texture(self, xPixels:float, yPixels:float, texture:"IRendererTexture2D") -> "TextureScreenOverlay":
         """Initializes the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture."""
         with agmarshall.DOUBLE_arg(xPixels) as arg_xPixels, \
              agmarshall.DOUBLE_arg(yPixels) as arg_yPixels, \
@@ -21724,7 +21724,7 @@ class ITextureScreenOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_xy_texture"](arg_xPixels.COM_val, arg_yPixels.COM_val, arg_texture.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_position_texture(self, position:list, texture:"IRendererTexture2D") -> "ITextureScreenOverlay":
+    def initialize_with_position_texture(self, position:list, texture:"IRendererTexture2D") -> "TextureScreenOverlay":
         """Initializes the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture."""
         with agmarshall.SAFEARRAY_arg(position) as arg_position, \
              agmarshall.AgInterface_in_arg(texture, IRendererTexture2D) as arg_texture, \
@@ -21773,13 +21773,13 @@ class ITimeIntervalDisplayConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeIntervalDisplayConditionFactory.")
     
-    def initialize(self) -> "ITimeIntervalDisplayCondition":
+    def initialize(self) -> "TimeIntervalDisplayCondition":
         """Initializes a default time display condition. minimum time is set to JulianDate.MinValue and maximum time is set to JulianDate.MaxValue. With this interval, an object is always rendered regardless of the current animation time."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_times(self, minimumTime:"IDate", maximumTime:"IDate") -> "ITimeIntervalDisplayCondition":
+    def initialize_with_times(self, minimumTime:"IDate", maximumTime:"IDate") -> "TimeIntervalDisplayCondition":
         """Initializes a time display condition with the inclusive time interval [minimumTime, maximumTime]..."""
         with agmarshall.AgInterface_in_arg(minimumTime, IDate) as arg_minimumTime, \
              agmarshall.AgInterface_in_arg(maximumTime, IDate) as arg_maximumTime, \
@@ -21787,7 +21787,7 @@ class ITimeIntervalDisplayConditionFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_times"](arg_minimumTime.COM_val, arg_maximumTime.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_time_interval(self, timeInterval:list) -> "ITimeIntervalDisplayCondition":
+    def initialize_with_time_interval(self, timeInterval:list) -> "TimeIntervalDisplayCondition":
         """Initializes a time display condition with a time interval."""
         with agmarshall.SAFEARRAY_arg(timeInterval) as arg_timeInterval, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -21833,13 +21833,13 @@ class ITriangleMeshPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITriangleMeshPrimitiveFactory.")
     
-    def initialize(self) -> "ITriangleMeshPrimitive":
+    def initialize(self) -> "TriangleMeshPrimitive":
         """Initializes a default triangle mesh primitive. This is equivalent to constructing a triangle mesh with a set hint of Frequent."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "ITriangleMeshPrimitive":
+    def initialize_with_set_hint(self, setHint:"SET_HINT") -> "TriangleMeshPrimitive":
         """Initializes a triangle mesh primitive with the specified setHint ."""
         with agmarshall.AgEnum_arg(SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -21883,7 +21883,7 @@ class ITriangleMeshPrimitiveOptionalParametersFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITriangleMeshPrimitiveOptionalParametersFactory.")
     
-    def initialize(self) -> "ITriangleMeshPrimitiveOptionalParameters":
+    def initialize(self) -> "TriangleMeshPrimitiveOptionalParameters":
         """Initializes default triangle mesh primitive optional parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
@@ -21926,7 +21926,7 @@ class IVectorPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorPrimitiveFactory.")
     
-    def initialize_with_direction(self, sys:"IVectorGeometryToolSystem", dir:"IVectorGeometryToolVector", font:"IGraphicsFont") -> "IVectorPrimitive":
+    def initialize_with_direction(self, sys:"IVectorGeometryToolSystem", dir:"IVectorGeometryToolVector", font:"IGraphicsFont") -> "VectorPrimitive":
         """Initializes a vector primitive with the specified ISystem sys as its source and pointing in direction dir."""
         with agmarshall.AgInterface_in_arg(sys, IVectorGeometryToolSystem) as arg_sys, \
              agmarshall.AgInterface_in_arg(dir, IVectorGeometryToolVector) as arg_dir, \
@@ -21960,7 +21960,7 @@ class PathPoint(IPathPoint):
             raise STKAttributeError(attrname + " is not a recognized attribute in PathPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4C86EAB3-9C30-4D1B-9391-A27010590176}", PathPoint)
-
+agcls.AgTypeNameMap["PathPoint"] = PathPoint
 
 class PathPointFactory(IPathPointFactory):
     """Factory creates path points."""
@@ -21981,7 +21981,7 @@ class PathPointFactory(IPathPointFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in PathPointFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{997C56C5-C114-4C2E-A25A-4D4860FA913F}", PathPointFactory)
-
+agcls.AgTypeNameMap["PathPointFactory"] = PathPointFactory
 
 class BoundingSphere(IBoundingSphere):
     """A sphere that encapsulates an object."""
@@ -22002,7 +22002,7 @@ class BoundingSphere(IBoundingSphere):
             raise STKAttributeError(attrname + " is not a recognized attribute in BoundingSphere.")
         
 agcls.AgClassCatalog.add_catalog_entry("{40BA7967-5508-4D2C-9048-76EA16351F61}", BoundingSphere)
-
+agcls.AgTypeNameMap["BoundingSphere"] = BoundingSphere
 
 class BoundingSphereFactory(IBoundingSphereFactory):
     """Creates bounding spheres."""
@@ -22023,7 +22023,7 @@ class BoundingSphereFactory(IBoundingSphereFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in BoundingSphereFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4CAEE1FD-33BB-4928-8363-39237A62C150}", BoundingSphereFactory)
-
+agcls.AgTypeNameMap["BoundingSphereFactory"] = BoundingSphereFactory
 
 class TextureFilter2D(ITextureFilter2D):
     """A texture filter."""
@@ -22044,7 +22044,7 @@ class TextureFilter2D(ITextureFilter2D):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextureFilter2D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DAE13DA7-D678-4F1F-9F87-F584DF78B8FE}", TextureFilter2D)
-
+agcls.AgTypeNameMap["TextureFilter2D"] = TextureFilter2D
 
 class TextureFilter2DFactory(ITextureFilter2DFactory):
     """Create texture filters."""
@@ -22065,7 +22065,7 @@ class TextureFilter2DFactory(ITextureFilter2DFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextureFilter2DFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C17EDE04-6594-4662-975E-795B7623414B}", TextureFilter2DFactory)
-
+agcls.AgTypeNameMap["TextureFilter2DFactory"] = TextureFilter2DFactory
 
 class RendererTexture2D(IRendererTexture2D):
     """A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory."""
@@ -22086,7 +22086,7 @@ class RendererTexture2D(IRendererTexture2D):
             raise STKAttributeError(attrname + " is not a recognized attribute in RendererTexture2D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{295B9996-B4D8-4AAD-B612-CB0348444732}", RendererTexture2D)
-
+agcls.AgTypeNameMap["RendererTexture2D"] = RendererTexture2D
 
 class RendererTextureTemplate2D(IRendererTextureTemplate2D):
     """Template object containing attributes required to create a 2D texture."""
@@ -22107,7 +22107,7 @@ class RendererTextureTemplate2D(IRendererTextureTemplate2D):
             raise STKAttributeError(attrname + " is not a recognized attribute in RendererTextureTemplate2D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0192E348-0FD1-440D-881D-EF3B882D7190}", RendererTextureTemplate2D)
-
+agcls.AgTypeNameMap["RendererTextureTemplate2D"] = RendererTextureTemplate2D
 
 class PathPointCollection(IPathPointCollection):
     """A collection of path points."""
@@ -22128,7 +22128,7 @@ class PathPointCollection(IPathPointCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in PathPointCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1EBC1AA-0D8C-417B-BD4B-3A1489C8D39E}", PathPointCollection)
-
+agcls.AgTypeNameMap["PathPointCollection"] = PathPointCollection
 
 class ObjectCollection(IObjectCollection):
     """A collection of objects."""
@@ -22149,7 +22149,7 @@ class ObjectCollection(IObjectCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ObjectCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EEFF034B-5D72-4EF4-A76D-A25AEBD04B1E}", ObjectCollection)
-
+agcls.AgTypeNameMap["ObjectCollection"] = ObjectCollection
 
 class SceneCollection(ISceneCollection):
     """A collection of scenes."""
@@ -22170,7 +22170,7 @@ class SceneCollection(ISceneCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in SceneCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1F9129CC-D135-4993-8E14-0AA4B8402AC8}", SceneCollection)
-
+agcls.AgTypeNameMap["SceneCollection"] = SceneCollection
 
 class ScreenOverlayPickResultCollection(IScreenOverlayPickResultCollection):
     """A collection of pick results."""
@@ -22191,7 +22191,7 @@ class ScreenOverlayPickResultCollection(IScreenOverlayPickResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScreenOverlayPickResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{566B0B55-437E-40E9-BB0C-1119BC58C3A4}", ScreenOverlayPickResultCollection)
-
+agcls.AgTypeNameMap["ScreenOverlayPickResultCollection"] = ScreenOverlayPickResultCollection
 
 class GlobeImageOverlayAddCompleteEventArgs(IGlobeImageOverlayAddCompleteEventArgs):
     """The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync."""
@@ -22212,7 +22212,7 @@ class GlobeImageOverlayAddCompleteEventArgs(IGlobeImageOverlayAddCompleteEventAr
             raise STKAttributeError(attrname + " is not a recognized attribute in GlobeImageOverlayAddCompleteEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{817BEFE9-18ED-489B-952E-8088AF90331D}", GlobeImageOverlayAddCompleteEventArgs)
-
+agcls.AgTypeNameMap["GlobeImageOverlayAddCompleteEventArgs"] = GlobeImageOverlayAddCompleteEventArgs
 
 class TerrainOverlayAddCompleteEventArgs(ITerrainOverlayAddCompleteEventArgs):
     """The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync."""
@@ -22233,7 +22233,7 @@ class TerrainOverlayAddCompleteEventArgs(ITerrainOverlayAddCompleteEventArgs):
             raise STKAttributeError(attrname + " is not a recognized attribute in TerrainOverlayAddCompleteEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{589B5FC6-D8FE-4387-8E3E-188F6C6704C8}", TerrainOverlayAddCompleteEventArgs)
-
+agcls.AgTypeNameMap["TerrainOverlayAddCompleteEventArgs"] = TerrainOverlayAddCompleteEventArgs
 
 class PickResultCollection(IPickResultCollection):
     """A collection of picked objects."""
@@ -22254,7 +22254,7 @@ class PickResultCollection(IPickResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in PickResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6DDBF58-AB3C-4F46-AA2F-4D9A2E0884F8}", PickResultCollection)
-
+agcls.AgTypeNameMap["PickResultCollection"] = PickResultCollection
 
 class RenderingEventArgs(IRenderingEventArgs):
     """The event is raised when the scene is rendered."""
@@ -22275,7 +22275,7 @@ class RenderingEventArgs(IRenderingEventArgs):
             raise STKAttributeError(attrname + " is not a recognized attribute in RenderingEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{46B2FD61-672F-4AD5-8588-F635D1EFB00C}", RenderingEventArgs)
-
+agcls.AgTypeNameMap["RenderingEventArgs"] = RenderingEventArgs
 
 class BatchPrimitiveIndex(IBatchPrimitiveIndex):
     """Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index..."""
@@ -22296,7 +22296,7 @@ class BatchPrimitiveIndex(IBatchPrimitiveIndex):
             raise STKAttributeError(attrname + " is not a recognized attribute in BatchPrimitiveIndex.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AC81969-B283-482A-89A3-AE66819F864E}", BatchPrimitiveIndex)
-
+agcls.AgTypeNameMap["BatchPrimitiveIndex"] = BatchPrimitiveIndex
 
 class KmlDocumentCollection(IKmlDocumentCollection):
     """A collection of KML documents."""
@@ -22317,7 +22317,7 @@ class KmlDocumentCollection(IKmlDocumentCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlDocumentCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2FB2F974-55DD-4862-B78F-8D9AA8B9167C}", KmlDocumentCollection)
-
+agcls.AgTypeNameMap["KmlDocumentCollection"] = KmlDocumentCollection
 
 class KmlFeatureCollection(IKmlFeatureCollection):
     """A collection of KML features."""
@@ -22338,7 +22338,7 @@ class KmlFeatureCollection(IKmlFeatureCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlFeatureCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{11C36E9E-AB1B-4F7A-B5CD-75B5E1F9DCA7}", KmlFeatureCollection)
-
+agcls.AgTypeNameMap["KmlFeatureCollection"] = KmlFeatureCollection
 
 class KmlDocumentLoadedEventArgs(IKmlDocumentLoadedEventArgs):
     """The event is raised when a KML document has been loaded."""
@@ -22359,7 +22359,7 @@ class KmlDocumentLoadedEventArgs(IKmlDocumentLoadedEventArgs):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlDocumentLoadedEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{77E26868-F894-4E5D-AE27-3D259B9763E3}", KmlDocumentLoadedEventArgs)
-
+agcls.AgTypeNameMap["KmlDocumentLoadedEventArgs"] = KmlDocumentLoadedEventArgs
 
 class FactoryAndInitializers(IFactoryAndInitializers):
     """Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a..."""
@@ -22380,7 +22380,7 @@ class FactoryAndInitializers(IFactoryAndInitializers):
             raise STKAttributeError(attrname + " is not a recognized attribute in FactoryAndInitializers.")
         
 agcls.AgClassCatalog.add_catalog_entry("{06756FC9-1EF3-45CD-8A1F-CE6652BEA6C1}", FactoryAndInitializers)
-
+agcls.AgTypeNameMap["FactoryAndInitializers"] = FactoryAndInitializers
 
 class ExtrudedPolylineTriangulatorResult(IExtrudedPolylineTriangulatorResult, ITriangulatorResult):
     """The result from extruded polyline triangulation: a triangle mesh defined using an indexed triangle list with top and bottom boundary positions. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
@@ -22404,7 +22404,7 @@ class ExtrudedPolylineTriangulatorResult(IExtrudedPolylineTriangulatorResult, IT
             raise STKAttributeError(attrname + " is not a recognized attribute in ExtrudedPolylineTriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BD7096DB-7447-43A4-B1D7-7E831565C909}", ExtrudedPolylineTriangulatorResult)
-
+agcls.AgTypeNameMap["ExtrudedPolylineTriangulatorResult"] = ExtrudedPolylineTriangulatorResult
 
 class SolidTriangulatorResult(ISolidTriangulatorResult, ITriangulatorResult):
     """The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive..."""
@@ -22428,7 +22428,7 @@ class SolidTriangulatorResult(ISolidTriangulatorResult, ITriangulatorResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in SolidTriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D97A5AF7-129F-4972-9DFB-B894D917B328}", SolidTriangulatorResult)
-
+agcls.AgTypeNameMap["SolidTriangulatorResult"] = SolidTriangulatorResult
 
 class SurfaceShapesResult(ISurfaceShapesResult):
     """Represents the boundary positions of a shape on the surface computed from by a surface shapes method."""
@@ -22449,7 +22449,7 @@ class SurfaceShapesResult(ISurfaceShapesResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in SurfaceShapesResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{627EC36E-26FE-4D33-81B1-3A4CE5955DED}", SurfaceShapesResult)
-
+agcls.AgTypeNameMap["SurfaceShapesResult"] = SurfaceShapesResult
 
 class SurfaceTriangulatorResult(ISurfaceTriangulatorResult, ITriangulatorResult):
     """The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh..."""
@@ -22473,7 +22473,7 @@ class SurfaceTriangulatorResult(ISurfaceTriangulatorResult, ITriangulatorResult)
             raise STKAttributeError(attrname + " is not a recognized attribute in SurfaceTriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{484F03DF-F617-49CC-A3AD-6AB09C86C400}", SurfaceTriangulatorResult)
-
+agcls.AgTypeNameMap["SurfaceTriangulatorResult"] = SurfaceTriangulatorResult
 
 class TriangulatorResult(ITriangulatorResult):
     """The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive."""
@@ -22494,7 +22494,7 @@ class TriangulatorResult(ITriangulatorResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1981E859-F957-4752-9B11-76A77512222B}", TriangulatorResult)
-
+agcls.AgTypeNameMap["TriangulatorResult"] = TriangulatorResult
 
 class AGICustomTerrainOverlay(IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeOverlay):
     """A terrain overlay for handling AGI Cesium Terrain."""
@@ -22521,7 +22521,7 @@ class AGICustomTerrainOverlay(IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeO
             raise STKAttributeError(attrname + " is not a recognized attribute in AGICustomTerrainOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{474FD730-8942-48A2-B5C1-F84E6E5B112E}", AGICustomTerrainOverlay)
-
+agcls.AgTypeNameMap["AGICustomTerrainOverlay"] = AGICustomTerrainOverlay
 
 class AGIProcessedImageGlobeOverlay(IAGIProcessedImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
@@ -22548,7 +22548,7 @@ class AGIProcessedImageGlobeOverlay(IAGIProcessedImageGlobeOverlay, IGlobeImageO
             raise STKAttributeError(attrname + " is not a recognized attribute in AGIProcessedImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26895086-F748-4134-8B1E-E51EF358363D}", AGIProcessedImageGlobeOverlay)
-
+agcls.AgTypeNameMap["AGIProcessedImageGlobeOverlay"] = AGIProcessedImageGlobeOverlay
 
 class AGIProcessedTerrainOverlay(IAGIProcessedTerrainOverlay, ITerrainOverlay, IGlobeOverlay):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
@@ -22575,7 +22575,7 @@ class AGIProcessedTerrainOverlay(IAGIProcessedTerrainOverlay, ITerrainOverlay, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AGIProcessedTerrainOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B835120-12BD-4D18-AD78-2C507068F582}", AGIProcessedTerrainOverlay)
-
+agcls.AgTypeNameMap["AGIProcessedTerrainOverlay"] = AGIProcessedTerrainOverlay
 
 class AGIRoamImageGlobeOverlay(IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
@@ -22602,7 +22602,7 @@ class AGIRoamImageGlobeOverlay(IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IG
             raise STKAttributeError(attrname + " is not a recognized attribute in AGIRoamImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{278C21A7-3D85-48C1-B934-BE89B25019CE}", AGIRoamImageGlobeOverlay)
-
+agcls.AgTypeNameMap["AGIRoamImageGlobeOverlay"] = AGIRoamImageGlobeOverlay
 
 class CameraSnapshot(ICameraSnapshot):
     """Takes snapshots of the 3D window."""
@@ -22623,7 +22623,7 @@ class CameraSnapshot(ICameraSnapshot):
             raise STKAttributeError(attrname + " is not a recognized attribute in CameraSnapshot.")
         
 agcls.AgClassCatalog.add_catalog_entry("{27A8C9DC-6AF7-436A-80B0-7B426D85EAB1}", CameraSnapshot)
-
+agcls.AgTypeNameMap["CameraSnapshot"] = CameraSnapshot
 
 class CameraVideoRecording(ICameraVideoRecording):
     """Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered."""
@@ -22644,7 +22644,7 @@ class CameraVideoRecording(ICameraVideoRecording):
             raise STKAttributeError(attrname + " is not a recognized attribute in CameraVideoRecording.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BBACA9D4-20A3-44B1-BF0F-174652805D72}", CameraVideoRecording)
-
+agcls.AgTypeNameMap["CameraVideoRecording"] = CameraVideoRecording
 
 class CentralBodyGraphicsIndexer(ICentralBodyGraphicsIndexer):
     """An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body."""
@@ -22665,7 +22665,7 @@ class CentralBodyGraphicsIndexer(ICentralBodyGraphicsIndexer):
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyGraphicsIndexer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{55BA55ED-B236-40BB-9F77-F7C32F3679FD}", CentralBodyGraphicsIndexer)
-
+agcls.AgTypeNameMap["CentralBodyGraphicsIndexer"] = CentralBodyGraphicsIndexer
 
 class CustomImageGlobeOverlay(ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay that allows for a user defined image to be specified."""
@@ -22692,7 +22692,7 @@ class CustomImageGlobeOverlay(ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlo
             raise STKAttributeError(attrname + " is not a recognized attribute in CustomImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FAFB3856-9989-4712-8355-8047D169B49F}", CustomImageGlobeOverlay)
-
+agcls.AgTypeNameMap["CustomImageGlobeOverlay"] = CustomImageGlobeOverlay
 
 class CustomImageGlobeOverlayPluginActivator(ICustomImageGlobeOverlayPluginActivator):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
@@ -22713,7 +22713,7 @@ class CustomImageGlobeOverlayPluginActivator(ICustomImageGlobeOverlayPluginActiv
             raise STKAttributeError(attrname + " is not a recognized attribute in CustomImageGlobeOverlayPluginActivator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{06EE5B12-485C-4AFE-8D16-B1516F3D6BFE}", CustomImageGlobeOverlayPluginActivator)
-
+agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginActivator"] = CustomImageGlobeOverlayPluginActivator
 
 class CustomImageGlobeOverlayPluginProxy(ICustomImageGlobeOverlayPluginProxy):
     """A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator."""
@@ -22734,7 +22734,7 @@ class CustomImageGlobeOverlayPluginProxy(ICustomImageGlobeOverlayPluginProxy):
             raise STKAttributeError(attrname + " is not a recognized attribute in CustomImageGlobeOverlayPluginProxy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1A2C5F92-FEFD-4961-B840-D940D30D3637}", CustomImageGlobeOverlayPluginProxy)
-
+agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginProxy"] = CustomImageGlobeOverlayPluginProxy
 
 class GeospatialImageGlobeOverlay(IGeospatialImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
@@ -22761,7 +22761,7 @@ class GeospatialImageGlobeOverlay(IGeospatialImageGlobeOverlay, IGlobeImageOverl
             raise STKAttributeError(attrname + " is not a recognized attribute in GeospatialImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2C72817-48CC-498A-BAF5-71CBDEEE4BD2}", GeospatialImageGlobeOverlay)
-
+agcls.AgTypeNameMap["GeospatialImageGlobeOverlay"] = GeospatialImageGlobeOverlay
 
 class GlobeOverlay(IGlobeOverlay):
     """The base class of all terrain overlay and globe image overlay objects."""
@@ -22782,7 +22782,7 @@ class GlobeOverlay(IGlobeOverlay):
             raise STKAttributeError(attrname + " is not a recognized attribute in GlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4D2E94A8-DE1F-4382-AF9D-5664313F3E49}", GlobeOverlay)
-
+agcls.AgTypeNameMap["GlobeOverlay"] = GlobeOverlay
 
 class GlobeOverlaySettings(IGlobeOverlaySettings):
     """Settings used by globe overlay objects. These setting affect all scenes."""
@@ -22803,7 +22803,7 @@ class GlobeOverlaySettings(IGlobeOverlaySettings):
             raise STKAttributeError(attrname + " is not a recognized attribute in GlobeOverlaySettings.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F326F62-7A92-46B9-8CD4-F73A14B32A42}", GlobeOverlaySettings)
-
+agcls.AgTypeNameMap["GlobeOverlaySettings"] = GlobeOverlaySettings
 
 class Lighting(ILighting):
     """Lighting in the 3D scene."""
@@ -22824,7 +22824,7 @@ class Lighting(ILighting):
             raise STKAttributeError(attrname + " is not a recognized attribute in Lighting.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29C20830-2D8B-4E6B-854A-FDE514F4396A}", Lighting)
-
+agcls.AgTypeNameMap["Lighting"] = Lighting
 
 class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy):
     """A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method."""
@@ -22845,7 +22845,7 @@ class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy):
             raise STKAttributeError(attrname + " is not a recognized attribute in PathPrimitiveUpdatePolicy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1D3DA5F-ABD5-4C2D-891B-AB5A0FCE78A6}", PathPrimitiveUpdatePolicy)
-
+agcls.AgTypeNameMap["PathPrimitiveUpdatePolicy"] = PathPrimitiveUpdatePolicy
 
 class ProjectedRasterOverlay(IProjectedRasterOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
@@ -22872,7 +22872,7 @@ class ProjectedRasterOverlay(IProjectedRasterOverlay, IGlobeImageOverlay, IGlobe
             raise STKAttributeError(attrname + " is not a recognized attribute in ProjectedRasterOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ED508BB0-4EF1-412D-BEC2-46CF8F9BC5E2}", ProjectedRasterOverlay)
-
+agcls.AgTypeNameMap["ProjectedRasterOverlay"] = ProjectedRasterOverlay
 
 class Projection(IProjection):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
@@ -22893,7 +22893,7 @@ class Projection(IProjection):
             raise STKAttributeError(attrname + " is not a recognized attribute in Projection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3C06C59D-E24C-4145-9634-15ABB16CF69F}", Projection)
-
+agcls.AgTypeNameMap["Projection"] = Projection
 
 class ProjectionStream(IProjectionStream, IProjection):
     """A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay..."""
@@ -22917,7 +22917,7 @@ class ProjectionStream(IProjectionStream, IProjection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProjectionStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{02371735-0B2F-48AA-A51E-53DAEC21903D}", ProjectionStream)
-
+agcls.AgTypeNameMap["ProjectionStream"] = ProjectionStream
 
 class SceneGlobeOverlaySettings(ISceneGlobeOverlaySettings):
     """Settings used by globe overlay objects. These settings only affect the scene."""
@@ -22938,7 +22938,7 @@ class SceneGlobeOverlaySettings(ISceneGlobeOverlaySettings):
             raise STKAttributeError(attrname + " is not a recognized attribute in SceneGlobeOverlaySettings.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AA19929F-DE78-4CDB-90C5-12D89532D4C4}", SceneGlobeOverlaySettings)
-
+agcls.AgTypeNameMap["SceneGlobeOverlaySettings"] = SceneGlobeOverlaySettings
 
 class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase):
     """The common base class for collections of overlays held by screen overlay and by screen overlay manager."""
@@ -22959,7 +22959,7 @@ class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScreenOverlayCollectionBase.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1764146-8986-45CB-A5B9-426988A9F289}", ScreenOverlayCollectionBase)
-
+agcls.AgTypeNameMap["ScreenOverlayCollectionBase"] = ScreenOverlayCollectionBase
 
 class Texture2DFactory(ITexture2DFactory):
     """A factory for creating texture 2d objects from various sources."""
@@ -22980,7 +22980,7 @@ class Texture2DFactory(ITexture2DFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in Texture2DFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1BA44C8C-0CFB-4A7C-B687-788BD4D49AB2}", Texture2DFactory)
-
+agcls.AgTypeNameMap["Texture2DFactory"] = Texture2DFactory
 
 class VisualEffects(IVisualEffects):
     """Controls various post processing effects that can be applied to the scene."""
@@ -23001,7 +23001,7 @@ class VisualEffects(IVisualEffects):
             raise STKAttributeError(attrname + " is not a recognized attribute in VisualEffects.")
         
 agcls.AgClassCatalog.add_catalog_entry("{901f26d9-644b-4513-a3e9-d4d1f4c3df48}", VisualEffects)
-
+agcls.AgTypeNameMap["VisualEffects"] = VisualEffects
 
 class AltitudeDisplayCondition(IAltitudeDisplayCondition, IDisplayCondition):
     """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
@@ -23025,7 +23025,7 @@ class AltitudeDisplayCondition(IAltitudeDisplayCondition, IDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E5AFCA9A-2850-44C4-BE11-930BB559872B}", AltitudeDisplayCondition)
-
+agcls.AgTypeNameMap["AltitudeDisplayCondition"] = AltitudeDisplayCondition
 
 class AxesPrimitive(IAxesPrimitive, IPrimitive):
     """Renders an axes in the 3D scene."""
@@ -23049,7 +23049,7 @@ class AxesPrimitive(IAxesPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in AxesPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE8A4146-1A03-4D94-95E4-4D1C67D5501F}", AxesPrimitive)
-
+agcls.AgTypeNameMap["AxesPrimitive"] = AxesPrimitive
 
 class Camera(ICamera):
     """Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene."""
@@ -23070,7 +23070,7 @@ class Camera(ICamera):
             raise STKAttributeError(attrname + " is not a recognized attribute in Camera.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B11DEE46-76FD-46E6-9476-AEA896C1E2AF}", Camera)
-
+agcls.AgTypeNameMap["Camera"] = Camera
 
 class CentralBodyGraphics(ICentralBodyGraphics):
     """The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property..."""
@@ -23091,7 +23091,7 @@ class CentralBodyGraphics(ICentralBodyGraphics):
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyGraphics.")
         
 agcls.AgClassCatalog.add_catalog_entry("{47858749-2CF1-48AF-ADCA-426C6E87B7EB}", CentralBodyGraphics)
-
+agcls.AgTypeNameMap["CentralBodyGraphics"] = CentralBodyGraphics
 
 class Clouds(IClouds):
     """Load, show and hide clouds in the scene."""
@@ -23112,7 +23112,7 @@ class Clouds(IClouds):
             raise STKAttributeError(attrname + " is not a recognized attribute in Clouds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{a98d31c3-daf0-40dd-ba64-0ceb18f0e522}", Clouds)
-
+agcls.AgTypeNameMap["Clouds"] = Clouds
 
 class CompositeDisplayCondition(ICompositeDisplayCondition, IDisplayCondition):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
@@ -23136,7 +23136,7 @@ class CompositeDisplayCondition(ICompositeDisplayCondition, IDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in CompositeDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B59D2316-7712-462C-BB2F-3C882D18388E}", CompositeDisplayCondition)
-
+agcls.AgTypeNameMap["CompositeDisplayCondition"] = CompositeDisplayCondition
 
 class CompositePrimitive(ICompositePrimitive, IPrimitive):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
@@ -23160,7 +23160,7 @@ class CompositePrimitive(ICompositePrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in CompositePrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8F6F69B8-80C9-40F2-BC5B-BCEE656C8917}", CompositePrimitive)
-
+agcls.AgTypeNameMap["CompositePrimitive"] = CompositePrimitive
 
 class ConstantDisplayCondition(IConstantDisplayCondition, IDisplayCondition):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
@@ -23184,7 +23184,7 @@ class ConstantDisplayCondition(IConstantDisplayCondition, IDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in ConstantDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C21814A8-7591-412D-9390-A6CE73468CA3}", ConstantDisplayCondition)
-
+agcls.AgTypeNameMap["ConstantDisplayCondition"] = ConstantDisplayCondition
 
 class DisplayCondition(IDisplayCondition):
     """When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered."""
@@ -23205,7 +23205,7 @@ class DisplayCondition(IDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in DisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CEC5D5EB-5AF8-4CCD-BD3D-EFF95DC04F26}", DisplayCondition)
-
+agcls.AgTypeNameMap["DisplayCondition"] = DisplayCondition
 
 class DistanceDisplayCondition(IDistanceDisplayCondition, IDisplayCondition):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
@@ -23229,7 +23229,7 @@ class DistanceDisplayCondition(IDistanceDisplayCondition, IDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B5589C8-51E7-4191-BD54-8326BFF56CE2}", DistanceDisplayCondition)
-
+agcls.AgTypeNameMap["DistanceDisplayCondition"] = DistanceDisplayCondition
 
 class DistanceToGlobeOverlayDisplayCondition(IDistanceToGlobeOverlayDisplayCondition, IDisplayCondition):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
@@ -23253,7 +23253,7 @@ class DistanceToGlobeOverlayDisplayCondition(IDistanceToGlobeOverlayDisplayCondi
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceToGlobeOverlayDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E9C27719-711F-4E36-9FF9-DEF15D35581E}", DistanceToGlobeOverlayDisplayCondition)
-
+agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayCondition"] = DistanceToGlobeOverlayDisplayCondition
 
 class DistanceToPositionDisplayCondition(IDistanceToPositionDisplayCondition, IDisplayCondition):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
@@ -23277,7 +23277,7 @@ class DistanceToPositionDisplayCondition(IDistanceToPositionDisplayCondition, ID
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceToPositionDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ACD2A88B-E930-4994-AA0A-D37AEDB51182}", DistanceToPositionDisplayCondition)
-
+agcls.AgTypeNameMap["DistanceToPositionDisplayCondition"] = DistanceToPositionDisplayCondition
 
 class DistanceToPrimitiveDisplayCondition(IDistanceToPrimitiveDisplayCondition, IDisplayCondition):
     """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
@@ -23301,7 +23301,7 @@ class DistanceToPrimitiveDisplayCondition(IDistanceToPrimitiveDisplayCondition, 
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceToPrimitiveDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{90A5B7AD-6FE1-4387-96B1-66A17A54FDA2}", DistanceToPrimitiveDisplayCondition)
-
+agcls.AgTypeNameMap["DistanceToPrimitiveDisplayCondition"] = DistanceToPrimitiveDisplayCondition
 
 class DurationPathPrimitiveUpdatePolicy(IDurationPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy):
     """path primitive update policy that removes points from remove location after a given duration."""
@@ -23325,7 +23325,7 @@ class DurationPathPrimitiveUpdatePolicy(IDurationPathPrimitiveUpdatePolicy, IPat
             raise STKAttributeError(attrname + " is not a recognized attribute in DurationPathPrimitiveUpdatePolicy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8628CCF8-7803-4528-B013-66116C059454}", DurationPathPrimitiveUpdatePolicy)
-
+agcls.AgTypeNameMap["DurationPathPrimitiveUpdatePolicy"] = DurationPathPrimitiveUpdatePolicy
 
 class FrameRate(IFrameRate):
     """Keeps track of how many times the scenes are rendered per second."""
@@ -23346,7 +23346,7 @@ class FrameRate(IFrameRate):
             raise STKAttributeError(attrname + " is not a recognized attribute in FrameRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EB82B58B-6E32-4E91-92A8-E8008A5C4B77}", FrameRate)
-
+agcls.AgTypeNameMap["FrameRate"] = FrameRate
 
 class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay):
     """A globe overlay that shows an image."""
@@ -23370,7 +23370,7 @@ class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay):
             raise STKAttributeError(attrname + " is not a recognized attribute in GlobeImageOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5316E632-3018-4625-866F-E56F29FFBC05}", GlobeImageOverlay)
-
+agcls.AgTypeNameMap["GlobeImageOverlay"] = GlobeImageOverlay
 
 class GraphicsFont(IGraphicsFont):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
@@ -23391,7 +23391,7 @@ class GraphicsFont(IGraphicsFont):
             raise STKAttributeError(attrname + " is not a recognized attribute in GraphicsFont.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C48AD7DF-40C9-4A57-86CD-E7B0E4BFCF52}", GraphicsFont)
-
+agcls.AgTypeNameMap["GraphicsFont"] = GraphicsFont
 
 class GreatArcInterpolator(IGreatArcInterpolator, IPositionInterpolator):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
@@ -23415,7 +23415,7 @@ class GreatArcInterpolator(IGreatArcInterpolator, IPositionInterpolator):
             raise STKAttributeError(attrname + " is not a recognized attribute in GreatArcInterpolator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A91AC76D-7326-4103-996E-DE20EB349A61}", GreatArcInterpolator)
-
+agcls.AgTypeNameMap["GreatArcInterpolator"] = GreatArcInterpolator
 
 class ImageCollection(IImageCollection):
     """A collection of globe image overlay objects."""
@@ -23436,7 +23436,7 @@ class ImageCollection(IImageCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ImageCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26812ED6-0AB2-4554-A01F-A1E52687763D}", ImageCollection)
-
+agcls.AgTypeNameMap["ImageCollection"] = ImageCollection
 
 class AlphaFromLuminanceFilter(IAlphaFromLuminanceFilter, IRasterFilter):
     """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
@@ -23460,7 +23460,7 @@ class AlphaFromLuminanceFilter(IAlphaFromLuminanceFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AlphaFromLuminanceFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7D660FC7-F1D2-4189-A5C7-B2BFD97E1B4E}", AlphaFromLuminanceFilter)
-
+agcls.AgTypeNameMap["AlphaFromLuminanceFilter"] = AlphaFromLuminanceFilter
 
 class AlphaFromPixelFilter(IAlphaFromPixelFilter, IRasterFilter):
     """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
@@ -23484,7 +23484,7 @@ class AlphaFromPixelFilter(IAlphaFromPixelFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AlphaFromPixelFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2D2B3A3-9FA8-4B58-9CA5-89705663DEDB}", AlphaFromPixelFilter)
-
+agcls.AgTypeNameMap["AlphaFromPixelFilter"] = AlphaFromPixelFilter
 
 class AlphaFromRasterFilter(IAlphaFromRasterFilter, IRasterFilter):
     """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
@@ -23508,7 +23508,7 @@ class AlphaFromRasterFilter(IAlphaFromRasterFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AlphaFromRasterFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E83A2AD-0A40-4CFC-823A-311AC8B034B3}", AlphaFromRasterFilter)
-
+agcls.AgTypeNameMap["AlphaFromRasterFilter"] = AlphaFromRasterFilter
 
 class BandExtractFilter(IBandExtractFilter, IRasterFilter):
     """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
@@ -23532,7 +23532,7 @@ class BandExtractFilter(IBandExtractFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in BandExtractFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC9176BE-3DBD-40D1-A0BC-CEDE39C747E2}", BandExtractFilter)
-
+agcls.AgTypeNameMap["BandExtractFilter"] = BandExtractFilter
 
 class BandOrderFilter(IBandOrderFilter, IRasterFilter):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
@@ -23556,7 +23556,7 @@ class BandOrderFilter(IBandOrderFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in BandOrderFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{91749CD4-8503-4C71-AD42-DB5AAF1BC240}", BandOrderFilter)
-
+agcls.AgTypeNameMap["BandOrderFilter"] = BandOrderFilter
 
 class BlurFilter(IBlurFilter, IConvolutionFilter, IRasterFilter):
     """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
@@ -23583,7 +23583,7 @@ class BlurFilter(IBlurFilter, IConvolutionFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in BlurFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A3E1128F-DE2D-4A57-AC68-C7C938480BF2}", BlurFilter)
-
+agcls.AgTypeNameMap["BlurFilter"] = BlurFilter
 
 class BrightnessFilter(IBrightnessFilter, IRasterFilter):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
@@ -23607,7 +23607,7 @@ class BrightnessFilter(IBrightnessFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in BrightnessFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6FF496E-64E8-41CA-BED7-8FEBDDB6B9C9}", BrightnessFilter)
-
+agcls.AgTypeNameMap["BrightnessFilter"] = BrightnessFilter
 
 class ColorToLuminanceFilter(IColorToLuminanceFilter, IRasterFilter):
     """Extracts a luminance band derived from the color bands of the source raster."""
@@ -23631,7 +23631,7 @@ class ColorToLuminanceFilter(IColorToLuminanceFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in ColorToLuminanceFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BE472786-A17B-490A-8DE7-4831AC3FEEDE}", ColorToLuminanceFilter)
-
+agcls.AgTypeNameMap["ColorToLuminanceFilter"] = ColorToLuminanceFilter
 
 class ContrastFilter(IContrastFilter, IRasterFilter):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
@@ -23655,7 +23655,7 @@ class ContrastFilter(IContrastFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in ContrastFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{20FA2A78-30D4-4DDE-84D7-EBF001730166}", ContrastFilter)
-
+agcls.AgTypeNameMap["ContrastFilter"] = ContrastFilter
 
 class ConvolutionFilter(IConvolutionFilter, IRasterFilter):
     """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
@@ -23679,7 +23679,7 @@ class ConvolutionFilter(IConvolutionFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in ConvolutionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{113D939E-C5B0-49BD-A38B-53DD961CAC5B}", ConvolutionFilter)
-
+agcls.AgTypeNameMap["ConvolutionFilter"] = ConvolutionFilter
 
 class EdgeDetectFilter(IEdgeDetectFilter, IConvolutionFilter, IRasterFilter):
     """Applies a convolution filter to detect edges in the source raster."""
@@ -23706,7 +23706,7 @@ class EdgeDetectFilter(IEdgeDetectFilter, IConvolutionFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in EdgeDetectFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{04E73117-38A1-4EE3-854D-253934DE9B54}", EdgeDetectFilter)
-
+agcls.AgTypeNameMap["EdgeDetectFilter"] = EdgeDetectFilter
 
 class FilteringRasterStream(IFilteringRasterStream, IRasterStream, IRaster):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
@@ -23733,7 +23733,7 @@ class FilteringRasterStream(IFilteringRasterStream, IRasterStream, IRaster):
             raise STKAttributeError(attrname + " is not a recognized attribute in FilteringRasterStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D59ED29-9EF8-4D85-BE0F-9E244736C814}", FilteringRasterStream)
-
+agcls.AgTypeNameMap["FilteringRasterStream"] = FilteringRasterStream
 
 class FlipFilter(IFlipFilter, IRasterFilter):
     """Flips the source raster along the given flip axis."""
@@ -23757,7 +23757,7 @@ class FlipFilter(IFlipFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in FlipFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{08E0C45D-A187-4B74-93AE-BF29B39D50C3}", FlipFilter)
-
+agcls.AgTypeNameMap["FlipFilter"] = FlipFilter
 
 class GammaCorrectionFilter(IGammaCorrectionFilter, IRasterFilter):
     """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
@@ -23781,7 +23781,7 @@ class GammaCorrectionFilter(IGammaCorrectionFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in GammaCorrectionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A560ACC2-4642-44FD-A5FC-BD3AB7A0FC2F}", GammaCorrectionFilter)
-
+agcls.AgTypeNameMap["GammaCorrectionFilter"] = GammaCorrectionFilter
 
 class GaussianBlurFilter(IGaussianBlurFilter, IConvolutionFilter, IRasterFilter):
     """Applies a convolution filter to blur the source raster using the Gaussian function."""
@@ -23808,7 +23808,7 @@ class GaussianBlurFilter(IGaussianBlurFilter, IConvolutionFilter, IRasterFilter)
             raise STKAttributeError(attrname + " is not a recognized attribute in GaussianBlurFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BCEE5F1C-66D8-48C6-8485-8435260855DE}", GaussianBlurFilter)
-
+agcls.AgTypeNameMap["GaussianBlurFilter"] = GaussianBlurFilter
 
 class GradientDetectFilter(IGradientDetectFilter, IConvolutionFilter, IRasterFilter):
     """Applies a convolution filter to detect gradients in the source raster."""
@@ -23835,7 +23835,7 @@ class GradientDetectFilter(IGradientDetectFilter, IConvolutionFilter, IRasterFil
             raise STKAttributeError(attrname + " is not a recognized attribute in GradientDetectFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F410D2F-C209-4F22-A906-5F8BA0C8CA40}", GradientDetectFilter)
-
+agcls.AgTypeNameMap["GradientDetectFilter"] = GradientDetectFilter
 
 class LevelsFilter(ILevelsFilter, IRasterFilter):
     """Adjusts the band levels of the source raster linearly."""
@@ -23859,7 +23859,7 @@ class LevelsFilter(ILevelsFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in LevelsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C21CE0FC-3E94-47C9-9E21-C8478A46E75C}", LevelsFilter)
-
+agcls.AgTypeNameMap["LevelsFilter"] = LevelsFilter
 
 class ProjectionRasterStreamPluginActivator(IProjectionRasterStreamPluginActivator):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
@@ -23880,7 +23880,7 @@ class ProjectionRasterStreamPluginActivator(IProjectionRasterStreamPluginActivat
             raise STKAttributeError(attrname + " is not a recognized attribute in ProjectionRasterStreamPluginActivator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5365D424-8630-4D9D-B209-F946D5116080}", ProjectionRasterStreamPluginActivator)
-
+agcls.AgTypeNameMap["ProjectionRasterStreamPluginActivator"] = ProjectionRasterStreamPluginActivator
 
 class ProjectionRasterStreamPluginProxy(IProjectionRasterStreamPluginProxy):
     """A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator."""
@@ -23901,7 +23901,7 @@ class ProjectionRasterStreamPluginProxy(IProjectionRasterStreamPluginProxy):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProjectionRasterStreamPluginProxy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82E6B1F4-DC2D-40C3-8251-8207F218B820}", ProjectionRasterStreamPluginProxy)
-
+agcls.AgTypeNameMap["ProjectionRasterStreamPluginProxy"] = ProjectionRasterStreamPluginProxy
 
 class Raster(IRaster):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
@@ -23922,7 +23922,7 @@ class Raster(IRaster):
             raise STKAttributeError(attrname + " is not a recognized attribute in Raster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50AB6A3A-54CA-4619-9B99-FB7BD497EA92}", Raster)
-
+agcls.AgTypeNameMap["Raster"] = Raster
 
 class RasterAttributes(IRasterAttributes):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
@@ -23943,7 +23943,7 @@ class RasterAttributes(IRasterAttributes):
             raise STKAttributeError(attrname + " is not a recognized attribute in RasterAttributes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32DEB10A-1039-43AF-AA36-BA94F8CC8531}", RasterAttributes)
-
+agcls.AgTypeNameMap["RasterAttributes"] = RasterAttributes
 
 class RasterFilter(IRasterFilter):
     """A filter for processing raster datasets. RasterFilter is the base class for all raster filters..."""
@@ -23964,7 +23964,7 @@ class RasterFilter(IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in RasterFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0345FD5E-C6A6-42D3-AEA9-57A7444BFF42}", RasterFilter)
-
+agcls.AgTypeNameMap["RasterFilter"] = RasterFilter
 
 class RasterStream(IRasterStream, IRaster):
     """A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients..."""
@@ -23988,7 +23988,7 @@ class RasterStream(IRasterStream, IRaster):
             raise STKAttributeError(attrname + " is not a recognized attribute in RasterStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CAFADC5E-933C-46AC-BD09-18B089E86346}", RasterStream)
-
+agcls.AgTypeNameMap["RasterStream"] = RasterStream
 
 class RotateFilter(IRotateFilter, IRasterFilter):
     """Rotates the source raster clockwise by the specified angle."""
@@ -24012,7 +24012,7 @@ class RotateFilter(IRotateFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in RotateFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AEDFA944-E740-4D19-9819-CB179C43E060}", RotateFilter)
-
+agcls.AgTypeNameMap["RotateFilter"] = RotateFilter
 
 class SequenceFilter(ISequenceFilter, IRasterFilter):
     """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
@@ -24036,7 +24036,7 @@ class SequenceFilter(ISequenceFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in SequenceFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{37330024-90FE-47DD-9548-C13089A085FC}", SequenceFilter)
-
+agcls.AgTypeNameMap["SequenceFilter"] = SequenceFilter
 
 class SharpenFilter(ISharpenFilter, IConvolutionFilter, IRasterFilter):
     """Applies a convolution filter to increase the sharpness of the source raster."""
@@ -24063,7 +24063,7 @@ class SharpenFilter(ISharpenFilter, IConvolutionFilter, IRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in SharpenFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F6FC309-D30E-41AD-A7B6-E70039313B6E}", SharpenFilter)
-
+agcls.AgTypeNameMap["SharpenFilter"] = SharpenFilter
 
 class VideoStream(IVideoStream, IRasterStream, IRaster):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
@@ -24090,7 +24090,7 @@ class VideoStream(IVideoStream, IRasterStream, IRaster):
             raise STKAttributeError(attrname + " is not a recognized attribute in VideoStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80D82D96-D87B-4910-B8BB-1FBE9E121A4F}", VideoStream)
-
+agcls.AgTypeNameMap["VideoStream"] = VideoStream
 
 class KmlContainer(IKmlContainer, IKmlFeature):
     """A KmlContainer contains a collection of children kml features."""
@@ -24114,7 +24114,7 @@ class KmlContainer(IKmlContainer, IKmlFeature):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlContainer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{24AA1395-417E-4845-A9D2-61C4D59BCABF}", KmlContainer)
-
+agcls.AgTypeNameMap["KmlContainer"] = KmlContainer
 
 class KmlDocument(IKmlDocument, IKmlContainer, IKmlFeature):
     """A KML document."""
@@ -24141,7 +24141,7 @@ class KmlDocument(IKmlDocument, IKmlContainer, IKmlFeature):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlDocument.")
         
 agcls.AgClassCatalog.add_catalog_entry("{130689C0-43C6-4C34-9AC7-252E155E9F66}", KmlDocument)
-
+agcls.AgTypeNameMap["KmlDocument"] = KmlDocument
 
 class KmlFeature(IKmlFeature):
     """A KML feature."""
@@ -24162,7 +24162,7 @@ class KmlFeature(IKmlFeature):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlFeature.")
         
 agcls.AgClassCatalog.add_catalog_entry("{20C290F8-9102-4960-AD19-F5EFC321F796}", KmlFeature)
-
+agcls.AgTypeNameMap["KmlFeature"] = KmlFeature
 
 class KmlFolder(IKmlFolder, IKmlContainer, IKmlFeature):
     """A KML folder."""
@@ -24189,7 +24189,7 @@ class KmlFolder(IKmlFolder, IKmlContainer, IKmlFeature):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlFolder.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7BE1A8D-28BF-4298-AE7D-656B40FFB3D0}", KmlFolder)
-
+agcls.AgTypeNameMap["KmlFolder"] = KmlFolder
 
 class KmlGraphics(IKmlGraphics):
     """Provides loading and unloading of kml documents for a particular central body."""
@@ -24210,7 +24210,7 @@ class KmlGraphics(IKmlGraphics):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlGraphics.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A094F5DE-8BF2-4079-8009-0450D2E4EF11}", KmlGraphics)
-
+agcls.AgTypeNameMap["KmlGraphics"] = KmlGraphics
 
 class KmlNetworkLink(IKmlNetworkLink, IKmlFeature):
     """A KML network link."""
@@ -24234,7 +24234,7 @@ class KmlNetworkLink(IKmlNetworkLink, IKmlFeature):
             raise STKAttributeError(attrname + " is not a recognized attribute in KmlNetworkLink.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BD2ECA7D-919B-4C64-8AA1-E503A80EF3EA}", KmlNetworkLink)
-
+agcls.AgTypeNameMap["KmlNetworkLink"] = KmlNetworkLink
 
 class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
@@ -24258,7 +24258,7 @@ class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in MarkerBatchPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7F4992D-BBE2-4C68-BB4E-51BB8CD2D124}", MarkerBatchPrimitive)
-
+agcls.AgTypeNameMap["MarkerBatchPrimitive"] = MarkerBatchPrimitive
 
 class MarkerBatchPrimitiveOptionalParameters(IMarkerBatchPrimitiveOptionalParameters):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
@@ -24279,7 +24279,7 @@ class MarkerBatchPrimitiveOptionalParameters(IMarkerBatchPrimitiveOptionalParame
             raise STKAttributeError(attrname + " is not a recognized attribute in MarkerBatchPrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{24750753-2036-4221-83F0-F9045DCA0A5D}", MarkerBatchPrimitiveOptionalParameters)
-
+agcls.AgTypeNameMap["MarkerBatchPrimitiveOptionalParameters"] = MarkerBatchPrimitiveOptionalParameters
 
 class MaximumCountPathPrimitiveUpdatePolicy(IMaximumCountPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
@@ -24303,7 +24303,7 @@ class MaximumCountPathPrimitiveUpdatePolicy(IMaximumCountPathPrimitiveUpdatePoli
             raise STKAttributeError(attrname + " is not a recognized attribute in MaximumCountPathPrimitiveUpdatePolicy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4D41C220-2CE4-4CA1-942A-9AF4F7F34C4A}", MaximumCountPathPrimitiveUpdatePolicy)
-
+agcls.AgTypeNameMap["MaximumCountPathPrimitiveUpdatePolicy"] = MaximumCountPathPrimitiveUpdatePolicy
 
 class ModelArticulation(IModelArticulation):
     """A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
@@ -24324,7 +24324,7 @@ class ModelArticulation(IModelArticulation):
             raise STKAttributeError(attrname + " is not a recognized attribute in ModelArticulation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9E72E72-17D6-4D7C-A4EF-5A970232ED93}", ModelArticulation)
-
+agcls.AgTypeNameMap["ModelArticulation"] = ModelArticulation
 
 class ModelArticulationCollection(IModelArticulationCollection):
     """A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
@@ -24345,7 +24345,7 @@ class ModelArticulationCollection(IModelArticulationCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ModelArticulationCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ACC4920A-6D6B-4374-937F-2469F439ABA8}", ModelArticulationCollection)
-
+agcls.AgTypeNameMap["ModelArticulationCollection"] = ModelArticulationCollection
 
 class ModelPrimitive(IModelPrimitive, IPrimitive):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
@@ -24369,7 +24369,7 @@ class ModelPrimitive(IModelPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in ModelPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD89B6D8-F106-4929-889A-3304A9CDBE97}", ModelPrimitive)
-
+agcls.AgTypeNameMap["ModelPrimitive"] = ModelPrimitive
 
 class ModelTransformation(IModelTransformation):
     """A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation..."""
@@ -24390,7 +24390,7 @@ class ModelTransformation(IModelTransformation):
             raise STKAttributeError(attrname + " is not a recognized attribute in ModelTransformation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC56F0E9-D0F3-4C3E-9AAA-AB5AB255927C}", ModelTransformation)
-
+agcls.AgTypeNameMap["ModelTransformation"] = ModelTransformation
 
 class Overlay(IOverlay, IScreenOverlayContainer):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
@@ -24414,7 +24414,7 @@ class Overlay(IOverlay, IScreenOverlayContainer):
             raise STKAttributeError(attrname + " is not a recognized attribute in Overlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6D9C8A3B-0EC8-428F-BC05-1F30315E92DC}", Overlay)
-
+agcls.AgTypeNameMap["Overlay"] = Overlay
 
 class PathPrimitive(IPathPrimitive, IPrimitive):
     """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
@@ -24438,7 +24438,7 @@ class PathPrimitive(IPathPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in PathPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFDCAA13-BE39-4E17-9AC5-06C08933A910}", PathPrimitive)
-
+agcls.AgTypeNameMap["PathPrimitive"] = PathPrimitive
 
 class PickResult(IPickResult):
     """A single result from Pick."""
@@ -24459,7 +24459,7 @@ class PickResult(IPickResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in PickResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E007C42E-13D7-4006-992A-B996CEA3BE49}", PickResult)
-
+agcls.AgTypeNameMap["PickResult"] = PickResult
 
 class PixelSizeDisplayCondition(IPixelSizeDisplayCondition, IDisplayCondition):
     """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
@@ -24483,7 +24483,7 @@ class PixelSizeDisplayCondition(IPixelSizeDisplayCondition, IDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in PixelSizeDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26B1DA4F-DA20-4E44-A98D-D54CC67821B8}", PixelSizeDisplayCondition)
-
+agcls.AgTypeNameMap["PixelSizeDisplayCondition"] = PixelSizeDisplayCondition
 
 class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
@@ -24507,7 +24507,7 @@ class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in PointBatchPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D8019323-F9C3-4238-BB4C-CD917C83E0F6}", PointBatchPrimitive)
-
+agcls.AgTypeNameMap["PointBatchPrimitive"] = PointBatchPrimitive
 
 class PointBatchPrimitiveOptionalParameters(IPointBatchPrimitiveOptionalParameters):
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
@@ -24528,7 +24528,7 @@ class PointBatchPrimitiveOptionalParameters(IPointBatchPrimitiveOptionalParamete
             raise STKAttributeError(attrname + " is not a recognized attribute in PointBatchPrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{944f2ade-d0e5-4896-a1e2-28b1c9e74f08}", PointBatchPrimitiveOptionalParameters)
-
+agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParameters"] = PointBatchPrimitiveOptionalParameters
 
 class PolylinePrimitive(IPolylinePrimitive, IPrimitive):
     """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
@@ -24552,7 +24552,7 @@ class PolylinePrimitive(IPolylinePrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in PolylinePrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F6E930C1-39F1-471B-A6F3-AFE651B00A95}", PolylinePrimitive)
-
+agcls.AgTypeNameMap["PolylinePrimitive"] = PolylinePrimitive
 
 class PolylinePrimitiveOptionalParameters(IPolylinePrimitiveOptionalParameters):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
@@ -24573,7 +24573,7 @@ class PolylinePrimitiveOptionalParameters(IPolylinePrimitiveOptionalParameters):
             raise STKAttributeError(attrname + " is not a recognized attribute in PolylinePrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{eee51ba6-73ae-4626-9fac-62a0f82cb3d1}", PolylinePrimitiveOptionalParameters)
-
+agcls.AgTypeNameMap["PolylinePrimitiveOptionalParameters"] = PolylinePrimitiveOptionalParameters
 
 class PositionInterpolator(IPositionInterpolator):
     """Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines."""
@@ -24594,7 +24594,7 @@ class PositionInterpolator(IPositionInterpolator):
             raise STKAttributeError(attrname + " is not a recognized attribute in PositionInterpolator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3D14E044-4128-4F60-9F08-797AA09205B5}", PositionInterpolator)
-
+agcls.AgTypeNameMap["PositionInterpolator"] = PositionInterpolator
 
 class Primitive(IPrimitive):
     """Primitives represent objects rendered in the 3D scene."""
@@ -24615,7 +24615,7 @@ class Primitive(IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in Primitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0BE64D00-03FF-41C1-8F8E-DCDB5D260FCE}", Primitive)
-
+agcls.AgTypeNameMap["Primitive"] = Primitive
 
 class PrimitiveManager(IPrimitiveManager):
     """The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered."""
@@ -24636,7 +24636,7 @@ class PrimitiveManager(IPrimitiveManager):
             raise STKAttributeError(attrname + " is not a recognized attribute in PrimitiveManager.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29884E1F-F498-4FED-9B83-AFC57A4BB09B}", PrimitiveManager)
-
+agcls.AgTypeNameMap["PrimitiveManager"] = PrimitiveManager
 
 class RasterImageGlobeOverlay(IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling rasters."""
@@ -24663,7 +24663,7 @@ class RasterImageGlobeOverlay(IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlo
             raise STKAttributeError(attrname + " is not a recognized attribute in RasterImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{49EC3E96-9494-4D95-A9C2-C722C46197FC}", RasterImageGlobeOverlay)
-
+agcls.AgTypeNameMap["RasterImageGlobeOverlay"] = RasterImageGlobeOverlay
 
 class RhumbLineInterpolator(IRhumbLineInterpolator, IPositionInterpolator):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
@@ -24687,7 +24687,7 @@ class RhumbLineInterpolator(IRhumbLineInterpolator, IPositionInterpolator):
             raise STKAttributeError(attrname + " is not a recognized attribute in RhumbLineInterpolator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E791A602-85BA-4413-9C8D-479D1692254C}", RhumbLineInterpolator)
-
+agcls.AgTypeNameMap["RhumbLineInterpolator"] = RhumbLineInterpolator
 
 class Scene(IScene):
     """A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property..."""
@@ -24708,7 +24708,7 @@ class Scene(IScene):
             raise STKAttributeError(attrname + " is not a recognized attribute in Scene.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E664A9F1-8A89-4B4C-9AA2-E5BEB603AF3C}", Scene)
-
+agcls.AgTypeNameMap["Scene"] = Scene
 
 class SceneDisplayCondition(ISceneDisplayCondition, IDisplayCondition):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
@@ -24732,7 +24732,7 @@ class SceneDisplayCondition(ISceneDisplayCondition, IDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in SceneDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8074B463-1740-4C65-870C-E231589EE5CE}", SceneDisplayCondition)
-
+agcls.AgTypeNameMap["SceneDisplayCondition"] = SceneDisplayCondition
 
 class SceneManager(ISceneManager):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
@@ -24753,7 +24753,7 @@ class SceneManager(ISceneManager):
             raise STKAttributeError(attrname + " is not a recognized attribute in SceneManager.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B671433F-CA75-4628-B84D-4878A247AFC3}", SceneManager)
-
+agcls.AgTypeNameMap["SceneManager"] = SceneManager
 
 class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
@@ -24780,7 +24780,7 @@ class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScreenOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B50A73BA-5299-4746-B30B-EEB80699546E}", ScreenOverlay)
-
+agcls.AgTypeNameMap["ScreenOverlay"] = ScreenOverlay
 
 class ScreenOverlayCollection(IScreenOverlayCollection, IScreenOverlayCollectionBase):
     """A collection of screen overlays."""
@@ -24804,7 +24804,7 @@ class ScreenOverlayCollection(IScreenOverlayCollection, IScreenOverlayCollection
             raise STKAttributeError(attrname + " is not a recognized attribute in ScreenOverlayCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F75B7693-A40E-4B54-AB6F-EE8F974D2E6C}", ScreenOverlayCollection)
-
+agcls.AgTypeNameMap["ScreenOverlayCollection"] = ScreenOverlayCollection
 
 class ScreenOverlayManager(IScreenOverlayManager, IScreenOverlayCollectionBase, IScreenOverlayContainer):
     """The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control."""
@@ -24831,7 +24831,7 @@ class ScreenOverlayManager(IScreenOverlayManager, IScreenOverlayCollectionBase, 
             raise STKAttributeError(attrname + " is not a recognized attribute in ScreenOverlayManager.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9853EC1E-531C-4494-B308-BC6644CF672C}", ScreenOverlayManager)
-
+agcls.AgTypeNameMap["ScreenOverlayManager"] = ScreenOverlayManager
 
 class ScreenOverlayPickResult(IScreenOverlayPickResult):
     """Describes a picked screen overlay as a result of a call to pick screen overlays."""
@@ -24852,7 +24852,7 @@ class ScreenOverlayPickResult(IScreenOverlayPickResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScreenOverlayPickResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6E7F318E-F7E5-4B19-A532-50EC60EF09FA}", ScreenOverlayPickResult)
-
+agcls.AgTypeNameMap["ScreenOverlayPickResult"] = ScreenOverlayPickResult
 
 class SolidPrimitive(ISolidPrimitive, IPrimitive):
     """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
@@ -24876,7 +24876,7 @@ class SolidPrimitive(ISolidPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in SolidPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{12343DC0-99FF-48B6-9D93-9B7A2CE34DB9}", SolidPrimitive)
-
+agcls.AgTypeNameMap["SolidPrimitive"] = SolidPrimitive
 
 class Stereoscopic(IStereoscopic):
     """Gets the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
@@ -24897,7 +24897,7 @@ class Stereoscopic(IStereoscopic):
             raise STKAttributeError(attrname + " is not a recognized attribute in Stereoscopic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5FDA997C-0450-4574-BFD9-D803A3AA6167}", Stereoscopic)
-
+agcls.AgTypeNameMap["Stereoscopic"] = Stereoscopic
 
 class SurfaceMeshPrimitive(ISurfaceMeshPrimitive, IPrimitive):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
@@ -24921,7 +24921,7 @@ class SurfaceMeshPrimitive(ISurfaceMeshPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in SurfaceMeshPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C4B2DB74-EBA8-4B18-8BE4-372FCA665F5D}", SurfaceMeshPrimitive)
-
+agcls.AgTypeNameMap["SurfaceMeshPrimitive"] = SurfaceMeshPrimitive
 
 class TerrainOverlayCollection(ITerrainOverlayCollection):
     """A collection of terrain overlay objects."""
@@ -24942,7 +24942,7 @@ class TerrainOverlayCollection(ITerrainOverlayCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in TerrainOverlayCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{168D1247-7208-45C3-AF31-7E4009DE2EA7}", TerrainOverlayCollection)
-
+agcls.AgTypeNameMap["TerrainOverlayCollection"] = TerrainOverlayCollection
 
 class TerrainOverlay(ITerrainOverlay, IGlobeOverlay):
     """A globe overlay which shows terrain."""
@@ -24966,7 +24966,7 @@ class TerrainOverlay(ITerrainOverlay, IGlobeOverlay):
             raise STKAttributeError(attrname + " is not a recognized attribute in TerrainOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C1640FF1-07BB-4584-940C-50BDD48CFE14}", TerrainOverlay)
-
+agcls.AgTypeNameMap["TerrainOverlay"] = TerrainOverlay
 
 class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
     """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
@@ -24990,7 +24990,7 @@ class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextBatchPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EEE49615-F2F3-4810-B877-4C7729F56DD1}", TextBatchPrimitive)
-
+agcls.AgTypeNameMap["TextBatchPrimitive"] = TextBatchPrimitive
 
 class TextBatchPrimitiveOptionalParameters(ITextBatchPrimitiveOptionalParameters):
     """Optional per-string and per-batch parameters for text batch primitive..."""
@@ -25011,7 +25011,7 @@ class TextBatchPrimitiveOptionalParameters(ITextBatchPrimitiveOptionalParameters
             raise STKAttributeError(attrname + " is not a recognized attribute in TextBatchPrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D68422E0-31FC-4E61-9A7C-6E4BCB261A9D}", TextBatchPrimitiveOptionalParameters)
-
+agcls.AgTypeNameMap["TextBatchPrimitiveOptionalParameters"] = TextBatchPrimitiveOptionalParameters
 
 class TextOverlay(ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer):
     """A rectangular overlay that contains text."""
@@ -25041,7 +25041,7 @@ class TextOverlay(ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContaine
             raise STKAttributeError(attrname + " is not a recognized attribute in TextOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{46BE31F3-1A5B-4B51-AA77-27CCA844F5CD}", TextOverlay)
-
+agcls.AgTypeNameMap["TextOverlay"] = TextOverlay
 
 class TextureMatrix(ITextureMatrix):
     """A 4 by 4 matrix applied to a texture coordinate."""
@@ -25062,7 +25062,7 @@ class TextureMatrix(ITextureMatrix):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextureMatrix.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E05D3E06-18C5-49DE-B9AC-B2245C83E62B}", TextureMatrix)
-
+agcls.AgTypeNameMap["TextureMatrix"] = TextureMatrix
 
 class TextureScreenOverlay(ITextureScreenOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer):
     """A rectangular overlay that can be assigned a texture."""
@@ -25092,7 +25092,7 @@ class TextureScreenOverlay(ITextureScreenOverlay, IScreenOverlay, IOverlay, IScr
             raise STKAttributeError(attrname + " is not a recognized attribute in TextureScreenOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51136098-508C-4DD3-B39C-D342235E58BD}", TextureScreenOverlay)
-
+agcls.AgTypeNameMap["TextureScreenOverlay"] = TextureScreenOverlay
 
 class TimeIntervalDisplayCondition(ITimeIntervalDisplayCondition, IDisplayCondition):
     """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
@@ -25116,7 +25116,7 @@ class TimeIntervalDisplayCondition(ITimeIntervalDisplayCondition, IDisplayCondit
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeIntervalDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{256AACC3-3E56-4BA6-80F9-15BD968C3863}", TimeIntervalDisplayCondition)
-
+agcls.AgTypeNameMap["TimeIntervalDisplayCondition"] = TimeIntervalDisplayCondition
 
 class TriangleMeshPrimitive(ITriangleMeshPrimitive, IPrimitive):
     """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
@@ -25140,7 +25140,7 @@ class TriangleMeshPrimitive(ITriangleMeshPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in TriangleMeshPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA3D4743-D0D9-49B8-8037-3DDC3075170E}", TriangleMeshPrimitive)
-
+agcls.AgTypeNameMap["TriangleMeshPrimitive"] = TriangleMeshPrimitive
 
 class TriangleMeshPrimitiveOptionalParameters(ITriangleMeshPrimitiveOptionalParameters):
     """Optional parameters for triangle mesh primitive..."""
@@ -25161,7 +25161,7 @@ class TriangleMeshPrimitiveOptionalParameters(ITriangleMeshPrimitiveOptionalPara
             raise STKAttributeError(attrname + " is not a recognized attribute in TriangleMeshPrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{07985409-9BA1-406C-8A91-D4E99DDB406F}", TriangleMeshPrimitiveOptionalParameters)
-
+agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParameters"] = TriangleMeshPrimitiveOptionalParameters
 
 class VectorPrimitive(IVectorPrimitive, IPrimitive):
     """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
@@ -25185,7 +25185,7 @@ class VectorPrimitive(IVectorPrimitive, IPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8DE433D5-0E13-44ED-B3CF-DF380B8BEA7D}", VectorPrimitive)
-
+agcls.AgTypeNameMap["VectorPrimitive"] = VectorPrimitive
 
 class BoxTriangulatorInitializer(IBoxTriangulatorInitializer):
     """Triangulates a box. It is recommended to visualize the box using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
@@ -25206,7 +25206,7 @@ class BoxTriangulatorInitializer(IBoxTriangulatorInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in BoxTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5AA6E13-2989-46FD-8BA7-341870EE56CB}", BoxTriangulatorInitializer)
-
+agcls.AgTypeNameMap["BoxTriangulatorInitializer"] = BoxTriangulatorInitializer
 
 class CylinderTriangulatorInitializer(ICylinderTriangulatorInitializer):
     """Triangulates a cylinder. It is recommended to visualize the cylinder using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
@@ -25227,7 +25227,7 @@ class CylinderTriangulatorInitializer(ICylinderTriangulatorInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in CylinderTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{351F63E3-5430-4B7C-8811-1353D7FDBA79}", CylinderTriangulatorInitializer)
-
+agcls.AgTypeNameMap["CylinderTriangulatorInitializer"] = CylinderTriangulatorInitializer
 
 class EllipsoidTriangulatorInitializer(IEllipsoidTriangulatorInitializer):
     """Triangulates an ellipsoid. It is recommended to visualize the ellipsoid using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
@@ -25248,7 +25248,7 @@ class EllipsoidTriangulatorInitializer(IEllipsoidTriangulatorInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in EllipsoidTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DEBC2954-C0E9-4562-8AD6-A93E7EDD3E82}", EllipsoidTriangulatorInitializer)
-
+agcls.AgTypeNameMap["EllipsoidTriangulatorInitializer"] = EllipsoidTriangulatorInitializer
 
 class ExtrudedPolylineTriangulatorInitializer(IExtrudedPolylineTriangulatorInitializer):
     """Triangulates a polyline into an extrusion with bottom and top boundaries."""
@@ -25269,7 +25269,7 @@ class ExtrudedPolylineTriangulatorInitializer(IExtrudedPolylineTriangulatorIniti
             raise STKAttributeError(attrname + " is not a recognized attribute in ExtrudedPolylineTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9DD61791-420A-401D-8C10-251999CA274B}", ExtrudedPolylineTriangulatorInitializer)
-
+agcls.AgTypeNameMap["ExtrudedPolylineTriangulatorInitializer"] = ExtrudedPolylineTriangulatorInitializer
 
 class SurfaceExtentTriangulatorInitializer(ISurfaceExtentTriangulatorInitializer):
     """Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive."""
@@ -25290,7 +25290,7 @@ class SurfaceExtentTriangulatorInitializer(ISurfaceExtentTriangulatorInitializer
             raise STKAttributeError(attrname + " is not a recognized attribute in SurfaceExtentTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F86CAF5F-4B95-4CD0-9E8A-7C04AF8B7E9B}", SurfaceExtentTriangulatorInitializer)
-
+agcls.AgTypeNameMap["SurfaceExtentTriangulatorInitializer"] = SurfaceExtentTriangulatorInitializer
 
 class SurfacePolygonTriangulatorInitializer(ISurfacePolygonTriangulatorInitializer):
     """Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
@@ -25311,7 +25311,7 @@ class SurfacePolygonTriangulatorInitializer(ISurfacePolygonTriangulatorInitializ
             raise STKAttributeError(attrname + " is not a recognized attribute in SurfacePolygonTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FB4D2919-C9DB-4C93-A64B-35A9EB884E6B}", SurfacePolygonTriangulatorInitializer)
-
+agcls.AgTypeNameMap["SurfacePolygonTriangulatorInitializer"] = SurfacePolygonTriangulatorInitializer
 
 class SurfaceShapesInitializer(ISurfaceShapesInitializer):
     """Computes boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
@@ -25332,7 +25332,7 @@ class SurfaceShapesInitializer(ISurfaceShapesInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in SurfaceShapesInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B227F07-5BB0-43E5-9AE2-7288A73856BC}", SurfaceShapesInitializer)
-
+agcls.AgTypeNameMap["SurfaceShapesInitializer"] = SurfaceShapesInitializer
 
 class AGICustomTerrainOverlayFactory(IAGICustomTerrainOverlayFactory):
     """A terrain overlay for handling AGI Cesium Terrain."""
@@ -25353,7 +25353,7 @@ class AGICustomTerrainOverlayFactory(IAGICustomTerrainOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AGICustomTerrainOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B6233AF-5A82-45AB-8371-0C1430585060}", AGICustomTerrainOverlayFactory)
-
+agcls.AgTypeNameMap["AGICustomTerrainOverlayFactory"] = AGICustomTerrainOverlayFactory
 
 class AGIProcessedImageGlobeOverlayFactory(IAGIProcessedImageGlobeOverlayFactory):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
@@ -25374,7 +25374,7 @@ class AGIProcessedImageGlobeOverlayFactory(IAGIProcessedImageGlobeOverlayFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in AGIProcessedImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{668251C7-6113-4243-B563-8F58F25A9281}", AGIProcessedImageGlobeOverlayFactory)
-
+agcls.AgTypeNameMap["AGIProcessedImageGlobeOverlayFactory"] = AGIProcessedImageGlobeOverlayFactory
 
 class AGIProcessedTerrainOverlayFactory(IAGIProcessedTerrainOverlayFactory):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
@@ -25395,7 +25395,7 @@ class AGIProcessedTerrainOverlayFactory(IAGIProcessedTerrainOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AGIProcessedTerrainOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AD84EB3C-79EC-43F8-B042-0B9180B94D75}", AGIProcessedTerrainOverlayFactory)
-
+agcls.AgTypeNameMap["AGIProcessedTerrainOverlayFactory"] = AGIProcessedTerrainOverlayFactory
 
 class AGIRoamImageGlobeOverlayFactory(IAGIRoamImageGlobeOverlayFactory):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
@@ -25416,7 +25416,7 @@ class AGIRoamImageGlobeOverlayFactory(IAGIRoamImageGlobeOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AGIRoamImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BB6E5A38-778A-4E22-91FB-7B4E63F40D6E}", AGIRoamImageGlobeOverlayFactory)
-
+agcls.AgTypeNameMap["AGIRoamImageGlobeOverlayFactory"] = AGIRoamImageGlobeOverlayFactory
 
 class CustomImageGlobeOverlayPluginActivatorFactory(ICustomImageGlobeOverlayPluginActivatorFactory):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
@@ -25437,7 +25437,7 @@ class CustomImageGlobeOverlayPluginActivatorFactory(ICustomImageGlobeOverlayPlug
             raise STKAttributeError(attrname + " is not a recognized attribute in CustomImageGlobeOverlayPluginActivatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B0D7F25-8A54-40C5-BD10-75EB00788704}", CustomImageGlobeOverlayPluginActivatorFactory)
-
+agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginActivatorFactory"] = CustomImageGlobeOverlayPluginActivatorFactory
 
 class GeospatialImageGlobeOverlayFactory(IGeospatialImageGlobeOverlayFactory):
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
@@ -25458,7 +25458,7 @@ class GeospatialImageGlobeOverlayFactory(IGeospatialImageGlobeOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in GeospatialImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{636E2A9D-49B9-4673-8BD5-4DF7E06A696E}", GeospatialImageGlobeOverlayFactory)
-
+agcls.AgTypeNameMap["GeospatialImageGlobeOverlayFactory"] = GeospatialImageGlobeOverlayFactory
 
 class ProjectedRasterOverlayFactory(IProjectedRasterOverlayFactory):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
@@ -25479,7 +25479,7 @@ class ProjectedRasterOverlayFactory(IProjectedRasterOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProjectedRasterOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FDAAFAF9-B61B-4DB8-8157-96EF4D476457}", ProjectedRasterOverlayFactory)
-
+agcls.AgTypeNameMap["ProjectedRasterOverlayFactory"] = ProjectedRasterOverlayFactory
 
 class ProjectionFactory(IProjectionFactory):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
@@ -25500,7 +25500,7 @@ class ProjectionFactory(IProjectionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProjectionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C22AAF01-98CE-41E1-8A98-E164A61D40CC}", ProjectionFactory)
-
+agcls.AgTypeNameMap["ProjectionFactory"] = ProjectionFactory
 
 class AltitudeDisplayConditionFactory(IAltitudeDisplayConditionFactory):
     """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
@@ -25521,7 +25521,7 @@ class AltitudeDisplayConditionFactory(IAltitudeDisplayConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75D5CF9A-FBCE-482C-9520-7811D9E71EC1}", AltitudeDisplayConditionFactory)
-
+agcls.AgTypeNameMap["AltitudeDisplayConditionFactory"] = AltitudeDisplayConditionFactory
 
 class AxesPrimitiveFactory(IAxesPrimitiveFactory):
     """Renders an axes in the 3D scene."""
@@ -25542,7 +25542,7 @@ class AxesPrimitiveFactory(IAxesPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AxesPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{166D78CD-1000-4EDC-B031-AAB1B1B45E8D}", AxesPrimitiveFactory)
-
+agcls.AgTypeNameMap["AxesPrimitiveFactory"] = AxesPrimitiveFactory
 
 class CompositeDisplayConditionFactory(ICompositeDisplayConditionFactory):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
@@ -25563,7 +25563,7 @@ class CompositeDisplayConditionFactory(ICompositeDisplayConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in CompositeDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{375A535B-557C-4E7B-A2AD-0905381BA46F}", CompositeDisplayConditionFactory)
-
+agcls.AgTypeNameMap["CompositeDisplayConditionFactory"] = CompositeDisplayConditionFactory
 
 class CompositePrimitiveFactory(ICompositePrimitiveFactory):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
@@ -25584,7 +25584,7 @@ class CompositePrimitiveFactory(ICompositePrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in CompositePrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F9D1191-7973-4B59-B2E6-9A4D4F19A222}", CompositePrimitiveFactory)
-
+agcls.AgTypeNameMap["CompositePrimitiveFactory"] = CompositePrimitiveFactory
 
 class ConstantDisplayConditionFactory(IConstantDisplayConditionFactory):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
@@ -25605,7 +25605,7 @@ class ConstantDisplayConditionFactory(IConstantDisplayConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ConstantDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84B6B505-833D-4A3B-BD6B-99266C8C5284}", ConstantDisplayConditionFactory)
-
+agcls.AgTypeNameMap["ConstantDisplayConditionFactory"] = ConstantDisplayConditionFactory
 
 class DistanceDisplayConditionFactory(IDistanceDisplayConditionFactory):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
@@ -25626,7 +25626,7 @@ class DistanceDisplayConditionFactory(IDistanceDisplayConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F8A027DC-AE3B-464A-A5C4-39AA37368ED7}", DistanceDisplayConditionFactory)
-
+agcls.AgTypeNameMap["DistanceDisplayConditionFactory"] = DistanceDisplayConditionFactory
 
 class DistanceToGlobeOverlayDisplayConditionFactory(IDistanceToGlobeOverlayDisplayConditionFactory):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
@@ -25647,7 +25647,7 @@ class DistanceToGlobeOverlayDisplayConditionFactory(IDistanceToGlobeOverlayDispl
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceToGlobeOverlayDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0BF7DA00-8B06-41FA-A580-15D898A0837F}", DistanceToGlobeOverlayDisplayConditionFactory)
-
+agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayConditionFactory"] = DistanceToGlobeOverlayDisplayConditionFactory
 
 class DistanceToPositionDisplayConditionFactory(IDistanceToPositionDisplayConditionFactory):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
@@ -25668,7 +25668,7 @@ class DistanceToPositionDisplayConditionFactory(IDistanceToPositionDisplayCondit
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceToPositionDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F19A2CB9-BF83-4F3F-9B76-82794467A872}", DistanceToPositionDisplayConditionFactory)
-
+agcls.AgTypeNameMap["DistanceToPositionDisplayConditionFactory"] = DistanceToPositionDisplayConditionFactory
 
 class DistanceToPrimitiveDisplayConditionFactory(IDistanceToPrimitiveDisplayConditionFactory):
     """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
@@ -25689,7 +25689,7 @@ class DistanceToPrimitiveDisplayConditionFactory(IDistanceToPrimitiveDisplayCond
             raise STKAttributeError(attrname + " is not a recognized attribute in DistanceToPrimitiveDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D977F6C-359B-4353-AD7A-B1317BE7136E}", DistanceToPrimitiveDisplayConditionFactory)
-
+agcls.AgTypeNameMap["DistanceToPrimitiveDisplayConditionFactory"] = DistanceToPrimitiveDisplayConditionFactory
 
 class DurationPathPrimitiveUpdatePolicyFactory(IDurationPathPrimitiveUpdatePolicyFactory):
     """path primitive update policy that removes points from remove location after a given duration."""
@@ -25710,7 +25710,7 @@ class DurationPathPrimitiveUpdatePolicyFactory(IDurationPathPrimitiveUpdatePolic
             raise STKAttributeError(attrname + " is not a recognized attribute in DurationPathPrimitiveUpdatePolicyFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D10A5794-C75B-43DA-8277-FAA18D9C988A}", DurationPathPrimitiveUpdatePolicyFactory)
-
+agcls.AgTypeNameMap["DurationPathPrimitiveUpdatePolicyFactory"] = DurationPathPrimitiveUpdatePolicyFactory
 
 class GlobeImageOverlayInitializer(IGlobeImageOverlayInitializer):
     """A globe overlay that shows an image."""
@@ -25731,7 +25731,7 @@ class GlobeImageOverlayInitializer(IGlobeImageOverlayInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in GlobeImageOverlayInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6CA56657-186B-4768-B747-AB0071E02C05}", GlobeImageOverlayInitializer)
-
+agcls.AgTypeNameMap["GlobeImageOverlayInitializer"] = GlobeImageOverlayInitializer
 
 class GraphicsFontFactory(IGraphicsFontFactory):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
@@ -25752,7 +25752,7 @@ class GraphicsFontFactory(IGraphicsFontFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in GraphicsFontFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4890C7DD-6EAC-4F44-94DB-A72E75BEDAF0}", GraphicsFontFactory)
-
+agcls.AgTypeNameMap["GraphicsFontFactory"] = GraphicsFontFactory
 
 class GreatArcInterpolatorFactory(IGreatArcInterpolatorFactory):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
@@ -25773,7 +25773,7 @@ class GreatArcInterpolatorFactory(IGreatArcInterpolatorFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in GreatArcInterpolatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6882FDC8-B958-498D-A274-46AE40AE78D5}", GreatArcInterpolatorFactory)
-
+agcls.AgTypeNameMap["GreatArcInterpolatorFactory"] = GreatArcInterpolatorFactory
 
 class AlphaFromLuminanceFilterFactory(IAlphaFromLuminanceFilterFactory):
     """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
@@ -25794,7 +25794,7 @@ class AlphaFromLuminanceFilterFactory(IAlphaFromLuminanceFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AlphaFromLuminanceFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1190FF7A-66F4-4B54-B35B-57BBBEDD35AA}", AlphaFromLuminanceFilterFactory)
-
+agcls.AgTypeNameMap["AlphaFromLuminanceFilterFactory"] = AlphaFromLuminanceFilterFactory
 
 class AlphaFromPixelFilterFactory(IAlphaFromPixelFilterFactory):
     """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
@@ -25815,7 +25815,7 @@ class AlphaFromPixelFilterFactory(IAlphaFromPixelFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AlphaFromPixelFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{72AEEA38-C86F-48DE-A8D7-F993011E6466}", AlphaFromPixelFilterFactory)
-
+agcls.AgTypeNameMap["AlphaFromPixelFilterFactory"] = AlphaFromPixelFilterFactory
 
 class AlphaFromRasterFilterFactory(IAlphaFromRasterFilterFactory):
     """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
@@ -25836,7 +25836,7 @@ class AlphaFromRasterFilterFactory(IAlphaFromRasterFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AlphaFromRasterFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F578725F-3B1F-4B45-AA36-FADF0AA5516F}", AlphaFromRasterFilterFactory)
-
+agcls.AgTypeNameMap["AlphaFromRasterFilterFactory"] = AlphaFromRasterFilterFactory
 
 class BandExtractFilterFactory(IBandExtractFilterFactory):
     """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
@@ -25857,7 +25857,7 @@ class BandExtractFilterFactory(IBandExtractFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in BandExtractFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{52C5D954-F113-46CA-BF7C-3BFCA6637B6D}", BandExtractFilterFactory)
-
+agcls.AgTypeNameMap["BandExtractFilterFactory"] = BandExtractFilterFactory
 
 class BandOrderFilterFactory(IBandOrderFilterFactory):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
@@ -25878,7 +25878,7 @@ class BandOrderFilterFactory(IBandOrderFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in BandOrderFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F238EFB7-84AC-4648-AB58-42C01DADA9A9}", BandOrderFilterFactory)
-
+agcls.AgTypeNameMap["BandOrderFilterFactory"] = BandOrderFilterFactory
 
 class BlurFilterFactory(IBlurFilterFactory):
     """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
@@ -25899,7 +25899,7 @@ class BlurFilterFactory(IBlurFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in BlurFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FE6B4C1-2607-4213-A2C6-EBD012D3A51F}", BlurFilterFactory)
-
+agcls.AgTypeNameMap["BlurFilterFactory"] = BlurFilterFactory
 
 class BrightnessFilterFactory(IBrightnessFilterFactory):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
@@ -25920,7 +25920,7 @@ class BrightnessFilterFactory(IBrightnessFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in BrightnessFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C03BF579-ED2C-480E-835C-A2F17B7B1E02}", BrightnessFilterFactory)
-
+agcls.AgTypeNameMap["BrightnessFilterFactory"] = BrightnessFilterFactory
 
 class ColorToLuminanceFilterFactory(IColorToLuminanceFilterFactory):
     """Extracts a luminance band derived from the color bands of the source raster."""
@@ -25941,7 +25941,7 @@ class ColorToLuminanceFilterFactory(IColorToLuminanceFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ColorToLuminanceFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7311B5AA-FC01-4B35-A1A3-76DE69555938}", ColorToLuminanceFilterFactory)
-
+agcls.AgTypeNameMap["ColorToLuminanceFilterFactory"] = ColorToLuminanceFilterFactory
 
 class ContrastFilterFactory(IContrastFilterFactory):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
@@ -25962,7 +25962,7 @@ class ContrastFilterFactory(IContrastFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ContrastFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B1023F6-67C4-4DC9-8EA1-9171564EFA42}", ContrastFilterFactory)
-
+agcls.AgTypeNameMap["ContrastFilterFactory"] = ContrastFilterFactory
 
 class ConvolutionFilterFactory(IConvolutionFilterFactory):
     """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
@@ -25983,7 +25983,7 @@ class ConvolutionFilterFactory(IConvolutionFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ConvolutionFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64B119DD-A78C-4815-A9DD-4D77B310D28D}", ConvolutionFilterFactory)
-
+agcls.AgTypeNameMap["ConvolutionFilterFactory"] = ConvolutionFilterFactory
 
 class EdgeDetectFilterFactory(IEdgeDetectFilterFactory):
     """Applies a convolution filter to detect edges in the source raster."""
@@ -26004,7 +26004,7 @@ class EdgeDetectFilterFactory(IEdgeDetectFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in EdgeDetectFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E14D1269-91FA-4A83-92A7-F5117E1E9DE9}", EdgeDetectFilterFactory)
-
+agcls.AgTypeNameMap["EdgeDetectFilterFactory"] = EdgeDetectFilterFactory
 
 class FilteringRasterStreamFactory(IFilteringRasterStreamFactory):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
@@ -26025,7 +26025,7 @@ class FilteringRasterStreamFactory(IFilteringRasterStreamFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in FilteringRasterStreamFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B9D2671-491B-4D5B-8410-B8A8ED881970}", FilteringRasterStreamFactory)
-
+agcls.AgTypeNameMap["FilteringRasterStreamFactory"] = FilteringRasterStreamFactory
 
 class FlipFilterFactory(IFlipFilterFactory):
     """Flips the source raster along the given flip axis."""
@@ -26046,7 +26046,7 @@ class FlipFilterFactory(IFlipFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in FlipFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0C012B18-9467-42CE-8EC5-E7B70012BA73}", FlipFilterFactory)
-
+agcls.AgTypeNameMap["FlipFilterFactory"] = FlipFilterFactory
 
 class GammaCorrectionFilterFactory(IGammaCorrectionFilterFactory):
     """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
@@ -26067,7 +26067,7 @@ class GammaCorrectionFilterFactory(IGammaCorrectionFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in GammaCorrectionFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E09D6B71-6E82-45A1-A208-B761D82266E9}", GammaCorrectionFilterFactory)
-
+agcls.AgTypeNameMap["GammaCorrectionFilterFactory"] = GammaCorrectionFilterFactory
 
 class GaussianBlurFilterFactory(IGaussianBlurFilterFactory):
     """Applies a convolution filter to blur the source raster using the Gaussian function."""
@@ -26088,7 +26088,7 @@ class GaussianBlurFilterFactory(IGaussianBlurFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in GaussianBlurFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B98AC54E-10BB-4E81-9766-806A2F0EA8C4}", GaussianBlurFilterFactory)
-
+agcls.AgTypeNameMap["GaussianBlurFilterFactory"] = GaussianBlurFilterFactory
 
 class GradientDetectFilterFactory(IGradientDetectFilterFactory):
     """Applies a convolution filter to detect gradients in the source raster."""
@@ -26109,7 +26109,7 @@ class GradientDetectFilterFactory(IGradientDetectFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in GradientDetectFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B88D6D7C-4807-4905-B52F-DF054A4AD186}", GradientDetectFilterFactory)
-
+agcls.AgTypeNameMap["GradientDetectFilterFactory"] = GradientDetectFilterFactory
 
 class Jpeg2000WriterInitializer(IJpeg2000WriterInitializer):
     """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
@@ -26130,7 +26130,7 @@ class Jpeg2000WriterInitializer(IJpeg2000WriterInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in Jpeg2000WriterInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F29EA41-17E7-4252-B419-B2573C015DC6}", Jpeg2000WriterInitializer)
-
+agcls.AgTypeNameMap["Jpeg2000WriterInitializer"] = Jpeg2000WriterInitializer
 
 class LevelsFilterFactory(ILevelsFilterFactory):
     """Adjusts the band levels of the source raster linearly."""
@@ -26151,7 +26151,7 @@ class LevelsFilterFactory(ILevelsFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in LevelsFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{69CBD183-936F-480E-B0FF-4D140DDC9232}", LevelsFilterFactory)
-
+agcls.AgTypeNameMap["LevelsFilterFactory"] = LevelsFilterFactory
 
 class ProjectionRasterStreamPluginActivatorFactory(IProjectionRasterStreamPluginActivatorFactory):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
@@ -26172,7 +26172,7 @@ class ProjectionRasterStreamPluginActivatorFactory(IProjectionRasterStreamPlugin
             raise STKAttributeError(attrname + " is not a recognized attribute in ProjectionRasterStreamPluginActivatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51F36FBA-E366-4A66-A452-FEE99786ED2E}", ProjectionRasterStreamPluginActivatorFactory)
-
+agcls.AgTypeNameMap["ProjectionRasterStreamPluginActivatorFactory"] = ProjectionRasterStreamPluginActivatorFactory
 
 class RasterFactory(IRasterFactory):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
@@ -26193,7 +26193,7 @@ class RasterFactory(IRasterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in RasterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{390E63D5-4C79-48B3-98CD-55B1983F859A}", RasterFactory)
-
+agcls.AgTypeNameMap["RasterFactory"] = RasterFactory
 
 class RasterAttributesFactory(IRasterAttributesFactory):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
@@ -26214,7 +26214,7 @@ class RasterAttributesFactory(IRasterAttributesFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in RasterAttributesFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{94CA0CCD-4D74-47BD-8E5F-E2D96403DACF}", RasterAttributesFactory)
-
+agcls.AgTypeNameMap["RasterAttributesFactory"] = RasterAttributesFactory
 
 class RotateFilterFactory(IRotateFilterFactory):
     """Rotates the source raster clockwise by the specified angle."""
@@ -26235,7 +26235,7 @@ class RotateFilterFactory(IRotateFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in RotateFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{12C8E395-4E61-4484-A97D-33742C841A6D}", RotateFilterFactory)
-
+agcls.AgTypeNameMap["RotateFilterFactory"] = RotateFilterFactory
 
 class SequenceFilterFactory(ISequenceFilterFactory):
     """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
@@ -26256,7 +26256,7 @@ class SequenceFilterFactory(ISequenceFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in SequenceFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4CC16FDF-B6CE-4C06-B47F-AD7812566215}", SequenceFilterFactory)
-
+agcls.AgTypeNameMap["SequenceFilterFactory"] = SequenceFilterFactory
 
 class SharpenFilterFactory(ISharpenFilterFactory):
     """Applies a convolution filter to increase the sharpness of the source raster."""
@@ -26277,7 +26277,7 @@ class SharpenFilterFactory(ISharpenFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in SharpenFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{98011831-2D99-4FED-AC53-DFB4090D132C}", SharpenFilterFactory)
-
+agcls.AgTypeNameMap["SharpenFilterFactory"] = SharpenFilterFactory
 
 class VideoStreamFactory(IVideoStreamFactory):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
@@ -26298,7 +26298,7 @@ class VideoStreamFactory(IVideoStreamFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VideoStreamFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A977E2D9-785B-4AB0-B01F-927486E3170B}", VideoStreamFactory)
-
+agcls.AgTypeNameMap["VideoStreamFactory"] = VideoStreamFactory
 
 class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
@@ -26319,7 +26319,7 @@ class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in MarkerBatchPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E2AC5708-26C2-469F-AE1C-C48AED18565E}", MarkerBatchPrimitiveFactory)
-
+agcls.AgTypeNameMap["MarkerBatchPrimitiveFactory"] = MarkerBatchPrimitiveFactory
 
 class MarkerBatchPrimitiveOptionalParametersFactory(IMarkerBatchPrimitiveOptionalParametersFactory):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
@@ -26340,7 +26340,7 @@ class MarkerBatchPrimitiveOptionalParametersFactory(IMarkerBatchPrimitiveOptiona
             raise STKAttributeError(attrname + " is not a recognized attribute in MarkerBatchPrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{120D8907-DB34-481B-93B1-C61A4C5C61EF}", MarkerBatchPrimitiveOptionalParametersFactory)
-
+agcls.AgTypeNameMap["MarkerBatchPrimitiveOptionalParametersFactory"] = MarkerBatchPrimitiveOptionalParametersFactory
 
 class MaximumCountPathPrimitiveUpdatePolicyFactory(IMaximumCountPathPrimitiveUpdatePolicyFactory):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
@@ -26361,7 +26361,7 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(IMaximumCountPathPrimitiveUpd
             raise STKAttributeError(attrname + " is not a recognized attribute in MaximumCountPathPrimitiveUpdatePolicyFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C3F59BCB-635A-4E50-B5AA-269CD0380069}", MaximumCountPathPrimitiveUpdatePolicyFactory)
-
+agcls.AgTypeNameMap["MaximumCountPathPrimitiveUpdatePolicyFactory"] = MaximumCountPathPrimitiveUpdatePolicyFactory
 
 class ModelPrimitiveFactory(IModelPrimitiveFactory):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
@@ -26382,7 +26382,7 @@ class ModelPrimitiveFactory(IModelPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ModelPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{90BABAB0-7D1E-420F-B91F-46E2E5B31763}", ModelPrimitiveFactory)
-
+agcls.AgTypeNameMap["ModelPrimitiveFactory"] = ModelPrimitiveFactory
 
 class PathPrimitiveFactory(IPathPrimitiveFactory):
     """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
@@ -26403,7 +26403,7 @@ class PathPrimitiveFactory(IPathPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in PathPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1847AEAB-C6B6-4561-BBDB-D979A443CCF0}", PathPrimitiveFactory)
-
+agcls.AgTypeNameMap["PathPrimitiveFactory"] = PathPrimitiveFactory
 
 class PixelSizeDisplayConditionFactory(IPixelSizeDisplayConditionFactory):
     """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
@@ -26424,7 +26424,7 @@ class PixelSizeDisplayConditionFactory(IPixelSizeDisplayConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in PixelSizeDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{52EC4EAD-B9A0-4940-BAE8-BD115805BB46}", PixelSizeDisplayConditionFactory)
-
+agcls.AgTypeNameMap["PixelSizeDisplayConditionFactory"] = PixelSizeDisplayConditionFactory
 
 class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
@@ -26445,7 +26445,7 @@ class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in PointBatchPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B497A3DE-DF9F-4EFD-8CB8-2767415F4889}", PointBatchPrimitiveFactory)
-
+agcls.AgTypeNameMap["PointBatchPrimitiveFactory"] = PointBatchPrimitiveFactory
 
 class PointBatchPrimitiveOptionalParametersFactory(IPointBatchPrimitiveOptionalParametersFactory):
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
@@ -26466,7 +26466,7 @@ class PointBatchPrimitiveOptionalParametersFactory(IPointBatchPrimitiveOptionalP
             raise STKAttributeError(attrname + " is not a recognized attribute in PointBatchPrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{aa54a6e1-f927-48b6-8a29-7b718bb0cb7b}", PointBatchPrimitiveOptionalParametersFactory)
-
+agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParametersFactory"] = PointBatchPrimitiveOptionalParametersFactory
 
 class PolylinePrimitiveFactory(IPolylinePrimitiveFactory):
     """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
@@ -26487,7 +26487,7 @@ class PolylinePrimitiveFactory(IPolylinePrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in PolylinePrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{825E24B9-F4B9-4EF4-8F98-A8BD8F7A6C4B}", PolylinePrimitiveFactory)
-
+agcls.AgTypeNameMap["PolylinePrimitiveFactory"] = PolylinePrimitiveFactory
 
 class PolylinePrimitiveOptionalParametersFactory(IPolylinePrimitiveOptionalParametersFactory):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
@@ -26508,7 +26508,7 @@ class PolylinePrimitiveOptionalParametersFactory(IPolylinePrimitiveOptionalParam
             raise STKAttributeError(attrname + " is not a recognized attribute in PolylinePrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2ff372bc-ad1c-4fa2-82e9-75c9b407f19c}", PolylinePrimitiveOptionalParametersFactory)
-
+agcls.AgTypeNameMap["PolylinePrimitiveOptionalParametersFactory"] = PolylinePrimitiveOptionalParametersFactory
 
 class RasterImageGlobeOverlayFactory(IRasterImageGlobeOverlayFactory):
     """A globe image overlay for handling rasters."""
@@ -26529,7 +26529,7 @@ class RasterImageGlobeOverlayFactory(IRasterImageGlobeOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in RasterImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{73782D85-0307-4B70-B793-2930A8880AEE}", RasterImageGlobeOverlayFactory)
-
+agcls.AgTypeNameMap["RasterImageGlobeOverlayFactory"] = RasterImageGlobeOverlayFactory
 
 class RhumbLineInterpolatorFactory(IRhumbLineInterpolatorFactory):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
@@ -26550,7 +26550,7 @@ class RhumbLineInterpolatorFactory(IRhumbLineInterpolatorFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in RhumbLineInterpolatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B6D54BD-A46B-4770-A936-23F247B6F038}", RhumbLineInterpolatorFactory)
-
+agcls.AgTypeNameMap["RhumbLineInterpolatorFactory"] = RhumbLineInterpolatorFactory
 
 class SceneDisplayConditionFactory(ISceneDisplayConditionFactory):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
@@ -26571,7 +26571,7 @@ class SceneDisplayConditionFactory(ISceneDisplayConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in SceneDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{19159366-8E64-467F-922B-739678DA01C2}", SceneDisplayConditionFactory)
-
+agcls.AgTypeNameMap["SceneDisplayConditionFactory"] = SceneDisplayConditionFactory
 
 class SceneManagerInitializer(ISceneManagerInitializer):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
@@ -26592,7 +26592,7 @@ class SceneManagerInitializer(ISceneManagerInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in SceneManagerInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{956AD97D-96ED-4898-89BE-08AF68BF1EA6}", SceneManagerInitializer)
-
+agcls.AgTypeNameMap["SceneManagerInitializer"] = SceneManagerInitializer
 
 class ScreenOverlayFactory(IScreenOverlayFactory):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
@@ -26613,7 +26613,7 @@ class ScreenOverlayFactory(IScreenOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScreenOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C2F5A068-E483-4CCF-819D-FBB25DC85A71}", ScreenOverlayFactory)
-
+agcls.AgTypeNameMap["ScreenOverlayFactory"] = ScreenOverlayFactory
 
 class SolidPrimitiveFactory(ISolidPrimitiveFactory):
     """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
@@ -26634,7 +26634,7 @@ class SolidPrimitiveFactory(ISolidPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in SolidPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9F23AC4E-DCB0-45B1-BE07-E4BEBA9B4AFF}", SolidPrimitiveFactory)
-
+agcls.AgTypeNameMap["SolidPrimitiveFactory"] = SolidPrimitiveFactory
 
 class SurfaceMeshPrimitiveFactory(ISurfaceMeshPrimitiveFactory):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
@@ -26655,7 +26655,7 @@ class SurfaceMeshPrimitiveFactory(ISurfaceMeshPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in SurfaceMeshPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9B40191-F8D7-46D8-B217-30C1C41E2369}", SurfaceMeshPrimitiveFactory)
-
+agcls.AgTypeNameMap["SurfaceMeshPrimitiveFactory"] = SurfaceMeshPrimitiveFactory
 
 class TerrainOverlayInitializer(ITerrainOverlayInitializer):
     """A globe overlay which shows terrain."""
@@ -26676,7 +26676,7 @@ class TerrainOverlayInitializer(ITerrainOverlayInitializer):
             raise STKAttributeError(attrname + " is not a recognized attribute in TerrainOverlayInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D76F5E3-BACE-4CA4-9C4D-9F14464ACAFD}", TerrainOverlayInitializer)
-
+agcls.AgTypeNameMap["TerrainOverlayInitializer"] = TerrainOverlayInitializer
 
 class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
     """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
@@ -26697,7 +26697,7 @@ class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextBatchPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{246D4DAA-4CD0-4E10-98C7-791A17E5A736}", TextBatchPrimitiveFactory)
-
+agcls.AgTypeNameMap["TextBatchPrimitiveFactory"] = TextBatchPrimitiveFactory
 
 class TextBatchPrimitiveOptionalParametersFactory(ITextBatchPrimitiveOptionalParametersFactory):
     """Optional per-string and per-batch parameters for text batch primitive..."""
@@ -26718,7 +26718,7 @@ class TextBatchPrimitiveOptionalParametersFactory(ITextBatchPrimitiveOptionalPar
             raise STKAttributeError(attrname + " is not a recognized attribute in TextBatchPrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A3C12306-7202-468F-B0A5-306D98A7E2BC}", TextBatchPrimitiveOptionalParametersFactory)
-
+agcls.AgTypeNameMap["TextBatchPrimitiveOptionalParametersFactory"] = TextBatchPrimitiveOptionalParametersFactory
 
 class TextOverlayFactory(ITextOverlayFactory):
     """A rectangular overlay that contains text."""
@@ -26739,7 +26739,7 @@ class TextOverlayFactory(ITextOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5DFA35A5-B53D-4B58-A32E-B2B2690D3104}", TextOverlayFactory)
-
+agcls.AgTypeNameMap["TextOverlayFactory"] = TextOverlayFactory
 
 class TextureMatrixFactory(ITextureMatrixFactory):
     """A 4 by 4 matrix applied to a texture coordinate."""
@@ -26760,7 +26760,7 @@ class TextureMatrixFactory(ITextureMatrixFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextureMatrixFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0169DB20-811D-4DF6-8EDF-51C47B485D6B}", TextureMatrixFactory)
-
+agcls.AgTypeNameMap["TextureMatrixFactory"] = TextureMatrixFactory
 
 class TextureScreenOverlayFactory(ITextureScreenOverlayFactory):
     """A rectangular overlay that can be assigned a texture."""
@@ -26781,7 +26781,7 @@ class TextureScreenOverlayFactory(ITextureScreenOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TextureScreenOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C4060E65-DD40-40CE-B462-55E08E6D63AF}", TextureScreenOverlayFactory)
-
+agcls.AgTypeNameMap["TextureScreenOverlayFactory"] = TextureScreenOverlayFactory
 
 class TimeIntervalDisplayConditionFactory(ITimeIntervalDisplayConditionFactory):
     """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
@@ -26802,7 +26802,7 @@ class TimeIntervalDisplayConditionFactory(ITimeIntervalDisplayConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeIntervalDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{526637D4-DD61-4B7D-BAE9-6FEF3673BF5D}", TimeIntervalDisplayConditionFactory)
-
+agcls.AgTypeNameMap["TimeIntervalDisplayConditionFactory"] = TimeIntervalDisplayConditionFactory
 
 class TriangleMeshPrimitiveFactory(ITriangleMeshPrimitiveFactory):
     """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
@@ -26823,7 +26823,7 @@ class TriangleMeshPrimitiveFactory(ITriangleMeshPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TriangleMeshPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D904C0D6-FEAE-4E13-9BBC-98F22CC2F0AF}", TriangleMeshPrimitiveFactory)
-
+agcls.AgTypeNameMap["TriangleMeshPrimitiveFactory"] = TriangleMeshPrimitiveFactory
 
 class TriangleMeshPrimitiveOptionalParametersFactory(ITriangleMeshPrimitiveOptionalParametersFactory):
     """Optional parameters for triangle mesh primitive..."""
@@ -26844,7 +26844,7 @@ class TriangleMeshPrimitiveOptionalParametersFactory(ITriangleMeshPrimitiveOptio
             raise STKAttributeError(attrname + " is not a recognized attribute in TriangleMeshPrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D9FB947-B9EB-4964-8FD8-6FF54D734BD8}", TriangleMeshPrimitiveOptionalParametersFactory)
-
+agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParametersFactory"] = TriangleMeshPrimitiveOptionalParametersFactory
 
 class VectorPrimitiveFactory(IVectorPrimitiveFactory):
     """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
@@ -26865,7 +26865,7 @@ class VectorPrimitiveFactory(IVectorPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{380CA28E-1D09-4F5B-9341-6E96BA4CACCE}", VectorPrimitiveFactory)
-
+agcls.AgTypeNameMap["VectorPrimitiveFactory"] = VectorPrimitiveFactory
 
 
 ################################################################################

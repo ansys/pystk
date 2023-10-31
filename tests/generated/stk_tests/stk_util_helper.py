@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from logger import *
@@ -18,12 +19,12 @@ class STKUtilHelper(object):
             def action1():
                 comp.name = "Test"
 
-            TryCatchAssertBlock.DoAssert("", action1)
+            TryCatchAssertBlock.DoAssert(action1)
 
             def action2():
                 comp.user_comment = "Test"
 
-            TryCatchAssertBlock.DoAssert("", action2)
+            TryCatchAssertBlock.DoAssert(action2)
             desc: str = comp.description
             readOnly: bool = comp.is_read_only()
 
@@ -46,16 +47,16 @@ class STKUtilHelper(object):
                 clone: typing.Any = cloneable.clone_object()
 
     @staticmethod
-    def TestDoublesCollection(dc: "IDoublesCollection", value: float, min: float, max: float):
+    def TestDoublesCollection(dc: "DoublesCollection", value: float, min: float, max: float):
         def action3():
             dc.add((min - 1e-06))
 
-        TryCatchAssertBlock.DoAssert("", action3)
+        TryCatchAssertBlock.DoAssert(action3)
 
         def action4():
             dc.add((max + 1e-06))
 
-        TryCatchAssertBlock.DoAssert("", action4)
+        TryCatchAssertBlock.DoAssert(action4)
 
         origCount: int = dc.count
         arDoubles = dc.to_array()  # save off the doubles
@@ -64,7 +65,7 @@ class STKUtilHelper(object):
             def action5():
                 dc.remove_at(dc.count)
 
-            TryCatchAssertBlock.DoAssert("", action5)
+            TryCatchAssertBlock.DoAssert(action5)
 
             dHold: float = dc[0]
             dc.remove_at(0)
@@ -81,7 +82,7 @@ class STKUtilHelper(object):
             def action6():
                 dc.set_at(dc.count, value)
 
-            TryCatchAssertBlock.DoAssert("", action6)
+            TryCatchAssertBlock.DoAssert(action6)
 
             found: bool = False
             d: float

@@ -251,7 +251,7 @@ class IUiToolbarCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrCaption:typing.Any) -> "IUiToolbar":
+    def item(self, indexOrCaption:typing.Any) -> "UiToolbar":
         """Retrieves a toolbar object."""
         with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
@@ -272,21 +272,21 @@ class IUiToolbarCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def get_toolbar_by_id(self, id:int) -> "IUiToolbar":
+    def get_toolbar_by_id(self, id:int) -> "UiToolbar":
         """Returns a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object."""
         with agmarshall.LONG_arg(id) as arg_id, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_toolbar_by_id"](arg_id.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IUiToolbar":
+    def get_item_by_index(self, index:int) -> "UiToolbar":
         """Retrieves a toolbar object based on the index in the collection."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def get_item_by_name(self, name:str) -> "IUiToolbar":
+    def get_item_by_name(self, name:str) -> "UiToolbar":
         """Retrieves a toolbar object based on the name of the Toolbar in the collection."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -504,7 +504,7 @@ class IUiWindow(object):
             return arg_pVal.python_val
 
     @property
-    def toolbars(self) -> "IUiToolbarCollection":
+    def toolbars(self) -> "UiToolbarCollection":
         """Returns the window's toolbar collection."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_toolbars"](byref(arg_ppVal.COM_val)))
@@ -585,7 +585,7 @@ class IUiWindowsCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrCaption:typing.Any) -> "IUiWindow":
+    def item(self, indexOrCaption:typing.Any) -> "UiWindow":
         """Retrieves a window object."""
         with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
@@ -604,7 +604,7 @@ class IUiWindowsCollection(object):
         with agmarshall.AgEnum_arg(ARRANGE_STYLE, arrangeStyle) as arg_arrangeStyle:
             agcls.evaluate_hresult(self.__dict__["_arrange"](arg_arrangeStyle.COM_val))
 
-    def add(self, pluginID:str, initData:typing.Any) -> "IUiWindow":
+    def add(self, pluginID:str, initData:typing.Any) -> "UiWindow":
         """Creates a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
         with agmarshall.BSTR_arg(pluginID) as arg_pluginID, \
              agmarshall.VARIANT_arg(initData) as arg_initData, \
@@ -619,14 +619,14 @@ class IUiWindowsCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IUiWindow":
+    def get_item_by_index(self, index:int) -> "UiWindow":
         """Retrieves a window object by index in collection."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def get_item_by_name(self, name:str) -> "IUiWindow":
+    def get_item_by_name(self, name:str) -> "UiWindow":
         """Retrieves a window object by name of window object."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -749,7 +749,7 @@ class UiWindowsCollection(IUiWindowsCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowsCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82F7DB8A-A761-4C3E-95DF-37300A3738CB}", UiWindowsCollection)
-
+agcls.AgTypeNameMap["UiWindowsCollection"] = UiWindowsCollection
 
 class UiWindow(IUiWindow):
     """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
@@ -770,7 +770,7 @@ class UiWindow(IUiWindow):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindow.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BD72ECC3-A4A2-42FB-95AC-AE25633BB9F6}", UiWindow)
-
+agcls.AgTypeNameMap["UiWindow"] = UiWindow
 
 class UiToolbar(IUiToolbar):
     """Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar."""
@@ -791,7 +791,7 @@ class UiToolbar(IUiToolbar):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiToolbar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C20AB584-ABCC-4BF3-96D4-D2A4AA880FBB}", UiToolbar)
-
+agcls.AgTypeNameMap["UiToolbar"] = UiToolbar
 
 class UiToolbarCollection(IUiToolbarCollection):
     """Provides methods and properties to manage the toolbars."""
@@ -812,7 +812,7 @@ class UiToolbarCollection(IUiToolbarCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiToolbarCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{28F000E7-D13E-485E-8484-0BCB359BBC55}", UiToolbarCollection)
-
+agcls.AgTypeNameMap["UiToolbarCollection"] = UiToolbarCollection
 
 class UiWindowMapObject(IUiWindowMapObject):
     """Provides methods and properties to manipulate the 2D map."""
@@ -833,7 +833,7 @@ class UiWindowMapObject(IUiWindowMapObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowMapObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D20C704C-0763-4CC9-9485-A2EA23C84E6B}", UiWindowMapObject)
-
+agcls.AgTypeNameMap["UiWindowMapObject"] = UiWindowMapObject
 
 class UiWindowGlobeObject(IUiWindowGlobeObject):
     """Provides methods and properties to manipulate the 3D globe."""
@@ -854,7 +854,7 @@ class UiWindowGlobeObject(IUiWindowGlobeObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowGlobeObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F69FA5F-30E8-4A07-9D8C-1AD163A3DE0D}", UiWindowGlobeObject)
-
+agcls.AgTypeNameMap["UiWindowGlobeObject"] = UiWindowGlobeObject
 
 
 ################################################################################

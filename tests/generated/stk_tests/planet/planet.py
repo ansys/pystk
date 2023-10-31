@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from assert_extension import *
@@ -19,7 +20,7 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("PlanetTests", "PlanetTests.sc"))
-            EarlyBoundTests.AG_PL = clr.Convert(TestBase.Application.current_scenario.children["Planet1"], IPlanet)
+            EarlyBoundTests.AG_PL = clr.Convert(TestBase.Application.current_scenario.children["Planet1"], Planet)
 
         except Exception as e:
             raise e
@@ -35,17 +36,17 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_PL: "IPlanet" = None
+    AG_PL: "Planet" = None
     # endregion
 
     # region CommonTasks
     def test_CommonTasks(self):
-        file: "IPlanetPositionFile" = EarlyBoundTests.AG_PL.common_tasks.set_position_source_file(
+        file: "PlanetPositionFile" = EarlyBoundTests.AG_PL.common_tasks.set_position_source_file(
             TestBase.GetScenarioFile("Venus.pe")
         )
         Assert.assertEqual("Venus.pe", file.filename)
 
-        cb: "IPlanetPositionCentralBody" = EarlyBoundTests.AG_PL.common_tasks.set_position_source_central_body(
+        cb: "PlanetPositionCentralBody" = EarlyBoundTests.AG_PL.common_tasks.set_position_source_central_body(
             "Jupiter", EPHEM_SOURCE_TYPE.DEFAULT
         )
         Assert.assertEqual(EPHEM_SOURCE_TYPE.DEFAULT, cb.ephem_source)
@@ -63,8 +64,8 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
         Assert.assertEqual(PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY, EarlyBoundTests.AG_PL.position_source)
         # CentralBody
-        oBody: "IPlanetPositionCentralBody" = clr.Convert(
-            EarlyBoundTests.AG_PL.position_source_data, IPlanetPositionCentralBody
+        oBody: "PlanetPositionCentralBody" = clr.Convert(
+            EarlyBoundTests.AG_PL.position_source_data, PlanetPositionCentralBody
         )
         Assert.assertIsNotNone(oBody)
         TestBase.logger.WriteLine6("\tThe current Radius is: {0}", oBody.radius)
@@ -100,14 +101,14 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_FILE
         TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
         Assert.assertEqual(PLANET_POSITION_SOURCE_TYPE.POSITION_FILE, EarlyBoundTests.AG_PL.position_source)
-        file: "IPlanetPositionFile" = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, IPlanetPositionFile)
+        file: "PlanetPositionFile" = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, PlanetPositionFile)
         Assert.assertIsNotNone(file)
         TestBase.logger.WriteLine5("The current Filename is: {0}", file.filename)
         file.filename = TestBase.GetScenarioFile("Venus.pe")
         TestBase.logger.WriteLine5("The new Filename is: {0}", file.filename)
         # Restore the planet name to its original value
         EarlyBoundTests.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
-        oBody = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, IPlanetPositionCentralBody)
+        oBody = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, PlanetPositionCentralBody)
         Assert.assertIsNotNone(oBody)
         oBody.auto_rename = False
         (clr.Convert(EarlyBoundTests.AG_PL, IStkObject)).instance_name = "Planet1"
@@ -128,12 +129,12 @@ class EarlyBoundTests(TestBase):
     def test_PlanetRadius(self):
         initialDistanceUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DistanceUnit")
         try:
-            tempPlanet: "IPlanet" = clr.Convert(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "TempPlanet"), IPlanet
+            tempPlanet: "Planet" = clr.Convert(
+                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "TempPlanet"), Planet
             )
             tempPlanet.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
-            centralBody: "IPlanetPositionCentralBody" = clr.Convert(
-                tempPlanet.position_source_data, IPlanetPositionCentralBody
+            centralBody: "PlanetPositionCentralBody" = clr.Convert(
+                tempPlanet.position_source_data, PlanetPositionCentralBody
             )
             centralBody.auto_rename = False
             centralBody.central_body = "Sun"
@@ -167,7 +168,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- BEGIN -----")
-        gfx: "IPlanetGraphics" = EarlyBoundTests.AG_PL.graphics
+        gfx: "PlanetGraphics" = EarlyBoundTests.AG_PL.graphics
         Assert.assertIsNotNone(gfx)
         # IsObjectGraphicsVisible
         TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
@@ -182,7 +183,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new Color is: {0}", gfx.color)
         AssertEx.AreEqual(Color.FromArgb(1193046), gfx.color)
         # Marker Style
-        scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
+        scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         arMarkers = scenario.graphics_3d.available_marker_types()
         TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.marker_style)
         gfx.marker_style = str(arMarkers[0])
@@ -202,12 +203,12 @@ class EarlyBoundTests(TestBase):
         def action1():
             gfx.line_width = clr.Convert((-1), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action1)
+        TryCatchAssertBlock.DoAssert(action1)
 
         def action2():
             gfx.line_width = clr.Convert((11), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action2)
+        TryCatchAssertBlock.DoAssert(action2)
 
         # Inherit from 2D
         TestBase.logger.WriteLine4("The current Inherit is: {0}", gfx.inherit)
@@ -317,7 +318,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            oODD: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, IPlanetOrbitDisplayTime)
+            oODD: "PlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, PlanetOrbitDisplayTime)
             Assert.assertIsNotNone(oODD)
             oODD.time = 12345.6789
 
@@ -337,7 +338,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(PLANET_ORBIT_DISPLAY_TYPE.DISPLAY_ONE_ORBIT, gfx.orbit_display)
         try:
             bCaught = False
-            oODD: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, IPlanetOrbitDisplayTime)
+            oODD: "PlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, PlanetOrbitDisplayTime)
             Assert.assertIsNotNone(oODD)
             oODD.time = 12345.6789
 
@@ -351,7 +352,7 @@ class EarlyBoundTests(TestBase):
         gfx.orbit_display = PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
         TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.orbit_display)
         Assert.assertEqual(PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME, gfx.orbit_display)
-        oODT: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, IPlanetOrbitDisplayTime)
+        oODT: "PlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, PlanetOrbitDisplayTime)
         Assert.assertIsNotNone(oODT)
         TestBase.logger.WriteLine6("The current Time is: {0}", oODT.time)
         oODT.time = 12345.6789
@@ -366,7 +367,7 @@ class EarlyBoundTests(TestBase):
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
         # VO
-        vo: "IPlanetGraphics3D" = EarlyBoundTests.AG_PL.graphics_3d
+        vo: "PlanetGraphics3D" = EarlyBoundTests.AG_PL.graphics_3d
         Assert.assertIsNotNone(vo)
         # InheritFrom2dGfx (true)
         TestBase.logger.WriteLine4("\tThe current InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
@@ -378,31 +379,31 @@ class EarlyBoundTests(TestBase):
             vo.inertial_position_visible = False
 
         # InertialPositionVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action3)
+        TryCatchAssertBlock.DoAssert(action3)
 
         def action4():
             vo.position_label_visible = False
 
         # PositionLabelVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action4)
+        TryCatchAssertBlock.DoAssert(action4)
 
         def action5():
             vo.sub_planet_label_visible = False
 
         # SubPlanetLabelVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action5)
+        TryCatchAssertBlock.DoAssert(action5)
 
         def action6():
             vo.sub_planet_point_visible = False
 
         # SubPlanetPointVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action6)
+        TryCatchAssertBlock.DoAssert(action6)
 
         def action7():
             vo.orbit_visible = False
 
         # OrbitVisible (readonly)
-        TryCatchAssertBlock.DoAssert("The property should be read-only.", action7)
+        TryCatchAssertBlock.DoAssert(action7)
         # InheritFrom2dGfx (false)
         vo.inherit_from_2d_graphics_2d = False
         TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)

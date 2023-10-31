@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assert_extension import *
 from assertion_harness import *
@@ -8,17 +9,17 @@ from ansys.stk.core.stkutil import *
 
 
 class FOMHelper(object):
-    def __init__(self, oRoot: "IStkObjectRoot"):
+    def __init__(self, oRoot: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "IStkObjectRoot" = oRoot
+        self.m_oRoot: "StkObjectRoot" = oRoot
 
     # region Definition
     def Definition(
         self,
         oDefinition: "IFigureOfMeritDefinition",
         eType: "FIGURE_OF_MERIT_DEFINITION_TYPE",
-        assets: "ICoverageAssetListCollection",
+        assets: "CoverageAssetListCollection",
     ):
         Assert.assertIsNotNone(oDefinition)
 
@@ -28,8 +29,8 @@ class FOMHelper(object):
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # AccessConstraint
-            oConstraint: "IFigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionAccessConstraint
+            oConstraint: "FigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionAccessConstraint
             )
             Assert.assertIsNotNone(oConstraint)
             # AcrossAssets
@@ -47,7 +48,7 @@ class FOMHelper(object):
             def action1():
                 oConstraint.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.UNKNOWN
 
-            TryCatchAssertBlock.DoAssert("", action1)
+            TryCatchAssertBlock.DoAssert(action1)
 
             # TimeStep
             self.m_logger.WriteLine6("\t\t\tThe current TimeStep is: {0}", oConstraint.time_step)
@@ -59,13 +60,13 @@ class FOMHelper(object):
             def action2():
                 oConstraint.time_step = 315576001
 
-            TryCatchAssertBlock.DoAssert("", action2)
+            TryCatchAssertBlock.DoAssert(action2)
             oConstraint.time_step = 0.1  # min. 0.1
 
             def action3():
                 oConstraint.time_step = 0.099
 
-            TryCatchAssertBlock.DoAssert("", action3)
+            TryCatchAssertBlock.DoAssert(action3)
 
             # ConstraintName and Constraint
             oConstraint.constraint = "AngularRate"
@@ -78,7 +79,7 @@ class FOMHelper(object):
             def action4():
                 oConstraint.constraint_name = FIGURE_OF_MERIT_CONSTRAINT_NAME.UNKNOWN
 
-            TryCatchAssertBlock.DoAssert("", action4)
+            TryCatchAssertBlock.DoAssert(action4)
         elif (
             (
                 (
@@ -92,8 +93,8 @@ class FOMHelper(object):
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION:
-            oSeparation: "IFigureOfMeritDefinitionAccessSeparation" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionAccessSeparation
+            oSeparation: "FigureOfMeritDefinitionAccessSeparation" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionAccessSeparation
             )
             Assert.assertIsNotNone(oSeparation)
             # MinMaxData
@@ -109,12 +110,12 @@ class FOMHelper(object):
             # DilutionOfPrecision
             self.DilutionOfPrecision(clr.CastAs(oDefinition, IFigureOfMeritDefinitionDilutionOfPrecision))
             # NavigationAccuracy
-            oNA: "IFigureOfMeritDefinitionNavigationAccuracy" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionNavigationAccuracy
+            oNA: "FigureOfMeritDefinitionNavigationAccuracy" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionNavigationAccuracy
             )
             Assert.assertIsNotNone(oNA)
             # Uncertainties
-            oUncertainties: "IFigureOfMeritUncertainties" = oNA.uncertainties
+            oUncertainties: "FigureOfMeritUncertainties" = oNA.uncertainties
             Assert.assertIsNotNone(oUncertainties)
             # ReceiverRange
             self.m_logger.WriteLine6("\t\t\tThe current ReceiverRange is: {0}", oUncertainties.receiver_range)
@@ -125,11 +126,11 @@ class FOMHelper(object):
             def action5():
                 oUncertainties.receiver_range = -1.2
 
-            TryCatchAssertBlock.DoAssert("", action5)
+            TryCatchAssertBlock.DoAssert(action5)
             # AssetList (empty)
             assets.remove_all()
             Assert.assertEqual(0, assets.count)
-            oList: "IFigureOfMeritAssetListCollection" = oUncertainties.asset_list
+            oList: "FigureOfMeritAssetListCollection" = oUncertainties.asset_list
             Assert.assertIsNotNone(oList)
             self.m_logger.WriteLine3("\t\t\tThe current AssetList collection contains: {0} elements", oList.count)
             Assert.assertEqual(0, oList.count)
@@ -144,7 +145,7 @@ class FOMHelper(object):
             self.m_logger.WriteLine3("\t\t\tThe new AssetList collection contains: {0} elements", oList.count)
             Assert.assertEqual(1, oList.count)
             # _NewEnum
-            oElem: "IFigureOfMeritAssetListElement"
+            oElem: "FigureOfMeritAssetListElement"
             # _NewEnum
             for oElem in oList:
                 self.m_logger.WriteLine7(
@@ -152,7 +153,7 @@ class FOMHelper(object):
                 )
 
             # Item
-            assetListElement: "IFigureOfMeritAssetListElement" = oList[0]
+            assetListElement: "FigureOfMeritAssetListElement" = oList[0]
             Assert.assertIsNotNone(assetListElement)
             # MethodType
             self.m_logger.WriteLine6("\t\t\tThe current MethodType is: {0}", assetListElement.method_type)
@@ -161,8 +162,8 @@ class FOMHelper(object):
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
             Assert.assertEqual(FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.CONSTANT, assetListElement.method_type)
             # Method
-            oMC: "IFigureOfMeritNavigationAccuracyMethodConstant" = clr.CastAs(
-                assetListElement.method, IFigureOfMeritNavigationAccuracyMethodConstant
+            oMC: "FigureOfMeritNavigationAccuracyMethodConstant" = clr.CastAs(
+                assetListElement.method, FigureOfMeritNavigationAccuracyMethodConstant
             )
             Assert.assertIsNotNone(oMC)
             # Value
@@ -174,7 +175,7 @@ class FOMHelper(object):
             def action6():
                 oMC.value = -1.2
 
-            TryCatchAssertBlock.DoAssert("", action6)
+            TryCatchAssertBlock.DoAssert(action6)
             # SetMethodType (eFmNAConstant)
             assetListElement.method_type = FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.ELEVATION_ANGLE
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
@@ -182,8 +183,8 @@ class FOMHelper(object):
                 FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.ELEVATION_ANGLE, assetListElement.method_type
             )
             # Method
-            oMEA: "IFigureOfMeritNavigationAccuracyMethodElevationAngle" = clr.CastAs(
-                assetListElement.method, IFigureOfMeritNavigationAccuracyMethodElevationAngle
+            oMEA: "FigureOfMeritNavigationAccuracyMethodElevationAngle" = clr.CastAs(
+                assetListElement.method, FigureOfMeritNavigationAccuracyMethodElevationAngle
             )
             Assert.assertIsNotNone(oMEA)
             # Filename
@@ -196,12 +197,12 @@ class FOMHelper(object):
             def action7():
                 oMEA.filename = ""
 
-            TryCatchAssertBlock.DoAssert("", action7)
+            TryCatchAssertBlock.DoAssert(action7)
 
             def action8():
                 oMEA.filename = "InvalidFile.Name"
 
-            TryCatchAssertBlock.DoAssert("", action8)
+            TryCatchAssertBlock.DoAssert(action8)
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.RESPONSE_TIME:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
@@ -219,7 +220,7 @@ class FOMHelper(object):
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # RevisitTime
-            oTime: "IFigureOfMeritDefinitionRevisitTime" = clr.CastAs(oDefinition, IFigureOfMeritDefinitionRevisitTime)
+            oTime: "FigureOfMeritDefinitionRevisitTime" = clr.CastAs(oDefinition, FigureOfMeritDefinitionRevisitTime)
             Assert.assertIsNotNone(oTime)
             # MinAssets
             self.m_logger.WriteLine3("\t\t\tThe current MinAssets is: {0}", oTime.min_assets)
@@ -243,8 +244,8 @@ class FOMHelper(object):
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
 
             # SystemResponseTime
-            srt: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionSystemResponseTime
+            srt: "FigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionSystemResponseTime
             )
             Assert.assertIsNotNone(srt)
 
@@ -259,7 +260,7 @@ class FOMHelper(object):
             def action9():
                 srt.collection_time = -10
 
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action9)
+            TryCatchAssertBlock.DoAssert(action9)
 
             srt.commanding_time = 20
             Assert.assertEqual(20, srt.commanding_time)
@@ -267,7 +268,7 @@ class FOMHelper(object):
             def action10():
                 srt.commanding_time = -10
 
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action10)
+            TryCatchAssertBlock.DoAssert(action10)
 
             srt.command_perp_time = 30
             Assert.assertEqual(30, srt.command_perp_time)
@@ -275,7 +276,7 @@ class FOMHelper(object):
             def action11():
                 srt.command_perp_time = -10
 
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action11)
+            TryCatchAssertBlock.DoAssert(action11)
 
             srt.command_station_path = (
                 r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
@@ -294,7 +295,7 @@ class FOMHelper(object):
             def action12():
                 srt.command_station_path = r"bogus"
 
-            TryCatchAssertBlock.DoAssert("bogus CommandStationPath", action12)
+            TryCatchAssertBlock.DoAssert(action12)
 
             srt.downlink_time = 40
             Assert.assertEqual(40, srt.downlink_time)
@@ -302,7 +303,7 @@ class FOMHelper(object):
             def action13():
                 srt.downlink_time = -10
 
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action13)
+            TryCatchAssertBlock.DoAssert(action13)
 
             srt.post_collection_time = 50
             Assert.assertEqual(50, srt.post_collection_time)
@@ -310,7 +311,7 @@ class FOMHelper(object):
             def action14():
                 srt.post_collection_time = -10
 
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action14)
+            TryCatchAssertBlock.DoAssert(action14)
 
             srt.pre_collection_time = 60
             Assert.assertEqual(60, srt.pre_collection_time)
@@ -318,7 +319,7 @@ class FOMHelper(object):
             def action15():
                 srt.pre_collection_time = -10
 
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action15)
+            TryCatchAssertBlock.DoAssert(action15)
 
             srt.receive_station_path = (
                 r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
@@ -337,7 +338,7 @@ class FOMHelper(object):
             def action16():
                 srt.receive_station_path = r"bogus"
 
-            TryCatchAssertBlock.DoAssert("bogus ReceiveStationPath", action16)
+            TryCatchAssertBlock.DoAssert(action16)
 
             srt.time_step = 60
             Assert.assertEqual(60, srt.time_step)
@@ -345,13 +346,13 @@ class FOMHelper(object):
             def action17():
                 srt.time_step = -10
 
-            TryCatchAssertBlock.DoAssert("shouldn't allow negative", action17)
+            TryCatchAssertBlock.DoAssert(action17)
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.AGE_OF_DATA:
             # Compute
-            self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionAgeOfData))
+            self.Compute(clr.CastAs(oDefinition, FigureOfMeritDefinitionAgeOfData))
 
             # AgeOfData
-            aod: "IFigureOfMeritDefinitionAgeOfData" = clr.CastAs(oDefinition, IFigureOfMeritDefinitionAgeOfData)
+            aod: "FigureOfMeritDefinitionAgeOfData" = clr.CastAs(oDefinition, FigureOfMeritDefinitionAgeOfData)
             Assert.assertIsNotNone(aod)
 
             aod.min_assets = 1
@@ -362,19 +363,19 @@ class FOMHelper(object):
             def action18():
                 aod.min_assets = 0
 
-            TryCatchAssertBlock.DoAssert("MinAssets below min", action18)
+            TryCatchAssertBlock.DoAssert(action18)
 
             def action19():
                 aod.min_assets = 10000
 
-            TryCatchAssertBlock.DoAssert("MinAssets above max", action19)
+            TryCatchAssertBlock.DoAssert(action19)
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION:
             # Compute
-            self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionScalarCalculation))
+            self.Compute(clr.CastAs(oDefinition, FigureOfMeritDefinitionScalarCalculation))
 
             # Scalar Calculation
-            sd: "IFigureOfMeritDefinitionScalarCalculation" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionScalarCalculation
+            sd: "FigureOfMeritDefinitionScalarCalculation" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionScalarCalculation
             )
             Assert.assertIsNotNone(sd)
 
@@ -384,7 +385,7 @@ class FOMHelper(object):
             def action20():
                 sd.calc_scalar = "Bogus"
 
-            TryCatchAssertBlock.DoAssert("bogus calcscalar", action20)
+            TryCatchAssertBlock.DoAssert(action20)
 
             sd.should_update_accesses = True
             Assert.assertTrue(sd.should_update_accesses)
@@ -395,8 +396,8 @@ class FOMHelper(object):
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
 
             # SystemAgeOfData
-            saod: "IFigureOfMeritDefinitionSystemAgeOfData" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionSystemAgeOfData
+            saod: "FigureOfMeritDefinitionSystemAgeOfData" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionSystemAgeOfData
             )
             Assert.assertIsNotNone(saod)
 
@@ -618,13 +619,13 @@ class FOMHelper(object):
                 def action31():
                     definitionData: "IFigureOfMeritDefinitionData" = oCompute.compute
 
-                TryCatchAssertBlock.DoAssert("", action31)
+                TryCatchAssertBlock.DoAssert(action31)
             elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_TIME_ABOVE)) or (
                 (eComputeType == FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
             ):
-                # IFigureOfMeritDefinitionDataMinAssets
-                dataMinAssets: "IFigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
-                    oCompute.compute, IFigureOfMeritDefinitionDataMinAssets
+                # FigureOfMeritDefinitionDataMinAssets
+                dataMinAssets: "FigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
+                    oCompute.compute, FigureOfMeritDefinitionDataMinAssets
                 )
                 Assert.assertIsNotNone(dataMinAssets)
                 # MinAssets
@@ -636,11 +637,11 @@ class FOMHelper(object):
                 def action32():
                     dataMinAssets.min_assets = 1234
 
-                TryCatchAssertBlock.DoAssert("", action32)
+                TryCatchAssertBlock.DoAssert(action32)
             elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN)) or (
                 (eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN_PER_DAY)
             ):
-                self.DataMinMax(clr.CastAs(oCompute.compute, IFigureOfMeritDefinitionDataMinMax))
+                self.DataMinMax(clr.CastAs(oCompute.compute, FigureOfMeritDefinitionDataMinMax))
             elif (
                 (
                     ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE))
@@ -648,8 +649,8 @@ class FOMHelper(object):
                 )
                 or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW_GAPS_ONLY))
             ) or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.NUM_PERCENT_BELOW)):
-                dataPercentLevel: "IFigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
-                    oCompute.compute, IFigureOfMeritDefinitionDataPercentLevel
+                dataPercentLevel: "FigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
+                    oCompute.compute, FigureOfMeritDefinitionDataPercentLevel
                 )
                 Assert.assertIsNotNone(dataPercentLevel)
                 # PercentLevel
@@ -661,7 +662,7 @@ class FOMHelper(object):
                 def action33():
                     dataPercentLevel.percent_level = 123.456
 
-                TryCatchAssertBlock.DoAssert("", action33)
+                TryCatchAssertBlock.DoAssert(action33)
             else:
                 Assert.fail("Invalid definition type - {0}", eComputeType)
 
@@ -670,7 +671,7 @@ class FOMHelper(object):
     # endregion
 
     # region Satisfaction
-    def Satisfaction(self, oSatisfaction: "IFigureOfMeritSatisfaction", eType: "FIGURE_OF_MERIT_DEFINITION_TYPE"):
+    def Satisfaction(self, oSatisfaction: "FigureOfMeritSatisfaction", eType: "FIGURE_OF_MERIT_DEFINITION_TYPE"):
         Assert.assertIsNotNone(oSatisfaction)
 
         bReadOnly: bool = False
@@ -685,49 +686,49 @@ class FOMHelper(object):
                 oSatisfaction.enable_satisfaction = True
 
             # EnableSatisfaction
-            TryCatchAssertBlock.DoAssert("", action34)
+            TryCatchAssertBlock.DoAssert(action34)
 
             def action35():
                 oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
 
             # SatisfactionType
-            TryCatchAssertBlock.DoAssert("", action35)
+            TryCatchAssertBlock.DoAssert(action35)
 
             def action36():
                 oSatisfaction.satisfaction_threshold = 123.456
 
             # SatisfactionThreshold
-            TryCatchAssertBlock.DoAssert("", action36)
+            TryCatchAssertBlock.DoAssert(action36)
 
             def action37():
                 oSatisfaction.invalid_data_indicator = 1.2
 
             # InvalidDataIndicator
-            TryCatchAssertBlock.DoAssert("", action37)
+            TryCatchAssertBlock.DoAssert(action37)
 
             def action38():
                 oSatisfaction.use_value_range_check = True
 
             # UseValueRangeCheck
-            TryCatchAssertBlock.DoAssert("", action38)
+            TryCatchAssertBlock.DoAssert(action38)
 
             def action39():
                 oSatisfaction.min_value_range = 1.2
 
             # MinValueRange
-            TryCatchAssertBlock.DoAssert("", action39)
+            TryCatchAssertBlock.DoAssert(action39)
 
             def action40():
                 oSatisfaction.max_value_range = 1.2
 
             # MaxValueRange
-            TryCatchAssertBlock.DoAssert("", action40)
+            TryCatchAssertBlock.DoAssert(action40)
 
             def action41():
                 oSatisfaction.exclude_value_range = True
 
             # ExcludeValueRange
-            TryCatchAssertBlock.DoAssert("", action41)
+            TryCatchAssertBlock.DoAssert(action41)
 
         else:
             # EnableSatisfaction (false)
@@ -740,13 +741,13 @@ class FOMHelper(object):
                 oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
 
             # SatisfactionType
-            TryCatchAssertBlock.DoAssert("", action42)
+            TryCatchAssertBlock.DoAssert(action42)
 
             def action43():
                 oSatisfaction.satisfaction_threshold = 123.456
 
             # SatisfactionThreshold
-            TryCatchAssertBlock.DoAssert("", action43)
+            TryCatchAssertBlock.DoAssert(action43)
             # EnableSatisfaction (true)
             oSatisfaction.enable_satisfaction = True
             self.m_logger.WriteLine4("\t\t\tThe new EnableSatisfaction is: {0}", oSatisfaction.enable_satisfaction)
@@ -782,7 +783,7 @@ class FOMHelper(object):
                 def action44():
                     oSatisfaction.satisfaction_threshold = 123.456
 
-                TryCatchAssertBlock.DoAssert("", action44)
+                TryCatchAssertBlock.DoAssert(action44)
 
             # InvalidDataIndicator
             self.m_logger.WriteLine6(
@@ -820,19 +821,19 @@ class FOMHelper(object):
                     oSatisfaction.min_value_range = 1.2
 
                 # MinValueRange
-                TryCatchAssertBlock.DoAssert("", action45)
+                TryCatchAssertBlock.DoAssert(action45)
 
                 def action46():
                     oSatisfaction.max_value_range = 1.2
 
                 # MaxValueRange
-                TryCatchAssertBlock.DoAssert("", action46)
+                TryCatchAssertBlock.DoAssert(action46)
 
                 def action47():
                     oSatisfaction.exclude_value_range = True
 
                 # ExcludeValueRange
-                TryCatchAssertBlock.DoAssert("", action47)
+                TryCatchAssertBlock.DoAssert(action47)
                 # UseValueRangeCheck (true)
                 oSatisfaction.use_value_range_check = True
                 self.m_logger.WriteLine4(
@@ -865,36 +866,36 @@ class FOMHelper(object):
                 def action48():
                     oSatisfaction.invalid_data_indicator = 1.2
 
-                TryCatchAssertBlock.DoAssert("", action48)
+                TryCatchAssertBlock.DoAssert(action48)
 
                 def action49():
                     oSatisfaction.use_value_range_check = True
 
                 # UseValueRangeCheck
-                TryCatchAssertBlock.DoAssert("", action49)
+                TryCatchAssertBlock.DoAssert(action49)
 
                 def action50():
                     oSatisfaction.min_value_range = 1.2
 
                 # MinValueRange
-                TryCatchAssertBlock.DoAssert("", action50)
+                TryCatchAssertBlock.DoAssert(action50)
 
                 def action51():
                     oSatisfaction.max_value_range = 1.2
 
                 # MaxValueRange
-                TryCatchAssertBlock.DoAssert("", action51)
+                TryCatchAssertBlock.DoAssert(action51)
 
                 def action52():
                     oSatisfaction.exclude_value_range = True
 
                 # ExcludeValueRange
-                TryCatchAssertBlock.DoAssert("", action52)
+                TryCatchAssertBlock.DoAssert(action52)
 
     # endregion
 
     # region DataMinMax
-    def DataMinMax(self, dataMinMax: "IFigureOfMeritDefinitionDataMinMax"):
+    def DataMinMax(self, dataMinMax: "FigureOfMeritDefinitionDataMinMax"):
         Assert.assertIsNotNone(dataMinMax)
         # MinValue
         min: float = dataMinMax.min_value
@@ -916,12 +917,12 @@ class FOMHelper(object):
         def action53():
             dataMinMax.min_value = 1234.56
 
-        TryCatchAssertBlock.DoAssert("", action53)
+        TryCatchAssertBlock.DoAssert(action53)
 
         def action54():
             dataMinMax.max_value = 45.6123
 
-        TryCatchAssertBlock.DoAssert("", action54)
+        TryCatchAssertBlock.DoAssert(action54)
 
     # endregion
 
@@ -970,13 +971,13 @@ class FOMHelper(object):
                 def action55():
                     definitionData: "IFigureOfMeritDefinitionData" = oDOP.type_data
 
-                TryCatchAssertBlock.DoAssert("", action55)
+                TryCatchAssertBlock.DoAssert(action55)
             elif eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST4:
                 definitionData: "IFigureOfMeritDefinitionData" = clr.CastAs(
                     oDOP.type_data, IFigureOfMeritDefinitionData
                 )
-                oBest4: "IFigureOfMeritDefinitionDataBest4" = clr.CastAs(
-                    definitionData, IFigureOfMeritDefinitionDataBest4
+                oBest4: "FigureOfMeritDefinitionDataBest4" = clr.CastAs(
+                    definitionData, FigureOfMeritDefinitionDataBest4
                 )
                 Assert.assertIsNotNone(oBest4)
                 # BestN
@@ -996,12 +997,12 @@ class FOMHelper(object):
                 def action56():
                     oBest4.best4_metric = FIGURE_OF_MERIT_METHOD.HDOP3
 
-                TryCatchAssertBlock.DoAssert("Best 4 metric is not supported", action56)
+                TryCatchAssertBlock.DoAssert(action56)
             elif ((eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N)) or (
                 (eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N_ACC)
             ):
-                oBestN: "IFigureOfMeritDefinitionDataBestN" = clr.CastAs(
-                    oDOP.type_data, IFigureOfMeritDefinitionDataBestN
+                oBestN: "FigureOfMeritDefinitionDataBestN" = clr.CastAs(
+                    oDOP.type_data, FigureOfMeritDefinitionDataBestN
                 )
                 Assert.assertIsNotNone(oBestN)
                 # BestN
@@ -1013,7 +1014,7 @@ class FOMHelper(object):
                 def action57():
                     oBestN.best_n = 123
 
-                TryCatchAssertBlock.DoAssert("", action57)
+                TryCatchAssertBlock.DoAssert(action57)
                 supportedTypes = oBestN.best_n_metric_supported_types
                 omethod: typing.Any
                 for omethod in supportedTypes:
@@ -1027,7 +1028,7 @@ class FOMHelper(object):
                 def action58():
                     oBestN.best_n_metric = FIGURE_OF_MERIT_METHOD.HDOP3
 
-                TryCatchAssertBlock.DoAssert("Best N metric is not supported", action58)
+                TryCatchAssertBlock.DoAssert(action58)
             else:
                 Assert.fail("Invalid Type - {0}!", eType)
 
@@ -1052,7 +1053,7 @@ class FOMHelper(object):
         def action59():
             oDOP.time_step = 12345.67
 
-        TryCatchAssertBlock.DoAssert("", action59)
+        TryCatchAssertBlock.DoAssert(action59)
 
     # endregion
 
@@ -1066,25 +1067,25 @@ class FOMHelper(object):
                 oAttributes.is_visible = True
 
             # IsVisible
-            TryCatchAssertBlock.DoAssert("", action60)
+            TryCatchAssertBlock.DoAssert(action60)
 
             def action61():
                 oAttributes.fill_points = True
 
             # FillPoints
-            TryCatchAssertBlock.DoAssert("", action61)
+            TryCatchAssertBlock.DoAssert(action61)
 
             def action62():
                 oAttributes.marker_style = "X"
 
             # MarkerStyle
-            TryCatchAssertBlock.DoAssert("", action62)
+            TryCatchAssertBlock.DoAssert(action62)
 
             def action63():
                 oAttributes.color = Color.FromArgb(1122867)
 
             # Color
-            TryCatchAssertBlock.DoAssert("", action63)
+            TryCatchAssertBlock.DoAssert(action63)
 
         else:
             # IsVisible (false)
@@ -1097,19 +1098,19 @@ class FOMHelper(object):
                 oAttributes.fill_points = True
 
             # FillPoints (readonly)
-            TryCatchAssertBlock.DoAssert("", action64)
+            TryCatchAssertBlock.DoAssert(action64)
 
             def action65():
                 oAttributes.marker_style = "X"
 
             # MarkerStyle (readonly)
-            TryCatchAssertBlock.DoAssert("", action65)
+            TryCatchAssertBlock.DoAssert(action65)
 
             def action66():
                 oAttributes.color = Color.FromArgb(1122867)
 
             # Color (readonly)
-            TryCatchAssertBlock.DoAssert("", action66)
+            TryCatchAssertBlock.DoAssert(action66)
             # IsVisible (true)
             oAttributes.is_visible = True
             self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
@@ -1126,7 +1127,7 @@ class FOMHelper(object):
             def action67():
                 oAttributes.marker_style = "X"
 
-            TryCatchAssertBlock.DoAssert("", action67)
+            TryCatchAssertBlock.DoAssert(action67)
             oAttributes.fill_points = False
             self.m_logger.WriteLine4("\tThe new FillPoints is: {0}", oAttributes.fill_points)
             Assert.assertFalse(oAttributes.fill_points)
@@ -1147,7 +1148,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxAnimationAttributes
-    def GfxAnimationAttributes(self, oAttributes: "IFigureOfMeritGraphics2DAttributesAnimation", bReadOnly: bool):
+    def GfxAnimationAttributes(self, oAttributes: "FigureOfMeritGraphics2DAttributesAnimation", bReadOnly: bool):
         self.m_logger.WriteLine4(
             "----- GRAPHICS ATTRIBUTES ANIMATION TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly
         )
@@ -1160,11 +1161,11 @@ class FOMHelper(object):
                 oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
 
             # Accumulation (readonly)
-            TryCatchAssertBlock.DoAssert("", action68)
+            TryCatchAssertBlock.DoAssert(action68)
 
         else:
-            klass: "IFigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
-                oAttributes, IFigureOfMeritGraphics2DAttributesAnimation
+            klass: "FigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
+                oAttributes, FigureOfMeritGraphics2DAttributesAnimation
             )
             dispatch: "FigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
                 oAttributes, FigureOfMeritGraphics2DAttributesAnimation
@@ -1208,19 +1209,19 @@ class FOMHelper(object):
                 def action69():
                     oContours.is_visible = True
 
-                TryCatchAssertBlock.DoAssert("", action69)
+                TryCatchAssertBlock.DoAssert(action69)
 
             def action70():
                 oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
 
             # ContourType (readonly)
-            TryCatchAssertBlock.DoAssert("", action70)
+            TryCatchAssertBlock.DoAssert(action70)
 
             def action71():
                 oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
 
             # ColorMethod (readonly)
-            TryCatchAssertBlock.DoAssert("", action71)
+            TryCatchAssertBlock.DoAssert(action71)
             # RampColor (readonly)
             self.GfxRampColor(oContours.ramp_color, bReadOnly)
             # LevelAttributes (readonly)
@@ -1239,13 +1240,13 @@ class FOMHelper(object):
                 oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
 
             # ContourType (readonly)
-            TryCatchAssertBlock.DoAssert("", action72)
+            TryCatchAssertBlock.DoAssert(action72)
 
             def action73():
                 oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
 
             # ColorMethod (readonly)
-            TryCatchAssertBlock.DoAssert("", action73)
+            TryCatchAssertBlock.DoAssert(action73)
             # IsVisible (true)
             oContours.is_visible = True
             self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oContours.is_visible)
@@ -1295,13 +1296,13 @@ class FOMHelper(object):
                 oContours.show_contour_lines = True
 
             # ShowContourLines (readonly)
-            TryCatchAssertBlock.DoAssert("", action74)
+            TryCatchAssertBlock.DoAssert(action74)
 
             def action75():
                 oContours.line_width = 3
 
             # LineWidth (readonly)
-            TryCatchAssertBlock.DoAssert("", action75)
+            TryCatchAssertBlock.DoAssert(action75)
 
         else:
             # Show contour lines
@@ -1327,8 +1328,8 @@ class FOMHelper(object):
     ):
         self.m_logger.WriteLine4("----- GRAPHICS CONTOURS ANIMATION TEST (ReadOnly = {0})----- BEGIN -----", bReadOnly)
         Assert.assertIsNotNone(oBaseContours)
-        oContours: "IFigureOfMeritGraphics2DContoursAnimation" = clr.CastAs(
-            oBaseContours, IFigureOfMeritGraphics2DContoursAnimation
+        oContours: "FigureOfMeritGraphics2DContoursAnimation" = clr.CastAs(
+            oBaseContours, FigureOfMeritGraphics2DContoursAnimation
         )
         Assert.assertIsNotNone(oContours)
         if bReadOnly:
@@ -1339,7 +1340,7 @@ class FOMHelper(object):
                 oContours.use_static_contours = True
 
             # UseStaticContours (readonly)
-            TryCatchAssertBlock.DoAssert("", action76)
+            TryCatchAssertBlock.DoAssert(action76)
 
         else:
             # UseStaticContours (false)
@@ -1361,7 +1362,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxRampColor
-    def GfxRampColor(self, oColor: "IFigureOfMeritGraphics2DRampColor", bReadOnly: bool):
+    def GfxRampColor(self, oColor: "FigureOfMeritGraphics2DRampColor", bReadOnly: bool):
         self.m_logger.WriteLine("----- GRAPHICS RAMP COLOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oColor)
         if bReadOnly:
@@ -1370,13 +1371,13 @@ class FOMHelper(object):
                 oColor.start_color = Color.FromArgb(10061943)
 
             # StartColor
-            TryCatchAssertBlock.DoAssert("", action77)
+            TryCatchAssertBlock.DoAssert(action77)
 
             def action78():
                 oColor.end_color = Color.FromArgb(13426158)
 
             # EndColor
-            TryCatchAssertBlock.DoAssert("", action78)
+            TryCatchAssertBlock.DoAssert(action78)
 
         else:
             # StartColor
@@ -1397,7 +1398,7 @@ class FOMHelper(object):
     # region GfxLevelAttributes
     def GfxLevelAttributes(
         self,
-        oCollection: "IFigureOfMeritGraphics2DLevelAttributesCollection",
+        oCollection: "FigureOfMeritGraphics2DLevelAttributesCollection",
         eMethod: "FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD",
         bReadOnly: bool,
     ):
@@ -1409,25 +1410,25 @@ class FOMHelper(object):
                 oCollection.add_level(123)
 
             # AddLevel
-            TryCatchAssertBlock.DoAssert("", action79)
+            TryCatchAssertBlock.DoAssert(action79)
 
             def action80():
                 oCollection.add_level_range(1, 25, 5)
 
             # AddLevelRange
-            TryCatchAssertBlock.DoAssert("", action80)
+            TryCatchAssertBlock.DoAssert(action80)
             if oCollection.count > 0:
 
                 def action81():
                     oCollection.remove_at(0)
 
-                TryCatchAssertBlock.DoAssert("", action81)
+                TryCatchAssertBlock.DoAssert(action81)
 
             def action82():
                 oCollection.remove_all()
 
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("", action82)
+            TryCatchAssertBlock.DoAssert(action82)
 
         else:
             # Count
@@ -1445,24 +1446,24 @@ class FOMHelper(object):
             def action83():
                 oCollection.add_level_range(50, 10, 5)
 
-            TryCatchAssertBlock.DoAssert("", action83)
+            TryCatchAssertBlock.DoAssert(action83)
 
             def action84():
                 oCollection.add_level_range(10, 20, -5)
 
-            TryCatchAssertBlock.DoAssert("", action84)
+            TryCatchAssertBlock.DoAssert(action84)
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
-            oElem: "IFigureOfMeritGraphics2DLevelAttributesElement"
+            oElem: "FigureOfMeritGraphics2DLevelAttributesElement"
             for oElem in oCollection:
                 # _NewEnum
                 self.m_logger.WriteLine7("\t\tElement: Level = {0}, Color = 0x{1:X}", oElem.level, oElem.color)
 
             # AddLevel
-            gfxLevelAttributesElement: "IFigureOfMeritGraphics2DLevelAttributesElement" = oCollection.add_level(37)
+            gfxLevelAttributesElement: "FigureOfMeritGraphics2DLevelAttributesElement" = oCollection.add_level(37)
             Assert.assertIsNotNone(gfxLevelAttributesElement)
             Assert.assertEqual(6, oCollection.count)
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
-            oElem: "IFigureOfMeritGraphics2DLevelAttributesElement"
+            oElem: "FigureOfMeritGraphics2DLevelAttributesElement"
             for oElem in oCollection:
                 self.m_logger.WriteLine7("\t\tElement: Level = {0}, Color = 0x{1:X}", oElem.level, oElem.color)
 
@@ -1483,7 +1484,7 @@ class FOMHelper(object):
                 def action85():
                     gfxLevelAttributesElement.color = Color.FromArgb(13426158)
 
-                TryCatchAssertBlock.DoAssert("", action85)
+                TryCatchAssertBlock.DoAssert(action85)
 
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
 
@@ -1526,7 +1527,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxLegend
-    def GfxLegend(self, oLegend: "IFigureOfMeritGraphics2DLegend", bReadOnly: bool, bIsVisibleReadOnly: bool):
+    def GfxLegend(self, oLegend: "FigureOfMeritGraphics2DLegend", bReadOnly: bool, bIsVisibleReadOnly: bool):
         self.m_logger.WriteLine4("----- GRAPHICS LEGEND TEST (ReadOnly = {0})----- BEGIN -----", bReadOnly)
         Assert.assertIsNotNone(oLegend)
         if bReadOnly:
@@ -1559,7 +1560,7 @@ class FOMHelper(object):
 
     # region GfxLegendColorOptions
     def GfxLegendColorOptions(
-        self, oOptions: "IFigureOfMeritGraphics2DColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oOptions: "FigureOfMeritGraphics2DColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1568,13 +1569,13 @@ class FOMHelper(object):
                 oOptions.background = 3430008
 
             # Background
-            TryCatchAssertBlock.DoAssert("", action86)
+            TryCatchAssertBlock.DoAssert(action86)
 
             def action87():
                 oOptions.text = 5666960
 
             # Text
-            TryCatchAssertBlock.DoAssert("", action87)
+            TryCatchAssertBlock.DoAssert(action87)
 
         else:
             # BackgroundColor
@@ -1596,7 +1597,7 @@ class FOMHelper(object):
 
     # region GfxLegendTextOptions
     def GfxLegendTextOptions(
-        self, oOptions: "IFigureOfMeritGraphics2DTextOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oOptions: "FigureOfMeritGraphics2DTextOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1605,19 +1606,19 @@ class FOMHelper(object):
                 oOptions.title = "Text Options ReadOnly Title"
 
             # Title
-            TryCatchAssertBlock.DoAssert("", action88)
+            TryCatchAssertBlock.DoAssert(action88)
 
             def action89():
                 oOptions.num_decimal_digits = 12
 
             # NumDecimalDigits
-            TryCatchAssertBlock.DoAssert("", action89)
+            TryCatchAssertBlock.DoAssert(action89)
 
             def action90():
                 oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
 
             # FloatingPointFormat
-            TryCatchAssertBlock.DoAssert("", action90)
+            TryCatchAssertBlock.DoAssert(action90)
 
         else:
             # Title
@@ -1637,7 +1638,7 @@ class FOMHelper(object):
             def action91():
                 oOptions.num_decimal_digits = 123
 
-            TryCatchAssertBlock.DoAssert("", action91)
+            TryCatchAssertBlock.DoAssert(action91)
             # FloatingPointFormat
             self.m_logger.WriteLine6("\tThe current FloatingPointFormat is: {0}", oOptions.floating_point_format)
             oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
@@ -1660,7 +1661,7 @@ class FOMHelper(object):
 
     # region GfxLegendRangeColorOptions
     def GfxLegendRangeColorOptions(
-        self, oOptions: "IFigureOfMeritGraphics2DRangeColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oOptions: "FigureOfMeritGraphics2DRangeColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1669,31 +1670,31 @@ class FOMHelper(object):
                 oOptions.color_square_height = 12
 
             # ColorSquareHeight
-            TryCatchAssertBlock.DoAssert("", action92)
+            TryCatchAssertBlock.DoAssert(action92)
 
             def action93():
                 oOptions.color_square_width = 34
 
             # ColorSquareWidth
-            TryCatchAssertBlock.DoAssert("", action93)
+            TryCatchAssertBlock.DoAssert(action93)
 
             def action94():
                 oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
 
             # Direction
-            TryCatchAssertBlock.DoAssert("", action94)
+            TryCatchAssertBlock.DoAssert(action94)
 
             def action95():
                 oOptions.max_squares_per_row = 12
 
             # MaxSquaresPerRow
-            TryCatchAssertBlock.DoAssert("", action95)
+            TryCatchAssertBlock.DoAssert(action95)
 
             def action96():
                 oOptions.max_squares_per_column = 34
 
             # MaxSquaresPerColumn
-            TryCatchAssertBlock.DoAssert("", action96)
+            TryCatchAssertBlock.DoAssert(action96)
 
         else:
             # ColorSquareHeight
@@ -1705,7 +1706,7 @@ class FOMHelper(object):
             def action97():
                 oOptions.color_square_height = 123
 
-            TryCatchAssertBlock.DoAssert("", action97)
+            TryCatchAssertBlock.DoAssert(action97)
             # ColorSquareWidth
             self.m_logger.WriteLine3("\tThe current ColorSquareWidth is: {0}", oOptions.color_square_width)
             oOptions.color_square_width = 34
@@ -1715,7 +1716,7 @@ class FOMHelper(object):
             def action98():
                 oOptions.color_square_width = 123
 
-            TryCatchAssertBlock.DoAssert("", action98)
+            TryCatchAssertBlock.DoAssert(action98)
             # Direction (eHorizontalMaxToMin)
             self.m_logger.WriteLine6("\tThe current Direction is: {0}", oOptions.direction)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
@@ -1730,13 +1731,13 @@ class FOMHelper(object):
             def action99():
                 oOptions.max_squares_per_row = 123456
 
-            TryCatchAssertBlock.DoAssert("", action99)
+            TryCatchAssertBlock.DoAssert(action99)
 
             def action100():
                 oOptions.max_squares_per_column = 34
 
             # MaxSquaresPerColumn
-            TryCatchAssertBlock.DoAssert("", action100)
+            TryCatchAssertBlock.DoAssert(action100)
             # Direction (eHorizontalMinToMax)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
@@ -1750,13 +1751,13 @@ class FOMHelper(object):
             def action101():
                 oOptions.max_squares_per_row = 12345
 
-            TryCatchAssertBlock.DoAssert("", action101)
+            TryCatchAssertBlock.DoAssert(action101)
 
             def action102():
                 oOptions.max_squares_per_column = 12
 
             # MaxSquaresPerColumn
-            TryCatchAssertBlock.DoAssert("", action102)
+            TryCatchAssertBlock.DoAssert(action102)
             # Direction (eVerticalMaxToMin)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
@@ -1770,13 +1771,13 @@ class FOMHelper(object):
             def action103():
                 oOptions.max_squares_per_column = 12345
 
-            TryCatchAssertBlock.DoAssert("", action103)
+            TryCatchAssertBlock.DoAssert(action103)
 
             def action104():
                 oOptions.max_squares_per_row = 12
 
             # MaxSquaresPerRow
-            TryCatchAssertBlock.DoAssert("", action104)
+            TryCatchAssertBlock.DoAssert(action104)
             # Direction (eVerticalMinToMax)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
@@ -1790,19 +1791,19 @@ class FOMHelper(object):
             def action105():
                 oOptions.max_squares_per_column = 12345
 
-            TryCatchAssertBlock.DoAssert("", action105)
+            TryCatchAssertBlock.DoAssert(action105)
 
             def action106():
                 oOptions.max_squares_per_row = 34
 
             # MaxSquaresPerRow
-            TryCatchAssertBlock.DoAssert("", action106)
+            TryCatchAssertBlock.DoAssert(action106)
 
     # endregion
 
     # region GfxLegend2DWindowLayout
     def GfxLegend2DWindowLayout(
-        self, oWindow: "IFigureOfMeritGraphics2DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oWindow: "FigureOfMeritGraphics2DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oWindow)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1811,7 +1812,7 @@ class FOMHelper(object):
                 oWindow.is_visible_on_map = True
 
             # IsVisibleOnMap (readonly)
-            TryCatchAssertBlock.DoAssert("", action107)
+            TryCatchAssertBlock.DoAssert(action107)
             # PositionOnMap (readonly)
             self.GfxLegendPositionOnMap(oWindow.position_on_map, bReadOnly)
 
@@ -1834,7 +1835,7 @@ class FOMHelper(object):
 
     # region GfxLegend3DWindowLayout
     def GfxLegend3DWindowLayout(
-        self, oWindow: "IFigureOfMeritGraphics3DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oWindow: "FigureOfMeritGraphics3DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oWindow)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1843,13 +1844,13 @@ class FOMHelper(object):
                 oWindow.is_visible_on_map = True
 
             # IsVisibleOnMap (readonly)
-            TryCatchAssertBlock.DoAssert("", action108)
+            TryCatchAssertBlock.DoAssert(action108)
 
             def action109():
                 oWindow.translucency = 67.89
 
             # Translucency (readonly)
-            TryCatchAssertBlock.DoAssert("", action109)
+            TryCatchAssertBlock.DoAssert(action109)
             # PositionOnMap (readonly)
             self.GfxLegendPositionOnMap(oWindow.position_on_map, bReadOnly)
 
@@ -1876,12 +1877,12 @@ class FOMHelper(object):
             def action110():
                 oWindow.translucency = 123.456
 
-            TryCatchAssertBlock.DoAssert("", action110)
+            TryCatchAssertBlock.DoAssert(action110)
 
     # endregion
 
     # region GfxLegendPositionOnMap
-    def GfxLegendPositionOnMap(self, oPosition: "IFigureOfMeritGraphics2DPositionOnMap", bReadOnly: bool):
+    def GfxLegendPositionOnMap(self, oPosition: "FigureOfMeritGraphics2DPositionOnMap", bReadOnly: bool):
         Assert.assertIsNotNone(oPosition)
         if bReadOnly:
 
@@ -1889,13 +1890,13 @@ class FOMHelper(object):
                 oPosition.x = 123
 
             # X (readonly)
-            TryCatchAssertBlock.DoAssert("", action111)
+            TryCatchAssertBlock.DoAssert(action111)
 
             def action112():
                 oPosition.y = 123
 
             # Y (readonly)
-            TryCatchAssertBlock.DoAssert("", action112)
+            TryCatchAssertBlock.DoAssert(action112)
 
         else:
             # X
@@ -1907,7 +1908,7 @@ class FOMHelper(object):
             def action113():
                 oPosition.x = -123
 
-            TryCatchAssertBlock.DoAssert("", action113)
+            TryCatchAssertBlock.DoAssert(action113)
             # Y
             self.m_logger.WriteLine3("\tThe current Y is: {0}", oPosition.y)
             oPosition.y = 234
@@ -1917,25 +1918,25 @@ class FOMHelper(object):
             def action114():
                 oPosition.y = -123
 
-            TryCatchAssertBlock.DoAssert("", action114)
+            TryCatchAssertBlock.DoAssert(action114)
 
     # endregion
 
     # region GfxObjectCoverage
-    def GfxObjectCoverage(self, oStkObjectCoverage: "IStkObjectCoverage"):
+    def GfxObjectCoverage(self, oStkObjectCoverage: "StkObjectCoverage"):
         self.m_logger.WriteLine("----- OBJECT COVERAGE GRAPHICS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oStkObjectCoverage)
-        oObjCovFOM: "IObjectCoverageFigureOfMerit" = clr.CastAs(
-            oStkObjectCoverage.figure_of_merit, IObjectCoverageFigureOfMerit
+        oObjCovFOM: "ObjectCoverageFigureOfMerit" = clr.CastAs(
+            oStkObjectCoverage.figure_of_merit, ObjectCoverageFigureOfMerit
         )
         Assert.assertIsNotNone(oObjCovFOM)
 
         facAssetName: str = "Facility/Facility1"
         oObjCovFOM.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
-        oCollection: "ICoverageAssetListCollection" = oStkObjectCoverage.assets
+        oCollection: "CoverageAssetListCollection" = oStkObjectCoverage.assets
         if Array.IndexOf(oCollection.available_assets, facAssetName) != -1:
             if oCollection.can_assign_asset(facAssetName):
-                assetListElement: "ICoverageAssetListElement" = oCollection.add(facAssetName)
+                assetListElement: "CoverageAssetListElement" = oCollection.add(facAssetName)
                 assetListElement.required = True
                 oStkObjectCoverage.compute()
 

@@ -604,7 +604,7 @@ class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
             raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLABNav.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4447B282-8834-4451-8CD8-0A3168015B45}", StrategyMATLABNav)
-
+agcls.AgTypeNameMap["StrategyMATLABNav"] = StrategyMATLABNav
 
 class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
     """Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure."""
@@ -628,7 +628,7 @@ class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
             raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLABProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1bf89982-311b-4b61-ba17-00881de09863}", StrategyMATLABProfile)
-
+agcls.AgTypeNameMap["StrategyMATLABProfile"] = StrategyMATLABProfile
 
 class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
     """Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure."""
@@ -652,7 +652,7 @@ class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
             raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLABFull3D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7fdf8025-0f64-4f1a-9c12-8275051354d4}", StrategyMATLABFull3D)
-
+agcls.AgTypeNameMap["StrategyMATLABFull3D"] = StrategyMATLABFull3D
 
 class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy):
     """Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure."""
@@ -676,7 +676,7 @@ class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy
             raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLAB3DGuidance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c90db66d-a2fa-4474-9c21-2e8f61b93fad}", StrategyMATLAB3DGuidance)
-
+agcls.AgTypeNameMap["StrategyMATLAB3DGuidance"] = StrategyMATLAB3DGuidance
 
 class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
     """Class defining the factory to create the basic maneuver PropNav strategies."""
@@ -697,7 +697,7 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverMATLABFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29352A63-3095-4D7E-A056-189D672BF458}", BasicManeuverMATLABFactory)
-
+agcls.AgTypeNameMap["BasicManeuverMATLABFactory"] = BasicManeuverMATLABFactory
 
 
 ################################################################################

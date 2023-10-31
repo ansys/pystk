@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assert_extension import *
 from assertion_harness import *
@@ -17,7 +18,7 @@ class VOSigmaScaleProbabilityHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oProbability: "IVehicleGraphics3DSigmaScaleProbability"):
+    def Run(self, oProbability: "VehicleGraphics3DSigmaScaleProbability"):
         Assert.assertIsNotNone(oProbability)
         self.m_logger.WriteLine6("\tThe current Probability value is: {0}", oProbability.probability)
         oProbability.probability = 34.567
@@ -58,7 +59,7 @@ class VOSigmaScaleScaleHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oScale: "IVehicleGraphics3DSigmaScaleScale"):
+    def Run(self, oScale: "VehicleGraphics3DSigmaScaleScale"):
         Assert.assertIsNotNone(oScale)
         self.m_logger.WriteLine6("\tThe current Scale value is: {0}", oScale.scale_value)
         oScale.scale_value = 3.456
@@ -99,7 +100,7 @@ class VOAttributesBasicHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oBasic: "IVehicleGraphics3DAttributesBasic"):
+    def Run(self, oBasic: "VehicleGraphics3DAttributesBasic"):
         Assert.assertIsNotNone(oBasic)
         self.m_logger.WriteLine4("\tCurrent Visible flag is: {0}", oBasic.is_visible)
         oBasic.is_visible = False
@@ -146,12 +147,12 @@ class VOAttributesBasicHelper(object):
         def action1():
             oBasic.line_width = clr.Convert((-1), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action1)
+        TryCatchAssertBlock.DoAssert(action1)
 
         def action2():
             oBasic.line_width = clr.Convert((11), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action2)
+        TryCatchAssertBlock.DoAssert(action2)
 
         oBasic.translucency = 50
         Assert.assertEqual(50, oBasic.translucency)
@@ -168,10 +169,10 @@ class VOAttributesIntervalsHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oIntervals: "IVehicleGraphics3DAttributesIntervals"):
+    def Run(self, oIntervals: "VehicleGraphics3DAttributesIntervals"):
         Assert.assertIsNotNone(oIntervals)
         # Default
-        oDefault: "IVehicleGraphics3DDefaultAttributes" = oIntervals.default_attributes
+        oDefault: "VehicleGraphics3DDefaultAttributes" = oIntervals.default_attributes
         Assert.assertIsNotNone(oDefault)
         # IsVisible
         self.m_logger.WriteLine4("\tCurrent Visible flag is: {0}", oDefault.is_visible)
@@ -201,10 +202,10 @@ class VOAttributesIntervalsHelper(object):
         Assert.assertEqual(50, oDefault.translucency)
 
         # Loaded
-        oCollection: "IVehicleGraphics3DIntervalsCollection" = oIntervals.intervals
+        oCollection: "VehicleGraphics3DIntervalsCollection" = oIntervals.intervals
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine3("\tThe current Intervals Collection contains: {0} elements", oCollection.count)
-        intervalsElement: "IVehicleGraphics3DIntervalsElement" = None
+        intervalsElement: "VehicleGraphics3DIntervalsElement" = None
 
         iIndex: int = 0
         while iIndex < oCollection.count:
@@ -222,15 +223,15 @@ class VOAttributesIntervalsHelper(object):
 
             iIndex += 1
 
-        oNewElement1: "IVehicleGraphics3DIntervalsElement" = oCollection.add(
+        oNewElement1: "VehicleGraphics3DIntervalsElement" = oCollection.add(
             "1 Jul 1999 04:00:00.000", "1 Jul 1999 08:00:00.000"
         )
         Assert.assertIsNotNone(oNewElement1)
-        oNewElement2: "IVehicleGraphics3DIntervalsElement" = oCollection.add(
+        oNewElement2: "VehicleGraphics3DIntervalsElement" = oCollection.add(
             "1 Jul 1999 12:00:00.000", "1 Jul 1999 16:00:00.000"
         )
         Assert.assertIsNotNone(oNewElement2)
-        oNewElement3: "IVehicleGraphics3DIntervalsElement" = oCollection.add(
+        oNewElement3: "VehicleGraphics3DIntervalsElement" = oCollection.add(
             "1 Jul 1999 20:00:00.000", "1 Jul 1999 24:00:00.000"
         )
         Assert.assertIsNotNone(oNewElement3)
@@ -259,7 +260,7 @@ class VOAttributesIntervalsHelper(object):
             "\tAfter RemoveAt(0) the Intervals Collection contains: {0} elements.", oCollection.count
         )
         Assert.assertEqual((iSize - 1), oCollection.count)
-        oElmnt: "IVehicleGraphics3DIntervalsElement"
+        oElmnt: "VehicleGraphics3DIntervalsElement"
         for oElmnt in oCollection:
             self.m_logger.WriteLine10(
                 "\t\tElement: StartTime = {0}, StopTime = {1}, Visible = {2}, Color = {3}, LineWidth = {4}, Translucency = {5}",
@@ -340,7 +341,7 @@ class VOCovarianceHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCovariance: "IVehicleGraphics3DCovariance"):
+    def Run(self, oCovariance: "VehicleGraphics3DCovariance"):
         self.m_logger.WriteLine("----- THE VO COVARIANCE TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCovariance)
         # SigmaScaleSupportedTypes
@@ -368,7 +369,7 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_SCALE, oCovariance.sigma_scale_type)
 
         oSSSHelper = VOSigmaScaleScaleHelper()
-        oSSSHelper.Run(clr.Convert(oCovariance.sigma_scale, IVehicleGraphics3DSigmaScaleScale))
+        oSSSHelper.Run(clr.Convert(oCovariance.sigma_scale, VehicleGraphics3DSigmaScaleScale))
         if not oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY):
             Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY)
 
@@ -377,14 +378,14 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY, oCovariance.sigma_scale_type)
 
         oSSPHelper = VOSigmaScaleProbabilityHelper()
-        oSSPHelper.Run(clr.Convert(oCovariance.sigma_scale, IVehicleGraphics3DSigmaScaleProbability))
+        oSSPHelper.Run(clr.Convert(oCovariance.sigma_scale, VehicleGraphics3DSigmaScaleProbability))
         if oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_UNKNOWN):
             Assert.fail("The eSigmaScaleUnknown type should be unsupported!")
 
         def action3():
             oCovariance.set_sigma_scale_type(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_UNKNOWN)
 
-        TryCatchAssertBlock.DoAssert("Allows to set eSigmaScaleUnknown type!", action3)
+        TryCatchAssertBlock.DoAssert(action3)
 
         # Attributes test
         arChoices = oCovariance.attributes_supported_types
@@ -414,7 +415,7 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC, oCovariance.attributes_type)
 
         oABHelper = VOAttributesBasicHelper()
-        oABHelper.Run(clr.Convert(oCovariance.attributes, IVehicleGraphics3DAttributesBasic))
+        oABHelper.Run(clr.Convert(oCovariance.attributes, VehicleGraphics3DAttributesBasic))
         if not oCovariance.is_attributes_type_supported(
             VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS
         ):
@@ -427,14 +428,14 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS, oCovariance.attributes_type)
 
         oAIHelper = VOAttributesIntervalsHelper()
-        oAIHelper.Run(clr.Convert(oCovariance.attributes, IVehicleGraphics3DAttributesIntervals))
+        oAIHelper.Run(clr.Convert(oCovariance.attributes, VehicleGraphics3DAttributesIntervals))
         if oCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN):
             Assert.fail("The eVOAttributesUnknown type should be unsupported!")
 
         def action4():
             oCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN)
 
-        TryCatchAssertBlock.DoAssert("Allows to set eVOAttributesUnknown type!", action4)
+        TryCatchAssertBlock.DoAssert(action4)
 
         self.m_logger.WriteLine("----- THE VO COVARIANCE TEST ----- END -----")
 
@@ -450,7 +451,7 @@ class VOVelocityCovarianceHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oVelCovariance: "IVehicleGraphics3DVelCovariance"):
+    def Run(self, oVelCovariance: "VehicleGraphics3DVelCovariance"):
         self.m_logger.WriteLine("----- THE VO VELOCITY COVARIANCE TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oVelCovariance)
 
@@ -491,7 +492,7 @@ class VOVelocityCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC, oVelCovariance.attributes_type)
 
         oABHelper = VOAttributesBasicHelper()
-        oABHelper.Run(clr.Convert(oVelCovariance.attributes, IVehicleGraphics3DAttributesBasic))
+        oABHelper.Run(clr.Convert(oVelCovariance.attributes, VehicleGraphics3DAttributesBasic))
         if not oVelCovariance.is_attributes_type_supported(
             VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS
         ):
@@ -506,14 +507,14 @@ class VOVelocityCovarianceHelper(object):
         )
 
         oAIHelper = VOAttributesIntervalsHelper()
-        oAIHelper.Run(clr.Convert(oVelCovariance.attributes, IVehicleGraphics3DAttributesIntervals))
+        oAIHelper.Run(clr.Convert(oVelCovariance.attributes, VehicleGraphics3DAttributesIntervals))
         if oVelCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN):
             Assert.fail("The eVOAttributesUnknown type should be unsupported!")
 
         def action5():
             oVelCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN)
 
-        TryCatchAssertBlock.DoAssert("Allows to set eVOAttributesUnknown type!", action5)
+        TryCatchAssertBlock.DoAssert(action5)
 
         self.m_logger.WriteLine("----- THE VO VELOCITY COVARIANCE TEST ----- END -----")
 
@@ -529,7 +530,7 @@ class VOCovariancePointingContourHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCPContour: "IVehicleGraphics3DCovariancePointingContour"):
+    def Run(self, oCPContour: "VehicleGraphics3DCovariancePointingContour"):
         self.m_logger.WriteLine("----- THE VO COVARIANCE POINTING CONTOUR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCPContour)
         arSupportedTypes = oCPContour.attributes_supported_types
@@ -569,10 +570,10 @@ class VOCovariancePointingContourHelper(object):
             Assert.assertEqual(eType, eType2)
             if eType == VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC:
                 oHelper = VOAttributesBasicHelper()
-                oHelper.Run(clr.Convert(oCPContour.attributes, IVehicleGraphics3DAttributesBasic))
+                oHelper.Run(clr.Convert(oCPContour.attributes, VehicleGraphics3DAttributesBasic))
             elif eType == VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS:
                 oHelper = VOAttributesIntervalsHelper()
-                oHelper.Run(clr.Convert(oCPContour.attributes, IVehicleGraphics3DAttributesIntervals))
+                oHelper.Run(clr.Convert(oCPContour.attributes, VehicleGraphics3DAttributesIntervals))
             else:
                 Assert.fail("The {0} type is not supported.", eType)
 
@@ -627,10 +628,10 @@ class VOCovariancePointingContourHelper(object):
             Assert.assertEqual(eType, eType2)
             if eType == VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY:
                 oSSPHelper = VOSigmaScaleProbabilityHelper()
-                oSSPHelper.Run(clr.Convert(oCPContour.sigma_scale, IVehicleGraphics3DSigmaScaleProbability))
+                oSSPHelper.Run(clr.Convert(oCPContour.sigma_scale, VehicleGraphics3DSigmaScaleProbability))
             elif eType == VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_SCALE:
                 oSSSHelper = VOSigmaScaleScaleHelper()
-                oSSSHelper.Run(clr.Convert(oCPContour.sigma_scale, IVehicleGraphics3DSigmaScaleScale))
+                oSSSHelper.Run(clr.Convert(oCPContour.sigma_scale, VehicleGraphics3DSigmaScaleScale))
             else:
                 Assert.fail("The {0} should not be supported!", eType)
 
@@ -660,7 +661,7 @@ class VOCovariancePointingContourHelper(object):
         Assert.assertEqual(True, oCPContour.is_cone_visible)
 
         # Size test
-        oSize: "IVehicleGraphics3DSize" = oCPContour.size
+        oSize: "VehicleGraphics3DSize" = oCPContour.size
         Assert.assertIsNotNone(oSize)
         self.m_logger.WriteLine4("The current Scale to Attitude Sphere flag is: {0}", oSize.scale_to_attitude_sphere)
         oSize.scale_to_attitude_sphere = True
@@ -712,19 +713,19 @@ class VODropLinePosItemCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IVehicleGraphics3DDropLinePositionItemCollection"):
+    def Run(self, oCollection: "VehicleGraphics3DDropLinePositionItemCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("The DropLinePosItem collection contains: {0} elements", oCollection.count)
         # _NewEnum
-        oItem: "IVehicleGraphics3DDropLinePositionItem"
+        oItem: "VehicleGraphics3DDropLinePositionItem"
         # _NewEnum
         for oItem in oCollection:
             self.m_logger.WriteLine6("\tElement: {0}", oItem.type)
 
         iIndex: int = 0
         while iIndex < oCollection.count:
-            dropLinePosItem: "IVehicleGraphics3DDropLinePositionItem" = oCollection[iIndex]
+            dropLinePosItem: "VehicleGraphics3DDropLinePositionItem" = oCollection[iIndex]
             Assert.assertIsNotNone(dropLinePosItem)
             # Type
             self.m_logger.WriteLine7("Element {0} is: {1}", iIndex, dropLinePosItem.type)
@@ -738,25 +739,25 @@ class VODropLinePosItemCollectionHelper(object):
                 dropLinePosItem.use_2d_color = False
 
             # Use2DColor
-            TryCatchAssertBlock.DoAssert("The Use2DColor should be readonly when IsVisible flag is False.", action6)
+            TryCatchAssertBlock.DoAssert(action6)
 
             def action7():
                 dropLinePosItem.color = Color.FromArgb(16448250)
 
             # Color
-            TryCatchAssertBlock.DoAssert("The Color should be readonly when IsVisible flag is False.", action7)
+            TryCatchAssertBlock.DoAssert(action7)
 
             def action8():
                 dropLinePosItem.line_width = LINE_WIDTH.WIDTH3
 
             # LineWidth
-            TryCatchAssertBlock.DoAssert("The LineWidth should be readonly when IsVisible flag is False.", action8)
+            TryCatchAssertBlock.DoAssert(action8)
 
             def action9():
                 dropLinePosItem.line_style = LINE_STYLE.DOTTED
 
             # LineStyle
-            TryCatchAssertBlock.DoAssert("The LineStyle should be readonly when IsVisible flag is False.", action9)
+            TryCatchAssertBlock.DoAssert(action9)
             # IsVisible (true)
             dropLinePosItem.is_visible = True
             self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", dropLinePosItem.is_visible)
@@ -771,7 +772,7 @@ class VODropLinePosItemCollectionHelper(object):
                 dropLinePosItem.color = Color.FromArgb(16448250)
 
             # Color
-            TryCatchAssertBlock.DoAssert("The Color should be readonly when Use2DColor flag is True.", action10)
+            TryCatchAssertBlock.DoAssert(action10)
             # Use2DColor (false)
             dropLinePosItem.use_2d_color = False
             self.m_logger.WriteLine4("\tThe new Use2DColor flag is: {0}", dropLinePosItem.use_2d_color)
@@ -806,19 +807,19 @@ class VODropLinePathItemCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IVehicleGraphics3DDropLinePathItemCollection"):
+    def Run(self, oCollection: "VehicleGraphics3DDropLinePathItemCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("The DropLinePathItem collection contains: {0} elements", oCollection.count)
         # _NewEnum
-        oItem: "IVehicleGraphics3DDropLinePathItem"
+        oItem: "VehicleGraphics3DDropLinePathItem"
         # _NewEnum
         for oItem in oCollection:
             self.m_logger.WriteLine6("\tElement: {0}", oItem.type)
 
         iIndex: int = 0
         while iIndex < oCollection.count:
-            dropLinePathItem: "IVehicleGraphics3DDropLinePathItem" = oCollection[iIndex]
+            dropLinePathItem: "VehicleGraphics3DDropLinePathItem" = oCollection[iIndex]
             Assert.assertIsNotNone(dropLinePathItem)
             # Type
             self.m_logger.WriteLine7("Element {0} is: {1}", iIndex, dropLinePathItem.type)
@@ -832,31 +833,31 @@ class VODropLinePathItemCollectionHelper(object):
                 dropLinePathItem.use_2d_color = False
 
             # Use2DColor
-            TryCatchAssertBlock.DoAssert("The Use2DColor should be readonly when IsVisible flag is False.", action11)
+            TryCatchAssertBlock.DoAssert(action11)
 
             def action12():
                 dropLinePathItem.color = Color.FromArgb(16448250)
 
             # Color
-            TryCatchAssertBlock.DoAssert("The Color should be readonly when IsVisible flag is False.", action12)
+            TryCatchAssertBlock.DoAssert(action12)
 
             def action13():
                 dropLinePathItem.line_width = LINE_WIDTH.WIDTH3
 
             # LineWidth
-            TryCatchAssertBlock.DoAssert("The LineWidth should be readonly when IsVisible flag is False.", action13)
+            TryCatchAssertBlock.DoAssert(action13)
 
             def action14():
                 dropLinePathItem.line_style = LINE_STYLE.SOLID
 
             # LineStyle
-            TryCatchAssertBlock.DoAssert("The LineStyle should be readonly when IsVisible flag is False.", action14)
+            TryCatchAssertBlock.DoAssert(action14)
 
             def action15():
                 dropLinePathItem.interval = 123.456
 
             # Interval
-            TryCatchAssertBlock.DoAssert("The Interval should be readonly when IsVisible flag is False.", action15)
+            TryCatchAssertBlock.DoAssert(action15)
             # IsVisible (true)
             dropLinePathItem.is_visible = True
             self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", dropLinePathItem.is_visible)
@@ -871,7 +872,7 @@ class VODropLinePathItemCollectionHelper(object):
                 dropLinePathItem.color = Color.FromArgb(16448250)
 
             # Color
-            TryCatchAssertBlock.DoAssert("The Color should be readonly when Use2DColor flag is True.", action16)
+            TryCatchAssertBlock.DoAssert(action16)
             # Use2DColor (false)
             dropLinePathItem.use_2d_color = False
             self.m_logger.WriteLine4("\tThe new Use2DColor flag is: {0}", dropLinePathItem.use_2d_color)
@@ -900,7 +901,7 @@ class VODropLinePathItemCollectionHelper(object):
             def action17():
                 dropLinePathItem.interval = -123.456
 
-            TryCatchAssertBlock.DoAssert("The Interval should not be allow to set out of range values.", action17)
+            TryCatchAssertBlock.DoAssert(action17)
 
             iIndex += 1
 
@@ -916,7 +917,7 @@ class VOElevationContoursHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oContours: "IVehicleGraphics3DElevContours"):
+    def Run(self, oContours: "VehicleGraphics3DElevContours"):
         self.m_logger.WriteLine("----- THE VO ELEVATION CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         bCaught: bool = False
@@ -1067,17 +1068,17 @@ class VOElevationContoursHelper(object):
 
 # region VORouteModelHelper
 class VORouteModelHelper(object):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "IStkObjectRoot" = root
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self._root: "StkObjectRoot" = root
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oModel: "IVehicleRouteGraphics3DModel"):
+    def Run(self, oModel: "VehicleRouteGraphics3DModel"):
         self.m_logger.WriteLine("----- THE VO MODEL TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oModel)
 
@@ -1091,7 +1092,7 @@ class VORouteModelHelper(object):
             oModel.point_size = 12.3456
 
         # PointSize
-        TryCatchAssertBlock.DoAssert("Allows to modify a readonly property!", action18)
+        TryCatchAssertBlock.DoAssert(action18)
         # IsPointVisible (true)
         oModel.is_point_visible = True
         self.m_logger.WriteLine4("\tThe new IsPointVisible is: {0}", oModel.is_point_visible)
@@ -1105,7 +1106,7 @@ class VORouteModelHelper(object):
         def action19():
             oModel.point_size = 123.456
 
-        TryCatchAssertBlock.DoAssert("Allows to set illegal value!", action19)
+        TryCatchAssertBlock.DoAssert(action19)
 
         def action20():
             oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
@@ -1114,20 +1115,20 @@ class VORouteModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("glTF settings are not available", action20)
         (
-            clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+            clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         def action21():
-            x: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+            x: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
 
         TryCatchAssertBlock.ExpectedException("is not set to Image Based", action21)
 
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
-        gltfImageBased: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+        gltfImageBased: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
         Assert.assertEqual("over_the_clouds.hdr", gltfImageBased.filename)
         Assert.assertTrue(("over_the_clouds.hdr" in gltfImageBased.file_path))
@@ -1152,15 +1153,15 @@ class VORouteModelHelper(object):
 
 # region VOMarkerHelper
 class VOMarkerHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Test_IAgVOMarkerFile method
-    def Test_IAgVOMarkerFile(self, oFile: "IGraphics3DMarkerFile"):
+    def Test_IAgVOMarkerFile(self, oFile: "Graphics3DMarkerFile"):
         oFile.filename = TestBase.PathCombine("STKData", "VO", "Markers", "Star.ppm")
         Assert.assertEqual(TestBase.PathCombine("STKData", "VO", "Markers", "Star.ppm"), oFile.filename)
         oFile.filename = TestBase.PathCombine("STKData", "VO", "Markers", "Ship.ppm")
@@ -1189,7 +1190,7 @@ class VOMarkerHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oMarker: "IGraphics3DMarker", bIsVehicle: bool):
+    def Run(self, oMarker: "Graphics3DMarker", bIsVehicle: bool):
         Assert.assertIsNotNone(oMarker)
 
         oMarker.visible = False
@@ -1227,7 +1228,7 @@ class VOMarkerHelper(object):
         oMarker.marker_type = MARKER_TYPE.SHAPE
         Assert.assertEqual(MARKER_TYPE.SHAPE, oMarker.marker_type)
 
-        oShape: "IGraphics3DMarkerShape" = clr.CastAs(oMarker.marker_data, IGraphics3DMarkerShape)
+        oShape: "Graphics3DMarkerShape" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerShape)
         Assert.assertIsNotNone(oShape)
         oShape.style = MARKER_SHAPE_3D.SHAPE_CIRCLE
         Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_CIRCLE, oShape.style)
@@ -1235,7 +1236,7 @@ class VOMarkerHelper(object):
         Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_POINT, oShape.style)
 
         def action29():
-            voMarkerFileX: "IGraphics3DMarkerFile" = clr.Convert(oMarker.marker_data, IGraphics3DMarkerFile)
+            voMarkerFileX: "Graphics3DMarkerFile" = clr.Convert(oMarker.marker_data, Graphics3DMarkerFile)
 
         TryCatchAssertBlock.DoAssertInvalidCast(action29)
 
@@ -1247,12 +1248,12 @@ class VOMarkerHelper(object):
         )  # This will set the MarkerType to eImageFile
 
         Assert.assertEqual(MARKER_TYPE.IMAGE_FILE, oMarker.marker_type)
-        oFile: "IGraphics3DMarkerFile" = clr.CastAs(oMarker.marker_data, IGraphics3DMarkerFile)
+        oFile: "Graphics3DMarkerFile" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerFile)
         Assert.assertIsNotNone(oFile)
         self.Test_IAgVOMarkerFile(oFile)
 
         def action30():
-            oShape = clr.Convert(oMarker.marker_data, IGraphics3DMarkerShape)
+            oShape = clr.Convert(oMarker.marker_data, Graphics3DMarkerShape)
 
         TryCatchAssertBlock.DoAssertInvalidCast(action30)
 
@@ -1323,12 +1324,12 @@ class VOMarkerHelper(object):
 
 # region VOModelHelper
 class VOModelHelper(object):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "IStkObjectRoot" = root
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self._root: "StkObjectRoot" = root
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -1346,12 +1347,12 @@ class VOModelHelper(object):
         def action38():
             oModel.scale_value = 3.3
 
-        TryCatchAssertBlock.DoAssert("The Scale is readonly when Visible flag is False.", action38)
+        TryCatchAssertBlock.DoAssert(action38)
 
         def action39():
             oModel.model_type = MODEL_TYPE.FILE
 
-        TryCatchAssertBlock.DoAssert("The ModelType is readonly when Visible flag is False.", action39)
+        TryCatchAssertBlock.DoAssert(action39)
 
         oModel.visible = True
         self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oModel.visible)
@@ -1365,14 +1366,14 @@ class VOModelHelper(object):
         def action40():
             oModel.scale_value = -12.34
 
-        TryCatchAssertBlock.DoAssert("Cannot set illegal ScaleValue (out of range)!", action40)
+        TryCatchAssertBlock.DoAssert(action40)
 
         # ModelType (File)
         self.m_logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
         oModel.model_type = MODEL_TYPE.FILE
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
-        oModelFile: "IGraphics3DModelFile" = clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+        oModelFile: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "pegasus.mdl")
@@ -1382,12 +1383,12 @@ class VOModelHelper(object):
         def action41():
             oModelFile.filename = "sat.mdl"
 
-        TryCatchAssertBlock.DoAssert("The Filename should not allow to set invalid filename.", action41)
+        TryCatchAssertBlock.DoAssert(action41)
 
         def action42():
             oModelFile.filename = ""
 
-        TryCatchAssertBlock.DoAssert("The Filename should not allow to set invalid filename.", action42)
+        TryCatchAssertBlock.DoAssert(action42)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "satellite.dae")
         Assert.assertEqual(TestBase.PathCombine("VO", "Models", "satellite.dae"), oModelFile.filename)
         self.m_logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.filename)
@@ -1398,7 +1399,7 @@ class VOModelHelper(object):
         oModel.model_type = MODEL_TYPE.LIST
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
         Assert.assertEqual(MODEL_TYPE.LIST, oModel.model_type)
-        oModelList: "IGraphics3DModelCollection" = clr.CastAs(oModel.model_data, IGraphics3DModelCollection)
+        oModelList: "Graphics3DModelCollection" = clr.CastAs(oModel.model_data, Graphics3DModelCollection)
         Assert.assertIsNotNone(oModelList)
         iSize: int = oModelList.count
         self.m_logger.WriteLine3("\t\tThe Model list collection contains: {0} elements", iSize)
@@ -1433,7 +1434,7 @@ class VOModelHelper(object):
         def action43():
             oModelList.add(oModelList[0].switch_time, oModelList[0].graphics_3d_model_file.file_path)
 
-        TryCatchAssertBlock.DoAssert("The Add() method should not allow to add duplicated elements.", action43)
+        TryCatchAssertBlock.DoAssert(action43)
         oModelList.add((time + 1), oModelList[0].graphics_3d_model_file.file_path)
         iSize = oModelList.count
         self.m_logger.WriteLine3("\t\tThe Model list collection contains: {0} elements", iSize)
@@ -1452,7 +1453,7 @@ class VOModelHelper(object):
         if iSize > 1:
             oModelList.remove(0)
             self.m_logger.WriteLine3("\t\tAfter Remove(0) the ModelList contains: {0} elements", oModelList.count)
-            oItem: "IGraphics3DModelItem"
+            oItem: "Graphics3DModelItem"
             for oItem in oModelList:
                 self.m_logger.WriteLine7(
                     "\t\t\tElement (before modification): ModelFile = {0}, SwitchTime = {1}",
@@ -1467,7 +1468,7 @@ class VOModelHelper(object):
                     oItem.switch_time,
                 )
 
-                voModelFile: "IGraphics3DModelFile" = oItem.graphics_3d_model_file
+                voModelFile: "Graphics3DModelFile" = oItem.graphics_3d_model_file
                 Assert.assertEqual((TestBase.PathCombine("VO", "Models", "satellite.dae")), voModelFile.filename)
                 Assert.assertTrue((TestBase.PathCombine("VO", "Models", "satellite.dae") in voModelFile.file_path))
                 voModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "pegasus.mdl")
@@ -1500,11 +1501,11 @@ class VOModelHelper(object):
         # ------------------------------------------------------------
         oModel.model_type = MODEL_TYPE.FILE
         Assert.assertTrue((oModel.model_type == MODEL_TYPE.FILE))
-        oldModel: str = (clr.CastAs(oModel.model_data, IGraphics3DModelFile)).filename
+        oldModel: str = (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename
         self._root.begin_update()
         try:
             oModel.model_type = MODEL_TYPE.FILE
-            modelFile: "IGraphics3DModelFile" = clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+            modelFile: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
             modelFile.filename = "\\STKData\\VO\\Models\\Space\\hubble.mdl"
 
             oModel.articulation.set_transformation_value(0, "HGA_Arm_1", "Fold", 90)
@@ -1513,7 +1514,7 @@ class VOModelHelper(object):
             self._root.end_update()
 
         oModel.model_type = MODEL_TYPE.LIST
-        modelList: "IGraphics3DModelCollection" = clr.CastAs(oModel.model_data, IGraphics3DModelCollection)
+        modelList: "Graphics3DModelCollection" = clr.CastAs(oModel.model_data, Graphics3DModelCollection)
         while modelList.count > 1:
             modelList.remove((modelList.count - 1))
         modelList[0].graphics_3d_model_file.filename = oldModel
@@ -1521,7 +1522,7 @@ class VOModelHelper(object):
         def action45():
             oModel.articulation.set_transformation_value(0, "HGA_Arm_1", "Fold", 90)
 
-        TryCatchAssertBlock.DoAssert("Must not allow setting invalid articulations.", action45)
+        TryCatchAssertBlock.DoAssert(action45)
 
         self._root.begin_update()
         try:
@@ -1535,7 +1536,7 @@ class VOModelHelper(object):
     # endregion
 
     # region VODetailThreshold
-    def VODetailThreshold(self, oDetail: "IGraphics3DDetailThreshold"):
+    def VODetailThreshold(self, oDetail: "Graphics3DDetailThreshold"):
         Assert.assertIsNotNone(oDetail)
         self.m_logger.WriteLine("VO DetailThreshold test:")
         # set DistanceUnit
@@ -1696,7 +1697,7 @@ class VOModelHelper(object):
     # endregion
 
     # region VOArticulation
-    def VOArticulation(self, oArticulation: "IGraphics3DModelArtic"):
+    def VOArticulation(self, oArticulation: "Graphics3DModelArtic"):
         Assert.assertIsNotNone(oArticulation)
 
         oArticulation.enable_default_save = False
@@ -1719,7 +1720,7 @@ class VOModelHelper(object):
         oArticulation.use_object_color_for_model = True
         Assert.assertTrue(oArticulation.use_object_color_for_model)
 
-        articFile: "IGraphics3DArticulationFile" = oArticulation.graphics_3d_articulation_file
+        articFile: "Graphics3DArticulationFile" = oArticulation.graphics_3d_articulation_file
         oArticulation.use_articulation_file = False
 
         def action46():
@@ -1753,7 +1754,7 @@ class VOModelHelper(object):
                 strArtic: str = str(arAvailableArtic[i])
                 self.m_logger.WriteLine7("\t\t\t\tArticulation {0} is: {1}", i, strArtic)
                 # TransCollection test
-                oTransformations: "IGraphics3DModelTransformationCollection" = (
+                oTransformations: "Graphics3DModelTransformationCollection" = (
                     oArticulation.get_available_transformations(iIndex, strArtic)
                 )
                 Assert.assertIsNotNone(oTransformations)
@@ -1762,7 +1763,7 @@ class VOModelHelper(object):
 
                 j: int = 0
                 while j < oTransformations.count:
-                    modelTrans: "IGraphics3DModelTransformation" = oTransformations[j]
+                    modelTrans: "Graphics3DModelTransformation" = oTransformations[j]
                     strTrans: str = modelTrans.name
                     self.m_logger.WriteLine7("\t\t\t\t\tTransformation {0} is: {1}", j, strTrans)
                     self.m_logger.WriteLine8(
@@ -1800,7 +1801,7 @@ class VOModelHelper(object):
                     j += 1
 
                 # Collection enumeration test
-                oItem: "IGraphics3DModelTransformation"
+                oItem: "Graphics3DModelTransformation"
                 # Collection enumeration test
                 for oItem in oTransformations:
                     Assert.assertIsNotNone(oItem)
@@ -1815,17 +1816,17 @@ class VOModelHelper(object):
 
 # region VOTargetModelHelper
 class VOTargetModelHelper(object):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "IStkObjectRoot" = root
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self._root: "StkObjectRoot" = root
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oModel: "IPointTargetGraphics3DModel"):
+    def Run(self, oModel: "PointTargetGraphics3DModel"):
         Assert.assertIsNotNone(oModel)
         # IsPointVisible (false)
         self.m_logger.WriteLine4("\tThe current IsPointVisible is: {0}", oModel.is_point_visible)
@@ -1837,7 +1838,7 @@ class VOTargetModelHelper(object):
             oModel.point_size = 12.3456
 
         # PointSize
-        TryCatchAssertBlock.DoAssert("Allows to modify a readonly property!", action48)
+        TryCatchAssertBlock.DoAssert(action48)
         # IsPointVisible (true)
         oModel.is_point_visible = True
         self.m_logger.WriteLine4("\tThe new IsPointVisible is: {0}", oModel.is_point_visible)
@@ -1851,7 +1852,7 @@ class VOTargetModelHelper(object):
         def action49():
             oModel.point_size = 123.456
 
-        TryCatchAssertBlock.DoAssert("Allows to set illegal value!", action49)
+        TryCatchAssertBlock.DoAssert(action49)
 
         def action50():
             oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
@@ -1860,20 +1861,20 @@ class VOTargetModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("glTF settings are not available", action50)
         (
-            clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+            clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         def action51():
-            x: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+            x: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
 
         TryCatchAssertBlock.ExpectedException("is not set to Image Based", action51)
 
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
-        gltfImageBased: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+        gltfImageBased: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
         Assert.assertEqual("over_the_clouds.hdr", gltfImageBased.filename)
         Assert.assertTrue(("over_the_clouds.hdr" in gltfImageBased.file_path))
@@ -1896,17 +1897,17 @@ class VOTargetModelHelper(object):
 
 # region VOTrajectoryModelHelper
 class VOTrajectoryModelHelper(object):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "IStkObjectRoot" = root
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self._root: "StkObjectRoot" = root
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oModel: "IVehicleTrajectoryGraphics3DModel", IsLaunchVehicle: bool):
+    def Run(self, oModel: "VehicleTrajectoryGraphics3DModel", IsLaunchVehicle: bool):
         self.m_logger.WriteLine("----- THE VO MODEL TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oModel)
 
@@ -1920,7 +1921,7 @@ class VOTrajectoryModelHelper(object):
             oModel.point_size = 12.3456
 
         # PointSize
-        TryCatchAssertBlock.DoAssert("Allows to modify a readonly property!", action53)
+        TryCatchAssertBlock.DoAssert(action53)
         # IsPointVisible (true)
         oModel.is_point_visible = True
         self.m_logger.WriteLine4("\tThe new IsPointVisible is: {0}", oModel.is_point_visible)
@@ -1934,7 +1935,7 @@ class VOTrajectoryModelHelper(object):
         def action54():
             oModel.point_size = 123.456
 
-        TryCatchAssertBlock.DoAssert("Allows to set illegal value!", action54)
+        TryCatchAssertBlock.DoAssert(action54)
         if not IsLaunchVehicle:
 
             def action55():
@@ -1943,20 +1944,20 @@ class VOTrajectoryModelHelper(object):
             TryCatchAssertBlock.ExpectedException("glTF settings are not available", action55)
 
         (
-            clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+            clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         def action56():
-            x: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+            x: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
 
         TryCatchAssertBlock.ExpectedException("is not set to Image Based", action56)
 
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
-        gltfImageBased: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+        gltfImageBased: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
         Assert.assertEqual("over_the_clouds.hdr", gltfImageBased.filename)
         Assert.assertTrue(("over_the_clouds.hdr" in gltfImageBased.file_path))
@@ -1988,17 +1989,17 @@ class VOTrajectoryModelHelper(object):
 
 # region VOSatelliteModelHelper
 class VOSatelliteModelHelper(object):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
-        self._root: "IStkObjectRoot" = root
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run method
-    def Run(self, oModel: "ISatelliteGraphics3DModel"):
+    def Run(self, oModel: "SatelliteGraphics3DModel"):
         self.m_logger.WriteLine("----- THE VO MODEL TEST ----- BEGIN -----")
 
         Assert.assertIsNotNone(oModel)
@@ -2013,7 +2014,7 @@ class VOSatelliteModelHelper(object):
             oModel.point_size = 12.3456
 
         # PointSize
-        TryCatchAssertBlock.DoAssert("Allows to modify a readonly property!", action58)
+        TryCatchAssertBlock.DoAssert(action58)
         # IsPointVisible (true)
         oModel.is_point_visible = True
         self.m_logger.WriteLine4("\tThe new IsPointVisible is: {0}", oModel.is_point_visible)
@@ -2027,7 +2028,7 @@ class VOSatelliteModelHelper(object):
         def action59():
             oModel.point_size = 123.456
 
-        TryCatchAssertBlock.DoAssert("Allows to set illegal value!", action59)
+        TryCatchAssertBlock.DoAssert(action59)
 
         def action60():
             oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
@@ -2036,20 +2037,20 @@ class VOSatelliteModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("glTF settings are not available", action60)
         (
-            clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+            clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         def action61():
-            x: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+            x: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
 
         TryCatchAssertBlock.ExpectedException("is not set to Image Based", action61)
 
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
-        gltfImageBased: "IGraphics3DModelGltfImageBased" = oModel.gltf_image_based
+        gltfImageBased: "Graphics3DModelGltfImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
         Assert.assertEqual("over_the_clouds.hdr", gltfImageBased.filename)
         Assert.assertTrue(("over_the_clouds.hdr" in gltfImageBased.file_path))
@@ -2096,11 +2097,11 @@ class VOModelPointingHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oModelPointing: "IGraphics3DModelPointing"):
+    def Run(self, oModelPointing: "Graphics3DModelPointing"):
         self.m_logger.WriteLine("----- THE VO MODEL POINTING TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oModelPointing)
         # PointableElements
-        oPECollection: "IGraphics3DPointableElementsCollection" = oModelPointing.pointable_elements
+        oPECollection: "Graphics3DPointableElementsCollection" = oModelPointing.pointable_elements
         Assert.assertIsNotNone(oPECollection)
         # Count
         self.m_logger.WriteLine3("The Pointable Elements collection contains: {0} elements", oPECollection.count)
@@ -2116,14 +2117,14 @@ class VOModelPointingHelper(object):
 
         iIndex: int = 0
         while iIndex < oPECollection.count:
-            pointableElementsElement: "IGraphics3DPointableElementsElement" = oPECollection[iIndex]
+            pointableElementsElement: "Graphics3DPointableElementsElement" = oPECollection[iIndex]
             Assert.assertIsNotNone(pointableElementsElement)
             self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, pointableElementsElement.pointing_name)
 
             def action63():
                 pointableElementsElement.pointing_name = "NewName"
 
-            TryCatchAssertBlock.DoAssert("The PointingName should be readonly!", action63)
+            TryCatchAssertBlock.DoAssert(action63)
 
             oHelper = LinkToObjectHelper()
             oHelper.Run(pointableElementsElement.assigned_target_object, pointableElementsElement.pointing_name)
@@ -2140,29 +2141,29 @@ class VOModelPointingHelper(object):
             iIndex += 1
 
         def action64():
-            oNewElement: "IGraphics3DPointableElementsElement" = oPECollection.add()
+            oNewElement: "Graphics3DPointableElementsElement" = oPECollection.add()
 
-        TryCatchAssertBlock.DoAssert("The PointableElementsCollection should be readonly!", action64)
+        TryCatchAssertBlock.DoAssert(action64)
 
         def action65():
             oPECollection.remove_at(0)
 
         # RemoveAt
-        TryCatchAssertBlock.DoAssert("The PointableElementsCollection should be readonly!", action65)
+        TryCatchAssertBlock.DoAssert(action65)
 
         def action66():
             oPECollection.remove_all()
 
         # RemoveAll
-        TryCatchAssertBlock.DoAssert("The PointableElementsCollection should be readonly!", action66)
+        TryCatchAssertBlock.DoAssert(action66)
         self.m_logger.WriteLine3("The Pointable Elements collection still contains: {0} elements", oPECollection.count)
-        oTempElement: "IGraphics3DPointableElementsElement"
+        oTempElement: "Graphics3DPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine5("\tElement: {0}", oTempElement.pointing_name)
 
         # Testing model pointing intervals
         Assert.assertTrue((oPECollection.count > 0))
-        oTempElement: "IGraphics3DPointableElementsElement"
+        oTempElement: "Graphics3DPointableElementsElement"
         for oTempElement in oPECollection:
             oTempElement.intervals.remove_all()
             Assert.assertEqual(
@@ -2175,7 +2176,7 @@ class VOModelPointingHelper(object):
         sPlanetTargetObject: str = "Planet/MarsJPL"
 
         # Verify that we can add intervals to existing pointable elements
-        oTempElement: "IGraphics3DPointableElementsElement"
+        oTempElement: "Graphics3DPointableElementsElement"
 
         # Verify that we can add intervals to existing pointable elements
         for oTempElement in oPECollection:
@@ -2199,7 +2200,7 @@ class VOModelPointingHelper(object):
             def action67():
                 oTempElement.intervals.add("1 Jul 1999 03:00:000.00", "1 Jul 1999 01:00:000.00")
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set illegal time interval!", action67)
+            TryCatchAssertBlock.DoAssert(action67)
 
         # adding a Sun target
         iCount: int = oPECollection.count
@@ -2208,7 +2209,7 @@ class VOModelPointingHelper(object):
         )
         Assert.assertEqual((iCount + 1), oPECollection.count)
         self.m_logger.WriteLine3("The new PointebleElements collection contains: {0} elements", oPECollection.count)
-        oTempElement: "IGraphics3DPointableElementsElement"
+        oTempElement: "Graphics3DPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine(oTempElement.pointing_name)
             self.m_logger.WriteLine5("\tTargetObject: {0}", oTempElement.assigned_target_object.name)
@@ -2220,21 +2221,21 @@ class VOModelPointingHelper(object):
                 "WrongPointingName", "Sun", "1 Jul 1999 13:00:000.00", "2 Jul 1999 00:00:000.00"
             )
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set illegal interval!", action68)
+        TryCatchAssertBlock.DoAssert(action68)
 
         def action69():
             oModelPointing.add_interval(
                 oPECollection[2].pointing_name, "WrongTargetName", "1 Jul 1999 13:00:000.00", "2 Jul 1999 00:00:000.00"
             )
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set illegal interval!", action69)
+        TryCatchAssertBlock.DoAssert(action69)
 
         def action70():
             oModelPointing.add_interval(
                 oPECollection[2].pointing_name, "Earth", "3 Jul 1999 13:00:000.00", "2 Jul 1999 00:00:000.00"
             )
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set illegal interval!", action70)
+        TryCatchAssertBlock.DoAssert(action70)
 
         # adding a Slew Interval target
         iCount = oPECollection.count
@@ -2243,7 +2244,7 @@ class VOModelPointingHelper(object):
         )
         Assert.assertEqual((iCount + 1), oPECollection.count)
         self.m_logger.WriteLine3("The new PointebleElements collection contains: {0} elements", oPECollection.count)
-        oTempElement: "IGraphics3DPointableElementsElement"
+        oTempElement: "Graphics3DPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine(oTempElement.pointing_name)
             self.m_logger.WriteLine5("\tTargetObject: {0}", oTempElement.assigned_target_object.name)
@@ -2254,7 +2255,7 @@ class VOModelPointingHelper(object):
         oModelPointing.remove_interval(oPECollection[1].pointing_name, "Slew")
         Assert.assertEqual(iCount, oPECollection.count)
         self.m_logger.WriteLine3("The new PointebleElements collection contains: {0} elements", oPECollection.count)
-        oTempElement: "IGraphics3DPointableElementsElement"
+        oTempElement: "Graphics3DPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine(oTempElement.pointing_name)
             self.m_logger.WriteLine5("\tTargetObject: {0}", oTempElement.assigned_target_object.name)
@@ -2264,17 +2265,17 @@ class VOModelPointingHelper(object):
         def action71():
             oModelPointing.remove_interval("WrongPointingName", "Sun")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to remove illegal interval!", action71)
+        TryCatchAssertBlock.DoAssert(action71)
 
         def action72():
             oModelPointing.remove_interval(oPECollection[2].pointing_name, "WrongTargetName")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to remove illegal interval!", action72)
+        TryCatchAssertBlock.DoAssert(action72)
 
         def action73():
             oModelPointing.remove_interval(oPECollection[1].pointing_name, "Earth")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to remove illegal interval!", action73)
+        TryCatchAssertBlock.DoAssert(action73)
 
         # Sort
         oPECollection.sort()
@@ -2310,14 +2311,14 @@ class VOModelPointingHelper(object):
                 TestBase.GetScenarioFile("MdlPtgIntsBad.int"), oModelPointing.pointable_elements[0].pointing_name
             )
 
-        TryCatchAssertBlock.DoAssert("This file is invalid and should throw an exception.", action74)
+        TryCatchAssertBlock.DoAssert(action74)
 
         self.m_logger.WriteLine("----- THE VO MODEL POINTING TEST ----- END -----")
 
     # endregion
 
     # region PrintIntervals method
-    def PrintIntervals(self, oCollection: "IIntervalCollection"):
+    def PrintIntervals(self, oCollection: "IntervalCollection"):
         iIndex: int = 0
         while iIndex < oCollection.count:
             oStart: typing.Any = None
@@ -2334,15 +2335,15 @@ class VOModelPointingHelper(object):
 
 # region VOOffsetsHelper
 class VOOffsetsHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oOffset: "IGraphics3DOffset"):
+    def Run(self, oOffset: "Graphics3DOffset"):
         self.m_logger.WriteLine("----- THE VO OFFSET TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oOffset)
 
@@ -2370,15 +2371,15 @@ class VOOffsetsHelper(object):
 
 # region VOOffsetRotationalHelper
 class VOOffsetRotationalHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oRotational: "IGraphics3DOffsetRotate"):
+    def Run(self, oRotational: "Graphics3DOffsetRotate"):
         Assert.assertIsNotNone(oRotational)
         self.m_logger.WriteLine("Offsets Rotational test:")
         # set AngleUnit
@@ -2489,15 +2490,15 @@ class VOOffsetRotationalHelper(object):
 
 # region VOOffsetTranslationalHelper
 class VOOffsetTranslationalHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oTranslational: "IGraphics3DOffsetTransformation"):
+    def Run(self, oTranslational: "Graphics3DOffsetTransformation"):
         Assert.assertIsNotNone(oTranslational)
         self.m_logger.WriteLine("Offsets Translational test:")
         # set DistanceUnit
@@ -2608,15 +2609,15 @@ class VOOffsetTranslationalHelper(object):
 
 # region VOOffsetLabelHelper
 class VOOffsetLabelHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oLabel: "IGraphics3DOffsetLabel", bReadOnly: bool):
+    def Run(self, oLabel: "Graphics3DOffsetLabel", bReadOnly: bool):
         self.m_logger.WriteLine("----- VO OFFSET LABEL ----- BEGIN -----")
         Assert.assertIsNotNone(oLabel)
         # set SmallDistanceUnit
@@ -2635,31 +2636,31 @@ class VOOffsetLabelHelper(object):
                 oLabel.enable = False
 
             # Enable
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action75)
+            TryCatchAssertBlock.DoAssert(action75)
 
             def action76():
                 oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
 
             # OffsetFrame
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action76)
+            TryCatchAssertBlock.DoAssert(action76)
 
             def action77():
                 oLabel.x = 10.1
 
             # X
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action77)
+            TryCatchAssertBlock.DoAssert(action77)
 
             def action78():
                 oLabel.y = 11.11
 
             # Y
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action78)
+            TryCatchAssertBlock.DoAssert(action78)
 
             def action79():
                 oLabel.z = 12.12
 
             # Z
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action79)
+            TryCatchAssertBlock.DoAssert(action79)
 
         else:
             # Enable (false)
@@ -2672,25 +2673,25 @@ class VOOffsetLabelHelper(object):
                 oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
 
             # OffsetFrame
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action80)
+            TryCatchAssertBlock.DoAssert(action80)
 
             def action81():
                 oLabel.x = 10.1
 
             # X
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action81)
+            TryCatchAssertBlock.DoAssert(action81)
 
             def action82():
                 oLabel.y = 11.11
 
             # Y
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action82)
+            TryCatchAssertBlock.DoAssert(action82)
 
             def action83():
                 oLabel.z = 12.12
 
             # Z
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action83)
+            TryCatchAssertBlock.DoAssert(action83)
             # Enable (true)
             oLabel.enable = True
             self.m_logger.WriteLine4("\t\tThe new Enable is: {0}", oLabel.enable)
@@ -2709,7 +2710,7 @@ class VOOffsetLabelHelper(object):
             def action84():
                 oLabel.x = 12340000000000000000000.0
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value!", action84)
+            TryCatchAssertBlock.DoAssert(action84)
             # Y
             self.m_logger.WriteLine6("\t\t\t\tThe current Y is: {0}", oLabel.y)
             oLabel.y = 11.11
@@ -2719,7 +2720,7 @@ class VOOffsetLabelHelper(object):
             def action85():
                 oLabel.y = -34120000000000.0
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value!", action85)
+            TryCatchAssertBlock.DoAssert(action85)
             # Z
             self.m_logger.WriteLine6("\t\t\t\tThe current Z is: {0}", oLabel.z)
             oLabel.z = 12.12
@@ -2729,7 +2730,7 @@ class VOOffsetLabelHelper(object):
             def action86():
                 oLabel.z = 210900000000000000000000000000000000.0
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value!", action86)
+            TryCatchAssertBlock.DoAssert(action86)
             # OffsetFrame (Pixel)
             oLabel.offset_frame = OFFSET_FRAME_TYPE.PIXEL
             self.m_logger.WriteLine6("\t\t\tThe new OffsetFrame is: {0}", oLabel.offset_frame)
@@ -2743,7 +2744,7 @@ class VOOffsetLabelHelper(object):
             def action87():
                 oLabel.x = 12340000000000000000000.0
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value!", action87)
+            TryCatchAssertBlock.DoAssert(action87)
             # Y
             self.m_logger.WriteLine6("\t\t\t\tThe current Y is: {0}", oLabel.y)
             oLabel.y = 14.14
@@ -2753,13 +2754,13 @@ class VOOffsetLabelHelper(object):
             def action88():
                 oLabel.y = -34120000000000.0
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value!", action88)
+            TryCatchAssertBlock.DoAssert(action88)
 
             def action89():
                 oLabel.z = 15.15
 
             # Z
-            TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action89)
+            TryCatchAssertBlock.DoAssert(action89)
 
         # restore SmallDistanceUnit
         self.m_oUnits.set_current_unit("SmallDistanceUnit", strUnit)
@@ -2779,7 +2780,7 @@ class VOOffsetAttachHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oAttach: "IGraphics3DOffsetAttach"):
+    def Run(self, oAttach: "Graphics3DOffsetAttach"):
         Assert.assertIsNotNone(oAttach)
         self.m_logger.WriteLine("Offsets Attach Points test:")
         # AvailableAttachPoints
@@ -2794,7 +2795,7 @@ class VOOffsetAttachHelper(object):
             def action90():
                 oAttach.attach_point_name = str(arPoints[0])
 
-            TryCatchAssertBlock.DoAssert("Allows to modify a readonly property!", action90)
+            TryCatchAssertBlock.DoAssert(action90)
 
         # Enable (true)
         oAttach.enable = True
@@ -2813,7 +2814,7 @@ class VOOffsetAttachHelper(object):
         def action91():
             oAttach.attach_point_name = "InvalidName"
 
-        TryCatchAssertBlock.DoAssert("Allows to set illegal value!", action91)
+        TryCatchAssertBlock.DoAssert(action91)
 
 
 # endregion
@@ -2821,11 +2822,11 @@ class VOOffsetAttachHelper(object):
 
 # region VOProximityHelper
 class VOProximityHelper(object):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_root: "IStkObjectRoot" = root
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_root: "StkObjectRoot" = root
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -2842,37 +2843,37 @@ class VOProximityHelper(object):
             oAreaObject.color = Color.FromArgb(12414)
 
         # Color (readonly)
-        TryCatchAssertBlock.DoAssert("", action92)
+        TryCatchAssertBlock.DoAssert(action92)
 
         def action93():
             oAreaObject.is_label_visible = True
 
         # IsLabelVisible (readonly)
-        TryCatchAssertBlock.DoAssert("", action93)
+        TryCatchAssertBlock.DoAssert(action93)
 
         def action94():
             oAreaObject.is_text_visible = True
 
         # IsTextVisible (readonly)
-        TryCatchAssertBlock.DoAssert("", action94)
+        TryCatchAssertBlock.DoAssert(action94)
 
         def action95():
             oAreaObject.line_style = LINE_STYLE.DASHED
 
         # LineStyle (readonly)
-        TryCatchAssertBlock.DoAssert("", action95)
+        TryCatchAssertBlock.DoAssert(action95)
 
         def action96():
             oAreaObject.line_width = LINE_WIDTH.WIDTH2
 
         # LineWidth (readonly)
-        TryCatchAssertBlock.DoAssert("", action96)
+        TryCatchAssertBlock.DoAssert(action96)
 
         def action97():
             oAreaObject.text = "Area Of Uncertainty"
 
         # Text (readonly)
-        TryCatchAssertBlock.DoAssert("", action97)
+        TryCatchAssertBlock.DoAssert(action97)
         # IsVisible (true)
         oAreaObject.is_visible = True
         self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oAreaObject.is_visible)
@@ -2921,7 +2922,7 @@ class VOProximityHelper(object):
     # endregion
 
     # region ControlBox
-    def TestControlBox(self, oBox: "IVehicleGraphics3DControlBox"):
+    def TestControlBox(self, oBox: "VehicleGraphics3DControlBox"):
         self.TestProximityAreObjectBase(oBox)
 
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
@@ -3047,11 +3048,11 @@ class VOProximityHelper(object):
     # endregion
 
     # region BearingBox
-    def TestBearingBox(self, oBox: "IVehicleGraphics3DBearingBox"):
+    def TestBearingBox(self, oBox: "VehicleGraphics3DBearingBox"):
         # base properties test
         self.TestProximityAreObjectBase(oBox)
 
-        self.m_logger.WriteLine("IVehicleGraphics3DBearingBox test:")
+        self.m_logger.WriteLine("VehicleGraphics3DBearingBox test:")
         # set DistanceUnit
         strDistanceUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
         self.m_logger.WriteLine5("\tThe current DistanceUnit is: {0}", strDistanceUnit)
@@ -3074,55 +3075,55 @@ class VOProximityHelper(object):
             oBox.bearing = 1234.56789
 
         # Bearing (readonly)
-        TryCatchAssertBlock.DoAssert("", action114)
+        TryCatchAssertBlock.DoAssert(action114)
 
         def action115():
             oBox.length = 1234.56789
 
         # Length (readonly)
-        TryCatchAssertBlock.DoAssert("", action115)
+        TryCatchAssertBlock.DoAssert(action115)
 
         def action116():
             oBox.width = 1234.56789
 
         # Width (readonly)
-        TryCatchAssertBlock.DoAssert("", action116)
+        TryCatchAssertBlock.DoAssert(action116)
 
         def action117():
             oBox.height = 1234.56789
 
         # Height (readonly)
-        TryCatchAssertBlock.DoAssert("", action117)
+        TryCatchAssertBlock.DoAssert(action117)
 
         def action118():
             oBox.length_offset = 1234.56789
 
         # LengthOffset (readonly)
-        TryCatchAssertBlock.DoAssert("", action118)
+        TryCatchAssertBlock.DoAssert(action118)
 
         def action119():
             oBox.width_offset = 1234.56789
 
         # WidthOffset (readonly)
-        TryCatchAssertBlock.DoAssert("", action119)
+        TryCatchAssertBlock.DoAssert(action119)
 
         def action120():
             oBox.height_offset = 1234.56789
 
         # HeightOffset (readonly)
-        TryCatchAssertBlock.DoAssert("", action120)
+        TryCatchAssertBlock.DoAssert(action120)
 
         def action121():
             oBox.use_translucency = True
 
         # UseTranslucency
-        TryCatchAssertBlock.DoAssert("", action121)
+        TryCatchAssertBlock.DoAssert(action121)
 
         def action122():
             oBox.translucency = 0.56789
 
         # Translucency
-        TryCatchAssertBlock.DoAssert("", action122)
+        TryCatchAssertBlock.DoAssert(action122)
         # IsVisible (true)
         oBox.is_visible = True
         self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBox.is_visible)
@@ -3141,7 +3142,7 @@ class VOProximityHelper(object):
         def action123():
             oBox.length = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action123)
+        TryCatchAssertBlock.DoAssert(action123)
         # Width
         self.m_logger.WriteLine6("\tThe current Width is: {0}", oBox.width)
         oBox.width = 130000
@@ -3151,7 +3152,7 @@ class VOProximityHelper(object):
         def action124():
             oBox.width = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action124)
+        TryCatchAssertBlock.DoAssert(action124)
         # Height
         self.m_logger.WriteLine6("\tThe current Height is: {0}", oBox.height)
         oBox.height = 100000
@@ -3161,7 +3162,7 @@ class VOProximityHelper(object):
         def action125():
             oBox.height = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action125)
+        TryCatchAssertBlock.DoAssert(action125)
         # HeightOffset
         self.m_logger.WriteLine6("\tThe current HeightOffset is: {0}", oBox.height_offset)
         oBox.height_offset = 2000
@@ -3171,7 +3172,7 @@ class VOProximityHelper(object):
         def action126():
             oBox.height_offset = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action126)
+        TryCatchAssertBlock.DoAssert(action126)
         # LengthOffset
         self.m_logger.WriteLine6("\tThe current LengthOffset is: {0}", oBox.length_offset)
         oBox.length_offset = 3000
@@ -3186,7 +3187,7 @@ class VOProximityHelper(object):
         def action127():
             oBox.width_offset = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action127)
+        TryCatchAssertBlock.DoAssert(action127)
         # UseTranslucency
         self.m_logger.WriteLine4("\tThe current UseTranslucency flag is: {0}", oBox.use_translucency)
         oBox.use_translucency = False
@@ -3196,7 +3197,7 @@ class VOProximityHelper(object):
         def action128():
             oBox.translucency = 12.3456
 
-        TryCatchAssertBlock.DoAssert("Can modify readonly property.", action128)
+        TryCatchAssertBlock.DoAssert(action128)
         oBox.use_translucency = True
         self.m_logger.WriteLine4("\tThe new UseTranslucency flag is: {0}", oBox.use_translucency)
         Assert.assertEqual(True, oBox.use_translucency)
@@ -3209,7 +3210,7 @@ class VOProximityHelper(object):
         def action129():
             oBox.translucency = 123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action129)
+        TryCatchAssertBlock.DoAssert(action129)
         # restore AngleUnit
         self.m_oUnits.set_current_unit("AngleUnit", strAngleUnit)
         self.m_logger.WriteLine5("\tThe new AngleUnit (restored) is: {0}", strAngleUnit)
@@ -3222,11 +3223,11 @@ class VOProximityHelper(object):
     # endregion
 
     # region BearingEllipse
-    def TestBearingEllipse(self, oBox: "IVehicleGraphics3DBearingEllipse"):
+    def TestBearingEllipse(self, oBox: "VehicleGraphics3DBearingEllipse"):
         # base properties test
         self.TestProximityAreObjectBase(oBox)
 
-        self.m_logger.WriteLine("IVehicleGraphics3DBearingEllipse test:")
+        self.m_logger.WriteLine("VehicleGraphics3DBearingEllipse test:")
         # set DistanceUnit
         strDistanceUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
         self.m_logger.WriteLine5("\tThe current DistanceUnit is: {0}", strDistanceUnit)
@@ -3249,37 +3250,37 @@ class VOProximityHelper(object):
             oBox.bearing = 1234.56789
 
         # Bearing (readonly)
-        TryCatchAssertBlock.DoAssert("", action130)
+        TryCatchAssertBlock.DoAssert(action130)
 
         def action131():
             oBox.semi_major_axis = 1234.56789
 
         # MajorAxis (readonly)
-        TryCatchAssertBlock.DoAssert("", action131)
+        TryCatchAssertBlock.DoAssert(action131)
 
         def action132():
             oBox.semi_minor_axis = 1234.56789
 
         # MinorAxis (readonly)
-        TryCatchAssertBlock.DoAssert("", action132)
+        TryCatchAssertBlock.DoAssert(action132)
 
         def action133():
             oBox.granularity = 1234.56789
 
         # Granularity (readonly)
-        TryCatchAssertBlock.DoAssert("", action133)
+        TryCatchAssertBlock.DoAssert(action133)
 
         def action134():
             oBox.major_axis_offset = 1234.56789
 
         # MajorAxisOffset (readonly)
-        TryCatchAssertBlock.DoAssert("", action134)
+        TryCatchAssertBlock.DoAssert(action134)
 
         def action135():
             oBox.minor_axis_offset = 1234.56789
 
         # MinorAxisOffset (readonly)
-        TryCatchAssertBlock.DoAssert("", action135)
+        TryCatchAssertBlock.DoAssert(action135)
         # IsVisible (true)
         oBox.is_visible = True
         self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBox.is_visible)
@@ -3298,7 +3299,7 @@ class VOProximityHelper(object):
         def action136():
             oBox.semi_major_axis = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action136)
+        TryCatchAssertBlock.DoAssert(action136)
         # MinorAxis
         self.m_logger.WriteLine6("\tThe current MinorAxis is: {0}", oBox.semi_minor_axis)
         oBox.semi_minor_axis = 130000
@@ -3308,7 +3309,7 @@ class VOProximityHelper(object):
         def action137():
             oBox.semi_minor_axis = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action137)
+        TryCatchAssertBlock.DoAssert(action137)
         # Granularity
         self.m_logger.WriteLine6("\tThe current Granularity is: {0}", oBox.granularity)
         oBox.granularity = 0.54321
@@ -3328,7 +3329,7 @@ class VOProximityHelper(object):
         def action138():
             oBox.minor_axis_offset = -123.456
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action138)
+        TryCatchAssertBlock.DoAssert(action138)
         # restore AngleUnit
         self.m_oUnits.set_current_unit("AngleUnit", strAngleUnit)
         self.m_logger.WriteLine5("\tThe new AngleUnit (restored) is: {0}", strAngleUnit)
@@ -3341,11 +3342,11 @@ class VOProximityHelper(object):
     # endregion
 
     # region LineOfBearing
-    def TestLineOfBearing(self, oBox: "IVehicleGraphics3DLineOfBearing"):
+    def TestLineOfBearing(self, oBox: "VehicleGraphics3DLineOfBearing"):
         # base properties test
         self.TestProximityAreObjectBase(oBox)
 
-        self.m_logger.WriteLine("IVehicleGraphics3DLineOfBearing test:")
+        self.m_logger.WriteLine("VehicleGraphics3DLineOfBearing test:")
         # set DistanceUnit
         strDistanceUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
         self.m_logger.WriteLine5("\tThe current DistanceUnit is: {0}", strDistanceUnit)
@@ -3368,49 +3369,49 @@ class VOProximityHelper(object):
             oBox.bearing = 1234.56789
 
         # Bearing (readonly)
-        TryCatchAssertBlock.DoAssert("", action139)
+        TryCatchAssertBlock.DoAssert(action139)
 
         def action140():
             oBox.origin_latitude = 123.456789
 
         # OriginLatitude (readonly)
-        TryCatchAssertBlock.DoAssert("", action140)
+        TryCatchAssertBlock.DoAssert(action140)
 
         def action141():
             oBox.origin_longitude = 123.456789
 
         # OriginLongitude (readonly)
-        TryCatchAssertBlock.DoAssert("", action141)
+        TryCatchAssertBlock.DoAssert(action141)
 
         def action142():
             oBox.origin_altitude = 123.456789
 
         # OriginAltitude (readonly)
-        TryCatchAssertBlock.DoAssert("", action142)
+        TryCatchAssertBlock.DoAssert(action142)
 
         def action143():
             oBox.length = 123.456789
 
         # Length (readonly)
-        TryCatchAssertBlock.DoAssert("", action143)
+        TryCatchAssertBlock.DoAssert(action143)
 
         def action144():
             oBox.bearing_error = 123.456789
 
         # BearingError (readonly)
-        TryCatchAssertBlock.DoAssert("", action144)
+        TryCatchAssertBlock.DoAssert(action144)
 
         def action145():
             oBox.error_color = Color.FromArgb(9991764)
 
         # ErrorColor (readonly)
-        TryCatchAssertBlock.DoAssert("", action145)
+        TryCatchAssertBlock.DoAssert(action145)
 
         def action146():
             oBox.error_line_width = LINE_WIDTH.WIDTH5
 
         # ErrorLineWidth (readonly)
-        TryCatchAssertBlock.DoAssert("", action146)
+        TryCatchAssertBlock.DoAssert(action146)
         # IsVisible (true)
         oBox.is_visible = True
         self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBox.is_visible)
@@ -3429,7 +3430,7 @@ class VOProximityHelper(object):
         def action147():
             oBox.origin_latitude = -91
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action147)
+        TryCatchAssertBlock.DoAssert(action147)
         # OriginLongitude
         self.m_logger.WriteLine6("\tThe current OriginLongitude is: {0}", oBox.origin_longitude)
         oBox.origin_longitude = 3.45
@@ -3439,7 +3440,7 @@ class VOProximityHelper(object):
         def action148():
             oBox.origin_longitude = -361
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action148)
+        TryCatchAssertBlock.DoAssert(action148)
         # OriginAltitude
         self.m_logger.WriteLine6("\tThe current OriginAltitude is: {0}", oBox.origin_altitude)
         oBox.origin_altitude = 54321.0
@@ -3454,7 +3455,7 @@ class VOProximityHelper(object):
         def action149():
             oBox.length = -123456.789
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action149)
+        TryCatchAssertBlock.DoAssert(action149)
         # BearingError
         self.m_logger.WriteLine6("\tThe current BearingError is: {0}", oBox.bearing_error)
         oBox.bearing_error = 2.345
@@ -3464,7 +3465,7 @@ class VOProximityHelper(object):
         def action150():
             oBox.bearing_error = -1
 
-        TryCatchAssertBlock.DoAssert("Can set invalid value (out-of-range).", action150)
+        TryCatchAssertBlock.DoAssert(action150)
         # ErrorColor
         self.m_logger.WriteLine6("\tThe current ErrorColor is: {0}", oBox.error_color)
         oBox.error_color = Color.FromArgb(11259375)
@@ -3487,7 +3488,7 @@ class VOProximityHelper(object):
     # endregion
 
     # region AOULabelSwapDistance
-    def TestAOULabelSwapDistance(self, oSwapDist: "IGraphics3DLabelSwapDistance"):
+    def TestAOULabelSwapDistance(self, oSwapDist: "Graphics3DLabelSwapDistance"):
         oLabelSwapHelper = VOLabelSwapDistanceHelper()
         oLabelSwapHelper.Run(oSwapDist)
 
@@ -3497,14 +3498,14 @@ class VOProximityHelper(object):
 
 # region VOOrbitProximityHelper
 class VOOrbitProximityHelper(VOProximityHelper):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         super(VOOrbitProximityHelper, self).__init__(root, oUnits)
 
     # endregion
 
     # region GeoBox method
-    def GeoBox(self, oGeoBox: "IVehicleGraphics3DGeoBox"):
+    def GeoBox(self, oGeoBox: "VehicleGraphics3DGeoBox"):
         self.m_logger.WriteLine("Geostationary Box test:")
         Assert.assertIsNotNone(oGeoBox)
         # set DistanceUnit
@@ -3537,31 +3538,31 @@ class VOOrbitProximityHelper(VOProximityHelper):
             oGeoBox.longitude = 3.21
 
         # Longitude
-        TryCatchAssertBlock.DoAssert("The Longitude should be readonly when Visible flag is False.", action151)
+        TryCatchAssertBlock.DoAssert(action151)
 
         def action152():
             oGeoBox.north_south = 0.123
 
         # NorthSouth
-        TryCatchAssertBlock.DoAssert("The NorthSouth should be readonly when Visible flag is False.", action152)
+        TryCatchAssertBlock.DoAssert(action152)
 
         def action153():
             oGeoBox.east_west = 0.321
 
         # EastWest
-        TryCatchAssertBlock.DoAssert("The EastWest should be readonly when Visible flag is False.", action153)
+        TryCatchAssertBlock.DoAssert(action153)
 
         def action154():
             oGeoBox.radius = 123.456
 
         # Radius
-        TryCatchAssertBlock.DoAssert("The Radius should be readonly when Visible flag is False.", action154)
+        TryCatchAssertBlock.DoAssert(action154)
 
         def action155():
             oGeoBox.color = Color.FromArgb(16702650)
 
         # Color
-        TryCatchAssertBlock.DoAssert("The Color should be readonly when Visible flag is False.", action155)
+        TryCatchAssertBlock.DoAssert(action155)
         # Reposition
         oGeoBox.reposition()
         # IsVisible
@@ -3601,25 +3602,25 @@ class VOOrbitProximityHelper(VOProximityHelper):
 
         # range test
         # Longitude
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action156)
+        TryCatchAssertBlock.DoAssert(action156)
 
         def action157():
             oGeoBox.north_south = 12.3
 
         # NorthSouth
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action157)
+        TryCatchAssertBlock.DoAssert(action157)
 
         def action158():
             oGeoBox.east_west = 3.21
 
         # EastWest
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action158)
+        TryCatchAssertBlock.DoAssert(action158)
 
         def action159():
             oGeoBox.radius = -123.456
 
         # Radius
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action159)
+        TryCatchAssertBlock.DoAssert(action159)
         # restore LongitudeUnit
         self.m_oUnits.set_current_unit("LongitudeUnit", strLongitudeUnit)
         self.m_logger.WriteLine5("\tThe new LongitudeUnit (restored) is: {0}", strLongitudeUnit)
@@ -3636,7 +3637,7 @@ class VOOrbitProximityHelper(VOProximityHelper):
     # endregion
 
     # region Run method
-    def Run(self, oProximity: "IVehicleGraphics3DOrbitProximity"):
+    def Run(self, oProximity: "VehicleGraphics3DOrbitProximity"):
         self.m_logger.WriteLine("----- THE VO PROXIMITY TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oProximity)
 
@@ -3662,14 +3663,14 @@ class VOOrbitProximityHelper(VOProximityHelper):
 
 # region VORouteProximityHelper
 class VORouteProximityHelper(VOProximityHelper):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         super(VORouteProximityHelper, self).__init__(root, oUnits)
 
     # endregion
 
     # region Run method
-    def Run(self, oProximity: "IVehicleGraphics3DRouteProximity"):
+    def Run(self, oProximity: "VehicleGraphics3DRouteProximity"):
         self.m_logger.WriteLine("----- THE VO PROXIMITY TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oProximity)
 
@@ -3692,14 +3693,14 @@ class VORouteProximityHelper(VOProximityHelper):
 
 # region VOTrajectoryProximityHelper
 class VOTrajectoryProximityHelper(VOProximityHelper):
-    def __init__(self, root: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         super(VOTrajectoryProximityHelper, self).__init__(root, oUnits)
 
     # endregion
 
     # region Run method
-    def Run(self, oProximity: "IVehicleGraphics3DTrajectoryProximity"):
+    def Run(self, oProximity: "VehicleGraphics3DTrajectoryProximity"):
         self.m_logger.WriteLine("----- THE VO PROXIMITY TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oProximity)
 
@@ -3722,15 +3723,15 @@ class VOTrajectoryProximityHelper(VOProximityHelper):
 
 # region VORangeContoursHelper
 class VORangeContoursHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oContours: "IGraphics3DRangeContours"):
+    def Run(self, oContours: "Graphics3DRangeContours"):
         self.m_logger.WriteLine("----- THE VO RANGE CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         # Visible
@@ -3743,13 +3744,13 @@ class VORangeContoursHelper(object):
             oContours.translucent_lines = False
 
         # TranslucentLines
-        TryCatchAssertBlock.DoAssert("The Translucent Lines should be readonly when Visible flag is False.", action160)
+        TryCatchAssertBlock.DoAssert(action160)
 
         def action161():
             oContours.percent_translucency = 34.56789
 
         # PercentTranslucency
-        TryCatchAssertBlock.DoAssert("The Translucency should be readonly when Visible flag is False.", action161)
+        TryCatchAssertBlock.DoAssert(action161)
 
         # LabelSwapDistance
         oLabelSwapHelper = VOLabelSwapDistanceHelper()
@@ -3773,9 +3774,7 @@ class VORangeContoursHelper(object):
             oContours.percent_translucency = 34.56789
 
         # PercentTranslucency
-        TryCatchAssertBlock.DoAssert(
-            "The Translucency should be readonly when Translucent Lines flag is False.", action162
-        )
+        TryCatchAssertBlock.DoAssert(action162)
         # TranslucentLines
         oContours.translucent_lines = True
         self.m_logger.WriteLine4("\t\tThe new TranslucentLines flag is: {0}", oContours.translucent_lines)
@@ -3790,7 +3789,7 @@ class VORangeContoursHelper(object):
             oContours.percent_translucency = 1234.56789
 
         # range test
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action163)
+        TryCatchAssertBlock.DoAssert(action163)
 
         # BorderWall (NotReadOnly) test
         oHelper.Run(oContours.border_wall, False)
@@ -3802,15 +3801,15 @@ class VORangeContoursHelper(object):
 
 # region VOBorderWallHelper
 class VOBorderWallHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oWall: "IGraphics3DBorderWall", bReadOnly: bool):
+    def Run(self, oWall: "Graphics3DBorderWall", bReadOnly: bool):
         Assert.assertIsNotNone(oWall)
         if bReadOnly:
             self.ReadOnly(oWall)
@@ -3821,7 +3820,7 @@ class VOBorderWallHelper(object):
     # endregion
 
     # region ReadOnly method
-    def ReadOnly(self, oWall: "IGraphics3DBorderWall"):
+    def ReadOnly(self, oWall: "Graphics3DBorderWall"):
         Assert.assertIsNotNone(oWall)
         self.m_logger.WriteLine("Border Wall (ReadOnly) test:")
 
@@ -3829,13 +3828,13 @@ class VOBorderWallHelper(object):
             oWall.use_border_wall = False
 
         # UseBorderWall
-        TryCatchAssertBlock.DoAssert("The Use Border Wall should be readonly.", action164)
+        TryCatchAssertBlock.DoAssert(action164)
 
         def action165():
             oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_MSL
 
         # UpperEdgeAltRef
-        TryCatchAssertBlock.DoAssert("The Upper Edge should be readonly.", action165)
+        TryCatchAssertBlock.DoAssert(action165)
 
         def action166():
             oWall.lower_edge_altitude_reference = (
@@ -3843,48 +3842,48 @@ class VOBorderWallHelper(object):
             )
 
         # LowerEdgeAltRef
-        TryCatchAssertBlock.DoAssert("The Lower Edge should be readonly.", action166)
+        TryCatchAssertBlock.DoAssert(action166)
 
         def action167():
             oWall.upper_edge_height = 12.34
 
         # UpperEdgeHeight
-        TryCatchAssertBlock.DoAssert("The Upper Edge Height should be readonly.", action167)
+        TryCatchAssertBlock.DoAssert(action167)
 
         def action168():
             oWall.lower_edge_height = 34.12
 
         # LowerEdgeHeight
-        TryCatchAssertBlock.DoAssert("The Lower Edge Height should be readonly.", action168)
+        TryCatchAssertBlock.DoAssert(action168)
 
         def action169():
             oWall.use_wall_translucency = False
 
         # UseWallTranslucency
-        TryCatchAssertBlock.DoAssert("The Use Wall Translucency should be readonly.", action169)
+        TryCatchAssertBlock.DoAssert(action169)
 
         def action170():
             oWall.use_line_translucency = False
 
         # UseLineTranslucency
-        TryCatchAssertBlock.DoAssert("The Use Line Translucency should be readonly.", action170)
+        TryCatchAssertBlock.DoAssert(action170)
 
         def action171():
             oWall.wall_translucency = 34.56
 
         # WallTranslucency
-        TryCatchAssertBlock.DoAssert("The Wall Translucency should be readonly.", action171)
+        TryCatchAssertBlock.DoAssert(action171)
 
         def action172():
             oWall.line_translucency = 56.34
 
         # LineTranslucency
-        TryCatchAssertBlock.DoAssert("The Line Translucency should be readonly.", action172)
+        TryCatchAssertBlock.DoAssert(action172)
 
     # endregion
 
     # region NotReadOnly method
-    def NotReadOnly(self, oWall: "IGraphics3DBorderWall"):
+    def NotReadOnly(self, oWall: "Graphics3DBorderWall"):
         Assert.assertIsNotNone(oWall)
         self.m_logger.WriteLine("Border Wall (NotReadOnly) test:")
         # UseBorderWall
@@ -3897,7 +3896,7 @@ class VOBorderWallHelper(object):
             oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_MSL
 
         # UpperEdgeAltRef
-        TryCatchAssertBlock.DoAssert("The Upper Edge should be readonly when Use Border Wall flag is False.", action173)
+        TryCatchAssertBlock.DoAssert(action173)
 
         def action174():
             oWall.lower_edge_altitude_reference = (
@@ -3905,55 +3904,43 @@ class VOBorderWallHelper(object):
             )
 
         # LowerEdgeAltRef
-        TryCatchAssertBlock.DoAssert("The Lower Edge should be readonly when Use Border Wall flag is False.", action174)
+        TryCatchAssertBlock.DoAssert(action174)
 
         def action175():
             oWall.upper_edge_height = 12.34
 
         # UpperEdgeHeight
-        TryCatchAssertBlock.DoAssert(
-            "The Upper Edge Height should be readonly when Use Border Wall flag is False.", action175
-        )
+        TryCatchAssertBlock.DoAssert(action175)
 
         def action176():
             oWall.lower_edge_height = 34.12
 
         # LowerEdgeHeight
-        TryCatchAssertBlock.DoAssert(
-            "The Lower Edge Height should be readonly when Use Border Wall flag is False.", action176
-        )
+        TryCatchAssertBlock.DoAssert(action176)
 
         def action177():
             oWall.use_wall_translucency = False
 
         # UseWallTranslucency
-        TryCatchAssertBlock.DoAssert(
-            "The Use Wall Translucency should be readonly when Use Border Wall flag is False.", action177
-        )
+        TryCatchAssertBlock.DoAssert(action177)
 
         def action178():
             oWall.use_line_translucency = False
 
         # UseLineTranslucency
-        TryCatchAssertBlock.DoAssert(
-            "The Use Line Translucency should be readonly when Use Border Wall flag is False.", action178
-        )
+        TryCatchAssertBlock.DoAssert(action178)
 
         def action179():
             oWall.wall_translucency = 34.56
 
         # WallTranslucency
-        TryCatchAssertBlock.DoAssert(
-            "The Wall Translucency should be readonly when Use Border Wall flag is False.", action179
-        )
+        TryCatchAssertBlock.DoAssert(action179)
 
         def action180():
             oWall.line_translucency = 56.34
 
         # LineTranslucency
-        TryCatchAssertBlock.DoAssert(
-            "The Line Translucency should be readonly when Use Border Wall flag is False.", action180
-        )
+        TryCatchAssertBlock.DoAssert(action180)
         # UseBorderWall
         oWall.use_border_wall = True
         self.m_logger.WriteLine4("\tThe new UseBorderWall flag is: {0}", oWall.use_border_wall)
@@ -4027,7 +4014,7 @@ class VOBorderWallHelper(object):
             oWall.upper_edge_height = -9876543210.1
 
         # UpperEdgeHeight
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action181)
+        TryCatchAssertBlock.DoAssert(action181)
         # LowerEdgeAltRef
         self.m_logger.WriteLine6("\t\tThe current LowerEdge is: {0}", oWall.lower_edge_altitude_reference)
         oWall.lower_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_MSL
@@ -4063,7 +4050,7 @@ class VOBorderWallHelper(object):
             oWall.lower_edge_height = -9876543210.1
 
         # LowerEdgeHeight
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action182)
+        TryCatchAssertBlock.DoAssert(action182)
         # restore DistanceUnit
         self.m_oUnits.set_current_unit("DistanceUnit", strDistanceUnit)
         self.m_logger.WriteLine5("\t\tThe new DistanceUnit (restored) is: {0}", strDistanceUnit)
@@ -4078,7 +4065,7 @@ class VOBorderWallHelper(object):
             oWall.wall_translucency = 34.56
 
         # WallTranslucency
-        TryCatchAssertBlock.DoAssert("The Wall Translucency should be readonly.", action183)
+        TryCatchAssertBlock.DoAssert(action183)
         # UseWallTranslucency
         oWall.use_wall_translucency = True
         self.m_logger.WriteLine4("\t\tThe new UseWallTranslucency flag is: {0}", oWall.use_wall_translucency)
@@ -4093,7 +4080,7 @@ class VOBorderWallHelper(object):
             oWall.wall_translucency = 1234.56
 
         # WallTranslucency
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action184)
+        TryCatchAssertBlock.DoAssert(action184)
         # UseLineTranslucency
         self.m_logger.WriteLine4("\t\tThe current UseLineTranslucency flag is: {0}", oWall.use_line_translucency)
         oWall.use_line_translucency = False
@@ -4104,7 +4091,7 @@ class VOBorderWallHelper(object):
             oWall.line_translucency = 34.56
 
         # LineTranslucency
-        TryCatchAssertBlock.DoAssert("The Line Translucency should be readonly.", action185)
+        TryCatchAssertBlock.DoAssert(action185)
         # UseLineTranslucency
         oWall.use_line_translucency = True
         self.m_logger.WriteLine4("\t\tThe new UseLineTranslucency flag is: {0}", oWall.use_line_translucency)
@@ -4119,7 +4106,7 @@ class VOBorderWallHelper(object):
             oWall.line_translucency = 1234.56
 
         # LineTranslucency
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action186)
+        TryCatchAssertBlock.DoAssert(action186)
 
 
 # endregion
@@ -4127,11 +4114,11 @@ class VOBorderWallHelper(object):
 
 # region VORouteHelper
 class VORouteHelper(object):
-    def __init__(self, app: "IStkObjectRoot", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, app: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
-        self._app: "IStkObjectRoot" = app
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
+        self._app: "StkObjectRoot" = app
 
     # endregion
 
@@ -4140,7 +4127,7 @@ class VORouteHelper(object):
         return self._app
 
     # region Run method
-    def Run(self, oRoute: "IVehicleGraphics3DRoute"):
+    def Run(self, oRoute: "VehicleGraphics3DRoute"):
         self.m_logger.WriteLine("----- THE VO ROUTE TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oRoute)
 
@@ -4173,15 +4160,15 @@ class VORouteHelper(object):
 
 # region VOLeadTrailDataHelper
 class VOLeadTrailDataHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, leadTrailData: "IVehicleGraphics3DLeadTrailData", bReadOnly: bool):
+    def Run(self, leadTrailData: "VehicleGraphics3DLeadTrailData", bReadOnly: bool):
         Assert.assertIsNotNone(leadTrailData)
         if bReadOnly:
             self.ReadOnly(leadTrailData)
@@ -4192,7 +4179,7 @@ class VOLeadTrailDataHelper(object):
     # endregion
 
     # region ReadOnly method
-    def ReadOnly(self, leadTrailData: "IVehicleGraphics3DLeadTrailData"):
+    def ReadOnly(self, leadTrailData: "VehicleGraphics3DLeadTrailData"):
         Assert.assertIsNotNone(leadTrailData)
         self.m_logger.WriteLine("VOLeadTrailData (ReadOnly) test:")
         bCaught: bool = False
@@ -4233,7 +4220,7 @@ class VOLeadTrailDataHelper(object):
     # endregion
 
     # region NotReadOnly method
-    def NotReadOnly(self, leadTrailData: "IVehicleGraphics3DLeadTrailData"):
+    def NotReadOnly(self, leadTrailData: "VehicleGraphics3DLeadTrailData"):
         Assert.assertIsNotNone(leadTrailData)
         self.m_logger.WriteLine("VOLeadTrailData (NotReadOnly) test:")
         bCaught: bool = False
@@ -4433,9 +4420,9 @@ class VOLeadTrailDataHelper(object):
 
 # region VOWaypointMarkersHelper
 class VOWaypointMarkersHelper(object):
-    def __init__(self, app: "IStkObjectRoot"):
+    def __init__(self, app: "StkObjectRoot"):
         self.m_logger = Logger.Instance
-        self._app: "IStkObjectRoot" = app
+        self._app: "StkObjectRoot" = app
 
     # endregion
 
@@ -4444,13 +4431,13 @@ class VOWaypointMarkersHelper(object):
         return self._app
 
     # region Run method
-    def Run(self, oCollection: "IVehicleGraphics3DWaypointMarkersCollection"):
+    def Run(self, oCollection: "VehicleGraphics3DWaypointMarkersCollection"):
         self.m_logger.WriteLine("VOWaypointMarkersCollection test:")
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\tCollection contains: {0} elements", oCollection.count)
         # enumeration test
-        waypointMarkersElement: "IVehicleGraphics3DWaypointMarkersElement"
+        waypointMarkersElement: "VehicleGraphics3DWaypointMarkersElement"
         # enumeration test
         for waypointMarkersElement in oCollection:
             self.m_logger.WriteLine10(
@@ -4469,7 +4456,7 @@ class VOWaypointMarkersHelper(object):
 
         iIndex: int = 0
         while iIndex < oCollection.count:
-            waypointMarkersElement: "IVehicleGraphics3DWaypointMarkersElement" = oCollection[iIndex]
+            waypointMarkersElement: "VehicleGraphics3DWaypointMarkersElement" = oCollection[iIndex]
             Assert.assertIsNotNone(waypointMarkersElement)
             self.m_logger.WriteLine3("\t\tElement {0}:", iIndex)
             self.m_logger.WriteLine10(
@@ -4580,15 +4567,15 @@ class VOWaypointMarkersHelper(object):
 
 # region VOTrajectoryHelper
 class VOTrajectoryHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oTrajectory: "IVehicleGraphics3DTrajectory"):
+    def Run(self, oTrajectory: "VehicleGraphics3DTrajectory"):
         self.m_logger.WriteLine("----- THE VO TRAJECTORY TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oTrajectory)
 
@@ -4603,7 +4590,7 @@ class VOTrajectoryHelper(object):
     # endregion
 
     # region TrackData method
-    def TrackData(self, oTrackData: "IVehicleGraphics3DTrajectoryTrackData"):
+    def TrackData(self, oTrackData: "VehicleGraphics3DTrajectoryTrackData"):
         self.m_logger.WriteLine("VOTrajectoryTrackData test:")
         Assert.assertIsNotNone(oTrackData)
 
@@ -4633,7 +4620,7 @@ class VOTrajectoryHelper(object):
     # endregion
 
     # region TickMarks method
-    def TickMarks(self, oTickMarks: "IVehicleGraphics3DTrajectoryTickMarks"):
+    def TickMarks(self, oTickMarks: "VehicleGraphics3DTrajectoryTickMarks"):
         self.m_logger.WriteLine("VOTrajectoryTrackData test:")
         Assert.assertIsNotNone(oTickMarks)
         # set TimeUnit
@@ -4690,15 +4677,15 @@ class VOTrajectoryHelper(object):
 
 # region VOPathTickMarksHelper
 class VOPathTickMarksHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oPath: "IVehicleGraphics3DPathTickMarks"):
+    def Run(self, oPath: "VehicleGraphics3DPathTickMarks"):
         self.m_logger.WriteLine("VOPathTickMarks test:")
         Assert.assertIsNotNone(oPath)
         # set DistanceUnit
@@ -4743,7 +4730,7 @@ class VOPathTickMarksHelper(object):
             Assert.fail("The TickDataType should be readonly.")
 
         if oPath.tick_data_type == TICK_DATA.POINT:
-            oPoint: "IVehicleGraphics3DTickDataPoint" = clr.Convert(oPath.tick_data, IVehicleGraphics3DTickDataPoint)
+            oPoint: "VehicleGraphics3DTickDataPoint" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataPoint)
             Assert.assertIsNotNone(oPoint)
             try:
                 bCaught = False
@@ -4759,7 +4746,7 @@ class VOPathTickMarksHelper(object):
         elif oPath.tick_data_type == TICK_DATA.UNKNOWN:
             pass
         else:
-            oLine: "IVehicleGraphics3DTickDataLine" = clr.Convert(oPath.tick_data, IVehicleGraphics3DTickDataLine)
+            oLine: "VehicleGraphics3DTickDataLine" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataLine)
             Assert.assertIsNotNone(oLine)
             try:
                 bCaught = False
@@ -4800,9 +4787,7 @@ class VOPathTickMarksHelper(object):
             if oPath.tick_data_type == TICK_DATA.UNKNOWN:
                 Assert.fail("The eTickDataUnknown type should not be supported!")
             elif oPath.tick_data_type == TICK_DATA.POINT:
-                oPoint: "IVehicleGraphics3DTickDataPoint" = clr.Convert(
-                    oPath.tick_data, IVehicleGraphics3DTickDataPoint
-                )
+                oPoint: "VehicleGraphics3DTickDataPoint" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataPoint)
                 Assert.assertIsNotNone(oPoint)
                 # Size
                 self.m_logger.WriteLine6("\t\t\tThe current Size is: {0}", oPoint.size)
@@ -4822,7 +4807,7 @@ class VOPathTickMarksHelper(object):
                     Assert.fail("Cannot set value out of range!")
 
             else:
-                oLine: "IVehicleGraphics3DTickDataLine" = clr.Convert(oPath.tick_data, IVehicleGraphics3DTickDataLine)
+                oLine: "VehicleGraphics3DTickDataLine" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataLine)
                 Assert.assertIsNotNone(oLine)
                 # LineWith
                 self.m_logger.WriteLine6("\t\t\tThe current LineWith is: {0}", oLine.line_width)
@@ -4859,15 +4844,15 @@ class VOPathTickMarksHelper(object):
 
 # region VOPassHelper
 class VOPassHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oPass: "IVehicleGraphics3DPass"):
+    def Run(self, oPass: "VehicleGraphics3DPass"):
         Assert.assertIsNotNone(oPass)
         self.TrackData(oPass.track_data)
         self.TickMarks(oPass.tick_marks)
@@ -4875,7 +4860,7 @@ class VOPassHelper(object):
     # endregion
 
     # region TrackData method
-    def TrackData(self, oTrackData: "IVehicleGraphics3DOrbitTrackData"):
+    def TrackData(self, oTrackData: "VehicleGraphics3DOrbitTrackData"):
         self.m_logger.WriteLine("VOOrbitTrackData test:")
         Assert.assertIsNotNone(oTrackData)
 
@@ -4905,7 +4890,7 @@ class VOPassHelper(object):
     # endregion
 
     # region TickMarks method
-    def TickMarks(self, oTickMarks: "IVehicleGraphics3DOrbitTickMarks"):
+    def TickMarks(self, oTickMarks: "VehicleGraphics3DOrbitTickMarks"):
         self.m_logger.WriteLine("VOOrbitTrackData test:")
         Assert.assertIsNotNone(oTickMarks)
 
@@ -4915,7 +4900,7 @@ class VOPassHelper(object):
         def action187():
             oTickMarks.time_between_ticks = 12345.6789
 
-        TryCatchAssertBlock.DoAssert("The TimeBetweenTicks should be readonly.", action187)
+        TryCatchAssertBlock.DoAssert(action187)
 
         # GroundTrack test
         oHelper = VOPathTickMarksHelper(self.m_oUnits)
@@ -4933,7 +4918,7 @@ class VOPassHelper(object):
             oTickMarks.time_between_ticks = -12345.6789
 
         # range test
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action188)
+        TryCatchAssertBlock.DoAssert(action188)
 
 
 # endregion
@@ -4947,7 +4932,7 @@ class VOAzElMaskHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oMask: "IGraphics3DAzElMask"):
+    def Run(self, oMask: "Graphics3DAzElMask"):
         self.m_logger.WriteLine("----- THE VO AZ/EL MASK TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oMask)
         # CompassDirectionsVisible
@@ -5043,7 +5028,7 @@ class VOLabelSwapDistanceHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oSwapDist: "IGraphics3DLabelSwapDistance"):
+    def Run(self, oSwapDist: "Graphics3DLabelSwapDistance"):
         self.m_logger.WriteLine("----- VO LABEL SWAP DISTANCE TEST ----- BEGIN -----")
         # DistanceValue
         self.m_logger.WriteLine6("\tThe current DistanceValue is: {0}", oSwapDist.distance_value)
@@ -5054,7 +5039,7 @@ class VOLabelSwapDistanceHelper(object):
         def action189():
             oSwapDist.distance_value = -34.56789
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action189)
+        TryCatchAssertBlock.DoAssert(action189)
         # DistanceLevel
         self.m_logger.WriteLine6("\tThe current DistanceLevel is: {0}", oSwapDist.distance_level)
         # SetDistanceLevel (eSwapAll)
@@ -5087,13 +5072,13 @@ class VOLabelSwapDistanceHelper(object):
             oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_CUSTOM)
 
         # SetDistanceLevel (eSwapCustom)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action190)
+        TryCatchAssertBlock.DoAssert(action190)
 
         def action191():
             oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_UNKNOWN)
 
         # SetDistanceLevel (eSwapUnknown)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action191)
+        TryCatchAssertBlock.DoAssert(action191)
         self.m_logger.WriteLine("----- VO LABEL SWAP DISTANCE TEST ----- END -----")
 
 
@@ -5108,7 +5093,7 @@ class VOSAAContoursHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oSAA: "IVehicleGraphics3DSAA"):
+    def Run(self, oSAA: "VehicleGraphics3DSAA"):
         Assert.assertIsNotNone(oSAA)
 
         oSAA.is_visible = False
@@ -5129,7 +5114,7 @@ class VOSystemsHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oSystems: "IVehicleGraphics3DSystemsCollection", root: "IStkObjectRoot"):
+    def Run(self, oSystems: "VehicleGraphics3DSystemsCollection", root: "StkObjectRoot"):
         self.m_logger.WriteLine("----- VO SYSTEMS COLLECTION TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oSystems)
         # Count
@@ -5143,7 +5128,7 @@ class VOSystemsHelper(object):
         self.m_logger.WriteLine3("\tThe Systems collection supports: {0} systems.", Array.Length(arSupported))
         # Add
         strSystem: str = str(arSupported[0])
-        systemsElement: "IVehicleGraphics3DSystemsElement" = oSystems.add(strSystem)
+        systemsElement: "VehicleGraphics3DSystemsElement" = oSystems.add(strSystem)
         Assert.assertIsNotNone(systemsElement)
         Assert.assertEqual(1, oSystems.count)
         systemsElement.is_visible = False
@@ -5210,7 +5195,7 @@ class VOSystemsHelper(object):
             def action192():
                 systemsElement.set_graphics_3d_window_ids(arNewWindowIDs)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set nonexisting window ids.", action192)
+            TryCatchAssertBlock.DoAssert(action192)
 
             # Remove the 2 new VO windows
             root.execute_command("Window3D * Remove WindowID 2")
@@ -5235,12 +5220,12 @@ class VOSystemsHelper(object):
             def action193():
                 systemsElement.set_graphics_3d_window_ids(arNewWindowIDs)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set nonexisting window ids.", action193)
+            TryCatchAssertBlock.DoAssert(action193)
 
         def action194():
             oSystems.add("")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action194)
+        TryCatchAssertBlock.DoAssert(action194)
 
         try:
             oSystems.add("InvalidSystem")
@@ -5273,17 +5258,17 @@ class VOSystemsHelper(object):
         def action195():
             oSystems.add("")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action195)
+        TryCatchAssertBlock.DoAssert(action195)
 
         def action196():
             oSystems.add("InvalidSystem")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action196)
+        TryCatchAssertBlock.DoAssert(action196)
         self.SystemElementBase(systemsElement, False)
 
         # _NewEnum
         self.m_logger.WriteLine3("\tThe new Systems collection contains: {0} elements.", oSystems.count)
-        oElem: "IVehicleGraphics3DSystemsElement"
+        oElem: "VehicleGraphics3DSystemsElement"
         for oElem in oSystems:
             self.m_logger.WriteLine9(
                 "\t\tElement: System = {0}, Color = {1}, Inherit = {2}, VOWindow = {3}",
@@ -5305,9 +5290,9 @@ class VOSystemsHelper(object):
         def action197():
             oSystems.remove_at(12)
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action197)
+        TryCatchAssertBlock.DoAssert(action197)
         self.m_logger.WriteLine3("\tThe new Systems collection contains: {0} elements.", oSystems.count)
-        oElem: "IVehicleGraphics3DSystemsElement"
+        oElem: "VehicleGraphics3DSystemsElement"
         for oElem in oSystems:
             self.m_logger.WriteLine9(
                 "\t\tElement: System = {0}, Color = {1}, Inherit = {2}, VOWindow = {3}",
@@ -5338,15 +5323,15 @@ class VOSystemsHelper(object):
         def action198():
             oSystems.remove("")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action198)
+        TryCatchAssertBlock.DoAssert(action198)
 
         def action199():
             oSystems.remove("InvalidSystem")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action199)
+        TryCatchAssertBlock.DoAssert(action199)
 
         # Test Fixed by Window element
-        oSpecial: "IVehicleGraphics3DSystemsSpecialElement" = oSystems.fixed_by_window
+        oSpecial: "VehicleGraphics3DSystemsSpecialElement" = oSystems.fixed_by_window
         Assert.assertIsNotNone(oSpecial)
         # IsVisible (false)
         self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oSpecial.is_visible)
@@ -5389,7 +5374,7 @@ class VOSystemsHelper(object):
         def action200():
             oSpecial.set_graphics_3d_window_ids(arNewWindowIDs)
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set nonexisting window ids.", action200)
+        TryCatchAssertBlock.DoAssert(action200)
 
         self.m_logger.WriteLine("----- THE VO SYSTEMS TEST ----- END -----")
 
@@ -5405,19 +5390,19 @@ class VOSystemsHelper(object):
                 oVeVOSystemsElementBase.inherit = False
 
             # Inherit
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly element.", action201)
+            TryCatchAssertBlock.DoAssert(action201)
 
             def action202():
                 oVeVOSystemsElementBase.color = Color.FromArgb(4660)
 
             # Color
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly element.", action202)
+            TryCatchAssertBlock.DoAssert(action202)
 
             def action203():
                 oVeVOSystemsElementBase.graphics_3d_window = oVeVOSystemsElementBase.graphics_3d_window
 
             # VOWindow
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly element.", action203)
+            TryCatchAssertBlock.DoAssert(action203)
 
         else:
             # Inherit
@@ -5429,7 +5414,7 @@ class VOSystemsHelper(object):
             def action204():
                 oVeVOSystemsElementBase.color = Color.FromArgb(4660)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly element.", action204)
+            TryCatchAssertBlock.DoAssert(action204)
             oVeVOSystemsElementBase.inherit = False
             self.m_logger.WriteLine4("\tThe new Inherit flag is: {0}", oVeVOSystemsElementBase.inherit)
             Assert.assertEqual(False, oVeVOSystemsElementBase.inherit)
@@ -5467,12 +5452,12 @@ class VOSystemsHelper(object):
             def action205():
                 oVeVOSystemsElementBase.graphics_3d_window = ""
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action205)
+            TryCatchAssertBlock.DoAssert(action205)
 
             def action206():
                 oVeVOSystemsElementBase.graphics_3d_window = "InvalidWindow"
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action206)
+            TryCatchAssertBlock.DoAssert(action206)
 
         self.m_logger.WriteLine("----- VO SYSTEMS ELEMENT BASE TEST ----- END -----")
 
@@ -5482,16 +5467,16 @@ class VOSystemsHelper(object):
 
 # region VOVectorsHelper
 class VOVectorsHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection", root: "IStkObjectRoot"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection", root: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
-        self.m_oRoot: "IStkObjectRoot" = root
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
+        self.m_oRoot: "StkObjectRoot" = root
 
     # endregion
 
     # region Run method
-    def Run(self, oVector: "IGraphics3DVector", bScaleRelativeReadOnly: bool):
+    def Run(self, oVector: "Graphics3DVector", bScaleRelativeReadOnly: bool):
         self.m_logger.WriteLine("----- THE VO VECTORS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oVector)
         bCaught: bool = False
@@ -5559,7 +5544,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnsCollection method
-    def RefCrdnsCollection(self, oCollection: "IGraphics3DReferenceAnalysisWorkbenchCollection"):
+    def RefCrdnsCollection(self, oCollection: "Graphics3DReferenceAnalysisWorkbenchCollection"):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine("VORefCrdnCollection test:")
 
@@ -5577,7 +5562,7 @@ class VOVectorsHelper(object):
         def action207():
             refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection[oCollection.count]
 
-        TryCatchAssertBlock.DoAssert("Invalid index", action207)
+        TryCatchAssertBlock.DoAssert(action207)
 
         voRefCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent"
 
@@ -5598,21 +5583,21 @@ class VOVectorsHelper(object):
                 GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "bogus"
             )
 
-        TryCatchAssertBlock.DoAssert("Invalid object.", action208)
+        TryCatchAssertBlock.DoAssert(action208)
 
         def action209():
             oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
                 clr.Convert((-1), GEOMETRIC_ELEM_TYPE), "bogus"
             )
 
-        TryCatchAssertBlock.DoAssert("Invalid GEOMETRIC_ELEM_TYPE", action209)
+        TryCatchAssertBlock.DoAssert(action209)
 
         def action210():
             oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
                 GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, ""
             )
 
-        TryCatchAssertBlock.DoAssert("Invalid crdn name", action210)
+        TryCatchAssertBlock.DoAssert(action210)
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
@@ -5689,8 +5674,8 @@ class VOVectorsHelper(object):
         while iIndex < len(arAvailable):
             eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
             if eType == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
-                oVector: "IGraphics3DReferenceVectorGeometryToolVector" = clr.Convert(
-                    oCollection.add(eType, str(arAvailable[iIndex][0])), IGraphics3DReferenceVectorGeometryToolVector
+                oVector: "Graphics3DReferenceVectorGeometryToolVector" = clr.Convert(
+                    oCollection.add(eType, str(arAvailable[iIndex][0])), Graphics3DReferenceVectorGeometryToolVector
                 )
                 Assert.assertIsNotNone(oVector)
                 strMagnitudeDim: str = oVector.magnitude_dimension
@@ -5754,15 +5739,15 @@ class VOVectorsHelper(object):
                 Assert.fail("The LabelVisible should be readonly.")
 
             if refCrdn.type_id == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
-                self.RefCrdnAngleReadOnly(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolAngle))
+                self.RefCrdnAngleReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAngle))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
-                self.RefCrdnAxesReadOnly(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolAxes))
+                self.RefCrdnAxesReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAxes))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
-                self.RefCrdnPlaneReadOnly(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolPlane))
+                self.RefCrdnPlaneReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPlane))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
-                self.RefCrdnPointReadOnly(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolPoint))
+                self.RefCrdnPointReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPoint))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
-                self.RefCrdnVectorReadOnly(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolVector))
+                self.RefCrdnVectorReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolVector))
             else:
                 Assert.fail("Invalid TypeID!")
 
@@ -5783,16 +5768,16 @@ class VOVectorsHelper(object):
             self.m_logger.WriteLine4("\tThe new LabelVisible flag is: {0}", refCrdn.label_visible)
             Assert.assertEqual(True, refCrdn.label_visible)
             if refCrdn.type_id == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
-                self.RefCrdnAngle(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolAngle))
+                self.RefCrdnAngle(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAngle))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
-                self.RefCrdnAxes(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolAxes))
+                self.RefCrdnAxes(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAxes))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
-                self.RefCrdnPlane(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolPlane))
+                self.RefCrdnPlane(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPlane))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
                 # 38619: Earth Center point freezes STK
-                self.RefCrdnPoint(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolPoint))
+                self.RefCrdnPoint(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPoint))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
-                self.RefCrdnVector(clr.Convert(refCrdn, IGraphics3DReferenceVectorGeometryToolVector))
+                self.RefCrdnVector(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolVector))
             else:
                 Assert.fail("Invalid TypeID!")
 
@@ -5809,7 +5794,7 @@ class VOVectorsHelper(object):
         def action211():
             oCollection.remove(oCollection.count)
 
-        TryCatchAssertBlock.DoAssert("Invalid Remove index", action211)
+        TryCatchAssertBlock.DoAssert(action211)
 
         # RemoveByName
         self.m_logger.WriteLine3(
@@ -5821,12 +5806,12 @@ class VOVectorsHelper(object):
         def action212():
             oCollection.remove_by_name(clr.Convert((-1), GEOMETRIC_ELEM_TYPE), "bogus")
 
-        TryCatchAssertBlock.DoAssert("Invalid Remove type", action212)
+        TryCatchAssertBlock.DoAssert(action212)
 
         def action213():
             oCollection.remove_by_name(GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "bogus")
 
-        TryCatchAssertBlock.DoAssert("Invalid Remove name", action213)
+        TryCatchAssertBlock.DoAssert(action213)
 
         # RemoveAll
         self.m_logger.WriteLine3("Before RemoveAll() the Vector Collection contains: {0} elements", oCollection.count)
@@ -5837,7 +5822,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnAngleReadOnly method
-    def RefCrdnAngleReadOnly(self, oAngle: "IGraphics3DReferenceVectorGeometryToolAngle"):
+    def RefCrdnAngleReadOnly(self, oAngle: "Graphics3DReferenceVectorGeometryToolAngle"):
         Assert.assertIsNotNone(oAngle)
         self.m_logger.WriteLine("\tRefCrdnAngle test (ReadOnly):")
         bCaught: bool = False
@@ -5877,7 +5862,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnAngle method
-    def RefCrdnAngle(self, oAngle: "IGraphics3DReferenceVectorGeometryToolAngle"):
+    def RefCrdnAngle(self, oAngle: "Graphics3DReferenceVectorGeometryToolAngle"):
         Assert.assertIsNotNone(oAngle)
         self.m_logger.WriteLine("\tRefCrdnAngle test:")
         # AngleValueVisible
@@ -5919,7 +5904,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnAxesReadOnly method
-    def RefCrdnAxesReadOnly(self, oAxes: "IGraphics3DReferenceVectorGeometryToolAxes"):
+    def RefCrdnAxesReadOnly(self, oAxes: "Graphics3DReferenceVectorGeometryToolAxes"):
         Assert.assertIsNotNone(oAxes)
         self.m_logger.WriteLine("\tRefCrdnAxes test (ReadOnly):")
         bCaught: bool = False
@@ -6004,7 +5989,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnAxes method
-    def RefCrdnAxes(self, oAxes: "IGraphics3DReferenceVectorGeometryToolAxes"):
+    def RefCrdnAxes(self, oAxes: "Graphics3DReferenceVectorGeometryToolAxes"):
         Assert.assertIsNotNone(oAxes)
         self.m_logger.WriteLine("\tRefCrdnAxes test:")
         # set TimeUnit
@@ -6103,7 +6088,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnPlaneReadOnly method
-    def RefCrdnPlaneReadOnly(self, oPlane: "IGraphics3DReferenceVectorGeometryToolPlane"):
+    def RefCrdnPlaneReadOnly(self, oPlane: "Graphics3DReferenceVectorGeometryToolPlane"):
         Assert.assertIsNotNone(oPlane)
         self.m_logger.WriteLine("\tRefCrdnPlane test (ReadOnly):")
         bCaught: bool = False
@@ -6212,7 +6197,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnPlane method
-    def RefCrdnPlane(self, oPlane: "IGraphics3DReferenceVectorGeometryToolPlane"):
+    def RefCrdnPlane(self, oPlane: "Graphics3DReferenceVectorGeometryToolPlane"):
         Assert.assertIsNotNone(oPlane)
         self.m_logger.WriteLine("\tRefCrdnPlane test:")
         # set DistanceUnit
@@ -6351,7 +6336,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnPointReadOnly method
-    def RefCrdnPointReadOnly(self, oPoint: "IGraphics3DReferenceVectorGeometryToolPoint"):
+    def RefCrdnPointReadOnly(self, oPoint: "Graphics3DReferenceVectorGeometryToolPoint"):
         Assert.assertIsNotNone(oPoint)
         self.m_logger.WriteLine("\tRefCrdnPoint test (ReadOnly):")
         bCaught: bool = False
@@ -6435,7 +6420,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnPoint method
-    def RefCrdnPoint(self, oPoint: "IGraphics3DReferenceVectorGeometryToolPoint"):
+    def RefCrdnPoint(self, oPoint: "Graphics3DReferenceVectorGeometryToolPoint"):
         Assert.assertIsNotNone(oPoint)
         self.m_logger.WriteLine("\tRefCrdnPoint test:")
         # TrajectoryType
@@ -6586,7 +6571,7 @@ class VOVectorsHelper(object):
     # endregion
 
     # region RefCrdnVectorReadOnly method
-    def RefCrdnVectorReadOnly(self, oVector: "IGraphics3DReferenceVectorGeometryToolVector"):
+    def RefCrdnVectorReadOnly(self, oVector: "Graphics3DReferenceVectorGeometryToolVector"):
         Assert.assertIsNotNone(oVector)
         self.m_logger.WriteLine("\tRefCrdnVector test (ReadOnly):")
 
@@ -6594,31 +6579,31 @@ class VOVectorsHelper(object):
             oVector.draw_at_cb = True
 
         # DrawAtCB
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action214)
+        TryCatchAssertBlock.DoAssert(action214)
 
         def action215():
             oVector.ra_dec_visible = True
 
         # RADecVisible
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action215)
+        TryCatchAssertBlock.DoAssert(action215)
 
         def action216():
             oVector.ra_dec_unit_abrv = "semiC"
 
         # RADecUnitAbrv
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action216)
+        TryCatchAssertBlock.DoAssert(action216)
 
         def action217():
             oVector.magnitude_visible = True
 
         # MagnitudeVisible
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action217)
+        TryCatchAssertBlock.DoAssert(action217)
 
         def action218():
             oVector.persistence_visible = True
 
         # PersistenceVisible
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action218)
+        TryCatchAssertBlock.DoAssert(action218)
         # set TimeUnit
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
         self.m_logger.WriteLine5("\t\tThe current TimeUnit is: {0}", strUnit)
@@ -6630,7 +6615,7 @@ class VOVectorsHelper(object):
             oVector.duration = 123.456
 
         # Duration
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action219)
+        TryCatchAssertBlock.DoAssert(action219)
         # restore TimeUnit
         self.m_oUnits.set_current_unit("TimeUnit", strUnit)
         self.m_logger.WriteLine5(
@@ -6642,42 +6627,42 @@ class VOVectorsHelper(object):
             oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
 
         # Connect
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action220)
+        TryCatchAssertBlock.DoAssert(action220)
 
         def action221():
             oVector.transparent = True
 
         # Transparent
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action221)
+        TryCatchAssertBlock.DoAssert(action221)
 
         def action222():
             oVector.axes = "CentralBody/Earth Fixed Axes"
 
         # Axes
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action222)
+        TryCatchAssertBlock.DoAssert(action222)
 
         def action223():
             oVector.draw_at_point = True
 
         # DrawAtPoint
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action223)
+        TryCatchAssertBlock.DoAssert(action223)
 
         def action224():
             oVector.point = "Satellite/Satellite1 Center Point"
 
         # Point
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action224)
+        TryCatchAssertBlock.DoAssert(action224)
 
         def action225():
             oVector.true_scale = True
 
         # TrueScale
-        TryCatchAssertBlock.DoAssert("The property should be readonly.", action225)
+        TryCatchAssertBlock.DoAssert(action225)
 
     # endregion
 
     # region RefCrdnVector method
-    def RefCrdnVector(self, oVector: "IGraphics3DReferenceVectorGeometryToolVector"):
+    def RefCrdnVector(self, oVector: "Graphics3DReferenceVectorGeometryToolVector"):
         Assert.assertIsNotNone(oVector)
         self.m_logger.WriteLine("\tRefCrdnVector test:")
         # DrawAtCB
@@ -6703,7 +6688,7 @@ class VOVectorsHelper(object):
             def action226():
                 oVector.true_scale = False
 
-            TryCatchAssertBlock.DoAssert("This property should be readonly", action226)
+            TryCatchAssertBlock.DoAssert(action226)
 
         # AvailableAxes
         arAxes = oVector.available_axes
@@ -6721,7 +6706,7 @@ class VOVectorsHelper(object):
         def action227():
             oVector.axes = "Abcdefgh"
 
-        TryCatchAssertBlock.DoAssert("Cannot set illegal Axes!", action227)
+        TryCatchAssertBlock.DoAssert(action227)
         # DrawAtPoint
         self.m_logger.WriteLine4("\t\tThe current DrawAtPoint flag is: {0}", oVector.draw_at_point)
         oVector.draw_at_point = False
@@ -6731,7 +6716,7 @@ class VOVectorsHelper(object):
         def action228():
             oVector.point = "Satellite/Satellite1 Center Point"
 
-        TryCatchAssertBlock.DoAssert("The Point should be readonly.", action228)
+        TryCatchAssertBlock.DoAssert(action228)
         oVector.draw_at_point = True
         self.m_logger.WriteLine4("\t\tThe new DrawAtPoint flag is: {0}", oVector.draw_at_point)
         Assert.assertEqual(True, oVector.draw_at_point)
@@ -6751,7 +6736,7 @@ class VOVectorsHelper(object):
         def action229():
             oVector.point = "Abcdefgh"
 
-        TryCatchAssertBlock.DoAssert("Cannot set illegal Point!", action229)
+        TryCatchAssertBlock.DoAssert(action229)
         # RADecVisible
         self.m_logger.WriteLine4("\t\tThe current RADecVisible flag is: {0}", oVector.ra_dec_visible)
         oVector.ra_dec_visible = False
@@ -6761,7 +6746,7 @@ class VOVectorsHelper(object):
         def action230():
             oVector.ra_dec_unit_abrv = "mdeg"
 
-        TryCatchAssertBlock.DoAssert("The RADecUnitAbrv should be readonly.", action230)
+        TryCatchAssertBlock.DoAssert(action230)
         oVector.ra_dec_visible = True
         self.m_logger.WriteLine4("\t\tThe new RADecVisible flag is: {0}", oVector.ra_dec_visible)
         Assert.assertEqual(True, oVector.ra_dec_visible)
@@ -6774,7 +6759,7 @@ class VOVectorsHelper(object):
         def action231():
             oVector.ra_dec_unit_abrv = "Abc"
 
-        TryCatchAssertBlock.DoAssert("Cannot set illegal RADecUnitAbrv!", action231)
+        TryCatchAssertBlock.DoAssert(action231)
         # MagnitudeDimension
         strMagnitudeDim: str = oVector.magnitude_dimension
         self.m_logger.WriteLine5("\t\tThe MagnitudeDimension is: {0}", strMagnitudeDim)
@@ -6790,7 +6775,7 @@ class VOVectorsHelper(object):
             def action232():
                 oVector.magnitude_unit_abrv = strCurrentDimensionAbrv
 
-            TryCatchAssertBlock.DoAssert("The MagnitudeUnitAbrv should be readonly.", action232)
+            TryCatchAssertBlock.DoAssert(action232)
             oVector.magnitude_visible = True
             self.m_logger.WriteLine4("\t\tThe new MagnitudeVisible flag is: {0}", oVector.magnitude_visible)
             Assert.assertEqual(True, oVector.magnitude_visible)
@@ -6807,7 +6792,7 @@ class VOVectorsHelper(object):
             def action233():
                 oVector.magnitude_unit_abrv = "Abc"
 
-            TryCatchAssertBlock.DoAssert("Cannot set illegal MagnitudeUnitAbrv!", action233)
+            TryCatchAssertBlock.DoAssert(action233)
 
         # set TimeUnit
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
@@ -6824,17 +6809,17 @@ class VOVectorsHelper(object):
         def action234():
             oVector.duration = 123.456
 
-        TryCatchAssertBlock.DoAssert("The Duration should be readonly.", action234)
+        TryCatchAssertBlock.DoAssert(action234)
 
         def action235():
             oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
 
-        TryCatchAssertBlock.DoAssert("The Connect should be readonly.", action235)
+        TryCatchAssertBlock.DoAssert(action235)
 
         def action236():
             oVector.transparent = True
 
-        TryCatchAssertBlock.DoAssert("The Transparent should be readonly.", action236)
+        TryCatchAssertBlock.DoAssert(action236)
         # PersistenceVisible (true)
         oVector.persistence_visible = True
         self.m_logger.WriteLine4("\t\tThe new PersistenceVisible flag is: {0}", oVector.persistence_visible)
@@ -6859,7 +6844,7 @@ class VOVectorsHelper(object):
             oVector.duration = -1234.56789
 
         # range test
-        TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action237)
+        TryCatchAssertBlock.DoAssert(action237)
         # restore TimeUnit
         self.m_oUnits.set_current_unit("TimeUnit", strUnit)
         self.m_logger.WriteLine5(
@@ -6879,7 +6864,7 @@ class VOVaporTrailHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oVaporTrail: "IGraphics3DVaporTrail", oModel: "IGraphics3DModel", strDataPath: str):
+    def Run(self, oVaporTrail: "Graphics3DVaporTrail", oModel: "IGraphics3DModel", strDataPath: str):
         self.m_logger.WriteLine("----- VO VAPOR TRAIL TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oVaporTrail)
         Assert.assertIsNotNone(oModel)
@@ -6893,43 +6878,43 @@ class VOVaporTrailHelper(object):
             oVaporTrail.max_num_of_puffs = 34
 
         # MaxNumOfPuffs (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action238)
+        TryCatchAssertBlock.DoAssert(action238)
 
         def action239():
             oVaporTrail.density = 3.4
 
         # Density (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action239)
+        TryCatchAssertBlock.DoAssert(action239)
 
         def action240():
             oVaporTrail.radius = 34.56
 
         # Radius (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action240)
+        TryCatchAssertBlock.DoAssert(action240)
 
         def action241():
             oVaporTrail.color = Color.FromArgb(1218646)
 
         # Color (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action241)
+        TryCatchAssertBlock.DoAssert(action241)
 
         def action242():
             oVaporTrail.image_file = strDataPath + r"\STKData\VO/Textures/smoke.pgm"
 
         # ImageFile (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action242)
+        TryCatchAssertBlock.DoAssert(action242)
 
         def action243():
             oVaporTrail.use_attach_point = False
 
         # UseAttachPoint (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action243)
+        TryCatchAssertBlock.DoAssert(action243)
 
         def action244():
             oVaporTrail.attach_point_name = "InvalidPointName"
 
         # AttachPointName (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action244)
+        TryCatchAssertBlock.DoAssert(action244)
         # Visible (true)
         oVaporTrail.visible = True
         self.m_logger.WriteLine4("\tThe new Visible is: {0}", oVaporTrail.visible)
@@ -6943,7 +6928,7 @@ class VOVaporTrailHelper(object):
         def action245():
             oVaporTrail.max_num_of_puffs = 12345
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action245)
+        TryCatchAssertBlock.DoAssert(action245)
         # Density
         self.m_logger.WriteLine6("\tThe current Density is: {0}", oVaporTrail.density)
         oVaporTrail.density = 123.456
@@ -6953,7 +6938,7 @@ class VOVaporTrailHelper(object):
         def action246():
             oVaporTrail.density = 12345.6789
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action246)
+        TryCatchAssertBlock.DoAssert(action246)
         # Radius
         self.m_logger.WriteLine6("\tThe current Radius is: {0}", oVaporTrail.radius)
         oVaporTrail.radius = 1234.56
@@ -6963,7 +6948,7 @@ class VOVaporTrailHelper(object):
         def action247():
             oVaporTrail.radius = -12345.6789
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action247)
+        TryCatchAssertBlock.DoAssert(action247)
         # StartTime / EndTime
         self.m_logger.WriteLine6("\tThe current StartTime is: {0}", oVaporTrail.display_interval.get_start_epoch())
         self.m_logger.WriteLine6("\tThe current EndTime is: {0}", oVaporTrail.display_interval.get_stop_epoch())
@@ -6986,10 +6971,10 @@ class VOVaporTrailHelper(object):
         def action248():
             oVaporTrail.image_file = "InvalidImageFile.Name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action248)
+        TryCatchAssertBlock.DoAssert(action248)
 
         # AvailableAttachPoints
-        file: "IGraphics3DModelFile" = clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+        file: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
         arAvailablePoints = oVaporTrail.available_attach_points
         self.m_logger.WriteLine3(
             "\tThe current model contains: {0} available attach points.", Array.Length(arAvailablePoints)
@@ -7003,19 +6988,19 @@ class VOVaporTrailHelper(object):
             def action249():
                 oVaporTrail.use_attach_point = False
 
-            TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action249)
+            TryCatchAssertBlock.DoAssert(action249)
 
         def action250():
             oVaporTrail.attach_point_name = "InvalidPointName"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action250)
+        TryCatchAssertBlock.DoAssert(action250)
 
         # Load a VOModel with attached points
         oModel.visible = True
         Assert.assertTrue(oModel.visible)
         oModel.model_type = MODEL_TYPE.FILE
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
-        oModelFile: "IGraphics3DModelFile" = clr.Convert(oModel.model_data, IGraphics3DModelFile)
+        oModelFile: "Graphics3DModelFile" = clr.Convert(oModel.model_data, Graphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\tThe current VOModel file is: {0}", oModelFile.filename)
         oModelFile.filename = strDataPath + r"\STKData\VO\Models\Space\pegasus.mdl"
@@ -7036,7 +7021,7 @@ class VOVaporTrailHelper(object):
             oVaporTrail.attach_point_name = "InvalidPointName"
 
         # AttachPointName (read only)
-        TryCatchAssertBlock.DoAssert("Should not allow to change a readonly value.", action251)
+        TryCatchAssertBlock.DoAssert(action251)
         # UseAttachPoint (true)
         oVaporTrail.use_attach_point = True
         self.m_logger.WriteLine4("\tThe new UseAttachPoint is: {0}", oVaporTrail.use_attach_point)
@@ -7055,7 +7040,7 @@ class VOVaporTrailHelper(object):
         def action252():
             oVaporTrail.attach_point_name = "InvalidPointName"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action252)
+        TryCatchAssertBlock.DoAssert(action252)
         self.m_logger.WriteLine("----- VO VAPOR TRAIL TEST ----- END -----")
 
     # endregion

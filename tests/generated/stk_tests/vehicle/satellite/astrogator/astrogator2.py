@@ -10,8 +10,8 @@ class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
 
-    m_satellite: "ISatellite" = None
-    m_driver: "IDriverMissionControlSequence" = None
+    m_satellite: "Satellite" = None
+    m_driver: "DriverMissionControlSequence" = None
 
     # region OneTimeSetUp
     @staticmethod
@@ -20,10 +20,10 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
 
         EarlyBoundTests.m_satellite = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CopyPasteTest"), ISatellite
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CopyPasteTest"), Satellite
         )
         EarlyBoundTests.m_satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.m_driver = clr.Convert(EarlyBoundTests.m_satellite.propagator, IDriverMissionControlSequence)
+        EarlyBoundTests.m_driver = clr.Convert(EarlyBoundTests.m_satellite.propagator, DriverMissionControlSequence)
 
     # endregion
 
@@ -40,26 +40,26 @@ class EarlyBoundTests(TestBase):
     def test_CutPropagateControlTest(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
-        targSeq: "IMissionControlSequenceTargetSequence" = clr.Convert(
+        targSeq: "MissionControlSequenceTargetSequence" = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
-        targSeq2: "IMissionControlSequenceTargetSequence" = clr.Convert(
+        targSeq2: "MissionControlSequenceTargetSequence" = clr.Convert(
             targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
-        prop: "IMissionControlSequencePropagate" = clr.Convert(
-            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+        prop: "MissionControlSequencePropagate" = clr.Convert(
+            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
         prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
         (clr.Convert(prop, IMissionControlSequenceSegment)).results.add("Keplerian Elems/Inclination")
-        diffCorr: "IProfileDifferentialCorrector" = clr.Convert(
-            targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector
+        diffCorr: "ProfileDifferentialCorrector" = clr.Convert(
+            targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector
         )
-        control: "IDifferentialCorrectorControl" = diffCorr.control_parameters.get_control_by_paths(
+        control: "DifferentialCorrectorControl" = diffCorr.control_parameters.get_control_by_paths(
             "TargetSequence.Propagate", "StoppingConditions.Duration.TripValue"
         )
-        constraint: "IDifferentialCorrectorResult" = diffCorr.results.get_result_by_paths(
+        constraint: "DifferentialCorrectorResult" = diffCorr.results.get_result_by_paths(
             "TargetSequence.Propagate", "Inclination"
         )
         control.enable = True
@@ -86,27 +86,26 @@ class EarlyBoundTests(TestBase):
     def test_ChangeResultStayActive(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
-        targSeq: "IMissionControlSequenceTargetSequence" = clr.Convert(
+        targSeq: "MissionControlSequenceTargetSequence" = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
-        targSeq2: "IMissionControlSequenceTargetSequence" = clr.Convert(
+        targSeq2: "MissionControlSequenceTargetSequence" = clr.Convert(
             targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
-        prop: "IMissionControlSequencePropagate" = clr.Convert(
-            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+        prop: "MissionControlSequencePropagate" = clr.Convert(
+            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
         result: "IComponentInfo" = (clr.Convert(prop, IMissionControlSequenceSegment)).results.add(
             "Keplerian Elems/Inclination"
         )
 
-        diffCorr: "IProfileDifferentialCorrector" = clr.Convert(
-            targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector
+        diffCorr: "ProfileDifferentialCorrector" = clr.Convert(
+            targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector
         )
-        dcEqConst: "IDifferentialCorrectorResult" = clr.Convert(
-            diffCorr.results.get_result_by_paths("TargetSequence.Propagate", "Inclination"),
-            IDifferentialCorrectorResult,
+        dcEqConst: "DifferentialCorrectorResult" = clr.Convert(
+            diffCorr.results.get_result_by_paths("TargetSequence.Propagate", "Inclination"), DifferentialCorrectorResult
         )
         dcEqConst.enable = True
         EarlyBoundTests.m_driver.main_sequence.remove_all()
@@ -118,95 +117,95 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "IMissionControlSequenceTargetSequence" = None
+        targSeq: "MissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        man: "IMissionControlSequenceManeuver" = None
+        man: "MissionControlSequenceManeuver" = None
         man = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), MissionControlSequenceManeuver
         )
         man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
-        ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
+        ret: "MissionControlSequenceReturn" = None
+        ret = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), MissionControlSequenceReturn)
 
-        stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop: "MissionControlSequenceStop" = None
+        stop = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), MissionControlSequenceStop)
 
         sequence: "IMissionControlSequenceSequence" = None
         sequence = clr.Convert(
             targSeq.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
         )
-        propInsideSequence: "IMissionControlSequencePropagate" = None
+        propInsideSequence: "MissionControlSequencePropagate" = None
         propInsideSequence = clr.Convert(
-            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
         sequence.scripting_tool.enable = True
-        seqAttr: "IScriptingSegment" = sequence.scripting_tool.segment_properties.add("Attribute")
+        seqAttr: "ScriptingSegment" = sequence.scripting_tool.segment_properties.add("Attribute")
         seqAttr.object_name = "Propagate"
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        dcScriptTool: "IScriptingTool" = diffCorr.scripting_tool
+        dcScriptTool: "ScriptingTool" = diffCorr.scripting_tool
         dcScriptTool.enable = True
 
-        dcAttribute: "IScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
+        dcAttribute: "ScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
         dcAttribute.object_name = "Propagate"
 
-        changeMan: "IProfileChangeManeuverType" = None
-        changeMan = clr.Convert(targSeq.profiles.add("Change Maneuver Type"), IProfileChangeManeuverType)
+        changeMan: "ProfileChangeManeuverType" = None
+        changeMan = clr.Convert(targSeq.profiles.add("Change Maneuver Type"), ProfileChangeManeuverType)
         changeMan.segment = man
         changeMan.name = "MyChangeManeuver"
 
-        changeProp: "IProfileChangePropagator" = None
-        changeProp = clr.Convert(targSeq.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changeProp: "ProfileChangePropagator" = None
+        changeProp = clr.Convert(targSeq.profiles.add("Change Propagator"), ProfileChangePropagator)
         changeProp.segment_name = "Propagate"
         changeProp.name = "MyChangePropagator"
 
-        changePropMan: "IProfileChangePropagator" = None
-        changePropMan = clr.Convert(targSeq.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changePropMan: "ProfileChangePropagator" = None
+        changePropMan = clr.Convert(targSeq.profiles.add("Change Propagator"), ProfileChangePropagator)
         changePropMan.segment_name = "Maneuver"
         changePropMan.name = "MyChangePropagatorForManeuver"
 
-        changeReturn: "IProfileChangeReturnSegment" = None
-        changeReturn = clr.Convert(targSeq.profiles.add("Change Return Segment"), IProfileChangeReturnSegment)
+        changeReturn: "ProfileChangeReturnSegment" = None
+        changeReturn = clr.Convert(targSeq.profiles.add("Change Return Segment"), ProfileChangeReturnSegment)
         changeReturn.segment_name = "Return"
         changeReturn.name = "MyReturn"
 
-        changeStopCondition: "IProfileChangeStoppingConditionState" = None
+        changeStopCondition: "ProfileChangeStoppingConditionState" = None
         changeStopCondition = clr.Convert(
-            targSeq.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeq.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopCondition.segment_name = "Propagate"
         changeStopCondition.name = "MyChangeStopCondForPropagate"
 
-        changeStopConditionMan: "IProfileChangeStoppingConditionState" = None
+        changeStopConditionMan: "ProfileChangeStoppingConditionState" = None
         changeStopConditionMan = clr.Convert(
-            targSeq.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeq.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopConditionMan.segment_name = "Maneuver"
         changeStopConditionMan.name = "MyChangeStopCondForMan"
 
-        changeStopSegment: "IProfileChangeStopSegment" = None
-        changeStopSegment = clr.Convert(targSeq.profiles.add("Change Stop Segment"), IProfileChangeStopSegment)
+        changeStopSegment: "ProfileChangeStopSegment" = None
+        changeStopSegment = clr.Convert(targSeq.profiles.add("Change Stop Segment"), ProfileChangeStopSegment)
         changeStopSegment.segment_name = "Stop"
         changeStopSegment.name = "MyChangeStopSegment"
 
-        scriptingTool: "IProfileScriptingTool" = None
-        scriptingTool = clr.Convert(targSeq.profiles.add("Scripting Tool"), IProfileScriptingTool)
+        scriptingTool: "ProfileScriptingTool" = None
+        scriptingTool = clr.Convert(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
 
-        attribute: "IScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
+        attribute: "ScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
         attribute.object_name = "Propagate"
         EarlyBoundTests.m_driver.main_sequence.remove_all()
 
@@ -217,11 +216,11 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "IMissionControlSequenceTargetSequence" = None
+        targSeq: "MissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
         sequence: "IMissionControlSequenceSequence" = None
@@ -229,75 +228,75 @@ class EarlyBoundTests(TestBase):
             targSeq.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        man: "IMissionControlSequenceManeuver" = None
+        man: "MissionControlSequenceManeuver" = None
         man = clr.Convert(
-            sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), MissionControlSequenceManeuver
         )
         man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
-        ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
+        ret: "MissionControlSequenceReturn" = None
+        ret = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), MissionControlSequenceReturn)
 
-        stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop: "MissionControlSequenceStop" = None
+        stop = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), MissionControlSequenceStop)
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        dcScriptTool: "IScriptingTool" = diffCorr.scripting_tool
+        dcScriptTool: "ScriptingTool" = diffCorr.scripting_tool
         dcScriptTool.enable = True
 
-        dcAttribute: "IScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
+        dcAttribute: "ScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
         dcAttribute.object_name = "Sequence.Propagate"
 
-        changeMan: "IProfileChangeManeuverType" = None
-        changeMan = clr.Convert(targSeq.profiles.add("Change Maneuver Type"), IProfileChangeManeuverType)
+        changeMan: "ProfileChangeManeuverType" = None
+        changeMan = clr.Convert(targSeq.profiles.add("Change Maneuver Type"), ProfileChangeManeuverType)
         changeMan.segment = man
         changeMan.name = "MyChangeManeuver"
 
-        changeProp: "IProfileChangePropagator" = None
-        changeProp = clr.Convert(targSeq.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changeProp: "ProfileChangePropagator" = None
+        changeProp = clr.Convert(targSeq.profiles.add("Change Propagator"), ProfileChangePropagator)
         changeProp.segment_name = "Sequence.Propagate"
         changeProp.name = "MyChangePropagator"
 
-        changePropMan: "IProfileChangePropagator" = None
-        changePropMan = clr.Convert(targSeq.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changePropMan: "ProfileChangePropagator" = None
+        changePropMan = clr.Convert(targSeq.profiles.add("Change Propagator"), ProfileChangePropagator)
         changePropMan.segment_name = "Sequence.Maneuver"
         changePropMan.name = "MyChangePropagatorForManeuver"
 
-        changeReturn: "IProfileChangeReturnSegment" = None
-        changeReturn = clr.Convert(targSeq.profiles.add("Change Return Segment"), IProfileChangeReturnSegment)
+        changeReturn: "ProfileChangeReturnSegment" = None
+        changeReturn = clr.Convert(targSeq.profiles.add("Change Return Segment"), ProfileChangeReturnSegment)
         changeReturn.segment_name = "Sequence.Return"
         changeReturn.name = "MyReturn"
 
-        changeStopCondition: "IProfileChangeStoppingConditionState" = None
+        changeStopCondition: "ProfileChangeStoppingConditionState" = None
         changeStopCondition = clr.Convert(
-            targSeq.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeq.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopCondition.segment_name = "Sequence.Propagate"
         changeStopCondition.name = "MyChangeStopCondForPropagate"
 
-        changeStopConditionMan: "IProfileChangeStoppingConditionState" = None
+        changeStopConditionMan: "ProfileChangeStoppingConditionState" = None
         changeStopConditionMan = clr.Convert(
-            targSeq.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeq.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopConditionMan.segment_name = "Sequence.Maneuver"
         changeStopConditionMan.name = "MyChangeStopCondForMan"
 
-        changeStopSegment: "IProfileChangeStopSegment" = None
-        changeStopSegment = clr.Convert(targSeq.profiles.add("Change Stop Segment"), IProfileChangeStopSegment)
+        changeStopSegment: "ProfileChangeStopSegment" = None
+        changeStopSegment = clr.Convert(targSeq.profiles.add("Change Stop Segment"), ProfileChangeStopSegment)
         changeStopSegment.segment_name = "Sequence.Stop"
         changeStopSegment.name = "MyChangeStopSegment"
 
-        scriptingTool: "IProfileScriptingTool" = None
-        scriptingTool = clr.Convert(targSeq.profiles.add("Scripting Tool"), IProfileScriptingTool)
+        scriptingTool: "ProfileScriptingTool" = None
+        scriptingTool = clr.Convert(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
 
-        attribute: "IScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
+        attribute: "ScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
         attribute.object_name = "Sequence.Propagate"
         EarlyBoundTests.m_driver.main_sequence.remove_all()
 
@@ -308,82 +307,82 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "IMissionControlSequenceTargetSequence" = None
+        targSeq: "MissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        man: "IMissionControlSequenceManeuver" = None
+        man: "MissionControlSequenceManeuver" = None
         man = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), MissionControlSequenceManeuver
         )
         man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
-        ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
+        ret: "MissionControlSequenceReturn" = None
+        ret = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), MissionControlSequenceReturn)
 
-        stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop: "MissionControlSequenceStop" = None
+        stop = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), MissionControlSequenceStop)
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        dcScriptTool: "IScriptingTool" = diffCorr.scripting_tool
+        dcScriptTool: "ScriptingTool" = diffCorr.scripting_tool
         dcScriptTool.enable = True
 
-        dcAttribute: "IScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
+        dcAttribute: "ScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
         dcAttribute.object_name = "Propagate"
 
-        changeMan: "IProfileChangeManeuverType" = None
-        changeMan = clr.Convert(targSeq.profiles.add("Change Maneuver Type"), IProfileChangeManeuverType)
+        changeMan: "ProfileChangeManeuverType" = None
+        changeMan = clr.Convert(targSeq.profiles.add("Change Maneuver Type"), ProfileChangeManeuverType)
         changeMan.segment = man
         changeMan.name = "MyChangeManeuver"
 
-        changeProp: "IProfileChangePropagator" = None
-        changeProp = clr.Convert(targSeq.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changeProp: "ProfileChangePropagator" = None
+        changeProp = clr.Convert(targSeq.profiles.add("Change Propagator"), ProfileChangePropagator)
         changeProp.segment_name = "Propagate"
         changeProp.name = "MyChangePropagator"
 
-        changePropMan: "IProfileChangePropagator" = None
-        changePropMan = clr.Convert(targSeq.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changePropMan: "ProfileChangePropagator" = None
+        changePropMan = clr.Convert(targSeq.profiles.add("Change Propagator"), ProfileChangePropagator)
         changePropMan.segment_name = "Maneuver"
         changePropMan.name = "MyChangePropagatorForManeuver"
 
-        changeReturn: "IProfileChangeReturnSegment" = None
-        changeReturn = clr.Convert(targSeq.profiles.add("Change Return Segment"), IProfileChangeReturnSegment)
+        changeReturn: "ProfileChangeReturnSegment" = None
+        changeReturn = clr.Convert(targSeq.profiles.add("Change Return Segment"), ProfileChangeReturnSegment)
         changeReturn.segment_name = "Return"
         changeReturn.name = "MyReturn"
 
-        changeStopCondition: "IProfileChangeStoppingConditionState" = None
+        changeStopCondition: "ProfileChangeStoppingConditionState" = None
         changeStopCondition = clr.Convert(
-            targSeq.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeq.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopCondition.segment_name = "Propagate"
         changeStopCondition.name = "MyChangeStopCondForPropagate"
 
-        changeStopConditionMan: "IProfileChangeStoppingConditionState" = None
+        changeStopConditionMan: "ProfileChangeStoppingConditionState" = None
         changeStopConditionMan = clr.Convert(
-            targSeq.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeq.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopConditionMan.segment_name = "Maneuver"
         changeStopConditionMan.name = "MyChangeStopCondForMan"
 
-        changeStopSegment: "IProfileChangeStopSegment" = None
-        changeStopSegment = clr.Convert(targSeq.profiles.add("Change Stop Segment"), IProfileChangeStopSegment)
+        changeStopSegment: "ProfileChangeStopSegment" = None
+        changeStopSegment = clr.Convert(targSeq.profiles.add("Change Stop Segment"), ProfileChangeStopSegment)
         changeStopSegment.segment_name = "Stop"
         changeStopSegment.name = "MyChangeStopSegment"
 
-        scriptingTool: "IProfileScriptingTool" = None
-        scriptingTool = clr.Convert(targSeq.profiles.add("Scripting Tool"), IProfileScriptingTool)
+        scriptingTool: "ProfileScriptingTool" = None
+        scriptingTool = clr.Convert(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
 
-        attribute: "IScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
+        attribute: "ScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
         attribute.object_name = "Propagate"
         EarlyBoundTests.m_driver.main_sequence.remove_all()
 
@@ -394,27 +393,27 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "IMissionControlSequenceTargetSequence" = None
+        targSeq: "MissionControlSequenceTargetSequence" = None
 
         targSeq = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        targSeq2: "IMissionControlSequenceTargetSequence" = None
+        targSeq2: "MissionControlSequenceTargetSequence" = None
 
         targSeq2 = clr.Convert(
             targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
 
         prop = clr.Convert(
-            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
     # endregion
 
@@ -423,11 +422,11 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeqOuter: "IMissionControlSequenceTargetSequence" = None
+        targSeqOuter: "MissionControlSequenceTargetSequence" = None
 
         targSeqOuter = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
         sequence: "IMissionControlSequenceSequence" = None
@@ -435,100 +434,100 @@ class EarlyBoundTests(TestBase):
             targSeqOuter.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        man: "IMissionControlSequenceManeuver" = None
+        man: "MissionControlSequenceManeuver" = None
         man = clr.Convert(
-            sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), MissionControlSequenceManeuver
         )
         man.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
-        ret: "IMissionControlSequenceReturn" = None
-        ret = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn)
+        ret: "MissionControlSequenceReturn" = None
+        ret = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), MissionControlSequenceReturn)
 
-        stop: "IMissionControlSequenceStop" = None
-        stop = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop: "MissionControlSequenceStop" = None
+        stop = clr.Convert(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), MissionControlSequenceStop)
 
-        targSeqInner: "IMissionControlSequenceTargetSequence" = None
+        targSeqInner: "MissionControlSequenceTargetSequence" = None
         targSeqInner = clr.Convert(
             targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop2: "IMissionControlSequencePropagate" = None
+        prop2: "MissionControlSequencePropagate" = None
         prop2 = clr.Convert(
-            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        man2: "IMissionControlSequenceManeuver" = None
+        man2: "MissionControlSequenceManeuver" = None
         man2 = clr.Convert(
-            targSeqInner.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), IMissionControlSequenceManeuver
+            targSeqInner.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), MissionControlSequenceManeuver
         )
         man2.set_maneuver_type(MANEUVER_TYPE.FINITE)
 
-        ret2: "IMissionControlSequenceReturn" = None
+        ret2: "MissionControlSequenceReturn" = None
         ret2 = clr.Convert(
-            targSeqInner.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), IMissionControlSequenceReturn
+            targSeqInner.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), MissionControlSequenceReturn
         )
 
-        stop2: "IMissionControlSequenceStop" = None
-        stop2 = clr.Convert(targSeqInner.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), IMissionControlSequenceStop)
+        stop2: "MissionControlSequenceStop" = None
+        stop2 = clr.Convert(targSeqInner.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"), MissionControlSequenceStop)
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeqOuter.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeqOuter.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        dcScriptTool: "IScriptingTool" = diffCorr.scripting_tool
+        dcScriptTool: "ScriptingTool" = diffCorr.scripting_tool
         dcScriptTool.enable = True
 
-        dcAttribute: "IScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
+        dcAttribute: "ScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
         dcAttribute.object_name = "Sequence.Propagate"
 
-        changeMan: "IProfileChangeManeuverType" = None
-        changeMan = clr.Convert(targSeqOuter.profiles.add("Change Maneuver Type"), IProfileChangeManeuverType)
+        changeMan: "ProfileChangeManeuverType" = None
+        changeMan = clr.Convert(targSeqOuter.profiles.add("Change Maneuver Type"), ProfileChangeManeuverType)
         changeMan.segment = man
         changeMan.name = "MyChangeManeuver"
 
-        changeProp: "IProfileChangePropagator" = None
-        changeProp = clr.Convert(targSeqOuter.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changeProp: "ProfileChangePropagator" = None
+        changeProp = clr.Convert(targSeqOuter.profiles.add("Change Propagator"), ProfileChangePropagator)
         changeProp.segment_name = "Sequence.Propagate"
         changeProp.name = "MyChangePropagator"
 
-        changePropMan: "IProfileChangePropagator" = None
-        changePropMan = clr.Convert(targSeqOuter.profiles.add("Change Propagator"), IProfileChangePropagator)
+        changePropMan: "ProfileChangePropagator" = None
+        changePropMan = clr.Convert(targSeqOuter.profiles.add("Change Propagator"), ProfileChangePropagator)
         changePropMan.segment_name = "Sequence.Maneuver"
         changePropMan.name = "MyChangePropagatorForManeuver"
 
-        changeReturn: "IProfileChangeReturnSegment" = None
-        changeReturn = clr.Convert(targSeqOuter.profiles.add("Change Return Segment"), IProfileChangeReturnSegment)
+        changeReturn: "ProfileChangeReturnSegment" = None
+        changeReturn = clr.Convert(targSeqOuter.profiles.add("Change Return Segment"), ProfileChangeReturnSegment)
         changeReturn.segment_name = "Sequence.Return"
         changeReturn.name = "MyReturn"
 
-        changeStopCondition: "IProfileChangeStoppingConditionState" = None
+        changeStopCondition: "ProfileChangeStoppingConditionState" = None
         changeStopCondition = clr.Convert(
-            targSeqOuter.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeqOuter.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopCondition.segment_name = "Sequence.Propagate"
         changeStopCondition.name = "MyChangeStopCondForPropagate"
 
-        changeStopConditionMan: "IProfileChangeStoppingConditionState" = None
+        changeStopConditionMan: "ProfileChangeStoppingConditionState" = None
         changeStopConditionMan = clr.Convert(
-            targSeqOuter.profiles.add("Change Stopping Condition State"), IProfileChangeStoppingConditionState
+            targSeqOuter.profiles.add("Change Stopping Condition State"), ProfileChangeStoppingConditionState
         )
         changeStopConditionMan.segment_name = "Sequence.Maneuver"
         changeStopConditionMan.name = "MyChangeStopCondForMan"
 
-        changeStopSegment: "IProfileChangeStopSegment" = None
-        changeStopSegment = clr.Convert(targSeqOuter.profiles.add("Change Stop Segment"), IProfileChangeStopSegment)
+        changeStopSegment: "ProfileChangeStopSegment" = None
+        changeStopSegment = clr.Convert(targSeqOuter.profiles.add("Change Stop Segment"), ProfileChangeStopSegment)
         changeStopSegment.segment_name = "Sequence.Stop"
         changeStopSegment.name = "MyChangeStopSegment"
 
-        scriptingTool: "IProfileScriptingTool" = None
-        scriptingTool = clr.Convert(targSeqOuter.profiles.add("Scripting Tool"), IProfileScriptingTool)
+        scriptingTool: "ProfileScriptingTool" = None
+        scriptingTool = clr.Convert(targSeqOuter.profiles.add("Scripting Tool"), ProfileScriptingTool)
 
-        attribute: "IScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
+        attribute: "ScriptingSegment" = scriptingTool.segment_properties.add("Attribute")
         attribute.object_name = "Sequence.Propagate"
         EarlyBoundTests.m_driver.main_sequence.remove_all()
 
@@ -539,24 +538,24 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "IMissionControlSequenceTargetSequence" = None
+        targSeq: "MissionControlSequenceTargetSequence" = None
         targSeq = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
-        dcScriptTool: "IScriptingTool" = diffCorr.scripting_tool
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector)
+        dcScriptTool: "ScriptingTool" = diffCorr.scripting_tool
         dcScriptTool.enable = True
-        dcParam: "IScriptingParameter" = dcScriptTool.parameters.add("Parameter")
-        dcParam2: "IScriptingParameter" = dcScriptTool.parameters.add("ParameterNowWithMoreChars")
-        control: "IDifferentialCorrectorControl" = diffCorr.control_parameters.get_control_by_paths(
+        dcParam: "ScriptingParameter" = dcScriptTool.parameters.add("Parameter")
+        dcParam2: "ScriptingParameter" = dcScriptTool.parameters.add("ParameterNowWithMoreChars")
+        control: "DifferentialCorrectorControl" = diffCorr.control_parameters.get_control_by_paths(
             "Scripting_Tool", "Parameter"
         )
         control.enable = True
@@ -572,34 +571,34 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeqOuter: "IMissionControlSequenceTargetSequence" = None
+        targSeqOuter: "MissionControlSequenceTargetSequence" = None
         targSeqOuter = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        targSeqInner: "IMissionControlSequenceTargetSequence" = None
+        targSeqInner: "MissionControlSequenceTargetSequence" = None
         targSeqInner = clr.Convert(
             targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        diffCorrOuter: "IProfileDifferentialCorrector" = None
-        diffCorrOuter = clr.Convert(targSeqOuter.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorrOuter: "ProfileDifferentialCorrector" = None
+        diffCorrOuter = clr.Convert(targSeqOuter.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        diffCorrInner: "IProfileDifferentialCorrector" = None
-        diffCorrInner = clr.Convert(targSeqInner.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorrInner: "ProfileDifferentialCorrector" = None
+        diffCorrInner = clr.Convert(targSeqInner.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        dcScriptTool: "IScriptingTool" = diffCorrInner.scripting_tool
+        dcScriptTool: "ScriptingTool" = diffCorrInner.scripting_tool
         dcScriptTool.enable = True
 
-        dcParam: "IScriptingParameter" = dcScriptTool.parameters.add("Parameter")
-        dcParam2: "IScriptingParameter" = dcScriptTool.parameters.add("ParameterNowWithMoreChars")
+        dcParam: "ScriptingParameter" = dcScriptTool.parameters.add("Parameter")
+        dcParam2: "ScriptingParameter" = dcScriptTool.parameters.add("ParameterNowWithMoreChars")
 
     # endregion
 
@@ -608,20 +607,20 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "IMissionControlSequenceTargetSequence" = None
+        targSeq: "MissionControlSequenceTargetSequence" = None
         targSeq = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        durationControl: "IStoppingConditionElement" = prop.stopping_conditions["Duration"]
+        durationControl: "StoppingConditionElement" = prop.stopping_conditions["Duration"]
 
-        duration2Control: "IStoppingConditionElement" = prop.stopping_conditions.add("Duration")
+        duration2Control: "StoppingConditionElement" = prop.stopping_conditions.add("Duration")
 
         durationControl.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
         duration2Control.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
@@ -633,8 +632,8 @@ class EarlyBoundTests(TestBase):
             "Time/Duration"
         )
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector)
         EarlyBoundTests.m_driver.main_sequence.remove_all()
 
     # endregion
@@ -644,34 +643,34 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeqOuter: "IMissionControlSequenceTargetSequence" = None
+        targSeqOuter: "MissionControlSequenceTargetSequence" = None
         targSeqOuter = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        targSeqInner: "IMissionControlSequenceTargetSequence" = None
+        targSeqInner: "MissionControlSequenceTargetSequence" = None
         targSeqInner = clr.Convert(
             targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        diffCorrOuter: "IProfileDifferentialCorrector" = None
-        diffCorrOuter = clr.Convert(targSeqOuter.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorrOuter: "ProfileDifferentialCorrector" = None
+        diffCorrOuter = clr.Convert(targSeqOuter.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        diffCorrInner: "IProfileDifferentialCorrector" = None
-        diffCorrInner = clr.Convert(targSeqInner.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorrInner: "ProfileDifferentialCorrector" = None
+        diffCorrInner = clr.Convert(targSeqInner.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        dcScriptTool: "IScriptingTool" = diffCorrInner.scripting_tool
+        dcScriptTool: "ScriptingTool" = diffCorrInner.scripting_tool
         dcScriptTool.enable = True
 
-        dcParam: "IScriptingParameter" = dcScriptTool.parameters.add("Parameter")
-        dcParam2: "IScriptingParameter" = dcScriptTool.parameters.add("ParameterNowWithMoreChars")
+        dcParam: "ScriptingParameter" = dcScriptTool.parameters.add("Parameter")
+        dcParam2: "ScriptingParameter" = dcScriptTool.parameters.add("ParameterNowWithMoreChars")
         EarlyBoundTests.m_driver.main_sequence.remove_all()
 
     # endregion
@@ -682,71 +681,71 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
         EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "IMissionControlSequenceTargetSequence" = None
+        targSeq: "MissionControlSequenceTargetSequence" = None
         targSeq = clr.Convert(
             EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            IMissionControlSequenceTargetSequence,
+            MissionControlSequenceTargetSequence,
         )
 
-        prop: "IMissionControlSequencePropagate" = None
+        prop: "MissionControlSequencePropagate" = None
         prop = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
-        prop2: "IMissionControlSequencePropagate" = None
+        prop2: "MissionControlSequencePropagate" = None
         prop2 = clr.Convert(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), IMissionControlSequencePropagate
+            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
         )
 
         result: "IComponentInfo" = (clr.Convert(prop2, IMissionControlSequenceSegment)).results.add(
             "Segments/Difference Across Segments"
         )
-        (clr.Convert(result, IStateCalcDifferenceOtherSegment)).other_segment_name = "TargetSequence.Propagate"
+        (clr.Convert(result, StateCalcDifferenceOtherSegment)).other_segment_name = "TargetSequence.Propagate"
 
-        diffAcrossSegs: "IStoppingConditionElement" = prop2.stopping_conditions.add("UserSelect")
+        diffAcrossSegs: "StoppingConditionElement" = prop2.stopping_conditions.add("UserSelect")
 
         (
-            clr.Convert(diffAcrossSegs.properties, IStoppingCondition)
+            clr.Convert(diffAcrossSegs.properties, StoppingCondition)
         ).user_calc_object_name = "Segments/Difference Across Segments"
-        stopCondCalcObj: "IStateCalcDifferenceOtherSegment" = clr.Convert(
-            (clr.Convert(diffAcrossSegs.properties, IStoppingCondition)).user_calc_object,
-            IStateCalcDifferenceOtherSegment,
+        stopCondCalcObj: "StateCalcDifferenceOtherSegment" = clr.Convert(
+            (clr.Convert(diffAcrossSegs.properties, StoppingCondition)).user_calc_object,
+            StateCalcDifferenceOtherSegment,
         )
         stopCondCalcObj.other_segment_name = "TargetSequence.Propagate"
 
-        beforeCond: "IStoppingConditionElement" = (
-            clr.Convert(diffAcrossSegs.properties, IStoppingCondition)
+        beforeCond: "StoppingConditionElement" = (
+            clr.Convert(diffAcrossSegs.properties, StoppingCondition)
         ).before_conditions.add("UserSelect")
         (
-            clr.Convert(beforeCond.properties, IStoppingCondition)
+            clr.Convert(beforeCond.properties, StoppingCondition)
         ).user_calc_object_name = "Segments/Difference Across Segments"
-        beforeCondCalcObj: "IStateCalcDifferenceOtherSegment" = clr.Convert(
-            (clr.Convert(beforeCond.properties, IStoppingCondition)).user_calc_object, IStateCalcDifferenceOtherSegment
+        beforeCondCalcObj: "StateCalcDifferenceOtherSegment" = clr.Convert(
+            (clr.Convert(beforeCond.properties, StoppingCondition)).user_calc_object, StateCalcDifferenceOtherSegment
         )
         beforeCondCalcObj.other_segment_name = "TargetSequence.Propagate"
 
-        constraint: "IAsTriggerCondition" = clr.Convert(
-            (clr.Convert(diffAcrossSegs.properties, IStoppingCondition)).constraints.add("UserDefined"),
-            IAsTriggerCondition,
+        constraint: "AsTriggerCondition" = clr.Convert(
+            (clr.Convert(diffAcrossSegs.properties, StoppingCondition)).constraints.add("UserDefined"),
+            AsTriggerCondition,
         )
 
         constraint.calc_object_name = "Segments/Difference Across Segments"
         (
-            clr.Convert(constraint.calc_object, IStateCalcDifferenceOtherSegment)
+            clr.Convert(constraint.calc_object, StateCalcDifferenceOtherSegment)
         ).other_segment_name = "TargetSequence.Propagate"
 
-        diffCorr: "IProfileDifferentialCorrector" = None
-        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], IProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = None
+        diffCorr = clr.Convert(targSeq.profiles["Differential Corrector"], ProfileDifferentialCorrector)
 
-        dcScriptTool: "IScriptingTool" = diffCorr.scripting_tool
+        dcScriptTool: "ScriptingTool" = diffCorr.scripting_tool
         dcScriptTool.enable = True
 
-        dcAttr: "IScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
+        dcAttr: "ScriptingSegment" = dcScriptTool.segment_properties.add("Attribute")
         dcAttr.object_name = "Propagate"
-        dcCalcObjWrap: "IScriptingCalcObject" = dcScriptTool.calc_objects.add("CalcObject")
+        dcCalcObjWrap: "ScriptingCalcObject" = dcScriptTool.calc_objects.add("CalcObject")
         dcCalcObjWrap.calc_object_name = "Segments/Difference Across Segments"
-        dcDiffOtherSegment: "IStateCalcDifferenceOtherSegment" = clr.Convert(
-            dcCalcObjWrap.calc_object, IStateCalcDifferenceOtherSegment
+        dcDiffOtherSegment: "StateCalcDifferenceOtherSegment" = clr.Convert(
+            dcCalcObjWrap.calc_object, StateCalcDifferenceOtherSegment
         )
         dcDiffOtherSegment.other_segment_name = "TargetSequence.Propagate"
 

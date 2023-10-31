@@ -10,29 +10,30 @@ class UnitPreferenceState(IDisposable):
     def __exit__(self, exception_type, exception_value, exception_traceback):
         self.Dispose()
 
-    def __init__(self, application: "IStkObjectRoot"):
+    def __init__(self, application: "StkObjectRoot"):
         self._disposed: bool = False
         self._state = {}
 
-        self._application: "IStkObjectRoot" = application
+        self._application: "StkObjectRoot" = application
         self.SaveState(application.unit_preferences)
 
-    def RestoreState(self, dimensions: "IUnitPreferencesDimensionCollection"):
-        dimension: "IUnitPreferencesDimension"
+    def RestoreState(self, dimensions: "UnitPreferencesDimensionCollection"):
+        dimension: "UnitPreferencesDimension"
         for dimension in dimensions:
             key: str = dimension.name
             abbr: str = self._state[key]
             if not String.IsNullOrEmpty(abbr):
                 dimension.set_current_unit(abbr)
 
-    def SaveState(self, dimensions: "IUnitPreferencesDimensionCollection"):
-        dimension: "IUnitPreferencesDimension"
+    def SaveState(self, dimensions: "UnitPreferencesDimensionCollection"):
+        dimension: "UnitPreferencesDimension"
         for dimension in dimensions:
             dim: str = dimension.name
             abrv: str = dimension.current_unit.abbrv
             self._state[dim] = abrv
 
-    cstopy_failure = "<<< Node type DestructorDeclarationSyntax not implemented yet. >>>"
+    def __del__(self):
+        pass
 
     def Dispose(self):
         self.Dispose2(True)

@@ -633,7 +633,7 @@ class IRubberBandPickInfoData(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRubberBandPickInfoData.")
     
     @property
-    def obj_paths(self) -> "IObjPathCollection":
+    def obj_paths(self) -> "ObjPathCollection":
         """List of object paths selected."""
         with agmarshall.AgInterface_out_arg() as arg_ppColl:
             agcls.evaluate_hresult(self.__dict__["_get_obj_paths"](byref(arg_ppColl.COM_val)))
@@ -730,7 +730,7 @@ class ISTKXApplication(object):
     def Subscribe(self) -> ISTKXApplicationEventHandler:
         """Returns an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
         return ISTKXApplicationEventHandler(self._pUnk)    
-    def execute_command(self, command:str) -> "IExecCmdResult":
+    def execute_command(self, command:str) -> "ExecCmdResult":
         """Send a connect command to STK X."""
         with agmarshall.BSTR_arg(command) as arg_command, \
              agmarshall.AgInterface_out_arg() as arg_ppExecCmdRes:
@@ -859,7 +859,7 @@ class ISTKXApplication(object):
         with agmarshall.LONG_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_connect_max_connections"](arg_newVal.COM_val))
 
-    def execute_multiple_commands(self, connectCommands:list, eAction:"EXEC_MULTI_CMD_RESULT_ACTION") -> "IExecMultiCmdResult":
+    def execute_multiple_commands(self, connectCommands:list, eAction:"EXEC_MULTI_CMD_RESULT_ACTION") -> "ExecMultiCmdResult":
         """Executes multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
         with agmarshall.SAFEARRAY_arg(connectCommands) as arg_connectCommands, \
              agmarshall.AgEnum_arg(EXEC_MULTI_CMD_RESULT_ACTION, eAction) as arg_eAction, \
@@ -919,7 +919,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A2BB8372-EA5F-4D9D-84C3-4D9E5B9A8840}",
 agcls.AgTypeNameMap["ISTKXApplication"] = ISTKXApplication
 
 class IDataObject(object):
-    """IDataObject is used for OLE drag and drop operations"""
+    """DataObject is used for OLE drag and drop operations"""
     _uuid = "{557F091D-247F-4040-B1E9-10E5BCEDFFD5}"
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -952,7 +952,7 @@ class IDataObject(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IDataObject.")
     
     @property
-    def files(self) -> "IDataObjectFiles":
+    def files(self) -> "DataObjectFiles":
         """Returns a collection of filenames."""
         with agmarshall.AgInterface_out_arg() as arg_pFile:
             agcls.evaluate_hresult(self.__dict__["_get_files"](byref(arg_pFile.COM_val)))
@@ -1689,7 +1689,7 @@ class IExecMultiCmdResult(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def item(self, index:int) -> "IExecCmdResult":
+    def item(self, index:int) -> "ExecCmdResult":
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pRetVal:
@@ -1867,7 +1867,7 @@ class IUiAxGraphics3DCntrl(object):
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
             agcls.evaluate_hresult(self.__dict__["_set_picture"](arg_pPicture.COM_val))
 
-    def pick_info(self, x:int, y:int) -> "IPickInfoData":
+    def pick_info(self, x:int, y:int) -> "PickInfoData":
         """Get detailed information about a mouse pick."""
         with agmarshall.OLE_XPOS_PIXELS_arg(x) as arg_x, \
              agmarshall.OLE_YPOS_PIXELS_arg(y) as arg_y, \
@@ -1888,7 +1888,7 @@ class IUiAxGraphics3DCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_win_id"](arg_newVal.COM_val))
 
     @property
-    def application(self) -> "ISTKXApplication":
+    def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_application"](byref(arg_pVal.COM_val)))
@@ -1934,7 +1934,7 @@ class IUiAxGraphics3DCntrl(object):
         with agmarshall.BSTR_arg(vendorID) as arg_vendorID:
             agcls.evaluate_hresult(self.__dict__["_set_vendor_id"](arg_vendorID.COM_val))
 
-    def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData":
+    def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "RubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
@@ -2301,7 +2301,7 @@ class IUiAx2DCntrl(object):
         """Zoom out to view a larger portion of a previously magnified map."""
         agcls.evaluate_hresult(self.__dict__["_zoom_out"]())
 
-    def pick_info(self, x:int, y:int) -> "IPickInfoData":
+    def pick_info(self, x:int, y:int) -> "PickInfoData":
         """Get detailed information about a mouse pick."""
         with agmarshall.OLE_XPOS_PIXELS_arg(x) as arg_x, \
              agmarshall.OLE_YPOS_PIXELS_arg(y) as arg_y, \
@@ -2310,7 +2310,7 @@ class IUiAx2DCntrl(object):
             return arg_ppPickData.python_val
 
     @property
-    def application(self) -> "ISTKXApplication":
+    def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_ppApp:
             agcls.evaluate_hresult(self.__dict__["_get_application"](byref(arg_ppApp.COM_val)))
@@ -2376,7 +2376,7 @@ class IUiAx2DCntrl(object):
         with agmarshall.LONG_arg(winID) as arg_winID:
             agcls.evaluate_hresult(self.__dict__["_copy_from_win_id"](arg_winID.COM_val))
 
-    def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData":
+    def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "RubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
@@ -2398,7 +2398,7 @@ class IUiAx2DCntrl(object):
         with agmarshall.VARIANT_BOOL_arg(bAdvancePickMode) as arg_bAdvancePickMode:
             agcls.evaluate_hresult(self.__dict__["_set_advanced_pick_mode"](arg_bAdvancePickMode.COM_val))
 
-    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS_2D_DRAW_COORDS") -> "IWinProjectionPosition":
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS_2D_DRAW_COORDS") -> "WinProjectionPosition":
         """Get the window projected position for given values."""
         with agmarshall.DOUBLE_arg(lat) as arg_lat, \
              agmarshall.DOUBLE_arg(lon) as arg_lon, \
@@ -2563,7 +2563,7 @@ class ISTKXApplicationPartnerAccess(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXApplicationPartnerAccess.")
     
-    def grant_partner_access(self, vendor:str, product:str, key:str) -> "ISTKXApplication":
+    def grant_partner_access(self, vendor:str, product:str, key:str) -> "STKXApplication":
         """Provide object model root for authorized business partners."""
         with agmarshall.BSTR_arg(vendor) as arg_vendor, \
              agmarshall.BSTR_arg(product) as arg_product, \
@@ -2778,7 +2778,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             return arg_pclr.python_val
 
     @property
-    def application(self) -> "ISTKXApplication":
+    def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_application"](byref(arg_pVal.COM_val)))
@@ -2846,7 +2846,7 @@ class ExecCmdResult(IExecCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in ExecCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}", ExecCmdResult)
-
+agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
 
 class ExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
@@ -2867,7 +2867,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in ExecMultiCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3849A604-DEB9-428C-8A72-D879719277E5}", ExecMultiCmdResult)
-
+agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
 
 class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
     """AGI Globe control."""
@@ -2888,7 +2888,7 @@ class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiAxGraphics3DCntrl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E939AC2-43D9-456E-9FE7-4C3C687BCDF2}", UiAxGraphics3DCntrl)
-
+agcls.AgTypeNameMap["UiAxGraphics3DCntrl"] = UiAxGraphics3DCntrl
 
 class UiAx2DCntrl(IUiAx2DCntrl):
     """AGI Map control."""
@@ -2909,7 +2909,7 @@ class UiAx2DCntrl(IUiAx2DCntrl):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiAx2DCntrl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{33FBA419-2BD0-422D-81A7-C5B68A49FB01}", UiAx2DCntrl)
-
+agcls.AgTypeNameMap["UiAx2DCntrl"] = UiAx2DCntrl
 
 class PickInfoData(IPickInfoData):
     """Single mouse pick result."""
@@ -2930,7 +2930,7 @@ class PickInfoData(IPickInfoData):
             raise STKAttributeError(attrname + " is not a recognized attribute in PickInfoData.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B6FCD4D-91A0-4855-A113-F7CC8D774608}", PickInfoData)
-
+agcls.AgTypeNameMap["PickInfoData"] = PickInfoData
 
 class STKXApplication(ISTKXApplication):
     """STK X Application object."""
@@ -2951,7 +2951,7 @@ class STKXApplication(ISTKXApplication):
             raise STKAttributeError(attrname + " is not a recognized attribute in STKXApplication.")
         
 agcls.AgClassCatalog.add_catalog_entry("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", STKXApplication)
-
+agcls.AgTypeNameMap["STKXApplication"] = STKXApplication
 
 class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
     """STK X Application Partner Access object."""
@@ -2972,7 +2972,7 @@ class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
             raise STKAttributeError(attrname + " is not a recognized attribute in STKXApplicationPartnerAccess.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3E8358E8-6042-4E4C-B89D-1F42164CDE3D}", STKXApplicationPartnerAccess)
-
+agcls.AgTypeNameMap["STKXApplicationPartnerAccess"] = STKXApplicationPartnerAccess
 
 class DataObject(IDataObject):
     """Data Object for OLE drag & drop operations."""
@@ -2993,7 +2993,7 @@ class DataObject(IDataObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in DataObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C58BE31A-8063-46F9-9751-AF13C1101D75}", DataObject)
-
+agcls.AgTypeNameMap["DataObject"] = DataObject
 
 class DataObjectFiles(IDataObjectFiles):
     """Collection of files for OLE drag & drop operations."""
@@ -3014,7 +3014,7 @@ class DataObjectFiles(IDataObjectFiles):
             raise STKAttributeError(attrname + " is not a recognized attribute in DataObjectFiles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{83A2F2F3-3122-4317-8D59-2F43906E4168}", DataObjectFiles)
-
+agcls.AgTypeNameMap["DataObjectFiles"] = DataObjectFiles
 
 class RubberBandPickInfoData(IRubberBandPickInfoData):
     """Rubber-band mouse pick result."""
@@ -3035,7 +3035,7 @@ class RubberBandPickInfoData(IRubberBandPickInfoData):
             raise STKAttributeError(attrname + " is not a recognized attribute in RubberBandPickInfoData.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A7EB5C99-B818-4531-B598-368AA2DD3CF6}", RubberBandPickInfoData)
-
+agcls.AgTypeNameMap["RubberBandPickInfoData"] = RubberBandPickInfoData
 
 class ObjPathCollection(IObjPathCollection):
     """Collection of object paths."""
@@ -3056,7 +3056,7 @@ class ObjPathCollection(IObjPathCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ObjPathCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B3FFC58-8105-4BE4-9D60-254A142448D5}", ObjPathCollection)
-
+agcls.AgTypeNameMap["ObjPathCollection"] = ObjPathCollection
 
 class DrawElemRect(IDrawElemRect):
     """Defines a rectangle in window coordinates."""
@@ -3077,7 +3077,7 @@ class DrawElemRect(IDrawElemRect):
             raise STKAttributeError(attrname + " is not a recognized attribute in DrawElemRect.")
         
 agcls.AgClassCatalog.add_catalog_entry("{55B0A7B5-2508-48BB-90D0-4B8B51DC9178}", DrawElemRect)
-
+agcls.AgTypeNameMap["DrawElemRect"] = DrawElemRect
 
 class DrawElemCollection(IDrawElemCollection):
     """Collection of elements to draw on the control."""
@@ -3098,7 +3098,7 @@ class DrawElemCollection(IDrawElemCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in DrawElemCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{97A759F9-49E4-42DE-A8E3-7B670EB3BDAC}", DrawElemCollection)
-
+agcls.AgTypeNameMap["DrawElemCollection"] = DrawElemCollection
 
 class Draw2DElemRect(IDrawElemRect):
     """Defines a rectangle in window coordinates for map control."""
@@ -3119,7 +3119,7 @@ class Draw2DElemRect(IDrawElemRect):
             raise STKAttributeError(attrname + " is not a recognized attribute in Draw2DElemRect.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C26CEE82-EB4B-4D63-86B0-C5E2BB261E3F}", Draw2DElemRect)
-
+agcls.AgTypeNameMap["Draw2DElemRect"] = Draw2DElemRect
 
 class Draw2DElemCollection(IDrawElemCollection):
     """Collection of elements to draw on map control."""
@@ -3140,7 +3140,7 @@ class Draw2DElemCollection(IDrawElemCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in Draw2DElemCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D6B1A826-3ABB-49FD-8C9F-F49ADBE6D2B8}", Draw2DElemCollection)
-
+agcls.AgTypeNameMap["Draw2DElemCollection"] = Draw2DElemCollection
 
 class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
     """AGI Graphics Analysis Control"""
@@ -3161,7 +3161,7 @@ class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiAxGraphics2DAnalysisCntrl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{600541C4-8B16-47AD-ABA4-EE8BC5E9FD5F}", UiAxGraphics2DAnalysisCntrl)
-
+agcls.AgTypeNameMap["UiAxGraphics2DAnalysisCntrl"] = UiAxGraphics2DAnalysisCntrl
 
 class WinProjectionPosition(IWinProjectionPosition):
     """Projected window position result."""
@@ -3182,7 +3182,7 @@ class WinProjectionPosition(IWinProjectionPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in WinProjectionPosition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{21D08121-9F86-485E-B143-337DACCD5022}", WinProjectionPosition)
-
+agcls.AgTypeNameMap["WinProjectionPosition"] = WinProjectionPosition
 
 class DrawElemLine(IDrawElemLine):
     """Defines a line in window coordinates."""
@@ -3203,7 +3203,7 @@ class DrawElemLine(IDrawElemLine):
             raise STKAttributeError(attrname + " is not a recognized attribute in DrawElemLine.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A4C86FD0-95FA-4F15-BE04-1FDF0DD6B0B5}", DrawElemLine)
-
+agcls.AgTypeNameMap["DrawElemLine"] = DrawElemLine
 
 class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
     """Provides information about an SSL certificate that is expired or invalid."""
@@ -3224,7 +3224,7 @@ class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
             raise STKAttributeError(attrname + " is not a recognized attribute in STKXSSLCertificateErrorEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2BCBD8EC-2EA5-4D14-855D-BB85A201BCB4}", STKXSSLCertificateErrorEventArgs)
-
+agcls.AgTypeNameMap["STKXSSLCertificateErrorEventArgs"] = STKXSSLCertificateErrorEventArgs
 
 class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
     """Arguments for the OnConControlQuitReceived event."""
@@ -3245,7 +3245,7 @@ class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
             raise STKAttributeError(attrname + " is not a recognized attribute in STKXConControlQuitReceivedEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CA9E9226-74BE-4733-B50A-D64703165F4E}", STKXConControlQuitReceivedEventArgs)
-
+agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"] = STKXConControlQuitReceivedEventArgs
 
 
 ################################################################################

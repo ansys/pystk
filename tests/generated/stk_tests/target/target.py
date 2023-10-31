@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from antenna.antenna_helper import *
@@ -23,7 +24,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("TargetTests", "TargetTests.sc"))
-        EarlyBoundTests.AG_TG = clr.Convert(TestBase.Application.current_scenario.children["Target1"], ITarget)
+        EarlyBoundTests.AG_TG = clr.Convert(TestBase.Application.current_scenario.children["Target1"], Target)
 
     # endregion
 
@@ -36,7 +37,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_TG: "ITarget" = None
+    AG_TG: "Target" = None
     # endregion
 
     # region STKObject
@@ -60,7 +61,7 @@ class EarlyBoundTests(TestBase):
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        gfx: "ITargetGraphics" = clr.Convert(EarlyBoundTests.AG_TG.graphics, ITargetGraphics)
+        gfx: "TargetGraphics" = clr.Convert(EarlyBoundTests.AG_TG.graphics, TargetGraphics)
         Assert.assertIsNotNone(gfx)
         gfx.is_object_graphics_visible = False
         Assert.assertFalse(gfx.is_object_graphics_visible)
@@ -85,7 +86,7 @@ class EarlyBoundTests(TestBase):
         gfx.marker_style = TestBase.GetScenarioFile("gp_marker.bmp")
 
         oHelper = GfxLabelNoteHelper(self.Units)
-        oHelper.Run(clr.Convert(gfx.label_notes, ILabelNoteCollection))
+        oHelper.Run(clr.Convert(gfx.label_notes, LabelNoteCollection))
 
         uiLC = gfx.label_color
         uiNewColor = Color.FromArgb(65280)  # Green
@@ -111,7 +112,7 @@ class EarlyBoundTests(TestBase):
     # region GfxAzElMask
     @category("Graphics Tests")
     def test_GfxAzElMask(self):
-        azel: "IBasicAzElMask" = clr.Convert(EarlyBoundTests.AG_TG.graphics.az_el_mask, IBasicAzElMask)
+        azel: "BasicAzElMask" = clr.Convert(EarlyBoundTests.AG_TG.graphics.az_el_mask, BasicAzElMask)
         azel.range_visible = True
         Assert.assertEqual(True, azel.range_visible)
         azel.altitude_visible = True
@@ -132,12 +133,12 @@ class EarlyBoundTests(TestBase):
         def action1():
             azel.altitude_color = Color.Yellow
 
-        TryCatchAssertBlock.DoAssert("Can not modify read only property.", action1)
+        TryCatchAssertBlock.DoAssert(action1)
 
         def action2():
             azel.range_color = Color.Yellow
 
-        TryCatchAssertBlock.DoAssert("Can not modify read only property.", action2)
+        TryCatchAssertBlock.DoAssert(action2)
         azel.altitude_color_visible = True
         Assert.assertTrue(azel.altitude_color_visible)
         azel.altitude_color = Color.Yellow
@@ -168,7 +169,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
         oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.vector, False)
 
     # endregion
@@ -202,7 +203,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
+        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.model)
 
     # endregion
@@ -223,7 +224,7 @@ class EarlyBoundTests(TestBase):
         oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
-        oModelFile: "IGraphics3DModelFile" = clr.Convert(oModel.model_data, IGraphics3DModelFile)
+        oModelFile: "Graphics3DModelFile" = clr.Convert(oModel.model_data, Graphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")

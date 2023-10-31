@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from parameterized import *
@@ -11,17 +12,17 @@ class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
 
-    AG_SAT: "ISatellite" = None
+    AG_SAT: "Satellite" = None
 
     @staticmethod
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("SatelliteTests", "SatelliteTests.sc"))
         EarlyBoundTests.AG_SAT = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite2"), ISatellite
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite2"), Satellite
         )
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        (clr.Convert(EarlyBoundTests.AG_SAT.propagator, IVehiclePropagatorTwoBody)).propagate()
+        (clr.Convert(EarlyBoundTests.AG_SAT.propagator, VehiclePropagatorTwoBody)).propagate()
 
     @staticmethod
     def tearDownClass():
@@ -52,13 +53,13 @@ class EarlyBoundTests(TestBase):
         StringAssert.Contains("Invalid", str(ex), "Exception message mismatch")
 
     def test_BUG62983_BUG67662_StkExternalOverride(self):
-        # Improper default value of false for IVehiclePropagatorStkExternal.Override
-        satellite: "ISatellite" = clr.CastAs(
+        # Improper default value of false for VehiclePropagatorStkExternal.Override
+        satellite: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "StkExternalSatellite1"),
-            ISatellite,
+            Satellite,
         )
         satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
-        prop: "IVehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, IVehiclePropagatorStkExternal)
+        prop: "VehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, VehiclePropagatorStkExternal)
         prop.filename = TestBase.GetScenarioFile("External", "Satellite1.e")
         prop.propagate()
         Assert.assertEqual("9 Sep 2009 16:00:00.000", prop.start_time)
@@ -67,41 +68,41 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(prop.override)
 
     def test_BUG67722_SGP4SatelliteDuration(self):
-        sat2: "ISatellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), ISatellite
+        sat2: "Satellite" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), Satellite
         )
         sat2.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
-        prop2: "IVehiclePropagatorSGP4" = clr.CastAs(sat2.propagator, IVehiclePropagatorSGP4)
+        prop2: "VehiclePropagatorSGP4" = clr.CastAs(sat2.propagator, VehiclePropagatorSGP4)
         prop2.propagate()
-        scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
+        scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         Assert.assertEqual(scenario.start_time, prop2.ephemeris_interval.find_start_time())
         Assert.assertEqual(scenario.stop_time, prop2.ephemeris_interval.find_stop_time())
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat2")
 
     def test_BUG65831_VectorConstraints(self):
-        sat: "ISatellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG65831"), ISatellite
+        sat: "Satellite" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG65831"), Satellite
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
-        sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(sat.propagator, IVehiclePropagatorSGP4)
+        sgp4: "VehiclePropagatorSGP4" = clr.CastAs(sat.propagator, VehiclePropagatorSGP4)
         sgp4.propagate()
-        scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
+        scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        cnstrAngle: "IAccessConstraintCrdnConstellation" = clr.CastAs(
+        cnstrAngle: "AccessConstraintCrdnConstellation" = clr.CastAs(
             sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_ANGLE),
-            IAccessConstraintCrdnConstellation,
+            AccessConstraintCrdnConstellation,
         )
         Assert.assertEqual("Satellite/BUG65831 VelocityAzimuth Angle", cnstrAngle.reference)
 
-        cnstrCondition: "IAccessConstraintCrdnConstellation" = clr.CastAs(
+        cnstrCondition: "AccessConstraintCrdnConstellation" = clr.CastAs(
             sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_CRDN_CONDITION),
-            IAccessConstraintCrdnConstellation,
+            AccessConstraintCrdnConstellation,
         )
         Assert.assertEqual("Satellite/BUG65831 AfterStart Condition", cnstrCondition.reference)
 
-        cnstrVectorMag: "IAccessConstraintCrdnConstellation" = clr.CastAs(
+        cnstrVectorMag: "AccessConstraintCrdnConstellation" = clr.CastAs(
             sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE),
-            IAccessConstraintCrdnConstellation,
+            AccessConstraintCrdnConstellation,
         )
         Assert.assertEqual("Satellite/BUG65831 Velocity Vector", cnstrVectorMag.reference)
 
@@ -110,15 +111,15 @@ class EarlyBoundTests(TestBase):
     # [Test]
     # public void BUG68243_CoordinateEpoch()
     # {
-    #    ISatellite sat = Application.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "BUG68243") as ISatellite;
+    #    Satellite sat = Application.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "BUG68243") as Satellite;
     #    sat.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation);
-    #    IVehiclePropagatorJ2Perturbation j2prop = sat.Propagator as IVehiclePropagatorJ2Perturbation;
+    #    VehiclePropagatorJ2Perturbation j2prop = sat.Propagator as VehiclePropagatorJ2Perturbation;
 
-    #    IOrbitStateCartesian cart = (IOrbitStateCartesian)j2prop.InitialState.Representation.ConvertTo(
+    #    OrbitStateCartesian cart = (OrbitStateCartesian)j2prop.InitialState.Representation.ConvertTo(
     #        AgEOrbitStateType.eOrbitStateCartesian);
 
     #    cart.CoordinateSystemType = AgECoordinateSystem.eCoordinateSystemMeanOfEpoch;
-    #    IOrbitStateCoordinateSystem coordsys = (IOrbitStateCoordinateSystem)cart.CoordinateSystem;
+    #    OrbitStateCoordinateSystem coordsys = (OrbitStateCoordinateSystem)cart.CoordinateSystem;
     #    ITimeToolEvent referenceEvent = Application.CurrentScenario.Vgt.Events["AnalysisStartTime"];
     #    cart.CoordinateSystem.CoordinateSystemEpoch.SetImplicitTime(referenceEvent);
 
@@ -130,26 +131,26 @@ class EarlyBoundTests(TestBase):
 
     @category("Graphics Tests")
     def test_BUG86580_AddSingleGfxTimeEvent(self):
-        timeEvent: "IVehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
+        timeEvent: "VehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
         Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
+        data: "VehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
+            timeEvent.time_event_type_data, VehicleGraphics2DTimeEventTypeMarker
         )
         Assert.assertEqual("TimeEvent1", data.unique_id)
 
     @category("Graphics Tests")
     def test_BUG86580_AddTwoGfxTimeEvents(self):
         EarlyBoundTests.AG_SAT.graphics.time_events.add()
-        timeEvent: "IVehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
+        timeEvent: "VehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
         Assert.assertEqual(2, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
         Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
+        data: "VehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
+            timeEvent.time_event_type_data, VehicleGraphics2DTimeEventTypeMarker
         )
         Assert.assertEqual("TimeEvent2", data.unique_id)
 
@@ -160,14 +161,14 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SAT.graphics.time_events.add()
         EarlyBoundTests.AG_SAT.graphics.time_events.remove_at(0)
 
-        timeEvent: "IVehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
+        timeEvent: "VehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
         Assert.assertEqual(3, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
         Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "IVehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, IVehicleGraphics2DTimeEventTypeMarker
+        data: "VehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
+            timeEvent.time_event_type_data, VehicleGraphics2DTimeEventTypeMarker
         )
         Assert.assertEqual("TimeEvent1", data.unique_id)
 
@@ -176,11 +177,11 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.vgt_root.get_provider("Satellite/Satellite1").angles.factory.create(
             "BUG112927_Dihedral", "", VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.DIHEDRAL_ANGLE
         )
-        dihedral: "IGraphics3DReferenceVectorGeometryToolAngle" = clr.CastAs(
+        dihedral: "Graphics3DReferenceVectorGeometryToolAngle" = clr.CastAs(
             EarlyBoundTests.AG_SAT.graphics_3d.vector.reference_crdns.add(
                 GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "Satellite/Satellite1 BUG112927_Dihedral Angle"
             ),
-            IGraphics3DReferenceVectorGeometryToolAngle,
+            Graphics3DReferenceVectorGeometryToolAngle,
         )
 
         dihedral.visible = False
@@ -204,18 +205,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(dihedral.show_dihedral_angle_supporting_arcs)
 
     def test_BUG119916_StoppingConditions_MaxTripTimes(self):
-        sat: "ISatellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG119916"), ISatellite
+        sat: "Satellite" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG119916"), Satellite
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
 
-        mcs: "IDriverMissionControlSequence" = clr.CastAs(sat.propagator, IDriverMissionControlSequence)
-        propagate: "IMissionControlSequencePropagate" = clr.CastAs(
-            mcs.main_sequence.get_item_by_name("Propagate"), IMissionControlSequencePropagate
+        mcs: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
+        propagate: "MissionControlSequencePropagate" = clr.CastAs(
+            mcs.main_sequence.get_item_by_name("Propagate"), MissionControlSequencePropagate
         )
 
-        stopCond: "IStoppingCondition" = clr.CastAs(
-            propagate.stopping_conditions["Duration"].properties, IStoppingCondition
+        stopCond: "StoppingCondition" = clr.CastAs(
+            propagate.stopping_conditions["Duration"].properties, StoppingCondition
         )
 
         def action2():
@@ -231,14 +232,14 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "BUG119916")
 
     def test_FEA119646_CCSDS_CB_and_RefFrames(self):
-        sat: "ISatellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119646"), ISatellite
+        sat: "Satellite" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119646"), Satellite
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
+        twoBody: "VehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)
         twoBody.propagate()
 
-        exportTool: "IVehicleEphemerisCCSDSExportTool" = sat.export_tools.get_ephemeris_ccsds_export_tool()
+        exportTool: "VehicleEphemerisCCSDSExportTool" = sat.export_tools.get_ephemeris_ccsds_export_tool()
         exportTool.originator = "originator"
         exportTool.object_id = "objectid"
         outputFile: str = TestBase.GetScenarioFile("test.out")
@@ -337,7 +338,7 @@ class EarlyBoundTests(TestBase):
         # Do the same as above with CCSDSv2
         #
 
-        exportToolv2: "IVehicleEphemerisCCSDSv2ExportTool" = sat.export_tools.get_ephemeris_ccsd_sv2_export_tool()
+        exportToolv2: "VehicleEphemerisCCSDSv2ExportTool" = sat.export_tools.get_ephemeris_ccsd_sv2_export_tool()
         exportToolv2.originator = "originator"
         exportToolv2.object_id = "objectid"
         outputFile = TestBase.GetScenarioFile("test.out")
@@ -435,18 +436,18 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "FEA119646")
 
     def test_FEA119465_STKEphem_CB_and_RefFrames(self):
-        sat: "ISatellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119465"), ISatellite
+        sat: "Satellite" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119465"), Satellite
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
+        twoBody: "VehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)
         twoBody.propagate()
 
         outputFile: str = TestBase.GetScenarioFile("test.out")
 
         # STK Binary Ephemeris
 
-        exportTool: "IVehicleEphemerisStkExportTool" = sat.export_tools.get_ephemeris_stk_export_tool()
+        exportTool: "VehicleEphemerisStkExportTool" = sat.export_tools.get_ephemeris_stk_export_tool()
         exportTool.use_vehicle_central_body = False
 
         exportTool.central_body_name = "Earth"
@@ -544,7 +545,7 @@ class EarlyBoundTests(TestBase):
         # Do the same with STK Binary Ephemeris
         #
 
-        exportTool2: "IVehicleEphemerisStkBinaryExportTool" = sat.export_tools.get_ephemeris_stk_binary_export_tool()
+        exportTool2: "VehicleEphemerisStkBinaryExportTool" = sat.export_tools.get_ephemeris_stk_binary_export_tool()
         exportTool2.use_vehicle_central_body = False
 
         exportTool2.central_body_name = "Earth"

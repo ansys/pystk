@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assert_extension import *
 from assertion_harness import *
@@ -10,25 +11,25 @@ class SEETHelper(object):
     logger = Logger.Instance
 
     @staticmethod
-    def TestEnvironment(spEnv: "IVehicleSpaceEnvironment"):
+    def TestEnvironment(spEnv: "VehicleSpaceEnvironment"):
         SEETHelper.Test_IAgVeSpEnvMagneticField(spEnv.magnetic_field)
         SEETHelper.Test_IAgSpEnvSAAContour(spEnv.saa_contour)
 
     @staticmethod
-    def TestThermal(spEnv: "IVehicleSpaceEnvironment"):
+    def TestThermal(spEnv: "VehicleSpaceEnvironment"):
         SEETHelper.Test_IAgVeSpEnvVehTemperature(spEnv.veh_temperature)
 
     @staticmethod
-    def TestParticleFlux(spEnv: "IVehicleSpaceEnvironment"):
+    def TestParticleFlux(spEnv: "VehicleSpaceEnvironment"):
         SEETHelper.Test_IAgVeSpEnvParticleFlux(spEnv.particle_flux)
 
     @staticmethod
-    def TestRadiation(spEnv: "IVehicleSpaceEnvironment"):
+    def TestRadiation(spEnv: "VehicleSpaceEnvironment"):
         SEETHelper.Test_IAgVeSpEnvRadiation(spEnv.radiation)
 
     @staticmethod
     def TestEnvironment_2D(
-        spEnv: "IVehicleSpaceEnvironment", veGfxSAA: "IVehicleGraphics2DSAA", veVOSAA: "IVehicleGraphics3DSAA"
+        spEnv: "VehicleSpaceEnvironment", veGfxSAA: "VehicleGraphics2DSAA", veVOSAA: "VehicleGraphics3DSAA"
     ):
         SEETHelper.Test_IAgVeSpEnvMagFieldLine(spEnv.graphics.magnitude_field_line)
         SEETHelper.Test_IAgVeGfxSAA(veGfxSAA)
@@ -36,7 +37,7 @@ class SEETHelper(object):
 
     @staticmethod
     def TestComputations(
-        obj: "IStkObject", spEnv: "IVehicleSpaceEnvironment", startTime: typing.Any, stopTime: typing.Any
+        obj: "IStkObject", spEnv: "VehicleSpaceEnvironment", startTime: typing.Any, stopTime: typing.Any
     ):
         startOM: float = 0
         stopOM: float = 0
@@ -44,12 +45,12 @@ class SEETHelper(object):
         stopDP: float = 0
 
         arValues = None
-        drDataSet: "IDataProviderResultDataSet" = None
+        drDataSet: "DataProviderResultDataSet" = None
         dp: "IDataProvider" = None
-        tv: "IDataProviderTimeVarying" = None
-        result: "IDataProviderResult" = None
-        dpg: "IDataProviderGroup" = None
-        dpColl: "IDataProviders" = None
+        tv: "DataProviderTimeVarying" = None
+        result: "DataProviderResult" = None
+        dpg: "DataProviderGroup" = None
+        dpColl: "DataProviders" = None
 
         #
         # Radiation - Dose Rate Compute methods
@@ -57,25 +58,25 @@ class SEETHelper(object):
 
         spEnv.radiation.computation_mode = VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.CRRES
 
-        rdrColl: "IVehicleSpaceEnvironmentRadDoseRateCollection" = spEnv.radiation.compute_dose_rates(
+        rdrColl: "VehicleSpaceEnvironmentRadDoseRateCollection" = spEnv.radiation.compute_dose_rates(
             "1 Jul 1999 00:58:00.000"
         )
-        element: "IVehicleSpaceEnvironmentRadDoseRateElement"
+        element: "VehicleSpaceEnvironmentRadDoseRateElement"
         for element in rdrColl:
             sElement: str = str(element)
 
         i: int = 0
         while i < rdrColl.count:
-            element: "IVehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[i]
+            element: "VehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[i]
 
             i += 1
 
         def action1():
-            element: "IVehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[rdrColl.count]
+            element: "VehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[rdrColl.count]
 
-        TryCatchAssertBlock.DoAssert("", action1)
+        TryCatchAssertBlock.DoAssert(action1)
 
-        rdre: "IVehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[0]
+        rdre: "VehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[0]
 
         shieldingThickness: float = rdre.shielding_thickness
 
@@ -84,14 +85,14 @@ class SEETHelper(object):
         def action2():
             ebdr: float = rdre.electron_bremsstrahlung_dose_rate()
 
-        TryCatchAssertBlock.DoAssert("", action2)
+        TryCatchAssertBlock.DoAssert(action2)
 
         Assert.assertFalse(rdre.is_electron_dose_rate_valid)
 
         def action3():
             ebdr: float = rdre.electron_dose_rate()
 
-        TryCatchAssertBlock.DoAssert("", action3)
+        TryCatchAssertBlock.DoAssert(action3)
 
         Assert.assertTrue(rdre.is_proton_dose_rate_valid)
         Assert.assertAlmostEqual(2.111e-05, rdre.proton_dose_rate(), delta=1e-08)
@@ -117,7 +118,7 @@ class SEETHelper(object):
 
         dp = clr.Convert(obj.data_providers["SEET Magnetic Field"], IDataProvider)
         dp.allow_user_interface = False
-        tv = clr.CastAs(dp, IDataProviderTimeVarying)
+        tv = clr.CastAs(dp, DataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
 
         # B/Beq
@@ -246,11 +247,11 @@ class SEETHelper(object):
         #
 
         # Meteor Impact Flux
-        dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], IDataProviderGroup)
+        dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], DataProviderGroup)
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Impacts"], IDataProvider)
         dp.allow_user_interface = False
-        tv = clr.CastAs(dp, IDataProviderTimeVarying)
+        tv = clr.CastAs(dp, DataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
 
         arRow0 = result.data_sets.get_row(0)
@@ -270,11 +271,11 @@ class SEETHelper(object):
         Console.WriteLine(stopDP)
 
         # Meteor Damaging Impact Flux
-        dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], IDataProviderGroup)
+        dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], DataProviderGroup)
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Damaging Impacts"], IDataProvider)
         dp.allow_user_interface = False
-        tv = clr.CastAs(dp, IDataProviderTimeVarying)
+        tv = clr.CastAs(dp, DataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
 
         arRow0 = result.data_sets.get_row(0)
@@ -359,14 +360,14 @@ class SEETHelper(object):
         # Change orbit to get good data for tests below
         #
 
-        seetSat: "ISatellite" = clr.CastAs(obj, ISatellite)
+        seetSat: "Satellite" = clr.CastAs(obj, Satellite)
         seetSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twobody: "IVehiclePropagatorTwoBody" = clr.Convert(seetSat.propagator, IVehiclePropagatorTwoBody)
-        classical: "IOrbitStateClassical" = clr.Convert(
-            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), IOrbitStateClassical
+        twobody: "VehiclePropagatorTwoBody" = clr.Convert(seetSat.propagator, VehiclePropagatorTwoBody)
+        classical: "OrbitStateClassical" = clr.Convert(
+            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
         )
         classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD
-        period: "IClassicalSizeShapePeriod" = clr.Convert(classical.size_shape, IClassicalSizeShapePeriod)
+        period: "ClassicalSizeShapePeriod" = clr.Convert(classical.size_shape, ClassicalSizeShapePeriod)
         period.eccentricity = 0.2
         period.period = 10000
         twobody.initial_state.representation.assign(classical)
@@ -376,7 +377,7 @@ class SEETHelper(object):
         # SAA Flux Intensity Compute methods
         #
 
-        dpg = clr.Convert(obj.data_providers["SEET SAA Flux Intensity"], IDataProviderGroup)
+        dpg = clr.Convert(obj.data_providers["SEET SAA Flux Intensity"], DataProviderGroup)
         dpColl = dpg.group
         dpx: "IDataProviderInfo"
         for dpx in dpColl:
@@ -384,7 +385,7 @@ class SEETHelper(object):
 
         dp = clr.CastAs(dpColl[0], IDataProvider)
         dp.allow_user_interface = False
-        tv = clr.CastAs(dp, IDataProviderTimeVarying)
+        tv = clr.CastAs(dp, DataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
         drDataSet = result.data_sets.get_data_set_by_name("Flux intensity")
         arValues = drDataSet.get_values()
@@ -399,7 +400,7 @@ class SEETHelper(object):
 
         dp = clr.Convert(obj.data_providers["SEET Vehicle Temperature"], IDataProvider)
         dp.allow_user_interface = False
-        tv = clr.CastAs(dp, IDataProviderTimeVarying)
+        tv = clr.CastAs(dp, DataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
         drDataSet = result.data_sets.get_data_set_by_name("Temperature")
         arValues = drDataSet.get_values()
@@ -414,11 +415,11 @@ class SEETHelper(object):
         Assert.assertAlmostEqual(208.43, stopDP, delta=0.01)
 
     @staticmethod
-    def Test_IAgVeSpEnvMagneticField(magField: "IVehicleSpaceEnvironmentMagneticField"):
+    def Test_IAgVeSpEnvMagneticField(magField: "VehicleSpaceEnvironmentMagneticField"):
         def action4():
             magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action4)
+        TryCatchAssertBlock.DoAssert(action4)
         magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.IGRF
         Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.IGRF, magField.main_field)
         magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.OFFSET_DIPOLE
@@ -431,7 +432,7 @@ class SEETHelper(object):
         def action5():
             magField.external_field = SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action5)
+        TryCatchAssertBlock.DoAssert(action5)
         magField.external_field = SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.OLSON_PFITZER
         Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.OLSON_PFITZER, magField.external_field)
         magField.external_field = SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD.NONE
@@ -441,11 +442,11 @@ class SEETHelper(object):
         Assert.assertEqual(2.0, magField.igrf_update_rate)
 
     @staticmethod
-    def Test_IAgSpEnvSAAContour(saaContour: "ISpaceEnvironmentSAAContour"):
+    def Test_IAgSpEnvSAAContour(saaContour: "SpaceEnvironmentSAAContour"):
         def action6():
             saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action6)
+        TryCatchAssertBlock.DoAssert(action6)
         saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V
         Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, saaContour.channel)
         saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL38_ME_V
@@ -458,7 +459,7 @@ class SEETHelper(object):
         def action7():
             saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action7)
+        TryCatchAssertBlock.DoAssert(action7)
         saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA
         Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA, saaContour.flux_level)
         saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.HALF_OF_PEAK
@@ -467,7 +468,7 @@ class SEETHelper(object):
         Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.TENTH_OF_PEAK, saaContour.flux_level)
 
     @staticmethod
-    def Test_IAgVeSpEnvVehTemperature(vehTemp: "IVehicleSpaceEnvironmentVehTemperature"):
+    def Test_IAgVeSpEnvVehTemperature(vehTemp: "VehicleSpaceEnvironmentVehTemperature"):
         vehTemp.earth_albedo = 0.4
         Assert.assertEqual(0.4, vehTemp.earth_albedo)
         vehTemp.material_emissivity = 0.9
@@ -482,7 +483,7 @@ class SEETHelper(object):
         def action8():
             vehTemp.shape_model = VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action8)
+        TryCatchAssertBlock.DoAssert(action8)
 
         vehTemp.shape_model = VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.PLATE
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL.PLATE, vehTemp.shape_model)
@@ -496,14 +497,14 @@ class SEETHelper(object):
         def action9():
             vehTemp.normal_vector = "Satellite/Satellite1 Sun"
 
-        TryCatchAssertBlock.DoAssert("", action9)
+        TryCatchAssertBlock.DoAssert(action9)
 
     @staticmethod
-    def Test_IAgVeSpEnvParticleFlux(particleFlux: "IVehicleSpaceEnvironmentParticleFlux"):
+    def Test_IAgVeSpEnvParticleFlux(particleFlux: "VehicleSpaceEnvironmentParticleFlux"):
         def action10():
             particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action10)
+        TryCatchAssertBlock.DoAssert(action10)
         particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.FILE
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.FILE, particleFlux.f_10_p7_source)
 
@@ -513,7 +514,7 @@ class SEETHelper(object):
         def action11():
             particleFlux.f_10_p7 = 160
 
-        TryCatchAssertBlock.DoAssert("", action11)
+        TryCatchAssertBlock.DoAssert(action11)
 
         particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.SPECIFY
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.SPECIFY, particleFlux.f_10_p7_source)
@@ -524,7 +525,7 @@ class SEETHelper(object):
         def action12():
             particleFlux.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
 
-        TryCatchAssertBlock.DoAssert("", action12)
+        TryCatchAssertBlock.DoAssert(action12)
 
         particleFlux.area = 1.1
         Assert.assertEqual(1.1, particleFlux.area)
@@ -535,7 +536,7 @@ class SEETHelper(object):
         def action13():
             particleFlux.material = VEHICLE_SPACE_ENVIRONMENT_MATERIAL.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action13)
+        TryCatchAssertBlock.DoAssert(action13)
 
         particleFlux.material = VEHICLE_SPACE_ENVIRONMENT_MATERIAL.ALUMINUM
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_MATERIAL.ALUMINUM, particleFlux.material)
@@ -545,12 +546,12 @@ class SEETHelper(object):
         def action14():
             particleFlux.material_density = 11
 
-        TryCatchAssertBlock.DoAssert("", action14)
+        TryCatchAssertBlock.DoAssert(action14)
 
         def action15():
             particleFlux.tensile_strength = 160
 
-        TryCatchAssertBlock.DoAssert("", action15)
+        TryCatchAssertBlock.DoAssert(action15)
 
         particleFlux.material = VEHICLE_SPACE_ENVIRONMENT_MATERIAL.USER_DEFINED
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_MATERIAL.USER_DEFINED, particleFlux.material)
@@ -572,7 +573,7 @@ class SEETHelper(object):
             Console.WriteLine(d)
 
     @staticmethod
-    def Test_IAgVeSpEnvMagFieldLine(magFieldLine: "IVehicleSpaceEnvironmentMagnitudeFieldLine"):
+    def Test_IAgVeSpEnvMagFieldLine(magFieldLine: "VehicleSpaceEnvironmentMagnitudeFieldLine"):
         magFieldLine.is_2d_visible = False
         Assert.assertFalse(magFieldLine.is_2d_visible)
         magFieldLine.is_2d_visible = True
@@ -595,12 +596,12 @@ class SEETHelper(object):
         def action16():
             magFieldLine.line_width = clr.Convert((-1), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action16)
+        TryCatchAssertBlock.DoAssert(action16)
 
         def action17():
             magFieldLine.line_width = clr.Convert((11), LINE_WIDTH)
 
-        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action17)
+        TryCatchAssertBlock.DoAssert(action17)
 
         magFieldLine.label_visible = False
         Assert.assertFalse(magFieldLine.label_visible)
@@ -608,7 +609,7 @@ class SEETHelper(object):
         Assert.assertTrue(magFieldLine.label_visible)
 
     @staticmethod
-    def Test_IAgVeGfxSAA(veGfxSAA: "IVehicleGraphics2DSAA"):
+    def Test_IAgVeGfxSAA(veGfxSAA: "VehicleGraphics2DSAA"):
         veGfxSAA.use_vehicle_altitude = False
         Assert.assertFalse(veGfxSAA.use_vehicle_altitude)
 
@@ -621,7 +622,7 @@ class SEETHelper(object):
         def action18():
             veGfxSAA.altitude = 600
 
-        TryCatchAssertBlock.DoAssert("", action18)
+        TryCatchAssertBlock.DoAssert(action18)
 
         veGfxSAA.is_visible = True
         Assert.assertTrue(veGfxSAA.is_visible)
@@ -638,7 +639,7 @@ class SEETHelper(object):
         def action19():
             veGfxSAA.translucency = 50
 
-        TryCatchAssertBlock.DoAssert("", action19)
+        TryCatchAssertBlock.DoAssert(action19)
 
         veGfxSAA.is_visible = False
         Assert.assertFalse(veGfxSAA.is_visible)
@@ -646,22 +647,22 @@ class SEETHelper(object):
         def action20():
             veGfxSAA.is_fill_visible = False
 
-        TryCatchAssertBlock.DoAssert("", action20)
+        TryCatchAssertBlock.DoAssert(action20)
 
         def action21():
             veGfxSAA.translucency = 50
 
-        TryCatchAssertBlock.DoAssert("", action21)
+        TryCatchAssertBlock.DoAssert(action21)
 
     @staticmethod
-    def Test_IAgVeVOSAA(veVOSAA: "IVehicleGraphics3DSAA"):
+    def Test_IAgVeVOSAA(veVOSAA: "VehicleGraphics3DSAA"):
         veVOSAA.is_visible = True
         Assert.assertTrue(veVOSAA.is_visible)
         veVOSAA.is_visible = False
         Assert.assertFalse(veVOSAA.is_visible)
 
     @staticmethod
-    def Test_IAgVeSpEnvRadiation(radiation: "IVehicleSpaceEnvironmentRadiation"):
+    def Test_IAgVeSpEnvRadiation(radiation: "VehicleSpaceEnvironmentRadiation"):
         fluxStatus: str = radiation.flux_status
         Assert.assertEqual(
             "The Radiation Only mode uses APEXRAD and CRRESRAD only and cannot compute radiation flux values.",
@@ -671,7 +672,7 @@ class SEETHelper(object):
         def action22():
             radiation.computation_mode = VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action22)
+        TryCatchAssertBlock.DoAssert(action22)
 
         compMode: "VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE"
 
@@ -696,14 +697,14 @@ class SEETHelper(object):
                     SEETHelper.TestDoseChannelEnabled(radiation)
                     SEETHelper.TestApFluxEnabled(radiation)
                 else:
-                    Assert.fail("Should never get here (Test_IVehicleSpaceEnvironmentRadiation)")
+                    Assert.fail("Should never get here (Test_VehicleSpaceEnvironmentRadiation)")
 
     @staticmethod
-    def TestDoseChannelEnabled(radiation: "IVehicleSpaceEnvironmentRadiation"):
+    def TestDoseChannelEnabled(radiation: "VehicleSpaceEnvironmentRadiation"):
         def action23():
             radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action23)
+        TryCatchAssertBlock.DoAssert(action23)
 
         radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET, radiation.dose_channel)
@@ -715,27 +716,27 @@ class SEETHelper(object):
         def action24():
             radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.AIR
 
-        TryCatchAssertBlock.DoAssert("", action24)
+        TryCatchAssertBlock.DoAssert(action24)
 
         def action25():
             radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.FINITE_SLAB
 
-        TryCatchAssertBlock.DoAssert("", action25)
+        TryCatchAssertBlock.DoAssert(action25)
 
         def action26():
             radiation.use_nuclear_attenuation = True
 
-        TryCatchAssertBlock.DoAssert("", action26)
+        TryCatchAssertBlock.DoAssert(action26)
 
         def action27():
             radiation.include_nuclear_atten_neutrons = True
 
-        TryCatchAssertBlock.DoAssert("", action27)
+        TryCatchAssertBlock.DoAssert(action27)
 
         def action28():
             radiation.shielding_thicknesses.add(10)
 
-        TryCatchAssertBlock.DoAssert("", action28)
+        TryCatchAssertBlock.DoAssert(action28)
         if radiation.computation_mode != VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.RADIATION_ONLY:
             arEE = radiation.get_electron_energies()
             ee: float
@@ -748,16 +749,16 @@ class SEETHelper(object):
                 Console.WriteLine(pe)
 
     @staticmethod
-    def TestDoseChannelDisabled(radiation: "IVehicleSpaceEnvironmentRadiation", shieldingThicknessesVal: float):
+    def TestDoseChannelDisabled(radiation: "VehicleSpaceEnvironmentRadiation", shieldingThicknessesVal: float):
         def action29():
             radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET
 
-        TryCatchAssertBlock.DoAssert("", action29)
+        TryCatchAssertBlock.DoAssert(action29)
 
         def action30():
             radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action30)
+        TryCatchAssertBlock.DoAssert(action30)
         radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.AIR
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.AIR, radiation.detector_type)
         radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.ALUMINUM
@@ -766,7 +767,7 @@ class SEETHelper(object):
         def action31():
             radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action31)
+        TryCatchAssertBlock.DoAssert(action31)
         radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.FINITE_SLAB
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.FINITE_SLAB, radiation.detector_geometry)
         radiation.detector_geometry = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY.SEMI_INFINITE_SLAB
@@ -788,7 +789,7 @@ class SEETHelper(object):
         def action32():
             radiation.include_nuclear_atten_neutrons = True
 
-        TryCatchAssertBlock.DoAssert("", action32)
+        TryCatchAssertBlock.DoAssert(action32)
 
         origCount: int = radiation.shielding_thicknesses.count
         radiation.shielding_thicknesses.add(shieldingThicknessesVal)
@@ -805,11 +806,11 @@ class SEETHelper(object):
             Console.WriteLine(pe)
 
     @staticmethod
-    def TestApFluxEnabled(radiation: "IVehicleSpaceEnvironmentRadiation"):
+    def TestApFluxEnabled(radiation: "VehicleSpaceEnvironmentRadiation"):
         def action33():
             radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("", action33)
+        TryCatchAssertBlock.DoAssert(action33)
         radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE, radiation.ap_source)
 
@@ -819,7 +820,7 @@ class SEETHelper(object):
         def action34():
             radiation.ap = 11
 
-        TryCatchAssertBlock.DoAssert("", action34)
+        TryCatchAssertBlock.DoAssert(action34)
 
         radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.SPECIFY
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.SPECIFY, radiation.ap_source)
@@ -830,28 +831,28 @@ class SEETHelper(object):
         def action35():
             radiation.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
 
-        TryCatchAssertBlock.DoAssert("", action35)
+        TryCatchAssertBlock.DoAssert(action35)
 
     @staticmethod
-    def TestApFluxDisabled(radiation: "IVehicleSpaceEnvironmentRadiation"):
+    def TestApFluxDisabled(radiation: "VehicleSpaceEnvironmentRadiation"):
         def action36():
             radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE
 
-        TryCatchAssertBlock.DoAssert("", action36)
+        TryCatchAssertBlock.DoAssert(action36)
 
         def action37():
             radiation.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
 
-        TryCatchAssertBlock.DoAssert("", action37)
+        TryCatchAssertBlock.DoAssert(action37)
 
         def action38():
             radiation.ap = 11
 
-        TryCatchAssertBlock.DoAssert("", action38)
+        TryCatchAssertBlock.DoAssert(action38)
 
     @staticmethod
-    def TestScenarioComputations(scen: "IScenario", startTime: typing.Any, stopTime: typing.Any):
-        scenSpEnv: "IScenSpaceEnvironment" = scen.space_environment
+    def TestScenarioComputations(scen: "Scenario", startTime: typing.Any, stopTime: typing.Any):
+        scenSpEnv: "ScenSpaceEnvironment" = scen.space_environment
         if not TestBase.NoGraphicsMode:
             startOM: float = 0
             stopOM: float = 0
@@ -927,4 +928,4 @@ class SEETHelper(object):
                 SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, 10, 20, 2000
             )
 
-        TryCatchAssertBlock.DoAssert("", action40)
+        TryCatchAssertBlock.DoAssert(action40)

@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from antenna.antenna_helper import *
 from assertion_harness import *
@@ -12,29 +13,29 @@ from ansys.stk.core.vgt import *
 
 # region ExportDataFileHelper
 class ExportDataFileHelper(object):
-    def __init__(self, obj: "IStkObject", root: "IStkObjectRoot"):
+    def __init__(self, obj: "IStkObject", root: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         self._oObj: "IStkObject" = obj
-        self._root: "IStkObjectRoot" = root
+        self._root: "StkObjectRoot" = root
 
     # region AttitudeExport
-    def AttitudeExportTool(self, attitude: "IVehicleAttitudeExportTool"):
-        customAxes: "IVehicleCoordinateAxesCustom" = None
+    def AttitudeExportTool(self, attitude: "VehicleAttitudeExportTool"):
+        customAxes: "VehicleCoordinateAxesCustom" = None
 
         def action1():
             attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action1)
+        TryCatchAssertBlock.DoAssert(action1)
 
         def action2():
             attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action2)
+        TryCatchAssertBlock.DoAssert(action2)
 
         def action3():
             attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT620
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action3)
+        TryCatchAssertBlock.DoAssert(action3)
         attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT430
         Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT430, attitude.version_format)
         attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
@@ -70,14 +71,14 @@ class ExportDataFileHelper(object):
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.ICRF, attitude.coordinate_axes_type)
                 attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-                customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
+                customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 Assert.assertEqual("CentralBody/Sun J2000 Axes", customAxes.reference_axes_name)
 
                 def action4():
                     customAxes.reference_axes_name = "CentralBody/Sun Bogus Axes"
 
-                TryCatchAssertBlock.DoAssert("IVehicleCoordinateAxesCustom.ReferenceAxesName - invalid choice", action4)
+                TryCatchAssertBlock.DoAssert(action4)
                 if attitude.central_body_name != "Earth":
                     attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
                     Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
@@ -87,7 +88,7 @@ class ExportDataFileHelper(object):
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
                 attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-                customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
+                customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 if attitude.central_body_name == "Earth":
                     attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.J2000)
@@ -104,7 +105,7 @@ class ExportDataFileHelper(object):
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
                 attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-                customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
+                customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
             supportedCoordinateAxes = attitude.supported_coordinate_axes
@@ -154,7 +155,7 @@ class ExportDataFileHelper(object):
         attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
         attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
         Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-        customAxes = clr.Convert(attitude.coordinate_axes, IVehicleCoordinateAxesCustom)
+        customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
         customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
         attitude.include = ATTITUDE_INCLUDE.QUATERNIONS
@@ -167,10 +168,10 @@ class ExportDataFileHelper(object):
         attitude.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, attitude.time_period.time_period_type)
 
-        attitude.time_period.start = (clr.Convert(self._root.current_scenario, IScenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).start_time, attitude.time_period.start)
-        attitude.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, attitude.time_period.stop)
+        attitude.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, attitude.time_period.start)
+        attitude.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, attitude.time_period.stop)
 
         attitude.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, attitude.step_size.step_size_type)
@@ -194,7 +195,7 @@ class ExportDataFileHelper(object):
         def action5():
             attitude.step_size.time_array = objName + " Bogus EventArray"
 
-        TryCatchAssertBlock.DoAssert("IExportToolStepSize.TimeArray - invalid choice", action5)
+        TryCatchAssertBlock.DoAssert(action5)
 
         attitude.export(TestBase.GetScenarioFile("OMExternalFileAttitude.a"))
 
@@ -225,7 +226,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region PropDefExportTool
-    def PropDefExportTool(self, dataFile: "IVehiclePropDefinitionExportTool"):
+    def PropDefExportTool(self, dataFile: "VehiclePropDefinitionExportTool"):
         dataFile.export(TestBase.GetScenarioFile("OMExternalFilePropDef.pg"))
         self._root.execute_command(
             (
@@ -291,7 +292,7 @@ class ExportDataFileHelper(object):
             Assert.assertEqual(omFile, connectFile)
 
     # region EphemerisSTKExportTool
-    def EphemerisSTKExportTool(self, stkEphem: "IVehicleEphemerisStkExportTool", isSat: bool):
+    def EphemerisSTKExportTool(self, stkEphem: "VehicleEphemerisStkExportTool", isSat: bool):
         # "Satellite1.e"
         stkEphem.coordinate_system = STK_EPHEM_COORDINATE_SYSTEM.FIXED
         Assert.assertEqual(STK_EPHEM_COORDINATE_SYSTEM.FIXED, stkEphem.coordinate_system)
@@ -354,10 +355,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, stkEphem.time_period.time_period_type)
         stkEphem.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, stkEphem.time_period.time_period_type)
-        stkEphem.time_period.start = (clr.Convert(self._root.current_scenario, IScenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).start_time, stkEphem.time_period.start)
-        stkEphem.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, stkEphem.time_period.stop)
+        stkEphem.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, stkEphem.time_period.start)
+        stkEphem.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, stkEphem.time_period.stop)
 
         def action10():
             stkEphem.covariance_type = STK_EPHEM_COVARIANCE_TYPE.POSITION3_X3
@@ -395,11 +396,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STK CentralBody Europa CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -418,11 +419,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STK CentralBody Earth CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -436,7 +437,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region EphemerisCCSDSExportTool
-    def EphemerisCCSDSExportTool(self, ccsds: "IVehicleEphemerisCCSDSExportTool"):
+    def EphemerisCCSDSExportTool(self, ccsds: "VehicleEphemerisCCSDSExportTool"):
         # Test "UseSatelliteCenterAndFrame"
         ccsds.use_satellite_center_and_frame = False
         Assert.assertFalse(ccsds.use_satellite_center_and_frame)
@@ -543,10 +544,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, ccsds.time_period.time_period_type)
         ccsds.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, ccsds.time_period.time_period_type)
-        ccsds.time_period.start = (clr.Convert(self._root.current_scenario, IScenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).start_time, ccsds.time_period.start)
-        ccsds.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, ccsds.time_period.stop)
+        ccsds.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, ccsds.time_period.start)
+        ccsds.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, ccsds.time_period.stop)
 
         ccsds.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, ccsds.step_size.step_size_type)
@@ -558,7 +559,7 @@ class ExportDataFileHelper(object):
         def action20():
             ccsds.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
 
-        TryCatchAssertBlock.DoAssert("must be in", action20)
+        TryCatchAssertBlock.DoAssert(action20)
 
         ccsds.time_system = CCSDS_TIME_SYSTEM.GPS
         Assert.assertEqual(CCSDS_TIME_SYSTEM.GPS, ccsds.time_system)
@@ -584,11 +585,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDS CenterName Moon RefFrame EME2000 Originator Test1 ObjectName TestSatellite ObjectID 2000-000B TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '"'
             )
@@ -625,11 +626,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDS CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '"'
             )
@@ -661,11 +662,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDS CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -685,7 +686,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region EphemerisCCSDSv2ExportTool
-    def EphemerisCCSDSv2ExportTool(self, ccsdsv2: "IVehicleEphemerisCCSDSv2ExportTool"):
+    def EphemerisCCSDSv2ExportTool(self, ccsdsv2: "VehicleEphemerisCCSDSv2ExportTool"):
         # Test "UseSatelliteCenterAndFrame"
         ccsdsv2.use_satellite_center_and_frame = False
         Assert.assertFalse(ccsdsv2.use_satellite_center_and_frame)
@@ -792,10 +793,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, ccsdsv2.time_period.time_period_type)
         ccsdsv2.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, ccsdsv2.time_period.time_period_type)
-        ccsdsv2.time_period.start = (clr.Convert(self._root.current_scenario, IScenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).start_time, ccsdsv2.time_period.start)
-        ccsdsv2.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, ccsdsv2.time_period.stop)
+        ccsdsv2.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, ccsdsv2.time_period.start)
+        ccsdsv2.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, ccsdsv2.time_period.stop)
 
         ccsdsv2.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, ccsdsv2.step_size.step_size_type)
@@ -807,7 +808,7 @@ class ExportDataFileHelper(object):
         def action28():
             ccsdsv2.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
 
-        TryCatchAssertBlock.DoAssert("Invalid Step size type", action28)
+        TryCatchAssertBlock.DoAssert(action28)
 
         ccsdsv2.time_system = CCSDS_TIME_SYSTEM.GPS
         Assert.assertEqual(CCSDS_TIME_SYSTEM.GPS, ccsdsv2.time_system)
@@ -833,11 +834,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator Test1 ObjectName TestSatellite ObjectID 2000-000B TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '"'
             )
@@ -874,11 +875,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '"'
             )
@@ -910,11 +911,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -962,11 +963,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat KVN TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -999,11 +1000,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat XML TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -1023,7 +1024,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region EphemerisCode500ExportTool
-    def EphemerisCode500ExportTool(self, code500: "IVehicleEphemerisCode500ExportTool"):
+    def EphemerisCode500ExportTool(self, code500: "VehicleEphemerisCode500ExportTool"):
         code500.sat_id = 40
         Assert.assertEqual(40, code500.sat_id)
 
@@ -1031,10 +1032,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, code500.time_period.time_period_type)
         code500.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, code500.time_period.time_period_type)
-        code500.time_period.start = (clr.Convert(self._root.current_scenario, IScenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).start_time, code500.time_period.start)
-        code500.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, code500.time_period.stop)
+        code500.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, code500.time_period.start)
+        code500.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, code500.time_period.stop)
 
         code500.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, code500.step_size.step_size_type)
@@ -1046,7 +1047,7 @@ class ExportDataFileHelper(object):
         def action30():
             code500.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
 
-        TryCatchAssertBlock.DoAssert("Invalid Step size type", action30)
+        TryCatchAssertBlock.DoAssert(action30)
 
         # this part only works if you have the code500 dll loaded.
         code500.export(TestBase.GetScenarioFile("OMExternalFileCode500.eph"))
@@ -1062,11 +1063,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type Code500 StepSize 3600 SatelliteID 40 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '"'
             )
@@ -1080,7 +1081,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region EphemerisSpiceExportTool
-    def EphemerisSpiceExportTool(self, spice: "IVehicleEphemerisSpiceExportTool"):
+    def EphemerisSpiceExportTool(self, spice: "VehicleEphemerisSpiceExportTool"):
         Assert.assertTrue(spice.use_vehicle_central_body)
         Assert.assertEqual("Earth", spice.central_body_name)
 
@@ -1113,10 +1114,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, spice.time_period.time_period_type)
         spice.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, spice.time_period.time_period_type)
-        spice.time_period.start = (clr.Convert(self._root.current_scenario, IScenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).start_time, spice.time_period.start)
-        spice.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, spice.time_period.stop)
+        spice.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, spice.time_period.start)
+        spice.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, spice.time_period.stop)
 
         spice.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, spice.step_size.step_size_type)
@@ -1143,11 +1144,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type Spice CentralBody Sun SatelliteID -200001 InterpType Type13 InterpOrder 7 StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                 )
                 + '"'
             )
@@ -1216,7 +1217,7 @@ class ExportDataFileHelper(object):
             index += 1
 
     # region EphemerisStkBinaryExportTool
-    def EphemerisStkBinaryExportTool(self, binary: "IVehicleEphemerisStkBinaryExportTool", isSat: bool):
+    def EphemerisStkBinaryExportTool(self, binary: "VehicleEphemerisStkBinaryExportTool", isSat: bool):
         # "Satellite1.be"
         binary.coordinate_system = STK_EPHEM_COORDINATE_SYSTEM.FIXED
         Assert.assertEqual(STK_EPHEM_COORDINATE_SYSTEM.FIXED, binary.coordinate_system)
@@ -1265,41 +1266,41 @@ class ExportDataFileHelper(object):
         def action37():
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action37)
+        TryCatchAssertBlock.DoAssert(action37)
 
         def action38():
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action38)
+        TryCatchAssertBlock.DoAssert(action38)
 
         def action39():
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT430
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action39)
+        TryCatchAssertBlock.DoAssert(action39)
 
         def action40():
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action40)
+        TryCatchAssertBlock.DoAssert(action40)
 
         def action41():
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT620
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action41)
+        TryCatchAssertBlock.DoAssert(action41)
 
         def action42():
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT800
 
-        TryCatchAssertBlock.DoAssert("Invalid version number", action42)
+        TryCatchAssertBlock.DoAssert(action42)
 
         binary.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, binary.time_period.time_period_type)
         binary.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, binary.time_period.time_period_type)
-        binary.time_period.start = (clr.Convert(self._root.current_scenario, IScenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).start_time, binary.time_period.start)
-        binary.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, binary.time_period.stop)
+        binary.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, binary.time_period.start)
+        binary.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
+        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, binary.time_period.stop)
 
         def action43():
             binary.covariance_type = STK_EPHEM_COVARIANCE_TYPE.NONE
@@ -1326,7 +1327,7 @@ class ExportDataFileHelper(object):
         def action46():
             binary.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
 
-        TryCatchAssertBlock.DoAssert("must be in", action46)
+        TryCatchAssertBlock.DoAssert(action46)
 
         binary.export(TestBase.GetScenarioFile("OMExternalFileStk.be"))
         if isSat:
@@ -1342,11 +1343,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STKBinary CentralBody Europa CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -1365,11 +1366,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STKBinary CentralBody Earth CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, IScenario)).start_time)
+                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, IScenario)).stop_time)
+                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -1392,15 +1393,15 @@ class ExportDataFileHelper(object):
 
 # region BasicGroundEllipsesHelper
 class BasicGroundEllipsesHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IVehicleGroundEllipsesCollection", bClearCollection: bool):
+    def Run(self, oCollection: "VehicleGroundEllipsesCollection", bClearCollection: bool):
         self.m_logger.WriteLine("----- THE BASIC GROUND ELLIPSES TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         # Count
@@ -1410,11 +1411,11 @@ class BasicGroundEllipsesHelper(object):
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
-            oEllipse: "IVehicleGroundEllipseElement" = oCollection[iIndex]
+            oEllipse: "VehicleGroundEllipseElement" = oCollection[iIndex]
             # EllipseSetName
             self.m_logger.WriteLine7("\t\tEllipse {0}: EllipseName = {1}", iIndex, oEllipse.ellipse_name)
             # EllipseData
-            oDataCollection: "IVehicleEllipseDataCollection" = oEllipse.ellipse_data
+            oDataCollection: "VehicleEllipseDataCollection" = oEllipse.ellipse_data
             Assert.assertIsNotNone(oDataCollection)
             # Count
             self.m_logger.WriteLine3("\t\t\tData collection contains: {0} elements", oDataCollection.count)
@@ -1422,7 +1423,7 @@ class BasicGroundEllipsesHelper(object):
             i: int = 0
             while i < oDataCollection.count:
                 # Item
-                ellipseDataElement: "IVehicleEllipseDataElement" = oDataCollection[i]
+                ellipseDataElement: "VehicleEllipseDataElement" = oDataCollection[i]
                 Assert.assertIsNotNone(ellipseDataElement)
                 self.m_logger.WriteLine10(
                     "\t\t\t\tElement {0}: Time = {1}, Latitude = {2}, Longitude = {3}, Bearing = {4}, SemiMajorAxis = {5}, SemiMinorAxis = {6}, CustomPosition = {7}",
@@ -1441,7 +1442,7 @@ class BasicGroundEllipsesHelper(object):
             iIndex += 1
 
         # Add 1
-        oGEElement: "IVehicleGroundEllipseElement" = oCollection.add("Ellipse1")
+        oGEElement: "VehicleGroundEllipseElement" = oCollection.add("Ellipse1")
         Assert.assertIsNotNone(oGEElement)
         Assert.assertEqual((iCount + 1), oCollection.count)
         self.m_logger.WriteLine7(
@@ -1453,7 +1454,7 @@ class BasicGroundEllipsesHelper(object):
         def action47():
             oGEElement = oCollection.add("Ellipse1")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to add element with the same name.", action47)
+        TryCatchAssertBlock.DoAssert(action47)
         Assert.assertEqual((iCount + 1), oCollection.count)
         # Add 2
         oGEElement = oCollection.add("Ellipse2")
@@ -1465,7 +1466,7 @@ class BasicGroundEllipsesHelper(object):
             oGEElement.ellipse_name,
         )
         # _NewEnum
-        groundEllipseElement: "IVehicleGroundEllipseElement"
+        groundEllipseElement: "VehicleGroundEllipseElement"
         # _NewEnum
         for groundEllipseElement in oCollection:
             self.m_logger.WriteLine5("\t\tEllipse: EllipseName = {0}", groundEllipseElement.ellipse_name)
@@ -1481,7 +1482,7 @@ class BasicGroundEllipsesHelper(object):
         def action48():
             oCollection.remove_at(oCollection.count)
 
-        TryCatchAssertBlock.DoAssert("Should not allow to remove element by invalid index.", action48)
+        TryCatchAssertBlock.DoAssert(action48)
         # EllipseName
         oCollection[(oCollection.count - 1)].ellipse_name = "ModifiedEllipse1"
         Assert.assertEqual("ModifiedEllipse1", oCollection[(oCollection.count - 1)].ellipse_name)
@@ -1490,11 +1491,11 @@ class BasicGroundEllipsesHelper(object):
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
-            oEllipse: "IVehicleGroundEllipseElement" = oCollection[iIndex]
+            oEllipse: "VehicleGroundEllipseElement" = oCollection[iIndex]
             # EllipseSetName
             self.m_logger.WriteLine7("\t\tEllipse {0}: EllipseName = {1}", iIndex, oEllipse.ellipse_name)
             # EllipseData
-            oDataCollection: "IVehicleEllipseDataCollection" = oEllipse.ellipse_data
+            oDataCollection: "VehicleEllipseDataCollection" = oEllipse.ellipse_data
             Assert.assertIsNotNone(oDataCollection)
             # Count
             self.m_logger.WriteLine3("\t\t\tData collection contains: {0} elements", oDataCollection.count)
@@ -1505,12 +1506,12 @@ class BasicGroundEllipsesHelper(object):
                 "\t\t\tAfter RemoveAll() Data collection contains: {0} elements", oDataCollection.count
             )
             # Add
-            oDataElement: "IVehicleEllipseDataElement" = oDataCollection.add()
+            oDataElement: "VehicleEllipseDataElement" = oDataCollection.add()
             Assert.assertIsNotNone(oDataElement)
             Assert.assertEqual(1, oDataCollection.count)
             self.m_logger.WriteLine3("\t\t\tAfter Add() Data collection contains: {0} elements", oDataCollection.count)
             # _NewEnum
-            ellipseDataElement: "IVehicleEllipseDataElement"
+            ellipseDataElement: "VehicleEllipseDataElement"
             # _NewEnum
             for ellipseDataElement in oDataCollection:
                 Assert.assertIsNotNone(ellipseDataElement)
@@ -1530,7 +1531,7 @@ class BasicGroundEllipsesHelper(object):
             i: int = 0
             while i < oDataCollection.count:
                 # Item
-                ellipseDataElement: "IVehicleEllipseDataElement" = oDataCollection[i]
+                ellipseDataElement: "VehicleEllipseDataElement" = oDataCollection[i]
                 Assert.assertIsNotNone(ellipseDataElement)
                 self.m_logger.WriteLine10(
                     "\t\t\t\tElement {0} (Before): Time = {1}, Latitude = {2}, Longitude = {3}, Bearing = {4}, SemiMajorAxis = {5}, SemiMinorAxis = {6}, CustomPosition = {7}",
@@ -1550,40 +1551,40 @@ class BasicGroundEllipsesHelper(object):
                 def action49():
                     oDataElement.latitude = 123
 
-                TryCatchAssertBlock.DoAssert("Should be readonly!", action49)
+                TryCatchAssertBlock.DoAssert(action49)
 
                 def action50():
                     oDataElement.longitude = 123
 
-                TryCatchAssertBlock.DoAssert("Should be readonly!", action50)
+                TryCatchAssertBlock.DoAssert(action50)
                 oDataElement.semi_major_axis = 1234
                 oDataElement.semi_minor_axis = 123
 
                 def action51():
                     oDataElement.semi_major_axis = 12
 
-                TryCatchAssertBlock.DoAssert("Should be more then SemiMinorAxis!", action51)
+                TryCatchAssertBlock.DoAssert(action51)
 
                 def action52():
                     oDataElement.semi_major_axis = -12345
 
-                TryCatchAssertBlock.DoAssert("Cannot set invalid value!", action52)
+                TryCatchAssertBlock.DoAssert(action52)
 
                 def action53():
                     oDataElement.semi_minor_axis = 12345
 
-                TryCatchAssertBlock.DoAssert("Should be less then SemiMajorAxis!", action53)
+                TryCatchAssertBlock.DoAssert(action53)
 
                 def action54():
                     oDataElement.semi_minor_axis = -12345
 
-                TryCatchAssertBlock.DoAssert("Cannot set invalid value!", action54)
+                TryCatchAssertBlock.DoAssert(action54)
                 oDataElement.bearing = 123
 
                 def action55():
                     oDataElement.bearing = 12345
 
-                TryCatchAssertBlock.DoAssert("Cannot set invalid value!", action55)
+                TryCatchAssertBlock.DoAssert(action55)
                 self.m_logger.WriteLine10(
                     "\t\t\t\tElement {0} (After):  Time = {1}, Latitude = {2}, Longitude = {3}, Bearing = {4}, SemiMajorAxis = {5}, SemiMinorAxis = {6}, CustomPosition = {7}",
                     i,
@@ -1612,30 +1613,30 @@ class BasicGroundEllipsesHelper(object):
         def action56():
             oCollection.get_ellipse_set("")
 
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of empty string!", action56)
+        TryCatchAssertBlock.DoAssert(action56)
 
         def action57():
             oCollection.get_ellipse_set(None)
 
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of NULL pointer!", action57)
+        TryCatchAssertBlock.DoAssert(action57)
 
         def action58():
             oCollection.remove_ellipse_set("")
 
         # RemoveEllipseSet
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of empty string!", action58)
+        TryCatchAssertBlock.DoAssert(action58)
 
         def action59():
             oCollection.remove_ellipse_set(None)
 
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of NULL pointer!", action59)
+        TryCatchAssertBlock.DoAssert(action59)
         oCollection.remove_ellipse_set(oGEElement.ellipse_name)  # oGEElement is now invalid
         Assert.assertEqual(iCount, oCollection.count)
 
         def action60():
             oCollection.remove_ellipse_set("InvalidName")
 
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of invalid name!", action60)
+        TryCatchAssertBlock.DoAssert(action60)
         if bClearCollection:
             oCollection.remove_all()
             Assert.assertEqual(0, oCollection.count)
@@ -1648,11 +1649,11 @@ class BasicGroundEllipsesHelper(object):
 
 # region BasicPropagatorHelper
 class BasicPropagatorHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oApplication.unit_preferences
+        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oApplication.unit_preferences
         self.m_oUnits.reset_units()
 
     # endregion
@@ -1665,48 +1666,48 @@ class BasicPropagatorHelper(object):
         Assert.assertIsNotNone(oPropagator)
         if eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC:
             oHelper = PropagatorGreatArcHelper(obj, self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorGreatArc))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorGreatArc))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL:
             oHelper = PropagatorStkExternalHelper(self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorStkExternal))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorStkExternal))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT:
             oHelper = PropagatorSimpleAscentHelper(obj, self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorSimpleAscent))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorSimpleAscent))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY:
             oHelper = PropagatorTwoBodyHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorTwoBody))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorTwoBody))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_LOP:
             oHelper = PropagatorLOPHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorLOP))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorLOP))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION:
             oHelper = PropagatorJ2PerturbationHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorJ2Perturbation))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorJ2Perturbation))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION:
             oHelper = PropagatorJ4PerturbationHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorJ4Perturbation))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorJ4Perturbation))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4:
             oHelper = PropagatorSGP4Helper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorSGP4))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorSGP4))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE:
             oHelper = PropagatorSPICEHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorSPICE))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorSPICE))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_USER_EXTERNAL:
             oHelper = PropagatorUserExternalHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorUserExternal))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorUserExternal))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP:
             oHelper = PropagatorHPOPHelper(self.m_oApplication, obj, EarthGravModel)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorHPOP), False)
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorHPOP), False)
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC:
             oHelper = PropagatorBallisticHelper(obj, self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, IVehiclePropagatorBallistic))
+            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorBallistic))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR:
             pass
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME:
             helper = PropagatorRealtimeHelper()
-            helper.Run(obj, clr.CastAs(oPropagator, IVehiclePropagatorRealtime))
+            helper.Run(obj, clr.CastAs(oPropagator, VehiclePropagatorRealtime))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GPS:
             helper = PropagatorGPSHelper(TestBase.GetSTKDBDir())
-            helper.Run(obj, clr.CastAs(oPropagator, IVehiclePropagatorGPS))
+            helper.Run(obj, clr.CastAs(oPropagator, VehiclePropagatorGPS))
 
         elif ((eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR11_PARAM)) or (
             (eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SP3)
@@ -1724,18 +1725,18 @@ class BasicPropagatorHelper(object):
 
 # region PropagatorGreatArcHelper
 class PropagatorGreatArcHelper(object):
-    def __init__(self, owner: "IStkObject", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, owner: "IStkObject", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         self._owner: "IStkObject" = owner
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(owner)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
         self.m_oUnits.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oGreatArc: "IVehiclePropagatorGreatArc"):
+    def Run(self, oGreatArc: "VehiclePropagatorGreatArc"):
         self.m_logger.WriteLine("----- GREAT ARC PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oGreatArc)
         # Method (eDetermineVelFromTime)
@@ -1809,7 +1810,7 @@ class PropagatorGreatArcHelper(object):
                 def action61():
                     oGreatArc.arc_granularity = 654.321
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action61)
+                TryCatchAssertBlock.DoAssert(action61)
             elif eRefType == VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN:
                 # AltitudeRef
                 oRef: "IVehicleWaypointAltitudeReference" = oGreatArc.altitude_reference
@@ -1821,10 +1822,10 @@ class PropagatorGreatArcHelper(object):
                     oGreatArc.arc_granularity = 65.4321
 
                 # ArcGranularity
-                TryCatchAssertBlock.DoAssert("The ArcGranularity should be readonly.", action62)
+                TryCatchAssertBlock.DoAssert(action62)
 
-                oTerrain: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
-                    oRef, IVehicleWaypointAltitudeReferenceTerrain
+                oTerrain: "VehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
+                    oRef, VehicleWaypointAltitudeReferenceTerrain
                 )
                 Assert.assertIsNotNone(oTerrain)
                 Assert.assertEqual(oRef.type, oTerrain.type)
@@ -1837,7 +1838,7 @@ class PropagatorGreatArcHelper(object):
                 def action63():
                     oTerrain.granularity = -65.4321
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal values.", action63)
+                TryCatchAssertBlock.DoAssert(action63)
                 # InterpMethod (eWayPtEllipsoidHeight)
                 self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interp_method)
                 oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
@@ -1872,7 +1873,7 @@ class PropagatorGreatArcHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overriden with the scenario's start/stop times.
-        sc: "IScenario" = clr.Convert(self._owner.root.current_scenario, IScenario)
+        sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
         oGreatArc.ephemeris_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00.000", oGreatArc.ephemeris_interval.find_stop_time()
         )
@@ -1899,16 +1900,16 @@ class PropagatorGreatArcHelper(object):
 
 # region BasicWaypointsHelper
 class BasicWaypointsHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
         self.m_oUnits.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IVehicleWaypointsCollection", eMethod: "VEHICLE_WAYPOINT_COMP_METHOD"):
+    def Run(self, oCollection: "VehicleWaypointsCollection", eMethod: "VEHICLE_WAYPOINT_COMP_METHOD"):
         self.m_logger.WriteLine6("----- THE BASIC WAYPOINTS TEST (Method = {0}) ----- BEGIN -----", eMethod)
         Assert.assertIsNotNone(oCollection)
 
@@ -1917,7 +1918,7 @@ class BasicWaypointsHelper(object):
         oCollection.remove_all()
         self.m_logger.WriteLine3("\tThe new Waypoints collection contains: {0} elements", oCollection.count)
 
-        waypointsElement: "IVehicleWaypointsElement" = oCollection.add()
+        waypointsElement: "VehicleWaypointsElement" = oCollection.add()
         Assert.assertIsNotNone(waypointsElement)
         self.m_logger.WriteLine3(
             "\tAfter Add() new element the Waypoints collection contains: {0} elements", oCollection.count
@@ -1949,21 +1950,21 @@ class BasicWaypointsHelper(object):
             iIndex += 1
 
         def action64():
-            oElement2: "IVehicleWaypointsElement" = oCollection[oCollection.count]
+            oElement2: "VehicleWaypointsElement" = oCollection[oCollection.count]
 
-        TryCatchAssertBlock.DoAssert("IVehicleWaypointsCollection bad index", action64)
+        TryCatchAssertBlock.DoAssert(action64)
 
         def action65():
             oCollection.remove_at(oCollection.count)
 
-        TryCatchAssertBlock.DoAssert("IVehicleWaypointsCollection remove bad index", action65)
+        TryCatchAssertBlock.DoAssert(action65)
 
         oCollection.remove_at(0)
         self.m_logger.WriteLine3(
             "\tAfter RemoveAt(0) the Waypoints collection contains: {0} elements", oCollection.count
         )
         Assert.assertEqual(1, oCollection.count)
-        oItem: "IVehicleWaypointsElement"
+        oItem: "VehicleWaypointsElement"
         for oItem in oCollection:
             self.m_logger.WriteLine10(
                 "\t\tElement(before): Latitude = {0}, Longitude = {1}, Altitude = {2}, Speed = {3}, Acceleration = {4}, Time = {5}, TurnRadius = {6}",
@@ -1981,28 +1982,28 @@ class BasicWaypointsHelper(object):
             def action66():
                 oItem.latitude = 654.321
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action66)
+            TryCatchAssertBlock.DoAssert(action66)
             # Longitude
             oItem.longitude = -123.456
 
             def action67():
                 oItem.longitude = 654.321
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action67)
+            TryCatchAssertBlock.DoAssert(action67)
             # Altitude
             oItem.altitude = 23.45
 
             def action68():
                 oItem.altitude = -654000.321
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action68)
+            TryCatchAssertBlock.DoAssert(action68)
             # TurnRadius
             oItem.turn_radius = 3.45
 
             def action69():
                 oItem.turn_radius = -654.321
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action69)
+            TryCatchAssertBlock.DoAssert(action69)
             if eMethod == VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL:
                 # Speed
                 distance: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
@@ -2015,19 +2016,19 @@ class BasicWaypointsHelper(object):
                 def action70():
                     oItem.speed = 1e-08
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action70)
+                TryCatchAssertBlock.DoAssert(action70)
 
                 def action71():
                     oItem.time = "10 Jul 1999 04:00:00.000"
 
                 # Time
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action71)
+                TryCatchAssertBlock.DoAssert(action71)
 
                 def action72():
                     oItem.acceleration = 0.321
 
                 # Acceleration
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action72)
+                TryCatchAssertBlock.DoAssert(action72)
                 self.m_oUnits.set_current_unit("DistanceUnit", distance)
                 self.m_oUnits.set_current_unit("TimeUnit", time)
             elif eMethod == VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC:
@@ -2037,20 +2038,20 @@ class BasicWaypointsHelper(object):
                 def action73():
                     oItem.speed = -654.321
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action73)
+                TryCatchAssertBlock.DoAssert(action73)
                 # Acceleration
                 oItem.acceleration = 32.1
 
                 def action74():
                     oItem.acceleration = -65432100000.0
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action74)
+                TryCatchAssertBlock.DoAssert(action74)
 
                 def action75():
                     oItem.time = "10 Jul 1999 04:00:00.000"
 
                 # Time
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action75)
+                TryCatchAssertBlock.DoAssert(action75)
             elif eMethod == VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME:
                 # Time
                 oItem.time = "12 Jul 1999 04:00:00.000"
@@ -2059,13 +2060,13 @@ class BasicWaypointsHelper(object):
                     oItem.speed = 654.321
 
                 # Speed
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action76)
+                TryCatchAssertBlock.DoAssert(action76)
 
                 def action77():
                     oItem.acceleration = 654.321
 
                 # Acceleration
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action77)
+                TryCatchAssertBlock.DoAssert(action77)
             else:
                 Assert.fail("Invalid value: {0}", eMethod)
             self.m_logger.WriteLine10(
@@ -2089,7 +2090,7 @@ class BasicWaypointsHelper(object):
 
 # region PropagatorStkExternalHelper
 class PropagatorStkExternalHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         oUnits.reset_units()
@@ -2097,7 +2098,7 @@ class PropagatorStkExternalHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oStkExternal: "IVehiclePropagatorStkExternal"):
+    def Run(self, oStkExternal: "VehiclePropagatorStkExternal"):
         self.m_logger.WriteLine("----- STK EXTERNAL PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oStkExternal)
         # StartTime
@@ -2155,17 +2156,17 @@ class PropagatorStkExternalHelper(object):
         def action78():
             oStkExternal.file_format = STK_EXTERNAL_EPHEMERIS_FORMAT.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action78)
+        TryCatchAssertBlock.DoAssert(action78)
 
         def action79():
             oStkExternal.filename = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action79)
+        TryCatchAssertBlock.DoAssert(action79)
 
         def action80():
             oStkExternal.filename = "IllegalFile.Name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action80)
+        TryCatchAssertBlock.DoAssert(action80)
 
         # LimitEphemerisToScenarioInterval (false)
         self.m_logger.WriteLine4(
@@ -2193,7 +2194,7 @@ class PropagatorStkExternalHelper(object):
 
 # region PropagatorSimpleAscentHelper
 class PropagatorSimpleAscentHelper(object):
-    def __init__(self, owner: "IStkObject", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, owner: "IStkObject", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         self._owner: "IStkObject" = owner
         Assert.assertIsNotNone(oUnits)
@@ -2202,7 +2203,7 @@ class PropagatorSimpleAscentHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oSimple: "IVehiclePropagatorSimpleAscent"):
+    def Run(self, oSimple: "VehiclePropagatorSimpleAscent"):
         self.m_logger.WriteLine("----- SIMPLE ASCENT PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oSimple)
         # EphemerisInterval
@@ -2222,9 +2223,9 @@ class PropagatorSimpleAscentHelper(object):
         def action81():
             oSimple.step = 12345
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action81)
+        TryCatchAssertBlock.DoAssert(action81)
         # InitialState
-        oInitState: "IVehicleLaunchVehicleInitialState" = oSimple.initial_state
+        oInitState: "VehicleLaunchVehicleInitialState" = oSimple.initial_state
         Assert.assertIsNotNone(oInitState)
         # Epoch
         self.m_logger.WriteLine6("\tThe current Epoch is:  {0}", oInitState.trajectory_epoch.time_instant)
@@ -2237,7 +2238,7 @@ class PropagatorSimpleAscentHelper(object):
         def action82():
             oInitState.burnout_vel = -21
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action82)
+        TryCatchAssertBlock.DoAssert(action82)
 
         # Burnout
         oHelper = LLAPositionTest()
@@ -2253,7 +2254,7 @@ class PropagatorSimpleAscentHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overriden with the scenario's start/stop times.
-        sc: "IScenario" = clr.Convert(self._owner.root.current_scenario, IScenario)
+        sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
         oSimple.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
@@ -2282,16 +2283,16 @@ class PropagatorSimpleAscentHelper(object):
 
 # region PropagatorTwoBodyHelper
 class PropagatorTwoBodyHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oTwoBody: "IVehiclePropagatorTwoBody"):
+    def Run(self, oTwoBody: "VehiclePropagatorTwoBody"):
         self.m_logger.WriteLine("----- TWO BODY PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oTwoBody)
         # StartTime
@@ -2314,15 +2315,15 @@ class PropagatorTwoBodyHelper(object):
         Assert.assertEqual(12, oTwoBody.step)
 
         # InitialState
-        oInitState: "IVehicleInitialState" = oTwoBody.initial_state
+        oInitState: "VehicleInitialState" = oTwoBody.initial_state
         Assert.assertIsNotNone(oInitState)
         # Epoch was  deprecated
         # m_logger.WriteLine("\tThe current Epoch is:  {0}", oInitState.Epoch);
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart: "IOrbitStateCartesian" = clr.Convert(
-            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), IOrbitStateCartesian
+        cart: "OrbitStateCartesian" = clr.Convert(
+            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian
         )
         (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
         self.m_logger.WriteLine6("\tThe new Epoch is:  {0}", cart.epoch)
@@ -2339,7 +2340,7 @@ class PropagatorTwoBodyHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overriden with the scenario's start/stop times.
-        sc: "IScenario" = clr.Convert(self.m_oApplication.current_scenario, IScenario)
+        sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
         oTwoBody.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_stop_time())
@@ -2368,16 +2369,16 @@ class PropagatorTwoBodyHelper(object):
 
 # region PropagatorLOPHelper
 class PropagatorLOPHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oLOP: "IVehiclePropagatorLOP"):
+    def Run(self, oLOP: "VehiclePropagatorLOP"):
         self.m_logger.WriteLine("----- LOP PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oLOP)
         # StartTime
@@ -2397,17 +2398,17 @@ class PropagatorLOPHelper(object):
         def action83():
             oLOP.step = 1200000000000.0
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action83)
+        TryCatchAssertBlock.DoAssert(action83)
         # InitialState
-        oInitState: "IVehicleInitialState" = oLOP.initial_state
+        oInitState: "VehicleInitialState" = oLOP.initial_state
         Assert.assertIsNotNone(oInitState)
         # Epoch was deprecated
         #            m_logger.WriteLine("\tThe current Epoch is:  {0}", oInitState.Epoch);
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart: "IOrbitStateCartesian" = clr.Convert(
-            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), IOrbitStateCartesian
+        cart: "OrbitStateCartesian" = clr.Convert(
+            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian
         )
         (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
@@ -2424,7 +2425,7 @@ class PropagatorLOPHelper(object):
         # Propagate
         oLOP.propagate()
         # ForceModel
-        oForceModel: "IVehicleLOPForceModel" = oLOP.force_model
+        oForceModel: "VehicleLOPForceModel" = oLOP.force_model
         Assert.assertIsNotNone(oForceModel)
         # CentralBodyGravity
         self.CentralBodyGravityTest(oForceModel.central_body_gravity)
@@ -2441,7 +2442,7 @@ class PropagatorLOPHelper(object):
     # endregion
 
     # region CentralBodyGravityTest
-    def CentralBodyGravityTest(self, oGravity: "IVehicleLOPCentralBodyGravity"):
+    def CentralBodyGravityTest(self, oGravity: "VehicleLOPCentralBodyGravity"):
         Assert.assertIsNotNone(oGravity)
         # MaxDegree
         self.m_logger.WriteLine3("\tThe current MaxDegree is:  {0}", oGravity.max_degree)
@@ -2452,7 +2453,7 @@ class PropagatorLOPHelper(object):
         def action84():
             oGravity.max_degree = 12345
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action84)
+        TryCatchAssertBlock.DoAssert(action84)
         # MaxOrder
         self.m_logger.WriteLine3("\tThe current MaxOrder is:  {0}", oGravity.max_order)
         oGravity.max_order = 22
@@ -2462,12 +2463,12 @@ class PropagatorLOPHelper(object):
         def action85():
             oGravity.max_order = 12345
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action85)
+        TryCatchAssertBlock.DoAssert(action85)
 
     # endregion
 
     # region ThirdBodyGravityTest
-    def ThirdBodyGravityTest(self, oGravity: "IVehicleThirdBodyGravity"):
+    def ThirdBodyGravityTest(self, oGravity: "VehicleThirdBodyGravity"):
         Assert.assertIsNotNone(oGravity)
         # UseSolarGravity
         self.m_logger.WriteLine4("\tThe current UseSolarGravity is:  {0}", oGravity.use_solar_gravity)
@@ -2489,7 +2490,7 @@ class PropagatorLOPHelper(object):
     # endregion
 
     # region DragTest
-    def DragTest(self, oDrag: "IVehicleLOPForceModelDrag"):
+    def DragTest(self, oDrag: "VehicleLOPForceModelDrag"):
         Assert.assertIsNotNone(oDrag)
         # Use (false)
         self.m_logger.WriteLine4("\tThe current Use is:  {0}", oDrag.use)
@@ -2501,7 +2502,7 @@ class PropagatorLOPHelper(object):
             oDrag.cd = 4.321
 
         # Cd (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action86)
+        TryCatchAssertBlock.DoAssert(action86)
         # Advanced (readonly)
         self.ForceModelAdvancedTest(oDrag.advanced, True)
         # Use (true)
@@ -2518,14 +2519,14 @@ class PropagatorLOPHelper(object):
         def action87():
             oDrag.cd = 43.21
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action87)
+        TryCatchAssertBlock.DoAssert(action87)
         # Advanced
         self.ForceModelAdvancedTest(oDrag.advanced, False)
 
     # endregion
 
     # region ForceModelAdvancedTest
-    def ForceModelAdvancedTest(self, oAdvanved: "IVehicleAdvanced", bIsReadOnly: bool):
+    def ForceModelAdvancedTest(self, oAdvanved: "VehicleAdvanced", bIsReadOnly: bool):
         Assert.assertIsNotNone(oAdvanved)
         if bIsReadOnly:
 
@@ -2533,25 +2534,25 @@ class PropagatorLOPHelper(object):
                 oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
 
             # AtmosphericDensityModel
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action88)
+            TryCatchAssertBlock.DoAssert(action88)
 
             def action89():
                 oAdvanved.use_osculating_altitude = True
 
             # UseOsculatingAlt
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action89)
+            TryCatchAssertBlock.DoAssert(action89)
 
             def action90():
                 oAdvanved.max_drag_altitude = 43.21
 
             # MaxDragAlt
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action90)
+            TryCatchAssertBlock.DoAssert(action90)
 
             def action91():
                 oAdvanved.density_weighing_factor = 43.21
 
             # DensityWeighingFactor
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action91)
+            TryCatchAssertBlock.DoAssert(action91)
             # ExpDensModelParams
             self.ExponentialModelParamsTest(oAdvanved.exp_dens_model_params, True)
 
@@ -2567,7 +2568,7 @@ class PropagatorLOPHelper(object):
             def action92():
                 oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER
 
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action92)
+            TryCatchAssertBlock.DoAssert(action92)
 
             # AtmosDensityModel (e1976StandardAtmosModel)
             self.m_logger.WriteLine6("\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmos_density_model)
@@ -2594,7 +2595,7 @@ class PropagatorLOPHelper(object):
             def action93():
                 oAdvanved.max_drag_altitude = -43.21
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action93)
+            TryCatchAssertBlock.DoAssert(action93)
             # DensityWeighingFactor
             self.m_logger.WriteLine6("\tThe current DensityWeighingFactor is:  {0}", oAdvanved.density_weighing_factor)
             oAdvanved.density_weighing_factor = 43.21
@@ -2604,7 +2605,7 @@ class PropagatorLOPHelper(object):
             def action94():
                 oAdvanved.density_weighing_factor = -43.21
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action94)
+            TryCatchAssertBlock.DoAssert(action94)
             # AtmosphericDensityModel (eExponentialModel)
             oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
@@ -2619,7 +2620,7 @@ class PropagatorLOPHelper(object):
     # endregion
 
     # region ExponentialModelParamsTest
-    def ExponentialModelParamsTest(self, oParams: "IVehicleExpDensModelParams", bIsReadOnly: bool):
+    def ExponentialModelParamsTest(self, oParams: "VehicleExpDensModelParams", bIsReadOnly: bool):
         Assert.assertIsNotNone(oParams)
         if bIsReadOnly:
 
@@ -2627,19 +2628,19 @@ class PropagatorLOPHelper(object):
                 oParams.reference_density = 43.21
 
             # ReferenceDensity
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action95)
+            TryCatchAssertBlock.DoAssert(action95)
 
             def action96():
                 oParams.reference_height = 43.21
 
             # ReferenceHeight
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action96)
+            TryCatchAssertBlock.DoAssert(action96)
 
             def action97():
                 oParams.scale_height = 43.21
 
             # ScaleHeight
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action97)
+            TryCatchAssertBlock.DoAssert(action97)
 
         else:
             # ReferenceDensity
@@ -2651,7 +2652,7 @@ class PropagatorLOPHelper(object):
             def action98():
                 oParams.reference_density = -43.21
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action98)
+            TryCatchAssertBlock.DoAssert(action98)
             # ReferenceHeight
             self.m_logger.WriteLine6("\tThe current ReferenceHeight is:  {0}", oParams.reference_height)
             oParams.reference_height = 43.21
@@ -2661,7 +2662,7 @@ class PropagatorLOPHelper(object):
             def action99():
                 oParams.reference_height = -43.21
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action99)
+            TryCatchAssertBlock.DoAssert(action99)
             # ScaleHeight
             self.m_logger.WriteLine6("\tThe current ScaleHeight is:  {0}", oParams.scale_height)
             oParams.scale_height = 43.21
@@ -2671,12 +2672,12 @@ class PropagatorLOPHelper(object):
             def action100():
                 oParams.scale_height = -43.21
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action100)
+            TryCatchAssertBlock.DoAssert(action100)
 
     # endregion
 
     # region SolarRadiationPressureTest
-    def SolarRadiationPressureTest(self, oPressure: "IVehicleLOPSolarRadiationPressure"):
+    def SolarRadiationPressureTest(self, oPressure: "VehicleLOPSolarRadiationPressure"):
         Assert.assertIsNotNone(oPressure)
         # Use (false)
         self.m_logger.WriteLine4("\tThe current Use is:  {0}", oPressure.use)
@@ -2688,13 +2689,13 @@ class PropagatorLOPHelper(object):
             oPressure.cp = 43.21
 
         # Cp (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action101)
+        TryCatchAssertBlock.DoAssert(action101)
 
         def action102():
             oPressure.atmos_height = 432.1
 
         # AtmosHeight (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action102)
+        TryCatchAssertBlock.DoAssert(action102)
         # Use (true)
         self.m_logger.WriteLine4("\tThe current Use is:  {0}", oPressure.use)
         oPressure.use = True
@@ -2709,7 +2710,7 @@ class PropagatorLOPHelper(object):
         def action103():
             oPressure.cp = 432.1
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action103)
+        TryCatchAssertBlock.DoAssert(action103)
         # AtmosHeight
         self.m_logger.WriteLine6("\tThe current AtmosHeight is:  {0}", oPressure.atmos_height)
         oPressure.atmos_height = 432.1
@@ -2719,12 +2720,12 @@ class PropagatorLOPHelper(object):
         def action104():
             oPressure.atmos_height = -432.1
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action104)
+        TryCatchAssertBlock.DoAssert(action104)
 
     # endregion
 
     # region PhysicalDataTest
-    def PhysicalDataTest(self, physicalData: "IVehiclePhysicalData"):
+    def PhysicalDataTest(self, physicalData: "VehiclePhysicalData"):
         Assert.assertIsNotNone(physicalData)
         # DragCrossSectionalArea
         self.m_logger.WriteLine6(
@@ -2737,7 +2738,7 @@ class PropagatorLOPHelper(object):
         def action105():
             physicalData.drag_cross_sectional_area = -43.21
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action105)
+        TryCatchAssertBlock.DoAssert(action105)
         # SRPCrossSectionalArea
         self.m_logger.WriteLine6("\tThe current SRPCrossSectionalArea is:  {0}", physicalData.srp_cross_sectional_area)
         physicalData.srp_cross_sectional_area = 4.321e-07
@@ -2747,7 +2748,7 @@ class PropagatorLOPHelper(object):
         def action106():
             physicalData.srp_cross_sectional_area = -432.1
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action106)
+        TryCatchAssertBlock.DoAssert(action106)
         # SatelliteMass
         self.m_logger.WriteLine6("\tThe current SatelliteMass is:  {0}", physicalData.satellite_mass)
         physicalData.satellite_mass = 432.1
@@ -2757,7 +2758,7 @@ class PropagatorLOPHelper(object):
         def action107():
             physicalData.satellite_mass = -432.1
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action107)
+        TryCatchAssertBlock.DoAssert(action107)
 
 
 # endregion
@@ -2765,17 +2766,17 @@ class PropagatorLOPHelper(object):
 
 # region PropagatorJ2PerturbationHelper
 class PropagatorJ2PerturbationHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oJ2: "IVehiclePropagatorJ2Perturbation"):
-        cart: "IOrbitStateCartesian" = None
+    def Run(self, oJ2: "VehiclePropagatorJ2Perturbation"):
+        cart: "OrbitStateCartesian" = None
         self.m_logger.WriteLine("----- J2 PERTURBATION PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oJ2)
         # EphemerisInterval
@@ -2796,14 +2797,14 @@ class PropagatorJ2PerturbationHelper(object):
         oJ2.step = 12345
         Assert.assertEqual(12345, oJ2.step)
         # InitialState
-        oInitState: "IVehicleJxInitialState" = oJ2.initial_state
+        oInitState: "VehicleJxInitialState" = oJ2.initial_state
         Assert.assertIsNotNone(oInitState)
         # Epoch is deprecated
         # m_logger.WriteLine("\tThe current Epoch is:  {0}", oInitState.Epoch);
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart = clr.Convert(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), IOrbitStateCartesian)
+        cart = clr.Convert(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian)
         (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
 
@@ -2827,7 +2828,7 @@ class PropagatorJ2PerturbationHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overriden with the scenario's start/stop times.
-        sc: "IScenario" = clr.Convert(self.m_oApplication.current_scenario, IScenario)
+        sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
         oJ2.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oJ2.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ2.ephemeris_interval.find_stop_time())
@@ -2856,17 +2857,17 @@ class PropagatorJ2PerturbationHelper(object):
 
 # region PropagatorJ4PerturbationHelper
 class PropagatorJ4PerturbationHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oJ4: "IVehiclePropagatorJ4Perturbation"):
-        cart: "IOrbitStateCartesian" = None
+    def Run(self, oJ4: "VehiclePropagatorJ4Perturbation"):
+        cart: "OrbitStateCartesian" = None
         self.m_logger.WriteLine("----- J4 PERTURBATION PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oJ4)
         # EphemerisInterval
@@ -2887,14 +2888,14 @@ class PropagatorJ4PerturbationHelper(object):
         oJ4.step = 12345
         Assert.assertEqual(12345, oJ4.step)
         # InitialState
-        oInitState: "IVehicleJxInitialState" = oJ4.initial_state
+        oInitState: "VehicleJxInitialState" = oJ4.initial_state
         Assert.assertIsNotNone(oInitState)
         # Epoch is deprecated
         # m_logger.WriteLine("\tThe current Epoch is:  {0}", oInitState.Epoch);
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart = clr.Convert(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), IOrbitStateCartesian)
+        cart = clr.Convert(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian)
         (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
         oInitState.representation.assign(cart)
@@ -2918,7 +2919,7 @@ class PropagatorJ4PerturbationHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overriden with the scenario's start/stop times.
-        sc: "IScenario" = clr.Convert(self.m_oApplication.current_scenario, IScenario)
+        sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
         oJ4.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oJ4.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ4.ephemeris_interval.find_stop_time())
@@ -2947,16 +2948,16 @@ class PropagatorJ4PerturbationHelper(object):
 
 # region PropagatorSGP4Helper
 class PropagatorSGP4Helper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oSGP4: "IVehiclePropagatorSGP4"):
+    def Run(self, oSGP4: "VehiclePropagatorSGP4"):
         self.m_logger.WriteLine("----- SGP4 PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oSGP4)
 
@@ -2987,9 +2988,9 @@ class PropagatorSGP4Helper(object):
         def action108():
             oSGP4.step = 12345
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action108)
+        TryCatchAssertBlock.DoAssert(action108)
         # Segments
-        oSegments: "IVehicleSGP4SegmentCollection" = oSGP4.segments
+        oSegments: "VehicleSGP4SegmentCollection" = oSGP4.segments
         Assert.assertIsNotNone(oSegments)
         # RemoveAllSegs
         oSegments.remove_all_segs()
@@ -2998,12 +2999,12 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine3("\tThe current Segment collection contains: {0} elements.", oSegments.count)
         # AddSeg
         oSegments.ssc_number = "123"
-        oSegment: "IVehicleSGP4Segment" = oSegments.add_seg()
+        oSegment: "VehicleSGP4Segment" = oSegments.add_seg()
         Assert.assertIsNotNone(oSegment)
         Assert.assertEqual(1, oSegments.count)
         self.m_logger.WriteLine3("\tThe new Segment collection contains: {0} elements.", oSegments.count)
         # _NewEnum
-        sgp4Segment: "IVehicleSGP4Segment"
+        sgp4Segment: "VehicleSGP4Segment"
         # _NewEnum
         for sgp4Segment in oSegments:
             self.m_logger.WriteLine7(
@@ -3025,7 +3026,7 @@ class PropagatorSGP4Helper(object):
         def action109():
             oSegments.max_tle_limit = 12345
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action109)
+        TryCatchAssertBlock.DoAssert(action109)
         # AvailableRoutines
         arRoutines = oSegments.available_routines
         self.m_logger.WriteLine3("\tThe Segment collection contains: {0} available routines.", Array.Length(arRoutines))
@@ -3046,7 +3047,7 @@ class PropagatorSGP4Helper(object):
             def action110():
                 oSegments.routine_type = "InvalidRoutineType"
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action110)
+            TryCatchAssertBlock.DoAssert(action110)
 
         else:
             if Array.Length(arRoutines) == 1:
@@ -3054,13 +3055,13 @@ class PropagatorSGP4Helper(object):
                 def action111():
                     oSegments.routine_type = str(arRoutines[0])
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action111)
+                TryCatchAssertBlock.DoAssert(action111)
 
         def action112():
             oSegments.remove_seg(12)
 
         # RemoveSeg
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an illegal segment.", action112)
+        TryCatchAssertBlock.DoAssert(action112)
         oSegments.remove_seg(0)
         Assert.assertEqual(0, oSegments.count)
         # LoadMethodType (eAutoLoad)
@@ -3069,7 +3070,7 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.AUTO_LOAD, oSegments.load_method_type)
         # LoadMethod
-        self.LoadFileTest(clr.CastAs(oSegments.load_method, IVehicleSGP4LoadFile))
+        self.LoadFileTest(clr.CastAs(oSegments.load_method, VehicleSGP4LoadFile))
         # Propagate
         oSGP4.propagate()
         # RemoveAllSegs
@@ -3080,7 +3081,7 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.FILE_INSERT, oSegments.load_method_type)
         # LoadMethod
-        self.LoadFileTest(clr.CastAs(oSegments.load_method, IVehicleSGP4LoadFile))
+        self.LoadFileTest(clr.CastAs(oSegments.load_method, VehicleSGP4LoadFile))
         # Propagate
         oSGP4.propagate()
         # RemoveAllSegs
@@ -3091,7 +3092,7 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.FILE_LOAD, oSegments.load_method_type)
         # LoadMethod
-        self.LoadFileTest(clr.CastAs(oSegments.load_method, IVehicleSGP4LoadFile))
+        self.LoadFileTest(clr.CastAs(oSegments.load_method, VehicleSGP4LoadFile))
         # Propagate
         oSGP4.propagate()
 
@@ -3100,7 +3101,7 @@ class PropagatorSGP4Helper(object):
         oSegments.remove_all_segs()
         Assert.assertEqual(0, oSegments.count)
         self.m_logger.WriteLine("\tThe new filetype is : csv")
-        oFile: "IVehicleSGP4LoadFile" = clr.CastAs(oSegments.load_method, IVehicleSGP4LoadFile)
+        oFile: "VehicleSGP4LoadFile" = clr.CastAs(oSegments.load_method, VehicleSGP4LoadFile)
         file: str = TestBase.GetScenarioFile("smallSet_unsorted.OMM.csv")
         self.m_logger.WriteLine5("\t\tThe current File is: {0}", oFile.file)
         oFile.file = file
@@ -3130,7 +3131,7 @@ class PropagatorSGP4Helper(object):
         oSegments.remove_all_segs()
         Assert.assertEqual(0, oSegments.count)
         self.m_logger.WriteLine("\tThe new filetype is : csv")
-        oFile = clr.CastAs(oSegments.load_method, IVehicleSGP4LoadFile)
+        oFile = clr.CastAs(oSegments.load_method, VehicleSGP4LoadFile)
         file = TestBase.GetScenarioFile("799501749.csv")
         self.m_logger.WriteLine5("\t\tThe current File is: {0}", oFile.file)
         oFile.file = file
@@ -3155,7 +3156,7 @@ class PropagatorSGP4Helper(object):
 
         self.m_logger.WriteLine5("\t\t\tSSC Number: {0}", oSegments.ssc_number)
         oSGP4.propagate()
-        segAlpha: "IVehicleSGP4Segment" = oSGP4.segments[0]
+        segAlpha: "VehicleSGP4Segment" = oSGP4.segments[0]
         Assert.assertTrue(segAlpha.enabled)
         Assert.assertTrue((segAlpha.ssc_num == "799501749"))
 
@@ -3163,7 +3164,7 @@ class PropagatorSGP4Helper(object):
         oSegments.remove_all_segs()
         Assert.assertEqual(0, oSegments.count)
         self.m_logger.WriteLine("\ttesting use of alpha5 and alphaOnly SSCs")
-        oFile = clr.CastAs(oSegments.load_method, IVehicleSGP4LoadFile)
+        oFile = clr.CastAs(oSegments.load_method, VehicleSGP4LoadFile)
         file = TestBase.GetScenarioFile("smallSet_unsorted_alpha5.tce")
         self.m_logger.WriteLine5("\t\tThe current File is: {0}", oFile.file)
         oFile.file = file
@@ -3194,7 +3195,7 @@ class PropagatorSGP4Helper(object):
 
         oSegments.remove_all_segs()
         Assert.assertEqual(0, oSegments.count)
-        oFile = clr.CastAs(oSegments.load_method, IVehicleSGP4LoadFile)
+        oFile = clr.CastAs(oSegments.load_method, VehicleSGP4LoadFile)
         oFile.file = file
         if Array.Length(arSSCNumbers) > 0:
             arSegments = oFile.get_segs_from_file("NotA5")
@@ -3218,7 +3219,7 @@ class PropagatorSGP4Helper(object):
         Assert.assertTrue((segAlpha.ssc_num == "NotA5"))
 
         # 9 digit ssc number
-        tasks: "IVehiclePropagatorSGP4CommonTasks" = oSGP4.common_tasks
+        tasks: "VehiclePropagatorSGP4CommonTasks" = oSGP4.common_tasks
         oSGP4.auto_update_enabled = False
         fn: str = TestBase.GetScenarioFile("799501749.csv")
         tasks.add_segs_from_file("799501749", fn)
@@ -3254,10 +3255,10 @@ class PropagatorSGP4Helper(object):
         Assert.assertEqual(LOAD_METHOD_TYPE.ONLINE_AUTO_LOAD, oSegments.load_method_type)
 
         # this is backwards compatability using a deprecated interface
-        # the current interface is IVehicleSGP4OnlineLoad
+        # the current interface is VehicleSGP4OnlineLoad
 
         # LoadMethod
-        oLoader: "IVehicleSGP4OnlineAutoLoad" = clr.CastAs(oSegments.load_method, IVehicleSGP4OnlineAutoLoad)
+        oLoader: "VehicleSGP4OnlineAutoLoad" = clr.CastAs(oSegments.load_method, VehicleSGP4OnlineAutoLoad)
         Assert.assertIsNotNone(oLoader)
         # AddLatestSegFromOnline
         oLoader.add_latest_seg_from_online("123")  # this curently does nothing!
@@ -3269,7 +3270,7 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.ONLINE_LOAD, oSegments.load_method_type)
         # LoadMethod
-        self.OnlineLoadTest(clr.CastAs(oSegments.load_method, IVehicleSGP4OnlineLoad))
+        self.OnlineLoadTest(clr.CastAs(oSegments.load_method, VehicleSGP4OnlineLoad))
         # Propagate
         oSGP4.propagate()
 
@@ -3283,12 +3284,12 @@ class PropagatorSGP4Helper(object):
         def action113():
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_NONE
 
-        TryCatchAssertBlock.DoAssert("Setting read-only attribute.", action113)
+        TryCatchAssertBlock.DoAssert(action113)
 
         def action114():
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("Setting read-only attribute.", action114)
+        TryCatchAssertBlock.DoAssert(action114)
 
         oSGP4.auto_update_enabled = True
         Assert.assertTrue(oSGP4.auto_update_enabled)
@@ -3306,17 +3307,17 @@ class PropagatorSGP4Helper(object):
         def action115():
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_NONE
 
-        TryCatchAssertBlock.DoAssert("Must not allow setting the enumeration.", action115)
+        TryCatchAssertBlock.DoAssert(action115)
 
         def action116():
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("Must not allow setting the enumeration.", action116)
+        TryCatchAssertBlock.DoAssert(action116)
 
         def action117():
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_ONLINE_SPACE_TRACK
 
-        TryCatchAssertBlock.DoAssert("Auto updates from space track are not currently supported.", action117)
+        TryCatchAssertBlock.DoAssert(action117)
 
         Assert.assertTrue(oSGP4.auto_update_enabled)
         oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_FILE
@@ -3352,7 +3353,7 @@ class PropagatorSGP4Helper(object):
         # ----------------------------------------------------
         # Validate the segments
         # ----------------------------------------------------
-        segment: "IVehicleSGP4Segment" = oSGP4.segments[0]
+        segment: "VehicleSGP4Segment" = oSGP4.segments[0]
         Assert.assertTrue(segment.enabled)
         Assert.assertTrue((segment.ssc_num == "00005"))
         Assert.assertTrue((segment.rev_number == 69126), String.Format("{0}", segment.rev_number))
@@ -3380,7 +3381,7 @@ class PropagatorSGP4Helper(object):
         def action118():
             oSGP4.auto_update.properties.switch_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_EPOCH
 
-        TryCatchAssertBlock.DoAssert("Must not allow changing the SwitchMethod.", action118)
+        TryCatchAssertBlock.DoAssert(action118)
 
         oSGP4.settings.use_sgp4_one_point_interpolation = True
         oSGP4.settings.use_sgp4_one_point_validation = True
@@ -3401,7 +3402,7 @@ class PropagatorSGP4Helper(object):
     # endregion
 
     # region SegmentTest
-    def SegmentTest(self, oSegment: "IVehicleSGP4Segment"):
+    def SegmentTest(self, oSegment: "VehicleSGP4Segment"):
         Assert.assertIsNotNone(oSegment)
 
         # Enabled
@@ -3420,7 +3421,7 @@ class PropagatorSGP4Helper(object):
         def action119():
             oSegment.epoch = 123456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action119)
+        TryCatchAssertBlock.DoAssert(action119)
 
         # SSCNum
         self.m_logger.WriteLine5("\tThe current SSCNum is:  {0}", oSegment.ssc_num)
@@ -3435,7 +3436,7 @@ class PropagatorSGP4Helper(object):
         def action120():
             oSegment.rev_number = 1234567890
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action120)
+        TryCatchAssertBlock.DoAssert(action120)
 
         # Inclination
         self.m_logger.WriteLine6("\tThe current Inclination is:  {0}", oSegment.inclination)
@@ -3446,7 +3447,7 @@ class PropagatorSGP4Helper(object):
         def action121():
             oSegment.inclination = 1234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action121)
+        TryCatchAssertBlock.DoAssert(action121)
 
         # ArgOfPerigee
         self.m_logger.WriteLine6("\tThe current ArgOfPerigee is:  {0}", oSegment.arg_of_perigee)
@@ -3457,7 +3458,7 @@ class PropagatorSGP4Helper(object):
         def action122():
             oSegment.arg_of_perigee = 1234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action122)
+        TryCatchAssertBlock.DoAssert(action122)
 
         # RAAN
         self.m_logger.WriteLine6("\tThe current RAAN is:  {0}", oSegment.raan)
@@ -3468,7 +3469,7 @@ class PropagatorSGP4Helper(object):
         def action123():
             oSegment.raan = 1234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action123)
+        TryCatchAssertBlock.DoAssert(action123)
 
         # Eccentricity
         self.m_logger.WriteLine6("\tThe current Eccentricity is:  {0}", oSegment.eccentricity)
@@ -3479,7 +3480,7 @@ class PropagatorSGP4Helper(object):
         def action124():
             oSegment.eccentricity = 1.234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action124)
+        TryCatchAssertBlock.DoAssert(action124)
 
         # MeanMotion
         self.m_logger.WriteLine6("\tThe current MeanMotion is:  {0}", oSegment.mean_motion)
@@ -3490,7 +3491,7 @@ class PropagatorSGP4Helper(object):
         def action125():
             oSegment.mean_motion = 1.234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action125)
+        TryCatchAssertBlock.DoAssert(action125)
 
         # MeanAnomaly
         self.m_logger.WriteLine6("\tThe current MeanAnomaly is:  {0}", oSegment.mean_anomaly)
@@ -3501,7 +3502,7 @@ class PropagatorSGP4Helper(object):
         def action126():
             oSegment.mean_anomaly = 1234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action126)
+        TryCatchAssertBlock.DoAssert(action126)
 
         # MeanMotionDot
         self.m_logger.WriteLine6("\tThe current MeanMotionDot is:  {0}", oSegment.mean_motion_dot)
@@ -3517,7 +3518,7 @@ class PropagatorSGP4Helper(object):
         def action127():
             oSegment.b_star = 1.234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action127)
+        TryCatchAssertBlock.DoAssert(action127)
 
         # Classification
         self.m_logger.WriteLine5("\tThe current Classification is:  {0}", oSegment.classification)
@@ -3528,7 +3529,7 @@ class PropagatorSGP4Helper(object):
         def action128():
             oSegment.classification = "SS"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action128)
+        TryCatchAssertBlock.DoAssert(action128)
 
         # IntlDesignator
         self.m_logger.WriteLine5("\tThe current IntlDesignator is:  {0}", oSegment.intl_designator)
@@ -3539,7 +3540,7 @@ class PropagatorSGP4Helper(object):
         def action129():
             oSegment.intl_designator = "InvalidDesignator"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action129)
+        TryCatchAssertBlock.DoAssert(action129)
 
         # Range
         self.m_logger.WriteLine6("\tThe current Range is:  {0}", oSegment.range)
@@ -3553,7 +3554,7 @@ class PropagatorSGP4Helper(object):
         def action130():
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action130)
+        TryCatchAssertBlock.DoAssert(action130)
 
         # SwitchingMethod (eSGP4Epoch)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_EPOCH
@@ -3563,7 +3564,7 @@ class PropagatorSGP4Helper(object):
         def action131():
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action131)
+        TryCatchAssertBlock.DoAssert(action131)
 
         # SwitchingMethod (eSGP4Midpoint)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_MIDPOINT
@@ -3573,7 +3574,7 @@ class PropagatorSGP4Helper(object):
         def action132():
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action132)
+        TryCatchAssertBlock.DoAssert(action132)
 
         # SwitchingMethod (eSGP4Override)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_OVERRIDE
@@ -3594,12 +3595,12 @@ class PropagatorSGP4Helper(object):
         def action133():
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action133)
+        TryCatchAssertBlock.DoAssert(action133)
 
     # endregion
 
     # region LoadFileTest
-    def LoadFileTest(self, oFile: "IVehicleSGP4LoadFile"):
+    def LoadFileTest(self, oFile: "VehicleSGP4LoadFile"):
         Assert.assertIsNotNone(oFile)
         file: str = TestBase.GetScenarioFile("stkAllTLE.tce")
         # File (*.tce)
@@ -3610,12 +3611,12 @@ class PropagatorSGP4Helper(object):
         def action134():
             oFile.file = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action134)
+        TryCatchAssertBlock.DoAssert(action134)
 
         def action135():
             oFile.file = "InvalidFile.Name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action135)
+        TryCatchAssertBlock.DoAssert(action135)
         # GetSSCNumsFromFile (.tce)
         arSSCNumbers = oFile.get_ssc_nums_from_file()
         self.m_logger.WriteLine3("\t\tThe loaded file contains: {0} SSC Numbers", Array.Length(arSSCNumbers))
@@ -3675,12 +3676,12 @@ class PropagatorSGP4Helper(object):
                 oFile.add_segs_from_file(arSegments)
 
             # AddSegsFromFile (duplicate)
-            TryCatchAssertBlock.DoAssert("Should not allow to load duplicated segments.", action136)
+            TryCatchAssertBlock.DoAssert(action136)
 
     # endregion
 
     # region OnlineLoadTest
-    def OnlineLoadTest(self, oLoader: "IVehicleSGP4OnlineLoad"):
+    def OnlineLoadTest(self, oLoader: "VehicleSGP4OnlineLoad"):
         Assert.assertIsNotNone(oLoader)
         # LoadNewest (true)
         self.m_logger.WriteLine4("\t\tThe current LoadNewest is: {0}", oLoader.load_newest)
@@ -3692,13 +3693,13 @@ class PropagatorSGP4Helper(object):
             oLoader.start_time = "28 Jun 2000 15:15:16.789"
 
         # StartTime (readonly)
-        TryCatchAssertBlock.DoAssert("The StartTime should be readonly when LoadNewest is True.", action137)
+        TryCatchAssertBlock.DoAssert(action137)
 
         def action138():
             oLoader.stop_time = "20 Jul 2000 15:00:00.000"
 
         # StopTime (readonly)
-        TryCatchAssertBlock.DoAssert("The StopTime should be readonly when LoadNewest is True.", action138)
+        TryCatchAssertBlock.DoAssert(action138)
         # LoadNewest (false)
         oLoader.load_newest = False
         self.m_logger.WriteLine4("\t\tThe new LoadNewest is: {0}", oLoader.load_newest)
@@ -3734,16 +3735,16 @@ class PropagatorSGP4Helper(object):
 
 # region PropagatorSPICEHelper
 class PropagatorSPICEHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oSPICE: "IVehiclePropagatorSPICE"):
+    def Run(self, oSPICE: "VehiclePropagatorSPICE"):
         self.m_logger.WriteLine("----- SPICE PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oSPICE)
         # StartTime
@@ -3763,7 +3764,7 @@ class PropagatorSPICEHelper(object):
         def action139():
             oSPICE.step = -1.23
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action139)
+        TryCatchAssertBlock.DoAssert(action139)
         # Spice
         strFilename: str = TestBase.GetScenarioFile("de405_2000-2050.bsp")
         self.m_logger.WriteLine5("\tThe current Spice is:  {0}", oSPICE.spice)
@@ -3774,17 +3775,17 @@ class PropagatorSPICEHelper(object):
         def action140():
             oSPICE.spice = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action140)
+        TryCatchAssertBlock.DoAssert(action140)
 
         def action141():
             oSPICE.spice = "InvalidFile.Name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action141)
+        TryCatchAssertBlock.DoAssert(action141)
 
         def action142():
             oSPICE.propagate()
 
-        TryCatchAssertBlock.DoAssert("A satellite id has not been set.", action142)  # must first set body name
+        TryCatchAssertBlock.DoAssert(action142)  # must first set body name
 
         # BodyName
         self.m_logger.WriteLine5("\tThe current BodyName is:  {0}", oSPICE.body_name)
@@ -3795,12 +3796,12 @@ class PropagatorSPICEHelper(object):
         def action143():
             oSPICE.body_name = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action143)
+        TryCatchAssertBlock.DoAssert(action143)
 
         def action144():
             oSPICE.body_name = "InvalidBodyName"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action144)
+        TryCatchAssertBlock.DoAssert(action144)
         # AvailableBodyNames
         arNames = oSPICE.available_body_names
         self.m_logger.WriteLine3("\tThe AvailableBodyNames array contains: {0} elements.", Array.Length(arNames))
@@ -3814,12 +3815,12 @@ class PropagatorSPICEHelper(object):
             iIndex += 1
 
         # Segments
-        oCollection: "IVehicleSegmentsCollection" = oSPICE.segments
+        oCollection: "VehicleSegmentsCollection" = oSPICE.segments
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\tThe Segments collection contains: {0} elements.", oCollection.count)
         # _NewEnum
-        spiceSegment: "IVehicleSPICESegment"
+        spiceSegment: "VehicleSPICESegment"
         # _NewEnum
         for spiceSegment in oCollection:
             self.m_logger.WriteLine10(
@@ -3834,7 +3835,7 @@ class PropagatorSPICEHelper(object):
 
         if oCollection.count > 0:
             # Item
-            oSegment: "IVehicleSPICESegment" = oCollection[0]
+            oSegment: "VehicleSPICESegment" = oCollection[0]
             Assert.assertIsNotNone(oSegment)
             self.m_logger.WriteLine10(
                 "\tSegment 0: SegmentName = {0}, SegmentType = {1}, CoordAxes = {2}, CentralBody = {3}, StartTime = {4}, StopTime = {5}",
@@ -3847,12 +3848,12 @@ class PropagatorSPICEHelper(object):
             )
 
         def action145():
-            oSegment: "IVehicleSPICESegment" = oCollection[-5]
+            oSegment: "VehicleSPICESegment" = oCollection[-5]
 
         TryCatchAssertBlock.ExpectedException("Index is out of range.", action145)
 
         def action146():
-            oSegment: "IVehicleSPICESegment" = oCollection[500]
+            oSegment: "VehicleSPICESegment" = oCollection[500]
 
         TryCatchAssertBlock.ExpectedException("Index is out of range.", action146)
 
@@ -3860,14 +3861,14 @@ class PropagatorSPICEHelper(object):
         oSPICE.propagate()
 
         # BUG59850 - Try to propagate SPICE using a SatelliteID as a BodyName
-        sat: "ISatellite" = clr.Convert(self.m_oApplication.get_object_from_path("Satellite/Satellite1"), ISatellite)
+        sat: "Satellite" = clr.Convert(self.m_oApplication.get_object_from_path("Satellite/Satellite1"), Satellite)
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE)
-        spice: "IVehiclePropagatorSPICE" = clr.Convert(sat.propagator, IVehiclePropagatorSPICE)
+        spice: "VehiclePropagatorSPICE" = clr.Convert(sat.propagator, VehiclePropagatorSPICE)
         spice.spice = TestBase.GetScenarioFile("Satellite1.bsp")
         spice.body_name = "-200000"
         spice.ephemeris_interval.set_explicit_interval(
-            (clr.Convert(self.m_oApplication.current_scenario, IScenario)).start_time,
-            (clr.Convert(self.m_oApplication.current_scenario, IScenario)).stop_time,
+            (clr.Convert(self.m_oApplication.current_scenario, Scenario)).start_time,
+            (clr.Convert(self.m_oApplication.current_scenario, Scenario)).stop_time,
         )
         spice.propagate()
 
@@ -3879,16 +3880,16 @@ class PropagatorSPICEHelper(object):
 
 # region PropagatorUserExternalHelper
 class PropagatorUserExternalHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, oUser: "IVehiclePropagatorUserExternal"):
+    def Run(self, oUser: "VehiclePropagatorUserExternal"):
         self.m_logger.WriteLine("----- USER EXTERNAL PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oUser)
         # StartTime
@@ -3916,12 +3917,12 @@ class PropagatorUserExternalHelper(object):
         def action147():
             oUser.file = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action147)
+        TryCatchAssertBlock.DoAssert(action147)
 
         def action148():
             oUser.file = "InvalidFile.Name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action148)
+        TryCatchAssertBlock.DoAssert(action148)
         # AvailablePropagators
         arPropagators = oUser.available_propagators
         self.m_logger.WriteLine("\tAvailable {0} propagators:")
@@ -3942,12 +3943,12 @@ class PropagatorUserExternalHelper(object):
         def action149():
             oUser.propagator = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action149)
+        TryCatchAssertBlock.DoAssert(action149)
 
         def action150():
             oUser.propagator = "InvalidName"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action150)
+        TryCatchAssertBlock.DoAssert(action150)
 
         # AvailableVehicleIDs
         arIDs = oUser.available_vehicle_ids
@@ -3969,22 +3970,22 @@ class PropagatorUserExternalHelper(object):
             def action151():
                 oUser.vehicle_id = ""
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action151)
+            TryCatchAssertBlock.DoAssert(action151)
 
             def action152():
                 oUser.vehicle_id = "InvalidName"
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action152)
+            TryCatchAssertBlock.DoAssert(action152)
 
         def action153():
             oUser.vehicle_id = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action153)
+        TryCatchAssertBlock.DoAssert(action153)
 
         def action154():
             oUser.vehicle_id = "InvalidName"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action154)
+        TryCatchAssertBlock.DoAssert(action154)
 
         # Description
         self.m_logger.WriteLine5("\tThe current Description is:  {0}", oUser.description)
@@ -3993,7 +3994,7 @@ class PropagatorUserExternalHelper(object):
             def action155():
                 oUser.propagate()
 
-            TryCatchAssertBlock.DoAssert("UserExternal propagator must have failed.", action155)
+            TryCatchAssertBlock.DoAssert(action155)
 
         else:
             self.m_logger.WriteLine5("EXTERNAL PROPAGATOR: {0}", oUser.propagator)
@@ -4007,10 +4008,10 @@ class PropagatorUserExternalHelper(object):
 
 # region PropagatorHPOPHelper
 class PropagatorHPOPHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot", vehicle: "IStkObject", EarthGravModel):
+    def __init__(self, oApplication: "StkObjectRoot", vehicle: "IStkObject", EarthGravModel):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
         oApplication.unit_preferences.reset_units()
         self._vehicle: "IStkObject" = vehicle
         self.m_EarthGravModel = EarthGravModel
@@ -4018,12 +4019,12 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oHPOP: "IVehiclePropagatorHPOP", isNotEarthCentralBody: bool):
+    def Run(self, oHPOP: "VehiclePropagatorHPOP", isNotEarthCentralBody: bool):
         self.m_logger.WriteLine("----- HPOP PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oHPOP)
 
         # Select specific GravModel which tests were written for
-        result: "IExecCmdResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
+        result: "ExecCmdResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
         fi = FileInfo(TestBase.PathCombine(result[0], "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"))
         if fi.Exists:
             oHPOP.force_model.central_body_gravity.file = fi.FullName
@@ -4048,7 +4049,7 @@ class PropagatorHPOPHelper(object):
         def action156():
             oHPOP.step = 1234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action156)
+        TryCatchAssertBlock.DoAssert(action156)
         # InitialState
         self.InitialState(oHPOP.initial_state)
         # ForceModel
@@ -4058,7 +4059,7 @@ class PropagatorHPOPHelper(object):
         # Covariance
         self.Covariance(oHPOP.covariance)
 
-        bodies: "IVehicleEclipsingBodies" = oHPOP.force_model.eclipsing_bodies
+        bodies: "VehicleEclipsingBodies" = oHPOP.force_model.eclipsing_bodies
         eclipsingBodies = bodies.assigned_eclipsing_bodies
         eclipseBody: str
         for eclipseBody in eclipsingBodies:
@@ -4071,7 +4072,7 @@ class PropagatorHPOPHelper(object):
         def action157():
             bodies.assign_eclipsing_body("Sun")
 
-        TryCatchAssertBlock.DoAssert("Can not add sun as an eclipsing body.", action157)
+        TryCatchAssertBlock.DoAssert(action157)
         bodies.remove_eclipsing_body("Ceres")
         Assert.assertFalse(bodies.is_eclipsing_body_assigned("Ceres"))
         bodies.remove_all_eclipsing_bodies()
@@ -4088,15 +4089,15 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region InitialState
-    def InitialState(self, oState: "IVehicleInitialState"):
-        cart: "IOrbitStateCartesian" = None
+    def InitialState(self, oState: "VehicleInitialState"):
+        cart: "OrbitStateCartesian" = None
         Assert.assertIsNotNone(oState)
         # Epoch is deprecated
         # m_logger.WriteLine("\tThe current Epoch is: {0}", oState.Epoch);
         # oState.Epoch = "18 Jan 2003 02:40:24.680";
         # m_logger.WriteLine("\tThe new Epoch is: {0}", oState.Epoch);
         # Assert.AreEqual("18 Jan 2003 02:40:24.680", oState.Epoch);
-        cart = clr.Convert(oState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), IOrbitStateCartesian)
+        cart = clr.Convert(oState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian)
         (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 02:40:24.680"
         Assert.assertEqual("18 Jan 2003 02:40:24.680", cart.epoch)
         oState.representation.assign(cart)
@@ -4107,7 +4108,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region ForceModel
-    def ForceModel(self, oModel: "IVehicleHPOPForceModel", isNotEarthCentralBody: bool):
+    def ForceModel(self, oModel: "VehicleHPOPForceModel", isNotEarthCentralBody: bool):
         Assert.assertIsNotNone(oModel)
         # CentralBodyGravity
         self.CentralBodyGravity(oModel.central_body_gravity, isNotEarthCentralBody)
@@ -4123,7 +4124,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region CentralBodyGravity
-    def CentralBodyGravity(self, oGravity: "IVehicleHPOPCentralBodyGravity", isNotEarthCentralBody: bool):
+    def CentralBodyGravity(self, oGravity: "VehicleHPOPCentralBodyGravity", isNotEarthCentralBody: bool):
         holdMaxDegree: int = oGravity.max_degree
         holdMaxOrder: int = oGravity.max_order
 
@@ -4239,7 +4240,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region SolarRadiationPressure
-    def SolarRadiationPressure(self, oPressure: "IVehicleHPOPSolarRadiationPressure"):
+    def SolarRadiationPressure(self, oPressure: "VehicleHPOPSolarRadiationPressure"):
         Assert.assertIsNotNone(oPressure)
         # Use (false)
         self.m_logger.WriteLine4("\tThe current Use is: {0}", oPressure.use)
@@ -4251,13 +4252,13 @@ class PropagatorHPOPHelper(object):
             oPressure.use_boundary_mitigation = False
 
         # UseBoundaryMitigation (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action168)
+        TryCatchAssertBlock.DoAssert(action168)
 
         def action169():
             oPressure.shadow_model = SHADOW_MODEL.MOD_CYLINDRICAL
 
         # ShadowModel (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action169)
+        TryCatchAssertBlock.DoAssert(action169)
         # Use (true)
         oPressure.use = True
         self.m_logger.WriteLine4("\tThe new Use is: {0}", oPressure.use)
@@ -4284,7 +4285,7 @@ class PropagatorHPOPHelper(object):
 
         # Testing new SRP models
         self.m_logger.WriteLine("***************** SRP MODELS ***********")
-        oSrpModel: "IVehicleHPOPSRPModel" = oPressure.srp_model
+        oSrpModel: "VehicleHPOPSRPModel" = oPressure.srp_model
         oSrpModel.set_model_type(SRP_MODEL.SPHERICAL)
         Assert.assertEqual(SRP_MODEL.SPHERICAL, oSrpModel.model_type)
 
@@ -4302,7 +4303,7 @@ class PropagatorHPOPHelper(object):
             Assert.assertEqual(eModel, eModel1)
             Assert.assertTrue(oSrpModel.is_model_type_supported(eModel))
             if eModel == SRP_MODEL.SPHERICAL:
-                oSphericalSRP: "ISRPModelSpherical" = clr.CastAs(oSrpModel.model, ISRPModelSpherical)
+                oSphericalSRP: "SRPModelSpherical" = clr.CastAs(oSrpModel.model, SRPModelSpherical)
                 Assert.assertIsNotNone(oSphericalSRP)
 
                 oSphericalSRP.area_mass_ratio = 12.0
@@ -4314,22 +4315,22 @@ class PropagatorHPOPHelper(object):
                 def action170():
                     oSphericalSRP.cr = -101
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action170)
+                TryCatchAssertBlock.DoAssert(action170)
 
                 def action171():
                     oSphericalSRP.cr = 101
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action171)
+                TryCatchAssertBlock.DoAssert(action171)
 
                 def action172():
                     oSphericalSRP.area_mass_ratio = 10000
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action172)
+                TryCatchAssertBlock.DoAssert(action172)
 
                 def action173():
                     oSphericalSRP.area_mass_ratio = -10000
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action173)
+                TryCatchAssertBlock.DoAssert(action173)
             elif (
                 (
                     (
@@ -4340,7 +4341,7 @@ class PropagatorHPOPHelper(object):
                 )
                 or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_A))
             ) or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_AE)):
-                oGPSSRP: "ISRPModelGPS" = clr.CastAs(oSrpModel.model, ISRPModelGPS)
+                oGPSSRP: "SRPModelGPS" = clr.CastAs(oSrpModel.model, SRPModelGPS)
                 Assert.assertIsNotNone(oGPSSRP)
                 oGPSSRP.scale = -100
                 Assert.assertEqual(-100, oGPSSRP.scale)
@@ -4355,22 +4356,22 @@ class PropagatorHPOPHelper(object):
                 def action174():
                     oGPSSRP.scale = -101
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action174)
+                TryCatchAssertBlock.DoAssert(action174)
 
                 def action175():
                     oGPSSRP.scale = 101
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action175)
+                TryCatchAssertBlock.DoAssert(action175)
 
                 def action176():
                     oGPSSRP.y_bias = -1
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action176)
+                TryCatchAssertBlock.DoAssert(action176)
 
                 def action177():
                     oGPSSRP.y_bias = 10000000000000000000000000000000.0
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action177)
+                TryCatchAssertBlock.DoAssert(action177)
 
             i += 1
 
@@ -4379,13 +4380,13 @@ class PropagatorHPOPHelper(object):
         def action178():
             oSrpModel.set_model_type(SRP_MODEL.UNKNOWN)
 
-        TryCatchAssertBlock.DoAssert("Should not have allowed setting invalid SRP model.", action178)
+        TryCatchAssertBlock.DoAssert(action178)
         self.m_logger.WriteLine("***************** END OF SRP MODELS ***********")
 
     # endregion
 
     # region Drag
-    def Drag(self, oDrag: "IVehicleHPOPForceModelDrag"):
+    def Drag(self, oDrag: "VehicleHPOPForceModelDrag"):
         Assert.assertIsNotNone(oDrag)
         # Use (false)
         self.m_logger.WriteLine4("\tThe current Use is: {0}", oDrag.use)
@@ -4394,22 +4395,22 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(False, oDrag.use)
 
         def action179():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 5.6
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = 5.6
 
         # Cd (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action179)
+        TryCatchAssertBlock.DoAssert(action179)
 
         def action180():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = 12.34
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = 12.34
 
         # AreaMassRatio (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action180)
+        TryCatchAssertBlock.DoAssert(action180)
 
         def action181():
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
 
         # AtmosphericDensityModel (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action181)
+        TryCatchAssertBlock.DoAssert(action181)
 
         def action182():
             oDrag.set_solar_flux_geo_magnitude_type(
@@ -4417,19 +4418,19 @@ class PropagatorHPOPHelper(object):
             )
 
         # SetSolarFluxGeoMagType (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action182)
+        TryCatchAssertBlock.DoAssert(action182)
 
         def action183():
             oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
 
         # LowAltAtmosphericDensityModel
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action183)
+        TryCatchAssertBlock.DoAssert(action183)
 
         def action184():
             oDrag.blending_range = 20
 
         # BlendingRange
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action184)
+        TryCatchAssertBlock.DoAssert(action184)
         if (
             oDrag.solar_flux_geo_magnitude_type
             == VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
@@ -4445,50 +4446,50 @@ class PropagatorHPOPHelper(object):
 
         # Cd
 
-        (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = -1.24
+        (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = -1.24
         self.m_logger.WriteLine6(
-            "\tThe new Cd is: {0}", (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd
+            "\tThe new Cd is: {0}", (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd
         )
-        Assert.assertEqual(-1.24, (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd)
+        Assert.assertEqual(-1.24, (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd)
 
         def action185():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 120.34
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = 120.34
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action185)
+        TryCatchAssertBlock.DoAssert(action185)
 
         def action186():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 120.34
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = 120.34
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action186)
+        TryCatchAssertBlock.DoAssert(action186)
 
         # AreaMassRatio
         self.m_logger.WriteLine6(
             "\tThe current AreaMassRatio is: {0}",
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio,
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio,
         )
-        (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = 123
+        (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = 123
         self.m_logger.WriteLine6(
             "\tThe new AreaMassRatio is: {0}",
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio,
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio,
         )
-        Assert.assertEqual(123, (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio)
+        Assert.assertEqual(123, (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio)
 
-        (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = 124
+        (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = 124
         self.m_logger.WriteLine6(
             "\tThe new AreaMassRatio is: {0}",
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio,
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio,
         )
-        Assert.assertEqual(124, (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio)
+        Assert.assertEqual(124, (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio)
 
         def action187():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action187)
+        TryCatchAssertBlock.DoAssert(action187)
 
         def action188():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
+            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action188)
+        TryCatchAssertBlock.DoAssert(action188)
 
         oDrag.set_drag_model_type(DRAG_MODEL.PLUGIN)
         Assert.assertEqual(DRAG_MODEL.PLUGIN, oDrag.drag_model_type)
@@ -4499,19 +4500,19 @@ class PropagatorHPOPHelper(object):
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
 
         # AtmosphericDensityModel (eExponentialModel)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action189)
+        TryCatchAssertBlock.DoAssert(action189)
 
         def action190():
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.USER_DEFINED
 
         # AtmosphericDensityModel (eUserDefined)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action190)
+        TryCatchAssertBlock.DoAssert(action190)
 
         def action191():
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL
 
         # AtmosphericDensityModel (eUnknownDensModel)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action191)
+        TryCatchAssertBlock.DoAssert(action191)
 
         # AtmosphericDensityModel (eCira72)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.CIRA72
@@ -4578,7 +4579,7 @@ class PropagatorHPOPHelper(object):
             )
 
         # SetSolarFluxGeoMagType (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action192)
+        TryCatchAssertBlock.DoAssert(action192)
         if (
             oDrag.solar_flux_geo_magnitude_type
             == VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
@@ -4780,7 +4781,7 @@ class PropagatorHPOPHelper(object):
             )
 
         # SetSolarFluxGeoMagType (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action193)
+        TryCatchAssertBlock.DoAssert(action193)
         if (
             oDrag.solar_flux_geo_magnitude_type
             == VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
@@ -4799,7 +4800,7 @@ class PropagatorHPOPHelper(object):
         def action194():
             oDrag.blending_range = 50.0
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an read-only.", action194)
+        TryCatchAssertBlock.DoAssert(action194)
 
         # LowAltAtmosphericDensityModel (eMSIS90)
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
@@ -4835,7 +4836,7 @@ class PropagatorHPOPHelper(object):
         def action195():
             oDrag.blending_range = 50.0
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an read-only.", action195)
+        TryCatchAssertBlock.DoAssert(action195)
 
         # LowAltAtmosDensityModel (eMSIS90)
         oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_MSISE1990
@@ -4907,8 +4908,8 @@ class PropagatorHPOPHelper(object):
             Assert.assertEqual(eModel, oDrag.drag_model_type)
             Assert.assertTrue(oDrag.is_drag_model_type_supported(eModel))
             if eModel == DRAG_MODEL.SPHERICAL:
-                oSphericalDrag: "IVehicleHPOPDragModelSpherical" = clr.CastAs(
-                    oDrag.drag_model, IVehicleHPOPDragModelSpherical
+                oSphericalDrag: "VehicleHPOPDragModelSpherical" = clr.CastAs(
+                    oDrag.drag_model, VehicleHPOPDragModelSpherical
                 )
                 Assert.assertIsNotNone(oSphericalDrag)
 
@@ -4921,22 +4922,22 @@ class PropagatorHPOPHelper(object):
                 def action198():
                     oSphericalDrag.cd = -101
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action198)
+                TryCatchAssertBlock.DoAssert(action198)
 
                 def action199():
                     oSphericalDrag.cd = 101
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action199)
+                TryCatchAssertBlock.DoAssert(action199)
 
                 def action200():
                     oSphericalDrag.area_mass_ratio = 10000
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action200)
+                TryCatchAssertBlock.DoAssert(action200)
 
                 def action201():
                     oSphericalDrag.area_mass_ratio = -1
 
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action201)
+                TryCatchAssertBlock.DoAssert(action201)
 
             i += 1
 
@@ -4945,7 +4946,7 @@ class PropagatorHPOPHelper(object):
         def action202():
             oDrag.set_drag_model_type(DRAG_MODEL.UNKNOWN)
 
-        TryCatchAssertBlock.DoAssert("Should not have allowed setting invalid Drag model.", action202)
+        TryCatchAssertBlock.DoAssert(action202)
         self.m_logger.WriteLine("***************** END OF Drag MODELS ***********")
 
     # endregion
@@ -4955,8 +4956,8 @@ class PropagatorHPOPHelper(object):
         self, oSolar: "IVehicleSolarFluxGeoMagnitude", eModel: "ATMOSPHERIC_DENSITY_MODEL", bReadOnly: bool
     ):
         Assert.assertIsNotNone(oSolar)
-        oManually: "IVehicleSolarFluxGeoMagnitudeEnterManually" = clr.CastAs(
-            oSolar, IVehicleSolarFluxGeoMagnitudeEnterManually
+        oManually: "VehicleSolarFluxGeoMagnitudeEnterManually" = clr.CastAs(
+            oSolar, VehicleSolarFluxGeoMagnitudeEnterManually
         )
         Assert.assertIsNotNone(oManually)
         if (bReadOnly or (eModel == ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976)) or (
@@ -4967,19 +4968,19 @@ class PropagatorHPOPHelper(object):
                 oManually.daily_f107 = 123.4
 
             # DailyF107
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action203)
+            TryCatchAssertBlock.DoAssert(action203)
 
             def action204():
                 oManually.average_f107 = 123.4
 
             # AverageF107
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action204)
+            TryCatchAssertBlock.DoAssert(action204)
 
             def action205():
                 oManually.geomagnetic_index = 1.234
 
             # GeomagneticIndex
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action205)
+            TryCatchAssertBlock.DoAssert(action205)
 
         else:
             # AverageF107
@@ -4991,20 +4992,20 @@ class PropagatorHPOPHelper(object):
             def action206():
                 oManually.average_f107 = 12345.6
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action206)
+            TryCatchAssertBlock.DoAssert(action206)
             if eModel == ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER:
 
                 def action207():
                     oManually.daily_f107 = 123.4
 
                 # DailyF107
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action207)
+                TryCatchAssertBlock.DoAssert(action207)
 
                 def action208():
                     oManually.geomagnetic_index = 1.234
 
                 # GeomagneticIndex
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action208)
+                TryCatchAssertBlock.DoAssert(action208)
             elif (
                 (
                     (
@@ -5033,7 +5034,7 @@ class PropagatorHPOPHelper(object):
                 def action209():
                     oManually.daily_f107 = 12345.6
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action209)
+                TryCatchAssertBlock.DoAssert(action209)
                 # GeomagneticIndex
                 self.m_logger.WriteLine6("\t\tThe current GeomagneticIndex is: {0}", oManually.geomagnetic_index)
                 oManually.geomagnetic_index = 3.4
@@ -5043,7 +5044,7 @@ class PropagatorHPOPHelper(object):
                 def action210():
                     oManually.geomagnetic_index = 12.34
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action210)
+                TryCatchAssertBlock.DoAssert(action210)
             else:
                 Assert.fail("Invalid AtmosphericDensityModel type!")
 
@@ -5054,7 +5055,7 @@ class PropagatorHPOPHelper(object):
         self, oSolar: "IVehicleSolarFluxGeoMagnitude", eModel: "ATMOSPHERIC_DENSITY_MODEL", bReadOnly: bool
     ):
         Assert.assertIsNotNone(oSolar)
-        oFile: "IVehicleSolarFluxGeoMagnitudeUseFile" = clr.CastAs(oSolar, IVehicleSolarFluxGeoMagnitudeUseFile)
+        oFile: "VehicleSolarFluxGeoMagnitudeUseFile" = clr.CastAs(oSolar, VehicleSolarFluxGeoMagnitudeUseFile)
         Assert.assertIsNotNone(oFile)
         if (bReadOnly or (eModel == ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976)) or (
             eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA60
@@ -5064,19 +5065,19 @@ class PropagatorHPOPHelper(object):
                 oFile.file = r"DynamicEarthData\EOP-v1.1.txt"
 
             # File
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action211)
+            TryCatchAssertBlock.DoAssert(action211)
 
             def action212():
                 oFile.geomag_flux_src = VEHICLE_GEOMAG_FLUX_SRC.READ_AP_FROM_FILE
 
             # GeomagFluxSrc
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action212)
+            TryCatchAssertBlock.DoAssert(action212)
 
             def action213():
                 oFile.geomag_flux_update_rate = VEHICLE_GEOMAG_FLUX_UPDATE_RATE.DAILY
 
             # GeomagFluxUpdateRate
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action213)
+            TryCatchAssertBlock.DoAssert(action213)
 
         else:
             # GeomagFluxSrc
@@ -5138,12 +5139,12 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region ThirdBodyGravity
-    def ThirdBodyGravity(self, oGravity: "IVehicleThirdBodyGravityCollection"):
+    def ThirdBodyGravity(self, oGravity: "VehicleThirdBodyGravityCollection"):
         Assert.assertIsNotNone(oGravity)
         # Count
         self.m_logger.WriteLine3("\tThe current ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
         # _NewEnum
-        thirdBodyGravityElement: "IVehicleThirdBodyGravityElement"
+        thirdBodyGravityElement: "VehicleThirdBodyGravityElement"
         # _NewEnum
         for thirdBodyGravityElement in oGravity:
             self.m_logger.WriteLine8(
@@ -5166,7 +5167,7 @@ class PropagatorHPOPHelper(object):
             centralBody: str = clr.Convert(arBodies[iIndex], str)
             self.m_logger.WriteLine7("\t\tBody {0}: {1}", iIndex, centralBody)
             # Add
-            thirdBodyGravityElement: "IVehicleThirdBodyGravityElement" = oGravity.add_third_body(centralBody)
+            thirdBodyGravityElement: "VehicleThirdBodyGravityElement" = oGravity.add_third_body(centralBody)
             Assert.assertIsNotNone(thirdBodyGravityElement)
             self.m_logger.WriteLine8(
                 "\t\t\tAdded: Name = {0}, Source = {1}, GravityValue = {2}",
@@ -5181,7 +5182,7 @@ class PropagatorHPOPHelper(object):
             def action216():
                 oGravity.add_third_body(centralBody)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action216)
+            TryCatchAssertBlock.DoAssert(action216)
 
             iIndex += 1
 
@@ -5190,7 +5191,7 @@ class PropagatorHPOPHelper(object):
         arrBodyNames = oGravity.available_third_body_names
         centralBody: str
         for centralBody in arrBodyNames:
-            thirdBodyGravityElement: "IVehicleThirdBodyGravityElement" = oGravity.add_third_body(centralBody)
+            thirdBodyGravityElement: "VehicleThirdBodyGravityElement" = oGravity.add_third_body(centralBody)
             Assert.assertIsNotNone(thirdBodyGravityElement)
             Assert.assertEqual(thirdBodyGravityElement.central_body, centralBody)
             self.m_logger.WriteLine8(
@@ -5206,12 +5207,12 @@ class PropagatorHPOPHelper(object):
             def action217():
                 oGravity.add_third_body(centralBody)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action217)
+            TryCatchAssertBlock.DoAssert(action217)
 
         self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
         Assert.assertEqual(Array.Length(arBodies), oGravity.count)
         # Item
-        oBody: "IVehicleThirdBodyGravityElement" = oGravity[0]
+        oBody: "VehicleThirdBodyGravityElement" = oGravity[0]
         Assert.assertIsNotNone(oBody)
         # Source (eCBFile)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.CB_FILE
@@ -5219,7 +5220,7 @@ class PropagatorHPOPHelper(object):
         def action218():
             oBody.gravity_value = 123.456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action218)
+        TryCatchAssertBlock.DoAssert(action218)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5232,7 +5233,7 @@ class PropagatorHPOPHelper(object):
         def action219():
             oBody.gravity_value = 123.456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action219)
+        TryCatchAssertBlock.DoAssert(action219)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5245,7 +5246,7 @@ class PropagatorHPOPHelper(object):
         def action220():
             oBody.gravity_value = 123.456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action220)
+        TryCatchAssertBlock.DoAssert(action220)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5260,7 +5261,7 @@ class PropagatorHPOPHelper(object):
         def action221():
             oBody.gravity_value = -123.456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action221)
+        TryCatchAssertBlock.DoAssert(action221)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5281,7 +5282,7 @@ class PropagatorHPOPHelper(object):
         def action222():
             oGravity.remove_third_body(centralBody1)
 
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action222)
+        TryCatchAssertBlock.DoAssert(action222)
         # Remove by name
         oGravity.remove_third_body(oGravity[1].central_body)
         self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
@@ -5294,7 +5295,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region MoreOptions
-    def MoreOptions(self, oMore: "IVehicleHPOPForceModelMoreOptions"):
+    def MoreOptions(self, oMore: "VehicleHPOPForceModelMoreOptions"):
         Assert.assertIsNotNone(oMore)
         # Drag
         self.MoreOptionsDrag(oMore.drag)
@@ -5313,7 +5314,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region MoreOptionsPluginPropagator
-    def MoreOptionsPluginPropagator(self, oPlugin: "IVehiclePluginPropagator"):
+    def MoreOptionsPluginPropagator(self, oPlugin: "VehiclePluginPropagator"):
         Assert.assertIsNotNone(oPlugin)
         # UsePlugin (false)
         self.m_logger.WriteLine4("\tThe current UsePlugin is: {0}", oPlugin.use_plugin)
@@ -5325,7 +5326,7 @@ class PropagatorHPOPHelper(object):
             oPlugin.plugin_name = "bogus name"
 
         # PluginName (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action223)
+        TryCatchAssertBlock.DoAssert(action223)
         # UsePlugin (true)
         oPlugin.use_plugin = True
         self.m_logger.WriteLine4("\tThe new UsePlugin is: {0}", oPlugin.use_plugin)
@@ -5336,12 +5337,12 @@ class PropagatorHPOPHelper(object):
         def action224():
             oPlugin.plugin_name = "bogus name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action224)
+        TryCatchAssertBlock.DoAssert(action224)
 
         def action225():
             oPlugin.plugin_name = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action225)
+        TryCatchAssertBlock.DoAssert(action225)
         # AvailablePlugins
         arPlugins = oPlugin.available_plugins
         self.m_logger.WriteLine3("\tNow available {0} plugins:", Array.Length(arPlugins))
@@ -5352,7 +5353,7 @@ class PropagatorHPOPHelper(object):
             self.m_logger.WriteLine5("\tThe new PluginName is: {0}", oPlugin.plugin_name)
             Assert.assertEqual(strPluginName, oPlugin.plugin_name)
             # PluginSettings
-            oSettings: "IVehiclePluginSettings" = oPlugin.plugin_settings
+            oSettings: "VehiclePluginSettings" = oPlugin.plugin_settings
             Assert.assertIsNotNone(oSettings)
             # AvailableProperties
             arProperties = oSettings.available_properties
@@ -5377,7 +5378,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region MoreOptionsDrag
-    def MoreOptionsDrag(self, oDrag: "IVehicleHPOPForceModelDragOptions"):
+    def MoreOptionsDrag(self, oDrag: "VehicleHPOPForceModelDragOptions"):
         Assert.assertIsNotNone(oDrag)
         # UseApproxAlt
         self.m_logger.WriteLine4("\tThe current UseApproxAlt is: {0}", oDrag.use_approx_altitude)
@@ -5399,7 +5400,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region MoreOptionsSolarRadiationPressure
-    def MoreOptionsSolarRadiationPressure(self, oOptions: "IVehicleHPOPSolarRadiationPressureOptions"):
+    def MoreOptionsSolarRadiationPressure(self, oOptions: "VehicleHPOPSolarRadiationPressureOptions"):
         Assert.assertIsNotNone(oOptions)
         # MethodToComputeSunPosition
         self.m_logger.WriteLine6(
@@ -5435,12 +5436,12 @@ class PropagatorHPOPHelper(object):
         def action226():
             oOptions.atmos_altitude_of_earth_shape_for_eclipse = -1234.5
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action226)
+        TryCatchAssertBlock.DoAssert(action226)
 
     # endregion
 
     # region MoreOptionsStatic
-    def MoreOptionsStatic(self, oOptions: "IVehicleStatic"):
+    def MoreOptionsStatic(self, oOptions: "VehicleStatic"):
         Assert.assertIsNotNone(oOptions)
         # IncRelativisticAcc
         self.m_logger.WriteLine4("\tThe current IncRelativisticAcc is: {0}", oOptions.inc_relativistic_acc)
@@ -5459,12 +5460,12 @@ class PropagatorHPOPHelper(object):
         def action227():
             oOptions.satellite_mass = -123.456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action227)
+        TryCatchAssertBlock.DoAssert(action227)
 
     # endregion
 
     # region MoreOptionsSolidTides
-    def MoreOptionsSolidTides(self, oOptions: "IVehicleSolidTides"):
+    def MoreOptionsSolidTides(self, oOptions: "VehicleSolidTides"):
         Assert.assertIsNotNone(oOptions)
         # IncTimeDepSolidTides (false)
         self.m_logger.WriteLine4("\tThe current IncTimeDepSolidTides is: {0}", oOptions.inc_time_dep_solid_tides)
@@ -5476,7 +5477,7 @@ class PropagatorHPOPHelper(object):
             oOptions.min_amplitude = 0.123
 
         # MinAmplitude (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action228)
+        TryCatchAssertBlock.DoAssert(action228)
         # IncTimeDepSolidTides (true)
         oOptions.inc_time_dep_solid_tides = True
         self.m_logger.WriteLine4("\tThe new IncTimeDepSolidTides is: {0}", oOptions.inc_time_dep_solid_tides)
@@ -5490,7 +5491,7 @@ class PropagatorHPOPHelper(object):
         def action229():
             oOptions.min_amplitude = -123.456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action229)
+        TryCatchAssertBlock.DoAssert(action229)
         # TruncateSolidTides
         oOptions.truncate_solid_tides = False
         self.m_logger.WriteLine4("\tThe new TruncateSolidTides is: {0}", oOptions.truncate_solid_tides)
@@ -5502,7 +5503,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region MoreOptionsOceanTides
-    def MoreOptionsOceanTides(self, oOptions: "IVehicleOceanTides"):
+    def MoreOptionsOceanTides(self, oOptions: "VehicleOceanTides"):
         Assert.assertIsNotNone(oOptions)
         # MaxDegree
         self.m_logger.WriteLine3("\tThe current MaxDegree is: {0}", oOptions.max_degree)
@@ -5513,7 +5514,7 @@ class PropagatorHPOPHelper(object):
         def action230():
             oOptions.max_degree = -1
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action230)
+        TryCatchAssertBlock.DoAssert(action230)
         # MaxOrder
         self.m_logger.WriteLine3("\tThe current MaxOrder is: {0}", oOptions.max_order)
         oOptions.max_order = 12
@@ -5523,7 +5524,7 @@ class PropagatorHPOPHelper(object):
         def action231():
             oOptions.max_order = 26
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action231)
+        TryCatchAssertBlock.DoAssert(action231)
         # MinAmplitude
         self.m_logger.WriteLine6("\tThe current MinAmplitude is: {0}", oOptions.min_amplitude)
         oOptions.min_amplitude = 0.123
@@ -5533,12 +5534,12 @@ class PropagatorHPOPHelper(object):
         def action232():
             oOptions.min_amplitude = -123.456
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action232)
+        TryCatchAssertBlock.DoAssert(action232)
 
     # endregion
 
     # region MoreOptionsRadiationPressure
-    def MoreOptionsRadiationPressure(self, oOptions: "IVehicleRadiationPressure"):
+    def MoreOptionsRadiationPressure(self, oOptions: "VehicleRadiationPressure"):
         Assert.assertIsNotNone(oOptions)
         # IncludeAlbedo (false)
         self.m_logger.WriteLine4("\tThe current IncludeAlbedo is: {0}", oOptions.include_albedo)
@@ -5555,19 +5556,19 @@ class PropagatorHPOPHelper(object):
             oOptions.ck = 12.34
 
         # Ck
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action233)
+        TryCatchAssertBlock.DoAssert(action233)
 
         def action234():
             oOptions.area_mass_ratio = 12.34
 
         # AreaMassRatio
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action234)
+        TryCatchAssertBlock.DoAssert(action234)
 
         def action235():
             oOptions.file = "JGM3.grv"
 
         # File
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action235)
+        TryCatchAssertBlock.DoAssert(action235)
         # IncludeAlbedo (true)
         oOptions.include_albedo = True
         self.m_logger.WriteLine4("\tThe new IncludeAlbedo is: {0}", oOptions.include_albedo)
@@ -5585,7 +5586,7 @@ class PropagatorHPOPHelper(object):
         def action236():
             oOptions.ck = -1234
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action236)
+        TryCatchAssertBlock.DoAssert(action236)
         # AreaMassRatio
         self.m_logger.WriteLine6("\tThe current AreaMassRatio is: {0}", oOptions.area_mass_ratio)
         oOptions.area_mass_ratio = 12
@@ -5595,7 +5596,7 @@ class PropagatorHPOPHelper(object):
         def action237():
             oOptions.area_mass_ratio = -26
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action237)
+        TryCatchAssertBlock.DoAssert(action237)
         # File
         self.m_logger.WriteLine5("\tThe current File is: {0}", oOptions.file)
         oOptions.file = r"STKData\CentralBodies\Earth\JGM3.grv"
@@ -5605,17 +5606,17 @@ class PropagatorHPOPHelper(object):
         def action238():
             oOptions.file = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action238)
+        TryCatchAssertBlock.DoAssert(action238)
 
         def action239():
             oOptions.file = "InvalidFile.Name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action239)
+        TryCatchAssertBlock.DoAssert(action239)
 
     # endregion
 
     # region Integrator
-    def Integrator(self, oIntegrator: "IVehicleIntegrator", oCovariance: "IVehicleCovariance"):
+    def Integrator(self, oIntegrator: "VehicleIntegrator", oCovariance: "VehicleCovariance"):
         Assert.assertIsNotNone(oIntegrator)
         # DoNotPropagateBelowAlt
         self.m_logger.WriteLine6(
@@ -5630,9 +5631,9 @@ class PropagatorHPOPHelper(object):
         def action240():
             oIntegrator.do_not_propagate_below_altitude = 12345.6
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action240)
+        TryCatchAssertBlock.DoAssert(action240)
         # TimeRegularization
-        oTime: "IVehicleTimeRegularization" = oIntegrator.time_regularization
+        oTime: "VehicleTimeRegularization" = oIntegrator.time_regularization
         Assert.assertIsNotNone(oTime)
         # Use (false)
         self.m_logger.WriteLine4("\tThe current Use is: {0}", oTime.use)
@@ -5644,13 +5645,13 @@ class PropagatorHPOPHelper(object):
             oTime.exponent = 2.34
 
         # Exponent
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action241)
+        TryCatchAssertBlock.DoAssert(action241)
 
         def action242():
             oTime.steps_per_orbit = 1234
 
         # StepsPerOrbit
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action242)
+        TryCatchAssertBlock.DoAssert(action242)
         # ReportEphemOnFixedTimeStep
         self.m_logger.WriteLine4(
             "\tThe current ReportEphemOnFixedTimeStep is: {0}", oIntegrator.report_ephem_on_fixed_time_step
@@ -5674,7 +5675,7 @@ class PropagatorHPOPHelper(object):
             oIntegrator.report_ephem_on_fixed_time_step = False
 
         # ReportEphemOnFixedTimeStep
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action243)
+        TryCatchAssertBlock.DoAssert(action243)
         # Exponent
         self.m_logger.WriteLine6("\tThe current Exponent is: {0}", oTime.exponent)
         oTime.exponent = 4.5
@@ -5684,7 +5685,7 @@ class PropagatorHPOPHelper(object):
         def action244():
             oTime.exponent = 12.34
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action244)
+        TryCatchAssertBlock.DoAssert(action244)
         # StepsPerOrbit
         self.m_logger.WriteLine3("\tThe current StepsPerOrbit is: {0}", oTime.steps_per_orbit)
         oTime.steps_per_orbit = 9
@@ -5694,7 +5695,7 @@ class PropagatorHPOPHelper(object):
         def action245():
             oTime.steps_per_orbit = -12
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action245)
+        TryCatchAssertBlock.DoAssert(action245)
         # UseVOP (false)
         self.m_logger.WriteLine4("\tThe current UseVOP is: {0}", oIntegrator.use_graphics_3d_p)
         oIntegrator.use_graphics_3d_p = False
@@ -5719,7 +5720,7 @@ class PropagatorHPOPHelper(object):
             oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
 
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action246)
+        TryCatchAssertBlock.DoAssert(action246)
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
@@ -5749,7 +5750,7 @@ class PropagatorHPOPHelper(object):
             oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
 
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action247)
+        TryCatchAssertBlock.DoAssert(action247)
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, True)
 
@@ -5762,7 +5763,7 @@ class PropagatorHPOPHelper(object):
             oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
 
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action248)
+        TryCatchAssertBlock.DoAssert(action248)
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
@@ -5775,7 +5776,7 @@ class PropagatorHPOPHelper(object):
             oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
 
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action249)
+        TryCatchAssertBlock.DoAssert(action249)
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
@@ -5785,7 +5786,7 @@ class PropagatorHPOPHelper(object):
         def action250():
             oIntegrator.allow_position_vel_cov_interpolation = True
 
-        TryCatchAssertBlock.DoAssert("readonly", action250)
+        TryCatchAssertBlock.DoAssert(action250)
         oCovariance.compute_covariance = True
         oIntegrator.allow_position_vel_cov_interpolation = False
         Assert.assertFalse(oIntegrator.allow_position_vel_cov_interpolation)
@@ -5795,7 +5796,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region Interpolation
-    def Interpolation(self, oInterpolation: "IVehicleInterpolation", bUseVOP: bool):
+    def Interpolation(self, oInterpolation: "VehicleInterpolation", bUseVOP: bool):
         Assert.assertIsNotNone(oInterpolation)
         self.m_logger.WriteLine6("\tThe current Method is: {0}", oInterpolation.method)
         if bUseVOP:
@@ -5804,7 +5805,7 @@ class PropagatorHPOPHelper(object):
                 oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
 
             # Method
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action251)
+            TryCatchAssertBlock.DoAssert(action251)
 
         else:
             # Test Hermitian/Lagrange interpolation orders
@@ -5815,12 +5816,12 @@ class PropagatorHPOPHelper(object):
             def action252():
                 oInterpolation.order = 2
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action252)
+            TryCatchAssertBlock.DoAssert(action252)
 
             def action253():
                 oInterpolation.order = 30
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action253)
+            TryCatchAssertBlock.DoAssert(action253)
             oInterpolation.order = 3
             Assert.assertEqual(3, oInterpolation.order)
             oInterpolation.order = 29
@@ -5831,12 +5832,12 @@ class PropagatorHPOPHelper(object):
             def action254():
                 oInterpolation.order = -1
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action254)
+            TryCatchAssertBlock.DoAssert(action254)
 
             def action255():
                 oInterpolation.order = 30
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action255)
+            TryCatchAssertBlock.DoAssert(action255)
             oInterpolation.order = 0
             Assert.assertEqual(0, oInterpolation.order)
             oInterpolation.order = 29
@@ -5855,13 +5856,13 @@ class PropagatorHPOPHelper(object):
             def action256():
                 oInterpolation.order = 321
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action256)
+            TryCatchAssertBlock.DoAssert(action256)
 
             def action257():
                 oInterpolation.graphics_3d_pmu = 12.34
 
             # VOPmu
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action257)
+            TryCatchAssertBlock.DoAssert(action257)
             # Method (eLagrange)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.LAGRANGE
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
@@ -5875,13 +5876,13 @@ class PropagatorHPOPHelper(object):
             def action258():
                 oInterpolation.order = 321
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action258)
+            TryCatchAssertBlock.DoAssert(action258)
 
             def action259():
                 oInterpolation.graphics_3d_pmu = 12.34
 
             # VOPmu
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action259)
+            TryCatchAssertBlock.DoAssert(action259)
             # Method (eVOP)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.GRAPHICS_3D_P
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
@@ -5896,7 +5897,7 @@ class PropagatorHPOPHelper(object):
         def action260():
             oInterpolation.order = 321
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action260)
+        TryCatchAssertBlock.DoAssert(action260)
         # VOPmu
         self.m_logger.WriteLine6("\t\tThe current VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
         if self.m_EarthGravModel == TestBase.GravModel.EGM2008:
@@ -5918,17 +5919,17 @@ class PropagatorHPOPHelper(object):
         def action261():
             oInterpolation.graphics_3d_pmu = 199300220749999
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action261)
+        TryCatchAssertBlock.DoAssert(action261)
 
         def action262():
             oInterpolation.graphics_3d_pmu = 797200883600001
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action262)
+        TryCatchAssertBlock.DoAssert(action262)
 
     # endregion
 
     # region StepSizeControl
-    def StepSizeControl(self, oControl: "IVehicleStepSizeControl", bReadOnly: bool):
+    def StepSizeControl(self, oControl: "VehicleStepSizeControl", bReadOnly: bool):
         Assert.assertIsNotNone(oControl)
         self.m_logger.WriteLine6("\tThe current Method is: {0}", oControl.method)
         if not bReadOnly:
@@ -5945,7 +5946,7 @@ class PropagatorHPOPHelper(object):
             def action263():
                 oControl.error_tolerance = -12.34
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action263)
+            TryCatchAssertBlock.DoAssert(action263)
             # MinStepSize
             self.m_logger.WriteLine6("\t\tThe current MinStepSize is: {0}", oControl.min_step_size)
             oControl.min_step_size = 12
@@ -5955,7 +5956,7 @@ class PropagatorHPOPHelper(object):
             def action264():
                 oControl.min_step_size = -12
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action264)
+            TryCatchAssertBlock.DoAssert(action264)
             # MaxStepSize
             self.m_logger.WriteLine6("\t\tThe current MaxStepSize is: {0}", oControl.max_step_size)
             oControl.max_step_size = 21
@@ -5965,17 +5966,17 @@ class PropagatorHPOPHelper(object):
             def action265():
                 oControl.max_step_size = -12
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action265)
+            TryCatchAssertBlock.DoAssert(action265)
 
             def action266():
                 oControl.min_step_size = 23
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action266)
+            TryCatchAssertBlock.DoAssert(action266)
 
             def action267():
                 oControl.max_step_size = 2
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action267)
+            TryCatchAssertBlock.DoAssert(action267)
             # Method (eFixedStep)
             oControl.method = VEHICLE_METHOD.FIXED_STEP
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oControl.method)
@@ -5987,30 +5988,30 @@ class PropagatorHPOPHelper(object):
                 oControl.method = VEHICLE_METHOD.FIXED_STEP
 
             # Method (eFixedStep)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action268)
+            TryCatchAssertBlock.DoAssert(action268)
 
         def action269():
             oControl.error_tolerance = 0.0001
 
         # ErrorTolerance
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action269)
+        TryCatchAssertBlock.DoAssert(action269)
 
         def action270():
             oControl.min_step_size = 3
 
         # MinStepSize
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action270)
+        TryCatchAssertBlock.DoAssert(action270)
 
         def action271():
             oControl.max_step_size = 34
 
         # MaxStepSize
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action271)
+        TryCatchAssertBlock.DoAssert(action271)
 
     # endregion
 
     # region Covariance
-    def Covariance(self, oCovariance: "IVehicleCovariance"):
+    def Covariance(self, oCovariance: "VehicleCovariance"):
         Assert.assertIsNotNone(oCovariance)
         # ComputeCovariance (false)
         self.m_logger.WriteLine4("\tThe current ComputeCovariance is: {0}", oCovariance.compute_covariance)
@@ -6022,7 +6023,7 @@ class PropagatorHPOPHelper(object):
             oCovariance.frame = VEHICLE_FRAME.LVLH
 
         # Frame (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action272)
+        TryCatchAssertBlock.DoAssert(action272)
         # Gravity
         self.CovarianceGravity(oCovariance.gravity, True)
         # PositionVelocity
@@ -6032,7 +6033,7 @@ class PropagatorHPOPHelper(object):
             oCovariance.include_consider_analysis = False
 
         # IncludeConsiderAnalysis (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action273)
+        TryCatchAssertBlock.DoAssert(action273)
         # ConsiderAnalysisList
         self.CovarianceConsiderAnalysis(oCovariance.consider_analysis_list, True)
 
@@ -6040,7 +6041,7 @@ class PropagatorHPOPHelper(object):
             oCovariance.include_consider_cross_correlation = True
 
         # IncludeConsiderCrossCorrelation (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action274)
+        TryCatchAssertBlock.DoAssert(action274)
         # ConsiderCorrelation
         self.CovarianceCorrelation(oCovariance.correlation_list, True)
         # Validate
@@ -6111,7 +6112,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region CovarianceGravity
-    def CovarianceGravity(self, oGravity: "IVehicleGravity", bReadOnly: bool):
+    def CovarianceGravity(self, oGravity: "VehicleGravity", bReadOnly: bool):
         Assert.assertIsNotNone(oGravity)
         if bReadOnly:
 
@@ -6119,13 +6120,13 @@ class PropagatorHPOPHelper(object):
                 oGravity.maximum_degree = 5
 
             # MaximumDegree (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action275)
+            TryCatchAssertBlock.DoAssert(action275)
 
             def action276():
                 oGravity.maximum_order = 2
 
             # MaximumOrder (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action276)
+            TryCatchAssertBlock.DoAssert(action276)
 
         else:
             # MaximumDegree
@@ -6137,7 +6138,7 @@ class PropagatorHPOPHelper(object):
             def action277():
                 oGravity.maximum_degree = 123
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action277)
+            TryCatchAssertBlock.DoAssert(action277)
             # MaximumOrder
             self.m_logger.WriteLine3("\t\tThe current MaximumOrder is: {0}", oGravity.maximum_order)
             oGravity.maximum_order = 12
@@ -6147,16 +6148,16 @@ class PropagatorHPOPHelper(object):
             def action278():
                 oGravity.maximum_order = 123
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action278)
+            TryCatchAssertBlock.DoAssert(action278)
 
     # endregion
 
     # region CovariancePositionVelocity
-    def CovariancePositionVelocity(self, oCollection: "IVehiclePositionVelocityCollection", bReadOnly: bool):
+    def CovariancePositionVelocity(self, oCollection: "VehiclePositionVelocityCollection", bReadOnly: bool):
         Assert.assertIsNotNone(oCollection)
         if bReadOnly:
             Assert.assertEqual(6, oCollection.count)
-            positionVelocityElement: "IVehiclePositionVelocityElement"
+            positionVelocityElement: "VehiclePositionVelocityElement"
             for positionVelocityElement in oCollection:
                 self.m_logger.WriteLine10(
                     "\t\tElement: X = {0}, Y = {1}, Z = {2}, Vx = {3}, Vy = {4}, Vz = {5}",
@@ -6172,44 +6173,44 @@ class PropagatorHPOPHelper(object):
                     positionVelocityElement.x = 25
 
                 # X (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action279)
+                TryCatchAssertBlock.DoAssert(action279)
 
                 def action280():
                     positionVelocityElement.y = 25
 
                 # Y (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action280)
+                TryCatchAssertBlock.DoAssert(action280)
 
                 def action281():
                     positionVelocityElement.z = 25
 
                 # Z (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action281)
+                TryCatchAssertBlock.DoAssert(action281)
 
                 def action282():
                     positionVelocityElement.vx = 0.01
 
                 # Vx (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action282)
+                TryCatchAssertBlock.DoAssert(action282)
 
                 def action283():
                     positionVelocityElement.vy = 0.01
 
                 # Vy (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action283)
+                TryCatchAssertBlock.DoAssert(action283)
 
                 def action284():
                     positionVelocityElement.vz = 0.01
 
                 # Vz (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action284)
+                TryCatchAssertBlock.DoAssert(action284)
 
         else:
             self.m_logger.WriteLine3("\tThe PositionVelocity collection contains: {0} elements.", oCollection.count)
 
             iIndex: int = 0
             while iIndex < oCollection.count:
-                positionVelocityElement: "IVehiclePositionVelocityElement" = oCollection[iIndex]
+                positionVelocityElement: "VehiclePositionVelocityElement" = oCollection[iIndex]
                 Assert.assertIsNotNone(positionVelocityElement)
                 self.m_logger.WriteLine10(
                     "\t\tElement {6}: X = {0}, Y = {1}, Z = {2}, Vx = {3}, Vy = {4}, Vz = {5}",
@@ -6237,7 +6238,7 @@ class PropagatorHPOPHelper(object):
                         positionVelocityElement.y = 22
 
                     # Y (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action285)
+                    TryCatchAssertBlock.DoAssert(action285)
 
                 else:
                     if iIndex == 1:
@@ -6256,7 +6257,7 @@ class PropagatorHPOPHelper(object):
                         positionVelocityElement.z = 23
 
                     # Z (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action286)
+                    TryCatchAssertBlock.DoAssert(action286)
 
                 else:
                     if iIndex == 2:
@@ -6275,7 +6276,7 @@ class PropagatorHPOPHelper(object):
                         positionVelocityElement.vx = 0.001
 
                     # Vx (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action287)
+                    TryCatchAssertBlock.DoAssert(action287)
 
                 else:
                     if iIndex == 3:
@@ -6294,7 +6295,7 @@ class PropagatorHPOPHelper(object):
                         positionVelocityElement.vy = 0.001
 
                     # Vy (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action288)
+                    TryCatchAssertBlock.DoAssert(action288)
 
                 else:
                     if iIndex == 4:
@@ -6313,7 +6314,7 @@ class PropagatorHPOPHelper(object):
                         positionVelocityElement.vz = 0.001
 
                     # Vz (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action289)
+                    TryCatchAssertBlock.DoAssert(action289)
 
                 else:
                     positionVelocityElement.vz = 0.03
@@ -6325,7 +6326,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region CovarianceConsiderAnalysis
-    def CovarianceConsiderAnalysis(self, oCollection: "IVehicleConsiderAnalysisCollection", bReadOnly: bool):
+    def CovarianceConsiderAnalysis(self, oCollection: "VehicleConsiderAnalysisCollection", bReadOnly: bool):
         Assert.assertIsNotNone(oCollection)
         if bReadOnly:
 
@@ -6333,26 +6334,26 @@ class PropagatorHPOPHelper(object):
                 oCollection.remove_all()
 
             # RemoveAll (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action290)
+            TryCatchAssertBlock.DoAssert(action290)
 
             def action291():
                 oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_DRAG)
 
             # Add (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action291)
+            TryCatchAssertBlock.DoAssert(action291)
             if oCollection.count > 0:
 
                 def action292():
                     oCollection.remove_at(0)
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action292)
+                TryCatchAssertBlock.DoAssert(action292)
 
             if oCollection.count > 0:
 
                 def action293():
                     oCollection.remove_by_type(oCollection[0].type)
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action293)
+                TryCatchAssertBlock.DoAssert(action293)
 
             if oCollection.count > 0:
                 self.CovarianceConsiderAnalysisElement(oCollection[0], True)
@@ -6375,7 +6376,7 @@ class PropagatorHPOPHelper(object):
             def action294():
                 oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_DRAG)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to add duplicated elements.", action294)
+            TryCatchAssertBlock.DoAssert(action294)
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
@@ -6386,12 +6387,12 @@ class PropagatorHPOPHelper(object):
             def action295():
                 oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_SRP)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to add duplicated elements.", action295)
+            TryCatchAssertBlock.DoAssert(action295)
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
             # _NewEnum
-            considerAnalysisCollectionElement: "IVehicleConsiderAnalysisCollectionElement"
+            considerAnalysisCollectionElement: "VehicleConsiderAnalysisCollectionElement"
             # _NewEnum
             for considerAnalysisCollectionElement in oCollection:
                 self.CovarianceConsiderAnalysisElement(considerAnalysisCollectionElement, False)
@@ -6406,7 +6407,7 @@ class PropagatorHPOPHelper(object):
             def action296():
                 oCollection.remove_at(12)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action296)
+            TryCatchAssertBlock.DoAssert(action296)
             # RemoveByType
             oCollection.remove_by_type(oCollection[0].type)
             self.m_logger.WriteLine3(
@@ -6417,13 +6418,13 @@ class PropagatorHPOPHelper(object):
             def action297():
                 oCollection.remove_by_type(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_SRP)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action297)
+            TryCatchAssertBlock.DoAssert(action297)
 
     # endregion
 
     # region CovarianceConsiderAnalysisElement
     def CovarianceConsiderAnalysisElement(
-        self, oVeConsiderAnalysisCollectionElement: "IVehicleConsiderAnalysisCollectionElement", bReadOnly: bool
+        self, oVeConsiderAnalysisCollectionElement: "VehicleConsiderAnalysisCollectionElement", bReadOnly: bool
     ):
         Assert.assertIsNotNone(oVeConsiderAnalysisCollectionElement)
         if bReadOnly:
@@ -6432,43 +6433,43 @@ class PropagatorHPOPHelper(object):
                 oVeConsiderAnalysisCollectionElement.value = 123.456
 
             # Value (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action298)
+            TryCatchAssertBlock.DoAssert(action298)
 
             def action299():
                 oVeConsiderAnalysisCollectionElement.x = 12.34
 
             # X (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action299)
+            TryCatchAssertBlock.DoAssert(action299)
 
             def action300():
                 oVeConsiderAnalysisCollectionElement.y = 12.34
 
             # Y (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action300)
+            TryCatchAssertBlock.DoAssert(action300)
 
             def action301():
                 oVeConsiderAnalysisCollectionElement.z = 12.34
 
             # Z (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action301)
+            TryCatchAssertBlock.DoAssert(action301)
 
             def action302():
                 oVeConsiderAnalysisCollectionElement.vx = 12.34
 
             # Vx (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action302)
+            TryCatchAssertBlock.DoAssert(action302)
 
             def action303():
                 oVeConsiderAnalysisCollectionElement.vy = 12.34
 
             # Vy (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action303)
+            TryCatchAssertBlock.DoAssert(action303)
 
             def action304():
                 oVeConsiderAnalysisCollectionElement.vz = 12.34
 
             # Vz (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action304)
+            TryCatchAssertBlock.DoAssert(action304)
 
         else:
             self.m_logger.WriteLine10(
@@ -6520,7 +6521,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region CovarianceCorrelation
-    def CovarianceCorrelation(self, oCollection: "IVehicleCorrelationListCollection", bReadOnly: bool):
+    def CovarianceCorrelation(self, oCollection: "VehicleCorrelationListCollection", bReadOnly: bool):
         Assert.assertIsNotNone(oCollection)
         if bReadOnly:
 
@@ -6528,19 +6529,19 @@ class PropagatorHPOPHelper(object):
                 oCollection.remove_all()
 
             # RemoveAll (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action305)
+            TryCatchAssertBlock.DoAssert(action305)
 
             def action306():
                 oCollection.add()
 
             # Add (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action306)
+            TryCatchAssertBlock.DoAssert(action306)
             if oCollection.count > 0:
 
                 def action307():
                     oCollection.remove_at(0)
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action307)
+                TryCatchAssertBlock.DoAssert(action307)
 
             if oCollection.count > 0:
                 self.CovarianceCorrelationElement(oCollection[0], True)
@@ -6564,19 +6565,19 @@ class PropagatorHPOPHelper(object):
             def action308():
                 oCollection.remove_at(12)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action308)
+            TryCatchAssertBlock.DoAssert(action308)
             # Add
             oCollection.add()
             Assert.assertEqual(1, oCollection.count)
             self.m_logger.WriteLine3("\t\tThe new Correlation collection contains: {0} elements", oCollection.count)
             # _NewEnum
-            correlationListElement: "IVehicleCorrelationListElement"
+            correlationListElement: "VehicleCorrelationListElement"
             # _NewEnum
             for correlationListElement in oCollection:
                 self.CovarianceCorrelationElement(correlationListElement, False)
 
             # Item
-            oElem: "IVehicleCorrelationListElement" = oCollection[0]
+            oElem: "VehicleCorrelationListElement" = oCollection[0]
             Assert.assertIsNotNone(oElem)
             self.m_logger.WriteLine8(
                 "\t\t\tElement: Row = {0}, Column = {1}, Value = {2}", oElem.row, oElem.column, oElem.value
@@ -6589,9 +6590,7 @@ class PropagatorHPOPHelper(object):
     # endregion
 
     # region CovarianceCorrelationElement
-    def CovarianceCorrelationElement(
-        self, oVeCorrelationListElement: "IVehicleCorrelationListElement", bReadOnly: bool
-    ):
+    def CovarianceCorrelationElement(self, oVeCorrelationListElement: "VehicleCorrelationListElement", bReadOnly: bool):
         Assert.assertIsNotNone(oVeCorrelationListElement)
         if bReadOnly:
 
@@ -6599,19 +6598,19 @@ class PropagatorHPOPHelper(object):
                 oVeCorrelationListElement.value = 123.456
 
             # Value (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action309)
+            TryCatchAssertBlock.DoAssert(action309)
 
             def action310():
                 oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_DRAG
 
             # Row (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action310)
+            TryCatchAssertBlock.DoAssert(action310)
 
             def action311():
                 oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_SRP
 
             # Column (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action311)
+            TryCatchAssertBlock.DoAssert(action311)
 
         else:
             # Value
@@ -6631,7 +6630,7 @@ class PropagatorHPOPHelper(object):
             def action312():
                 oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_NONE
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action312)
+            TryCatchAssertBlock.DoAssert(action312)
             # Column
             self.m_logger.WriteLine6("\t\tThe current Column is: {0}", oVeCorrelationListElement.column)
             oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_DRAG
@@ -6644,7 +6643,7 @@ class PropagatorHPOPHelper(object):
             def action313():
                 oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_NONE
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action313)
+            TryCatchAssertBlock.DoAssert(action313)
 
 
 # endregion
@@ -6652,18 +6651,18 @@ class PropagatorHPOPHelper(object):
 
 # region PropagatorBallisticHelper
 class PropagatorBallisticHelper(object):
-    def __init__(self, owner: "IStkObject", oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, owner: "IStkObject", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(owner)
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
         self.m_oUnits.reset_units()
         self._owner: "IStkObject" = owner
 
     # endregion
 
     # region Run method
-    def Run(self, oBallistic: "IVehiclePropagatorBallistic"):
+    def Run(self, oBallistic: "VehiclePropagatorBallistic"):
         self.m_logger.WriteLine("----- BALLISTIC PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oBallistic)
         # StartTime
@@ -6682,7 +6681,7 @@ class PropagatorBallisticHelper(object):
         def action314():
             oBallistic.step = 123456789
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action314)
+        TryCatchAssertBlock.DoAssert(action314)
         # LaunchType
         self.m_logger.WriteLine6("\tThe current LunchType is: {0}", oBallistic.launch_type)
         # LaunchSupportedTypes
@@ -6702,7 +6701,7 @@ class PropagatorBallisticHelper(object):
             Assert.assertEqual(eLaunch, oBallistic.launch_type)
             if eLaunch == VEHICLE_LAUNCH.LAUNCH_LLA:
                 # Launch
-                launchLLA: "IVehicleLaunchLLA" = clr.Convert(oBallistic.launch, IVehicleLaunchLLA)
+                launchLLA: "VehicleLaunchLLA" = clr.Convert(oBallistic.launch, VehicleLaunchLLA)
                 Assert.assertIsNotNone(launchLLA)
                 # Lat
                 self.m_logger.WriteLine6("\t\t\tThe current Lat is: {0}", launchLLA.lat)
@@ -6713,7 +6712,7 @@ class PropagatorBallisticHelper(object):
                 def action315():
                     launchLLA.lat = 90.1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action315)
+                TryCatchAssertBlock.DoAssert(action315)
                 # Lon
                 self.m_logger.WriteLine6("\t\t\tThe current Lon is: {0}", launchLLA.lon)
                 launchLLA.lon = 12.34
@@ -6723,7 +6722,7 @@ class PropagatorBallisticHelper(object):
                 def action316():
                     launchLLA.lon = 360.1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action316)
+                TryCatchAssertBlock.DoAssert(action316)
                 # Alt
                 self.m_logger.WriteLine6("\t\t\tThe current Alt is: {0}", launchLLA.altitude)
                 launchLLA.altitude = 123.4
@@ -6733,9 +6732,9 @@ class PropagatorBallisticHelper(object):
                 def action317():
                     launchLLA.altitude = -1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action317)
+                TryCatchAssertBlock.DoAssert(action317)
             elif eLaunch == VEHICLE_LAUNCH.LAUNCH_LLR:
-                oLLR: "IVehicleLaunchLLR" = clr.Convert(oBallistic.launch, IVehicleLaunchLLR)
+                oLLR: "VehicleLaunchLLR" = clr.Convert(oBallistic.launch, VehicleLaunchLLR)
                 Assert.assertIsNotNone(oLLR)
                 # Lat
                 self.m_logger.WriteLine6("\t\t\tThe current Lat is: {0}", oLLR.lat)
@@ -6746,7 +6745,7 @@ class PropagatorBallisticHelper(object):
                 def action318():
                     oLLR.lat = 90.1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action318)
+                TryCatchAssertBlock.DoAssert(action318)
                 # Lon
                 self.m_logger.WriteLine6("\t\t\tThe current Lon is: {0}", oLLR.lon)
                 oLLR.lon = 12.4
@@ -6756,7 +6755,7 @@ class PropagatorBallisticHelper(object):
                 def action319():
                     oLLR.lon = 360.1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action319)
+                TryCatchAssertBlock.DoAssert(action319)
                 # Radius
                 self.m_logger.WriteLine6("\t\t\tThe current Radius is: {0}", oLLR.radius)
                 oLLR.radius = 6400.789
@@ -6766,13 +6765,13 @@ class PropagatorBallisticHelper(object):
                 def action320():
                     oLLR.radius = -1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action320)
+                TryCatchAssertBlock.DoAssert(action320)
             else:
                 Assert.fail("Invalid type!")
             # need the deltaV to be set in order to propagate without exception
             oBallistic.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL)
-            oAzEl: "IVehicleImpactLocationLaunchAzEl" = clr.Convert(
-                oBallistic.impact_location, IVehicleImpactLocationLaunchAzEl
+            oAzEl: "VehicleImpactLocationLaunchAzEl" = clr.Convert(
+                oBallistic.impact_location, VehicleImpactLocationLaunchAzEl
             )
             oAzEl.delta_v = 4
             oAzEl.elevation = 88
@@ -6801,8 +6800,8 @@ class PropagatorBallisticHelper(object):
             Assert.assertEqual(eImpact, oBallistic.impact_location_type)
             if eImpact == VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL:
                 # ImpactLocation
-                oAzEl: "IVehicleImpactLocationLaunchAzEl" = clr.Convert(
-                    oBallistic.impact_location, IVehicleImpactLocationLaunchAzEl
+                oAzEl: "VehicleImpactLocationLaunchAzEl" = clr.Convert(
+                    oBallistic.impact_location, VehicleImpactLocationLaunchAzEl
                 )
                 Assert.assertIsNotNone(oAzEl)
                 # Azimuth
@@ -6814,7 +6813,7 @@ class PropagatorBallisticHelper(object):
                 def action321():
                     oAzEl.azimuth = 390.1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action321)
+                TryCatchAssertBlock.DoAssert(action321)
                 # Elevation
                 self.m_logger.WriteLine6("\t\t\tThe current Elevation is: {0}", oAzEl.elevation)
                 oAzEl.elevation = 87.34
@@ -6824,7 +6823,7 @@ class PropagatorBallisticHelper(object):
                 def action322():
                     oAzEl.elevation = 390.1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action322)
+                TryCatchAssertBlock.DoAssert(action322)
                 # DeltaV
                 self.m_logger.WriteLine6("\t\t\tThe current DeltaV is: {0}", oAzEl.delta_v)
                 oAzEl.delta_v = 5
@@ -6834,11 +6833,11 @@ class PropagatorBallisticHelper(object):
                 def action323():
                     oAzEl.delta_v = 390.1
 
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action323)
+                TryCatchAssertBlock.DoAssert(action323)
             elif eImpact == VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_POINT:
                 # ImpactLocation
-                oPoint: "IVehicleImpactLocationPoint" = clr.Convert(
-                    oBallistic.impact_location, IVehicleImpactLocationPoint
+                oPoint: "VehicleImpactLocationPoint" = clr.Convert(
+                    oBallistic.impact_location, VehicleImpactLocationPoint
                 )
                 Assert.assertIsNotNone(oPoint)
                 # ImpactType
@@ -6859,7 +6858,7 @@ class PropagatorBallisticHelper(object):
                     self.m_logger.WriteLine6("\t\t\tThe new Impact type is: {0}", oPoint.impact_type)
                     Assert.assertEqual(eI, oPoint.impact_type)
                     if eI == VEHICLE_IMPACT.IMPACT_LLA:
-                        impactLLA: "IVehicleImpactLLA" = clr.Convert(oPoint.impact, IVehicleImpactLLA)
+                        impactLLA: "VehicleImpactLLA" = clr.Convert(oPoint.impact, VehicleImpactLLA)
                         Assert.assertIsNotNone(impactLLA)
                         # Lat
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lat is: {0}", impactLLA.lat)
@@ -6870,7 +6869,7 @@ class PropagatorBallisticHelper(object):
                         def action324():
                             impactLLA.lat = 90.1
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action324)
+                        TryCatchAssertBlock.DoAssert(action324)
                         # Lon
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lon is: {0}", impactLLA.lon)
                         impactLLA.lon = 20.4
@@ -6880,7 +6879,7 @@ class PropagatorBallisticHelper(object):
                         def action325():
                             impactLLA.lon = 360.1
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action325)
+                        TryCatchAssertBlock.DoAssert(action325)
                         # Alt
                         self.m_logger.WriteLine6("\t\t\t\tThe current Alt is: {0}", impactLLA.altitude)
                         impactLLA.altitude = 10
@@ -6890,9 +6889,9 @@ class PropagatorBallisticHelper(object):
                         def action326():
                             impactLLA.altitude = -1
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action326)
+                        TryCatchAssertBlock.DoAssert(action326)
                     elif eI == VEHICLE_IMPACT.IMPACT_LLR:
-                        oLLR: "IVehicleImpactLLR" = clr.Convert(oPoint.impact, IVehicleImpactLLR)
+                        oLLR: "VehicleImpactLLR" = clr.Convert(oPoint.impact, VehicleImpactLLR)
                         Assert.assertIsNotNone(oLLR)
                         # Lat
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lat is: {0}", oLLR.lat)
@@ -6903,7 +6902,7 @@ class PropagatorBallisticHelper(object):
                         def action327():
                             oLLR.lat = 90.1
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action327)
+                        TryCatchAssertBlock.DoAssert(action327)
                         # Lon
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lon is: {0}", oLLR.lon)
                         oLLR.lon = 20.4
@@ -6913,7 +6912,7 @@ class PropagatorBallisticHelper(object):
                         def action328():
                             oLLR.lon = 360.1
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action328)
+                        TryCatchAssertBlock.DoAssert(action328)
                         # Radius
                         self.m_logger.WriteLine6("\t\t\t\tThe current Radius is: {0}", oLLR.radius)
                         oLLR.radius = 6500.789
@@ -6923,11 +6922,11 @@ class PropagatorBallisticHelper(object):
                         def action329():
                             oLLR.radius = -1
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action329)
+                        TryCatchAssertBlock.DoAssert(action329)
                     else:
                         Assert.fail("Invalid type!")
-                    deltaV: "IVehicleLaunchControlFixedDeltaV" = clr.Convert(
-                        oPoint.launch_control, IVehicleLaunchControlFixedDeltaV
+                    deltaV: "VehicleLaunchControlFixedDeltaV" = clr.Convert(
+                        oPoint.launch_control, VehicleLaunchControlFixedDeltaV
                     )
                     deltaV.delta_v = 4
                     # Propagate
@@ -6953,8 +6952,8 @@ class PropagatorBallisticHelper(object):
                     self.m_logger.WriteLine6("\t\t\tThe new LaunchControl type is: {0}", oPoint.launch_control_type)
                     Assert.assertEqual(eI, oPoint.launch_control_type)
                     if eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_APOGEE_ALTITUDE:
-                        launchControlFixedApogeeAlt: "IVehicleLaunchControlFixedApogeeAltitude" = clr.Convert(
-                            oPoint.launch_control, IVehicleLaunchControlFixedApogeeAltitude
+                        launchControlFixedApogeeAlt: "VehicleLaunchControlFixedApogeeAltitude" = clr.Convert(
+                            oPoint.launch_control, VehicleLaunchControlFixedApogeeAltitude
                         )
                         Assert.assertIsNotNone(launchControlFixedApogeeAlt)
                         # ApogeeAlt
@@ -6970,10 +6969,10 @@ class PropagatorBallisticHelper(object):
                         def action330():
                             launchControlFixedApogeeAlt.apogee_altitude = -1
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action330)
+                        TryCatchAssertBlock.DoAssert(action330)
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V:
-                        launchControlFixedDeltaV: "IVehicleLaunchControlFixedDeltaV" = clr.Convert(
-                            oPoint.launch_control, IVehicleLaunchControlFixedDeltaV
+                        launchControlFixedDeltaV: "VehicleLaunchControlFixedDeltaV" = clr.Convert(
+                            oPoint.launch_control, VehicleLaunchControlFixedDeltaV
                         )
                         Assert.assertIsNotNone(launchControlFixedDeltaV)
                         # DeltaV
@@ -6985,10 +6984,10 @@ class PropagatorBallisticHelper(object):
                         def action331():
                             launchControlFixedDeltaV.delta_v = 23
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action331)
+                        TryCatchAssertBlock.DoAssert(action331)
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V_MIN_ECCENTRICITY:
-                        launchControlFixedDeltaVMinEcc: "IVehicleLaunchControlFixedDeltaVMinEccentricity" = clr.Convert(
-                            oPoint.launch_control, IVehicleLaunchControlFixedDeltaVMinEccentricity
+                        launchControlFixedDeltaVMinEcc: "VehicleLaunchControlFixedDeltaVMinEccentricity" = clr.Convert(
+                            oPoint.launch_control, VehicleLaunchControlFixedDeltaVMinEccentricity
                         )
                         Assert.assertIsNotNone(launchControlFixedDeltaVMinEcc)
                         # DeltaVMin
@@ -7004,10 +7003,10 @@ class PropagatorBallisticHelper(object):
                         def action332():
                             launchControlFixedDeltaVMinEcc.delta_v_min = 12
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action332)
+                        TryCatchAssertBlock.DoAssert(action332)
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT:
-                        launchControlFixedTimeOfFlight: "IVehicleLaunchControlFixedTimeOfFlight" = clr.Convert(
-                            oPoint.launch_control, IVehicleLaunchControlFixedTimeOfFlight
+                        launchControlFixedTimeOfFlight: "VehicleLaunchControlFixedTimeOfFlight" = clr.Convert(
+                            oPoint.launch_control, VehicleLaunchControlFixedTimeOfFlight
                         )
                         Assert.assertIsNotNone(launchControlFixedTimeOfFlight)
                         # TimeOfFlight
@@ -7023,7 +7022,7 @@ class PropagatorBallisticHelper(object):
                         def action333():
                             launchControlFixedTimeOfFlight.time_of_flight = 123456789
 
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action333)
+                        TryCatchAssertBlock.DoAssert(action333)
                     else:
                         Assert.fail("Invalid type!")
                     # Propagate
@@ -7044,7 +7043,7 @@ class PropagatorBallisticHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overriden with the scenario's start/stop times.
-        sc: "IScenario" = clr.Convert(self._owner.root.current_scenario, IScenario)
+        sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
         oBallistic.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "1 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oBallistic.ephemeris_interval.find_start_time())
         # oBallistic.StopTime = "2 Jul 2005 12:00:00.000";
@@ -7135,7 +7134,7 @@ class ConnectRealtimePointBuilderHelper(object):
         reader = LLAReportReader()
         data = reader.ReadLines(TestBase.GetScenarioFile("LLAPosition.txt"))
 
-        root: "IStkObjectRoot" = obj.root
+        root: "StkObjectRoot" = obj.root
         Assert.assertIsNotNone(root)
         path: str = obj.path
         for row in data:
@@ -7167,7 +7166,7 @@ class OMRealtimePointBuilderHelper(object):
     def __init__(self, *args, **kwargs):
         self.m_logger = Logger.Instance
 
-    def Run(self, obj: "IStkObject", pb: "IVehicleRealtimePointBuilder"):
+    def Run(self, obj: "IStkObject", pb: "VehicleRealtimePointBuilder"):
         reader = LLAReportReader()
         data = reader.ReadLines(TestBase.GetScenarioFile("LLAPosition.txt"))
         # Configure the unit preferences
@@ -7176,7 +7175,7 @@ class OMRealtimePointBuilderHelper(object):
         obj.root.unit_preferences.set_current_unit("Longitude", "deg")
         obj.root.unit_preferences.set_current_unit("Distance", "km")
 
-        point: "IVehicleRealtimeLLAPoints" = pb.lla
+        point: "VehicleRealtimeLLAPoints" = pb.lla
         for row in data:
             Assert.assertEqual(7, Array.Length(row))
 
@@ -7194,12 +7193,12 @@ class OMRealtimePointBuilderHelper(object):
 class BoostedOMRealtimePointBuilderHelper(object):
     BATCH_SIZE: int = 10
 
-    def __init__(self, root: "IStkObjectRoot", includeVelocities: bool):
+    def __init__(self, root: "StkObjectRoot", includeVelocities: bool):
         self.m_logger = Logger.Instance
-        self._root: "IStkObjectRoot" = root
+        self._root: "StkObjectRoot" = root
         self._includeVelocities: bool = includeVelocities
 
-    def Run(self, obj: "IStkObject", point: "IVehicleRealtimeLLAPoints"):
+    def Run(self, obj: "IStkObject", point: "VehicleRealtimeLLAPoints"):
         reader = LLAReportReader()
         data = reader.ReadLines(TestBase.GetScenarioFile("LLAPosition.txt"))
         # Configure the unit preferences
@@ -7251,9 +7250,9 @@ class BoostedOMRealtimePointBuilderHelper(object):
                 batchIndex += 1
 
         if batchIndex != 0:
-            dtStart: "IDate" = self._root.conversion_utility.new_date(
+            dtStart: "Date" = self._root.conversion_utility.new_date(
                 self._root.unit_preferences.get_current_unit_abbrv("DateFormat"),
-                str((clr.Convert(self._root.current_scenario, IScenario)).stop_time),
+                str((clr.Convert(self._root.current_scenario, Scenario)).stop_time),
             )
             lasttime: float = float(dtStart.format("EpSec"))
             if self._includeVelocities:
@@ -7272,7 +7271,7 @@ class PropagatorRealtimeHelper(object):
     def __init__(self, *args, **kwargs):
         self.m_logger = Logger.Instance
 
-    def Run(self, obj: "IStkObject", realtime: "IVehiclePropagatorRealtime"):
+    def Run(self, obj: "IStkObject", realtime: "VehiclePropagatorRealtime"):
         Assert.assertIsNotNone(realtime)
         realtime.interpolation_order = 1
         Assert.assertEqual(1, realtime.interpolation_order)
@@ -7282,7 +7281,7 @@ class PropagatorRealtimeHelper(object):
         def action334():
             realtime.interpolation_order = 8
 
-        TryCatchAssertBlock.DoAssert("Should not allow illegal interpolation order.", action334)
+        TryCatchAssertBlock.DoAssert(action334)
         realtime.time_step = 10
         Assert.assertEqual(10, realtime.time_step)
         realtime.timeout_gap = 10
@@ -7371,7 +7370,7 @@ class PropagatorRealtimeHelper(object):
             i += 1
 
         # Duration
-        oDuration: "IVehicleDuration" = realtime.duration
+        oDuration: "VehicleDuration" = realtime.duration
         Assert.assertIsNotNone(oDuration)
         # LookAhead
         self.m_logger.WriteLine6("\tThe current LookAhead is: {0}", oDuration.look_ahead)
@@ -7382,7 +7381,7 @@ class PropagatorRealtimeHelper(object):
         def action335():
             oDuration.look_ahead = 0
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action335)
+        TryCatchAssertBlock.DoAssert(action335)
         # LookBehind
         self.m_logger.WriteLine6("\tThe current LookBehind is: {0}", oDuration.look_behind)
         oDuration.look_behind = 456.789
@@ -7392,7 +7391,7 @@ class PropagatorRealtimeHelper(object):
         def action336():
             oDuration.look_behind = 123456789
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action336)
+        TryCatchAssertBlock.DoAssert(action336)
 
         realtime.propagate()
 
@@ -7406,7 +7405,7 @@ class PropagatorGPSHelper(object):
         self.m_logger = Logger.Instance
         self._dataDir: str = dataDir
 
-    def Run(self, obj: "IStkObject", gps: "IVehiclePropagatorGPS"):
+    def Run(self, obj: "IStkObject", gps: "VehiclePropagatorGPS"):
         Assert.assertIsNotNone(gps)
 
         sSEMAlmanacPath: str = TestBase.GetScenarioFile("GPSAlmanac.al3")
@@ -7425,8 +7424,8 @@ class PropagatorGPSHelper(object):
         Assert.assertEqual("GPSAlmanac.alm", gps.specify_catalog.filename)
         Assert.assertEqual(gps.specify_catalog.properties.type, VEHICLE_GPS_ALMANAC_TYPE.GPS_ALMANAC_TYPE_YUMA)
 
-        yuma: "IVehicleGPSAlmanacPropertiesYUMA" = clr.CastAs(
-            gps.specify_catalog.properties, IVehicleGPSAlmanacPropertiesYUMA
+        yuma: "VehicleGPSAlmanacPropertiesYUMA" = clr.CastAs(
+            gps.specify_catalog.properties, VehicleGPSAlmanacPropertiesYUMA
         )
         Assert.assertIsNotNone(yuma)
 
@@ -7442,7 +7441,7 @@ class PropagatorGPSHelper(object):
         def action337():
             yuma.reference_week = GPS_REFERENCE_WEEK.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("bad yuma.ReferenceWeek.", action337)
+        TryCatchAssertBlock.DoAssert(action337)
 
         self.m_logger.WriteLine10(
             "Almanac week: {0}, Date of almanac: {1}, Time of almanac: {2}, Ref.Week: {3}, Health: {4}, WeekNumber:{5}",
@@ -7458,8 +7457,8 @@ class PropagatorGPSHelper(object):
         Assert.assertEqual("GPSAlmanac.sp3", gps.specify_catalog.filename)
         Assert.assertEqual(gps.specify_catalog.properties.type, VEHICLE_GPS_ALMANAC_TYPE.GPS_ALMANAC_TYPE_SP3)
 
-        sp3: "IVehicleGPSAlmanacPropertiesSP3" = clr.CastAs(
-            gps.specify_catalog.properties, IVehicleGPSAlmanacPropertiesSP3
+        sp3: "VehicleGPSAlmanacPropertiesSP3" = clr.CastAs(
+            gps.specify_catalog.properties, VehicleGPSAlmanacPropertiesSP3
         )
         Assert.assertIsNotNone(sp3)
 
@@ -7488,7 +7487,7 @@ class PropagatorGPSHelper(object):
 
         gps.auto_update_enabled = True
 
-        properties: "IVehicleGPSAutoUpdateProperties" = gps.auto_update.properties
+        properties: "VehicleGPSAutoUpdateProperties" = gps.auto_update.properties
 
         properties.selection = VEHICLE_GPS_ELEM_SELECTION.GPS_ELEM_SELECTION_USE_ALL
         Assert.assertEqual(VEHICLE_GPS_ELEM_SELECTION.GPS_ELEM_SELECTION_USE_ALL, properties.selection)
@@ -7504,8 +7503,8 @@ class PropagatorGPSHelper(object):
 
         gps.auto_update_enabled = False
 
-        sem: "IVehicleGPSAlmanacPropertiesSEM" = clr.CastAs(
-            gps.specify_catalog.properties, IVehicleGPSAlmanacPropertiesSEM
+        sem: "VehicleGPSAlmanacPropertiesSEM" = clr.CastAs(
+            gps.specify_catalog.properties, VehicleGPSAlmanacPropertiesSEM
         )
         Assert.assertIsNotNone(sem)
 
@@ -7521,7 +7520,7 @@ class PropagatorGPSHelper(object):
         def action338():
             sem.reference_week = GPS_REFERENCE_WEEK.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("bad sem.ReferenceWeek.", action338)
+        TryCatchAssertBlock.DoAssert(action338)
 
         self.m_logger.WriteLine10(
             "Almanac week: {0}, Date of almanac: {1}, Time of almanac: {2}, Ref.Week: {3}, Health: {4}, AvgURA:{5}",
@@ -7597,7 +7596,7 @@ class PropagatorGPSHelper(object):
 
         gps.auto_update.file_source.filename = sSEMAlmanacPath
         Assert.assertEqual("GPSAlmanac.al3", gps.auto_update.file_source.filename)
-        records: "IVehicleGPSElementCollection" = gps.auto_update.file_source.preview()
+        records: "VehicleGPSElementCollection" = gps.auto_update.file_source.preview()
         Assert.assertTrue((records.count > 0))
 
         i: int = 0
@@ -7609,9 +7608,9 @@ class PropagatorGPSHelper(object):
         def action339():
             age: float = records[records.count].age
 
-        TryCatchAssertBlock.DoAssert("Should have failed referencing bad index.", action339)
+        TryCatchAssertBlock.DoAssert(action339)
 
-        element: "IVehicleGPSElement"
+        element: "VehicleGPSElement"
 
         for element in records:
             age: float = element.age
@@ -7627,7 +7626,7 @@ class PropagatorGPSHelper(object):
         def action340():
             gps.auto_update.file_source.filename = sSP3AlmanacPath
 
-        TryCatchAssertBlock.DoAssert("Should have failed.", action340)
+        TryCatchAssertBlock.DoAssert(action340)
         # Verify that the file name has not been updated
         Assert.assertEqual("GPSAlmanac.alm", gps.auto_update.file_source.filename)
 
@@ -7639,11 +7638,11 @@ class PropagatorGPSHelper(object):
 
 # region BasicAttitudeStandardHelper
 class BasicAttitudeStandardHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "IStkObjectRoot" = oApplication
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oApplication.unit_preferences
+        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oApplication.unit_preferences
         self.m_oUnits.reset_units()
 
     # endregion
@@ -7655,9 +7654,7 @@ class BasicAttitudeStandardHelper(object):
         # Type
         self.m_logger.WriteLine6("\tThe current Type is: {0}", oAttitude.type)
         if oAttitude.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
-            oTrajectory: "IVehicleTrajectoryAttitudeStandard" = clr.Convert(
-                oAttitude, IVehicleTrajectoryAttitudeStandard
-            )
+            oTrajectory: "VehicleTrajectoryAttitudeStandard" = clr.Convert(oAttitude, VehicleTrajectoryAttitudeStandard)
             Assert.assertIsNotNone(oTrajectory)
             # Basic
             self.Basic(oTrajectory.basic)
@@ -7666,7 +7663,7 @@ class BasicAttitudeStandardHelper(object):
             # Pointing
             self.Pointing(oTrajectory.pointing)
         elif oAttitude.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
-            oOrbit: "IVehicleOrbitAttitudeStandard" = clr.Convert(oAttitude, IVehicleOrbitAttitudeStandard)
+            oOrbit: "VehicleOrbitAttitudeStandard" = clr.Convert(oAttitude, VehicleOrbitAttitudeStandard)
             Assert.assertIsNotNone(oOrbit)
             # Basic
             self.Basic(oOrbit.basic)
@@ -7677,7 +7674,7 @@ class BasicAttitudeStandardHelper(object):
             # External
             self.External(oOrbit.external)
         elif oAttitude.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
-            oRoute: "IVehicleRouteAttitudeStandard" = clr.Convert(oAttitude, IVehicleRouteAttitudeStandard)
+            oRoute: "VehicleRouteAttitudeStandard" = clr.Convert(oAttitude, VehicleRouteAttitudeStandard)
             Assert.assertIsNotNone(oRoute)
             # Basic
             self.Basic(oRoute.basic)
@@ -7690,7 +7687,7 @@ class BasicAttitudeStandardHelper(object):
     # endregion
 
     # region Basic
-    def Basic(self, oBasic: "IVehicleStandardBasic"):
+    def Basic(self, oBasic: "VehicleStandardBasic"):
         self.m_logger.WriteLine("----- STANDARD BASIC TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oBasic)
         # ProfileType
@@ -7726,7 +7723,7 @@ class BasicAttitudeStandardHelper(object):
         # Type
         self.m_logger.WriteLine5("\t\t\tThe current Type is: {0}", oProfile.type)
         if oProfile.type == "Aligned and Constrained":
-            oAAC: "IVehicleProfileAlignedAndConstrained" = clr.Convert(oProfile, IVehicleProfileAlignedAndConstrained)
+            oAAC: "VehicleProfileAlignedAndConstrained" = clr.Convert(oProfile, VehicleProfileAlignedAndConstrained)
             Assert.assertIsNotNone(oAAC)
             # AlignedVector
             self.Vector(oAAC.aligned_vector)
@@ -7734,7 +7731,7 @@ class BasicAttitudeStandardHelper(object):
             self.Vector(oAAC.constrained_vector)
 
         if oProfile.type == "Coordinated Turn":
-            oCTurn: "IVehicleProfileCoordinatedTurn" = clr.Convert(oProfile, IVehicleProfileCoordinatedTurn)
+            oCTurn: "VehicleProfileCoordinatedTurn" = clr.Convert(oProfile, VehicleProfileCoordinatedTurn)
             Assert.assertIsNotNone(oCTurn)
             # TimeOffset
             self.m_logger.WriteLine6("\t\t\t\tThe current TimeOffset is: {0}", oCTurn.time_offset)
@@ -7745,7 +7742,7 @@ class BasicAttitudeStandardHelper(object):
             def action341():
                 oCTurn.time_offset = 0
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action341)
+            TryCatchAssertBlock.DoAssert(action341)
 
         if (
             (
@@ -7763,7 +7760,7 @@ class BasicAttitudeStandardHelper(object):
             )
             or (oProfile.type == "Nadir alignment with Sun constraint")
         ) or (oProfile.type == "Nadir alignment with orbit normal constraint"):
-            oCOffset: "IVehicleProfileConstraintOffset" = clr.Convert(oProfile, IVehicleProfileConstraintOffset)
+            oCOffset: "VehicleProfileConstraintOffset" = clr.Convert(oProfile, VehicleProfileConstraintOffset)
             Assert.assertIsNotNone(oCOffset)
             # ConstraintOffset
             self.m_logger.WriteLine6("\t\t\t\tThe current ConstraintOffset is: {0}", oCOffset.constraint_offset)
@@ -7774,10 +7771,10 @@ class BasicAttitudeStandardHelper(object):
             def action342():
                 oCOffset.constraint_offset = 1234.56
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action342)
+            TryCatchAssertBlock.DoAssert(action342)
 
         if oProfile.type == "Fixed in Axes":
-            oFixed: "IVehicleProfileFixedInAxes" = clr.Convert(oProfile, IVehicleProfileFixedInAxes)
+            oFixed: "VehicleProfileFixedInAxes" = clr.Convert(oProfile, VehicleProfileFixedInAxes)
             Assert.assertIsNotNone(oFixed)
             arAvailRefAxes = oFixed.available_reference_axes
             # ReferenceAxes
@@ -7789,12 +7786,12 @@ class BasicAttitudeStandardHelper(object):
             def action343():
                 oFixed.reference_axes = ""
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action343)
+            TryCatchAssertBlock.DoAssert(action343)
 
             def action344():
                 oFixed.reference_axes = "InvalidReferenceAxes"
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action344)
+            TryCatchAssertBlock.DoAssert(action344)
             # Orientation
             oHelper = OrientationTest(self.m_oUnits)
             oHelper.Run(
@@ -7802,9 +7799,7 @@ class BasicAttitudeStandardHelper(object):
             )
 
         if oProfile.type == "Precessing Spin":
-            profilePrecessingSpin: "IVehicleProfilePrecessingSpin" = clr.Convert(
-                oProfile, IVehicleProfilePrecessingSpin
-            )
+            profilePrecessingSpin: "VehicleProfilePrecessingSpin" = clr.Convert(oProfile, VehicleProfilePrecessingSpin)
             Assert.assertIsNotNone(profilePrecessingSpin)
             # Epoch
             self.m_logger.WriteLine6(
@@ -7822,7 +7817,7 @@ class BasicAttitudeStandardHelper(object):
             def action345():
                 profilePrecessingSpin.nutation_angle = 123.4
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action345)
+            TryCatchAssertBlock.DoAssert(action345)
             # Precession
             self.RateOffset(profilePrecessingSpin.precession)
             # Spin
@@ -7841,10 +7836,10 @@ class BasicAttitudeStandardHelper(object):
             def action346():
                 profilePrecessingSpin.reference_axes = "bogus"
 
-            TryCatchAssertBlock.DoAssert("Should not allow a bogus reference axes.", action346)
+            TryCatchAssertBlock.DoAssert(action346)
 
         if oProfile.type == "Spinning":
-            profileSpinning: "IVehicleProfileSpinning" = clr.Convert(oProfile, IVehicleProfileSpinning)
+            profileSpinning: "VehicleProfileSpinning" = clr.Convert(oProfile, VehicleProfileSpinning)
             Assert.assertIsNotNone(profileSpinning)
             # Epoch
             self.m_logger.WriteLine6("\t\t\t\tThe current Epoch is: {0}", profileSpinning.smart_epoch.time_instant)
@@ -7860,7 +7855,7 @@ class BasicAttitudeStandardHelper(object):
             def action347():
                 profileSpinning.rate = 123456.789
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action347)
+            TryCatchAssertBlock.DoAssert(action347)
             # Offset
             self.m_logger.WriteLine6("\t\t\t\tThe current Offset is: {0}", profileSpinning.offset)
             profileSpinning.offset = 12.34
@@ -7870,7 +7865,7 @@ class BasicAttitudeStandardHelper(object):
             def action348():
                 profileSpinning.offset = 1234.5
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action348)
+            TryCatchAssertBlock.DoAssert(action348)
             # Body
             oHelper = DirectionsTest()
             oHelper.Run(profileSpinning.body)
@@ -7893,7 +7888,7 @@ class BasicAttitudeStandardHelper(object):
             )
             or (oProfile.type == "Sun alignment with ecliptic normal constraint")
         ) or (oProfile.type == "XPOP Inertial Attitude"):
-            oAOffset: "IVehicleProfileAlignmentOffset" = clr.Convert(oProfile, IVehicleProfileAlignmentOffset)
+            oAOffset: "VehicleProfileAlignmentOffset" = clr.Convert(oProfile, VehicleProfileAlignmentOffset)
             Assert.assertIsNotNone(oAOffset)
             # AlignmentOffset
             self.m_logger.WriteLine6("\t\t\t\tThe current AlignmentOffset is: {0}", oAOffset.alignment_offset)
@@ -7904,10 +7899,10 @@ class BasicAttitudeStandardHelper(object):
             def action349():
                 oAOffset.alignment_offset = 1234.56
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action349)
+            TryCatchAssertBlock.DoAssert(action349)
 
         if oProfile.type == "Inertially fixed":
-            oInertial: "IVehicleProfileInertial" = clr.Convert(oProfile, IVehicleProfileInertial)
+            oInertial: "VehicleProfileInertial" = clr.Convert(oProfile, VehicleProfileInertial)
             Assert.assertIsNotNone(oInertial)
             # Inertial
             oHelper = OrientationTest(self.m_oUnits)
@@ -7916,14 +7911,14 @@ class BasicAttitudeStandardHelper(object):
             )
 
         if oProfile.type == "Yaw to nadir":
-            oYTN: "IVehicleProfileYawToNadir" = clr.Convert(oProfile, IVehicleProfileYawToNadir)
+            oYTN: "VehicleProfileYawToNadir" = clr.Convert(oProfile, VehicleProfileYawToNadir)
             Assert.assertIsNotNone(oYTN)
             # Inertial
             oHelper = DirectionsTest()
             oHelper.Run(oYTN.inertial)
 
         if (oProfile.type == "Spin about Sun vector") or (oProfile.type == "Spin about nadir"):
-            profileSpinAboutXxx: "IVehicleProfileSpinAboutXXX" = clr.Convert(oProfile, IVehicleProfileSpinAboutXXX)
+            profileSpinAboutXxx: "VehicleProfileSpinAboutXXX" = clr.Convert(oProfile, VehicleProfileSpinAboutXXX)
             Assert.assertIsNotNone(profileSpinAboutXxx)
             # Epoch
             self.m_logger.WriteLine6("\t\t\t\tThe current Epoch is: {0}", profileSpinAboutXxx.smart_epoch.time_instant)
@@ -7939,7 +7934,7 @@ class BasicAttitudeStandardHelper(object):
             def action350():
                 profileSpinAboutXxx.rate = 123456.789
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action350)
+            TryCatchAssertBlock.DoAssert(action350)
             # Offset
             self.m_logger.WriteLine6("\t\t\t\tThe current Offset is: {0}", profileSpinAboutXxx.offset)
             profileSpinAboutXxx.offset = 12.34
@@ -7949,10 +7944,10 @@ class BasicAttitudeStandardHelper(object):
             def action351():
                 profileSpinAboutXxx.offset = 1234.5
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action351)
+            TryCatchAssertBlock.DoAssert(action351)
 
         if oProfile.type == "GPS":
-            oGPS: "IVehicleProfileGPS" = clr.Convert(oProfile, IVehicleProfileGPS)
+            oGPS: "VehicleProfileGPS" = clr.Convert(oProfile, VehicleProfileGPS)
             Assert.assertIsNotNone(oGPS)
             # ModelType
             self.m_logger.WriteLine6("\t\t\t\tThe current ModelType is: {0}", oGPS.model_type)
@@ -7969,12 +7964,12 @@ class BasicAttitudeStandardHelper(object):
             def action352():
                 oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.MODEL_TYPE_UNKNOWN
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action352)
+            TryCatchAssertBlock.DoAssert(action352)
 
     # endregion
 
     # region Vector
-    def Vector(self, oVector: "IVehicleVector"):
+    def Vector(self, oVector: "VehicleVector"):
         Assert.assertIsNotNone(oVector)
 
         # AvailableReferenceVectors
@@ -7989,12 +7984,12 @@ class BasicAttitudeStandardHelper(object):
         def action353():
             oVector.reference_vector = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action353)
+        TryCatchAssertBlock.DoAssert(action353)
 
         def action354():
             oVector.reference_vector = "InvalidReferenceVector"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action354)
+        TryCatchAssertBlock.DoAssert(action354)
 
         # Body
         oHelper = DirectionsTest()
@@ -8003,7 +7998,7 @@ class BasicAttitudeStandardHelper(object):
     # endregion
 
     # region External
-    def External(self, oExternal: "IVehicleAttitudeExternal"):
+    def External(self, oExternal: "VehicleAttitudeExternal"):
         self.m_logger.WriteLine("----- EXTERNAL ATT TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oExternal)
         # starting
@@ -8039,12 +8034,12 @@ class BasicAttitudeStandardHelper(object):
         def action355():
             oExternal.load("InvalidFileName.a")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to load an invalid file.", action355)
+        TryCatchAssertBlock.DoAssert(action355)
 
         def action356():
             oExternal.load("")
 
-        TryCatchAssertBlock.DoAssert("Should not allow to load an invalid file.", action356)
+        TryCatchAssertBlock.DoAssert(action356)
         # Enabled
         self.m_logger.WriteLine4("\t\tThe new Enabled is: {0}", oExternal.enabled)
         # Filename
@@ -8170,12 +8165,12 @@ class BasicAttitudeStandardHelper(object):
         attStart3: str = "1 Jul 1999 03:33:33.000"
         self.m_logger.WriteLine("\tCreate a time component for use with att overrride")
         scen: "IStkObject" = self.m_oApplication.current_scenario
-        prv: "IAnalysisWorkbenchProvider" = scen.vgt
-        grp: "ITimeToolEventGroup" = prv.events
+        prv: "AnalysisWorkbenchProvider" = scen.vgt
+        grp: "TimeToolEventGroup" = prv.events
         evt: "ITimeToolEvent" = prv.events.factory.create_event_epoch(
             "AttOverrideTest", "External Attitude - Override testing"
         )
-        evtEpoch: "ITimeToolEventEpoch" = clr.CastAs(evt, ITimeToolEventEpoch)
+        evtEpoch: "TimeToolEventEpoch" = clr.CastAs(evt, TimeToolEventEpoch)
         evtEpoch.epoch = attStart3
 
         self.m_logger.WriteLine("\tUse the time component for att overrride")
@@ -8191,7 +8186,7 @@ class BasicAttitudeStandardHelper(object):
         self.m_logger.WriteLine6("\t\tThe new StopTime is: {0}", oExternal.stop_time)
         # AttStart
         refEvt: "ITimeToolEvent" = oExternal.attitude_start_epoch.reference_event
-        res: "ITimeToolEventFindOccurrenceResult" = refEvt.find_occurrence()
+        res: "TimeToolEventFindOccurrenceResult" = refEvt.find_occurrence()
         self.m_logger.WriteLine7("\t\tThe new AttitudeStart is: {0} and isValid: {1}", res.epoch, res.is_valid)
 
         # delete the time component
@@ -8216,7 +8211,7 @@ class BasicAttitudeStandardHelper(object):
     # endregion
 
     # region RateOffset
-    def RateOffset(self, oOffset: "IVehicleRateOffset"):
+    def RateOffset(self, oOffset: "VehicleRateOffset"):
         Assert.assertIsNotNone(oOffset)
         # Rate
         self.m_logger.WriteLine6("\t\t\t\tThe current Rate is: {0}", oOffset.rate)
@@ -8227,7 +8222,7 @@ class BasicAttitudeStandardHelper(object):
         def action357():
             oOffset.rate = 123456.789
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action357)
+        TryCatchAssertBlock.DoAssert(action357)
         # Offset
         self.m_logger.WriteLine6("\t\t\t\tThe current Offset is: {0}", oOffset.offset)
         oOffset.offset = 12.34
@@ -8237,12 +8232,12 @@ class BasicAttitudeStandardHelper(object):
         def action358():
             oOffset.offset = 1234.5
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action358)
+        TryCatchAssertBlock.DoAssert(action358)
 
     # endregion
 
     # region Pointing
-    def Pointing(self, oPointing: "IVehicleAttitudePointing"):
+    def Pointing(self, oPointing: "VehicleAttitudePointing"):
         self.m_logger.WriteLine("----- POINTING TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oPointing)
         # UseTargetPointing (false)
@@ -8272,7 +8267,7 @@ class BasicAttitudeStandardHelper(object):
     # endregion
 
     # region Advanced
-    def Advanced(self, oAdvanced: "IVehicleAccessAdvanced", bReadOnly: bool):
+    def Advanced(self, oAdvanced: "VehicleAccessAdvanced", bReadOnly: bool):
         self.m_logger.WriteLine4("----- ADVANCED ACCESS TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly)
         oEDHelper = AccessEventDetectionHelper()
         oSHelper = AccessSamplingHelper()
@@ -8282,25 +8277,25 @@ class BasicAttitudeStandardHelper(object):
                 oAdvanced.use_light_time_delay = True
 
             # UseLightTimeDelay (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action359)
+            TryCatchAssertBlock.DoAssert(action359)
 
             def action360():
                 oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
 
             # TimeSense (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action360)
+            TryCatchAssertBlock.DoAssert(action360)
 
             def action361():
                 oAdvanced.time_delay_convergence = 0.1
 
             # TimeDelayConvergence (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action361)
+            TryCatchAssertBlock.DoAssert(action361)
 
             def action362():
                 (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
 
             # AberrationType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action362)
+            TryCatchAssertBlock.DoAssert(action362)
             # EventDetection (readonly)
             oEDHelper.Run(oAdvanced.event_detection, bReadOnly)
             # Sampling (readonly)
@@ -8317,19 +8312,19 @@ class BasicAttitudeStandardHelper(object):
                 oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
 
             # TimeSense (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action363)
+            TryCatchAssertBlock.DoAssert(action363)
 
             def action364():
                 oAdvanced.time_delay_convergence = 0.1
 
             # TimeDelayConvergence (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action364)
+            TryCatchAssertBlock.DoAssert(action364)
 
             def action365():
                 (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
 
             # AberrationType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action365)
+            TryCatchAssertBlock.DoAssert(action365)
             # UseLightTimeDelay (true)
             oAdvanced.use_light_time_delay = True
             self.m_logger.WriteLine4("\tThe new UseLightTimeDelay is: {0}", oAdvanced.use_light_time_delay)
@@ -8349,7 +8344,7 @@ class BasicAttitudeStandardHelper(object):
             def action366():
                 (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.UNKNOWN
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action366)
+            TryCatchAssertBlock.DoAssert(action366)
             # TimeDelayConvergence
             self.m_logger.WriteLine6("\tThe current TimeDelayConvergence is: {0}", oAdvanced.time_delay_convergence)
             oAdvanced.time_delay_convergence = 0.1
@@ -8359,7 +8354,7 @@ class BasicAttitudeStandardHelper(object):
             def action367():
                 oAdvanced.time_delay_convergence = 0.5
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action367)
+            TryCatchAssertBlock.DoAssert(action367)
             # TimeSense
             self.m_logger.WriteLine6("\tThe current TimeSense is: {0}", oAdvanced.time_sense)
             oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
@@ -8372,7 +8367,7 @@ class BasicAttitudeStandardHelper(object):
             def action368():
                 oAdvanced.time_sense = IV_TIME_SENSE.UNKNOWN
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action368)
+            TryCatchAssertBlock.DoAssert(action368)
             # EventDetection
             oEDHelper.Run(oAdvanced.event_detection, bReadOnly)
             # Sampling
@@ -8383,8 +8378,8 @@ class BasicAttitudeStandardHelper(object):
     # endregion
 
     # region Targets
-    def Targets(self, oPointing: "IVehicleAttitudePointing", bReadOnly: bool):
-        oCollection: "IVehicleTargetPointingCollection" = oPointing.targets
+    def Targets(self, oPointing: "VehicleAttitudePointing", bReadOnly: bool):
+        oCollection: "VehicleTargetPointingCollection" = oPointing.targets
 
         self.m_logger.WriteLine("----- TARGETS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
@@ -8392,18 +8387,18 @@ class BasicAttitudeStandardHelper(object):
 
         i: int = 0
         while i < oCollection.count:
-            element: "IVehicleTargetPointingElement" = oCollection[i]
+            element: "VehicleTargetPointingElement" = oCollection[i]
 
             i += 1
 
-        element: "IVehicleTargetPointingElement"
+        element: "VehicleTargetPointingElement"
         for element in oCollection:
             lat: float = element.latitude
 
         def action369():
-            element2: "IVehicleTargetPointingElement" = oCollection[oCollection.count]
+            element2: "VehicleTargetPointingElement" = oCollection[oCollection.count]
 
-        TryCatchAssertBlock.DoAssert("IVehicleTargetPointingCollection bad index", action369)
+        TryCatchAssertBlock.DoAssert(action369)
 
         arTargets = oCollection.available_targets
         self.m_logger.WriteLine3("\tThe TargetPointing collection has: {0} available targets.", Array.Length(arTargets))
@@ -8413,36 +8408,36 @@ class BasicAttitudeStandardHelper(object):
                 def action370():
                     oCollection.add(str(arTargets[0]))
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action370)
+                TryCatchAssertBlock.DoAssert(action370)
 
             if Array.Length(arTargets) > 0:
                 oCollection.add_position_as_target(10.0, 20.0, 30.0)
-                e0: "IVehicleTargetPointingElement" = oCollection[0]
+                e0: "VehicleTargetPointingElement" = oCollection[0]
 
                 def action371():
                     oCollection.add_position_as_target(-10000.0, -10000.0, -10000.0)
 
-                TryCatchAssertBlock.DoAssert("AddPositionAsTarget bad params.", action371)
+                TryCatchAssertBlock.DoAssert(action371)
 
             if oCollection.count > 0:
 
                 def action372():
                     oCollection.remove_at(0)
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action372)
+                TryCatchAssertBlock.DoAssert(action372)
 
             if oCollection.count > 0:
 
                 def action373():
                     oCollection.remove(str(arTargets[0]))
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action373)
+                TryCatchAssertBlock.DoAssert(action373)
 
             def action374():
                 oCollection.remove_all()
 
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action374)
+            TryCatchAssertBlock.DoAssert(action374)
 
         else:
             # RemoveAll
@@ -8453,7 +8448,7 @@ class BasicAttitudeStandardHelper(object):
             def action375():
                 oCollection.add("Bogus")
 
-            TryCatchAssertBlock.DoAssert("Should not allow to add a bad target.", action375)
+            TryCatchAssertBlock.DoAssert(action375)
 
             strTarget: str = ""
 
@@ -8464,7 +8459,7 @@ class BasicAttitudeStandardHelper(object):
                     Assert.fail("Collection should not contain Target: {0}", strTarget)
 
                 # Add
-                oElem: "IVehicleTargetPointingElement" = oCollection.add(strTarget)
+                oElem: "VehicleTargetPointingElement" = oCollection.add(strTarget)
                 Assert.assertIsNotNone(oElem)
                 self.m_logger.WriteLine5("\t\tThe {0} Target was added into the collection.", strTarget)
                 if not oCollection.contains(strTarget):
@@ -8483,7 +8478,7 @@ class BasicAttitudeStandardHelper(object):
             def action376():
                 oCollection.remove("Bogus")
 
-            TryCatchAssertBlock.DoAssert("Should not remove thru bad name.", action376)
+            TryCatchAssertBlock.DoAssert(action376)
 
             # RemoveAt
             oCollection.remove_at(0)
@@ -8493,15 +8488,15 @@ class BasicAttitudeStandardHelper(object):
             def action377():
                 oCollection.remove_at(-1)
 
-            TryCatchAssertBlock.DoAssert("Should not remove thru bad index -1.", action377)
+            TryCatchAssertBlock.DoAssert(action377)
 
             def action378():
                 oCollection.remove_at(oCollection.count)
 
-            TryCatchAssertBlock.DoAssert("Should not remove thru bad index.", action378)
+            TryCatchAssertBlock.DoAssert(action378)
 
             # Item
-            targetPointingElement: "IVehicleTargetPointingElement" = oCollection[0]
+            targetPointingElement: "VehicleTargetPointingElement" = oCollection[0]
             Assert.assertIsNotNone(targetPointingElement)
 
             # AlignedVector
@@ -8522,12 +8517,12 @@ class BasicAttitudeStandardHelper(object):
             def action379():
                 targetPointingElement.constrained_vector_reference = ""
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action379)
+            TryCatchAssertBlock.DoAssert(action379)
 
             def action380():
                 targetPointingElement.constrained_vector_reference = "InvalidReferenceVector"
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action380)
+            TryCatchAssertBlock.DoAssert(action380)
             # ResetConstrainedVectorReference
             self.m_logger.WriteLine4(
                 "\tThe current ResetConstrainedVectorReference is: {0}",
@@ -8546,7 +8541,7 @@ class BasicAttitudeStandardHelper(object):
                 targetPointingElement.longitude,
                 targetPointingElement.altitude,
             )
-            intervals: "IVehicleTargetPointingIntervalCollection" = targetPointingElement.intervals
+            intervals: "VehicleTargetPointingIntervalCollection" = targetPointingElement.intervals
 
             useAccessTimes: bool = oPointing.target_times.use_access_times
             oPointing.target_times.use_access_times = False
@@ -8558,7 +8553,7 @@ class BasicAttitudeStandardHelper(object):
             intervals.add("1 Jul 2005 13:40", "1 Jul 2005 13:50")
             Assert.assertEqual(intervals.count, (prevCount + 2))
 
-            ste: "IVehicleScheduleTimesElement"
+            ste: "VehicleScheduleTimesElement"
 
             for ste in intervals:
                 steString: str = str(ste)
@@ -8593,7 +8588,7 @@ class BasicAttitudeStandardHelper(object):
     # endregion
 
     # region TargetTimes
-    def TargetTimes(self, oTimes: "IVehicleTargetTimes", bReadOnly: bool):
+    def TargetTimes(self, oTimes: "VehicleTargetTimes", bReadOnly: bool):
         self.m_logger.WriteLine("----- TARGET TIMES TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oTimes)
 
@@ -8604,7 +8599,7 @@ class BasicAttitudeStandardHelper(object):
             def action381():
                 oTimes.use_access_times = True
 
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action381)
+            TryCatchAssertBlock.DoAssert(action381)
             # AccessTimes
             oATH.Run(oTimes.access_times)
             # ScheduleTimes (readonly)
@@ -8638,7 +8633,7 @@ class BasicAttitudeStandardHelper(object):
     # endregion
 
     # region IntegratedAttitude
-    def IntegratedAttitude(self, oAttitude: "IVehicleIntegratedAttitude"):
+    def IntegratedAttitude(self, oAttitude: "VehicleIntegratedAttitude"):
         self.m_logger.WriteLine("----- THE INTEGRATED ATTITUDE TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oAttitude)
         # StartTime
@@ -8670,7 +8665,7 @@ class BasicAttitudeStandardHelper(object):
         def action382():
             oAttitude.wx = 1234567.89
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action382)
+        TryCatchAssertBlock.DoAssert(action382)
         # Wy
         self.m_logger.WriteLine6("\tThe current Wy is: {0}", oAttitude.wy)
         oAttitude.wy = 0.000349066
@@ -8680,7 +8675,7 @@ class BasicAttitudeStandardHelper(object):
         def action383():
             oAttitude.wy = 1234567.89
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action383)
+        TryCatchAssertBlock.DoAssert(action383)
         # Wz
         self.m_logger.WriteLine6("\tThe current Wz is: {0}", oAttitude.wz)
         oAttitude.wz = 0.000523599
@@ -8690,7 +8685,7 @@ class BasicAttitudeStandardHelper(object):
         def action384():
             oAttitude.wz = 1234567.89
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action384)
+        TryCatchAssertBlock.DoAssert(action384)
 
         oAttitude.save_to_file("Satellite2.a")
 
@@ -8700,7 +8695,7 @@ class BasicAttitudeStandardHelper(object):
         oAttitude.save_to_file("Satellite2.a")
 
         # Torque
-        oTorque: "IVehicleTorque" = oAttitude.torque
+        oTorque: "VehicleTorque" = oAttitude.torque
         Assert.assertIsNotNone(oTorque)
         # UseTorqueFile
         self.m_logger.WriteLine4("\tThe current UseTorqueFile is: {0}", oTorque.use_torque_file)
@@ -8711,7 +8706,7 @@ class BasicAttitudeStandardHelper(object):
         def action385():
             oTorque.torque_file = r"..\..\..\Scenario\TorquesTimeBodyFixed.tq"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action385)
+        TryCatchAssertBlock.DoAssert(action385)
         oTorque.use_torque_file = True
         self.m_logger.WriteLine4("\tThe new UseTorqueFile is: {0}", oTorque.use_torque_file)
         Assert.assertTrue(oTorque.use_torque_file)
@@ -8724,12 +8719,12 @@ class BasicAttitudeStandardHelper(object):
         def action386():
             oTorque.torque_file = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action386)
+        TryCatchAssertBlock.DoAssert(action386)
 
         def action387():
             oTorque.torque_file = "InvalidFile.Name"
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action387)
+        TryCatchAssertBlock.DoAssert(action387)
         oAttitude.save_to_file("Satellite2.a")
         self.m_logger.WriteLine("----- THE INTEGRATED ATTITUDE TEST ----- END -----")
 
@@ -8745,13 +8740,13 @@ class AccessTimeHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IAccessTimeCollection"):
+    def Run(self, oCollection: "AccessTimeCollection"):
         self.m_logger.WriteLine("----- ACCESS TIME COLLECTION TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\tThe current AccessTime collection contains: {0} elements.", oCollection.count)
         # _NewEnum
-        accessTime: "IAccessTime"
+        accessTime: "AccessTime"
         # _NewEnum
         for accessTime in oCollection:
             self.m_logger.WriteLine8(
@@ -8762,12 +8757,12 @@ class AccessTimeHelper(object):
             )
 
         def action388():
-            oTime: "IAccessTime" = oCollection[oCollection.count]
+            oTime: "AccessTime" = oCollection[oCollection.count]
 
         # Item
-        TryCatchAssertBlock.DoAssert("Bad IAccessTimeCollection index", action388)
+        TryCatchAssertBlock.DoAssert(action388)
         if oCollection.count > 0:
-            oTime: "IAccessTime" = oCollection[0]
+            oTime: "AccessTime" = oCollection[0]
             Assert.assertIsNotNone(oTime)
             self.m_logger.WriteLine8(
                 "\tThe first element: Target = {0}, StartTime = {1}, StopTime = {2}",
@@ -8790,7 +8785,7 @@ class ScheduleTimesHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IVehicleScheduleTimesCollection", bReadOnly: bool):
+    def Run(self, oCollection: "VehicleScheduleTimesCollection", bReadOnly: bool):
         self.m_logger.WriteLine("----- SCHEDULE TIMES COLLECTION TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         # Count
@@ -8801,19 +8796,19 @@ class ScheduleTimesHelper(object):
                 oCollection.add("Satellite/Satellite1")
 
             # Add
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action389)
+            TryCatchAssertBlock.DoAssert(action389)
 
             def action390():
                 oCollection.remove_at(0)
 
             # RemoveAt
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action390)
+            TryCatchAssertBlock.DoAssert(action390)
 
             def action391():
                 oCollection.remove_all()
 
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action391)
+            TryCatchAssertBlock.DoAssert(action391)
 
         else:
             arAvailTargets = oCollection.available_targets
@@ -8825,17 +8820,17 @@ class ScheduleTimesHelper(object):
                 i += 1
 
             # Add
-            oNew: "IVehicleScheduleTimesElement" = oCollection.add(r"AreaTarget/AreaTarget1")
+            oNew: "VehicleScheduleTimesElement" = oCollection.add(r"AreaTarget/AreaTarget1")
             Assert.assertIsNotNone(oNew)
 
             i: int = 0
             while i < oCollection.count:
-                element: "IVehicleScheduleTimesElement" = oCollection[i]
+                element: "VehicleScheduleTimesElement" = oCollection[i]
 
                 i += 1
 
             # _NewEnum
-            scheduleTimesElement: "IVehicleScheduleTimesElement"
+            scheduleTimesElement: "VehicleScheduleTimesElement"
             # _NewEnum
             for scheduleTimesElement in oCollection:
                 self.m_logger.WriteLine8(
@@ -8846,17 +8841,17 @@ class ScheduleTimesHelper(object):
                 )
 
             def action392():
-                element: "IVehicleScheduleTimesElement" = oCollection[oCollection.count]
+                element: "VehicleScheduleTimesElement" = oCollection[oCollection.count]
 
-            TryCatchAssertBlock.DoAssert("IVehicleScheduleTimesCollection bad index", action392)
+            TryCatchAssertBlock.DoAssert(action392)
 
             def action393():
                 oCollection.add("bogus")
 
-            TryCatchAssertBlock.DoAssert("bogus schedule time element", action393)
+            TryCatchAssertBlock.DoAssert(action393)
 
             # Item
-            oTime: "IVehicleScheduleTimesElement" = oCollection[0]
+            oTime: "VehicleScheduleTimesElement" = oCollection[0]
             nameX: str = oTime.target.name
             start: str = clr.Convert(oTime.start, str)
             stop: str = clr.Convert(oTime.stop, str)
@@ -8880,7 +8875,7 @@ class ScheduleTimesHelper(object):
                 oCollection.remove_at(oCollection.count)
 
             # RemoveAt
-            TryCatchAssertBlock.DoAssert("oCollection.RemoveAt(oCollection.Count)", action394)
+            TryCatchAssertBlock.DoAssert(action394)
 
             oCollection.remove_at(0)
             self.m_logger.WriteLine3("\tThe new ScheduleTimes collection contains: {0} elements.", oCollection.count)
@@ -8898,56 +8893,56 @@ class ScheduleTimesHelper(object):
 
 # region BasicAttitudeRealTimeHelper
 class BasicAttitudeRealTimeHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot", o: "IStkObject"):
+    def __init__(self, oApplication: "StkObjectRoot", o: "IStkObject"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
         Assert.assertIsNotNone(o)
-        self._application: "IStkObjectRoot" = oApplication
+        self._application: "StkObjectRoot" = oApplication
         self._obj: "IStkObject" = o
         oApplication.unit_preferences.reset_units()
 
     # endregion
 
-    def FindDataSet(self, datasets: "IDataProviderResultDataSetCollection", dsName: str):
+    def FindDataSet(self, datasets: "DataProviderResultDataSetCollection", dsName: str):
         Assert.assertIsNotNone(datasets)
         Assert.assertIsNotNone(dsName)
-        ds: "IDataProviderResultDataSet"
+        ds: "DataProviderResultDataSet"
         for ds in datasets:
             if ds.element_name == dsName:
                 return ds
 
         return None
 
-    def CreateTrajectory(self, ga: "IVehiclePropagatorGreatArc", startTime: typing.Any, stopTime: typing.Any):
+    def CreateTrajectory(self, ga: "VehiclePropagatorGreatArc", startTime: typing.Any, stopTime: typing.Any):
         MAX_POINTS: int = 100
 
         Assert.assertIsNotNone(startTime)
         Assert.assertIsNotNone(stopTime)
         Assert.assertIsNotNone(ga)
 
-        dtStart: "IDate" = self._application.conversion_utility.new_date(
+        dtStart: "Date" = self._application.conversion_utility.new_date(
             self._application.unit_preferences.get_current_unit_abbrv("DateFormat"), str(startTime)
         )
-        dtStop: "IDate" = self._application.conversion_utility.new_date(
+        dtStop: "Date" = self._application.conversion_utility.new_date(
             self._application.unit_preferences.get_current_unit_abbrv("DateFormat"), str(stopTime)
         )
         #
         # dtIncrement is used to add waypoints to aircraft, groundvehicle and ship objects
         #
-        dtSpan: "IQuantity" = dtStop.span(dtStart)
+        dtSpan: "Quantity" = dtStop.span(dtStart)
         dtSpan.convert_to_unit("sec")
 
         ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         # ga.StartTime = startTime;
         # ga.StopTime = stopTime;
         increment: float = dtSpan.value / MAX_POINTS
-        dtTime: "IDate" = self._application.conversion_utility.new_date(
+        dtTime: "Date" = self._application.conversion_utility.new_date(
             self._application.unit_preferences.get_current_unit_abbrv("DateFormat"), str(startTime)
         )
 
         i: int = 0
         while i < MAX_POINTS:
-            wp: "IVehicleWaypointsElement" = ga.waypoints.add()
+            wp: "VehicleWaypointsElement" = ga.waypoints.add()
             wp.longitude = Math.Sin((i / 180))
             wp.latitude = Math.Sin((i / 360))
             dtTime = dtTime.add("sec", increment)
@@ -8956,12 +8951,12 @@ class BasicAttitudeRealTimeHelper(object):
             i += 1
 
     # region Run method
-    def Run(self, oAttitude: "IVehicleAttitudeRealTime"):
-        resultA: "IDataProviderResult" = None
-        resultB: "IDataProviderResult" = None
+    def Run(self, oAttitude: "VehicleAttitudeRealTime"):
+        resultA: "DataProviderResult" = None
+        resultB: "DataProviderResult" = None
 
         dpi: "IDataProviderInfo" = None
-        tvdp: "IDataProviderTimeVarying" = None
+        tvdp: "DataProviderTimeVarying" = None
         reportStep: float = 600
         reportedStartTime: typing.Any = None
         reportedStopTime: typing.Any = None
@@ -9065,10 +9060,10 @@ class BasicAttitudeRealTimeHelper(object):
         #
         # Define a span of 60000 seconds
         #
-        dtStart: "IDate" = self._application.conversion_utility.new_date(
+        dtStart: "Date" = self._application.conversion_utility.new_date(
             self._application.unit_preferences.get_current_unit_abbrv("DateFormat"), str(startTime)
         )
-        dtStop: "IDate" = dtStart.add("sec", 60000)
+        dtStop: "Date" = dtStart.add("sec", 60000)
         #
         # stopTime is used in the following code to propagate the vehicle's ephemeris
         #
@@ -9076,7 +9071,7 @@ class BasicAttitudeRealTimeHelper(object):
         #
         # dtTime is a sliding time used when adding attitude quaternions
         #
-        dtTime: "IDate" = self._application.conversion_utility.new_date(
+        dtTime: "Date" = self._application.conversion_utility.new_date(
             self._application.unit_preferences.get_current_unit_abbrv("DateFormat"), str(startTime)
         )
 
@@ -9086,51 +9081,51 @@ class BasicAttitudeRealTimeHelper(object):
         self.m_logger.WriteLine5(" Stop time in seconds: {0} ", dtStop.format("EpSec"))
         if self._obj.class_type == STK_OBJECT_TYPE.SATELLITE:
             # Re-propagate the satellite
-            AG_SAT: "ISatellite" = clr.Convert(self._obj, ISatellite)
+            AG_SAT: "Satellite" = clr.Convert(self._obj, Satellite)
             AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            tb: "IVehiclePropagatorTwoBody" = clr.CastAs(AG_SAT.propagator, IVehiclePropagatorTwoBody)
+            tb: "VehiclePropagatorTwoBody" = clr.CastAs(AG_SAT.propagator, VehiclePropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             tb.propagate()
             startTime = tb.ephemeris_interval.find_start_time()
             stopTime = tb.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.SHIP:
-            AG_SH: "IShip" = clr.Convert(self._obj, IShip)
+            AG_SH: "Ship" = clr.Convert(self._obj, Ship)
             AG_SH.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-            ga: "IVehiclePropagatorGreatArc" = clr.CastAs(AG_SH.route, IVehiclePropagatorGreatArc)
+            ga: "VehiclePropagatorGreatArc" = clr.CastAs(AG_SH.route, VehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
             stopTime = ga.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.AIRCRAFT:
-            AG_AC: "IAircraft" = clr.Convert(self._obj, IAircraft)
+            AG_AC: "Aircraft" = clr.Convert(self._obj, Aircraft)
             AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-            ga: "IVehiclePropagatorGreatArc" = clr.CastAs(AG_AC.route, IVehiclePropagatorGreatArc)
+            ga: "VehiclePropagatorGreatArc" = clr.CastAs(AG_AC.route, VehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
             stopTime = ga.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE:
-            AG_GV: "IGroundVehicle" = clr.Convert(self._obj, IGroundVehicle)
+            AG_GV: "GroundVehicle" = clr.Convert(self._obj, GroundVehicle)
             AG_GV.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-            ga: "IVehiclePropagatorGreatArc" = clr.CastAs(AG_GV.route, IVehiclePropagatorGreatArc)
+            ga: "VehiclePropagatorGreatArc" = clr.CastAs(AG_GV.route, VehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
             stopTime = ga.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.MISSILE:
-            AG_MS: "IMissile" = clr.Convert(self._obj, IMissile)
+            AG_MS: "Missile" = clr.Convert(self._obj, Missile)
             AG_MS.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            tb: "IVehiclePropagatorTwoBody" = clr.CastAs(AG_MS.trajectory, IVehiclePropagatorTwoBody)
+            tb: "VehiclePropagatorTwoBody" = clr.CastAs(AG_MS.trajectory, VehiclePropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             tb.propagate()
             startTime = tb.ephemeris_interval.find_start_time()
             stopTime = tb.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-            AG_LV: "ILaunchVehicle" = clr.Convert(self._obj, ILaunchVehicle)
+            AG_LV: "LaunchVehicle" = clr.Convert(self._obj, LaunchVehicle)
             AG_LV.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
-            sa: "IVehiclePropagatorSimpleAscent" = clr.CastAs(AG_LV.trajectory, IVehiclePropagatorSimpleAscent)
+            sa: "VehiclePropagatorSimpleAscent" = clr.CastAs(AG_LV.trajectory, VehiclePropagatorSimpleAscent)
             sa.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             sa.propagate()
 
@@ -9149,7 +9144,7 @@ class BasicAttitudeRealTimeHelper(object):
         self.m_logger.WriteLine6("\tThe new LookAheadMethod is: {0}", oAttitude.look_ahead_method)
         Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.HOLD, oAttitude.look_ahead_method)
         # Duration
-        oDuration: "IVehicleDuration" = oAttitude.duration
+        oDuration: "VehicleDuration" = oAttitude.duration
         Assert.assertIsNotNone(oDuration)
         # LookAhead
         self.m_logger.WriteLine6("\tThe current LookAhead is: {0}", oDuration.look_ahead)
@@ -9160,7 +9155,7 @@ class BasicAttitudeRealTimeHelper(object):
         def action395():
             oDuration.look_ahead = 0
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action395)
+        TryCatchAssertBlock.DoAssert(action395)
         # LookBehind
         self.m_logger.WriteLine6("\tThe current LookBehind is: {0}", oDuration.look_behind)
         oDuration.look_behind = 456.789
@@ -9170,7 +9165,7 @@ class BasicAttitudeRealTimeHelper(object):
         def action396():
             oDuration.look_behind = 123456789
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action396)
+        TryCatchAssertBlock.DoAssert(action396)
 
         # BlockFactor
         oAttitude.block_factor = 20
@@ -9181,7 +9176,7 @@ class BasicAttitudeRealTimeHelper(object):
         def action397():
             oAttitude.block_factor = 19
 
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action397)
+        TryCatchAssertBlock.DoAssert(action397)
         if oAttitude.data_reference.profile_type == VEHICLE_PROFILE.PROFILE_UNKNOWN:
             Assert.assertIsNone(oAttitude.data_reference.profile)
 
@@ -9241,10 +9236,10 @@ class BasicAttitudeRealTimeHelper(object):
                 raise
 
         if dpi != None:
-            tvdp = clr.Convert(dpi, IDataProviderTimeVarying)
+            tvdp = clr.Convert(dpi, DataProviderTimeVarying)
             resultA = tvdp.exec_elements(startTime, stopTime, reportStep, elements)
             Assert.assertEqual(5, resultA.data_sets.count)
-            ds1: "IDataProviderResultDataSet" = self.FindDataSet(resultA.data_sets, "Time")
+            ds1: "DataProviderResultDataSet" = self.FindDataSet(resultA.data_sets, "Time")
             times = ds1.get_values()
             # Check if the start/stop times of the report match the
             # times used to add the attitude data.
@@ -9254,8 +9249,8 @@ class BasicAttitudeRealTimeHelper(object):
             Assert.assertEqual(reportedStopTime, stopTime)
             if oAttitude.data_reference.is_profile_type_supported(VEHICLE_PROFILE.PROFILE_FIXED_IN_AXES):
                 oAttitude.data_reference.set_profile_type(VEHICLE_PROFILE.PROFILE_FIXED_IN_AXES)
-                fixed: "IVehicleProfileFixedInAxes" = clr.CastAs(
-                    oAttitude.data_reference.profile, IVehicleProfileFixedInAxes
+                fixed: "VehicleProfileFixedInAxes" = clr.CastAs(
+                    oAttitude.data_reference.profile, VehicleProfileFixedInAxes
                 )
                 if fixed != None:
                     fixed.reference_axes = "CentralBody/Earth Fixed"
@@ -9273,9 +9268,9 @@ class BasicAttitudeRealTimeHelper(object):
                     pos += 4
 
                 dpi = self._obj.data_providers["Attitude Quaternions"]
-                tvdp = clr.Convert(dpi, IDataProviderTimeVarying)
+                tvdp = clr.Convert(dpi, DataProviderTimeVarying)
                 resultB = tvdp.exec_elements(startTime, stopTime, reportStep, elements)
-                ds2: "IDataProviderResultDataSet" = self.FindDataSet(resultB.data_sets, "Time")
+                ds2: "DataProviderResultDataSet" = self.FindDataSet(resultB.data_sets, "Time")
                 times = ds2.get_values()
                 reportedStartTime = str(times[0])[0 : len(str(startTime))]
                 reportedStopTime = str(times[(Array.Length(times) - 1)])[0 : len(str(stopTime))]
@@ -9290,11 +9285,11 @@ class BasicAttitudeRealTimeHelper(object):
 
 # region BasicAttitudeDifferenceHelper
 class BasicAttitudeDifferenceHelper(object):
-    def __init__(self, oApplication: "IStkObjectRoot"):
+    def __init__(self, oApplication: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
         oApplication.unit_preferences.reset_units()
-        self.m_oApplication: "IStkObjectRoot" = oApplication
+        self.m_oApplication: "StkObjectRoot" = oApplication
 
     # endregion
 
@@ -9311,7 +9306,7 @@ class BasicAttitudeDifferenceHelper(object):
         # check a RealTime Attitude
         self.m_oApplication.execute_command((("SetAttitude " + strObject) + " RealTime Extrapolate 300 120"))
 
-        oRealTime: "IVehicleAttitudeRealTime" = clr.CastAs(self.GetAttitude(oAny), IVehicleAttitudeRealTime)
+        oRealTime: "VehicleAttitudeRealTime" = clr.CastAs(self.GetAttitude(oAny), VehicleAttitudeRealTime)
         Assert.assertIsNotNone(oRealTime)
         Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oRealTime.look_ahead_method)
         Assert.assertEqual(300, oRealTime.duration.look_ahead)
@@ -9328,7 +9323,7 @@ class BasicAttitudeDifferenceHelper(object):
         Assert.assertEqual(VEHICLE_PROFILE.PROFILE_ECF_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT, veProfile)
         Assert.assertEqual(
             12.5,
-            (clr.Convert(self.GetCurrentBasicProfile(oStandard), IVehicleProfileConstraintOffset)).constraint_offset,
+            (clr.Convert(self.GetCurrentBasicProfile(oStandard), VehicleProfileConstraintOffset)).constraint_offset,
         )
 
         self.m_oApplication.execute_command(
@@ -9350,17 +9345,17 @@ class BasicAttitudeDifferenceHelper(object):
     def GetAttitude(self, oAny: "IStkObject"):
         oAttitude: "IVehicleAttitude" = None
         if oAny.class_type == STK_OBJECT_TYPE.SATELLITE:
-            oAttitude = (clr.Convert(oAny, ISatellite)).attitude
+            oAttitude = (clr.Convert(oAny, Satellite)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.SHIP:
-            oAttitude = (clr.Convert(oAny, IShip)).attitude
+            oAttitude = (clr.Convert(oAny, Ship)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.AIRCRAFT:
-            oAttitude = (clr.Convert(oAny, IAircraft)).attitude
+            oAttitude = (clr.Convert(oAny, Aircraft)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.MISSILE:
-            oAttitude = (clr.Convert(oAny, IMissile)).attitude
+            oAttitude = (clr.Convert(oAny, Missile)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE:
-            oAttitude = (clr.Convert(oAny, IGroundVehicle)).attitude
+            oAttitude = (clr.Convert(oAny, GroundVehicle)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-            oAttitude = (clr.Convert(oAny, ILaunchVehicle)).attitude
+            oAttitude = (clr.Convert(oAny, LaunchVehicle)).attitude
         return oAttitude
 
     # endregion
@@ -9368,13 +9363,13 @@ class BasicAttitudeDifferenceHelper(object):
     # region GetCurrentBasicProfileType
     def GetCurrentBasicProfileType(self, oStandard: "IVehicleAttitudeStandard"):
         if oStandard.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
-            orbit: "IVehicleOrbitAttitudeStandard" = clr.Convert(oStandard, IVehicleOrbitAttitudeStandard)
+            orbit: "VehicleOrbitAttitudeStandard" = clr.Convert(oStandard, VehicleOrbitAttitudeStandard)
             return orbit.basic.profile_type
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
-            route: "IVehicleRouteAttitudeStandard" = clr.Convert(oStandard, IVehicleRouteAttitudeStandard)
+            route: "VehicleRouteAttitudeStandard" = clr.Convert(oStandard, VehicleRouteAttitudeStandard)
             return route.basic.profile_type
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
-            traj: "IVehicleTrajectoryAttitudeStandard" = clr.Convert(oStandard, IVehicleTrajectoryAttitudeStandard)
+            traj: "VehicleTrajectoryAttitudeStandard" = clr.Convert(oStandard, VehicleTrajectoryAttitudeStandard)
             return traj.basic.profile_type
         else:
             return VEHICLE_PROFILE.PROFILE_UNKNOWN
@@ -9384,13 +9379,13 @@ class BasicAttitudeDifferenceHelper(object):
     # region GetCurrentBasicProfile
     def GetCurrentBasicProfile(self, oStandard: "IVehicleAttitudeStandard"):
         if oStandard.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
-            orbit: "IVehicleOrbitAttitudeStandard" = clr.Convert(oStandard, IVehicleOrbitAttitudeStandard)
+            orbit: "VehicleOrbitAttitudeStandard" = clr.Convert(oStandard, VehicleOrbitAttitudeStandard)
             return orbit.basic.profile
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
-            route: "IVehicleRouteAttitudeStandard" = clr.Convert(oStandard, IVehicleRouteAttitudeStandard)
+            route: "VehicleRouteAttitudeStandard" = clr.Convert(oStandard, VehicleRouteAttitudeStandard)
             return route.basic.profile
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
-            traj: "IVehicleTrajectoryAttitudeStandard" = clr.Convert(oStandard, IVehicleTrajectoryAttitudeStandard)
+            traj: "VehicleTrajectoryAttitudeStandard" = clr.Convert(oStandard, VehicleTrajectoryAttitudeStandard)
             return traj.basic.profile
         else:
             return None
@@ -9407,7 +9402,7 @@ class AccessEventDetectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oDetection: "IAccessEventDetection", bReadOnly: bool):
+    def Run(self, oDetection: "AccessEventDetection", bReadOnly: bool):
         self.m_logger.WriteLine4("----- ACCESS EVENT DETECTION TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly)
         if bReadOnly:
 
@@ -9415,33 +9410,33 @@ class AccessEventDetectionHelper(object):
                 oDetection.set_type(oDetection.type)
 
             # SetType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action398)
+            TryCatchAssertBlock.DoAssert(action398)
             if oDetection.type == EVENT_DETECTION.NO_SUB_SAMPLING:
-                oNoSubSampling: "IEventDetectionNoSubSampling" = clr.CastAs(
-                    oDetection.strategy, IEventDetectionNoSubSampling
+                oNoSubSampling: "EventDetectionNoSubSampling" = clr.CastAs(
+                    oDetection.strategy, EventDetectionNoSubSampling
                 )
                 Assert.assertIsNotNone(oNoSubSampling)
             elif oDetection.type == EVENT_DETECTION.USE_SUB_SAMPLING:
-                oSubSampling: "IEventDetectionSubSampling" = clr.CastAs(oDetection.strategy, IEventDetectionSubSampling)
+                oSubSampling: "EventDetectionSubSampling" = clr.CastAs(oDetection.strategy, EventDetectionSubSampling)
                 Assert.assertIsNotNone(oSubSampling)
 
                 def action399():
                     oSubSampling.abs_value_convergence = 0.1
 
                 # AbsValueConvergence (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action399)
+                TryCatchAssertBlock.DoAssert(action399)
 
                 def action400():
                     oSubSampling.rel_value_convergence = 0.1
 
                 # RelValueConvergence (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action400)
+                TryCatchAssertBlock.DoAssert(action400)
 
                 def action401():
                     oSubSampling.time_convergence = 0.01
 
                 # TimeConvergence (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action401)
+                TryCatchAssertBlock.DoAssert(action401)
             else:
                 Assert.fail("Invalid type!")
 
@@ -9466,14 +9461,14 @@ class AccessEventDetectionHelper(object):
                 Assert.assertEqual(eType, eType1)
                 if oDetection.type == EVENT_DETECTION.NO_SUB_SAMPLING:
                     # Strategy
-                    oNoSubSampling: "IEventDetectionNoSubSampling" = clr.CastAs(
-                        oDetection.strategy, IEventDetectionNoSubSampling
+                    oNoSubSampling: "EventDetectionNoSubSampling" = clr.CastAs(
+                        oDetection.strategy, EventDetectionNoSubSampling
                     )
                     Assert.assertIsNotNone(oNoSubSampling)
                 elif oDetection.type == EVENT_DETECTION.USE_SUB_SAMPLING:
                     # Strategy
-                    oSubSampling: "IEventDetectionSubSampling" = clr.CastAs(
-                        oDetection.strategy, IEventDetectionSubSampling
+                    oSubSampling: "EventDetectionSubSampling" = clr.CastAs(
+                        oDetection.strategy, EventDetectionSubSampling
                     )
                     Assert.assertIsNotNone(oSubSampling)
                     # TimeConvergence
@@ -9485,7 +9480,7 @@ class AccessEventDetectionHelper(object):
                     def action402():
                         oSubSampling.time_convergence = -0.5
 
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action402)
+                    TryCatchAssertBlock.DoAssert(action402)
                     # AbsValueConvergence
                     self.m_logger.WriteLine6(
                         "\t\t\tThe current AbsValueConvergence is: {0}", oSubSampling.abs_value_convergence
@@ -9499,7 +9494,7 @@ class AccessEventDetectionHelper(object):
                     def action403():
                         oSubSampling.abs_value_convergence = -0.5
 
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action403)
+                    TryCatchAssertBlock.DoAssert(action403)
                     # RelValueConvergence
                     self.m_logger.WriteLine6(
                         "\t\t\tThe current RelValueConvergence is: {0}", oSubSampling.rel_value_convergence
@@ -9513,7 +9508,7 @@ class AccessEventDetectionHelper(object):
                     def action404():
                         oSubSampling.rel_value_convergence = -0.5
 
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action404)
+                    TryCatchAssertBlock.DoAssert(action404)
                 else:
                     Assert.fail("Invalid type!")
 
@@ -9533,7 +9528,7 @@ class AccessSamplingHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oSampling: "IAccessSampling", bReadOnly: bool):
+    def Run(self, oSampling: "AccessSampling", bReadOnly: bool):
         self.m_logger.WriteLine4("----- ACCESS SAMPLING TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly)
         if bReadOnly:
 
@@ -9541,37 +9536,37 @@ class AccessSamplingHelper(object):
                 oSampling.set_type(oSampling.type)
 
             # SetType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action405)
+            TryCatchAssertBlock.DoAssert(action405)
             if oSampling.type == SAMPLING_METHOD.ADAPTIVE:
-                oAdaptive: "ISamplingMethodAdaptive" = clr.CastAs(oSampling.strategy, ISamplingMethodAdaptive)
+                oAdaptive: "SamplingMethodAdaptive" = clr.CastAs(oSampling.strategy, SamplingMethodAdaptive)
                 Assert.assertIsNotNone(oAdaptive)
 
                 def action406():
                     oAdaptive.min_time_step = 0.1
 
                 # MinTimeStep (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action406)
+                TryCatchAssertBlock.DoAssert(action406)
 
                 def action407():
                     oAdaptive.max_time_step = 1.1
 
                 # MaxTimeStep (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action407)
+                TryCatchAssertBlock.DoAssert(action407)
             elif oSampling.type == SAMPLING_METHOD.FIXED_STEP:
-                oFixedStep: "ISamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, ISamplingMethodFixedStep)
+                oFixedStep: "SamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, SamplingMethodFixedStep)
                 Assert.assertIsNotNone(oFixedStep)
 
                 def action408():
                     oFixedStep.fixed_time_step = 123
 
                 # FixedTimeStep (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action408)
+                TryCatchAssertBlock.DoAssert(action408)
 
                 def action409():
                     oFixedStep.time_bound = 123
 
                 # TimeBound (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action409)
+                TryCatchAssertBlock.DoAssert(action409)
             else:
                 Assert.fail("Invalid type!")
 
@@ -9596,7 +9591,7 @@ class AccessSamplingHelper(object):
                 Assert.assertEqual(eType, eType1)
                 if oSampling.type == SAMPLING_METHOD.ADAPTIVE:
                     # Strategy
-                    oAdaptive: "ISamplingMethodAdaptive" = clr.CastAs(oSampling.strategy, ISamplingMethodAdaptive)
+                    oAdaptive: "SamplingMethodAdaptive" = clr.CastAs(oSampling.strategy, SamplingMethodAdaptive)
                     Assert.assertIsNotNone(oAdaptive)
                     # MinTimeStep
                     self.m_logger.WriteLine6("\t\t\tThe current MinTimeStep is: {0}", oAdaptive.min_time_step)
@@ -9607,7 +9602,7 @@ class AccessSamplingHelper(object):
                     def action410():
                         oAdaptive.min_time_step = -12.5
 
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action410)
+                    TryCatchAssertBlock.DoAssert(action410)
                     # MaxTimeStep
                     self.m_logger.WriteLine6("\t\t\tThe current MaxTimeStep is: {0}", oAdaptive.max_time_step)
                     oAdaptive.max_time_step = 12.5
@@ -9617,10 +9612,10 @@ class AccessSamplingHelper(object):
                     def action411():
                         oAdaptive.max_time_step = -12.5
 
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action411)
+                    TryCatchAssertBlock.DoAssert(action411)
                 elif oSampling.type == SAMPLING_METHOD.FIXED_STEP:
                     # Strategy
-                    oFixedStep: "ISamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, ISamplingMethodFixedStep)
+                    oFixedStep: "SamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, SamplingMethodFixedStep)
                     Assert.assertIsNotNone(oFixedStep)
                     # FixedTimeStep
                     self.m_logger.WriteLine6("\t\t\tThe current FixedTimeStep is: {0}", oFixedStep.fixed_time_step)
@@ -9631,7 +9626,7 @@ class AccessSamplingHelper(object):
                     def action412():
                         oFixedStep.fixed_time_step = -34.5
 
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action412)
+                    TryCatchAssertBlock.DoAssert(action412)
                     # TimeBound
                     self.m_logger.WriteLine6("\t\t\tThe current TimeBound is: {0}", oFixedStep.time_bound)
                     oFixedStep.time_bound = 34.5
@@ -9641,7 +9636,7 @@ class AccessSamplingHelper(object):
                     def action413():
                         oFixedStep.time_bound = -34.5
 
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action413)
+                    TryCatchAssertBlock.DoAssert(action413)
                 else:
                     Assert.fail("Invalid type!")
 
@@ -9655,9 +9650,9 @@ class AccessSamplingHelper(object):
 
 # region Spatial Info Helper
 class SpatialInfoHelper(object):
-    def __init__(self, app: "IStkObjectRoot"):
+    def __init__(self, app: "StkObjectRoot"):
         self.m_logger = Logger.Instance
-        self.m_app: "IStkObjectRoot" = app
+        self.m_app: "StkObjectRoot" = app
 
     @property
     def Application(self):
@@ -9666,27 +9661,27 @@ class SpatialInfoHelper(object):
     def InternalRun(self, oObj: "IStkObject"):
         Assert.assertIsNotNone(oObj)
         Assert.assertIsNotNone(clr.CastAs(oObj, IProvideSpatialInfo))
-        oSpatialInfo: "IVehicleSpatialInfo" = (clr.CastAs(oObj, IProvideSpatialInfo)).get_spatial_info(False)
+        oSpatialInfo: "VehicleSpatialInfo" = (clr.CastAs(oObj, IProvideSpatialInfo)).get_spatial_info(False)
         Assert.assertIsNotNone(oSpatialInfo)
         Assert.assertFalse(oSpatialInfo.recycle)
 
         Assert.assertIsNotNone(oSpatialInfo)
         Assert.assertIsNotNone(oObj)
 
-        spatialState: "ISpatialState" = oSpatialInfo.get_state(
-            (clr.CastAs(self.Application.current_scenario, IScenario)).start_time
+        spatialState: "SpatialState" = oSpatialInfo.get_state(
+            (clr.CastAs(self.Application.current_scenario, Scenario)).start_time
         )
         Assert.assertIsNotNone(spatialState)
 
         Assert.assertIsNotNone(spatialState.central_body)
         Assert.assertEqual(
-            spatialState.current_time, (clr.CastAs(self.Application.current_scenario, IScenario)).start_time
+            spatialState.current_time, (clr.CastAs(self.Application.current_scenario, Scenario)).start_time
         )
 
         # spatial data should not be available for non-propagated vehicles
 
-        ga: "IVehiclePropagatorGreatArc" = None
-        wpe: "IVehicleWaypointsElement" = None
+        ga: "VehiclePropagatorGreatArc" = None
+        wpe: "VehicleWaypointsElement" = None
         oParentObj: "IStkObject" = oObj
         oParentType: "STK_OBJECT_TYPE" = oObj.class_type
         objTypeToPropagate: "STK_OBJECT_TYPE" = None
@@ -9703,8 +9698,8 @@ class SpatialInfoHelper(object):
             Assert.assertFalse(spatialState.is_available)
             objTypeToPropagate = oObj.class_type
             if objTypeToPropagate == STK_OBJECT_TYPE.AIRCRAFT:
-                (clr.Convert(oParentObj, IAircraft)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-                ga = clr.Convert((clr.Convert(oParentObj, IAircraft)).route, IVehiclePropagatorGreatArc)
+                (clr.Convert(oParentObj, Aircraft)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                ga = clr.Convert((clr.Convert(oParentObj, Aircraft)).route, VehiclePropagatorGreatArc)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -10
                 wpe.longitude = -11
@@ -9716,8 +9711,8 @@ class SpatialInfoHelper(object):
                 wpe.longitude = -14
                 ga.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.GROUND_VEHICLE:
-                (clr.Convert(oParentObj, IGroundVehicle)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-                ga = clr.Convert((clr.Convert(oParentObj, IGroundVehicle)).route, IVehiclePropagatorGreatArc)
+                (clr.Convert(oParentObj, GroundVehicle)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                ga = clr.Convert((clr.Convert(oParentObj, GroundVehicle)).route, VehiclePropagatorGreatArc)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -16
                 wpe.longitude = -17
@@ -9729,32 +9724,32 @@ class SpatialInfoHelper(object):
                 wpe.longitude = -21
                 ga.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-                (clr.Convert(oParentObj, ILaunchVehicle)).set_trajectory_type(
+                (clr.Convert(oParentObj, LaunchVehicle)).set_trajectory_type(
                     VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT
                 )
-                ascent: "IVehiclePropagatorSimpleAscent" = clr.CastAs(
-                    (clr.Convert(oParentObj, ILaunchVehicle)).trajectory, IVehiclePropagatorSimpleAscent
+                ascent: "VehiclePropagatorSimpleAscent" = clr.CastAs(
+                    (clr.Convert(oParentObj, LaunchVehicle)).trajectory, VehiclePropagatorSimpleAscent
                 )
                 Assert.assertIsNotNone(ascent)
                 ascent.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.MISSILE:
-                (clr.Convert(oParentObj, IMissile)).set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-                ballistic: "IVehiclePropagatorTwoBody" = clr.CastAs(
-                    (clr.Convert(oParentObj, IMissile)).trajectory, IVehiclePropagatorTwoBody
+                (clr.Convert(oParentObj, Missile)).set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+                ballistic: "VehiclePropagatorTwoBody" = clr.CastAs(
+                    (clr.Convert(oParentObj, Missile)).trajectory, VehiclePropagatorTwoBody
                 )
                 Assert.assertIsNotNone(ballistic)
                 ballistic.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.SATELLITE:
-                (clr.Convert(oParentObj, ISatellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-                tb: "IVehiclePropagatorTwoBody" = clr.CastAs(
-                    (clr.Convert(oParentObj, ISatellite)).propagator, IVehiclePropagatorTwoBody
+                (clr.Convert(oParentObj, Satellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+                tb: "VehiclePropagatorTwoBody" = clr.CastAs(
+                    (clr.Convert(oParentObj, Satellite)).propagator, VehiclePropagatorTwoBody
                 )
                 Assert.assertIsNotNone(tb)
                 tb.step = 120
                 tb.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.SHIP:
-                (clr.Convert(oParentObj, IShip)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-                ga = clr.Convert((clr.Convert(oParentObj, IShip)).route, IVehiclePropagatorGreatArc)
+                (clr.Convert(oParentObj, Ship)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                ga = clr.Convert((clr.Convert(oParentObj, Ship)).route, VehiclePropagatorGreatArc)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -22
                 wpe.longitude = -23
@@ -9767,12 +9762,10 @@ class SpatialInfoHelper(object):
                 ga.propagate()
 
         # Verify the available intervals
-        intervals: "IImmutableIntervalCollection" = oSpatialInfo.get_available_times()
+        intervals: "ImmutableIntervalCollection" = oSpatialInfo.get_available_times()
         Assert.assertIsNotNone(intervals)
 
-        self.spatialTimeHelper(
-            oObj, oSpatialInfo, (clr.CastAs(self.Application.current_scenario, IScenario)).start_time
-        )
+        self.spatialTimeHelper(oObj, oSpatialInfo, (clr.CastAs(self.Application.current_scenario, Scenario)).start_time)
 
         Logger.Instance.WriteLine3("# of available intervals: {0}", intervals.count)
 
@@ -9790,10 +9783,10 @@ class SpatialInfoHelper(object):
             Logger.Instance.WriteLine7("Interval [{0},{1}]", start, stop)
 
             self.spatialTimeHelper(oObj, oSpatialInfo, start)
-            dtStop: "IDate" = self.Application.conversion_utility.new_date(dateFormat, str(stop))
+            dtStop: "Date" = self.Application.conversion_utility.new_date(dateFormat, str(stop))
             # Modify the stop time by decrementing it by 60 seconds to avoid the
             # test failures.
-            dtStopModified: "IDate" = dtStop.subtract("sec", 60)
+            dtStopModified: "Date" = dtStop.subtract("sec", 60)
             dtStopModifiedStr: str = dtStopModified.format(dateFormat)
             self.spatialTimeHelper(oObj, oSpatialInfo, dtStopModifiedStr)
 
@@ -9807,18 +9800,18 @@ class SpatialInfoHelper(object):
             Assert.assertTrue(oSpatialInfo.get_state(start).is_available)
             # BUG59737 Assert.IsTrue(oSpatialInfo.GetState(stop).IsAvailable);
 
-            dateStart: "IDate" = self.Application.conversion_utility.new_date(dateFormat, str(start))
+            dateStart: "Date" = self.Application.conversion_utility.new_date(dateFormat, str(start))
             dateStart = dateStart.subtract("sec", 1)
             Assert.assertFalse(oSpatialInfo.get_state(dateStart.format(dateFormat)).is_available)
 
-            dateStop: "IDate" = self.Application.conversion_utility.new_date(dateFormat, str(stop))
+            dateStop: "Date" = self.Application.conversion_utility.new_date(dateFormat, str(stop))
             dateStop = dateStop.add("sec", 1)
             Assert.assertFalse(oSpatialInfo.get_state(dateStop.format(dateFormat)).is_available)
 
             i += 1
 
-    def spatialTimeHelper(self, oObj: "IStkObject", oSpatialInfo: "IVehicleSpatialInfo", param0: typing.Any):
-        spatialState: "ISpatialState" = None
+    def spatialTimeHelper(self, oObj: "IStkObject", oSpatialInfo: "VehicleSpatialInfo", param0: typing.Any):
+        spatialState: "SpatialState" = None
 
         oSpatialInfo = (clr.CastAs(oObj, IProvideSpatialInfo)).get_spatial_info(False)
 
@@ -9843,7 +9836,7 @@ class SpatialInfoHelper(object):
         def action414():
             spatialState.fixed_orientation.assign(fo)
 
-        TryCatchAssertBlock.DoAssert("Should not allow assignment to read-only attributes.", action414)
+        TryCatchAssertBlock.DoAssert(action414)
 
         vx: float = 0.0
         vy: float = 0.0
@@ -9873,10 +9866,10 @@ class SpatialInfoHelper(object):
         Assert.assertTrue(spatialState.is_available)
 
         # Convert the spatial state time to 'epSec'
-        oCurDate: "IDate" = self.Application.conversion_utility.new_date(
+        oCurDate: "Date" = self.Application.conversion_utility.new_date(
             self.Application.unit_preferences.get_current_unit_abbrv("DateFormat"), str(spatialState.current_time)
         )
-        oNewDate: "IDate" = oCurDate.add("sec", 60)  # 1 min
+        oNewDate: "Date" = oCurDate.add("sec", 60)  # 1 min
         # When recycling, the calls to GetState reuse the same instance
         # of the spatial state.
         oSpatialInfo.get_state(oNewDate.format(self.Application.unit_preferences.get_current_unit_abbrv("DateFormat")))
@@ -9916,9 +9909,9 @@ class EclipsingBodiesHelper(object):
     def __init__(self, *args, **kwargs):
         self.logger = Logger.Instance
 
-    def Run(self, oBodies: "IVehicleEclipseBodies"):
+    def Run(self, oBodies: "VehicleEclipseBodies"):
         self.logger.WriteLine("----- THE EclipsingBodiesHelper TEST ----- BEGIN -----")
-        # IVehicleEclipseBodies oBodies = AG_SAT.EclipseBodies;
+        # VehicleEclipseBodies oBodies = AG_SAT.EclipseBodies;
         Assert.assertIsNotNone(oBodies)
         # UseCustomizedList (false)
         self.logger.WriteLine4("The current UseCustomizedList flag is: {0}", oBodies.use_customized_list)
@@ -10104,8 +10097,8 @@ class EclipsingBodiesHelper(object):
 # region PlatformLaserEnvAtmosLossBBLLHelper
 class PlatformLaserEnvAtmosLossBBLLHelper(object):
     # region Run
-    def Run(self, laserEnv: "IPlatformLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+    def Run(self, laserEnv: "PlatformLaserEnvironment"):
+        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -10127,14 +10120,14 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
             LASER_PROPAGATION_LOSS_MODEL_TYPE.BEER_BOUGUER_LAMBERT_LAW, laserPropChan.atmospheric_loss_model.type
         )
 
-        bbll: "ILaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
-            laserPropChan.atmospheric_loss_model, ILaserAtmosphericLossModelBeerBouguerLambertLaw
+        bbll: "LaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
+            laserPropChan.atmospheric_loss_model, LaserAtmosphericLossModelBeerBouguerLambertLaw
         )
 
         bbll.create_evenly_spaced_layers(5, 100)
         Assert.assertTrue(bbll.enable_evenly_spaced_heights)
         Assert.assertEqual(100, bbll.maximum_altitude)
-        bbllLayerColl: "IBeerBouguerLambertLawLayerCollection" = bbll.atmosphere_layers
+        bbllLayerColl: "BeerBouguerLambertLawLayerCollection" = bbll.atmosphere_layers
         Assert.assertEqual(5, bbllLayerColl.count)
         Assert.assertEqual(100, bbllLayerColl[0].top_height)
         Assert.assertEqual(0, bbllLayerColl[0].extinction_coefficient)
@@ -10203,8 +10196,8 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
 # region PlatformLaserEnvAtmosLossModtranHelper
 class PlatformLaserEnvAtmosLossModtranHelper(object):
     # region Run
-    def Run(self, laserEnv: "IPlatformLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+    def Run(self, laserEnv: "PlatformLaserEnvironment"):
+        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -10232,8 +10225,8 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
             LASER_PROPAGATION_LOSS_MODEL_TYPE.MODTRAN_LOOKUP_TABLE_TYPE, laserPropChan.atmospheric_loss_model.type
         )
 
-        modtran: "IModtranLookupTablePropagationModel" = clr.CastAs(
-            laserPropChan.atmospheric_loss_model, IModtranLookupTablePropagationModel
+        modtran: "ModtranLookupTablePropagationModel" = clr.CastAs(
+            laserPropChan.atmospheric_loss_model, ModtranLookupTablePropagationModel
         )
 
         modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.MARITIME
@@ -10297,8 +10290,8 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 # region PlatformLaserEnvTropoScintLossHelper
 class PlatformLaserEnvTropoScintLossHelper(object):
     # region Run
-    def Run(self, laserEnv: "IPlatformLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+    def Run(self, laserEnv: "PlatformLaserEnvironment"):
+        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -10328,15 +10321,15 @@ class PlatformLaserEnvTropoScintLossHelper(object):
             laserPropChan.tropospheric_scintillation_loss_model.type,
         )
 
-        iturp1814: "ILaserTroposphericScintillationLossModelITURP1814" = clr.CastAs(
-            laserTropoScint, ILaserTroposphericScintillationLossModelITURP1814
+        iturp1814: "LaserTroposphericScintillationLossModelITURP1814" = clr.CastAs(
+            laserTropoScint, LaserTroposphericScintillationLossModelITURP1814
         )
 
         iturp1814.set_atmospheric_turbulence_model_type(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT)
         Assert.assertEqual(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT, iturp1814.atmospheric_turbulence_model.type)
 
-        cnst: "IAtmosphericTurbulenceModelConstant" = clr.CastAs(
-            iturp1814.atmospheric_turbulence_model, IAtmosphericTurbulenceModelConstant
+        cnst: "AtmosphericTurbulenceModelConstant" = clr.CastAs(
+            iturp1814.atmospheric_turbulence_model, AtmosphericTurbulenceModelConstant
         )
         cnst.constant_refractive_index_structure_parameter = 99
         Assert.assertEqual(99, cnst.constant_refractive_index_structure_parameter)
@@ -10346,8 +10339,8 @@ class PlatformLaserEnvTropoScintLossHelper(object):
             ATMOSPHERIC_TURBULENCE_MODEL_TYPE.HUFNAGEL_VALLEY, iturp1814.atmospheric_turbulence_model.type
         )
 
-        huf: "IAtmosphericTurbulenceModelHufnagelValley" = clr.CastAs(
-            iturp1814.atmospheric_turbulence_model, IAtmosphericTurbulenceModelHufnagelValley
+        huf: "AtmosphericTurbulenceModelHufnagelValley" = clr.CastAs(
+            iturp1814.atmospheric_turbulence_model, AtmosphericTurbulenceModelHufnagelValley
         )
         huf.wind_speed = 98
         Assert.assertEqual(98, huf.wind_speed)
@@ -10361,8 +10354,8 @@ class PlatformLaserEnvTropoScintLossHelper(object):
 # region PlatformRF_Environment_EnvironmentalDataHelper
 class PlatformRF_Environment_EnvironmentalDataHelper(object):
     # region Run
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+    def Run(self, rfEnv: "Atmosphere"):
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_itu_618_section2_p5 = False
         Assert.assertFalse(propChan.enable_itu_618_section2_p5)
@@ -10376,11 +10369,11 @@ class PlatformRF_Environment_EnvironmentalDataHelper(object):
 # region PlatformRF_Environment_RainCloudFog_RainModelHelper
 class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
     # region Run
-    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "IStkObjectRoot"):
+    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_rain_loss = False
         Assert.assertFalse(propChan.enable_rain_loss)
@@ -10401,7 +10394,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
             Assert.assertEqual(rainLossModelName, rainLossModel.name)
             if rainLossModelName == "Crane 1985":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1985, rainLossModel.type)
-                crane85: "IRainLossModelCrane1985" = clr.CastAs(rainLossModel, IRainLossModelCrane1985)
+                crane85: "RainLossModelCrane1985" = clr.CastAs(rainLossModel, RainLossModelCrane1985)
                 crane85.surface_temperature = -100
                 Assert.assertEqual(-100, crane85.surface_temperature)
                 crane85.surface_temperature = 100
@@ -10421,7 +10414,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.SCRIPT_PLUGIN, rainLossModel.type)
-                    scriptPlugin: "IRainLossModelScriptPlugin" = clr.CastAs(rainLossModel, IRainLossModelScriptPlugin)
+                    scriptPlugin: "RainLossModelScriptPlugin" = clr.CastAs(rainLossModel, RainLossModelScriptPlugin)
 
                     def action433():
                         scriptPlugin.filename = r"C:\bogus.vbs"
@@ -10437,7 +10430,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "CCIR 1983":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CCIR1983, rainLossModel.type)
-                ccir83: "IRainLossModelCCIR1983" = clr.CastAs(rainLossModel, IRainLossModelCCIR1983)
+                ccir83: "RainLossModelCCIR1983" = clr.CastAs(rainLossModel, RainLossModelCCIR1983)
                 ccir83.surface_temperature = -100
                 Assert.assertEqual(-100, ccir83.surface_temperature)
                 ccir83.surface_temperature = 100
@@ -10455,7 +10448,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "Crane 1982":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1982, rainLossModel.type)
-                crane82: "IRainLossModelCrane1982" = clr.CastAs(rainLossModel, IRainLossModelCrane1982)
+                crane82: "RainLossModelCrane1982" = clr.CastAs(rainLossModel, RainLossModelCrane1982)
                 crane82.surface_temperature = -100
                 Assert.assertEqual(-100, crane82.surface_temperature)
                 crane82.surface_temperature = 100
@@ -10473,7 +10466,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-10":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_10, rainLossModel.type)
-                itu618_10: "IRainLossModelITURP618_10" = clr.CastAs(rainLossModel, IRainLossModelITURP618_10)
+                itu618_10: "RainLossModelITURP618_10" = clr.CastAs(rainLossModel, RainLossModelITURP618_10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
                 itu618_10.surface_temperature = 100
@@ -10495,7 +10488,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-12":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_12, rainLossModel.type)
-                itu618_12: "IRainLossModelITURP618_12" = clr.CastAs(rainLossModel, IRainLossModelITURP618_12)
+                itu618_12: "RainLossModelITURP618_12" = clr.CastAs(rainLossModel, RainLossModelITURP618_12)
                 itu618_12.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
                 itu618_12.surface_temperature = 100
@@ -10517,7 +10510,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-13":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_13, rainLossModel.type)
-                itu618_13: "IRainLossModelITURP618_13" = clr.CastAs(rainLossModel, IRainLossModelITURP618_13)
+                itu618_13: "RainLossModelITURP618_13" = clr.CastAs(rainLossModel, RainLossModelITURP618_13)
 
                 itu618_13.enable_itu_1510 = False
                 Assert.assertFalse(itu618_13.enable_itu_1510)
@@ -10601,12 +10594,12 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
 # region PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "IStkObjectRoot"):
+    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
         root.unit_preferences.set_current_unit("MassUnit", "g")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         arSupportedCFFLM = propChan.supported_clouds_and_fog_fading_loss_models
         Assert.assertEqual(2, Array.Length(arSupportedCFFLM))
@@ -10628,17 +10621,17 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-7", cfflm.name)
         Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_7_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, ICloudsAndFogFadingLossModelP840_7))
+        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_7))
 
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-6")
         cfflm = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-6", cfflm.name)
         Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_6_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, ICloudsAndFogFadingLossModelP840_6))
+        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_6))
 
         root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "ICloudsAndFogFadingLossModelP840_7"):
+    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "CloudsAndFogFadingLossModelP840_7"):
         cfflm7.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm7.cloud_ceiling)
         cfflm7.cloud_ceiling = 20
@@ -10805,7 +10798,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("read only", action474)
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "ICloudsAndFogFadingLossModelP840_6"):
+    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "CloudsAndFogFadingLossModelP840_6"):
         cfflm6.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm6.cloud_ceiling)
         cfflm6.cloud_ceiling = 20
@@ -10973,16 +10966,16 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
 # region PlatformRF_Environment_AtmosphericAbsorptionHelper
 class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
+    def Run(self, rfEnv: "Atmosphere"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
         atmosAbsorb: "IAtmosphericAbsorptionModel" = propChan.atmos_absorption_model
 
         propChan.enable_atmos_absorption = False
@@ -11005,20 +10998,20 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SCRIPT_PLUGIN, aaModel.type)
                     self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
-                        clr.CastAs(aaModel, IAtmosphericAbsorptionModelScriptPlugin)
+                        clr.CastAs(aaModel, AtmosphericAbsorptionModelScriptPlugin)
                     )
 
             elif aaModelName == "Simple Satcom":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SIMPLE_SATCOM, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelSimpleSatcom)
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
                 )
             elif aaModelName == "TIREM 3.31":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM331, aaModel.type)
@@ -11032,7 +11025,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
                 helper = AtmosphereHelper(self._root)
-                helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, IAtmosphericAbsorptionModelVoacap))
+                helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
             else:
                 Assert.fail("Unknown model type")
 
@@ -11043,7 +11036,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -11054,7 +11047,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         iturp676.seasonal_regional_method = True
         Assert.assertTrue(iturp676.seasonal_regional_method)
 
-    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "IAtmosphericAbsorptionModelScriptPlugin"):
+    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "AtmosphericAbsorptionModelScriptPlugin"):
         def action500():
             scriptPlugin.filename = r"C:\bogus.vbs"
 
@@ -11068,7 +11061,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.filename)
 
-    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "IAtmosphericAbsorptionModelSimpleSatcom"):
+    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "AtmosphericAbsorptionModelSimpleSatcom"):
         self._root.unit_preferences.set_current_unit("DistanceUnit", "m")
         simpleSatcom.water_vapor_concentration = 0
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
@@ -11210,16 +11203,16 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
 # region PlatformRF_Environment_UrbanAndTerrestrialHelper
 class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
+    def Run(self, rfEnv: "Atmosphere"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_urban_terrestrial_loss = False
         Assert.assertFalse(propChan.enable_urban_terrestrial_loss)
@@ -11240,11 +11233,11 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             Assert.assertEqual(utModelName, utModel.name)
             if utModelName == "Two Ray":
                 Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.TWO_RAY, utModel.type)
-                self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, IUrbanTerrestrialLossModelTwoRay))
+                self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
             elif utModelName == "Urban Propagation Wireless InSite RT":
                 Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE_RT, utModel.type)
                 self.Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(
-                    clr.CastAs(utModel, IUrbanTerrestrialLossModelWirelessInSiteRT)
+                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSiteRT)
                 )
             else:
                 Assert.fail("Unknown model type")
@@ -11255,7 +11248,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
         TryCatchAssertBlock.ExpectedException("Invalid model name", action520)
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "IUrbanTerrestrialLossModelTwoRay"):
+    def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "UrbanTerrestrialLossModelTwoRay"):
         twoRay.loss_factor = 0.1
         Assert.assertEqual(0.1, twoRay.loss_factor)
         twoRay.loss_factor = 10
@@ -11286,7 +11279,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
         TryCatchAssertBlock.ExpectedException("is invalid", action524)
 
-    def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "IUrbanTerrestrialLossModelWirelessInSiteRT"):
+    def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "UrbanTerrestrialLossModelWirelessInSiteRT"):
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
         Assert.assertEqual(5, Array.Length(arSupportedCalculationMethods))
         sCalcMethod: str
@@ -11320,7 +11313,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
             TryCatchAssertBlock.ExpectedException("is invalid", action526)
 
-            geometryData: "IWirelessInSiteRTGeometryData" = wisRT.geometry_data
+            geometryData: "WirelessInSiteRTGeometryData" = wisRT.geometry_data
 
             def action527():
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
@@ -11421,16 +11414,16 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
 # region PlatformRF_Environment_TropoScintillationHelper
 class PlatformRF_Environment_TropoScintillationHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
+    def Run(self, rfEnv: "Atmosphere"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         arSupportedTSFLM = propChan.supported_tropospheric_scintillation_fading_loss_models
         Assert.assertEqual(2, Array.Length(arSupportedTSFLM))
@@ -11453,7 +11446,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual("ITU-R P618-12", tsflm.name)
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_12_TYPE, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
-            clr.CastAs(tsflm, ITroposphericScintillationFadingLossModelP618_12)
+            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_12)
         )
 
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-8")
@@ -11461,11 +11454,11 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual("ITU-R P618-8", tsflm.name)
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_8_TYPE, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
-            clr.CastAs(tsflm, ITroposphericScintillationFadingLossModelP618_8)
+            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_8)
         )
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_12(
-        self, tsflm12: "ITroposphericScintillationFadingLossModelP618_12"
+        self, tsflm12: "TroposphericScintillationFadingLossModelP618_12"
     ):
         def action537():
             tsflm12.compute_deep_fade = True
@@ -11543,7 +11536,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         TryCatchAssertBlock.ExpectedException("must be in", action546)
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
-        self, tsflm8: "ITroposphericScintillationFadingLossModelP618_8"
+        self, tsflm8: "TroposphericScintillationFadingLossModelP618_8"
     ):
         tsflm8.compute_deep_fade = False
         Assert.assertFalse(tsflm8.compute_deep_fade)
@@ -11607,19 +11600,19 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
 
 # region PlatformRF_Environment_CustomModelsHelper
 class PlatformRF_Environment_CustomModelsHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+    def Run(self, rfEnv: "Atmosphere"):
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         self.Test_IAgCustomPropagationModel(propChan.custom_a)
         self.Test_IAgCustomPropagationModel(propChan.custom_b)
         self.Test_IAgCustomPropagationModel(propChan.custom_c)
 
-    def Test_IAgCustomPropagationModel(self, customModel: "ICustomPropagationModel"):
+    def Test_IAgCustomPropagationModel(self, customModel: "CustomPropagationModel"):
         if not OSHelper.IsLinux():
             customModel.enable = False
             Assert.assertFalse(customModel.enable)

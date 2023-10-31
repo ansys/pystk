@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 
@@ -23,14 +24,14 @@ class EarlyBoundTests(TestBase):
         scenario: "IStkObject" = clr.CastAs(TestBase.Application.current_scenario, IStkObject)
         EarlyBoundTests.AG_Scenario = TestBase.Application.current_scenario
         EarlyBoundTests.AG_AC = clr.Convert(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC")), IAircraft
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC")), Aircraft
         )
         # Set to Propagator to Aviator
         EarlyBoundTests.AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
         # Get the aircrafts route (still on the STKObjects side)
-        aircraftRoute: "IVehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, IVehiclePropagatorAviator)
+        aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, VehiclePropagatorAviator)
         # Get the Aviator propagator
-        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.avtr_propagator, IAviatorPropagator)
+        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.avtr_propagator, AviatorPropagator)
         # Get the Aviator mission
         EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.avtr_mission
         # Get the phases
@@ -42,7 +43,7 @@ class EarlyBoundTests(TestBase):
         # Get the User Aircraft Models
         EarlyBoundTests.AG_AvtrAircraftModels = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.aircraft_models
         # Get the Aviator Aircraft
-        EarlyBoundTests.AG_AvtrAircraft = clr.CastAs(EarlyBoundTests.AG_Mission.vehicle, IAircraftModel)
+        EarlyBoundTests.AG_AvtrAircraft = clr.CastAs(EarlyBoundTests.AG_Mission.vehicle, AircraftModel)
         # Create a target object
         EarlyBoundTests.AG_Target = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.TARGET, "Target")
 
@@ -68,14 +69,14 @@ class EarlyBoundTests(TestBase):
 
     # region Static DataMembers
     AG_Scenario: "IStkObject" = None
-    AG_AC: "IAircraft" = None
-    AG_AvtrProp: "IAviatorPropagator" = None
-    AG_AvtrCatalog: "ICatalog" = None
-    AG_AvtrAircraftModels: "IAircraftModels" = None
-    AG_Mission: "IMission" = None
-    AG_Phases: "IPhaseCollection" = None
-    AG_Procedures: "IProcedureCollection" = None
-    AG_AvtrAircraft: "IAircraftModel" = None
+    AG_AC: "Aircraft" = None
+    AG_AvtrProp: "AviatorPropagator" = None
+    AG_AvtrCatalog: "Catalog" = None
+    AG_AvtrAircraftModels: "AircraftModels" = None
+    AG_Mission: "Mission" = None
+    AG_Phases: "PhaseCollection" = None
+    AG_Procedures: "ProcedureCollection" = None
+    AG_AvtrAircraft: "AircraftModel" = None
     AG_Target: "IStkObject" = None
     # endregion
 
@@ -89,10 +90,10 @@ class EarlyBoundTests(TestBase):
     # region Configuration
     @category("Configuration Tests")
     def test_Configuration(self):
-        acCopy: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        acCopy: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        defConfig: "IConfiguration" = acCopy.default_configuration
+        defConfig: "Configuration" = acCopy.default_configuration
 
         defConfig.base_drag_index = 1
         Assert.assertEqual(1, defConfig.base_drag_index)
@@ -102,7 +103,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(2, defConfig.empty_cgy)
         Assert.assertEqual(3, defConfig.empty_cgz)
 
-        defConfig2: "IConfiguration" = EarlyBoundTests.AG_AvtrAircraft.default_configuration
+        defConfig2: "Configuration" = EarlyBoundTests.AG_AvtrAircraft.default_configuration
         Assert.assertEqual(0, defConfig2.empty_cgx)
         Assert.assertEqual(0, defConfig2.empty_cgy)
         Assert.assertEqual(0, defConfig2.empty_cgz)
@@ -119,18 +120,18 @@ class EarlyBoundTests(TestBase):
     # region Stations
     @category("Configuration Tests")
     def test_Stations(self):
-        acCopy: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        acCopy: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        defConfig: "IConfiguration" = acCopy.default_configuration
+        defConfig: "Configuration" = acCopy.default_configuration
 
-        stations: "IStationCollection" = defConfig.get_stations()
+        stations: "StationCollection" = defConfig.get_stations()
         stationCount: int = Array.Length(stations.station_names)
 
         totalCapacity: float = defConfig.total_capacity
         initialState: float = defConfig.initial_fuel_state
 
-        internalTank: "IFuelTankInternal" = stations.add_internal_fuel_tank()
+        internalTank: "FuelTankInternal" = stations.add_internal_fuel_tank()
         stationCount += 1
         internalTank.name = "Tank Name Test"
         Assert.assertTrue(stations.contains_station("Tank Name Test"))
@@ -149,14 +150,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(totalCapacity, defConfig.total_capacity)
         Assert.assertEqual(initialState, defConfig.initial_fuel_state)
 
-        payloadStation: "IPayloadStation" = stations.add_payload_station()
+        payloadStation: "PayloadStation" = stations.add_payload_station()
         stationCount += 1
         payloadStation.name = "Payload Station Name Test"
         Assert.assertTrue(stations.contains_station("Payload Station Name Test"))
         Assert.assertEqual("Payload Station Name Test", stations.station_names[(stationCount - 1)])
         Assert.assertEqual(stationCount, stations.count)
 
-        externalTank: "IFuelTankExternal" = payloadStation.add_external_fuel_tank()
+        externalTank: "FuelTankExternal" = payloadStation.add_external_fuel_tank()
         externalTankSize: float = 3000
         externalTank.capacity = externalTankSize
         externalTank.initial_fuel_state = externalTankSize
@@ -172,11 +173,11 @@ class EarlyBoundTests(TestBase):
         stations.remove_station_by_name("Payload Station Name Test")
         Assert.assertEqual(0, stations.count)
 
-        currentTank: "IFuelTankInternal" = stations.add_internal_fuel_tank()
+        currentTank: "FuelTankInternal" = stations.add_internal_fuel_tank()
         currentTank.name = "4"
         currentTank = stations.add_internal_fuel_tank()
         currentTank.name = "1"
-        currentPayloadStation: "IPayloadStation" = stations.add_payload_station()
+        currentPayloadStation: "PayloadStation" = stations.add_payload_station()
         currentPayloadStation.name = "3"
         currentPayloadStation = stations.add_payload_station()
         currentPayloadStation.name = "2"
@@ -197,9 +198,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Station 1", stations.station_names[5])
         Assert.assertEqual("Station 2", stations.station_names[6])
 
-        tank: "IFuelTankInternal" = clr.CastAs(stations[0], IFuelTankInternal)
+        tank: "FuelTankInternal" = clr.CastAs(stations[0], FuelTankInternal)
         Assert.assertEqual("1", tank.name)
-        station3: "IPayloadStation" = clr.CastAs(stations[3], IPayloadStation)
+        station3: "PayloadStation" = clr.CastAs(stations[3], PayloadStation)
         Assert.assertEqual("3", station3.name)
 
         def action1():
@@ -237,7 +238,7 @@ class EarlyBoundTests(TestBase):
     def test_Wind(self):
         tolerance: float = 1e-09
 
-        wind: "IWindModel" = EarlyBoundTests.AG_Mission.wind_model
+        wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
 
         def action5():
             wind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.PROCEDURE_MODEL
@@ -246,14 +247,14 @@ class EarlyBoundTests(TestBase):
 
         wind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
         wind.wind_model_type = WIND_MODEL_TYPE.CONSTANT_WIND
-        addsWind: "IWindModelADDS" = None
+        addsWind: "WindModelADDS" = None
 
         def action6():
             addsWind = wind.mode_as_adds
 
         TryCatchAssertBlock.ExpectedException("must be set", action6)
 
-        constWind: "IWindModelConstant" = wind.mode_as_constant
+        constWind: "WindModelConstant" = wind.mode_as_constant
         constWind.wind_speed = 1
         Assert.assertAlmostEqual(1, constWind.wind_speed, delta=tolerance)
         wind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.SCENARIO_MODEL
@@ -265,9 +266,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(0, constWind.wind_speed, delta=tolerance)
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        procWind: "IWindModel" = proc1.wind_model
+        procWind: "WindModel" = proc1.wind_model
         procWind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
-        procConstWind: "IWindModelConstant" = procWind.mode_as_constant
+        procConstWind: "WindModelConstant" = procWind.mode_as_constant
 
         Assert.assertAlmostEqual(0, procConstWind.wind_speed, delta=tolerance)
 
@@ -295,10 +296,10 @@ class EarlyBoundTests(TestBase):
     def test_WindModelConstant(self):
         tolerance: float = 1e-09
 
-        wind: "IWindModel" = EarlyBoundTests.AG_Mission.wind_model
+        wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
         wind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
         wind.wind_model_type = WIND_MODEL_TYPE.CONSTANT_WIND
-        constWind: "IWindModelConstant" = wind.mode_as_constant
+        constWind: "WindModelConstant" = wind.mode_as_constant
 
         constWind.name = "Constant Name Test"
         Assert.assertEqual("Constant Name Test", constWind.name)
@@ -323,10 +324,10 @@ class EarlyBoundTests(TestBase):
     @category("Weather Tests")
     @category("ExcludeOnLinux")
     def test_WindModelADDS(self):
-        wind: "IWindModel" = EarlyBoundTests.AG_Mission.wind_model
+        wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
         wind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
         wind.wind_model_type = WIND_MODEL_TYPE.ADDS
-        ADDSWind: "IWindModelADDS" = wind.mode_as_adds
+        ADDSWind: "WindModelADDS" = wind.mode_as_adds
 
         ADDSWind.name = "ADDS Name Test"
         Assert.assertEqual("ADDS Name Test", ADDSWind.name)
@@ -351,7 +352,7 @@ class EarlyBoundTests(TestBase):
     # region Atmosphere
     @category("Weather Tests")
     def test_Atmosphere(self):
-        atmos: "IAtmosphereModel" = EarlyBoundTests.AG_Mission.atmosphere_model
+        atmos: "AtmosphereModel" = EarlyBoundTests.AG_Mission.atmosphere_model
 
         def action10():
             atmos.atmosphere_model_source = WIND_ATMOS_MODEL_SOURCE.PROCEDURE_MODEL
@@ -359,7 +360,7 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.ExpectedException("procedure model", action10)
 
         atmos.atmosphere_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
-        basicAtmos: "IAtmosphereModelBasic" = atmos.mode_as_basic
+        basicAtmos: "AtmosphereModelBasic" = atmos.mode_as_basic
         basicAtmos.basic_model_type = ATMOSPHERE_MODEL.STANDARD1976
 
         basicAtmos.use_non_standard_atmosphere = True
@@ -374,9 +375,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(288.15, basicAtmos.temperature)
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        procAtmos: "IAtmosphereModel" = proc1.atmosphere_model
+        procAtmos: "AtmosphereModel" = proc1.atmosphere_model
         procAtmos.atmosphere_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
-        procAtmosBasic: "IAtmosphereModelBasic" = procAtmos.mode_as_basic
+        procAtmosBasic: "AtmosphereModelBasic" = procAtmos.mode_as_basic
 
         def action11():
             procAtmosBasic.use_non_standard_atmosphere = True
@@ -398,9 +399,9 @@ class EarlyBoundTests(TestBase):
     # region BasicAtmosphereModel
     @category("Weather Tests")
     def test_BasicAtmosphereModel(self):
-        atmos: "IAtmosphereModel" = EarlyBoundTests.AG_Mission.atmosphere_model
+        atmos: "AtmosphereModel" = EarlyBoundTests.AG_Mission.atmosphere_model
         atmos.atmosphere_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
-        basicAtmos: "IAtmosphereModelBasic" = atmos.mode_as_basic
+        basicAtmos: "AtmosphereModelBasic" = atmos.mode_as_basic
         basicAtmos.basic_model_type = ATMOSPHERE_MODEL.STANDARD1976
 
         Assert.assertEqual(288.15, basicAtmos.temperature)
@@ -427,20 +428,20 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Phase 1", EarlyBoundTests.AG_Phases[0].name)
 
         def action13():
-            testVal: "IPhase" = EarlyBoundTests.AG_Phases[-1]
+            testVal: "Phase" = EarlyBoundTests.AG_Phases[-1]
 
         TryCatchAssertBlock.ExpectedException("Invalid index", action13)
 
         def action14():
-            testVal: "IPhase" = EarlyBoundTests.AG_Phases[EarlyBoundTests.AG_Phases.count]
+            testVal: "Phase" = EarlyBoundTests.AG_Phases[EarlyBoundTests.AG_Phases.count]
 
         TryCatchAssertBlock.ExpectedException("Invalid index", action14)
 
-        phase2: "IPhase" = EarlyBoundTests.AG_Phases.add()
+        phase2: "Phase" = EarlyBoundTests.AG_Phases.add()
         Assert.assertEqual(2, EarlyBoundTests.AG_Phases.count)
         Assert.assertEqual("Phase 2", phase2.name)
 
-        phase0: "IPhase" = EarlyBoundTests.AG_Phases.add_at_index(0)
+        phase0: "Phase" = EarlyBoundTests.AG_Phases.add_at_index(0)
         phase0.name = "Phase 0"
         Assert.assertEqual("Phase 0", EarlyBoundTests.AG_Phases[0].name)
 
@@ -462,7 +463,7 @@ class EarlyBoundTests(TestBase):
         def action17():
             EarlyBoundTests.AG_Phases.remove(phase0)
 
-        TryCatchAssertBlock.DoAssert2(action17)
+        TryCatchAssertBlock.DoAssert(action17)
 
         def action18():
             EarlyBoundTests.AG_Phases.remove_at_index(-1)
@@ -484,7 +485,7 @@ class EarlyBoundTests(TestBase):
         def action21():
             EarlyBoundTests.AG_Phases.remove(phase0)
 
-        TryCatchAssertBlock.DoAssert2(action21)
+        TryCatchAssertBlock.DoAssert(action21)
 
         Assert.assertEqual(1, EarlyBoundTests.AG_Phases.count)
 
@@ -493,18 +494,18 @@ class EarlyBoundTests(TestBase):
     # region Phase
     @category("Mission Tests")
     def test_Phase(self):
-        currentPhase: "IPhase" = EarlyBoundTests.AG_Phases[0]
+        currentPhase: "Phase" = EarlyBoundTests.AG_Phases[0]
 
         currentPhase.name = "My First Phase"
         Assert.assertEqual("My First Phase", EarlyBoundTests.AG_Phases[0].name)
         currentPhase.name = "Phase 1"
 
         def action22():
-            testPerfModel: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("Test")
+            testPerfModel: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("Test")
 
         TryCatchAssertBlock.ExpectedException("does not contain", action22)
 
-        acc: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("Acceleration")
+        acc: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("Acceleration")
 
         Assert.assertEqual("Built-In Model", acc.name)
 
@@ -522,7 +523,7 @@ class EarlyBoundTests(TestBase):
         acc.link_to_catalog("Built-In Model")
         Assert.assertEqual("Built-In Model", acc.name)
         Assert.assertTrue(acc.is_linked_to_catalog)
-        basicAcc: "IAircraftBasicAccelerationModel" = clr.CastAs(acc.properties, IAircraftBasicAccelerationModel)
+        basicAcc: "AircraftBasicAccelerationModel" = clr.CastAs(acc.properties, AircraftBasicAccelerationModel)
 
         acc.copy_from_catalog("Built-In Model")
         Assert.assertEqual("Built-In Model", acc.name)
@@ -532,12 +533,12 @@ class EarlyBoundTests(TestBase):
         name: str = acc.name
         Assert.assertTrue(("Advanced Acceleration Model" in name))
         Assert.assertEqual(False, acc.is_linked_to_catalog)
-        advAcc: "IAircraftAdvAccelerationModel" = clr.CastAs(acc.properties, IAircraftAdvAccelerationModel)
+        advAcc: "AircraftAdvAccelerationModel" = clr.CastAs(acc.properties, AircraftAdvAccelerationModel)
 
         acc.rename("Test Rename")
         Assert.assertEqual("Test Rename", acc.name)
 
-        vtol: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
+        vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
 
         vtol.delete()
 
@@ -574,7 +575,7 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.ExpectedException("No copy", action29)
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        phase2: "IPhase" = EarlyBoundTests.AG_Phases.add()
+        phase2: "Phase" = EarlyBoundTests.AG_Phases.add()
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
         )
@@ -584,14 +585,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Testing Copy Paste", acc.name)
         currentPhase.copy_performance_models()
         phase2.paste_performance_models()
-        acc2: "IPerformanceModelOptions" = phase2.get_performance_model_by_type("Acceleration")
+        acc2: "PerformanceModelOptions" = phase2.get_performance_model_by_type("Acceleration")
         Assert.assertEqual("Testing Copy Paste", acc2.name)
 
         EarlyBoundTests.AG_Phases.remove(phase2)
         currentPhase.procedures.remove(proc2)
         currentPhase.procedures.remove(proc1)
 
-        missileTest: "IMissileModel" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models.add_missile(
+        missileTest: "MissileModel" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models.add_missile(
             "Missile Perf Model Test"
         )
         EarlyBoundTests.AG_Mission.vehicle = clr.CastAs(missileTest, IAviatorVehicle)
@@ -602,7 +603,7 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("", action30)
 
-        rotorcraftTest: "IRotorcraftModel" = (
+        rotorcraftTest: "RotorcraftModel" = (
             EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models.add_rotorcraft(
                 "Rotorcraft Perf Model Test"
             )
@@ -696,7 +697,7 @@ class EarlyBoundTests(TestBase):
         def action38():
             EarlyBoundTests.AG_Procedures.remove(proc3)
 
-        TryCatchAssertBlock.DoAssert2(action38)
+        TryCatchAssertBlock.DoAssert(action38)
 
         EarlyBoundTests.AG_Procedures.remove_at_index(0)
         self.EmptyProcedures()
@@ -721,7 +722,7 @@ class EarlyBoundTests(TestBase):
         proc4: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_LANDING)
 
         # //////// TESTING TAKEOFF TIME OPTIONS /////////////
-        timeOpts: "IProcedureTimeOptions" = proc1.time_options
+        timeOpts: "ProcedureTimeOptions" = proc1.time_options
         Assert.assertTrue(timeOpts.start_time_enabled)
         Assert.assertTrue(timeOpts.interrupt_time_enabled)
         Assert.assertEqual(False, timeOpts.stop_time_enabled)
@@ -762,7 +763,7 @@ class EarlyBoundTests(TestBase):
 
         # //////// TESTING ENROUTE TIME OPTIONS /////////////
 
-        timeOpts2: "IProcedureTimeOptions" = proc2.time_options
+        timeOpts2: "ProcedureTimeOptions" = proc2.time_options
         Assert.assertEqual(False, timeOpts2.start_time_enabled)
         Assert.assertTrue(timeOpts2.interrupt_time_enabled)
         Assert.assertTrue(timeOpts2.stop_time_enabled)
@@ -807,14 +808,14 @@ class EarlyBoundTests(TestBase):
 
         # //////// TESTING BASIC POINT TO POINT TIME OPTIONS /////////////
 
-        timeOpts3: "IProcedureTimeOptions" = proc3.time_options
+        timeOpts3: "ProcedureTimeOptions" = proc3.time_options
         Assert.assertEqual(False, timeOpts3.start_time_enabled)
         Assert.assertTrue(timeOpts3.interrupt_time_enabled)
         Assert.assertTrue(timeOpts3.stop_time_enabled)
 
         # //////// TESTING LANDING TIME OPTIONS /////////////
 
-        timeOpts4: "IProcedureTimeOptions" = proc4.time_options
+        timeOpts4: "ProcedureTimeOptions" = proc4.time_options
         Assert.assertEqual(False, timeOpts4.start_time_enabled)
         Assert.assertTrue(timeOpts4.interrupt_time_enabled)
         Assert.assertTrue(timeOpts4.stop_time_enabled)
@@ -834,7 +835,7 @@ class EarlyBoundTests(TestBase):
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
 
-        calcOpts: "ICalculationOptions" = proc1.calculation_options
+        calcOpts: "CalculationOptions" = proc1.calculation_options
 
         calcOpts.max_rel_motion_factor = 1.1
         Assert.assertEqual(1.1, calcOpts.max_rel_motion_factor)
@@ -869,7 +870,7 @@ class EarlyBoundTests(TestBase):
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
         Assert.assertFalse(proc1.refuel_dump_is_supported)
-        rdp: "IRefuelDumpProperties" = proc1.refuel_dump_properties
+        rdp: "RefuelDumpProperties" = proc1.refuel_dump_properties
 
         def action43():
             rdp.set_refuel_dump_mode(REFUEL_DUMP_MODE.REFUEL_DUMP_DISABLED, 0.0)
@@ -991,27 +992,27 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        arcProc: "IProcedureArcEnroute" = clr.CastAs(
+        arcProc: "ProcedureArcEnroute" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ARC_ENROUTE),
-            IProcedureArcEnroute,
+            ProcedureArcEnroute,
         )
 
-        alt: "IArcAltitudeAndDelayOptions" = arcProc.altitude_options
+        alt: "ArcAltitudeAndDelayOptions" = arcProc.altitude_options
         self.ArcAltitudeAndDelayOptions(alt)
 
-        arc: "IArcOptions" = arcProc.arc_options
+        arc: "ArcOptions" = arcProc.arc_options
         self.ArcOptions(arc)
 
-        arcAirspeed: "ICruiseAirspeedOptions" = arcProc.arc_cruise_airspeed_options
+        arcAirspeed: "CruiseAirspeedOptions" = arcProc.arc_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(arcAirspeed)
 
         enroute: "IEnrouteAndDelayOptions" = arcProc.enroute_options
         self.EnrouteAndDelayOptions(enroute)
 
-        airspeed: "ICruiseAirspeedOptions" = arcProc.enroute_cruise_airspeed_options
+        airspeed: "CruiseAirspeedOptions" = arcProc.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
-        turnOpts: "IEnrouteTurnDirectionOptions" = arcProc.enroute_turn_direction_options
+        turnOpts: "EnrouteTurnDirectionOptions" = arcProc.enroute_turn_direction_options
         self.EnrouteTurnDirection(turnOpts)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(takeoff, IProcedure))
@@ -1025,35 +1026,35 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        arcProc: "IProcedureArcPointToPoint" = clr.CastAs(
+        arcProc: "ProcedureArcPointToPoint" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ARC_POINT_TO_POINT
             ),
-            IProcedureArcPointToPoint,
+            ProcedureArcPointToPoint,
         )
 
-        alt: "IArcAltitudeOptions" = arcProc.altitude_options
+        alt: "ArcAltitudeOptions" = arcProc.altitude_options
         self.ArcAltitudeOptions(alt)
 
-        arc: "IArcOptions" = arcProc.arc_options
+        arc: "ArcOptions" = arcProc.arc_options
         self.ArcOptions(arc)
 
-        arcAirspeed: "ICruiseAirspeedOptions" = arcProc.arc_cruise_airspeed_options
+        arcAirspeed: "CruiseAirspeedOptions" = arcProc.arc_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(arcAirspeed)
 
-        enroute: "IEnrouteOptions" = arcProc.enroute_options
+        enroute: "EnrouteOptions" = arcProc.enroute_options
         self.EnrouteOptions(enroute)
 
-        airspeed: "ICruiseAirspeedOptions" = arcProc.enroute_cruise_airspeed_options
+        airspeed: "CruiseAirspeedOptions" = arcProc.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
-        turnOpts: "IEnrouteTurnDirectionOptions" = arcProc.enroute_turn_direction_options
+        turnOpts: "EnrouteTurnDirectionOptions" = arcProc.enroute_turn_direction_options
         self.EnrouteTurnDirection(turnOpts)
 
         arcProc.fly_cruise_airspeed_profile = False
         Assert.assertEqual(False, arcProc.fly_cruise_airspeed_profile)
 
-        vertOpts: "IArcVerticalPlaneOptions" = arcProc.vertical_plane_options
+        vertOpts: "ArcVerticalPlaneOptions" = arcProc.vertical_plane_options
         self.ArcVerticalPlane(vertOpts)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(takeoff, IProcedure))
@@ -1069,9 +1070,9 @@ class EarlyBoundTests(TestBase):
         areaTargetObj: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(
             STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget"
         )
-        areaTargetProc: "IProcedureAreaTargetSearch" = clr.CastAs(
+        areaTargetProc: "ProcedureAreaTargetSearch" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_AREA_TARGET, PROCEDURE_TYPE.PROC_AREA_TARGET_SEARCH),
-            IProcedureAreaTargetSearch,
+            ProcedureAreaTargetSearch,
         )
 
         self.TestProcedureName(areaTargetProc.get_as_procedure(), "AreaTargetSearch")
@@ -1148,26 +1149,26 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        p2p: "IProcedureBasicPointToPoint" = clr.CastAs(
+        p2p: "ProcedureBasicPointToPoint" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT
             ),
-            IProcedureBasicPointToPoint,
+            ProcedureBasicPointToPoint,
         )
 
-        alt: "IAltitudeOptions" = p2p.altitude_options
+        alt: "AltitudeOptions" = p2p.altitude_options
         self.AltitudeOptions(alt)
 
-        nav: "INavigationOptions" = p2p.navigation_options
+        nav: "NavigationOptions" = p2p.navigation_options
         self.NavigationOptions(nav)
 
-        enroute: "IEnrouteOptions" = p2p.enroute_options
+        enroute: "EnrouteOptions" = p2p.enroute_options
         self.EnrouteOptions(enroute)
 
         airspeed: "ICruiseAirspeedAndProfileOptions" = p2p.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeedAndProfile(airspeed)
 
-        vert: "IVerticalPlaneAndFlightPathOptions" = p2p.vertical_plane_options
+        vert: "VerticalPlaneAndFlightPathOptions" = p2p.vertical_plane_options
         self.VerticalPlaneAndFlightPathOptions(vert)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(takeoff, IProcedure))
@@ -1181,9 +1182,9 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        delay: "IProcedureDelay" = clr.CastAs(
+        delay: "ProcedureDelay" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_DELAY),
-            IProcedureDelay,
+            ProcedureDelay,
         )
 
         delay.altitude_mode = DELAY_ALTITUDE_MODE.DELAY_DEFAULT_CRUISE_ALTITUDE
@@ -1197,7 +1198,7 @@ class EarlyBoundTests(TestBase):
         delay.altitude = 5000
         Assert.assertEqual(5000, delay.altitude)
 
-        airspeedOpts: "ICruiseAirspeedOptions" = delay.cruise_airspeed_options
+        airspeedOpts: "CruiseAirspeedOptions" = delay.cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeedOpts)
 
         delay.turn_direction = NAVIGATOR_TURN_DIRECTION.NAVIGATOR_TURN_RIGHT
@@ -1216,21 +1217,21 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        enroute: "IProcedureEnroute" = clr.CastAs(
+        enroute: "ProcedureEnroute" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE),
-            IProcedureEnroute,
+            ProcedureEnroute,
         )
 
-        alt: "IAltitudeMSLAndLevelOffOptions" = enroute.altitude_msl_options
+        alt: "AltitudeMSLAndLevelOffOptions" = enroute.altitude_msl_options
         self.AltitudeMSLAndLevelOffOptions(alt)
 
-        nav: "INavigationOptions" = enroute.navigation_options
+        nav: "NavigationOptions" = enroute.navigation_options
         self.NavigationOptions(nav)
 
         enrouteOpts: "IEnrouteAndDelayOptions" = enroute.enroute_options
         self.EnrouteAndDelayOptions(enrouteOpts)
 
-        airspeed: "ICruiseAirspeedOptions" = enroute.enroute_cruise_airspeed_options
+        airspeed: "CruiseAirspeedOptions" = enroute.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(takeoff, IProcedure))
@@ -1243,9 +1244,9 @@ class EarlyBoundTests(TestBase):
     def test_ExternalEphemeris(self):
         self.EmptyProcedures()
 
-        extEphem: "IProcedureExtEphem" = clr.CastAs(
+        extEphem: "ProcedureExtEphem" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROC_EXT_EPHEM),
-            IProcedureExtEphem,
+            ProcedureExtEphem,
         )
 
         proc: "IProcedure" = extEphem.get_as_procedure()
@@ -1329,24 +1330,24 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        flightLine: "IProcedureFlightLine" = clr.CastAs(
+        flightLine: "ProcedureFlightLine" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_FLIGHT_LINE),
-            IProcedureFlightLine,
+            ProcedureFlightLine,
         )
 
-        alt: "IAltitudeOptions" = flightLine.altitude_options
+        alt: "AltitudeOptions" = flightLine.altitude_options
         self.AltitudeOptions(alt)
 
-        flightAirspeed: "ICruiseAirspeedOptions" = flightLine.flight_line_airspeed_options
+        flightAirspeed: "CruiseAirspeedOptions" = flightLine.flight_line_airspeed_options
         self.EnrouteCruiseAirspeed(flightAirspeed)
 
-        enroute: "IEnrouteOptions" = flightLine.enroute_options
+        enroute: "EnrouteOptions" = flightLine.enroute_options
         self.EnrouteOptions(enroute)
 
-        turnOpts: "IEnrouteTurnDirectionOptions" = flightLine.enroute_turn_direction_options
+        turnOpts: "EnrouteTurnDirectionOptions" = flightLine.enroute_turn_direction_options
         self.EnrouteTurnDirection(turnOpts)
 
-        airspeed: "ICruiseAirspeedOptions" = flightLine.enroute_cruise_airspeed_options
+        airspeed: "CruiseAirspeedOptions" = flightLine.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
         flightLine.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_TERRAIN_FOLLOW
@@ -1396,21 +1397,21 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(TestBase.PathCombine("AviatorTests", "Formation_Flyer", "Scenario1.sc"))
         EarlyBoundTests.AG_Scenario = TestBase.Application.current_scenario
         EarlyBoundTests.AG_AC = clr.Convert(
-            (EarlyBoundTests.AG_Scenario.children.get_item_by_name("Wingman")), IAircraft
+            (EarlyBoundTests.AG_Scenario.children.get_item_by_name("Wingman")), Aircraft
         )
-        aircraftRoute: "IVehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, IVehiclePropagatorAviator)
-        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.avtr_propagator, IAviatorPropagator)
+        aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, VehiclePropagatorAviator)
+        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.avtr_propagator, AviatorPropagator)
         EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.avtr_mission
         EarlyBoundTests.AG_Phases = EarlyBoundTests.AG_Mission.phases
         EarlyBoundTests.AG_Procedures = EarlyBoundTests.AG_Phases[0].procedures
 
         EarlyBoundTests.AG_Procedures.remove_at_index(2)  # Remove existing Formation Flyer procedure.
 
-        formationFlyer: "IProcedureFormationFlyer" = clr.CastAs(
+        formationFlyer: "ProcedureFormationFlyer" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_FORMATION_FLYER
             ),
-            IProcedureFormationFlyer,
+            ProcedureFormationFlyer,
         )
 
         formationFlyer.cross_range_close_rate = 10
@@ -1546,21 +1547,21 @@ class EarlyBoundTests(TestBase):
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
-        ac2: "IAircraft" = clr.CastAs(ac2Obj, IAircraft)
-        route2: "IVehiclePropagatorAviator" = clr.CastAs(ac2.route, IVehiclePropagatorAviator)
-        prop2: "IAviatorPropagator" = clr.CastAs(route2.avtr_propagator, IAviatorPropagator)
-        mission2: "IMission" = prop2.avtr_mission
-        phases2: "IPhaseCollection" = mission2.phases
-        procedures2: "IProcedureCollection" = phases2[0].procedures
+        ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
+        route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
+        prop2: "AviatorPropagator" = clr.CastAs(route2.avtr_propagator, AviatorPropagator)
+        mission2: "Mission" = prop2.avtr_mission
+        phases2: "PhaseCollection" = mission2.phases
+        procedures2: "ProcedureCollection" = phases2[0].procedures
 
         proc2: "IProcedure" = procedures2.add(
             SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR
         )
         prop2.propagate()
 
-        formRecov: "IProcedureFormationRecover" = clr.CastAs(
+        formRecov: "ProcedureFormationRecover" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_FORMATION_RECOVER),
-            IProcedureFormationRecover,
+            ProcedureFormationRecover,
         )
 
         self.TestProcedureName(formRecov.get_as_procedure(), "Formation/Recover")
@@ -1636,7 +1637,7 @@ class EarlyBoundTests(TestBase):
         formRecov.use_delay = False
 
         def action86():
-            airspeed: "ICruiseAirspeedOptions" = formRecov.delay_cruise_airspeed_options
+            airspeed: "CruiseAirspeedOptions" = formRecov.delay_cruise_airspeed_options
 
         TryCatchAssertBlock.ExpectedException("must be", action86)
         formRecov.use_delay = True
@@ -1673,12 +1674,12 @@ class EarlyBoundTests(TestBase):
         TryCatchAssertBlock.ExpectedException("first procedure", action91)
 
         def action92():
-            enrouteOpts: "IEnrouteOptions" = formRecov.enroute_options
+            enrouteOpts: "EnrouteOptions" = formRecov.enroute_options
 
         TryCatchAssertBlock.ExpectedException("first procedure", action92)
 
         def action93():
-            airspeed: "ICruiseAirspeedOptions" = formRecov.delay_cruise_airspeed_options
+            airspeed: "CruiseAirspeedOptions" = formRecov.delay_cruise_airspeed_options
 
         TryCatchAssertBlock.ExpectedException("first procedure", action93)
 
@@ -1686,8 +1687,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(formRecov.flight_mode, PHASE_OF_FLIGHT.FLIGHT_PHASE_VTOL)
         formRecov.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
         Assert.assertEqual(formRecov.fuel_flow_type, FUEL_FLOW_TYPE.FUEL_FLOW_VTOL)
-        currentPhase: "IPhase" = EarlyBoundTests.AG_Phases[0]
-        vtol: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
+        currentPhase: "Phase" = EarlyBoundTests.AG_Phases[0]
+        vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
         vtol.delete()
 
         def action94():
@@ -1713,26 +1714,26 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        holdingProc: "IProcedureHoldingCircular" = clr.CastAs(
+        holdingProc: "ProcedureHoldingCircular" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR
             ),
-            IProcedureHoldingCircular,
+            ProcedureHoldingCircular,
         )
 
-        alt: "IAltitudeMSLOptions" = holdingProc.altitude_options
+        alt: "AltitudeMSLOptions" = holdingProc.altitude_options
         self.AltitudeMSLOptions(alt)
 
-        holdAirspeed: "ICruiseAirspeedOptions" = holdingProc.hold_cruise_airspeed_options
+        holdAirspeed: "CruiseAirspeedOptions" = holdingProc.hold_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(holdAirspeed)
 
         enrouteOpts: "IEnrouteAndDelayOptions" = holdingProc.enroute_options
         self.EnrouteAndDelayOptions(enrouteOpts)
 
-        turnOpts: "IEnrouteTurnDirectionOptions" = holdingProc.enroute_turn_direction_options
+        turnOpts: "EnrouteTurnDirectionOptions" = holdingProc.enroute_turn_direction_options
         self.EnrouteTurnDirection(turnOpts)
 
-        airspeed: "ICruiseAirspeedOptions" = holdingProc.enroute_cruise_airspeed_options
+        airspeed: "CruiseAirspeedOptions" = holdingProc.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
         holdingProc.profile_mode = HOLDING_PROFILE_MODE.STK8_COMPATIBLE
@@ -1777,28 +1778,28 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        holdingProc: "IProcedureHoldingFigure8" = clr.CastAs(
+        holdingProc: "ProcedureHoldingFigure8" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_FIGURE8
             ),
-            IProcedureHoldingFigure8,
+            ProcedureHoldingFigure8,
         )
 
         Assert.assertTrue((clr.Is(holdingProc, IProcedure)))
 
-        alt: "IAltitudeMSLOptions" = holdingProc.altitude_options
+        alt: "AltitudeMSLOptions" = holdingProc.altitude_options
         self.AltitudeMSLOptions(alt)
 
-        holdAirspeed: "ICruiseAirspeedOptions" = holdingProc.hold_cruise_airspeed_options
+        holdAirspeed: "CruiseAirspeedOptions" = holdingProc.hold_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(holdAirspeed)
 
         enrouteOpts: "IEnrouteAndDelayOptions" = holdingProc.enroute_options
         self.EnrouteAndDelayOptions(enrouteOpts)
 
-        turnOpts: "IEnrouteTurnDirectionOptions" = holdingProc.enroute_turn_direction_options
+        turnOpts: "EnrouteTurnDirectionOptions" = holdingProc.enroute_turn_direction_options
         self.EnrouteTurnDirection(turnOpts)
 
-        airspeed: "ICruiseAirspeedOptions" = holdingProc.enroute_cruise_airspeed_options
+        airspeed: "CruiseAirspeedOptions" = holdingProc.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
         holdingProc.profile_mode = HOLDING_PROFILE_MODE.STK8_COMPATIBLE
@@ -1853,26 +1854,26 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        holdingProc: "IProcedureHoldingRacetrack" = clr.CastAs(
+        holdingProc: "ProcedureHoldingRacetrack" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_RACETRACK
             ),
-            IProcedureHoldingRacetrack,
+            ProcedureHoldingRacetrack,
         )
 
-        alt: "IAltitudeMSLOptions" = holdingProc.altitude_options
+        alt: "AltitudeMSLOptions" = holdingProc.altitude_options
         self.AltitudeMSLOptions(alt)
 
-        holdAirspeed: "ICruiseAirspeedOptions" = holdingProc.hold_cruise_airspeed_options
+        holdAirspeed: "CruiseAirspeedOptions" = holdingProc.hold_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(holdAirspeed)
 
         enrouteOpts: "IEnrouteAndDelayOptions" = holdingProc.enroute_options
         self.EnrouteAndDelayOptions(enrouteOpts)
 
-        turnOpts: "IEnrouteTurnDirectionOptions" = holdingProc.enroute_turn_direction_options
+        turnOpts: "EnrouteTurnDirectionOptions" = holdingProc.enroute_turn_direction_options
         self.EnrouteTurnDirection(turnOpts)
 
-        airspeed: "ICruiseAirspeedOptions" = holdingProc.enroute_cruise_airspeed_options
+        airspeed: "CruiseAirspeedOptions" = holdingProc.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
         holdingProc.profile_mode = HOLDING_PROFILE_MODE.STK8_COMPATIBLE
@@ -1922,12 +1923,12 @@ class EarlyBoundTests(TestBase):
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
         )
-        hoverProc: "IProcedureHover" = clr.CastAs(
+        hoverProc: "ProcedureHover" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOVER),
-            IProcedureHover,
+            ProcedureHover,
         )
 
-        alt: "IHoverAltitudeOptions" = hoverProc.altitude_options
+        alt: "HoverAltitudeOptions" = hoverProc.altitude_options
         self.HoverAltitudeOptions(alt)
 
         hoverProc.hover_mode = HOVER_MODE.HOVER_MODE_FIXED_TIME
@@ -2115,12 +2116,12 @@ class EarlyBoundTests(TestBase):
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
         )
-        hoverProc: "IProcedureHoverTranslate" = clr.CastAs(
+        hoverProc: "ProcedureHoverTranslate" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROC_HOVER_TRANSLATE),
-            IProcedureHoverTranslate,
+            ProcedureHoverTranslate,
         )
 
-        alt: "IHoverAltitudeOptions" = hoverProc.altitude_options
+        alt: "HoverAltitudeOptions" = hoverProc.altitude_options
         self.HoverAltitudeOptions(alt)
 
         hoverProc.heading_mode = VTOL_HEADING_MODE.HEADING_INTO_WIND
@@ -2192,12 +2193,12 @@ class EarlyBoundTests(TestBase):
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
-        ac2: "IAircraft" = clr.CastAs(ac2Obj, IAircraft)
-        route2: "IVehiclePropagatorAviator" = clr.CastAs(ac2.route, IVehiclePropagatorAviator)
-        prop2: "IAviatorPropagator" = clr.CastAs(route2.avtr_propagator, IAviatorPropagator)
-        mission2: "IMission" = prop2.avtr_mission
-        phases2: "IPhaseCollection" = mission2.phases
-        procedures2: "IProcedureCollection" = phases2[0].procedures
+        ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
+        route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
+        prop2: "AviatorPropagator" = clr.CastAs(route2.avtr_propagator, AviatorPropagator)
+        mission2: "Mission" = prop2.avtr_mission
+        phases2: "PhaseCollection" = mission2.phases
+        procedures2: "ProcedureCollection" = phases2[0].procedures
 
         proc2: "IProcedure" = procedures2.add(
             SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR
@@ -2207,9 +2208,9 @@ class EarlyBoundTests(TestBase):
         formRecov: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_FORMATION_RECOVER
         )
-        inFormation: "IProcedureInFormation" = clr.CastAs(
+        inFormation: "ProcedureInFormation" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_IN_FORMATION),
-            IProcedureInFormation,
+            ProcedureInFormation,
         )
 
         self.TestProcedureName(inFormation.get_as_procedure(), "In-Formation")
@@ -2257,8 +2258,8 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("must be", action129)
 
-        currentPhase: "IPhase" = EarlyBoundTests.AG_Phases[0]
-        vtol: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
+        currentPhase: "Phase" = EarlyBoundTests.AG_Phases[0]
+        vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
         vtol.delete()
 
         def action130():
@@ -2286,11 +2287,11 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        landing: "IProcedureLanding" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_LANDING), IProcedureLanding
+        landing: "ProcedureLanding" = clr.CastAs(
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_LANDING), ProcedureLanding
         )
 
-        headingOptions: "IRunwayHeadingOptions" = landing.runway_heading_options
+        headingOptions: "RunwayHeadingOptions" = landing.runway_heading_options
         headingOptions.runway_mode = RUNWAY_HIGH_LOW_END.HEADWIND
         Assert.assertEqual(RUNWAY_HIGH_LOW_END.HEADWIND, headingOptions.runway_mode)
 
@@ -2299,15 +2300,15 @@ class EarlyBoundTests(TestBase):
         enrouteOpts: "IEnrouteAndDelayOptions" = landing.enroute_options
         self.EnrouteAndDelayOptions(enrouteOpts)
 
-        sia: "ILandingStandardInstrumentApproach" = landing.mode_as_standard_instrument_approach
+        sia: "LandingStandardInstrumentApproach" = landing.mode_as_standard_instrument_approach
 
         def action132():
-            testVal: "ILandingEnterDownwindPattern" = landing.mode_as_enter_downwind_pattern
+            testVal: "LandingEnterDownwindPattern" = landing.mode_as_enter_downwind_pattern
 
         TryCatchAssertBlock.ExpectedException("must be set", action132)
 
         def action133():
-            testVal: "ILandingInterceptGlideslope" = landing.mode_as_intercept_glideslope
+            testVal: "LandingInterceptGlideslope" = landing.mode_as_intercept_glideslope
 
         TryCatchAssertBlock.ExpectedException("must be set", action133)
 
@@ -2380,28 +2381,28 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        missile: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), IMissile
+        missile: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
-        impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, IVehicleImpactLocationPoint)
-        impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
+        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
+        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
         impact.lat = -20
         impact.lon = -20
         traj.propagate()
 
-        missile2: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), IMissile
+        missile2: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "IVehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, IVehiclePropagatorBallistic)
-        impactLocation2: "IVehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, IVehicleImpactLocationPoint)
-        impact2: "IVehicleImpactLLA" = clr.CastAs(impactLocation2.impact, IVehicleImpactLLA)
+        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
+        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
         impact2.lat = -20
         impact2.lon = -20
         traj2.propagate()
 
-        launchProc: "IProcedureLaunch" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_LAUNCH), IProcedureLaunch
+        launchProc: "ProcedureLaunch" = clr.CastAs(
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_LAUNCH), ProcedureLaunch
         )
 
         launchProc.launch_time = "1 Jul 1999 00:00:01.000"
@@ -2494,29 +2495,29 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        missile: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), IMissile
+        missile: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
-        impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, IVehicleImpactLocationPoint)
-        impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
+        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
+        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
         impact.lat = -20
         impact.lon = -20
         traj.propagate()
 
-        missile2: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), IMissile
+        missile2: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "IVehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, IVehiclePropagatorBallistic)
-        impactLocation2: "IVehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, IVehicleImpactLocationPoint)
-        impact2: "IVehicleImpactLLA" = clr.CastAs(impactLocation2.impact, IVehicleImpactLLA)
+        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
+        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
         impact2.lat = -20
         impact2.lon = -20
         traj2.propagate()
 
-        launchProc: "IProcedureLaunchDynState" = clr.CastAs(
+        launchProc: "ProcedureLaunchDynState" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_DYN_STATE, PROCEDURE_TYPE.PROC_LAUNCH_DYN_STATE),
-            IProcedureLaunchDynState,
+            ProcedureLaunchDynState,
         )
 
         launchProc.launch_time = "1 Jul 1999 00:00:01.000"
@@ -2617,9 +2618,9 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        launchProc: "IProcedureLaunchWaypoint" = clr.CastAs(
+        launchProc: "ProcedureLaunchWaypoint" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROC_LAUNCH_WAYPOINT),
-            IProcedureLaunchWaypoint,
+            ProcedureLaunchWaypoint,
         )
 
         launchProc.launch_time = "1 Jul 1999 00:00:01.000"
@@ -2676,22 +2677,22 @@ class EarlyBoundTests(TestBase):
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_FLIGHT_LINE
         )
-        parallelProc: "IProcedureParallelFlightLine" = clr.CastAs(
+        parallelProc: "ProcedureParallelFlightLine" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_PARALLEL_FLIGHT_LINE
             ),
-            IProcedureParallelFlightLine,
+            ProcedureParallelFlightLine,
         )
 
         self.TestProcedureName(parallelProc.get_as_procedure(), "Parallel Flight Line")
 
-        alt: "IAltitudeOptions" = parallelProc.altitude_options
+        alt: "AltitudeOptions" = parallelProc.altitude_options
         self.AltitudeOptions(alt)
 
-        enroute: "IEnrouteOptions" = parallelProc.enroute_options
+        enroute: "EnrouteOptions" = parallelProc.enroute_options
         self.EnrouteOptions(enroute)
 
-        turnOpts: "IEnrouteTurnDirectionOptions" = parallelProc.enroute_turn_direction_options
+        turnOpts: "EnrouteTurnDirectionOptions" = parallelProc.enroute_turn_direction_options
         self.EnrouteTurnDirection(turnOpts)
 
         airspeed: "ICruiseAirspeedAndProfileOptions" = parallelProc.enroute_cruise_airspeed_options
@@ -2739,9 +2740,9 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        refState: "IProcedureReferenceState" = clr.CastAs(
+        refState: "ProcedureReferenceState" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROC_REFERENCE_STATE),
-            IProcedureReferenceState,
+            ProcedureReferenceState,
         )
 
         self.TestProcedureName(refState.get_as_procedure(), "ReferenceState")
@@ -2780,12 +2781,12 @@ class EarlyBoundTests(TestBase):
         refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING
 
         def action159():
-            ffTest: "IReferenceStateForwardFlightOptions" = refState.mode_as_forward_flight
+            ffTest: "ReferenceStateForwardFlightOptions" = refState.mode_as_forward_flight
 
         TryCatchAssertBlock.ExpectedException("must be", action159)
 
         refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
-        ff: "IReferenceStateForwardFlightOptions" = refState.mode_as_forward_flight
+        ff: "ReferenceStateForwardFlightOptions" = refState.mode_as_forward_flight
 
         ff.set_airspeed(AIRSPEED_TYPE.TAS, 251)
         Assert.assertEqual(AIRSPEED_TYPE.TAS, ff.airspeed_type)
@@ -2877,12 +2878,12 @@ class EarlyBoundTests(TestBase):
         refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
 
         def action165():
-            tlTest: "IReferenceStateTakeoffLandingOptions" = refState.mode_as_takeoff_landing
+            tlTest: "ReferenceStateTakeoffLandingOptions" = refState.mode_as_takeoff_landing
 
         TryCatchAssertBlock.ExpectedException("must be", action165)
 
         refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING
-        tl: "IReferenceStateTakeoffLandingOptions" = refState.mode_as_takeoff_landing
+        tl: "ReferenceStateTakeoffLandingOptions" = refState.mode_as_takeoff_landing
         refState.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME
 
         tl.set_airspeed(AIRSPEED_TYPE.TAS, 251)
@@ -2974,12 +2975,12 @@ class EarlyBoundTests(TestBase):
         refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
 
         def action171():
-            hoverTest: "IReferenceStateHoverOptions" = refState.mode_as_hover
+            hoverTest: "ReferenceStateHoverOptions" = refState.mode_as_hover
 
         TryCatchAssertBlock.ExpectedException("must be", action171)
 
-        currentPhase: "IPhase" = EarlyBoundTests.AG_Phases[0]
-        vtol: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
+        currentPhase: "Phase" = EarlyBoundTests.AG_Phases[0]
+        vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
         vtol.delete()
 
         def action172():
@@ -2995,7 +2996,7 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("must be", action173)
 
-        hoverOpts: "IReferenceStateHoverOptions" = refState.mode_as_hover
+        hoverOpts: "ReferenceStateHoverOptions" = refState.mode_as_hover
 
         hoverOpts.groundspeed = 200
         Assert.assertEqual(200, hoverOpts.groundspeed)
@@ -3053,7 +3054,7 @@ class EarlyBoundTests(TestBase):
         refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
 
         def action175():
-            wowTest: "IReferenceStateWeightOnWheelsOptions" = refState.mode_as_weight_on_wheels
+            wowTest: "ReferenceStateWeightOnWheelsOptions" = refState.mode_as_weight_on_wheels
 
         TryCatchAssertBlock.ExpectedException("must be", action175)
 
@@ -3064,7 +3065,7 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("must be", action176)
 
-        wowOpts: "IReferenceStateWeightOnWheelsOptions" = refState.mode_as_weight_on_wheels
+        wowOpts: "ReferenceStateWeightOnWheelsOptions" = refState.mode_as_weight_on_wheels
 
         wowOpts.groundspeed = 200
         Assert.assertEqual(200, wowOpts.groundspeed)
@@ -3106,24 +3107,24 @@ class EarlyBoundTests(TestBase):
     def test_Takeoff(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedureTakeoff" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF), IProcedureTakeoff
+        takeoff: "ProcedureTakeoff" = clr.CastAs(
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF), ProcedureTakeoff
         )
 
-        headingOptions: "IRunwayHeadingOptions" = takeoff.runway_heading_options
+        headingOptions: "RunwayHeadingOptions" = takeoff.runway_heading_options
         headingOptions.runway_mode = RUNWAY_HIGH_LOW_END.HEADWIND
         Assert.assertEqual(RUNWAY_HIGH_LOW_END.HEADWIND, headingOptions.runway_mode)
 
         takeoff.takeoff_mode = TAKEOFF_MODE.TAKEOFF_NORMAL
-        takeoffNormal: "ITakeoffNormal" = takeoff.mode_as_normal
+        takeoffNormal: "TakeoffNormal" = takeoff.mode_as_normal
 
         def action178():
-            testVal: "ITakeoffDeparturePoint" = takeoff.mode_as_departure_point
+            testVal: "TakeoffDeparturePoint" = takeoff.mode_as_departure_point
 
         TryCatchAssertBlock.ExpectedException("must be set", action178)
 
         def action179():
-            testVal: "ITakeoffLowTransition" = takeoff.mode_as_low_transition
+            testVal: "TakeoffLowTransition" = takeoff.mode_as_low_transition
 
         TryCatchAssertBlock.ExpectedException("must be set", action179)
 
@@ -3164,20 +3165,20 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        terrainFollow: "IProcedureTerrainFollow" = clr.CastAs(
+        terrainFollow: "ProcedureTerrainFollow" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TERRAIN_FOLLOWING
             ),
-            IProcedureTerrainFollow,
+            ProcedureTerrainFollow,
         )
 
         terrainFollow.altitude_agl = 600
         Assert.assertEqual(600, terrainFollow.altitude_agl)
 
-        nav: "INavigationOptions" = terrainFollow.navigation_options
+        nav: "NavigationOptions" = terrainFollow.navigation_options
         self.NavigationOptions(nav)
 
-        terrainAirspeed: "ICruiseAirspeedOptions" = terrainFollow.terrain_following_airspeed_options
+        terrainAirspeed: "CruiseAirspeedOptions" = terrainFollow.terrain_following_airspeed_options
         self.EnrouteCruiseAirspeed(terrainAirspeed)
 
         terrainFollow.reduce_turn_radii = True
@@ -3198,17 +3199,17 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        toHover: "IProcedureTransitionToHover" = clr.CastAs(
+        toHover: "ProcedureTransitionToHover" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
             ),
-            IProcedureTransitionToHover,
+            ProcedureTransitionToHover,
         )
-        toFlight: "IProcedureTransitionToForwardFlight" = clr.CastAs(
+        toFlight: "ProcedureTransitionToForwardFlight" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_FORWARD_FLIGHT
             ),
-            IProcedureTransitionToForwardFlight,
+            ProcedureTransitionToForwardFlight,
         )
 
         toFlight.set_transition_into_wind()
@@ -3243,11 +3244,11 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        toHover: "IProcedureTransitionToHover" = clr.CastAs(
+        toHover: "ProcedureTransitionToHover" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
             ),
-            IProcedureTransitionToHover,
+            ProcedureTransitionToHover,
         )
 
         toHover.altitude = 600
@@ -3255,13 +3256,13 @@ class EarlyBoundTests(TestBase):
         toHover.altitude_reference = AGL_MSL.ALTITUDE_AGL
         Assert.assertEqual(AGL_MSL.ALTITUDE_AGL, toHover.altitude_reference)
 
-        enrouteOpts: "IEnrouteOptions" = toHover.enroute_options
+        enrouteOpts: "EnrouteOptions" = toHover.enroute_options
         self.EnrouteOptions(enrouteOpts)
 
-        enrouteTurnDirOpts: "IEnrouteTurnDirectionOptions" = toHover.enroute_turn_direction_options
+        enrouteTurnDirOpts: "EnrouteTurnDirectionOptions" = toHover.enroute_turn_direction_options
         self.EnrouteTurnDirection(enrouteTurnDirOpts)
 
-        verticalPlaneOpts: "IVerticalPlaneAndFlightPathOptions" = toHover.vertical_plane_options
+        verticalPlaneOpts: "VerticalPlaneAndFlightPathOptions" = toHover.vertical_plane_options
         self.VerticalPlaneAndFlightPathOptions(verticalPlaneOpts)
 
         toHover.set_transition_into_wind()
@@ -3290,9 +3291,9 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF
         )
-        vertLanding: "IProcedureVerticalLanding" = clr.CastAs(
+        vertLanding: "ProcedureVerticalLanding" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_LANDING),
-            IProcedureVerticalLanding,
+            ProcedureVerticalLanding,
         )
 
         vertLanding.altitude_above_point = 101
@@ -3343,9 +3344,9 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        vertTakeoff: "IProcedureVerticalTakeoff" = clr.CastAs(
+        vertTakeoff: "ProcedureVerticalTakeoff" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF),
-            IProcedureVerticalTakeoff,
+            ProcedureVerticalTakeoff,
         )
 
         vertTakeoff.altitude_above_point = 101
@@ -3387,17 +3388,17 @@ class EarlyBoundTests(TestBase):
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
-        ac2: "IAircraft" = clr.CastAs(ac2Obj, IAircraft)
-        route2: "IVehiclePropagatorAviator" = clr.CastAs(ac2.route, IVehiclePropagatorAviator)
-        prop2: "IAviatorPropagator" = clr.CastAs(route2.avtr_propagator, IAviatorPropagator)
-        mission2: "IMission" = prop2.avtr_mission
+        ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
+        route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
+        prop2: "AviatorPropagator" = clr.CastAs(route2.avtr_propagator, AviatorPropagator)
+        mission2: "Mission" = prop2.avtr_mission
         prop2.propagate()
 
         EarlyBoundTests.AG_Procedures.remove_at_index(1)
         EarlyBoundTests.AG_Procedures.remove_at_index(0)
-        vgtProc: "IProcedureVGTPoint" = clr.CastAs(
+        vgtProc: "ProcedureVGTPoint" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_VGT_POINT),
-            IProcedureVGTPoint,
+            ProcedureVGTPoint,
         )
 
         self.TestProcedureName(vgtProc.get_as_procedure(), "VGT Point")
@@ -3450,8 +3451,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(vgtProc.flight_mode, PHASE_OF_FLIGHT.FLIGHT_PHASE_VTOL)
         vgtProc.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
         Assert.assertEqual(vgtProc.fuel_flow_type, FUEL_FLOW_TYPE.FUEL_FLOW_VTOL)
-        currentPhase: "IPhase" = EarlyBoundTests.AG_Phases[0]
-        vtol: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
+        currentPhase: "Phase" = EarlyBoundTests.AG_Phases[0]
+        vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
         vtol.delete()
 
         def action188():
@@ -3477,9 +3478,9 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.use_max_downrange = True
@@ -3538,8 +3539,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(basicManeuver.flight_mode, PHASE_OF_FLIGHT.FLIGHT_PHASE_VTOL)
         basicManeuver.fuel_flow_type = BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_VTOL
         Assert.assertEqual(basicManeuver.fuel_flow_type, BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_VTOL)
-        currentPhase: "IPhase" = EarlyBoundTests.AG_Phases[0]
-        vtol: "IPerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
+        currentPhase: "Phase" = EarlyBoundTests.AG_Phases[0]
+        vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
         vtol.delete()
 
         def action196():
@@ -3565,22 +3566,22 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Aileron Roll"
-        roll: "IBasicManeuverStrategyAileronRoll" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyAileronRoll
+        roll: "BasicManeuverStrategyAileronRoll" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyAileronRoll
         )
 
         roll.flight_path_option = AILERON_ROLL_FLIGHT_PATH.ZERO_G_FLIGHT_PATH
         Assert.assertEqual(AILERON_ROLL_FLIGHT_PATH.ZERO_G_FLIGHT_PATH, roll.flight_path_option)
 
         Assert.assertEqual("Aileron Roll", basicManeuver.profile_strategy_type)
-        rollProfile: "IBasicManeuverStrategyAileronRoll" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyAileronRoll
+        rollProfile: "BasicManeuverStrategyAileronRoll" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyAileronRoll
         )
         Assert.assertEqual(AILERON_ROLL_FLIGHT_PATH.ZERO_G_FLIGHT_PATH, rollProfile.flight_path_option)
 
@@ -3606,7 +3607,7 @@ class EarlyBoundTests(TestBase):
         overrideRollRate: typing.Any = roll.override_roll_rate
         Assert.assertEqual(20, float(overrideRollRate))
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = roll.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = roll.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -3620,14 +3621,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Autopilot - Horizontal Plane"
-        autopilot: "IBasicManeuverStrategyAutopilotNav" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyAutopilotNav
+        autopilot: "BasicManeuverStrategyAutopilotNav" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyAutopilotNav
         )
 
         autopilot.active_mode = AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE
@@ -3656,14 +3657,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
-        autopilot: "IBasicManeuverStrategyAutopilotProf" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyAutopilotProf
+        autopilot: "BasicManeuverStrategyAutopilotProf" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyAutopilotProf
         )
         autopilot.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE
 
@@ -3751,7 +3752,7 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("must be", action209)
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = autopilot.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = autopilot.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         autopilot.compensate_for_coriolis_accel = True
@@ -3768,14 +3769,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Ballistic3D"
-        ballistic: "IBasicManeuverStrategyBallistic3D" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyBallistic3D
+        ballistic: "BasicManeuverStrategyBallistic3D" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyBallistic3D
         )
 
         ballistic.control_mode = BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_COMPENSATE_FOR_WIND
@@ -3843,15 +3844,13 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Barrel Roll"
-        roll: "IBasicManeuverStrategyBarrelRoll" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyBarrelRoll
-        )
+        roll: "BasicManeuverStrategyBarrelRoll" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyBarrelRoll)
         roll.helix_angle = 359
         helixAngle: typing.Any = roll.helix_angle
         roll.helix_angle_mode = ANGLE_MODE.RELATIVE_ANGLE
@@ -3859,8 +3858,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(ANGLE_MODE.RELATIVE_ANGLE, roll.helix_angle_mode)
 
         Assert.assertEqual("Barrel Roll", basicManeuver.profile_strategy_type)
-        rollProfile: "IBasicManeuverStrategyBarrelRoll" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyBarrelRoll
+        rollProfile: "BasicManeuverStrategyBarrelRoll" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyBarrelRoll
         )
         helixAngleProfile: typing.Any = rollProfile.helix_angle
         Assert.assertEqual(359, float(helixAngleProfile))
@@ -3895,13 +3894,13 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.profile_strategy_type = "Profile Segment - Bezier"
-        bezier: "IBasicManeuverStrategyBezier" = clr.CastAs(basicManeuver.profile, IBasicManeuverStrategyBezier)
+        bezier: "BasicManeuverStrategyBezier" = clr.CastAs(basicManeuver.profile, BasicManeuverStrategyBezier)
 
         bezier.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.WIND_FRAME
         Assert.assertEqual(BASIC_MANEUVER_REFERENCE_FRAME.WIND_FRAME, bezier.reference_frame)
@@ -3948,14 +3947,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.profile_strategy_type = "Cruise Profile"
-        cruise: "IBasicManeuverStrategyCruiseProfile" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyCruiseProfile
+        cruise: "BasicManeuverStrategyCruiseProfile" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyCruiseProfile
         )
 
         cruise.use_default_cruise_altitude = True
@@ -4006,20 +4005,20 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Fly AOA"
-        flyAOA: "IBasicManeuverStrategyFlyAOA" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyFlyAOA)
+        flyAOA: "BasicManeuverStrategyFlyAOA" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyFlyAOA)
 
         flyAOA.aoa = 11
         aoa: typing.Any = flyAOA.aoa
         Assert.assertEqual(11, float(aoa))
 
         Assert.assertEqual("Fly AOA", basicManeuver.profile_strategy_type)
-        flyAOAProfile: "IBasicManeuverStrategyFlyAOA" = clr.CastAs(basicManeuver.profile, IBasicManeuverStrategyFlyAOA)
+        flyAOAProfile: "BasicManeuverStrategyFlyAOA" = clr.CastAs(basicManeuver.profile, BasicManeuverStrategyFlyAOA)
         aoaProfile: typing.Any = flyAOAProfile.aoa
         Assert.assertEqual(11, float(aoaProfile))
 
@@ -4076,7 +4075,7 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("must be", action227)
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = flyAOA.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = flyAOA.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -4090,14 +4089,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.profile_strategy_type = "Glide - Vertical Plane"
-        glide: "IBasicManeuverStrategyGlideProfile" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyGlideProfile
+        glide: "BasicManeuverStrategyGlideProfile" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyGlideProfile
         )
 
         glide.hold_initial_airspeed = True
@@ -4179,9 +4178,9 @@ class EarlyBoundTests(TestBase):
         )
 
         glide.powered_cruise_throttle = 20.0
-        thrust1: "IPropulsionThrust" = glide.powered_cruise_thrust_model
+        thrust1: "PropulsionThrust" = glide.powered_cruise_thrust_model
         # BUG120578 TryCatchAssertBlock.ExpectedException("read only", delegate () { glide.PoweredCruiseThrottle = 20.0; });
-        # BUG120578 TryCatchAssertBlock.ExpectedException("read only", delegate () { IPropulsionThrust thrust1 = glide.PoweredCruiseThrustModel; });
+        # BUG120578 TryCatchAssertBlock.ExpectedException("read only", delegate () { PropulsionThrust thrust1 = glide.PoweredCruiseThrustModel; });
 
         glide.powered_cruise_mode = BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE.GLIDE_SPECIFY_THROTTLE
         Assert.assertEqual(
@@ -4210,7 +4209,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgAvtrPropulsionThrust
-    def Test_IAgAvtrPropulsionThrust(self, thrust: "IPropulsionThrust"):
+    def Test_IAgAvtrPropulsionThrust(self, thrust: "PropulsionThrust"):
         thrust.use_constant_thrust = True
         Assert.assertTrue(thrust.use_constant_thrust)
 
@@ -4279,14 +4278,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Intercept"
-        intercept: "IBasicManeuverStrategyIntercept" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyIntercept
+        intercept: "BasicManeuverStrategyIntercept" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyIntercept
         )
 
         targetName: str = (EarlyBoundTests.AG_Target.class_name + "/") + EarlyBoundTests.AG_Target.instance_name
@@ -4295,12 +4294,12 @@ class EarlyBoundTests(TestBase):
             intercept.target_name = targetName
 
         TryCatchAssertBlock.ExpectedException("not a valid", action236)
-        missile: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), IMissile
+        missile: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
-        impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, IVehicleImpactLocationPoint)
-        impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
+        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
+        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
         impact.lat = -20
         impact.lon = -20
         traj.propagate()
@@ -4389,13 +4388,13 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Loop"
-        loop: "IBasicManeuverStrategyLoop" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyLoop)
+        loop: "BasicManeuverStrategyLoop" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyLoop)
         loop.loop_angle = 359
         loopAngle: typing.Any = loop.loop_angle
         loop.loop_angle_mode = ANGLE_MODE.RELATIVE_ANGLE
@@ -4403,7 +4402,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(ANGLE_MODE.RELATIVE_ANGLE, loop.loop_angle_mode)
 
         Assert.assertEqual("Loop", basicManeuver.profile_strategy_type)
-        loopProfile: "IBasicManeuverStrategyLoop" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyLoop)
+        loopProfile: "BasicManeuverStrategyLoop" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyLoop)
         loopAngleProfile: typing.Any = loopProfile.loop_angle
         Assert.assertEqual(359, float(loopAngleProfile))
         Assert.assertEqual(ANGLE_MODE.RELATIVE_ANGLE, loopProfile.loop_angle_mode)
@@ -4435,20 +4434,20 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Lighter Than Air Hover"
-        hover: "IBasicManeuverStrategyLTAHover" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyLTAHover)
+        hover: "BasicManeuverStrategyLTAHover" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyLTAHover)
         hover.heading_rate = 1.5
         headingRate: typing.Any = hover.heading_rate
         Assert.assertEqual(1.5, float(headingRate))
 
         Assert.assertEqual("Lighter Than Air Hover", basicManeuver.profile_strategy_type)
-        hoverProfile: "IBasicManeuverStrategyLTAHover" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyLTAHover
+        hoverProfile: "BasicManeuverStrategyLTAHover" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyLTAHover
         )
         headingRateProfile: typing.Any = hoverProfile.heading_rate
         Assert.assertEqual(1.5, float(headingRateProfile))
@@ -4579,13 +4578,13 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Pitch3D"
-        pitch3D: "IBasicManeuverStrategyPitch3D" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyPitch3D)
+        pitch3D: "BasicManeuverStrategyPitch3D" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyPitch3D)
 
         pitch3D.control_mode = PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE
         Assert.assertEqual(PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE, pitch3D.control_mode)
@@ -4627,13 +4626,13 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Pull"
-        pull: "IBasicManeuverStrategyPull" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyPull)
+        pull: "BasicManeuverStrategyPull" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyPull)
 
         pull.active_mode = PULL_MODE.PULL_TO_ANGLE
         pull.active_angle = 59
@@ -4641,7 +4640,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(59, float(angle), delta=tolerance)
 
         Assert.assertEqual("Pull", basicManeuver.profile_strategy_type)
-        pullProfile: "IBasicManeuverStrategyPull" = clr.CastAs(basicManeuver.profile, IBasicManeuverStrategyPull)
+        pullProfile: "BasicManeuverStrategyPull" = clr.CastAs(basicManeuver.profile, BasicManeuverStrategyPull)
         angleProfile: typing.Any = pullProfile.active_angle
         Assert.assertAlmostEqual(59, float(angleProfile), delta=tolerance)
 
@@ -4655,7 +4654,7 @@ class EarlyBoundTests(TestBase):
         pull.override_pull_g = 2
         Assert.assertEqual(2, pull.override_pull_g)
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = pull.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = pull.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -4671,13 +4670,13 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.profile_strategy_type = "Profile Segment - Push/Pull"
-        pushPull: "IBasicManeuverStrategyPushPull" = clr.CastAs(basicManeuver.profile, IBasicManeuverStrategyPushPull)
+        pushPull: "BasicManeuverStrategyPushPull" = clr.CastAs(basicManeuver.profile, BasicManeuverStrategyPushPull)
 
         pushPull.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.WIND_FRAME
         Assert.assertEqual(BASIC_MANEUVER_REFERENCE_FRAME.WIND_FRAME, pushPull.reference_frame)
@@ -4726,14 +4725,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Relative Bearing"
-        relBearing: "IBasicManeuverStrategyRelativeBearing" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyRelativeBearing
+        relBearing: "BasicManeuverStrategyRelativeBearing" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyRelativeBearing
         )
 
         validTargets = relBearing.valid_target_names
@@ -4781,14 +4780,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Relative Course"
-        relCourse: "IBasicManeuverStrategyRelativeCourse" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyRelativeCourse
+        relCourse: "BasicManeuverStrategyRelativeCourse" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyRelativeCourse
         )
 
         validTargets = relCourse.valid_target_names
@@ -4868,14 +4867,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Relative Course"
-        relCourse: "IBasicManeuverStrategyRelativeCourse" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyRelativeCourse
+        relCourse: "BasicManeuverStrategyRelativeCourse" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyRelativeCourse
         )
 
         validTargets = relCourse.valid_target_names
@@ -4885,8 +4884,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(targetName, relCourse.target_name)
 
         basicManeuver.profile_strategy_type = "Relative Flight Path Angle"
-        relativeFPA: "IBasicManeuverStrategyRelativeFPA" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyRelativeFPA
+        relativeFPA: "BasicManeuverStrategyRelativeFPA" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyRelativeFPA
         )
 
         relativeFPA.fpa = 5
@@ -4914,7 +4913,7 @@ class EarlyBoundTests(TestBase):
         relativeFPA.set_max_altitude_rel_anchor(True, 100)
         Assert.assertEqual(100, relativeFPA.max_altitude_rel_anchor)
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = relativeFPA.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = relativeFPA.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         relativeFPA.compensate_for_coriolis_accel = True
@@ -4931,14 +4930,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Relative Course"
-        relCourse: "IBasicManeuverStrategyRelativeCourse" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyRelativeCourse
+        relCourse: "BasicManeuverStrategyRelativeCourse" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyRelativeCourse
         )
 
         validTargets = relCourse.valid_target_names
@@ -4948,8 +4947,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(targetName, relCourse.target_name)
 
         basicManeuver.profile_strategy_type = "Relative Speed/Altitude"
-        relSpeedAlt: "IBasicManeuverStrategyRelSpeedAltitude" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyRelSpeedAltitude
+        relSpeedAlt: "BasicManeuverStrategyRelSpeedAltitude" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyRelSpeedAltitude
         )
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
@@ -5035,17 +5034,17 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         testAC: "IStkObject" = acObj.copy_object("LeaderAC")
 
         basicManeuver.navigation_strategy_type = "Rendezvous/Formation"
-        formation: "IBasicManeuverStrategyRendezvous" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyRendezvous
+        formation: "BasicManeuverStrategyRendezvous" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyRendezvous
         )
 
         targetName: str = (EarlyBoundTests.AG_Target.class_name + "/") + EarlyBoundTests.AG_Target.instance_name
@@ -5137,14 +5136,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Rolling Pull"
-        pull: "IBasicManeuverStrategyRollingPull" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyRollingPull
+        pull: "BasicManeuverStrategyRollingPull" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyRollingPull
         )
         pull.active_mode = ROLLING_PULL_MODE.PULL_TO_ANGLE_MODE
         pull.angle = 10
@@ -5152,8 +5151,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(10, float(angle), delta=tolerance)
 
         Assert.assertEqual("Rolling Pull", basicManeuver.profile_strategy_type)
-        pullProfile: "IBasicManeuverStrategyRollingPull" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategyRollingPull
+        pullProfile: "BasicManeuverStrategyRollingPull" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyRollingPull
         )
         angleProfile: typing.Any = pullProfile.angle
         Assert.assertAlmostEqual(10, float(angleProfile), delta=tolerance)
@@ -5187,7 +5186,7 @@ class EarlyBoundTests(TestBase):
         pull.override_pull_g = 2
         Assert.assertEqual(2, pull.override_pull_g)
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = pull.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = pull.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -5201,14 +5200,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Simple Turn"
-        simpleTurn: "IBasicManeuverStrategySimpleTurn" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategySimpleTurn
+        simpleTurn: "BasicManeuverStrategySimpleTurn" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategySimpleTurn
         )
 
         simpleTurn.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME
@@ -5237,22 +5236,22 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Smooth Accel"
-        accel: "IBasicManeuverStrategySmoothAccel" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategySmoothAccel
+        accel: "BasicManeuverStrategySmoothAccel" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategySmoothAccel
         )
         accel.roll_rate_dot = 29
         rateDot: typing.Any = accel.roll_rate_dot
         Assert.assertAlmostEqual(29, float(rateDot), delta=tolerance)
 
         Assert.assertEqual("Smooth Accel", basicManeuver.profile_strategy_type)
-        accelProfile: "IBasicManeuverStrategySmoothAccel" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategySmoothAccel
+        accelProfile: "BasicManeuverStrategySmoothAccel" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategySmoothAccel
         )
         rateDotProfile: typing.Any = accelProfile.roll_rate_dot
         Assert.assertAlmostEqual(29, float(rateDotProfile), delta=tolerance)
@@ -5307,7 +5306,7 @@ class EarlyBoundTests(TestBase):
         accel.stop_on_roll_angle = True
         Assert.assertTrue(accel.stop_on_roll_angle)
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = accel.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = accel.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -5323,23 +5322,21 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Smooth Turn"
-        turn: "IBasicManeuverStrategySmoothTurn" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategySmoothTurn
-        )
+        turn: "BasicManeuverStrategySmoothTurn" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategySmoothTurn)
 
         turn.heading_change = 89
         headingChange: typing.Any = turn.heading_change
         Assert.assertAlmostEqual(89, float(headingChange), delta=tolerance)
 
         Assert.assertEqual("Smooth Turn", basicManeuver.profile_strategy_type)
-        turnProfile: "IBasicManeuverStrategySmoothTurn" = clr.CastAs(
-            basicManeuver.profile, IBasicManeuverStrategySmoothTurn
+        turnProfile: "BasicManeuverStrategySmoothTurn" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategySmoothTurn
         )
         headingChange = turnProfile.heading_change
         Assert.assertAlmostEqual(89, float(headingChange), delta=tolerance)
@@ -5380,7 +5377,7 @@ class EarlyBoundTests(TestBase):
         turn.fpa_mode = SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF
         Assert.assertEqual(SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF, turn.fpa_mode)
 
-        airspeedOpts: "IBasicManeuverAirspeedOptions" = turn.airspeed_options
+        airspeedOpts: "BasicManeuverAirspeedOptions" = turn.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -5396,14 +5393,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Stationkeeping"
-        stationNav: "IBasicManeuverStrategyStationkeeping" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyStationkeeping
+        stationNav: "BasicManeuverStrategyStationkeeping" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyStationkeeping
         )
 
         targetName: str = (EarlyBoundTests.AG_Target.class_name + "/") + EarlyBoundTests.AG_Target.instance_name
@@ -5440,7 +5437,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(stationNav.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS)
         Assert.assertEqual(700, stationNav.control_limit_turn_radius)
 
-        scenario: "IScenario" = clr.CastAs(EarlyBoundTests.AG_Scenario, IScenario)
+        scenario: "Scenario" = clr.CastAs(EarlyBoundTests.AG_Scenario, Scenario)
         stationNav.stop_condition = STATIONKEEPING_STOP_CONDITION.STOP_CONDITION_NOT_SET
         Assert.assertEqual(stationNav.stop_condition, STATIONKEEPING_STOP_CONDITION.STOP_CONDITION_NOT_SET)
 
@@ -5519,14 +5516,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Straight Ahead"
-        straightAhead: "IBasicManeuverStrategyStraightAhead" = clr.CastAs(
-            basicManeuver.navigation, IBasicManeuverStrategyStraightAhead
+        straightAhead: "BasicManeuverStrategyStraightAhead" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyStraightAhead
         )
 
         straightAhead.reference_frame = STRAIGHT_AHEAD_REFERENCE_FRAME.MAINTAIN_COURSE
@@ -5548,13 +5545,13 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
+        basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
-            IProcedureBasicManeuver,
+            ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Weave"
-        weave: "IBasicManeuverStrategyWeave" = clr.CastAs(basicManeuver.navigation, IBasicManeuverStrategyWeave)
+        weave: "BasicManeuverStrategyWeave" = clr.CastAs(basicManeuver.navigation, BasicManeuverStrategyWeave)
 
         weave.heading_change = 45
         heading: typing.Any = weave.heading_change
@@ -5596,7 +5593,7 @@ class EarlyBoundTests(TestBase):
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_RELATIVE_TO_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
         )
-        relToPrevProc: "ISiteRelToPrevProcedure" = clr.CastAs(proc2.site, ISiteRelToPrevProcedure)
+        relToPrevProc: "SiteRelToPrevProcedure" = clr.CastAs(proc2.site, SiteRelToPrevProcedure)
 
         self.TestSiteName(relToPrevProc.get_as_site(), "Relative to Previous Procedure")
 
@@ -5626,7 +5623,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_RELATIVE_TO_STATIONARY_STK_OBJECT, PROCEDURE_TYPE.PROC_ENROUTE
         )
-        relToSTKObject: "ISiteRelToSTKObject" = clr.CastAs(proc1.site, ISiteRelToSTKObject)
+        relToSTKObject: "SiteRelToSTKObject" = clr.CastAs(proc1.site, SiteRelToSTKObject)
 
         self.TestSiteName(relToSTKObject.get_as_site(), "Relative to stationary STK Object Site")
 
@@ -5661,13 +5658,13 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_AIRPORT_FROM_CATALOG, PROCEDURE_TYPE.PROC_TAKEOFF
         )
-        catAirport: "ISiteAirportFromCatalog" = clr.CastAs(proc1.site, ISiteAirportFromCatalog)
+        catAirport: "SiteAirportFromCatalog" = clr.CastAs(proc1.site, SiteAirportFromCatalog)
 
-        arincAirports: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.airport_category.arinc424_airports
+        arincAirports: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.airport_category.arinc424_airports
         arincSource: "ICatalogSource" = clr.CastAs(arincAirports, ICatalogSource)
         arincNames = arincSource.child_names
         firstArincAirport: "IARINC424Item" = arincAirports.get_arinc424_item(str(arincNames[0]))
-        catAirport.set_catalog_airport(clr.CastAs(firstArincAirport, ICatalogAirport))
+        catAirport.set_catalog_airport(clr.CastAs(firstArincAirport, ARINC424Airport))
         arincName: str = firstArincAirport.get_as_catalog_item().name
         Assert.assertEqual(arincName, catAirport.get_as_site().name)
         arincAirport2: "ICatalogItem" = clr.CastAs(catAirport.get_catalog_airport(), ICatalogItem)
@@ -5686,13 +5683,13 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROC_ENROUTE
         )
-        catNavaid: "ISiteNavaidFromCatalog" = clr.CastAs(proc1.site, ISiteNavaidFromCatalog)
+        catNavaid: "SiteNavaidFromCatalog" = clr.CastAs(proc1.site, SiteNavaidFromCatalog)
 
-        arincNavaids: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.navaid_category.arinc424_navaids
+        arincNavaids: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.navaid_category.arinc424_navaids
         arincSource: "ICatalogSource" = clr.CastAs(arincNavaids, ICatalogSource)
         arincNames = arincSource.child_names
         firstArincNavaid: "IARINC424Item" = arincNavaids.get_arinc424_item(str(arincNames[0]))
-        catNavaid.set_catalog_navaid(clr.CastAs(firstArincNavaid, ICatalogNavaid))
+        catNavaid.set_catalog_navaid(clr.CastAs(firstArincNavaid, ARINC424Navaid))
         arincName: str = firstArincNavaid.get_as_catalog_item().name
         Assert.assertEqual(arincName, catNavaid.get_as_site().name)
         arincNavaid2: "ICatalogItem" = clr.CastAs(catNavaid.get_catalog_navaid(), ICatalogItem)
@@ -5710,7 +5707,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        runway: "ISiteRunway" = clr.CastAs(proc1.site, ISiteRunway)
+        runway: "SiteRunway" = clr.CastAs(proc1.site, SiteRunway)
 
         self.TestSiteName(runway.get_as_site(), "Runway")
 
@@ -5748,7 +5745,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, runway.altitude)
 
         # Copy the catalog runway you just created
-        catRunway: "IUserRunway" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways.get_user_runway("Runway")
+        catRunway: "UserRunway" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways.get_user_runway("Runway")
         runway.copy_from_catalog(clr.CastAs(catRunway, ICatalogRunway))
 
         lat = runway.latitude
@@ -5774,7 +5771,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROC_ENROUTE)
-        waypoint: "ISiteWaypoint" = clr.CastAs(proc1.site, ISiteWaypoint)
+        waypoint: "SiteWaypoint" = clr.CastAs(proc1.site, SiteWaypoint)
 
         self.TestSiteName(waypoint.get_as_site(), "Waypoint")
 
@@ -5797,7 +5794,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROC_REFERENCE_STATE
         )
-        refStateSite: "ISiteReferenceState" = clr.CastAs(proc1.site, ISiteReferenceState)
+        refStateSite: "SiteReferenceState" = clr.CastAs(proc1.site, SiteReferenceState)
 
         self.TestSiteName(refStateSite.get_as_site(), "Reference State Site")
 
@@ -5816,7 +5813,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_STK_AREA_TARGET, PROCEDURE_TYPE.PROC_AREA_TARGET_SEARCH
         )
-        atSite: "ISiteSTKAreaTarget" = clr.CastAs(proc1.site, ISiteSTKAreaTarget)
+        atSite: "SiteSTKAreaTarget" = clr.CastAs(proc1.site, SiteSTKAreaTarget)
 
         atSite.object_name = "AreaTarget/AreaTarget2"
         name: typing.Any = atSite.object_name
@@ -5836,22 +5833,22 @@ class EarlyBoundTests(TestBase):
     def test_SiteDynState(self):
         self.EmptyProcedures()
 
-        missile: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), IMissile
+        missile: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
-        impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, IVehicleImpactLocationPoint)
-        impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
+        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
+        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
         impact.lat = -20
         impact.lon = -20
         traj.propagate()
 
-        missile2: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), IMissile
+        missile2: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "IVehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, IVehiclePropagatorBallistic)
-        impactLocation2: "IVehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, IVehicleImpactLocationPoint)
-        impact2: "IVehicleImpactLLA" = clr.CastAs(impactLocation2.impact, IVehicleImpactLLA)
+        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
+        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
         impact2.lat = -20
         impact2.lon = -20
         traj2.propagate()
@@ -5859,7 +5856,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_DYN_STATE, PROCEDURE_TYPE.PROC_LAUNCH_DYN_STATE
         )
-        dynState: "ISiteDynState" = clr.CastAs(proc1.site, ISiteDynState)
+        dynState: "SiteDynState" = clr.CastAs(proc1.site, SiteDynState)
 
         dynState.object_name = "Missile/Missile2"
         name: typing.Any = dynState.object_name
@@ -5887,7 +5884,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_STK_OBJECT_WAYPOINT, PROCEDURE_TYPE.PROC_ENROUTE
         )
-        objectWaypointSite: "ISiteSTKObjectWaypoint" = clr.CastAs(proc1.site, ISiteSTKObjectWaypoint)
+        objectWaypointSite: "SiteSTKObjectWaypoint" = clr.CastAs(proc1.site, SiteSTKObjectWaypoint)
 
         self.TestSiteName(objectWaypointSite.get_as_site(), "STK Object Waypoint Site")
 
@@ -5899,7 +5896,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue((Array.Length(names) >= 2))
 
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        scenario: "IScenario" = clr.CastAs(EarlyBoundTests.AG_Scenario, IScenario)
+        scenario: "Scenario" = clr.CastAs(EarlyBoundTests.AG_Scenario, Scenario)
 
         objectWaypointSite.minimize_site_proc_time_diff = MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF
         Assert.assertEqual(
@@ -6000,7 +5997,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_STK_STATIC_OBJECT, PROCEDURE_TYPE.PROC_ENROUTE
         )
-        staticObjectSite: "ISiteSTKStaticObject" = clr.CastAs(proc1.site, ISiteSTKStaticObject)
+        staticObjectSite: "SiteSTKStaticObject" = clr.CastAs(proc1.site, SiteSTKStaticObject)
 
         self.TestSiteName(staticObjectSite.get_as_site(), "STK Static Object Site")
 
@@ -6022,28 +6019,28 @@ class EarlyBoundTests(TestBase):
     def test_STKVehicle(self):
         self.EmptyProcedures()
 
-        missile: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), IMissile
+        missile: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
-        impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, IVehicleImpactLocationPoint)
-        impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
+        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
+        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
         impact.lat = -20
         impact.lon = -20
         traj.propagate()
 
-        missile2: "IMissile" = clr.CastAs(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), IMissile
+        missile2: "Missile" = clr.CastAs(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "IVehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, IVehiclePropagatorBallistic)
-        impactLocation2: "IVehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, IVehicleImpactLocationPoint)
-        impact2: "IVehicleImpactLLA" = clr.CastAs(impactLocation2.impact, IVehicleImpactLLA)
+        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
+        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
         impact2.lat = -20
         impact2.lon = -20
         traj2.propagate()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_LAUNCH)
-        stkVehicleSite: "ISiteSTKVehicle" = clr.CastAs(proc1.site, ISiteSTKVehicle)
+        stkVehicleSite: "SiteSTKVehicle" = clr.CastAs(proc1.site, SiteSTKVehicle)
 
         stkVehicleSite.object_name = "Missile/Missile2"
         name: typing.Any = stkVehicleSite.object_name
@@ -6066,9 +6063,9 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
-        superProc: "IProcedureSuperProcedure" = clr.CastAs(
+        superProc: "ProcedureSuperProcedure" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_SUPER_PROCEDURE, PROCEDURE_TYPE.PROC_SUPER_PROCEDURE),
-            IProcedureSuperProcedure,
+            ProcedureSuperProcedure,
         )
 
         self.TestProcedureName(superProc.get_as_procedure(), "Super Procedure")
@@ -6099,7 +6096,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_SUPER_PROCEDURE, PROCEDURE_TYPE.PROC_SUPER_PROCEDURE
         )
-        superProcSite: "ISiteSuperProcedure" = clr.CastAs(proc1.site, ISiteSuperProcedure)
+        superProcSite: "SiteSuperProcedure" = clr.CastAs(proc1.site, SiteSuperProcedure)
 
         self.TestSiteName(superProcSite.get_as_site(), "Super Procedure Site")
 
@@ -6115,7 +6112,7 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF
         )
-        vtolSite: "ISiteVTOLPoint" = clr.CastAs(proc1.site, ISiteVTOLPoint)
+        vtolSite: "SiteVTOLPoint" = clr.CastAs(proc1.site, SiteVTOLPoint)
 
         vtolSite.latitude = 1
         lat: typing.Any = vtolSite.latitude
@@ -6135,7 +6132,7 @@ class EarlyBoundTests(TestBase):
     # region ReadOnlyCatalogItem
     @category("Aircraft Tests")
     def test_ReadOnlyCatalogItem(self):
-        basicAirliner: "IAircraftModel" = EarlyBoundTests.AG_AvtrAircraftModels.get_aircraft("Basic Airliner")
+        basicAirliner: "AircraftModel" = EarlyBoundTests.AG_AvtrAircraftModels.get_aircraft("Basic Airliner")
         acAsCatalogItem: "ICatalogItem" = basicAirliner.get_as_catalog_item()
         Assert.assertEqual("Basic Airliner", acAsCatalogItem.name)
 
@@ -6195,10 +6192,10 @@ class EarlyBoundTests(TestBase):
     def test_AdvFixedWingTool(self):
         tolerance: float = 1e-09
 
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.wing_area = 300
         Assert.assertEqual(300, advFWT.wing_area)
@@ -6248,20 +6245,20 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingExternalAero
     @category("Aircraft Tests")
     def test_AdvFixedWingExternalAero(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
 
         def action302():
-            aeroTest: "IAdvFixedWingExternalAero" = advFWT.aero_mode_as_external
+            aeroTest: "AdvFixedWingExternalAero" = advFWT.aero_mode_as_external
 
         TryCatchAssertBlock.ExpectedException("must be", action302)
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE
-        aero: "IAdvFixedWingExternalAero" = advFWT.aero_mode_as_external
+        aero: "AdvFixedWingExternalAero" = advFWT.aero_mode_as_external
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.aero")
 
@@ -6282,21 +6279,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingSubSuperHypersonicAero
     @category("Aircraft Tests")
     def test_AdvFixedWingSubSuperHypersonicAero(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
 
         def action304():
-            aeroTest: "IAdvFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
+            aeroTest: "AdvFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
 
         TryCatchAssertBlock.ExpectedException("must be", action304)
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO
         Assert.assertEqual(ADV_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO, advFWT.aero_strategy)
-        aero: "IAdvFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
+        aero: "AdvFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
 
         aero.transonic_min_mach = 0.81
         Assert.assertEqual(0.81, aero.transonic_min_mach)
@@ -6322,30 +6319,30 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingSubsonicAero
     @category("Aircraft Tests")
     def test_AdvFixedWingSubsonicAero(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
 
         def action305():
-            aeroTest: "IAdvFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
+            aeroTest: "AdvFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
 
         TryCatchAssertBlock.ExpectedException("must be", action305)
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
         Assert.assertEqual(ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO, advFWT.aero_strategy)
-        aero: "IAdvFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
+        aero: "AdvFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
 
         aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
 
         def action306():
-            basicGeoTest: "IAdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+            basicGeoTest: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
 
         TryCatchAssertBlock.ExpectedException("must be", action306)
         aero.geometry_type = ADV_FIXED_WING_GEOMETRY.BASIC_GEOMETRY
-        basicGeo: "IAdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+        basicGeo: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
 
         basicGeo.set_aspect_ratio(11)
         Assert.assertEqual(11, basicGeo.aspect_ratio)
@@ -6354,11 +6351,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(22, float(sweep))
 
         def action307():
-            variableGeoTest: "IAdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+            variableGeoTest: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
 
         TryCatchAssertBlock.ExpectedException("must be", action307)
         aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
-        variableGeo: "IAdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+        variableGeo: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
 
         variableGeo.set_aspect_ratio(12)
         Assert.assertEqual(12, variableGeo.aspect_ratio)
@@ -6389,30 +6386,30 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingSupersonicAero
     @category("Aircraft Tests")
     def test_AdvFixedWingSupersonicAero(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
 
         def action308():
-            aeroTest: "IAdvFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
+            aeroTest: "AdvFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
 
         TryCatchAssertBlock.ExpectedException("must be", action308)
 
         advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
         Assert.assertEqual(ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO, advFWT.aero_strategy)
-        aero: "IAdvFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
+        aero: "AdvFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
 
         aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
 
         def action309():
-            basicGeoTest: "IAdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+            basicGeoTest: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
 
         TryCatchAssertBlock.ExpectedException("must be", action309)
         aero.geometry_type = ADV_FIXED_WING_GEOMETRY.BASIC_GEOMETRY
-        basicGeo: "IAdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+        basicGeo: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
 
         basicGeo.set_aspect_ratio(11)
         Assert.assertEqual(11, basicGeo.aspect_ratio)
@@ -6421,11 +6418,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(22, float(sweep))
 
         def action310():
-            variableGeoTest: "IAdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+            variableGeoTest: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
 
         TryCatchAssertBlock.ExpectedException("must be", action310)
         aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
-        variableGeo: "IAdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+        variableGeo: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
 
         variableGeo.set_aspect_ratio(12)
         Assert.assertEqual(12, variableGeo.aspect_ratio)
@@ -6464,21 +6461,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingElectricPowerplant
     @category("Aircraft Tests")
     def test_AdvFixedWingElectricPowerplant(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action311():
-            propTest: "IAdvFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
+            propTest: "AdvFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
 
         TryCatchAssertBlock.ExpectedException("must be", action311)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
+        prop: "AdvFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
 
         prop.max_power = 111
         Assert.assertEqual(111, prop.max_power)
@@ -6494,21 +6491,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingExternalProp
     @category("Aircraft Tests")
     def test_AdvFixedWingExternalProp(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT
 
         def action312():
-            propTest: "IAdvFixedWingExternalProp" = advFWT.powerplant_mode_as_external
+            propTest: "AdvFixedWingExternalProp" = advFWT.powerplant_mode_as_external
 
         TryCatchAssertBlock.ExpectedException("must be", action312)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingExternalProp" = advFWT.powerplant_mode_as_external
+        prop: "AdvFixedWingExternalProp" = advFWT.powerplant_mode_as_external
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.prop")
 
@@ -6531,21 +6528,21 @@ class EarlyBoundTests(TestBase):
     def test_AdvFixedWingPistonPowerplant(self):
         tolerance: float = 0.001
 
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action314():
-            propTest: "IAdvFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
+            propTest: "AdvFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
 
         TryCatchAssertBlock.ExpectedException("must be", action314)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
+        prop: "AdvFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
 
         prop.max_sea_level_static_power = 111
         Assert.assertEqual(111, prop.max_sea_level_static_power)
@@ -6571,21 +6568,21 @@ class EarlyBoundTests(TestBase):
     def test_AdvFixedWingTurbopropPowerplant(self):
         tolerance: float = 0.001
 
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action315():
-            propTest: "IAdvFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
+            propTest: "AdvFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
 
         TryCatchAssertBlock.ExpectedException("must be", action315)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
+        prop: "AdvFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
 
         prop.max_sea_level_static_power = 111
         Assert.assertEqual(111, prop.max_sea_level_static_power)
@@ -6604,21 +6601,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingTurbofanHighBypassPowerplant
     @category("Aircraft Tests")
     def test_AdvFixedWingTurbofanHighBypassPowerplant(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action316():
-            propTest: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         TryCatchAssertBlock.ExpectedException("must be", action316)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -6629,21 +6626,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingTurbofanLowBypassPowerplant
     @category("Aircraft Tests")
     def test_AdvFixedWingTurbofanLowBypassPowerplant(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action317():
-            propTest: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         TryCatchAssertBlock.ExpectedException("must be", action317)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -6654,15 +6651,15 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingTurbofanLowBypassAfterburningPowerplant
     @category("Aircraft Tests")
     def test_AdvFixedWingTurbofanLowBypassAfterburningPowerplant(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action318():
-            propTest: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         TryCatchAssertBlock.ExpectedException("must be", action318)
 
@@ -6670,7 +6667,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(
             ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING, advFWT.powerplant_strategy
         )
-        prop: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -6681,21 +6678,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingTurbofanTurbojetPowerplant
     @category("Aircraft Tests")
     def test_AdvFixedWingTurbofanTurbojetPowerplant(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action319():
-            propTest: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         TryCatchAssertBlock.ExpectedException("must be", action319)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -6706,21 +6703,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingTurbofanTurbojetAfterburningPowerplant
     @category("Aircraft Tests")
     def test_AdvFixedWingTurbofanTurbojetAfterburningPowerplant(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action320():
-            propTest: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         TryCatchAssertBlock.ExpectedException("must be", action320)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -6731,15 +6728,15 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingTurbojetBasicABProp
     @category("Aircraft Tests")
     def test_AdvFixedWingTurbojetBasicABProp(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action321():
-            propTest: "IAdvFixedWingTurbojetBasicABProp" = advFWT.powerplant_mode_as_basic_turbojet
+            propTest: "AdvFixedWingTurbojetBasicABProp" = advFWT.powerplant_mode_as_basic_turbojet
 
         TryCatchAssertBlock.ExpectedException("must be", action321)
 
@@ -6754,15 +6751,15 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingTurbofanBasicABProp
     @category("Aircraft Tests")
     def test_AdvFixedWingTurbofanBasicABProp(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action322():
-            propTest: "IAdvFixedWingTurbofanBasicABProp" = advFWT.powerplant_mode_as_basic_turbofan
+            propTest: "AdvFixedWingTurbofanBasicABProp" = advFWT.powerplant_mode_as_basic_turbofan
 
         TryCatchAssertBlock.ExpectedException("must be", action322)
 
@@ -6777,21 +6774,21 @@ class EarlyBoundTests(TestBase):
     # region AdvFixedWingSubSuperHypersonicProp
     @category("Aircraft Tests")
     def test_AdvFixedWingSubSuperHypersonicProp(self):
-        tempAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        tempAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "IAdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
 
         def action323():
-            propTest: "IAdvFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
+            propTest: "AdvFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
 
         TryCatchAssertBlock.ExpectedException("must be", action323)
 
         advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT
         Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT, advFWT.powerplant_strategy)
-        prop: "IAdvFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
+        prop: "AdvFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
 
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, prop.max_turbine_compression_temp)
@@ -6810,27 +6807,27 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(TURBINE_MODE.TURBINE_MODE_DISABLED, prop.turbine_mode)
 
         def action324():
-            fanTest: "IAdvFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
+            fanTest: "AdvFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
 
         TryCatchAssertBlock.ExpectedException("must be", action324)
         prop.ramjet_mode = RAMJET_MODE.RAMJET_MODE_DISABLED
         Assert.assertEqual(RAMJET_MODE.RAMJET_MODE_DISABLED, prop.ramjet_mode)
 
         def action325():
-            ramTest: "IAdvFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
+            ramTest: "AdvFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
 
         TryCatchAssertBlock.ExpectedException("must be", action325)
         prop.scramjet_mode = SCRAMJET_MODE.SCRAMJET_MODE_DISABLED
         Assert.assertEqual(SCRAMJET_MODE.SCRAMJET_MODE_DISABLED, prop.scramjet_mode)
 
         def action326():
-            scramTest: "IAdvFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
+            scramTest: "AdvFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
 
         TryCatchAssertBlock.ExpectedException("must be", action326)
 
         # /////////////////// Now test the turbojet turbine ////////////
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_TURBOJET_BASIC_AB
-        turbojet: "IAdvFixedWingTurbojetBasicABProp" = prop.turbine_mode_as_turbojet
+        turbojet: "AdvFixedWingTurbojetBasicABProp" = prop.turbine_mode_as_turbojet
         self.TestTurbojetBasicAB(turbojet)
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, turbojet.max_compression_temp)
@@ -6839,7 +6836,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the turbofan turbine ////////////
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_TURBOFAN_BASIC_AB
-        turbofan: "IAdvFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
+        turbofan: "AdvFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
         self.TestTurbofanBasicAB(turbofan)
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, turbofan.max_compression_temp)
@@ -6848,7 +6845,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the ramjet /////////////////////
         prop.ramjet_mode = RAMJET_MODE.RAMJET_MODE_BASIC
-        ramjet: "IAdvFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
+        ramjet: "AdvFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
 
         ramjet.design_altitude = 60001
         Assert.assertEqual(60001, ramjet.design_altitude)
@@ -6875,12 +6872,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(JET_FUEL_TYPE.HYDROGEN, ramjet.fuel_type)
 
         def action327():
-            afprop: "IFuelModelKeroseneAFPROP" = ramjet.fuel_mode_as_afprop
+            afprop: "FuelModelKeroseneAFPROP" = ramjet.fuel_mode_as_afprop
 
         TryCatchAssertBlock.ExpectedException("must be", action327)
 
         def action328():
-            cea: "IFuelModelKeroseneCEA" = ramjet.fuel_mode_as_cea
+            cea: "FuelModelKeroseneCEA" = ramjet.fuel_mode_as_cea
 
         TryCatchAssertBlock.ExpectedException("must be", action328)
 
@@ -6888,7 +6885,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the scramjet /////////////////////
         prop.scramjet_mode = SCRAMJET_MODE.SCRAMJET_MODE_BASIC
-        scramjet: "IAdvFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
+        scramjet: "AdvFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
 
         scramjet.design_altitude = 90001
         Assert.assertEqual(90001, scramjet.design_altitude)
@@ -6915,12 +6912,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(JET_FUEL_TYPE.HYDROGEN, scramjet.fuel_type)
 
         def action329():
-            afprop: "IFuelModelKeroseneAFPROP" = scramjet.fuel_mode_as_afprop
+            afprop: "FuelModelKeroseneAFPROP" = scramjet.fuel_mode_as_afprop
 
         TryCatchAssertBlock.ExpectedException("must be", action329)
 
         def action330():
-            cea: "IFuelModelKeroseneCEA" = scramjet.fuel_mode_as_cea
+            cea: "FuelModelKeroseneCEA" = scramjet.fuel_mode_as_cea
 
         TryCatchAssertBlock.ExpectedException("must be", action330)
 
@@ -6933,7 +6930,7 @@ class EarlyBoundTests(TestBase):
     # region PerformanceModelCategory
     @category("Aircraft Tests")
     def test_PerformanceModelCategory(self):
-        acc: "IAircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
+        acc: "AircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
         accAsCI: "ICatalogItem" = acc.get_as_catalog_item()
 
         Assert.assertEqual("Acceleration", accAsCI.name)
@@ -6962,8 +6959,8 @@ class EarlyBoundTests(TestBase):
     # region BuiltInPerformanceModel
     @category("Aircraft Tests")
     def test_BuiltInPerformanceModel(self):
-        acc: "IAircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
-        builtInAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
+        builtInAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
         accAsCatalogItem: "ICatalogItem" = clr.CastAs(builtInAcc, ICatalogItem)
 
         Assert.assertEqual("Built-In Model", accAsCatalogItem.name)
@@ -6971,7 +6968,7 @@ class EarlyBoundTests(TestBase):
         def action334():
             accAsCatalogItem.name = ""
 
-        TryCatchAssertBlock.DoAssert2(action334)
+        TryCatchAssertBlock.DoAssert(action334)
 
         Assert.assertEqual("Built-In Model", accAsCatalogItem.name)
 
@@ -6981,41 +6978,41 @@ class EarlyBoundTests(TestBase):
         def action335():
             accAsCatalogItem.remove()
 
-        TryCatchAssertBlock.DoAssert2(action335)
+        TryCatchAssertBlock.DoAssert(action335)
 
     # endregion
 
     # region BasicAccelerationModel
     @category("Aircraft Tests")
     def test_BasicAccelerationModel(self):
-        acc: "IAircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        levelTurns: "ILevelTurns" = basicAcc.level_turns
+        levelTurns: "LevelTurns" = basicAcc.level_turns
         levelTurns.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_NORMAL
 
         def action336():
-            testVal: "IAeroPropManeuverModeHelper" = levelTurns.maneuver_mode_helper
+            testVal: "AeroPropManeuverModeHelper" = levelTurns.maneuver_mode_helper
 
         TryCatchAssertBlock.ExpectedException("must be set", action336)
         levelTurns.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE
 
         def action337():
-            testVal: "IAeroPropManeuverModeHelper" = levelTurns.maneuver_mode_helper
+            testVal: "AeroPropManeuverModeHelper" = levelTurns.maneuver_mode_helper
 
         TryCatchAssertBlock.ExpectedException("must be set", action337)
 
-        climbDescent: "IClimbAndDescentTransitions" = basicAcc.climb_and_descent_transitions
+        climbDescent: "ClimbAndDescentTransitions" = basicAcc.climb_and_descent_transitions
         climbDescent.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_NORMAL
 
         def action338():
-            testVal: "IAeroPropManeuverModeHelper" = climbDescent.maneuver_mode_helper
+            testVal: "AeroPropManeuverModeHelper" = climbDescent.maneuver_mode_helper
 
         TryCatchAssertBlock.ExpectedException("must be set", action338)
         climbDescent.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE
 
         def action339():
-            testVal: "IAeroPropManeuverModeHelper" = climbDescent.maneuver_mode_helper
+            testVal: "AeroPropManeuverModeHelper" = climbDescent.maneuver_mode_helper
 
         TryCatchAssertBlock.ExpectedException("must be set", action339)
 
@@ -7024,13 +7021,13 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationAero
     @category("Aircraft Tests")
     def test_BasicAccelerationAero(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "IAircraftAero" = basicAcc.aerodynamics
+        aero: "AircraftAero" = basicAcc.aerodynamics
         aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE
         Assert.assertEqual(AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE, aero.aero_strategy)
 
@@ -7059,16 +7056,16 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationSimpleAero
     @category("Aircraft Tests")
     def test_BasicAccelerationSimpleAero(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "IAircraftAero" = basicAcc.aerodynamics
+        aero: "AircraftAero" = basicAcc.aerodynamics
         aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE
 
-        simpleAero: "IAircraftSimpleAero" = aero.mode_as_simple
+        simpleAero: "AircraftSimpleAero" = aero.mode_as_simple
         simpleAero.operating_mode = AERO_PROP_SIMPLE_MODE.HELICOPTER
         Assert.assertEqual(AERO_PROP_SIMPLE_MODE.HELICOPTER, simpleAero.operating_mode)
 
@@ -7088,16 +7085,16 @@ class EarlyBoundTests(TestBase):
     def test_BasicAccelerationBasicFixedWingAero(self):
         tolerance: float = 1e-06
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "IAircraftAero" = basicAcc.aerodynamics
+        aero: "AircraftAero" = basicAcc.aerodynamics
         aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_BASIC_FIXED_WING
 
-        bfwAero: "IAircraftBasicFixedWingAero" = aero.mode_as_basic_fixed_wing
+        bfwAero: "AircraftBasicFixedWingAero" = aero.mode_as_basic_fixed_wing
 
         bfwAero.forward_flight_reference_area = 0.05
         Assert.assertEqual(0.05, bfwAero.forward_flight_reference_area)
@@ -7144,16 +7141,16 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationExternalAero
     @category("Aircraft Tests")
     def test_BasicAccelerationExternalAero(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "IAircraftAero" = basicAcc.aerodynamics
+        aero: "AircraftAero" = basicAcc.aerodynamics
         aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_EXTERNAL_FILE
 
-        externalAero: "IAircraftExternalAero" = aero.mode_as_external
+        externalAero: "AircraftExternalAero" = aero.mode_as_external
         Assert.assertIs(None, externalAero.forward_flight_filepath)
         Assert.assertIs(None, externalAero.takeoff_landing_filepath)
 
@@ -7221,13 +7218,13 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationAdvancedMissileAero
     @category("Aircraft Tests")
     def test_BasicAccelerationAdvancedMissileAero(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "IAircraftAero" = basicAcc.aerodynamics
+        aero: "AircraftAero" = basicAcc.aerodynamics
         aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_ADVANCED_MISSILE
         self.AdvancedMissileAero(aero.mode_as_advanced_missile)
 
@@ -7238,13 +7235,13 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationProp
     @category("Aircraft Tests")
     def test_BasicAccelerationProp(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "IAircraftProp" = basicAcc.propulsion
+        prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE
         Assert.assertEqual(AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE, prop.prop_strategy)
 
@@ -7274,15 +7271,15 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationSimpleProp
     @category("Aircraft Tests")
     def test_BasicAccelerationSimpleProp(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "IAircraftProp" = basicAcc.propulsion
+        prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE
-        simpleProp: "IAircraftSimpleProp" = prop.mode_as_simple
+        simpleProp: "AircraftSimpleProp" = prop.mode_as_simple
 
         simpleProp.max_thrust_accel = 0.6
         Assert.assertEqual(0.6, simpleProp.max_thrust_accel)
@@ -7301,16 +7298,16 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationExternalProp
     @category("Aircraft Tests")
     def test_BasicAccelerationExternalProp(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "IAircraftProp" = basicAcc.propulsion
+        prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_EXTERNAL_FILE
 
-        externalProp: "IAircraftExternalProp" = prop.mode_as_external
+        externalProp: "AircraftExternalProp" = prop.mode_as_external
         Assert.assertIs(None, externalProp.prop_filepath)
 
         def action351():
@@ -7357,16 +7354,16 @@ class EarlyBoundTests(TestBase):
     def test_BasicAccelerationBasicFixedWingProp(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "IAircraftProp" = basicAcc.propulsion
+        prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING
 
-        bfwProp: "IAircraftBasicFixedWingProp" = prop.mode_as_basic_fixed_wing
+        bfwProp: "AircraftBasicFixedWingProp" = prop.mode_as_basic_fixed_wing
         bfwProp.propulsion_mode = BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST
         Assert.assertEqual(BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST, bfwProp.propulsion_mode)
 
@@ -7426,15 +7423,15 @@ class EarlyBoundTests(TestBase):
     def test_BasicAccelerationRocketProp(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "IAircraftProp" = basicAcc.propulsion
+        prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_ROCKET
-        rocketProp: "IMissileRocketProp" = prop.mode_as_rocket
+        rocketProp: "MissileRocketProp" = prop.mode_as_rocket
 
         rocketProp.nozzle_expansion_ratio = 7.1
         Assert.assertEqual(7.1, rocketProp.nozzle_expansion_ratio)
@@ -7475,15 +7472,15 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationRamjetProp
     @category("Aircraft Tests")
     def test_BasicAccelerationRamjetProp(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "IAircraftProp" = basicAcc.propulsion
+        prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_RAMJET
-        ramjetProp: "IMissileRamjetProp" = prop.mode_as_ramjet
+        ramjetProp: "MissileRamjetProp" = prop.mode_as_ramjet
 
         ramjetProp.design_altitude = 5000
         Assert.assertEqual(5000, ramjetProp.design_altitude)
@@ -7517,15 +7514,15 @@ class EarlyBoundTests(TestBase):
     # region BasicAccelerationTurbojetProp
     @category("Aircraft Tests")
     def test_BasicAccelerationTurbojetProp(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        acc: "IAircraftAcceleration" = newAC.acceleration
-        basicAcc: "IAircraftBasicAccelerationModel" = acc.get_built_in_model()
+        acc: "AircraftAcceleration" = newAC.acceleration
+        basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "IAircraftProp" = basicAcc.propulsion
+        prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_TURBOJET
-        turboProp: "IMissileTurbojetProp" = prop.mode_as_turbojet
+        turboProp: "MissileTurbojetProp" = prop.mode_as_turbojet
 
         turboProp.design_altitude = 5000
         Assert.assertEqual(5000, turboProp.design_altitude)
@@ -7567,13 +7564,13 @@ class EarlyBoundTests(TestBase):
     # region AdvancedAccelerationModel
     @category("Aircraft Tests")
     def test_AdvancedAccelerationModel(self):
-        acc: "IAircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
+        acc: "AircraftAcceleration" = EarlyBoundTests.AG_AvtrAircraft.acceleration
         accAsCatalogItem: "ICatalogItem" = acc.get_as_catalog_item()
         accModelNames = accAsCatalogItem.child_names
         count: int = Array.Length(accModelNames)
-        advAcc: "IAircraftAdvAccelerationModel" = clr.CastAs(
+        advAcc: "AircraftAdvAccelerationModel" = clr.CastAs(
             accAsCatalogItem.add_child_of_type("Advanced Acceleration Model", "AdvAcceleration Model Name"),
-            IAircraftAdvAccelerationModel,
+            AircraftAdvAccelerationModel,
         )
 
         accModelNames = accAsCatalogItem.child_names
@@ -7581,7 +7578,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(count, Array.Length(accModelNames))
         Assert.assertEqual("AdvAcceleration Model Name", accModelNames[0])
 
-        accMode: "IAircraftAccelerationMode" = advAcc.acceleration_mode
+        accMode: "AircraftAccelerationMode" = advAcc.acceleration_mode
         accMode.accel_mode = ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL
 
         def action360():
@@ -7601,11 +7598,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicClimbModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        climb: "IAircraftClimb" = newAC.climb
-        basicClimb: "IAircraftBasicClimbModel" = climb.get_built_in_model()
+        climb: "AircraftClimb" = newAC.climb
+        basicClimb: "AircraftBasicClimbModel" = climb.get_built_in_model()
 
         basicClimb.ceiling_altitude = 70001
         Assert.assertEqual(70001, basicClimb.ceiling_altitude)
@@ -7672,12 +7669,12 @@ class EarlyBoundTests(TestBase):
     def test_AdvancedClimbModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        climb: "IAircraftClimb" = newAC.climb
+        climb: "AircraftClimb" = newAC.climb
         climb.get_as_catalog_item().add_child_of_type("Advanced Climb Model", "Adv Climb")
-        advClimb: "IAircraftAdvClimbModel" = climb.get_adv_climb_by_name("Adv Climb")
+        advClimb: "AircraftAdvClimbModel" = climb.get_adv_climb_by_name("Adv Climb")
 
         advClimb.climb_speed_type = CLIMB_SPEED_TYPE.CLIMB_SPEED_MIN_FUEL
         Assert.assertEqual(CLIMB_SPEED_TYPE.CLIMB_SPEED_MIN_FUEL, advClimb.climb_speed_type)
@@ -7744,11 +7741,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicCruiseModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        cruise: "IAircraftCruise" = newAC.cruise
-        basicCruise: "IAircraftBasicCruiseModel" = cruise.get_built_in_model()
+        cruise: "AircraftCruise" = newAC.cruise
+        basicCruise: "AircraftBasicCruiseModel" = cruise.get_built_in_model()
 
         basicCruise.ceiling_altitude = 20000
         Assert.assertEqual(20000, basicCruise.ceiling_altitude)
@@ -7842,12 +7839,12 @@ class EarlyBoundTests(TestBase):
     def test_AdvancedCruiseModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        cruise: "IAircraftCruise" = newAC.cruise
+        cruise: "AircraftCruise" = newAC.cruise
         cruise.get_as_catalog_item().add_child_of_type("Advanced Cruise Model", "Adv Cruise")
-        advCruise: "IAircraftAdvCruiseModel" = cruise.get_adv_cruise_by_name("Adv Cruise")
+        advCruise: "AircraftAdvCruiseModel" = cruise.get_adv_cruise_by_name("Adv Cruise")
 
         advCruise.default_cruise_altitude = 10001
         Assert.assertEqual(10001, advCruise.default_cruise_altitude)
@@ -7889,11 +7886,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicDescentModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        descent: "IAircraftDescent" = newAC.descent
-        basicDescent: "IAircraftBasicDescentModel" = descent.get_built_in_model()
+        descent: "AircraftDescent" = newAC.descent
+        basicDescent: "AircraftBasicDescentModel" = descent.get_built_in_model()
 
         basicDescent.ceiling_altitude = 70001
         Assert.assertEqual(70001, basicDescent.ceiling_altitude)
@@ -7960,12 +7957,12 @@ class EarlyBoundTests(TestBase):
     def test_AdvancedDescentModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        descent: "IAircraftDescent" = newAC.descent
+        descent: "AircraftDescent" = newAC.descent
         descent.get_as_catalog_item().add_child_of_type("Advanced Descent Model", "Adv Descent")
-        advDescent: "IAircraftAdvDescentModel" = descent.get_adv_descent_by_name("Adv Descent")
+        advDescent: "AircraftAdvDescentModel" = descent.get_adv_descent_by_name("Adv Descent")
 
         advDescent.descent_speed_type = DESCENT_SPEED_TYPE.DESCENT_MAX_RANGE_CRUISE
         Assert.assertEqual(DESCENT_SPEED_TYPE.DESCENT_MAX_RANGE_CRUISE, advDescent.descent_speed_type)
@@ -8031,11 +8028,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicLandingModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        landing: "IAircraftLanding" = newAC.landing
-        basicLanding: "IAircraftBasicLandingModel" = landing.get_built_in_model()
+        landing: "AircraftLanding" = newAC.landing
+        basicLanding: "AircraftBasicLandingModel" = landing.get_built_in_model()
 
         basicLanding.set_landing_speed(AIRSPEED_TYPE.TAS, 251)
         Assert.assertEqual(AIRSPEED_TYPE.TAS, basicLanding.landing_speed_type)
@@ -8075,12 +8072,12 @@ class EarlyBoundTests(TestBase):
     # region AdvancedLandingModel
     @category("Aircraft Tests")
     def test_AdvancedLandingModel(self):
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        landing: "IAircraftLanding" = newAC.landing
+        landing: "AircraftLanding" = newAC.landing
         landing.get_as_catalog_item().add_child_of_type("Advanced Landing Model", "Adv Landing")
-        advLanding: "IAircraftAdvLandingModel" = landing.get_adv_landing_by_name("Adv Landing")
+        advLanding: "AircraftAdvLandingModel" = landing.get_adv_landing_by_name("Adv Landing")
 
         advLanding.landing_speed_mode = TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK
         Assert.assertEqual(TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK, advLanding.landing_speed_mode)
@@ -8111,11 +8108,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicTakeoffModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        takeoff: "IAircraftTakeoff" = newAC.takeoff
-        basicTakeoff: "IAircraftBasicTakeoffModel" = takeoff.get_built_in_model()
+        takeoff: "AircraftTakeoff" = newAC.takeoff
+        basicTakeoff: "AircraftBasicTakeoffModel" = takeoff.get_built_in_model()
 
         basicTakeoff.set_takeoff_speed(AIRSPEED_TYPE.TAS, 151)
         Assert.assertEqual(AIRSPEED_TYPE.TAS, basicTakeoff.takeoff_speed_type)
@@ -8171,12 +8168,12 @@ class EarlyBoundTests(TestBase):
     def test_AdvancedTakeoffModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        takeoff: "IAircraftTakeoff" = newAC.takeoff
+        takeoff: "AircraftTakeoff" = newAC.takeoff
         takeoff.get_as_catalog_item().add_child_of_type("Advanced Takeoff Model", "Adv Takeoff")
-        advTakeoff: "IAircraftAdvTakeoffModel" = takeoff.get_adv_takeoff_by_name("Adv Takeoff")
+        advTakeoff: "AircraftAdvTakeoffModel" = takeoff.get_adv_takeoff_by_name("Adv Takeoff")
 
         advTakeoff.takeoff_speed_mode = TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK
         Assert.assertEqual(TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK, advTakeoff.takeoff_speed_mode)
@@ -8216,14 +8213,14 @@ class EarlyBoundTests(TestBase):
     def test_TerrainFollowModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        terrainFollowCategory: "IAircraftTerrainFollow" = newAC.terrain_follow
+        terrainFollowCategory: "AircraftTerrainFollow" = newAC.terrain_follow
         terrainFollowCategory.get_as_catalog_item().add_child_of_type(
             "AGI TerrainFollow Model", "Test TerrainFollow Model"
         )
-        terrainFollow: "IAircraftTerrainFollowModel" = terrainFollowCategory.get_terrain_follow_by_name(
+        terrainFollow: "AircraftTerrainFollowModel" = terrainFollowCategory.get_terrain_follow_by_name(
             "Test TerrainFollow Model"
         )
 
@@ -8322,12 +8319,12 @@ class EarlyBoundTests(TestBase):
     def test_VTOLModel(self):
         tolerance: float = 1e-09
 
-        newAC: "IAircraftModel" = clr.CastAs(
-            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), IAircraftModel
+        newAC: "AircraftModel" = clr.CastAs(
+            EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        vtolCategory: "IAircraftVTOL" = newAC.vtol
+        vtolCategory: "AircraftVTOL" = newAC.vtol
         vtolCategory.get_as_catalog_item().add_child_of_type("AGI VTOL Model", "Test VTOL Model")
-        vtol: "IAircraftVTOLModel" = vtolCategory.get_vtol_by_name("Test VTOL Model")
+        vtol: "AircraftVTOLModel" = vtolCategory.get_vtol_by_name("Test VTOL Model")
 
         vtol.max_hover_altitude = 20000
         Assert.assertEqual(20000, vtol.max_hover_altitude)
@@ -8384,11 +8381,11 @@ class EarlyBoundTests(TestBase):
     # region MissileModel
     @category("Missile Tests")
     def test_MissileModel(self):
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
@@ -8409,11 +8406,11 @@ class EarlyBoundTests(TestBase):
     def test_MissilePerformanceModels(self):
         tolerance: float = 1e-09
 
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
@@ -8423,7 +8420,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE, missile.maneuver_mode)
 
         def action403():
-            testVal: "IAeroPropManeuverModeHelper" = missile.maneuver_mode_helper
+            testVal: "AeroPropManeuverModeHelper" = missile.maneuver_mode_helper
 
         TryCatchAssertBlock.ExpectedException("must be set", action403)
 
@@ -8520,18 +8517,18 @@ class EarlyBoundTests(TestBase):
     # region MissileAeroSimple
     @category("Missile Tests")
     def test_MissileAeroSimple(self):
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileAero: "IMissileAero" = missile.aerodynamics
+        missileAero: "MissileAero" = missile.aerodynamics
         missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE
         Assert.assertEqual(MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE, missileAero.aero_strategy)
-        simple: "IMissileSimpleAero" = missileAero.mode_as_simple
+        simple: "MissileSimpleAero" = missileAero.mode_as_simple
 
         simple.s_reference = 5
         Assert.assertEqual(5, simple.s_reference)
@@ -8554,18 +8551,18 @@ class EarlyBoundTests(TestBase):
     # region MissileAeroExternal
     @category("Missile Tests")
     def test_MissileAeroExternal(self):
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileAero: "IMissileAero" = missile.aerodynamics
+        missileAero: "MissileAero" = missile.aerodynamics
         missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE
         Assert.assertEqual(MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE, missileAero.aero_strategy)
-        externalAero: "IMissileExternalAero" = missileAero.mode_as_external
+        externalAero: "MissileExternalAero" = missileAero.mode_as_external
 
         externalAero.reference_area = 3
         Assert.assertEqual(3, externalAero.reference_area)
@@ -8597,18 +8594,18 @@ class EarlyBoundTests(TestBase):
     # region MissileAeroAdvanced
     @category("Missile Tests")
     def test_MissileAeroAdvanced(self):
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileAero: "IMissileAero" = missile.aerodynamics
+        missileAero: "MissileAero" = missile.aerodynamics
         missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_ADVANCED
         Assert.assertEqual(MISSILE_AERO_STRATEGY.MISSILE_AERO_ADVANCED, missileAero.aero_strategy)
-        advancedAero: "IMissileAdvancedAero" = missileAero.mode_as_advanced
+        advancedAero: "MissileAdvancedAero" = missileAero.mode_as_advanced
 
         self.AdvancedMissileAero(advancedAero)
 
@@ -8622,18 +8619,18 @@ class EarlyBoundTests(TestBase):
     def test_MissilePropSimple(self):
         tolerance: float = 1e-09
 
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileProp: "IMissileProp" = missile.propulsion
+        missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE
         Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE, missileProp.prop_strategy)
-        simpleProp: "IMissileSimpleProp" = missileProp.mode_as_simple
+        simpleProp: "MissileSimpleProp" = missileProp.mode_as_simple
 
         simpleProp.max_thrust = 2000
         Assert.assertEqual(2000, simpleProp.max_thrust)
@@ -8650,18 +8647,18 @@ class EarlyBoundTests(TestBase):
     # region MissilePropExternal
     @category("Missile Tests")
     def test_MissilePropExternal(self):
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileProp: "IMissileProp" = missile.propulsion
+        missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE
         Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE, missileProp.prop_strategy)
-        externalProp: "IMissileExternalProp" = missileProp.mode_as_external
+        externalProp: "MissileExternalProp" = missileProp.mode_as_external
 
         Assert.assertEqual(False, externalProp.is_valid)
 
@@ -8691,18 +8688,18 @@ class EarlyBoundTests(TestBase):
     # region MissilePropRamjet
     @category("Missile Tests")
     def test_MissilePropRamjet(self):
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileProp: "IMissileProp" = missile.propulsion
+        missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_RAMJET
         Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_RAMJET, missileProp.prop_strategy)
-        ramjetProp: "IMissileRamjetProp" = missileProp.mode_as_ramjet
+        ramjetProp: "MissileRamjetProp" = missileProp.mode_as_ramjet
 
         ramjetProp.design_altitude = 5000
         Assert.assertEqual(5000, ramjetProp.design_altitude)
@@ -8737,18 +8734,18 @@ class EarlyBoundTests(TestBase):
     # region MissilePropTurbojet
     @category("Missile Tests")
     def test_MissilePropTurbojet(self):
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileProp: "IMissileProp" = missile.propulsion
+        missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_TURBOJET
         Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_TURBOJET, missileProp.prop_strategy)
-        turboProp: "IMissileTurbojetProp" = missileProp.mode_as_turbojet
+        turboProp: "MissileTurbojetProp" = missileProp.mode_as_turbojet
 
         turboProp.design_altitude = 5000
         Assert.assertEqual(5000, turboProp.design_altitude)
@@ -8793,18 +8790,18 @@ class EarlyBoundTests(TestBase):
     def test_MissilePropRocket(self):
         tolerance: float = 1e-09
 
-        missileModels: "IMissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
+        missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
         if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
             missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
 
-        missile: "IMissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
+        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
         Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
 
-        missileProp: "IMissileProp" = missile.propulsion
+        missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_ROCKET
         Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_ROCKET, missileProp.prop_strategy)
-        rocketProp: "IMissileRocketProp" = missileProp.mode_as_rocket
+        rocketProp: "MissileRocketProp" = missileProp.mode_as_rocket
 
         rocketProp.nozzle_expansion_ratio = 7.1
         Assert.assertEqual(7.1, rocketProp.nozzle_expansion_ratio)
@@ -8838,11 +8835,11 @@ class EarlyBoundTests(TestBase):
     # region RotorcraftModel
     @category("Missile Tests")
     def test_RotorcraftModel(self):
-        rotorcraftModels: "IRotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
+        rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
         if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
             rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
 
-        rotorcraft: "IRotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
         Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
         Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
 
@@ -8863,11 +8860,11 @@ class EarlyBoundTests(TestBase):
     def test_RotorcraftPerformanceModels(self):
         tolerance: float = 1e-09
 
-        rotorcraftModels: "IRotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
+        rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
         if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
             rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
 
-        rotorcraft: "IRotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
         Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
         Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
 
@@ -8940,15 +8937,15 @@ class EarlyBoundTests(TestBase):
     # region RotorcraftAero
     @category("Rotorcraft Tests")
     def test_RotorcraftAero(self):
-        rotorcraftModels: "IRotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
+        rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
         if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
             rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
 
-        rotorcraft: "IRotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
         Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
         Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
 
-        aero: "IRotorcraftAero" = rotorcraft.aerodynamics
+        aero: "RotorcraftAero" = rotorcraft.aerodynamics
 
         aero.rotor_count = 5
         Assert.assertEqual(5, aero.rotor_count)
@@ -8989,15 +8986,15 @@ class EarlyBoundTests(TestBase):
     def test_RotorcraftProp(self):
         tolerance: float = 1e-09
 
-        rotorcraftModels: "IRotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
+        rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
         if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
             rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
 
-        rotorcraft: "IRotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
         Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
         Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
 
-        prop: "IRotorcraftProp" = rotorcraft.propulsion
+        prop: "RotorcraftProp" = rotorcraft.propulsion
 
         prop.powerplant_type = ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_ELECTRIC
         Assert.assertEqual(ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_ELECTRIC, prop.powerplant_type)
@@ -9018,21 +9015,21 @@ class EarlyBoundTests(TestBase):
     # region UserRunwaySource
     @category("Catalog Tests")
     def test_UserRunwaySource(self):
-        userRunways: "IUserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
+        userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
         if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
             userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
 
         names = userRunways.get_as_catalog_source().child_names
         nameCount: int = Array.Length(names)
 
-        nunitRunway: "IUserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
         Assert.assertEqual("NUnitUserRunway", nunitRunway.get_as_catalog_item().name)
         Assert.assertTrue(userRunways.get_as_catalog_source().contains("NUnitUserRunway"))
         names = userRunways.get_as_catalog_source().child_names
         nameCount = nameCount + 1
         Assert.assertEqual(nameCount, Array.Length(names))
 
-        nunitRunway2: "IUserRunway" = userRunways.get_user_runway("NUnitUserRunway")
+        nunitRunway2: "UserRunway" = userRunways.get_user_runway("NUnitUserRunway")
         Assert.assertEqual("NUnitUserRunway", nunitRunway2.get_as_catalog_item().name)
 
         userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
@@ -9049,11 +9046,11 @@ class EarlyBoundTests(TestBase):
     def test_UserRunway(self):
         tolerance: float = 1e-09
 
-        userRunways: "IUserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
+        userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
         if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
             userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
 
-        nunitRunway: "IUserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
 
         nunitRunway.latitude = 1
         lat: typing.Any = nunitRunway.latitude
@@ -9081,7 +9078,7 @@ class EarlyBoundTests(TestBase):
         if userRunways.get_as_catalog_source().contains("NUnitUserRunway2"):
             userRunways.get_as_catalog_source().remove_child("NUnitUserRunway2")
 
-        nunitRunway2: "IUserRunway" = userRunways.add_user_runway("NUnitUserRunway2")
+        nunitRunway2: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway2")
         nunitRunway2.paste_site()
 
         lat = nunitRunway2.latitude
@@ -9100,21 +9097,21 @@ class EarlyBoundTests(TestBase):
     # region UserVTOLPointSource
     @category("Catalog Tests")
     def test_UserVTOLPointSource(self):
-        userVTOLPoints: "IUserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
+        userVTOLPoints: "UserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
         if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
             userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
 
         names = userVTOLPoints.get_as_catalog_source().child_names
         nameCount: int = Array.Length(names)
 
-        nunitVTOLPoint: "IUserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
+        nunitVTOLPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
         Assert.assertEqual("NUnitUserVTOLPoint", nunitVTOLPoint.get_as_catalog_item().name)
         Assert.assertTrue(userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"))
         names = userVTOLPoints.get_as_catalog_source().child_names
         nameCount = nameCount + 1
         Assert.assertEqual(nameCount, Array.Length(names))
 
-        nunitVTOLPoint2: "IUserVTOLPoint" = userVTOLPoints.get_user_vtol_point("NUnitUserVTOLPoint")
+        nunitVTOLPoint2: "UserVTOLPoint" = userVTOLPoints.get_user_vtol_point("NUnitUserVTOLPoint")
         Assert.assertEqual("NUnitUserVTOLPoint", nunitVTOLPoint2.get_as_catalog_item().name)
 
         userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
@@ -9129,11 +9126,11 @@ class EarlyBoundTests(TestBase):
     # region UserVTOLPoint
     @category("Catalog Tests")
     def test_UserVTOLPoint(self):
-        userVTOLPoints: "IUserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
+        userVTOLPoints: "UserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
         if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
             userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
 
-        nunitVTOLPoint: "IUserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
+        nunitVTOLPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
 
         nunitVTOLPoint.latitude = 1
         lat: typing.Any = nunitVTOLPoint.latitude
@@ -9150,7 +9147,7 @@ class EarlyBoundTests(TestBase):
         if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint2"):
             userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint2")
 
-        nunitVTOLPoint2: "IUserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint2")
+        nunitVTOLPoint2: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint2")
         nunitVTOLPoint2.paste_site()
 
         lat = nunitVTOLPoint2.latitude
@@ -9169,21 +9166,21 @@ class EarlyBoundTests(TestBase):
     # region UserWaypointSource
     @category("Catalog Tests")
     def test_UserWaypointSource(self):
-        userWaypoints: "IUserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
+        userWaypoints: "UserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
         if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
             userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
 
         names = userWaypoints.get_as_catalog_source().child_names
         nameCount: int = Array.Length(names)
 
-        nunitWaypoint: "IUserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
+        nunitWaypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
         Assert.assertEqual("NUnitUserWaypoint", nunitWaypoint.get_as_catalog_item().name)
         Assert.assertTrue(userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"))
         names = userWaypoints.get_as_catalog_source().child_names
         nameCount = nameCount + 1
         Assert.assertEqual(nameCount, Array.Length(names))
 
-        nunitWaypoint2: "IUserWaypoint" = userWaypoints.get_user_waypoint("NUnitUserWaypoint")
+        nunitWaypoint2: "UserWaypoint" = userWaypoints.get_user_waypoint("NUnitUserWaypoint")
         Assert.assertEqual("NUnitUserWaypoint", nunitWaypoint2.get_as_catalog_item().name)
 
         userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
@@ -9198,11 +9195,11 @@ class EarlyBoundTests(TestBase):
     # region UserWaypoint
     @category("Catalog Tests")
     def test_UserWaypoint(self):
-        userWaypoints: "IUserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
+        userWaypoints: "UserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
         if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
             userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
 
-        nunitWaypoint: "IUserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
+        nunitWaypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
 
         nunitWaypoint.latitude = 1
         lat: typing.Any = nunitWaypoint.latitude
@@ -9215,7 +9212,7 @@ class EarlyBoundTests(TestBase):
         if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint2"):
             userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint2")
 
-        nunitWaypoint2: "IUserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint2")
+        nunitWaypoint2: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint2")
         nunitWaypoint2.paste_site()
 
         lat = nunitWaypoint2.latitude
@@ -9235,7 +9232,7 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     @category("ARINC424 Tests")
     def test_ARINC424AirportSource(self):
-        arincAirports: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.airport_category.arinc424_airports
+        arincAirports: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.airport_category.arinc424_airports
         self.ARINC424Source(arincAirports, "02 RANCH")
 
     # endregion
@@ -9246,7 +9243,7 @@ class EarlyBoundTests(TestBase):
     def test_ARINC424Airport(self):
         tolerance: float = 0.01
 
-        arincAirports: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.airport_category.arinc424_airports
+        arincAirports: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.airport_category.arinc424_airports
         ranch: "IARINC424Item" = arincAirports.get_arinc424_item("02 RANCH")
 
         identifier: typing.Any = ranch.get_value("ICAO Code")
@@ -9266,11 +9263,11 @@ class EarlyBoundTests(TestBase):
 
         ranch.copy_site()
 
-        userRunways: "IUserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
+        userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
         if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
             userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
 
-        nunitRunway: "IUserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
 
         nunitRunway.paste_site()
         lat: typing.Any = nunitRunway.latitude
@@ -9286,7 +9283,7 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     @category("ARINC424 Tests")
     def test_ARINC424HelipadSource(self):
-        arincHelipads: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.arinc424_helipads
+        arincHelipads: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.arinc424_helipads
         self.ARINC424Source(arincHelipads, "1001 FOURTH AVENUE PLAZA H1")
 
     # endregion
@@ -9297,7 +9294,7 @@ class EarlyBoundTests(TestBase):
     def test_ARINC424Helipad(self):
         tolerance: float = 0.01
 
-        arincHelipads: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.arinc424_helipads
+        arincHelipads: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.arinc424_helipads
         fourthAveH1: "IARINC424Item" = arincHelipads.get_arinc424_item("1001 FOURTH AVENUE PLAZA H1")
 
         identifier: typing.Any = fourthAveH1.get_value("ICAO Code")
@@ -9317,11 +9314,11 @@ class EarlyBoundTests(TestBase):
 
         fourthAveH1.copy_site()
 
-        userVTOLPoints: "IUserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
+        userVTOLPoints: "UserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
         if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
             userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
 
-        nunitVTOLPoint: "IUserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
+        nunitVTOLPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
 
         nunitVTOLPoint.paste_site()
         lat: typing.Any = nunitVTOLPoint.latitude
@@ -9338,7 +9335,7 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     @category("ARINC424 Tests")
     def test_ARINC424NavaidSource(self):
-        arincNavaids: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.navaid_category.arinc424_navaids
+        arincNavaids: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.navaid_category.arinc424_navaids
         self.ARINC424Source(arincNavaids, "1B")
 
     # endregion
@@ -9349,7 +9346,7 @@ class EarlyBoundTests(TestBase):
     def test_ARINC424Navaid(self):
         tolerance: float = 0.01
 
-        arincNavaids: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.navaid_category.arinc424_navaids
+        arincNavaids: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.navaid_category.arinc424_navaids
         oneb: "IARINC424Item" = arincNavaids.get_arinc424_item("1B")
 
         identifier: typing.Any = oneb.get_value("Navaid Identifier")
@@ -9369,11 +9366,11 @@ class EarlyBoundTests(TestBase):
 
         oneb.copy_site()
 
-        userRunways: "IUserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
+        userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
         if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
             userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
 
-        nunitRunway: "IUserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
 
         nunitRunway.paste_site()
         lat: typing.Any = nunitRunway.latitude
@@ -9389,7 +9386,7 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     @category("ARINC424 Tests")
     def test_ARINC424RunwaySource(self):
-        arincRunways: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.runway_category.arinc424_runways
+        arincRunways: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.runway_category.arinc424_runways
         self.ARINC424Source(arincRunways, "JOHN F KENNEDY INTL 04L 22R")
 
     # endregion
@@ -9400,7 +9397,7 @@ class EarlyBoundTests(TestBase):
     def test_ARINC424Runway(self):
         tolerance: float = 0.01
 
-        arincRunways: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.runway_category.arinc424_runways
+        arincRunways: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.runway_category.arinc424_runways
         jfk: "IARINC424Item" = arincRunways.get_arinc424_item("JOHN F KENNEDY INTL 04L 22R")
 
         identifier: typing.Any = jfk.get_value("Airport ICAO Identifier")
@@ -9420,11 +9417,11 @@ class EarlyBoundTests(TestBase):
 
         jfk.copy_site()
 
-        userRunways: "IUserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
+        userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
         if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
             userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
 
-        nunitRunway: "IUserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
 
         nunitRunway.paste_site()
         lat: typing.Any = nunitRunway.latitude
@@ -9441,7 +9438,7 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     @category("ARINC424 Tests")
     def test_ARINC424WaypointSource(self):
-        arincWaypoints: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.arinc424_waypoints
+        arincWaypoints: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.arinc424_waypoints
         self.ARINC424Source(arincWaypoints, "AAAMY")
 
     # endregion
@@ -9452,7 +9449,7 @@ class EarlyBoundTests(TestBase):
     def test_ARINC424Waypoint(self):
         tolerance: float = 0.01
 
-        arincWaypoints: "IARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.arinc424_waypoints
+        arincWaypoints: "ARINC424Source" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.arinc424_waypoints
         aaamy: "IARINC424Item" = arincWaypoints.get_arinc424_item("AAAMY")
 
         identifier: typing.Any = aaamy.get_value("ICAO Code")
@@ -9472,11 +9469,11 @@ class EarlyBoundTests(TestBase):
 
         aaamy.copy_site()
 
-        userWaypoints: "IUserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
+        userWaypoints: "UserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
         if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
             userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
 
-        nunitWaypoint: "IUserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
+        nunitWaypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
 
         nunitWaypoint.paste_site()
         lat: typing.Any = nunitWaypoint.latitude
@@ -9490,7 +9487,7 @@ class EarlyBoundTests(TestBase):
 
     # region PrivateCatalogMethods
 
-    def AdvancedMissileAero(self, advancedAero: "IMissileAdvancedAero"):
+    def AdvancedMissileAero(self, advancedAero: "MissileAdvancedAero"):
         advancedAero.body_width = 0.2
         Assert.assertEqual(0.2, advancedAero.body_width)
         advancedAero.body_height = 0.3
@@ -9548,7 +9545,7 @@ class EarlyBoundTests(TestBase):
         advancedAero.tail_max_thickness_along_mac = 0.008
         Assert.assertEqual(0.008, advancedAero.tail_max_thickness_along_mac)
 
-    def EmpiricalJetEngineOptions(self, prop: "IAdvFixedWingEmpiricalJetEngine"):
+    def EmpiricalJetEngineOptions(self, prop: "AdvFixedWingEmpiricalJetEngine"):
         tolerance: float = 1e-09
 
         prop.max_sea_level_static_thrust = 65000
@@ -9561,7 +9558,7 @@ class EarlyBoundTests(TestBase):
         prop.fuel_flow = 25000
         Assert.assertAlmostEqual(25000, prop.fuel_flow, delta=tolerance)
 
-    def AttitudeTransitionOptions(self, att: "IAttitudeTransitions"):
+    def AttitudeTransitionOptions(self, att: "AttitudeTransitions"):
         tolerance: float = 1e-09
 
         att.pitch_rate = 10
@@ -9576,7 +9573,7 @@ class EarlyBoundTests(TestBase):
         rollRate: typing.Any = att.roll_rate
         Assert.assertAlmostEqual(30, float(rollRate), delta=tolerance)
 
-    def ManeuverModeHelperOptions(self, helper: "IAeroPropManeuverModeHelper"):
+    def ManeuverModeHelperOptions(self, helper: "AeroPropManeuverModeHelper"):
         tolerance: float = 1e-09
 
         helper.mode = ACCEL_MANEUVER_AERO_PROP_MODE.USE_LIFT_COEFFICIENT_ONLY
@@ -9605,7 +9602,7 @@ class EarlyBoundTests(TestBase):
         helper.control_authority = 0.5
         Assert.assertEqual(0.5, helper.control_authority)
 
-    def ConfigurationOptions(self, defConfig: "IConfiguration"):
+    def ConfigurationOptions(self, defConfig: "Configuration"):
         defConfig.empty_weight = 100
         Assert.assertEqual(100, defConfig.empty_weight)
 
@@ -9620,7 +9617,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(2, defConfig.empty_cgy)
         Assert.assertEqual(3, defConfig.empty_cgz)
 
-    def ARINC424Source(self, arincSource: "IARINC424Source", childName: str):
+    def ARINC424Source(self, arincSource: "ARINC424Source", childName: str):
         Assert.assertTrue(arincSource.use_master_data_file)
 
         def action410():
@@ -9645,7 +9642,7 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("", action411)
 
-    def TestPropulsionEfficiencies(self, propEffs: "IPropulsionEfficiencies"):
+    def TestPropulsionEfficiencies(self, propEffs: "PropulsionEfficiencies"):
         propEffs.technology_level = JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL5
         Assert.assertEqual(JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL5, propEffs.technology_level)
         propEffs.intake_type = JET_ENGINE_INTAKE_TYPE.SUBSONIC_EMBEDDED
@@ -9655,7 +9652,7 @@ class EarlyBoundTests(TestBase):
         propEffs.exhaust_nozzle_type = JET_ENGINE_EXHAUST_NOZZLE_TYPE.FIXED_AREA_CONVERGENT
         Assert.assertEqual(JET_ENGINE_EXHAUST_NOZZLE_TYPE.FIXED_AREA_CONVERGENT, propEffs.exhaust_nozzle_type)
 
-    def TestPropulsionEfficienciesRamScram(self, propEffs: "IPropulsionEfficiencies"):
+    def TestPropulsionEfficienciesRamScram(self, propEffs: "PropulsionEfficiencies"):
         # This tests the propulsion efficiencies interface only for Ramjets and Scramjets as the enumeration values are more limited
         propEffs.technology_level = JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL5
         Assert.assertEqual(JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL5, propEffs.technology_level)
@@ -9669,7 +9666,7 @@ class EarlyBoundTests(TestBase):
             JET_ENGINE_EXHAUST_NOZZLE_TYPE.VARIABLE_AREA_CONVERGENT_DIVERGENT, propEffs.exhaust_nozzle_type
         )
 
-    def TestFuelAFPROP(self, afprop: "IFuelModelKeroseneAFPROP"):
+    def TestFuelAFPROP(self, afprop: "FuelModelKeroseneAFPROP"):
         afprop.subtype = AFPROP_FUEL_TYPE.AFPROP_JET_A
         Assert.assertEqual(AFPROP_FUEL_TYPE.AFPROP_JET_A, afprop.subtype)
 
@@ -9682,7 +9679,7 @@ class EarlyBoundTests(TestBase):
         afprop.specific_energy = 43.21
         Assert.assertEqual(43.21, afprop.specific_energy)
 
-    def TestFuelCEA(self, cea: "IFuelModelKeroseneCEA"):
+    def TestFuelCEA(self, cea: "FuelModelKeroseneCEA"):
         cea.subtype = CEA_FUEL_TYPE.CEA_JET_A
         Assert.assertEqual(CEA_FUEL_TYPE.CEA_JET_A, cea.subtype)
 
@@ -9695,7 +9692,7 @@ class EarlyBoundTests(TestBase):
         cea.specific_energy = 43.21
         Assert.assertEqual(43.21, cea.specific_energy)
 
-    def TestTurbofanBasicAB(self, prop: "IAdvFixedWingTurbofanBasicABProp"):
+    def TestTurbofanBasicAB(self, prop: "AdvFixedWingTurbofanBasicABProp"):
         prop.can_use_afterburner = False
         Assert.assertEqual(False, prop.can_use_afterburner)
 
@@ -9736,12 +9733,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(JET_FUEL_TYPE.HYDROGEN, prop.fuel_type)
 
         def action417():
-            afprop: "IFuelModelKeroseneAFPROP" = prop.fuel_mode_as_afprop
+            afprop: "FuelModelKeroseneAFPROP" = prop.fuel_mode_as_afprop
 
         TryCatchAssertBlock.ExpectedException("must be", action417)
 
         def action418():
-            cea: "IFuelModelKeroseneCEA" = prop.fuel_mode_as_cea
+            cea: "FuelModelKeroseneCEA" = prop.fuel_mode_as_cea
 
         TryCatchAssertBlock.ExpectedException("must be", action418)
 
@@ -9752,7 +9749,7 @@ class EarlyBoundTests(TestBase):
 
         self.TestPropulsionEfficiencies(prop.efficiencies_and_losses)
 
-    def TestTurbojetBasicAB(self, prop: "IAdvFixedWingTurbojetBasicABProp"):
+    def TestTurbojetBasicAB(self, prop: "AdvFixedWingTurbojetBasicABProp"):
         prop.can_use_afterburner = False
         Assert.assertEqual(False, prop.can_use_afterburner)
 
@@ -9791,12 +9788,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(JET_FUEL_TYPE.HYDROGEN, prop.fuel_type)
 
         def action421():
-            afprop: "IFuelModelKeroseneAFPROP" = prop.fuel_mode_as_afprop
+            afprop: "FuelModelKeroseneAFPROP" = prop.fuel_mode_as_afprop
 
         TryCatchAssertBlock.ExpectedException("must be", action421)
 
         def action422():
-            cea: "IFuelModelKeroseneCEA" = prop.fuel_mode_as_cea
+            cea: "FuelModelKeroseneCEA" = prop.fuel_mode_as_cea
 
         TryCatchAssertBlock.ExpectedException("must be", action422)
 
@@ -9825,7 +9822,7 @@ class EarlyBoundTests(TestBase):
         proc.name = "Name Test"
         Assert.assertEqual("Name Test", proc.name)
 
-    def AltitudeOptions(self, alt: "IAltitudeOptions"):
+    def AltitudeOptions(self, alt: "AltitudeOptions"):
         alt.use_default_cruise_altitude = True
 
         def action423():
@@ -9839,7 +9836,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AGL_MSL.ALTITUDE_AGL, alt.altitude_reference)
         Assert.assertEqual(5000, alt.altitude)
 
-    def AltitudeMSLOptions(self, altitudeOpts: "IAltitudeMSLOptions"):
+    def AltitudeMSLOptions(self, altitudeOpts: "AltitudeMSLOptions"):
         altitudeOpts.use_default_cruise_altitude = True
 
         def action424():
@@ -9851,7 +9848,7 @@ class EarlyBoundTests(TestBase):
         altitudeOpts.msl_altitude = 10000
         Assert.assertEqual(10000, altitudeOpts.msl_altitude)
 
-    def AltitudeMSLAndLevelOffOptions(self, altitudeOpts: "IAltitudeMSLAndLevelOffOptions"):
+    def AltitudeMSLAndLevelOffOptions(self, altitudeOpts: "AltitudeMSLAndLevelOffOptions"):
         altitudeOpts.use_default_cruise_altitude = True
         # TryCatchAssertBlock.ExpectedException("must be ", delegate () { altitudeOpts.MSLAltitude = 10000; });
 
@@ -9865,7 +9862,7 @@ class EarlyBoundTests(TestBase):
         altitudeOpts.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER
         Assert.assertEqual(ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER, altitudeOpts.level_off_mode)
 
-    def ArcAltitudeOptions(self, alt: "IArcAltitudeOptions"):
+    def ArcAltitudeOptions(self, alt: "ArcAltitudeOptions"):
         alt.use_default_cruise_altitude = True
 
         def action425():
@@ -9884,7 +9881,7 @@ class EarlyBoundTests(TestBase):
         alt.stop_arc_altitude = 10002
         Assert.assertEqual(10002, alt.stop_arc_altitude)
 
-    def ArcAltitudeAndDelayOptions(self, alt: "IArcAltitudeAndDelayOptions"):
+    def ArcAltitudeAndDelayOptions(self, alt: "ArcAltitudeAndDelayOptions"):
         alt.use_default_cruise_altitude = True
 
         def action427():
@@ -9910,7 +9907,7 @@ class EarlyBoundTests(TestBase):
         alt.stop_arc_altitude = 10002
         Assert.assertEqual(10002, alt.stop_arc_altitude)
 
-    def HoverAltitudeOptions(self, alt: "IHoverAltitudeOptions"):
+    def HoverAltitudeOptions(self, alt: "HoverAltitudeOptions"):
         alt.altitude_reference = AGL_MSL.ALTITUDE_AGL
         Assert.assertEqual(AGL_MSL.ALTITUDE_AGL, alt.altitude_reference)
 
@@ -9920,7 +9917,7 @@ class EarlyBoundTests(TestBase):
         alt.final_altitude_rate = VTOL_RATE_MODE.ALWAYS_STOP
         Assert.assertEqual(VTOL_RATE_MODE.ALWAYS_STOP, alt.final_altitude_rate)
 
-    def ArcOptions(self, arc: "IArcOptions"):
+    def ArcOptions(self, arc: "ArcOptions"):
         arc.turn_direction = TURN_DIRECTION.TURN_RIGHT
         Assert.assertEqual(TURN_DIRECTION.TURN_RIGHT, arc.turn_direction)
 
@@ -9936,7 +9933,7 @@ class EarlyBoundTests(TestBase):
         turnAngle: typing.Any = arc.turn_angle
         Assert.assertEqual(100, float(turnAngle))
 
-    def NavigationOptions(self, navOpts: "INavigationOptions"):
+    def NavigationOptions(self, navOpts: "NavigationOptions"):
         tolerance: float = 1e-09
 
         navOpts.nav_mode = POINT_TO_POINT_MODE.ARRIVE_ON_COURSE_FOR_NEXT
@@ -9958,7 +9955,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(1, float(course), delta=tolerance)
         Assert.assertTrue(navOpts.use_magnetic_heading)
 
-    def EnrouteOptions(self, enrouteOpts: "IEnrouteOptions"):
+    def EnrouteOptions(self, enrouteOpts: "EnrouteOptions"):
         enrouteOpts.use_max_speed_turns = True
         enrouteOpts.max_turn_radius_factor = 3.5
         Assert.assertTrue(enrouteOpts.use_max_speed_turns)
@@ -9972,7 +9969,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(enrouteOpts.use_max_speed_turns)
         Assert.assertEqual(3.5, enrouteOpts.max_turn_radius_factor)
 
-    def EnrouteCruiseAirspeed(self, airspeedOpts: "ICruiseAirspeedOptions"):
+    def EnrouteCruiseAirspeed(self, airspeedOpts: "CruiseAirspeedOptions"):
         tolerance: float = 1e-09
 
         airspeedOpts.cruise_speed_type = CRUISE_SPEED.MAX_AIRSPEED
@@ -10013,7 +10010,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(0.5, airspeedOpts.other_airspeed, delta=tolerance)
         Assert.assertEqual(AIRSPEED_TYPE.MACH, airspeedOpts.other_airspeed_type)
 
-    def EnrouteTurnDirection(self, turnOpts: "IEnrouteTurnDirectionOptions"):
+    def EnrouteTurnDirection(self, turnOpts: "EnrouteTurnDirectionOptions"):
         turnOpts.enroute_first_turn = NAVIGATOR_TURN_DIRECTION.NAVIGATOR_TURN_LEFT
         Assert.assertEqual(NAVIGATOR_TURN_DIRECTION.NAVIGATOR_TURN_LEFT, turnOpts.enroute_first_turn)
         turnOpts.enroute_second_turn = NAVIGATOR_TURN_DIRECTION.NAVIGATOR_TURN_RIGHT
@@ -10029,7 +10026,7 @@ class EarlyBoundTests(TestBase):
         maxAng: typing.Any = vertOpts.max_enroute_flight_path_angle
         Assert.assertEqual(89.2, float(maxAng))
 
-    def VerticalPlaneAndFlightPathOptions(self, vertOpts: "IVerticalPlaneAndFlightPathOptions"):
+    def VerticalPlaneAndFlightPathOptions(self, vertOpts: "VerticalPlaneAndFlightPathOptions"):
         vertOpts.final_flight_path_angle = 3
         fpa: typing.Any = vertOpts.final_flight_path_angle
         Assert.assertEqual(3, float(fpa))
@@ -10042,7 +10039,7 @@ class EarlyBoundTests(TestBase):
         maxAng: typing.Any = vertOpts.max_enroute_flight_path_angle
         Assert.assertEqual(89.2, float(maxAng))
 
-    def ArcVerticalPlane(self, vertOpts: "IArcVerticalPlaneOptions"):
+    def ArcVerticalPlane(self, vertOpts: "ArcVerticalPlaneOptions"):
         vertOpts.start_arc_flight_path_angle = 3
         startArc: typing.Any = vertOpts.start_arc_flight_path_angle
         Assert.assertEqual(3, float(startArc))
@@ -10061,7 +10058,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region PrivateBasicManeuverMethods
-    def BasicManeuverAirspeedOptions(self, airspeedOptions: "IBasicManeuverAirspeedOptions"):
+    def BasicManeuverAirspeedOptions(self, airspeedOptions: "BasicManeuverAirspeedOptions"):
         airspeedMode: "BASIC_MANEUVER_AIRSPEED_MODE"
         for airspeedMode in Enum.GetValues(clr.TypeOf(BASIC_MANEUVER_AIRSPEED_MODE)):
             airspeedOptions.airspeed_mode = airspeedMode
@@ -10185,7 +10182,7 @@ class EarlyBoundTests(TestBase):
                 TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action448)
 
                 def action449():
-                    value: "IPropulsionThrust" = airspeedOptions.thrust
+                    value: "PropulsionThrust" = airspeedOptions.thrust
 
                 TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action449)
 
@@ -10287,7 +10284,7 @@ class EarlyBoundTests(TestBase):
         site.name = name
 
     def TestCatalogVTOLPoint(
-        self, siteVTOLPointFromCatalog: "ISiteVTOLPointFromCatalog", catVTOLPoint: "ICatalogVTOLPoint"
+        self, siteVTOLPointFromCatalog: "SiteVTOLPointFromCatalog", catVTOLPoint: "ICatalogVTOLPoint"
     ):
         siteVTOLPointFromCatalog.set_catalog_vtol_point(catVTOLPoint)
         VTOLPointAsItem: "ICatalogItem" = clr.CastAs(catVTOLPoint, ICatalogItem)
@@ -10296,7 +10293,7 @@ class EarlyBoundTests(TestBase):
         catVTOLPoint2: "ICatalogItem" = clr.CastAs(siteVTOLPointFromCatalog.get_catalog_vtol_point(), ICatalogItem)
         Assert.assertEqual(VTOLPointName, catVTOLPoint2.name)
 
-    def TestCatalogWaypoint(self, siteWaypointFromCatalog: "ISiteWaypointFromCatalog", catWaypoint: "ICatalogWaypoint"):
+    def TestCatalogWaypoint(self, siteWaypointFromCatalog: "SiteWaypointFromCatalog", catWaypoint: "ICatalogWaypoint"):
         siteWaypointFromCatalog.set_catalog_waypoint(catWaypoint)
         waypointAsItem: "ICatalogItem" = clr.CastAs(catWaypoint, ICatalogItem)
         waypointName: str = waypointAsItem.name

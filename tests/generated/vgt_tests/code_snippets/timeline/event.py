@@ -12,13 +12,13 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_DetermineIfEventOccursBeforeEpoch(self):
         self.DetermineIfEventOccursBeforeEpoch(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def DetermineIfEventOccursBeforeEpoch(self, provider: "IAnalysisWorkbenchProvider"):
+    def DetermineIfEventOccursBeforeEpoch(self, provider: "AnalysisWorkbenchProvider"):
         # The event you are interested in.
         timeEvent1: "ITimeToolEvent" = provider.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
 
         # The reference event you want to determine if event of interest happened before.
         timeEvent2: "ITimeToolEvent" = provider.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
-        occurrence2: "ITimeToolEventFindOccurrenceResult" = timeEvent2.find_occurrence()
+        occurrence2: "TimeToolEventFindOccurrenceResult" = timeEvent2.find_occurrence()
         if occurrence2.is_valid:
             if timeEvent1.occurs_before(occurrence2.epoch):
                 Console.WriteLine("The time of maximum altitude happend before time of minimum altitude")
@@ -32,11 +32,11 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_DetermineTimeOfEvent(self):
         self.DetermineTimeOfEvent(TestBase.Application)
 
-    def DetermineTimeOfEvent(self, stkRoot: "IStkObjectRoot"):
-        provider: "IAnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
+    def DetermineTimeOfEvent(self, stkRoot: "StkObjectRoot"):
+        provider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
         timeEvent: "ITimeToolEvent" = provider.events["PassIntervals.First.Start"]
 
-        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:
             Console.WriteLine(("The first pass interval happened at: " + str(occurrence.epoch)))
 
@@ -47,9 +47,9 @@ class Event(TimelineCodeSnippetsTestBase):
         noEphemObj: "IStkObject" = stkRoot.current_scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, "NoEphem_FindOccurenceTest"
         )
-        provider2: "IAnalysisWorkbenchProvider" = noEphemObj.vgt
+        provider2: "AnalysisWorkbenchProvider" = noEphemObj.vgt
         timeEvent2: "ITimeToolEvent" = provider2.events["EphemerisStartTime"]
-        occurrence2: "ITimeToolEventFindOccurrenceResult" = timeEvent2.find_occurrence()
+        occurrence2: "TimeToolEventFindOccurrenceResult" = timeEvent2.find_occurrence()
 
         Assert.assertFalse(occurrence2.is_valid)
 
@@ -61,18 +61,18 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateFixedEpochEvent(self):
         self.CreateFixedEpochEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateFixedEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateFixedEpochEvent(self, provider: "AnalysisWorkbenchProvider"):
         timeEvent: "ITimeToolEvent" = provider.events.factory.create_event_epoch("MyEventFixed", "MyDescription")
-        asEpoch: "ITimeToolEventEpoch" = clr.CastAs(timeEvent, ITimeToolEventEpoch)
+        asEpoch: "TimeToolEventEpoch" = clr.CastAs(timeEvent, TimeToolEventEpoch)
 
         # Epoch can be set explicitly (Uses current DateTime unit preference, this code snippet assumes UTCG)
         asEpoch.epoch = "1 May 2016 04:00:00.000"
 
         # Epoch can also be set with the epoch of another event
-        startTime: "ITimeToolEventFindOccurrenceResult" = provider.events["AvailabilityStartTime"].find_occurrence()
+        startTime: "TimeToolEventFindOccurrenceResult" = provider.events["AvailabilityStartTime"].find_occurrence()
         asEpoch.epoch = startTime.epoch
 
-        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.epoch)))
 
@@ -82,18 +82,18 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateFixedTimeOffsetEvent(self):
         self.CreateFixedTimeOffsetEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateFixedTimeOffsetEvent(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateFixedTimeOffsetEvent(self, provider: "AnalysisWorkbenchProvider"):
         timeEvent: "ITimeToolEvent" = provider.events.factory.create_event_time_offset(
             "MyEventTimeOffset", "MyDescription"
         )
-        asTimeOffset: "ITimeToolEventTimeOffset" = clr.CastAs(timeEvent, ITimeToolEventTimeOffset)
+        asTimeOffset: "TimeToolEventTimeOffset" = clr.CastAs(timeEvent, TimeToolEventTimeOffset)
 
         asTimeOffset.reference_time_instant = provider.events["AvailabilityStartTime"]
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asTimeOffset.time_offset2 = 3
 
-        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.epoch)))
 
@@ -101,29 +101,29 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateSignaledEvent
     def test_CreateSignaledEvent(self):
-        self.CreateSignaledEvent(clr.Convert(TestBase.Application, IStkObjectRoot))
+        self.CreateSignaledEvent(clr.Convert(TestBase.Application, StkObjectRoot))
 
-    def CreateSignaledEvent(self, stkRoot: "IStkObjectRoot"):
-        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+    def CreateSignaledEvent(self, stkRoot: "StkObjectRoot"):
+        satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
+        aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
 
         timeEvent: "ITimeToolEvent" = satelliteVgtProvider.events.factory.create_event_signaled(
             "MyEventSignaled", "MyDescription"
         )
-        asSignaled: "ITimeToolEventSignaled" = clr.CastAs(timeEvent, ITimeToolEventSignaled)
+        asSignaled: "TimeToolEventSignaled" = clr.CastAs(timeEvent, TimeToolEventSignaled)
 
         asSignaled.original_time_instant = aircraftVgtProvider.events["EphemerisStartTime"]
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
         asSignaled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
-        basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, TimeToolSignalDelayBasic)
         basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.CUSTOM_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
 
-        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.epoch)))
 
@@ -133,17 +133,17 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateStartStopTimeEvent(self):
         self.CreateStartStopTimeEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateStartStopTimeEvent(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateStartStopTimeEvent(self, provider: "AnalysisWorkbenchProvider"):
         timeEvent: "ITimeToolEvent" = provider.events.factory.create_event_start_stop_time(
             "MyEventStartStopTime", "MyDescription"
         )
-        asStartStopTime: "ITimeToolEventStartStopTime" = clr.CastAs(timeEvent, ITimeToolEventStartStopTime)
+        asStartStopTime: "TimeToolEventStartStopTime" = clr.CastAs(timeEvent, TimeToolEventStartStopTime)
 
         asStartStopTime.reference_event_interval = provider.event_intervals["EphemerisTimeSpan"]
 
         asStartStopTime.use_start = True
 
-        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.epoch)))
 
@@ -153,15 +153,15 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateExtremumEvent(self):
         self.CreateExtremumEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateExtremumEvent(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateExtremumEvent(self, provider: "AnalysisWorkbenchProvider"):
         timeEvent: "ITimeToolEvent" = provider.events.factory.create_event_extremum("MyEventExtremum", "MyDescription")
-        asExtremum: "ITimeToolEventExtremum" = clr.CastAs(timeEvent, ITimeToolEventExtremum)
+        asExtremum: "TimeToolEventExtremum" = clr.CastAs(timeEvent, TimeToolEventExtremum)
 
         # For instance, time at highest altitude
         asExtremum.calculation = provider.calc_scalars["GroundTrajectory.Detic.LLA.Altitude"]
         asExtremum.extremum_type = CRDN_EXTREMUM_CONSTANTS.MAXIMUM
 
-        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.epoch)))
 
@@ -171,8 +171,8 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateExplicitSmartEpochEvent(self):
         self.CreateExplicitSmartEpochEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateExplicitSmartEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
-        smartEpoch: "ITimeToolEventSmartEpoch" = provider.events.factory.create_smart_epoch_from_time(
+    def CreateExplicitSmartEpochEvent(self, provider: "AnalysisWorkbenchProvider"):
+        smartEpoch: "TimeToolEventSmartEpoch" = provider.events.factory.create_smart_epoch_from_time(
             "1 May 2016 04:00:00.000"
         )
 
@@ -187,9 +187,9 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateImplicitSmartEpochEvent(self):
         self.CreateImplicitSmartEpochEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateImplicitSmartEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateImplicitSmartEpochEvent(self, provider: "AnalysisWorkbenchProvider"):
         referencedEvent: "ITimeToolEvent" = provider.events["AvailabilityStartTime"]
-        smartEpoch: "ITimeToolEventSmartEpoch" = provider.events.factory.create_smart_epoch_from_event(referencedEvent)
+        smartEpoch: "TimeToolEventSmartEpoch" = provider.events.factory.create_smart_epoch_from_event(referencedEvent)
 
         # Smart epochs can be set implicitly using the another epoch.
         anotherEvent: "ITimeToolEvent" = provider.events["AvailabilityStopTime"]
