@@ -1,4 +1,5 @@
 import enum
+import inspect
 import math
 import os
 import pytz
@@ -1686,16 +1687,14 @@ def category(name):
 
 
 def GetTestCase():
-    import inspect
 
-    frameinfos = inspect.getouterframes(inspect.currentframe())
-    for frameinfo in frameinfos:
-        frame = frameinfo[0]
-        locals = frame.f_locals
-        if "self" in locals:
-            candidate = locals["self"]
-            if isinstance(candidate, unittest.TestCase):
-                return candidate
+    frame = inspect.currentframe()
+    while frame:
+        candidate = frame.f_locals.get('self', None)
+        if candidate and isinstance(candidate, unittest.TestCase):
+            return candidate
+        frame = frame.f_back
+
     return None
 
 
