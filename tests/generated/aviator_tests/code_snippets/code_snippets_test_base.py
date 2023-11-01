@@ -9,7 +9,7 @@ class CodeSnippetsTestBase(TestBase):
     def __init__(self, *args, **kwargs):
         super(CodeSnippetsTestBase, self).__init__(*args, **kwargs)
 
-    m_Root: "IStkObjectRoot" = None
+    m_Root: "StkObjectRoot" = None
 
     @staticmethod
     def Initialize():
@@ -18,7 +18,7 @@ class CodeSnippetsTestBase(TestBase):
         CodeSnippetsTestBase.SafeScenarioUnload()
 
         TestBase.Application.new_scenario("CodeSnippetScenario")
-        scenario: "IScenario" = clr.Convert(TestBase.Application.current_scenario, IScenario)
+        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
         scenario.set_time_period("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
 
     @staticmethod
@@ -28,7 +28,7 @@ class CodeSnippetsTestBase(TestBase):
         CodeSnippetsTestBase.SafeScenarioUnload()
         if makeNewScenario:
             TestBase.Application.new_scenario("CodeSnippetScenario")
-            scenario: "IScenario" = clr.Convert(TestBase.Application.current_scenario, IScenario)
+            scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
             scenario.set_time_period("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
 
     @staticmethod

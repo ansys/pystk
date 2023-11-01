@@ -59,7 +59,7 @@ class STKEventSubscriber(object):
         del(self._cpc)
     
     def Subscribe(self):
-        """Use to re-subscribe to events after calling Unsubscribe.  This class is initialized as subscribed when returned from IStkObjectRoot.Subscribe()."""
+        """Use to re-subscribe to events after calling Unsubscribe.  This class is initialized as subscribed when returned from StkObjectRoot.Subscribe()."""
         if self._event_manager_id is None:
             self.__dict__["_event_manager_id"] = EventSubscriptionManager.Subscribe(self)
             
@@ -299,7 +299,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         if attrname in IStkObjectRootEventHandler.__dict__ and type(IStkObjectRootEventHandler.__dict__[attrname]) == property:
             IStkObjectRootEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IStkObjectRootEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in StkObjectRootEvents.")
         
     def _QueryInterface(self, pThis:PVOID, riid:REFIID, ppvObject:POINTER(PVOID)) -> int:
         iid = riid.contents
@@ -429,7 +429,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioBeforeSave(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"IScenarioBeforeSaveEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"ScenarioBeforeSaveEventArgs") -> None]"""
         return self._OnScenarioBeforeSaveEvent
         
     @OnScenarioBeforeSave.setter
@@ -474,7 +474,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnPercentCompleteUpdate(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"IPctCmpltEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"PctCmpltEventArgs") -> None]"""
         return self._OnPercentCompleteUpdateEvent
         
     @OnPercentCompleteUpdate.setter
@@ -501,7 +501,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectChanged(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"IStkObjectChangedEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"StkObjectChangedEventArgs") -> None]"""
         return self._OnStkObjectChangedEvent
         
     @OnStkObjectChanged.setter
@@ -519,7 +519,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectPreDelete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"IStkObjectPreDeleteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"StkObjectPreDeleteEventArgs") -> None]"""
         return self._OnStkObjectPreDeleteEvent
         
     @OnStkObjectPreDelete.setter
@@ -564,7 +564,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectPreCut(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"IStkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
         return self._OnStkObjectPreCutEvent
         
     @OnStkObjectPreCut.setter
@@ -573,7 +573,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectCopy(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"IStkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
         return self._OnStkObjectCopyEvent
         
     @OnStkObjectCopy.setter
@@ -582,7 +582,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectPaste(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"IStkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
         return self._OnStkObjectPasteEvent
         
     @OnStkObjectPaste.setter
@@ -642,7 +642,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
                 
     def _OnScenarioBeforeSave(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnScenarioBeforeSaveEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["IScenarioBeforeSaveEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["ScenarioBeforeSaveEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _OnAnimationStep(self, pThis:PVOID, CurrentTime:float) -> None:
@@ -663,7 +663,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
             
     def _OnPercentCompleteUpdate(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnPercentCompleteUpdateEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["IPctCmpltEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["PctCmpltEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _OnPercentCompleteEnd(self, pThis:PVOID) -> None:
@@ -676,7 +676,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
             
     def _OnStkObjectChanged(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnStkObjectChangedEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["IStkObjectChangedEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectChangedEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _OnScenarioBeforeClose(self, pThis:PVOID) -> None:
@@ -685,7 +685,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
             
     def _OnStkObjectPreDelete(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnStkObjectPreDeleteEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["IStkObjectPreDeleteEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectPreDeleteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _OnStkObjectStart3dEditing(self, pThis:PVOID, path:str) -> None:
@@ -706,17 +706,17 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
             
     def _OnStkObjectPreCut(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnStkObjectPreCutEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["IStkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _OnStkObjectCopy(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnStkObjectCopyEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["IStkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _OnStkObjectPaste(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnStkObjectPasteEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["IStkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
     
     
@@ -816,7 +816,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         if attrname in ISTKXApplicationEventHandler.__dict__ and type(ISTKXApplicationEventHandler.__dict__[attrname]) == property:
             ISTKXApplicationEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in ISTKXApplicationEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in STKXApplicationEvents.")
         
     def _QueryInterface(self, pThis:PVOID, riid:REFIID, ppvObject:POINTER(PVOID)) -> int:
         iid = riid.contents
@@ -943,7 +943,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnSSLCertificateServerError(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnSSLCertificateServerError(pArgs:"ISTKXSSLCertificateErrorEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnSSLCertificateServerError(pArgs:"STKXSSLCertificateErrorEventArgs") -> None]"""
         return self._OnSSLCertificateServerErrorEvent
         
     @OnSSLCertificateServerError.setter
@@ -952,7 +952,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnConControlQuitReceived(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnConControlQuitReceived(pArgs:"ISTKXConControlQuitReceivedEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnConControlQuitReceived(pArgs:"STKXConControlQuitReceivedEventArgs") -> None]"""
         return self._OnConControlQuitReceivedEvent
         
     @OnConControlQuitReceived.setter
@@ -1010,12 +1010,12 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnSSLCertificateServerErrorEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["ISTKXSSLCertificateErrorEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["STKXSSLCertificateErrorEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
         
     def _OnConControlQuitReceived(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnConControlQuitReceivedEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["ISTKXConControlQuitReceivedEventArgs"]) as arg_pArgs:
+            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
 ################################################################################
@@ -1202,7 +1202,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
     @property
     def OLEDragDrop(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OLEDragDrop(Data:"IDataObject", Effect:int, Button:int, Shift:int, X:int, Y:int) -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OLEDragDrop(Data:"DataObject", Effect:int, Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._OLEDragDropEvent
         
     @OLEDragDrop.setter
@@ -1211,7 +1211,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
     def _OLEDragDrop(self, pThis:PVOID, Data:PVOID, Effect:int, Button:int, Shift:int, X:int, Y:int) -> int:
         for callback in self._OLEDragDropEvent._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(Data, agcls.AgTypeNameMap["IDataObject"]) as arg_Data:
+            with agmarshall.AgInterface_event_callback_arg(Data, agcls.AgTypeNameMap["DataObject"]) as arg_Data:
                 callback(arg_Data.python_val, Effect, KeyCode, Shift, X, Y)
         return S_OK
         
@@ -1248,7 +1248,7 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
             if attrname in IUiAxGraphics2DCntrlEventHandler.__dict__ and type(IUiAxGraphics2DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics2DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in IUiAx2DCntrlEvents.")
+                raise STKAttributeError(attrname + " is not a recognized event in UiAx2DCntrlEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1315,7 +1315,7 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
             if attrname in IUiAxGraphics3DCntrlEventHandler.__dict__ and type(IUiAxGraphics3DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics3DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in IUiAxGraphics3DCntrlEvents.")
+                raise STKAttributeError(attrname + " is not a recognized event in UiAxGraphics3DCntrlEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1456,7 +1456,7 @@ class ISceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
         if attrname in ISceneEventHandler.__dict__ and type(ISceneEventHandler.__dict__[attrname]) == property:
             ISceneEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in ISceneEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in SceneEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1509,7 +1509,7 @@ class ISceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
           
     @property
     def Rendering(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [Rendering(Sender:typing.Any, Args:"IRenderingEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [Rendering(Sender:typing.Any, Args:"RenderingEventArgs") -> None]"""
         return self._RenderingEvent
         
     @Rendering.setter
@@ -1519,7 +1519,7 @@ class ISceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
     def _Rendering(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._RenderingEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IRenderingEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["RenderingEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
                 
                 
@@ -1554,7 +1554,7 @@ class IKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBase):
         if attrname in IKmlGraphicsEventHandler.__dict__ and type(IKmlGraphicsEventHandler.__dict__[attrname]) == property:
             IKmlGraphicsEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IKmlGraphicsEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in KmlGraphicsEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1607,7 +1607,7 @@ class IKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBase):
 
     @property
     def DocumentLoaded(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [DocumentLoaded(Sender:typing.Any, Args:"IKmlDocumentLoadedEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [DocumentLoaded(Sender:typing.Any, Args:"KmlDocumentLoadedEventArgs") -> None]"""
         return self._DocumentLoadedEvent
         
     @DocumentLoaded.setter
@@ -1617,7 +1617,7 @@ class IKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBase):
     def _DocumentLoaded(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._DocumentLoadedEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IKmlDocumentLoadedEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["KmlDocumentLoadedEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
                 
                 
@@ -1652,7 +1652,7 @@ class IImageCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
         if attrname in IImageCollectionEventHandler.__dict__ and type(IImageCollectionEventHandler.__dict__[attrname]) == property:
             IImageCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IImageCollectionEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in ImageCollectionEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1705,7 +1705,7 @@ class IImageCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
 
     @property
     def AddComplete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IGlobeImageOverlayAddCompleteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"GlobeImageOverlayAddCompleteEventArgs") -> None]"""
         return self._AddCompleteEvent
         
     @AddComplete.setter
@@ -1715,7 +1715,7 @@ class IImageCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
     def _AddComplete(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._AddCompleteEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IGlobeImageOverlayAddCompleteEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["GlobeImageOverlayAddCompleteEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
                 
                 
@@ -1750,7 +1750,7 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber, STKEventHandlerB
         if attrname in ITerrainOverlayCollectionEventHandler.__dict__ and type(ITerrainOverlayCollectionEventHandler.__dict__[attrname]) == property:
             ITerrainOverlayCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in ITerrainOverlayCollectionEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in TerrainOverlayCollectionEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1803,7 +1803,7 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber, STKEventHandlerB
 
     @property
     def AddComplete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"ITerrainOverlayAddCompleteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"TerrainOverlayAddCompleteEventArgs") -> None]"""
         return self._AddCompleteEvent
         
     @AddComplete.setter
@@ -1813,7 +1813,7 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber, STKEventHandlerB
     def _AddComplete(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._AddCompleteEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["ITerrainOverlayAddCompleteEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["TerrainOverlayAddCompleteEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
 
 ################################################################################

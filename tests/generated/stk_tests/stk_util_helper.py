@@ -1,7 +1,7 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from logger import *
-
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -41,7 +41,7 @@ class STKUtilHelper(object):
                 clone: typing.Any = cloneable.clone_object()
 
     @staticmethod
-    def TestDoublesCollection(dc: "IDoublesCollection", value: float, min: float, max: float):
+    def TestDoublesCollection(dc: "DoublesCollection", value: float, min: float, max: float):
         with pytest.raises(Exception):
             dc.add((min - 1e-06))
         with pytest.raises(Exception):

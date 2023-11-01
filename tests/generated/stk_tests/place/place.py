@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from antenna.antenna_helper import *
@@ -10,7 +11,6 @@ from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
-
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -25,7 +25,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("PlaceTests", "PlaceTests.sc"))
-        EarlyBoundTests.AG_PLC = clr.Convert(TestBase.Application.current_scenario.children["Place1"], IPlace)
+        EarlyBoundTests.AG_PLC = clr.Convert(TestBase.Application.current_scenario.children["Place1"], Place)
 
     # endregion
 
@@ -38,7 +38,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_PLC: "IPlace" = None
+    AG_PLC: "Place" = None
     # endregion
 
     # region 1ptaccess
@@ -48,7 +48,7 @@ class EarlyBoundTests(TestBase):
 
     def OnePtAccessStartStop(self, startTime: str, stopTime: str):
         oObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_PLC, IStkObject)
-        onePtAccess: "IOnePointAccess" = oObj.create_one_point_access("Satellite/Satellite1")
+        onePtAccess: "OnePointAccess" = oObj.create_one_point_access("Satellite/Satellite1")
         onePtAccess.start_time = startTime
         Assert.assertEqual(startTime, onePtAccess.start_time)
         onePtAccess.stop_time = stopTime
@@ -57,8 +57,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(120, onePtAccess.step_size)
         onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.DETAILED
         Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.DETAILED, onePtAccess.summary_option)
-        result: "IOnePointAccessResult" = None
-        results: "IOnePointAccessResultCollection" = onePtAccess.compute()
+        result: "OnePointAccessResult" = None
+        results: "OnePointAccessResultCollection" = onePtAccess.compute()
 
         i: int = 0
         while i < results.count:
@@ -68,19 +68,19 @@ class EarlyBoundTests(TestBase):
 
             j: int = 0
             while j < result.constraints.count:
-                constraint: "IOnePointAccessConstraint" = result.constraints[j]
+                constraint: "OnePointAccessConstraint" = result.constraints[j]
                 self.dumpOnePtAccessConstraint(constraint)
 
                 j += 1
 
             i += 1
 
-        r: "IOnePointAccessResult"
+        r: "OnePointAccessResult"
 
         for r in results:
             TestBase.logger.WriteLine2(r.time)
             TestBase.logger.WriteLine2(r.access_satisfied)
-            c: "IOnePointAccessConstraint"
+            c: "OnePointAccessConstraint"
             for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
@@ -103,7 +103,7 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    def dumpOnePtAccessConstraint(self, constraint: "IOnePointAccessConstraint"):
+    def dumpOnePtAccessConstraint(self, constraint: "OnePointAccessConstraint"):
         TestBase.logger.WriteLine2(constraint.constraint)
         TestBase.logger.WriteLine(constraint.object_path)
         TestBase.logger.WriteLine2(constraint.status)
@@ -111,10 +111,10 @@ class EarlyBoundTests(TestBase):
 
     def test_StartTime2StopTime2(self):
         place1: "IStkObject" = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "BUG56961")
-        interval: "IDataProviderInterval" = clr.CastAs(place1.data_providers["Eclipse Times"], IDataProviderInterval)
-        result: "IDataProviderResult" = interval.exec(
-            (clr.CastAs(TestBase.Application.current_scenario, IScenario)).start_time,
-            (clr.CastAs(TestBase.Application.current_scenario, IScenario)).stop_time,
+        interval: "DataProviderInterval" = clr.CastAs(place1.data_providers["Eclipse Times"], DataProviderInterval)
+        result: "DataProviderResult" = interval.exec(
+            (clr.CastAs(TestBase.Application.current_scenario, Scenario)).start_time,
+            (clr.CastAs(TestBase.Application.current_scenario, Scenario)).stop_time,
         )
         Assert.assertEqual("1 Jul 1999 00:00:00.000", result.intervals[0].start_time)
         Assert.assertEqual("2 Jul 1999 00:00:00.000", result.intervals[0].stop_time)
@@ -148,7 +148,7 @@ class EarlyBoundTests(TestBase):
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        gfx: "IPlaceGraphics" = EarlyBoundTests.AG_PLC.graphics
+        gfx: "PlaceGraphics" = EarlyBoundTests.AG_PLC.graphics
         Assert.assertIsNotNone(gfx)
         gfx.is_object_graphics_visible = False
         Assert.assertFalse(gfx.is_object_graphics_visible)
@@ -201,7 +201,7 @@ class EarlyBoundTests(TestBase):
     # region GfxAzElMask
     @category("Graphics Tests")
     def test_GfxAzElMask(self):
-        azel: "IBasicAzElMask" = EarlyBoundTests.AG_PLC.graphics.az_el_mask
+        azel: "BasicAzElMask" = EarlyBoundTests.AG_PLC.graphics.az_el_mask
         azel.range_visible = True
         Assert.assertTrue(azel.range_visible)
         azel.altitude_visible = True
@@ -252,7 +252,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
         oHelper.Run(EarlyBoundTests.AG_PLC.graphics_3d.vector, False)
 
     # endregion
@@ -286,7 +286,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
+        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_PLC.graphics_3d.model)
 
     # endregion
@@ -307,7 +307,7 @@ class EarlyBoundTests(TestBase):
         oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
-        oModelFile: "IGraphics3DModelFile" = clr.CastAs(oModel.model_data, IGraphics3DModelFile)
+        oModelFile: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")

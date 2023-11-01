@@ -11,11 +11,11 @@ class LogMessageMonitor(IObjectModelEventMonitor):
     def __exit__(self, exception_type, exception_value, exception_traceback):
         self.Dispose()
 
-    def __init__(self, root: "IStkObjectRoot", filterEcho: bool):
+    def __init__(self, root: "StkObjectRoot", filterEcho: bool):
         self._messages = []
         self._filterEcho: bool = filterEcho
         self._counter: int = 0
-        self._root: "IStkObjectRoot" = root
+        self._root: "StkObjectRoot" = root
 
         self.csToPy_OnLogMessageSubscription = (self._root).Subscribe()
         self.csToPy_OnLogMessageSubscription.OnLogMessage += self._root_OnLogMessage

@@ -112,7 +112,7 @@ class STKXInitialize(ISTKXInitialize):
             raise STKAttributeError(attrname + " is not a recognized attribute in STKXInitialize.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B85901D-FC82-4733-97E6-5BB25CE69379}", STKXInitialize)
-
+agcls.AgTypeNameMap["STKXInitialize"] = STKXInitialize
 
 
 ################################################################################

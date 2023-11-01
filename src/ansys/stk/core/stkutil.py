@@ -472,9 +472,9 @@ class PROPERTY_INFO_VALUE_TYPE(IntEnum):
     REAL = 1
     """Property is of type real."""
     QUANTITY = 2
-    """Property is of type IQuantity."""
+    """Property is of type Quantity."""
     DATE = 3
-    """Property is of type IDate."""
+    """Property is of type Date."""
     STRING = 4
     """Property is of type string."""
     BOOL = 5
@@ -484,8 +484,8 @@ class PROPERTY_INFO_VALUE_TYPE(IntEnum):
 
 PROPERTY_INFO_VALUE_TYPE.INT.__doc__ = "Property is of type int."
 PROPERTY_INFO_VALUE_TYPE.REAL.__doc__ = "Property is of type real."
-PROPERTY_INFO_VALUE_TYPE.QUANTITY.__doc__ = "Property is of type IQuantity."
-PROPERTY_INFO_VALUE_TYPE.DATE.__doc__ = "Property is of type IDate."
+PROPERTY_INFO_VALUE_TYPE.QUANTITY.__doc__ = "Property is of type Quantity."
+PROPERTY_INFO_VALUE_TYPE.DATE.__doc__ = "Property is of type Date."
 PROPERTY_INFO_VALUE_TYPE.STRING.__doc__ = "Property is of type string."
 PROPERTY_INFO_VALUE_TYPE.BOOL.__doc__ = "Property is of type bool."
 PROPERTY_INFO_VALUE_TYPE.INTERFACE.__doc__ = "Property is an interface."
@@ -494,7 +494,7 @@ agcls.AgTypeNameMap["PROPERTY_INFO_VALUE_TYPE"] = PROPERTY_INFO_VALUE_TYPE
 
 
 class ILocationData(object):
-    """Base interface ILocationData. IPosition derives from this interface."""
+    """Base interface Position. IPosition derives from this interface."""
     _uuid = "{C1E99EDA-C666-4971-AFD0-2259CB7E8452}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1087,7 +1087,7 @@ agcls.AgClassCatalog.add_catalog_entry("{36F08499-F7C4-41DE-AB49-794EC65C5165}",
 agcls.AgTypeNameMap["ICylindrical"] = ICylindrical
 
 class ICartesian(IPosition):
-    """ICartesian Interface used to access a position using Cartesian Coordinates"""
+    """Cartesian Interface used to access a position using Cartesian Coordinates"""
     _uuid = "{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}"
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
@@ -1171,7 +1171,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}",
 agcls.AgTypeNameMap["ICartesian"] = ICartesian
 
 class IGeodetic(IPosition):
-    """IGeodetic sets the position using Geodetic properties."""
+    """Geodetic sets the position using Geodetic properties."""
     _uuid = "{93D3322B-C842-48D2-AFCF-BC42B59DB28E}"
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
@@ -1255,7 +1255,7 @@ agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}",
 agcls.AgTypeNameMap["IGeodetic"] = IGeodetic
 
 class IPlanetodetic(IPosition):
-    """IPlanetodetic sets the position using Planetodetic properties."""
+    """Planetodetic sets the position using Planetodetic properties."""
     _uuid = "{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}"
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
@@ -2879,14 +2879,14 @@ class IUnitPreferencesDimension(object):
             return arg_pName.python_val
 
     @property
-    def available_units(self) -> "IUnitPreferencesUnitCollection":
+    def available_units(self) -> "UnitPreferencesUnitCollection":
         """Returns collection of Units."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnitCollection:
             agcls.evaluate_hresult(self.__dict__["_get_available_units"](byref(arg_ppUnitPrefsUnitCollection.COM_val)))
             return arg_ppUnitPrefsUnitCollection.python_val
 
     @property
-    def current_unit(self) -> "IUnitPreferencesUnit":
+    def current_unit(self) -> "UnitPreferencesUnit":
         """Returns the current unit for this dimension."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_get_current_unit"](byref(arg_ppUnitPrefsUnit.COM_val)))
@@ -3058,7 +3058,7 @@ class IPropertyInfoCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IPropertyInfo":
+    def item(self, indexOrName:typing.Any) -> "PropertyInfo":
         """Allows the user to iterate through the properties."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -3079,14 +3079,14 @@ class IPropertyInfoCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IPropertyInfo":
+    def get_item_by_index(self, index:int) -> "PropertyInfo":
         """Retrieves a property from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def get_item_by_name(self, name:str) -> "IPropertyInfo":
+    def get_item_by_name(self, name:str) -> "PropertyInfo":
         """Retrieves a property from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -3140,7 +3140,7 @@ class IRuntimeTypeInfo(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRuntimeTypeInfo.")
     
     @property
-    def properties(self) -> "IPropertyInfoCollection":
+    def properties(self) -> "PropertyInfoCollection":
         """The collection of properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_properties"](byref(arg_ppRetVal.COM_val)))
@@ -3160,7 +3160,7 @@ class IRuntimeTypeInfo(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item(self, index:int) -> "IPropertyInfo":
+    def get_item(self, index:int) -> "PropertyInfo":
         """Returns the property of the collection at the given index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -3172,7 +3172,7 @@ agcls.AgClassCatalog.add_catalog_entry("{01F8872C-9586-4131-A724-F97C6ADD083F}",
 agcls.AgTypeNameMap["IRuntimeTypeInfo"] = IRuntimeTypeInfo
 
 class IRuntimeTypeInfoProvider(object):
-    """Access point for IRuntimeTypeInfo."""
+    """Access point for RuntimeTypeInfo."""
     _uuid = "{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3205,8 +3205,8 @@ class IRuntimeTypeInfoProvider(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRuntimeTypeInfoProvider.")
     
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3367,7 +3367,7 @@ class IExecMultiCmdResult(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def item(self, index:int) -> "IExecCmdResult":
+    def item(self, index:int) -> "ExecCmdResult":
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pRetVal:
@@ -3449,7 +3449,7 @@ class IUnitPreferencesUnit(object):
             return arg_pId.python_val
 
     @property
-    def dimension(self) -> "IUnitPreferencesDimension":
+    def dimension(self) -> "UnitPreferencesDimension":
         """Returns the Dimension for this unit."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_get_dimension"](byref(arg_ppUnitPrefsDim.COM_val)))
@@ -3512,7 +3512,7 @@ class IUnitPreferencesUnitCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IUnitPreferencesUnit":
+    def item(self, indexOrName:typing.Any) -> "UnitPreferencesUnit":
         """Returns the specific item in the collection given a unit identifier or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
@@ -3533,14 +3533,14 @@ class IUnitPreferencesUnitCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IUnitPreferencesUnit":
+    def get_item_by_index(self, index:int) -> "UnitPreferencesUnit":
         """Retrieves a unit from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
-    def get_item_by_name(self, name:str) -> "IUnitPreferencesUnit":
+    def get_item_by_name(self, name:str) -> "UnitPreferencesUnit":
         """Retrieves a unit from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
@@ -3621,8 +3621,8 @@ class IUnitPreferencesDimensionCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IUnitPreferencesDimension":
-        """Returns an IUnitPreferencesDimension given a Dimension name or an index."""
+    def item(self, indexOrName:typing.Any) -> "UnitPreferencesDimension":
+        """Returns an UnitPreferencesDimension given a Dimension name or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
@@ -3674,7 +3674,7 @@ class IUnitPreferencesDimensionCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        """Returns a collection of IUnitPreferencesDimension."""
+        """Returns a collection of UnitPreferencesDimension."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3683,14 +3683,14 @@ class IUnitPreferencesDimensionCollection(object):
         """Resets the unitpreferences to the Default units"""
         agcls.evaluate_hresult(self.__dict__["_reset_units"]())
 
-    def get_item_by_index(self, index:int) -> "IUnitPreferencesDimension":
+    def get_item_by_index(self, index:int) -> "UnitPreferencesDimension":
         """Retrieves a dimension from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
-    def get_item_by_name(self, name:str) -> "IUnitPreferencesDimension":
+    def get_item_by_name(self, name:str) -> "UnitPreferencesDimension":
         """Retrieves a dimension from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
@@ -3784,29 +3784,29 @@ class IQuantity(object):
         with agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_value"](arg_value.COM_val))
 
-    def add(self, quantity:"IQuantity") -> "IQuantity":
-        """Adds the value from the IQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+    def add(self, quantity:"IQuantity") -> "Quantity":
+        """Adds the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_add"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def subtract(self, quantity:"IQuantity") -> "IQuantity":
-        """Subtracts the value from the IQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+    def subtract(self, quantity:"IQuantity") -> "Quantity":
+        """Subtracts the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_subtract"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def multiply_qty(self, quantity:"IQuantity") -> "IQuantity":
-        """Multiplies the value from the IQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+    def multiply_qty(self, quantity:"IQuantity") -> "Quantity":
+        """Multiplies the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_multiply_qty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def divide_qty(self, quantity:"IQuantity") -> "IQuantity":
-        """Divides the value from the IQuantity interface to this interface. The dimensions must be similar."""
+    def divide_qty(self, quantity:"IQuantity") -> "Quantity":
+        """Divides the value from the Quantity interface to this interface. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_divide_qty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -3950,7 +3950,7 @@ class IDate(object):
         with agmarshall.DOUBLE_arg(secIntoDay) as arg_secIntoDay:
             agcls.evaluate_hresult(self.__dict__["_set_sec_into_day_utc"](arg_secIntoDay.COM_val))
 
-    def add(self, unit:str, value:float) -> "IDate":
+    def add(self, unit:str, value:float) -> "Date":
         """Adds the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
@@ -3958,7 +3958,7 @@ class IDate(object):
             agcls.evaluate_hresult(self.__dict__["_add"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def subtract(self, unit:str, value:float) -> "IDate":
+    def subtract(self, unit:str, value:float) -> "Date":
         """Subtracts the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
@@ -3966,8 +3966,8 @@ class IDate(object):
             agcls.evaluate_hresult(self.__dict__["_subtract"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def span(self, date:"IDate") -> "IQuantity":
-        """Subtracts the value from the IDate interface and returns an IAgQuantity."""
+    def span(self, date:"IDate") -> "Quantity":
+        """Subtracts the value from the Date interface and returns an IAgQuantity."""
         with agmarshall.AgInterface_in_arg(date, IDate) as arg_date, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_span"](arg_date.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -4082,8 +4082,8 @@ class IConversionUtility(object):
             agcls.evaluate_hresult(self.__dict__["_convert_date_array"](arg_fromUnit.COM_val, arg_toUnit.COM_val, byref(arg_fromValues.COM_val), byref(arg_ppConvertedDateValues.COM_val)))
             return arg_ppConvertedDateValues.python_val
 
-    def new_quantity(self, dimension:str, unitAbbrv:str, value:float) -> "IQuantity":
-        """Creates an IQuantity interface with the given dimension, unit and value"""
+    def new_quantity(self, dimension:str, unitAbbrv:str, value:float) -> "Quantity":
+        """Creates an Quantity interface with the given dimension, unit and value"""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
@@ -4091,8 +4091,8 @@ class IConversionUtility(object):
             agcls.evaluate_hresult(self.__dict__["_new_quantity"](arg_dimension.COM_val, arg_unitAbbrv.COM_val, arg_value.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def new_date(self, unitAbbrv:str, value:str) -> "IDate":
-        """Creates an IDate interface with the given unit and value"""
+    def new_date(self, unitAbbrv:str, value:str) -> "Date":
+        """Creates an Date interface with the given unit and value"""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.BSTR_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
@@ -4320,7 +4320,7 @@ class ExecCmdResult(IExecCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in ExecCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92FE4418-FBA3-4D69-8F6E-9F600A1BA5E0}", ExecCmdResult)
-
+agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
 
 class ExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
@@ -4341,7 +4341,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in ExecMultiCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", ExecMultiCmdResult)
-
+agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
 
 class UnitPreferencesUnit(IUnitPreferencesUnit):
     """Object that contains info on the unit."""
@@ -4362,10 +4362,10 @@ class UnitPreferencesUnit(IUnitPreferencesUnit):
             raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesUnit.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", UnitPreferencesUnit)
-
+agcls.AgTypeNameMap["UnitPreferencesUnit"] = UnitPreferencesUnit
 
 class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
-    """Object that contains a collection of IUnitPreferencesUnit."""
+    """Object that contains a collection of UnitPreferencesUnit."""
     def __init__(self, sourceObject=None):
         IUnitPreferencesUnitCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -4383,7 +4383,7 @@ class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesUnitCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", UnitPreferencesUnitCollection)
-
+agcls.AgTypeNameMap["UnitPreferencesUnitCollection"] = UnitPreferencesUnitCollection
 
 class UnitPreferencesDimension(IUnitPreferencesDimension):
     """Object that contains info on the Dimension."""
@@ -4404,7 +4404,7 @@ class UnitPreferencesDimension(IUnitPreferencesDimension):
             raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesDimension.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", UnitPreferencesDimension)
-
+agcls.AgTypeNameMap["UnitPreferencesDimension"] = UnitPreferencesDimension
 
 class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
     """Object that contains a collection of dimensions."""
@@ -4425,7 +4425,7 @@ class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesDimensionCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", UnitPreferencesDimensionCollection)
-
+agcls.AgTypeNameMap["UnitPreferencesDimensionCollection"] = UnitPreferencesDimensionCollection
 
 class ConversionUtility(IConversionUtility):
     """Object that contains a unit conversion utility."""
@@ -4446,7 +4446,7 @@ class ConversionUtility(IConversionUtility):
             raise STKAttributeError(attrname + " is not a recognized attribute in ConversionUtility.")
         
 agcls.AgClassCatalog.add_catalog_entry("{89E0FDC5-4016-47E9-96ED-0C1B05FFDADA}", ConversionUtility)
-
+agcls.AgTypeNameMap["ConversionUtility"] = ConversionUtility
 
 class Quantity(IQuantity):
     """Object that contains a quantity."""
@@ -4467,7 +4467,7 @@ class Quantity(IQuantity):
             raise STKAttributeError(attrname + " is not a recognized attribute in Quantity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59806B16-8D20-4EC3-8913-9457846AC0E5}", Quantity)
-
+agcls.AgTypeNameMap["Quantity"] = Quantity
 
 class Date(IDate):
     """Object that contains a date."""
@@ -4488,7 +4488,7 @@ class Date(IDate):
             raise STKAttributeError(attrname + " is not a recognized attribute in Date.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CC2BA6FD-3A05-46D1-BAA0-68AC2D7896F1}", Date)
-
+agcls.AgTypeNameMap["Date"] = Date
 
 class Position(ILocationData, IPosition):
     """The Position class."""
@@ -4512,7 +4512,7 @@ class Position(ILocationData, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Position.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B3FE87C4-702C-4263-83D8-4E32C993E2D0}", Position)
-
+agcls.AgTypeNameMap["Position"] = Position
 
 class Cartesian(ICartesian, IPosition):
     """Class used to access a position using Cartesian Coordinates."""
@@ -4536,7 +4536,7 @@ class Cartesian(ICartesian, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Cartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{027F342E-5989-43D1-831B-BF2E313A1CBB}", Cartesian)
-
+agcls.AgTypeNameMap["Cartesian"] = Cartesian
 
 class Geodetic(IGeodetic, IPosition):
     """Class defining Geodetic position."""
@@ -4560,7 +4560,7 @@ class Geodetic(IGeodetic, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Geodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F65DA479-6847-456B-8816-85FF3ECD4469}", Geodetic)
-
+agcls.AgTypeNameMap["Geodetic"] = Geodetic
 
 class Geocentric(IGeocentric, IPosition):
     """Class defining Geocentric position."""
@@ -4584,7 +4584,7 @@ class Geocentric(IGeocentric, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Geocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AC9E304-8DCE-4CD6-A5AA-B82738823556}", Geocentric)
-
+agcls.AgTypeNameMap["Geocentric"] = Geocentric
 
 class Planetodetic(IPlanetodetic, IPosition):
     """Class defining Planetodetic position."""
@@ -4608,7 +4608,7 @@ class Planetodetic(IPlanetodetic, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Planetodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E06625DF-EEB4-4384-B142-C1C501F522F8}", Planetodetic)
-
+agcls.AgTypeNameMap["Planetodetic"] = Planetodetic
 
 class Planetocentric(IPlanetocentric, IPosition):
     """Class defining Planetocentric position."""
@@ -4632,7 +4632,7 @@ class Planetocentric(IPlanetocentric, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Planetocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DB009F3C-1FA7-4241-8A8D-D55E234CFF02}", Planetocentric)
-
+agcls.AgTypeNameMap["Planetocentric"] = Planetocentric
 
 class Spherical(ISpherical, IPosition):
     """Class defining spherical position."""
@@ -4656,7 +4656,7 @@ class Spherical(ISpherical, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Spherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CD809FAC-48DF-46AB-A322-92947F84C7E6}", Spherical)
-
+agcls.AgTypeNameMap["Spherical"] = Spherical
 
 class Cylindrical(ICylindrical, IPosition):
     """Class defining cylindrical position."""
@@ -4680,7 +4680,7 @@ class Cylindrical(ICylindrical, IPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in Cylindrical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FF1B8082-F06B-4F7B-94B2-6D3C4D9A7D51}", Cylindrical)
-
+agcls.AgTypeNameMap["Cylindrical"] = Cylindrical
 
 class Direction(IDirection):
     """Class defining direction options for aligned and constrained vectors."""
@@ -4701,7 +4701,7 @@ class Direction(IDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in Direction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9BC95D30-4E21-4502-ADE6-2AAE9ED89903}", Direction)
-
+agcls.AgTypeNameMap["Direction"] = Direction
 
 class DirectionEuler(IDirectionEuler, IDirection):
     """Euler direction sequence."""
@@ -4725,7 +4725,7 @@ class DirectionEuler(IDirectionEuler, IDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in DirectionEuler.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A14FAC2D-C055-4FB4-9AAD-67314E647717}", DirectionEuler)
-
+agcls.AgTypeNameMap["DirectionEuler"] = DirectionEuler
 
 class DirectionPR(IDirectionPR, IDirection):
     """Pitch-Roll (PR) direction sequence."""
@@ -4749,7 +4749,7 @@ class DirectionPR(IDirectionPR, IDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in DirectionPR.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3EEEDD8D-FB4C-442D-8A1F-28C7A3C2C9A6}", DirectionPR)
-
+agcls.AgTypeNameMap["DirectionPR"] = DirectionPR
 
 class DirectionRADec(IDirectionRADec, IDirection):
     """Spherical direction (Right Ascension and Declination)."""
@@ -4773,7 +4773,7 @@ class DirectionRADec(IDirectionRADec, IDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in DirectionRADec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EB70218F-18C4-41FE-90AC-99AFEB243666}", DirectionRADec)
-
+agcls.AgTypeNameMap["DirectionRADec"] = DirectionRADec
 
 class DirectionXYZ(IDirectionXYZ, IDirection):
     """Cartesian direction."""
@@ -4797,7 +4797,7 @@ class DirectionXYZ(IDirectionXYZ, IDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in DirectionXYZ.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1AB8359-28B7-468F-BD92-378267CA0998}", DirectionXYZ)
-
+agcls.AgTypeNameMap["DirectionXYZ"] = DirectionXYZ
 
 class Orientation(IOrientation):
     """Class defining the orientation of an orbit."""
@@ -4818,7 +4818,7 @@ class Orientation(IOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in Orientation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{97DF3B0E-D8E0-46B1-88CB-DC7A0AF934AE}", Orientation)
-
+agcls.AgTypeNameMap["Orientation"] = Orientation
 
 class OrientationAzEl(IOrientationAzEl, IOrientation):
     """AzEl orientation method."""
@@ -4842,7 +4842,7 @@ class OrientationAzEl(IOrientationAzEl, IOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in OrientationAzEl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3CF365C4-9B79-4B72-A479-16EF921F791C}", OrientationAzEl)
-
+agcls.AgTypeNameMap["OrientationAzEl"] = OrientationAzEl
 
 class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
     """Euler Angles orientation method."""
@@ -4866,7 +4866,7 @@ class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in OrientationEulerAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C3DC0E0A-690B-4C20-9134-D6C57BE46D40}", OrientationEulerAngles)
-
+agcls.AgTypeNameMap["OrientationEulerAngles"] = OrientationEulerAngles
 
 class OrientationQuaternion(IOrientationQuaternion, IOrientation):
     """Quaternion orientation method."""
@@ -4890,7 +4890,7 @@ class OrientationQuaternion(IOrientationQuaternion, IOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in OrientationQuaternion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8AC57BB2-C7A7-4C05-9E35-7246956759D9}", OrientationQuaternion)
-
+agcls.AgTypeNameMap["OrientationQuaternion"] = OrientationQuaternion
 
 class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
@@ -4914,7 +4914,7 @@ class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in OrientationYPRAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE398C98-2D0D-4863-8097-9F7648CABC21}", OrientationYPRAngles)
-
+agcls.AgTypeNameMap["OrientationYPRAngles"] = OrientationYPRAngles
 
 class DoublesCollection(IDoublesCollection):
     """A collection of doubles."""
@@ -4935,7 +4935,7 @@ class DoublesCollection(IDoublesCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in DoublesCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ECD576C3-0440-44D9-9D16-B88873C3A816}", DoublesCollection)
-
+agcls.AgTypeNameMap["DoublesCollection"] = DoublesCollection
 
 class Cartesian3Vector(ICartesian3Vector):
     """A 3-D cartesian vector."""
@@ -4956,7 +4956,7 @@ class Cartesian3Vector(ICartesian3Vector):
             raise STKAttributeError(attrname + " is not a recognized attribute in Cartesian3Vector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A70BA75-BC1A-459D-9DAD-E174F3B94002}", Cartesian3Vector)
-
+agcls.AgTypeNameMap["Cartesian3Vector"] = Cartesian3Vector
 
 class Cartesian2Vector(ICartesian2Vector):
     """A 2-D cartesian vector."""
@@ -4977,7 +4977,7 @@ class Cartesian2Vector(ICartesian2Vector):
             raise STKAttributeError(attrname + " is not a recognized attribute in Cartesian2Vector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ECE2E7DF-CBF1-4124-AAAC-33700F16FAE2}", Cartesian2Vector)
-
+agcls.AgTypeNameMap["Cartesian2Vector"] = Cartesian2Vector
 
 class PropertyInfo(IPropertyInfo):
     """Property Information coclass."""
@@ -4998,7 +4998,7 @@ class PropertyInfo(IPropertyInfo):
             raise STKAttributeError(attrname + " is not a recognized attribute in PropertyInfo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92498440-7C87-495C-A8BD-0A70F85D4DC8}", PropertyInfo)
-
+agcls.AgTypeNameMap["PropertyInfo"] = PropertyInfo
 
 class PropertyInfoCollection(IPropertyInfoCollection):
     """Property Information Collection coclass."""
@@ -5019,7 +5019,7 @@ class PropertyInfoCollection(IPropertyInfoCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in PropertyInfoCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{113B1CA1-4DD4-4915-8D7F-E1F96E18A985}", PropertyInfoCollection)
-
+agcls.AgTypeNameMap["PropertyInfoCollection"] = PropertyInfoCollection
 
 class RuntimeTypeInfo(IRuntimeTypeInfo):
     """Runtime Type info coclass."""
@@ -5040,7 +5040,7 @@ class RuntimeTypeInfo(IRuntimeTypeInfo):
             raise STKAttributeError(attrname + " is not a recognized attribute in RuntimeTypeInfo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D80F3E93-932A-49B3-8661-1A1627DCBDD1}", RuntimeTypeInfo)
-
+agcls.AgTypeNameMap["RuntimeTypeInfo"] = RuntimeTypeInfo
 
 class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset):
     """AzEl orientation method."""
@@ -5067,7 +5067,7 @@ class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffs
             raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationAzEl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1E11E3CE-BCAA-4E1F-BAF9-B6AD3650F9BA}", CROrientationAzEl)
-
+agcls.AgTypeNameMap["CROrientationAzEl"] = CROrientationAzEl
 
 class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset):
     """Euler Angles orientation method."""
@@ -5094,7 +5094,7 @@ class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientati
             raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationEulerAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D08A5BF9-5CBA-432D-8C48-3CD1CFC42636}", CROrientationEulerAngles)
-
+agcls.AgTypeNameMap["CROrientationEulerAngles"] = CROrientationEulerAngles
 
 class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset):
     """Quaternion orientation method."""
@@ -5121,7 +5121,7 @@ class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientation
             raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationQuaternion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D3BA3F8-B6F6-443B-A8AC-74C86A8B901A}", CROrientationQuaternion)
-
+agcls.AgTypeNameMap["CROrientationQuaternion"] = CROrientationQuaternion
 
 class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
@@ -5148,7 +5148,7 @@ class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPo
             raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationYPRAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FB88B69-1844-4CD9-BD44-09A9FCC4E06F}", CROrientationYPRAngles)
-
+agcls.AgTypeNameMap["CROrientationYPRAngles"] = CROrientationYPRAngles
 
 class CROrientationOffsetCart(ICartesian3Vector):
     """Orientation offset cartesian."""
@@ -5169,7 +5169,7 @@ class CROrientationOffsetCart(ICartesian3Vector):
             raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationOffsetCart.")
         
 agcls.AgClassCatalog.add_catalog_entry("{462F58AA-A74F-4E42-88B6-8F2790E85FEC}", CROrientationOffsetCart)
-
+agcls.AgTypeNameMap["CROrientationOffsetCart"] = CROrientationOffsetCart
 
 
 ################################################################################

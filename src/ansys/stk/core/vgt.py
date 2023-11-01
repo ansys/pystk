@@ -1914,7 +1914,7 @@ class ITimeToolIntervalCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "ITimeToolInterval":
+    def item(self, index:int) -> "TimeToolInterval":
         """Returns an interval at a specified index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -2032,7 +2032,7 @@ class IVectorGeometryToolPoint(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def locate_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IVectorGeometryToolPointLocateInSystemWithRateResult":
+    def locate_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchMethodCallResult":
         """Locates the point's position and velocity in a specified coordinate system."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(system, IVectorGeometryToolSystem) as arg_system, \
@@ -2040,7 +2040,7 @@ class IVectorGeometryToolPoint(object):
             agcls.evaluate_hresult(self.__dict__["_locate_in_system_with_rate"](arg_epoch.COM_val, arg_system.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def locate_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IVectorGeometryToolPointLocateInSystemResult":
+    def locate_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchMethodCallResult":
         """Locates the point's position in a specified coordinate system."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(system, IVectorGeometryToolSystem) as arg_system, \
@@ -2096,7 +2096,7 @@ class IVectorGeometryToolVector(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolVectorFindInAxesResult":
+    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Computes the vector in the specified axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2104,7 +2104,7 @@ class IVectorGeometryToolVector(object):
             agcls.evaluate_hresult(self.__dict__["_find_in_axes"](arg_epoch.COM_val, arg_axes.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolVectorFindInAxesWithRateResult":
+    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Computes the vector and its rate in the specified axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2162,7 +2162,7 @@ class IVectorGeometryToolSystem(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IVectorGeometryToolSystemFindInSystemResult":
+    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchMethodCallResult":
         """Find position, velocity, rate and orientation using the specified system."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(system, IVectorGeometryToolSystem) as arg_system, \
@@ -2170,7 +2170,7 @@ class IVectorGeometryToolSystem(object):
             agcls.evaluate_hresult(self.__dict__["_find_in_system"](arg_epoch.COM_val, arg_system.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def transform(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector") -> "IVectorGeometryToolSystemTransformResult":
+    def transform(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallResult":
         """Translates the position vector from this system into the output system."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(outputSystem, IVectorGeometryToolSystem) as arg_outputSystem, \
@@ -2179,7 +2179,7 @@ class IVectorGeometryToolSystem(object):
             agcls.evaluate_hresult(self.__dict__["_transform"](arg_epoch.COM_val, arg_outputSystem.COM_val, arg_positionInMySystem.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def transform_with_rate(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector", velocityInMySystem:"ICartesian3Vector") -> "IVectorGeometryToolSystemTransformWithRateResult":
+    def transform_with_rate(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector", velocityInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallResult":
         """Translates the position and rate vectors from this system into the output system."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(outputSystem, IVectorGeometryToolSystem) as arg_outputSystem, \
@@ -2249,7 +2249,7 @@ class IVectorGeometryToolAxes(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAxesFindInAxesWithRateResult":
+    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Find an angular velocity and orientation in the specified axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2257,7 +2257,7 @@ class IVectorGeometryToolAxes(object):
             agcls.evaluate_hresult(self.__dict__["_find_in_axes_with_rate"](arg_epoch.COM_val, arg_axes.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAxesFindInAxesResult":
+    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Find an orientation in the specified axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2266,7 +2266,7 @@ class IVectorGeometryToolAxes(object):
             return arg_ppRetVal.python_val
 
     @property
-    def labels(self) -> "IVectorGeometryToolAxesLabels":
+    def labels(self) -> "VectorGeometryToolAxesLabels":
         """Returns an object that allows modifying the axes labels."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_labels"](byref(arg_ppRetVal.COM_val)))
@@ -2293,7 +2293,7 @@ class IVectorGeometryToolAxes(object):
             agcls.evaluate_hresult(self.__dict__["_get_z"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def transform(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector") -> "IVectorGeometryToolAxesTransformResult":
+    def transform(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallResult":
         """Transforms the input vector from this axes into the output axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(outputAxes, IVectorGeometryToolAxes) as arg_outputAxes, \
@@ -2302,7 +2302,7 @@ class IVectorGeometryToolAxes(object):
             agcls.evaluate_hresult(self.__dict__["_transform"](arg_epoch.COM_val, arg_outputAxes.COM_val, arg_vectorInMyAxes.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def transform_with_rate(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector", rateInMyAxes:"ICartesian3Vector") -> "IVectorGeometryToolAxesTransformWithRateResult":
+    def transform_with_rate(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector", rateInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallResult":
         """Transforms the input vector and vector's rate from this axes into the output axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(outputAxes, IVectorGeometryToolAxes) as arg_outputAxes, \
@@ -2364,21 +2364,21 @@ class IVectorGeometryToolAngle(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def find_angle(self, epoch:typing.Any) -> "IVectorGeometryToolAngleFindAngleResult":
+    def find_angle(self, epoch:typing.Any) -> "AnalysisWorkbenchMethodCallResult":
         """Finds an angle at the specified epoch."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_find_angle"](arg_epoch.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_angle_with_rate(self, epoch:typing.Any) -> "IVectorGeometryToolAngleFindAngleWithRateResult":
+    def find_angle_with_rate(self, epoch:typing.Any) -> "AnalysisWorkbenchMethodCallResult":
         """Finds an angle and angle rate."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_find_angle_with_rate"](arg_epoch.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_coordinates(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAngleFindResult":
+    def find_coordinates(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Finds the angle value and three vectors that define the angle in a specified input axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2386,7 +2386,7 @@ class IVectorGeometryToolAngle(object):
             agcls.evaluate_hresult(self.__dict__["_find_coordinates"](arg_epoch.COM_val, arg_axes.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_coordinates_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAngleFindWithRateResult":
+    def find_coordinates_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Finds the angle value, the angle rate and three vectors that define the angle in a specified input axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2448,7 +2448,7 @@ class IVectorGeometryToolPlane(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolPlaneFindInAxesResult":
+    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Computes the plane's axes vectors in a specified reference axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2456,7 +2456,7 @@ class IVectorGeometryToolPlane(object):
             agcls.evaluate_hresult(self.__dict__["_find_in_axes"](arg_epoch.COM_val, arg_axes.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolPlaneFindInAxesWithRateResult":
+    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallResult":
         """Computes the plane's axes vectors and their rates in a specified reference axes."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
@@ -2464,7 +2464,7 @@ class IVectorGeometryToolPlane(object):
             agcls.evaluate_hresult(self.__dict__["_find_in_axes_with_rate"](arg_epoch.COM_val, arg_axes.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IVectorGeometryToolPlaneFindInSystemResult":
+    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchMethodCallResult":
         """Computes the position and X and Y axes in the specified coordinate system."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(system, IVectorGeometryToolSystem) as arg_system, \
@@ -2472,7 +2472,7 @@ class IVectorGeometryToolPlane(object):
             agcls.evaluate_hresult(self.__dict__["_find_in_system"](arg_epoch.COM_val, arg_system.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IVectorGeometryToolPlaneFindInSystemWithRateResult":
+    def find_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchMethodCallResult":
         """Computes the position, X and Y axes and their rates of change in the specified coordinate system."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_in_arg(system, IVectorGeometryToolSystem) as arg_system, \
@@ -2481,7 +2481,7 @@ class IVectorGeometryToolPlane(object):
             return arg_ppRetVal.python_val
 
     @property
-    def labels(self) -> "IVectorGeometryToolPlaneLabels":
+    def labels(self) -> "VectorGeometryToolPlaneLabels":
         """Allows configuring the plane's X and Y axes labels."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_labels"](byref(arg_ppRetVal.COM_val)))
@@ -2653,13 +2653,13 @@ class IAnalysisWorkbenchComponent(object):
 
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns the context object associated with the instance. The returned object is either an instance of IAnalysisWorkbenchInstance or IAnalysisWorkbenchTemplate interface."""
+        """Returns the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchInstance or IAnalysisWorkbenchTemplate interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_context"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def type_info(self) -> "IAnalysisWorkbenchTypeInfo":
+    def type_info(self) -> "AnalysisWorkbenchTypeInfo":
         """Returns the component type information."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type_info"](byref(arg_ppRetVal.COM_val)))
@@ -2715,7 +2715,7 @@ class IAnalysisWorkbenchComponent(object):
             return arg_pRetVal.python_val
 
     @property
-    def embedded_components(self) -> "IAnalysisWorkbenchCollection":
+    def embedded_components(self) -> "AnalysisWorkbenchCollection":
         """Returns a collection of embedded components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_embedded_components"](byref(arg_ppRetVal.COM_val)))
@@ -2894,7 +2894,7 @@ class ITimeToolEventIntervalResult(object):
             return arg_pRetVal.python_val
 
     @property
-    def interval(self) -> "ITimeToolInterval":
+    def interval(self) -> "TimeToolInterval":
         """An interval."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_interval"](byref(arg_ppRetVal.COM_val)))
@@ -3006,7 +3006,7 @@ class ITimeToolFindTimesResult(object):
             return arg_pRetVal.python_val
 
     @property
-    def intervals(self) -> "ITimeToolIntervalCollection":
+    def intervals(self) -> "TimeToolIntervalCollection":
         """A collection of found intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_intervals"](byref(arg_ppRetVal.COM_val)))
@@ -3080,7 +3080,7 @@ class ITimeToolIntervalsVectorResult(object):
             return arg_pRetVal.python_val
 
     @property
-    def interval_collections(self) -> "ITimeToolIntervalVectorCollection":
+    def interval_collections(self) -> "TimeToolIntervalVectorCollection":
         """A collection of interval collections."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_interval_collections"](byref(arg_ppRetVal.COM_val)))
@@ -3186,7 +3186,7 @@ class ITimeToolIntervalListResult(object):
             return arg_pRetVal.python_val
 
     @property
-    def intervals(self) -> "ITimeToolIntervalCollection":
+    def intervals(self) -> "TimeToolIntervalCollection":
         """A list of intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_intervals"](byref(arg_ppRetVal.COM_val)))
@@ -3252,7 +3252,7 @@ class ITimeToolIntervalVectorCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "ITimeToolIntervalCollection":
+    def item(self, index:int) -> "TimeToolIntervalCollection":
         """Accesses an element at the specified position."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -3361,7 +3361,7 @@ class ITimeToolEventGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ITimeToolEventFactory":
+    def factory(self) -> "TimeToolEventFactory":
         """Returns a Factory object used to create custom events."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -3490,7 +3490,7 @@ class ITimeToolEventIntervalGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ITimeToolEventIntervalFactory":
+    def factory(self) -> "TimeToolEventIntervalFactory":
         """Returns a Factory object used to create custom event intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -3619,7 +3619,7 @@ class ITimeToolEventIntervalListGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ITimeToolEventIntervalListFactory":
+    def factory(self) -> "TimeToolEventIntervalListFactory":
         """Returns a factory object used to create custom event interval lists."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -3748,7 +3748,7 @@ class ITimeToolEventArrayGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ITimeToolEventArrayFactory":
+    def factory(self) -> "TimeToolEventArrayFactory":
         """Returns a Factory object used to create event arrays."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -3877,7 +3877,7 @@ class ICalculationToolScalarGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ICalculationToolScalarFactory":
+    def factory(self) -> "CalculationToolScalarFactory":
         """Returns a factory object used to create calc scalar components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4006,7 +4006,7 @@ class ITimeToolEventIntervalCollectionGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ITimeToolEventIntervalCollectionFactory":
+    def factory(self) -> "TimeToolEventIntervalCollectionFactory":
         """Returns a factory object used to create calc scalar components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4135,7 +4135,7 @@ class ICalculationToolParameterSetGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ICalculationToolParameterSetFactory":
+    def factory(self) -> "CalculationToolParameterSetFactory":
         """Returns a factory object used to create calc scalar components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4264,7 +4264,7 @@ class ICalculationToolConditionGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ICalculationToolConditionFactory":
+    def factory(self) -> "CalculationToolConditionFactory":
         """Returns a factory object used to create calc scalar components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4393,7 +4393,7 @@ class ICalculationToolConditionSetGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ICalculationToolConditionSetFactory":
+    def factory(self) -> "CalculationToolConditionSetFactory":
         """Returns a factory object used to create condition set components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4637,7 +4637,7 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ISpatialAnalysisToolVolumeGridFactory":
+    def factory(self) -> "SpatialAnalysisToolVolumeGridFactory":
         """Returns a factory object used to create volume grid components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4766,7 +4766,7 @@ class ISpatialAnalysisToolVolumeGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ISpatialAnalysisToolVolumeFactory":
+    def factory(self) -> "SpatialAnalysisToolVolumeFactory":
         """Returns a factory object used to create spatial condition components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4895,7 +4895,7 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "ISpatialAnalysisToolVolumeCalcFactory":
+    def factory(self) -> "SpatialAnalysisToolVolumeCalcFactory":
         """Returns a factory object used to create volume calc components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -4996,7 +4996,7 @@ class ICalculationToolScalar(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def evaluate(self, epoch:typing.Any) -> "ICalculationToolEvaluateResult":
+    def evaluate(self, epoch:typing.Any) -> "CalculationToolEvaluateResult":
         """Evaluates the scalar calculation at the specified time instant."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -5010,7 +5010,7 @@ class ICalculationToolScalar(object):
             agcls.evaluate_hresult(self.__dict__["_quick_evaluate"](arg_epoch.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def evaluate_with_rate(self, epoch:typing.Any) -> "ICalculationToolEvaluateWithRateResult":
+    def evaluate_with_rate(self, epoch:typing.Any) -> "CalculationToolEvaluateWithRateResult":
         """Evaluates the scalar calculation at the specified time instant. The result is a scalar value and its rate of change."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -5024,7 +5024,7 @@ class ICalculationToolScalar(object):
             agcls.evaluate_hresult(self.__dict__["_quick_evaluate_with_rate"](arg_epoch.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_availability(self) -> "ITimeToolIntervalCollection":
+    def get_availability(self) -> "TimeToolIntervalCollection":
         """Returns a list of availability intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_availability"](byref(arg_ppRetVal.COM_val)))
@@ -5977,7 +5977,7 @@ class ICalculationToolScalarFile(object):
         """Reload the file specified with Filename property."""
         agcls.evaluate_hresult(self.__dict__["_reload"]())
 
-    def get_file_span(self) -> "ITimeToolEventIntervalResult":
+    def get_file_span(self) -> "TimeToolEventIntervalResult":
         """Computes the interval time span of the file."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_file_span"](byref(arg_ppRetVal.COM_val)))
@@ -7191,14 +7191,14 @@ class ICalculationToolCondition(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def evaluate(self, epoch:typing.Any) -> "ICalculationToolEvaluateResult":
+    def evaluate(self, epoch:typing.Any) -> "CalculationToolEvaluateResult":
         """Returns result of evaluating continuously varying condition metric at the specified time, used for detecting condition crossings."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_evaluate"](arg_epoch.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def evaluate_with_rate(self, epoch:typing.Any) -> "ICalculationToolEvaluateWithRateResult":
+    def evaluate_with_rate(self, epoch:typing.Any) -> "CalculationToolEvaluateWithRateResult":
         """Returns result of evaluating continuously varying condition metric and its rate of change at the specified time, used for detecting condition crossings."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -7654,14 +7654,14 @@ class ICalculationToolConditionSet(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def evaluate(self, epoch:typing.Any) -> "ICalculationToolConditionSetEvaluateResult":
+    def evaluate(self, epoch:typing.Any) -> "CalculationToolConditionSetEvaluateResult":
         """Returns an array of results of evaluating continuously varying condition metrics, one for each condition in the set, at the specified time, used for detecting condition crossings."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_evaluate"](arg_epoch.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def evaluate_with_rate(self, epoch:typing.Any) -> "ICalculationToolConditionSetEvaluateWithRateResult":
+    def evaluate_with_rate(self, epoch:typing.Any) -> "CalculationToolConditionSetEvaluateWithRateResult":
         """Returns an array of results of evaluating continuously varying condition metrics and their rates of change, one for each condition in the set, at the specified time, used for detecting condition crossings."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -8146,7 +8146,7 @@ class ITimeToolEvent(object):
             agcls.evaluate_hresult(self.__dict__["_get_noon_tomorrow"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_occurrence(self) -> "ITimeToolEventFindOccurrenceResult":
+    def find_occurrence(self) -> "TimeToolEventFindOccurrenceResult":
         """Return computed time instance if it occurs."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_find_occurrence"](byref(arg_ppRetVal.COM_val)))
@@ -8205,7 +8205,7 @@ class ITimeToolEventArray(object):
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def find_times(self) -> "ITimeToolFindTimesResult":
+    def find_times(self) -> "TimeToolFindTimesResult":
         """Return computed array of times."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_find_times"](byref(arg_ppRetVal.COM_val)))
@@ -9520,14 +9520,14 @@ class ITimeToolEventFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_event_time_offset"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_smart_epoch_from_time(self, epoch:typing.Any) -> "ITimeToolEventSmartEpoch":
+    def create_smart_epoch_from_time(self, epoch:typing.Any) -> "TimeToolEventSmartEpoch":
         """Creates a smart epoch from STK epoch."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create_smart_epoch_from_time"](arg_epoch.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_smart_epoch_from_event(self, refEvent:"ITimeToolEvent") -> "ITimeToolEventSmartEpoch":
+    def create_smart_epoch_from_event(self, refEvent:"ITimeToolEvent") -> "TimeToolEventSmartEpoch":
         """Creates a smart epoch from an event."""
         with agmarshall.AgInterface_in_arg(refEvent, ITimeToolEvent) as arg_refEvent, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -9625,7 +9625,7 @@ class ITimeToolEventInterval(object):
             agcls.evaluate_hresult(self.__dict__["_get_label_stop"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def find_interval(self) -> "ITimeToolEventIntervalResult":
+    def find_interval(self) -> "TimeToolEventIntervalResult":
         """Return computed interval if it exists."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_find_interval"](byref(arg_ppRetVal.COM_val)))
@@ -9762,13 +9762,13 @@ class ITimeToolEventIntervalCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_labels"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_interval_collection(self) -> "ITimeToolIntervalsVectorResult":
+    def find_interval_collection(self) -> "TimeToolIntervalsVectorResult":
         """Return computed collection of interval lists."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_find_interval_collection"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def occurred(self, epoch:typing.Any) -> "ITimeToolEventIntervalCollectionOccurredResult":
+    def occurred(self, epoch:typing.Any) -> "TimeToolEventIntervalCollectionOccurredResult":
         """Determine if specified time falls within any of the computed interval lists in the collection."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -10607,7 +10607,7 @@ class ITimeToolEventIntervalList(object):
             agcls.evaluate_hresult(self.__dict__["_get_descriptions"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def find_intervals(self) -> "ITimeToolIntervalListResult":
+    def find_intervals(self) -> "TimeToolIntervalListResult":
         """Return computed interval list that can be empty."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_find_intervals"](byref(arg_ppRetVal.COM_val)))
@@ -10946,7 +10946,7 @@ class ITimeToolEventIntervalListFile(object):
         """Reloads the interval list file."""
         agcls.evaluate_hresult(self.__dict__["_reload"]())
 
-    def get_file_span(self) -> "ITimeToolEventIntervalResult":
+    def get_file_span(self) -> "TimeToolEventIntervalResult":
         """Computes the interval list file span."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_file_span"](byref(arg_ppRetVal.COM_val)))
@@ -11010,7 +11010,7 @@ class ITimeToolEventIntervalListFiltered(object):
             agcls.evaluate_hresult(self.__dict__["_set_original_intervals"](arg_originalIntervals.COM_val))
 
     @property
-    def filter_factory(self) -> "ITimeToolPruneFilterFactory":
+    def filter_factory(self) -> "TimeToolPruneFilterFactory":
         """Get the prune filter factory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_filter_factory"](byref(arg_ppRetVal.COM_val)))
@@ -11841,7 +11841,7 @@ class ITimeToolEventIntervalSmartInterval(object):
             agcls.evaluate_hresult(self.__dict__["_find_stop_time"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def get_start_epoch(self) -> "ITimeToolEventSmartEpoch":
+    def get_start_epoch(self) -> "TimeToolEventSmartEpoch":
         """Returns a copy of the start epoch. Changes to the epoch will not affect the state of the interval."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_start_epoch"](byref(arg_ppRetVal.COM_val)))
@@ -11852,7 +11852,7 @@ class ITimeToolEventIntervalSmartInterval(object):
         with agmarshall.AgInterface_in_arg(startEpoch, ITimeToolEventSmartEpoch) as arg_startEpoch:
             agcls.evaluate_hresult(self.__dict__["_set_start_epoch"](arg_startEpoch.COM_val))
 
-    def get_stop_epoch(self) -> "ITimeToolEventSmartEpoch":
+    def get_stop_epoch(self) -> "TimeToolEventSmartEpoch":
         """Returns a copy of the stop epoch. Changes to the epoch will not affect the state of the interval."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_epoch"](byref(arg_ppRetVal.COM_val)))
@@ -13601,7 +13601,7 @@ class ICalculationToolSamplingBasic(object):
             agcls.evaluate_hresult(self.__dict__["_set_sampling_method"](arg_samplingMethod.COM_val))
 
     @property
-    def method_factory(self) -> "ICalculationToolSamplingMethodFactory":
+    def method_factory(self) -> "CalculationToolSamplingMethodFactory":
         """Creates sampling definitions, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples..."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method_factory"](byref(arg_ppRetVal.COM_val)))
@@ -14689,7 +14689,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             agcls.evaluate_hresult(self.__dict__["_get_grid_values_method"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def set_grid_values_fixed_step(self, min:float, max:float, includeMinMax:bool, refValue:float, fixedStep:float) -> "ISpatialAnalysisToolGridValuesFixedStep":
+    def set_grid_values_fixed_step(self, min:float, max:float, includeMinMax:bool, refValue:float, fixedStep:float) -> "SpatialAnalysisToolGridValuesFixedStep":
         """Sets grid values type to fixed step."""
         with agmarshall.DOUBLE_arg(min) as arg_min, \
              agmarshall.DOUBLE_arg(max) as arg_max, \
@@ -14700,7 +14700,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             agcls.evaluate_hresult(self.__dict__["_set_grid_values_fixed_step"](arg_min.COM_val, arg_max.COM_val, arg_includeMinMax.COM_val, arg_refValue.COM_val, arg_fixedStep.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def set_grid_values_fixed_number_of_steps(self, min:float, max:float, numSteps:int) -> "ISpatialAnalysisToolGridValuesFixedNumberOfSteps":
+    def set_grid_values_fixed_number_of_steps(self, min:float, max:float, numSteps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
         """This method is deprecated. Use SetGridValuesFixedNumberOfStepsEx."""
         with agmarshall.DOUBLE_arg(min) as arg_min, \
              agmarshall.DOUBLE_arg(max) as arg_max, \
@@ -14709,15 +14709,15 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             agcls.evaluate_hresult(self.__dict__["_set_grid_values_fixed_number_of_steps"](arg_min.COM_val, arg_max.COM_val, arg_numSteps.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def set_grid_values_custom(self, values:list) -> "ISpatialAnalysisToolGridValuesCustom":
+    def set_grid_values_custom(self, values:list) -> "SpatialAnalysisToolGridValuesCustom":
         """Sets grid values type to custom values."""
         with agmarshall.SAFEARRAY_arg(values) as arg_values, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_set_grid_values_custom"](byref(arg_values.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def set_grid_values_fixed_number_of_steps_ex(self, min:"IQuantity", max:"IQuantity", numSteps:int) -> "ISpatialAnalysisToolGridValuesFixedNumberOfSteps":
-        """Sets grid values type to fixed number of steps with min and max as IQuantity"""
+    def set_grid_values_fixed_number_of_steps_ex(self, min:"IQuantity", max:"IQuantity", numSteps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
+        """Sets grid values type to fixed number of steps with min and max as Quantity"""
         with agmarshall.AgInterface_in_arg(min, IQuantity) as arg_min, \
              agmarshall.AgInterface_in_arg(max, IQuantity) as arg_max, \
              agmarshall.INT_arg(numSteps) as arg_numSteps, \
@@ -14869,7 +14869,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
 
     @property
     def min_ex(self) -> "IQuantity":
-        """Minimum coordinate value as IQuantity."""
+        """Minimum coordinate value as Quantity."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_min_ex"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -14881,7 +14881,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
 
     @property
     def max_ex(self) -> "IQuantity":
-        """Maximum coordinate value as IQuantity."""
+        """Maximum coordinate value as Quantity."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_ex"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -16591,21 +16591,21 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_central_body"](arg_referenceCentralBody.COM_val))
 
     @property
-    def along_bearing_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def along_bearing_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns AlongBearing Coordinates parameters for the surface bearing."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_along_bearing_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def cross_bearing_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def cross_bearing_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns CrossBearing Coordinates parameters for the surface bearing."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_cross_bearing_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def altitude_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def altitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns altitude Coordinates parameters for the surface bearing."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_coordinates"](byref(arg_ppRetVal.COM_val)))
@@ -16705,21 +16705,21 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_system"](arg_referenceSystem.COM_val))
 
     @property
-    def x_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def x_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns X Coordinates parameters for the Cartesian system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_x_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def y_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def y_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns Y Coordinates parameters for the Cartesian system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_y_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def z_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def z_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns Z Coordinates parameters for the Cartesian system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_z_coordinates"](byref(arg_ppRetVal.COM_val)))
@@ -16850,21 +16850,21 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_system"](arg_referenceSystem.COM_val))
 
     @property
-    def theta_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def theta_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns theta Coordinates parameters for the Theta system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_theta_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def radius_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def radius_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns radius Coordinates parameters for the Radius system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_radius_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def height_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def height_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns height Coordinates parameters for the Height system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_height_coordinates"](byref(arg_ppRetVal.COM_val)))
@@ -16932,21 +16932,21 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_central_body"](arg_referenceCentralBody.COM_val))
 
     @property
-    def latitude_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def latitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns latitude Coordinates parameters for the Theta system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_latitude_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def longitude_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def longitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns longtitude Coordinates parameters for the Radius system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_longitude_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def altitude_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def altitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns altitude parameters for the Height system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_coordinates"](byref(arg_ppRetVal.COM_val)))
@@ -17129,21 +17129,21 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_system"](arg_referenceSystem.COM_val))
 
     @property
-    def azimuth_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def azimuth_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns azimuth coordinates parameters for the spherical volume grid."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_azimuth_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def elevation_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def elevation_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns elevation coordinates parameters for the spherical volume grid."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_elevation_coordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def range_coordinates(self) -> "ISpatialAnalysisToolGridCoordinateDefinition":
+    def range_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
         """Returns range coordinates parameters for the spherical volume grid."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_range_coordinates"](byref(arg_ppRetVal.COM_val)))
@@ -17203,7 +17203,7 @@ class ISpatialAnalysisToolVolumeInview(object):
             agcls.evaluate_hresult(self.__dict__["_set_constraint_object"](arg_constraintObject.COM_val))
 
     @property
-    def light_time_delay(self) -> "ITimeToolLightTimeDelay":
+    def light_time_delay(self) -> "TimeToolLightTimeDelay":
         """Returns Light Time Delay options parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_light_time_delay"](byref(arg_ppRetVal.COM_val)))
@@ -17444,7 +17444,7 @@ class ITimeToolTimeProperties(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolTimeProperties.")
     
-    def get_availability(self) -> "ITimeToolIntervalCollection":
+    def get_availability(self) -> "TimeToolIntervalCollection":
         """Returns a collection of availability intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_availability"](byref(arg_ppRetVal.COM_val)))
@@ -17561,7 +17561,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2F3A17A6-4304-4565-BC1C-7A064DCFE310}",
 agcls.AgTypeNameMap["IAnalysisWorkbenchRefTo"] = IAnalysisWorkbenchRefTo
 
 class IAnalysisWorkbenchTemplate(object):
-    """The IAnalysisWorkbenchTemplate interface enables to obtain information about the STK class that owns the VGT component."""
+    """The AnalysisWorkbenchTemplate interface enables to obtain information about the STK class that owns the VGT component."""
     _uuid = "{990635EA-63F9-4CA7-A5A8-DEDAA9C52100}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17605,7 +17605,7 @@ agcls.AgClassCatalog.add_catalog_entry("{990635EA-63F9-4CA7-A5A8-DEDAA9C52100}",
 agcls.AgTypeNameMap["IAnalysisWorkbenchTemplate"] = IAnalysisWorkbenchTemplate
 
 class IAnalysisWorkbenchInstance(object):
-    """The IAnalysisWorkbenchInstance interface enables to obtain information about the parent object that owns the VGT component."""
+    """The AnalysisWorkbenchInstance interface enables to obtain information about the parent object that owns the VGT component."""
     _uuid = "{17633665-9601-4FFF-8227-4D5DF0AAEA06}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18243,14 +18243,14 @@ class IVectorGeometryToolAxesAlignedAndConstrained(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesAlignedAndConstrained.")
     
     @property
-    def alignment_reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def alignment_reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify an alignment reference vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_alignment_reference_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def constraint_reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def constraint_reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a constraint reference vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_constraint_reference_vector"](byref(arg_ppRetVal.COM_val)))
@@ -18316,21 +18316,21 @@ class IVectorGeometryToolAxesAngularOffset(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesAngularOffset.")
     
     @property
-    def spin_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def spin_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a spin vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_spin_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def rotation_angle(self) -> "IVectorGeometryToolAngleRefTo":
+    def rotation_angle(self) -> "VectorGeometryToolAngleRefTo":
         """Specify a rotational angle."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_rotation_angle"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -18392,14 +18392,14 @@ class IVectorGeometryToolAxesFixedAtEpoch(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFixedAtEpoch.")
     
     @property
-    def source_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def source_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a source axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_source_axes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -18463,21 +18463,21 @@ class IVectorGeometryToolAxesBPlane(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesBPlane.")
     
     @property
-    def trajectory(self) -> "IVectorGeometryToolPointRefTo":
+    def trajectory(self) -> "VectorGeometryToolPointRefTo":
         """Specify a trajectory point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_trajectory"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a reference vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def target_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def target_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a target central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_target_body"](byref(arg_ppRetVal.COM_val)))
@@ -18537,7 +18537,7 @@ class IVectorGeometryToolAxesCustomScript(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesCustomScript.")
     
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -18646,7 +18646,7 @@ class IVectorGeometryToolAxesFixed(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFixed.")
     
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -18762,14 +18762,14 @@ class IVectorGeometryToolAxesSpinning(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesSpinning.")
     
     @property
-    def spin_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def spin_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a spin vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_spin_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -18855,14 +18855,14 @@ class IVectorGeometryToolAxesOnSurface(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesOnSurface.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -18924,14 +18924,14 @@ class IVectorGeometryToolAxesTrajectory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesTrajectory.")
     
     @property
-    def trajectory_point(self) -> "IVectorGeometryToolPointRefTo":
+    def trajectory_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a trajectory point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_trajectory_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_system(self) -> "IVectorGeometryToolSystemRefTo":
+    def reference_system(self) -> "VectorGeometryToolSystemRefTo":
         """Specify a reference system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_system"](byref(arg_ppRetVal.COM_val)))
@@ -18993,7 +18993,7 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesLagrangeLibration.")
     
     @property
-    def primary_central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def primary_central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a primary central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_primary_central_body"](byref(arg_ppRetVal.COM_val)))
@@ -19012,7 +19012,7 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
             agcls.evaluate_hresult(self.__dict__["_set_point_type"](arg_pointType.COM_val))
 
     @property
-    def secondary_central_bodies(self) -> "IAnalysisWorkbenchCentralBodyCollection":
+    def secondary_central_bodies(self) -> "AnalysisWorkbenchCentralBodyCollection":
         """Specify secondary central bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_secondary_central_bodies"](byref(arg_ppRetVal.COM_val)))
@@ -19061,7 +19061,7 @@ class IVectorGeometryToolAxesCommonTasks(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesCommonTasks.")
     
-    def create_topocentric_axes_quaternion(self, originPoint:"IVectorGeometryToolPoint", qx:float, qy:float, qz:float, qs:float) -> "IVectorGeometryToolAxesFixed":
+    def create_topocentric_axes_quaternion(self, originPoint:"IVectorGeometryToolPoint", qx:float, qy:float, qz:float, qs:float) -> "VectorGeometryToolAxesFixed":
         """Creates non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation."""
         with agmarshall.AgInterface_in_arg(originPoint, IVectorGeometryToolPoint) as arg_originPoint, \
              agmarshall.DOUBLE_arg(qx) as arg_qx, \
@@ -19072,7 +19072,7 @@ class IVectorGeometryToolAxesCommonTasks(object):
             agcls.evaluate_hresult(self.__dict__["_create_topocentric_axes_quaternion"](arg_originPoint.COM_val, arg_qx.COM_val, arg_qy.COM_val, arg_qz.COM_val, arg_qs.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_topocentric_axes_euler_angles(self, originPoint:"IVectorGeometryToolPoint", sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> "IVectorGeometryToolAxesFixed":
+    def create_topocentric_axes_euler_angles(self, originPoint:"IVectorGeometryToolPoint", sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> "VectorGeometryToolAxesFixed":
         """Creates non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation."""
         with agmarshall.AgInterface_in_arg(originPoint, IVectorGeometryToolPoint) as arg_originPoint, \
              agmarshall.AgEnum_arg(EULER_ORIENTATION_SEQUENCE, sequence) as arg_sequence, \
@@ -19083,14 +19083,14 @@ class IVectorGeometryToolAxesCommonTasks(object):
             agcls.evaluate_hresult(self.__dict__["_create_topocentric_axes_euler_angles"](arg_originPoint.COM_val, arg_sequence.COM_val, arg_a.COM_val, arg_b.COM_val, arg_c.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_fixed(self, referenceAxes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAxesFixed":
+    def create_fixed(self, referenceAxes:"IVectorGeometryToolAxes") -> "VectorGeometryToolAxesFixed":
         """Creates non-persistent fixed axes based on specified axes."""
         with agmarshall.AgInterface_in_arg(referenceAxes, IVectorGeometryToolAxes) as arg_referenceAxes, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create_fixed"](arg_referenceAxes.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def sample(self, axes:"IVectorGeometryToolAxes", referenceAxes:"IVectorGeometryToolAxes", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "ITimeToolAxesSamplingResult":
+    def sample(self, axes:"IVectorGeometryToolAxes", referenceAxes:"IVectorGeometryToolAxes", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolAxesSamplingResult":
         """Computes and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters."""
         with agmarshall.AgInterface_in_arg(axes, IVectorGeometryToolAxes) as arg_axes, \
              agmarshall.AgInterface_in_arg(referenceAxes, IVectorGeometryToolAxes) as arg_referenceAxes, \
@@ -19310,14 +19310,14 @@ class IVectorGeometryToolAngleBetweenVectors(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleBetweenVectors.")
     
     @property
-    def from_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def from_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify the first of the two vectors the angle is measured."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_from_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def to_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def to_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify the second of the two vectors the angle is measured."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_to_vector"](byref(arg_ppRetVal.COM_val)))
@@ -19363,14 +19363,14 @@ class IVectorGeometryToolAngleBetweenPlanes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleBetweenPlanes.")
     
     @property
-    def from_plane(self) -> "IVectorGeometryToolPlaneRefTo":
+    def from_plane(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify the first of the two planes the angle is measured."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_from_plane"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def to_plane(self) -> "IVectorGeometryToolPlaneRefTo":
+    def to_plane(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify the second of the two planes the angle is measured."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_to_plane"](byref(arg_ppRetVal.COM_val)))
@@ -19426,21 +19426,21 @@ class IVectorGeometryToolAngleDihedral(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleDihedral.")
     
     @property
-    def from_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def from_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a first vector to measure the angle."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_from_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def to_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def to_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a second vector to measure the angle."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_to_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def pole_about(self) -> "IVectorGeometryToolVectorRefTo":
+    def pole_about(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a vector about."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_pole_about"](byref(arg_ppRetVal.COM_val)))
@@ -19514,14 +19514,14 @@ class IVectorGeometryToolAngleRotation(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleRotation.")
     
     @property
-    def from_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def from_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify an axes to rotate from."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_from_axes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def to_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def to_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify an axes to rotate to."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_to_axes"](byref(arg_ppRetVal.COM_val)))
@@ -19583,14 +19583,14 @@ class IVectorGeometryToolAngleToPlane(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleToPlane.")
     
     @property
-    def reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a reference vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_plane(self) -> "IVectorGeometryToolPlaneRefTo":
+    def reference_plane(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify a reference plane."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_plane"](byref(arg_ppRetVal.COM_val)))
@@ -19650,21 +19650,21 @@ class IVectorGeometryToolPlaneNormal(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneNormal.")
     
     @property
-    def normal_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def normal_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a Normal vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_normal_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a reference vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -19712,7 +19712,7 @@ class IVectorGeometryToolPlaneQuadrant(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneQuadrant.")
     
     @property
-    def reference_system(self) -> "IVectorGeometryToolSystemRefTo":
+    def reference_system(self) -> "VectorGeometryToolSystemRefTo":
         """Specify a reference system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_system"](byref(arg_ppRetVal.COM_val)))
@@ -19774,14 +19774,14 @@ class IVectorGeometryToolPlaneTrajectory(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneTrajectory.")
     
     @property
-    def point(self) -> "IVectorGeometryToolPointRefTo":
+    def point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a trajectory point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_system(self) -> "IVectorGeometryToolSystemRefTo":
+    def reference_system(self) -> "VectorGeometryToolSystemRefTo":
         """Specify a reference system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_system"](byref(arg_ppRetVal.COM_val)))
@@ -19845,21 +19845,21 @@ class IVectorGeometryToolPlaneTriad(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneTriad.")
     
     @property
-    def point_a(self) -> "IVectorGeometryToolPointRefTo":
+    def point_a(self) -> "VectorGeometryToolPointRefTo":
         """Specify a point A."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_a"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def point_b(self) -> "IVectorGeometryToolPointRefTo":
+    def point_b(self) -> "VectorGeometryToolPointRefTo":
         """Specify a point B."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_b"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -19919,21 +19919,21 @@ class IVectorGeometryToolPlaneTwoVector(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneTwoVector.")
     
     @property
-    def reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a reference vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def vector2(self) -> "IVectorGeometryToolVectorRefTo":
+    def vector2(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a Normal vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_vector2"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -19987,14 +19987,14 @@ class IVectorGeometryToolPointBPlane(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointBPlane.")
     
     @property
-    def target_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def target_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a target central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_target_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def trajectory(self) -> "IVectorGeometryToolPointRefTo":
+    def trajectory(self) -> "VectorGeometryToolPointRefTo":
         """Specify a trajectory point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_trajectory"](byref(arg_ppRetVal.COM_val)))
@@ -20115,7 +20115,7 @@ class IVectorGeometryToolPointFixedInSystem(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointFixedInSystem.")
     
     @property
-    def reference(self) -> "IVectorGeometryToolSystemRefTo":
+    def reference(self) -> "VectorGeometryToolSystemRefTo":
         """Specify a reference system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference"](byref(arg_ppRetVal.COM_val)))
@@ -20174,21 +20174,21 @@ class IVectorGeometryToolPointGrazing(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointGrazing.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def direction_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def direction_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction_vector"](byref(arg_ppRetVal.COM_val)))
@@ -20248,21 +20248,21 @@ class IVectorGeometryToolPointGlint(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointGlint.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def source_point(self) -> "IVectorGeometryToolPointRefTo":
+    def source_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a source point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_source_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def observer_point(self) -> "IVectorGeometryToolPointRefTo":
+    def observer_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify an observer point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_observer_point"](byref(arg_ppRetVal.COM_val)))
@@ -20328,14 +20328,14 @@ class IVectorGeometryToolPointCovarianceGrazing(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointCovarianceGrazing.")
     
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def direction_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def direction_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a direction vector to be used in conjunction with the displacement vector from the selected target object to the reference point to define a plane in which the line will lie."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction_vector"](byref(arg_ppRetVal.COM_val)))
@@ -20443,21 +20443,21 @@ class IVectorGeometryToolPointPlaneIntersection(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointPlaneIntersection.")
     
     @property
-    def direction_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def direction_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a direction vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_plane(self) -> "IVectorGeometryToolPlaneRefTo":
+    def reference_plane(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify a reference plane."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_plane"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def origin_point(self) -> "IVectorGeometryToolPointRefTo":
+    def origin_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify the origin point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_origin_point"](byref(arg_ppRetVal.COM_val)))
@@ -20511,14 +20511,14 @@ class IVectorGeometryToolPointOnSurface(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointOnSurface.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -20706,14 +20706,14 @@ class IVectorGeometryToolPointPlaneProjection(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointPlaneProjection.")
     
     @property
-    def source_point(self) -> "IVectorGeometryToolPointRefTo":
+    def source_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a source point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_source_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_plane(self) -> "IVectorGeometryToolPlaneRefTo":
+    def reference_plane(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify a reference plane."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_plane"](byref(arg_ppRetVal.COM_val)))
@@ -20763,7 +20763,7 @@ class IVectorGeometryToolPointLagrangeLibration(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointLagrangeLibration.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
@@ -20782,7 +20782,7 @@ class IVectorGeometryToolPointLagrangeLibration(object):
             agcls.evaluate_hresult(self.__dict__["_set_point_type"](arg_pointType.COM_val))
 
     @property
-    def secondary_central_bodies(self) -> "IAnalysisWorkbenchCentralBodyCollection":
+    def secondary_central_bodies(self) -> "AnalysisWorkbenchCentralBodyCollection":
         """Specify multiple secondary central bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_secondary_central_bodies"](byref(arg_ppRetVal.COM_val)))
@@ -20829,7 +20829,7 @@ class IVectorGeometryToolPointCommonTasks(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointCommonTasks.")
     
-    def create_fixed_in_system_cartographic(self, referenceSystem:"IVectorGeometryToolSystem", latitude:typing.Any, longitude:typing.Any, altitude:float) -> "IVectorGeometryToolPointFixedInSystem":
+    def create_fixed_in_system_cartographic(self, referenceSystem:"IVectorGeometryToolSystem", latitude:typing.Any, longitude:typing.Any, altitude:float) -> "VectorGeometryToolPointFixedInSystem":
         """Creates a non-persistent point fixed in a specified reference system."""
         with agmarshall.AgInterface_in_arg(referenceSystem, IVectorGeometryToolSystem) as arg_referenceSystem, \
              agmarshall.VARIANT_arg(latitude) as arg_latitude, \
@@ -20839,7 +20839,7 @@ class IVectorGeometryToolPointCommonTasks(object):
             agcls.evaluate_hresult(self.__dict__["_create_fixed_in_system_cartographic"](arg_referenceSystem.COM_val, arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_fixed_in_system_cartesian(self, referenceSystem:"IVectorGeometryToolSystem", x:float, y:float, z:float) -> "IVectorGeometryToolPointFixedInSystem":
+    def create_fixed_in_system_cartesian(self, referenceSystem:"IVectorGeometryToolSystem", x:float, y:float, z:float) -> "VectorGeometryToolPointFixedInSystem":
         """Creates a non-persistent point fixed in a specified reference system."""
         with agmarshall.AgInterface_in_arg(referenceSystem, IVectorGeometryToolSystem) as arg_referenceSystem, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
@@ -20849,7 +20849,7 @@ class IVectorGeometryToolPointCommonTasks(object):
             agcls.evaluate_hresult(self.__dict__["_create_fixed_in_system_cartesian"](arg_referenceSystem.COM_val, arg_x.COM_val, arg_y.COM_val, arg_z.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def sample(self, point:"IVectorGeometryToolPoint", referenceSystem:"IVectorGeometryToolSystem", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "ITimeToolPointSamplingResult":
+    def sample(self, point:"IVectorGeometryToolPoint", referenceSystem:"IVectorGeometryToolSystem", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolPointSamplingResult":
         """Computes and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters."""
         with agmarshall.AgInterface_in_arg(point, IVectorGeometryToolPoint) as arg_point, \
              agmarshall.AgInterface_in_arg(referenceSystem, IVectorGeometryToolSystem) as arg_referenceSystem, \
@@ -21364,14 +21364,14 @@ class IVectorGeometryToolSystemAssembled(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemAssembled.")
     
     @property
-    def origin_point(self) -> "IVectorGeometryToolPointRefTo":
+    def origin_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a point of origin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_origin_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -21425,7 +21425,7 @@ class IVectorGeometryToolSystemOnSurface(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemOnSurface.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
@@ -21456,7 +21456,7 @@ class IVectorGeometryToolSystemOnSurface(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_msl"](arg_useMSL.COM_val))
 
     @property
-    def position(self) -> "IAnalysisWorkbenchLLAPosition":
+    def position(self) -> "AnalysisWorkbenchLLAPosition":
         """Specify the position of the system's origin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_position"](byref(arg_ppRetVal.COM_val)))
@@ -21584,7 +21584,7 @@ class IVectorGeometryToolSystemCommonTasks(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemCommonTasks.")
     
-    def create_east_north_up_cartographic(self, latitude:typing.Any, longitude:typing.Any, altitude:float) -> "IVectorGeometryToolSystemAssembled":
+    def create_east_north_up_cartographic(self, latitude:typing.Any, longitude:typing.Any, altitude:float) -> "VectorGeometryToolSystemAssembled":
         """Creates a non-persistent East-North-Up (ENU) reference frame with the origin at the specified geodetic location."""
         with agmarshall.VARIANT_arg(latitude) as arg_latitude, \
              agmarshall.VARIANT_arg(longitude) as arg_longitude, \
@@ -21593,7 +21593,7 @@ class IVectorGeometryToolSystemCommonTasks(object):
             agcls.evaluate_hresult(self.__dict__["_create_east_north_up_cartographic"](arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_assembled(self, originPoint:"IVectorGeometryToolPoint", referenceAxes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolSystemAssembled":
+    def create_assembled(self, originPoint:"IVectorGeometryToolPoint", referenceAxes:"IVectorGeometryToolAxes") -> "VectorGeometryToolSystemAssembled":
         """Creates a non-persistent system component assembled from an origin point and a set of reference axes."""
         with agmarshall.AgInterface_in_arg(originPoint, IVectorGeometryToolPoint) as arg_originPoint, \
              agmarshall.AgInterface_in_arg(referenceAxes, IVectorGeometryToolAxes) as arg_referenceAxes, \
@@ -21643,7 +21643,7 @@ class IVectorGeometryToolVectorAngleRate(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorAngleRate.")
     
     @property
-    def angle(self) -> "IVectorGeometryToolAngleRefTo":
+    def angle(self) -> "VectorGeometryToolAngleRefTo":
         """Specify an angle. The angle vector will be perpendicular to the plane in which the angle is defined."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_angle"](byref(arg_ppRetVal.COM_val)))
@@ -21705,14 +21705,14 @@ class IVectorGeometryToolVectorApoapsis(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorApoapsis.")
     
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
@@ -21786,14 +21786,14 @@ class IVectorGeometryToolVectorFixedAtEpoch(object):
             agcls.evaluate_hresult(self.__dict__["_set_epoch"](arg_epoch.COM_val))
 
     @property
-    def source_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def source_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a source vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_source_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -21843,14 +21843,14 @@ class IVectorGeometryToolVectorAngularVelocity(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorAngularVelocity.")
     
     @property
-    def axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify the axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_axes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -21928,14 +21928,14 @@ class IVectorGeometryToolVectorConing(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorConing.")
     
     @property
-    def about_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def about_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a vector around which the the reference vector is revolved."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_about_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a reference vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_vector"](byref(arg_ppRetVal.COM_val)))
@@ -22049,14 +22049,14 @@ class IVectorGeometryToolVectorCross(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorCross.")
     
     @property
-    def from_method(self) -> "IVectorGeometryToolVectorRefTo":
+    def from_method(self) -> "VectorGeometryToolVectorRefTo":
         """Specify one of the two vectors which define the vector cross product."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_from_method"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def to(self) -> "IVectorGeometryToolVectorRefTo":
+    def to(self) -> "VectorGeometryToolVectorRefTo":
         """Specify the second of the two vectors which define the vector cross product."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_to"](byref(arg_ppRetVal.COM_val)))
@@ -22132,7 +22132,7 @@ class IVectorGeometryToolVectorCustomScript(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorCustomScript.")
     
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -22210,14 +22210,14 @@ class IVectorGeometryToolVectorDerivative(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorDerivative.")
     
     @property
-    def vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a base vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -22301,14 +22301,14 @@ class IVectorGeometryToolVectorDisplacement(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorDisplacement.")
     
     @property
-    def origin(self) -> "IVectorGeometryToolPointRefTo":
+    def origin(self) -> "VectorGeometryToolPointRefTo":
         """Specify the vector's origin point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_origin"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def destination(self) -> "IVectorGeometryToolPointRefTo":
+    def destination(self) -> "VectorGeometryToolPointRefTo":
         """Specify the vector's destination point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_destination"](byref(arg_ppRetVal.COM_val)))
@@ -22351,7 +22351,7 @@ class IVectorGeometryToolVectorDisplacement(object):
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_signalSense.COM_val))
 
     @property
-    def reference_system(self) -> "IVectorGeometryToolSystemRefTo":
+    def reference_system(self) -> "VectorGeometryToolSystemRefTo":
         """Specify a frame in which the light time delay is computed. This property is read-only if Apparent is set to false."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_system"](byref(arg_ppRetVal.COM_val)))
@@ -22397,14 +22397,14 @@ class IVectorGeometryToolVectorTwoPlanesIntersection(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorTwoPlanesIntersection.")
     
     @property
-    def plane_a(self) -> "IVectorGeometryToolPlaneRefTo":
+    def plane_a(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify the first of the two planes which intersection defines the vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plane_a"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def plane_b(self) -> "IVectorGeometryToolPlaneRefTo":
+    def plane_b(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify the second of the two planes which intersection defines the vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plane_b"](byref(arg_ppRetVal.COM_val)))
@@ -22501,14 +22501,14 @@ class IVectorGeometryToolVectorProjection(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorProjection.")
     
     @property
-    def source(self) -> "IVectorGeometryToolVectorRefTo":
+    def source(self) -> "VectorGeometryToolVectorRefTo":
         """Specify a source vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_source"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_plane(self) -> "IVectorGeometryToolPlaneRefTo":
+    def reference_plane(self) -> "VectorGeometryToolPlaneRefTo":
         """Specify a reference plane."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_plane"](byref(arg_ppRetVal.COM_val)))
@@ -22560,7 +22560,7 @@ class IVectorGeometryToolVectorScaled(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorScaled.")
     
     @property
-    def reference_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def reference_vector(self) -> "VectorGeometryToolVectorRefTo":
         """A vector being scaled."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_vector"](byref(arg_ppRetVal.COM_val)))
@@ -22634,14 +22634,14 @@ class IVectorGeometryToolVectorEccentricity(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorEccentricity.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -22699,7 +22699,7 @@ class IVectorGeometryToolVectorFixedInAxes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFixedInAxes.")
     
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -22752,14 +22752,14 @@ class IVectorGeometryToolVectorLineOfNodes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorLineOfNodes.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Specify a reference point."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -22809,14 +22809,14 @@ class IVectorGeometryToolVectorOrbitAngularMomentum(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorOrbitAngularMomentum.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -22878,14 +22878,14 @@ class IVectorGeometryToolVectorOrbitNormal(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorOrbitNormal.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -22947,14 +22947,14 @@ class IVectorGeometryToolVectorPeriapsis(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorPeriapsis.")
     
     @property
-    def central_body(self) -> "IAnalysisWorkbenchCentralBodyRefTo":
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyRefTo":
         """Specify a central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_point(self) -> "IVectorGeometryToolPointRefTo":
+    def reference_point(self) -> "VectorGeometryToolPointRefTo":
         """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_point"](byref(arg_ppRetVal.COM_val)))
@@ -23024,7 +23024,7 @@ class IVectorGeometryToolVectorReflection(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorReflection.")
     
     @property
-    def incoming_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def incoming_vector(self) -> "VectorGeometryToolVectorRefTo":
         """The reflecting vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_incoming_vector"](byref(arg_ppRetVal.COM_val)))
@@ -23043,7 +23043,7 @@ class IVectorGeometryToolVectorReflection(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_opposite_of_selected_vector"](arg_useOppositeOfSelectedVector.COM_val))
 
     @property
-    def normal_vector(self) -> "IVectorGeometryToolVectorRefTo":
+    def normal_vector(self) -> "VectorGeometryToolVectorRefTo":
         """The vector defines the reflection surface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_normal_vector"](byref(arg_ppRetVal.COM_val)))
@@ -23117,14 +23117,14 @@ class IVectorGeometryToolVectorRotationVector(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorRotationVector.")
     
     @property
-    def axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify the axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_axes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def reference_axes(self) -> "IVectorGeometryToolAxesRefTo":
+    def reference_axes(self) -> "VectorGeometryToolAxesRefTo":
         """Specify a reference axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_axes"](byref(arg_ppRetVal.COM_val)))
@@ -24194,7 +24194,7 @@ class IVectorGeometryToolVectorFactory(object):
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def create_displacement_vector(self, vectorName:str, originPoint:"IVectorGeometryToolPoint", destPoint:"IVectorGeometryToolPoint") -> "IVectorGeometryToolVectorDisplacement":
+    def create_displacement_vector(self, vectorName:str, originPoint:"IVectorGeometryToolPoint", destPoint:"IVectorGeometryToolPoint") -> "VectorGeometryToolVectorDisplacement":
         """Creates a displacement vector."""
         with agmarshall.BSTR_arg(vectorName) as arg_vectorName, \
              agmarshall.AgInterface_in_arg(originPoint, IVectorGeometryToolPoint) as arg_originPoint, \
@@ -24219,7 +24219,7 @@ class IVectorGeometryToolVectorFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_vector_plugin_from_display_name"](arg_vectorName.COM_val, arg_description.COM_val, arg_displayName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_cross_product_vector(self, vectorName:str, vectorA:"IVectorGeometryToolVector", vectorB:"IVectorGeometryToolVector") -> "IVectorGeometryToolVectorCross":
+    def create_cross_product_vector(self, vectorName:str, vectorA:"IVectorGeometryToolVector", vectorB:"IVectorGeometryToolVector") -> "VectorGeometryToolVectorCross":
         """Creates a cross product C = A x B."""
         with agmarshall.BSTR_arg(vectorName) as arg_vectorName, \
              agmarshall.AgInterface_in_arg(vectorA, IVectorGeometryToolVector) as arg_vectorA, \
@@ -24649,7 +24649,7 @@ class IVectorGeometryToolVectorGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "IVectorGeometryToolVectorFactory":
+    def factory(self) -> "VectorGeometryToolVectorFactory":
         """Returns a Factory object used to create custom vectors."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -24780,7 +24780,7 @@ class IVectorGeometryToolPointGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "IVectorGeometryToolPointFactory":
+    def factory(self) -> "VectorGeometryToolPointFactory":
         """Returns a Factory object used to create custom points."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -24801,7 +24801,7 @@ class IVectorGeometryToolPointGroup(object):
             return arg_ppRetVal.python_val
 
     @property
-    def common_tasks(self) -> "IVectorGeometryToolPointCommonTasks":
+    def common_tasks(self) -> "VectorGeometryToolPointCommonTasks":
         """Provides access to common tasks that allow users quickly carry out tasks such as creating known point types, etc."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_common_tasks"](byref(arg_ppRetVal.COM_val)))
@@ -24916,7 +24916,7 @@ class IVectorGeometryToolAngleGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "IVectorGeometryToolAngleFactory":
+    def factory(self) -> "VectorGeometryToolAngleFactory":
         """Returns a Factory object used to create custom angles."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -25047,7 +25047,7 @@ class IVectorGeometryToolAxesGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "IVectorGeometryToolAxesFactory":
+    def factory(self) -> "VectorGeometryToolAxesFactory":
         """Returns a Factory object used to create custom axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -25068,7 +25068,7 @@ class IVectorGeometryToolAxesGroup(object):
             return arg_ppRetVal.python_val
 
     @property
-    def common_tasks(self) -> "IVectorGeometryToolAxesCommonTasks":
+    def common_tasks(self) -> "VectorGeometryToolAxesCommonTasks":
         """Provides access to common tasks that allow users quickly carry out tasks such as creating known axes, etc."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_common_tasks"](byref(arg_ppRetVal.COM_val)))
@@ -25183,7 +25183,7 @@ class IVectorGeometryToolPlaneGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "IVectorGeometryToolPlaneFactory":
+    def factory(self) -> "VectorGeometryToolPlaneFactory":
         """Returns a Factory object used to create custom planes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -25314,7 +25314,7 @@ class IVectorGeometryToolSystemGroup(object):
             return arg_pRetVal.python_val
 
     @property
-    def factory(self) -> "IVectorGeometryToolSystemFactory":
+    def factory(self) -> "VectorGeometryToolSystemFactory":
         """Returns a Factory object used to create custom VGT systems."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_factory"](byref(arg_ppRetVal.COM_val)))
@@ -25335,7 +25335,7 @@ class IVectorGeometryToolSystemGroup(object):
             return arg_ppRetVal.python_val
 
     @property
-    def common_tasks(self) -> "IVectorGeometryToolSystemCommonTasks":
+    def common_tasks(self) -> "VectorGeometryToolSystemCommonTasks":
         """Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_common_tasks"](byref(arg_ppRetVal.COM_val)))
@@ -25438,112 +25438,112 @@ class IAnalysisWorkbenchProvider(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchProvider.")
     
     @property
-    def vectors(self) -> "IVectorGeometryToolVectorGroup":
+    def vectors(self) -> "VectorGeometryToolVectorGroup":
         """Returns a group of vectors."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_vectors"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def points(self) -> "IVectorGeometryToolPointGroup":
+    def points(self) -> "VectorGeometryToolPointGroup":
         """Returns a group of points."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_points"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def angles(self) -> "IVectorGeometryToolAngleGroup":
+    def angles(self) -> "VectorGeometryToolAngleGroup":
         """Returns a group of angles."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_angles"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def axes(self) -> "IVectorGeometryToolAxesGroup":
+    def axes(self) -> "VectorGeometryToolAxesGroup":
         """Returns a group of axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_axes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def planes(self) -> "IVectorGeometryToolPlaneGroup":
+    def planes(self) -> "VectorGeometryToolPlaneGroup":
         """Returns a group of planes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_planes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def systems(self) -> "IVectorGeometryToolSystemGroup":
+    def systems(self) -> "VectorGeometryToolSystemGroup":
         """Returns a group of systems."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_systems"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def well_known_systems(self) -> "IVectorGeometryToolWellKnownSystems":
+    def well_known_systems(self) -> "VectorGeometryToolWellKnownSystems":
         """Returns well-known systems."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_well_known_systems"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def well_known_axes(self) -> "IVectorGeometryToolWellKnownAxes":
+    def well_known_axes(self) -> "VectorGeometryToolWellKnownAxes":
         """Returns well-known axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_well_known_axes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def events(self) -> "ITimeToolEventGroup":
+    def events(self) -> "TimeToolEventGroup":
         """Returns a group of events."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_events"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def event_intervals(self) -> "ITimeToolEventIntervalGroup":
+    def event_intervals(self) -> "TimeToolEventIntervalGroup":
         """Returns a group of event intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_event_intervals"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def calc_scalars(self) -> "ICalculationToolScalarGroup":
+    def calc_scalars(self) -> "CalculationToolScalarGroup":
         """Returns a group of calc scalars."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_calc_scalars"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def event_arrays(self) -> "ITimeToolEventArrayGroup":
+    def event_arrays(self) -> "TimeToolEventArrayGroup":
         """Returns a group of event arrays."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_event_arrays"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def event_interval_lists(self) -> "ITimeToolEventIntervalListGroup":
+    def event_interval_lists(self) -> "TimeToolEventIntervalListGroup":
         """Returns a group of event interval lists."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_event_interval_lists"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def event_interval_collections(self) -> "ITimeToolEventIntervalCollectionGroup":
+    def event_interval_collections(self) -> "TimeToolEventIntervalCollectionGroup":
         """Returns a group of event interval collections."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_event_interval_collections"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def parameter_sets(self) -> "ICalculationToolParameterSetGroup":
+    def parameter_sets(self) -> "CalculationToolParameterSetGroup":
         """Access, add new or remove existing parameter set components."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_parameter_sets"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def conditions(self) -> "ICalculationToolConditionGroup":
+    def conditions(self) -> "CalculationToolConditionGroup":
         """Returns a group of condition objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_conditions"](byref(arg_ppRetVal.COM_val)))
@@ -25557,13 +25557,13 @@ class IAnalysisWorkbenchProvider(object):
             return arg_pRetVal.python_val
 
     @property
-    def condition_sets(self) -> "ICalculationToolConditionSetGroup":
+    def condition_sets(self) -> "CalculationToolConditionSetGroup":
         """Returns a group of condition set objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_condition_sets"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def import_method(self, filename:str) -> "IAnalysisWorkbenchCollection":
+    def import_method(self, filename:str) -> "AnalysisWorkbenchCollection":
         """Imports Analysis Workbench components from a file."""
         with agmarshall.BSTR_arg(filename) as arg_filename, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -25571,21 +25571,21 @@ class IAnalysisWorkbenchProvider(object):
             return arg_ppRetVal.python_val
 
     @property
-    def volume_grids(self) -> "ISpatialAnalysisToolVolumeGridGroup":
+    def volume_grids(self) -> "SpatialAnalysisToolVolumeGridGroup":
         """Returns a group of volume grid objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_volume_grids"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def volumes(self) -> "ISpatialAnalysisToolVolumeGroup":
+    def volumes(self) -> "SpatialAnalysisToolVolumeGroup":
         """Returns a group of volume objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_volumes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def volume_calcs(self) -> "ISpatialAnalysisToolVolumeCalcGroup":
+    def volume_calcs(self) -> "SpatialAnalysisToolVolumeCalcGroup":
         """Returns a group of volume calc objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_volume_calcs"](byref(arg_ppRetVal.COM_val)))
@@ -25634,14 +25634,14 @@ class IAnalysisWorkbenchRoot(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchRoot.")
     
-    def get_template_provider(self, className:str) -> "IAnalysisWorkbenchProvider":
+    def get_template_provider(self, className:str) -> "AnalysisWorkbenchProvider":
         """Returns a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)"""
         with agmarshall.BSTR_arg(className) as arg_className, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_template_provider"](arg_className.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_provider(self, instPath:str) -> "IAnalysisWorkbenchProvider":
+    def get_provider(self, instPath:str) -> "AnalysisWorkbenchProvider":
         """Returns an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)"""
         with agmarshall.BSTR_arg(instPath) as arg_instPath, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -25649,14 +25649,14 @@ class IAnalysisWorkbenchRoot(object):
             return arg_ppRetVal.python_val
 
     @property
-    def well_known_systems(self) -> "IVectorGeometryToolWellKnownSystems":
+    def well_known_systems(self) -> "VectorGeometryToolWellKnownSystems":
         """Returns the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.)."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_well_known_systems"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def well_known_axes(self) -> "IVectorGeometryToolWellKnownAxes":
+    def well_known_axes(self) -> "VectorGeometryToolWellKnownAxes":
         """Returns the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.)."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_well_known_axes"](byref(arg_ppRetVal.COM_val)))
@@ -25986,14 +25986,14 @@ class IVectorGeometryToolWellKnownSystems(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownSystems.")
     
     @property
-    def earth(self) -> "IVectorGeometryToolWellKnownEarthSystems":
+    def earth(self) -> "VectorGeometryToolWellKnownEarthSystems":
         """Earth's coordinate reference systems."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_earth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def sun(self) -> "IVectorGeometryToolWellKnownSunSystems":
+    def sun(self) -> "VectorGeometryToolWellKnownSunSystems":
         """The Sun's coordinate reference systems."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun"](byref(arg_ppRetVal.COM_val)))
@@ -26039,14 +26039,14 @@ class IVectorGeometryToolWellKnownAxes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownAxes.")
     
     @property
-    def earth(self) -> "IVectorGeometryToolWellKnownEarthAxes":
+    def earth(self) -> "VectorGeometryToolWellKnownEarthAxes":
         """Earth's well-known axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_earth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def sun(self) -> "IVectorGeometryToolWellKnownSunAxes":
+    def sun(self) -> "VectorGeometryToolWellKnownSunAxes":
         """The Sun's well-known axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun"](byref(arg_ppRetVal.COM_val)))
@@ -27441,7 +27441,7 @@ class IAnalysisWorkbenchCentralBodyRefTo(object):
         with agmarshall.AgInterface_in_arg(centralBody, IAnalysisWorkbenchCentralBody) as arg_centralBody:
             agcls.evaluate_hresult(self.__dict__["_set_central_body"](arg_centralBody.COM_val))
 
-    def get_central_body(self) -> "IAnalysisWorkbenchCentralBody":
+    def get_central_body(self) -> "AnalysisWorkbenchCentralBody":
         """Returns a central body or null if the central body is invalid."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_central_body"](byref(arg_ppRetVal.COM_val)))
@@ -27691,7 +27691,7 @@ class ITimeToolPointSamplingResult(object):
             return arg_pRetVal.python_val
 
     @property
-    def intervals(self) -> "ITimeToolPointSamplingIntervalCollection":
+    def intervals(self) -> "TimeToolPointSamplingIntervalCollection":
         """A collection of sampling intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_intervals"](byref(arg_ppRetVal.COM_val)))
@@ -27837,7 +27837,7 @@ class ITimeToolPointSamplingIntervalCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "ITimeToolPointSamplingInterval":
+    def item(self, index:int) -> "TimeToolPointSamplingInterval":
         """Accesses an element at the specified position."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -27901,7 +27901,7 @@ class ITimeToolAxesSamplingResult(object):
             return arg_pRetVal.python_val
 
     @property
-    def intervals(self) -> "ITimeToolAxesSamplingIntervalCollection":
+    def intervals(self) -> "TimeToolAxesSamplingIntervalCollection":
         """A collection of sampling intervals."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_intervals"](byref(arg_ppRetVal.COM_val)))
@@ -28047,7 +28047,7 @@ class ITimeToolAxesSamplingIntervalCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def item(self, index:int) -> "ITimeToolAxesSamplingInterval":
+    def item(self, index:int) -> "TimeToolAxesSamplingInterval":
         """Accesses an element at the specified position."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -28089,7 +28089,7 @@ class CalculationToolEvaluateResult(ICalculationToolEvaluateResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolEvaluateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{94FD0DFF-1DD0-4CA5-A7DB-1CB9CA3E3C93}", CalculationToolEvaluateResult)
-
+agcls.AgTypeNameMap["CalculationToolEvaluateResult"] = CalculationToolEvaluateResult
 
 class CalculationToolEvaluateWithRateResult(ICalculationToolEvaluateWithRateResult):
     """Represents the results of evaluating a scalar component."""
@@ -28110,7 +28110,7 @@ class CalculationToolEvaluateWithRateResult(ICalculationToolEvaluateWithRateResu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolEvaluateWithRateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{832CA139-8ECF-4E95-AB67-1BB7713CF9FC}", CalculationToolEvaluateWithRateResult)
-
+agcls.AgTypeNameMap["CalculationToolEvaluateWithRateResult"] = CalculationToolEvaluateWithRateResult
 
 class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
@@ -28131,7 +28131,7 @@ class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ACE6C28C-4664-4B7F-8736-91F55C7962A6}", TimeToolEventIntervalResult)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalResult"] = TimeToolEventIntervalResult
 
 class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
     """Contains the results returned with ITimeToolEvent.FindOccurrence method."""
@@ -28152,7 +28152,7 @@ class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventFindOccurrenceResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6A432F58-4CAB-4448-8540-CBBAA9C2B9F0}", TimeToolEventFindOccurrenceResult)
-
+agcls.AgTypeNameMap["TimeToolEventFindOccurrenceResult"] = TimeToolEventFindOccurrenceResult
 
 class TimeToolFindTimesResult(ITimeToolFindTimesResult):
     """Returns a collection of intervals and an array of times."""
@@ -28173,7 +28173,7 @@ class TimeToolFindTimesResult(ITimeToolFindTimesResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolFindTimesResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AF246FCF-7FA3-4CD6-878B-E9AC267F017A}", TimeToolFindTimesResult)
-
+agcls.AgTypeNameMap["TimeToolFindTimesResult"] = TimeToolFindTimesResult
 
 class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
     """Contains the results returned with ITimeToolEventIntervalCollection.FindIntervalCollection method."""
@@ -28194,7 +28194,7 @@ class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalsVectorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{233B8EB4-0B6A-485F-BACB-C678798FDA21}", TimeToolIntervalsVectorResult)
-
+agcls.AgTypeNameMap["TimeToolIntervalsVectorResult"] = TimeToolIntervalsVectorResult
 
 class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollectionOccurredResult):
     """Contains the results returned with ITimeToolEventIntervalCollection.Occurred method."""
@@ -28215,7 +28215,7 @@ class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollec
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionOccurredResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D2BD8F6-406D-4BA0-B5CF-C81711C7C344}", TimeToolEventIntervalCollectionOccurredResult)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalCollectionOccurredResult"] = TimeToolEventIntervalCollectionOccurredResult
 
 class TimeToolIntervalListResult(ITimeToolIntervalListResult):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
@@ -28236,7 +28236,7 @@ class TimeToolIntervalListResult(ITimeToolIntervalListResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalListResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C24C2EE4-3F75-41E8-BDC3-FE71E863921F}", TimeToolIntervalListResult)
-
+agcls.AgTypeNameMap["TimeToolIntervalListResult"] = TimeToolIntervalListResult
 
 class TimeToolIntervalVectorCollection(ITimeToolIntervalVectorCollection):
     """A collection of interval collections."""
@@ -28257,7 +28257,7 @@ class TimeToolIntervalVectorCollection(ITimeToolIntervalVectorCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalVectorCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{99AAE1D2-3C5D-4836-A1BD-6EAD38FC9BC5}", TimeToolIntervalVectorCollection)
-
+agcls.AgTypeNameMap["TimeToolIntervalVectorCollection"] = TimeToolIntervalVectorCollection
 
 class TimeToolEventGroup(ITimeToolEventGroup):
     """Access or create VGT events associated with an object."""
@@ -28278,7 +28278,7 @@ class TimeToolEventGroup(ITimeToolEventGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D5D83181-A954-4FA9-886E-A917F135C974}", TimeToolEventGroup)
-
+agcls.AgTypeNameMap["TimeToolEventGroup"] = TimeToolEventGroup
 
 class TimeToolEventIntervalGroup(ITimeToolEventIntervalGroup):
     """Access or create VGT event intervals associated with an object."""
@@ -28299,7 +28299,7 @@ class TimeToolEventIntervalGroup(ITimeToolEventIntervalGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{48C9D4D2-2713-4063-8BB1-D6F2E72E1025}", TimeToolEventIntervalGroup)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalGroup"] = TimeToolEventIntervalGroup
 
 class TimeToolEventIntervalListGroup(ITimeToolEventIntervalListGroup):
     """Access or create VGT event interval lists associated with an object."""
@@ -28320,7 +28320,7 @@ class TimeToolEventIntervalListGroup(ITimeToolEventIntervalListGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B2FDEBA-A2B9-4568-8F48-469F604DB966}", TimeToolEventIntervalListGroup)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListGroup"] = TimeToolEventIntervalListGroup
 
 class TimeToolEventArrayGroup(ITimeToolEventArrayGroup):
     """Access or create VGT event arrays associated with an object."""
@@ -28341,7 +28341,7 @@ class TimeToolEventArrayGroup(ITimeToolEventArrayGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{365C4A6E-9C2B-4883-96C6-CF689BCC2943}", TimeToolEventArrayGroup)
-
+agcls.AgTypeNameMap["TimeToolEventArrayGroup"] = TimeToolEventArrayGroup
 
 class CalculationToolScalarGroup(ICalculationToolScalarGroup):
     """Access or create VGT calculation scalars associated with an object or a central body."""
@@ -28362,7 +28362,7 @@ class CalculationToolScalarGroup(ICalculationToolScalarGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DFAD8468-4480-460F-993D-74FFADB567B3}", CalculationToolScalarGroup)
-
+agcls.AgTypeNameMap["CalculationToolScalarGroup"] = CalculationToolScalarGroup
 
 class TimeToolEventIntervalCollectionGroup(ITimeToolEventIntervalCollectionGroup):
     """Access or create VGT event interval collections associated with an object."""
@@ -28383,7 +28383,7 @@ class TimeToolEventIntervalCollectionGroup(ITimeToolEventIntervalCollectionGroup
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{16E277E2-E306-40E7-B698-B725BDED5739}", TimeToolEventIntervalCollectionGroup)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalCollectionGroup"] = TimeToolEventIntervalCollectionGroup
 
 class CalculationToolParameterSetGroup(ICalculationToolParameterSetGroup):
     """Access or create VGT parameter sets associated with an object or a central body."""
@@ -28404,7 +28404,7 @@ class CalculationToolParameterSetGroup(ICalculationToolParameterSetGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4AF3C889-3805-40E2-94E2-3EA11AAFB0D7}", CalculationToolParameterSetGroup)
-
+agcls.AgTypeNameMap["CalculationToolParameterSetGroup"] = CalculationToolParameterSetGroup
 
 class CalculationToolConditionGroup(ICalculationToolConditionGroup):
     """Access or create VGT conditions associated with an object or a central body."""
@@ -28425,7 +28425,7 @@ class CalculationToolConditionGroup(ICalculationToolConditionGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{28BCB469-D32F-4FCE-9CC2-76216E3A37CA}", CalculationToolConditionGroup)
-
+agcls.AgTypeNameMap["CalculationToolConditionGroup"] = CalculationToolConditionGroup
 
 class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
     """Allows accessing and creating condition set components."""
@@ -28446,7 +28446,7 @@ class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D82D5C71-102E-4154-9FF6-153C4EDB5A94}", CalculationToolConditionSetGroup)
-
+agcls.AgTypeNameMap["CalculationToolConditionSetGroup"] = CalculationToolConditionSetGroup
 
 class CalculationToolConditionSetEvaluateResult(ICalculationToolConditionSetEvaluateResult):
     """Represents the results returned by ConditionSet.Evaluate."""
@@ -28467,7 +28467,7 @@ class CalculationToolConditionSetEvaluateResult(ICalculationToolConditionSetEval
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetEvaluateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{13F4EB53-F5AB-487A-BC09-AA186C884744}", CalculationToolConditionSetEvaluateResult)
-
+agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateResult"] = CalculationToolConditionSetEvaluateResult
 
 class CalculationToolConditionSetEvaluateWithRateResult(ICalculationToolConditionSetEvaluateWithRateResult):
     """Represents the results returned by ConditionSet.EvaluateWithRate."""
@@ -28488,7 +28488,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(ICalculationToolConditio
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetEvaluateWithRateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{53051D77-87D0-432C-9044-A2AB1E2104BA}", CalculationToolConditionSetEvaluateWithRateResult)
-
+agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateWithRateResult"] = CalculationToolConditionSetEvaluateWithRateResult
 
 class SpatialAnalysisToolVolumeGridGroup(ISpatialAnalysisToolVolumeGridGroup):
     """Access or create VGT volume grids associated with an object or a central body."""
@@ -28509,7 +28509,7 @@ class SpatialAnalysisToolVolumeGridGroup(ISpatialAnalysisToolVolumeGridGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E471C90-D0F2-4B6B-88AE-D529E9D16D03}", SpatialAnalysisToolVolumeGridGroup)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridGroup"] = SpatialAnalysisToolVolumeGridGroup
 
 class SpatialAnalysisToolVolumeGroup(ISpatialAnalysisToolVolumeGroup):
     """Access or create spatial conditions associated with a volume grid."""
@@ -28530,7 +28530,7 @@ class SpatialAnalysisToolVolumeGroup(ISpatialAnalysisToolVolumeGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0055B726-654F-446B-82D7-BCDD744F1D8F}", SpatialAnalysisToolVolumeGroup)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGroup"] = SpatialAnalysisToolVolumeGroup
 
 class SpatialAnalysisToolVolumeCalcGroup(ISpatialAnalysisToolVolumeCalcGroup):
     """Access or create VGT volume calc associated with an object or a central body."""
@@ -28551,7 +28551,7 @@ class SpatialAnalysisToolVolumeCalcGroup(ISpatialAnalysisToolVolumeCalcGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{b10331b7-f8c3-4a59-9e9b-b05dd6599167}", SpatialAnalysisToolVolumeCalcGroup)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcGroup"] = SpatialAnalysisToolVolumeCalcGroup
 
 class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Any scalar calculation that is not constant by construction."""
@@ -28575,7 +28575,7 @@ class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent)
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{440E178B-1B34-4896-A25F-2A4F3AD4848E}", CalculationToolScalar)
-
+agcls.AgTypeNameMap["CalculationToolScalar"] = CalculationToolScalar
 
 class CalculationToolScalarAngle(ICalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Scalar equal to angular displacement obtained from any angle in VGT."""
@@ -28602,7 +28602,7 @@ class CalculationToolScalarAngle(ICalculationToolScalarAngle, ICalculationToolSc
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2E2A940D-2656-4410-86B4-D7314B788E47}", CalculationToolScalarAngle)
-
+agcls.AgTypeNameMap["CalculationToolScalarAngle"] = CalculationToolScalarAngle
 
 class CalculationToolScalarConstant(ICalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Constant scalar value of specified dimension."""
@@ -28629,7 +28629,7 @@ class CalculationToolScalarConstant(ICalculationToolScalarConstant, ICalculation
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarConstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0725A767-6788-4FF4-B848-EF3D526BD7B0}", CalculationToolScalarConstant)
-
+agcls.AgTypeNameMap["CalculationToolScalarConstant"] = CalculationToolScalarConstant
 
 class CalculationToolScalarCustom(ICalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
@@ -28656,7 +28656,7 @@ class CalculationToolScalarCustom(ICalculationToolScalarCustom, ICalculationTool
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarCustom.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80114DE9-EF5E-47DB-AC1B-91FD78FCA094}", CalculationToolScalarCustom)
-
+agcls.AgTypeNameMap["CalculationToolScalarCustom"] = CalculationToolScalarCustom
 
 class CalculationToolScalarDataElement(ICalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Any time-dependent data element from STK data providers available for parent STK object."""
@@ -28683,7 +28683,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalarDataElement, ICalcu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarDataElement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{260D686F-07E2-49DB-8E88-467EF79EFA54}", CalculationToolScalarDataElement)
-
+agcls.AgTypeNameMap["CalculationToolScalarDataElement"] = CalculationToolScalarDataElement
 
 class CalculationToolScalarDerivative(ICalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Derivative of an input scalar calculation."""
@@ -28710,7 +28710,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalarDerivative, ICalcula
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarDerivative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{865CE7A8-F7C3-4B25-AA1D-10CA305C7CF0}", CalculationToolScalarDerivative)
-
+agcls.AgTypeNameMap["CalculationToolScalarDerivative"] = CalculationToolScalarDerivative
 
 class CalculationToolScalarDotProduct(ICalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Dot product between two vectors."""
@@ -28737,7 +28737,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalarDotProduct, ICalcula
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarDotProduct.")
         
 agcls.AgClassCatalog.add_catalog_entry("{703f009e-faab-4281-8d07-733b1344d42b}", CalculationToolScalarDotProduct)
-
+agcls.AgTypeNameMap["CalculationToolScalarDotProduct"] = CalculationToolScalarDotProduct
 
 class CalculationToolScalarElapsedTime(ICalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Time elapsed since the reference time instant. Negative if in the past."""
@@ -28764,7 +28764,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalarElapsedTime, ICalcu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarElapsedTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D9FAF22-291A-4348-9EAD-1C8DF06D9C1C}", CalculationToolScalarElapsedTime)
-
+agcls.AgTypeNameMap["CalculationToolScalarElapsedTime"] = CalculationToolScalarElapsedTime
 
 class CalculationToolScalarFactory(ICalculationToolScalarFactory):
     """The factory creates scalar calculation components."""
@@ -28785,7 +28785,7 @@ class CalculationToolScalarFactory(ICalculationToolScalarFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{47235112-821F-4DC2-9A70-57AB9F1F17E8}", CalculationToolScalarFactory)
-
+agcls.AgTypeNameMap["CalculationToolScalarFactory"] = CalculationToolScalarFactory
 
 class CalculationToolScalarFile(ICalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Tabulated scalar calculation data loaded from specified file - a file with .csc extension."""
@@ -28812,7 +28812,7 @@ class CalculationToolScalarFile(ICalculationToolScalarFile, ICalculationToolScal
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75F0039F-B789-4771-BD50-9AEF30F6038E}", CalculationToolScalarFile)
-
+agcls.AgTypeNameMap["CalculationToolScalarFile"] = CalculationToolScalarFile
 
 class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined."""
@@ -28839,7 +28839,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalarFixedAtTimeI
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFixedAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{83E8DC6B-7821-4474-AA5B-29646ECD1EC1}", CalculationToolScalarFixedAtTimeInstant)
-
+agcls.AgTypeNameMap["CalculationToolScalarFixedAtTimeInstant"] = CalculationToolScalarFixedAtTimeInstant
 
 class CalculationToolScalarFunction(ICalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Defined by performing the specified function on the input scalar or time instant."""
@@ -28866,7 +28866,7 @@ class CalculationToolScalarFunction(ICalculationToolScalarFunction, ICalculation
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{40158F99-3146-4167-8BB0-A0046BB08EEB}", CalculationToolScalarFunction)
-
+agcls.AgTypeNameMap["CalculationToolScalarFunction"] = CalculationToolScalarFunction
 
 class CalculationToolScalarFunction2Var(ICalculationToolScalarFunction2Var, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Defined by performing a function(x,y) on two scalar arguments."""
@@ -28893,7 +28893,7 @@ class CalculationToolScalarFunction2Var(ICalculationToolScalarFunction2Var, ICal
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFunction2Var.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05CA07A4-A36F-44EF-99C4-5E0999E79200}", CalculationToolScalarFunction2Var)
-
+agcls.AgTypeNameMap["CalculationToolScalarFunction2Var"] = CalculationToolScalarFunction2Var
 
 class CalculationToolScalarIntegral(ICalculationToolScalarIntegral, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
@@ -28920,7 +28920,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalarIntegral, ICalculation
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarIntegral.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C87C787A-BEDA-4AEC-9F88-3D6EE0936A03}", CalculationToolScalarIntegral)
-
+agcls.AgTypeNameMap["CalculationToolScalarIntegral"] = CalculationToolScalarIntegral
 
 class CalculationToolScalarPlugin(ICalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Use a scalar calculation plugin."""
@@ -28947,7 +28947,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalarPlugin, ICalculationTool
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E435E30B-EA9B-4EFB-852A-C20427B71484}", CalculationToolScalarPlugin)
-
+agcls.AgTypeNameMap["CalculationToolScalarPlugin"] = CalculationToolScalarPlugin
 
 class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."""
@@ -28974,7 +28974,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalarSu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarSurfaceDistanceBetweenPoints.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DEDCB488-6C70-4BC0-A719-68832FB6D30E}", CalculationToolScalarSurfaceDistanceBetweenPoints)
-
+agcls.AgTypeNameMap["CalculationToolScalarSurfaceDistanceBetweenPoints"] = CalculationToolScalarSurfaceDistanceBetweenPoints
 
 class CalculationToolScalarVectorComponent(ICalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """The specified component of a vector when resolved in the specified axes."""
@@ -29001,7 +29001,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalarVectorComponent
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarVectorComponent.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0b8e5c9f-de1b-4b6b-9e38-87b16db7bb71}", CalculationToolScalarVectorComponent)
-
+agcls.AgTypeNameMap["CalculationToolScalarVectorComponent"] = CalculationToolScalarVectorComponent
 
 class CalculationToolScalarVectorMagnitude(ICalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Scalar equal to the magnitude of a specified vector."""
@@ -29028,7 +29028,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalarVectorMagnitude
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarVectorMagnitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7430CE8-D611-4F5C-B4B4-05531F1E0CC0}", CalculationToolScalarVectorMagnitude)
-
+agcls.AgTypeNameMap["CalculationToolScalarVectorMagnitude"] = CalculationToolScalarVectorMagnitude
 
 class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComponent):
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
@@ -29052,7 +29052,7 @@ class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComp
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D1BED244-FFB2-4038-AE76-A9B3194B2E49}", CalculationToolCondition)
-
+agcls.AgTypeNameMap["CalculationToolCondition"] = CalculationToolCondition
 
 class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent):
     """Defines a condition which combines multiple conditions."""
@@ -29079,7 +29079,7 @@ class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalcu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionCombined.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92F4488B-3543-4229-B1FB-447D282199B9}", CalculationToolConditionCombined)
-
+agcls.AgTypeNameMap["CalculationToolConditionCombined"] = CalculationToolConditionCombined
 
 class CalculationToolConditionFactory(ICalculationToolConditionFactory):
     """The factory creates condition components."""
@@ -29100,7 +29100,7 @@ class CalculationToolConditionFactory(ICalculationToolConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{06C627F8-87EA-4552-86E8-7E5049914CDE}", CalculationToolConditionFactory)
-
+agcls.AgTypeNameMap["CalculationToolConditionFactory"] = CalculationToolConditionFactory
 
 class CalculationToolConditionPointInVolume(ICalculationToolConditionPointInVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent):
     """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate"""
@@ -29127,7 +29127,7 @@ class CalculationToolConditionPointInVolume(ICalculationToolConditionPointInVolu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionPointInVolume.")
         
 agcls.AgClassCatalog.add_catalog_entry("{41532AD9-B30C-44AE-8581-CE74C24846A8}", CalculationToolConditionPointInVolume)
-
+agcls.AgTypeNameMap["CalculationToolConditionPointInVolume"] = CalculationToolConditionPointInVolume
 
 class CalculationToolConditionScalarBounds(ICalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent):
     """Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary."""
@@ -29154,7 +29154,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolConditionScalarBounds
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionScalarBounds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{452E2178-AFB0-4E61-8187-9C6CB4A704A0}", CalculationToolConditionScalarBounds)
-
+agcls.AgTypeNameMap["CalculationToolConditionScalarBounds"] = CalculationToolConditionScalarBounds
 
 class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkbenchComponent):
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
@@ -29178,7 +29178,7 @@ class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkben
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSet.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B6407B1B-6858-49FC-845A-F8A6239162C2}", CalculationToolConditionSet)
-
+agcls.AgTypeNameMap["CalculationToolConditionSet"] = CalculationToolConditionSet
 
 class CalculationToolConditionSetFactory(ICalculationToolConditionSetFactory):
     """The factory creates condition set components."""
@@ -29199,7 +29199,7 @@ class CalculationToolConditionSetFactory(ICalculationToolConditionSetFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D2445C98-9EA1-458F-9B6A-607249BF399A}", CalculationToolConditionSetFactory)
-
+agcls.AgTypeNameMap["CalculationToolConditionSetFactory"] = CalculationToolConditionSetFactory
 
 class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent):
     """Condition set based on single scalar calculation compared to set of threshold values."""
@@ -29226,7 +29226,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSetSc
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetScalarThresholds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EED0BF6B-4D96-4D55-B988-0B962DCDBB4E}", CalculationToolConditionSetScalarThresholds)
-
+agcls.AgTypeNameMap["CalculationToolConditionSetScalarThresholds"] = CalculationToolConditionSetScalarThresholds
 
 class AnalysisWorkbenchConverge(IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent):
     """Represents a base class for convergence definitions."""
@@ -29250,7 +29250,7 @@ class AnalysisWorkbenchConverge(IAnalysisWorkbenchConverge, IAnalysisWorkbenchCo
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchConverge.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6A13D679-1970-43C2-8D4F-174B08AB04DC}", AnalysisWorkbenchConverge)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchConverge"] = AnalysisWorkbenchConverge
 
 class CalculationToolConvergeBasic(ICalculationToolConvergeBasic, IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent):
     """Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations."""
@@ -29277,7 +29277,7 @@ class CalculationToolConvergeBasic(ICalculationToolConvergeBasic, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConvergeBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{808F19C3-0E31-4C89-94C8-BBE01E067DFF}", CalculationToolConvergeBasic)
-
+agcls.AgTypeNameMap["CalculationToolConvergeBasic"] = CalculationToolConvergeBasic
 
 class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent):
     """Represents a base class for derivative definitions."""
@@ -29301,7 +29301,7 @@ class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkben
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchDerivative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2C7C1DA3-BD86-4D8B-9505-AC796FF1FD45}", AnalysisWorkbenchDerivative)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchDerivative"] = AnalysisWorkbenchDerivative
 
 class CalculationToolDerivativeBasic(ICalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent):
     """Derivative definition determines how numerical differencing is used to compute derivatives."""
@@ -29328,7 +29328,7 @@ class CalculationToolDerivativeBasic(ICalculationToolDerivativeBasic, IAnalysisW
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolDerivativeBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3CD084C3-0045-4452-9793-AE8DF4073433}", CalculationToolDerivativeBasic)
-
+agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativeBasic
 
 class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Defines an event (time instant)."""
@@ -29352,7 +29352,7 @@ class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEvent.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A4B75B25-5DAE-4AEC-86EF-512F5E031766}", TimeToolEvent)
-
+agcls.AgTypeNameMap["TimeToolEvent"] = TimeToolEvent
 
 class TimeToolEventArray(ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """An ordered array of times, which may or may not be evenly spaced."""
@@ -29376,7 +29376,7 @@ class TimeToolEventArray(ITimeToolEventArray, IAnalysisWorkbenchComponent):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArray.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5C87B1A-D519-4A01-8649-AA7560CD503A}", TimeToolEventArray)
-
+agcls.AgTypeNameMap["TimeToolEventArray"] = TimeToolEventArray
 
 class TimeToolEventArrayConditionCrossings(ITimeToolEventArrayConditionCrossings, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters."""
@@ -29403,7 +29403,7 @@ class TimeToolEventArrayConditionCrossings(ITimeToolEventArrayConditionCrossings
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayConditionCrossings.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B6FBC501-3521-4AE3-AFD8-4971F089D14F}", TimeToolEventArrayConditionCrossings)
-
+agcls.AgTypeNameMap["TimeToolEventArrayConditionCrossings"] = TimeToolEventArrayConditionCrossings
 
 class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Determines times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -29430,7 +29430,7 @@ class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray,
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayExtrema.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FB3F78C-D9F6-43F0-BCAA-5A7DCD035592}", TimeToolEventArrayExtrema)
-
+agcls.AgTypeNameMap["TimeToolEventArrayExtrema"] = TimeToolEventArrayExtrema
 
 class TimeToolEventArrayFactory(ITimeToolEventArrayFactory):
     """The factory creates event arrays."""
@@ -29451,7 +29451,7 @@ class TimeToolEventArrayFactory(ITimeToolEventArrayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A001EDFD-FAC8-4BBE-9FDC-0C7A5C4BB11C}", TimeToolEventArrayFactory)
-
+agcls.AgTypeNameMap["TimeToolEventArrayFactory"] = TimeToolEventArrayFactory
 
 class TimeToolEventArrayFiltered(ITimeToolEventArrayFiltered, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by filtering times from original time array according to specified filtering method."""
@@ -29478,7 +29478,7 @@ class TimeToolEventArrayFiltered(ITimeToolEventArrayFiltered, ITimeToolEventArra
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFiltered.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CA0D9FE7-E921-406E-8A1A-EE448A46C03C}", TimeToolEventArrayFiltered)
-
+agcls.AgTypeNameMap["TimeToolEventArrayFiltered"] = TimeToolEventArrayFiltered
 
 class TimeToolEventArrayFixedStep(ITimeToolEventArrayFixedStep, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."""
@@ -29505,7 +29505,7 @@ class TimeToolEventArrayFixedStep(ITimeToolEventArrayFixedStep, ITimeToolEventAr
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFixedStep.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CDA379CC-7511-496E-874E-14E10F3E2B1A}", TimeToolEventArrayFixedStep)
-
+agcls.AgTypeNameMap["TimeToolEventArrayFixedStep"] = TimeToolEventArrayFixedStep
 
 class TimeToolEventArrayFixedTimes(ITimeToolEventArrayFixedTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Array defined by time ordered instants each explicitly specified."""
@@ -29532,7 +29532,7 @@ class TimeToolEventArrayFixedTimes(ITimeToolEventArrayFixedTimes, ITimeToolEvent
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFixedTimes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EA73AECA-23AB-4DA1-B297-E80E19C55C15}", TimeToolEventArrayFixedTimes)
-
+agcls.AgTypeNameMap["TimeToolEventArrayFixedTimes"] = TimeToolEventArrayFixedTimes
 
 class TimeToolEventArrayMerged(ITimeToolEventArrayMerged, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together."""
@@ -29559,7 +29559,7 @@ class TimeToolEventArrayMerged(ITimeToolEventArrayMerged, ITimeToolEventArray, I
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayMerged.")
         
 agcls.AgClassCatalog.add_catalog_entry("{44FBC83E-D466-425F-ADF5-2003D754F935}", TimeToolEventArrayMerged)
-
+agcls.AgTypeNameMap["TimeToolEventArrayMerged"] = TimeToolEventArrayMerged
 
 class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
@@ -29586,7 +29586,7 @@ class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArra
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArraySignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50E37652-E4D1-4B6F-BA12-2D9B17E5F1AA}", TimeToolEventArraySignaled)
-
+agcls.AgTypeNameMap["TimeToolEventArraySignaled"] = TimeToolEventArraySignaled
 
 class TimeToolEventArrayStartStopTimes(ITimeToolEventArrayStartStopTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list..."""
@@ -29613,7 +29613,7 @@ class TimeToolEventArrayStartStopTimes(ITimeToolEventArrayStartStopTimes, ITimeT
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayStartStopTimes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AF5E1AC-97CB-4375-B0AE-AE8B6684432B}", TimeToolEventArrayStartStopTimes)
-
+agcls.AgTypeNameMap["TimeToolEventArrayStartStopTimes"] = TimeToolEventArrayStartStopTimes
 
 class TimeToolEventEpoch(ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event set at specified date/time."""
@@ -29640,7 +29640,7 @@ class TimeToolEventEpoch(ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbench
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{230426D4-438A-4B6E-A9D2-5393F7F87238}", TimeToolEventEpoch)
-
+agcls.AgTypeNameMap["TimeToolEventEpoch"] = TimeToolEventEpoch
 
 class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Determines time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -29667,7 +29667,7 @@ class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWor
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventExtremum.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7D4AD095-F1A4-4ACA-8788-50DEF2F4B604}", TimeToolEventExtremum)
-
+agcls.AgTypeNameMap["TimeToolEventExtremum"] = TimeToolEventExtremum
 
 class TimeToolEventFactory(ITimeToolEventFactory):
     """The factory creates events."""
@@ -29688,7 +29688,7 @@ class TimeToolEventFactory(ITimeToolEventFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9DEB7422-F9AA-492A-9269-3BDB7B0AF7E4}", TimeToolEventFactory)
-
+agcls.AgTypeNameMap["TimeToolEventFactory"] = TimeToolEventFactory
 
 class TimeToolEventInterval(ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """A single time interval."""
@@ -29712,7 +29712,7 @@ class TimeToolEventInterval(ITimeToolEventInterval, IAnalysisWorkbenchComponent)
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2CDA6DDC-7412-441A-8F94-0671FD57D16A}", TimeToolEventInterval)
-
+agcls.AgTypeNameMap["TimeToolEventInterval"] = TimeToolEventInterval
 
 class TimeToolEventIntervalBetweenTimeInstants(ITimeToolEventIntervalBetweenTimeInstants, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined."""
@@ -29739,7 +29739,7 @@ class TimeToolEventIntervalBetweenTimeInstants(ITimeToolEventIntervalBetweenTime
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalBetweenTimeInstants.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E84D9CAE-E919-4B84-99D7-553CCB97739C}", TimeToolEventIntervalBetweenTimeInstants)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalBetweenTimeInstants"] = TimeToolEventIntervalBetweenTimeInstants
 
 class TimeToolEventIntervalCollection(ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """A collection of related interval lists."""
@@ -29763,7 +29763,7 @@ class TimeToolEventIntervalCollection(ITimeToolEventIntervalCollection, IAnalysi
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{892BFFEB-D366-49D5-8220-50AC5E4529A1}", TimeToolEventIntervalCollection)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalCollection"] = TimeToolEventIntervalCollection
 
 class TimeToolEventIntervalCollectionCondition(ITimeToolEventIntervalCollectionCondition, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -29790,7 +29790,7 @@ class TimeToolEventIntervalCollectionCondition(ITimeToolEventIntervalCollectionC
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05E4AFDD-2917-46BA-84C9-1EE7973F11D7}", TimeToolEventIntervalCollectionCondition)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalCollectionCondition"] = TimeToolEventIntervalCollectionCondition
 
 class TimeToolEventIntervalCollectionFactory(ITimeToolEventIntervalCollectionFactory):
     """The factory creates collections of event interval lists."""
@@ -29811,7 +29811,7 @@ class TimeToolEventIntervalCollectionFactory(ITimeToolEventIntervalCollectionFac
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C76F8390-6619-47D5-9D33-DD1FBBF19B63}", TimeToolEventIntervalCollectionFactory)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalCollectionFactory"] = TimeToolEventIntervalCollectionFactory
 
 class TimeToolEventIntervalCollectionLighting(ITimeToolEventIntervalCollectionLighting, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
@@ -29838,7 +29838,7 @@ class TimeToolEventIntervalCollectionLighting(ITimeToolEventIntervalCollectionLi
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionLighting.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5457BFBA-3076-4250-B0E0-81FA79D58F19}", TimeToolEventIntervalCollectionLighting)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalCollectionLighting"] = TimeToolEventIntervalCollectionLighting
 
 class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSignaled, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
@@ -29865,7 +29865,7 @@ class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSi
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D1ED3869-B0E3-40F6-967A-C539C5D5D630}", TimeToolEventIntervalCollectionSignaled)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalCollectionSignaled"] = TimeToolEventIntervalCollectionSignaled
 
 class TimeToolEventIntervalFactory(ITimeToolEventIntervalFactory):
     """The factory creates event intervals."""
@@ -29886,7 +29886,7 @@ class TimeToolEventIntervalFactory(ITimeToolEventIntervalFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D5D195D8-DE6D-4926-B743-556B08A827C8}", TimeToolEventIntervalFactory)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalFactory"] = TimeToolEventIntervalFactory
 
 class TimeToolEventIntervalFixed(ITimeToolEventIntervalFixed, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start."""
@@ -29913,7 +29913,7 @@ class TimeToolEventIntervalFixed(ITimeToolEventIntervalFixed, ITimeToolEventInte
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFixed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4408570B-CE46-4B6A-9A50-F8F6D56D76F1}", TimeToolEventIntervalFixed)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalFixed"] = TimeToolEventIntervalFixed
 
 class TimeToolEventIntervalFixedDuration(ITimeToolEventIntervalFixedDuration, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."""
@@ -29940,7 +29940,7 @@ class TimeToolEventIntervalFixedDuration(ITimeToolEventIntervalFixedDuration, IT
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFixedDuration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84316F31-A3DB-4DF3-B8E3-352673D4E251}", TimeToolEventIntervalFixedDuration)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalFixedDuration"] = TimeToolEventIntervalFixedDuration
 
 class TimeToolEventIntervalFromIntervalList(ITimeToolEventIntervalFromIntervalList, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval created from specified interval list by using one of several selection methods."""
@@ -29967,7 +29967,7 @@ class TimeToolEventIntervalFromIntervalList(ITimeToolEventIntervalFromIntervalLi
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFromIntervalList.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E3B57D7-B236-4DCA-82DA-6C4835A6D0F1}", TimeToolEventIntervalFromIntervalList)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalFromIntervalList"] = TimeToolEventIntervalFromIntervalList
 
 class TimeToolEventIntervalList(ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """An ordered list of time intervals."""
@@ -29991,7 +29991,7 @@ class TimeToolEventIntervalList(ITimeToolEventIntervalList, IAnalysisWorkbenchCo
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalList.")
         
 agcls.AgClassCatalog.add_catalog_entry("{050E0A6D-9960-4470-9803-AF58B43FD747}", TimeToolEventIntervalList)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalList"] = TimeToolEventIntervalList
 
 class TimeToolEventIntervalListCondition(ITimeToolEventIntervalListCondition, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -30018,7 +30018,7 @@ class TimeToolEventIntervalListCondition(ITimeToolEventIntervalListCondition, IT
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4D1E24FE-BD49-4F09-9C30-523AFD58E02B}", TimeToolEventIntervalListCondition)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListCondition"] = TimeToolEventIntervalListCondition
 
 class TimeToolEventIntervalListFactory(ITimeToolEventIntervalListFactory):
     """The factory creates event interval lists."""
@@ -30039,7 +30039,7 @@ class TimeToolEventIntervalListFactory(ITimeToolEventIntervalListFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC3FA659-172B-4C9D-9DCA-EF6AD6CC4A8A}", TimeToolEventIntervalListFactory)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListFactory"] = TimeToolEventIntervalListFactory
 
 class TimeToolEventIntervalListFile(ITimeToolEventIntervalListFile, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list loaded from specified interval file - ASCII file with .int extension. See STK help."""
@@ -30066,7 +30066,7 @@ class TimeToolEventIntervalListFile(ITimeToolEventIntervalListFile, ITimeToolEve
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5A3BC6C1-559F-448D-946E-3D608C0C59B4}", TimeToolEventIntervalListFile)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListFile"] = TimeToolEventIntervalListFile
 
 class TimeToolEventIntervalListFiltered(ITimeToolEventIntervalListFiltered, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Defined by filtering intervals from original interval list using specified filtering method."""
@@ -30093,7 +30093,7 @@ class TimeToolEventIntervalListFiltered(ITimeToolEventIntervalListFiltered, ITim
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFiltered.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7123DA29-BECE-4032-9A81-77CDA69C5B13}", TimeToolEventIntervalListFiltered)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListFiltered"] = TimeToolEventIntervalListFiltered
 
 class TimeToolEventIntervalListFixed(ITimeToolEventIntervalListFixed, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval."""
@@ -30120,7 +30120,7 @@ class TimeToolEventIntervalListFixed(ITimeToolEventIntervalListFixed, ITimeToolE
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFixed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{60EF79E3-069B-45E3-A5A6-B49F9F9D618E}", TimeToolEventIntervalListFixed)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListFixed"] = TimeToolEventIntervalListFixed
 
 class TimeToolEventIntervalListMerged(ITimeToolEventIntervalListMerged, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents."""
@@ -30147,7 +30147,7 @@ class TimeToolEventIntervalListMerged(ITimeToolEventIntervalListMerged, ITimeToo
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListMerged.")
         
 agcls.AgClassCatalog.add_catalog_entry("{115C7064-1624-4928-B401-2C2B8DA2A2DC}", TimeToolEventIntervalListMerged)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListMerged"] = TimeToolEventIntervalListMerged
 
 class TimeToolEventIntervalListScaled(ITimeToolEventIntervalListScaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list..."""
@@ -30174,7 +30174,7 @@ class TimeToolEventIntervalListScaled(ITimeToolEventIntervalListScaled, ITimeToo
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3A5FDAFA-95C5-4743-A675-B9598AAAA1B9}", TimeToolEventIntervalListScaled)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListScaled"] = TimeToolEventIntervalListScaled
 
 class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
@@ -30201,7 +30201,7 @@ class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITim
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0C2159AF-FCE5-46AA-A06B-30E49A5B6704}", TimeToolEventIntervalListSignaled)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListSignaled"] = TimeToolEventIntervalListSignaled
 
 class TimeToolEventIntervalListTimeOffset(ITimeToolEventIntervalListTimeOffset, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval List defined by shifting the specified reference interval list by a fixed time offset."""
@@ -30228,7 +30228,7 @@ class TimeToolEventIntervalListTimeOffset(ITimeToolEventIntervalListTimeOffset, 
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListTimeOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BA2C1495-B20E-477A-A995-8B5B879DE84C}", TimeToolEventIntervalListTimeOffset)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalListTimeOffset"] = TimeToolEventIntervalListTimeOffset
 
 class TimeToolEventIntervalScaled(ITimeToolEventIntervalScaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined."""
@@ -30255,7 +30255,7 @@ class TimeToolEventIntervalScaled(ITimeToolEventIntervalScaled, ITimeToolEventIn
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8BCF947C-8E52-4B0C-9416-520C7CCEAB3E}", TimeToolEventIntervalScaled)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalScaled"] = TimeToolEventIntervalScaled
 
 class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Determines what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
@@ -30282,7 +30282,7 @@ class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEve
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E2D6BF4-81D9-476D-A4F2-F1882E24B56E}", TimeToolEventIntervalSignaled)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalSignaled"] = TimeToolEventIntervalSignaled
 
 class TimeToolEventIntervalSmartInterval(ITimeToolEventIntervalSmartInterval, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """A smart interval."""
@@ -30309,7 +30309,7 @@ class TimeToolEventIntervalSmartInterval(ITimeToolEventIntervalSmartInterval, IT
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalSmartInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F3D4E2AC-3845-4719-AD57-EE0C715A584D}", TimeToolEventIntervalSmartInterval)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalSmartInterval"] = TimeToolEventIntervalSmartInterval
 
 class TimeToolEventIntervalTimeOffset(ITimeToolEventIntervalTimeOffset, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval defined by shifting specified reference interval by fixed time offset."""
@@ -30336,7 +30336,7 @@ class TimeToolEventIntervalTimeOffset(ITimeToolEventIntervalTimeOffset, ITimeToo
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalTimeOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DE89BB00-5A89-4DA4-8730-CA2C3495A867}", TimeToolEventIntervalTimeOffset)
-
+agcls.AgTypeNameMap["TimeToolEventIntervalTimeOffset"] = TimeToolEventIntervalTimeOffset
 
 class TimeToolEventSignaled(ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event recorded on specified clock via signal transmission from original time instant recorded on different clock."""
@@ -30363,7 +30363,7 @@ class TimeToolEventSignaled(ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWor
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3951EF3D-DAEA-4F04-B78C-22537BD84A2D}", TimeToolEventSignaled)
-
+agcls.AgTypeNameMap["TimeToolEventSignaled"] = TimeToolEventSignaled
 
 class TimeToolEventSmartEpoch(ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """A smart epoch."""
@@ -30390,7 +30390,7 @@ class TimeToolEventSmartEpoch(ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysi
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventSmartEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F722C253-92DA-4956-983B-B80AB469F192}", TimeToolEventSmartEpoch)
-
+agcls.AgTypeNameMap["TimeToolEventSmartEpoch"] = TimeToolEventSmartEpoch
 
 class TimeToolEventStartStopTime(ITimeToolEventStartStopTime, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event is either start or stop time selected from a reference interval."""
@@ -30417,7 +30417,7 @@ class TimeToolEventStartStopTime(ITimeToolEventStartStopTime, ITimeToolEvent, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventStartStopTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F0429607-A51C-495C-9902-585429D40D10}", TimeToolEventStartStopTime)
-
+agcls.AgTypeNameMap["TimeToolEventStartStopTime"] = TimeToolEventStartStopTime
 
 class TimeToolEventTimeOffset(ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event at fixed offset from specified reference event."""
@@ -30444,7 +30444,7 @@ class TimeToolEventTimeOffset(ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysi
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventTimeOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EE2C89C8-C148-4044-B0BE-BF137D4B876B}", TimeToolEventTimeOffset)
-
+agcls.AgTypeNameMap["TimeToolEventTimeOffset"] = TimeToolEventTimeOffset
 
 class TimeToolFirstIntervalsFilter(ITimeToolFirstIntervalsFilter, ITimeToolPruneFilter):
     """The filter selects a portion of first intervals."""
@@ -30468,7 +30468,7 @@ class TimeToolFirstIntervalsFilter(ITimeToolFirstIntervalsFilter, ITimeToolPrune
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolFirstIntervalsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9A044590-5063-4331-9FC2-621221CF7EA9}", TimeToolFirstIntervalsFilter)
-
+agcls.AgTypeNameMap["TimeToolFirstIntervalsFilter"] = TimeToolFirstIntervalsFilter
 
 class TimeToolGapsFilter(ITimeToolGapsFilter, ITimeToolPruneFilter):
     """The filter merges intervals unless they are separated by gaps of at least/most certain duration."""
@@ -30492,7 +30492,7 @@ class TimeToolGapsFilter(ITimeToolGapsFilter, ITimeToolPruneFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolGapsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C54D3817-6B48-4436-8E1D-323A38DC2BC0}", TimeToolGapsFilter)
-
+agcls.AgTypeNameMap["TimeToolGapsFilter"] = TimeToolGapsFilter
 
 class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent):
     """Represents a base class for integral definitions."""
@@ -30516,7 +30516,7 @@ class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchCo
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchIntegral.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C6B1D39-FC48-475A-A888-DA9D459C1906}", AnalysisWorkbenchIntegral)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchIntegral"] = AnalysisWorkbenchIntegral
 
 class CalculationToolIntegralBasic(ICalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent):
     """Integral definition determines how scalar calculation is numerically integrated."""
@@ -30543,7 +30543,7 @@ class CalculationToolIntegralBasic(ICalculationToolIntegralBasic, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolIntegralBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7FCEE0EE-218C-419E-B5DB-8381B18FAE8A}", CalculationToolIntegralBasic)
-
+agcls.AgTypeNameMap["CalculationToolIntegralBasic"] = CalculationToolIntegralBasic
 
 class AnalysisWorkbenchInterp(IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent):
     """Represents a base class for interpolation definitions."""
@@ -30567,7 +30567,7 @@ class AnalysisWorkbenchInterp(IAnalysisWorkbenchInterp, IAnalysisWorkbenchCompon
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchInterp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F73B3675-6FD4-4050-9566-797DCD695107}", AnalysisWorkbenchInterp)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchInterp"] = AnalysisWorkbenchInterp
 
 class CalculationToolInterpBasic(ICalculationToolInterpBasic, IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent):
     """Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details."""
@@ -30594,7 +30594,7 @@ class CalculationToolInterpBasic(ICalculationToolInterpBasic, IAnalysisWorkbench
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolInterpBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AB05143F-6997-4F40-BE86-DCF4D723F31E}", CalculationToolInterpBasic)
-
+agcls.AgTypeNameMap["CalculationToolInterpBasic"] = CalculationToolInterpBasic
 
 class TimeToolIntervalsFilter(ITimeToolIntervalsFilter, ITimeToolPruneFilter):
     """The filter selects intervals of at least/most certain duration."""
@@ -30618,7 +30618,7 @@ class TimeToolIntervalsFilter(ITimeToolIntervalsFilter, ITimeToolPruneFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA31C4A7-B07C-4DEC-B479-BBEB07234B44}", TimeToolIntervalsFilter)
-
+agcls.AgTypeNameMap["TimeToolIntervalsFilter"] = TimeToolIntervalsFilter
 
 class TimeToolLastIntervalsFilter(ITimeToolLastIntervalsFilter, ITimeToolPruneFilter):
     """The filter selects a portion of last intervals."""
@@ -30642,7 +30642,7 @@ class TimeToolLastIntervalsFilter(ITimeToolLastIntervalsFilter, ITimeToolPruneFi
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolLastIntervalsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FAF4A1D-B0BA-4A86-A0AC-049670C66302}", TimeToolLastIntervalsFilter)
-
+agcls.AgTypeNameMap["TimeToolLastIntervalsFilter"] = TimeToolLastIntervalsFilter
 
 class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Parameter set contains various sets of scalar computations."""
@@ -30666,7 +30666,7 @@ class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkben
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSet.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CD1D82FC-08BF-4854-9295-F90AC87FAE68}", CalculationToolParameterSet)
-
+agcls.AgTypeNameMap["CalculationToolParameterSet"] = CalculationToolParameterSet
 
 class CalculationToolParameterSetAttitude(ICalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Attitude parameter set contains various representations of attitude of one set of axes relative to another."""
@@ -30693,7 +30693,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSetAttitude, 
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetAttitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7082CB04-052B-46A2-A051-4FF52D0260B0}", CalculationToolParameterSetAttitude)
-
+agcls.AgTypeNameMap["CalculationToolParameterSetAttitude"] = CalculationToolParameterSetAttitude
 
 class CalculationToolParameterSetFactory(ICalculationToolParameterSetFactory):
     """The factory is used to create instances of available parameter set types."""
@@ -30714,7 +30714,7 @@ class CalculationToolParameterSetFactory(ICalculationToolParameterSetFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FF399336-197C-480B-98AC-3F07E76FF3BC}", CalculationToolParameterSetFactory)
-
+agcls.AgTypeNameMap["CalculationToolParameterSetFactory"] = CalculationToolParameterSetFactory
 
 class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Ground trajectory parameter set contains various representations of trajectory of a point relative to central body reference shape."""
@@ -30741,7 +30741,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSetGr
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetGroundTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1972E17-F000-4BFF-80A3-216A91D0E2B1}", CalculationToolParameterSetGroundTrajectory)
-
+agcls.AgTypeNameMap["CalculationToolParameterSetGroundTrajectory"] = CalculationToolParameterSetGroundTrajectory
 
 class CalculationToolParameterSetOrbit(ICalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Orbit parameter set contains various trajectory representations of an orbiting point."""
@@ -30768,7 +30768,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSetOrbit, ICalcu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetOrbit.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BF4A60A0-68E5-4000-8843-DD7FD76813A9}", CalculationToolParameterSetOrbit)
-
+agcls.AgTypeNameMap["CalculationToolParameterSetOrbit"] = CalculationToolParameterSetOrbit
 
 class CalculationToolParameterSetTrajectory(ICalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system."""
@@ -30795,7 +30795,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSetTrajecto
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{542072ED-4073-4F91-8EC8-45F7CC401ED7}", CalculationToolParameterSetTrajectory)
-
+agcls.AgTypeNameMap["CalculationToolParameterSetTrajectory"] = CalculationToolParameterSetTrajectory
 
 class CalculationToolParameterSetVector(ICalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Vector parameter set contains various representations of a vector in a reference set of axes."""
@@ -30822,7 +30822,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSetVector, ICal
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC7B40D5-7091-4A24-A698-436D2A274DC8}", CalculationToolParameterSetVector)
-
+agcls.AgTypeNameMap["CalculationToolParameterSetVector"] = CalculationToolParameterSetVector
 
 class TimeToolPruneFilter(ITimeToolPruneFilter):
     """A filter used with event interval list pruned class to prune interval lists..."""
@@ -30843,7 +30843,7 @@ class TimeToolPruneFilter(ITimeToolPruneFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPruneFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E08D63E9-CC8E-41F8-B3C5-0D062425C025}", TimeToolPruneFilter)
-
+agcls.AgTypeNameMap["TimeToolPruneFilter"] = TimeToolPruneFilter
 
 class TimeToolPruneFilterFactory(ITimeToolPruneFilterFactory):
     """The factory creates pruning filters."""
@@ -30864,7 +30864,7 @@ class TimeToolPruneFilterFactory(ITimeToolPruneFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPruneFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{954284C2-3544-4888-9A56-759AA8C7E1F7}", TimeToolPruneFilterFactory)
-
+agcls.AgTypeNameMap["TimeToolPruneFilterFactory"] = TimeToolPruneFilterFactory
 
 class TimeToolRelativeSatisfactionConditionFilter(ITimeToolRelativeSatisfactionConditionFilter, ITimeToolPruneFilter):
     """The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time."""
@@ -30888,7 +30888,7 @@ class TimeToolRelativeSatisfactionConditionFilter(ITimeToolRelativeSatisfactionC
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolRelativeSatisfactionConditionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{93A5C2C0-AABA-4DB3-9359-100604D0BA02}", TimeToolRelativeSatisfactionConditionFilter)
-
+agcls.AgTypeNameMap["TimeToolRelativeSatisfactionConditionFilter"] = TimeToolRelativeSatisfactionConditionFilter
 
 class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent):
     """Base sampling interface."""
@@ -30912,7 +30912,7 @@ class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchCo
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchSampling.")
         
 agcls.AgClassCatalog.add_catalog_entry("{17FC40E9-EF68-4FFD-8A16-071054486F6A}", AnalysisWorkbenchSampling)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchSampling"] = AnalysisWorkbenchSampling
 
 class CalculationToolSamplingBasic(ICalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent):
     """Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data."""
@@ -30939,7 +30939,7 @@ class CalculationToolSamplingBasic(ICalculationToolSamplingBasic, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CB786C50-8D9C-4333-A985-FFD2ADD20206}", CalculationToolSamplingBasic)
-
+agcls.AgTypeNameMap["CalculationToolSamplingBasic"] = CalculationToolSamplingBasic
 
 class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingCurvatureTolerance, ICalculationToolSamplingMethod):
     """Curvature tolerance definition includes parameters that determine how scalar data should be sampled based on limits on slope changes between samples."""
@@ -30963,7 +30963,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingCurvatur
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingCurvatureTolerance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EF49B404-27D2-4AC5-BB5E-EA223A237922}", CalculationToolSamplingCurvatureTolerance)
-
+agcls.AgTypeNameMap["CalculationToolSamplingCurvatureTolerance"] = CalculationToolSamplingCurvatureTolerance
 
 class CalculationToolSamplingFixedStep(ICalculationToolSamplingFixedStep, ICalculationToolSamplingMethod):
     """Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples."""
@@ -30987,7 +30987,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingFixedStep, ICalcu
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingFixedStep.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B7D520F-7835-4E84-BCA4-D748C73CB609}", CalculationToolSamplingFixedStep)
-
+agcls.AgTypeNameMap["CalculationToolSamplingFixedStep"] = CalculationToolSamplingFixedStep
 
 class CalculationToolSamplingMethod(ICalculationToolSamplingMethod):
     """A sampling method."""
@@ -31008,7 +31008,7 @@ class CalculationToolSamplingMethod(ICalculationToolSamplingMethod):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingMethod.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D77F1444-C9BC-4C9C-91A2-A5F9DE172AB8}", CalculationToolSamplingMethod)
-
+agcls.AgTypeNameMap["CalculationToolSamplingMethod"] = CalculationToolSamplingMethod
 
 class CalculationToolSamplingMethodFactory(ICalculationToolSamplingMethodFactory):
     """The factory creates sampling method components."""
@@ -31029,7 +31029,7 @@ class CalculationToolSamplingMethodFactory(ICalculationToolSamplingMethodFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingMethodFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E55B6BC9-25B5-46E6-A29A-4E32F9EF3080}", CalculationToolSamplingMethodFactory)
-
+agcls.AgTypeNameMap["CalculationToolSamplingMethodFactory"] = CalculationToolSamplingMethodFactory
 
 class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingRelativeTolerance, ICalculationToolSamplingMethod):
     """Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning."""
@@ -31053,7 +31053,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingRelativeT
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingRelativeTolerance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5FBC3E6B-8097-4482-A1BA-DAA0083FE904}", CalculationToolSamplingRelativeTolerance)
-
+agcls.AgTypeNameMap["CalculationToolSamplingRelativeTolerance"] = CalculationToolSamplingRelativeTolerance
 
 class TimeToolSatisfactionConditionFilter(ITimeToolSatisfactionConditionFilter, ITimeToolPruneFilter):
     """The filter selects intervals if certain side condition is satisfied at least/most certain duration."""
@@ -31077,7 +31077,7 @@ class TimeToolSatisfactionConditionFilter(ITimeToolSatisfactionConditionFilter, 
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolSatisfactionConditionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3DD67B2F-2C0A-4355-A154-08E47A93AFCF}", TimeToolSatisfactionConditionFilter)
-
+agcls.AgTypeNameMap["TimeToolSatisfactionConditionFilter"] = TimeToolSatisfactionConditionFilter
 
 class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
@@ -31101,7 +31101,7 @@ class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchSignalDelay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{71744841-D938-44BE-8336-2B54F06CF443}", AnalysisWorkbenchSignalDelay)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchSignalDelay"] = AnalysisWorkbenchSignalDelay
 
 class TimeToolSignalDelayBasic(ITimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
@@ -31128,7 +31128,7 @@ class TimeToolSignalDelayBasic(ITimeToolSignalDelayBasic, IAnalysisWorkbenchSign
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolSignalDelayBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0763A330-475A-4E4E-AB26-8943A8CC1C92}", TimeToolSignalDelayBasic)
-
+agcls.AgTypeNameMap["TimeToolSignalDelayBasic"] = TimeToolSignalDelayBasic
 
 class SpatialAnalysisToolVolumeCalcFactory(ISpatialAnalysisToolVolumeCalcFactory):
     """The factory is used to create instances of volume calcs."""
@@ -31149,7 +31149,7 @@ class SpatialAnalysisToolVolumeCalcFactory(ISpatialAnalysisToolVolumeCalcFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80956ae5-fb8c-4ce4-930f-56b362d07cec}", SpatialAnalysisToolVolumeCalcFactory)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFactory"] = SpatialAnalysisToolVolumeCalcFactory
 
 class SpatialAnalysisToolVolumeFactory(ISpatialAnalysisToolVolumeFactory):
     """The factory is used to create instances of volumes."""
@@ -31170,7 +31170,7 @@ class SpatialAnalysisToolVolumeFactory(ISpatialAnalysisToolVolumeFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F9497BD8-A985-4054-8ADE-9042DE66125F}", SpatialAnalysisToolVolumeFactory)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFactory"] = SpatialAnalysisToolVolumeFactory
 
 class SpatialAnalysisToolVolumeGridFactory(ISpatialAnalysisToolVolumeGridFactory):
     """The factory is used to create instances of volume grids."""
@@ -31191,7 +31191,7 @@ class SpatialAnalysisToolVolumeGridFactory(ISpatialAnalysisToolVolumeGridFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F6359611-FB48-4B00-9017-01A4BE2B76E5}", SpatialAnalysisToolVolumeGridFactory)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridFactory"] = SpatialAnalysisToolVolumeGridFactory
 
 class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordinateDefinition):
     """Defines a set of coordinate values."""
@@ -31212,7 +31212,7 @@ class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordi
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridCoordinateDefinition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CCE5BC10-615F-441F-95AE-CB4CC0A7C62A}", SpatialAnalysisToolGridCoordinateDefinition)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolGridCoordinateDefinition"] = SpatialAnalysisToolGridCoordinateDefinition
 
 class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesCustom, ISpatialAnalysisToolGridValuesMethod):
     """Fixed step grid values."""
@@ -31236,7 +31236,7 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesCustom, 
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesCustom.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B50CCBA5-A969-40E1-86B3-96DAE5D2A3E3}", SpatialAnalysisToolGridValuesCustom)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesCustom"] = SpatialAnalysisToolGridValuesCustom
 
 class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridValuesFixedNumberOfSteps, ISpatialAnalysisToolGridValuesMethod):
     """Fixed step grid values."""
@@ -31260,7 +31260,7 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesFixedNumberOfSteps.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DDD7F78E-13DC-4417-8AE5-B43BB1511AFC}", SpatialAnalysisToolGridValuesFixedNumberOfSteps)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedNumberOfSteps"] = SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
 class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesFixedStep, ISpatialAnalysisToolGridValuesMethod):
     """Fixed step grid values."""
@@ -31284,7 +31284,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesFixed
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesFixedStep.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0942EA2D-33DE-41B5-98BE-E53E659EC81D}", SpatialAnalysisToolGridValuesFixedStep)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedStep"] = SpatialAnalysisToolGridValuesFixedStep
 
 class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod):
     """A grid values method."""
@@ -31305,7 +31305,7 @@ class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod):
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesMethod.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D1D242BF-73F3-443A-AB46-64EAA02C5F37}", SpatialAnalysisToolGridValuesMethod)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesMethod"] = SpatialAnalysisToolGridValuesMethod
 
 class TimeToolLightTimeDelay(ITimeToolLightTimeDelay):
     """Manage Light Time Delay options.."""
@@ -31326,7 +31326,7 @@ class TimeToolLightTimeDelay(ITimeToolLightTimeDelay):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolLightTimeDelay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{085E2242-4392-4F35-857E-A46A72EADE70}", TimeToolLightTimeDelay)
-
+agcls.AgTypeNameMap["TimeToolLightTimeDelay"] = TimeToolLightTimeDelay
 
 class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A volume interface. The methods and properties of the interface provide Volume functions."""
@@ -31350,7 +31350,7 @@ class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchCo
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolume.")
         
 agcls.AgClassCatalog.add_catalog_entry("{299D5D3F-7E12-4747-BFD3-2B5CADBAD8EE}", SpatialAnalysisToolVolume)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolume"] = SpatialAnalysisToolVolume
 
 class SpatialAnalysisToolVolumeCalc(ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
@@ -31374,7 +31374,7 @@ class SpatialAnalysisToolVolumeCalc(ISpatialAnalysisToolVolumeCalc, IAnalysisWor
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d014bfd1-130d-4dc4-a841-76c75bc08f9c}", SpatialAnalysisToolVolumeCalc)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalc"] = SpatialAnalysisToolVolumeCalc
 
 class SpatialAnalysisToolVolumeCalcAltitude(ISpatialAnalysisToolVolumeCalcAltitude, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc altitude interface."""
@@ -31401,7 +31401,7 @@ class SpatialAnalysisToolVolumeCalcAltitude(ISpatialAnalysisToolVolumeCalcAltitu
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcAltitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4e3c369c-c189-48ce-8e93-f0c6478f0abe}", SpatialAnalysisToolVolumeCalcAltitude)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcAltitude"] = SpatialAnalysisToolVolumeCalcAltitude
 
 class SpatialAnalysisToolVolumeCalcAngleOffVector(ISpatialAnalysisToolVolumeCalcAngleOffVector, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc angle off vector interface."""
@@ -31428,7 +31428,7 @@ class SpatialAnalysisToolVolumeCalcAngleOffVector(ISpatialAnalysisToolVolumeCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcAngleOffVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e37c954b-d3d5-4d2e-91b6-0ae4f8380620}", SpatialAnalysisToolVolumeCalcAngleOffVector)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcAngleOffVector"] = SpatialAnalysisToolVolumeCalcAngleOffVector
 
 class SpatialAnalysisToolVolumeCalcConditionSatMetric(ISpatialAnalysisToolVolumeCalcConditionSatMetric, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc condition satisfaction interface."""
@@ -31455,7 +31455,7 @@ class SpatialAnalysisToolVolumeCalcConditionSatMetric(ISpatialAnalysisToolVolume
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcConditionSatMetric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{589b39d3-7b75-4fe8-8fb2-1c7e5e247fea}", SpatialAnalysisToolVolumeCalcConditionSatMetric)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcConditionSatMetric"] = SpatialAnalysisToolVolumeCalcConditionSatMetric
 
 class SpatialAnalysisToolVolumeCalcDelayRange(ISpatialAnalysisToolVolumeCalcDelayRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc propagation delay to location interface."""
@@ -31482,7 +31482,7 @@ class SpatialAnalysisToolVolumeCalcDelayRange(ISpatialAnalysisToolVolumeCalcDela
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcDelayRange.")
         
 agcls.AgClassCatalog.add_catalog_entry("{bd9388e8-e5f8-4ba9-9371-4ff8fc1ed33c}", SpatialAnalysisToolVolumeCalcDelayRange)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcDelayRange"] = SpatialAnalysisToolVolumeCalcDelayRange
 
 class SpatialAnalysisToolVolumeCalcFile(ISpatialAnalysisToolVolumeCalcFile, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """Volumetric data loaded from a specified file - A file with .h5 extension. See STK help."""
@@ -31509,7 +31509,7 @@ class SpatialAnalysisToolVolumeCalcFile(ISpatialAnalysisToolVolumeCalcFile, ISpa
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{188f96c6-9568-4609-9944-dfc5fb7247c5}", SpatialAnalysisToolVolumeCalcFile)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFile"] = SpatialAnalysisToolVolumeCalcFile
 
 class SpatialAnalysisToolVolumeCalcFromScalar(ISpatialAnalysisToolVolumeCalcFromScalar, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc scalar to location interface."""
@@ -31536,7 +31536,7 @@ class SpatialAnalysisToolVolumeCalcFromScalar(ISpatialAnalysisToolVolumeCalcFrom
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcFromScalar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{73219623-93c0-4c6e-961a-7fae5dfe9234}", SpatialAnalysisToolVolumeCalcFromScalar)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFromScalar"] = SpatialAnalysisToolVolumeCalcFromScalar
 
 class SpatialAnalysisToolVolumeCalcRange(ISpatialAnalysisToolVolumeCalcRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc distance to location interface."""
@@ -31563,7 +31563,7 @@ class SpatialAnalysisToolVolumeCalcRange(ISpatialAnalysisToolVolumeCalcRange, IS
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcRange.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7f1aa95f-e8d6-4faf-925b-98785243ba67}", SpatialAnalysisToolVolumeCalcRange)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcRange"] = SpatialAnalysisToolVolumeCalcRange
 
 class SpatialAnalysisToolVolumeCalcSolarIntensity(ISpatialAnalysisToolVolumeCalcSolarIntensity, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc solar intensityn interface."""
@@ -31590,7 +31590,7 @@ class SpatialAnalysisToolVolumeCalcSolarIntensity(ISpatialAnalysisToolVolumeCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcSolarIntensity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7796e871-d645-4f65-a3dc-de687b6fbcd5}", SpatialAnalysisToolVolumeCalcSolarIntensity)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcSolarIntensity"] = SpatialAnalysisToolVolumeCalcSolarIntensity
 
 class SpatialAnalysisToolVolumeCombined(ISpatialAnalysisToolVolumeCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A combined volume interface."""
@@ -31617,7 +31617,7 @@ class SpatialAnalysisToolVolumeCombined(ISpatialAnalysisToolVolumeCombined, ISpa
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCombined.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7ECD2E89-B432-47C3-A80F-AF6429E66746}", SpatialAnalysisToolVolumeCombined)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCombined"] = SpatialAnalysisToolVolumeCombined
 
 class SpatialAnalysisToolVolumeFromCalc(ISpatialAnalysisToolVolumeFromCalc, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An volume from calc volume interface."""
@@ -31644,7 +31644,7 @@ class SpatialAnalysisToolVolumeFromCalc(ISpatialAnalysisToolVolumeFromCalc, ISpa
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F2AC0BF-4645-4C7F-9660-A894E267FD59}", SpatialAnalysisToolVolumeFromCalc)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromCalc"] = SpatialAnalysisToolVolumeFromCalc
 
 class SpatialAnalysisToolVolumeFromCondition(ISpatialAnalysisToolVolumeFromCondition, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A volume from conditioninterface."""
@@ -31671,7 +31671,7 @@ class SpatialAnalysisToolVolumeFromCondition(ISpatialAnalysisToolVolumeFromCondi
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A2546B12-78BF-4F8F-87C2-31BC73DA265B}", SpatialAnalysisToolVolumeFromCondition)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromCondition"] = SpatialAnalysisToolVolumeFromCondition
 
 class SpatialAnalysisToolVolumeFromGrid(ISpatialAnalysisToolVolumeFromGrid, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An over time volume interface."""
@@ -31698,7 +31698,7 @@ class SpatialAnalysisToolVolumeFromGrid(ISpatialAnalysisToolVolumeFromGrid, ISpa
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromGrid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D49FE282-4C05-4097-970C-1282997378E9}", SpatialAnalysisToolVolumeFromGrid)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromGrid"] = SpatialAnalysisToolVolumeFromGrid
 
 class SpatialAnalysisToolVolumeFromTimeSatisfaction(ISpatialAnalysisToolVolumeFromTimeSatisfaction, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An volume from time satisfaction volume interface."""
@@ -31725,7 +31725,7 @@ class SpatialAnalysisToolVolumeFromTimeSatisfaction(ISpatialAnalysisToolVolumeFr
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromTimeSatisfaction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29ECFCF5-9E5E-4E17-99AA-0B312227CFBF}", SpatialAnalysisToolVolumeFromTimeSatisfaction)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromTimeSatisfaction"] = SpatialAnalysisToolVolumeFromTimeSatisfaction
 
 class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
@@ -31749,7 +31749,7 @@ class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWor
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGrid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B7068C38-74D7-4F22-B0C4-A0DBA06DF373}", SpatialAnalysisToolVolumeGrid)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGrid"] = SpatialAnalysisToolVolumeGrid
 
 class SpatialAnalysisToolVolumeGridBearingAlt(ISpatialAnalysisToolVolumeGridBearingAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid bearing alt (Surface Bearing) interface."""
@@ -31776,7 +31776,7 @@ class SpatialAnalysisToolVolumeGridBearingAlt(ISpatialAnalysisToolVolumeGridBear
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridBearingAlt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ED60A16E-82F8-4E0A-9F07-CF8DF05C985A}", SpatialAnalysisToolVolumeGridBearingAlt)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridBearingAlt"] = SpatialAnalysisToolVolumeGridBearingAlt
 
 class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid Cartesian interface."""
@@ -31803,7 +31803,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGridCarte
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridCartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AF15D0A4-BB42-4762-A761-9BD11DC948D0}", SpatialAnalysisToolVolumeGridCartesian)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCartesian"] = SpatialAnalysisToolVolumeGridCartesian
 
 class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid constrained interface."""
@@ -31830,7 +31830,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGridCon
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridConstrained.")
         
 agcls.AgClassCatalog.add_catalog_entry("{253FC52C-5554-4A53-AE3D-624316ECFFFD}", SpatialAnalysisToolVolumeGridConstrained)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridConstrained"] = SpatialAnalysisToolVolumeGridConstrained
 
 class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid cylindrical interface."""
@@ -31857,7 +31857,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGridCyl
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridCylindrical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{55C6A7AA-5354-4DF1-9A0E-F62CB01115C8}", SpatialAnalysisToolVolumeGridCylindrical)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCylindrical"] = SpatialAnalysisToolVolumeGridCylindrical
 
 class SpatialAnalysisToolVolumeGridLatLonAlt(ISpatialAnalysisToolVolumeGridLatLonAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid lat lon alt (Cartogrographic) interface."""
@@ -31884,7 +31884,7 @@ class SpatialAnalysisToolVolumeGridLatLonAlt(ISpatialAnalysisToolVolumeGridLatLo
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridLatLonAlt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{89C10FC4-4031-4B63-9C55-E092DDF3839D}", SpatialAnalysisToolVolumeGridLatLonAlt)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridLatLonAlt"] = SpatialAnalysisToolVolumeGridLatLonAlt
 
 class SpatialAnalysisToolVolumeGridResult(ISpatialAnalysisToolVolumeGridResult):
     """An interface that generates Volume Grid results."""
@@ -31905,7 +31905,7 @@ class SpatialAnalysisToolVolumeGridResult(ISpatialAnalysisToolVolumeGridResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{43B95CA7-5CCA-4477-9F37-63A86CD9DEBB}", SpatialAnalysisToolVolumeGridResult)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridResult"] = SpatialAnalysisToolVolumeGridResult
 
 class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid spherical interface."""
@@ -31932,7 +31932,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGridSpher
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0DFD2937-3181-4895-AB05-A45FFD744964}", SpatialAnalysisToolVolumeGridSpherical)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridSpherical"] = SpatialAnalysisToolVolumeGridSpherical
 
 class SpatialAnalysisToolVolumeInview(ISpatialAnalysisToolVolumeInview, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An Inview volume interface."""
@@ -31959,7 +31959,7 @@ class SpatialAnalysisToolVolumeInview(ISpatialAnalysisToolVolumeInview, ISpatial
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeInview.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC8CB747-2714-4F73-8BD6-ED974F0B03AB}", SpatialAnalysisToolVolumeInview)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeInview"] = SpatialAnalysisToolVolumeInview
 
 class SpatialAnalysisToolVolumeLighting(ISpatialAnalysisToolVolumeLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A lighting volume interface."""
@@ -31986,7 +31986,7 @@ class SpatialAnalysisToolVolumeLighting(ISpatialAnalysisToolVolumeLighting, ISpa
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeLighting.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B9ACC019-A8DD-4342-ADE9-1335215F0FAF}", SpatialAnalysisToolVolumeLighting)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeLighting"] = SpatialAnalysisToolVolumeLighting
 
 class SpatialAnalysisToolVolumeOverTime(ISpatialAnalysisToolVolumeOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An over time volume interface."""
@@ -32013,7 +32013,7 @@ class SpatialAnalysisToolVolumeOverTime(ISpatialAnalysisToolVolumeOverTime, ISpa
             raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeOverTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5AB68EE-DCC1-435F-A0C3-133095B01D2D}", SpatialAnalysisToolVolumeOverTime)
-
+agcls.AgTypeNameMap["SpatialAnalysisToolVolumeOverTime"] = SpatialAnalysisToolVolumeOverTime
 
 class AnalysisWorkbenchGeneric(IAnalysisWorkbenchComponent):
     """Generic VGT component."""
@@ -32034,7 +32034,7 @@ class AnalysisWorkbenchGeneric(IAnalysisWorkbenchComponent):
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchGeneric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2909EDFB-9BE2-4BD2-A678-186C9D136937}", AnalysisWorkbenchGeneric)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchGeneric"] = AnalysisWorkbenchGeneric
 
 class AnalysisWorkbenchTypeInfo(IAnalysisWorkbenchTypeInfo):
     """VGT component info."""
@@ -32055,7 +32055,7 @@ class AnalysisWorkbenchTypeInfo(IAnalysisWorkbenchTypeInfo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchTypeInfo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BA26887C-6DFE-4F18-96D8-5694296568D2}", AnalysisWorkbenchTypeInfo)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchTypeInfo"] = AnalysisWorkbenchTypeInfo
 
 class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchInstance):
     """Enables to obtain information about the parent object that owns the VGT component."""
@@ -32079,7 +32079,7 @@ class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchIns
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchInstance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{28241775-2044-4AD1-BC1D-D5B345437415}", AnalysisWorkbenchInstance)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchInstance"] = AnalysisWorkbenchInstance
 
 class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTemplate):
     """Enables to obtain information about the STK class that owns the VGT component."""
@@ -32103,7 +32103,7 @@ class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTem
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchTemplate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DB2ABC0D-53EC-43C9-AB85-3ADBDC10CFE3}", AnalysisWorkbenchTemplate)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchTemplate"] = AnalysisWorkbenchTemplate
 
 class VectorGeometryToolPointRefTo(IVectorGeometryToolPointRefTo, IAnalysisWorkbenchRefTo):
     """Represents a reference to a VGT point."""
@@ -32127,7 +32127,7 @@ class VectorGeometryToolPointRefTo(IVectorGeometryToolPointRefTo, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{33A043CD-6D36-414A-B73C-9DA3ABDE4C6F}", VectorGeometryToolPointRefTo)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointRefTo"] = VectorGeometryToolPointRefTo
 
 class VectorGeometryToolVectorRefTo(IVectorGeometryToolVectorRefTo, IAnalysisWorkbenchRefTo):
     """Represents a vector reference."""
@@ -32151,7 +32151,7 @@ class VectorGeometryToolVectorRefTo(IVectorGeometryToolVectorRefTo, IAnalysisWor
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{76ABF2B5-C60E-4B80-84BA-3F2345E357A6}", VectorGeometryToolVectorRefTo)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorRefTo"] = VectorGeometryToolVectorRefTo
 
 class VectorGeometryToolAxesRefTo(IVectorGeometryToolAxesRefTo, IAnalysisWorkbenchRefTo):
     """Represents a reference to a VGT axes."""
@@ -32175,7 +32175,7 @@ class VectorGeometryToolAxesRefTo(IVectorGeometryToolAxesRefTo, IAnalysisWorkben
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ABAD0C95-5570-461A-9DA0-FD800B10DB20}", VectorGeometryToolAxesRefTo)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesRefTo"] = VectorGeometryToolAxesRefTo
 
 class VectorGeometryToolAngleRefTo(IVectorGeometryToolAngleRefTo, IAnalysisWorkbenchRefTo):
     """Represents a reference to a VGT angle."""
@@ -32199,7 +32199,7 @@ class VectorGeometryToolAngleRefTo(IVectorGeometryToolAngleRefTo, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1C8DFF6-65AA-4A6B-B160-7315BD795133}", VectorGeometryToolAngleRefTo)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleRefTo"] = VectorGeometryToolAngleRefTo
 
 class VectorGeometryToolSystemRefTo(IVectorGeometryToolSystemRefTo, IAnalysisWorkbenchRefTo):
     """Represents a System reference."""
@@ -32223,7 +32223,7 @@ class VectorGeometryToolSystemRefTo(IVectorGeometryToolSystemRefTo, IAnalysisWor
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4C6DEAA3-3DD0-439F-A58F-A2BC329384A8}", VectorGeometryToolSystemRefTo)
-
+agcls.AgTypeNameMap["VectorGeometryToolSystemRefTo"] = VectorGeometryToolSystemRefTo
 
 class VectorGeometryToolPlaneRefTo(IVectorGeometryToolPlaneRefTo, IAnalysisWorkbenchRefTo):
     """Represents a Plane reference."""
@@ -32247,7 +32247,7 @@ class VectorGeometryToolPlaneRefTo(IVectorGeometryToolPlaneRefTo, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C24A1C1D-EEF3-43DB-83BF-04F12E85B155}", VectorGeometryToolPlaneRefTo)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneRefTo"] = VectorGeometryToolPlaneRefTo
 
 class VectorGeometryToolVector(IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A generic vector class."""
@@ -32274,7 +32274,7 @@ class VectorGeometryToolVector(IVectorGeometryToolVector, ITimeToolTimePropertie
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64392436-52D5-4274-9483-E10C56BBD037}", VectorGeometryToolVector)
-
+agcls.AgTypeNameMap["VectorGeometryToolVector"] = VectorGeometryToolVector
 
 class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
     """Allows configuring the VGT axes labels."""
@@ -32295,7 +32295,7 @@ class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesLabels.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AC9F13AD-1E42-4695-AC74-6259D2013E4F}", VectorGeometryToolAxesLabels)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesLabels"] = VectorGeometryToolAxesLabels
 
 class VectorGeometryToolAxes(IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A generic axes class."""
@@ -32322,7 +32322,7 @@ class VectorGeometryToolAxes(IVectorGeometryToolAxes, ITimeToolTimeProperties, I
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50F5DD10-4D83-4603-94ED-BF7514C26282}", VectorGeometryToolAxes)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxes"] = VectorGeometryToolAxes
 
 class VectorGeometryToolPoint(IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A generic VGT point class."""
@@ -32349,7 +32349,7 @@ class VectorGeometryToolPoint(IVectorGeometryToolPoint, ITimeToolTimeProperties,
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0092C129-467E-4B36-B971-C53F65481DA9}", VectorGeometryToolPoint)
-
+agcls.AgTypeNameMap["VectorGeometryToolPoint"] = VectorGeometryToolPoint
 
 class VectorGeometryToolSystem(IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Base class for VGT axes."""
@@ -32376,7 +32376,7 @@ class VectorGeometryToolSystem(IVectorGeometryToolSystem, ITimeToolTimePropertie
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{20F29E1B-F72A-4B9C-B13B-04E8F1CCAEA6}", VectorGeometryToolSystem)
-
+agcls.AgTypeNameMap["VectorGeometryToolSystem"] = VectorGeometryToolSystem
 
 class VectorGeometryToolAngle(IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Base class for VGT axes."""
@@ -32403,7 +32403,7 @@ class VectorGeometryToolAngle(IVectorGeometryToolAngle, ITimeToolTimeProperties,
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C3F96DA3-00EC-4E20-A66C-B3506100496B}", VectorGeometryToolAngle)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngle"] = VectorGeometryToolAngle
 
 class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
     """Allows configuring the X and Y axes labels."""
@@ -32424,7 +32424,7 @@ class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneLabels.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E40312E9-2D04-4F38-8E35-0C1F5CC66B79}", VectorGeometryToolPlaneLabels)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneLabels"] = VectorGeometryToolPlaneLabels
 
 class VectorGeometryToolPlane(IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Base class for VGT axes."""
@@ -32451,7 +32451,7 @@ class VectorGeometryToolPlane(IVectorGeometryToolPlane, ITimeToolTimeProperties,
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2E6EAA85-8440-4C4E-97FE-76491E05098A}", VectorGeometryToolPlane)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlane"] = VectorGeometryToolPlane
 
 class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."""
@@ -32481,7 +32481,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxesAligned
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAlignedAndConstrained.")
         
 agcls.AgClassCatalog.add_catalog_entry("{46BB7D5B-6593-434F-B288-BF1445920A2C}", VectorGeometryToolAxesAlignedAndConstrained)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesAlignedAndConstrained"] = VectorGeometryToolAxesAlignedAndConstrained
 
 class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."""
@@ -32511,7 +32511,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxesAngularOffset, 
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAngularOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64503F8B-96E7-455B-B589-2578ADE1214B}", VectorGeometryToolAxesAngularOffset)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesAngularOffset"] = VectorGeometryToolAxesAngularOffset
 
 class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes based on another set fixed at a specified epoch."""
@@ -32541,7 +32541,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxesFixedAtEpoch, IV
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesFixedAtEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BEEE1271-F9F7-4C9E-A6C9-4337AA4F86AC}", VectorGeometryToolAxesFixedAtEpoch)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesFixedAtEpoch"] = VectorGeometryToolAxesFixedAtEpoch
 
 class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """B-Plane axes using the selected target body and reference vector."""
@@ -32571,7 +32571,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxesBPlane, IVectorGeometr
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesBPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E0F714EA-31E4-4F92-876F-BDD3183C29B5}", VectorGeometryToolAxesBPlane)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesBPlane"] = VectorGeometryToolAxesBPlane
 
 class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Customized axes offset with respect to a set of reference Axes."""
@@ -32601,7 +32601,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxesCustomScript, IV
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesCustomScript.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC7A87DC-118E-46ED-8657-90DF42B7B101}", VectorGeometryToolAxesCustomScript)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesCustomScript"] = VectorGeometryToolAxesCustomScript
 
 class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes specified by data from a file."""
@@ -32631,7 +32631,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxesAttitudeFile, IV
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAttitudeFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3505D063-9E1B-4964-9865-FFE41F64C8CF}", VectorGeometryToolAxesAttitudeFile)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesAttitudeFile"] = VectorGeometryToolAxesAttitudeFile
 
 class VectorGeometryToolAxesFixed(IVectorGeometryToolAxesFixed, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes fixed in reference axes."""
@@ -32661,7 +32661,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxesFixed, IVectorGeometryT
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesFixed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4AE41C73-3C82-405B-B7D2-A6D1BE7EE2EE}", VectorGeometryToolAxesFixed)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesFixed"] = VectorGeometryToolAxesFixed
 
 class VectorGeometryToolAxesModelAttach(IVectorGeometryToolAxesModelAttach, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."""
@@ -32691,7 +32691,7 @@ class VectorGeometryToolAxesModelAttach(IVectorGeometryToolAxesModelAttach, IVec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesModelAttach.")
         
 agcls.AgClassCatalog.add_catalog_entry("{816C612A-13DD-4812-BFDE-E3861F8C39FD}", VectorGeometryToolAxesModelAttach)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesModelAttach"] = VectorGeometryToolAxesModelAttach
 
 class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."""
@@ -32721,7 +32721,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxesSpinning, IVectorGeo
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesSpinning.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C0FB8B6D-84CC-4553-ADA9-2F7D91A83AB6}", VectorGeometryToolAxesSpinning)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesSpinning"] = VectorGeometryToolAxesSpinning
 
 class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Topocentric axes located at the reference point's projection on the central body."""
@@ -32751,7 +32751,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxesOnSurface, IVectorG
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesOnSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE8C301A-A846-44FD-8871-5AB4CAACEF11}", VectorGeometryToolAxesOnSurface)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesOnSurface"] = VectorGeometryToolAxesOnSurface
 
 class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes based on trajectory of the point relative to the reference coordinate system."""
@@ -32781,7 +32781,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxesTrajectory, IVecto
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4038771E-73C1-4989-A9AB-4DC37025FACC}", VectorGeometryToolAxesTrajectory)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesTrajectory"] = VectorGeometryToolAxesTrajectory
 
 class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."""
@@ -32811,7 +32811,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxesLagrangeLib
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesLagrangeLibration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{16315085-7C87-4A20-865C-0F419A5CDA2F}", VectorGeometryToolAxesLagrangeLibration)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesLagrangeLibration"] = VectorGeometryToolAxesLagrangeLibration
 
 class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
     """Provides methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
@@ -32832,7 +32832,7 @@ class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesCommonTasks.")
         
 agcls.AgClassCatalog.add_catalog_entry("{07D4865C-78F1-4B3A-9756-D70050613D4A}", VectorGeometryToolAxesCommonTasks)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesCommonTasks"] = VectorGeometryToolAxesCommonTasks
 
 class VectorGeometryToolAxesAtTimeInstant(IVectorGeometryToolAxesAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes):
     """Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."""
@@ -32862,7 +32862,7 @@ class VectorGeometryToolAxesAtTimeInstant(IVectorGeometryToolAxesAtTimeInstant, 
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3845C20A-A6E2-45A0-A748-10E9B565C48D}", VectorGeometryToolAxesAtTimeInstant)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesAtTimeInstant"] = VectorGeometryToolAxesAtTimeInstant
 
 class VectorGeometryToolAxesPlugin(IVectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes):
     """A VGT axes plugin."""
@@ -32892,7 +32892,7 @@ class VectorGeometryToolAxesPlugin(IVectorGeometryToolAxesPlugin, IAnalysisWorkb
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C494C46D-EBC6-45B9-B2E7-C9FF7E75467D}", VectorGeometryToolAxesPlugin)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesPlugin"] = VectorGeometryToolAxesPlugin
 
 class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between two vectors."""
@@ -32922,7 +32922,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngleBetweenVecto
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleBetweenVectors.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2F0AA430-85D0-4479-9540-B1B64EB3B530}", VectorGeometryToolAngleBetweenVectors)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenVectors"] = VectorGeometryToolAngleBetweenVectors
 
 class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between two planes."""
@@ -32952,7 +32952,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngleBetweenPlanes
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleBetweenPlanes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{30C2886F-8792-475D-9E42-975308B1B94E}", VectorGeometryToolAngleBetweenPlanes)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenPlanes"] = VectorGeometryToolAngleBetweenPlanes
 
 class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between two vectors about an axis."""
@@ -32982,7 +32982,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngleDihedral, IVectorG
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleDihedral.")
         
 agcls.AgClassCatalog.add_catalog_entry("{550855BB-E8F1-440B-BA5C-024ACE2E2A17}", VectorGeometryToolAngleDihedral)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleDihedral"] = VectorGeometryToolAngleDihedral
 
 class VectorGeometryToolAngleRotation(IVectorGeometryToolAngleRotation, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Angle of the shortest rotation between the specified FromAxes and ToAxes axes."""
@@ -33012,7 +33012,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngleRotation, IVectorG
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleRotation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AD8B87A3-8407-42AB-B6CA-8E83450C32C1}", VectorGeometryToolAngleRotation)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleRotation"] = VectorGeometryToolAngleRotation
 
 class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between a vector and a plane."""
@@ -33042,7 +33042,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngleToPlane, IVectorGeo
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleToPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8CE8877B-1078-41CD-AEE6-B9DDD92F8201}", VectorGeometryToolAngleToPlane)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleToPlane"] = VectorGeometryToolAngleToPlane
 
 class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A plane normal to a vector at a given point."""
@@ -33072,7 +33072,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlaneNormal, IVectorGeome
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneNormal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0AED319D-7B6C-462B-882B-D363F7A2A86C}", VectorGeometryToolPlaneNormal)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneNormal"] = VectorGeometryToolPlaneNormal
 
 class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A plane based on a selected Quadrant of a reference system."""
@@ -33102,7 +33102,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlaneQuadrant, IVectorG
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneQuadrant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8330CE61-25F6-4F92-AE2E-BDB566BA42F3}", VectorGeometryToolPlaneQuadrant)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneQuadrant"] = VectorGeometryToolPlaneQuadrant
 
 class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem."""
@@ -33132,7 +33132,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlaneTrajectory, IVec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7BD18F79-6788-48B1-AFB5-243D62C01177}", VectorGeometryToolPlaneTrajectory)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneTrajectory"] = VectorGeometryToolPlaneTrajectory
 
 class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A Plane containing points PointA, PointB and ReferencePont with the first axis aligned with the direction from the ReferencePoint to PointA and the second axis toward the direction from the ReferencePoint to PointB."""
@@ -33162,7 +33162,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlaneTriad, IVectorGeometr
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneTriad.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8A4D3940-BD08-4D5C-A171-E0AC90DEB5F4}", VectorGeometryToolPlaneTriad)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneTriad"] = VectorGeometryToolPlaneTriad
 
 class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A plane normal to a vector at a given point."""
@@ -33192,7 +33192,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlaneTwoVector, IVecto
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneTwoVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{49a61e7a-baba-48fd-9d9d-61f91c520291}", VectorGeometryToolPlaneTwoVector)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneTwoVector"] = VectorGeometryToolPlaneTwoVector
 
 class VectorGeometryToolPointBPlane(IVectorGeometryToolPointBPlane, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """B-Plane point using the selected target body."""
@@ -33222,7 +33222,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPointBPlane, IVectorGeome
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointBPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E62329EB-83D1-47CE-8B5B-B795995A2270}", VectorGeometryToolPointBPlane)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointBPlane"] = VectorGeometryToolPointBPlane
 
 class VectorGeometryToolPointFile(IVectorGeometryToolPointFile, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point specified by data from a file."""
@@ -33252,7 +33252,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPointFile, IVectorGeometryT
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E71C927-09CA-4A90-95F0-CB87E244CE72}", VectorGeometryToolPointFile)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointFile"] = VectorGeometryToolPointFile
 
 class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point fixed in a reference coordinate system using the selected coordinate type."""
@@ -33282,7 +33282,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPointFixedInSystem
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointFixedInSystem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9FA10E06-094A-446C-BE9A-5BA397776778}", VectorGeometryToolPointFixedInSystem)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointFixedInSystem"] = VectorGeometryToolPointFixedInSystem
 
 class VectorGeometryToolPointGrazing(IVectorGeometryToolPointGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."""
@@ -33312,7 +33312,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPointGrazing, IVectorGeo
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointGrazing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7D8A954-B6ED-43A0-8B2C-C58B06DCDFF7}", VectorGeometryToolPointGrazing)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointGrazing"] = VectorGeometryToolPointGrazing
 
 class VectorGeometryToolPointGlint(IVectorGeometryToolPointGlint, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point on central body surface that reflects from source to observer."""
@@ -33342,7 +33342,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPointGlint, IVectorGeometr
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointGlint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{68F85553-0FA2-459D-93AC-BD4D68A01F6F}", VectorGeometryToolPointGlint)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointGlint"] = VectorGeometryToolPointGlint
 
 class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."""
@@ -33372,7 +33372,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPointCovarianc
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCovarianceGrazing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84D91807-716E-46F4-AB70-53C73FA21C20}", VectorGeometryToolPointCovarianceGrazing)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointCovarianceGrazing"] = VectorGeometryToolPointCovarianceGrazing
 
 class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point on a plane located along a given direction looking from a given origin."""
@@ -33402,7 +33402,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPointPlaneInte
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointPlaneIntersection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{63F785C4-EC8E-4BCA-AF05-D57BD357D06C}", VectorGeometryToolPointPlaneIntersection)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointPlaneIntersection"] = VectorGeometryToolPointPlaneIntersection
 
 class VectorGeometryToolPointOnSurface(IVectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The detic subpoint of the reference point as projected onto the central body."""
@@ -33432,7 +33432,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPointOnSurface, IVecto
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointOnSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03ECCFD1-B058-4817-826F-EDE2A6880757}", VectorGeometryToolPointOnSurface)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointOnSurface"] = VectorGeometryToolPointOnSurface
 
 class VectorGeometryToolPointModelAttach(IVectorGeometryToolPointModelAttach, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."""
@@ -33462,7 +33462,7 @@ class VectorGeometryToolPointModelAttach(IVectorGeometryToolPointModelAttach, IV
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointModelAttach.")
         
 agcls.AgClassCatalog.add_catalog_entry("{15958616-F779-4772-9E54-9B134B69BE89}", VectorGeometryToolPointModelAttach)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointModelAttach"] = VectorGeometryToolPointModelAttach
 
 class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A point placed at the center of mass of a specified satellite of the satellite collection."""
@@ -33492,7 +33492,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPointSa
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointSatelliteCollectionEntry.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d0dacbed-0c16-4de5-b32a-9c7624297014}", VectorGeometryToolPointSatelliteCollectionEntry)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointSatelliteCollectionEntry"] = VectorGeometryToolPointSatelliteCollectionEntry
 
 class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The projection of a point onto a reference plane. Specify the Source Point and Reference Plane."""
@@ -33522,7 +33522,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPointPlaneProjec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointPlaneProjection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C750AD99-2498-42F6-BBBD-CEB1835E8F3A}", VectorGeometryToolPointPlaneProjection)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointPlaneProjection"] = VectorGeometryToolPointPlaneProjection
 
 class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type."""
@@ -33552,7 +33552,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPointLagrangeL
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointLagrangeLibration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6BF6D976-775A-445D-AD2B-899892F3127E}", VectorGeometryToolPointLagrangeLibration)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointLagrangeLibration"] = VectorGeometryToolPointLagrangeLibration
 
 class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
     """Provides methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
@@ -33573,7 +33573,7 @@ class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCommonTasks.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9866644C-E731-465E-A7AA-3F4667C1729E}", VectorGeometryToolPointCommonTasks)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointCommonTasks"] = VectorGeometryToolPointCommonTasks
 
 class VectorGeometryToolPointCentBodyIntersect(IVectorGeometryToolPointCentBodyIntersect, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """Point on central body surface along direction vector originating at source point."""
@@ -33603,7 +33603,7 @@ class VectorGeometryToolPointCentBodyIntersect(IVectorGeometryToolPointCentBodyI
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCentBodyIntersect.")
         
 agcls.AgClassCatalog.add_catalog_entry("{882047E8-7CB3-489B-B029-33163CBBA583}", VectorGeometryToolPointCentBodyIntersect)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointCentBodyIntersect"] = VectorGeometryToolPointCentBodyIntersect
 
 class VectorGeometryToolPointAtTimeInstant(IVectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """Point fixed relative to reference system based on another point evaluated at specified time instant."""
@@ -33633,7 +33633,7 @@ class VectorGeometryToolPointAtTimeInstant(IVectorGeometryToolPointAtTimeInstant
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8BFB46DF-C6BC-45DA-BAA7-9C996710CFDA}", VectorGeometryToolPointAtTimeInstant)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointAtTimeInstant"] = VectorGeometryToolPointAtTimeInstant
 
 class VectorGeometryToolPointPlugin(IVectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """A VGT point plugin."""
@@ -33663,7 +33663,7 @@ class VectorGeometryToolPointPlugin(IVectorGeometryToolPointPlugin, IAnalysisWor
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8297DC34-1755-4FE7-BA23-2D9CDE487EF1}", VectorGeometryToolPointPlugin)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointPlugin"] = VectorGeometryToolPointPlugin
 
 class VectorGeometryToolPointCBFixedOffset(IVectorGeometryToolPointCBFixedOffset, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """Point specified by fixed components with respect to central body."""
@@ -33693,7 +33693,7 @@ class VectorGeometryToolPointCBFixedOffset(IVectorGeometryToolPointCBFixedOffset
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCBFixedOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0C76BDAE-992E-4D61-8D09-E6B2B6923A5B}", VectorGeometryToolPointCBFixedOffset)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointCBFixedOffset"] = VectorGeometryToolPointCBFixedOffset
 
 class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A system assembled from an origin point and a set of reference axes."""
@@ -33723,7 +33723,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystemAssembled, IVec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemAssembled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE4E84B1-8CCF-467A-A3ED-274D0943407F}", VectorGeometryToolSystemAssembled)
-
+agcls.AgTypeNameMap["VectorGeometryToolSystemAssembled"] = VectorGeometryToolSystemAssembled
 
 class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin."""
@@ -33753,7 +33753,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystemOnSurface, IVec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemOnSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{073423F9-A59D-4313-B499-C86A45C63513}", VectorGeometryToolSystemOnSurface)
-
+agcls.AgTypeNameMap["VectorGeometryToolSystemOnSurface"] = VectorGeometryToolSystemOnSurface
 
 class AnalysisWorkbenchLLAPosition(IAnalysisWorkbenchLLAPosition):
     """A position represented by the Latitude, longtitude and Latitude."""
@@ -33774,7 +33774,7 @@ class AnalysisWorkbenchLLAPosition(IAnalysisWorkbenchLLAPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchLLAPosition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CB962F51-978A-43F9-A88B-AAB62117F93C}", AnalysisWorkbenchLLAPosition)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchLLAPosition"] = AnalysisWorkbenchLLAPosition
 
 class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
     """Provides methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
@@ -33795,7 +33795,7 @@ class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemCommonTasks.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EBE7AF41-FC7E-4D82-B522-72B4AA551B41}", VectorGeometryToolSystemCommonTasks)
-
+agcls.AgTypeNameMap["VectorGeometryToolSystemCommonTasks"] = VectorGeometryToolSystemCommonTasks
 
 class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Angle rate vector perpendicular to the plane in which the angle is defined."""
@@ -33825,7 +33825,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVectorAngleRate, IVec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorAngleRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5769E079-8E9B-40B2-B2EF-14F202AF5666}", VectorGeometryToolVectorAngleRate)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorAngleRate"] = VectorGeometryToolVectorAngleRate
 
 class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."""
@@ -33855,7 +33855,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVectorApoapsis, IVecto
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorApoapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{22E4138C-29C6-4401-91E0-DF0C00422302}", VectorGeometryToolVectorApoapsis)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorApoapsis"] = VectorGeometryToolVectorApoapsis
 
 class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Based on another vector fixed at a specified epoch."""
@@ -33885,7 +33885,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVectorFixedAtEpoch
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFixedAtEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FA8DB5F5-1F28-40E6-9B86-489E06D61523}", VectorGeometryToolVectorFixedAtEpoch)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtEpoch"] = VectorGeometryToolVectorFixedAtEpoch
 
 class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Angular velocity vector of one set of axes computed with respect to the reference set."""
@@ -33915,7 +33915,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVectorAngularVe
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorAngularVelocity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2ABC83DB-6F6C-4A91-8597-21BD2715D411}", VectorGeometryToolVectorAngularVelocity)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorAngularVelocity"] = VectorGeometryToolVectorAngularVelocity
 
 class VectorGeometryToolVectorConing(IVectorGeometryToolVectorConing, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector created by revolving the Reference vector around the About vector with the specified rate."""
@@ -33945,7 +33945,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVectorConing, IVectorGeo
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorConing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{74E6F986-E292-4115-84E4-9E9953C163B8}", VectorGeometryToolVectorConing)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorConing"] = VectorGeometryToolVectorConing
 
 class VectorGeometryToolVectorCross(IVectorGeometryToolVectorCross, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The vector cross product of two vectors."""
@@ -33975,7 +33975,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVectorCross, IVectorGeome
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorCross.")
         
 agcls.AgClassCatalog.add_catalog_entry("{88B6E3B7-51CD-45DE-97C0-DCFE834C0111}", VectorGeometryToolVectorCross)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorCross"] = VectorGeometryToolVectorCross
 
 class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Customized vector components defined with respect to reference axes."""
@@ -34005,7 +34005,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVectorCustomScript
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorCustomScript.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D65CDDC6-21DA-419F-BF72-79C2376648E8}", VectorGeometryToolVectorCustomScript)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorCustomScript"] = VectorGeometryToolVectorCustomScript
 
 class VectorGeometryToolVectorDerivative(IVectorGeometryToolVectorDerivative, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A vector derivative of a vector computed with respect to specified axes."""
@@ -34035,7 +34035,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVectorDerivative, IV
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDerivative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B81ECB39-CF3E-49AE-8622-F454CD0EA7B2}", VectorGeometryToolVectorDerivative)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorDerivative"] = VectorGeometryToolVectorDerivative
 
 class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector defined by its start and end points."""
@@ -34065,7 +34065,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVectorDisplacement
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDisplacement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6CAADA67-7238-4705-9F74-95596344DED0}", VectorGeometryToolVectorDisplacement)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorDisplacement"] = VectorGeometryToolVectorDisplacement
 
 class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Defined along the intersection of two planes."""
@@ -34095,7 +34095,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVectorTwo
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorTwoPlanesIntersection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1145553-76CD-4C1E-AE08-E63E29CF4E46}", VectorGeometryToolVectorTwoPlanesIntersection)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorTwoPlanesIntersection"] = VectorGeometryToolVectorTwoPlanesIntersection
 
 class VectorGeometryToolVectorModelAttach(IVectorGeometryToolVectorModelAttach, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."""
@@ -34125,7 +34125,7 @@ class VectorGeometryToolVectorModelAttach(IVectorGeometryToolVectorModelAttach, 
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorModelAttach.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E95BEEB8-C544-4852-9C82-20080343E585}", VectorGeometryToolVectorModelAttach)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorModelAttach"] = VectorGeometryToolVectorModelAttach
 
 class VectorGeometryToolVectorProjection(IVectorGeometryToolVectorProjection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A projection of a vector computed with respect to a reference plane."""
@@ -34155,7 +34155,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVectorProjection, IV
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorProjection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7306544A-A8B0-477B-B89D-BA711C9ED600}", VectorGeometryToolVectorProjection)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorProjection"] = VectorGeometryToolVectorProjection
 
 class VectorGeometryToolVectorScaled(IVectorGeometryToolVectorScaled, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it."""
@@ -34185,7 +34185,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVectorScaled, IVectorGeo
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92D80C29-251B-436B-9DA0-D5BA4B262185}", VectorGeometryToolVectorScaled)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorScaled"] = VectorGeometryToolVectorScaled
 
 class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."""
@@ -34215,7 +34215,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVectorEccentricity
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorEccentricity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7F157D7-11EB-4779-955F-98530B9C2608}", VectorGeometryToolVectorEccentricity)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorEccentricity"] = VectorGeometryToolVectorEccentricity
 
 class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector fixed in reference axes."""
@@ -34245,7 +34245,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVectorFixedInAxes, 
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFixedInAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{61E9F963-8CFC-4B24-B583-716A64BAE54C}", VectorGeometryToolVectorFixedInAxes)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorFixedInAxes"] = VectorGeometryToolVectorFixedInAxes
 
 class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."""
@@ -34275,7 +34275,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVectorLineOfNodes, 
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorLineOfNodes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3D6B3FD1-93C2-4F11-AB10-B749DF633C29}", VectorGeometryToolVectorLineOfNodes)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorLineOfNodes"] = VectorGeometryToolVectorLineOfNodes
 
 class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
@@ -34305,7 +34305,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVectorOrbi
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorOrbitAngularMomentum.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B38A283-7EDA-43E2-9C04-E9964FCA7D91}", VectorGeometryToolVectorOrbitAngularMomentum)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitAngularMomentum"] = VectorGeometryToolVectorOrbitAngularMomentum
 
 class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
@@ -34335,7 +34335,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVectorOrbitNormal, 
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorOrbitNormal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFBAED88-891B-4EF7-98BD-DEBAF630C0E1}", VectorGeometryToolVectorOrbitNormal)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitNormal"] = VectorGeometryToolVectorOrbitNormal
 
 class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."""
@@ -34365,7 +34365,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVectorPeriapsis, IVec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA81B380-6D7C-48F4-8E7F-472035958B44}", VectorGeometryToolVectorPeriapsis)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorPeriapsis"] = VectorGeometryToolVectorPeriapsis
 
 class VectorGeometryToolVectorReflection(IVectorGeometryToolVectorReflection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."""
@@ -34395,7 +34395,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVectorReflection, IV
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorReflection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C35F8BF0-ED12-48BF-8770-EE63DAF4A9B1}", VectorGeometryToolVectorReflection)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorReflection"] = VectorGeometryToolVectorReflection
 
 class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
@@ -34425,7 +34425,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVectorRotationVe
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorRotationVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c599beae-b6c1-495e-8957-a4b9ffc5cb8e}", VectorGeometryToolVectorRotationVector)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorRotationVector"] = VectorGeometryToolVectorRotationVector
 
 class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Defined with respect to a star object. For a star object to be available, you must first create one."""
@@ -34455,7 +34455,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVectorDirection
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDirectionToStar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{147FDFCC-767A-460C-9833-02A582AFCA9C}", VectorGeometryToolVectorDirectionToStar)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorDirectionToStar"] = VectorGeometryToolVectorDirectionToStar
 
 class VectorGeometryToolVectorFixedAtTimeInstant(IVectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Vector fixed relative to reference axes based on another vector evaluated at specified time instant."""
@@ -34485,7 +34485,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IVectorGeometryToolVectorFixedA
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFixedAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC8737B3-A94E-4B68-857F-81E780C874FD}", VectorGeometryToolVectorFixedAtTimeInstant)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtTimeInstant"] = VectorGeometryToolVectorFixedAtTimeInstant
 
 class VectorGeometryToolVectorLinearCombination(IVectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Linear combination of two input vectors."""
@@ -34515,7 +34515,7 @@ class VectorGeometryToolVectorLinearCombination(IVectorGeometryToolVectorLinearC
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorLinearCombination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59E2764C-7920-4CDC-B5FF-2590154E1ABE}", VectorGeometryToolVectorLinearCombination)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorLinearCombination"] = VectorGeometryToolVectorLinearCombination
 
 class VectorGeometryToolVectorProjectAlongVector(IVectorGeometryToolVectorProjectAlongVector, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """A projection of a source vector in the direction of another vector."""
@@ -34545,7 +34545,7 @@ class VectorGeometryToolVectorProjectAlongVector(IVectorGeometryToolVectorProjec
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorProjectAlongVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7B76B999-135B-4AAF-ADEA-444FD759417D}", VectorGeometryToolVectorProjectAlongVector)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorProjectAlongVector"] = VectorGeometryToolVectorProjectAlongVector
 
 class VectorGeometryToolVectorScalarLinearCombination(IVectorGeometryToolVectorScalarLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Linear combination of two input vectors using scalars."""
@@ -34575,7 +34575,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IVectorGeometryToolVectorS
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorScalarLinearCombination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0FB78FA5-9E5F-4A0F-AD73-FB89A0E523F8}", VectorGeometryToolVectorScalarLinearCombination)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorScalarLinearCombination"] = VectorGeometryToolVectorScalarLinearCombination
 
 class VectorGeometryToolVectorScalarScaled(IVectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Scaled version of the input vector using scalar."""
@@ -34605,7 +34605,7 @@ class VectorGeometryToolVectorScalarScaled(IVectorGeometryToolVectorScalarScaled
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorScalarScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C93B992-687F-4311-B339-DE0DA38409AE}", VectorGeometryToolVectorScalarScaled)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorScalarScaled"] = VectorGeometryToolVectorScalarScaled
 
 class VectorGeometryToolVectorVelocityAcceleration(IVectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Velocity vector of a point in a coordinate system."""
@@ -34635,7 +34635,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IVectorGeometryToolVectorVelo
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorVelocityAcceleration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75A62225-C09F-4F08-B7FE-9216B02DECF2}", VectorGeometryToolVectorVelocityAcceleration)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorVelocityAcceleration"] = VectorGeometryToolVectorVelocityAcceleration
 
 class VectorGeometryToolVectorPlugin(IVectorGeometryToolVectorPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """A VGT vector plugin."""
@@ -34665,7 +34665,7 @@ class VectorGeometryToolVectorPlugin(IVectorGeometryToolVectorPlugin, IAnalysisW
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E105429A-489E-47F6-B827-8E5819FCE917}", VectorGeometryToolVectorPlugin)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorPlugin"] = VectorGeometryToolVectorPlugin
 
 class VectorGeometryToolVectorDispSurface(IVectorGeometryToolVectorDispSurface, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Displacement between origin and destination points using surface distance and altitude difference."""
@@ -34695,7 +34695,7 @@ class VectorGeometryToolVectorDispSurface(IVectorGeometryToolVectorDispSurface, 
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDispSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ccd4af03-78af-47ae-902a-90860a17daa4}", VectorGeometryToolVectorDispSurface)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorDispSurface"] = VectorGeometryToolVectorDispSurface
 
 class VectorGeometryToolVectorFactory(IVectorGeometryToolVectorFactory):
     """A Factory object to create vectors."""
@@ -34716,7 +34716,7 @@ class VectorGeometryToolVectorFactory(IVectorGeometryToolVectorFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{084C11E1-D35D-4F42-83D6-3EF43FEC1E23}", VectorGeometryToolVectorFactory)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorFactory"] = VectorGeometryToolVectorFactory
 
 class VectorGeometryToolAxesFactory(IVectorGeometryToolAxesFactory):
     """A Factory object to create axes."""
@@ -34737,7 +34737,7 @@ class VectorGeometryToolAxesFactory(IVectorGeometryToolAxesFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7B3E2402-1E15-43DC-BB48-6E98D377B107}", VectorGeometryToolAxesFactory)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesFactory"] = VectorGeometryToolAxesFactory
 
 class VectorGeometryToolSystemFactory(IVectorGeometryToolSystemFactory):
     """A Factory class to create VGT systems."""
@@ -34758,7 +34758,7 @@ class VectorGeometryToolSystemFactory(IVectorGeometryToolSystemFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{01A37414-BA74-4DF3-A007-6A3395C8A859}", VectorGeometryToolSystemFactory)
-
+agcls.AgTypeNameMap["VectorGeometryToolSystemFactory"] = VectorGeometryToolSystemFactory
 
 class VectorGeometryToolPointFactory(IVectorGeometryToolPointFactory):
     """A Factory object to create points."""
@@ -34779,7 +34779,7 @@ class VectorGeometryToolPointFactory(IVectorGeometryToolPointFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6C79F3B2-8AE5-468A-940F-F0988752B309}", VectorGeometryToolPointFactory)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointFactory"] = VectorGeometryToolPointFactory
 
 class VectorGeometryToolPlaneFactory(IVectorGeometryToolPlaneFactory):
     """A Factory object to create VGT planes."""
@@ -34800,7 +34800,7 @@ class VectorGeometryToolPlaneFactory(IVectorGeometryToolPlaneFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6F83DB0C-0AFB-4831-BED0-63AE2F8FEFFB}", VectorGeometryToolPlaneFactory)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneFactory"] = VectorGeometryToolPlaneFactory
 
 class VectorGeometryToolAngleFactory(IVectorGeometryToolAngleFactory):
     """A Factory object to create angles."""
@@ -34821,7 +34821,7 @@ class VectorGeometryToolAngleFactory(IVectorGeometryToolAngleFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0888F89F-9D77-4FCE-9A08-67FCBE870187}", VectorGeometryToolAngleFactory)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleFactory"] = VectorGeometryToolAngleFactory
 
 class VectorGeometryToolVectorGroup(IVectorGeometryToolVectorGroup):
     """Access or create VGT vectors associated with an object or a central body."""
@@ -34842,7 +34842,7 @@ class VectorGeometryToolVectorGroup(IVectorGeometryToolVectorGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{69ABE9EE-BAA4-40A7-8097-06DBE70D71D5}", VectorGeometryToolVectorGroup)
-
+agcls.AgTypeNameMap["VectorGeometryToolVectorGroup"] = VectorGeometryToolVectorGroup
 
 class VectorGeometryToolPointGroup(IVectorGeometryToolPointGroup):
     """Access or create VGT points associated with an object or a central body."""
@@ -34863,7 +34863,7 @@ class VectorGeometryToolPointGroup(IVectorGeometryToolPointGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0793BE73-C894-4AF7-BFDB-5D61F5C3B6FD}", VectorGeometryToolPointGroup)
-
+agcls.AgTypeNameMap["VectorGeometryToolPointGroup"] = VectorGeometryToolPointGroup
 
 class VectorGeometryToolAngleGroup(IVectorGeometryToolAngleGroup):
     """Access or create VGT angles associated with an object or a central body."""
@@ -34884,7 +34884,7 @@ class VectorGeometryToolAngleGroup(IVectorGeometryToolAngleGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CF6C41CC-A02E-424C-8E7E-B5BA05F1FAF3}", VectorGeometryToolAngleGroup)
-
+agcls.AgTypeNameMap["VectorGeometryToolAngleGroup"] = VectorGeometryToolAngleGroup
 
 class VectorGeometryToolAxesGroup(IVectorGeometryToolAxesGroup):
     """Access or create VGT axes associated with an object or a central body."""
@@ -34905,7 +34905,7 @@ class VectorGeometryToolAxesGroup(IVectorGeometryToolAxesGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2D792657-9D6E-4B1E-AEAB-B964839C6F94}", VectorGeometryToolAxesGroup)
-
+agcls.AgTypeNameMap["VectorGeometryToolAxesGroup"] = VectorGeometryToolAxesGroup
 
 class VectorGeometryToolPlaneGroup(IVectorGeometryToolPlaneGroup):
     """Represents a VGT Plane component."""
@@ -34926,7 +34926,7 @@ class VectorGeometryToolPlaneGroup(IVectorGeometryToolPlaneGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{15117A82-3EE6-483E-A65E-2A44F60DB355}", VectorGeometryToolPlaneGroup)
-
+agcls.AgTypeNameMap["VectorGeometryToolPlaneGroup"] = VectorGeometryToolPlaneGroup
 
 class VectorGeometryToolSystemGroup(IVectorGeometryToolSystemGroup):
     """Access or create VGT systems associated with an object or a central body."""
@@ -34947,7 +34947,7 @@ class VectorGeometryToolSystemGroup(IVectorGeometryToolSystemGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{65E8F1CC-E68C-4EF6-9A68-443DD01C55E2}", VectorGeometryToolSystemGroup)
-
+agcls.AgTypeNameMap["VectorGeometryToolSystemGroup"] = VectorGeometryToolSystemGroup
 
 class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
     """Allows accessing existing Vector Geometry Tool components."""
@@ -34968,7 +34968,7 @@ class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchProvider.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D9031FE1-81E1-4818-944D-5F00FC3EC97D}", AnalysisWorkbenchProvider)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchProvider"] = AnalysisWorkbenchProvider
 
 class AnalysisWorkbenchRoot(IAnalysisWorkbenchRoot):
     """Represents a VGT root."""
@@ -34989,7 +34989,7 @@ class AnalysisWorkbenchRoot(IAnalysisWorkbenchRoot):
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchRoot.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26E18B6F-19CA-4537-B6B3-D307DAADCDBB}", AnalysisWorkbenchRoot)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchRoot"] = AnalysisWorkbenchRoot
 
 class VectorGeometryToolWellKnownEarthSystems(IVectorGeometryToolWellKnownEarthSystems):
     """Well-known Earth's coordinate systems."""
@@ -35010,7 +35010,7 @@ class VectorGeometryToolWellKnownEarthSystems(IVectorGeometryToolWellKnownEarthS
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownEarthSystems.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9CE3EA8C-78D7-4C9E-9D35-4E34DBA9FD19}", VectorGeometryToolWellKnownEarthSystems)
-
+agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthSystems"] = VectorGeometryToolWellKnownEarthSystems
 
 class VectorGeometryToolWellKnownEarthAxes(IVectorGeometryToolWellKnownEarthAxes):
     """Well-known Earth's axes."""
@@ -35031,7 +35031,7 @@ class VectorGeometryToolWellKnownEarthAxes(IVectorGeometryToolWellKnownEarthAxes
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownEarthAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B79CA8BC-D4BA-4F76-9278-AB7C9C537859}", VectorGeometryToolWellKnownEarthAxes)
-
+agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthAxes"] = VectorGeometryToolWellKnownEarthAxes
 
 class VectorGeometryToolWellKnownSunSystems(IVectorGeometryToolWellKnownSunSystems):
     """The Sun's well-known coordinate reference systems."""
@@ -35052,7 +35052,7 @@ class VectorGeometryToolWellKnownSunSystems(IVectorGeometryToolWellKnownSunSyste
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownSunSystems.")
         
 agcls.AgClassCatalog.add_catalog_entry("{855EB036-E71F-47F9-B27B-57247345282A}", VectorGeometryToolWellKnownSunSystems)
-
+agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunSystems"] = VectorGeometryToolWellKnownSunSystems
 
 class VectorGeometryToolWellKnownSunAxes(IVectorGeometryToolWellKnownSunAxes):
     """Well-known Sun's axes."""
@@ -35073,7 +35073,7 @@ class VectorGeometryToolWellKnownSunAxes(IVectorGeometryToolWellKnownSunAxes):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownSunAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F786A33-8851-4FA4-A0CA-DC353170143E}", VectorGeometryToolWellKnownSunAxes)
-
+agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunAxes"] = VectorGeometryToolWellKnownSunAxes
 
 class VectorGeometryToolWellKnownSystems(IVectorGeometryToolWellKnownSystems):
     """Well-known coordinate reference systems."""
@@ -35094,7 +35094,7 @@ class VectorGeometryToolWellKnownSystems(IVectorGeometryToolWellKnownSystems):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownSystems.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8C5101B3-3FDD-443D-A59F-B1E801873E0A}", VectorGeometryToolWellKnownSystems)
-
+agcls.AgTypeNameMap["VectorGeometryToolWellKnownSystems"] = VectorGeometryToolWellKnownSystems
 
 class VectorGeometryToolWellKnownAxes(IVectorGeometryToolWellKnownAxes):
     """Represents well-known VGT Axes."""
@@ -35115,7 +35115,7 @@ class VectorGeometryToolWellKnownAxes(IVectorGeometryToolWellKnownAxes):
             raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E24B44A-B46D-4B9B-A22C-615EFAA73A6C}", VectorGeometryToolWellKnownAxes)
-
+agcls.AgTypeNameMap["VectorGeometryToolWellKnownAxes"] = VectorGeometryToolWellKnownAxes
 
 class AnalysisWorkbenchMethodCallResult(IVectorGeometryToolAngleFindResult, IVectorGeometryToolAngleFindWithRateResult, IVectorGeometryToolAxesTransformResult, IVectorGeometryToolAxesTransformWithRateResult, IVectorGeometryToolAxesFindInAxesResult, IVectorGeometryToolAxesFindInAxesWithRateResult, IVectorGeometryToolPlaneFindInAxesResult, IVectorGeometryToolPlaneFindInAxesWithRateResult, IVectorGeometryToolPlaneFindInSystemResult, IVectorGeometryToolPlaneFindInSystemWithRateResult, IVectorGeometryToolPointLocateInSystemResult, IVectorGeometryToolPointLocateInSystemWithRateResult, IVectorGeometryToolSystemTransformResult, IVectorGeometryToolSystemTransformWithRateResult, IVectorGeometryToolSystemFindInSystemResult, IVectorGeometryToolVectorFindInAxesResult, IVectorGeometryToolVectorFindInAxesWithRateResult, IVectorGeometryToolAngleFindAngleWithRateResult, IVectorGeometryToolAngleFindAngleResult, IAnalysisWorkbenchMethodCallResult):
     """
@@ -35423,7 +35423,7 @@ class AnalysisWorkbenchMethodCallResult(IVectorGeometryToolAngleFindResult, IVec
             raise STKAttributeError(attrname + " is not a valid attribute in this instance of AnalysisWorkbenchMethodCallResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03665183-03A3-4ABE-9954-476CD71C8BB3}", AnalysisWorkbenchMethodCallResult)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallResult"] = AnalysisWorkbenchMethodCallResult
 
 class TimeToolInterval(ITimeToolInterval):
     """Represents an interval."""
@@ -35444,7 +35444,7 @@ class TimeToolInterval(ITimeToolInterval):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7825007C-4D30-46EC-A047-EAF6683C4187}", TimeToolInterval)
-
+agcls.AgTypeNameMap["TimeToolInterval"] = TimeToolInterval
 
 class TimeToolIntervalCollection(ITimeToolIntervalCollection):
     """Represents a collection of intervals."""
@@ -35465,7 +35465,7 @@ class TimeToolIntervalCollection(ITimeToolIntervalCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{908714CE-1D69-4F68-875A-9B584CF8F2A7}", TimeToolIntervalCollection)
-
+agcls.AgTypeNameMap["TimeToolIntervalCollection"] = TimeToolIntervalCollection
 
 class AnalysisWorkbenchCentralBody(IAnalysisWorkbenchCentralBody):
     """Represents an central body."""
@@ -35486,7 +35486,7 @@ class AnalysisWorkbenchCentralBody(IAnalysisWorkbenchCentralBody):
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCentralBody.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9A0248DF-B126-4448-A653-CD5C28DC9229}", AnalysisWorkbenchCentralBody)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchCentralBody"] = AnalysisWorkbenchCentralBody
 
 class AnalysisWorkbenchCentralBodyRefTo(IAnalysisWorkbenchCentralBodyRefTo, IAnalysisWorkbenchRefTo):
     """Represents a central body reference."""
@@ -35510,7 +35510,7 @@ class AnalysisWorkbenchCentralBodyRefTo(IAnalysisWorkbenchCentralBodyRefTo, IAna
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCentralBodyRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFB22A58-DB60-4A1B-B0D4-44916CACC759}", AnalysisWorkbenchCentralBodyRefTo)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyRefTo"] = AnalysisWorkbenchCentralBodyRefTo
 
 class AnalysisWorkbenchCentralBodyCollection(IAnalysisWorkbenchCentralBodyCollection):
     """A collection of central body names."""
@@ -35531,7 +35531,7 @@ class AnalysisWorkbenchCentralBodyCollection(IAnalysisWorkbenchCentralBodyCollec
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCentralBodyCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E8951B8F-E457-4289-9125-5381515552C4}", AnalysisWorkbenchCentralBodyCollection)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyCollection"] = AnalysisWorkbenchCentralBodyCollection
 
 class AnalysisWorkbenchCollection(IAnalysisWorkbenchCollection):
     """A collection of VGT objects."""
@@ -35552,7 +35552,7 @@ class AnalysisWorkbenchCollection(IAnalysisWorkbenchCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{24B18D3A-675E-467D-A97C-5CD42EB6DC8D}", AnalysisWorkbenchCollection)
-
+agcls.AgTypeNameMap["AnalysisWorkbenchCollection"] = AnalysisWorkbenchCollection
 
 class TimeToolPointSamplingResult(ITimeToolPointSamplingResult):
     """Contains tabulated positions and velocities of a point created by Sample method."""
@@ -35573,7 +35573,7 @@ class TimeToolPointSamplingResult(ITimeToolPointSamplingResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPointSamplingResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A3132149-15ED-4D7E-85A6-FD1B2BB80B1E}", TimeToolPointSamplingResult)
-
+agcls.AgTypeNameMap["TimeToolPointSamplingResult"] = TimeToolPointSamplingResult
 
 class TimeToolPointSamplingInterval(ITimeToolPointSamplingInterval):
     """The interface represents an interval with the time, position and velocity arrays."""
@@ -35594,7 +35594,7 @@ class TimeToolPointSamplingInterval(ITimeToolPointSamplingInterval):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPointSamplingInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B7546E8-0228-4269-92D1-B3C186AF18EF}", TimeToolPointSamplingInterval)
-
+agcls.AgTypeNameMap["TimeToolPointSamplingInterval"] = TimeToolPointSamplingInterval
 
 class TimeToolPointSamplingIntervalCollection(ITimeToolPointSamplingIntervalCollection):
     """A collection of intervals where each interval contains the time, position and velocity arrays."""
@@ -35615,7 +35615,7 @@ class TimeToolPointSamplingIntervalCollection(ITimeToolPointSamplingIntervalColl
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPointSamplingIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F6CF6B1-7192-4960-927D-1FC328122E59}", TimeToolPointSamplingIntervalCollection)
-
+agcls.AgTypeNameMap["TimeToolPointSamplingIntervalCollection"] = TimeToolPointSamplingIntervalCollection
 
 class TimeToolAxesSamplingResult(ITimeToolAxesSamplingResult):
     """Contains tabulated orientations and angular velocities of axes created by Sample method."""
@@ -35636,7 +35636,7 @@ class TimeToolAxesSamplingResult(ITimeToolAxesSamplingResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolAxesSamplingResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{54622168-5440-4C86-9539-A0CA336E554B}", TimeToolAxesSamplingResult)
-
+agcls.AgTypeNameMap["TimeToolAxesSamplingResult"] = TimeToolAxesSamplingResult
 
 class TimeToolAxesSamplingInterval(ITimeToolAxesSamplingInterval):
     """The interface represents an interval with the time, orientation and velocity arrays."""
@@ -35657,7 +35657,7 @@ class TimeToolAxesSamplingInterval(ITimeToolAxesSamplingInterval):
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolAxesSamplingInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{069BCA07-B5AB-4A46-A508-AFE218E21B2F}", TimeToolAxesSamplingInterval)
-
+agcls.AgTypeNameMap["TimeToolAxesSamplingInterval"] = TimeToolAxesSamplingInterval
 
 class TimeToolAxesSamplingIntervalCollection(ITimeToolAxesSamplingIntervalCollection):
     """A collection of intervals where each interval contains the time, orientation and velocity arrays."""
@@ -35678,7 +35678,7 @@ class TimeToolAxesSamplingIntervalCollection(ITimeToolAxesSamplingIntervalCollec
             raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolAxesSamplingIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4AD4C296-E643-4CB6-A34A-D33748117EEF}", TimeToolAxesSamplingIntervalCollection)
-
+agcls.AgTypeNameMap["TimeToolAxesSamplingIntervalCollection"] = TimeToolAxesSamplingIntervalCollection
 
 
 ################################################################################

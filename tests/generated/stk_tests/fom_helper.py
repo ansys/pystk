@@ -1,25 +1,25 @@
+import pytest
 from test_util import *
 from assert_extension import *
 from assertion_harness import *
 from logger import *
 from math2 import *
-
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
 
 class FOMHelper(object):
-    def __init__(self, oRoot: "IStkObjectRoot"):
+    def __init__(self, oRoot: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "IStkObjectRoot" = oRoot
+        self.m_oRoot: "StkObjectRoot" = oRoot
 
     # region Definition
     def Definition(
         self,
         oDefinition: "IFigureOfMeritDefinition",
         eType: "FIGURE_OF_MERIT_DEFINITION_TYPE",
-        assets: "ICoverageAssetListCollection",
+        assets: "CoverageAssetListCollection",
     ):
         Assert.assertIsNotNone(oDefinition)
 
@@ -29,8 +29,8 @@ class FOMHelper(object):
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # AccessConstraint
-            oConstraint: "IFigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionAccessConstraint
+            oConstraint: "FigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionAccessConstraint
             )
             Assert.assertIsNotNone(oConstraint)
             # AcrossAssets
@@ -81,8 +81,8 @@ class FOMHelper(object):
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION:
-            oSeparation: "IFigureOfMeritDefinitionAccessSeparation" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionAccessSeparation
+            oSeparation: "FigureOfMeritDefinitionAccessSeparation" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionAccessSeparation
             )
             Assert.assertIsNotNone(oSeparation)
             # MinMaxData
@@ -98,12 +98,12 @@ class FOMHelper(object):
             # DilutionOfPrecision
             self.DilutionOfPrecision(clr.CastAs(oDefinition, IFigureOfMeritDefinitionDilutionOfPrecision))
             # NavigationAccuracy
-            oNA: "IFigureOfMeritDefinitionNavigationAccuracy" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionNavigationAccuracy
+            oNA: "FigureOfMeritDefinitionNavigationAccuracy" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionNavigationAccuracy
             )
             Assert.assertIsNotNone(oNA)
             # Uncertainties
-            oUncertainties: "IFigureOfMeritUncertainties" = oNA.uncertainties
+            oUncertainties: "FigureOfMeritUncertainties" = oNA.uncertainties
             Assert.assertIsNotNone(oUncertainties)
             # ReceiverRange
             self.m_logger.WriteLine6("\t\t\tThe current ReceiverRange is: {0}", oUncertainties.receiver_range)
@@ -115,7 +115,7 @@ class FOMHelper(object):
             # AssetList (empty)
             assets.remove_all()
             Assert.assertEqual(0, assets.count)
-            oList: "IFigureOfMeritAssetListCollection" = oUncertainties.asset_list
+            oList: "FigureOfMeritAssetListCollection" = oUncertainties.asset_list
             Assert.assertIsNotNone(oList)
             self.m_logger.WriteLine3("\t\t\tThe current AssetList collection contains: {0} elements", oList.count)
             Assert.assertEqual(0, oList.count)
@@ -130,7 +130,7 @@ class FOMHelper(object):
             self.m_logger.WriteLine3("\t\t\tThe new AssetList collection contains: {0} elements", oList.count)
             Assert.assertEqual(1, oList.count)
             # _NewEnum
-            oElem: "IFigureOfMeritAssetListElement"
+            oElem: "FigureOfMeritAssetListElement"
             # _NewEnum
             for oElem in oList:
                 self.m_logger.WriteLine7(
@@ -138,7 +138,7 @@ class FOMHelper(object):
                 )
 
             # Item
-            assetListElement: "IFigureOfMeritAssetListElement" = oList[0]
+            assetListElement: "FigureOfMeritAssetListElement" = oList[0]
             Assert.assertIsNotNone(assetListElement)
             # MethodType
             self.m_logger.WriteLine6("\t\t\tThe current MethodType is: {0}", assetListElement.method_type)
@@ -147,8 +147,8 @@ class FOMHelper(object):
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
             Assert.assertEqual(FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.CONSTANT, assetListElement.method_type)
             # Method
-            oMC: "IFigureOfMeritNavigationAccuracyMethodConstant" = clr.CastAs(
-                assetListElement.method, IFigureOfMeritNavigationAccuracyMethodConstant
+            oMC: "FigureOfMeritNavigationAccuracyMethodConstant" = clr.CastAs(
+                assetListElement.method, FigureOfMeritNavigationAccuracyMethodConstant
             )
             Assert.assertIsNotNone(oMC)
             # Value
@@ -165,8 +165,8 @@ class FOMHelper(object):
                 FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.ELEVATION_ANGLE, assetListElement.method_type
             )
             # Method
-            oMEA: "IFigureOfMeritNavigationAccuracyMethodElevationAngle" = clr.CastAs(
-                assetListElement.method, IFigureOfMeritNavigationAccuracyMethodElevationAngle
+            oMEA: "FigureOfMeritNavigationAccuracyMethodElevationAngle" = clr.CastAs(
+                assetListElement.method, FigureOfMeritNavigationAccuracyMethodElevationAngle
             )
             Assert.assertIsNotNone(oMEA)
             # Filename
@@ -196,7 +196,7 @@ class FOMHelper(object):
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # RevisitTime
-            oTime: "IFigureOfMeritDefinitionRevisitTime" = clr.CastAs(oDefinition, IFigureOfMeritDefinitionRevisitTime)
+            oTime: "FigureOfMeritDefinitionRevisitTime" = clr.CastAs(oDefinition, FigureOfMeritDefinitionRevisitTime)
             Assert.assertIsNotNone(oTime)
             # MinAssets
             self.m_logger.WriteLine3("\t\t\tThe current MinAssets is: {0}", oTime.min_assets)
@@ -220,8 +220,8 @@ class FOMHelper(object):
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
 
             # SystemResponseTime
-            srt: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionSystemResponseTime
+            srt: "FigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionSystemResponseTime
             )
             Assert.assertIsNotNone(srt)
 
@@ -300,10 +300,10 @@ class FOMHelper(object):
                 srt.time_step = -10
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.AGE_OF_DATA:
             # Compute
-            self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionAgeOfData))
+            self.Compute(clr.CastAs(oDefinition, FigureOfMeritDefinitionAgeOfData))
 
             # AgeOfData
-            aod: "IFigureOfMeritDefinitionAgeOfData" = clr.CastAs(oDefinition, IFigureOfMeritDefinitionAgeOfData)
+            aod: "FigureOfMeritDefinitionAgeOfData" = clr.CastAs(oDefinition, FigureOfMeritDefinitionAgeOfData)
             Assert.assertIsNotNone(aod)
 
             aod.min_assets = 1
@@ -316,11 +316,11 @@ class FOMHelper(object):
                 aod.min_assets = 10000
         elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION:
             # Compute
-            self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionScalarCalculation))
+            self.Compute(clr.CastAs(oDefinition, FigureOfMeritDefinitionScalarCalculation))
 
             # Scalar Calculation
-            sd: "IFigureOfMeritDefinitionScalarCalculation" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionScalarCalculation
+            sd: "FigureOfMeritDefinitionScalarCalculation" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionScalarCalculation
             )
             Assert.assertIsNotNone(sd)
 
@@ -338,8 +338,8 @@ class FOMHelper(object):
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
 
             # SystemAgeOfData
-            saod: "IFigureOfMeritDefinitionSystemAgeOfData" = clr.CastAs(
-                oDefinition, IFigureOfMeritDefinitionSystemAgeOfData
+            saod: "FigureOfMeritDefinitionSystemAgeOfData" = clr.CastAs(
+                oDefinition, FigureOfMeritDefinitionSystemAgeOfData
             )
             Assert.assertIsNotNone(saod)
 
@@ -532,9 +532,9 @@ class FOMHelper(object):
             elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_TIME_ABOVE)) or (
                 (eComputeType == FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
             ):
-                # IFigureOfMeritDefinitionDataMinAssets
-                dataMinAssets: "IFigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
-                    oCompute.compute, IFigureOfMeritDefinitionDataMinAssets
+                # FigureOfMeritDefinitionDataMinAssets
+                dataMinAssets: "FigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
+                    oCompute.compute, FigureOfMeritDefinitionDataMinAssets
                 )
                 Assert.assertIsNotNone(dataMinAssets)
                 # MinAssets
@@ -547,7 +547,7 @@ class FOMHelper(object):
             elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN)) or (
                 (eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN_PER_DAY)
             ):
-                self.DataMinMax(clr.CastAs(oCompute.compute, IFigureOfMeritDefinitionDataMinMax))
+                self.DataMinMax(clr.CastAs(oCompute.compute, FigureOfMeritDefinitionDataMinMax))
             elif (
                 (
                     ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE))
@@ -555,8 +555,8 @@ class FOMHelper(object):
                 )
                 or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW_GAPS_ONLY))
             ) or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.NUM_PERCENT_BELOW)):
-                dataPercentLevel: "IFigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
-                    oCompute.compute, IFigureOfMeritDefinitionDataPercentLevel
+                dataPercentLevel: "FigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
+                    oCompute.compute, FigureOfMeritDefinitionDataPercentLevel
                 )
                 Assert.assertIsNotNone(dataPercentLevel)
                 # PercentLevel
@@ -574,7 +574,7 @@ class FOMHelper(object):
     # endregion
 
     # region Satisfaction
-    def Satisfaction(self, oSatisfaction: "IFigureOfMeritSatisfaction", eType: "FIGURE_OF_MERIT_DEFINITION_TYPE"):
+    def Satisfaction(self, oSatisfaction: "FigureOfMeritSatisfaction", eType: "FIGURE_OF_MERIT_DEFINITION_TYPE"):
         Assert.assertIsNotNone(oSatisfaction)
 
         bReadOnly: bool = False
@@ -741,7 +741,7 @@ class FOMHelper(object):
     # endregion
 
     # region DataMinMax
-    def DataMinMax(self, dataMinMax: "IFigureOfMeritDefinitionDataMinMax"):
+    def DataMinMax(self, dataMinMax: "FigureOfMeritDefinitionDataMinMax"):
         Assert.assertIsNotNone(dataMinMax)
         # MinValue
         min: float = dataMinMax.min_value
@@ -813,8 +813,8 @@ class FOMHelper(object):
                 definitionData: "IFigureOfMeritDefinitionData" = clr.CastAs(
                     oDOP.type_data, IFigureOfMeritDefinitionData
                 )
-                oBest4: "IFigureOfMeritDefinitionDataBest4" = clr.CastAs(
-                    definitionData, IFigureOfMeritDefinitionDataBest4
+                oBest4: "FigureOfMeritDefinitionDataBest4" = clr.CastAs(
+                    definitionData, FigureOfMeritDefinitionDataBest4
                 )
                 Assert.assertIsNotNone(oBest4)
                 # BestN
@@ -835,8 +835,8 @@ class FOMHelper(object):
             elif ((eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N)) or (
                 (eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N_ACC)
             ):
-                oBestN: "IFigureOfMeritDefinitionDataBestN" = clr.CastAs(
-                    oDOP.type_data, IFigureOfMeritDefinitionDataBestN
+                oBestN: "FigureOfMeritDefinitionDataBestN" = clr.CastAs(
+                    oDOP.type_data, FigureOfMeritDefinitionDataBestN
                 )
                 Assert.assertIsNotNone(oBestN)
                 # BestN
@@ -950,7 +950,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxAnimationAttributes
-    def GfxAnimationAttributes(self, oAttributes: "IFigureOfMeritGraphics2DAttributesAnimation", bReadOnly: bool):
+    def GfxAnimationAttributes(self, oAttributes: "FigureOfMeritGraphics2DAttributesAnimation", bReadOnly: bool):
         self.m_logger.WriteLine4(
             "----- GRAPHICS ATTRIBUTES ANIMATION TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly
         )
@@ -963,8 +963,8 @@ class FOMHelper(object):
                 oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
 
         else:
-            klass: "IFigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
-                oAttributes, IFigureOfMeritGraphics2DAttributesAnimation
+            klass: "FigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
+                oAttributes, FigureOfMeritGraphics2DAttributesAnimation
             )
             dispatch: "FigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
                 oAttributes, FigureOfMeritGraphics2DAttributesAnimation
@@ -1107,8 +1107,8 @@ class FOMHelper(object):
     ):
         self.m_logger.WriteLine4("----- GRAPHICS CONTOURS ANIMATION TEST (ReadOnly = {0})----- BEGIN -----", bReadOnly)
         Assert.assertIsNotNone(oBaseContours)
-        oContours: "IFigureOfMeritGraphics2DContoursAnimation" = clr.CastAs(
-            oBaseContours, IFigureOfMeritGraphics2DContoursAnimation
+        oContours: "FigureOfMeritGraphics2DContoursAnimation" = clr.CastAs(
+            oBaseContours, FigureOfMeritGraphics2DContoursAnimation
         )
         Assert.assertIsNotNone(oContours)
         if bReadOnly:
@@ -1138,7 +1138,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxRampColor
-    def GfxRampColor(self, oColor: "IFigureOfMeritGraphics2DRampColor", bReadOnly: bool):
+    def GfxRampColor(self, oColor: "FigureOfMeritGraphics2DRampColor", bReadOnly: bool):
         self.m_logger.WriteLine("----- GRAPHICS RAMP COLOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oColor)
         if bReadOnly:
@@ -1168,7 +1168,7 @@ class FOMHelper(object):
     # region GfxLevelAttributes
     def GfxLevelAttributes(
         self,
-        oCollection: "IFigureOfMeritGraphics2DLevelAttributesCollection",
+        oCollection: "FigureOfMeritGraphics2DLevelAttributesCollection",
         eMethod: "FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD",
         bReadOnly: bool,
     ):
@@ -1206,17 +1206,17 @@ class FOMHelper(object):
             with pytest.raises(Exception):
                 oCollection.add_level_range(10, 20, -5)
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
-            oElem: "IFigureOfMeritGraphics2DLevelAttributesElement"
+            oElem: "FigureOfMeritGraphics2DLevelAttributesElement"
             for oElem in oCollection:
                 # _NewEnum
                 self.m_logger.WriteLine7("\t\tElement: Level = {0}, Color = 0x{1:X}", oElem.level, oElem.color)
 
             # AddLevel
-            gfxLevelAttributesElement: "IFigureOfMeritGraphics2DLevelAttributesElement" = oCollection.add_level(37)
+            gfxLevelAttributesElement: "FigureOfMeritGraphics2DLevelAttributesElement" = oCollection.add_level(37)
             Assert.assertIsNotNone(gfxLevelAttributesElement)
             Assert.assertEqual(6, oCollection.count)
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
-            oElem: "IFigureOfMeritGraphics2DLevelAttributesElement"
+            oElem: "FigureOfMeritGraphics2DLevelAttributesElement"
             for oElem in oCollection:
                 self.m_logger.WriteLine7("\t\tElement: Level = {0}, Color = 0x{1:X}", oElem.level, oElem.color)
 
@@ -1277,7 +1277,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxLegend
-    def GfxLegend(self, oLegend: "IFigureOfMeritGraphics2DLegend", bReadOnly: bool, bIsVisibleReadOnly: bool):
+    def GfxLegend(self, oLegend: "FigureOfMeritGraphics2DLegend", bReadOnly: bool, bIsVisibleReadOnly: bool):
         self.m_logger.WriteLine4("----- GRAPHICS LEGEND TEST (ReadOnly = {0})----- BEGIN -----", bReadOnly)
         Assert.assertIsNotNone(oLegend)
         if bReadOnly:
@@ -1310,7 +1310,7 @@ class FOMHelper(object):
 
     # region GfxLegendColorOptions
     def GfxLegendColorOptions(
-        self, oOptions: "IFigureOfMeritGraphics2DColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oOptions: "FigureOfMeritGraphics2DColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1341,7 +1341,7 @@ class FOMHelper(object):
 
     # region GfxLegendTextOptions
     def GfxLegendTextOptions(
-        self, oOptions: "IFigureOfMeritGraphics2DTextOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oOptions: "FigureOfMeritGraphics2DTextOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1393,7 +1393,7 @@ class FOMHelper(object):
 
     # region GfxLegendRangeColorOptions
     def GfxLegendRangeColorOptions(
-        self, oOptions: "IFigureOfMeritGraphics2DRangeColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oOptions: "FigureOfMeritGraphics2DRangeColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oOptions)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1490,7 +1490,7 @@ class FOMHelper(object):
 
     # region GfxLegend2DWindowLayout
     def GfxLegend2DWindowLayout(
-        self, oWindow: "IFigureOfMeritGraphics2DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oWindow: "FigureOfMeritGraphics2DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oWindow)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1519,7 +1519,7 @@ class FOMHelper(object):
 
     # region GfxLegend3DWindowLayout
     def GfxLegend3DWindowLayout(
-        self, oWindow: "IFigureOfMeritGraphics3DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
+        self, oWindow: "FigureOfMeritGraphics3DLegendWindow", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oWindow)
         if bReadOnly and bIsVisibleReadOnly:
@@ -1557,7 +1557,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxLegendPositionOnMap
-    def GfxLegendPositionOnMap(self, oPosition: "IFigureOfMeritGraphics2DPositionOnMap", bReadOnly: bool):
+    def GfxLegendPositionOnMap(self, oPosition: "FigureOfMeritGraphics2DPositionOnMap", bReadOnly: bool):
         Assert.assertIsNotNone(oPosition)
         if bReadOnly:
             # X (readonly)
@@ -1586,20 +1586,20 @@ class FOMHelper(object):
     # endregion
 
     # region GfxObjectCoverage
-    def GfxObjectCoverage(self, oStkObjectCoverage: "IStkObjectCoverage"):
+    def GfxObjectCoverage(self, oStkObjectCoverage: "StkObjectCoverage"):
         self.m_logger.WriteLine("----- OBJECT COVERAGE GRAPHICS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oStkObjectCoverage)
-        oObjCovFOM: "IObjectCoverageFigureOfMerit" = clr.CastAs(
-            oStkObjectCoverage.figure_of_merit, IObjectCoverageFigureOfMerit
+        oObjCovFOM: "ObjectCoverageFigureOfMerit" = clr.CastAs(
+            oStkObjectCoverage.figure_of_merit, ObjectCoverageFigureOfMerit
         )
         Assert.assertIsNotNone(oObjCovFOM)
 
         facAssetName: str = "Facility/Facility1"
         oObjCovFOM.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
-        oCollection: "ICoverageAssetListCollection" = oStkObjectCoverage.assets
+        oCollection: "CoverageAssetListCollection" = oStkObjectCoverage.assets
         if Array.IndexOf(oCollection.available_assets, facAssetName) != -1:
             if oCollection.can_assign_asset(facAssetName):
-                assetListElement: "ICoverageAssetListElement" = oCollection.add(facAssetName)
+                assetListElement: "CoverageAssetListElement" = oCollection.add(facAssetName)
                 assetListElement.required = True
                 oStkObjectCoverage.compute()
 

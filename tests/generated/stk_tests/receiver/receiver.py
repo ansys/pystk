@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from antenna.antenna_helper import *
@@ -6,7 +7,6 @@ from display_times_helper import *
 from interfaces.stk_objects import *
 from orientation_helper import *
 from vehicle.vehicle_vo import *
-
 from parameterized import *
 
 from ansys.stk.core.stkobjects import *
@@ -29,23 +29,23 @@ class EarlyBoundTests(TestBase):
     oReceiver: "IStkObject" = None
     oAntenna1: "IStkObject" = None
     oAntenna2: "IStkObject" = None
-    receiver: "IReceiver" = None
+    receiver: "Receiver" = None
 
     # Use a receiver on a Facility in order to test the Cable Receiver Model
     oFacForCableModel: "IStkObject" = None
     oReceiverForCableModel: "IStkObject" = None
-    receiverForCableModel: "IReceiver" = None
+    receiverForCableModel: "Receiver" = None
 
     # 2D
-    receiverGraphics: "IReceiverGraphics" = None
-    antennaContourGraphics: "IAntennaContourGraphics" = None
+    receiverGraphics: "ReceiverGraphics" = None
+    antennaContourGraphics: "AntennaContourGraphics" = None
     antennaContour: "IAntennaContour" = None
-    antennaContourLevelCollection: "IAntennaContourLevelCollection" = None
+    antennaContourLevelCollection: "AntennaContourLevelCollection" = None
 
     # 3D
-    receiverVO: "IReceiverGraphics3D" = None
-    VOVector: "IGraphics3DVector" = None
-    antennaVolumeGraphics: "IAntennaVolumeGraphics" = None
+    receiverVO: "ReceiverGraphics3D" = None
+    VOVector: "Graphics3DVector" = None
+    antennaVolumeGraphics: "AntennaVolumeGraphics" = None
     # endregion
 
     # region OneTimeSetUp
@@ -65,13 +65,13 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.oAntenna2 = EarlyBoundTests.oSat.children.new(
                 STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA2_NAME
             )
-            EarlyBoundTests.receiver = clr.CastAs(EarlyBoundTests.oReceiver, IReceiver)
+            EarlyBoundTests.receiver = clr.CastAs(EarlyBoundTests.oReceiver, Receiver)
 
             EarlyBoundTests.oFacForCableModel = TestBase.Application.current_scenario.children["Facility1"]
             EarlyBoundTests.oReceiverForCableModel = EarlyBoundTests.oFacForCableModel.children.new(
                 STK_OBJECT_TYPE.RECEIVER, EarlyBoundTests.RECEIVER_NAME
             )
-            EarlyBoundTests.receiverForCableModel = clr.CastAs(EarlyBoundTests.oReceiverForCableModel, IReceiver)
+            EarlyBoundTests.receiverForCableModel = clr.CastAs(EarlyBoundTests.oReceiverForCableModel, Receiver)
             if not TestBase.NoGraphicsMode:
                 # 3D
                 EarlyBoundTests.receiverVO = EarlyBoundTests.receiver.graphics_3d
@@ -228,8 +228,8 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgAntennaContour_Levels
     def Test_IAgAntennaContour_Levels(self, antennaContour: "IAntennaContour"):
-        levelCollection: "IAntennaContourLevelCollection" = clr.CastAs(
-            antennaContour.levels, IAntennaContourLevelCollection
+        levelCollection: "AntennaContourLevelCollection" = clr.CastAs(
+            antennaContour.levels, AntennaContourLevelCollection
         )
         Assert.assertEqual(0, levelCollection.count)
 
@@ -254,22 +254,22 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("already exists")):
             levelCollection.add(4.0)
 
-        level: "IAntennaContourLevel"
+        level: "AntennaContourLevel"
 
         for level in levelCollection:
             Assert.assertIsNotNone(level)
 
         i: int = 0
         while i < levelCollection.count:
-            level: "IAntennaContourLevel" = levelCollection[i]
+            level: "AntennaContourLevel" = levelCollection[i]
             Assert.assertIsNotNone(level)
 
             i += 1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
-            level: "IAntennaContourLevel" = levelCollection[5]
+            level: "AntennaContourLevel" = levelCollection[5]
 
-        level4: "IAntennaContourLevel" = levelCollection.get_level(4.0)
+        level4: "AntennaContourLevel" = levelCollection.get_level(4.0)
         Assert.assertEqual(4.0, level4.value)
         level4.line_style = LINE_STYLE.DASH_DOT_DOTTED
         Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, level4.line_style)
@@ -281,7 +281,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             level4.color = Color.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("Unable to find")):
-            level8: "IAntennaContourLevel" = levelCollection.get_level(8.0)
+            level8: "AntennaContourLevel" = levelCollection.get_level(8.0)
 
         levelCollection.remove_at(1)
         Assert.assertEqual(2, levelCollection.count)
@@ -382,8 +382,8 @@ class EarlyBoundTests(TestBase):
             self.Test_IAgAntennaContour_LineWidth(EarlyBoundTests.antennaContour)
             if type == ANTENNA_CONTOUR_TYPE.GAIN:
                 Assert.assertEqual(ANTENNA_CONTOUR_TYPE.GAIN, EarlyBoundTests.antennaContourGraphics.contour.type)
-                antennaContourGain: "IAntennaContourGain" = clr.CastAs(
-                    EarlyBoundTests.antennaContour, IAntennaContourGain
+                antennaContourGain: "AntennaContourGain" = clr.CastAs(
+                    EarlyBoundTests.antennaContour, AntennaContourGain
                 )
 
                 antennaContourGain_Helper = IAgAntennaContourGain_Helper()
@@ -513,8 +513,8 @@ class EarlyBoundTests(TestBase):
                 antennaContourGain_Helper.CoordinateSystem(antennaContourGain)
             elif type == ANTENNA_CONTOUR_TYPE.EIRP:
                 Assert.assertEqual(ANTENNA_CONTOUR_TYPE.EIRP, EarlyBoundTests.antennaContourGraphics.contour.type)
-                antennaContourEirp: "IAntennaContourEirp" = clr.CastAs(
-                    EarlyBoundTests.antennaContour, IAntennaContourEirp
+                antennaContourEirp: "AntennaContourEirp" = clr.CastAs(
+                    EarlyBoundTests.antennaContour, AntennaContourEirp
                 )
 
                 antennaContourEirp_Helper = IAgAntennaContourEirp_Helper()
@@ -646,8 +646,8 @@ class EarlyBoundTests(TestBase):
                 Assert.assertEqual(
                     ANTENNA_CONTOUR_TYPE.FLUX_DENSITY, EarlyBoundTests.antennaContourGraphics.contour.type
                 )
-                antennaContourFluxDensity: "IAntennaContourFluxDensity" = clr.CastAs(
-                    EarlyBoundTests.antennaContour, IAntennaContourFluxDensity
+                antennaContourFluxDensity: "AntennaContourFluxDensity" = clr.CastAs(
+                    EarlyBoundTests.antennaContour, AntennaContourFluxDensity
                 )
 
                 antennaContourFluxDensity_Helper = IAgAntennaContourFluxDensity_Helper()
@@ -681,7 +681,7 @@ class EarlyBoundTests(TestBase):
                 )  # above max maxEl
             elif type == ANTENNA_CONTOUR_TYPE.RIP:
                 Assert.assertEqual(ANTENNA_CONTOUR_TYPE.RIP, EarlyBoundTests.antennaContourGraphics.contour.type)
-                antennaContourRip: "IAntennaContourRip" = clr.CastAs(EarlyBoundTests.antennaContour, IAntennaContourRip)
+                antennaContourRip: "AntennaContourRip" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourRip)
 
                 antennaContourRip_Helper = IAgAntennaContourRip_Helper()
 
@@ -702,8 +702,8 @@ class EarlyBoundTests(TestBase):
                 Assert.assertEqual(
                     ANTENNA_CONTOUR_TYPE.SPECTRAL_FLUX_DENSITY, EarlyBoundTests.antennaContourGraphics.contour.type
                 )
-                antennaContourSpectralFluxDensity: "IAntennaContourSpectralFluxDensity" = clr.CastAs(
-                    EarlyBoundTests.antennaContour, IAntennaContourSpectralFluxDensity
+                antennaContourSpectralFluxDensity: "AntennaContourSpectralFluxDensity" = clr.CastAs(
+                    EarlyBoundTests.antennaContour, AntennaContourSpectralFluxDensity
                 )
 
                 antennaContourSpectralFluxDensity_Helper = IAgAntennaContourSpectralFluxDensity_Helper()
@@ -747,12 +747,12 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaNoiseTemperature_ExternalNoiseFile
     def test_IAgAntennaNoiseTemperature_ExternalNoiseFile(self):
         EarlyBoundTests.receiverForCableModel.set_model("Complex Receiver Model")
-        myComplex: "IReceiverModelComplex" = clr.CastAs(
-            EarlyBoundTests.receiverForCableModel.model, IReceiverModelComplex
+        myComplex: "ReceiverModelComplex" = clr.CastAs(
+            EarlyBoundTests.receiverForCableModel.model, ReceiverModelComplex
         )
         myComplex.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
 
-        ant: "IAntennaNoiseTemperature" = myComplex.system_noise_temperature.antenna_noise_temperature
+        ant: "AntennaNoiseTemperature" = myComplex.system_noise_temperature.antenna_noise_temperature
         ant.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
 
         ant.use_external = False
@@ -1062,7 +1062,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region RefractionModel Interface tests
-    def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "IRefractionModelEffectiveRadiusMethod"):
+    def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod"):
         EffectiveRadiusMethod.eff_rad = 0.1
         Assert.assertEqual(0.1, EffectiveRadiusMethod.eff_rad)
         EffectiveRadiusMethod.eff_rad = 100
@@ -1091,7 +1091,7 @@ class EarlyBoundTests(TestBase):
         EffectiveRadiusMethod.use_extrapolation = False
         Assert.assertFalse(EffectiveRadiusMethod.use_extrapolation)
 
-    def Test_IAgRfModelITURP8344(self, ITURP8344: "IRefractionModelITURP8344"):
+    def Test_IAgRfModelITURP8344(self, ITURP8344: "RefractionModelITURP8344"):
         ITURP8344.ceiling = 0.0
         Assert.assertEqual(0.0, ITURP8344.ceiling)
         ITURP8344.ceiling = 1000000000
@@ -1115,7 +1115,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.knee_bend_factor = 1.1
 
-    def Test_IAgRfModelSCFMethod(self, SCFMethod: "IRefractionModelSCFMethod"):
+    def Test_IAgRfModelSCFMethod(self, SCFMethod: "RefractionModelSCFMethod"):
         SCFMethod.use_refraction_index = True
         Assert.assertTrue(SCFMethod.use_refraction_index)
 
@@ -1231,15 +1231,15 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(eSnRefractionType, EarlyBoundTests.receiver.refraction)
             if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD:
                 self.Test_IAgRfModelEffectiveRadiusMethod(
-                    clr.CastAs(EarlyBoundTests.receiver.refraction_model, IRefractionModelEffectiveRadiusMethod)
+                    clr.CastAs(EarlyBoundTests.receiver.refraction_model, RefractionModelEffectiveRadiusMethod)
                 )
             elif eSnRefractionType == SENSOR_REFRACTION_TYPE.ITU_R_P834_4:
                 self.Test_IAgRfModelITURP8344(
-                    clr.CastAs(EarlyBoundTests.receiver.refraction_model, IRefractionModelITURP8344)
+                    clr.CastAs(EarlyBoundTests.receiver.refraction_model, RefractionModelITURP8344)
                 )
             elif eSnRefractionType == SENSOR_REFRACTION_TYPE.SCF_METHOD:
                 self.Test_IAgRfModelSCFMethod(
-                    clr.CastAs(EarlyBoundTests.receiver.refraction_model, IRefractionModelSCFMethod)
+                    clr.CastAs(EarlyBoundTests.receiver.refraction_model, RefractionModelSCFMethod)
                 )
 
         else:
@@ -1361,7 +1361,7 @@ class EarlyBoundTests(TestBase):
     # region Model Tests
 
     # region Test_IAgReceiverModelCable
-    def Test_IAgReceiverModelCable(self, cable: "IReceiverModelCable"):
+    def Test_IAgReceiverModelCable(self, cable: "ReceiverModelCable"):
         cable.ber = 1e-07
         Assert.assertEqual(1e-07, cable.ber)
         cable.ber = 0.5
@@ -1392,7 +1392,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgReceiverModelComplex
-    def Test_IAgReceiverModelComplex(self, complex: "IReceiverModelComplex"):
+    def Test_IAgReceiverModelComplex(self, complex: "ReceiverModelComplex"):
         # Model Specs tab
 
         complex.auto_track_frequency = True
@@ -1484,7 +1484,7 @@ class EarlyBoundTests(TestBase):
             0, Array.Length(complex.supported_rain_outage_percent_values)
         )  # This property use to have choices but was changed to a user input. This property is deprecated.
 
-        linkMargin: "ILinkMargin" = complex.link_margin
+        linkMargin: "LinkMargin" = complex.link_margin
         linkMargin.enable = False
         Assert.assertFalse(linkMargin.enable)
 
@@ -1600,7 +1600,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgReceiverModelLaser
-    def Test_IAgReceiverModelLaser(self, laser: "IReceiverModelLaser"):
+    def Test_IAgReceiverModelLaser(self, laser: "ReceiverModelLaser"):
         # Model Specs tab
 
         laser.auto_track_frequency = True
@@ -1706,7 +1706,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 laser.detector_load_impedance = 1000000000001
 
-        linkMargin: "ILinkMargin" = laser.link_margin
+        linkMargin: "LinkMargin" = laser.link_margin
         linkMargin.enable = False
         Assert.assertFalse(linkMargin.enable)
 
@@ -1735,7 +1735,7 @@ class EarlyBoundTests(TestBase):
 
         # Antenna tab (Embed only for Laser)
 
-        antennaControl: "IAntennaControl" = laser.antenna_control
+        antennaControl: "AntennaControl" = laser.antenna_control
 
         Assert.assertEqual(ANTENNA_CONTROL_REFERENCE_TYPE.EMBED, antennaControl.reference_type)
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -1850,7 +1850,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgReceiverModelMedium
-    def Test_IAgReceiverModelMedium(self, medium: "IReceiverModelMedium"):
+    def Test_IAgReceiverModelMedium(self, medium: "ReceiverModelMedium"):
         # Model Specs tab
 
         medium.auto_track_frequency = True
@@ -1942,7 +1942,7 @@ class EarlyBoundTests(TestBase):
             0, Array.Length(medium.supported_rain_outage_percent_values)
         )  # This property use to have choices but was changed to a user input. This property is deprecated.
 
-        linkMargin: "ILinkMargin" = medium.link_margin
+        linkMargin: "LinkMargin" = medium.link_margin
         linkMargin.enable = False
         Assert.assertFalse(linkMargin.enable)
 
@@ -2058,10 +2058,10 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgReceiverModelMultibeam
-    def Test_IAgReceiverModelMultibeam(self, multibeam: "IReceiverModelMultibeam"):
+    def Test_IAgReceiverModelMultibeam(self, multibeam: "ReceiverModelMultibeam"):
         # Beams tab
 
-        antennaSystem: "IAntennaSystem" = multibeam.antenna_system
+        antennaSystem: "AntennaSystem" = multibeam.antenna_system
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.UNKNOWN)
@@ -2078,7 +2078,7 @@ class EarlyBoundTests(TestBase):
         antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.SCRIPT_PLUGIN)
         Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.SCRIPT_PLUGIN, antennaSystem.beam_selection_strategy.type)
         helper = AntennaBeamSelectionStrategyScriptPluginHelper(TestBase.Application)
-        helper.Run(clr.CastAs(antennaSystem.beam_selection_strategy, IAntennaBeamSelectionStrategyScriptPlugin))
+        helper.Run(clr.CastAs(antennaSystem.beam_selection_strategy, AntennaBeamSelectionStrategyScriptPlugin))
 
         antennaBeamCollectionHelper = AntennaBeamCollectionHelper(TestBase.Application)
         antennaBeamCollectionHelper.Run(antennaSystem.antenna_beams, False)
@@ -2159,7 +2159,7 @@ class EarlyBoundTests(TestBase):
             0, Array.Length(multibeam.supported_rain_outage_percent_values)
         )  # This property use to have choices but was changed to a user input. This property is deprecated.
 
-        linkMargin: "ILinkMargin" = multibeam.link_margin
+        linkMargin: "LinkMargin" = multibeam.link_margin
         linkMargin.enable = False
         Assert.assertFalse(linkMargin.enable)
 
@@ -2252,7 +2252,7 @@ class EarlyBoundTests(TestBase):
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_ReceiverModel.vbs")
         Assert.assertEqual(r"CommRad\VB_ReceiverModel.vbs", scriptPlugin.filename)
 
-        linkMargin: "ILinkMargin" = scriptPlugin.link_margin
+        linkMargin: "LinkMargin" = scriptPlugin.link_margin
         linkMargin.enable = False
         Assert.assertFalse(linkMargin.enable)
 
@@ -2282,8 +2282,8 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgReceiverModelScriptPluginRF
-    def Test_IAgReceiverModelScriptPluginRF(self, scriptPlugin: "IReceiverModelScriptPluginRF"):
-        interference: "IRFInterference" = scriptPlugin.interference
+    def Test_IAgReceiverModelScriptPluginRF(self, scriptPlugin: "ReceiverModelScriptPluginRF"):
+        interference: "RFInterference" = scriptPlugin.interference
 
         TestBase.Application.current_scenario.children["Facility1"].children.new(
             STK_OBJECT_TYPE.RADAR, "Radar1"
@@ -2303,7 +2303,7 @@ class EarlyBoundTests(TestBase):
         interference.enabled = True
         Assert.assertTrue(interference.enabled)
 
-        emitters: "IObjectLinkCollection" = interference.emitters
+        emitters: "ObjectLinkCollection" = interference.emitters
         Assert.assertIsNotNone(emitters)
         oOLCHelper = ObjectLinkCollectionHelper()
         oOLCHelper.Run(emitters, TestBase.Application)
@@ -2319,7 +2319,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgReceiverModelSimple
-    def Test_IAgReceiverModelSimple(self, simple: "IReceiverModelSimple"):
+    def Test_IAgReceiverModelSimple(self, simple: "ReceiverModelSimple"):
         # Model Specs tab
 
         simple.auto_track_frequency = True
@@ -2363,7 +2363,7 @@ class EarlyBoundTests(TestBase):
             0, Array.Length(simple.supported_rain_outage_percent_values)
         )  # This property use to have choices but was changed to a user input. This property is deprecated.
 
-        linkMargin: "ILinkMargin" = simple.link_margin
+        linkMargin: "LinkMargin" = simple.link_margin
         linkMargin.enable = False
         Assert.assertFalse(linkMargin.enable)
 
@@ -2505,19 +2505,19 @@ class EarlyBoundTests(TestBase):
 
         if modelName == "Cable Receiver Model":
             Assert.assertEqual(RECEIVER_MODEL_TYPE.CABLE, receiverModel.type)
-            self.Test_IAgReceiverModelCable(clr.CastAs(receiverModel, IReceiverModelCable))
+            self.Test_IAgReceiverModelCable(clr.CastAs(receiverModel, ReceiverModelCable))
         elif modelName == "Complex Receiver Model":
             Assert.assertEqual(RECEIVER_MODEL_TYPE.COMPLEX, receiverModel.type)
-            self.Test_IAgReceiverModelComplex(clr.CastAs(receiverModel, IReceiverModelComplex))
+            self.Test_IAgReceiverModelComplex(clr.CastAs(receiverModel, ReceiverModelComplex))
         elif modelName == "Laser Receiver Model":
             Assert.assertEqual(RECEIVER_MODEL_TYPE.LASER, receiverModel.type)
-            self.Test_IAgReceiverModelLaser(clr.CastAs(receiverModel, IReceiverModelLaser))
+            self.Test_IAgReceiverModelLaser(clr.CastAs(receiverModel, ReceiverModelLaser))
         elif modelName == "Medium Receiver Model":
             Assert.assertEqual(RECEIVER_MODEL_TYPE.MEDIUM, receiverModel.type)
-            self.Test_IAgReceiverModelMedium(clr.CastAs(receiverModel, IReceiverModelMedium))
+            self.Test_IAgReceiverModelMedium(clr.CastAs(receiverModel, ReceiverModelMedium))
         elif modelName == "Multibeam Receiver Model":
             Assert.assertEqual(RECEIVER_MODEL_TYPE.MULTIBEAM, receiverModel.type)
-            self.Test_IAgReceiverModelMultibeam(clr.CastAs(receiverModel, IReceiverModelMultibeam))
+            self.Test_IAgReceiverModelMultibeam(clr.CastAs(receiverModel, ReceiverModelMultibeam))
         elif modelName == "Script Plugin Laser Receiver Model":
             if not OSHelper.IsLinux():
                 # script plugins do not work on linux
@@ -2529,11 +2529,11 @@ class EarlyBoundTests(TestBase):
                 # script plugins do not work on linux
                 Assert.assertEqual(RECEIVER_MODEL_TYPE.SCRIPT_PLUGIN_RF, receiverModel.type)
                 self.Test_IAgReceiverModelScriptPlugin(clr.CastAs(receiverModel, IReceiverModelScriptPlugin))
-                self.Test_IAgReceiverModelScriptPluginRF(clr.CastAs(receiverModel, IReceiverModelScriptPluginRF))
+                self.Test_IAgReceiverModelScriptPluginRF(clr.CastAs(receiverModel, ReceiverModelScriptPluginRF))
 
         elif modelName == "Simple Receiver Model":
             Assert.assertEqual(RECEIVER_MODEL_TYPE.SIMPLE, receiverModel.type)
-            self.Test_IAgReceiverModelSimple(clr.CastAs(receiverModel, IReceiverModelSimple))
+            self.Test_IAgReceiverModelSimple(clr.CastAs(receiverModel, ReceiverModelSimple))
         else:
             Assert.fail(("Unknown Receiver Model name: " + modelName))
 
@@ -2554,7 +2554,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(DEMODULATOR_MODEL_TYPE.DPSK, dm.type)
         elif demodulatorName == "External":
             Assert.assertEqual(DEMODULATOR_MODEL_TYPE.EXTERNAL, dm.type)
-            self.Test_IAgDemodulatorModelExternal(clr.CastAs(dm, IDemodulatorModelExternal))
+            self.Test_IAgDemodulatorModelExternal(clr.CastAs(dm, DemodulatorModelExternal))
         elif demodulatorName == "FSK":
             Assert.assertEqual(DEMODULATOR_MODEL_TYPE.FSK, dm.type)
         elif demodulatorName == "MSK":
@@ -2583,7 +2583,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(DEMODULATOR_MODEL_TYPE.QPSK, dm.type)
         elif demodulatorName == "Script":
             Assert.assertEqual(DEMODULATOR_MODEL_TYPE.SCRIPT_PLUGIN, dm.type)
-            self.Test_IAgDemodulatorModelScriptPlugin(clr.CastAs(dm, IDemodulatorModelScriptPlugin))
+            self.Test_IAgDemodulatorModelScriptPlugin(clr.CastAs(dm, DemodulatorModelScriptPlugin))
         elif demodulatorName == "Wideband Gaussian":
             Assert.assertEqual(DEMODULATOR_MODEL_TYPE.WIDEBAND_GAUSSIAN, dm.type)
         elif demodulatorName == "Wideband Uniform":
@@ -2632,7 +2632,7 @@ class EarlyBoundTests(TestBase):
         else:
             Assert.fail("Unknown demodulator name")
 
-    def Test_IAgDemodulatorModelExternal(self, external: "IDemodulatorModelExternal"):
+    def Test_IAgDemodulatorModelExternal(self, external: "DemodulatorModelExternal"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             external.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Missing required tag")):
@@ -2641,7 +2641,7 @@ class EarlyBoundTests(TestBase):
         external.filename = TestBase.GetScenarioFile("CommRad", "NFSK-BCH-511-385.dmd")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "NFSK-BCH-511-385.dmd"), external.filename)
 
-    def Test_IAgDemodulatorModelScriptPlugin(self, scriptPlugin: "IDemodulatorModelScriptPlugin"):
+    def Test_IAgDemodulatorModelScriptPlugin(self, scriptPlugin: "DemodulatorModelScriptPlugin"):
         if not OSHelper.IsLinux():
             # script plugins do not work on linux
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -2672,7 +2672,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
         oHelper.Run(EarlyBoundTests.VOVector, True)
 
     # endregion

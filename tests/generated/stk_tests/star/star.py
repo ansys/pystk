@@ -1,10 +1,10 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from assert_extension import *
 from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
-
 from ansys.stk.core.stkobjects import *
 
 
@@ -18,7 +18,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("StarTests", "StarTests.sc"))
-        EarlyBoundTests.AG_SR = clr.Convert(TestBase.Application.current_scenario.children["Star1"], IStar)
+        EarlyBoundTests.AG_SR = clr.Convert(TestBase.Application.current_scenario.children["Star1"], Star)
 
     # endregion
 
@@ -31,7 +31,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_SR: "IStar" = None
+    AG_SR: "Star" = None
     # endregion
 
     # region Basic
@@ -135,7 +135,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- BEGIN -----")
-        gfx: "IStarGraphics" = EarlyBoundTests.AG_SR.graphics
+        gfx: "StarGraphics" = EarlyBoundTests.AG_SR.graphics
         Assert.assertIsNotNone(gfx)
         # IsObjectGraphicsVisible
         TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
@@ -150,7 +150,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new Color is: {0}", gfx.color)
         AssertEx.AreEqual(Color.FromArgb(6636321), gfx.color)
         # Marker Style
-        scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
+        scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         arMarkers = scenario.graphics_3d.available_marker_types()
         TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.marker_style)
         gfx.marker_style = str(arMarkers[1])
@@ -191,7 +191,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
-        vo: "IStarGraphics3D" = EarlyBoundTests.AG_SR.graphics_3d
+        vo: "StarGraphics3D" = EarlyBoundTests.AG_SR.graphics_3d
         Assert.assertIsNotNone(vo)
         # InertialPositionVisible
         TestBase.logger.WriteLine4("The current InertialPositionVisible flag is: {0}", vo.inertial_position_visible)

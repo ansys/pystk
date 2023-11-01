@@ -1,5 +1,4 @@
 from test_util import *
-
 from ansys.stk.core.stkobjects import *
 
 
@@ -53,7 +52,7 @@ class TryCatchAssertBlock(object):
             finalizer()
 
     @staticmethod
-    def DoActionRunFinalize2(root: "IStkObjectRoot", action, finalizer, *units):
+    def DoActionRunFinalize2(root: "StkObjectRoot", action, finalizer, *units):
         try:
             runner = CodeRunner(root)
             runner.DoWithUnits(action, units)
@@ -63,8 +62,8 @@ class TryCatchAssertBlock(object):
 
 
 class CodeRunner(object):
-    def __init__(self, root: "IStkObjectRoot", bBeginEndUpdate: bool = False):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot", bBeginEndUpdate: bool = False):
+        self._root: "StkObjectRoot" = root
         self._bBeginEndUpdate: bool = bBeginEndUpdate
 
     def DoWithUnits(self, action, *units):
