@@ -4,7 +4,7 @@ from display_times_helper import *
 from math2 import *
 from orientation_helper import *
 
-# AGI STK API
+
 from ansys.stk.core.stkobjects import *
 
 
@@ -129,11 +129,8 @@ class AntennaHelper(object):
     def Run(self, antennaModel: "IAntennaModel", antennaModelName: str, designFrequencyEnabled: bool):
         Console.WriteLine(antennaModelName)  # Debug
         if not designFrequencyEnabled:
-
-            def action1():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 antennaModel.design_frequency = 1.0
-
-            TryCatchAssertBlock.ExpectedException("read only", action1)
 
         else:
             if (antennaModel.type != ANTENNA_MODEL_TYPE.OPTICAL_SIMPLE) and (
@@ -146,10 +143,8 @@ class AntennaHelper(object):
                 antennaModel.design_frequency = 1000000
                 Assert.assertEqual(1000000.0, antennaModel.design_frequency)
 
-            def action2():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 antennaModel.design_frequency = 0.0
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action2)
 
         if antennaModelName == "ANSYS ffd Format":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ANSY_SFFD_FORMAT, antennaModel.type)
@@ -358,25 +353,18 @@ class AntennaHelper(object):
     # region Antenna Model Interface tests
 
     def Test_IAgAntennaModelANSYSffdFormat(self, ansys: "IAntennaModelANSYSffdFormat"):
-        def action3():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             ansys.filename = r"C:\bogus.ffd"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action3)
 
         FilePath: str = TestBase.PathCombine("CommRad", "RCHP_Ant_phi_0-180_theta_-180-180.ffd")
         ansys.filename = TestBase.GetScenarioFile(FilePath)
         Assert.assertEqual(FilePath, ansys.filename)
 
     def Test_IAgAntennaModelScriptPlugin(self, scriptPlugin: "IAntennaModelScriptPlugin"):
-        def action4():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action4)
-
-        def action5():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             scriptPlugin.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action5)
 
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_GaussianAntennaGain.vbs")
         Assert.assertEqual(r"CommRad\VB_GaussianAntennaGain.vbs", scriptPlugin.filename)
@@ -386,31 +374,19 @@ class AntennaHelper(object):
         Assert.assertEqual(0, acb.function_power)
         acb.function_power = 3
         Assert.assertEqual(3, acb.function_power)
-
-        def action6():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.function_power = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action6)
-
-        def action7():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.function_power = 4
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action7)
 
         acb.pedestal_level = -300.0
         Assert.assertEqual(-300.0, acb.pedestal_level)
         acb.pedestal_level = 0.0
         Assert.assertEqual(0.0, acb.pedestal_level)
-
-        def action8():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.pedestal_level = -301.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action8)
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.pedestal_level = 1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action9)
 
         acb.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, acb.input_type)
@@ -418,21 +394,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, acb.beamwidth)
         acb.beamwidth = 90.0
         Assert.assertEqual(90.0, acb.beamwidth)
-
-        def action10():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action10)
-
-        def action11():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action11)
-
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acb.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action12)
 
         acb.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, acb.input_type)
@@ -440,21 +407,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, acb.diameter)
         acb.diameter = 1000.0
         Assert.assertEqual(1000.0, acb.diameter)
-
-        def action13():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action13)
-
-        def action14():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action14)
-
-        def action15():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acb.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action15)
 
         acb.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(acb.use_backlobe_as_mainlobe_atten)
@@ -472,38 +430,24 @@ class AntennaHelper(object):
             acb.backlobe_gain = 999.0
             Assert.assertEqual(999.0, acb.backlobe_gain)
 
-        def action16():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action16)
-
-        def action17():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action17)
 
         acb.efficiency = 0.0
         Assert.assertEqual(0.0, acb.efficiency)
         acb.efficiency = 100.0
         Assert.assertEqual(100.0, acb.efficiency)
-
-        def action18():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action18)
-
-        def action19():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action19)
 
         acb.compute_mainlobe_gain = True
         Assert.assertTrue(acb.compute_mainlobe_gain)
-
-        def action20():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acb.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action20)
 
         acb.compute_mainlobe_gain = False
         Assert.assertFalse(acb.compute_mainlobe_gain)
@@ -518,46 +462,29 @@ class AntennaHelper(object):
             acb.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, acb.mainlobe_gain)
 
-        def action21():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action21)
-
-        def action22():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action22)
 
     def Test_IAgAntennaModelApertureCircularBesselEnvelope(self, acbe: "IAntennaModelApertureCircularBesselEnvelope"):
         acbe.function_power = 0
         Assert.assertEqual(0, acbe.function_power)
         acbe.function_power = 3
         Assert.assertEqual(3, acbe.function_power)
-
-        def action23():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.function_power = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action23)
-
-        def action24():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.function_power = 4
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action24)
 
         acbe.pedestal_level = -300.0
         Assert.assertEqual(-300.0, acbe.pedestal_level)
         acbe.pedestal_level = 0.0
         Assert.assertEqual(0.0, acbe.pedestal_level)
-
-        def action25():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.pedestal_level = -301.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action25)
-
-        def action26():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.pedestal_level = 1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action26)
 
         acbe.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, acbe.input_type)
@@ -565,21 +492,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, acbe.beamwidth)
         acbe.beamwidth = 90.0
         Assert.assertEqual(90.0, acbe.beamwidth)
-
-        def action27():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action27)
-
-        def action28():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action28)
-
-        def action29():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acbe.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action29)
 
         acbe.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, acbe.input_type)
@@ -587,21 +505,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, acbe.diameter)
         acbe.diameter = 1000.0
         Assert.assertEqual(1000.0, acbe.diameter)
-
-        def action30():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action30)
-
-        def action31():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action31)
-
-        def action32():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acbe.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action32)
 
         acbe.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(acbe.use_backlobe_as_mainlobe_atten)
@@ -619,38 +528,24 @@ class AntennaHelper(object):
             acbe.backlobe_gain = 999.0
             Assert.assertEqual(999.0, acbe.backlobe_gain)
 
-        def action33():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action33)
-
-        def action34():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action34)
 
         acbe.efficiency = 0.0
         Assert.assertEqual(0.0, acbe.efficiency)
         acbe.efficiency = 100.0
         Assert.assertEqual(100.0, acbe.efficiency)
-
-        def action35():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action35)
-
-        def action36():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action36)
 
         acbe.compute_mainlobe_gain = True
         Assert.assertTrue(acbe.compute_mainlobe_gain)
-
-        def action37():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acbe.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action37)
 
         acbe.compute_mainlobe_gain = False
         Assert.assertFalse(acbe.compute_mainlobe_gain)
@@ -665,61 +560,38 @@ class AntennaHelper(object):
             acbe.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, acbe.mainlobe_gain)
 
-        def action38():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action38)
-
-        def action39():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action39)
 
     def Test_IAgAntennaModelCosecantSquared(self, cosequentSquared: "IAntennaModelCosecantSquared"):
         cosequentSquared.cutoff_angle = 0.1
         Assert.assertEqual(0.1, cosequentSquared.cutoff_angle)
         cosequentSquared.cutoff_angle = 50
         Assert.assertEqual(50, cosequentSquared.cutoff_angle)
-
-        def action40():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.cutoff_angle = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action40)
-
-        def action41():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.cutoff_angle = 91
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action41)
 
         cosequentSquared.azimuth_beamwidth = 0.01
         Assert.assertAlmostEqual(0.01, float(cosequentSquared.azimuth_beamwidth), delta=0.0001)
         cosequentSquared.azimuth_beamwidth = 60
         Assert.assertAlmostEqual(60, float(cosequentSquared.azimuth_beamwidth), delta=0.0001)
-
-        def action42():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.azimuth_beamwidth = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action42)
-
-        def action43():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.azimuth_beamwidth = 61
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action43)
 
         cosequentSquared.efficiency = 0
         Assert.assertEqual(0, cosequentSquared.efficiency)
         cosequentSquared.efficiency = 100
         Assert.assertEqual(100, cosequentSquared.efficiency)
-
-        def action44():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.efficiency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action44)
-
-        def action45():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action45)
 
         cosequentSquared.mainlobe_gain = -500
         Assert.assertEqual(-500, cosequentSquared.mainlobe_gain)
@@ -732,30 +604,19 @@ class AntennaHelper(object):
             cosequentSquared.mainlobe_gain = 999
             Assert.assertEqual(999, cosequentSquared.mainlobe_gain)
 
-        def action46():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.mainlobe_gain = -501
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action46)
-
-        def action47():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action47)
 
         cosequentSquared.backlobe_gain = -500
         Assert.assertEqual(-500, cosequentSquared.backlobe_gain)
         cosequentSquared.backlobe_gain = 0
         Assert.assertEqual(0, cosequentSquared.backlobe_gain)
-
-        def action48():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.backlobe_gain = -501
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action48)
-
-        def action49():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.backlobe_gain = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action49)
 
     def Test_IAgAntennaModelApertureCircularCosine(self, acc: "IAntennaModelApertureCircularCosine"):
         acc.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
@@ -764,21 +625,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, acc.beamwidth)
         acc.beamwidth = 90.0
         Assert.assertEqual(90.0, acc.beamwidth)
-
-        def action50():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action50)
-
-        def action51():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action51)
-
-        def action52():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acc.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action52)
 
         acc.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, acc.input_type)
@@ -786,21 +638,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, acc.diameter)
         acc.diameter = 1000.0
         Assert.assertEqual(1000.0, acc.diameter)
-
-        def action53():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action53)
-
-        def action54():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action54)
-
-        def action55():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acc.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action55)
 
         acc.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(acc.use_backlobe_as_mainlobe_atten)
@@ -818,38 +661,24 @@ class AntennaHelper(object):
             acc.backlobe_gain = 999.0
             Assert.assertEqual(999.0, acc.backlobe_gain)
 
-        def action56():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action56)
-
-        def action57():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action57)
 
         acc.efficiency = 0.0
         Assert.assertEqual(0.0, acc.efficiency)
         acc.efficiency = 100.0
         Assert.assertEqual(100.0, acc.efficiency)
-
-        def action58():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action58)
-
-        def action59():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action59)
 
         acc.compute_mainlobe_gain = True
         Assert.assertTrue(acc.compute_mainlobe_gain)
-
-        def action60():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acc.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action60)
 
         acc.compute_mainlobe_gain = False
         Assert.assertFalse(acc.compute_mainlobe_gain)
@@ -864,15 +693,10 @@ class AntennaHelper(object):
             acc.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, acc.mainlobe_gain)
 
-        def action61():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action61)
-
-        def action62():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action62)
 
     def Test_IAgAntennaModelApertureRectangularCosine(self, arc: "IAntennaModelApertureRectangularCosine"):
         arc.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
@@ -882,41 +706,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, arc.x_dimension)
         arc.x_dimension = 1000.0
         Assert.assertEqual(1000.0, arc.x_dimension)
-
-        def action63():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.x_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action63)
-
-        def action64():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.x_dimension = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action64)
 
         arc.y_dimension = 0.01
         Assert.assertEqual(0.01, arc.y_dimension)
         arc.y_dimension = 1000.0
         Assert.assertEqual(1000.0, arc.y_dimension)
-
-        def action65():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.y_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action65)
-
-        def action66():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.y_dimension = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action66)
-
-        def action67():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arc.x_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action67)
-
-        def action68():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arc.y_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action68)
 
         arc.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS, arc.input_type)
@@ -925,41 +732,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, arc.x_beamwidth)
         arc.x_beamwidth = 90.0
         Assert.assertEqual(90.0, arc.x_beamwidth)
-
-        def action69():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.x_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action69)
-
-        def action70():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.x_beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action70)
 
         arc.y_beamwidth = 0.001
         Assert.assertEqual(0.001, arc.y_beamwidth)
         arc.y_beamwidth = 90.0
         Assert.assertEqual(90.0, arc.y_beamwidth)
-
-        def action71():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.y_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action71)
-
-        def action72():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.y_beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action72)
-
-        def action73():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arc.x_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action73)
-
-        def action74():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arc.y_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action74)
 
         arc.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(arc.use_backlobe_as_mainlobe_atten)
@@ -977,38 +767,24 @@ class AntennaHelper(object):
             arc.backlobe_gain = 999.0
             Assert.assertEqual(999.0, arc.backlobe_gain)
 
-        def action75():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action75)
-
-        def action76():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action76)
 
         arc.efficiency = 0.0
         Assert.assertEqual(0.0, arc.efficiency)
         arc.efficiency = 100.0
         Assert.assertEqual(100.0, arc.efficiency)
-
-        def action77():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action77)
-
-        def action78():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action78)
 
         arc.compute_mainlobe_gain = True
         Assert.assertTrue(arc.compute_mainlobe_gain)
-
-        def action79():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arc.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action79)
 
         arc.compute_mainlobe_gain = False
         Assert.assertFalse(arc.compute_mainlobe_gain)
@@ -1023,31 +799,20 @@ class AntennaHelper(object):
             arc.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, arc.mainlobe_gain)
 
-        def action80():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action80)
-
-        def action81():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action81)
 
     def Test_IAgAntennaModelApertureCircularCosinePedestal(self, accp: "IAntennaModelApertureCircularCosinePedestal"):
         accp.pedestal_level = -300.0
         Assert.assertEqual(-300.0, accp.pedestal_level)
         accp.pedestal_level = 0.0
         Assert.assertEqual(0.0, accp.pedestal_level)
-
-        def action82():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.pedestal_level = -301.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action82)
-
-        def action83():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.pedestal_level = 1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action83)
 
         accp.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, accp.input_type)
@@ -1055,21 +820,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, accp.beamwidth)
         accp.beamwidth = 90.0
         Assert.assertEqual(90.0, accp.beamwidth)
-
-        def action84():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action84)
-
-        def action85():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action85)
-
-        def action86():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             accp.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action86)
 
         accp.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, accp.input_type)
@@ -1077,21 +833,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, accp.diameter)
         accp.diameter = 1000.0
         Assert.assertEqual(1000.0, accp.diameter)
-
-        def action87():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action87)
-
-        def action88():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action88)
-
-        def action89():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             accp.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action89)
 
         accp.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(accp.use_backlobe_as_mainlobe_atten)
@@ -1109,38 +856,24 @@ class AntennaHelper(object):
             accp.backlobe_gain = 999.0
             Assert.assertEqual(999.0, accp.backlobe_gain)
 
-        def action90():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action90)
-
-        def action91():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action91)
 
         accp.efficiency = 0.0
         Assert.assertEqual(0.0, accp.efficiency)
         accp.efficiency = 100.0
         Assert.assertEqual(100.0, accp.efficiency)
-
-        def action92():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action92)
-
-        def action93():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action93)
 
         accp.compute_mainlobe_gain = True
         Assert.assertTrue(accp.compute_mainlobe_gain)
-
-        def action94():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             accp.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action94)
 
         accp.compute_mainlobe_gain = False
         Assert.assertFalse(accp.compute_mainlobe_gain)
@@ -1155,15 +888,10 @@ class AntennaHelper(object):
             accp.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, accp.mainlobe_gain)
 
-        def action95():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action95)
-
-        def action96():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accp.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action96)
 
     def Test_IAgAntennaModelApertureRectangularCosinePedestal(
         self, arcp: "IAntennaModelApertureRectangularCosinePedestal"
@@ -1172,16 +900,10 @@ class AntennaHelper(object):
         Assert.assertEqual(-300.0, arcp.pedestal_level)
         arcp.pedestal_level = 0.0
         Assert.assertEqual(0.0, arcp.pedestal_level)
-
-        def action97():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.pedestal_level = -301.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action97)
-
-        def action98():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.pedestal_level = 1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action98)
 
         arcp.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS, arcp.input_type)
@@ -1190,41 +912,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, arcp.x_dimension)
         arcp.x_dimension = 1000.0
         Assert.assertEqual(1000.0, arcp.x_dimension)
-
-        def action99():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.x_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action99)
-
-        def action100():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.x_dimension = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action100)
 
         arcp.y_dimension = 0.01
         Assert.assertEqual(0.01, arcp.y_dimension)
         arcp.y_dimension = 1000.0
         Assert.assertEqual(1000.0, arcp.y_dimension)
-
-        def action101():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.y_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action101)
-
-        def action102():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.y_dimension = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action102)
-
-        def action103():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcp.x_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action103)
-
-        def action104():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcp.y_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action104)
 
         arcp.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS, arcp.input_type)
@@ -1233,41 +938,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, arcp.x_beamwidth)
         arcp.x_beamwidth = 90.0
         Assert.assertEqual(90.0, arcp.x_beamwidth)
-
-        def action105():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.x_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action105)
-
-        def action106():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.x_beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action106)
 
         arcp.y_beamwidth = 0.001
         Assert.assertEqual(0.001, arcp.y_beamwidth)
         arcp.y_beamwidth = 90.0
         Assert.assertEqual(90.0, arcp.y_beamwidth)
-
-        def action107():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.y_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action107)
-
-        def action108():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.y_beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action108)
-
-        def action109():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcp.x_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action109)
-
-        def action110():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcp.y_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action110)
 
         arcp.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(arcp.use_backlobe_as_mainlobe_atten)
@@ -1285,38 +973,24 @@ class AntennaHelper(object):
             arcp.backlobe_gain = 999.0
             Assert.assertEqual(999.0, arcp.backlobe_gain)
 
-        def action111():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action111)
-
-        def action112():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action112)
 
         arcp.efficiency = 0.0
         Assert.assertEqual(0.0, arcp.efficiency)
         arcp.efficiency = 100.0
         Assert.assertEqual(100.0, arcp.efficiency)
-
-        def action113():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action113)
-
-        def action114():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action114)
 
         arcp.compute_mainlobe_gain = True
         Assert.assertTrue(arcp.compute_mainlobe_gain)
-
-        def action115():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcp.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action115)
 
         arcp.compute_mainlobe_gain = False
         Assert.assertFalse(arcp.compute_mainlobe_gain)
@@ -1331,15 +1005,10 @@ class AntennaHelper(object):
             arcp.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, arcp.mainlobe_gain)
 
-        def action116():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action116)
-
-        def action117():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action117)
 
     def Test_IAgAntennaModelApertureCircularCosineSquared(self, accs: "IAntennaModelApertureCircularCosineSquared"):
         accs.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
@@ -1348,21 +1017,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, accs.beamwidth)
         accs.beamwidth = 90.0
         Assert.assertEqual(90.0, accs.beamwidth)
-
-        def action118():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action118)
-
-        def action119():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action119)
-
-        def action120():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             accs.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action120)
 
         accs.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, accs.input_type)
@@ -1370,21 +1030,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, accs.diameter)
         accs.diameter = 1000.0
         Assert.assertEqual(1000.0, accs.diameter)
-
-        def action121():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action121)
-
-        def action122():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action122)
-
-        def action123():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             accs.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action123)
 
         accs.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(accs.use_backlobe_as_mainlobe_atten)
@@ -1402,38 +1053,24 @@ class AntennaHelper(object):
             accs.backlobe_gain = 999.0
             Assert.assertEqual(999.0, accs.backlobe_gain)
 
-        def action124():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action124)
-
-        def action125():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action125)
 
         accs.efficiency = 0.0
         Assert.assertEqual(0.0, accs.efficiency)
         accs.efficiency = 100.0
         Assert.assertEqual(100.0, accs.efficiency)
-
-        def action126():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action126)
-
-        def action127():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action127)
 
         accs.compute_mainlobe_gain = True
         Assert.assertTrue(accs.compute_mainlobe_gain)
-
-        def action128():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             accs.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action128)
 
         accs.compute_mainlobe_gain = False
         Assert.assertFalse(accs.compute_mainlobe_gain)
@@ -1448,15 +1085,10 @@ class AntennaHelper(object):
             accs.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, accs.mainlobe_gain)
 
-        def action129():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action129)
-
-        def action130():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             accs.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action130)
 
     def Test_IAgAntennaModelApertureRectangularCosineSquared(
         self, arcs: "IAntennaModelApertureRectangularCosineSquared"
@@ -1468,41 +1100,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, arcs.x_dimension)
         arcs.x_dimension = 1000.0
         Assert.assertEqual(1000.0, arcs.x_dimension)
-
-        def action131():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.x_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action131)
-
-        def action132():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.x_dimension = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action132)
 
         arcs.y_dimension = 0.01
         Assert.assertEqual(0.01, arcs.y_dimension)
         arcs.y_dimension = 1000.0
         Assert.assertEqual(1000.0, arcs.y_dimension)
-
-        def action133():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.y_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action133)
-
-        def action134():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.y_dimension = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action134)
-
-        def action135():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcs.x_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action135)
-
-        def action136():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcs.y_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action136)
 
         arcs.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS, arcs.input_type)
@@ -1511,41 +1126,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, arcs.x_beamwidth)
         arcs.x_beamwidth = 90.0
         Assert.assertEqual(90.0, arcs.x_beamwidth)
-
-        def action137():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.x_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action137)
-
-        def action138():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.x_beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action138)
 
         arcs.y_beamwidth = 0.001
         Assert.assertEqual(0.001, arcs.y_beamwidth)
         arcs.y_beamwidth = 90.0
         Assert.assertEqual(90.0, arcs.y_beamwidth)
-
-        def action139():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.y_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action139)
-
-        def action140():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.y_beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action140)
-
-        def action141():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcs.x_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action141)
-
-        def action142():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcs.y_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action142)
 
         arcs.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(arcs.use_backlobe_as_mainlobe_atten)
@@ -1563,38 +1161,24 @@ class AntennaHelper(object):
             arcs.backlobe_gain = 999.0
             Assert.assertEqual(999.0, arcs.backlobe_gain)
 
-        def action143():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action143)
-
-        def action144():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action144)
 
         arcs.efficiency = 0.0
         Assert.assertEqual(0.0, arcs.efficiency)
         arcs.efficiency = 100.0
         Assert.assertEqual(100.0, arcs.efficiency)
-
-        def action145():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action145)
-
-        def action146():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action146)
 
         arcs.compute_mainlobe_gain = True
         Assert.assertTrue(arcs.compute_mainlobe_gain)
-
-        def action147():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arcs.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action147)
 
         arcs.compute_mainlobe_gain = False
         Assert.assertFalse(arcs.compute_mainlobe_gain)
@@ -1609,15 +1193,10 @@ class AntennaHelper(object):
             arcs.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, arcs.mainlobe_gain)
 
-        def action148():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action148)
-
-        def action149():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcs.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action149)
 
     def Test_IAgAntennaModelApertureCircularCosineSquaredPedestal(
         self, ccsp: "IAntennaModelApertureCircularCosineSquaredPedestal"
@@ -1626,16 +1205,10 @@ class AntennaHelper(object):
         Assert.assertEqual(-300.0, ccsp.pedestal_level)
         ccsp.pedestal_level = 0.0
         Assert.assertEqual(0.0, ccsp.pedestal_level)
-
-        def action150():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.pedestal_level = -301.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action150)
-
-        def action151():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.pedestal_level = 1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action151)
 
         ccsp.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, ccsp.input_type)
@@ -1643,21 +1216,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ccsp.beamwidth)
         ccsp.beamwidth = 90.0
         Assert.assertEqual(90.0, ccsp.beamwidth)
-
-        def action152():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action152)
-
-        def action153():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action153)
-
-        def action154():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ccsp.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action154)
 
         ccsp.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, ccsp.input_type)
@@ -1665,21 +1229,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, ccsp.diameter)
         ccsp.diameter = 1000.0
         Assert.assertEqual(1000.0, ccsp.diameter)
-
-        def action155():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action155)
-
-        def action156():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action156)
-
-        def action157():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ccsp.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action157)
 
         ccsp.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(ccsp.use_backlobe_as_mainlobe_atten)
@@ -1697,38 +1252,24 @@ class AntennaHelper(object):
             ccsp.backlobe_gain = 999.0
             Assert.assertEqual(999.0, ccsp.backlobe_gain)
 
-        def action158():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action158)
-
-        def action159():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action159)
 
         ccsp.efficiency = 0.0
         Assert.assertEqual(0.0, ccsp.efficiency)
         ccsp.efficiency = 100.0
         Assert.assertEqual(100.0, ccsp.efficiency)
-
-        def action160():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action160)
-
-        def action161():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action161)
 
         ccsp.compute_mainlobe_gain = True
         Assert.assertTrue(ccsp.compute_mainlobe_gain)
-
-        def action162():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ccsp.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action162)
 
         ccsp.compute_mainlobe_gain = False
         Assert.assertFalse(ccsp.compute_mainlobe_gain)
@@ -1743,15 +1284,10 @@ class AntennaHelper(object):
             ccsp.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, ccsp.mainlobe_gain)
 
-        def action163():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action163)
-
-        def action164():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ccsp.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action164)
 
     def Test_IAgAntennaModelApertureRectangularCosineSquaredPedestal(
         self, rcsp: "IAntennaModelApertureRectangularCosineSquaredPedestal"
@@ -1760,16 +1296,10 @@ class AntennaHelper(object):
         Assert.assertEqual(-300.0, rcsp.pedestal_level)
         rcsp.pedestal_level = 0.0
         Assert.assertEqual(0.0, rcsp.pedestal_level)
-
-        def action165():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.pedestal_level = -301.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action165)
-
-        def action166():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.pedestal_level = 1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action166)
 
         rcsp.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS, rcsp.input_type)
@@ -1778,41 +1308,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, rcsp.x_dimension)
         rcsp.x_dimension = 1000.0
         Assert.assertEqual(1000.0, rcsp.x_dimension)
-
-        def action167():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.x_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action167)
-
-        def action168():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.x_dimension = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action168)
 
         rcsp.y_dimension = 0.01
         Assert.assertEqual(0.01, rcsp.y_dimension)
         rcsp.y_dimension = 1000.0
         Assert.assertEqual(1000.0, rcsp.y_dimension)
-
-        def action169():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.y_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action169)
-
-        def action170():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.y_dimension = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action170)
-
-        def action171():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             rcsp.x_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action171)
-
-        def action172():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             rcsp.y_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action172)
 
         rcsp.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS, rcsp.input_type)
@@ -1821,41 +1334,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, rcsp.x_beamwidth)
         rcsp.x_beamwidth = 90.0
         Assert.assertEqual(90.0, rcsp.x_beamwidth)
-
-        def action173():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.x_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action173)
-
-        def action174():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.x_beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action174)
 
         rcsp.y_beamwidth = 0.001
         Assert.assertEqual(0.001, rcsp.y_beamwidth)
         rcsp.y_beamwidth = 90.0
         Assert.assertEqual(90.0, rcsp.y_beamwidth)
-
-        def action175():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.y_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action175)
-
-        def action176():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.y_beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action176)
-
-        def action177():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             rcsp.x_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action177)
-
-        def action178():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             rcsp.y_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action178)
 
         rcsp.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(rcsp.use_backlobe_as_mainlobe_atten)
@@ -1873,38 +1369,24 @@ class AntennaHelper(object):
             rcsp.backlobe_gain = 999.0
             Assert.assertEqual(999.0, rcsp.backlobe_gain)
 
-        def action179():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action179)
-
-        def action180():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action180)
 
         rcsp.efficiency = 0.0
         Assert.assertEqual(0.0, rcsp.efficiency)
         rcsp.efficiency = 100.0
         Assert.assertEqual(100.0, rcsp.efficiency)
-
-        def action181():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action181)
-
-        def action182():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action182)
 
         rcsp.compute_mainlobe_gain = True
         Assert.assertTrue(rcsp.compute_mainlobe_gain)
-
-        def action183():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             rcsp.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action183)
 
         rcsp.compute_mainlobe_gain = False
         Assert.assertFalse(rcsp.compute_mainlobe_gain)
@@ -1919,86 +1401,53 @@ class AntennaHelper(object):
             rcsp.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, rcsp.mainlobe_gain)
 
-        def action184():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action184)
-
-        def action185():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action185)
 
     def Test_IAgAntennaModelDipole(self, dipole: "IAntennaModelDipole"):
         dipole.length = 0.001
         Assert.assertEqual(0.001, dipole.length)
         dipole.length = 1000000.0
         Assert.assertEqual(1000000.0, dipole.length)
-
-        def action186():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             dipole.length = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action186)
-
-        def action187():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             dipole.length = 1000001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action187)
 
         dipole.length_to_wavelength_ratio = 1e-06
         Assert.assertEqual(1e-06, dipole.length_to_wavelength_ratio)
         dipole.length_to_wavelength_ratio = 1000000.0
         Assert.assertAlmostEqual(1000000.0, dipole.length_to_wavelength_ratio, delta=Math2.Epsilon4)
-
-        def action188():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             dipole.length_to_wavelength_ratio = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action188)
-
-        def action189():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             dipole.length_to_wavelength_ratio = 1000001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action189)
 
         dipole.efficiency = 0.0
         Assert.assertEqual(0.0, dipole.efficiency)
         dipole.efficiency = 100.0
         Assert.assertEqual(100.0, dipole.efficiency)
-
-        def action190():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             dipole.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action190)
-
-        def action191():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             dipole.efficiency = 101.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action191)
-
     def Test_IAgAntennaModelExternal(self, external: "IAntennaModelExternal"):
-        def action192():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             external.filename = r"C:\bogus.ant"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action192)
-
-        def action193():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error loading external")):
             external.filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
-
-        TryCatchAssertBlock.ExpectedException("Error loading external", action193)
 
         external.filename = TestBase.GetScenarioFile("CommRad", "SymmetricAntenna.ant")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "SymmetricAntenna.ant"), external.filename)
 
     def Test_IAgAntennaModelGimroc(self, gimroc: "IAntennaModelGimroc"):
-        def action194():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             gimroc.filename = r"C:\bogus.ant"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action194)
-
-        def action195():
+        with pytest.raises(Exception, match=RegexSubstringMatch("data parsing error")):
             gimroc.filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
-
-        TryCatchAssertBlock.ExpectedException("data parsing error", action195)
 
         gimroc.filename = TestBase.GetScenarioFile("CommRad", "Gimconc_Test_4-30dbgain_HiRes.gxt")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "Gimconc_Test_4-30dbgain_HiRes.gxt"), gimroc.filename)
@@ -2008,16 +1457,10 @@ class AntennaHelper(object):
         Assert.assertEqual(0.0, gpsFrpa.efficiency)
         gpsFrpa.efficiency = 100.0
         Assert.assertEqual(100.0, gpsFrpa.efficiency)
-
-        def action196():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gpsFrpa.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action196)
-
-        def action197():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gpsFrpa.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action197)
 
     def Test_IAgAntennaModelGpsGlobal(self, gpsGlobal: "IAntennaModelGpsGlobal"):
         Assert.assertEqual(14, len(gpsGlobal.supported_block_types))
@@ -2031,16 +1474,10 @@ class AntennaHelper(object):
             Assert.assertEqual(0.0, gpsGlobal.efficiency)
             gpsGlobal.efficiency = 100.0
             Assert.assertEqual(100.0, gpsGlobal.efficiency)
-
-            def action198():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 gpsGlobal.efficiency = -1.0
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action198)
-
-            def action199():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 gpsGlobal.efficiency = 101.0
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action199)
             if gpsGlobal.block_type == "II, IIA, L1":
                 Assert.assertAlmostEqual(13.0, float(gpsGlobal.max_gain), delta=1e-05)
                 Assert.assertAlmostEqual(30.0, float(gpsGlobal.beamwidth), delta=1e-05)
@@ -2103,75 +1540,46 @@ class AntennaHelper(object):
             helix.backlobe_gain = 999.0
             Assert.assertEqual(999.0, helix.backlobe_gain)
 
-        def action200():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action200)
-
-        def action201():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action201)
 
         helix.efficiency = 0.0
         Assert.assertEqual(0.0, helix.efficiency)
         helix.efficiency = 100.0
         Assert.assertEqual(100.0, helix.efficiency)
-
-        def action202():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action202)
-
-        def action203():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action203)
 
         helix.diameter = 0.001
         Assert.assertEqual(0.001, helix.diameter)
         helix.diameter = 1000000.0
         Assert.assertEqual(1000000.0, helix.diameter)
-
-        def action204():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.diameter = -0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action204)
-
-        def action205():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.diameter = 1000001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action205)
 
         helix.number_of_turns = 1.0
         Assert.assertEqual(1.0, helix.number_of_turns)
         helix.number_of_turns = 1000.0
         Assert.assertEqual(1000.0, helix.number_of_turns)
-
-        def action206():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.number_of_turns = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action206)
-
-        def action207():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.number_of_turns = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action207)
 
         helix.turn_spacing = 0.001
         Assert.assertEqual(0.001, helix.turn_spacing)
         helix.turn_spacing = 1000.0
         Assert.assertEqual(1000.0, helix.turn_spacing)
-
-        def action208():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.turn_spacing = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action208)
-
-        def action209():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.turn_spacing = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action209)
 
     def Test_IAgAntennaModelHemispherical(self, hemis: "IAntennaModelHemispherical"):
         Assert.assertAlmostEqual(3.0, hemis.mainlobe_gain, delta=1e-05)  # never changes
@@ -2180,16 +1588,10 @@ class AntennaHelper(object):
         Assert.assertEqual(0.0, hemis.efficiency)
         hemis.efficiency = 100.0
         Assert.assertEqual(100.0, hemis.efficiency)
-
-        def action210():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hemis.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action210)
-
-        def action211():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hemis.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action211)
 
     def Test_IAgAntennaModelGaussian(self, gaussian: "IAntennaModelGaussian"):
         gaussian.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
@@ -2198,26 +1600,15 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, gaussian.beamwidth)
         gaussian.beamwidth = 90.0
         Assert.assertEqual(90.0, gaussian.beamwidth)
-
-        def action212():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action212)
-
-        def action213():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action213)
-
-        def action214():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gaussian.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action214)
-
-        def action215():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gaussian.mainlobe_gain = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action215)
 
         gaussian.input_type = ANTENNA_MODEL_INPUT_TYPE.DIAMETER
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.DIAMETER, gaussian.input_type)
@@ -2225,26 +1616,15 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, gaussian.diameter)
         gaussian.diameter = 1000.0
         Assert.assertEqual(1000.0, gaussian.diameter)
-
-        def action216():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action216)
-
-        def action217():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.diameter = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action217)
-
-        def action218():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gaussian.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action218)
-
-        def action219():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gaussian.mainlobe_gain = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action219)
 
         gaussian.input_type = ANTENNA_MODEL_INPUT_TYPE.MAINLOBE_GAIN
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.MAINLOBE_GAIN, gaussian.input_type)
@@ -2259,40 +1639,24 @@ class AntennaHelper(object):
             gaussian.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, gaussian.mainlobe_gain)
 
-        def action220():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action220)
-
-        def action221():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.mainlobe_gain = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action221)
-
-        def action222():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gaussian.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action222)
-
-        def action223():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gaussian.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action223)
 
         gaussian.efficiency = 0.1
         Assert.assertEqual(0.1, gaussian.efficiency)
         gaussian.efficiency = 100.0
         Assert.assertEqual(100.0, gaussian.efficiency)
-
-        def action224():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.efficiency = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action224)
-
-        def action225():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action225)
 
         gaussian.backlobe_gain = -1000.0
         Assert.assertEqual(-1000.0, gaussian.backlobe_gain)
@@ -2305,15 +1669,10 @@ class AntennaHelper(object):
             gaussian.backlobe_gain = 999.0
             Assert.assertEqual(999.0, gaussian.backlobe_gain)
 
-        def action226():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action226)
-
-        def action227():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussian.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action227)
 
         gaussian.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(gaussian.use_backlobe_as_mainlobe_atten)
@@ -2328,31 +1687,19 @@ class AntennaHelper(object):
         Assert.assertEqual(1e-06, opticalSimple.area)
         opticalSimple.area = 10000.0
         Assert.assertEqual(10000.0, opticalSimple.area)
-
-        def action228():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             opticalSimple.area = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action228)
-
-        def action229():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             opticalSimple.area = 10001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action229)
 
         opticalSimple.efficiency = 0.0
         Assert.assertEqual(0.0, opticalSimple.efficiency)
         opticalSimple.efficiency = 100.0
         Assert.assertEqual(100.0, opticalSimple.efficiency)
-
-        def action230():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             opticalSimple.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action230)
-
-        def action231():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             opticalSimple.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action231)
 
         opticalSimple.compute_gain = False
         Assert.assertFalse(opticalSimple.compute_gain)
@@ -2368,26 +1715,16 @@ class AntennaHelper(object):
             opticalSimple.max_gain = 2889.0
             Assert.assertEqual(2889.0, opticalSimple.max_gain)
 
-        def action232():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             opticalSimple.max_gain = -2891.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action232)
-
-        def action233():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             opticalSimple.max_gain = 2891.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action233)
-
     def Test_IAgAntennaModelIeee1979(self, ieee1979: "IAntennaModelIeee1979"):
-        def action234():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             ieee1979.filename = r"C:\bogus.ant"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action234)
-
-        def action235():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error loading")):
             ieee1979.filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
-
-        TryCatchAssertBlock.ExpectedException("Error loading", action235)
 
         ieee1979.filename = TestBase.GetScenarioFile("CommRad", "IEEE1979.ant")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "IEEE1979.ant"), ieee1979.filename)
@@ -2398,16 +1735,10 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ItuBO1213CoPolar.diameter)
         ItuBO1213CoPolar.diameter = 12.5
         Assert.assertEqual(12.5, ItuBO1213CoPolar.diameter)
-
-        def action236():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CoPolar.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action236)
-
-        def action237():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CoPolar.diameter = 13000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action237)
 
         ItuBO1213CoPolar.mainlobe_gain = 32
         Assert.assertEqual(32, ItuBO1213CoPolar.mainlobe_gain)
@@ -2420,46 +1751,29 @@ class AntennaHelper(object):
             ItuBO1213CoPolar.mainlobe_gain = 999
             Assert.assertEqual(999, ItuBO1213CoPolar.mainlobe_gain)
 
-        def action238():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CoPolar.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action238)
-
-        def action239():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CoPolar.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action239)
 
         ItuBO1213CoPolar.efficiency = 0.0
         Assert.assertEqual(0.0, ItuBO1213CoPolar.efficiency)
         ItuBO1213CoPolar.efficiency = 100
         Assert.assertEqual(100, ItuBO1213CoPolar.efficiency)
-
-        def action240():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CoPolar.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action240)
-
-        def action241():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CoPolar.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action241)
 
     def Test_IAgAntennaModelItuBO1213CrossPolar(self, ItuBO1213CrossPolar: "IAntennaModelItuBO1213CrossPolar"):
         ItuBO1213CrossPolar.diameter = 0.001
         Assert.assertEqual(0.001, ItuBO1213CrossPolar.diameter)
         ItuBO1213CrossPolar.diameter = 1000
         Assert.assertEqual(1000, ItuBO1213CrossPolar.diameter)
-
-        def action242():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CrossPolar.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action242)
-
-        def action243():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CrossPolar.diameter = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action243)
 
         ItuBO1213CrossPolar.mainlobe_gain = 32
         Assert.assertEqual(32, ItuBO1213CrossPolar.mainlobe_gain)
@@ -2472,30 +1786,19 @@ class AntennaHelper(object):
             ItuBO1213CrossPolar.mainlobe_gain = 999
             Assert.assertEqual(999, ItuBO1213CrossPolar.mainlobe_gain)
 
-        def action244():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CrossPolar.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action244)
-
-        def action245():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CrossPolar.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action245)
 
         ItuBO1213CrossPolar.efficiency = 0.0
         Assert.assertEqual(0.0, ItuBO1213CrossPolar.efficiency)
         ItuBO1213CrossPolar.efficiency = 100
         Assert.assertEqual(100, ItuBO1213CrossPolar.efficiency)
-
-        def action246():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CrossPolar.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action246)
-
-        def action247():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CrossPolar.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action247)
 
     def Test_IAgAntennaModelItuF1245(self, ItuF1245: "IAntennaModelItuF1245"):
         # Depends on Design Frequency
@@ -2503,16 +1806,10 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ItuF1245.diameter)
         ItuF1245.diameter = 10
         Assert.assertEqual(10, ItuF1245.diameter)
-
-        def action248():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuF1245.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action248)
-
-        def action249():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuF1245.diameter = 10001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action249)
 
         ItuF1245.polarization_advantage = True
         Assert.assertTrue(ItuF1245.polarization_advantage)
@@ -2530,46 +1827,29 @@ class AntennaHelper(object):
             ItuF1245.mainlobe_gain = 999
             Assert.assertEqual(999, ItuF1245.mainlobe_gain)
 
-        def action250():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuF1245.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action250)
-
-        def action251():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuF1245.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action251)
 
         ItuF1245.efficiency = 0.0
         Assert.assertEqual(0.0, ItuF1245.efficiency)
         ItuF1245.efficiency = 100
         Assert.assertEqual(100, ItuF1245.efficiency)
-
-        def action252():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuF1245.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action252)
-
-        def action253():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuF1245.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action253)
 
     def Test_IAgAntennaModelItuS1528R12Circular(self, ItuS1528R12Circular: "IAntennaModelItuS1528R12Circular"):
         ItuS1528R12Circular.diameter = 0.001
         Assert.assertEqual(0.001, ItuS1528R12Circular.diameter)
         ItuS1528R12Circular.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS1528R12Circular.diameter)
-
-        def action254():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action254)
-
-        def action255():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action255)
 
         ItuS1528R12Circular.use_mainlobe_model = True
         Assert.assertTrue(ItuS1528R12Circular.use_mainlobe_model)
@@ -2583,39 +1863,25 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ItuS1528R12Circular.half_beamwidth)
         ItuS1528R12Circular.half_beamwidth = 360.0
         Assert.assertEqual(360.0, ItuS1528R12Circular.half_beamwidth)
-
-        def action256():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.half_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action256)
-
-        def action257():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.half_beamwidth = 361.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action257)
 
         ItuS1528R12Circular.override_half_beamwidth = False
         Assert.assertFalse(ItuS1528R12Circular.override_half_beamwidth)
 
-        def action258():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ItuS1528R12Circular.half_beamwidth = 0.001
-
-        TryCatchAssertBlock.ExpectedException("read only", action258)
 
         ItuS1528R12Circular.nearin_sidelobe_level = -100
         Assert.assertEqual(-100, ItuS1528R12Circular.nearin_sidelobe_level)
         ItuS1528R12Circular.nearin_sidelobe_level = 0
         Assert.assertEqual(0, ItuS1528R12Circular.nearin_sidelobe_level)
-
-        def action259():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.nearin_sidelobe_level = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action259)
-
-        def action260():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.nearin_sidelobe_level = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action260)
 
         ItuS1528R12Circular.farout_sidelobe_level = -1000
         Assert.assertEqual(-1000, ItuS1528R12Circular.farout_sidelobe_level)
@@ -2628,15 +1894,10 @@ class AntennaHelper(object):
             ItuS1528R12Circular.farout_sidelobe_level = 999
             Assert.assertEqual(999, ItuS1528R12Circular.farout_sidelobe_level)
 
-        def action261():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.farout_sidelobe_level = -1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action261)
-
-        def action262():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.farout_sidelobe_level = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action262)
 
         ItuS1528R12Circular.mainlobe_gain = 32
         Assert.assertEqual(32, ItuS1528R12Circular.mainlobe_gain)
@@ -2649,62 +1910,39 @@ class AntennaHelper(object):
             ItuS1528R12Circular.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS1528R12Circular.mainlobe_gain)
 
-        def action263():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action263)
-
-        def action264():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action264)
 
         ItuS1528R12Circular.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS1528R12Circular.efficiency)
         ItuS1528R12Circular.efficiency = 100
         Assert.assertEqual(100, ItuS1528R12Circular.efficiency)
-
-        def action265():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action265)
-
-        def action266():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action266)
 
     def Test_IAgAntennaModelItuS1528R12Rectangular(self, ItuS1528R12Rectangular: "IAntennaModelItuS1528R12Rectangular"):
         ItuS1528R12Rectangular.major_dimension = 1
         Assert.assertEqual(1, ItuS1528R12Rectangular.major_dimension)
         ItuS1528R12Rectangular.major_dimension = 46
         Assert.assertEqual(46, ItuS1528R12Rectangular.major_dimension)
-
-        def action267():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.major_dimension = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action267)
-
-        def action268():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.major_dimension = 47.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action268)
 
         # Depends on MajorDimension
         ItuS1528R12Rectangular.minor_dimension = 1
         Assert.assertEqual(1, ItuS1528R12Rectangular.minor_dimension)
         ItuS1528R12Rectangular.minor_dimension = 46
         Assert.assertEqual(46, ItuS1528R12Rectangular.minor_dimension)
-
-        def action269():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.minor_dimension = 0.01
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action269)
-
-        def action270():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.minor_dimension = 47
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action270)
 
         ItuS1528R12Rectangular.use_mainlobe_model = True
         Assert.assertTrue(ItuS1528R12Rectangular.use_mainlobe_model)
@@ -2718,39 +1956,25 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ItuS1528R12Rectangular.half_beamwidth)
         ItuS1528R12Rectangular.half_beamwidth = 360.0
         Assert.assertEqual(360.0, ItuS1528R12Rectangular.half_beamwidth)
-
-        def action271():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.half_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action271)
-
-        def action272():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.half_beamwidth = 361.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action272)
 
         ItuS1528R12Rectangular.override_half_beamwidth = False
         Assert.assertFalse(ItuS1528R12Rectangular.override_half_beamwidth)
 
-        def action273():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ItuS1528R12Rectangular.half_beamwidth = 0.001
-
-        TryCatchAssertBlock.ExpectedException("read only", action273)
 
         ItuS1528R12Rectangular.nearin_sidelobe_level = -100
         Assert.assertEqual(-100, ItuS1528R12Rectangular.nearin_sidelobe_level)
         ItuS1528R12Rectangular.nearin_sidelobe_level = 0
         Assert.assertEqual(0, ItuS1528R12Rectangular.nearin_sidelobe_level)
-
-        def action274():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.nearin_sidelobe_level = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action274)
-
-        def action275():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.nearin_sidelobe_level = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action275)
 
         ItuS1528R12Rectangular.farout_sidelobe_level = -1000
         Assert.assertEqual(-1000, ItuS1528R12Rectangular.farout_sidelobe_level)
@@ -2763,15 +1987,10 @@ class AntennaHelper(object):
             ItuS1528R12Rectangular.farout_sidelobe_level = 999
             Assert.assertEqual(999, ItuS1528R12Rectangular.farout_sidelobe_level)
 
-        def action276():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.farout_sidelobe_level = -1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action276)
-
-        def action277():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.farout_sidelobe_level = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action277)
 
         ItuS1528R12Rectangular.mainlobe_gain = 32
         Assert.assertEqual(32, ItuS1528R12Rectangular.mainlobe_gain)
@@ -2784,46 +2003,29 @@ class AntennaHelper(object):
             ItuS1528R12Rectangular.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS1528R12Rectangular.mainlobe_gain)
 
-        def action278():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action278)
-
-        def action279():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action279)
 
         ItuS1528R12Rectangular.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS1528R12Rectangular.efficiency)
         ItuS1528R12Rectangular.efficiency = 100
         Assert.assertEqual(100, ItuS1528R12Rectangular.efficiency)
-
-        def action280():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action280)
-
-        def action281():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action281)
 
     def Test_IAgAntennaModelItuS1528R13(self, ItuS1528R13: "IAntennaModelItuS1528R13"):
         ItuS1528R13.diameter = 0.001
         Assert.assertEqual(0.001, ItuS1528R13.diameter)
         ItuS1528R13.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS1528R13.diameter)
-
-        def action282():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action282)
-
-        def action283():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action283)
 
         ItuS1528R13.use_mainlobe_model = True
         Assert.assertTrue(ItuS1528R13.use_mainlobe_model)
@@ -2837,39 +2039,25 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ItuS1528R13.half_beamwidth)
         ItuS1528R13.half_beamwidth = 360.0
         Assert.assertEqual(360.0, ItuS1528R13.half_beamwidth)
-
-        def action284():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.half_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action284)
-
-        def action285():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.half_beamwidth = 361.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action285)
 
         ItuS1528R13.override_half_beamwidth = False
         Assert.assertFalse(ItuS1528R13.override_half_beamwidth)
 
-        def action286():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ItuS1528R13.half_beamwidth = 0.001
-
-        TryCatchAssertBlock.ExpectedException("read only", action286)
 
         ItuS1528R13.nearin_sidelobe_mask_cross_point = -100
         Assert.assertEqual(-100, ItuS1528R13.nearin_sidelobe_mask_cross_point)
         ItuS1528R13.nearin_sidelobe_mask_cross_point = 0
         Assert.assertEqual(0, ItuS1528R13.nearin_sidelobe_mask_cross_point)
-
-        def action287():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.nearin_sidelobe_mask_cross_point = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action287)
-
-        def action288():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.nearin_sidelobe_mask_cross_point = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action288)
 
         ItuS1528R13.farout_sidelobe_level = -1000
         Assert.assertEqual(-1000, ItuS1528R13.farout_sidelobe_level)
@@ -2882,15 +2070,10 @@ class AntennaHelper(object):
             ItuS1528R13.farout_sidelobe_level = 999
             Assert.assertEqual(999, ItuS1528R13.farout_sidelobe_level)
 
-        def action289():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.farout_sidelobe_level = -1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action289)
-
-        def action290():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.farout_sidelobe_level = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action290)
 
         ItuS1528R13.mainlobe_gain = 32
         Assert.assertEqual(32, ItuS1528R13.mainlobe_gain)
@@ -2903,46 +2086,29 @@ class AntennaHelper(object):
             ItuS1528R13.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS1528R13.mainlobe_gain)
 
-        def action291():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action291)
-
-        def action292():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action292)
 
         ItuS1528R13.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS1528R13.efficiency)
         ItuS1528R13.efficiency = 100
         Assert.assertEqual(100, ItuS1528R13.efficiency)
-
-        def action293():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action293)
-
-        def action294():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action294)
 
     def Test_IAgAntennaModelItuS465(self, ItuS465: "IAntennaModelItuS465"):
         ItuS465.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS465.diameter)
         ItuS465.diameter = 0.001
         Assert.assertEqual(0.001, ItuS465.diameter)
-
-        def action295():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action295)
-
-        def action296():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action296)
 
         ItuS465.use_mainlobe_model = True
         Assert.assertTrue(ItuS465.use_mainlobe_model)
@@ -2953,10 +2119,8 @@ class AntennaHelper(object):
         ItuS465.coordinated_prior1993 = True
         Assert.assertTrue(ItuS465.coordinated_prior1993)
 
-        def action297():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ItuS465.sidelobe_mask_level = 16
-
-        TryCatchAssertBlock.ExpectedException("read only", action297)
 
         ItuS465.coordinated_prior1993 = False
         Assert.assertFalse(ItuS465.coordinated_prior1993)
@@ -2965,16 +2129,10 @@ class AntennaHelper(object):
         Assert.assertEqual(16, ItuS465.sidelobe_mask_level)
         ItuS465.sidelobe_mask_level = 32
         Assert.assertEqual(32, ItuS465.sidelobe_mask_level)
-
-        def action298():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.sidelobe_mask_level = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action298)
-
-        def action299():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.sidelobe_mask_level = 33.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action299)
 
         ItuS465.sidelobe_relative_to_mainlobe = True
         Assert.assertTrue(ItuS465.sidelobe_relative_to_mainlobe)
@@ -2992,46 +2150,29 @@ class AntennaHelper(object):
             ItuS465.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS465.mainlobe_gain)
 
-        def action300():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action300)
-
-        def action301():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action301)
 
         ItuS465.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS465.efficiency)
         ItuS465.efficiency = 100
         Assert.assertEqual(100, ItuS465.efficiency)
-
-        def action302():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action302)
-
-        def action303():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action303)
 
     def Test_IAgAntennaModelItuS580(self, ItuS580: "IAntennaModelItuS580"):
         ItuS580.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS580.diameter)
         ItuS580.diameter = 0.001
         Assert.assertEqual(0.001, ItuS580.diameter)
-
-        def action304():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action304)
-
-        def action305():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action305)
 
         ItuS580.use_mainlobe_model = True
         Assert.assertTrue(ItuS580.use_mainlobe_model)
@@ -3043,16 +2184,10 @@ class AntennaHelper(object):
         Assert.assertAlmostEqual(0, float(ItuS580.sidelobe_mask_level), delta=1e-05)
         ItuS580.sidelobe_mask_level = 29
         Assert.assertAlmostEqual(29, float(ItuS580.sidelobe_mask_level), delta=1e-05)
-
-        def action306():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.sidelobe_mask_level = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action306)
-
-        def action307():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.sidelobe_mask_level = 30
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action307)
 
         ItuS580.sidelobe_relative_to_mainlobe = True
         Assert.assertTrue(ItuS580.sidelobe_relative_to_mainlobe)
@@ -3070,46 +2205,29 @@ class AntennaHelper(object):
             ItuS580.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS580.mainlobe_gain)
 
-        def action308():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action308)
-
-        def action309():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action309)
 
         ItuS580.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS580.efficiency)
         ItuS580.efficiency = 100
         Assert.assertEqual(100, ItuS580.efficiency)
-
-        def action310():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action310)
-
-        def action311():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action311)
 
     def Test_IAgAntennaModelItuS672Circular(self, ItuS672Circular: "IAntennaModelItuS672Circular"):
         ItuS672Circular.diameter = 0.001
         Assert.assertEqual(0.001, ItuS672Circular.diameter)
         ItuS672Circular.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS672Circular.diameter)
-
-        def action312():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action312)
-
-        def action313():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action313)
 
         ItuS672Circular.use_mainlobe_model = True
         Assert.assertTrue(ItuS672Circular.use_mainlobe_model)
@@ -3123,39 +2241,25 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ItuS672Circular.half_beamwidth)
         ItuS672Circular.half_beamwidth = 360.0
         Assert.assertEqual(360.0, ItuS672Circular.half_beamwidth)
-
-        def action314():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.half_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action314)
-
-        def action315():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.half_beamwidth = 361.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action315)
 
         ItuS672Circular.override_half_beamwidth = False
         Assert.assertFalse(ItuS672Circular.override_half_beamwidth)
 
-        def action316():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ItuS672Circular.half_beamwidth = 0.001
-
-        TryCatchAssertBlock.ExpectedException("read only", action316)
 
         ItuS672Circular.nearin_sidelobe_level = -100
         Assert.assertEqual(-100, ItuS672Circular.nearin_sidelobe_level)
         ItuS672Circular.nearin_sidelobe_level = 0
         Assert.assertEqual(0, ItuS672Circular.nearin_sidelobe_level)
-
-        def action317():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.nearin_sidelobe_level = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action317)
-
-        def action318():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.nearin_sidelobe_level = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action318)
 
         ItuS672Circular.farout_sidelobe_level = -1000
         Assert.assertEqual(-1000, ItuS672Circular.farout_sidelobe_level)
@@ -3168,15 +2272,10 @@ class AntennaHelper(object):
             ItuS672Circular.farout_sidelobe_level = 999
             Assert.assertEqual(999, ItuS672Circular.farout_sidelobe_level)
 
-        def action319():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.farout_sidelobe_level = -1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action319)
-
-        def action320():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.farout_sidelobe_level = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action320)
 
         ItuS672Circular.mainlobe_gain = 32
         Assert.assertEqual(32, ItuS672Circular.mainlobe_gain)
@@ -3189,62 +2288,39 @@ class AntennaHelper(object):
             ItuS672Circular.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS672Circular.mainlobe_gain)
 
-        def action321():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action321)
-
-        def action322():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action322)
 
         ItuS672Circular.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS672Circular.efficiency)
         ItuS672Circular.efficiency = 100
         Assert.assertEqual(100, ItuS672Circular.efficiency)
-
-        def action323():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action323)
-
-        def action324():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action324)
 
     def Test_IAgAntennaModelItuS672Rectangular(self, ItuS672Rectangular: "IAntennaModelItuS672Rectangular"):
         ItuS672Rectangular.major_dimension = 1
         Assert.assertEqual(1, ItuS672Rectangular.major_dimension)
         ItuS672Rectangular.major_dimension = 17
         Assert.assertEqual(17, ItuS672Rectangular.major_dimension)
-
-        def action325():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.major_dimension = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action325)
-
-        def action326():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.major_dimension = 18
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action326)
 
         # Depends on MajorDimension
         ItuS672Rectangular.minor_dimension = 17
         Assert.assertEqual(17, ItuS672Rectangular.minor_dimension)
         ItuS672Rectangular.minor_dimension = 17
         Assert.assertEqual(17, ItuS672Rectangular.minor_dimension)
-
-        def action327():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.minor_dimension = 0.01
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action327)
-
-        def action328():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.minor_dimension = 18
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action328)
 
         ItuS672Rectangular.use_mainlobe_model = True
         Assert.assertTrue(ItuS672Rectangular.use_mainlobe_model)
@@ -3258,39 +2334,25 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, ItuS672Rectangular.half_beamwidth)
         ItuS672Rectangular.half_beamwidth = 360.0
         Assert.assertEqual(360.0, ItuS672Rectangular.half_beamwidth)
-
-        def action329():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.half_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action329)
-
-        def action330():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.half_beamwidth = 361.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action330)
 
         ItuS672Rectangular.override_half_beamwidth = False
         Assert.assertFalse(ItuS672Rectangular.override_half_beamwidth)
 
-        def action331():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ItuS672Rectangular.half_beamwidth = 0.001
-
-        TryCatchAssertBlock.ExpectedException("read only", action331)
 
         ItuS672Rectangular.nearin_sidelobe_level = -100
         Assert.assertEqual(-100, ItuS672Rectangular.nearin_sidelobe_level)
         ItuS672Rectangular.nearin_sidelobe_level = 0
         Assert.assertEqual(0, ItuS672Rectangular.nearin_sidelobe_level)
-
-        def action332():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.nearin_sidelobe_level = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action332)
-
-        def action333():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.nearin_sidelobe_level = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action333)
 
         ItuS672Rectangular.farout_sidelobe_level = -1000
         Assert.assertEqual(-1000, ItuS672Rectangular.farout_sidelobe_level)
@@ -3303,15 +2365,10 @@ class AntennaHelper(object):
             ItuS672Rectangular.farout_sidelobe_level = 999
             Assert.assertEqual(999, ItuS672Rectangular.farout_sidelobe_level)
 
-        def action334():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.farout_sidelobe_level = -1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action334)
-
-        def action335():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.farout_sidelobe_level = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action335)
 
         ItuS672Rectangular.mainlobe_gain = 32
         Assert.assertEqual(32, ItuS672Rectangular.mainlobe_gain)
@@ -3324,46 +2381,29 @@ class AntennaHelper(object):
             ItuS672Rectangular.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS672Rectangular.mainlobe_gain)
 
-        def action336():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action336)
-
-        def action337():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action337)
 
         ItuS672Rectangular.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS672Rectangular.efficiency)
         ItuS672Rectangular.efficiency = 100
         Assert.assertEqual(100, ItuS672Rectangular.efficiency)
-
-        def action338():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action338)
-
-        def action339():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action339)
 
     def Test_IAgAntennaModelItuS731(self, ItuS731: "IAntennaModelItuS731"):
         ItuS731.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS731.diameter)
         ItuS731.diameter = 0.001
         Assert.assertEqual(0.001, ItuS731.diameter)
-
-        def action340():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action340)
-
-        def action341():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action341)
 
         ItuS731.use_mainlobe_model = True
         Assert.assertTrue(ItuS731.use_mainlobe_model)
@@ -3375,16 +2415,10 @@ class AntennaHelper(object):
         Assert.assertAlmostEqual(0, float(ItuS731.sidelobe_mask_level), delta=1e-05)
         ItuS731.sidelobe_mask_level = 23
         Assert.assertAlmostEqual(23, float(ItuS731.sidelobe_mask_level), delta=1e-05)
-
-        def action342():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.sidelobe_mask_level = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action342)
-
-        def action343():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.sidelobe_mask_level = 24
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action343)
 
         ItuS731.sidelobe_relative_to_mainlobe = True
         Assert.assertTrue(ItuS731.sidelobe_relative_to_mainlobe)
@@ -3402,41 +2436,25 @@ class AntennaHelper(object):
             ItuS731.mainlobe_gain = 999
             Assert.assertEqual(999, ItuS731.mainlobe_gain)
 
-        def action344():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action344)
-
-        def action345():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.mainlobe_gain = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action345)
 
         ItuS731.efficiency = 0.0
         Assert.assertEqual(0.0, ItuS731.efficiency)
         ItuS731.efficiency = 100
         Assert.assertEqual(100, ItuS731.efficiency)
-
-        def action346():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action346)
-
-        def action347():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.efficiency = 101
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action347)
-
     def Test_IAgAntennaModelIntelSat(self, intelSat: "IAntennaModelIntelSat"):
-        def action348():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             intelSat.filename = r"C:\bogus.ant"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action348)
-
-        def action349():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Aborting file load")):
             intelSat.filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
-
-        TryCatchAssertBlock.ExpectedException("Aborting file load", action349)
 
         intelSat.filename = TestBase.GetScenarioFile("CommRad", "trga0c.f03")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "trga0c.f03"), intelSat.filename)
@@ -3448,16 +2466,10 @@ class AntennaHelper(object):
         Assert.assertEqual(0.0, isotropic.efficiency)
         isotropic.efficiency = 100
         Assert.assertEqual(100, isotropic.efficiency)
-
-        def action350():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             isotropic.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action350)
-
-        def action351():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             isotropic.efficiency = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action351)
 
     def Test_IAgAntennaModelParabolic(self, parabolic: "IAntennaModelParabolic"):
         parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
@@ -3466,26 +2478,15 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, parabolic.beamwidth)
         parabolic.beamwidth = 90.0
         Assert.assertEqual(90.0, parabolic.beamwidth)
-
-        def action352():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action352)
-
-        def action353():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action353)
-
-        def action354():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             parabolic.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action354)
-
-        def action355():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             parabolic.mainlobe_gain = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action355)
 
         parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.DIAMETER
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.DIAMETER, parabolic.input_type)
@@ -3493,26 +2494,15 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, parabolic.diameter)
         parabolic.diameter = 1000.0
         Assert.assertEqual(1000.0, parabolic.diameter)
-
-        def action356():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action356)
-
-        def action357():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.diameter = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action357)
-
-        def action358():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             parabolic.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action358)
-
-        def action359():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             parabolic.mainlobe_gain = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action359)
 
         parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.MAINLOBE_GAIN
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.MAINLOBE_GAIN, parabolic.input_type)
@@ -3527,40 +2517,24 @@ class AntennaHelper(object):
             parabolic.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, parabolic.mainlobe_gain)
 
-        def action360():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action360)
-
-        def action361():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.mainlobe_gain = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action361)
-
-        def action362():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             parabolic.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action362)
-
-        def action363():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             parabolic.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action363)
 
         parabolic.efficiency = 0.1
         Assert.assertEqual(0.1, parabolic.efficiency)
         parabolic.efficiency = 100.0
         Assert.assertEqual(100.0, parabolic.efficiency)
-
-        def action364():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.efficiency = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action364)
-
-        def action365():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action365)
 
         parabolic.backlobe_gain = -1000.0
         Assert.assertEqual(-1000.0, parabolic.backlobe_gain)
@@ -3573,15 +2547,10 @@ class AntennaHelper(object):
             parabolic.backlobe_gain = 999.0
             Assert.assertEqual(999.0, parabolic.backlobe_gain)
 
-        def action366():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action366)
-
-        def action367():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             parabolic.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action367)
 
         parabolic.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(parabolic.use_backlobe_as_mainlobe_atten)
@@ -3593,23 +2562,16 @@ class AntennaHelper(object):
         asciiFile.enabled = False
         Assert.assertFalse(asciiFile.enabled)
 
-        def action368():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             asciiFile.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action368)
 
         asciiFile.enabled = True
         Assert.assertTrue(asciiFile.enabled)
 
-        def action369():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             asciiFile.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action369)
-
-        def action370():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error File Type")):
             asciiFile.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Error File Type", action370)
         if IsBeamDirection:
             # Beam Direction Provider
             asciiFile.filename = TestBase.GetScenarioFile("CommRad", "beamDirections22p0.bdf")
@@ -3630,10 +2592,8 @@ class AntennaHelper(object):
         objectx.enabled = False
         Assert.assertFalse(objectx.enabled)
 
-        def action371():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot generate")):
             objectx.directions.add("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Cannot generate", action371)
 
         objectx.enabled = True
         Assert.assertTrue(objectx.enabled)
@@ -3643,15 +2603,10 @@ class AntennaHelper(object):
 
     # Used by Phased Array test
     def Test_IAgDirectionProviderScript(self, script: "IDirectionProviderScript", filename: str):
-        def action372():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             script.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action372)
-
-        def action373():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             script.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action373)
         if not OSHelper.IsLinux():
             # script plugins don't work on linux
             script.filename = TestBase.GetScenarioFile(filename)
@@ -3662,15 +2617,10 @@ class AntennaHelper(object):
 
     # Used by Phased Array test
     def Test_IAgElementConfigurationAsciiFile(self, asciiFile: "IElementConfigurationAsciiFile"):
-        def action374():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             asciiFile.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action374)
-
-        def action375():
+        with pytest.raises(Exception, match=RegexSubstringMatch("incorrect")):
             asciiFile.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("incorrect", action375)
 
         asciiFile.filename = TestBase.GetScenarioFile("CommRad", "elementPositions.pae")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "elementPositions.pae"), asciiFile.filename)
@@ -3681,102 +2631,63 @@ class AntennaHelper(object):
         Assert.assertEqual(3, circular.num_elements)
         circular.num_elements = 10  # Actual max is 5000, but this can cause out-of-memory exceptions
         Assert.assertEqual(10, circular.num_elements)
-
-        def action376():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             circular.num_elements = 2
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action376)
-
-        def action377():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             circular.num_elements = 5001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action377)
 
         circular.spacing = 0.1
         Assert.assertEqual(0.1, circular.spacing)
         circular.spacing = 1.0
         Assert.assertEqual(1.0, circular.spacing)
-
-        def action378():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             circular.spacing = 0.0
-
-        TryCatchAssertBlock.ExpectedException("must be from", action378)
-
-        def action379():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             circular.spacing = 1.1
-
-        TryCatchAssertBlock.ExpectedException("must be from", action379)
 
     def Test_IAgElementConfigurationLinear(self, linear: "IElementConfigurationLinear"):
         linear.num_elements = 2
         Assert.assertEqual(2, linear.num_elements)
         linear.num_elements = 10  # Actual max is 5000, but this can cause out-of-memory exceptions
         Assert.assertEqual(10, linear.num_elements)
-
-        def action380():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             linear.num_elements = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action380)
-
-        def action381():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             linear.num_elements = 5001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action381)
 
         linear.spacing = 0.1
         Assert.assertEqual(0.1, linear.spacing)
         linear.spacing = 1.0
         Assert.assertEqual(1.0, linear.spacing)
-
-        def action382():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             linear.spacing = 0.0
-
-        TryCatchAssertBlock.ExpectedException("must be from", action382)
-
-        def action383():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             linear.spacing = 1.1
-
-        TryCatchAssertBlock.ExpectedException("must be from", action383)
 
         linear.tilt_angle = 0.0
         Assert.assertEqual(0.0, linear.tilt_angle)
         linear.tilt_angle = 180.0
         Assert.assertEqual(180.0, linear.tilt_angle)
-
-        def action384():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             linear.tilt_angle = -0.1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action384)
-
-        def action385():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             linear.tilt_angle = 180.1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action385)
 
     def Test_IAgElementConfigurationPolygon(self, polygon: "IElementConfigurationPolygon", bIsHexagon: bool):
         if bIsHexagon:
             Assert.assertEqual(6, polygon.num_sides)
-
-            def action386():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 polygon.num_sides = 3
-
-            TryCatchAssertBlock.ExpectedException("read-only", action386)
 
         else:
             polygon.num_sides = 3
             Assert.assertEqual(3, polygon.num_sides)
             polygon.num_sides = 360
             Assert.assertEqual(360, polygon.num_sides)
-
-            def action387():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 polygon.num_sides = 2
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action387)
-
-            def action388():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 polygon.num_sides = 361
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action388)
 
         Assert.assertEqual(90, polygon.max_look_angle_az)
         Assert.assertEqual(90, polygon.max_look_angle_el)
@@ -3790,10 +2701,8 @@ class AntennaHelper(object):
         polygon.equilateral = True
         Assert.assertTrue(polygon.equilateral)
 
-        def action389():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             polygon.spacing_y = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action389)
 
         polygon.equilateral = False
         Assert.assertFalse(polygon.equilateral)
@@ -3802,61 +2711,37 @@ class AntennaHelper(object):
         Assert.assertEqual(0.1, polygon.spacing_y)
         polygon.spacing_y = 1.0
         Assert.assertEqual(1.0, polygon.spacing_y)
-
-        def action390():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             polygon.spacing_y = 0.0
-
-        TryCatchAssertBlock.ExpectedException("must be from", action390)
-
-        def action391():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             polygon.spacing_y = 1.1
-
-        TryCatchAssertBlock.ExpectedException("must be from", action391)
 
         polygon.spacing_x = 0.1
         Assert.assertEqual(0.1, polygon.spacing_x)
         polygon.spacing_x = 1.0
         Assert.assertEqual(1.0, polygon.spacing_x)
-
-        def action392():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             polygon.spacing_x = 0.0
-
-        TryCatchAssertBlock.ExpectedException("must be from", action392)
-
-        def action393():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             polygon.spacing_x = 1.1
-
-        TryCatchAssertBlock.ExpectedException("must be from", action393)
 
         polygon.num_elements_x = 3
         Assert.assertEqual(3, polygon.num_elements_x)
         polygon.num_elements_x = 5  # Actual max is 1667, but this can cause out-of-memory exceptions
         Assert.assertEqual(5, polygon.num_elements_x)
-
-        def action394():
+        with pytest.raises(Exception, match=RegexSubstringMatch("value must be")):
             polygon.num_elements_x = 1
-
-        TryCatchAssertBlock.ExpectedException("value must be", action394)
-
-        def action395():
+        with pytest.raises(Exception, match=RegexSubstringMatch("value must be")):
             polygon.num_elements_x = 2001
-
-        TryCatchAssertBlock.ExpectedException("value must be", action395)
 
         polygon.num_elements_y = 3
         Assert.assertEqual(3, polygon.num_elements_y)
         polygon.num_elements_y = 5  # Actual max is 1667, but this can cause out-of-memory exceptions
         Assert.assertEqual(5, polygon.num_elements_y)
-
-        def action396():
+        with pytest.raises(Exception, match=RegexSubstringMatch("value must be")):
             polygon.num_elements_y = 1
-
-        TryCatchAssertBlock.ExpectedException("value must be", action396)
-
-        def action397():
+        with pytest.raises(Exception, match=RegexSubstringMatch("value must be")):
             polygon.num_elements_y = 2001
-
-        TryCatchAssertBlock.ExpectedException("value must be", action397)
 
         Assert.assertEqual(0, polygon.max_look_angle_az)
         Assert.assertEqual(0, polygon.max_look_angle_el)
@@ -3873,15 +2758,10 @@ class AntennaHelper(object):
             phasedArray.backlobe_suppression = 2999
             Assert.assertEqual(2999, phasedArray.backlobe_suppression)
 
-        def action398():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             phasedArray.backlobe_suppression = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action398)
-
-        def action399():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             phasedArray.backlobe_suppression = 3001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action399)
 
         phasedArray.show_grid = False
         Assert.assertFalse(phasedArray.show_grid)
@@ -3905,10 +2785,8 @@ class AntennaHelper(object):
         else:
             pass
 
-        def action400():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
             phasedArray.beamformer_type = BEAMFORMER_TYPE.UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("Unrecognized", action400)
 
         phasedArray.include_element_factor = False
         Assert.assertFalse(phasedArray.include_element_factor)
@@ -3919,16 +2797,10 @@ class AntennaHelper(object):
         Assert.assertEqual(0, phasedArray.element_factor_exponent)
         phasedArray.element_factor_exponent = 100
         Assert.assertEqual(100, phasedArray.element_factor_exponent)
-
-        def action401():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             phasedArray.element_factor_exponent = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action401)
-
-        def action402():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             phasedArray.element_factor_exponent = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action402)
 
         # Element Configuration sub-tab
 
@@ -4017,11 +2889,8 @@ class AntennaHelper(object):
             ele2: "IElement" = eleColl[i]
             Assert.assertEqual(i, ele2.id)
             if i == (eleColl.count - 1):
-
-                def action403():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Cannot disable the last element")):
                     ele2.enabled = False
-
-                TryCatchAssertBlock.ExpectedException("Cannot disable the last element", action403)
 
             else:
                 ele2.enabled = False
@@ -4063,11 +2932,8 @@ class AntennaHelper(object):
                     clr.CastAs(phasedArray.element_configuration, IElementConfigurationPolygon), False
                 )
             elif elementConfigurationType == ELEMENT_CONFIGURATION_TYPE.UNKNOWN:
-
-                def action404():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.UNKNOWN
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action404)
             else:
                 Assert.fail("Untested ELEMENT_CONFIGURATION_TYPE")
 
@@ -4100,11 +2966,8 @@ class AntennaHelper(object):
                     clr.CastAs(phasedArray.beam_direction_provider, IDirectionProviderScript), filename
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
-
-                def action405():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action405)
             else:
                 Assert.fail("Untested DIRECTION_PROVIDER_TYPE for Beam DP")
 
@@ -4136,11 +2999,8 @@ class AntennaHelper(object):
                     clr.CastAs(phasedArray.null_direction_provider, IDirectionProviderScript), filename
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
-
-                def action406():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action406)
             else:
                 Assert.fail("Untested DIRECTION_PROVIDER_TYPE for Null DP")
 
@@ -4152,16 +3012,10 @@ class AntennaHelper(object):
         Assert.assertEqual(BEAMFORMER_TYPE.ASCII_FILE, phasedArray.beamformer_type)
 
         asciiFile: "IBeamformerAsciiFile" = clr.CastAs(phasedArray.beamformer, IBeamformerAsciiFile)
-
-        def action407():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             asciiFile.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action407)
-
-        def action408():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error File Type")):
             asciiFile.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Error File Type", action408)
         asciiFile.filename = TestBase.GetScenarioFile("CommRad", "weights_7El2-8.ewf")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "weights_7El2-8.ewf"), asciiFile.filename)
 
@@ -4173,31 +3027,19 @@ class AntennaHelper(object):
         Assert.assertAlmostEqual(0.001, mvdr.constraint, delta=1e-06)
         mvdr.constraint = 10
         Assert.assertAlmostEqual(10, mvdr.constraint, delta=1e-06)
-
-        def action409():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             mvdr.constraint = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action409)
-
-        def action410():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             mvdr.constraint = 11
-
-        TryCatchAssertBlock.ExpectedException("invalid", action410)
 
         phasedArray.beamformer_type = BEAMFORMER_TYPE.SCRIPT
         Assert.assertEqual(BEAMFORMER_TYPE.SCRIPT, phasedArray.beamformer_type)
 
         script: "IBeamformerScript" = clr.CastAs(phasedArray.beamformer, IBeamformerScript)
-
-        def action411():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             script.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action411)
-
-        def action412():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             script.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action412)
         if not OSHelper.IsLinux():
             # script plugins don't work on linux
             script.filename = TestBase.GetScenarioFile("CommRad", "VB_Beamformer.vbs")
@@ -4217,26 +3059,16 @@ class AntennaHelper(object):
             pencilBeam.mainlobe_gain = 999
             Assert.assertEqual(999, pencilBeam.mainlobe_gain)
 
-        def action413():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pencilBeam.mainlobe_gain = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action413)
-
-        def action414():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pencilBeam.mainlobe_gain = 1001
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action414)
-
     def Test_IAgAntennaModelElevationAzimuthCuts(self, cuts: "IAntennaModelElevationAzimuthCuts"):
-        def action415():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             cuts.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action415)
-
-        def action416():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error loading")):
             cuts.filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
-
-        TryCatchAssertBlock.ExpectedException("Error loading", action416)
 
         cuts.filename = TestBase.GetScenarioFile("CommRad", "Pattern_Elev_Azi_Cuts_1Beam.Ant")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "Pattern_Elev_Azi_Cuts_1Beam.Ant"), cuts.filename)
@@ -4248,37 +3080,26 @@ class AntennaHelper(object):
         Assert.assertAlmostEqual(-1.2, rp.sidelobe_gain, delta=0.1)
 
         rp.mainlobe_gain = 10.0
-
-        def action417():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rp.mainlobe_gain = 100.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action417)
         Assert.assertEqual(10.0, rp.mainlobe_gain)
         Assert.assertAlmostEqual(-0.1, rp.sidelobe_gain, delta=0.1)
 
         rp.phi_angle = 40.0
-
-        def action418():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rp.phi_angle = 100.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action418)
         Assert.assertEqual(40.0, rp.phi_angle)
         Assert.assertAlmostEqual(-0.4, rp.sidelobe_gain, delta=0.1)
 
         rp.theta_angle = 5.0
-
-        def action419():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rp.theta_angle = 100.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action419)
         Assert.assertEqual(5.0, rp.theta_angle)
         Assert.assertAlmostEqual(-0.2, rp.sidelobe_gain, delta=0.1)
 
     def Test_IAgAntennaModelRemcomUanFormat(self, remcom: "IAntennaModelRemcomUanFormat"):
-        def action420():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             remcom.filename = r"C:\bogus.uan"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action420)
 
         FilePath: str = TestBase.PathCombine(
             "CommRad", "helical_rhcp_exported_calcprop_fMagPhase_pGain_mDB_pDeg_aDeg.uan"
@@ -4287,10 +3108,8 @@ class AntennaHelper(object):
         Assert.assertEqual(FilePath, remcom.filename)
 
     def Test_IAgAntennaModelTicraGRASPFormat(self, ticra: "IAntennaModelTicraGRASPFormat"):
-        def action421():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             ticra.filename = r"C:\bogus.grd"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action421)
 
         FilePath: str = TestBase.PathCombine("CommRad", "uv-file.grd")
         ticra.filename = TestBase.GetScenarioFile(FilePath)
@@ -4301,16 +3120,10 @@ class AntennaHelper(object):
         Assert.assertEqual(1, acsip.function_power)
         acsip.function_power = 10
         Assert.assertEqual(10, acsip.function_power)
-
-        def action422():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.function_power = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action422)
-
-        def action423():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.function_power = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action423)
 
         acsip.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, acsip.input_type)
@@ -4318,21 +3131,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, acsip.beamwidth)
         acsip.beamwidth = 90.0
         Assert.assertEqual(90.0, acsip.beamwidth)
-
-        def action424():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action424)
-
-        def action425():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action425)
-
-        def action426():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acsip.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action426)
 
         acsip.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, acsip.input_type)
@@ -4340,21 +3144,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, acsip.diameter)
         acsip.diameter = 1000.0
         Assert.assertEqual(1000.0, acsip.diameter)
-
-        def action427():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action427)
-
-        def action428():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action428)
-
-        def action429():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acsip.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action429)
 
         acsip.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(acsip.use_backlobe_as_mainlobe_atten)
@@ -4372,38 +3167,24 @@ class AntennaHelper(object):
             acsip.backlobe_gain = 999.0
             Assert.assertEqual(999.0, acsip.backlobe_gain)
 
-        def action430():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action430)
-
-        def action431():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action431)
 
         acsip.efficiency = 0.0
         Assert.assertEqual(0.0, acsip.efficiency)
         acsip.efficiency = 100.0
         Assert.assertEqual(100.0, acsip.efficiency)
-
-        def action432():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action432)
-
-        def action433():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action433)
 
         acsip.compute_mainlobe_gain = True
         Assert.assertTrue(acsip.compute_mainlobe_gain)
-
-        def action434():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acsip.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action434)
 
         acsip.compute_mainlobe_gain = False
         Assert.assertFalse(acsip.compute_mainlobe_gain)
@@ -4418,15 +3199,10 @@ class AntennaHelper(object):
             acsip.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, acsip.mainlobe_gain)
 
-        def action435():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action435)
-
-        def action436():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action436)
 
     def Test_IAgAntennaModelApertureRectangularSincIntPower(
         self, arsip: "IAntennaModelApertureRectangularSincIntPower"
@@ -4435,16 +3211,10 @@ class AntennaHelper(object):
         Assert.assertEqual(1, arsip.function_power)
         arsip.function_power = 10
         Assert.assertEqual(10, arsip.function_power)
-
-        def action437():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.function_power = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action437)
-
-        def action438():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.function_power = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action438)
 
         arsip.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS, arsip.input_type)
@@ -4453,41 +3223,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, arsip.x_dimension)
         arsip.x_dimension = 1000.0
         Assert.assertEqual(1000.0, arsip.x_dimension)
-
-        def action439():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.x_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action439)
-
-        def action440():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.x_dimension = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action440)
 
         arsip.y_dimension = 0.01
         Assert.assertEqual(0.01, arsip.y_dimension)
         arsip.y_dimension = 1000.0
         Assert.assertEqual(1000.0, arsip.y_dimension)
-
-        def action441():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.y_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action441)
-
-        def action442():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.y_dimension = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action442)
-
-        def action443():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsip.x_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action443)
-
-        def action444():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsip.y_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action444)
 
         arsip.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS, arsip.input_type)
@@ -4496,41 +3249,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, arsip.x_beamwidth)
         arsip.x_beamwidth = 90.0
         Assert.assertEqual(90.0, arsip.x_beamwidth)
-
-        def action445():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.x_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action445)
-
-        def action446():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.x_beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action446)
 
         arsip.y_beamwidth = 0.001
         Assert.assertEqual(0.001, arsip.y_beamwidth)
         arsip.y_beamwidth = 90.0
         Assert.assertEqual(90.0, arsip.y_beamwidth)
-
-        def action447():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.y_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action447)
-
-        def action448():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.y_beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action448)
-
-        def action449():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsip.x_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action449)
-
-        def action450():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsip.y_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action450)
 
         arsip.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(arsip.use_backlobe_as_mainlobe_atten)
@@ -4548,38 +3284,24 @@ class AntennaHelper(object):
             arsip.backlobe_gain = 999.0
             Assert.assertEqual(999.0, arsip.backlobe_gain)
 
-        def action451():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action451)
-
-        def action452():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action452)
 
         arsip.efficiency = 0.0
         Assert.assertEqual(0.0, arsip.efficiency)
         arsip.efficiency = 100.0
         Assert.assertEqual(100.0, arsip.efficiency)
-
-        def action453():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action453)
-
-        def action454():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action454)
 
         arsip.compute_mainlobe_gain = True
         Assert.assertTrue(arsip.compute_mainlobe_gain)
-
-        def action455():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsip.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action455)
 
         arsip.compute_mainlobe_gain = False
         Assert.assertFalse(arsip.compute_mainlobe_gain)
@@ -4594,31 +3316,20 @@ class AntennaHelper(object):
             arsip.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, arsip.mainlobe_gain)
 
-        def action456():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action456)
-
-        def action457():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action457)
 
     def Test_IAgAntennaModelApertureCircularSincRealPower(self, acsrp: "IAntennaModelApertureCircularSincRealPower"):
         acsrp.function_power = 1
         Assert.assertEqual(1, acsrp.function_power)
         acsrp.function_power = 10
         Assert.assertEqual(10, acsrp.function_power)
-
-        def action458():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.function_power = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action458)
-
-        def action459():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.function_power = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action459)
 
         acsrp.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, acsrp.input_type)
@@ -4626,21 +3337,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, acsrp.beamwidth)
         acsrp.beamwidth = 90.0
         Assert.assertEqual(90.0, acsrp.beamwidth)
-
-        def action460():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action460)
-
-        def action461():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action461)
-
-        def action462():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acsrp.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action462)
 
         acsrp.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, acsrp.input_type)
@@ -4648,21 +3350,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, acsrp.diameter)
         acsrp.diameter = 1000.0
         Assert.assertEqual(1000.0, acsrp.diameter)
-
-        def action463():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action463)
-
-        def action464():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action464)
-
-        def action465():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acsrp.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action465)
 
         acsrp.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(acsrp.use_backlobe_as_mainlobe_atten)
@@ -4680,38 +3373,24 @@ class AntennaHelper(object):
             acsrp.backlobe_gain = 999.0
             Assert.assertEqual(999.0, acsrp.backlobe_gain)
 
-        def action466():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action466)
-
-        def action467():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action467)
 
         acsrp.efficiency = 0.0
         Assert.assertEqual(0.0, acsrp.efficiency)
         acsrp.efficiency = 100.0
         Assert.assertEqual(100.0, acsrp.efficiency)
-
-        def action468():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action468)
-
-        def action469():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action469)
 
         acsrp.compute_mainlobe_gain = True
         Assert.assertTrue(acsrp.compute_mainlobe_gain)
-
-        def action470():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acsrp.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action470)
 
         acsrp.compute_mainlobe_gain = False
         Assert.assertFalse(acsrp.compute_mainlobe_gain)
@@ -4726,15 +3405,10 @@ class AntennaHelper(object):
             acsrp.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, acsrp.mainlobe_gain)
 
-        def action471():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action471)
-
-        def action472():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsrp.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action472)
 
     def Test_IAgAntennaModelApertureRectangularSincRealPower(
         self, arsrp: "IAntennaModelApertureRectangularSincRealPower"
@@ -4743,16 +3417,10 @@ class AntennaHelper(object):
         Assert.assertEqual(1, arsrp.function_power)
         arsrp.function_power = 10
         Assert.assertEqual(10, arsrp.function_power)
-
-        def action473():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.function_power = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action473)
-
-        def action474():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.function_power = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action474)
 
         arsrp.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS, arsrp.input_type)
@@ -4761,41 +3429,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, arsrp.x_dimension)
         arsrp.x_dimension = 1000.0
         Assert.assertEqual(1000.0, arsrp.x_dimension)
-
-        def action475():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.x_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action475)
-
-        def action476():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.x_dimension = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action476)
 
         arsrp.y_dimension = 0.01
         Assert.assertEqual(0.01, arsrp.y_dimension)
         arsrp.y_dimension = 1000.0
         Assert.assertEqual(1000.0, arsrp.y_dimension)
-
-        def action477():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.y_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action477)
-
-        def action478():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.y_dimension = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action478)
-
-        def action479():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsrp.x_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action479)
-
-        def action480():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsrp.y_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action480)
 
         arsrp.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS, arsrp.input_type)
@@ -4804,41 +3455,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, arsrp.x_beamwidth)
         arsrp.x_beamwidth = 90.0
         Assert.assertEqual(90.0, arsrp.x_beamwidth)
-
-        def action481():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.x_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action481)
-
-        def action482():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.x_beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action482)
 
         arsrp.y_beamwidth = 0.001
         Assert.assertEqual(0.001, arsrp.y_beamwidth)
         arsrp.y_beamwidth = 90.0
         Assert.assertEqual(90.0, arsrp.y_beamwidth)
-
-        def action483():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.y_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action483)
-
-        def action484():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.y_beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action484)
-
-        def action485():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsrp.x_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action485)
-
-        def action486():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsrp.y_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action486)
 
         arsrp.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(arsrp.use_backlobe_as_mainlobe_atten)
@@ -4856,38 +3490,24 @@ class AntennaHelper(object):
             arsrp.backlobe_gain = 999.0
             Assert.assertEqual(999.0, arsrp.backlobe_gain)
 
-        def action487():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action487)
-
-        def action488():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action488)
 
         arsrp.efficiency = 0.0
         Assert.assertEqual(0.0, arsrp.efficiency)
         arsrp.efficiency = 100.0
         Assert.assertEqual(100.0, arsrp.efficiency)
-
-        def action489():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action489)
-
-        def action490():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action490)
 
         arsrp.compute_mainlobe_gain = True
         Assert.assertTrue(arsrp.compute_mainlobe_gain)
-
-        def action491():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             arsrp.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action491)
 
         arsrp.compute_mainlobe_gain = False
         Assert.assertFalse(arsrp.compute_mainlobe_gain)
@@ -4902,15 +3522,10 @@ class AntennaHelper(object):
             arsrp.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, arsrp.mainlobe_gain)
 
-        def action492():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action492)
-
-        def action493():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action493)
 
     def Test_IAgAntennaModelSquareHorn(self, squareHorn: "IAntennaModelSquareHorn"):
         squareHorn.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
@@ -4919,26 +3534,15 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, squareHorn.beamwidth)
         squareHorn.beamwidth = 90.0
         Assert.assertEqual(90.0, squareHorn.beamwidth)
-
-        def action494():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action494)
-
-        def action495():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action495)
-
-        def action496():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             squareHorn.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action496)
-
-        def action497():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             squareHorn.mainlobe_gain = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action497)
 
         squareHorn.input_type = ANTENNA_MODEL_INPUT_TYPE.DIAMETER
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.DIAMETER, squareHorn.input_type)
@@ -4946,26 +3550,15 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, squareHorn.diameter)
         squareHorn.diameter = 1000.0
         Assert.assertEqual(1000.0, squareHorn.diameter)
-
-        def action498():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action498)
-
-        def action499():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.diameter = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action499)
-
-        def action500():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             squareHorn.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action500)
-
-        def action501():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             squareHorn.mainlobe_gain = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action501)
 
         squareHorn.input_type = ANTENNA_MODEL_INPUT_TYPE.MAINLOBE_GAIN
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.MAINLOBE_GAIN, squareHorn.input_type)
@@ -4980,40 +3573,24 @@ class AntennaHelper(object):
             squareHorn.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, squareHorn.mainlobe_gain)
 
-        def action502():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action502)
-
-        def action503():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.mainlobe_gain = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action503)
-
-        def action504():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             squareHorn.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action504)
-
-        def action505():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             squareHorn.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action505)
 
         squareHorn.efficiency = 0.1
         Assert.assertEqual(0.1, squareHorn.efficiency)
         squareHorn.efficiency = 100.0
         Assert.assertEqual(100.0, squareHorn.efficiency)
-
-        def action506():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.efficiency = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action506)
-
-        def action507():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action507)
 
         squareHorn.backlobe_gain = -1000.0
         Assert.assertEqual(-1000.0, squareHorn.backlobe_gain)
@@ -5026,15 +3603,10 @@ class AntennaHelper(object):
             squareHorn.backlobe_gain = 999.0
             Assert.assertEqual(999.0, squareHorn.backlobe_gain)
 
-        def action508():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action508)
-
-        def action509():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             squareHorn.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action509)
 
         squareHorn.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(squareHorn.use_backlobe_as_mainlobe_atten)
@@ -5048,21 +3620,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, acu.beamwidth)
         acu.beamwidth = 180.0
         Assert.assertEqual(180.0, acu.beamwidth)
-
-        def action510():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action510)
-
-        def action511():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action511)
-
-        def action512():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acu.diameter = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action512)
 
         acu.input_type = CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.DIAMETER, acu.input_type)
@@ -5070,21 +3633,12 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, acu.diameter)
         acu.diameter = 1000.0
         Assert.assertEqual(1000.0, acu.diameter)
-
-        def action513():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.diameter = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action513)
-
-        def action514():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.diameter = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action514)
-
-        def action515():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acu.beamwidth = 45.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action515)
 
         acu.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(acu.use_backlobe_as_mainlobe_atten)
@@ -5102,38 +3656,24 @@ class AntennaHelper(object):
             acu.backlobe_gain = 999.0
             Assert.assertEqual(999.0, acu.backlobe_gain)
 
-        def action516():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action516)
-
-        def action517():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action517)
 
         acu.efficiency = 0.0
         Assert.assertEqual(0.0, acu.efficiency)
         acu.efficiency = 100.0
         Assert.assertEqual(100.0, acu.efficiency)
-
-        def action518():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action518)
-
-        def action519():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action519)
 
         acu.compute_mainlobe_gain = True
         Assert.assertTrue(acu.compute_mainlobe_gain)
-
-        def action520():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             acu.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action520)
 
         acu.compute_mainlobe_gain = False
         Assert.assertFalse(acu.compute_mainlobe_gain)
@@ -5148,15 +3688,10 @@ class AntennaHelper(object):
             acu.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, acu.mainlobe_gain)
 
-        def action521():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action521)
-
-        def action522():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action522)
 
     def Test_IAgAntennaModelApertureRectangularUniform(self, aru: "IAntennaModelApertureRectangularUniform"):
         aru.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
@@ -5166,41 +3701,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.01, aru.x_dimension)
         aru.x_dimension = 1000.0
         Assert.assertEqual(1000.0, aru.x_dimension)
-
-        def action523():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.x_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action523)
-
-        def action524():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.x_dimension = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action524)
 
         aru.y_dimension = 0.01
         Assert.assertEqual(0.01, aru.y_dimension)
         aru.y_dimension = 1000.0
         Assert.assertEqual(1000.0, aru.y_dimension)
-
-        def action525():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.y_dimension = 0.001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action525)
-
-        def action526():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.y_dimension = 1001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action526)
-
-        def action527():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             aru.x_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action527)
-
-        def action528():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             aru.y_beamwidth = 100.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action528)
 
         aru.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS, aru.input_type)
@@ -5209,41 +3727,24 @@ class AntennaHelper(object):
         Assert.assertEqual(0.001, aru.x_beamwidth)
         aru.x_beamwidth = 180.0
         Assert.assertEqual(180.0, aru.x_beamwidth)
-
-        def action529():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.x_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action529)
-
-        def action530():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.x_beamwidth = 181.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action530)
 
         aru.y_beamwidth = 0.001
         Assert.assertEqual(0.001, aru.y_beamwidth)
         aru.y_beamwidth = 180.0
         Assert.assertEqual(180.0, aru.y_beamwidth)
-
-        def action531():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.y_beamwidth = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action531)
-
-        def action532():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.y_beamwidth = 181.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action532)
-
-        def action533():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             aru.x_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action533)
-
-        def action534():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             aru.y_dimension = 50.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action534)
 
         aru.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(aru.use_backlobe_as_mainlobe_atten)
@@ -5261,38 +3762,24 @@ class AntennaHelper(object):
             aru.backlobe_gain = 999.0
             Assert.assertEqual(999.0, aru.backlobe_gain)
 
-        def action535():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.backlobe_gain = -1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action535)
-
-        def action536():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.backlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action536)
 
         aru.efficiency = 0.0
         Assert.assertEqual(0.0, aru.efficiency)
         aru.efficiency = 100.0
         Assert.assertEqual(100.0, aru.efficiency)
-
-        def action537():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.efficiency = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action537)
-
-        def action538():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.efficiency = 101.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action538)
 
         aru.compute_mainlobe_gain = True
         Assert.assertTrue(aru.compute_mainlobe_gain)
-
-        def action539():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             aru.mainlobe_gain = 500.0
-
-        TryCatchAssertBlock.ExpectedException("read only", action539)
 
         aru.compute_mainlobe_gain = False
         Assert.assertFalse(aru.compute_mainlobe_gain)
@@ -5307,15 +3794,10 @@ class AntennaHelper(object):
             aru.mainlobe_gain = 999.0
             Assert.assertEqual(999.0, aru.mainlobe_gain)
 
-        def action540():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.mainlobe_gain = -1.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action540)
-
-        def action541():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             aru.mainlobe_gain = 1001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action541)
 
 
 # endregion
@@ -5331,52 +3813,31 @@ class RFFilterModelHelper(object):
     # region Run
     def Run(self, filterModel: "IRFFilterModel", filterName: str, enabled: bool):
         if not enabled:
-
-            def action542():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 filterModel.upper_bandwidth_limit = 0.0
-
-            TryCatchAssertBlock.ExpectedException("read only", action542)
-
-            def action543():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 filterModel.lower_bandwidth_limit = 0.0
-
-            TryCatchAssertBlock.ExpectedException("read only", action543)
-
-            def action544():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 filterModel.insertion_loss = 0.0
-
-            TryCatchAssertBlock.ExpectedException("read only", action544)
 
         else:
             filterModel.upper_bandwidth_limit = 0
             Assert.assertEqual(0, filterModel.upper_bandwidth_limit)
             filterModel.upper_bandwidth_limit = 1000000000
             Assert.assertEqual(1000000000, filterModel.upper_bandwidth_limit)
-
-            def action545():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 filterModel.upper_bandwidth_limit = -1
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action545)
-
-            def action546():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 filterModel.insertion_loss = 1000000001
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action546)
 
             filterModel.lower_bandwidth_limit = -1000000000
             Assert.assertEqual(-1000000000, filterModel.lower_bandwidth_limit)
             filterModel.lower_bandwidth_limit = 0
             Assert.assertEqual(0, filterModel.lower_bandwidth_limit)
-
-            def action547():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 filterModel.lower_bandwidth_limit = -1000000001
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action547)
-
-            def action548():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 filterModel.lower_bandwidth_limit = 1
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action548)
 
             Assert.assertEqual(1000000000, filterModel.bandwidth)  # read only
 
@@ -5391,15 +3852,10 @@ class RFFilterModelHelper(object):
                 filterModel.insertion_loss = 999
                 Assert.assertEqual(999, filterModel.insertion_loss)
 
-            def action549():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 filterModel.insertion_loss = -1
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action549)
-
-            def action550():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 filterModel.insertion_loss = 1001
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action550)
             if filterName == "Bessel":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.BESSEL, filterModel.type)
                 self.Test_IAgRFFilterModelBessel(clr.CastAs(filterModel, IRFFilterModelBessel))
@@ -5484,15 +3940,10 @@ class RFFilterModelHelper(object):
         Assert.assertEqual(13, crComplexCollection[2].real)
         Assert.assertEqual(14, crComplexCollection[2].imaginary)
 
-        def action551():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             crComplexCollection.insert_at(-1, 21, 22)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action551)
-
-        def action552():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             crComplexCollection.insert_at(3, 21, 22)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action552)
 
         entry: "ICRComplex"
 
@@ -5507,15 +3958,10 @@ class RFFilterModelHelper(object):
         Assert.assertEqual(13, crComplexCollection[1].real)
         Assert.assertEqual(14, crComplexCollection[1].imaginary)
 
-        def action553():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             crComplexCollection.remove_at(-1)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action553)
-
-        def action554():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             crComplexCollection.remove_at(2)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action554)
 
         crComplexCollection.clear()
         Assert.assertEqual(0, crComplexCollection.count)
@@ -5525,93 +3971,57 @@ class RFFilterModelHelper(object):
         Assert.assertEqual(1, bessel.order)
         bessel.order = 1000
         Assert.assertEqual(1000, bessel.order)
-
-        def action555():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             bessel.order = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action555)
-
-        def action556():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             bessel.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action556)
 
         bessel.cutoff_frequency = 0
         Assert.assertEqual(0, bessel.cutoff_frequency)
         bessel.cutoff_frequency = 1000000000
         Assert.assertEqual(1000000000, bessel.cutoff_frequency)
-
-        def action557():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             bessel.cutoff_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action557)
-
-        def action558():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             bessel.cutoff_frequency = 10000000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action558)
 
     def Test_IAgRFFilterModelButterworth(self, butterworth: "IRFFilterModelButterworth"):
         butterworth.order = 1
         Assert.assertEqual(1, butterworth.order)
         butterworth.order = 1000
         Assert.assertEqual(1000, butterworth.order)
-
-        def action559():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             butterworth.order = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action559)
-
-        def action560():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             butterworth.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action560)
 
         butterworth.cutoff_frequency = 0
         Assert.assertEqual(0, butterworth.cutoff_frequency)
         butterworth.cutoff_frequency = 1000000000
         Assert.assertEqual(1000000000, butterworth.cutoff_frequency)
-
-        def action561():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             butterworth.cutoff_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action561)
-
-        def action562():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             butterworth.cutoff_frequency = 10000000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action562)
 
     def Test_IAgRFFilterModelChebyshev(self, chebyshev: "IRFFilterModelChebyshev"):
         chebyshev.order = 1
         Assert.assertEqual(1, chebyshev.order)
         chebyshev.order = 1000
         Assert.assertEqual(1000, chebyshev.order)
-
-        def action563():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             chebyshev.order = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action563)
-
-        def action564():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             chebyshev.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action564)
 
         chebyshev.cutoff_frequency = 0
         Assert.assertEqual(0, chebyshev.cutoff_frequency)
         chebyshev.cutoff_frequency = 1000000000
         Assert.assertEqual(1000000000, chebyshev.cutoff_frequency)
-
-        def action565():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             chebyshev.cutoff_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action565)
-
-        def action566():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             chebyshev.cutoff_frequency = 10000000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action566)
 
         chebyshev.ripple = 0
         Assert.assertEqual(0, chebyshev.ripple)
@@ -5624,62 +4034,39 @@ class RFFilterModelHelper(object):
             chebyshev.ripple = 999
             Assert.assertEqual(999, chebyshev.ripple)
 
-        def action567():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             chebyshev.ripple = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action567)
-
-        def action568():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             chebyshev.ripple = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action568)
 
     def Test_IAgRFFilterModelCosineWindow(self, cosineWindow: "IRFFilterModelCosineWindow"):
         cosineWindow.sampling_frequency = 0
         Assert.assertEqual(0, cosineWindow.sampling_frequency)
         cosineWindow.sampling_frequency = 1000000000
         Assert.assertEqual(1000000000, cosineWindow.sampling_frequency)
-
-        def action569():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosineWindow.sampling_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action569)
-
-        def action570():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosineWindow.sampling_frequency = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action570)
 
     def Test_IAgRFFilterModelElliptic(self, elliptic: "IRFFilterModelElliptic"):
         elliptic.order = 1
         Assert.assertEqual(1, elliptic.order)
         elliptic.order = 1000
         Assert.assertEqual(1000, elliptic.order)
-
-        def action571():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             elliptic.order = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action571)
-
-        def action572():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             elliptic.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action572)
 
         elliptic.cutoff_frequency = 0
         Assert.assertEqual(0, elliptic.cutoff_frequency)
         elliptic.cutoff_frequency = 1000000000
         Assert.assertEqual(1000000000, elliptic.cutoff_frequency)
-
-        def action573():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             elliptic.cutoff_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action573)
-
-        def action574():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             elliptic.cutoff_frequency = 10000000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action574)
 
         elliptic.ripple = 0
         Assert.assertEqual(0, elliptic.ripple)
@@ -5692,21 +4079,14 @@ class RFFilterModelHelper(object):
             elliptic.ripple = 999
             Assert.assertEqual(999, elliptic.ripple)
 
-        def action575():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             elliptic.ripple = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action575)
-
-        def action576():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             elliptic.ripple = 1001
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action576)
-
     def Test_IAgRFFilterModelExternal(self, external: "IRFFilterModelExternal"):
-        def action577():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             external.override_bandwidth_limits = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action577)
 
         external.filename = TestBase.GetScenarioFile("CommRad", "raiseCosineFilter_Rolloff_1p0.filter")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "raiseCosineFilter_Rolloff_1p0.filter"), external.filename)
@@ -5716,31 +4096,20 @@ class RFFilterModelHelper(object):
         external.override_bandwidth_limits = False
         Assert.assertFalse(external.override_bandwidth_limits)
 
-        def action578():
+        with pytest.raises(Exception, match=RegexSubstringMatch("file does not exist")):
             external.filename = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("file does not exist", action578)
-
-        def action579():
+        with pytest.raises(Exception, match=RegexSubstringMatch("did not find required tag")):
             external.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("did not find required tag", action579)
 
     def Test_IAgRFFilterModelFir(self, fir: "IRFFilterModelFir"):
         fir.sampling_frequency = 0
         Assert.assertEqual(0, fir.sampling_frequency)
         fir.sampling_frequency = 1000000000
         Assert.assertEqual(1000000000, fir.sampling_frequency)
-
-        def action580():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             fir.sampling_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action580)
-
-        def action581():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             fir.sampling_frequency = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action581)
 
         self.Test_IAgCRComplexCollection(fir.numerator_complex_polynomial)
 
@@ -5749,109 +4118,67 @@ class RFFilterModelHelper(object):
         Assert.assertEqual(1, firBoxCar.order)
         firBoxCar.order = 1000
         Assert.assertEqual(1000, firBoxCar.order)
-
-        def action582():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             firBoxCar.order = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action582)
-
-        def action583():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             firBoxCar.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action583)
 
         firBoxCar.sampling_frequency = 0
         Assert.assertEqual(0, firBoxCar.sampling_frequency)
         firBoxCar.sampling_frequency = 1000000000
         Assert.assertEqual(1000000000, firBoxCar.sampling_frequency)
-
-        def action584():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             firBoxCar.sampling_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action584)
-
-        def action585():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             firBoxCar.sampling_frequency = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action585)
 
     def Test_IAgRFFilterModelGaussianWindow(self, gaussianWindow: "IRFFilterModelGaussianWindow"):
         gaussianWindow.order = 1
         Assert.assertEqual(1, gaussianWindow.order)
         gaussianWindow.order = 1000
         Assert.assertEqual(1000, gaussianWindow.order)
-
-        def action586():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussianWindow.order = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action586)
-
-        def action587():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussianWindow.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action587)
 
         gaussianWindow.sampling_frequency = 0
         Assert.assertEqual(0, gaussianWindow.sampling_frequency)
         gaussianWindow.sampling_frequency = 1000000000
         Assert.assertEqual(1000000000, gaussianWindow.sampling_frequency)
-
-        def action588():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussianWindow.sampling_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action588)
-
-        def action589():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussianWindow.sampling_frequency = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action589)
 
     def Test_IAgRFFilterModelHammingWindow(self, hammingWindow: "IRFFilterModelHammingWindow"):
         hammingWindow.order = 1
         Assert.assertEqual(1, hammingWindow.order)
         hammingWindow.order = 1000
         Assert.assertEqual(1000, hammingWindow.order)
-
-        def action590():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hammingWindow.order = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action590)
-
-        def action591():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hammingWindow.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action591)
 
         hammingWindow.sampling_frequency = 0
         Assert.assertEqual(0, hammingWindow.sampling_frequency)
         hammingWindow.sampling_frequency = 1000000000
         Assert.assertEqual(1000000000, hammingWindow.sampling_frequency)
-
-        def action592():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hammingWindow.sampling_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action592)
-
-        def action593():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hammingWindow.sampling_frequency = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action593)
 
     def Test_IAgRFFilterModelIir(self, iir: "IRFFilterModelIir"):
         iir.sampling_frequency = 0
         Assert.assertEqual(0, iir.sampling_frequency)
         iir.sampling_frequency = 1000000000
         Assert.assertEqual(1000000000, iir.sampling_frequency)
-
-        def action594():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             iir.sampling_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action594)
-
-        def action595():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             iir.sampling_frequency = 1000000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action595)
 
         self.Test_IAgCRComplexCollection(iir.numerator_complex_polynomial)
 
@@ -5862,134 +4189,84 @@ class RFFilterModelHelper(object):
         Assert.assertEqual(0, rcLowPass.cutoff_frequency)
         rcLowPass.cutoff_frequency = 1000000000
         Assert.assertEqual(1000000000, rcLowPass.cutoff_frequency)
-
-        def action596():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcLowPass.cutoff_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action596)
-
-        def action597():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcLowPass.cutoff_frequency = 10000000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action597)
 
     def Test_IAgRFFilterModelRaisedCosine(self, raisedCosine: "IRFFilterModelRaisedCosine"):
         raisedCosine.roll_off_factor = 1e-07
         Assert.assertAlmostEqual(1e-07, raisedCosine.roll_off_factor, delta=1e-10)
         raisedCosine.roll_off_factor = 100
         Assert.assertEqual(100, raisedCosine.roll_off_factor)
-
-        def action598():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             raisedCosine.roll_off_factor = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action598)
-
-        def action599():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             raisedCosine.roll_off_factor = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action599)
 
         raisedCosine.symbol_rate = 1e-06
         Assert.assertEqual(1e-06, raisedCosine.symbol_rate)
         raisedCosine.symbol_rate = 10000000
         Assert.assertEqual(10000000, raisedCosine.symbol_rate)
-
-        def action600():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             raisedCosine.symbol_rate = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action600)
-
-        def action601():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             raisedCosine.symbol_rate = 10000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action601)
 
     def Test_IAgRFFilterModelRootRaisedCosine(self, rootRaisedCosine: "IRFFilterModelRootRaisedCosine"):
         rootRaisedCosine.roll_off_factor = 1e-07
         Assert.assertAlmostEqual(1e-07, rootRaisedCosine.roll_off_factor, delta=1e-10)
         rootRaisedCosine.roll_off_factor = 100
         Assert.assertEqual(100, rootRaisedCosine.roll_off_factor)
-
-        def action602():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rootRaisedCosine.roll_off_factor = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action602)
-
-        def action603():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rootRaisedCosine.roll_off_factor = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action603)
 
         rootRaisedCosine.symbol_rate = 1e-06
         Assert.assertEqual(1e-06, rootRaisedCosine.symbol_rate)
         rootRaisedCosine.symbol_rate = 10000000
         Assert.assertEqual(10000000, rootRaisedCosine.symbol_rate)
-
-        def action604():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rootRaisedCosine.symbol_rate = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action604)
-
-        def action605():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rootRaisedCosine.symbol_rate = 10000001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action605)
 
     def Test_IAgRFFilterModelScriptPlugin(self, scriptPlugin: "IRFFilterModelScriptPlugin"):
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_DynamicFilter.vbs")
         Assert.assertEqual(r"CommRad\VB_DynamicFilter.vbs", scriptPlugin.filename)
 
-        def action606():
+        with pytest.raises(Exception, match=RegexSubstringMatch("file does not exist")):
             scriptPlugin.filename = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("file does not exist", action606)
 
     def Test_IAgRFFilterModelIAgRFFilterModelSinc(self, sinc: "IRFFilterModelSinc"):
         sinc.cutoff_frequency = 0
         Assert.assertEqual(0, sinc.cutoff_frequency)
         sinc.cutoff_frequency = 1000000000
         Assert.assertEqual(1000000000, sinc.cutoff_frequency)
-
-        def action607():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sinc.cutoff_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action607)
-
-        def action608():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sinc.cutoff_frequency = 10000000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action608)
 
     def Test_IAgRFFilterModelIAgRFFilterModelSincEnvSinc(self, sincEnvSinc: "IRFFilterModelSincEnvSinc"):
         sincEnvSinc.order = 0
         Assert.assertEqual(0, sincEnvSinc.order)
         sincEnvSinc.order = 1000
         Assert.assertEqual(1000, sincEnvSinc.order)
-
-        def action609():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sincEnvSinc.order = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action609)
-
-        def action610():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sincEnvSinc.order = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action610)
 
         sincEnvSinc.cutoff_frequency = 0
         Assert.assertEqual(0, sincEnvSinc.cutoff_frequency)
         sincEnvSinc.cutoff_frequency = 1000000000
         Assert.assertEqual(1000000000, sincEnvSinc.cutoff_frequency)
-
-        def action611():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sincEnvSinc.cutoff_frequency = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action611)
-
-        def action612():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sincEnvSinc.cutoff_frequency = 10000000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action612)
 
         sincEnvSinc.ripple = 0
         Assert.assertEqual(0, sincEnvSinc.ripple)
@@ -6002,15 +4279,10 @@ class RFFilterModelHelper(object):
             sincEnvSinc.ripple = 999
             Assert.assertEqual(999, sincEnvSinc.ripple)
 
-        def action613():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sincEnvSinc.ripple = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action613)
-
-        def action614():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sincEnvSinc.ripple = 1001
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action614)
 
 
 # endregion
@@ -6041,27 +4313,19 @@ class AntennaControlHelper(object):
 
         antennaControl.set_embedded_model("Dipole")
         Assert.assertIsNotNone(clr.CastAs(antennaControl.embedded_model, IAntennaModelDipole))
-
-        def action615():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             antennaControl.set_embedded_model("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action615)
 
         arSupportedLinkedAntennaObjects = antennaControl.supported_linked_antenna_objects
         Assert.assertTrue((len(arSupportedLinkedAntennaObjects) == 2))
-
-        def action616():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             antennaControl.linked_antenna_object = "Antenna/Antenna1Test"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action616)
 
         antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.LINK
         Assert.assertEqual(ANTENNA_CONTROL_REFERENCE_TYPE.LINK, antennaControl.reference_type)
 
-        def action617():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             antennaControl.set_embedded_model("Dipole")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action617)
 
         arSupportedLinkedAntennaObjects = antennaControl.supported_linked_antenna_objects
 
@@ -6070,19 +4334,15 @@ class AntennaControlHelper(object):
         antennaControl.linked_antenna_object = "Antenna/Antenna2Test"
         Assert.assertEqual("Antenna/Antenna2Test", antennaControl.linked_antenna_object)
 
-        def action618():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid linked antenna name")):
             antennaControl.linked_antenna_object = "Antenna/Bogus1"
-
-        TryCatchAssertBlock.ExpectedException("Invalid linked antenna name", action618)
 
         # Antenna tab - Model Specs sub-tab
 
         antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.EMBED
 
-        def action619():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             antennaControl.set_embedded_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action619)
         self.m_root.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
         antennaHelper = AntennaHelper(self.m_root)
         antennaModelType: "ANTENNA_MODEL_TYPE"
@@ -6143,11 +4403,8 @@ class AdditionalGainLossCollectionHelper(object):
         Assert.assertEqual("Id2", gainLossColl[1].identifier)
         Assert.assertAlmostEqual(3.3, gainLossColl[2].gain, delta=1e-06)
         Assert.assertEqual("Id3", gainLossColl[2].identifier)
-
-        def action620():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             d: float = gainLossColl[3].gain
-
-        TryCatchAssertBlock.ExpectedException("out of range", action620)
 
         gl: "IAdditionalGainLoss"
 
@@ -6160,11 +4417,8 @@ class AdditionalGainLossCollectionHelper(object):
         Assert.assertEqual("Id1", gainLossColl[0].identifier)
         Assert.assertAlmostEqual(3.3, gainLossColl[1].gain, delta=1e-06)
         Assert.assertEqual("Id3", gainLossColl[1].identifier)
-
-        def action621():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             gainLossColl.remove_at(2)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action621)
 
         gainLossColl.clear()
         Assert.assertEqual(0, gainLossColl.count)
@@ -6200,16 +4454,10 @@ class PolarizationHelper(object):
             Assert.assertEqual(-180, elliptical.tilt_angle)
             elliptical.tilt_angle = 180
             Assert.assertEqual(180, elliptical.tilt_angle)
-
-            def action622():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 elliptical.tilt_angle = -181
-
-            TryCatchAssertBlock.ExpectedException("invalid", action622)
-
-            def action623():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 elliptical.tilt_angle = 181
-
-            TryCatchAssertBlock.ExpectedException("invalid", action623)
         elif type == POLARIZATION_TYPE.HORIZONTAL:
             horiz: "IPolarizationHorizontal" = clr.CastAs(polarization, IPolarizationHorizontal)
 
@@ -6237,16 +4485,10 @@ class PolarizationHelper(object):
             Assert.assertEqual(-180, linear.tilt_angle)
             linear.tilt_angle = 180
             Assert.assertEqual(180, linear.tilt_angle)
-
-            def action624():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 linear.tilt_angle = -181
-
-            TryCatchAssertBlock.ExpectedException("invalid", action624)
-
-            def action625():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 linear.tilt_angle = 181
-
-            TryCatchAssertBlock.ExpectedException("invalid", action625)
         elif type == POLARIZATION_TYPE.RHC:
             pass
         elif type == POLARIZATION_TYPE.VERTICAL:
@@ -6285,106 +4527,63 @@ class SystemNoiseTemperatureHelper(object):
         Assert.assertEqual(1e-12, snt.constant_noise_temperature)
         snt.constant_noise_temperature = 100000000.0
         Assert.assertEqual(100000000.0, snt.constant_noise_temperature)
-
-        def action626():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.constant_noise_temperature = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action626)
-
-        def action627():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.constant_noise_temperature = 1000000000.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action627)
-
-        def action628():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             snt.antenna_to_lna_line_temperature = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action628)
-
-        def action629():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             snt.lna_noise_figure = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action629)
-
-        def action630():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             snt.lna_temperature = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action630)
-
-        def action631():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             snt.lna_to_receiver_line_temperature = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action631)
 
         self.Test_IAgAntennaNoiseTemperature(snt.antenna_noise_temperature, True)
 
         snt.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
         Assert.assertEqual(NOISE_TEMP_COMPUTE_TYPE.CALCULATE, snt.compute_type)
 
-        def action632():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             snt.constant_noise_temperature = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action632)
 
         snt.antenna_to_lna_line_temperature = 0.0
         Assert.assertEqual(0.0, snt.antenna_to_lna_line_temperature)
         snt.antenna_to_lna_line_temperature = 1000000
         Assert.assertEqual(1000000, snt.antenna_to_lna_line_temperature)
-
-        def action633():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.antenna_to_lna_line_temperature = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action633)
-
-        def action634():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.antenna_to_lna_line_temperature = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action634)
 
         snt.lna_noise_figure = 0.0
         Assert.assertEqual(0.0, snt.lna_noise_figure)
         snt.lna_noise_figure = 200
         Assert.assertEqual(200, snt.lna_noise_figure)
-
-        def action635():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.lna_noise_figure = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action635)
-
-        def action636():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.lna_noise_figure = 201
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action636)
 
         snt.lna_temperature = 0.0
         Assert.assertEqual(0.0, snt.lna_temperature)
         snt.lna_temperature = 1000000
         Assert.assertEqual(1000000, snt.lna_temperature)
-
-        def action637():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.lna_temperature = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action637)
-
-        def action638():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.lna_temperature = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action638)
 
         snt.lna_to_receiver_line_temperature = 0.0
         Assert.assertEqual(0.0, snt.lna_to_receiver_line_temperature)
         snt.lna_to_receiver_line_temperature = 1000000
         Assert.assertEqual(1000000, snt.lna_to_receiver_line_temperature)
-
-        def action639():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.lna_to_receiver_line_temperature = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action639)
-
-        def action640():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             snt.lna_to_receiver_line_temperature = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action640)
 
         self.Test_IAgAntennaNoiseTemperature(snt.antenna_noise_temperature, False)
 
@@ -6393,81 +4592,36 @@ class SystemNoiseTemperatureHelper(object):
     # region Test_IAgAntennaNoiseTemperature
     def Test_IAgAntennaNoiseTemperature(self, ant: "IAntennaNoiseTemperature", readOnly: bool):
         if readOnly:
-
-            def action641():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.compute_type = NOISE_TEMP_COMPUTE_TYPE.CONSTANT
-
-            TryCatchAssertBlock.ExpectedException("read only", action641)
-
-            def action642():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.constant_noise_temperature = 1
-
-            TryCatchAssertBlock.ExpectedException("read only", action642)
-
-            def action643():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_earth = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action643)
-
-            def action644():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_sun = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action644)
-
-            def action645():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_atmosphere = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action645)
-
-            def action646():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_urban_terrestrial = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action646)
-
-            def action647():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_rain = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action647)
-
-            def action648():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_clouds_fog = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action648)
-
-            def action649():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_tropo_scint = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action649)
-
-            def action650():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_cosmic_background = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action650)
-
-            def action651():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.other_noise_temperature = 1
-
-            TryCatchAssertBlock.ExpectedException("read only", action651)
-
-            def action652():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_external = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action652)
-
-            def action653():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.external_noise_file = "bogus"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action653)
-
-            def action654():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.inherit_scenario_earth_temperature = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action654)
-
-            def action655():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.local_earth_temperature = 1
-
-            TryCatchAssertBlock.ExpectedException("read only", action655)
 
         else:
             ant.compute_type = NOISE_TEMP_COMPUTE_TYPE.CONSTANT
@@ -6477,102 +4631,51 @@ class SystemNoiseTemperatureHelper(object):
             Assert.assertEqual(1e-12, ant.constant_noise_temperature)
             ant.constant_noise_temperature = 100000000
             Assert.assertEqual(100000000, ant.constant_noise_temperature)
-
-            def action656():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 ant.constant_noise_temperature = -1
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action656)
-
-            def action657():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 ant.constant_noise_temperature = 1000000000
 
-            TryCatchAssertBlock.ExpectedException("is invalid", action657)
-
-            def action658():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_earth = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action658)
-
-            def action659():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_sun = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action659)
-
-            def action660():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_atmosphere = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action660)
-
-            def action661():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_urban_terrestrial = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action661)
-
-            def action662():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_rain = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action662)
-
-            def action663():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_clouds_fog = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action663)
-
-            def action664():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_tropo_scint = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action664)
-
-            def action665():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_cosmic_background = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action665)
-
-            def action666():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.other_noise_temperature = 1
-
-            TryCatchAssertBlock.ExpectedException("read only", action666)
-
-            def action667():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.use_external = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action667)
-
-            def action668():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.external_noise_file = "bogus"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action668)
-
-            def action669():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.inherit_scenario_earth_temperature = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action669)
-
-            def action670():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.local_earth_temperature = 1
-
-            TryCatchAssertBlock.ExpectedException("read only", action670)
 
             ant.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
             Assert.assertEqual(NOISE_TEMP_COMPUTE_TYPE.CALCULATE, ant.compute_type)
 
-            def action671():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.constant_noise_temperature = 1
-
-            TryCatchAssertBlock.ExpectedException("read only", action671)
 
             ant.use_earth = False
             Assert.assertFalse(ant.use_earth)
 
-            def action672():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 ant.inherit_scenario_earth_temperature = True
-
-            TryCatchAssertBlock.ExpectedException("read-only", action672)
-
-            def action673():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.local_earth_temperature = 290
-
-            TryCatchAssertBlock.ExpectedException("read only", action673)
 
             ant.use_earth = True
             Assert.assertTrue(ant.use_earth)
@@ -6580,10 +4683,8 @@ class SystemNoiseTemperatureHelper(object):
             ant.inherit_scenario_earth_temperature = True
             Assert.assertTrue(ant.inherit_scenario_earth_temperature)
 
-            def action674():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.local_earth_temperature = 290
-
-            TryCatchAssertBlock.ExpectedException("read only", action674)
 
             ant.inherit_scenario_earth_temperature = False
             Assert.assertFalse(ant.inherit_scenario_earth_temperature)
@@ -6592,16 +4693,10 @@ class SystemNoiseTemperatureHelper(object):
             Assert.assertEqual(0.0, ant.local_earth_temperature)
             ant.local_earth_temperature = 1000000
             Assert.assertEqual(1000000, ant.local_earth_temperature)
-
-            def action675():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 ant.local_earth_temperature = -1.0
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action675)
-
-            def action676():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 ant.local_earth_temperature = 10000001
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action676)
 
             ant.use_sun = False
             Assert.assertFalse(ant.use_sun)
@@ -6637,15 +4732,10 @@ class SystemNoiseTemperatureHelper(object):
             ant.other_noise_temperature = 100000000
             Assert.assertEqual(100000000, ant.other_noise_temperature)
 
-            def action677():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 ant.other_noise_temperature = -1.0
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action677)
-
-            def action678():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 ant.other_noise_temperature = 100000001
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action678)
 
 
 # endregion
@@ -6661,17 +4751,11 @@ class AntennaBeamSelectionStrategyScriptPluginHelper(object):
     # region Run
     def Run(self, scriptPlugin: "IAntennaBeamSelectionStrategyScriptPlugin"):
         if not OSHelper.IsLinux():
-
-            def action679():
-                scriptPlugin.filename = r"C:\bogus.vbs"
-
             # script plugins do not work on linux
-            TryCatchAssertBlock.ExpectedException("does not exist", action679)
-
-            def action680():
+            with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+                scriptPlugin.filename = r"C:\bogus.vbs"
+            with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
                 scriptPlugin.filename = r"ChainTest\ChainTest.sc"
-
-            TryCatchAssertBlock.ExpectedException("Could not initialize", action680)
 
             scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AntMultiBeamSelStrat.vbs")
             Assert.assertEqual(r"CommRad\VB_AntMultiBeamSelStrat.vbs", scriptPlugin.filename)
@@ -6697,11 +4781,8 @@ class AntennaBeamHelper(object):
         if beams.count == 1:
             # always at least 1 beam. If just 1, it must be active.
             Assert.assertTrue(beam.active)
-
-            def action681():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 beam.active = False
-
-            TryCatchAssertBlock.ExpectedException("read-only", action681)
 
         else:
             beam.active = False
@@ -6713,16 +4794,10 @@ class AntennaBeamHelper(object):
         Assert.assertEqual(1e-07, beam.frequency)
         beam.frequency = 1000000
         Assert.assertEqual(1000000, beam.frequency)
-
-        def action682():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             beam.frequency = 0.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action682)
-
-        def action683():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             beam.frequency = 10000000
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action683)
 
         beam.frequency = 1.0  # set to this for consistency with properties that depend on this in other tests
         if bIsTransmitter:
@@ -6739,22 +4814,15 @@ class AntennaBeamHelper(object):
                 beamTransmit.power = 2889
                 Assert.assertEqual(2889, beamTransmit.power)
 
-            def action684():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 beamTransmit.power = -2891
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action684)
-
-            def action685():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 beamTransmit.power = 2891
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action685)
-
-        def action686():
-            beam.antenna_model_name = "bogus"
 
         # Beams tab, Antenna sub-tab, Model Specs sub-tab
 
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action686)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
+            beam.antenna_model_name = "bogus"
         self.m_root.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
         antennaHelper = AntennaHelper(self.m_root)
         antennaModelType: "ANTENNA_MODEL_TYPE"
@@ -6780,21 +4848,15 @@ class AntennaBeamHelper(object):
 
         beam.enable_polarization = False
         Assert.assertFalse(beam.enable_polarization)
-
-        def action687():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             beam.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action687)
         beam.enable_polarization = True
         Assert.assertTrue(beam.enable_polarization)
         type: "POLARIZATION_TYPE"
         for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
             if POLARIZATION_TYPE.UNKNOWN == type:
-
-                def action688():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     beam.set_polarization_type(type)
-
-                TryCatchAssertBlock.ExpectedException("Unrecognized", action688)
                 continue
 
             else:
@@ -6819,15 +4881,10 @@ class AntennaBeamCollectionHelper(object):
 
     # region Run
     def Run(self, beams: "IAntennaBeamCollection", bIsTransmitter: bool):
-        def action689():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             beams.remove_at(0)
-
-        TryCatchAssertBlock.ExpectedException("Cannot erase elements", action689)
-
-        def action690():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             beams.remove_at(1)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action690)
 
         beam: "IAntennaBeam" = None
         Assert.assertEqual(1, beams.count)  # initial value, always at least 1
@@ -6885,10 +4942,8 @@ class RadarClutterMapInheritableHelper(object):
         clutterMapInheritable.inherit = True
         Assert.assertTrue(clutterMapInheritable.inherit)
 
-        def action691():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             clutterMap.set_model("Constant Coefficient")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action691)
 
         clutterMapInheritable.inherit = False
         Assert.assertFalse(clutterMapInheritable.inherit)
@@ -6901,10 +4956,8 @@ class RadarClutterMapInheritableHelper(object):
             "Expected [Constant Coefficient] model not found",
         )
 
-        def action692():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object type")):
             clutterMap.set_model("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid object type", action692)
 
         clutterMap.set_model("Constant Coefficient")
         model: "IRadarClutterMapModel" = clutterMap.model
@@ -6918,16 +4971,10 @@ class RadarClutterMapInheritableHelper(object):
         Assert.assertEqual(-200, constantCoefficient.constant_coefficient)
         constantCoefficient.constant_coefficient = 200
         Assert.assertEqual(200, constantCoefficient.constant_coefficient)
-
-        def action693():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             constantCoefficient.constant_coefficient = -201
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action693)
-
-        def action694():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             constantCoefficient.constant_coefficient = 201
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action694)
 
 
 # endregion
@@ -6945,10 +4992,8 @@ class RadarCrossSectionInheritableHelper(object):
         crossSectionInheritable.inherit = True
         Assert.assertTrue(crossSectionInheritable.inherit)
 
-        def action695():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             crossSectionInheritable.set_model("Radar Cross Section")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action695)
 
         crossSectionInheritable.inherit = False
         Assert.assertFalse(crossSectionInheritable.inherit)
@@ -6971,21 +5016,12 @@ class RadarCrossSectionInheritableHelper(object):
         bandColl: "IRadarCrossSectionFrequencyBandCollection" = rcsModel.frequency_bands
         Assert.assertEqual(1, bandColl.count)
         band: "IRadarCrossSectionFrequencyBand" = bandColl[0]
-
-        def action696():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             band.minimum_frequency = 250000
-
-        TryCatchAssertBlock.ExpectedException("read only", action696)
-
-        def action697():
+        with pytest.raises(Exception, match=RegexSubstringMatch("delete the last")):
             bandColl.remove_at(0)
-
-        TryCatchAssertBlock.ExpectedException("delete the last", action697)
-
-        def action698():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bandX: "IRadarCrossSectionFrequencyBand" = bandColl.add(200000, 3000000000000.0)
-
-        TryCatchAssertBlock.ExpectedException("invalid", action698)
         band1: "IRadarCrossSectionFrequencyBand" = bandColl.add(200000, 300000000000.0)
         Assert.assertEqual(2, bandColl.count)
 
@@ -6995,16 +5031,10 @@ class RadarCrossSectionInheritableHelper(object):
         Assert.assertEqual(250000, band.minimum_frequency)
         band.minimum_frequency = 299999
         Assert.assertEqual(299999, band.minimum_frequency)
-
-        def action699():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             band.minimum_frequency = 1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action699)
-
-        def action700():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             band.minimum_frequency = 400000000000.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action700)
 
         Assert.assertEqual(300000000000.0, band.maximum_frequency)
 
@@ -7047,16 +5077,10 @@ class RadarCrossSectionInheritableHelper(object):
                 strategyExternalFile: "IRadarCrossSectionComputeStrategyExternalFile" = clr.CastAs(
                     band.compute_strategy, IRadarCrossSectionComputeStrategyExternalFile
                 )
-
-                def action701():
+                with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                     strategyExternalFile.filename = r"C:\bogus.vbs"
-
-                TryCatchAssertBlock.ExpectedException("does not exist", action701)
-
-                def action702():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unable to determine")):
                     strategyExternalFile.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-                TryCatchAssertBlock.ExpectedException("Unable to determine", action702)
                 strategyExternalFile.filename = TestBase.GetScenarioFile("CommRad", "RCS_External_File.txt")
                 Assert.assertEqual(
                     TestBase.PathCombine("CommRad", "RCS_External_File.txt"), strategyExternalFile.filename
@@ -7074,27 +5098,18 @@ class RadarCrossSectionInheritableHelper(object):
                     strategyScriptPlugin: "IRadarCrossSectionComputeStrategyScriptPlugin" = clr.CastAs(
                         band.compute_strategy, IRadarCrossSectionComputeStrategyScriptPlugin
                     )
-
-                    def action703():
+                    with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                         strategyScriptPlugin.filename = r"C:\bogus.vbs"
-
-                    TryCatchAssertBlock.ExpectedException("does not exist", action703)
-
-                    def action704():
+                    with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
                         strategyScriptPlugin.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-                    TryCatchAssertBlock.ExpectedException("Could not initialize", action704)
                     strategyScriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_RadarCrossSection.vbs")
                     Assert.assertEqual(
                         TestBase.PathCombine("CommRad", "VB_RadarCrossSection.vbs"), strategyScriptPlugin.filename
                     )
 
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.PLUGIN:
-
-                def action705():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
                     band.set_compute_strategy("Plugin")
-
-                TryCatchAssertBlock.ExpectedException("Invalid", action705)
                 Assert.assertFalse(self.IsSupportedComputeStrategy("Plugin", band.supported_compute_strategies))
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.ANSYS_CSV_FILE:
                 band.set_compute_strategy("Ansys HFSS CSV File")
@@ -7107,16 +5122,10 @@ class RadarCrossSectionInheritableHelper(object):
                 ansys: "IRadarCrossSectionComputeStrategyAnsysCsvFile" = clr.CastAs(
                     band.compute_strategy, IRadarCrossSectionComputeStrategyAnsysCsvFile
                 )
-
-                def action706():
+                with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                     ansys.filename = TestBase.GetScenarioFile("CommRad, bogus.csv")
-
-                TryCatchAssertBlock.ExpectedException("does not exist", action706)
-
-                def action707():
+                with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                     ansys.file2_name = TestBase.GetScenarioFile("CommRad, bogus.csv")
-
-                TryCatchAssertBlock.ExpectedException("does not exist", action707)
 
                 ansys.filename = TestBase.GetScenarioFile("CommRad", "MD4-200_H_Incident_2p8GHz.csv")
                 Assert.assertEqual(TestBase.PathCombine("CommRad", "MD4-200_H_Incident_2p8GHz.csv"), ansys.filename)
@@ -7124,40 +5133,28 @@ class RadarCrossSectionInheritableHelper(object):
                 ansys.file2_name = TestBase.GetScenarioFile("CommRad", "MD4-200_V_Incident_2p8GHz.csv")
                 Assert.assertEqual(TestBase.PathCombine("CommRad", "MD4-200_V_Incident_2p8GHz.csv"), ansys.file2_name)
 
-                def action708():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Please ensure that the frequency")):
                     ansys.file2_name = TestBase.GetScenarioFile("CommRad", "MD4-200_H_Incident_10GHz.csv")
-
-                TryCatchAssertBlock.ExpectedException("Please ensure that the frequency", action708)
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.UNKNOWN:
-
-                def action709():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
                     band.set_compute_strategy("Unknown")
-
-                TryCatchAssertBlock.ExpectedException("Invalid", action709)
                 Assert.assertFalse(self.IsSupportedComputeStrategy("Unknown", band.supported_compute_strategies))
 
         band2: "IRadarCrossSectionFrequencyBand" = bandColl.add(100000, 200000)  # This adds two bands
         Assert.assertEqual(4, bandColl.count)
 
-        def action710():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bandColl.add(-100000, 200000)
-
-        TryCatchAssertBlock.ExpectedException("invalid", action710)
-
-        def action711():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bandColl.add(100000, -200000)
-
-        TryCatchAssertBlock.ExpectedException("invalid", action711)
 
         bandx: "IRadarCrossSectionFrequencyBand"
 
         for bandx in bandColl:
             Assert.assertTrue((bandx.minimum_frequency > 2))
 
-        def action712():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             band3: "IRadarCrossSectionFrequencyBand" = bandColl[4]
-
-        TryCatchAssertBlock.ExpectedException("out of range", action712)
 
         bandColl.remove_at(3)
         Assert.assertEqual(3, bandColl.count)
@@ -7165,11 +5162,8 @@ class RadarCrossSectionInheritableHelper(object):
         Assert.assertEqual(2, bandColl.count)
         bandColl.remove_at(1)
         Assert.assertEqual(1, bandColl.count)
-
-        def action713():
+        with pytest.raises(Exception, match=RegexSubstringMatch("delete the last")):
             bandColl.remove_at(0)
-
-        TryCatchAssertBlock.ExpectedException("delete the last", action713)
 
     def IsSupportedComputeStrategy(self, myStrategy: str, arSupportedComputeStrategies):
         bRet: bool = False
@@ -7225,10 +5219,8 @@ class IAgAntennaContourGain_Helper(object):
         elNumPoints: int,
         expectedMessage: str,
     ):
-        def action714():
+        with pytest.raises(Exception, match=RegexSubstringMatch(expectedMessage)):
             antennaContourGain.set_num_points(azStart, azStop, azNumPoints, elStart, elStop, elNumPoints)
-
-        TryCatchAssertBlock.ExpectedException(expectedMessage, action714)
 
     # endregion
 
@@ -7286,10 +5278,8 @@ class IAgAntennaContourGain_Helper(object):
         elStop: float,
         elRes: float,
     ):
-        def action715():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             antennaContourGain.set_resolution(azStart, azStop, azRes, elStart, elStop, elRes)
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action715)
 
     # endregion
 
@@ -7365,10 +5355,8 @@ class IAgAntennaContourEirp_Helper(object):
         elNumPoints: int,
         expectedMessage: str,
     ):
-        def action716():
+        with pytest.raises(Exception, match=RegexSubstringMatch(expectedMessage)):
             antennaContourEirp.set_num_points(azStart, azStop, azNumPoints, elStart, elStop, elNumPoints)
-
-        TryCatchAssertBlock.ExpectedException(expectedMessage, action716)
 
     # endregion
 
@@ -7426,10 +5414,8 @@ class IAgAntennaContourEirp_Helper(object):
         elStop: float,
         elRes: float,
     ):
-        def action717():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             antennaContourEirp.set_resolution(azStart, azStop, azRes, elStart, elStop, elRes)
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action717)
 
     # endregion
 
@@ -7478,10 +5464,8 @@ class IAgAntennaContourFluxDensity_Helper(object):
     def SetResolution_ExpectedException(
         self, antennaContourFluxDensity: "IAntennaContourFluxDensity", azRes: float, elRes: float, maxEl: float
     ):
-        def action718():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             antennaContourFluxDensity.set_resolution(azRes, elRes, maxEl)
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action718)
 
 
 # endregion
@@ -7502,10 +5486,8 @@ class IAgAntennaContourRip_Helper(object):
     def SetResolution_ExpectedException(
         self, antennaContourRip: "IAntennaContourRip", azRes: float, elRes: float, maxEl: float
     ):
-        def action719():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             antennaContourRip.set_resolution(azRes, elRes, maxEl)
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action719)
 
 
 # endregion
@@ -7536,10 +5518,8 @@ class IAgAntennaContourSpectralFluxDensity_Helper(object):
         elRes: float,
         maxEl: float,
     ):
-        def action720():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             antennaContourSpectralFluxDensity.set_resolution(azRes, elRes, maxEl)
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action720)
 
 
 # endregion
@@ -7555,20 +5535,12 @@ class AtmosphereLocalRainDataHelper(object):
         atmosphere.enable_local_rain_data = False
         Assert.assertFalse(atmosphere.enable_local_rain_data)
 
-        def action721():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             atmosphere.local_rain_iso_height = 2
-
-        TryCatchAssertBlock.ExpectedException("read only", action721)
-
-        def action722():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             atmosphere.local_rain_rate = 0
-
-        TryCatchAssertBlock.ExpectedException("read only", action722)
-
-        def action723():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             atmosphere.local_surface_temperature = -100
-
-        TryCatchAssertBlock.ExpectedException("read only", action723)
 
         atmosphere.enable_local_rain_data = True
         Assert.assertTrue(atmosphere.enable_local_rain_data)
@@ -7577,46 +5549,28 @@ class AtmosphereLocalRainDataHelper(object):
         Assert.assertEqual(0, atmosphere.local_rain_iso_height)
         atmosphere.local_rain_iso_height = 20
         Assert.assertEqual(20, atmosphere.local_rain_iso_height)
-
-        def action724():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             atmosphere.local_rain_iso_height = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action724)
-
-        def action725():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             atmosphere.local_rain_iso_height = 21
-
-        TryCatchAssertBlock.ExpectedException("invalid", action725)
 
         atmosphere.local_rain_rate = 0
         Assert.assertEqual(0, atmosphere.local_rain_rate)
         atmosphere.local_rain_rate = 250
         Assert.assertEqual(250, atmosphere.local_rain_rate)
-
-        def action726():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             atmosphere.local_rain_rate = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action726)
-
-        def action727():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             atmosphere.local_rain_rate = 251
-
-        TryCatchAssertBlock.ExpectedException("invalid", action727)
 
         atmosphere.local_surface_temperature = -99.9
         Assert.assertEqual(-99.9, atmosphere.local_surface_temperature)
         atmosphere.local_surface_temperature = 100
         Assert.assertEqual(100, atmosphere.local_surface_temperature)
-
-        def action728():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             atmosphere.local_surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("invalid", action728)
-
-        def action729():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             atmosphere.local_surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("invalid", action729)
 
         root.unit_preferences.set_current_unit("Temperature", abbr)
 
@@ -7636,10 +5590,8 @@ class AtmosphereHelper(object):
         atmosphere.inherit_atmos_absorption_model = True
         Assert.assertTrue(atmosphere.inherit_atmos_absorption_model)
 
-        def action730():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             atmosphere.set_local_atmos_absorption_model("ITU-R P676-9")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action730)
 
         atmosphere.inherit_atmos_absorption_model = False
         Assert.assertFalse(atmosphere.inherit_atmos_absorption_model)
@@ -7683,10 +5635,8 @@ class AtmosphereHelper(object):
             else:
                 Assert.fail(String.Format("Unknown model type ({0})", aaModelName))
 
-        def action731():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             atmosphere.set_local_atmos_absorption_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action731)
 
     # endregion
 
@@ -7702,15 +5652,10 @@ class AtmosphereHelper(object):
         Assert.assertTrue(iturp676.seasonal_regional_method)
 
     def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "IAtmosphericAbsorptionModelScriptPlugin"):
-        def action732():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action732)
-
-        def action733():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             scriptPlugin.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action733)
 
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.filename)
@@ -7721,32 +5666,20 @@ class AtmosphereHelper(object):
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
         simpleSatcom.water_vapor_concentration = 100
         Assert.assertEqual(100, simpleSatcom.water_vapor_concentration)
-
-        def action734():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.water_vapor_concentration = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action734)
-
-        def action735():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.water_vapor_concentration = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action735)
 
         self.m_root.unit_preferences.set_current_unit("Temperature", "degC")
         simpleSatcom.surface_temperature = -99.9
         Assert.assertEqual(-99.9, simpleSatcom.surface_temperature)
         simpleSatcom.surface_temperature = 100
         Assert.assertEqual(100, simpleSatcom.surface_temperature)
-
-        def action736():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action736)
-
-        def action737():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action737)
 
     def Test_IAgAtmosphericAbsorptionModelTirem(self, tirem: "IAtmosphericAbsorptionModelTirem"):
         self.m_root.unit_preferences.set_current_unit("Temperature", "degC")
@@ -7754,85 +5687,53 @@ class AtmosphereHelper(object):
         Assert.assertEqual(-99.9, tirem.surface_temperature)
         tirem.surface_temperature = 100
         Assert.assertEqual(100, tirem.surface_temperature)
-
-        def action738():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action738)
-
-        def action739():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action739)
 
         self.m_root.unit_preferences.set_current_unit("DistanceUnit", "m")
         tirem.surface_humidity = 0
         Assert.assertEqual(0, tirem.surface_humidity)
         tirem.surface_humidity = 13.25
         Assert.assertEqual(13.25, tirem.surface_humidity)
-
-        def action740():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action740)
-
-        def action741():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = 14
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action741)
 
         tirem.surface_conductivity = 1e-05
         Assert.assertEqual(1e-05, tirem.surface_conductivity)
         tirem.surface_conductivity = 100
         Assert.assertEqual(100, tirem.surface_conductivity)
-
-        def action742():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_conductivity = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action742)
-
-        def action743():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_conductivity = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action743)
 
         tirem.surface_refractivity = 200
         Assert.assertEqual(200, tirem.surface_refractivity)
         tirem.surface_refractivity = 450
         Assert.assertEqual(450, tirem.surface_refractivity)
-
-        def action744():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 199
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action744)
-
-        def action745():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 451
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action745)
 
         tirem.relative_permittivity = 0
         Assert.assertEqual(0, tirem.relative_permittivity)
         tirem.relative_permittivity = 100
         Assert.assertEqual(100, tirem.relative_permittivity)
-
-        def action746():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action746)
-
-        def action747():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action747)
 
         tirem.override_terrain_sample_resolution = False
         Assert.assertFalse(tirem.override_terrain_sample_resolution)
 
-        def action748():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             tirem.terrain_sample_resolution = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action748)
 
         tirem.override_terrain_sample_resolution = True
         Assert.assertTrue(tirem.override_terrain_sample_resolution)
@@ -7842,22 +5743,14 @@ class AtmosphereHelper(object):
         Assert.assertEqual(0.0001, tirem.terrain_sample_resolution)
         tirem.terrain_sample_resolution = 10
         Assert.assertEqual(10, tirem.terrain_sample_resolution)
-
-        def action749():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action749)
-
-        def action750():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 11
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action750)
-
     def Test_IAgAtmosphericAbsorptionModelVoacap(self, voacap: "IAtmosphericAbsorptionModelVoacap"):
-        def action751():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
             voacap.solar_activity_configuration_type = VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE.UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("Unrecognized", action751)
 
         voacap.solar_activity_configuration_type = VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE.SUNSPOT_NUMBER
         Assert.assertEqual(
@@ -7877,32 +5770,20 @@ class AtmosphereHelper(object):
         configSunspotNumber.sunspot_number = 200
         Assert.assertEqual(200, configSunspotNumber.sunspot_number)
         Assert.assertEqual(200, voacap.sunspot_number)  # verify against old property
-
-        def action752():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             configSunspotNumber.sunspot_number = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action752)
-
-        def action753():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             configSunspotNumber.sunspot_number = 301
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action753)
 
         voacap.sunspot_number = 0
         Assert.assertEqual(0, voacap.sunspot_number)
         voacap.sunspot_number = 300
         Assert.assertEqual(300, voacap.sunspot_number)
         Assert.assertEqual(300, configSunspotNumber.sunspot_number)  # verify against new property
-
-        def action754():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             voacap.sunspot_number = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action754)
-
-        def action755():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             voacap.sunspot_number = 301
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action755)
 
         voacap.solar_activity_configuration_type = VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE.SOLAR_FLUX
         Assert.assertEqual(
@@ -7921,54 +5802,34 @@ class AtmosphereHelper(object):
         Assert.assertEqual(0.0, configSolarFlux.solar_flux)
         configSolarFlux.solar_flux = 362.2
         Assert.assertEqual(362.2, configSolarFlux.solar_flux)
-
-        def action756():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             configSolarFlux.solar_flux = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action756)
-
-        def action757():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             configSolarFlux.solar_flux = 362.3
-
-        TryCatchAssertBlock.ExpectedException("invalid", action757)
 
         voacap.multipath_power_tolerance = 0.0
         Assert.assertEqual(0.0, voacap.multipath_power_tolerance)
         voacap.multipath_power_tolerance = 40.0
         Assert.assertEqual(40.0, voacap.multipath_power_tolerance)
-
-        def action758():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             voacap.multipath_power_tolerance = -0.1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action758)
-
-        def action759():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             voacap.multipath_power_tolerance = 40.1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action759)
 
         voacap.multipath_delay_tolerance = 0.0
         Assert.assertEqual(0.0, voacap.multipath_delay_tolerance)
         voacap.multipath_delay_tolerance = 0.09999
         Assert.assertEqual(0.09999, voacap.multipath_delay_tolerance)
-
-        def action760():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             voacap.multipath_delay_tolerance = -0.1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action760)
-
-        def action761():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             voacap.multipath_delay_tolerance = 0.1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action761)
 
         voacap.coefficient_data_type = VOACAP_COEFFICIENT_DATA_TYPE.CCIR
         Assert.assertEqual(VOACAP_COEFFICIENT_DATA_TYPE.CCIR, voacap.coefficient_data_type)
 
-        def action762():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             voacap.use_day_of_month_average = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action762)
 
         voacap.coefficient_data_type = VOACAP_COEFFICIENT_DATA_TYPE.URSI
         Assert.assertEqual(VOACAP_COEFFICIENT_DATA_TYPE.URSI, voacap.coefficient_data_type)
@@ -7998,11 +5859,8 @@ class LaserEnvAtmosLossBBLLHelper(object):
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
 
         laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.atmospheric_loss_model
-
-        def action763():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             laserPropChan.set_atmospheric_loss_model("Beer-Bouguer-Lambert Law")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action763)
 
         laserPropChan.enable_atmospheric_loss_model = True
         Assert.assertTrue(laserPropChan.enable_atmospheric_loss_model)
@@ -8034,10 +5892,8 @@ class LaserEnvAtmosLossBBLLHelper(object):
         Assert.assertEqual(20, bbllLayerColl[4].top_height)
         Assert.assertEqual(0, bbllLayerColl[4].extinction_coefficient)
 
-        def action764():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             bbllLayerColl[3].top_height = 41
-
-        TryCatchAssertBlock.ExpectedException("read only", action764)
         bbllLayerColl[3].extinction_coefficient = 1.5
         Assert.assertEqual(1.5, bbllLayerColl[3].extinction_coefficient)
 
@@ -8056,24 +5912,18 @@ class LaserEnvAtmosLossBBLLHelper(object):
         Assert.assertEqual(5, bbllLayerColl[3].top_height)
         Assert.assertEqual(0, bbllLayerColl[3].extinction_coefficient)
 
-        def action765():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bbllLayerColl[3].top_height = 101
-
-        TryCatchAssertBlock.ExpectedException("invalid", action765)
         bbllLayerColl[3].top_height = 6
         Assert.assertEqual(6, bbllLayerColl[3].top_height)
 
-        def action766():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bbllLayerColl[3].extinction_coefficient = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action766)
         bbllLayerColl[3].extinction_coefficient = 1.5
         Assert.assertEqual(1.5, bbllLayerColl[3].extinction_coefficient)
 
-        def action767():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             bbllLayerColl.remove_at(5)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action767)
         bbllLayerColl.remove_at(2)
         Assert.assertEqual(3, bbllLayerColl.count)
         Assert.assertEqual(95, bbllLayerColl[0].top_height)
@@ -8097,21 +5947,15 @@ class LaserEnvAtmosLossModtranHelper(object):
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
 
         laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.atmospheric_loss_model
-
-        def action768():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             laserPropChan.set_atmospheric_loss_model("MODTRAN-derived Lookup Table")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action768)
 
         laserPropChan.enable_atmospheric_loss_model = True
         Assert.assertTrue(laserPropChan.enable_atmospheric_loss_model)
 
         laserAtmosLossModel = laserPropChan.atmospheric_loss_model
-
-        def action769():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             laserPropChan.set_atmospheric_loss_model("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action769)
         laserPropChan.set_atmospheric_loss_model("MODTRAN-derived Lookup Table")
 
         Assert.assertEqual("MODTRAN-derived Lookup Table", laserPropChan.atmospheric_loss_model.name)
@@ -8136,46 +5980,28 @@ class LaserEnvAtmosLossModtranHelper(object):
         Assert.assertEqual(0.5, modtran.visibility)
         modtran.visibility = 50
         Assert.assertEqual(50, modtran.visibility)
-
-        def action770():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.visibility = 0.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action770)
-
-        def action771():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.visibility = 51
-
-        TryCatchAssertBlock.ExpectedException("invalid", action771)
 
         modtran.relative_humidity = 0
         Assert.assertEqual(0, modtran.relative_humidity)
         modtran.relative_humidity = 100
         Assert.assertEqual(100, modtran.relative_humidity)
-
-        def action772():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.relative_humidity = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action772)
-
-        def action773():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.relative_humidity = 101
-
-        TryCatchAssertBlock.ExpectedException("invalid", action773)
 
         modtran.surface_temperature = 190
         Assert.assertEqual(190, modtran.surface_temperature)
         modtran.surface_temperature = 320
         Assert.assertEqual(320, modtran.surface_temperature)
-
-        def action774():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.surface_temperature = 189
-
-        TryCatchAssertBlock.ExpectedException("invalid", action774)
-
-        def action775():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.surface_temperature = 321
-
-        TryCatchAssertBlock.ExpectedException("invalid", action775)
 
 
 # endregion
@@ -8193,21 +6019,15 @@ class LaserEnvTropoScintLossHelper(object):
         laserTropoScint: "ILaserTroposphericScintillationLossModel" = (
             laserPropChan.tropospheric_scintillation_loss_model
         )
-
-        def action776():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action776)
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = True
         Assert.assertTrue(laserPropChan.enable_tropospheric_scintillation_loss_model)
 
         laserTropoScint = laserPropChan.tropospheric_scintillation_loss_model
-
-        def action777():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             laserPropChan.set_atmospheric_loss_model("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action777)
         laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
         Assert.assertEqual("ITU-R P1814", laserPropChan.tropospheric_scintillation_loss_model.name)
         Assert.assertEqual(
@@ -8272,10 +6092,8 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
         propChan.enable_rain_loss = False
         Assert.assertFalse(propChan.enable_rain_loss)
 
-        def action778():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_rain_loss_model("Crane 1985")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action778)
 
         propChan.enable_rain_loss = True
         Assert.assertTrue(propChan.enable_rain_loss)
@@ -8293,32 +6111,20 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, crane85.surface_temperature)
                 crane85.surface_temperature = 100
                 Assert.assertEqual(100, crane85.surface_temperature)
-
-                def action779():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane85.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action779)
-
-                def action780():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane85.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action780)
 
             elif rainLossModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.SCRIPT_PLUGIN, rainLossModel.type)
                     scriptPlugin: "IRainLossModelScriptPlugin" = clr.CastAs(rainLossModel, IRainLossModelScriptPlugin)
-
-                    def action781():
+                    with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                         scriptPlugin.filename = r"C:\bogus.vbs"
-
-                    TryCatchAssertBlock.ExpectedException("does not exist", action781)
-
-                    def action782():
+                    with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
                         scriptPlugin.filename = r"ChainTest\ChainTest.sc"
-
-                    TryCatchAssertBlock.ExpectedException("Could not initialize", action782)
                     scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_RainLossModel.vbs")
                     Assert.assertEqual(r"CommRad\VB_RainLossModel.vbs", scriptPlugin.filename)
 
@@ -8329,16 +6135,10 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, ccir83.surface_temperature)
                 ccir83.surface_temperature = 100
                 Assert.assertEqual(100, ccir83.surface_temperature)
-
-                def action783():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     ccir83.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action783)
-
-                def action784():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     ccir83.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action784)
 
             elif rainLossModelName == "Crane 1982":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1982, rainLossModel.type)
@@ -8347,16 +6147,10 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, crane82.surface_temperature)
                 crane82.surface_temperature = 100
                 Assert.assertEqual(100, crane82.surface_temperature)
-
-                def action785():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane82.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action785)
-
-                def action786():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane82.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action786)
 
             elif rainLossModelName == "ITU-R P618-10":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_10, rainLossModel.type)
@@ -8365,16 +6159,10 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
                 itu618_10.surface_temperature = 100
                 Assert.assertEqual(100, itu618_10.surface_temperature)
-
-                def action787():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_10.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action787)
-
-                def action788():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_10.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action788)
                 itu618_10.enable_depolarization_loss = False
                 Assert.assertFalse(itu618_10.enable_depolarization_loss)
                 itu618_10.enable_depolarization_loss = True
@@ -8388,16 +6176,10 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
                 itu618_12.surface_temperature = 100
                 Assert.assertEqual(100, itu618_12.surface_temperature)
-
-                def action789():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_12.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action789)
-
-                def action790():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_12.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action790)
 
                 itu618_12.enable_depolarization_loss = False
                 Assert.assertFalse(itu618_12.enable_depolarization_loss)
@@ -8415,34 +6197,21 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, itu618_13.surface_temperature)
                 itu618_13.surface_temperature = 100
                 Assert.assertEqual(100, itu618_13.surface_temperature)
-
-                def action791():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_13.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action791)
-
-                def action792():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_13.surface_temperature = 101
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action792)
-
-                def action793():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     itu618_13.use_annual_itu_1510 = True
-
-                TryCatchAssertBlock.ExpectedException("read-only", action793)
-
-                def action794():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     itu618_13.itu_1510_month = 1
-
-                TryCatchAssertBlock.ExpectedException("read-only", action794)
 
                 itu618_13.enable_itu_1510 = True
                 Assert.assertTrue(itu618_13.enable_itu_1510)
 
-                def action795():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                     itu618_13.surface_temperature = 100
-
-                TryCatchAssertBlock.ExpectedException("read only", action795)
 
                 itu618_13.use_annual_itu_1510 = False
                 Assert.assertFalse(itu618_13.use_annual_itu_1510)
@@ -8451,24 +6220,16 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(1, itu618_13.itu_1510_month)
                 itu618_13.itu_1510_month = 12
                 Assert.assertEqual(12, itu618_13.itu_1510_month)
-
-                def action796():
+                with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                     itu618_13.itu_1510_month = 0
-
-                TryCatchAssertBlock.ExpectedException("must be in", action796)
-
-                def action797():
+                with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                     itu618_13.itu_1510_month = 13
-
-                TryCatchAssertBlock.ExpectedException("must be in", action797)
 
                 itu618_13.use_annual_itu_1510 = True
                 Assert.assertTrue(itu618_13.use_annual_itu_1510)
 
-                def action798():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     itu618_13.itu_1510_month = 1
-
-                TryCatchAssertBlock.ExpectedException("read-only", action798)
 
                 itu618_13.enable_depolarization_loss = False
                 Assert.assertFalse(itu618_13.enable_depolarization_loss)
@@ -8478,10 +6239,8 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
             else:
                 Assert.fail(("Unknown Rain Loss Model name: " + rainLossModelName))
 
-        def action799():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_rain_loss_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action799)
         root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
 
@@ -8508,10 +6267,8 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         propChan.enable_clouds_and_fog_fading_loss = True
         Assert.assertTrue(propChan.enable_clouds_and_fog_fading_loss)
 
-        def action800():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-5")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action800)
 
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-7")
         cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
@@ -8534,11 +6291,8 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm7.cloud_ceiling)
         cfflm7.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm7.cloud_ceiling)
-
-        def action801():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_ceiling = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action801)
         # TryCatchAssertBlock.ExpectedException("is invalid", delegate () { cfflm7.CloudCeiling = 21; });   // no max
 
         cfflm7.cloud_layer_thickness = 1
@@ -8547,11 +6301,8 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm7.cloud_layer_thickness)
         cfflm7.cloud_layer_thickness = 1
         Assert.assertEqual(1, cfflm7.cloud_layer_thickness)
-
-        def action802():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_layer_thickness = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action802)
         # TryCatchAssertBlock.ExpectedException("is invalid", delegate () { cfflm7.CloudLayerThickness = 21; });   // no max
 
         cfflm7.cloud_temperature = -100
@@ -8560,21 +6311,13 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm7.cloud_temperature)
         cfflm7.cloud_temperature = -100
         Assert.assertEqual(-100, cfflm7.cloud_temperature)
-
-        def action803():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action803)
-
-        def action804():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_temperature = 101
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action804)
-
-        def action805():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("must be in", action805)
 
         cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
@@ -8584,36 +6327,18 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm7.cloud_liquid_water_density)
         cfflm7.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm7.cloud_liquid_water_density)
-
-        def action806():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_liquid_water_density = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action806)
-
-        def action807():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_liquid_water_density = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action807)
-
-        def action808():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action808)
-
-        def action809():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action809)
-
-        def action810():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action810)
-
-        def action811():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.use_rain_height_as_cloud_layer_thickness = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action811)
 
         cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
         cfflm7.liquid_water_percent_annual_exceeded = 0.1
@@ -8625,30 +6350,16 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         cfflm7.use_rain_height_as_cloud_layer_thickness = True
         Assert.assertTrue(cfflm7.use_rain_height_as_cloud_layer_thickness)
 
-        def action812():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_annual_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action812)
-
-        def action813():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_annual_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action813)
-
-        def action814():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action814)
-
-        def action815():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action815)
-
-        def action816():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action816)
 
         cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
         cfflm7.liquid_water_percent_monthly_exceeded = 1.0
@@ -8664,35 +6375,18 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         cfflm7.use_rain_height_as_cloud_layer_thickness = True
         Assert.assertTrue(cfflm7.use_rain_height_as_cloud_layer_thickness)
 
-        def action817():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_monthly_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action817)
-
-        def action818():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_monthly_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action818)
-
-        def action819():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.average_data_month = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action819)
-
-        def action820():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.average_data_month = 13
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action820)
-
-        def action821():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action821)
-
-        def action822():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action822)
 
     def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "ICloudsAndFogFadingLossModelP840_6"):
         cfflm6.cloud_ceiling = 0
@@ -8701,16 +6395,10 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm6.cloud_ceiling)
         cfflm6.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm6.cloud_ceiling)
-
-        def action823():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_ceiling = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action823)
-
-        def action824():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_ceiling = 21
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action824)
 
         cfflm6.cloud_layer_thickness = 0
         Assert.assertEqual(0, cfflm6.cloud_layer_thickness)
@@ -8718,16 +6406,10 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm6.cloud_layer_thickness)
         cfflm6.cloud_layer_thickness = 0
         Assert.assertEqual(0, cfflm6.cloud_layer_thickness)
-
-        def action825():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_layer_thickness = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action825)
-
-        def action826():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_layer_thickness = 21
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action826)
 
         cfflm6.cloud_temperature = -100
         Assert.assertEqual(-100, cfflm6.cloud_temperature)
@@ -8735,21 +6417,13 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm6.cloud_temperature)
         cfflm6.cloud_temperature = -100
         Assert.assertEqual(-100, cfflm6.cloud_temperature)
-
-        def action827():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action827)
-
-        def action828():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_temperature = 101
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action828)
-
-        def action829():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("must be in", action829)
 
         cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
@@ -8759,62 +6433,32 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm6.cloud_liquid_water_density)
         cfflm6.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm6.cloud_liquid_water_density)
-
-        def action830():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_liquid_water_density = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action830)
-
-        def action831():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_liquid_water_density = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action831)
-
-        def action832():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action832)
-
-        def action833():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action833)
-
-        def action834():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action834)
 
         cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
         cfflm6.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm6.liquid_water_percent_annual_exceeded)
         cfflm6.liquid_water_percent_annual_exceeded = 99
         Assert.assertEqual(99, cfflm6.liquid_water_percent_annual_exceeded)
-
-        def action835():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_annual_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action835)
-
-        def action836():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_annual_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action836)
-
-        def action837():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action837)
-
-        def action838():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action838)
-
-        def action839():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action839)
 
         cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
         cfflm6.liquid_water_percent_monthly_exceeded = 1.0
@@ -8825,36 +6469,18 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(1, cfflm6.average_data_month)
         cfflm6.average_data_month = 12
         Assert.assertEqual(12, cfflm6.average_data_month)
-
-        def action840():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_monthly_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action840)
-
-        def action841():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_monthly_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action841)
-
-        def action842():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.average_data_month = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action842)
-
-        def action843():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.average_data_month = 13
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action843)
-
-        def action844():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action844)
-
-        def action845():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action845)
 
 
 # endregion
@@ -8877,10 +6503,8 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         propChan.enable_atmos_absorption = False
         Assert.assertFalse(propChan.enable_atmos_absorption)
 
-        def action846():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_atmos_absorption_model("ITU-R P676-9")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action846)
 
         propChan.enable_atmos_absorption = True
         Assert.assertTrue(propChan.enable_atmos_absorption)
@@ -8925,10 +6549,8 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
             else:
                 Assert.fail("Unknown model type")
 
-        def action847():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_atmos_absorption_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action847)
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
@@ -8944,15 +6566,10 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertTrue(iturp676.seasonal_regional_method)
 
     def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "IAtmosphericAbsorptionModelScriptPlugin"):
-        def action848():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action848)
-
-        def action849():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             scriptPlugin.filename = r"ChainTest\ChainTest.sc"
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action849)
 
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(r"CommRad\VB_AbsorpModel.vbs", scriptPlugin.filename)
@@ -8963,116 +6580,72 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
         simpleSatcom.water_vapor_concentration = 100
         Assert.assertEqual(100, simpleSatcom.water_vapor_concentration)
-
-        def action850():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.water_vapor_concentration = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action850)
-
-        def action851():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.water_vapor_concentration = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action851)
 
         simpleSatcom.surface_temperature = -100
         Assert.assertEqual(-100, simpleSatcom.surface_temperature)
         simpleSatcom.surface_temperature = 100
         Assert.assertEqual(100, simpleSatcom.surface_temperature)
-
-        def action852():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action852)
-
-        def action853():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action853)
 
     def Test_IAgAtmosphericAbsorptionModelTirem(self, tirem: "IAtmosphericAbsorptionModelTirem"):
         tirem.surface_temperature = -100
         Assert.assertEqual(-100, tirem.surface_temperature)
         tirem.surface_temperature = 100
         Assert.assertEqual(100, tirem.surface_temperature)
-
-        def action854():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action854)
-
-        def action855():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action855)
 
         self._root.unit_preferences.set_current_unit("DistanceUnit", "m")
         tirem.surface_humidity = 0
         Assert.assertEqual(0, tirem.surface_humidity)
         tirem.surface_humidity = 13.25
         Assert.assertEqual(13.25, tirem.surface_humidity)
-
-        def action856():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action856)
-
-        def action857():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = 14
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action857)
 
         tirem.surface_conductivity = 1e-05
         Assert.assertEqual(1e-05, tirem.surface_conductivity)
         tirem.surface_conductivity = 100
         Assert.assertEqual(100, tirem.surface_conductivity)
-
-        def action858():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_conductivity = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action858)
-
-        def action859():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_conductivity = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action859)
 
         tirem.surface_refractivity = 200
         Assert.assertEqual(200, tirem.surface_refractivity)
         tirem.surface_refractivity = 450
         Assert.assertEqual(450, tirem.surface_refractivity)
-
-        def action860():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 199
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action860)
-
-        def action861():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 451
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action861)
 
         tirem.relative_permittivity = 0
         Assert.assertEqual(0, tirem.relative_permittivity)
         tirem.relative_permittivity = 100
         Assert.assertEqual(100, tirem.relative_permittivity)
-
-        def action862():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action862)
-
-        def action863():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action863)
 
         tirem.override_terrain_sample_resolution = False
         Assert.assertFalse(tirem.override_terrain_sample_resolution)
 
-        def action864():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             tirem.terrain_sample_resolution = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action864)
 
         tirem.override_terrain_sample_resolution = True
         Assert.assertTrue(tirem.override_terrain_sample_resolution)
@@ -9082,16 +6655,10 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertEqual(0.0001, tirem.terrain_sample_resolution)
         tirem.terrain_sample_resolution = 10
         Assert.assertEqual(10, tirem.terrain_sample_resolution)
-
-        def action865():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action865)
-
-        def action866():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action866)
 
 
 # endregion
@@ -9113,10 +6680,8 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
         propChan.enable_urban_terrestrial_loss = False
         Assert.assertFalse(propChan.enable_urban_terrestrial_loss)
 
-        def action867():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_urban_terrestrial_loss_model("Two Ray")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action867)
 
         propChan.enable_urban_terrestrial_loss = True
         Assert.assertTrue(propChan.enable_urban_terrestrial_loss)
@@ -9138,10 +6703,8 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             else:
                 Assert.fail("Unknown model type")
 
-        def action868():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_urban_terrestrial_loss_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action868)
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
     def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "IUrbanTerrestrialLossModelTwoRay"):
@@ -9149,31 +6712,19 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
         Assert.assertEqual(0.1, twoRay.loss_factor)
         twoRay.loss_factor = 10
         Assert.assertEqual(10, twoRay.loss_factor)
-
-        def action869():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.loss_factor = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action869)
-
-        def action870():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.loss_factor = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action870)
 
         twoRay.surface_temperature = -100
         Assert.assertEqual(-100, twoRay.surface_temperature)
         twoRay.surface_temperature = 100
         Assert.assertEqual(100, twoRay.surface_temperature)
-
-        def action871():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action871)
-
-        def action872():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action872)
 
     def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "IUrbanTerrestrialLossModelWirelessInSiteRT"):
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
@@ -9198,40 +6749,26 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             Assert.assertEqual(-100, wisRT.surface_temperature)
             wisRT.surface_temperature = 100
             Assert.assertEqual(100, wisRT.surface_temperature)
-
-            def action873():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 wisRT.surface_temperature = -101
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action873)
-
-            def action874():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 wisRT.surface_temperature = 101
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action874)
 
             geometryData: "IWirelessInSiteRTGeometryData" = wisRT.geometry_data
 
-            def action875():
+            with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
-
-            TryCatchAssertBlock.ExpectedException("does not exist", action875)
             geometryData.filename = TestBase.GetScenarioFile("Cochise.shp")
 
             geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84
             Assert.assertEqual(PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84, geometryData.projection_horizontal_datum)
-
-            def action876():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.UTMWGS84
-
-            TryCatchAssertBlock.ExpectedException("must be in", action876)
 
             geometryData.building_height_data_attribute = "STATE_NAME"
             Assert.assertEqual("STATE_NAME", geometryData.building_height_data_attribute)
-
-            def action877():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.building_height_data_attribute = "Some"
-
-            TryCatchAssertBlock.ExpectedException("must be in", action877)
 
             geometryData.building_height_reference_method = BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_SEA_LEVEL
             Assert.assertEqual(
@@ -9245,15 +6782,10 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             geometryData.override_geometry_tile_origin = False
             Assert.assertFalse(geometryData.override_geometry_tile_origin)
 
-            def action878():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 geometryData.geometry_tile_origin_latitude = 0
-
-            TryCatchAssertBlock.ExpectedException("read only", action878)
-
-            def action879():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 geometryData.geometry_tile_origin_longitude = 0
-
-            TryCatchAssertBlock.ExpectedException("read only", action879)
 
             geometryData.override_geometry_tile_origin = True
             Assert.assertTrue(geometryData.override_geometry_tile_origin)
@@ -9262,31 +6794,19 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             Assert.assertEqual(-90, geometryData.geometry_tile_origin_latitude)
             geometryData.geometry_tile_origin_latitude = 90
             Assert.assertEqual(90, geometryData.geometry_tile_origin_latitude)
-
-            def action880():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_latitude = -91
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action880)
-
-            def action881():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_latitude = 91
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action881)
 
             geometryData.geometry_tile_origin_longitude = -180
             Assert.assertEqual(-180, geometryData.geometry_tile_origin_longitude)
             geometryData.geometry_tile_origin_longitude = 360
             Assert.assertEqual(360, geometryData.geometry_tile_origin_longitude)
-
-            def action882():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_longitude = -181
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action882)
-
-            def action883():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_longitude = 361
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action883)
 
             geometryData.use_terrain_data = False
             Assert.assertFalse(geometryData.use_terrain_data)
@@ -9329,10 +6849,8 @@ class RF_Environment_TropoScintillationHelper(object):
         propChan.enable_tropospheric_scintillation_fading_loss = False
         Assert.assertFalse(propChan.enable_tropospheric_scintillation_fading_loss)
 
-        def action884():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-12")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action884)
 
         propChan.enable_tropospheric_scintillation_fading_loss = True
         Assert.assertTrue(propChan.enable_tropospheric_scintillation_fading_loss)
@@ -9356,80 +6874,51 @@ class RF_Environment_TropoScintillationHelper(object):
     def Test_IAgTroposphericScintillationFadingLossModelP618_12(
         self, tsflm12: "ITroposphericScintillationFadingLossModelP618_12"
     ):
-        def action885():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # Deprecated and should not be used.
             tsflm12.compute_deep_fade = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action885)  # Deprecated and should not be used.
 
         tsflm12.surface_temperature = -100
         Assert.assertEqual(-100, tsflm12.surface_temperature)
         tsflm12.surface_temperature = 100
         Assert.assertEqual(100, tsflm12.surface_temperature)
-
-        def action886():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action886)
-
-        def action887():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action887)
 
         tsflm12.fade_outage = 0.01
         Assert.assertEqual(0.01, tsflm12.fade_outage)
         tsflm12.fade_outage = 40
         Assert.assertEqual(40, tsflm12.fade_outage)
-
-        def action888():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_outage = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action888)
-
-        def action889():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_outage = 51
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action889)
 
         tsflm12.fade_exceeded = 0.01
         Assert.assertEqual(0.01, tsflm12.fade_exceeded)
         tsflm12.fade_exceeded = 50
         Assert.assertEqual(50, tsflm12.fade_exceeded)
-
-        def action890():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action890)
-
-        def action891():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_exceeded = 51
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action891)
 
         tsflm12.percent_time_refractivity_gradient = 0
         Assert.assertEqual(0, tsflm12.percent_time_refractivity_gradient)
         tsflm12.percent_time_refractivity_gradient = 100
         Assert.assertEqual(100, tsflm12.percent_time_refractivity_gradient)
-
-        def action892():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.percent_time_refractivity_gradient = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action892)
-
-        def action893():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.percent_time_refractivity_gradient = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action893)
 
         tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH, tsflm12.average_time_choice)
         tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR, tsflm12.average_time_choice)
-
-        def action894():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("must be in", action894)
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
         self, tsflm8: "ITroposphericScintillationFadingLossModelP618_8"
@@ -9445,16 +6934,10 @@ class RF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual(100, tsflm8.surface_temperature)
         tsflm8.surface_temperature = -100
         Assert.assertEqual(-100, tsflm8.surface_temperature)
-
-        def action895():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action895)
-
-        def action896():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action896)
 
         tsflm8.fade_outage = 0
         Assert.assertEqual(0, tsflm8.fade_outage)
@@ -9462,16 +6945,10 @@ class RF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual(100, tsflm8.fade_outage)
         tsflm8.fade_outage = 0
         Assert.assertEqual(0, tsflm8.fade_outage)
-
-        def action897():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.fade_outage = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action897)
-
-        def action898():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.fade_outage = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action898)
 
         tsflm8.percent_time_refractivity_gradient = 0
         Assert.assertEqual(0, tsflm8.percent_time_refractivity_gradient)
@@ -9479,16 +6956,10 @@ class RF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual(100, tsflm8.percent_time_refractivity_gradient)
         tsflm8.percent_time_refractivity_gradient = 0
         Assert.assertEqual(0, tsflm8.percent_time_refractivity_gradient)
-
-        def action899():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.percent_time_refractivity_gradient = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action899)
-
-        def action900():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.percent_time_refractivity_gradient = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action900)
 
 
 # endregion
@@ -9513,23 +6984,16 @@ class RF_Environment_CustomModelsHelper(object):
             customModel.enable = False
             Assert.assertFalse(customModel.enable)
 
-            def action901():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 customModel.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
-
-            TryCatchAssertBlock.ExpectedException("read-only", action901)
 
             customModel.enable = True
             Assert.assertTrue(customModel.enable)
 
-            def action902():
+            with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 customModel.filename = r"C:\bogus.vbs"
-
-            TryCatchAssertBlock.ExpectedException("does not exist", action902)
-
-            def action903():
+            with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
                 customModel.filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
-
-            TryCatchAssertBlock.ExpectedException("Could not initialize", action903)
             customModel.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
             Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), customModel.filename)
 

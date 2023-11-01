@@ -7,6 +7,7 @@ from interfaces.stk_objects import *
 from logger import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -62,11 +63,8 @@ class EarlyBoundTests(TestBase):
         size: int = oPoints.count
         oPoints.add(1, 2)
         Assert.assertEqual((size + 1), oPoints.count)
-
-        def action1():
+        with pytest.raises(Exception):
             oPoints.add(1234, 5678)
-
-        TryCatchAssertBlock.DoAssert("Allows to add invalid point!", action1)
         Assert.assertEqual((size + 1), oPoints.count)
         TestBase.logger.WriteLine3("\tThe new Line Target points collection contains: {0} elements", oPoints.count)
 
@@ -106,11 +104,8 @@ class EarlyBoundTests(TestBase):
         oPoints.anchor_point = 1
         TestBase.logger.WriteLine3("\tThe new AnchorPoint is: {0}", oPoints.anchor_point)
         Assert.assertEqual(1, oPoints.anchor_point)
-
-        def action2():
+        with pytest.raises(Exception):
             oPoints.anchor_point = 123
-
-        TryCatchAssertBlock.DoAssert("Able to set invalid index!", action2)
         # Remove
         oPoints.remove(size)
         Assert.assertEqual(size, oPoints.count)
@@ -151,12 +146,9 @@ class EarlyBoundTests(TestBase):
         gfx.inherit = True
         TestBase.logger.WriteLine4("\tThe new Inherit is: {0}", gfx.inherit)
         Assert.assertEqual(True, gfx.inherit)
-
-        def action3():
-            gfx.label_visible = False
-
         # LabelVisible
-        TryCatchAssertBlock.DoAssert("Allows to modify a read-only property!", action3)
+        with pytest.raises(Exception):
+            gfx.label_visible = False
         # Inherit (false)
         TestBase.logger.WriteLine4("\tThe new Inherit is: {0}", gfx.inherit)
         gfx.inherit = False
@@ -213,16 +205,10 @@ class EarlyBoundTests(TestBase):
         gfx.line_width = LINE_WIDTH.WIDTH2
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", gfx.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH2, gfx.line_width)
-
-        def action4():
+        with pytest.raises(Exception):
             gfx.line_width = clr.Convert((-1), LINE_WIDTH)
-
-        TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action4)
-
-        def action5():
+        with pytest.raises(Exception):
             gfx.line_width = clr.Convert((11), LINE_WIDTH)
-
-        TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action5)
 
         # LineStyle
         TestBase.logger.WriteLine6("\tThe current LineStyle is: {0}", gfx.line_style)
@@ -282,12 +268,9 @@ class EarlyBoundTests(TestBase):
         vo.enable_label_max_viewing_dist = False
         TestBase.logger.WriteLine4("\tThe new EnableLabelMaxViewingDist is: {0}", vo.enable_label_max_viewing_dist)
         Assert.assertEqual(False, vo.enable_label_max_viewing_dist)
-
-        def action6():
-            vo.label_max_viewing_dist = 1000000000000.0
-
         # LabelMaxViewingDist
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property!", action6)
+        with pytest.raises(Exception):
+            vo.label_max_viewing_dist = 1000000000000.0
         # EnableLabelMaxViewingDist (true)
         vo.enable_label_max_viewing_dist = True
         TestBase.logger.WriteLine4("\tThe new EnableLabelMaxViewingDist is: {0}", vo.enable_label_max_viewing_dist)

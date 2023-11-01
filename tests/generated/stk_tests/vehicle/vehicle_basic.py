@@ -5,6 +5,7 @@ from interfaces.stk_objects import *
 from logger import *
 from orbit_state_helper import *
 from orientation_helper import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
@@ -20,21 +21,12 @@ class ExportDataFileHelper(object):
     # region AttitudeExport
     def AttitudeExportTool(self, attitude: "IVehicleAttitudeExportTool"):
         customAxes: "IVehicleCoordinateAxesCustom" = None
-
-        def action1():
+        with pytest.raises(Exception):
             attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action1)
-
-        def action2():
+        with pytest.raises(Exception):
             attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action2)
-
-        def action3():
+        with pytest.raises(Exception):
             attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT620
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action3)
         attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT430
         Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT430, attitude.version_format)
         attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
@@ -74,10 +66,8 @@ class ExportDataFileHelper(object):
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 Assert.assertEqual("CentralBody/Sun J2000 Axes", customAxes.reference_axes_name)
 
-                def action4():
+                with pytest.raises(Exception):
                     customAxes.reference_axes_name = "CentralBody/Sun Bogus Axes"
-
-                TryCatchAssertBlock.DoAssert("IVehicleCoordinateAxesCustom.ReferenceAxesName - invalid choice", action4)
                 if attitude.central_body_name != "Earth":
                     attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
                     Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
@@ -191,10 +181,8 @@ class ExportDataFileHelper(object):
         attitude.step_size.time_array = objName + " OneMinuteSampleTimes EventArray"
         Assert.assertEqual((objName + " OneMinuteSampleTimes EventArray"), attitude.step_size.time_array)
 
-        def action5():
+        with pytest.raises(Exception):
             attitude.step_size.time_array = objName + " Bogus EventArray"
-
-        TryCatchAssertBlock.DoAssert("IExportToolStepSize.TimeArray - invalid choice", action5)
 
         attitude.export(TestBase.GetScenarioFile("OMExternalFileAttitude.a"))
 
@@ -304,39 +292,27 @@ class ExportDataFileHelper(object):
         Assert.assertTrue(stkEphem.use_vehicle_central_body)
         Assert.assertEqual("Earth", stkEphem.central_body_name)
         if isSat:
-
-            def action6():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 stkEphem.central_body_name = "Europa"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action6)
 
             stkEphem.use_vehicle_central_body = False
             Assert.assertFalse(stkEphem.use_vehicle_central_body)
 
             stkEphem.central_body_name = "Europa"
             Assert.assertEqual("Europa", stkEphem.central_body_name)
-
-            def action7():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 stkEphem.central_body_name = "Uvanus"
 
-            TryCatchAssertBlock.ExpectedException("must be in", action7)
-
         else:
-
-            def action8():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 stkEphem.central_body_name = "Europa"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action8)
 
         stkEphem.include_interp = False
         Assert.assertFalse(stkEphem.include_interp)
         stkEphem.include_interp = True
         Assert.assertTrue(stkEphem.include_interp)
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
-
-        TryCatchAssertBlock.ExpectedException("must be in", action9)
         stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
         Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT410, stkEphem.version_format)
         stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
@@ -359,15 +335,11 @@ class ExportDataFileHelper(object):
         stkEphem.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
         Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, stkEphem.time_period.stop)
 
-        def action10():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             stkEphem.covariance_type = STK_EPHEM_COVARIANCE_TYPE.POSITION3_X3
 
-        TryCatchAssertBlock.ExpectedException("read-only", action10)
-
-        def action11():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             stkEphem.covariance_type = STK_EPHEM_COVARIANCE_TYPE.POSITION_VELOCITY6_X6
-
-        TryCatchAssertBlock.ExpectedException("read-only", action11)
 
         stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, stkEphem.step_size.step_size_type)
@@ -375,11 +347,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, stkEphem.step_size.step_size_type)
         stkEphem.step_size.value = 3600
         Assert.assertEqual(3600, stkEphem.step_size.value)
-
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
-
-        TryCatchAssertBlock.ExpectedException("must be in", action12)
 
         stkEphem.export(TestBase.GetScenarioFile("OMExternalFileStk.e"))
         if isSat:
@@ -449,16 +418,10 @@ class ExportDataFileHelper(object):
 
         ccsds.use_satellite_center_and_frame = True
         Assert.assertTrue(ccsds.use_satellite_center_and_frame)
-
-        def action13():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             ccsds.central_body_name = "Earth"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action13)
-
-        def action14():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             ccsds.reference_frame = CCSDS_REFERENCE_FRAME.FIXED
-
-        TryCatchAssertBlock.ExpectedException("read-only", action14)
 
         ccsds.use_satellite_center_and_frame = False
 
@@ -470,11 +433,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual("TestSatellite", ccsds.object_name)
         ccsds.central_body_name = "Moon"
         Assert.assertEqual("Moon", ccsds.central_body_name)
-
-        def action15():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsds.central_body_name = "Uvanus"
-
-        TryCatchAssertBlock.ExpectedException("must be in", action15)
 
         # specific central bodies have specific reference frames  (See 42071)
         # Earth:  ICRF, J2000, TOD, ITRF, Fixed, TEME, ITRF frames
@@ -486,10 +446,8 @@ class ExportDataFileHelper(object):
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
-        def action16():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in ")):
             ccsds.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
-
-        TryCatchAssertBlock.ExpectedException("must be in ", action16)
 
         # Moon: ICRF, J2000, TOD, MeanEarth, Fixed
         ccsds.central_body_name = "Moon"
@@ -500,10 +458,8 @@ class ExportDataFileHelper(object):
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
-        def action17():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsds.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
-
-        TryCatchAssertBlock.ExpectedException("must be in", action17)
 
         # other cb's: ICRF, J2000, TOD, Fixed
         ccsds.central_body_name = "Sun"
@@ -514,15 +470,10 @@ class ExportDataFileHelper(object):
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
-        def action18():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsds.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
-
-        TryCatchAssertBlock.ExpectedException("must be in", action18)
-
-        def action19():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsds.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
-
-        TryCatchAssertBlock.ExpectedException("must be in", action19)
 
         # pick a valid combination
         ccsds.central_body_name = "Moon"
@@ -554,11 +505,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, ccsds.step_size.step_size_type)
         ccsds.step_size.value = 3600
         Assert.assertEqual(3600, ccsds.step_size.value)
-
-        def action20():
+        with pytest.raises(Exception):
             ccsds.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
-
-        TryCatchAssertBlock.DoAssert("must be in", action20)
 
         ccsds.time_system = CCSDS_TIME_SYSTEM.GPS
         Assert.assertEqual(CCSDS_TIME_SYSTEM.GPS, ccsds.time_system)
@@ -698,16 +646,10 @@ class ExportDataFileHelper(object):
 
         ccsdsv2.use_satellite_center_and_frame = True
         Assert.assertTrue(ccsdsv2.use_satellite_center_and_frame)
-
-        def action21():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             ccsdsv2.central_body_name = "Earth"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action21)
-
-        def action22():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.FIXED
-
-        TryCatchAssertBlock.ExpectedException("read-only", action22)
 
         ccsdsv2.use_satellite_center_and_frame = False
 
@@ -719,11 +661,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual("TestSatellite", ccsdsv2.object_name)
         ccsdsv2.central_body_name = "Moon"
         Assert.assertEqual("Moon", ccsdsv2.central_body_name)
-
-        def action23():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsdsv2.central_body_name = "Uvanus"
-
-        TryCatchAssertBlock.ExpectedException("must be in", action23)
 
         # specific central bodies have specific reference frames  (See 42071)
         # Earth:  ICRF, J2000, TOD, ITRF, Fixed, ITRF frames
@@ -735,10 +674,8 @@ class ExportDataFileHelper(object):
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
-        def action24():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
-
-        TryCatchAssertBlock.ExpectedException("must be in", action24)
 
         # Moon: ICRF, J2000, TOD, MeanEarth, Fixed
         ccsdsv2.central_body_name = "Moon"
@@ -749,10 +686,8 @@ class ExportDataFileHelper(object):
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
-        def action25():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
-
-        TryCatchAssertBlock.ExpectedException("must be in", action25)
 
         # other cb's: ICRF, J2000, TOD, Fixed
         ccsdsv2.central_body_name = "Sun"
@@ -763,15 +698,10 @@ class ExportDataFileHelper(object):
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
-        def action26():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
-
-        TryCatchAssertBlock.ExpectedException("must be in", action26)
-
-        def action27():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
-
-        TryCatchAssertBlock.ExpectedException("must be in", action27)
 
         # pick a valid combination
         ccsdsv2.central_body_name = "Moon"
@@ -803,11 +733,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, ccsdsv2.step_size.step_size_type)
         ccsdsv2.step_size.value = 3600
         Assert.assertEqual(3600, ccsdsv2.step_size.value)
-
-        def action28():
+        with pytest.raises(Exception):
             ccsdsv2.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
-
-        TryCatchAssertBlock.DoAssert("Invalid Step size type", action28)
 
         ccsdsv2.time_system = CCSDS_TIME_SYSTEM.GPS
         Assert.assertEqual(CCSDS_TIME_SYSTEM.GPS, ccsdsv2.time_system)
@@ -935,11 +862,8 @@ class ExportDataFileHelper(object):
 
         Assert.assertFalse(ccsdsv2.has_covariance_data)
         Assert.assertFalse(ccsdsv2.include_covariance)
-
-        def action29():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             ccsdsv2.include_covariance = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action29)
 
         ccsdsv2.include_acceleration = False
         Assert.assertFalse(ccsdsv2.include_acceleration)
@@ -1042,11 +966,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, code500.step_size.step_size_type)
         code500.step_size.value = 3600
         Assert.assertEqual(3600, code500.step_size.value)
-
-        def action30():
+        with pytest.raises(Exception):
             code500.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
-
-        TryCatchAssertBlock.DoAssert("Invalid Step size type", action30)
 
         # this part only works if you have the code500 dll loaded.
         code500.export(TestBase.GetScenarioFile("OMExternalFileCode500.eph"))
@@ -1084,21 +1005,16 @@ class ExportDataFileHelper(object):
         Assert.assertTrue(spice.use_vehicle_central_body)
         Assert.assertEqual("Earth", spice.central_body_name)
 
-        def action31():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             spice.central_body_name = "Sun"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action31)
 
         spice.use_vehicle_central_body = False
         Assert.assertFalse(spice.use_vehicle_central_body)
 
         spice.central_body_name = "Sun"
         Assert.assertEqual("Sun", spice.central_body_name)
-
-        def action32():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             spice.central_body_name = "Uvanus"
-
-        TryCatchAssertBlock.ExpectedException("must be in", action32)
 
         spice.sat_id = -200001
         Assert.assertEqual(-200001, spice.sat_id)
@@ -1124,11 +1040,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, spice.step_size.step_size_type)
         spice.step_size.value = 3600
         Assert.assertEqual(3600, spice.step_size.value)
-
-        def action33():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             spice.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
-
-        TryCatchAssertBlock.ExpectedException("must be in", action33)
 
         spice.export(TestBase.GetScenarioFile("OMExternalFileSpice.bsp"))
         self._root.execute_command(
@@ -1230,29 +1143,20 @@ class ExportDataFileHelper(object):
         Assert.assertTrue(binary.use_vehicle_central_body)
         Assert.assertEqual("Earth", binary.central_body_name)
         if isSat:
-
-            def action34():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 binary.central_body_name = "Europa"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action34)
 
             binary.use_vehicle_central_body = False
             Assert.assertFalse(binary.use_vehicle_central_body)
 
             binary.central_body_name = "Europa"
             Assert.assertEqual("Europa", binary.central_body_name)
-
-            def action35():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 binary.central_body_name = "Uvanus"
 
-            TryCatchAssertBlock.ExpectedException("must be in", action35)
-
         else:
-
-            def action36():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 binary.central_body_name = "Europa"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action36)
 
         binary.include_interp = False
         Assert.assertFalse(binary.include_interp)
@@ -1261,36 +1165,18 @@ class ExportDataFileHelper(object):
 
         binary.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
         Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.CURRENT, binary.version_format)
-
-        def action37():
+        with pytest.raises(Exception):
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action37)
-
-        def action38():
+        with pytest.raises(Exception):
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action38)
-
-        def action39():
+        with pytest.raises(Exception):
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT430
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action39)
-
-        def action40():
+        with pytest.raises(Exception):
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action40)
-
-        def action41():
+        with pytest.raises(Exception):
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT620
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action41)
-
-        def action42():
+        with pytest.raises(Exception):
             binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT800
-
-        TryCatchAssertBlock.DoAssert("Invalid version number", action42)
 
         binary.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, binary.time_period.time_period_type)
@@ -1301,20 +1187,12 @@ class ExportDataFileHelper(object):
         binary.time_period.stop = (clr.Convert(self._root.current_scenario, IScenario)).stop_time
         Assert.assertEqual((clr.Convert(self._root.current_scenario, IScenario)).stop_time, binary.time_period.stop)
 
-        def action43():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             binary.covariance_type = STK_EPHEM_COVARIANCE_TYPE.NONE
-
-        TryCatchAssertBlock.ExpectedException("read-only", action43)
-
-        def action44():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             binary.covariance_type = STK_EPHEM_COVARIANCE_TYPE.POSITION3_X3
-
-        TryCatchAssertBlock.ExpectedException("read-only", action44)
-
-        def action45():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             binary.covariance_type = STK_EPHEM_COVARIANCE_TYPE.POSITION_VELOCITY6_X6
-
-        TryCatchAssertBlock.ExpectedException("read-only", action45)
 
         binary.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, binary.step_size.step_size_type)
@@ -1322,11 +1200,8 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, binary.step_size.step_size_type)
         binary.step_size.value = 3600
         Assert.assertEqual(3600, binary.step_size.value)
-
-        def action46():
+        with pytest.raises(Exception):
             binary.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
-
-        TryCatchAssertBlock.DoAssert("must be in", action46)
 
         binary.export(TestBase.GetScenarioFile("OMExternalFileStk.be"))
         if isSat:
@@ -1449,11 +1324,8 @@ class BasicGroundEllipsesHelper(object):
             oCollection.count,
             oGEElement.ellipse_name,
         )
-
-        def action47():
+        with pytest.raises(Exception):
             oGEElement = oCollection.add("Ellipse1")
-
-        TryCatchAssertBlock.DoAssert("Should not allow to add element with the same name.", action47)
         Assert.assertEqual((iCount + 1), oCollection.count)
         # Add 2
         oGEElement = oCollection.add("Ellipse2")
@@ -1477,11 +1349,8 @@ class BasicGroundEllipsesHelper(object):
             "\tAfter RemoveAt({1}) the GroundEllipses collection contains: {0} elements", oCollection.count, strName
         )
         Assert.assertEqual((iCount + 1), oCollection.count)
-
-        def action48():
+        with pytest.raises(Exception):
             oCollection.remove_at(oCollection.count)
-
-        TryCatchAssertBlock.DoAssert("Should not allow to remove element by invalid index.", action48)
         # EllipseName
         oCollection[(oCollection.count - 1)].ellipse_name = "ModifiedEllipse1"
         Assert.assertEqual("ModifiedEllipse1", oCollection[(oCollection.count - 1)].ellipse_name)
@@ -1546,44 +1415,23 @@ class BasicGroundEllipsesHelper(object):
                 # Time
                 oDataElement.time = "2 Jul 1999 10:00:00.000"
                 oDataElement.custom_position = not oDataElement.custom_position
-
-                def action49():
+                with pytest.raises(Exception):
                     oDataElement.latitude = 123
-
-                TryCatchAssertBlock.DoAssert("Should be readonly!", action49)
-
-                def action50():
+                with pytest.raises(Exception):
                     oDataElement.longitude = 123
-
-                TryCatchAssertBlock.DoAssert("Should be readonly!", action50)
                 oDataElement.semi_major_axis = 1234
                 oDataElement.semi_minor_axis = 123
-
-                def action51():
+                with pytest.raises(Exception):
                     oDataElement.semi_major_axis = 12
-
-                TryCatchAssertBlock.DoAssert("Should be more then SemiMinorAxis!", action51)
-
-                def action52():
+                with pytest.raises(Exception):
                     oDataElement.semi_major_axis = -12345
-
-                TryCatchAssertBlock.DoAssert("Cannot set invalid value!", action52)
-
-                def action53():
+                with pytest.raises(Exception):
                     oDataElement.semi_minor_axis = 12345
-
-                TryCatchAssertBlock.DoAssert("Should be less then SemiMajorAxis!", action53)
-
-                def action54():
+                with pytest.raises(Exception):
                     oDataElement.semi_minor_axis = -12345
-
-                TryCatchAssertBlock.DoAssert("Cannot set invalid value!", action54)
                 oDataElement.bearing = 123
-
-                def action55():
+                with pytest.raises(Exception):
                     oDataElement.bearing = 12345
-
-                TryCatchAssertBlock.DoAssert("Cannot set invalid value!", action55)
                 self.m_logger.WriteLine10(
                     "\t\t\t\tElement {0} (After):  Time = {1}, Latitude = {2}, Longitude = {3}, Bearing = {4}, SemiMajorAxis = {5}, SemiMinorAxis = {6}, CustomPosition = {7}",
                     i,
@@ -1608,34 +1456,19 @@ class BasicGroundEllipsesHelper(object):
         # GetEllipseSet
         oGEElement = oCollection.get_ellipse_set("Ellipse3")
         Assert.assertIsNotNone(oGEElement)
-
-        def action56():
+        with pytest.raises(Exception):
             oCollection.get_ellipse_set("")
-
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of empty string!", action56)
-
-        def action57():
+        with pytest.raises(Exception):
             oCollection.get_ellipse_set(None)
-
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of NULL pointer!", action57)
-
-        def action58():
-            oCollection.remove_ellipse_set("")
-
         # RemoveEllipseSet
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of empty string!", action58)
-
-        def action59():
+        with pytest.raises(Exception):
+            oCollection.remove_ellipse_set("")
+        with pytest.raises(Exception):
             oCollection.remove_ellipse_set(None)
-
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of NULL pointer!", action59)
         oCollection.remove_ellipse_set(oGEElement.ellipse_name)  # oGEElement is now invalid
         Assert.assertEqual(iCount, oCollection.count)
-
-        def action60():
+        with pytest.raises(Exception):
             oCollection.remove_ellipse_set("InvalidName")
-
-        TryCatchAssertBlock.DoAssert("Should throw an exception in case of invalid name!", action60)
         if bClearCollection:
             oCollection.remove_all()
             Assert.assertEqual(0, oCollection.count)
@@ -1805,23 +1638,17 @@ class PropagatorGreatArcHelper(object):
                 oGreatArc.arc_granularity = 23.456
                 self.m_logger.WriteLine6("\t\t\tThe new ArcGranularity is: {0}", oGreatArc.arc_granularity)
                 Assert.assertAlmostEqual(23.456, oGreatArc.arc_granularity, delta=0.0001)
-
-                def action61():
+                with pytest.raises(Exception):
                     oGreatArc.arc_granularity = 654.321
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action61)
             elif eRefType == VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN:
                 # AltitudeRef
                 oRef: "IVehicleWaypointAltitudeReference" = oGreatArc.altitude_reference
                 Assert.assertIsNotNone(oRef)
                 # Type
                 self.m_logger.WriteLine6("\t\t\tThe current Type is:{0}", oRef.type)
-
-                def action62():
-                    oGreatArc.arc_granularity = 65.4321
-
                 # ArcGranularity
-                TryCatchAssertBlock.DoAssert("The ArcGranularity should be readonly.", action62)
+                with pytest.raises(Exception):
+                    oGreatArc.arc_granularity = 65.4321
 
                 oTerrain: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
                     oRef, IVehicleWaypointAltitudeReferenceTerrain
@@ -1833,11 +1660,8 @@ class PropagatorGreatArcHelper(object):
                 oTerrain.granularity = 123.456
                 self.m_logger.WriteLine6("\t\t\tThe new Granularity is: {0}", oTerrain.granularity)
                 Assert.assertAlmostEqual(123.456, oTerrain.granularity, delta=0.0001)
-
-                def action63():
+                with pytest.raises(Exception):
                     oTerrain.granularity = -65.4321
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal values.", action63)
                 # InterpMethod (eWayPtEllipsoidHeight)
                 self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interp_method)
                 oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
@@ -1948,15 +1772,11 @@ class BasicWaypointsHelper(object):
 
             iIndex += 1
 
-        def action64():
+        with pytest.raises(Exception):
             oElement2: "IVehicleWaypointsElement" = oCollection[oCollection.count]
 
-        TryCatchAssertBlock.DoAssert("IVehicleWaypointsCollection bad index", action64)
-
-        def action65():
+        with pytest.raises(Exception):
             oCollection.remove_at(oCollection.count)
-
-        TryCatchAssertBlock.DoAssert("IVehicleWaypointsCollection remove bad index", action65)
 
         oCollection.remove_at(0)
         self.m_logger.WriteLine3(
@@ -1977,32 +1797,20 @@ class BasicWaypointsHelper(object):
             )
             # Latitude
             oItem.latitude = 12.3456
-
-            def action66():
+            with pytest.raises(Exception):
                 oItem.latitude = 654.321
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action66)
             # Longitude
             oItem.longitude = -123.456
-
-            def action67():
+            with pytest.raises(Exception):
                 oItem.longitude = 654.321
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action67)
             # Altitude
             oItem.altitude = 23.45
-
-            def action68():
+            with pytest.raises(Exception):
                 oItem.altitude = -654000.321
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action68)
             # TurnRadius
             oItem.turn_radius = 3.45
-
-            def action69():
+            with pytest.raises(Exception):
                 oItem.turn_radius = -654.321
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action69)
             if eMethod == VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL:
                 # Speed
                 distance: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
@@ -2011,61 +1819,37 @@ class BasicWaypointsHelper(object):
                 self.m_oUnits.set_current_unit("TimeUnit", "sec")
 
                 oItem.speed = 3.21
-
-                def action70():
+                with pytest.raises(Exception):
                     oItem.speed = 1e-08
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action70)
-
-                def action71():
-                    oItem.time = "10 Jul 1999 04:00:00.000"
-
                 # Time
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action71)
-
-                def action72():
-                    oItem.acceleration = 0.321
-
+                with pytest.raises(Exception):
+                    oItem.time = "10 Jul 1999 04:00:00.000"
                 # Acceleration
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action72)
+                with pytest.raises(Exception):
+                    oItem.acceleration = 0.321
                 self.m_oUnits.set_current_unit("DistanceUnit", distance)
                 self.m_oUnits.set_current_unit("TimeUnit", time)
             elif eMethod == VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC:
                 # Speed
                 oItem.speed = 3.21
-
-                def action73():
+                with pytest.raises(Exception):
                     oItem.speed = -654.321
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action73)
                 # Acceleration
                 oItem.acceleration = 32.1
-
-                def action74():
+                with pytest.raises(Exception):
                     oItem.acceleration = -65432100000.0
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action74)
-
-                def action75():
-                    oItem.time = "10 Jul 1999 04:00:00.000"
-
                 # Time
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action75)
+                with pytest.raises(Exception):
+                    oItem.time = "10 Jul 1999 04:00:00.000"
             elif eMethod == VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME:
                 # Time
                 oItem.time = "12 Jul 1999 04:00:00.000"
-
-                def action76():
-                    oItem.speed = 654.321
-
                 # Speed
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action76)
-
-                def action77():
-                    oItem.acceleration = 654.321
-
+                with pytest.raises(Exception):
+                    oItem.speed = 654.321
                 # Acceleration
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action77)
+                with pytest.raises(Exception):
+                    oItem.acceleration = 654.321
             else:
                 Assert.fail("Invalid value: {0}", eMethod)
             self.m_logger.WriteLine10(
@@ -2152,20 +1936,14 @@ class PropagatorStkExternalHelper(object):
         oStkExternal.filename = externalFile
         Assert.assertEqual(TestBase.PathCombine("External", "Satellite1.EPH"), oStkExternal.filename)
 
-        def action78():
+        with pytest.raises(Exception):
             oStkExternal.file_format = STK_EXTERNAL_EPHEMERIS_FORMAT.UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action78)
-
-        def action79():
+        with pytest.raises(Exception):
             oStkExternal.filename = ""
 
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action79)
-
-        def action80():
+        with pytest.raises(Exception):
             oStkExternal.filename = "IllegalFile.Name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action80)
 
         # LimitEphemerisToScenarioInterval (false)
         self.m_logger.WriteLine4(
@@ -2218,11 +1996,8 @@ class PropagatorSimpleAscentHelper(object):
         oSimple.step = 12
         self.m_logger.WriteLine6("\tThe new Step is:  {0}", oSimple.step)
         Assert.assertEqual(12, oSimple.step)
-
-        def action81():
+        with pytest.raises(Exception):
             oSimple.step = 12345
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action81)
         # InitialState
         oInitState: "IVehicleLaunchVehicleInitialState" = oSimple.initial_state
         Assert.assertIsNotNone(oInitState)
@@ -2233,11 +2008,8 @@ class PropagatorSimpleAscentHelper(object):
         oInitState.burnout_vel = 12
         self.m_logger.WriteLine6("\tThe new BurnoutVel is:  {0}", oInitState.burnout_vel)
         Assert.assertEqual(12, oInitState.burnout_vel)
-
-        def action82():
+        with pytest.raises(Exception):
             oInitState.burnout_vel = -21
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action82)
 
         # Burnout
         oHelper = LLAPositionTest()
@@ -2393,11 +2165,8 @@ class PropagatorLOPHelper(object):
         oLOP.step = 87000
         self.m_logger.WriteLine6("\tThe new Step is:  {0}", oLOP.step)
         Assert.assertEqual(87000, oLOP.step)
-
-        def action83():
+        with pytest.raises(Exception):
             oLOP.step = 1200000000000.0
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action83)
         # InitialState
         oInitState: "IVehicleInitialState" = oLOP.initial_state
         Assert.assertIsNotNone(oInitState)
@@ -2448,21 +2217,15 @@ class PropagatorLOPHelper(object):
         oGravity.max_degree = 25
         self.m_logger.WriteLine3("\tThe new MaxDegree is:  {0}", oGravity.max_degree)
         Assert.assertEqual(25, oGravity.max_degree)
-
-        def action84():
+        with pytest.raises(Exception):
             oGravity.max_degree = 12345
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action84)
         # MaxOrder
         self.m_logger.WriteLine3("\tThe current MaxOrder is:  {0}", oGravity.max_order)
         oGravity.max_order = 22
         self.m_logger.WriteLine3("\tThe new MaxOrder is:  {0}", oGravity.max_order)
         Assert.assertEqual(22, oGravity.max_order)
-
-        def action85():
+        with pytest.raises(Exception):
             oGravity.max_order = 12345
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action85)
 
     # endregion
 
@@ -2496,12 +2259,9 @@ class PropagatorLOPHelper(object):
         oDrag.use = False
         self.m_logger.WriteLine4("\tThe new Use is:  {0}", oDrag.use)
         Assert.assertEqual(False, oDrag.use)
-
-        def action86():
-            oDrag.cd = 4.321
-
         # Cd (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action86)
+        with pytest.raises(Exception):
+            oDrag.cd = 4.321
         # Advanced (readonly)
         self.ForceModelAdvancedTest(oDrag.advanced, True)
         # Use (true)
@@ -2514,11 +2274,8 @@ class PropagatorLOPHelper(object):
         oDrag.cd = 4.321
         self.m_logger.WriteLine6("\tThe new Cd is:  {0}", oDrag.cd)
         Assert.assertEqual(4.321, oDrag.cd)
-
-        def action87():
+        with pytest.raises(Exception):
             oDrag.cd = 43.21
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action87)
         # Advanced
         self.ForceModelAdvancedTest(oDrag.advanced, False)
 
@@ -2528,30 +2285,18 @@ class PropagatorLOPHelper(object):
     def ForceModelAdvancedTest(self, oAdvanved: "IVehicleAdvanced", bIsReadOnly: bool):
         Assert.assertIsNotNone(oAdvanved)
         if bIsReadOnly:
-
-            def action88():
-                oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
-
             # AtmosphericDensityModel
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action88)
-
-            def action89():
-                oAdvanved.use_osculating_altitude = True
-
+            with pytest.raises(Exception):
+                oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
             # UseOsculatingAlt
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action89)
-
-            def action90():
-                oAdvanved.max_drag_altitude = 43.21
-
+            with pytest.raises(Exception):
+                oAdvanved.use_osculating_altitude = True
             # MaxDragAlt
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action90)
-
-            def action91():
-                oAdvanved.density_weighing_factor = 43.21
-
+            with pytest.raises(Exception):
+                oAdvanved.max_drag_altitude = 43.21
             # DensityWeighingFactor
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action91)
+            with pytest.raises(Exception):
+                oAdvanved.density_weighing_factor = 43.21
             # ExpDensModelParams
             self.ExponentialModelParamsTest(oAdvanved.exp_dens_model_params, True)
 
@@ -2564,10 +2309,8 @@ class PropagatorLOPHelper(object):
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
             Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976, oAdvanved.atmospheric_density_model)
 
-            def action92():
+            with pytest.raises(Exception):
                 oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER
-
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action92)
 
             # AtmosDensityModel (e1976StandardAtmosModel)
             self.m_logger.WriteLine6("\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmos_density_model)
@@ -2590,21 +2333,15 @@ class PropagatorLOPHelper(object):
             oAdvanved.max_drag_altitude = 43.21
             self.m_logger.WriteLine6("\tThe new MaxDragAlt is:  {0}", oAdvanved.max_drag_altitude)
             Assert.assertEqual(43.21, oAdvanved.max_drag_altitude)
-
-            def action93():
+            with pytest.raises(Exception):
                 oAdvanved.max_drag_altitude = -43.21
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action93)
             # DensityWeighingFactor
             self.m_logger.WriteLine6("\tThe current DensityWeighingFactor is:  {0}", oAdvanved.density_weighing_factor)
             oAdvanved.density_weighing_factor = 43.21
             self.m_logger.WriteLine6("\tThe new DensityWeighingFactor is:  {0}", oAdvanved.density_weighing_factor)
             Assert.assertEqual(43.21, oAdvanved.density_weighing_factor)
-
-            def action94():
+            with pytest.raises(Exception):
                 oAdvanved.density_weighing_factor = -43.21
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action94)
             # AtmosphericDensityModel (eExponentialModel)
             oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
@@ -2622,24 +2359,15 @@ class PropagatorLOPHelper(object):
     def ExponentialModelParamsTest(self, oParams: "IVehicleExpDensModelParams", bIsReadOnly: bool):
         Assert.assertIsNotNone(oParams)
         if bIsReadOnly:
-
-            def action95():
-                oParams.reference_density = 43.21
-
             # ReferenceDensity
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action95)
-
-            def action96():
-                oParams.reference_height = 43.21
-
+            with pytest.raises(Exception):
+                oParams.reference_density = 43.21
             # ReferenceHeight
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action96)
-
-            def action97():
-                oParams.scale_height = 43.21
-
+            with pytest.raises(Exception):
+                oParams.reference_height = 43.21
             # ScaleHeight
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action97)
+            with pytest.raises(Exception):
+                oParams.scale_height = 43.21
 
         else:
             # ReferenceDensity
@@ -2647,31 +2375,22 @@ class PropagatorLOPHelper(object):
             oParams.reference_density = 43.21
             self.m_logger.WriteLine6("\tThe new ReferenceDensity is:  {0}", oParams.reference_density)
             Assert.assertEqual(43.21, oParams.reference_density)
-
-            def action98():
+            with pytest.raises(Exception):
                 oParams.reference_density = -43.21
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action98)
             # ReferenceHeight
             self.m_logger.WriteLine6("\tThe current ReferenceHeight is:  {0}", oParams.reference_height)
             oParams.reference_height = 43.21
             self.m_logger.WriteLine6("\tThe new ReferenceHeight is:  {0}", oParams.reference_height)
             Assert.assertEqual(43.21, oParams.reference_height)
-
-            def action99():
+            with pytest.raises(Exception):
                 oParams.reference_height = -43.21
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action99)
             # ScaleHeight
             self.m_logger.WriteLine6("\tThe current ScaleHeight is:  {0}", oParams.scale_height)
             oParams.scale_height = 43.21
             self.m_logger.WriteLine6("\tThe new ScaleHeight is:  {0}", oParams.scale_height)
             Assert.assertEqual(43.21, oParams.scale_height)
-
-            def action100():
+            with pytest.raises(Exception):
                 oParams.scale_height = -43.21
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action100)
 
     # endregion
 
@@ -2683,18 +2402,12 @@ class PropagatorLOPHelper(object):
         oPressure.use = False
         self.m_logger.WriteLine4("\tThe new Use is:  {0}", oPressure.use)
         Assert.assertEqual(False, oPressure.use)
-
-        def action101():
-            oPressure.cp = 43.21
-
         # Cp (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action101)
-
-        def action102():
-            oPressure.atmos_height = 432.1
-
+        with pytest.raises(Exception):
+            oPressure.cp = 43.21
         # AtmosHeight (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action102)
+        with pytest.raises(Exception):
+            oPressure.atmos_height = 432.1
         # Use (true)
         self.m_logger.WriteLine4("\tThe current Use is:  {0}", oPressure.use)
         oPressure.use = True
@@ -2705,21 +2418,15 @@ class PropagatorLOPHelper(object):
         oPressure.cp = 43.21
         self.m_logger.WriteLine6("\tThe new Cp is:  {0}", oPressure.cp)
         Assert.assertEqual(43.21, oPressure.cp)
-
-        def action103():
+        with pytest.raises(Exception):
             oPressure.cp = 432.1
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action103)
         # AtmosHeight
         self.m_logger.WriteLine6("\tThe current AtmosHeight is:  {0}", oPressure.atmos_height)
         oPressure.atmos_height = 432.1
         self.m_logger.WriteLine6("\tThe new AtmosHeight is:  {0}", oPressure.atmos_height)
         Assert.assertEqual(432.1, oPressure.atmos_height)
-
-        def action104():
+        with pytest.raises(Exception):
             oPressure.atmos_height = -432.1
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action104)
 
     # endregion
 
@@ -2733,31 +2440,22 @@ class PropagatorLOPHelper(object):
         physicalData.drag_cross_sectional_area = 0.0004321
         self.m_logger.WriteLine6("\tThe new DragCrossSectionalArea is:  {0}", physicalData.drag_cross_sectional_area)
         Assert.assertEqual(0.0004321, physicalData.drag_cross_sectional_area)
-
-        def action105():
+        with pytest.raises(Exception):
             physicalData.drag_cross_sectional_area = -43.21
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action105)
         # SRPCrossSectionalArea
         self.m_logger.WriteLine6("\tThe current SRPCrossSectionalArea is:  {0}", physicalData.srp_cross_sectional_area)
         physicalData.srp_cross_sectional_area = 4.321e-07
         self.m_logger.WriteLine6("\tThe new SRPCrossSectionalArea is:  {0}", physicalData.srp_cross_sectional_area)
         Assert.assertAlmostEqual(4.321e-07, physicalData.srp_cross_sectional_area, delta=1e-09)
-
-        def action106():
+        with pytest.raises(Exception):
             physicalData.srp_cross_sectional_area = -432.1
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action106)
         # SatelliteMass
         self.m_logger.WriteLine6("\tThe current SatelliteMass is:  {0}", physicalData.satellite_mass)
         physicalData.satellite_mass = 432.1
         self.m_logger.WriteLine6("\tThe new SatelliteMass is:  {0}", physicalData.satellite_mass)
         Assert.assertEqual(432.1, physicalData.satellite_mass)
-
-        def action107():
+        with pytest.raises(Exception):
             physicalData.satellite_mass = -432.1
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action107)
 
 
 # endregion
@@ -2984,10 +2682,8 @@ class PropagatorSGP4Helper(object):
             oSGP4.segments.routine_type = "SGP4"
             Assert.assertEqual("SGP4", oSGP4.segments.routine_type)
 
-        def action108():
+        with pytest.raises(Exception):
             oSGP4.step = 12345
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action108)
         # Segments
         oSegments: "IVehicleSGP4SegmentCollection" = oSGP4.segments
         Assert.assertIsNotNone(oSegments)
@@ -3021,11 +2717,8 @@ class PropagatorSGP4Helper(object):
         oSegments.max_tle_limit = 123
         self.m_logger.WriteLine3("\tThe new MaxTLELimit is:  {0}", oSegments.max_tle_limit)
         Assert.assertEqual(123, oSegments.max_tle_limit)
-
-        def action109():
+        with pytest.raises(Exception):
             oSegments.max_tle_limit = 12345
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action109)
         # AvailableRoutines
         arRoutines = oSegments.available_routines
         self.m_logger.WriteLine3("\tThe Segment collection contains: {0} available routines.", Array.Length(arRoutines))
@@ -3042,25 +2735,17 @@ class PropagatorSGP4Helper(object):
             oSegments.routine_type = str(arRoutines[0])
             self.m_logger.WriteLine5("\tThe new RoutineType is:  {0}", oSegments.routine_type)
             Assert.assertEqual(str(arRoutines[0]), oSegments.routine_type)
-
-            def action110():
+            with pytest.raises(Exception):
                 oSegments.routine_type = "InvalidRoutineType"
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action110)
 
         else:
             if Array.Length(arRoutines) == 1:
-
-                def action111():
+                with pytest.raises(Exception):
                     oSegments.routine_type = str(arRoutines[0])
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action111)
-
-        def action112():
-            oSegments.remove_seg(12)
-
         # RemoveSeg
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an illegal segment.", action112)
+        with pytest.raises(Exception):
+            oSegments.remove_seg(12)
         oSegments.remove_seg(0)
         Assert.assertEqual(0, oSegments.count)
         # LoadMethodType (eAutoLoad)
@@ -3280,15 +2965,11 @@ class PropagatorSGP4Helper(object):
         Assert.assertFalse(oSGP4.auto_update_enabled)
         Assert.assertEqual(VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_NONE, oSGP4.auto_update.selected_source)
 
-        def action113():
+        with pytest.raises(Exception):
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_NONE
 
-        TryCatchAssertBlock.DoAssert("Setting read-only attribute.", action113)
-
-        def action114():
+        with pytest.raises(Exception):
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_UNKNOWN
-
-        TryCatchAssertBlock.DoAssert("Setting read-only attribute.", action114)
 
         oSGP4.auto_update_enabled = True
         Assert.assertTrue(oSGP4.auto_update_enabled)
@@ -3303,20 +2984,14 @@ class PropagatorSGP4Helper(object):
             oSGP4.auto_update.selected_source, VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_FILE
         )
 
-        def action115():
+        with pytest.raises(Exception):
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_NONE
 
-        TryCatchAssertBlock.DoAssert("Must not allow setting the enumeration.", action115)
-
-        def action116():
+        with pytest.raises(Exception):
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_UNKNOWN
 
-        TryCatchAssertBlock.DoAssert("Must not allow setting the enumeration.", action116)
-
-        def action117():
+        with pytest.raises(Exception):
             oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_ONLINE_SPACE_TRACK
-
-        TryCatchAssertBlock.DoAssert("Auto updates from space track are not currently supported.", action117)
 
         Assert.assertTrue(oSGP4.auto_update_enabled)
         oSGP4.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_FILE
@@ -3376,11 +3051,8 @@ class PropagatorSGP4Helper(object):
         Assert.assertEqual(
             VEHICLE_SGP4TLE_SELECTION.SGP4TLE_SELECTION_USE_FIRST, oSGP4.auto_update.properties.selection
         )
-
-        def action118():
+        with pytest.raises(Exception):
             oSGP4.auto_update.properties.switch_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_EPOCH
-
-        TryCatchAssertBlock.DoAssert("Must not allow changing the SwitchMethod.", action118)
 
         oSGP4.settings.use_sgp4_one_point_interpolation = True
         oSGP4.settings.use_sgp4_one_point_validation = True
@@ -3416,11 +3088,8 @@ class PropagatorSGP4Helper(object):
         oSegment.epoch = 123
         self.m_logger.WriteLine6("\tThe new Epoch is:  {0}", oSegment.epoch)
         Assert.assertEqual(123, oSegment.epoch)
-
-        def action119():
+        with pytest.raises(Exception):
             oSegment.epoch = 123456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action119)
 
         # SSCNum
         self.m_logger.WriteLine5("\tThe current SSCNum is:  {0}", oSegment.ssc_num)
@@ -3431,77 +3100,56 @@ class PropagatorSGP4Helper(object):
         oSegment.rev_number = 321
         self.m_logger.WriteLine3("\tThe new RevNumber is:  {0}", oSegment.rev_number)
         Assert.assertEqual(321, oSegment.rev_number)
-
-        def action120():
+        with pytest.raises(Exception):
             oSegment.rev_number = 1234567890
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action120)
 
         # Inclination
         self.m_logger.WriteLine6("\tThe current Inclination is:  {0}", oSegment.inclination)
         oSegment.inclination = 123
         self.m_logger.WriteLine6("\tThe new Inclination is:  {0}", oSegment.inclination)
         Assert.assertEqual(123, oSegment.inclination)
-
-        def action121():
+        with pytest.raises(Exception):
             oSegment.inclination = 1234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action121)
 
         # ArgOfPerigee
         self.m_logger.WriteLine6("\tThe current ArgOfPerigee is:  {0}", oSegment.arg_of_perigee)
         oSegment.arg_of_perigee = 123
         self.m_logger.WriteLine6("\tThe new ArgOfPerigee is:  {0}", oSegment.arg_of_perigee)
         Assert.assertEqual(123, oSegment.arg_of_perigee)
-
-        def action122():
+        with pytest.raises(Exception):
             oSegment.arg_of_perigee = 1234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action122)
 
         # RAAN
         self.m_logger.WriteLine6("\tThe current RAAN is:  {0}", oSegment.raan)
         oSegment.raan = 123
         self.m_logger.WriteLine6("\tThe new RAAN is:  {0}", oSegment.raan)
         Assert.assertEqual(123, oSegment.raan)
-
-        def action123():
+        with pytest.raises(Exception):
             oSegment.raan = 1234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action123)
 
         # Eccentricity
         self.m_logger.WriteLine6("\tThe current Eccentricity is:  {0}", oSegment.eccentricity)
         oSegment.eccentricity = 0.123
         self.m_logger.WriteLine6("\tThe new Eccentricity is:  {0}", oSegment.eccentricity)
         Assert.assertEqual(0.123, oSegment.eccentricity)
-
-        def action124():
+        with pytest.raises(Exception):
             oSegment.eccentricity = 1.234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action124)
 
         # MeanMotion
         self.m_logger.WriteLine6("\tThe current MeanMotion is:  {0}", oSegment.mean_motion)
         oSegment.mean_motion = 0.0123
         self.m_logger.WriteLine6("\tThe new MeanMotion is:  {0}", oSegment.mean_motion)
         Assert.assertAlmostEqual(0.0123, float(oSegment.mean_motion), delta=1e-05)
-
-        def action125():
+        with pytest.raises(Exception):
             oSegment.mean_motion = 1.234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action125)
 
         # MeanAnomaly
         self.m_logger.WriteLine6("\tThe current MeanAnomaly is:  {0}", oSegment.mean_anomaly)
         oSegment.mean_anomaly = 123
         self.m_logger.WriteLine6("\tThe new MeanAnomaly is:  {0}", oSegment.mean_anomaly)
         Assert.assertEqual(123, oSegment.mean_anomaly)
-
-        def action126():
+        with pytest.raises(Exception):
             oSegment.mean_anomaly = 1234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action126)
 
         # MeanMotionDot
         self.m_logger.WriteLine6("\tThe current MeanMotionDot is:  {0}", oSegment.mean_motion_dot)
@@ -3513,33 +3161,24 @@ class PropagatorSGP4Helper(object):
         oSegment.b_star = 0.321
         self.m_logger.WriteLine6("\tThe new BStar is:  {0}", oSegment.b_star)
         Assert.assertEqual(0.321, oSegment.b_star)
-
-        def action127():
+        with pytest.raises(Exception):
             oSegment.b_star = 1.234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action127)
 
         # Classification
         self.m_logger.WriteLine5("\tThe current Classification is:  {0}", oSegment.classification)
         oSegment.classification = "S"
         self.m_logger.WriteLine5("\tThe new Classification is:  {0}", oSegment.classification)
         Assert.assertEqual("S", oSegment.classification)
-
-        def action128():
+        with pytest.raises(Exception):
             oSegment.classification = "SS"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action128)
 
         # IntlDesignator
         self.m_logger.WriteLine5("\tThe current IntlDesignator is:  {0}", oSegment.intl_designator)
         oSegment.intl_designator = "Test"
         self.m_logger.WriteLine5("\tThe new IntlDesignator is:  {0}", oSegment.intl_designator)
         Assert.assertEqual("Test", oSegment.intl_designator)
-
-        def action129():
+        with pytest.raises(Exception):
             oSegment.intl_designator = "InvalidDesignator"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action129)
 
         # Range
         self.m_logger.WriteLine6("\tThe current Range is:  {0}", oSegment.range)
@@ -3549,31 +3188,22 @@ class PropagatorSGP4Helper(object):
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_DISABLE
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_DISABLE, oSegment.switching_method)
-
-        def action130():
+        with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action130)
 
         # SwitchingMethod (eSGP4Epoch)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_EPOCH
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_EPOCH, oSegment.switching_method)
-
-        def action131():
+        with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action131)
 
         # SwitchingMethod (eSGP4Midpoint)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_MIDPOINT
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_MIDPOINT, oSegment.switching_method)
-
-        def action132():
+        with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action132)
 
         # SwitchingMethod (eSGP4Override)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_OVERRIDE
@@ -3590,11 +3220,8 @@ class PropagatorSGP4Helper(object):
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4TCA
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4TCA, oSegment.switching_method)
-
-        def action133():
+        with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property.", action133)
 
     # endregion
 
@@ -3606,16 +3233,10 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine5("\t\tThe current File is: {0}", oFile.file)
         oFile.file = file
         self.m_logger.WriteLine5("\t\tThe new File is: {0}", oFile.file)
-
-        def action134():
+        with pytest.raises(Exception):
             oFile.file = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action134)
-
-        def action135():
+        with pytest.raises(Exception):
             oFile.file = "InvalidFile.Name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action135)
         # GetSSCNumsFromFile (.tce)
         arSSCNumbers = oFile.get_ssc_nums_from_file()
         self.m_logger.WriteLine3("\t\tThe loaded file contains: {0} SSC Numbers", Array.Length(arSSCNumbers))
@@ -3671,11 +3292,9 @@ class PropagatorSGP4Helper(object):
 
                 iIndex += 1
 
-            def action136():
-                oFile.add_segs_from_file(arSegments)
-
             # AddSegsFromFile (duplicate)
-            TryCatchAssertBlock.DoAssert("Should not allow to load duplicated segments.", action136)
+            with pytest.raises(Exception):
+                oFile.add_segs_from_file(arSegments)
 
     # endregion
 
@@ -3687,18 +3306,12 @@ class PropagatorSGP4Helper(object):
         oLoader.load_newest = True
         self.m_logger.WriteLine4("\t\tThe new LoadNewest is: {0}", oLoader.load_newest)
         Assert.assertEqual(True, oLoader.load_newest)
-
-        def action137():
-            oLoader.start_time = "28 Jun 2000 15:15:16.789"
-
         # StartTime (readonly)
-        TryCatchAssertBlock.DoAssert("The StartTime should be readonly when LoadNewest is True.", action137)
-
-        def action138():
-            oLoader.stop_time = "20 Jul 2000 15:00:00.000"
-
+        with pytest.raises(Exception):
+            oLoader.start_time = "28 Jun 2000 15:15:16.789"
         # StopTime (readonly)
-        TryCatchAssertBlock.DoAssert("The StopTime should be readonly when LoadNewest is True.", action138)
+        with pytest.raises(Exception):
+            oLoader.stop_time = "20 Jul 2000 15:00:00.000"
         # LoadNewest (false)
         oLoader.load_newest = False
         self.m_logger.WriteLine4("\t\tThe new LoadNewest is: {0}", oLoader.load_newest)
@@ -3759,48 +3372,30 @@ class PropagatorSPICEHelper(object):
         oSPICE.step = 58
         self.m_logger.WriteLine6("\tThe new Step is:  {0}", oSPICE.step)
         Assert.assertEqual(58, oSPICE.step)
-
-        def action139():
+        with pytest.raises(Exception):
             oSPICE.step = -1.23
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action139)
         # Spice
         strFilename: str = TestBase.GetScenarioFile("de405_2000-2050.bsp")
         self.m_logger.WriteLine5("\tThe current Spice is:  {0}", oSPICE.spice)
         oSPICE.spice = strFilename
         self.m_logger.WriteLine5("\tThe new Spice is:  {0}", oSPICE.spice)
         Assert.assertEqual("de405_2000-2050.bsp", Path.GetFileName(oSPICE.spice))
-
-        def action140():
+        with pytest.raises(Exception):
             oSPICE.spice = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action140)
-
-        def action141():
+        with pytest.raises(Exception):
             oSPICE.spice = "InvalidFile.Name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action141)
-
-        def action142():
+        with pytest.raises(Exception):  # must first set body name
             oSPICE.propagate()
-
-        TryCatchAssertBlock.DoAssert("A satellite id has not been set.", action142)  # must first set body name
 
         # BodyName
         self.m_logger.WriteLine5("\tThe current BodyName is:  {0}", oSPICE.body_name)
         oSPICE.body_name = "VENUS"
         self.m_logger.WriteLine5("\tThe new BodyName is:  {0}", oSPICE.body_name)
         Assert.assertEqual("VENUS", oSPICE.body_name)
-
-        def action143():
+        with pytest.raises(Exception):
             oSPICE.body_name = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action143)
-
-        def action144():
+        with pytest.raises(Exception):
             oSPICE.body_name = "InvalidBodyName"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action144)
         # AvailableBodyNames
         arNames = oSPICE.available_body_names
         self.m_logger.WriteLine3("\tThe AvailableBodyNames array contains: {0} elements.", Array.Length(arNames))
@@ -3846,15 +3441,10 @@ class PropagatorSPICEHelper(object):
                 oSegment.stop_time,
             )
 
-        def action145():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index is out of range.")):
             oSegment: "IVehicleSPICESegment" = oCollection[-5]
-
-        TryCatchAssertBlock.ExpectedException("Index is out of range.", action145)
-
-        def action146():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index is out of range.")):
             oSegment: "IVehicleSPICESegment" = oCollection[500]
-
-        TryCatchAssertBlock.ExpectedException("Index is out of range.", action146)
 
         # Propagate
         oSPICE.propagate()
@@ -3912,16 +3502,10 @@ class PropagatorUserExternalHelper(object):
         oUser.file = strFilename
         self.m_logger.WriteLine5("\tThe new File is:  {0}", oUser.file)
         Assert.assertEqual("stkAllTLE.tle", oUser.file)
-
-        def action147():
+        with pytest.raises(Exception):
             oUser.file = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action147)
-
-        def action148():
+        with pytest.raises(Exception):
             oUser.file = "InvalidFile.Name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action148)
         # AvailablePropagators
         arPropagators = oUser.available_propagators
         self.m_logger.WriteLine("\tAvailable {0} propagators:")
@@ -3939,15 +3523,10 @@ class PropagatorUserExternalHelper(object):
             self.m_logger.WriteLine5("\tThe new Propagator is:  {0}", oUser.propagator)
             Assert.assertEqual(str(arPropagators[0]), oUser.propagator)
 
-        def action149():
+        with pytest.raises(Exception):
             oUser.propagator = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action149)
-
-        def action150():
+        with pytest.raises(Exception):
             oUser.propagator = "InvalidName"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action150)
 
         # AvailableVehicleIDs
         arIDs = oUser.available_vehicle_ids
@@ -3965,35 +3544,21 @@ class PropagatorUserExternalHelper(object):
             oUser.vehicle_id = str(arIDs[0])
             self.m_logger.WriteLine5("\tThe new VehicleID is:  {0}", oUser.vehicle_id)
             Assert.assertEqual(str(arIDs[0]), oUser.vehicle_id)
-
-            def action151():
+            with pytest.raises(Exception):
                 oUser.vehicle_id = ""
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action151)
-
-            def action152():
+            with pytest.raises(Exception):
                 oUser.vehicle_id = "InvalidName"
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action152)
-
-        def action153():
+        with pytest.raises(Exception):
             oUser.vehicle_id = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action153)
-
-        def action154():
+        with pytest.raises(Exception):
             oUser.vehicle_id = "InvalidName"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action154)
 
         # Description
         self.m_logger.WriteLine5("\tThe current Description is:  {0}", oUser.description)
         if (oUser.propagator == None) or (len(oUser.propagator) == 0):
-
-            def action155():
+            with pytest.raises(Exception):
                 oUser.propagate()
-
-            TryCatchAssertBlock.DoAssert("UserExternal propagator must have failed.", action155)
 
         else:
             self.m_logger.WriteLine5("EXTERNAL PROPAGATOR: {0}", oUser.propagator)
@@ -4044,11 +3609,8 @@ class PropagatorHPOPHelper(object):
         oHPOP.step = 12
         self.m_logger.WriteLine6("\tThe new Step is:  {0}", oHPOP.step)
         Assert.assertEqual(12, oHPOP.step)
-
-        def action156():
+        with pytest.raises(Exception):
             oHPOP.step = 1234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action156)
         # InitialState
         self.InitialState(oHPOP.initial_state)
         # ForceModel
@@ -4067,11 +3629,8 @@ class PropagatorHPOPHelper(object):
         Assert.assertTrue(bodies.is_eclipsing_body_assigned("Earth"))
         bodies.assign_eclipsing_body("Ceres")
         Assert.assertTrue(bodies.is_eclipsing_body_assigned("Ceres"))
-
-        def action157():
+        with pytest.raises(Exception):
             bodies.assign_eclipsing_body("Sun")
-
-        TryCatchAssertBlock.DoAssert("Can not add sun as an eclipsing body.", action157)
         bodies.remove_eclipsing_body("Ceres")
         Assert.assertFalse(bodies.is_eclipsing_body_assigned("Ceres"))
         bodies.remove_all_eclipsing_bodies()
@@ -4134,21 +3693,12 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(70, oGravity.max_degree)
         oGravity.max_degree = 21
         Assert.assertEqual(holdMaxOrder, oGravity.max_order)  # does not change
-
-        def action158():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oGravity.max_degree = 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action158)
-
-        def action159():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oGravity.max_degree = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action159)
-
-        def action160():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oGravity.max_degree = 71
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action160)
 
         # MaxOrder (default 21, range 0-70, must be <= MaxOrder, will be changed if needed when MaxDegree changes.)
         oGravity.max_order = 15
@@ -4157,16 +3707,10 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(0, oGravity.max_order)
         oGravity.max_order = 21
         Assert.assertEqual(21, oGravity.max_degree)
-
-        def action161():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oGravity.max_order = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action161)
-
-        def action162():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oGravity.max_order = 71
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action162)
 
         # SetMaximumDegreeAndOrder
         oGravity.set_maximum_degree_and_order(50, 45)
@@ -4181,21 +3725,12 @@ class PropagatorHPOPHelper(object):
         oGravity.set_maximum_degree_and_order(holdMaxDegree, holdMaxOrder)  # restore to original
         Assert.assertEqual(holdMaxDegree, oGravity.max_degree)
         Assert.assertEqual(holdMaxOrder, oGravity.max_order)
-
-        def action163():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be greater or equal")):
             oGravity.set_maximum_degree_and_order(45, 50)
-
-        TryCatchAssertBlock.ExpectedException("must be greater or equal", action163)
-
-        def action164():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid values")):
             oGravity.set_maximum_degree_and_order(71, 0)
-
-        TryCatchAssertBlock.ExpectedException("Invalid values", action164)
-
-        def action165():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid values")):
             oGravity.set_maximum_degree_and_order(70, -1)
-
-        TryCatchAssertBlock.ExpectedException("Invalid values", action165)
 
         # UseOceanTides
         # See: 47217 UseOceanTides is grayed out in GUI but writtable via the Object Model
@@ -4218,16 +3753,10 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual("WGS84_EGM96.grv", oGravity.file)
         oGravity.file = r"STKData\CentralBodies\Earth\EGM2008.grv"
         Assert.assertEqual(TestBase.PathCombine("STKData", "CentralBodies", "Earth", "EGM2008.grv"), oGravity.file)
-
-        def action166():
+        with pytest.raises(Exception, match=RegexSubstringMatch("file does not exist")):
             oGravity.file = ""
-
-        TryCatchAssertBlock.ExpectedException("file does not exist", action166)
-
-        def action167():
+        with pytest.raises(Exception, match=RegexSubstringMatch("file does not exist")):
             oGravity.file = "InvalidFile.Name"
-
-        TryCatchAssertBlock.ExpectedException("file does not exist", action167)
 
         # UseSecularVariations
         # Note: oGravity.File must be set to "EGM2008.grv" so that the property below is visible in GUI (on More Options panel).
@@ -4246,18 +3775,12 @@ class PropagatorHPOPHelper(object):
         oPressure.use = False
         self.m_logger.WriteLine4("\tThe new Use is: {0}", oPressure.use)
         Assert.assertEqual(False, oPressure.use)
-
-        def action168():
-            oPressure.use_boundary_mitigation = False
-
         # UseBoundaryMitigation (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action168)
-
-        def action169():
-            oPressure.shadow_model = SHADOW_MODEL.MOD_CYLINDRICAL
-
+        with pytest.raises(Exception):
+            oPressure.use_boundary_mitigation = False
         # ShadowModel (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action169)
+        with pytest.raises(Exception):
+            oPressure.shadow_model = SHADOW_MODEL.MOD_CYLINDRICAL
         # Use (true)
         oPressure.use = True
         self.m_logger.WriteLine4("\tThe new Use is: {0}", oPressure.use)
@@ -4311,25 +3834,14 @@ class PropagatorHPOPHelper(object):
                 Assert.assertEqual(99, oSphericalSRP.cr)
                 type1: "SRP_MODEL" = oSphericalSRP.type
 
-                def action170():
+                with pytest.raises(Exception):
                     oSphericalSRP.cr = -101
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action170)
-
-                def action171():
+                with pytest.raises(Exception):
                     oSphericalSRP.cr = 101
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action171)
-
-                def action172():
+                with pytest.raises(Exception):
                     oSphericalSRP.area_mass_ratio = 10000
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action172)
-
-                def action173():
+                with pytest.raises(Exception):
                     oSphericalSRP.area_mass_ratio = -10000
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action173)
             elif (
                 (
                     (
@@ -4352,34 +3864,20 @@ class PropagatorHPOPHelper(object):
                 Assert.assertEqual(1000000000000000000000000000000.0, oGPSSRP.y_bias)
                 type2: "SRP_MODEL" = oGPSSRP.type
 
-                def action174():
+                with pytest.raises(Exception):
                     oGPSSRP.scale = -101
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action174)
-
-                def action175():
+                with pytest.raises(Exception):
                     oGPSSRP.scale = 101
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action175)
-
-                def action176():
+                with pytest.raises(Exception):
                     oGPSSRP.y_bias = -1
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action176)
-
-                def action177():
+                with pytest.raises(Exception):
                     oGPSSRP.y_bias = 10000000000000000000000000000000.0
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action177)
 
             i += 1
 
         oSrpModel.set_model_type(SRP_MODEL.SPHERICAL)
-
-        def action178():
+        with pytest.raises(Exception):
             oSrpModel.set_model_type(SRP_MODEL.UNKNOWN)
-
-        TryCatchAssertBlock.DoAssert("Should not have allowed setting invalid SRP model.", action178)
         self.m_logger.WriteLine("***************** END OF SRP MODELS ***********")
 
     # endregion
@@ -4392,44 +3890,26 @@ class PropagatorHPOPHelper(object):
         oDrag.use = False
         self.m_logger.WriteLine4("\tThe new Use is: {0}", oDrag.use)
         Assert.assertEqual(False, oDrag.use)
-
-        def action179():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 5.6
-
         # Cd (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action179)
-
-        def action180():
-            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = 12.34
-
+        with pytest.raises(Exception):
+            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 5.6
         # AreaMassRatio (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action180)
-
-        def action181():
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
-
+        with pytest.raises(Exception):
+            (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = 12.34
         # AtmosphericDensityModel (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action181)
-
-        def action182():
+        with pytest.raises(Exception):
+            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
+        # SetSolarFluxGeoMagType (readonly)
+        with pytest.raises(Exception):
             oDrag.set_solar_flux_geo_magnitude_type(
                 VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
             )
-
-        # SetSolarFluxGeoMagType (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action182)
-
-        def action183():
-            oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
-
         # LowAltAtmosphericDensityModel
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action183)
-
-        def action184():
-            oDrag.blending_range = 20
-
+        with pytest.raises(Exception):
+            oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
         # BlendingRange
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action184)
+        with pytest.raises(Exception):
+            oDrag.blending_range = 20
         if (
             oDrag.solar_flux_geo_magnitude_type
             == VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
@@ -4450,16 +3930,10 @@ class PropagatorHPOPHelper(object):
             "\tThe new Cd is: {0}", (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd
         )
         Assert.assertEqual(-1.24, (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd)
-
-        def action185():
+        with pytest.raises(Exception):
             (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 120.34
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action185)
-
-        def action186():
+        with pytest.raises(Exception):
             (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 120.34
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action186)
 
         # AreaMassRatio
         self.m_logger.WriteLine6(
@@ -4479,39 +3953,24 @@ class PropagatorHPOPHelper(object):
             (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio,
         )
         Assert.assertEqual(124, (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio)
-
-        def action187():
+        with pytest.raises(Exception):
             (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action187)
-
-        def action188():
+        with pytest.raises(Exception):
             (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action188)
 
         oDrag.set_drag_model_type(DRAG_MODEL.PLUGIN)
         Assert.assertEqual(DRAG_MODEL.PLUGIN, oDrag.drag_model_type)
 
         self.m_logger.WriteLine6("\tThe current AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-
-        def action189():
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
-
         # AtmosphericDensityModel (eExponentialModel)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action189)
-
-        def action190():
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.USER_DEFINED
-
+        with pytest.raises(Exception):
+            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
         # AtmosphericDensityModel (eUserDefined)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action190)
-
-        def action191():
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL
-
+        with pytest.raises(Exception):
+            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.USER_DEFINED
         # AtmosphericDensityModel (eUnknownDensModel)
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action191)
+        with pytest.raises(Exception):
+            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL
 
         # AtmosphericDensityModel (eCira72)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.CIRA72
@@ -4571,14 +4030,11 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA60, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-
-        def action192():
+        # SetSolarFluxGeoMagType (readonly)
+        with pytest.raises(Exception):
             oDrag.set_solar_flux_geo_magnitude_type(
                 VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
             )
-
-        # SetSolarFluxGeoMagType (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action192)
         if (
             oDrag.solar_flux_geo_magnitude_type
             == VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
@@ -4773,14 +4229,11 @@ class PropagatorHPOPHelper(object):
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976, oDrag.atmospheric_density_model)
-
-        def action193():
+        # SetSolarFluxGeoMagType (readonly)
+        with pytest.raises(Exception):
             oDrag.set_solar_flux_geo_magnitude_type(
                 VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
             )
-
-        # SetSolarFluxGeoMagType (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action193)
         if (
             oDrag.solar_flux_geo_magnitude_type
             == VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE.SOLAR_FLUX_GEO_MAGNITUDE_ENTER_MANUALLY
@@ -4795,11 +4248,8 @@ class PropagatorHPOPHelper(object):
         self.m_logger.WriteLine6(
             "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
         )
-
-        def action194():
+        with pytest.raises(Exception):
             oDrag.blending_range = 50.0
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an read-only.", action194)
 
         # LowAltAtmosphericDensityModel (eMSIS90)
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
@@ -4831,11 +4281,8 @@ class PropagatorHPOPHelper(object):
             LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_NONE, oDrag.low_altitude_atmos_density_model
         )
         self.m_logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
-
-        def action195():
+        with pytest.raises(Exception):
             oDrag.blending_range = 50.0
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an read-only.", action195)
 
         # LowAltAtmosDensityModel (eMSIS90)
         oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_MSISE1990
@@ -4868,22 +4315,16 @@ class PropagatorHPOPHelper(object):
         # Try to set to equivalent of "None"
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL, oDrag.low_altitude_atmospheric_density_model)
-
-        def action196():
-            oDrag.blending_range = 30
-
         # If None above, then shouldn't be able to set the Blending Range
-        TryCatchAssertBlock.ExpectedException("read only", action196)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oDrag.blending_range = 30
 
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS00, oDrag.low_altitude_atmospheric_density_model)
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS90, oDrag.low_altitude_atmospheric_density_model)
-
-        def action197():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.CIRA72
-
-        TryCatchAssertBlock.ExpectedException("must be in", action197)
 
         # BlendingRange
         oDrag.blending_range = 30
@@ -4918,34 +4359,21 @@ class PropagatorHPOPHelper(object):
                 oSphericalDrag.cd = 99
                 Assert.assertEqual(99, oSphericalDrag.cd)
 
-                def action198():
+                with pytest.raises(Exception):
                     oSphericalDrag.cd = -101
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action198)
-
-                def action199():
+                with pytest.raises(Exception):
                     oSphericalDrag.cd = 101
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action199)
-
-                def action200():
+                with pytest.raises(Exception):
                     oSphericalDrag.area_mass_ratio = 10000
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action200)
-
-                def action201():
+                with pytest.raises(Exception):
                     oSphericalDrag.area_mass_ratio = -1
-
-                TryCatchAssertBlock.DoAssert("Should have thrown 'Out of range' exception.", action201)
 
             i += 1
 
         oDrag.set_drag_model_type(DRAG_MODEL.SPHERICAL)
 
-        def action202():
+        with pytest.raises(Exception):
             oDrag.set_drag_model_type(DRAG_MODEL.UNKNOWN)
-
-        TryCatchAssertBlock.DoAssert("Should not have allowed setting invalid Drag model.", action202)
         self.m_logger.WriteLine("***************** END OF Drag MODELS ***********")
 
     # endregion
@@ -4962,24 +4390,15 @@ class PropagatorHPOPHelper(object):
         if (bReadOnly or (eModel == ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976)) or (
             eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA60
         ):
-
-            def action203():
-                oManually.daily_f107 = 123.4
-
             # DailyF107
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action203)
-
-            def action204():
-                oManually.average_f107 = 123.4
-
+            with pytest.raises(Exception):
+                oManually.daily_f107 = 123.4
             # AverageF107
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action204)
-
-            def action205():
-                oManually.geomagnetic_index = 1.234
-
+            with pytest.raises(Exception):
+                oManually.average_f107 = 123.4
             # GeomagneticIndex
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action205)
+            with pytest.raises(Exception):
+                oManually.geomagnetic_index = 1.234
 
         else:
             # AverageF107
@@ -4987,24 +4406,15 @@ class PropagatorHPOPHelper(object):
             oManually.average_f107 = 123.4
             self.m_logger.WriteLine6("\t\tThe new AverageF107 is: {0}", oManually.average_f107)
             Assert.assertEqual(123.4, oManually.average_f107)
-
-            def action206():
+            with pytest.raises(Exception):
                 oManually.average_f107 = 12345.6
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action206)
             if eModel == ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER:
-
-                def action207():
-                    oManually.daily_f107 = 123.4
-
                 # DailyF107
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action207)
-
-                def action208():
-                    oManually.geomagnetic_index = 1.234
-
+                with pytest.raises(Exception):
+                    oManually.daily_f107 = 123.4
                 # GeomagneticIndex
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action208)
+                with pytest.raises(Exception):
+                    oManually.geomagnetic_index = 1.234
             elif (
                 (
                     (
@@ -5029,21 +4439,15 @@ class PropagatorHPOPHelper(object):
                 oManually.daily_f107 = 123.4
                 self.m_logger.WriteLine6("\t\tThe new DailyF107 is: {0}", oManually.daily_f107)
                 Assert.assertEqual(123.4, oManually.daily_f107)
-
-                def action209():
+                with pytest.raises(Exception):
                     oManually.daily_f107 = 12345.6
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action209)
                 # GeomagneticIndex
                 self.m_logger.WriteLine6("\t\tThe current GeomagneticIndex is: {0}", oManually.geomagnetic_index)
                 oManually.geomagnetic_index = 3.4
                 self.m_logger.WriteLine6("\t\tThe new GeomagneticIndex is: {0}", oManually.geomagnetic_index)
                 Assert.assertEqual(3.4, oManually.geomagnetic_index)
-
-                def action210():
+                with pytest.raises(Exception):
                     oManually.geomagnetic_index = 12.34
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action210)
             else:
                 Assert.fail("Invalid AtmosphericDensityModel type!")
 
@@ -5059,24 +4463,15 @@ class PropagatorHPOPHelper(object):
         if (bReadOnly or (eModel == ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976)) or (
             eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA60
         ):
-
-            def action211():
-                oFile.file = r"DynamicEarthData\EOP-v1.1.txt"
-
             # File
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action211)
-
-            def action212():
-                oFile.geomag_flux_src = VEHICLE_GEOMAG_FLUX_SRC.READ_AP_FROM_FILE
-
+            with pytest.raises(Exception):
+                oFile.file = r"DynamicEarthData\EOP-v1.1.txt"
             # GeomagFluxSrc
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action212)
-
-            def action213():
-                oFile.geomag_flux_update_rate = VEHICLE_GEOMAG_FLUX_UPDATE_RATE.DAILY
-
+            with pytest.raises(Exception):
+                oFile.geomag_flux_src = VEHICLE_GEOMAG_FLUX_SRC.READ_AP_FROM_FILE
             # GeomagFluxUpdateRate
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action213)
+            with pytest.raises(Exception):
+                oFile.geomag_flux_update_rate = VEHICLE_GEOMAG_FLUX_UPDATE_RATE.DAILY
 
         else:
             # GeomagFluxSrc
@@ -5122,16 +4517,10 @@ class PropagatorHPOPHelper(object):
                 # BUG86710 oFile.File = @"BogusDir\EOP-v1.1.txt";  // This succeeds, but it should fail
 
                 Assert.assertEqual("EOP-v1.1.txt", oFile.file)
-
-                def action214():
+                with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                     oFile.file = ""
-
-                TryCatchAssertBlock.ExpectedException("does not exist", action214)
-
-                def action215():
+                with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                     oFile.file = "InvalidFile.Name"
-
-                TryCatchAssertBlock.ExpectedException("does not exist", action215)
             else:
                 Assert.fail("Invalid AtmosphericDensityModel type!")
 
@@ -5177,11 +4566,8 @@ class PropagatorHPOPHelper(object):
             gravValue: float = thirdBodyGravityElement.gravity_value
             thirdBodyGravityElement.source = THIRD_BODY_GRAV_SOURCE_TYPE.HPOP_HISTORICAL
             Assert.assertFalse((gravValue == thirdBodyGravityElement.gravity_value))
-
-            def action216():
+            with pytest.raises(Exception):
                 oGravity.add_third_body(centralBody)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action216)
 
             iIndex += 1
 
@@ -5202,11 +4588,8 @@ class PropagatorHPOPHelper(object):
             gravValue: float = thirdBodyGravityElement.gravity_value
             thirdBodyGravityElement.source = THIRD_BODY_GRAV_SOURCE_TYPE.HPOP_HISTORICAL
             Assert.assertFalse((gravValue == thirdBodyGravityElement.gravity_value))
-
-            def action217():
+            with pytest.raises(Exception):
                 oGravity.add_third_body(centralBody)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action217)
 
         self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
         Assert.assertEqual(Array.Length(arBodies), oGravity.count)
@@ -5215,11 +4598,8 @@ class PropagatorHPOPHelper(object):
         Assert.assertIsNotNone(oBody)
         # Source (eCBFile)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.CB_FILE
-
-        def action218():
+        with pytest.raises(Exception):
             oBody.gravity_value = 123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action218)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5228,11 +4608,8 @@ class PropagatorHPOPHelper(object):
         )
         # Source (eHPOPHistorical)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.HPOP_HISTORICAL
-
-        def action219():
+        with pytest.raises(Exception):
             oBody.gravity_value = 123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action219)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5241,11 +4618,8 @@ class PropagatorHPOPHelper(object):
         )
         # Source (eJPLDE)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.JPLDE
-
-        def action220():
+        with pytest.raises(Exception):
             oBody.gravity_value = 123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action220)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5256,11 +4630,8 @@ class PropagatorHPOPHelper(object):
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.USER_SPECIFIED
         oBody.gravity_value = 123.456
         Assert.assertEqual(123.456, oBody.gravity_value)
-
-        def action221():
+        with pytest.raises(Exception):
             oBody.gravity_value = -123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action221)
         self.m_logger.WriteLine8(
             "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
             oBody.central_body,
@@ -5277,11 +4648,8 @@ class PropagatorHPOPHelper(object):
         oGravity.remove_third_body(centralBody1)
         self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
         Assert.assertEqual((Array.Length(arBodies) - 2), oGravity.count)
-
-        def action222():
+        with pytest.raises(Exception):
             oGravity.remove_third_body(centralBody1)
-
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action222)
         # Remove by name
         oGravity.remove_third_body(oGravity[1].central_body)
         self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
@@ -5320,28 +4688,19 @@ class PropagatorHPOPHelper(object):
         oPlugin.use_plugin = False
         self.m_logger.WriteLine4("\tThe new UsePlugin is: {0}", oPlugin.use_plugin)
         Assert.assertFalse(oPlugin.use_plugin)
-
-        def action223():
-            oPlugin.plugin_name = "bogus name"
-
         # PluginName (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action223)
+        with pytest.raises(Exception):
+            oPlugin.plugin_name = "bogus name"
         # UsePlugin (true)
         oPlugin.use_plugin = True
         self.m_logger.WriteLine4("\tThe new UsePlugin is: {0}", oPlugin.use_plugin)
         Assert.assertTrue(oPlugin.use_plugin)
         # PluginName
         self.m_logger.WriteLine5("\tThe current PluginName is: {0}", oPlugin.plugin_name)
-
-        def action224():
+        with pytest.raises(Exception):
             oPlugin.plugin_name = "bogus name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action224)
-
-        def action225():
+        with pytest.raises(Exception):
             oPlugin.plugin_name = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action225)
         # AvailablePlugins
         arPlugins = oPlugin.available_plugins
         self.m_logger.WriteLine3("\tNow available {0} plugins:", Array.Length(arPlugins))
@@ -5431,11 +4790,8 @@ class PropagatorHPOPHelper(object):
             "\tThe new AtmosAltOfEarthShapeForEclipse is: {0}", oOptions.atmos_altitude_of_earth_shape_for_eclipse
         )
         Assert.assertEqual(12.34, oOptions.atmos_altitude_of_earth_shape_for_eclipse)
-
-        def action226():
+        with pytest.raises(Exception):
             oOptions.atmos_altitude_of_earth_shape_for_eclipse = -1234.5
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action226)
 
     # endregion
 
@@ -5455,11 +4811,8 @@ class PropagatorHPOPHelper(object):
         oOptions.satellite_mass = 123.456
         self.m_logger.WriteLine6("\tThe new SatelliteMass is: {0}", oOptions.satellite_mass)
         Assert.assertEqual(123.456, oOptions.satellite_mass)
-
-        def action227():
+        with pytest.raises(Exception):
             oOptions.satellite_mass = -123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action227)
 
     # endregion
 
@@ -5471,12 +4824,9 @@ class PropagatorHPOPHelper(object):
         oOptions.inc_time_dep_solid_tides = False
         self.m_logger.WriteLine4("\tThe new IncTimeDepSolidTides is: {0}", oOptions.inc_time_dep_solid_tides)
         Assert.assertEqual(False, oOptions.inc_time_dep_solid_tides)
-
-        def action228():
-            oOptions.min_amplitude = 0.123
-
         # MinAmplitude (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action228)
+        with pytest.raises(Exception):
+            oOptions.min_amplitude = 0.123
         # IncTimeDepSolidTides (true)
         oOptions.inc_time_dep_solid_tides = True
         self.m_logger.WriteLine4("\tThe new IncTimeDepSolidTides is: {0}", oOptions.inc_time_dep_solid_tides)
@@ -5486,11 +4836,8 @@ class PropagatorHPOPHelper(object):
         oOptions.min_amplitude = 0.123
         self.m_logger.WriteLine6("\tThe new MinAmplitude is: {0}", oOptions.min_amplitude)
         Assert.assertEqual(0.123, oOptions.min_amplitude)
-
-        def action229():
+        with pytest.raises(Exception):
             oOptions.min_amplitude = -123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action229)
         # TruncateSolidTides
         oOptions.truncate_solid_tides = False
         self.m_logger.WriteLine4("\tThe new TruncateSolidTides is: {0}", oOptions.truncate_solid_tides)
@@ -5509,31 +4856,22 @@ class PropagatorHPOPHelper(object):
         oOptions.max_degree = 23
         self.m_logger.WriteLine3("\tThe new MaxDegree is: {0}", oOptions.max_degree)
         Assert.assertEqual(23, oOptions.max_degree)
-
-        def action230():
+        with pytest.raises(Exception):
             oOptions.max_degree = -1
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action230)
         # MaxOrder
         self.m_logger.WriteLine3("\tThe current MaxOrder is: {0}", oOptions.max_order)
         oOptions.max_order = 12
         self.m_logger.WriteLine3("\tThe new MaxOrder is: {0}", oOptions.max_order)
         Assert.assertEqual(12, oOptions.max_order)
-
-        def action231():
+        with pytest.raises(Exception):
             oOptions.max_order = 26
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action231)
         # MinAmplitude
         self.m_logger.WriteLine6("\tThe current MinAmplitude is: {0}", oOptions.min_amplitude)
         oOptions.min_amplitude = 0.123
         self.m_logger.WriteLine6("\tThe new MinAmplitude is: {0}", oOptions.min_amplitude)
         Assert.assertEqual(0.123, oOptions.min_amplitude)
-
-        def action232():
+        with pytest.raises(Exception):
             oOptions.min_amplitude = -123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action232)
 
     # endregion
 
@@ -5550,24 +4888,15 @@ class PropagatorHPOPHelper(object):
         oOptions.include_thermal = False
         self.m_logger.WriteLine4("\tThe new IncludeThermal is: {0}", oOptions.include_thermal)
         Assert.assertEqual(False, oOptions.include_thermal)
-
-        def action233():
-            oOptions.ck = 12.34
-
         # Ck
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action233)
-
-        def action234():
-            oOptions.area_mass_ratio = 12.34
-
+        with pytest.raises(Exception):
+            oOptions.ck = 12.34
         # AreaMassRatio
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action234)
-
-        def action235():
-            oOptions.file = "JGM3.grv"
-
+        with pytest.raises(Exception):
+            oOptions.area_mass_ratio = 12.34
         # File
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action235)
+        with pytest.raises(Exception):
+            oOptions.file = "JGM3.grv"
         # IncludeAlbedo (true)
         oOptions.include_albedo = True
         self.m_logger.WriteLine4("\tThe new IncludeAlbedo is: {0}", oOptions.include_albedo)
@@ -5581,36 +4910,24 @@ class PropagatorHPOPHelper(object):
         oOptions.ck = 23
         self.m_logger.WriteLine6("\tThe new Ck is: {0}", oOptions.ck)
         Assert.assertEqual(23, oOptions.ck)
-
-        def action236():
+        with pytest.raises(Exception):
             oOptions.ck = -1234
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action236)
         # AreaMassRatio
         self.m_logger.WriteLine6("\tThe current AreaMassRatio is: {0}", oOptions.area_mass_ratio)
         oOptions.area_mass_ratio = 12
         self.m_logger.WriteLine6("\tThe new AreaMassRatio is: {0}", oOptions.area_mass_ratio)
         Assert.assertEqual(12, oOptions.area_mass_ratio)
-
-        def action237():
+        with pytest.raises(Exception):
             oOptions.area_mass_ratio = -26
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action237)
         # File
         self.m_logger.WriteLine5("\tThe current File is: {0}", oOptions.file)
         oOptions.file = r"STKData\CentralBodies\Earth\JGM3.grv"
         self.m_logger.WriteLine5("\tThe new File is: {0}", oOptions.file)
         Assert.assertEqual(TestBase.PathCombine("STKData", "CentralBodies", "Earth", "JGM3.grv"), oOptions.file)
-
-        def action238():
+        with pytest.raises(Exception):
             oOptions.file = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action238)
-
-        def action239():
+        with pytest.raises(Exception):
             oOptions.file = "InvalidFile.Name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action239)
 
     # endregion
 
@@ -5626,11 +4943,8 @@ class PropagatorHPOPHelper(object):
             "\tThe new DoNotPropagateBelowAlt is: {0}", oIntegrator.do_not_propagate_below_altitude
         )
         Assert.assertEqual(123.45, oIntegrator.do_not_propagate_below_altitude)
-
-        def action240():
+        with pytest.raises(Exception):
             oIntegrator.do_not_propagate_below_altitude = 12345.6
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action240)
         # TimeRegularization
         oTime: "IVehicleTimeRegularization" = oIntegrator.time_regularization
         Assert.assertIsNotNone(oTime)
@@ -5639,18 +4953,12 @@ class PropagatorHPOPHelper(object):
         oTime.use = False
         self.m_logger.WriteLine4("\tThe new Use is: {0}", oTime.use)
         Assert.assertEqual(False, oTime.use)
-
-        def action241():
-            oTime.exponent = 2.34
-
         # Exponent
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action241)
-
-        def action242():
-            oTime.steps_per_orbit = 1234
-
+        with pytest.raises(Exception):
+            oTime.exponent = 2.34
         # StepsPerOrbit
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action242)
+        with pytest.raises(Exception):
+            oTime.steps_per_orbit = 1234
         # ReportEphemOnFixedTimeStep
         self.m_logger.WriteLine4(
             "\tThe current ReportEphemOnFixedTimeStep is: {0}", oIntegrator.report_ephem_on_fixed_time_step
@@ -5669,32 +4977,23 @@ class PropagatorHPOPHelper(object):
         oTime.use = True
         self.m_logger.WriteLine4("\tThe new Use is: {0}", oTime.use)
         Assert.assertEqual(True, oTime.use)
-
-        def action243():
-            oIntegrator.report_ephem_on_fixed_time_step = False
-
         # ReportEphemOnFixedTimeStep
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action243)
+        with pytest.raises(Exception):
+            oIntegrator.report_ephem_on_fixed_time_step = False
         # Exponent
         self.m_logger.WriteLine6("\tThe current Exponent is: {0}", oTime.exponent)
         oTime.exponent = 4.5
         self.m_logger.WriteLine6("\tThe new Exponent is: {0}", oTime.exponent)
         Assert.assertEqual(4.5, oTime.exponent)
-
-        def action244():
+        with pytest.raises(Exception):
             oTime.exponent = 12.34
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action244)
         # StepsPerOrbit
         self.m_logger.WriteLine3("\tThe current StepsPerOrbit is: {0}", oTime.steps_per_orbit)
         oTime.steps_per_orbit = 9
         self.m_logger.WriteLine3("\tThe new StepsPerOrbit is: {0}", oTime.steps_per_orbit)
         Assert.assertEqual(9, oTime.steps_per_orbit)
-
-        def action245():
+        with pytest.raises(Exception):
             oTime.steps_per_orbit = -12
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action245)
         # UseVOP (false)
         self.m_logger.WriteLine4("\tThe current UseVOP is: {0}", oIntegrator.use_graphics_3d_p)
         oIntegrator.use_graphics_3d_p = False
@@ -5714,12 +5013,9 @@ class PropagatorHPOPHelper(object):
         oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.BULIRSCH_STOER
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
         Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.BULIRSCH_STOER, oIntegrator.integration_model)
-
-        def action246():
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
-
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action246)
+        with pytest.raises(Exception):
+            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
@@ -5744,12 +5040,9 @@ class PropagatorHPOPHelper(object):
         oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA4
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
         Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA4, oIntegrator.integration_model)
-
-        def action247():
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
-
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action247)
+        with pytest.raises(Exception):
+            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, True)
 
@@ -5757,12 +5050,9 @@ class PropagatorHPOPHelper(object):
         oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_F78
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
         Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_F78, oIntegrator.integration_model)
-
-        def action248():
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
-
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action248)
+        with pytest.raises(Exception):
+            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
@@ -5770,22 +5060,16 @@ class PropagatorHPOPHelper(object):
         oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_V89_EFFICIENT
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
         Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_V89_EFFICIENT, oIntegrator.integration_model)
-
-        def action249():
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
-
         # PredictorCorrectorScheme (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action249)
+        with pytest.raises(Exception):
+            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDO_CORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
         # AllowPosVelCovInterpolation
         oCovariance.compute_covariance = False
-
-        def action250():
+        with pytest.raises(Exception):
             oIntegrator.allow_position_vel_cov_interpolation = True
-
-        TryCatchAssertBlock.DoAssert("readonly", action250)
         oCovariance.compute_covariance = True
         oIntegrator.allow_position_vel_cov_interpolation = False
         Assert.assertFalse(oIntegrator.allow_position_vel_cov_interpolation)
@@ -5799,44 +5083,29 @@ class PropagatorHPOPHelper(object):
         Assert.assertIsNotNone(oInterpolation)
         self.m_logger.WriteLine6("\tThe current Method is: {0}", oInterpolation.method)
         if bUseVOP:
-
-            def action251():
-                oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
-
             # Method
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action251)
+            with pytest.raises(Exception):
+                oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
 
         else:
             # Test Hermitian/Lagrange interpolation orders
             # When Hermitian, the order's lower bound is 3 and the upper bound is 29
             # For Lagrange, the lower bound is 0 and the upper bound is 29.
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
-
-            def action252():
+            with pytest.raises(Exception):
                 oInterpolation.order = 2
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action252)
-
-            def action253():
+            with pytest.raises(Exception):
                 oInterpolation.order = 30
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action253)
             oInterpolation.order = 3
             Assert.assertEqual(3, oInterpolation.order)
             oInterpolation.order = 29
             Assert.assertEqual(29, oInterpolation.order)
 
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.LAGRANGE
-
-            def action254():
+            with pytest.raises(Exception):
                 oInterpolation.order = -1
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action254)
-
-            def action255():
+            with pytest.raises(Exception):
                 oInterpolation.order = 30
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action255)
             oInterpolation.order = 0
             Assert.assertEqual(0, oInterpolation.order)
             oInterpolation.order = 29
@@ -5851,17 +5120,11 @@ class PropagatorHPOPHelper(object):
             oInterpolation.order = 12
             self.m_logger.WriteLine3("\t\tThe new Order is: {0}", oInterpolation.order)
             Assert.assertEqual(12, oInterpolation.order)
-
-            def action256():
+            with pytest.raises(Exception):
                 oInterpolation.order = 321
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action256)
-
-            def action257():
-                oInterpolation.graphics_3d_pmu = 12.34
-
             # VOPmu
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action257)
+            with pytest.raises(Exception):
+                oInterpolation.graphics_3d_pmu = 12.34
             # Method (eLagrange)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.LAGRANGE
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
@@ -5871,17 +5134,11 @@ class PropagatorHPOPHelper(object):
             oInterpolation.order = 13
             self.m_logger.WriteLine3("\t\tThe new Order is: {0}", oInterpolation.order)
             Assert.assertEqual(13, oInterpolation.order)
-
-            def action258():
+            with pytest.raises(Exception):
                 oInterpolation.order = 321
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action258)
-
-            def action259():
-                oInterpolation.graphics_3d_pmu = 12.34
-
             # VOPmu
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action259)
+            with pytest.raises(Exception):
+                oInterpolation.graphics_3d_pmu = 12.34
             # Method (eVOP)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.GRAPHICS_3D_P
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
@@ -5892,11 +5149,8 @@ class PropagatorHPOPHelper(object):
         oInterpolation.order = 14
         self.m_logger.WriteLine3("\t\tThe new Order is: {0}", oInterpolation.order)
         Assert.assertEqual(14, oInterpolation.order)
-
-        def action260():
+        with pytest.raises(Exception):
             oInterpolation.order = 321
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action260)
         # VOPmu
         self.m_logger.WriteLine6("\t\tThe current VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
         if self.m_EarthGravModel == TestBase.GravModel.EGM2008:
@@ -5915,15 +5169,10 @@ class PropagatorHPOPHelper(object):
             self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_pmu)
             Assert.assertEqual(797200883600000, oInterpolation.graphics_3d_pmu)
 
-        def action261():
+        with pytest.raises(Exception):
             oInterpolation.graphics_3d_pmu = 199300220749999
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action261)
-
-        def action262():
+        with pytest.raises(Exception):
             oInterpolation.graphics_3d_pmu = 797200883600001
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action262)
 
     # endregion
 
@@ -5941,71 +5190,45 @@ class PropagatorHPOPHelper(object):
             oControl.error_tolerance = 1e-06
             self.m_logger.WriteLine6("\t\tThe new ErrorTolerance is: {0}", oControl.error_tolerance)
             Assert.assertEqual(1e-06, oControl.error_tolerance)
-
-            def action263():
+            with pytest.raises(Exception):
                 oControl.error_tolerance = -12.34
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action263)
             # MinStepSize
             self.m_logger.WriteLine6("\t\tThe current MinStepSize is: {0}", oControl.min_step_size)
             oControl.min_step_size = 12
             self.m_logger.WriteLine6("\t\tThe new MinStepSize is: {0}", oControl.min_step_size)
             Assert.assertEqual(12, oControl.min_step_size)
-
-            def action264():
+            with pytest.raises(Exception):
                 oControl.min_step_size = -12
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action264)
             # MaxStepSize
             self.m_logger.WriteLine6("\t\tThe current MaxStepSize is: {0}", oControl.max_step_size)
             oControl.max_step_size = 21
             self.m_logger.WriteLine6("\t\tThe new MaxStepSize is: {0}", oControl.max_step_size)
             Assert.assertEqual(21, oControl.max_step_size)
-
-            def action265():
+            with pytest.raises(Exception):
                 oControl.max_step_size = -12
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action265)
-
-            def action266():
+            with pytest.raises(Exception):
                 oControl.min_step_size = 23
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action266)
-
-            def action267():
+            with pytest.raises(Exception):
                 oControl.max_step_size = 2
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action267)
             # Method (eFixedStep)
             oControl.method = VEHICLE_METHOD.FIXED_STEP
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oControl.method)
             Assert.assertEqual(VEHICLE_METHOD.FIXED_STEP, oControl.method)
 
         else:
-
-            def action268():
+            # Method (eFixedStep)
+            with pytest.raises(Exception):
                 oControl.method = VEHICLE_METHOD.FIXED_STEP
 
-            # Method (eFixedStep)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action268)
-
-        def action269():
-            oControl.error_tolerance = 0.0001
-
         # ErrorTolerance
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action269)
-
-        def action270():
-            oControl.min_step_size = 3
-
+        with pytest.raises(Exception):
+            oControl.error_tolerance = 0.0001
         # MinStepSize
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action270)
-
-        def action271():
-            oControl.max_step_size = 34
-
+        with pytest.raises(Exception):
+            oControl.min_step_size = 3
         # MaxStepSize
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action271)
+        with pytest.raises(Exception):
+            oControl.max_step_size = 34
 
     # endregion
 
@@ -6017,30 +5240,21 @@ class PropagatorHPOPHelper(object):
         oCovariance.compute_covariance = False
         self.m_logger.WriteLine4("\tThe new ComputeCovariance is: {0}", oCovariance.compute_covariance)
         Assert.assertEqual(False, oCovariance.compute_covariance)
-
-        def action272():
-            oCovariance.frame = VEHICLE_FRAME.LVLH
-
         # Frame (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action272)
+        with pytest.raises(Exception):
+            oCovariance.frame = VEHICLE_FRAME.LVLH
         # Gravity
         self.CovarianceGravity(oCovariance.gravity, True)
         # PositionVelocity
         self.CovariancePositionVelocity(oCovariance.position_velocity, True)
-
-        def action273():
-            oCovariance.include_consider_analysis = False
-
         # IncludeConsiderAnalysis (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action273)
+        with pytest.raises(Exception):
+            oCovariance.include_consider_analysis = False
         # ConsiderAnalysisList
         self.CovarianceConsiderAnalysis(oCovariance.consider_analysis_list, True)
-
-        def action274():
-            oCovariance.include_consider_cross_correlation = True
-
         # IncludeConsiderCrossCorrelation (readonly)
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action274)
+        with pytest.raises(Exception):
+            oCovariance.include_consider_cross_correlation = True
         # ConsiderCorrelation
         self.CovarianceCorrelation(oCovariance.correlation_list, True)
         # Validate
@@ -6114,18 +5328,12 @@ class PropagatorHPOPHelper(object):
     def CovarianceGravity(self, oGravity: "IVehicleGravity", bReadOnly: bool):
         Assert.assertIsNotNone(oGravity)
         if bReadOnly:
-
-            def action275():
-                oGravity.maximum_degree = 5
-
             # MaximumDegree (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action275)
-
-            def action276():
-                oGravity.maximum_order = 2
-
+            with pytest.raises(Exception):
+                oGravity.maximum_degree = 5
             # MaximumOrder (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action276)
+            with pytest.raises(Exception):
+                oGravity.maximum_order = 2
 
         else:
             # MaximumDegree
@@ -6133,21 +5341,15 @@ class PropagatorHPOPHelper(object):
             oGravity.maximum_degree = 23
             self.m_logger.WriteLine3("\t\tThe new MaximumDegree is: {0}", oGravity.maximum_degree)
             Assert.assertEqual(23, oGravity.maximum_degree)
-
-            def action277():
+            with pytest.raises(Exception):
                 oGravity.maximum_degree = 123
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action277)
             # MaximumOrder
             self.m_logger.WriteLine3("\t\tThe current MaximumOrder is: {0}", oGravity.maximum_order)
             oGravity.maximum_order = 12
             self.m_logger.WriteLine3("\t\tThe new MaximumOrder is: {0}", oGravity.maximum_order)
             Assert.assertEqual(12, oGravity.maximum_order)
-
-            def action278():
+            with pytest.raises(Exception):
                 oGravity.maximum_order = 123
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action278)
 
     # endregion
 
@@ -6167,42 +5369,24 @@ class PropagatorHPOPHelper(object):
                     positionVelocityElement.vy,
                     positionVelocityElement.vz,
                 )
-
-                def action279():
-                    positionVelocityElement.x = 25
-
                 # X (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action279)
-
-                def action280():
-                    positionVelocityElement.y = 25
-
+                with pytest.raises(Exception):
+                    positionVelocityElement.x = 25
                 # Y (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action280)
-
-                def action281():
-                    positionVelocityElement.z = 25
-
+                with pytest.raises(Exception):
+                    positionVelocityElement.y = 25
                 # Z (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action281)
-
-                def action282():
-                    positionVelocityElement.vx = 0.01
-
+                with pytest.raises(Exception):
+                    positionVelocityElement.z = 25
                 # Vx (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action282)
-
-                def action283():
-                    positionVelocityElement.vy = 0.01
-
+                with pytest.raises(Exception):
+                    positionVelocityElement.vx = 0.01
                 # Vy (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action283)
-
-                def action284():
-                    positionVelocityElement.vz = 0.01
-
+                with pytest.raises(Exception):
+                    positionVelocityElement.vy = 0.01
                 # Vz (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action284)
+                with pytest.raises(Exception):
+                    positionVelocityElement.vz = 0.01
 
         else:
             self.m_logger.WriteLine3("\tThe PositionVelocity collection contains: {0} elements.", oCollection.count)
@@ -6232,12 +5416,9 @@ class PropagatorHPOPHelper(object):
                     Assert.assertEqual(0.0, positionVelocityElement.x)
 
                 if iIndex == 0:
-
-                    def action285():
-                        positionVelocityElement.y = 22
-
                     # Y (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action285)
+                    with pytest.raises(Exception):
+                        positionVelocityElement.y = 22
 
                 else:
                     if iIndex == 1:
@@ -6251,12 +5432,9 @@ class PropagatorHPOPHelper(object):
                         Assert.assertEqual(0.0, positionVelocityElement.y)
 
                 if iIndex < 2:
-
-                    def action286():
-                        positionVelocityElement.z = 23
-
                     # Z (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action286)
+                    with pytest.raises(Exception):
+                        positionVelocityElement.z = 23
 
                 else:
                     if iIndex == 2:
@@ -6270,12 +5448,9 @@ class PropagatorHPOPHelper(object):
                         Assert.assertEqual(0.0, positionVelocityElement.z)
 
                 if iIndex < 3:
-
-                    def action287():
-                        positionVelocityElement.vx = 0.001
-
                     # Vx (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action287)
+                    with pytest.raises(Exception):
+                        positionVelocityElement.vx = 0.001
 
                 else:
                     if iIndex == 3:
@@ -6289,12 +5464,9 @@ class PropagatorHPOPHelper(object):
                         Assert.assertEqual(0.0, positionVelocityElement.vx)
 
                 if iIndex < 4:
-
-                    def action288():
-                        positionVelocityElement.vy = 0.001
-
                     # Vy (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action288)
+                    with pytest.raises(Exception):
+                        positionVelocityElement.vy = 0.001
 
                 else:
                     if iIndex == 4:
@@ -6308,12 +5480,9 @@ class PropagatorHPOPHelper(object):
                         Assert.assertEqual(0.0, positionVelocityElement.vy)
 
                 if iIndex < 5:
-
-                    def action289():
-                        positionVelocityElement.vz = 0.001
-
                     # Vz (readonly)
-                    TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action289)
+                    with pytest.raises(Exception):
+                        positionVelocityElement.vz = 0.001
 
                 else:
                     positionVelocityElement.vz = 0.03
@@ -6328,31 +5497,19 @@ class PropagatorHPOPHelper(object):
     def CovarianceConsiderAnalysis(self, oCollection: "IVehicleConsiderAnalysisCollection", bReadOnly: bool):
         Assert.assertIsNotNone(oCollection)
         if bReadOnly:
-
-            def action290():
-                oCollection.remove_all()
-
             # RemoveAll (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action290)
-
-            def action291():
-                oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_DRAG)
-
+            with pytest.raises(Exception):
+                oCollection.remove_all()
             # Add (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action291)
+            with pytest.raises(Exception):
+                oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_DRAG)
             if oCollection.count > 0:
-
-                def action292():
+                with pytest.raises(Exception):
                     oCollection.remove_at(0)
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action292)
-
             if oCollection.count > 0:
-
-                def action293():
+                with pytest.raises(Exception):
                     oCollection.remove_by_type(oCollection[0].type)
-
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action293)
 
             if oCollection.count > 0:
                 self.CovarianceConsiderAnalysisElement(oCollection[0], True)
@@ -6371,22 +5528,16 @@ class PropagatorHPOPHelper(object):
             # Add (eConsiderAnalysisDrag)
             oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_DRAG)
             Assert.assertEqual(1, oCollection.count)
-
-            def action294():
+            with pytest.raises(Exception):
                 oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_DRAG)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to add duplicated elements.", action294)
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
             # Add (eConsiderAnalysisSRP)
             oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_SRP)
             Assert.assertEqual(2, oCollection.count)
-
-            def action295():
+            with pytest.raises(Exception):
                 oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_SRP)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to add duplicated elements.", action295)
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
@@ -6402,22 +5553,16 @@ class PropagatorHPOPHelper(object):
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
             Assert.assertEqual(1, oCollection.count)
-
-            def action296():
+            with pytest.raises(Exception):
                 oCollection.remove_at(12)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action296)
             # RemoveByType
             oCollection.remove_by_type(oCollection[0].type)
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
             Assert.assertEqual(0, oCollection.count)
-
-            def action297():
+            with pytest.raises(Exception):
                 oCollection.remove_by_type(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_SRP)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action297)
 
     # endregion
 
@@ -6427,48 +5572,27 @@ class PropagatorHPOPHelper(object):
     ):
         Assert.assertIsNotNone(oVeConsiderAnalysisCollectionElement)
         if bReadOnly:
-
-            def action298():
-                oVeConsiderAnalysisCollectionElement.value = 123.456
-
             # Value (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action298)
-
-            def action299():
-                oVeConsiderAnalysisCollectionElement.x = 12.34
-
+            with pytest.raises(Exception):
+                oVeConsiderAnalysisCollectionElement.value = 123.456
             # X (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action299)
-
-            def action300():
-                oVeConsiderAnalysisCollectionElement.y = 12.34
-
+            with pytest.raises(Exception):
+                oVeConsiderAnalysisCollectionElement.x = 12.34
             # Y (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action300)
-
-            def action301():
-                oVeConsiderAnalysisCollectionElement.z = 12.34
-
+            with pytest.raises(Exception):
+                oVeConsiderAnalysisCollectionElement.y = 12.34
             # Z (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action301)
-
-            def action302():
-                oVeConsiderAnalysisCollectionElement.vx = 12.34
-
+            with pytest.raises(Exception):
+                oVeConsiderAnalysisCollectionElement.z = 12.34
             # Vx (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action302)
-
-            def action303():
-                oVeConsiderAnalysisCollectionElement.vy = 12.34
-
+            with pytest.raises(Exception):
+                oVeConsiderAnalysisCollectionElement.vx = 12.34
             # Vy (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action303)
-
-            def action304():
-                oVeConsiderAnalysisCollectionElement.vz = 12.34
-
+            with pytest.raises(Exception):
+                oVeConsiderAnalysisCollectionElement.vy = 12.34
             # Vz (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action304)
+            with pytest.raises(Exception):
+                oVeConsiderAnalysisCollectionElement.vz = 12.34
 
         else:
             self.m_logger.WriteLine10(
@@ -6523,24 +5647,15 @@ class PropagatorHPOPHelper(object):
     def CovarianceCorrelation(self, oCollection: "IVehicleCorrelationListCollection", bReadOnly: bool):
         Assert.assertIsNotNone(oCollection)
         if bReadOnly:
-
-            def action305():
-                oCollection.remove_all()
-
             # RemoveAll (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action305)
-
-            def action306():
-                oCollection.add()
-
+            with pytest.raises(Exception):
+                oCollection.remove_all()
             # Add (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action306)
+            with pytest.raises(Exception):
+                oCollection.add()
             if oCollection.count > 0:
-
-                def action307():
+                with pytest.raises(Exception):
                     oCollection.remove_at(0)
-
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action307)
 
             if oCollection.count > 0:
                 self.CovarianceCorrelationElement(oCollection[0], True)
@@ -6560,11 +5675,8 @@ class PropagatorHPOPHelper(object):
             oCollection.remove_at(0)
             self.m_logger.WriteLine3("\t\tThe new Correlation collection contains: {0} elements", oCollection.count)
             Assert.assertEqual(0, oCollection.count)
-
-            def action308():
+            with pytest.raises(Exception):
                 oCollection.remove_at(12)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid element.", action308)
             # Add
             oCollection.add()
             Assert.assertEqual(1, oCollection.count)
@@ -6594,24 +5706,15 @@ class PropagatorHPOPHelper(object):
     ):
         Assert.assertIsNotNone(oVeCorrelationListElement)
         if bReadOnly:
-
-            def action309():
-                oVeCorrelationListElement.value = 123.456
-
             # Value (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action309)
-
-            def action310():
-                oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_DRAG
-
+            with pytest.raises(Exception):
+                oVeCorrelationListElement.value = 123.456
             # Row (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action310)
-
-            def action311():
-                oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_SRP
-
+            with pytest.raises(Exception):
+                oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_DRAG
             # Column (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action311)
+            with pytest.raises(Exception):
+                oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_SRP
 
         else:
             # Value
@@ -6627,11 +5730,8 @@ class PropagatorHPOPHelper(object):
             oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_SRP
             self.m_logger.WriteLine6("\t\tThe new Row is: {0}", oVeCorrelationListElement.row)
             Assert.assertEqual(VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_SRP, oVeCorrelationListElement.row)
-
-            def action312():
+            with pytest.raises(Exception):
                 oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_NONE
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action312)
             # Column
             self.m_logger.WriteLine6("\t\tThe current Column is: {0}", oVeCorrelationListElement.column)
             oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_DRAG
@@ -6640,11 +5740,8 @@ class PropagatorHPOPHelper(object):
             oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_SRP
             self.m_logger.WriteLine6("\t\tThe new Column is: {0}", oVeCorrelationListElement.column)
             Assert.assertEqual(VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_SRP, oVeCorrelationListElement.column)
-
-            def action313():
+            with pytest.raises(Exception):
                 oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.CORRELATION_LIST_NONE
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action313)
 
 
 # endregion
@@ -6678,11 +5775,8 @@ class PropagatorBallisticHelper(object):
         oBallistic.step = 12
         self.m_logger.WriteLine6("\tThe new Step is:  {0}", oBallistic.step)
         Assert.assertEqual(12, oBallistic.step)
-
-        def action314():
+        with pytest.raises(Exception):
             oBallistic.step = 123456789
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action314)
         # LaunchType
         self.m_logger.WriteLine6("\tThe current LunchType is: {0}", oBallistic.launch_type)
         # LaunchSupportedTypes
@@ -6709,31 +5803,22 @@ class PropagatorBallisticHelper(object):
                 launchLLA.lat = 12.34
                 self.m_logger.WriteLine6("\t\t\tThe new Lat is: {0}", launchLLA.lat)
                 Assert.assertEqual(12.34, launchLLA.lat)
-
-                def action315():
+                with pytest.raises(Exception):
                     launchLLA.lat = 90.1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action315)
                 # Lon
                 self.m_logger.WriteLine6("\t\t\tThe current Lon is: {0}", launchLLA.lon)
                 launchLLA.lon = 12.34
                 self.m_logger.WriteLine6("\t\t\tThe new Lon is: {0}", launchLLA.lon)
                 Assert.assertEqual(12.34, launchLLA.lon)
-
-                def action316():
+                with pytest.raises(Exception):
                     launchLLA.lon = 360.1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action316)
                 # Alt
                 self.m_logger.WriteLine6("\t\t\tThe current Alt is: {0}", launchLLA.altitude)
                 launchLLA.altitude = 123.4
                 self.m_logger.WriteLine6("\t\t\tThe new Alt is: {0}", launchLLA.altitude)
                 Assert.assertEqual(123.4, launchLLA.altitude)
-
-                def action317():
+                with pytest.raises(Exception):
                     launchLLA.altitude = -1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action317)
             elif eLaunch == VEHICLE_LAUNCH.LAUNCH_LLR:
                 oLLR: "IVehicleLaunchLLR" = clr.Convert(oBallistic.launch, IVehicleLaunchLLR)
                 Assert.assertIsNotNone(oLLR)
@@ -6742,31 +5827,22 @@ class PropagatorBallisticHelper(object):
                 oLLR.lat = 12.34
                 self.m_logger.WriteLine6("\t\t\tThe new Lat is: {0}", oLLR.lat)
                 Assert.assertEqual(12.34, oLLR.lat)
-
-                def action318():
+                with pytest.raises(Exception):
                     oLLR.lat = 90.1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action318)
                 # Lon
                 self.m_logger.WriteLine6("\t\t\tThe current Lon is: {0}", oLLR.lon)
                 oLLR.lon = 12.4
                 self.m_logger.WriteLine6("\t\t\tThe new Lon is: {0}", oLLR.lon)
                 Assert.assertEqual(12.4, oLLR.lon)
-
-                def action319():
+                with pytest.raises(Exception):
                     oLLR.lon = 360.1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action319)
                 # Radius
                 self.m_logger.WriteLine6("\t\t\tThe current Radius is: {0}", oLLR.radius)
                 oLLR.radius = 6400.789
                 self.m_logger.WriteLine6("\t\t\tThe new Radius is: {0}", oLLR.radius)
                 Assert.assertEqual(6400.789, oLLR.radius)
-
-                def action320():
+                with pytest.raises(Exception):
                     oLLR.radius = -1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action320)
             else:
                 Assert.fail("Invalid type!")
             # need the deltaV to be set in order to propagate without exception
@@ -6810,31 +5886,22 @@ class PropagatorBallisticHelper(object):
                 oAzEl.azimuth = 324.4
                 self.m_logger.WriteLine6("\t\t\tThe new Azimuth is: {0}", oAzEl.azimuth)
                 Assert.assertEqual(324.4, oAzEl.azimuth)
-
-                def action321():
+                with pytest.raises(Exception):
                     oAzEl.azimuth = 390.1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action321)
                 # Elevation
                 self.m_logger.WriteLine6("\t\t\tThe current Elevation is: {0}", oAzEl.elevation)
                 oAzEl.elevation = 87.34
                 self.m_logger.WriteLine6("\t\t\tThe new Elevation is: {0}", oAzEl.elevation)
                 Assert.assertEqual(87.34, oAzEl.elevation)
-
-                def action322():
+                with pytest.raises(Exception):
                     oAzEl.elevation = 390.1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action322)
                 # DeltaV
                 self.m_logger.WriteLine6("\t\t\tThe current DeltaV is: {0}", oAzEl.delta_v)
                 oAzEl.delta_v = 5
                 self.m_logger.WriteLine6("\t\t\tThe new DeltaV is: {0}", oAzEl.delta_v)
                 Assert.assertEqual(5, oAzEl.delta_v)
-
-                def action323():
+                with pytest.raises(Exception):
                     oAzEl.delta_v = 390.1
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action323)
             elif eImpact == VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_POINT:
                 # ImpactLocation
                 oPoint: "IVehicleImpactLocationPoint" = clr.Convert(
@@ -6866,31 +5933,22 @@ class PropagatorBallisticHelper(object):
                         impactLLA.lat = 20.34
                         self.m_logger.WriteLine6("\t\t\t\tThe new Lat is: {0}", impactLLA.lat)
                         Assert.assertEqual(20.34, impactLLA.lat)
-
-                        def action324():
+                        with pytest.raises(Exception):
                             impactLLA.lat = 90.1
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action324)
                         # Lon
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lon is: {0}", impactLLA.lon)
                         impactLLA.lon = 20.4
                         self.m_logger.WriteLine6("\t\t\t\tThe new Lon is: {0}", impactLLA.lon)
                         Assert.assertEqual(20.4, impactLLA.lon)
-
-                        def action325():
+                        with pytest.raises(Exception):
                             impactLLA.lon = 360.1
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action325)
                         # Alt
                         self.m_logger.WriteLine6("\t\t\t\tThe current Alt is: {0}", impactLLA.altitude)
                         impactLLA.altitude = 10
                         self.m_logger.WriteLine6("\t\t\t\tThe new Alt is: {0}", impactLLA.altitude)
                         Assert.assertEqual(10, impactLLA.altitude)
-
-                        def action326():
+                        with pytest.raises(Exception):
                             impactLLA.altitude = -1
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action326)
                     elif eI == VEHICLE_IMPACT.IMPACT_LLR:
                         oLLR: "IVehicleImpactLLR" = clr.Convert(oPoint.impact, IVehicleImpactLLR)
                         Assert.assertIsNotNone(oLLR)
@@ -6899,31 +5957,22 @@ class PropagatorBallisticHelper(object):
                         oLLR.lat = 20.34
                         self.m_logger.WriteLine6("\t\t\t\tThe new Lat is: {0}", oLLR.lat)
                         Assert.assertEqual(20.34, oLLR.lat)
-
-                        def action327():
+                        with pytest.raises(Exception):
                             oLLR.lat = 90.1
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action327)
                         # Lon
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lon is: {0}", oLLR.lon)
                         oLLR.lon = 20.4
                         self.m_logger.WriteLine6("\t\t\t\tThe new Lon is: {0}", oLLR.lon)
                         Assert.assertEqual(20.4, oLLR.lon)
-
-                        def action328():
+                        with pytest.raises(Exception):
                             oLLR.lon = 360.1
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action328)
                         # Radius
                         self.m_logger.WriteLine6("\t\t\t\tThe current Radius is: {0}", oLLR.radius)
                         oLLR.radius = 6500.789
                         self.m_logger.WriteLine6("\t\t\t\tThe new Radius is: {0}", oLLR.radius)
                         Assert.assertEqual(6500.789, oLLR.radius)
-
-                        def action329():
+                        with pytest.raises(Exception):
                             oLLR.radius = -1
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action329)
                     else:
                         Assert.fail("Invalid type!")
                     deltaV: "IVehicleLaunchControlFixedDeltaV" = clr.Convert(
@@ -6966,11 +6015,8 @@ class PropagatorBallisticHelper(object):
                             "\t\t\t\tThe new ApogeeAlt is: {0}", launchControlFixedApogeeAlt.apogee_altitude
                         )
                         Assert.assertEqual(12345.6, launchControlFixedApogeeAlt.apogee_altitude)
-
-                        def action330():
+                        with pytest.raises(Exception):
                             launchControlFixedApogeeAlt.apogee_altitude = -1
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action330)
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V:
                         launchControlFixedDeltaV: "IVehicleLaunchControlFixedDeltaV" = clr.Convert(
                             oPoint.launch_control, IVehicleLaunchControlFixedDeltaV
@@ -6981,11 +6027,8 @@ class PropagatorBallisticHelper(object):
                         launchControlFixedDeltaV.delta_v = 8.6
                         self.m_logger.WriteLine6("\t\t\t\tThe new DeltaV is: {0}", launchControlFixedDeltaV.delta_v)
                         Assert.assertEqual(8.6, launchControlFixedDeltaV.delta_v)
-
-                        def action331():
+                        with pytest.raises(Exception):
                             launchControlFixedDeltaV.delta_v = 23
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action331)
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V_MIN_ECCENTRICITY:
                         launchControlFixedDeltaVMinEcc: "IVehicleLaunchControlFixedDeltaVMinEccentricity" = clr.Convert(
                             oPoint.launch_control, IVehicleLaunchControlFixedDeltaVMinEccentricity
@@ -7000,11 +6043,8 @@ class PropagatorBallisticHelper(object):
                             "\t\t\t\tThe new DeltaVMin is: {0}", launchControlFixedDeltaVMinEcc.delta_v_min
                         )
                         Assert.assertEqual(10, launchControlFixedDeltaVMinEcc.delta_v_min)
-
-                        def action332():
+                        with pytest.raises(Exception):
                             launchControlFixedDeltaVMinEcc.delta_v_min = 12
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action332)
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT:
                         launchControlFixedTimeOfFlight: "IVehicleLaunchControlFixedTimeOfFlight" = clr.Convert(
                             oPoint.launch_control, IVehicleLaunchControlFixedTimeOfFlight
@@ -7019,11 +6059,8 @@ class PropagatorBallisticHelper(object):
                             "\t\t\t\tThe new TimeOfFlight is: {0}", launchControlFixedTimeOfFlight.time_of_flight
                         )
                         Assert.assertEqual(1024.456, launchControlFixedTimeOfFlight.time_of_flight)
-
-                        def action333():
+                        with pytest.raises(Exception):
                             launchControlFixedTimeOfFlight.time_of_flight = 123456789
-
-                        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action333)
                     else:
                         Assert.fail("Invalid type!")
                     # Propagate
@@ -7278,11 +6315,8 @@ class PropagatorRealtimeHelper(object):
         Assert.assertEqual(1, realtime.interpolation_order)
         realtime.interpolation_order = 7
         Assert.assertEqual(7, realtime.interpolation_order)
-
-        def action334():
+        with pytest.raises(Exception):
             realtime.interpolation_order = 8
-
-        TryCatchAssertBlock.DoAssert("Should not allow illegal interpolation order.", action334)
         realtime.time_step = 10
         Assert.assertEqual(10, realtime.time_step)
         realtime.timeout_gap = 10
@@ -7378,21 +6412,15 @@ class PropagatorRealtimeHelper(object):
         oDuration.look_ahead = 123.456
         self.m_logger.WriteLine6("\tThe new LookAhead is: {0}", oDuration.look_ahead)
         Assert.assertEqual(123.456, oDuration.look_ahead)
-
-        def action335():
+        with pytest.raises(Exception):
             oDuration.look_ahead = 0
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action335)
         # LookBehind
         self.m_logger.WriteLine6("\tThe current LookBehind is: {0}", oDuration.look_behind)
         oDuration.look_behind = 456.789
         self.m_logger.WriteLine6("\tThe new LookBehind is: {0}", oDuration.look_behind)
         Assert.assertEqual(456.789, oDuration.look_behind)
-
-        def action336():
+        with pytest.raises(Exception):
             oDuration.look_behind = 123456789
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action336)
 
         realtime.propagate()
 
@@ -7438,11 +6466,8 @@ class PropagatorGPSHelper(object):
         Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK07_APR2019, yuma.reference_week)
         yuma.reference_week = GPS_REFERENCE_WEEK.WEEK22_AUG1999
         Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK22_AUG1999, yuma.reference_week)
-
-        def action337():
+        with pytest.raises(Exception):
             yuma.reference_week = GPS_REFERENCE_WEEK.UNKNOWN
-
-        TryCatchAssertBlock.DoAssert("bad yuma.ReferenceWeek.", action337)
 
         self.m_logger.WriteLine10(
             "Almanac week: {0}, Date of almanac: {1}, Time of almanac: {2}, Ref.Week: {3}, Health: {4}, WeekNumber:{5}",
@@ -7517,11 +6542,8 @@ class PropagatorGPSHelper(object):
         Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK07_APR2019, sem.reference_week)
         sem.reference_week = GPS_REFERENCE_WEEK.WEEK22_AUG1999
         Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK22_AUG1999, sem.reference_week)
-
-        def action338():
+        with pytest.raises(Exception):
             sem.reference_week = GPS_REFERENCE_WEEK.UNKNOWN
-
-        TryCatchAssertBlock.DoAssert("bad sem.ReferenceWeek.", action338)
 
         self.m_logger.WriteLine10(
             "Almanac week: {0}, Date of almanac: {1}, Time of almanac: {2}, Ref.Week: {3}, Health: {4}, AvgURA:{5}",
@@ -7606,10 +6628,8 @@ class PropagatorGPSHelper(object):
 
             i += 1
 
-        def action339():
+        with pytest.raises(Exception):
             age: float = records[records.count].age
-
-        TryCatchAssertBlock.DoAssert("Should have failed referencing bad index.", action339)
 
         element: "IVehicleGPSElement"
 
@@ -7624,10 +6644,8 @@ class PropagatorGPSHelper(object):
         records = gps.auto_update.file_source.preview()
         Assert.assertTrue((records.count > 0))
 
-        def action340():
+        with pytest.raises(Exception):
             gps.auto_update.file_source.filename = sSP3AlmanacPath
-
-        TryCatchAssertBlock.DoAssert("Should have failed.", action340)
         # Verify that the file name has not been updated
         Assert.assertEqual("GPSAlmanac.alm", gps.auto_update.file_source.filename)
 
@@ -7741,11 +6759,8 @@ class BasicAttitudeStandardHelper(object):
             oCTurn.time_offset = 123.456
             self.m_logger.WriteLine6("\t\t\t\tThe new TimeOffset is: {0}", oCTurn.time_offset)
             Assert.assertEqual(123.456, oCTurn.time_offset)
-
-            def action341():
+            with pytest.raises(Exception):
                 oCTurn.time_offset = 0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action341)
 
         if (
             (
@@ -7770,11 +6785,8 @@ class BasicAttitudeStandardHelper(object):
             oCOffset.constraint_offset = 123.456
             self.m_logger.WriteLine6("\t\t\t\tThe new ConstraintOffset is: {0}", oCOffset.constraint_offset)
             Assert.assertAlmostEqual(123.456, oCOffset.constraint_offset, delta=0.0001)
-
-            def action342():
+            with pytest.raises(Exception):
                 oCOffset.constraint_offset = 1234.56
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action342)
 
         if oProfile.type == "Fixed in Axes":
             oFixed: "IVehicleProfileFixedInAxes" = clr.Convert(oProfile, IVehicleProfileFixedInAxes)
@@ -7785,16 +6797,10 @@ class BasicAttitudeStandardHelper(object):
             oFixed.reference_axes = "Star/Star1 MeanEclpJ2000"
             self.m_logger.WriteLine5("\t\t\t\tThe new ReferenceAxes is: {0}", oFixed.reference_axes)
             Assert.assertEqual("Star/Star1 MeanEclpJ2000", oFixed.reference_axes)
-
-            def action343():
+            with pytest.raises(Exception):
                 oFixed.reference_axes = ""
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action343)
-
-            def action344():
+            with pytest.raises(Exception):
                 oFixed.reference_axes = "InvalidReferenceAxes"
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action344)
             # Orientation
             oHelper = OrientationTest(self.m_oUnits)
             oHelper.Run(
@@ -7818,11 +6824,8 @@ class BasicAttitudeStandardHelper(object):
             profilePrecessingSpin.nutation_angle = 12.34
             self.m_logger.WriteLine6("\t\t\t\tThe new NutationAngle is: {0}", profilePrecessingSpin.nutation_angle)
             Assert.assertEqual(12.34, profilePrecessingSpin.nutation_angle)
-
-            def action345():
+            with pytest.raises(Exception):
                 profilePrecessingSpin.nutation_angle = 123.4
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action345)
             # Precession
             self.RateOffset(profilePrecessingSpin.precession)
             # Spin
@@ -7837,11 +6840,8 @@ class BasicAttitudeStandardHelper(object):
             Assert.assertEqual("CentralBody/Earth ICRF", profilePrecessingSpin.reference_axes)
             profilePrecessingSpin.reference_axes = "CentralBody/Earth Inertial"
             Assert.assertEqual("CentralBody/Earth Inertial", profilePrecessingSpin.reference_axes)
-
-            def action346():
+            with pytest.raises(Exception):
                 profilePrecessingSpin.reference_axes = "bogus"
-
-            TryCatchAssertBlock.DoAssert("Should not allow a bogus reference axes.", action346)
 
         if oProfile.type == "Spinning":
             profileSpinning: "IVehicleProfileSpinning" = clr.Convert(oProfile, IVehicleProfileSpinning)
@@ -7856,21 +6856,15 @@ class BasicAttitudeStandardHelper(object):
             profileSpinning.rate = 123.4
             self.m_logger.WriteLine6("\t\t\t\tThe new Rate is: {0}", profileSpinning.rate)
             Assert.assertEqual(123.4, profileSpinning.rate)
-
-            def action347():
+            with pytest.raises(Exception):
                 profileSpinning.rate = 123456.789
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action347)
             # Offset
             self.m_logger.WriteLine6("\t\t\t\tThe current Offset is: {0}", profileSpinning.offset)
             profileSpinning.offset = 12.34
             self.m_logger.WriteLine6("\t\t\t\tThe new Offset is: {0}", profileSpinning.offset)
             Assert.assertEqual(12.34, profileSpinning.offset)
-
-            def action348():
+            with pytest.raises(Exception):
                 profileSpinning.offset = 1234.5
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action348)
             # Body
             oHelper = DirectionsTest()
             oHelper.Run(profileSpinning.body)
@@ -7900,11 +6894,8 @@ class BasicAttitudeStandardHelper(object):
             oAOffset.alignment_offset = 123.456
             self.m_logger.WriteLine6("\t\t\t\tThe new AlignmentOffset is: {0}", oAOffset.alignment_offset)
             Assert.assertAlmostEqual(123.456, oAOffset.alignment_offset, delta=0.0001)
-
-            def action349():
+            with pytest.raises(Exception):
                 oAOffset.alignment_offset = 1234.56
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action349)
 
         if oProfile.type == "Inertially fixed":
             oInertial: "IVehicleProfileInertial" = clr.Convert(oProfile, IVehicleProfileInertial)
@@ -7935,21 +6926,15 @@ class BasicAttitudeStandardHelper(object):
             profileSpinAboutXxx.rate = 123.4
             self.m_logger.WriteLine6("\t\t\t\tThe new Rate is: {0}", profileSpinAboutXxx.rate)
             Assert.assertEqual(123.4, profileSpinAboutXxx.rate)
-
-            def action350():
+            with pytest.raises(Exception):
                 profileSpinAboutXxx.rate = 123456.789
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action350)
             # Offset
             self.m_logger.WriteLine6("\t\t\t\tThe current Offset is: {0}", profileSpinAboutXxx.offset)
             profileSpinAboutXxx.offset = 12.34
             self.m_logger.WriteLine6("\t\t\t\tThe new Offset is: {0}", profileSpinAboutXxx.offset)
             Assert.assertEqual(12.34, profileSpinAboutXxx.offset)
-
-            def action351():
+            with pytest.raises(Exception):
                 profileSpinAboutXxx.offset = 1234.5
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action351)
 
         if oProfile.type == "GPS":
             oGPS: "IVehicleProfileGPS" = clr.Convert(oProfile, IVehicleProfileGPS)
@@ -7965,11 +6950,8 @@ class BasicAttitudeStandardHelper(object):
             oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_GYM95
             self.m_logger.WriteLine6("\t\t\t\tThe new ModelType is: {0}", oGPS.model_type)
             Assert.assertEqual(GPS_ATTITUDE_MODEL_TYPE.GSP_MODEL_GYM95, oGPS.model_type)
-
-            def action352():
+            with pytest.raises(Exception):
                 oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.MODEL_TYPE_UNKNOWN
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action352)
 
     # endregion
 
@@ -7985,16 +6967,10 @@ class BasicAttitudeStandardHelper(object):
         oVector.reference_vector = "CentralBody/Moon Earth"
         self.m_logger.WriteLine5("\t\t\t\tThe new ReferenceVector is: {0}", oVector.reference_vector)
         Assert.assertEqual("CentralBody/Moon Earth", oVector.reference_vector)
-
-        def action353():
+        with pytest.raises(Exception):
             oVector.reference_vector = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action353)
-
-        def action354():
+        with pytest.raises(Exception):
             oVector.reference_vector = "InvalidReferenceVector"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action354)
 
         # Body
         oHelper = DirectionsTest()
@@ -8035,16 +7011,10 @@ class BasicAttitudeStandardHelper(object):
         self.m_logger.WriteLine("\tTest Load - sets enabled, sets filename, then reloads")
         # Load
         oExternal.load(r"Scenario\Satellite1.a")
-
-        def action355():
+        with pytest.raises(Exception):
             oExternal.load("InvalidFileName.a")
-
-        TryCatchAssertBlock.DoAssert("Should not allow to load an invalid file.", action355)
-
-        def action356():
+        with pytest.raises(Exception):
             oExternal.load("")
-
-        TryCatchAssertBlock.DoAssert("Should not allow to load an invalid file.", action356)
         # Enabled
         self.m_logger.WriteLine4("\t\tThe new Enabled is: {0}", oExternal.enabled)
         # Filename
@@ -8223,21 +7193,15 @@ class BasicAttitudeStandardHelper(object):
         oOffset.rate = 123.4
         self.m_logger.WriteLine6("\t\t\t\tThe new Rate is: {0}", oOffset.rate)
         Assert.assertEqual(123.4, oOffset.rate)
-
-        def action357():
+        with pytest.raises(Exception):
             oOffset.rate = 123456.789
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action357)
         # Offset
         self.m_logger.WriteLine6("\t\t\t\tThe current Offset is: {0}", oOffset.offset)
         oOffset.offset = 12.34
         self.m_logger.WriteLine6("\t\t\t\tThe new Offset is: {0}", oOffset.offset)
         Assert.assertEqual(12.34, oOffset.offset)
-
-        def action358():
+        with pytest.raises(Exception):
             oOffset.offset = 1234.5
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action358)
 
     # endregion
 
@@ -8277,30 +7241,18 @@ class BasicAttitudeStandardHelper(object):
         oEDHelper = AccessEventDetectionHelper()
         oSHelper = AccessSamplingHelper()
         if bReadOnly:
-
-            def action359():
-                oAdvanced.use_light_time_delay = True
-
             # UseLightTimeDelay (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action359)
-
-            def action360():
-                oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
-
+            with pytest.raises(Exception):
+                oAdvanced.use_light_time_delay = True
             # TimeSense (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action360)
-
-            def action361():
-                oAdvanced.time_delay_convergence = 0.1
-
+            with pytest.raises(Exception):
+                oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
             # TimeDelayConvergence (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action361)
-
-            def action362():
-                (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
-
+            with pytest.raises(Exception):
+                oAdvanced.time_delay_convergence = 0.1
             # AberrationType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action362)
+            with pytest.raises(Exception):
+                (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
             # EventDetection (readonly)
             oEDHelper.Run(oAdvanced.event_detection, bReadOnly)
             # Sampling (readonly)
@@ -8312,24 +7264,15 @@ class BasicAttitudeStandardHelper(object):
             oAdvanced.use_light_time_delay = False
             self.m_logger.WriteLine4("\tThe new UseLightTimeDelay is: {0}", oAdvanced.use_light_time_delay)
             Assert.assertFalse(oAdvanced.use_light_time_delay)
-
-            def action363():
-                oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
-
             # TimeSense (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action363)
-
-            def action364():
-                oAdvanced.time_delay_convergence = 0.1
-
+            with pytest.raises(Exception):
+                oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
             # TimeDelayConvergence (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action364)
-
-            def action365():
-                (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
-
+            with pytest.raises(Exception):
+                oAdvanced.time_delay_convergence = 0.1
             # AberrationType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action365)
+            with pytest.raises(Exception):
+                (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
             # UseLightTimeDelay (true)
             oAdvanced.use_light_time_delay = True
             self.m_logger.WriteLine4("\tThe new UseLightTimeDelay is: {0}", oAdvanced.use_light_time_delay)
@@ -8345,21 +7288,15 @@ class BasicAttitudeStandardHelper(object):
             (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.TOTAL
             self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
             Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
-
-            def action366():
+            with pytest.raises(Exception):
                 (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.UNKNOWN
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action366)
             # TimeDelayConvergence
             self.m_logger.WriteLine6("\tThe current TimeDelayConvergence is: {0}", oAdvanced.time_delay_convergence)
             oAdvanced.time_delay_convergence = 0.1
             self.m_logger.WriteLine6("\tThe new TimeDelayConvergence is: {0}", oAdvanced.time_delay_convergence)
             Assert.assertEqual(0.1, oAdvanced.time_delay_convergence)
-
-            def action367():
+            with pytest.raises(Exception):
                 oAdvanced.time_delay_convergence = 0.5
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action367)
             # TimeSense
             self.m_logger.WriteLine6("\tThe current TimeSense is: {0}", oAdvanced.time_sense)
             oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
@@ -8368,11 +7305,8 @@ class BasicAttitudeStandardHelper(object):
             oAdvanced.time_sense = IV_TIME_SENSE.TRANSMIT
             self.m_logger.WriteLine6("\tThe new TimeSense is: {0}", oAdvanced.time_sense)
             Assert.assertEqual(IV_TIME_SENSE.TRANSMIT, oAdvanced.time_sense)
-
-            def action368():
+            with pytest.raises(Exception):
                 oAdvanced.time_sense = IV_TIME_SENSE.UNKNOWN
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action368)
             # EventDetection
             oEDHelper.Run(oAdvanced.event_detection, bReadOnly)
             # Sampling
@@ -8400,49 +7334,34 @@ class BasicAttitudeStandardHelper(object):
         for element in oCollection:
             lat: float = element.latitude
 
-        def action369():
+        with pytest.raises(Exception):
             element2: "IVehicleTargetPointingElement" = oCollection[oCollection.count]
-
-        TryCatchAssertBlock.DoAssert("IVehicleTargetPointingCollection bad index", action369)
 
         arTargets = oCollection.available_targets
         self.m_logger.WriteLine3("\tThe TargetPointing collection has: {0} available targets.", Array.Length(arTargets))
         if bReadOnly:
             if Array.Length(arTargets) > 0:
-
-                def action370():
+                with pytest.raises(Exception):
                     oCollection.add(str(arTargets[0]))
-
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action370)
 
             if Array.Length(arTargets) > 0:
                 oCollection.add_position_as_target(10.0, 20.0, 30.0)
                 e0: "IVehicleTargetPointingElement" = oCollection[0]
 
-                def action371():
+                with pytest.raises(Exception):
                     oCollection.add_position_as_target(-10000.0, -10000.0, -10000.0)
 
-                TryCatchAssertBlock.DoAssert("AddPositionAsTarget bad params.", action371)
-
             if oCollection.count > 0:
-
-                def action372():
+                with pytest.raises(Exception):
                     oCollection.remove_at(0)
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action372)
-
             if oCollection.count > 0:
-
-                def action373():
+                with pytest.raises(Exception):
                     oCollection.remove(str(arTargets[0]))
 
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action373)
-
-            def action374():
-                oCollection.remove_all()
-
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action374)
+            with pytest.raises(Exception):
+                oCollection.remove_all()
 
         else:
             # RemoveAll
@@ -8450,10 +7369,8 @@ class BasicAttitudeStandardHelper(object):
             self.m_logger.WriteLine3("\tThe new TargetPointing collection contains: {0} elements.", oCollection.count)
             Assert.assertEqual(0, oCollection.count)
 
-            def action375():
+            with pytest.raises(Exception):
                 oCollection.add("Bogus")
-
-            TryCatchAssertBlock.DoAssert("Should not allow to add a bad target.", action375)
 
             strTarget: str = ""
 
@@ -8479,26 +7396,17 @@ class BasicAttitudeStandardHelper(object):
             oCollection.remove(strTarget)
             Assert.assertEqual((Array.Length(arTargets) - 1), oCollection.count)
             self.m_logger.WriteLine3("\tThe new TargetPointing collection contains: {0} elements.", oCollection.count)
-
-            def action376():
+            with pytest.raises(Exception):
                 oCollection.remove("Bogus")
-
-            TryCatchAssertBlock.DoAssert("Should not remove thru bad name.", action376)
 
             # RemoveAt
             oCollection.remove_at(0)
             Assert.assertEqual((Array.Length(arTargets) - 2), oCollection.count)
             self.m_logger.WriteLine3("\tThe new TargetPointing collection contains: {0} elements.", oCollection.count)
-
-            def action377():
+            with pytest.raises(Exception):
                 oCollection.remove_at(-1)
-
-            TryCatchAssertBlock.DoAssert("Should not remove thru bad index -1.", action377)
-
-            def action378():
+            with pytest.raises(Exception):
                 oCollection.remove_at(oCollection.count)
-
-            TryCatchAssertBlock.DoAssert("Should not remove thru bad index.", action378)
 
             # Item
             targetPointingElement: "IVehicleTargetPointingElement" = oCollection[0]
@@ -8518,16 +7426,10 @@ class BasicAttitudeStandardHelper(object):
                 "\tThe new ConstrainedVectorReference is: {0}", targetPointingElement.constrained_vector_reference
             )
             Assert.assertEqual("CentralBody/Io Sun(True)", targetPointingElement.constrained_vector_reference)
-
-            def action379():
+            with pytest.raises(Exception):
                 targetPointingElement.constrained_vector_reference = ""
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action379)
-
-            def action380():
+            with pytest.raises(Exception):
                 targetPointingElement.constrained_vector_reference = "InvalidReferenceVector"
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action380)
             # ResetConstrainedVectorReference
             self.m_logger.WriteLine4(
                 "\tThe current ResetConstrainedVectorReference is: {0}",
@@ -8600,11 +7502,8 @@ class BasicAttitudeStandardHelper(object):
         oATH = AccessTimeHelper()
         oSTH = ScheduleTimesHelper()
         if bReadOnly:
-
-            def action381():
+            with pytest.raises(Exception):
                 oTimes.use_access_times = True
-
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action381)
             # AccessTimes
             oATH.Run(oTimes.access_times)
             # ScheduleTimes (readonly)
@@ -8666,31 +7565,22 @@ class BasicAttitudeStandardHelper(object):
         oAttitude.wx = 0.000174533
         self.m_logger.WriteLine6("\tThe new Wx is: {0}", oAttitude.wx)
         Assert.assertEqual(0.000174533, oAttitude.wx)
-
-        def action382():
+        with pytest.raises(Exception):
             oAttitude.wx = 1234567.89
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action382)
         # Wy
         self.m_logger.WriteLine6("\tThe current Wy is: {0}", oAttitude.wy)
         oAttitude.wy = 0.000349066
         self.m_logger.WriteLine6("\tThe new Wy is: {0}", oAttitude.wy)
         Assert.assertEqual(0.000349066, oAttitude.wy)
-
-        def action383():
+        with pytest.raises(Exception):
             oAttitude.wy = 1234567.89
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action383)
         # Wz
         self.m_logger.WriteLine6("\tThe current Wz is: {0}", oAttitude.wz)
         oAttitude.wz = 0.000523599
         self.m_logger.WriteLine6("\tThe new Wz is: {0}", oAttitude.wz)
         Assert.assertEqual(0.000523599, oAttitude.wz)
-
-        def action384():
+        with pytest.raises(Exception):
             oAttitude.wz = 1234567.89
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action384)
 
         oAttitude.save_to_file("Satellite2.a")
 
@@ -8707,11 +7597,8 @@ class BasicAttitudeStandardHelper(object):
         oTorque.use_torque_file = False
         self.m_logger.WriteLine4("\tThe new UseTorqueFile is: {0}", oTorque.use_torque_file)
         Assert.assertFalse(oTorque.use_torque_file)
-
-        def action385():
+        with pytest.raises(Exception):
             oTorque.torque_file = r"..\..\..\Scenario\TorquesTimeBodyFixed.tq"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action385)
         oTorque.use_torque_file = True
         self.m_logger.WriteLine4("\tThe new UseTorqueFile is: {0}", oTorque.use_torque_file)
         Assert.assertTrue(oTorque.use_torque_file)
@@ -8720,16 +7607,10 @@ class BasicAttitudeStandardHelper(object):
         oTorque.torque_file = TestBase.GetScenarioFile(r"TorquesTimeBodyFixed.tq")
         self.m_logger.WriteLine5("\tThe new TorqueFile is: {0}", oTorque.torque_file)
         Assert.assertEqual("TorquesTimeBodyFixed.tq", oTorque.torque_file)
-
-        def action386():
+        with pytest.raises(Exception):
             oTorque.torque_file = ""
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action386)
-
-        def action387():
+        with pytest.raises(Exception):
             oTorque.torque_file = "InvalidFile.Name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an invalid value.", action387)
         oAttitude.save_to_file("Satellite2.a")
         self.m_logger.WriteLine("----- THE INTEGRATED ATTITUDE TEST ----- END -----")
 
@@ -8761,11 +7642,9 @@ class AccessTimeHelper(object):
                 accessTime.stop_time,
             )
 
-        def action388():
-            oTime: "IAccessTime" = oCollection[oCollection.count]
-
         # Item
-        TryCatchAssertBlock.DoAssert("Bad IAccessTimeCollection index", action388)
+        with pytest.raises(Exception):
+            oTime: "IAccessTime" = oCollection[oCollection.count]
         if oCollection.count > 0:
             oTime: "IAccessTime" = oCollection[0]
             Assert.assertIsNotNone(oTime)
@@ -8796,24 +7675,15 @@ class ScheduleTimesHelper(object):
         # Count
         self.m_logger.WriteLine3("\tThe current ScheduleTimes collection contains: {0} elements.", oCollection.count)
         if bReadOnly:
-
-            def action389():
-                oCollection.add("Satellite/Satellite1")
-
             # Add
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action389)
-
-            def action390():
-                oCollection.remove_at(0)
-
+            with pytest.raises(Exception):
+                oCollection.add("Satellite/Satellite1")
             # RemoveAt
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action390)
-
-            def action391():
-                oCollection.remove_all()
-
+            with pytest.raises(Exception):
+                oCollection.remove_at(0)
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action391)
+            with pytest.raises(Exception):
+                oCollection.remove_all()
 
         else:
             arAvailTargets = oCollection.available_targets
@@ -8845,15 +7715,11 @@ class ScheduleTimesHelper(object):
                     scheduleTimesElement.stop,
                 )
 
-            def action392():
+            with pytest.raises(Exception):
                 element: "IVehicleScheduleTimesElement" = oCollection[oCollection.count]
 
-            TryCatchAssertBlock.DoAssert("IVehicleScheduleTimesCollection bad index", action392)
-
-            def action393():
+            with pytest.raises(Exception):
                 oCollection.add("bogus")
-
-            TryCatchAssertBlock.DoAssert("bogus schedule time element", action393)
 
             # Item
             oTime: "IVehicleScheduleTimesElement" = oCollection[0]
@@ -8876,11 +7742,9 @@ class ScheduleTimesHelper(object):
             oLTO = LinkToObjectHelper()
             oLTO.Run(oNew.target, nameX)
 
-            def action394():
-                oCollection.remove_at(oCollection.count)
-
             # RemoveAt
-            TryCatchAssertBlock.DoAssert("oCollection.RemoveAt(oCollection.Count)", action394)
+            with pytest.raises(Exception):
+                oCollection.remove_at(oCollection.count)
 
             oCollection.remove_at(0)
             self.m_logger.WriteLine3("\tThe new ScheduleTimes collection contains: {0} elements.", oCollection.count)
@@ -9156,32 +8020,23 @@ class BasicAttitudeRealTimeHelper(object):
         oDuration.look_ahead = 123.456
         self.m_logger.WriteLine6("\tThe new LookAhead is: {0}", oDuration.look_ahead)
         Assert.assertEqual(123.456, oDuration.look_ahead)
-
-        def action395():
+        with pytest.raises(Exception):
             oDuration.look_ahead = 0
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action395)
         # LookBehind
         self.m_logger.WriteLine6("\tThe current LookBehind is: {0}", oDuration.look_behind)
         oDuration.look_behind = 456.789
         self.m_logger.WriteLine6("\tThe new LookBehind is: {0}", oDuration.look_behind)
         Assert.assertEqual(456.789, oDuration.look_behind)
-
-        def action396():
+        with pytest.raises(Exception):
             oDuration.look_behind = 123456789
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action396)
 
         # BlockFactor
         oAttitude.block_factor = 20
         Assert.assertEqual(20, oAttitude.block_factor)
         oAttitude.block_factor = 40
         Assert.assertEqual(40, oAttitude.block_factor)
-
-        def action397():
+        with pytest.raises(Exception):
             oAttitude.block_factor = 19
-
-        TryCatchAssertBlock.DoAssert("Should not allow invalid values.", action397)
         if oAttitude.data_reference.profile_type == VEHICLE_PROFILE.PROFILE_UNKNOWN:
             Assert.assertIsNone(oAttitude.data_reference.profile)
 
@@ -9410,12 +8265,9 @@ class AccessEventDetectionHelper(object):
     def Run(self, oDetection: "IAccessEventDetection", bReadOnly: bool):
         self.m_logger.WriteLine4("----- ACCESS EVENT DETECTION TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly)
         if bReadOnly:
-
-            def action398():
-                oDetection.set_type(oDetection.type)
-
             # SetType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action398)
+            with pytest.raises(Exception):
+                oDetection.set_type(oDetection.type)
             if oDetection.type == EVENT_DETECTION.NO_SUB_SAMPLING:
                 oNoSubSampling: "IEventDetectionNoSubSampling" = clr.CastAs(
                     oDetection.strategy, IEventDetectionNoSubSampling
@@ -9424,24 +8276,15 @@ class AccessEventDetectionHelper(object):
             elif oDetection.type == EVENT_DETECTION.USE_SUB_SAMPLING:
                 oSubSampling: "IEventDetectionSubSampling" = clr.CastAs(oDetection.strategy, IEventDetectionSubSampling)
                 Assert.assertIsNotNone(oSubSampling)
-
-                def action399():
-                    oSubSampling.abs_value_convergence = 0.1
-
                 # AbsValueConvergence (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action399)
-
-                def action400():
-                    oSubSampling.rel_value_convergence = 0.1
-
+                with pytest.raises(Exception):
+                    oSubSampling.abs_value_convergence = 0.1
                 # RelValueConvergence (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action400)
-
-                def action401():
-                    oSubSampling.time_convergence = 0.01
-
+                with pytest.raises(Exception):
+                    oSubSampling.rel_value_convergence = 0.1
                 # TimeConvergence (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action401)
+                with pytest.raises(Exception):
+                    oSubSampling.time_convergence = 0.01
             else:
                 Assert.fail("Invalid type!")
 
@@ -9481,11 +8324,8 @@ class AccessEventDetectionHelper(object):
                     oSubSampling.time_convergence = 0.5
                     self.m_logger.WriteLine6("\t\t\tThe new TimeConvergence is: {0}", oSubSampling.time_convergence)
                     Assert.assertEqual(0.5, oSubSampling.time_convergence)
-
-                    def action402():
+                    with pytest.raises(Exception):
                         oSubSampling.time_convergence = -0.5
-
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action402)
                     # AbsValueConvergence
                     self.m_logger.WriteLine6(
                         "\t\t\tThe current AbsValueConvergence is: {0}", oSubSampling.abs_value_convergence
@@ -9495,11 +8335,8 @@ class AccessEventDetectionHelper(object):
                         "\t\t\tThe new AbsValueConvergence is: {0}", oSubSampling.abs_value_convergence
                     )
                     Assert.assertEqual(0.5, oSubSampling.abs_value_convergence)
-
-                    def action403():
+                    with pytest.raises(Exception):
                         oSubSampling.abs_value_convergence = -0.5
-
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action403)
                     # RelValueConvergence
                     self.m_logger.WriteLine6(
                         "\t\t\tThe current RelValueConvergence is: {0}", oSubSampling.rel_value_convergence
@@ -9509,11 +8346,8 @@ class AccessEventDetectionHelper(object):
                         "\t\t\tThe new RelValueConvergence is: {0}", oSubSampling.rel_value_convergence
                     )
                     Assert.assertEqual(0.5, oSubSampling.rel_value_convergence)
-
-                    def action404():
+                    with pytest.raises(Exception):
                         oSubSampling.rel_value_convergence = -0.5
-
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action404)
                 else:
                     Assert.fail("Invalid type!")
 
@@ -9536,42 +8370,27 @@ class AccessSamplingHelper(object):
     def Run(self, oSampling: "IAccessSampling", bReadOnly: bool):
         self.m_logger.WriteLine4("----- ACCESS SAMPLING TEST (ReadOnly = {0}) ----- BEGIN -----", bReadOnly)
         if bReadOnly:
-
-            def action405():
-                oSampling.set_type(oSampling.type)
-
             # SetType (readonly)
-            TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action405)
+            with pytest.raises(Exception):
+                oSampling.set_type(oSampling.type)
             if oSampling.type == SAMPLING_METHOD.ADAPTIVE:
                 oAdaptive: "ISamplingMethodAdaptive" = clr.CastAs(oSampling.strategy, ISamplingMethodAdaptive)
                 Assert.assertIsNotNone(oAdaptive)
-
-                def action406():
-                    oAdaptive.min_time_step = 0.1
-
                 # MinTimeStep (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action406)
-
-                def action407():
-                    oAdaptive.max_time_step = 1.1
-
+                with pytest.raises(Exception):
+                    oAdaptive.min_time_step = 0.1
                 # MaxTimeStep (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action407)
+                with pytest.raises(Exception):
+                    oAdaptive.max_time_step = 1.1
             elif oSampling.type == SAMPLING_METHOD.FIXED_STEP:
                 oFixedStep: "ISamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, ISamplingMethodFixedStep)
                 Assert.assertIsNotNone(oFixedStep)
-
-                def action408():
-                    oFixedStep.fixed_time_step = 123
-
                 # FixedTimeStep (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action408)
-
-                def action409():
-                    oFixedStep.time_bound = 123
-
+                with pytest.raises(Exception):
+                    oFixedStep.fixed_time_step = 123
                 # TimeBound (readonly)
-                TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action409)
+                with pytest.raises(Exception):
+                    oFixedStep.time_bound = 123
             else:
                 Assert.fail("Invalid type!")
 
@@ -9603,21 +8422,15 @@ class AccessSamplingHelper(object):
                     oAdaptive.min_time_step = 12.5
                     self.m_logger.WriteLine6("\t\t\tThe new MinTimeStep is: {0}", oAdaptive.min_time_step)
                     Assert.assertEqual(12.5, oAdaptive.min_time_step)
-
-                    def action410():
+                    with pytest.raises(Exception):
                         oAdaptive.min_time_step = -12.5
-
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action410)
                     # MaxTimeStep
                     self.m_logger.WriteLine6("\t\t\tThe current MaxTimeStep is: {0}", oAdaptive.max_time_step)
                     oAdaptive.max_time_step = 12.5
                     self.m_logger.WriteLine6("\t\t\tThe new MaxTimeStep is: {0}", oAdaptive.max_time_step)
                     Assert.assertEqual(12.5, oAdaptive.max_time_step)
-
-                    def action411():
+                    with pytest.raises(Exception):
                         oAdaptive.max_time_step = -12.5
-
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action411)
                 elif oSampling.type == SAMPLING_METHOD.FIXED_STEP:
                     # Strategy
                     oFixedStep: "ISamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, ISamplingMethodFixedStep)
@@ -9627,21 +8440,15 @@ class AccessSamplingHelper(object):
                     oFixedStep.fixed_time_step = 34.5
                     self.m_logger.WriteLine6("\t\t\tThe new FixedTimeStep is: {0}", oFixedStep.fixed_time_step)
                     Assert.assertEqual(34.5, oFixedStep.fixed_time_step)
-
-                    def action412():
+                    with pytest.raises(Exception):
                         oFixedStep.fixed_time_step = -34.5
-
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action412)
                     # TimeBound
                     self.m_logger.WriteLine6("\t\t\tThe current TimeBound is: {0}", oFixedStep.time_bound)
                     oFixedStep.time_bound = 34.5
                     self.m_logger.WriteLine6("\t\t\tThe new TimeBound is: {0}", oFixedStep.time_bound)
                     Assert.assertEqual(34.5, oFixedStep.time_bound)
-
-                    def action413():
+                    with pytest.raises(Exception):
                         oFixedStep.time_bound = -34.5
-
-                    TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action413)
                 else:
                     Assert.fail("Invalid type!")
 
@@ -9839,11 +8646,8 @@ class SpatialInfoHelper(object):
         # Text the orientation
         fo: "IOrientation" = spatialState.fixed_orientation.convert_to(ORIENTATION_TYPE.AZ_EL)
         Assert.assertIsNotNone(fo)
-
-        def action414():
+        with pytest.raises(Exception):
             spatialState.fixed_orientation.assign(fo)
-
-        TryCatchAssertBlock.DoAssert("Should not allow assignment to read-only attributes.", action414)
 
         vx: float = 0.0
         vy: float = 0.0
@@ -10111,11 +8915,8 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
 
         laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.atmospheric_loss_model
-
-        def action415():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             laserPropChan.set_atmospheric_loss_model("Beer-Bouguer-Lambert Law")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action415)
 
         laserPropChan.enable_atmospheric_loss_model = True
         Assert.assertTrue(laserPropChan.enable_atmospheric_loss_model)
@@ -10147,10 +8948,8 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
         Assert.assertEqual(20, bbllLayerColl[4].top_height)
         Assert.assertEqual(0, bbllLayerColl[4].extinction_coefficient)
 
-        def action416():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             bbllLayerColl[3].top_height = 41
-
-        TryCatchAssertBlock.ExpectedException("read only", action416)
         bbllLayerColl[3].extinction_coefficient = 1.5
         Assert.assertEqual(1.5, bbllLayerColl[3].extinction_coefficient)
 
@@ -10169,24 +8968,18 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
         Assert.assertEqual(5, bbllLayerColl[3].top_height)
         Assert.assertEqual(0, bbllLayerColl[3].extinction_coefficient)
 
-        def action417():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bbllLayerColl[3].top_height = 101
-
-        TryCatchAssertBlock.ExpectedException("invalid", action417)
         bbllLayerColl[3].top_height = 6
         Assert.assertEqual(6, bbllLayerColl[3].top_height)
 
-        def action418():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bbllLayerColl[3].extinction_coefficient = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action418)
         bbllLayerColl[3].extinction_coefficient = 1.5
         Assert.assertEqual(1.5, bbllLayerColl[3].extinction_coefficient)
 
-        def action419():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             bbllLayerColl.remove_at(5)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action419)
         bbllLayerColl.remove_at(2)
         Assert.assertEqual(3, bbllLayerColl.count)
         Assert.assertEqual(95, bbllLayerColl[0].top_height)
@@ -10210,21 +9003,15 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
 
         laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.atmospheric_loss_model
-
-        def action420():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             laserPropChan.set_atmospheric_loss_model("MODTRAN-derived Lookup Table")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action420)
 
         laserPropChan.enable_atmospheric_loss_model = True
         Assert.assertTrue(laserPropChan.enable_atmospheric_loss_model)
 
         laserAtmosLossModel = laserPropChan.atmospheric_loss_model
-
-        def action421():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             laserPropChan.set_atmospheric_loss_model("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action421)
         laserPropChan.set_atmospheric_loss_model("MODTRAN-derived Lookup Table")
 
         Assert.assertEqual("MODTRAN-derived Lookup Table", laserPropChan.atmospheric_loss_model.name)
@@ -10249,46 +9036,28 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
         Assert.assertEqual(0.5, modtran.visibility)
         modtran.visibility = 50
         Assert.assertEqual(50, modtran.visibility)
-
-        def action422():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.visibility = 0.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action422)
-
-        def action423():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.visibility = 51
-
-        TryCatchAssertBlock.ExpectedException("invalid", action423)
 
         modtran.relative_humidity = 0
         Assert.assertEqual(0, modtran.relative_humidity)
         modtran.relative_humidity = 100
         Assert.assertEqual(100, modtran.relative_humidity)
-
-        def action424():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.relative_humidity = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action424)
-
-        def action425():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.relative_humidity = 101
-
-        TryCatchAssertBlock.ExpectedException("invalid", action425)
 
         modtran.surface_temperature = 190
         Assert.assertEqual(190, modtran.surface_temperature)
         modtran.surface_temperature = 320
         Assert.assertEqual(320, modtran.surface_temperature)
-
-        def action426():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.surface_temperature = 189
-
-        TryCatchAssertBlock.ExpectedException("invalid", action426)
-
-        def action427():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             modtran.surface_temperature = 321
-
-        TryCatchAssertBlock.ExpectedException("invalid", action427)
 
 
 # endregion
@@ -10306,21 +9075,15 @@ class PlatformLaserEnvTropoScintLossHelper(object):
         laserTropoScint: "ILaserTroposphericScintillationLossModel" = (
             laserPropChan.tropospheric_scintillation_loss_model
         )
-
-        def action428():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action428)
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = True
         Assert.assertTrue(laserPropChan.enable_tropospheric_scintillation_loss_model)
 
         laserTropoScint = laserPropChan.tropospheric_scintillation_loss_model
-
-        def action429():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             laserPropChan.set_atmospheric_loss_model("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action429)
         laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
         Assert.assertEqual("ITU-R P1814", laserPropChan.tropospheric_scintillation_loss_model.name)
         Assert.assertEqual(
@@ -10385,10 +9148,8 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
         propChan.enable_rain_loss = False
         Assert.assertFalse(propChan.enable_rain_loss)
 
-        def action430():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_rain_loss_model("Crane 1985")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action430)
 
         propChan.enable_rain_loss = True
         Assert.assertTrue(propChan.enable_rain_loss)
@@ -10406,32 +9167,20 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, crane85.surface_temperature)
                 crane85.surface_temperature = 100
                 Assert.assertEqual(100, crane85.surface_temperature)
-
-                def action431():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane85.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action431)
-
-                def action432():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane85.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action432)
 
             elif rainLossModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.SCRIPT_PLUGIN, rainLossModel.type)
                     scriptPlugin: "IRainLossModelScriptPlugin" = clr.CastAs(rainLossModel, IRainLossModelScriptPlugin)
-
-                    def action433():
+                    with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                         scriptPlugin.filename = r"C:\bogus.vbs"
-
-                    TryCatchAssertBlock.ExpectedException("does not exist", action433)
-
-                    def action434():
+                    with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
                         scriptPlugin.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-                    TryCatchAssertBlock.ExpectedException("Could not initialize", action434)
                     scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_RainLossModel.vbs")
                     Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_RainLossModel.vbs"), scriptPlugin.filename)
 
@@ -10442,16 +9191,10 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, ccir83.surface_temperature)
                 ccir83.surface_temperature = 100
                 Assert.assertEqual(100, ccir83.surface_temperature)
-
-                def action435():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     ccir83.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action435)
-
-                def action436():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     ccir83.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action436)
 
             elif rainLossModelName == "Crane 1982":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1982, rainLossModel.type)
@@ -10460,16 +9203,10 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, crane82.surface_temperature)
                 crane82.surface_temperature = 100
                 Assert.assertEqual(100, crane82.surface_temperature)
-
-                def action437():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane82.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action437)
-
-                def action438():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     crane82.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action438)
 
             elif rainLossModelName == "ITU-R P618-10":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_10, rainLossModel.type)
@@ -10478,16 +9215,10 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
                 itu618_10.surface_temperature = 100
                 Assert.assertEqual(100, itu618_10.surface_temperature)
-
-                def action439():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_10.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action439)
-
-                def action440():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_10.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action440)
                 itu618_10.enable_depolarization_loss = False
                 Assert.assertFalse(itu618_10.enable_depolarization_loss)
                 itu618_10.enable_depolarization_loss = True
@@ -10500,16 +9231,10 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
                 itu618_12.surface_temperature = 100
                 Assert.assertEqual(100, itu618_12.surface_temperature)
-
-                def action441():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_12.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action441)
-
-                def action442():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_12.surface_temperature = 101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action442)
                 itu618_12.enable_depolarization_loss = False
                 Assert.assertFalse(itu618_12.enable_depolarization_loss)
                 itu618_12.enable_depolarization_loss = True
@@ -10526,34 +9251,21 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(-100, itu618_13.surface_temperature)
                 itu618_13.surface_temperature = 100
                 Assert.assertEqual(100, itu618_13.surface_temperature)
-
-                def action443():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_13.surface_temperature = -101
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action443)
-
-                def action444():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     itu618_13.surface_temperature = 101
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action444)
-
-                def action445():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     itu618_13.use_annual_itu_1510 = True
-
-                TryCatchAssertBlock.ExpectedException("read-only", action445)
-
-                def action446():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     itu618_13.itu_1510_month = 1
-
-                TryCatchAssertBlock.ExpectedException("read-only", action446)
 
                 itu618_13.enable_itu_1510 = True
                 Assert.assertTrue(itu618_13.enable_itu_1510)
 
-                def action447():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                     itu618_13.surface_temperature = 100
-
-                TryCatchAssertBlock.ExpectedException("read only", action447)
 
                 itu618_13.use_annual_itu_1510 = False
                 Assert.assertFalse(itu618_13.use_annual_itu_1510)
@@ -10562,24 +9274,16 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertEqual(1, itu618_13.itu_1510_month)
                 itu618_13.itu_1510_month = 12
                 Assert.assertEqual(12, itu618_13.itu_1510_month)
-
-                def action448():
+                with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                     itu618_13.itu_1510_month = 0
-
-                TryCatchAssertBlock.ExpectedException("must be in", action448)
-
-                def action449():
+                with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                     itu618_13.itu_1510_month = 13
-
-                TryCatchAssertBlock.ExpectedException("must be in", action449)
 
                 itu618_13.use_annual_itu_1510 = True
                 Assert.assertTrue(itu618_13.use_annual_itu_1510)
 
-                def action450():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     itu618_13.itu_1510_month = 1
-
-                TryCatchAssertBlock.ExpectedException("read-only", action450)
 
                 itu618_13.enable_depolarization_loss = False
                 Assert.assertFalse(itu618_13.enable_depolarization_loss)
@@ -10589,10 +9293,8 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
             else:
                 Assert.fail("Unknown Rain Loss Model name")
 
-        def action451():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_rain_loss_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action451)
         root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
 
@@ -10619,10 +9321,8 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         propChan.enable_clouds_and_fog_fading_loss = True
         Assert.assertTrue(propChan.enable_clouds_and_fog_fading_loss)
 
-        def action452():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-5")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action452)
 
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-7")
         cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
@@ -10645,11 +9345,8 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm7.cloud_ceiling)
         cfflm7.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm7.cloud_ceiling)
-
-        def action453():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_ceiling = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action453)
         # TryCatchAssertBlock.ExpectedException("is invalid", delegate () { cfflm7.CloudCeiling = 21; });   // no max
 
         cfflm7.cloud_layer_thickness = 1
@@ -10658,11 +9355,8 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm7.cloud_layer_thickness)
         cfflm7.cloud_layer_thickness = 1
         Assert.assertEqual(1, cfflm7.cloud_layer_thickness)
-
-        def action454():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_layer_thickness = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action454)
         # TryCatchAssertBlock.ExpectedException("is invalid", delegate () { cfflm7.CloudLayerThickness = 21; });   // no max
 
         cfflm7.cloud_temperature = -100
@@ -10671,21 +9365,13 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm7.cloud_temperature)
         cfflm7.cloud_temperature = -100
         Assert.assertEqual(-100, cfflm7.cloud_temperature)
-
-        def action455():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action455)
-
-        def action456():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_temperature = 101
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action456)
-
-        def action457():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("must be in", action457)
 
         cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
@@ -10695,36 +9381,18 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm7.cloud_liquid_water_density)
         cfflm7.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm7.cloud_liquid_water_density)
-
-        def action458():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_liquid_water_density = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action458)
-
-        def action459():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.cloud_liquid_water_density = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action459)
-
-        def action460():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action460)
-
-        def action461():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action461)
-
-        def action462():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action462)
-
-        def action463():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.use_rain_height_as_cloud_layer_thickness = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action463)
 
         cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
         cfflm7.liquid_water_percent_annual_exceeded = 0.1
@@ -10736,30 +9404,16 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         cfflm7.use_rain_height_as_cloud_layer_thickness = True
         Assert.assertTrue(cfflm7.use_rain_height_as_cloud_layer_thickness)
 
-        def action464():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_annual_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action464)
-
-        def action465():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_annual_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action465)
-
-        def action466():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action466)
-
-        def action467():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action467)
-
-        def action468():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action468)
 
         cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
         cfflm7.liquid_water_percent_monthly_exceeded = 1.0
@@ -10775,35 +9429,18 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         cfflm7.use_rain_height_as_cloud_layer_thickness = True
         Assert.assertTrue(cfflm7.use_rain_height_as_cloud_layer_thickness)
 
-        def action469():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_monthly_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action469)
-
-        def action470():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.liquid_water_percent_monthly_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action470)
-
-        def action471():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.average_data_month = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action471)
-
-        def action472():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm7.average_data_month = 13
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action472)
-
-        def action473():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action473)
-
-        def action474():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action474)
 
     def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "ICloudsAndFogFadingLossModelP840_6"):
         cfflm6.cloud_ceiling = 0
@@ -10812,16 +9449,10 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm6.cloud_ceiling)
         cfflm6.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm6.cloud_ceiling)
-
-        def action475():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_ceiling = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action475)
-
-        def action476():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_ceiling = 21
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action476)
 
         cfflm6.cloud_layer_thickness = 0
         Assert.assertEqual(0, cfflm6.cloud_layer_thickness)
@@ -10829,16 +9460,10 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(20, cfflm6.cloud_layer_thickness)
         cfflm6.cloud_layer_thickness = 0
         Assert.assertEqual(0, cfflm6.cloud_layer_thickness)
-
-        def action477():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_layer_thickness = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action477)
-
-        def action478():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_layer_thickness = 21
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action478)
 
         cfflm6.cloud_temperature = -100
         Assert.assertEqual(-100, cfflm6.cloud_temperature)
@@ -10846,21 +9471,13 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm6.cloud_temperature)
         cfflm6.cloud_temperature = -100
         Assert.assertEqual(-100, cfflm6.cloud_temperature)
-
-        def action479():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action479)
-
-        def action480():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_temperature = 101
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action480)
-
-        def action481():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("must be in", action481)
 
         cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
@@ -10870,62 +9487,32 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(100, cfflm6.cloud_liquid_water_density)
         cfflm6.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm6.cloud_liquid_water_density)
-
-        def action482():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_liquid_water_density = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action482)
-
-        def action483():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.cloud_liquid_water_density = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action483)
-
-        def action484():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action484)
-
-        def action485():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action485)
-
-        def action486():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action486)
 
         cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
         cfflm6.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm6.liquid_water_percent_annual_exceeded)
         cfflm6.liquid_water_percent_annual_exceeded = 99
         Assert.assertEqual(99, cfflm6.liquid_water_percent_annual_exceeded)
-
-        def action487():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_annual_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action487)
-
-        def action488():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_annual_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action488)
-
-        def action489():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action489)
-
-        def action490():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_monthly_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action490)
-
-        def action491():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action491)
 
         cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
         cfflm6.liquid_water_percent_monthly_exceeded = 1.0
@@ -10936,36 +9523,18 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         Assert.assertEqual(1, cfflm6.average_data_month)
         cfflm6.average_data_month = 12
         Assert.assertEqual(12, cfflm6.average_data_month)
-
-        def action492():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_monthly_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action492)
-
-        def action493():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.liquid_water_percent_monthly_exceeded = 100
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action493)
-
-        def action494():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.average_data_month = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action494)
-
-        def action495():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cfflm6.average_data_month = 13
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action495)
-
-        def action496():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.cloud_liquid_water_density = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action496)
-
-        def action497():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_annual_exceeded = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action497)
 
 
 # endregion
@@ -10988,10 +9557,8 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         propChan.enable_atmos_absorption = False
         Assert.assertFalse(propChan.enable_atmos_absorption)
 
-        def action498():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_atmos_absorption_model("ITU-R P676-9")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action498)
 
         propChan.enable_atmos_absorption = True
         Assert.assertTrue(propChan.enable_atmos_absorption)
@@ -11036,10 +9603,8 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             else:
                 Assert.fail("Unknown model type")
 
-        def action499():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_atmos_absorption_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action499)
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
@@ -11055,15 +9620,10 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertTrue(iturp676.seasonal_regional_method)
 
     def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "IAtmosphericAbsorptionModelScriptPlugin"):
-        def action500():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action500)
-
-        def action501():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             scriptPlugin.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-        TryCatchAssertBlock.ExpectedException("Could not initialize", action501)
 
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.filename)
@@ -11074,116 +9634,72 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
         simpleSatcom.water_vapor_concentration = 100
         Assert.assertEqual(100, simpleSatcom.water_vapor_concentration)
-
-        def action502():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.water_vapor_concentration = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action502)
-
-        def action503():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.water_vapor_concentration = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action503)
 
         simpleSatcom.surface_temperature = -100
         Assert.assertEqual(-100, simpleSatcom.surface_temperature)
         simpleSatcom.surface_temperature = 100
         Assert.assertEqual(100, simpleSatcom.surface_temperature)
-
-        def action504():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action504)
-
-        def action505():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action505)
 
     def Test_IAgAtmosphericAbsorptionModelTirem(self, tirem: "IAtmosphericAbsorptionModelTirem"):
         tirem.surface_temperature = -100
         Assert.assertEqual(-100, tirem.surface_temperature)
         tirem.surface_temperature = 100
         Assert.assertEqual(100, tirem.surface_temperature)
-
-        def action506():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action506)
-
-        def action507():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action507)
 
         self._root.unit_preferences.set_current_unit("DistanceUnit", "m")
         tirem.surface_humidity = 0
         Assert.assertEqual(0, tirem.surface_humidity)
         tirem.surface_humidity = 13.25
         Assert.assertEqual(13.25, tirem.surface_humidity)
-
-        def action508():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action508)
-
-        def action509():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = 14
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action509)
 
         tirem.surface_conductivity = 1e-05
         Assert.assertEqual(1e-05, tirem.surface_conductivity)
         tirem.surface_conductivity = 100
         Assert.assertEqual(100, tirem.surface_conductivity)
-
-        def action510():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_conductivity = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action510)
-
-        def action511():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_conductivity = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action511)
 
         tirem.surface_refractivity = 200
         Assert.assertEqual(200, tirem.surface_refractivity)
         tirem.surface_refractivity = 450
         Assert.assertEqual(450, tirem.surface_refractivity)
-
-        def action512():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 199
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action512)
-
-        def action513():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 451
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action513)
 
         tirem.relative_permittivity = 0
         Assert.assertEqual(0, tirem.relative_permittivity)
         tirem.relative_permittivity = 100
         Assert.assertEqual(100, tirem.relative_permittivity)
-
-        def action514():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action514)
-
-        def action515():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action515)
 
         tirem.override_terrain_sample_resolution = False
         Assert.assertFalse(tirem.override_terrain_sample_resolution)
 
-        def action516():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             tirem.terrain_sample_resolution = 1
-
-        TryCatchAssertBlock.ExpectedException("read only", action516)
 
         tirem.override_terrain_sample_resolution = True
         Assert.assertTrue(tirem.override_terrain_sample_resolution)
@@ -11193,16 +9709,10 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertEqual(0.0001, tirem.terrain_sample_resolution)
         tirem.terrain_sample_resolution = 10
         Assert.assertEqual(10, tirem.terrain_sample_resolution)
-
-        def action517():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action517)
-
-        def action518():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action518)
 
 
 # endregion
@@ -11224,10 +9734,8 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
         propChan.enable_urban_terrestrial_loss = False
         Assert.assertFalse(propChan.enable_urban_terrestrial_loss)
 
-        def action519():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_urban_terrestrial_loss_model("Two Ray")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action519)
 
         propChan.enable_urban_terrestrial_loss = True
         Assert.assertTrue(propChan.enable_urban_terrestrial_loss)
@@ -11249,10 +9757,8 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             else:
                 Assert.fail("Unknown model type")
 
-        def action520():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_urban_terrestrial_loss_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action520)
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
     def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "IUrbanTerrestrialLossModelTwoRay"):
@@ -11260,31 +9766,19 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
         Assert.assertEqual(0.1, twoRay.loss_factor)
         twoRay.loss_factor = 10
         Assert.assertEqual(10, twoRay.loss_factor)
-
-        def action521():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.loss_factor = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action521)
-
-        def action522():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.loss_factor = 11
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action522)
 
         twoRay.surface_temperature = -100
         Assert.assertEqual(-100, twoRay.surface_temperature)
         twoRay.surface_temperature = 100
         Assert.assertEqual(100, twoRay.surface_temperature)
-
-        def action523():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action523)
-
-        def action524():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action524)
 
     def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "IUrbanTerrestrialLossModelWirelessInSiteRT"):
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
@@ -11309,40 +9803,26 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             Assert.assertEqual(-100, wisRT.surface_temperature)
             wisRT.surface_temperature = 100
             Assert.assertEqual(100, wisRT.surface_temperature)
-
-            def action525():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 wisRT.surface_temperature = -101
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action525)
-
-            def action526():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 wisRT.surface_temperature = 101
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action526)
 
             geometryData: "IWirelessInSiteRTGeometryData" = wisRT.geometry_data
 
-            def action527():
+            with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
-
-            TryCatchAssertBlock.ExpectedException("does not exist", action527)
             geometryData.filename = TestBase.GetScenarioFile("Cochise.shp")
 
             geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84
             Assert.assertEqual(PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84, geometryData.projection_horizontal_datum)
-
-            def action528():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.UTMWGS84
-
-            TryCatchAssertBlock.ExpectedException("must be in", action528)
 
             geometryData.building_height_data_attribute = "STATE_NAME"
             Assert.assertEqual("STATE_NAME", geometryData.building_height_data_attribute)
-
-            def action529():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.building_height_data_attribute = "Some"
-
-            TryCatchAssertBlock.ExpectedException("must be in", action529)
 
             geometryData.building_height_reference_method = BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_SEA_LEVEL
             Assert.assertEqual(
@@ -11356,15 +9836,10 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             geometryData.override_geometry_tile_origin = False
             Assert.assertFalse(geometryData.override_geometry_tile_origin)
 
-            def action530():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 geometryData.geometry_tile_origin_latitude = 0
-
-            TryCatchAssertBlock.ExpectedException("read only", action530)
-
-            def action531():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 geometryData.geometry_tile_origin_longitude = 0
-
-            TryCatchAssertBlock.ExpectedException("read only", action531)
 
             geometryData.override_geometry_tile_origin = True
             Assert.assertTrue(geometryData.override_geometry_tile_origin)
@@ -11373,31 +9848,19 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             Assert.assertEqual(-90, geometryData.geometry_tile_origin_latitude)
             geometryData.geometry_tile_origin_latitude = 90
             Assert.assertEqual(90, geometryData.geometry_tile_origin_latitude)
-
-            def action532():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_latitude = -91
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action532)
-
-            def action533():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_latitude = 91
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action533)
 
             geometryData.geometry_tile_origin_longitude = -180
             Assert.assertEqual(-180, geometryData.geometry_tile_origin_longitude)
             geometryData.geometry_tile_origin_longitude = 360
             Assert.assertEqual(360, geometryData.geometry_tile_origin_longitude)
-
-            def action534():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_longitude = -181
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action534)
-
-            def action535():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 geometryData.geometry_tile_origin_longitude = 361
-
-            TryCatchAssertBlock.ExpectedException("is invalid", action535)
 
             geometryData.use_terrain_data = False
             Assert.assertFalse(geometryData.use_terrain_data)
@@ -11440,10 +9903,8 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         propChan.enable_tropospheric_scintillation_fading_loss = False
         Assert.assertFalse(propChan.enable_tropospheric_scintillation_fading_loss)
 
-        def action536():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-12")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action536)
 
         propChan.enable_tropospheric_scintillation_fading_loss = True
         Assert.assertTrue(propChan.enable_tropospheric_scintillation_fading_loss)
@@ -11467,80 +9928,51 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
     def Test_IAgTroposphericScintillationFadingLossModelP618_12(
         self, tsflm12: "ITroposphericScintillationFadingLossModelP618_12"
     ):
-        def action537():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # Deprecated and should not be used.
             tsflm12.compute_deep_fade = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action537)  # Deprecated and should not be used.
 
         tsflm12.surface_temperature = -100
         Assert.assertEqual(-100, tsflm12.surface_temperature)
         tsflm12.surface_temperature = 100
         Assert.assertEqual(100, tsflm12.surface_temperature)
-
-        def action538():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action538)
-
-        def action539():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action539)
 
         tsflm12.fade_outage = 0.01
         Assert.assertEqual(0.01, tsflm12.fade_outage)
         tsflm12.fade_outage = 40
         Assert.assertEqual(40, tsflm12.fade_outage)
-
-        def action540():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_outage = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action540)
-
-        def action541():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_outage = 51
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action541)
 
         tsflm12.fade_exceeded = 0.01
         Assert.assertEqual(0.01, tsflm12.fade_exceeded)
         tsflm12.fade_exceeded = 50
         Assert.assertEqual(50, tsflm12.fade_exceeded)
-
-        def action542():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_exceeded = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action542)
-
-        def action543():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.fade_exceeded = 51
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action543)
 
         tsflm12.percent_time_refractivity_gradient = 0
         Assert.assertEqual(0, tsflm12.percent_time_refractivity_gradient)
         tsflm12.percent_time_refractivity_gradient = 100
         Assert.assertEqual(100, tsflm12.percent_time_refractivity_gradient)
-
-        def action544():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.percent_time_refractivity_gradient = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action544)
-
-        def action545():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.percent_time_refractivity_gradient = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action545)
 
         tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH, tsflm12.average_time_choice)
         tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR, tsflm12.average_time_choice)
-
-        def action546():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("must be in", action546)
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
         self, tsflm8: "ITroposphericScintillationFadingLossModelP618_8"
@@ -11556,16 +9988,10 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual(100, tsflm8.surface_temperature)
         tsflm8.surface_temperature = -100
         Assert.assertEqual(-100, tsflm8.surface_temperature)
-
-        def action547():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.surface_temperature = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action547)
-
-        def action548():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.surface_temperature = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action548)
 
         tsflm8.fade_outage = 0
         Assert.assertEqual(0, tsflm8.fade_outage)
@@ -11573,16 +9999,10 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual(100, tsflm8.fade_outage)
         tsflm8.fade_outage = 0
         Assert.assertEqual(0, tsflm8.fade_outage)
-
-        def action549():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.fade_outage = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action549)
-
-        def action550():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.fade_outage = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action550)
 
         tsflm8.percent_time_refractivity_gradient = 0
         Assert.assertEqual(0, tsflm8.percent_time_refractivity_gradient)
@@ -11590,16 +10010,10 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual(100, tsflm8.percent_time_refractivity_gradient)
         tsflm8.percent_time_refractivity_gradient = 0
         Assert.assertEqual(0, tsflm8.percent_time_refractivity_gradient)
-
-        def action551():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.percent_time_refractivity_gradient = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action551)
-
-        def action552():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.percent_time_refractivity_gradient = 101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action552)
 
 
 # endregion
@@ -11624,23 +10038,16 @@ class PlatformRF_Environment_CustomModelsHelper(object):
             customModel.enable = False
             Assert.assertFalse(customModel.enable)
 
-            def action553():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 customModel.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
-
-            TryCatchAssertBlock.ExpectedException("read-only", action553)
 
             customModel.enable = True
             Assert.assertTrue(customModel.enable)
 
-            def action554():
+            with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 customModel.filename = r"C:\bogus.vbs"
-
-            TryCatchAssertBlock.ExpectedException("does not exist", action554)
-
-            def action555():
+            with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
                 customModel.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-            TryCatchAssertBlock.ExpectedException("Could not initialize", action555)
             customModel.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
             Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), customModel.filename)
 

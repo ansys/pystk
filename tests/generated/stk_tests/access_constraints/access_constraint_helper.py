@@ -2,6 +2,7 @@ from test_util import *
 from assertion_harness import *
 from display_times_helper import *
 from logger import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -539,22 +540,16 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oRawPlugin)
 
         else:
-
-            def action1():
+            with pytest.raises(Exception, match=RegexSubstringMatch("Failed to get a raw pointer")):
                 oRawPlugin: typing.Any = oPlugin.get_raw_plugin_object()
-
-            TryCatchAssertBlock.ExpectedException("Failed to get a raw pointer", action1)
 
         # AvailableProperties
         arProperties = oPlugin.available_properties
 
         oPlugin.enable_min = False
         Assert.assertFalse(oPlugin.enable_min)
-
-        def action2():
+        with pytest.raises(Exception):
             (clr.Convert(oPlugin, IAccessConstraintMinMax)).min = 20.0
-
-        TryCatchAssertBlock.DoAssert("", action2)
         oPlugin.enable_min = True
         Assert.assertTrue(oPlugin.enable_min)
         (clr.Convert(oPlugin, IAccessConstraintMinMax)).min = 20.0
@@ -562,18 +557,12 @@ class AccessConstraintHelper(object):
 
         oPlugin.enable_max = False
         Assert.assertFalse(oPlugin.enable_max)
-
-        def action3():
+        with pytest.raises(Exception):
             (clr.Convert(oPlugin, IAccessConstraintMinMax)).max = 20.0
-
-        TryCatchAssertBlock.DoAssert("", action3)
         oPlugin.enable_max = True
         Assert.assertTrue(oPlugin.enable_max)
-
-        def action4():
+        with pytest.raises(Exception):
             (clr.Convert(oPlugin, IAccessConstraintMinMax)).max = 19.0
-
-        TryCatchAssertBlock.DoAssert("", action4)
         (clr.Convert(oPlugin, IAccessConstraintMinMax)).max = 20.0
         Assert.assertEqual(20.0, oPlugin.max)
 
@@ -585,11 +574,8 @@ class AccessConstraintHelper(object):
 
             # SetProperty
             oPlugin.set_property(strName, strValue)
-
-            def action5():
+            with pytest.raises(Exception):
                 oPlugin.set_property("bogus", strValue)
-
-            TryCatchAssertBlock.DoAssert("", action5)
 
             iIndex += 1
 
@@ -646,18 +632,14 @@ class AccessConstraintHelper(object):
         oCollection.use_preferred_max_time_step = False
         Assert.assertFalse(oCollection.use_preferred_max_time_step)
 
-        def action6():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oCollection.preferred_max_time_step = 100
-
-        TryCatchAssertBlock.ExpectedException("read only", action6)
 
         oCollection.use_preferred_max_time_step = True
         Assert.assertTrue(oCollection.use_preferred_max_time_step)
 
-        def action7():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oCollection.preferred_max_time_step = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action7)
         oCollection.preferred_max_time_step = 1
         Assert.assertEqual(1, oCollection.preferred_max_time_step)
         oCollection.preferred_max_time_step = 360
@@ -687,16 +669,10 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action8():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action8)
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action9)
 
         # Min on, Max off
         oMinMax.enable_min = True
@@ -707,11 +683,8 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(False, oMinMax.enable_max)
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
-
-        def action10():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action10)
 
         # Min on, Max on
         oMinMax.enable_min = True
@@ -724,21 +697,12 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(67.89, oMinMax.max)
         oMinMax.min = 21.345
         Assert.assertEqual(21.345, oMinMax.min)
-
-        def action11():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = -1234
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action11)
-
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action12)
-
-        def action13():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action13)
 
         # Min off, Max on
         oMinMax.enable_min = False
@@ -747,11 +711,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = True
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(True, oMinMax.enable_max)
-
-        def action14():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action14)
         oMinMax.max = 76.89
         Assert.assertEqual(76.89, oMinMax.max)
 
@@ -762,16 +723,10 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action15():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action15)
-
-        def action16():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action16)
 
         # restore to original
         oMinMax.enable_min = holdEnableMin
@@ -797,16 +752,10 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action17():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action17)
-
-        def action18():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action18)
 
         # Min on
         oMinMax.enable_min = True
@@ -816,36 +765,21 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(12.345, oMinMax.min)
         oMinMax.max = 67.89
         Assert.assertEqual(67.89, oMinMax.max)
-
-        def action19():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = -1234
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action19)
-
-        def action20():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action20)
-
-        def action21():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action21)
 
         # Max off
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action22():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action22)
-
-        def action23():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action23)
 
         # Max on
         oMinMax.enable_max = True
@@ -855,36 +789,21 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(12.345, oMinMax.min)
         oMinMax.max = 76.89
         Assert.assertEqual(76.89, oMinMax.max)
-
-        def action24():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = -1234
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action24)
-
-        def action25():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action25)
-
-        def action26():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action26)
 
         # Max off
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action27():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action27)
-
-        def action28():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action28)
 
         # restore to original
         oMinMax.enable_min = holdEnableMin
@@ -904,10 +823,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action29():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = dMax
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action29)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -915,10 +832,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action30():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = dMin
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action30)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -930,52 +845,36 @@ class AccessConstraintHelper(object):
             oMinMax.min = dMin
             Assert.assertEqual(dMin, float(oMinMax.min))
             if bRange:
-
-                def action31():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
                     oMinMax.min = dMin * (-2)
-
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action31)
 
             # Max
             oMinMax.max = dMax
             Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
-
-                def action32():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
                     oMinMax.max = dMax * 2
-
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action32)
 
         else:
             # Max
             oMinMax.max = dMax
             Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
-
-                def action33():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     oMinMax.max = dMax * 2
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action33)
 
             # Min
             oMinMax.min = dMin
             Assert.assertEqual(dMin, oMinMax.min)
             if bRange:
-
-                def action34():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     oMinMax.min = dMin * (-2)
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action34)
-
-        def action35():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = dMin - 0.01
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action35)
-
-        def action36():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = dMax + 0.01
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action36)
 
     # endregion
 
@@ -991,10 +890,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action37():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action37)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1002,10 +899,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action38():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action38)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -1016,15 +911,11 @@ class AccessConstraintHelper(object):
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
 
-        def action39():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action39)
-
-        def action40():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action40)
 
         # restore DistanceUnit
         self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
@@ -1040,10 +931,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action41():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = 1.01
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action41)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1051,26 +940,20 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action42():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = 0
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action42)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
 
-        def action43():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Value 0 is invalid")):
             oMinMax.min = 0
-
-        TryCatchAssertBlock.ExpectedException("Value 0 is invalid", action43)
 
         oMinMax.min = 1e-25
         Assert.assertEqual(1e-25, oMinMax.min)
 
-        def action44():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Value 1.010000 is invalid")):
             oMinMax.max = 1.01
-
-        TryCatchAssertBlock.ExpectedException("Value 1.010000 is invalid", action44)
 
         oMinMax.max = 1
         Assert.assertEqual(1, oMinMax.max)
@@ -1078,18 +961,14 @@ class AccessConstraintHelper(object):
         oMinMax.min = 0.2
         Assert.assertEqual(0.2, oMinMax.min)
 
-        def action45():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 0.1
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action45)
 
         oMinMax.max = 0.8
         Assert.assertEqual(0.8, oMinMax.max)
 
-        def action46():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 0.9
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action46)
 
         oMinMax.min = 1e-25
         Assert.assertEqual(1e-25, oMinMax.min)
@@ -1106,10 +985,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action47():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = 1.01
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action47)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1117,26 +994,20 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action48():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = 0
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action48)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
 
-        def action49():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 0.9
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action49)
 
         oMinMax.min = 1e-25
         Assert.assertEqual(1e-25, oMinMax.min)
 
-        def action50():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.max = 1.01
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action50)
 
         oMinMax.max = 1
         Assert.assertEqual(1, oMinMax.max)
@@ -1144,18 +1015,14 @@ class AccessConstraintHelper(object):
         oMinMax.min = 0.2
         Assert.assertEqual(0.2, oMinMax.min)
 
-        def action51():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 0.1
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action51)
 
         oMinMax.max = 0.8
         Assert.assertEqual(0.8, oMinMax.max)
 
-        def action52():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 0.9
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action52)
 
         oMinMax.min = 1e-25
         Assert.assertEqual(1e-25, oMinMax.min)
@@ -1175,10 +1042,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action53():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = MAX
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action53)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1186,26 +1051,20 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action54():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = MIN
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action54)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
 
-        def action55():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.min = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action55)
 
         oMinMax.min = MIN
         Assert.assertEqual(MIN, oMinMax.min)
 
-        def action56():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.max = 100000000.0 + 1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action56)
 
         oMinMax.max = MAX
         Assert.assertEqual(MAX, oMinMax.max)
@@ -1213,18 +1072,14 @@ class AccessConstraintHelper(object):
         oMinMax.min = MIN + 200
         Assert.assertEqual((MIN + 200), oMinMax.min)
 
-        def action57():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = MIN + 100
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action57)
 
         oMinMax.max = MAX - 2000
         Assert.assertEqual((MAX - 2000), oMinMax.max)
 
-        def action58():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = MAX - 1000
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action58)
 
         oMinMax.min = MIN
         Assert.assertEqual(MIN, oMinMax.min)
@@ -1244,10 +1099,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action59():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = MAX_TEMP
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action59)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1255,26 +1108,20 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action60():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = MIN_TEMP
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action60)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
 
-        def action61():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.min = -1
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action61)
 
         oMinMax.min = MIN_TEMP
         Assert.assertEqual(MIN_TEMP, oMinMax.min)
 
-        def action62():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.max = 5771
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action62)
 
         oMinMax.max = MAX_TEMP
         Assert.assertEqual(MAX_TEMP, oMinMax.max)
@@ -1282,18 +1129,14 @@ class AccessConstraintHelper(object):
         oMinMax.min = MIN_TEMP + 200
         Assert.assertEqual((MIN_TEMP + 200), oMinMax.min)
 
-        def action63():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = MIN_TEMP + 100
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action63)
 
         oMinMax.max = MAX_TEMP - 2000
         Assert.assertEqual((MAX_TEMP - 2000), oMinMax.max)
 
-        def action64():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = MAX_TEMP - 1000
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action64)
 
         oMinMax.min = MIN_TEMP
         Assert.assertEqual(MIN_TEMP, oMinMax.min)
@@ -1314,10 +1157,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action65():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action65)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1325,10 +1166,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action66():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action66)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -1339,15 +1178,11 @@ class AccessConstraintHelper(object):
         oMinMax.min = 12.345
         Assert.assertAlmostEqual(12.345, float(oMinMax.min), delta=0.001)
 
-        def action67():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action67)
-
-        def action68():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action68)
 
         # restore TimeUnit
         self.m_oUnits.set_current_unit("TimeUnit", strUnit)
@@ -1367,10 +1202,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action69():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action69)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1378,10 +1211,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action70():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action70)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -1390,29 +1221,21 @@ class AccessConstraintHelper(object):
         oMinMax.max = 67.89
         Assert.assertEqual(67.89, oMinMax.max)
 
-        def action71():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.max = 1234
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action71)
 
         # Min
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
 
-        def action72():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.min = -1234
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action72)
-
-        def action73():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action73)
-
-        def action74():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action74)
 
         # restore LongitudeUnit
         self.m_oUnits.set_current_unit("LongitudeUnit", strUnit)
@@ -1434,10 +1257,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action75():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action75)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1446,10 +1267,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action76():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action76)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -1458,29 +1277,21 @@ class AccessConstraintHelper(object):
         oMinMax.max = 67.89
         Assert.assertEqual(67.89, oMinMax.max)
 
-        def action77():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.max = 123456.789
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action77)
 
         # Min
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
 
-        def action78():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.min = -123456.789
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action78)
-
-        def action79():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action79)
-
-        def action80():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action80)
 
         # restore DurationUnit
         self.m_oUnits.set_current_unit("DurationUnit", strUnit)
@@ -1502,10 +1313,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action81():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action81)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1513,10 +1322,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action82():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action82)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -1529,15 +1336,11 @@ class AccessConstraintHelper(object):
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
 
-        def action83():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action83)
-
-        def action84():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action84)
 
         # restore DistanceUnit
         self.m_oUnits.set_current_unit("SmallDistanceUnit", strUnit)
@@ -1559,10 +1362,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action85():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action85)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1571,10 +1372,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action86():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action86)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -1582,29 +1381,21 @@ class AccessConstraintHelper(object):
         oMinMax.max = 67.89
         Assert.assertEqual(67.89, oMinMax.max)
 
-        def action87():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.max = 3001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action87)
 
         # Min
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, Math.Round(float(oMinMax.min), 3))
 
-        def action88():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.min = -3001.0
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action88)
-
-        def action89():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action89)
-
-        def action90():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action90)
 
         # restore RatioUnit
         self.m_oUnits.set_current_unit("RatioUnit", strUnit)
@@ -1619,31 +1410,22 @@ class AccessConstraintHelper(object):
 
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action91():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action91)
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
 
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
-
-        def action92():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action92)
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
 
         oMinMax.max = 67.89
         Assert.assertEqual(67.89, oMinMax.max)
-
-        def action93():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.max = 3001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action93)
 
         oMinMax.min = 12.34
         Assert.assertEqual(12.34, oMinMax.min)
@@ -1653,20 +1435,12 @@ class AccessConstraintHelper(object):
         Assert.assertAlmostEqual(6151770000.0, float(oMinMax.max), delta=10000)
         self.m_oUnits.set_current_unit("PowerUnit", holdPowerUnit)
 
-        def action94():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oMinMax.min = -3001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action94)
-
-        def action95():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action95)
-
-        def action96():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action96)
 
     # endregion
 
@@ -1684,10 +1458,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action97():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action97)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -1695,10 +1467,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action98():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action98)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -1711,15 +1481,11 @@ class AccessConstraintHelper(object):
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
 
-        def action99():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action99)
-
-        def action100():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action100)
 
         # restore SARTimeResPodUnit
         self.m_oUnits.set_current_unit("SARTimeResProdUnit", strUnit)
@@ -1738,22 +1504,16 @@ class AccessConstraintHelper(object):
 
         oGrazingAlt.enable_max = False
         Assert.assertEqual(False, oGrazingAlt.enable_max)
-
-        def action101():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oGrazingAlt.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action101)
 
         oGrazingAlt.enable_max = True
         Assert.assertEqual(True, oGrazingAlt.enable_max)
 
         oGrazingAlt.enable_min = False
         Assert.assertEqual(False, oGrazingAlt.enable_min)
-
-        def action102():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oGrazingAlt.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action102)
 
         oGrazingAlt.enable_min = True
         Assert.assertEqual(True, oGrazingAlt.enable_min)
@@ -1764,15 +1524,11 @@ class AccessConstraintHelper(object):
         oGrazingAlt.min = 12.345
         Assert.assertEqual(12.345, oGrazingAlt.min)
 
-        def action103():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oGrazingAlt.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action103)
-
-        def action104():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oGrazingAlt.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action104)
 
         oGrazingAlt.compute_beyond_tgt = True
         Assert.assertEqual(True, oGrazingAlt.compute_beyond_tgt)
@@ -1849,10 +1605,8 @@ class AccessConstraintHelper(object):
         oAngle.angle = 45
         Assert.assertEqual(45, oAngle.angle)
 
-        def action105():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oAngle.angle = 380
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action105)
 
         # restore unit
         self.m_oUnits.set_current_unit(strUnitName, strUnitAbbreviation)
@@ -1877,11 +1631,9 @@ class AccessConstraintHelper(object):
                 if not oObject.is_object_assigned(strObject):
                     Assert.fail("The {0} object should be already assigned.", strObject)
 
-            def action106():
-                oObject.add_exclusion_object(strObject)
-
             # re-assign object test
-            TryCatchAssertBlock.DoAssert("", action106)
+            with pytest.raises(Exception):
+                oObject.add_exclusion_object(strObject)
 
         arAssigned = oObject.assigned_objects
 
@@ -1894,11 +1646,8 @@ class AccessConstraintHelper(object):
         Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
         oObject.exclusion_angle = 123
         Assert.assertEqual(123, oObject.exclusion_angle)
-
-        def action107():
+        with pytest.raises(Exception):
             oObject.exclusion_angle = 1234
-
-        TryCatchAssertBlock.DoAssert("", action107)
         self.m_oUnits.set_current_unit("AngleUnit", strUnit)
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
         if Array.Length(arAssigned) > 0:
@@ -1906,11 +1655,9 @@ class AccessConstraintHelper(object):
             if oObject.is_object_assigned(strObject):
                 oObject.remove_exclusion_object(strObject)
 
-            def action108():
-                oObject.remove_exclusion_object(strObject)
-
             # remove object test
-            TryCatchAssertBlock.DoAssert("", action108)
+            with pytest.raises(Exception):
+                oObject.remove_exclusion_object(strObject)
 
         arAssigned = oObject.assigned_objects
 
@@ -1996,21 +1743,13 @@ class AccessConstraintHelper(object):
                 Assert.assertEqual(False, oCrdnCn.enable_max)
                 oCrdnCn.enable_min = False
                 Assert.assertEqual(False, oCrdnCn.enable_min)
-
-                def action109():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     oCrdnCn.min = 40
-
-                TryCatchAssertBlock.ExpectedException("read-only", action109)
-
-                def action110():
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                     oCrdnCn.max = 50
 
-                TryCatchAssertBlock.ExpectedException("read-only", action110)
-
-                def action111():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
                     oCrdnCn.reference = str(arReferences[0])
-
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action111)
 
                 oCrdnCn.enable_max = True
                 Assert.assertEqual(True, oCrdnCn.enable_max)
@@ -2025,10 +1764,8 @@ class AccessConstraintHelper(object):
             oCrdnCn.reference = str(arReferences[0])
             Assert.assertEqual(str(arReferences[0]), oCrdnCn.reference)
 
-            def action112():
+            with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
                 oCrdnCn.reference = "Bogus"
-
-            TryCatchAssertBlock.ExpectedException("not a valid choice", action112)
 
     # endregion
 
@@ -2046,10 +1783,8 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_max = False
         Assert.assertEqual(False, oCrdnCn.enable_max)
 
-        def action113():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oCrdnCn.max = 100
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action113)
 
         oCrdnCn.enable_max = True
         Assert.assertEqual(True, oCrdnCn.enable_max)
@@ -2058,10 +1793,8 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_min = False
         Assert.assertEqual(False, oCrdnCn.enable_min)
 
-        def action114():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oCrdnCn.min = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action114)
 
         oCrdnCn.enable_min = True
         Assert.assertEqual(True, oCrdnCn.enable_min)
@@ -2070,29 +1803,21 @@ class AccessConstraintHelper(object):
         oCrdnCn.max = 100
         Assert.assertEqual(100, oCrdnCn.max)
 
-        def action115():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oCrdnCn.max = 1234
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action115)
 
         # Min
         oCrdnCn.min = 50
         Assert.assertEqual(50, oCrdnCn.min)
 
-        def action116():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oCrdnCn.min = -1234
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action116)
-
-        def action117():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oCrdnCn.max = 12
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action117)
-
-        def action118():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oCrdnCn.min = 123
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action118)
 
         # restore AngleUnit
         self.m_oUnits.set_current_unit("AngleUnit", strUnit)
@@ -2109,10 +1834,8 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_max = False
         Assert.assertEqual(False, oCrdnCn.enable_max)
 
-        def action119():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oCrdnCn.max = 100
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action119)
 
         oCrdnCn.enable_max = True
         Assert.assertEqual(True, oCrdnCn.enable_max)
@@ -2121,10 +1844,8 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_min = False
         Assert.assertEqual(False, oCrdnCn.enable_min)
 
-        def action120():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oCrdnCn.min = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action120)
 
         oCrdnCn.enable_min = True
         Assert.assertEqual(True, oCrdnCn.enable_min)
@@ -2133,30 +1854,21 @@ class AccessConstraintHelper(object):
         oCrdnCn.max = 98765.4321
         Assert.assertEqual(98765.4321, oCrdnCn.max)
 
-        def action121():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oCrdnCn.max = -1234
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action121)
 
         # Min
         oCrdnCn.min = 12345.6789
         Assert.assertEqual(12345.6789, oCrdnCn.min)
         if oCrdnCn.constraint_name != "CrdnCalcScalar":
-
-            def action122():
+            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 oCrdnCn.min = -1234
 
-            TryCatchAssertBlock.ExpectedException("is invalid", action122)
-
-        def action123():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oCrdnCn.max = 12
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action123)
-
-        def action124():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oCrdnCn.min = 123456
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action124)
 
     # endregion
 
@@ -2190,10 +1902,8 @@ class AccessConstraintHelper(object):
 
         Assert.assertEqual(reference, (clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench)).reference)
 
-        def action125():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Specified reference cannot be found")):
             awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), "Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Specified reference cannot be found", action125)
 
         awbCol.remove_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
         Assert.assertEqual(origCount, awbCol.count)
@@ -2205,11 +1915,8 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(origCount, awbCol.count)
 
         awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
-
-        def action126():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Constraint already active")):
             awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
-
-        TryCatchAssertBlock.ExpectedException("Constraint already active", action126)
 
         found: bool = False
         awbConstraint: "IAccessConstraintAnalysisWorkbench"
@@ -2255,16 +1962,10 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action127():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action127)
-
-        def action128():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action128)
 
         # Min on, Max off
         oMinMax.enable_min = True
@@ -2275,11 +1976,8 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(False, oMinMax.enable_max)
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
-
-        def action129():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action129)
 
         # Min on, Max on
         oMinMax.enable_min = True
@@ -2292,21 +1990,12 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(67.89, oMinMax.max)
         oMinMax.min = 21.345
         Assert.assertEqual(21.345, oMinMax.min)
-
-        def action130():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = -1234
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action130)
-
-        def action131():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = 1.2
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action131)
-
-        def action132():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = 87.65
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action132)
 
         # Min off, Max on
         oMinMax.enable_min = False
@@ -2315,11 +2004,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = True
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(True, oMinMax.enable_max)
-
-        def action133():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action133)
         oMinMax.max = 76.89
         Assert.assertEqual(76.89, oMinMax.max)
 
@@ -2330,16 +2016,10 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
-
-        def action134():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action134)
-
-        def action135():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify")):
             oMinMax.max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action135)
 
         # restore to original
         oMinMax.enable_min = holdEnableMin
@@ -2358,10 +2038,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action136():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.max = dMax
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action136)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -2369,10 +2047,8 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action137():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             oMinMax.min = dMin
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action137)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -2384,52 +2060,36 @@ class AccessConstraintHelper(object):
             oMinMax.min = dMin
             Assert.assertEqual(dMin, float(oMinMax.min))
             if bRange:
-
-                def action138():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
                     oMinMax.min = dMin * (-2)
-
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action138)
 
             # Max
             oMinMax.max = dMax
             Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
-
-                def action139():
+                with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
                     oMinMax.max = dMax * 2
-
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action139)
 
         else:
             # Max
             oMinMax.max = dMax
             Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
-
-                def action140():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     oMinMax.max = dMax * 2
-
-                TryCatchAssertBlock.ExpectedException("is invalid", action140)
 
             # Min
             oMinMax.min = dMin
             Assert.assertEqual(dMin, oMinMax.min)
             if bRange:
-
-                def action141():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                     oMinMax.min = dMin * (-2)
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action141)
-
-        def action142():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set max less than min")):
             oMinMax.max = dMin - 0.01
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action142)
-
-        def action143():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oMinMax.min = dMax + 0.01
-
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action143)
 
     # endregion
 
@@ -2548,25 +2208,17 @@ class AccessConstraintHelper(object):
         oZone.max_lon = 45.6789
         Assert.assertEqual(45.6789, oZone.max_lon)
 
-        def action144():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.min_lat = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action144)
-
-        def action145():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.max_lat = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action145)
-
-        def action146():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.min_lon = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action146)
-
-        def action147():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.max_lon = -380
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action147)
 
         # Restore LatitudeUnit units
         self.m_oUnits.set_current_unit("LatitudeUnit", strLatitudeUnit)
@@ -2592,20 +2244,16 @@ class AccessConstraintHelper(object):
             if not oCb.is_obstruction_assigned(strName):
                 Assert.fail("The {0} obstruction should be assigned!", strName)
 
-            def action148():
+            with pytest.raises(Exception):
                 oCb.add_obstruction(strName)
-
-            TryCatchAssertBlock.DoAssert("", action148)
             # AssignedObstructions
             assigned = oCb.assigned_obstructions
             oCb.remove_obstruction(strName)
             if oCb.is_obstruction_assigned(strName):
                 Assert.fail("The {0} obstruction should not be assigned!", strName)
 
-            def action149():
+            with pytest.raises(Exception):
                 oCb.remove_obstruction(strName)
-
-            TryCatchAssertBlock.DoAssert("", action149)
             assigned = oCb.assigned_obstructions
 
     # endregion
@@ -2629,15 +2277,10 @@ class AccessConstraintHelper(object):
         collection.add_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
         Assert.assertEqual((origCount + 1), collection.count)
 
-        def action150():
+        with pytest.raises(Exception, match=RegexSubstringMatch("already active")):
             collection.add_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
-
-        TryCatchAssertBlock.ExpectedException("already active", action150)
-
-        def action151():
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             collection.add_constraint(clr.Convert((-1), ACCESS_CONSTRAINTS))
-
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action151)
 
         activeConstraint: "IAccessConstraint" = collection.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
         Assert.assertEqual(ACCESS_CONSTRAINTS.CSTR_ALTITUDE, activeConstraint.constraint_type)
@@ -2649,10 +2292,8 @@ class AccessConstraintHelper(object):
         Assert.assertFalse(collection.is_constraint_active(ACCESS_CONSTRAINTS.CSTR_ALTITUDE))
         Assert.assertFalse(collection.is_constraint_supported(ACCESS_CONSTRAINTS.CSTR_NONE))
 
-        def action152():
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             activeConstraint = collection.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
-
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action152)
 
         arAvailable = collection.available_constraints()
 
@@ -2667,15 +2308,10 @@ class AccessConstraintHelper(object):
         collection.add_named_constraint("Altitude")
         Assert.assertEqual((origCount + 1), collection.count)
 
-        def action153():
+        with pytest.raises(Exception, match=RegexSubstringMatch("already active")):
             collection.add_named_constraint("Altitude")
-
-        TryCatchAssertBlock.ExpectedException("already active", action153)
-
-        def action154():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             collection.add_named_constraint("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action154)
 
         activeConstraint = collection.get_active_named_constraint("Altitude")
         Assert.assertEqual(ACCESS_CONSTRAINTS.CSTR_ALTITUDE, activeConstraint.constraint_type)
@@ -2692,15 +2328,10 @@ class AccessConstraintHelper(object):
         collection.add_named_constraint("Altitude")
         collection.remove_named_constraint_ex("Altitude")
         Assert.assertEqual(origCount, collection.count)
-
-        def action155():
+        with pytest.raises(Exception, match=RegexSubstringMatch("was not found")):
             collection.remove_named_constraint_ex("Bogus")
 
-        TryCatchAssertBlock.ExpectedException("was not found", action155)
-
-        def action156():
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             activeConstraint = collection.get_active_named_constraint("Altitude")
-
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action156)
 
     # endregion

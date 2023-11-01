@@ -3,6 +3,7 @@ from assertion_harness import *
 from fom_helper import *
 from interfaces.stk_objects import *
 from logger import *
+
 from ansys.stk.core.stkobjects import *
 
 
@@ -268,16 +269,10 @@ class EarlyBoundTests(TestBase):
         oInspector.select_point(0, 0)
         # Message
         TestBase.logger.WriteLine5("\tThe SelectPoint message:\n{0}", oInspector.message)
-
-        def action1():
+        with pytest.raises(Exception):
             oInspector.select_point("one", 0)
-
-        TryCatchAssertBlock.DoAssert("", action1)
-
-        def action2():
+        with pytest.raises(Exception):
             oInspector.select_point(-12, "two")
-
-        TryCatchAssertBlock.DoAssert("", action2)
         # PointFOM
         oTimeVar: "IDataProviderTimeVarying" = clr.Convert(oInspector.point_figure_of_merit, IDataProviderTimeVarying)
         Assert.assertIsNotNone(oTimeVar)
@@ -290,12 +285,9 @@ class EarlyBoundTests(TestBase):
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointSatisfaction result:")
         oResult.Dump()
-
-        def action3():
-            oInspector.select_region("AreaTarget1")
-
         # SelectRegion
-        TryCatchAssertBlock.DoAssert("", action3)
+        with pytest.raises(Exception):
+            oInspector.select_region("AreaTarget1")
         # RegionFOM
         oTimeVar = clr.Convert(oInspector.region_figure_of_merit, IDataProviderTimeVarying)
         Assert.assertIsNotNone(oTimeVar)
@@ -328,11 +320,8 @@ class EarlyBoundTests(TestBase):
         oInspector.select_region("AreaTarget1")
         # Message
         TestBase.logger.WriteLine5("\tThe SelectRegion message:\n{0}", oInspector.message)
-
-        def action4():
+        with pytest.raises(Exception):
             oInspector.select_region("Invalid.Region")
-
-        TryCatchAssertBlock.DoAssert("", action4)
         # PointFOM
         oTimeVar = clr.Convert(oInspector.point_figure_of_merit, IDataProviderTimeVarying)
         Assert.assertIsNotNone(oTimeVar)
@@ -432,21 +421,15 @@ class EarlyBoundTests(TestBase):
         oVO.granularity = 1.23
         TestBase.logger.WriteLine6("\tThe new Granularity is: {0}", oVO.granularity)
         Assert.assertEqual(1.23, oVO.granularity)
-
-        def action5():
+        with pytest.raises(Exception):
             oVO.granularity = 12.3
-
-        TryCatchAssertBlock.DoAssert("", action5)
         # PixelsPerDeg
         TestBase.logger.WriteLine6("\tThe current PixelsPerDeg is: {0}", oVO.pixels_per_deg)
         oVO.pixels_per_deg = 12.3
         TestBase.logger.WriteLine6("\tThe new PixelsPerDeg is: {0}", oVO.pixels_per_deg)
         Assert.assertEqual(12.3, oVO.pixels_per_deg)
-
-        def action6():
+        with pytest.raises(Exception):
             oVO.pixels_per_deg = -12.3
-
-        TryCatchAssertBlock.DoAssert("", action6)
 
         # Static
         self.VOAttributes(oVO.static, False)
@@ -467,24 +450,15 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("----- VO ATTRIBUTES TEST (ReadOnly = {0})----- BEGIN -----", bReadOnly)
         Assert.assertIsNotNone(oAttributes)
         if bReadOnly:
-
-            def action7():
-                oAttributes.is_visible = True
-
             #  (readonly)
-            TryCatchAssertBlock.DoAssert("", action7)
-
-            def action8():
-                oAttributes.point_size = 5.6
-
+            with pytest.raises(Exception):
+                oAttributes.is_visible = True
             # PointSize (readonly)
-            TryCatchAssertBlock.DoAssert("", action8)
-
-            def action9():
-                oAttributes.translucency = 56.78
-
+            with pytest.raises(Exception):
+                oAttributes.point_size = 5.6
             # Translucency (readonly)
-            TryCatchAssertBlock.DoAssert("", action9)
+            with pytest.raises(Exception):
+                oAttributes.translucency = 56.78
 
         else:
             # IsVisible (false)
@@ -492,18 +466,12 @@ class EarlyBoundTests(TestBase):
             oAttributes.is_visible = False
             TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
             Assert.assertFalse(oAttributes.is_visible)
-
-            def action10():
-                oAttributes.point_size = 5.6
-
             # PointSize (readonly)
-            TryCatchAssertBlock.DoAssert("", action10)
-
-            def action11():
-                oAttributes.translucency = 56.78
-
+            with pytest.raises(Exception):
+                oAttributes.point_size = 5.6
             # Translucency (readonly)
-            TryCatchAssertBlock.DoAssert("", action11)
+            with pytest.raises(Exception):
+                oAttributes.translucency = 56.78
             # IsVisible (true)
             oAttributes.is_visible = True
             TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
@@ -513,21 +481,15 @@ class EarlyBoundTests(TestBase):
             oAttributes.point_size = 5.6
             TestBase.logger.WriteLine6("\tThe new PointSize is: {0}", oAttributes.point_size)
             Assert.assertEqual(5.6, oAttributes.point_size)
-
-            def action12():
+            with pytest.raises(Exception):
                 oAttributes.point_size = 12.3
-
-            TryCatchAssertBlock.DoAssert("", action12)
             # Translucency
             TestBase.logger.WriteLine6("\tThe current Translucency is: {0}", oAttributes.translucency)
             oAttributes.translucency = 56.78
             TestBase.logger.WriteLine6("\tThe new Translucency is: {0}", oAttributes.translucency)
             Assert.assertAlmostEqual(56.78, oAttributes.translucency, delta=0.001)
-
-            def action13():
+            with pytest.raises(Exception):
                 oAttributes.translucency = 123
-
-            TryCatchAssertBlock.DoAssert("", action13)
 
         TestBase.logger.WriteLine("----- VO ATTRIBUTES TEST ----- END -----")
 
@@ -613,11 +575,8 @@ class EarlyBoundTests(TestBase):
             "\t\tThe current Graphics.Static.Contours.ContourType is: {0}", fom.graphics.static.contours.contour_type
         )
         if not bIsSmoothFillSupported:
-
-            def action14():
+            with pytest.raises(Exception):
                 fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
-
-            TryCatchAssertBlock.DoAssert("", action14)
 
         else:
             fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
@@ -677,11 +636,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.unit_preferences.set_current_unit("BandwidthUnit", unit2a)
 
         else:
-
-            def action15():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 fomc1: "IFigureOfMeritGraphics2DContours" = fom1.graphics.static.contours
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action15)
 
         fomobj2: "IStkObject" = covchilds.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FM2Bug44875")
         fom2: "IFigureOfMerit" = clr.CastAs(fomobj2, IFigureOfMerit)
@@ -703,11 +659,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.unit_preferences.set_current_unit("SmallDistance", unit2b)
 
         else:
-
-            def action16():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 fomc2: "IFigureOfMeritGraphics2DContours" = fom2.graphics.static.contours
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action16)
 
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))

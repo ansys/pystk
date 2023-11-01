@@ -4,6 +4,7 @@ from assert_extension import *
 from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
+
 from ansys.stk.core.stkobjects import *
 
 
@@ -104,19 +105,14 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_SR.proper_motion_radial_velocity = -10000000000.0
             EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 10000000000.0
 
-            def action1():
+            with pytest.raises(
+                Exception
+            ):  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
                 EarlyBoundTests.AG_SR.proper_motion_radial_velocity = -20000000000.0
-
-            TryCatchAssertBlock.DoAssert(
-                "Should not allow invalid values.", action1
-            )  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
-
-            def action2():
+            with pytest.raises(
+                Exception
+            ):  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
                 EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 20000000000.0
-
-            TryCatchAssertBlock.DoAssert(
-                "Should not allow invalid values.", action2
-            )  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
 
         finally:
             (clr.Convert(EarlyBoundTests.AG_SR, IStkObject)).root.unit_preferences.set_current_unit("Distance", unit)

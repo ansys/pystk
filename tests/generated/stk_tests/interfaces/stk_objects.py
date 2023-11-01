@@ -2,6 +2,7 @@ from test_util import *
 from assert_extension import *
 from assertion_harness import *
 from logger import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -55,10 +56,8 @@ class LinkToObjectHelper(object):
                 )
                 self.m_logger.WriteLine4("\t\t\tIsIntrinsic flag is: {0}", oLink.is_intrinsic)
 
-        def action1():
+        with pytest.raises(Exception):
             oLink.bind_to("WrongObject")
-
-        TryCatchAssertBlock.DoAssert("", action1)
 
 
 # endregion
@@ -81,16 +80,10 @@ class STKObjectHelper(object):
         oObject.instance_name = "Instance"
         self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.instance_name)
         Assert.assertEqual("Instance", oObject.instance_name)
-
-        def action2():
+        with pytest.raises(Exception):
             oObject.instance_name = ""
-
-        TryCatchAssertBlock.DoAssert("", action2)
-
-        def action3():
+        with pytest.raises(Exception):
             oObject.instance_name = "Invalid Name"
-
-        TryCatchAssertBlock.DoAssert("", action3)
         oObject.instance_name = strValue
         self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.instance_name)
         Assert.assertEqual(strValue, oObject.instance_name)
@@ -143,11 +136,8 @@ class STKObjectHelper(object):
 
         else:
             self.m_logger.WriteLine5("\tThe {0} does not support an ObjectCoverage.", oObject.instance_name)
-
-            def action4():
+            with pytest.raises(Exception):
                 oCoverage: "IStkObjectCoverage" = oObject.object_coverage
-
-            TryCatchAssertBlock.DoAssert("", action4)
 
         # create an additional Satellite
         oSatellite: "ISatellite" = clr.Convert(
@@ -179,26 +169,14 @@ class STKObjectHelper(object):
 
         else:
             self.m_logger.WriteLine5("\tThe {0} does not support an Access.", oObject.instance_name)
-
-            def action5():
+            with pytest.raises(Exception):
                 oAccess: "IStkAccess" = oObject.get_access((clr.Convert(oSatellite, IStkObject)).path)
-
-            TryCatchAssertBlock.DoAssert("", action5)
-
-            def action6():
+            with pytest.raises(Exception):
                 oAccess: "IStkAccess" = oObject.get_access_to_object(clr.CastAs(oSatellite, IStkObject))
-
-            TryCatchAssertBlock.DoAssert("", action6)
-
-            def action7():
+            with pytest.raises(Exception):
                 acc: "IAccessConstraintCollection" = oObject.access_constraints
-
-            TryCatchAssertBlock.DoAssert("", action7)
-
-            def action8():
+            with pytest.raises(Exception):
                 opa: "IOnePointAccess" = oObject.create_one_point_access("Satellite/MIR")
-
-            TryCatchAssertBlock.DoAssert("", action8)
 
         oObject.root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "MIR")
         # Root
@@ -399,11 +377,8 @@ class STKObjectHelper(object):
             oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTests", "at2.at"))
 
         else:
-
-            def action9():
+            with pytest.raises(Exception):
                 oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
-
-            TryCatchAssertBlock.DoAssert("", action9)
 
         # _NewEnum
         stkObject1: "IStkObject"
@@ -452,26 +427,19 @@ class STKObjectHelper(object):
 
         metadata.set_read_only("Key1", True)
         Assert.assertTrue(metadata.get_read_only("Key1"))
-
-        def action10():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             metadata.set("Key1", "Changed1")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action10)
 
         metadata.set_read_only("Key1", False)
         Assert.assertFalse(metadata.get_read_only("Key1"))
         metadata.set("Key1", "Changed1")
         Assert.assertEqual("Changed1", metadata["Key1"])
 
-        def action11():
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
             metadata.set_read_only("BogusKey", True)
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action11)
-
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("empty string")):
             metadata.set("", "Value1")
-
-        TryCatchAssertBlock.ExpectedException("empty string", action12)
 
         metadata.set("Key1", "Changed1")
         metadata.set("Key2", "Changed2")
@@ -499,11 +467,8 @@ class STKObjectHelper(object):
             i += 1
 
         Assert.assertFalse(metadata.contains("Key4"))
-
-        def action13():
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
             dummy: str = metadata["Key4"]
-
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action13)
 
         metadata.remove_key("Key2")
         Assert.assertEqual(2, metadata.count)
@@ -693,11 +658,8 @@ class DataProviderCollectionHelper(object):
             self.DrResult(oResult)
 
         else:
-
-            def action14():
+            with pytest.raises(Exception):
                 oResult = oProvider.exec()
-
-            TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action14)
 
         self.m_logger.WriteLine5("----- DATA PROVIDER FIXED TEST ({0}) ----- END -----", strName)
 
@@ -855,11 +817,8 @@ class DataProviderCollectionHelper(object):
             self.m_logger.WriteLine5("----- DATA PROVIDER INTERVAL TEST ({0}) ----- END -----", strName)
 
         else:
-
-            def action15():
+            with pytest.raises(Exception):
                 oResult = oProvider.exec(dtStart, dtStop)
-
-            TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action15)
 
     # endregion
 
@@ -904,11 +863,8 @@ class DataProviderCollectionHelper(object):
                 self.DrResult(oResult)
 
             else:
-
-                def action16():
+                with pytest.raises(Exception):
                     oResult = oProvider.exec(dtStart, dtStop, 240.0)
-
-                TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action16)
 
         self.m_logger.WriteLine5("----- DATA PROVIDER TIMEVAR TEST ({0}) ----- END -----", strName)
 
@@ -952,11 +908,8 @@ class StkAccessHelper(object):
             self.Graphics(oAccess.graphics)
 
         else:
-
-            def action17():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 self.Graphics(oAccess.graphics)
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action17)
 
         # Advanced
         self.Advanced(oAccess)
@@ -965,12 +918,9 @@ class StkAccessHelper(object):
             oDDHelper.Run(oAccess.data_displays, True, False)
 
         else:
-
-            def action18():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 oDDHelper = VODataDisplayHelper(oRoot)
                 oDDHelper.Run(oAccess.data_displays, True, False)
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action18)
 
         # DataProviders
         oDPHelper = DataProviderCollectionHelper()
@@ -989,36 +939,21 @@ class StkAccessHelper(object):
         oGraphics.inherit = True
         self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.inherit)
         Assert.assertTrue(oGraphics.inherit)
-
-        def action19():
-            oGraphics.animate_graphics_2d = True
-
         # AnimateGfx (readonly)
-        TryCatchAssertBlock.DoAssert("", action19)
-
-        def action20():
-            oGraphics.line_visible = True
-
+        with pytest.raises(Exception):
+            oGraphics.animate_graphics_2d = True
         # LineVisible (readonly)
-        TryCatchAssertBlock.DoAssert("", action20)
-
-        def action21():
-            oGraphics.static_graphics_2d = True
-
+        with pytest.raises(Exception):
+            oGraphics.line_visible = True
         # StaticGfx (readonly)
-        TryCatchAssertBlock.DoAssert("", action21)
-
-        def action22():
-            oGraphics.line_width = 2
-
+        with pytest.raises(Exception):
+            oGraphics.static_graphics_2d = True
         # LineWidth (readonly)
-        TryCatchAssertBlock.DoAssert("", action22)
-
-        def action23():
-            oGraphics.line_style = "Dashed"
-
+        with pytest.raises(Exception):
+            oGraphics.line_width = 2
         # LineStyle (readonly)
-        TryCatchAssertBlock.DoAssert("", action23)
+        with pytest.raises(Exception):
+            oGraphics.line_style = "Dashed"
         # Inherit (false)
         oGraphics.inherit = False
         self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.inherit)
@@ -1040,12 +975,10 @@ class StkAccessHelper(object):
         self.m_logger.WriteLine4("\tThe new LineVisible is: {0}", oGraphics.line_visible)
         Assert.assertFalse(oGraphics.line_visible)
 
-        def action24():
-            oGraphics.line_width = 2
-
         # LineWidth
         # LineVisible is false so LineWidth can't be set (readonly)
-        TryCatchAssertBlock.DoAssert("", action24)
+        with pytest.raises(Exception):
+            oGraphics.line_width = 2
         oGraphics.line_visible = True
         self.m_logger.WriteLine3("\tThe current LineWidth is: {0}", oGraphics.line_width)
         oGraphics.line_width = 2
@@ -1057,12 +990,10 @@ class StkAccessHelper(object):
         # Restore LineVisible (false)
         oGraphics.line_visible = False
 
-        def action25():
-            oGraphics.line_style = "Dashed"
-
         # LineStyle
         # LineVisible is false so LineStyle can't be set (readonly)
-        TryCatchAssertBlock.DoAssert("", action25)
+        with pytest.raises(Exception):
+            oGraphics.line_style = "Dashed"
         oGraphics.line_visible = True
         self.m_logger.WriteLine5("\tThe current LineStyle is: {0}", oGraphics.line_style)
         oGraphics.line_style = "Dashed"
@@ -1104,60 +1035,35 @@ class StkAccessHelper(object):
         oAdvanced.use_precise_event_times = False  # Use Samples Only
         Assert.assertFalse(oAdvanced.use_precise_event_times)
 
-        def action26():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAdvanced.time_convergence = 0.123
-
-        TryCatchAssertBlock.ExpectedException("read only", action26)
-
-        def action27():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.relative_tolerance = 0.456
-
-        TryCatchAssertBlock.ExpectedException("read-only", action27)
-
-        def action28():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.absolute_tolerance = 0.789
-
-        TryCatchAssertBlock.ExpectedException("read-only", action28)
 
         # Light Time Delay
         oAdvanced.enable_light_time_delay = False
         Assert.assertFalse(oAdvanced.enable_light_time_delay)
 
-        def action29():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAdvanced.time_light_delay_convergence = 0.01234
-
-        TryCatchAssertBlock.ExpectedException("read only", action29)
-
-        def action30():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.aberration_type = ABERRATION_TYPE.ANNUAL
-
-        TryCatchAssertBlock.ExpectedException("read-only", action30)
-
-        def action31():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.use_default_clock_host_and_signal_sense = False
-
-        TryCatchAssertBlock.ExpectedException("read-only", action31)
-
-        def action32():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.clock_host = IV_CLOCK_HOST.BASE
-
-        TryCatchAssertBlock.ExpectedException("read-only", action32)
-
-        def action33():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
-
-        TryCatchAssertBlock.ExpectedException("read-only", action33)
 
         oAdvanced.enable_light_time_delay = True
         Assert.assertTrue(oAdvanced.enable_light_time_delay)
 
         oAdvanced.time_light_delay_convergence = 0.0123
         Assert.assertEqual(0.0123, oAdvanced.time_light_delay_convergence)
-
-        def action34():
+        with pytest.raises(Exception, match=RegexSubstringMatch("")):
             oAdvanced.time_light_delay_convergence = 12.34
-
-        TryCatchAssertBlock.ExpectedException("", action34)
 
         oAdvanced.aberration_type = ABERRATION_TYPE.ANNUAL
         Assert.assertEqual(ABERRATION_TYPE.ANNUAL, oAdvanced.aberration_type)
@@ -1165,25 +1071,17 @@ class StkAccessHelper(object):
         Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
         oAdvanced.aberration_type = ABERRATION_TYPE.TOTAL
         Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
-
-        def action35():
+        with pytest.raises(Exception, match=RegexSubstringMatch("")):
             oAdvanced.aberration_type = ABERRATION_TYPE.UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("", action35)
 
         # Signal Path
         oAdvanced.use_default_clock_host_and_signal_sense = True
         Assert.assertTrue(oAdvanced.use_default_clock_host_and_signal_sense)
 
-        def action36():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.clock_host = IV_CLOCK_HOST.BASE
-
-        TryCatchAssertBlock.ExpectedException("read-only", action36)
-
-        def action37():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
-
-        TryCatchAssertBlock.ExpectedException("read-only", action37)
 
         oAdvanced.use_default_clock_host_and_signal_sense = False
         Assert.assertFalse(oAdvanced.use_default_clock_host_and_signal_sense)
@@ -1193,10 +1091,8 @@ class StkAccessHelper(object):
         oAdvanced.clock_host = IV_CLOCK_HOST.TARGET
         Assert.assertEqual(IV_CLOCK_HOST.TARGET, oAdvanced.clock_host)
 
-        def action38():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.UNKNOWN
-
-        TryCatchAssertBlock.ExpectedException("must be in", action38)
         oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
         Assert.assertEqual(IV_TIME_SENSE.TRANSMIT, oAdvanced.signal_sense_of_clock_host)
         oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
@@ -1208,58 +1104,36 @@ class StkAccessHelper(object):
 
         oAdvanced.max_time_step = 123.456
         Assert.assertEqual(123.456, oAdvanced.max_time_step)
-
-        def action39():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oAdvanced.max_time_step = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action39)
 
         oAdvanced.min_time_step = 456.123
         Assert.assertEqual(456.123, oAdvanced.min_time_step)
-
-        def action40():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oAdvanced.min_time_step = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action40)
-
-        def action41():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAdvanced.fixed_step_size = 789
-
-        TryCatchAssertBlock.ExpectedException("read only", action41)
-
-        def action42():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAdvanced.fixed_time_bound = 789
-
-        TryCatchAssertBlock.ExpectedException("read only", action42)
 
         oAdvanced.use_fixed_time_step = True  # Fixed Step
         Assert.assertTrue(oAdvanced.use_fixed_time_step)
 
         oAdvanced.fixed_step_size = 123.456
         Assert.assertEqual(123.456, oAdvanced.fixed_step_size)
-
-        def action43():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oAdvanced.fixed_step_size = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action43)
 
         oAdvanced.fixed_time_bound = 56.123
         Assert.assertEqual(56.123, oAdvanced.fixed_time_bound)
-
-        def action44():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oAdvanced.fixed_time_bound = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action44)
-
-        def action45():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAdvanced.max_time_step = 123.456
-
-        TryCatchAssertBlock.ExpectedException("read only", action45)
-
-        def action46():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAdvanced.min_time_step = 56.123
-
-        TryCatchAssertBlock.ExpectedException("read only", action46)
 
         oAccess.compute_access()  # to make changes show in GUI
 
@@ -1486,90 +1360,48 @@ class VODataDisplayHelper(object):
     # region NotVisibleCheck
     def NotVisibleCheck(self, oVODataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
-
-        def action47():
-            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
-
         # Location
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action47)
-
-        def action48():
-            oVODataDisplayElement.font_color = Color.FromArgb(11254443)
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
         # FontColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action48)
-
-        def action49():
-            oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.font_color = Color.FromArgb(11254443)
         # XOrigin
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action49)
-
-        def action50():
-            oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
         # YOrigin
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action50)
-
-        def action51():
-            oVODataDisplayElement.x = 12
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM
         # X
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action51)
-
-        def action52():
-            oVODataDisplayElement.y = 21
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.x = 12
         # Y
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action52)
-
-        def action53():
-            oVODataDisplayElement.title = True
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.y = 21
         # Title
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action53)
-
-        def action54():
-            oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.title = True
         # FontSize
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action54)
-
-        def action55():
-            oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.HORIZONTAL
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
         # Format
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action55)
-
-        def action56():
-            oVODataDisplayElement.use_background = True
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.HORIZONTAL
         # UseBackground
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action56)
-
-        def action57():
-            oVODataDisplayElement.transparent_bg = True
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.use_background = True
         # TransparentBg
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action57)
-
-        def action58():
-            oVODataDisplayElement.bg_width = 34
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.transparent_bg = True
         # BgWidth
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action58)
-
-        def action59():
-            oVODataDisplayElement.bg_height = 43
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.bg_width = 34
         # BgHeight
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action59)
-
-        def action60():
-            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.bg_height = 43
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action60)
+        with pytest.raises(Exception):
+            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
 
     # endregion
 
@@ -1584,18 +1416,12 @@ class VODataDisplayHelper(object):
             Assert.assertEqual(GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
 
         else:
-
-            def action61():
+            with pytest.raises(Exception):
                 oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action61)
-
         if self.m_bIsChain:
-
-            def action62():
+            with pytest.raises(Exception):
                 oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT
-
-            TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action62)
 
         else:
             oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT
@@ -1675,60 +1501,33 @@ class VODataDisplayHelper(object):
     # region NotUseBackgroundCheck
     def NotUseBackgroundCheck(self, oVODataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
-
-        def action63():
-            oVODataDisplayElement.transparent_bg = True
-
         # TransparentBg
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action63)
-
-        def action64():
-            oVODataDisplayElement.background_translucency = 0.33
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.transparent_bg = True
         # BackgroundTranslucency
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action64)
-
-        def action65():
-            oVODataDisplayElement.use_background_texture = True
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.background_translucency = 0.33
         # UseBackgroundTexture
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action65)
-
-        def action66():
-            oVODataDisplayElement.background_texture_filename = "foo.png"
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.use_background_texture = True
         # BackgroundTextureFileName
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action66)
-
-        def action67():
-            oVODataDisplayElement.use_background_border = True
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.background_texture_filename = "foo.png"
         # UseBackgroundBorder
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action67)
-
-        def action68():
-            oVODataDisplayElement.background_border_color = Color.FromArgb(13491405)
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.use_background_border = True
         # BackgroundBorderColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action68)
-
-        def action69():
-            oVODataDisplayElement.use_auto_size_width = True
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.background_border_color = Color.FromArgb(13491405)
         # UseAutoSizeWidth
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action69)
-
-        def action70():
-            oVODataDisplayElement.use_auto_size_height = True
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.use_auto_size_width = True
         # UseAutoSizeHeight
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action70)
-
-        def action71():
-            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
-
+        with pytest.raises(Exception):
+            oVODataDisplayElement.use_auto_size_height = True
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action71)
+        with pytest.raises(Exception):
+            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
 
     # endregion
 
@@ -1818,18 +1617,12 @@ class VODataDisplayHelper(object):
     # region NotUseTitleCheck
     def NotUseTitleCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
-
-        def action72():
-            oDataDisplayElement.title_text = "New Title"
-
         # TitleText
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action72)
-
-        def action73():
-            oDataDisplayElement.is_show_name_enabled = False
-
+        with pytest.raises(Exception):
+            oDataDisplayElement.title_text = "New Title"
         # IsShowNameEnabled
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action73)
+        with pytest.raises(Exception):
+            oDataDisplayElement.is_show_name_enabled = False
 
     # endregion
 
@@ -1872,28 +1665,19 @@ class VODataDisplayHelper(object):
     # region UseAutoSizeCheck
     def UseAutoSizeCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
-
-        def action74():
+        with pytest.raises(Exception):
             oDataDisplayElement.bg_width = 500
-
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeWidth is False.", action74)
-
-        def action75():
+        with pytest.raises(Exception):
             oDataDisplayElement.bg_height = 500
-
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeHeight is False.", action75)
 
     # endregion
 
     # region NotUseBackgroundBorderCheck
     def NotUseBackgroundBorderCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
-
-        def action76():
-            oDataDisplayElement.background_border_color = Color.Black
-
         # BackgroundBorderColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundBorder is False.", action76)
+        with pytest.raises(Exception):
+            oDataDisplayElement.background_border_color = Color.Black
 
     # endregion
 
@@ -1915,12 +1699,9 @@ class VODataDisplayHelper(object):
     # region NotUseBackgroundTextureCheck
     def NotUseBackgroundTextureCheck(self, oDataDisplayElement: "IGraphics3DDataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
-
-        def action77():
-            oDataDisplayElement.background_texture_filename = "foo.png"
-
         # BackgroundTextureFileName
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundTexture is False.", action77)
+        with pytest.raises(Exception):
+            oDataDisplayElement.background_texture_filename = "foo.png"
 
     # endregion
 

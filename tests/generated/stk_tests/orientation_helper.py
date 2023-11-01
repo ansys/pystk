@@ -1,6 +1,7 @@
 from test_util import *
 from assertion_harness import *
 from logger import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -100,16 +101,10 @@ class OrientationTest(object):
                 oAzEl.convert_to(ORIENTATION_TYPE.QUATERNION)
             if ((eTypes & Orientations.YPRAngles)) == Orientations.YPRAngles:
                 oAzEl.convert_to(ORIENTATION_TYPE.YPR_ANGLES)
-
-            def action1():
+            with pytest.raises(Exception):
                 oAzEl.azimuth = 1234.5
-
-            TryCatchAssertBlock.DoAssert("", action1)
-
-            def action2():
+            with pytest.raises(Exception):
                 oAzEl.elevation = -1234.5
-
-            TryCatchAssertBlock.DoAssert("", action2)
 
         if ((eTypes & Orientations.EulerAngles)) == Orientations.EulerAngles:
             oEulerAngles: "IOrientationEulerAngles" = clr.Convert(
@@ -144,21 +139,12 @@ class OrientationTest(object):
                 oEulerAngles.convert_to(ORIENTATION_TYPE.QUATERNION)
             if ((eTypes & Orientations.YPRAngles)) == Orientations.YPRAngles:
                 oEulerAngles.convert_to(ORIENTATION_TYPE.YPR_ANGLES)
-
-            def action3():
+            with pytest.raises(Exception):
                 oEulerAngles.a = 1234.5
-
-            TryCatchAssertBlock.DoAssert("", action3)
-
-            def action4():
+            with pytest.raises(Exception):
                 oEulerAngles.b = -1234.5
-
-            TryCatchAssertBlock.DoAssert("", action4)
-
-            def action5():
+            with pytest.raises(Exception):
                 oEulerAngles.c = 1234.5
-
-            TryCatchAssertBlock.DoAssert("", action5)
 
         if ((eTypes & Orientations.Quaternion)) == Orientations.Quaternion:
             oQuaternion: "IOrientationQuaternion" = clr.Convert(
@@ -183,26 +169,14 @@ class OrientationTest(object):
                 oQuaternion.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
             if ((eTypes & Orientations.YPRAngles)) == Orientations.YPRAngles:
                 oQuaternion.convert_to(ORIENTATION_TYPE.YPR_ANGLES)
-
-            def action6():
+            with pytest.raises(Exception):
                 oQuaternion.qx = 1.2345
-
-            TryCatchAssertBlock.DoAssert("", action6)
-
-            def action7():
+            with pytest.raises(Exception):
                 oQuaternion.qy = -1.2345
-
-            TryCatchAssertBlock.DoAssert("", action7)
-
-            def action8():
+            with pytest.raises(Exception):
                 oQuaternion.qz = 1.2345
-
-            TryCatchAssertBlock.DoAssert("", action8)
-
-            def action9():
+            with pytest.raises(Exception):
                 oQuaternion.qs = -1.2345
-
-            TryCatchAssertBlock.DoAssert("", action9)
 
         if ((eTypes & Orientations.YPRAngles)) == Orientations.YPRAngles:
             oYPRAngles: "IOrientationYPRAngles" = clr.Convert(
@@ -231,21 +205,12 @@ class OrientationTest(object):
                 oYPRAngles.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
             if ((eTypes & Orientations.Quaternion)) == Orientations.Quaternion:
                 oYPRAngles.convert_to(ORIENTATION_TYPE.QUATERNION)
-
-            def action10():
+            with pytest.raises(Exception):
                 oYPRAngles.yaw = 1234.5
-
-            TryCatchAssertBlock.DoAssert("", action10)
-
-            def action11():
+            with pytest.raises(Exception):
                 oYPRAngles.pitch = -1234.5
-
-            TryCatchAssertBlock.DoAssert("", action11)
-
-            def action12():
+            with pytest.raises(Exception):
                 oYPRAngles.roll = 1234.5
-
-            TryCatchAssertBlock.DoAssert("", action12)
 
         if ((eTypes & Orientations.AzEl)) == Orientations.AzEl:
             oOrientation.assign_az_el(85.4, 34.5, AZ_EL_ABOUT_BORESIGHT.ROTATE)
@@ -357,11 +322,8 @@ class DirectionsTest(object):
         self.Display(oPR)
         oPR.pitch = 123.456
         oPR.roll = -54.321
-
-        def action13():
+        with pytest.raises(Exception):
             oPR.sequence = PR_SEQUENCE.PR
-
-        TryCatchAssertBlock.DoAssert("", action13)
         oPR.assign_pr(123.456, -54.321)
         self.m_logger.WriteLine("\t\tNew values:")
         self.Display(oPR)
@@ -529,21 +491,12 @@ class PositionTest(object):
             oCartesian.assign_cartesian(1234.5, 54.321, 789.012)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oCartesian)
-
-            def action14():
+            with pytest.raises(Exception):
                 oCartesian.x = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action14)
-
-            def action15():
+            with pytest.raises(Exception):
                 oCartesian.y = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action15)
-
-            def action16():
+            with pytest.raises(Exception):
                 oCartesian.z = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action16)
 
             oCartesian.convert_to(POSITION_TYPE.CARTESIAN)
             if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
@@ -568,21 +521,12 @@ class PositionTest(object):
             oCylindrical.assign_cylindrical(12203.4, 3513.17, 1.23)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oCylindrical)
-
-            def action17():
+            with pytest.raises(Exception):
                 oCylindrical.radius = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action17)
-
-            def action18():
+            with pytest.raises(Exception):
                 oCylindrical.z = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action18)
-
-            def action19():
+            with pytest.raises(Exception):
                 oCylindrical.lon = 6.78
-
-            TryCatchAssertBlock.DoAssert("", action19)
 
             oCylindrical.convert_to(POSITION_TYPE.CYLINDRICAL)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
@@ -607,21 +551,12 @@ class PositionTest(object):
             oGeocentric.assign_geocentric(1.234, 2.345, 12.34)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oGeocentric)
-
-            def action20():
+            with pytest.raises(Exception):
                 oGeocentric.lat = 2.34
-
-            TryCatchAssertBlock.DoAssert("", action20)
-
-            def action21():
+            with pytest.raises(Exception):
                 oGeocentric.lon = 6.78
-
-            TryCatchAssertBlock.DoAssert("", action21)
-
-            def action22():
+            with pytest.raises(Exception):
                 oGeocentric.altitude = 6780000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action22)
 
             oGeocentric.convert_to(POSITION_TYPE.GEOCENTRIC)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
@@ -646,21 +581,12 @@ class PositionTest(object):
             oGeodetic.assign_geodetic(0.190988679940043, -0.743582379766568, 0.640787459798838)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oGeodetic)
-
-            def action23():
+            with pytest.raises(Exception):
                 oGeodetic.lat = 2.34
-
-            TryCatchAssertBlock.DoAssert("", action23)
-
-            def action24():
+            with pytest.raises(Exception):
                 oGeodetic.lon = 6.78
-
-            TryCatchAssertBlock.DoAssert("", action24)
-
-            def action25():
+            with pytest.raises(Exception):
                 oGeodetic.altitude = 6780000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action25)
 
             oGeodetic.convert_to(POSITION_TYPE.GEODETIC)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
@@ -685,21 +611,12 @@ class PositionTest(object):
             oSpherical.assign_spherical(1, 2, 6355753)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oSpherical)
-
-            def action26():
+            with pytest.raises(Exception):
                 oSpherical.lat = 2.34
-
-            TryCatchAssertBlock.DoAssert("", action26)
-
-            def action27():
+            with pytest.raises(Exception):
                 oSpherical.lon = 6.78
-
-            TryCatchAssertBlock.DoAssert("", action27)
-
-            def action28():
+            with pytest.raises(Exception):
                 oSpherical.radius = 67800000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("", action28)
 
             oSpherical.convert_to(POSITION_TYPE.SPHERICAL)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
@@ -833,27 +750,18 @@ class LLAPositionTest(object):
         # Lat
         oGeocentric.lat = 23.45
         Assert.assertAlmostEqual(23.45, oGeocentric.lat, delta=0.01)
-
-        def action29():
+        with pytest.raises(Exception):
             oGeocentric.lat = -321
-
-        TryCatchAssertBlock.DoAssert("", action29)
         # Lon
         oGeocentric.lon = 54.321
         Assert.assertAlmostEqual(54.321, oGeocentric.lon, delta=0.001)
-
-        def action30():
+        with pytest.raises(Exception):
             oGeocentric.lon = -321
-
-        TryCatchAssertBlock.DoAssert("", action30)
         # Rad
         oGeocentric.rad = 12345.6
         Assert.assertAlmostEqual(12345.6, oGeocentric.rad, delta=0.01)
-
-        def action31():
+        with pytest.raises(Exception):
             oGeocentric.rad = -321
-
-        TryCatchAssertBlock.DoAssert("", action31)
         self.m_logger.WriteLine("\t\tNew values:")
         self.Display(oGeocentric)
         # Geodetic
@@ -869,34 +777,22 @@ class LLAPositionTest(object):
         # Lat
         oGeodetic.lat = 12.3456
         Assert.assertAlmostEqual(12.3456, oGeodetic.lat, delta=0.0001)
-
-        def action32():
+        with pytest.raises(Exception):
             oGeodetic.lat = -321
-
-        TryCatchAssertBlock.DoAssert("", action32)
         # Lon
         oGeodetic.lon = -54.321
         Assert.assertAlmostEqual(-54.321, oGeodetic.lon, delta=0.001)
-
-        def action33():
+        with pytest.raises(Exception):
             oGeodetic.lon = -321
-
-        TryCatchAssertBlock.DoAssert("", action33)
         # Alt
         oGeodetic.altitude = 123.456
         Assert.assertAlmostEqual(123.456, oGeodetic.altitude, delta=0.001)
-
-        def action34():
+        with pytest.raises(Exception):
             oGeodetic.altitude = -321
-
-        TryCatchAssertBlock.DoAssert("", action34)
         self.m_logger.WriteLine("\t\tNew values:")
         self.Display(oGeodetic)
-
-        def action35():
+        with pytest.raises(Exception):
             oPosition.convert_to(LLA_POSITION_TYPE.UNKNOWN)
-
-        TryCatchAssertBlock.DoAssert("", action35)
 
         # Testing the helper methods to convert to desired LLA position type and set its values in one call
         # SetAsGeocentric

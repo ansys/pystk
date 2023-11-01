@@ -4,6 +4,7 @@ from assertion_harness import *
 from logger import *
 from math2 import *
 
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkutil import *
@@ -146,11 +147,8 @@ class GatorHelper(object):
     def TestStoppingConditionCollection2(scc: "IStoppingConditionCollection", readOnly: bool):
         sc: "IStoppingCondition" = None
         if readOnly:
-
-            def action1():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 sc = clr.CastAs(scc.add("Altitude").properties, IStoppingCondition)
-
-            TryCatchAssertBlock.ExpectedException("read-only", action1)
             return
 
         sc = clr.CastAs(scc.add("Altitude").properties, IStoppingCondition)
@@ -171,10 +169,8 @@ class GatorHelper(object):
         sc.repeat_count = 2
         Assert.assertEqual(2, sc.repeat_count)
 
-        def action2():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             sc.max_trip_times = 10001
-
-        TryCatchAssertBlock.ExpectedException("read-only", action2)
 
         sc.central_body_name = "Mars"
         scx: "STOPPING_CONDITION" = sc.stopping_condition_type
@@ -192,25 +188,19 @@ class GatorHelper(object):
 
         sce: "IStoppingConditionElement" = scc["Duration"]
 
-        def action3():
+        with pytest.raises(Exception):
             cmp3: "IComponentInfo" = clr.Convert(scc[5], IComponentInfo)
 
-        TryCatchAssertBlock.DoAssert("", action3)
-
-        def action4():
+        with pytest.raises(Exception):
             cmp4: "IComponentInfo" = clr.Convert(scc["Bogus"], IComponentInfo)
-
-        TryCatchAssertBlock.DoAssert("", action4)
 
         cmp: "IComponentInfo"
 
         for cmp in scc:
             name: str = cmp.name
 
-        def action5():
+        with pytest.raises(Exception):
             scc.add("Bogus")
-
-        TryCatchAssertBlock.DoAssert("", action5)
 
         Assert.assertEqual(1, scc.count)
         scc.add("Argument of Latitude")
@@ -223,11 +213,8 @@ class GatorHelper(object):
 
         scc.add("Argument of Latitude")
         scc.remove("Argument of Latitude")
-
-        def action6():
+        with pytest.raises(Exception):
             scc.remove("Bogus")
-
-        TryCatchAssertBlock.DoAssert("", action6)
 
         sc = clr.CastAs(clr.Convert(scc.add("Argument of Latitude").properties, IStoppingCondition), IStoppingCondition)
         sc.trip = 1
@@ -261,10 +248,8 @@ class GatorHelper(object):
             COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, sc.user_calc_object_link_embed_control.reference_type
         )
 
-        def action7():
+        with pytest.raises(Exception):
             test: str = sc.coord_system
-
-        TryCatchAssertBlock.DoAssert("", action7)
         sc.central_body_name = "Mars"
         Assert.assertEqual("Mars", sc.central_body_name)
         sc.inherited = False
@@ -340,25 +325,14 @@ class GatorHelper(object):
         attControl.constraint_vector_name = "CentralBody/Moon Moon Angular Velocity"
         Assert.assertEqual("CentralBody/Moon Moon_Angular_Velocity", attControl.constraint_vector_name)
 
-        def action8():
+        with pytest.raises(Exception):
             attControl.body_axis = clr.Convert((-1), BODY_AXIS)
-
-        TryCatchAssertBlock.DoAssert("Bad BodyAxis", action8)
-
-        def action9():
+        with pytest.raises(Exception):
             attControl.custom_function = clr.Convert((-1), CUSTOM_FUNCTION)
-
-        TryCatchAssertBlock.DoAssert("Bad CustomFunction", action9)
-
-        def action10():
+        with pytest.raises(Exception):
             attControl.constraint_sign = clr.Convert((-1), CONSTRAINT_SIGN)
-
-        TryCatchAssertBlock.DoAssert("Bad ConstraintSign", action10)
-
-        def action11():
+        with pytest.raises(Exception):
             attControl.constraint_vector_name = "Bogus"
-
-        TryCatchAssertBlock.DoAssert("Bad ConstraintVectorName", action11)
 
     @staticmethod
     def TestSNOPTControlParameter(cp: "ISNOPTControl", objName: str, decName: str):
@@ -392,21 +366,16 @@ class GatorHelper(object):
         cp.use_custom_display_unit = False
         Assert.assertFalse(cp.use_custom_display_unit)
 
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cp.custom_display_unit = "m"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action12)
 
         cp.use_custom_display_unit = True
         Assert.assertTrue(cp.use_custom_display_unit)
 
         cp.custom_display_unit = "min"
         Assert.assertEqual("min", cp.custom_display_unit)
-
-        def action13():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid Unit")):
             cp.custom_display_unit = "m"
-
-        TryCatchAssertBlock.ExpectedException("Invalid Unit", action13)
 
         GatorHelper.m_logger.WriteLine("TestSNOPTControlParameter End")
 
@@ -442,21 +411,16 @@ class GatorHelper(object):
         cp.use_custom_display_unit = False
         Assert.assertFalse(cp.use_custom_display_unit)
 
-        def action14():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cp.custom_display_unit = "m"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action14)
 
         cp.use_custom_display_unit = True
         Assert.assertTrue(cp.use_custom_display_unit)
 
         cp.custom_display_unit = "min"
         Assert.assertEqual("min", cp.custom_display_unit)
-
-        def action15():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid Unit")):
             cp.custom_display_unit = "m"
-
-        TryCatchAssertBlock.ExpectedException("Invalid Unit", action15)
 
     @staticmethod
     def TestDCControlParameter(cp: "IDifferentialCorrectorControl"):
@@ -522,11 +486,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.CD_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.CD_VAL))
-
-        def action16():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "CdVal")
-
-        TryCatchAssertBlock.DoAssert("", action16)
 
         update.enable_control_parameter(CONTROL_UPDATE.CR_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.CR_VAL))
@@ -535,11 +496,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.CR_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.CR_VAL))
-
-        def action17():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "CrVal")
-
-        TryCatchAssertBlock.DoAssert("", action17)
 
         update.enable_control_parameter(CONTROL_UPDATE.DRAG_AREA_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.DRAG_AREA_VAL))
@@ -548,11 +506,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.DRAG_AREA_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.DRAG_AREA_VAL))
-
-        def action18():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "DragAreaVal")
-
-        TryCatchAssertBlock.DoAssert("", action18)
 
         update.enable_control_parameter(CONTROL_UPDATE.DRY_MASS_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.DRY_MASS_VAL))
@@ -561,11 +516,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.DRY_MASS_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.DRY_MASS_VAL))
-
-        def action19():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "DryMassVal")
-
-        TryCatchAssertBlock.DoAssert("", action19)
 
         update.enable_control_parameter(CONTROL_UPDATE.FUEL_DENSITY_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.FUEL_DENSITY_VAL))
@@ -574,11 +526,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.FUEL_DENSITY_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.FUEL_DENSITY_VAL))
-
-        def action20():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "FuelDensityVal")
-
-        TryCatchAssertBlock.DoAssert("", action20)
 
         update.enable_control_parameter(CONTROL_UPDATE.FUEL_MASS_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.FUEL_MASS_VAL))
@@ -587,11 +536,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.FUEL_MASS_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.FUEL_MASS_VAL))
-
-        def action21():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "FuelMassVal")
-
-        TryCatchAssertBlock.DoAssert("", action21)
 
         update.enable_control_parameter(CONTROL_UPDATE.RADIATION_PRESSURE_AREA_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.RADIATION_PRESSURE_AREA_VAL))
@@ -600,11 +546,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.RADIATION_PRESSURE_AREA_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.RADIATION_PRESSURE_AREA_VAL))
-
-        def action22():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "RadPressureAreaVal")
-
-        TryCatchAssertBlock.DoAssert("", action22)
 
         update.enable_control_parameter(CONTROL_UPDATE.RADIATION_PRESSURE_COEFFICIENT_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.RADIATION_PRESSURE_COEFFICIENT_VAL))
@@ -613,11 +556,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.RADIATION_PRESSURE_COEFFICIENT_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.RADIATION_PRESSURE_COEFFICIENT_VAL))
-
-        def action23():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "RadPressureCoefficientVal")
-
-        TryCatchAssertBlock.DoAssert("", action23)
 
         update.enable_control_parameter(CONTROL_UPDATE.SRP_AREA_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.SRP_AREA_VAL))
@@ -626,11 +566,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.SRP_AREA_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.SRP_AREA_VAL))
-
-        def action24():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "SRPAreaVal")
-
-        TryCatchAssertBlock.DoAssert("", action24)
 
         update.enable_control_parameter(CONTROL_UPDATE.TANK_PRESSURE_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.TANK_PRESSURE_VAL))
@@ -639,11 +576,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.TANK_PRESSURE_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.TANK_PRESSURE_VAL))
-
-        def action25():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "TankPressureVal")
-
-        TryCatchAssertBlock.DoAssert("", action25)
 
         update.enable_control_parameter(CONTROL_UPDATE.TANK_TEMP_VAL)
         Assert.assertTrue(update.is_control_parameter_enabled(CONTROL_UPDATE.TANK_TEMP_VAL))
@@ -652,11 +586,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         update.disable_control_parameter(CONTROL_UPDATE.TANK_TEMP_VAL)
         Assert.assertFalse(update.is_control_parameter_enabled(CONTROL_UPDATE.TANK_TEMP_VAL))
-
-        def action26():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myUpdate", "TankTemperatureVal")
-
-        TryCatchAssertBlock.DoAssert("", action26)
 
     @staticmethod
     def TestPropagateControls(prop: "IMissionControlSequencePropagate", dc: "IProfileDifferentialCorrector"):
@@ -671,11 +602,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
         Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME))
-
-        def action27():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MaxPropTime")
-
-        TryCatchAssertBlock.DoAssert("", action27)
 
         prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME)
         Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME))
@@ -684,11 +612,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME)
         Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME))
-
-        def action28():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MinPropTime")
-
-        TryCatchAssertBlock.DoAssert("", action28)
 
     @staticmethod
     def TestFollowControls(follow: "IMissionControlSequenceFollow", dc: "IProfileDifferentialCorrector"):
@@ -702,11 +627,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.CD)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.CD))
-
-        def action29():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.Cd")
-
-        TryCatchAssertBlock.DoAssert("", action29)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.CK)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.CK))
@@ -715,11 +637,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.CK)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.CK))
-
-        def action30():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.RadPressureCoeff")
-
-        TryCatchAssertBlock.DoAssert("", action30)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.CR)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.CR))
@@ -728,11 +647,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.CR)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.CR))
-
-        def action31():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.Cr")
-
-        TryCatchAssertBlock.DoAssert("", action31)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.DRAG_AREA)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.DRAG_AREA))
@@ -741,11 +657,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.DRAG_AREA)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.DRAG_AREA))
-
-        def action32():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.DragArea")
-
-        TryCatchAssertBlock.DoAssert("", action32)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.DRY_MASS)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.DRY_MASS))
@@ -754,11 +667,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.DRY_MASS)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.DRY_MASS))
-
-        def action33():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.DryMass")
-
-        TryCatchAssertBlock.DoAssert("", action33)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.FUEL_DENSITY)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.FUEL_DENSITY))
@@ -767,11 +677,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.FUEL_DENSITY)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.FUEL_DENSITY))
-
-        def action34():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.FuelDensity")
-
-        TryCatchAssertBlock.DoAssert("", action34)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.FUEL_MASS)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.FUEL_MASS))
@@ -780,11 +687,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.FUEL_MASS)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.FUEL_MASS))
-
-        def action35():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "FuelMass")
-
-        TryCatchAssertBlock.DoAssert("", action35)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.K1)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.K1))
@@ -793,11 +697,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.K1)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.K1))
-
-        def action36():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.K1")
-
-        TryCatchAssertBlock.DoAssert("", action36)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.K2)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.K2))
@@ -806,11 +707,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.K2)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.K2))
-
-        def action37():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.K2")
-
-        TryCatchAssertBlock.DoAssert("", action37)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.MAX_FUEL_MASS)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.MAX_FUEL_MASS))
@@ -819,11 +717,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.MAX_FUEL_MASS)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.MAX_FUEL_MASS))
-
-        def action38():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "MaxFuelMass")
-
-        TryCatchAssertBlock.DoAssert("", action38)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.RADIATION_PRESSURE_AREA)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.RADIATION_PRESSURE_AREA))
@@ -832,11 +727,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.RADIATION_PRESSURE_AREA)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.RADIATION_PRESSURE_AREA))
-
-        def action39():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.RadPressureArea")
-
-        TryCatchAssertBlock.DoAssert("", action39)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.SRP_AREA)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.SRP_AREA))
@@ -845,11 +737,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.SRP_AREA)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.SRP_AREA))
-
-        def action40():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.SRPArea")
-
-        TryCatchAssertBlock.DoAssert("", action40)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.TANK_PRESSURE)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.TANK_PRESSURE))
@@ -858,11 +747,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.TANK_PRESSURE)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.TANK_PRESSURE))
-
-        def action41():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.TankPressure")
-
-        TryCatchAssertBlock.DoAssert("", action41)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.TANK_TEMP)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.TANK_TEMP))
@@ -871,11 +757,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.TANK_TEMP)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.TANK_TEMP))
-
-        def action42():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "InitialState.TankTemperature")
-
-        TryCatchAssertBlock.DoAssert("", action42)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.TANK_VOLUME)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.TANK_VOLUME))
@@ -884,11 +767,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.TANK_VOLUME)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.TANK_VOLUME))
-
-        def action43():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "TankVolume")
-
-        TryCatchAssertBlock.DoAssert("", action43)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.X_OFFSET)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.X_OFFSET))
@@ -897,11 +777,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.X_OFFSET)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.X_OFFSET))
-
-        def action44():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "Xoffset")
-
-        TryCatchAssertBlock.DoAssert("", action44)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.Y_OFFSET)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.Y_OFFSET))
@@ -910,11 +787,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.Y_OFFSET)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.Y_OFFSET))
-
-        def action45():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "Yoffset")
-
-        TryCatchAssertBlock.DoAssert("", action45)
 
         follow.enable_control_parameter(CONTROL_FOLLOW.Z_OFFSET)
         Assert.assertTrue(follow.is_control_parameter_enabled(CONTROL_FOLLOW.Z_OFFSET))
@@ -923,11 +797,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         follow.disable_control_parameter(CONTROL_FOLLOW.Z_OFFSET)
         Assert.assertFalse(follow.is_control_parameter_enabled(CONTROL_FOLLOW.Z_OFFSET))
-
-        def action46():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myFollow", "Zoffset")
-
-        TryCatchAssertBlock.DoAssert("", action46)
 
     @staticmethod
     def TestLaunchControls(launch: "IMissionControlSequenceLaunch", dc: "IProfileDifferentialCorrector"):
@@ -943,11 +814,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_ALTITUDE)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_ALTITUDE))
-
-        def action47():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.LaunchAzDRDAlt.Altitude")
-
-        TryCatchAssertBlock.DoAssert("", action47)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_AZ)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_AZ))
@@ -956,11 +824,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_AZ)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_AZ))
-
-        def action48():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.LaunchAzDRDAlt.LaunchAz")
-
-        TryCatchAssertBlock.DoAssert("", action48)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST))
@@ -969,11 +834,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST))
-
-        def action49():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.LaunchAzDRDAlt.DownrangeDistance")
-
-        TryCatchAssertBlock.DoAssert("", action49)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_RAD_AZ)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_RAD_AZ))
@@ -982,11 +844,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_RAD_AZ)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_RAD_AZ))
-
-        def action50():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.LaunchAzDRDRadius.LaunchAz")
-
-        TryCatchAssertBlock.DoAssert("", action50)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_RAD_DOWNRANGE_DIST)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_RAD_DOWNRANGE_DIST))
@@ -995,11 +854,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_RAD_DOWNRANGE_DIST)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_RAD_DOWNRANGE_DIST))
-
-        def action51():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.LaunchAzDRDRadius.DownrangeDistance")
-
-        TryCatchAssertBlock.DoAssert("", action51)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_RAD_RAD)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_RAD_RAD))
@@ -1008,11 +864,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_AZ_RAD_RAD)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_AZ_RAD_RAD))
-
-        def action52():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.LaunchAzDRDRadius.Radius")
-
-        TryCatchAssertBlock.DoAssert("", action52)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_FIXED_VELOCITY)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_FIXED_VELOCITY))
@@ -1021,11 +874,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_FIXED_VELOCITY)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_FIXED_VELOCITY))
-
-        def action53():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.FixedVelocity")
-
-        TryCatchAssertBlock.DoAssert("", action53)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LAT)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LAT))
@@ -1034,11 +884,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LAT)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LAT))
-
-        def action54():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.Geocentric.Latitude")
-
-        TryCatchAssertBlock.DoAssert("", action54)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LON)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LON))
@@ -1047,11 +894,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LON)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LON))
-
-        def action55():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.Geocentric.Longitude")
-
-        TryCatchAssertBlock.DoAssert("", action55)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_RAD)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_RAD))
@@ -1060,11 +904,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_RAD)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_RAD))
-
-        def action56():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.Geocentric.Radius")
-
-        TryCatchAssertBlock.DoAssert("", action56)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEODETIC_ALTITUDE)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEODETIC_ALTITUDE))
@@ -1073,11 +914,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEODETIC_ALTITUDE)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEODETIC_ALTITUDE))
-
-        def action57():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.Geodetic.Altitude")
-
-        TryCatchAssertBlock.DoAssert("", action57)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEODETIC_LAT)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEODETIC_LAT))
@@ -1086,11 +924,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEODETIC_LAT)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEODETIC_LAT))
-
-        def action58():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.Geodetic.Latitude")
-
-        TryCatchAssertBlock.DoAssert("", action58)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEODETIC_LON)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEODETIC_LON))
@@ -1099,11 +934,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_GEODETIC_LON)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_GEODETIC_LON))
-
-        def action59():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.Geodetic.Longitude")
-
-        TryCatchAssertBlock.DoAssert("", action59)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_INERTIAL_HORIZONTAL_FPA)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_INERTIAL_HORIZONTAL_FPA))
@@ -1112,11 +944,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_INERTIAL_HORIZONTAL_FPA)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_INERTIAL_HORIZONTAL_FPA))
-
-        def action60():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.InertialHFPA")
-
-        TryCatchAssertBlock.DoAssert("", action60)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY))
@@ -1125,11 +954,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY))
-
-        def action61():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.InertialVelocity")
-
-        TryCatchAssertBlock.DoAssert("", action61)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY_AZIMUTH)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY_AZIMUTH))
@@ -1138,11 +964,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY_AZIMUTH)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY_AZIMUTH))
-
-        def action62():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Burnout.InertialVelAzimuth")
-
-        TryCatchAssertBlock.DoAssert("", action62)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.CD)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.CD))
@@ -1151,11 +974,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.CD)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.CD))
-
-        def action63():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.Cd")
-
-        TryCatchAssertBlock.DoAssert("", action63)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.CK)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.CK))
@@ -1164,11 +984,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.CK)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.CK))
-
-        def action64():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.RadPressureCoeff")
-
-        TryCatchAssertBlock.DoAssert("", action64)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.CR)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.CR))
@@ -1177,11 +994,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.CR)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.CR))
-
-        def action65():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.Cr")
-
-        TryCatchAssertBlock.DoAssert("", action65)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.DRAG_AREA)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.DRAG_AREA))
@@ -1190,11 +1004,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.DRAG_AREA)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.DRAG_AREA))
-
-        def action66():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.DragArea")
-
-        TryCatchAssertBlock.DoAssert("", action66)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.DRY_MASS)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.DRY_MASS))
@@ -1203,11 +1014,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.DRY_MASS)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.DRY_MASS))
-
-        def action67():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.DryMass")
-
-        TryCatchAssertBlock.DoAssert("", action67)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.EPOCH)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.EPOCH))
@@ -1216,11 +1024,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.EPOCH)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.EPOCH))
-
-        def action68():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Launch.Epoch")
-
-        TryCatchAssertBlock.DoAssert("", action68)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.FUEL_DENSITY)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.FUEL_DENSITY))
@@ -1229,11 +1034,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.FUEL_DENSITY)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.FUEL_DENSITY))
-
-        def action69():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.FuelDensity")
-
-        TryCatchAssertBlock.DoAssert("", action69)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.FUEL_MASS)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.FUEL_MASS))
@@ -1242,11 +1044,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.FUEL_MASS)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.FUEL_MASS))
-
-        def action70():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "FuelMass")
-
-        TryCatchAssertBlock.DoAssert("", action70)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.GEOCENTRIC_LAT)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEOCENTRIC_LAT))
@@ -1255,11 +1054,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.GEOCENTRIC_LAT)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEOCENTRIC_LAT))
-
-        def action71():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Launch.Geocentric.Latitude")
-
-        TryCatchAssertBlock.DoAssert("", action71)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.GEOCENTRIC_LON)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEOCENTRIC_LON))
@@ -1268,11 +1064,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.GEOCENTRIC_LON)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEOCENTRIC_LON))
-
-        def action72():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Launch.Geocentric.Longitude")
-
-        TryCatchAssertBlock.DoAssert("", action72)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.GEOCENTRIC_RAD)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEOCENTRIC_RAD))
@@ -1281,11 +1074,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.GEOCENTRIC_RAD)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEOCENTRIC_RAD))
-
-        def action73():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Launch.Geocentric.Radius")
-
-        TryCatchAssertBlock.DoAssert("", action73)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.GEODETIC_ALTITUDE)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEODETIC_ALTITUDE))
@@ -1294,11 +1084,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.GEODETIC_ALTITUDE)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEODETIC_ALTITUDE))
-
-        def action74():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Launch.Geodetic.Altitude")
-
-        TryCatchAssertBlock.DoAssert("", action74)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.GEODETIC_LAT)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEODETIC_LAT))
@@ -1307,11 +1094,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.GEODETIC_LAT)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEODETIC_LAT))
-
-        def action75():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Launch.Geodetic.Latitude")
-
-        TryCatchAssertBlock.DoAssert("", action75)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.GEODETIC_LON)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEODETIC_LON))
@@ -1320,11 +1104,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.GEODETIC_LON)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.GEODETIC_LON))
-
-        def action76():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "Launch.Geodetic.Longitude")
-
-        TryCatchAssertBlock.DoAssert("", action76)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.K1)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.K1))
@@ -1333,11 +1114,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.K1)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.K1))
-
-        def action77():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.K1")
-
-        TryCatchAssertBlock.DoAssert("", action77)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.K2)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.K2))
@@ -1346,11 +1124,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.K2)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.K2))
-
-        def action78():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.K2")
-
-        TryCatchAssertBlock.DoAssert("", action78)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.MAX_FUEL_MASS)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.MAX_FUEL_MASS))
@@ -1359,11 +1134,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.MAX_FUEL_MASS)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.MAX_FUEL_MASS))
-
-        def action79():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "MaxFuelMass")
-
-        TryCatchAssertBlock.DoAssert("", action79)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.RADIATION_PRESSURE_AREA)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.RADIATION_PRESSURE_AREA))
@@ -1372,11 +1144,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.RADIATION_PRESSURE_AREA)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.RADIATION_PRESSURE_AREA))
-
-        def action80():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.RadPressureArea")
-
-        TryCatchAssertBlock.DoAssert("", action80)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.SRP_AREA)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.SRP_AREA))
@@ -1385,11 +1154,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.SRP_AREA)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.SRP_AREA))
-
-        def action81():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.SRPArea")
-
-        TryCatchAssertBlock.DoAssert("", action81)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.TANK_PRESSURE)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TANK_PRESSURE))
@@ -1398,11 +1164,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.TANK_PRESSURE)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TANK_PRESSURE))
-
-        def action82():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.TankPressure")
-
-        TryCatchAssertBlock.DoAssert("", action82)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.TANK_TEMP)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TANK_TEMP))
@@ -1411,11 +1174,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.TANK_TEMP)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TANK_TEMP))
-
-        def action83():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "InitialState.TankTemperature")
-
-        TryCatchAssertBlock.DoAssert("", action83)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.TANK_VOLUME)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TANK_VOLUME))
@@ -1424,11 +1184,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.TANK_VOLUME)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TANK_VOLUME))
-
-        def action84():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "TankVolume")
-
-        TryCatchAssertBlock.DoAssert("", action84)
 
         launch.enable_control_parameter(CONTROL_LAUNCH.TIME_OF_FLIGHT)
         Assert.assertTrue(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TIME_OF_FLIGHT))
@@ -1437,11 +1194,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         launch.disable_control_parameter(CONTROL_LAUNCH.TIME_OF_FLIGHT)
         Assert.assertFalse(launch.is_control_parameter_enabled(CONTROL_LAUNCH.TIME_OF_FLIGHT))
-
-        def action85():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "TimeOfFlight")
-
-        TryCatchAssertBlock.DoAssert("", action85)
         if not OSHelper.IsLinux():
             scriptingTool: "IScriptingTool" = dc.scripting_tool
             scriptingTool.enable = True
@@ -1466,11 +1220,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_VX)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_VX))
-
-        def action86():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cartesian.Vx")
-
-        TryCatchAssertBlock.DoAssert("", action86)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_VY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_VY))
@@ -1479,11 +1230,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_VY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_VY))
-
-        def action87():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cartesian.Vy")
-
-        TryCatchAssertBlock.DoAssert("", action87)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_VZ)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_VZ))
@@ -1492,11 +1240,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_VZ)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_VZ))
-
-        def action88():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cartesian.Vz")
-
-        TryCatchAssertBlock.DoAssert("", action88)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_X)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_X))
@@ -1505,11 +1250,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_X)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_X))
-
-        def action89():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cartesian.X")
-
-        TryCatchAssertBlock.DoAssert("", action89)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_Y)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_Y))
@@ -1518,11 +1260,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_Y)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_Y))
-
-        def action90():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cartesian.Y")
-
-        TryCatchAssertBlock.DoAssert("", action90)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_Z)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_Z))
@@ -1531,11 +1270,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CARTESIAN_Z)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CARTESIAN_Z))
-
-        def action91():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cartesian.Z")
-
-        TryCatchAssertBlock.DoAssert("", action91)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CD)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CD))
@@ -1544,11 +1280,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CD)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CD))
-
-        def action92():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cd")
-
-        TryCatchAssertBlock.DoAssert("", action92)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CK)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CK))
@@ -1557,11 +1290,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CK)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CK))
-
-        def action93():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.RadPressureCoeff")
-
-        TryCatchAssertBlock.DoAssert("", action93)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.CR)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CR))
@@ -1570,11 +1300,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.CR)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.CR))
-
-        def action94():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Cr")
-
-        TryCatchAssertBlock.DoAssert("", action94)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DRAG_AREA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DRAG_AREA))
@@ -1583,11 +1310,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DRAG_AREA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DRAG_AREA))
-
-        def action95():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.DragArea")
-
-        TryCatchAssertBlock.DoAssert("", action95)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DRY_MASS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DRY_MASS))
@@ -1596,11 +1320,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DRY_MASS)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DRY_MASS))
-
-        def action96():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.DryMass")
-
-        TryCatchAssertBlock.DoAssert("", action96)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EPOCH)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EPOCH))
@@ -1609,11 +1330,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EPOCH)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EPOCH))
-
-        def action97():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Epoch")
-
-        TryCatchAssertBlock.DoAssert("", action97)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.FUEL_DENSITY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.FUEL_DENSITY))
@@ -1622,11 +1340,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.FUEL_DENSITY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.FUEL_DENSITY))
-
-        def action98():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.FuelDensity")
-
-        TryCatchAssertBlock.DoAssert("", action98)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.FUEL_MASS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.FUEL_MASS))
@@ -1635,11 +1350,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.FUEL_MASS)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.FUEL_MASS))
-
-        def action99():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "FuelMass")
-
-        TryCatchAssertBlock.DoAssert("", action99)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.K1)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.K1))
@@ -1648,11 +1360,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.K1)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.K1))
-
-        def action100():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.K1")
-
-        TryCatchAssertBlock.DoAssert("", action100)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.K2)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.K2))
@@ -1661,11 +1370,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.K2)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.K2))
-
-        def action101():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.K2")
-
-        TryCatchAssertBlock.DoAssert("", action101)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY))
@@ -1674,11 +1380,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY))
-
-        def action102():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.ecc")
-
-        TryCatchAssertBlock.DoAssert("", action102)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_INC)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_INC))
@@ -1687,11 +1390,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_INC)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_INC))
-
-        def action103():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.inc")
-
-        TryCatchAssertBlock.DoAssert("", action103)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_RAAN)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_RAAN))
@@ -1700,11 +1400,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_RAAN)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_RAAN))
-
-        def action104():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.RAAN")
-
-        TryCatchAssertBlock.DoAssert("", action104)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_SMA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_SMA))
@@ -1713,11 +1410,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_SMA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_SMA))
-
-        def action105():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.sma")
-
-        TryCatchAssertBlock.DoAssert("", action105)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_TA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_TA))
@@ -1726,11 +1420,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_TA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_TA))
-
-        def action106():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.TA")
-
-        TryCatchAssertBlock.DoAssert("", action106)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_W)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_W))
@@ -1739,11 +1430,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_W)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_W))
-
-        def action107():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.w")
-
-        TryCatchAssertBlock.DoAssert("", action107)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MAX_FUEL_MASS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MAX_FUEL_MASS))
@@ -1752,11 +1440,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MAX_FUEL_MASS)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MAX_FUEL_MASS))
-
-        def action108():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "MaxFuelMass")
-
-        TryCatchAssertBlock.DoAssert("", action108)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.RADIATION_PRESSURE_AREA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.RADIATION_PRESSURE_AREA))
@@ -1765,11 +1450,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.RADIATION_PRESSURE_AREA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.RADIATION_PRESSURE_AREA))
-
-        def action109():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.RadPressureArea")
-
-        TryCatchAssertBlock.DoAssert("", action109)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_AZ)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_AZ))
@@ -1778,11 +1460,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_AZ)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_AZ))
-
-        def action110():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Azimuth")
-
-        TryCatchAssertBlock.DoAssert("", action110)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_DEC)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_DEC))
@@ -1791,11 +1470,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_DEC)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_DEC))
-
-        def action111():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Decl")
-
-        TryCatchAssertBlock.DoAssert("", action111)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA))
@@ -1804,11 +1480,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA))
-
-        def action112():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Horiz_FPA")
-
-        TryCatchAssertBlock.DoAssert("", action112)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FPA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FPA))
@@ -1817,11 +1490,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FPA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FPA))
-
-        def action113():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Vertical_FPA")
-
-        TryCatchAssertBlock.DoAssert("", action113)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_RA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_RA))
@@ -1830,11 +1500,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_RA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_RA))
-
-        def action114():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Right_Asc")
-
-        TryCatchAssertBlock.DoAssert("", action114)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_R_MAGNITUDE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_R_MAGNITUDE))
@@ -1843,11 +1510,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_R_MAGNITUDE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_R_MAGNITUDE))
-
-        def action115():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.RMAg")
-
-        TryCatchAssertBlock.DoAssert("", action115)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_V_MAGNITUDE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_V_MAGNITUDE))
@@ -1856,11 +1520,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_V_MAGNITUDE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_V_MAGNITUDE))
-
-        def action116():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.VMag")
-
-        TryCatchAssertBlock.DoAssert("", action116)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.SRP_AREA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SRP_AREA))
@@ -1869,11 +1530,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.SRP_AREA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SRP_AREA))
-
-        def action117():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.SRPArea")
-
-        TryCatchAssertBlock.DoAssert("", action117)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TANK_PRESSURE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TANK_PRESSURE))
@@ -1882,11 +1540,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TANK_PRESSURE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TANK_PRESSURE))
-
-        def action118():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.TankPressure")
-
-        TryCatchAssertBlock.DoAssert("", action118)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TANK_TEMP)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TANK_TEMP))
@@ -1895,11 +1550,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TANK_TEMP)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TANK_TEMP))
-
-        def action119():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.TankTemperature")
-
-        TryCatchAssertBlock.DoAssert("", action119)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TANK_VOLUME)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TANK_VOLUME))
@@ -1908,11 +1560,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TANK_VOLUME)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TANK_VOLUME))
-
-        def action120():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "TankVolume")
-
-        TryCatchAssertBlock.DoAssert("", action120)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_DEC)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_DEC))
@@ -1923,13 +1572,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_DEC)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_DEC))
-
-        def action121():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Incoming_Asymptote.AsymDec"
             )
-
-        TryCatchAssertBlock.DoAssert("", action121)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_RA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_RA))
@@ -1940,13 +1586,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_RA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_RA))
-
-        def action122():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Incoming_Asymptote.AsymRA"
             )
-
-        TryCatchAssertBlock.DoAssert("", action122)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS))
@@ -1957,13 +1600,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS))
-
-        def action123():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Incoming_Asymptote.AzVp"
             )
-
-        TryCatchAssertBlock.DoAssert("", action123)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_C3)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_C3))
@@ -1974,13 +1614,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_C3)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_C3))
-
-        def action124():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Incoming_Asymptote.C3"
             )
-
-        TryCatchAssertBlock.DoAssert("", action124)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_RAD_OF_PERIAPSIS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_RAD_OF_PERIAPSIS))
@@ -1991,13 +1628,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_RAD_OF_PERIAPSIS)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_RAD_OF_PERIAPSIS))
-
-        def action125():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Incoming_Asymptote.rp"
             )
-
-        TryCatchAssertBlock.DoAssert("", action125)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_TRUE_ANOMALY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_TRUE_ANOMALY))
@@ -2008,13 +1642,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_IN_TRUE_ANOMALY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_IN_TRUE_ANOMALY))
-
-        def action126():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Incoming_Asymptote.TA"
             )
-
-        TryCatchAssertBlock.DoAssert("", action126)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_DEC)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_DEC))
@@ -2025,13 +1656,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_DEC)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_DEC))
-
-        def action127():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Outgoing_Asymptote.AsymDec"
             )
-
-        TryCatchAssertBlock.DoAssert("", action127)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_RA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_RA))
@@ -2042,13 +1670,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_RA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_RA))
-
-        def action128():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Outgoing_Asymptote.AsymRA"
             )
-
-        TryCatchAssertBlock.DoAssert("", action128)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS))
@@ -2061,13 +1686,10 @@ class GatorHelper(object):
         Assert.assertFalse(
             initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS)
         )
-
-        def action129():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Outgoing_Asymptote.AzVp"
             )
-
-        TryCatchAssertBlock.DoAssert("", action129)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_C3)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_C3))
@@ -2078,13 +1700,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_C3)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_C3))
-
-        def action130():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Outgoing_Asymptote.C3"
             )
-
-        TryCatchAssertBlock.DoAssert("", action130)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_RAD_OF_PERIAPSIS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_RAD_OF_PERIAPSIS))
@@ -2095,13 +1714,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_RAD_OF_PERIAPSIS)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_RAD_OF_PERIAPSIS))
-
-        def action131():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Outgoing_Asymptote.rp"
             )
-
-        TryCatchAssertBlock.DoAssert("", action131)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_TRUE_ANOMALY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_TRUE_ANOMALY))
@@ -2112,13 +1728,10 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.TARGET_VEC_OUT_TRUE_ANOMALY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.TARGET_VEC_OUT_TRUE_ANOMALY))
-
-        def action132():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths(
                 "myInitState", "InitialState.Target_Vector_Outgoing_Asymptote.TA"
             )
-
-        TryCatchAssertBlock.DoAssert("", action132)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_G)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_G))
@@ -2127,11 +1740,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_G)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_G))
-
-        def action133():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.G")
-
-        TryCatchAssertBlock.DoAssert("", action133)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_H)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_H))
@@ -2140,11 +1750,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_H)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_H))
-
-        def action134():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.H")
-
-        TryCatchAssertBlock.DoAssert("", action134)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_INC)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_INC))
@@ -2153,11 +1760,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_INC)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_INC))
-
-        def action135():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.inc")
-
-        TryCatchAssertBlock.DoAssert("", action135)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_L)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_L))
@@ -2166,11 +1770,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_L)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_L))
-
-        def action136():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.L")
-
-        TryCatchAssertBlock.DoAssert("", action136)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_MEAN_ANOMALY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_MEAN_ANOMALY))
@@ -2179,11 +1780,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_MEAN_ANOMALY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_MEAN_ANOMALY))
-
-        def action137():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.MeanAnomaly")
-
-        TryCatchAssertBlock.DoAssert("", action137)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_RAAN)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_RAAN))
@@ -2192,11 +1790,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_RAAN)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_RAAN))
-
-        def action138():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.RAAN")
-
-        TryCatchAssertBlock.DoAssert("", action138)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM))
@@ -2205,11 +1800,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM))
-
-        def action139():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.SemiLatusRectum")
-
-        TryCatchAssertBlock.DoAssert("", action139)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_SMA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_SMA))
@@ -2218,11 +1810,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_SMA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_SMA))
-
-        def action140():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.sma")
-
-        TryCatchAssertBlock.DoAssert("", action140)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_W)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_W))
@@ -2231,11 +1820,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.DELAUNAY_W)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.DELAUNAY_W))
-
-        def action141():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Delaunay.w")
-
-        TryCatchAssertBlock.DoAssert("", action141)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_H)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_H))
@@ -2244,11 +1830,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_H)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_H))
-
-        def action142():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Equinoctial.h")
-
-        TryCatchAssertBlock.DoAssert("", action142)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_K)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_K))
@@ -2257,11 +1840,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_K)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_K))
-
-        def action143():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Equinoctial.k")
-
-        TryCatchAssertBlock.DoAssert("", action143)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE))
@@ -2270,11 +1850,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE))
-
-        def action144():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Equinoctial.MeanLongitude")
-
-        TryCatchAssertBlock.DoAssert("", action144)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_MOTION)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_MOTION))
@@ -2283,11 +1860,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_MOTION)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_MOTION))
-
-        def action145():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Equinoctial.MeanMotion")
-
-        TryCatchAssertBlock.DoAssert("", action145)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_P)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_P))
@@ -2296,11 +1870,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_P)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_P))
-
-        def action146():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Equinoctial.p")
-
-        TryCatchAssertBlock.DoAssert("", action146)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_Q)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_Q))
@@ -2309,11 +1880,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_Q)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_Q))
-
-        def action147():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Equinoctial.q")
-
-        TryCatchAssertBlock.DoAssert("", action147)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_SMA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_SMA))
@@ -2322,11 +1890,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.EQUINOCTIAL_SMA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.EQUINOCTIAL_SMA))
-
-        def action148():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Equinoctial.sma")
-
-        TryCatchAssertBlock.DoAssert("", action148)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_ALTITUDE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_ALTITUDE))
@@ -2335,11 +1900,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_ALTITUDE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_ALTITUDE))
-
-        def action149():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Altitude")
-
-        TryCatchAssertBlock.DoAssert("", action149)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_AZIMUTH)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_AZIMUTH))
@@ -2348,11 +1910,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_AZIMUTH)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_AZIMUTH))
-
-        def action150():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Azimuth")
-
-        TryCatchAssertBlock.DoAssert("", action150)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA))
@@ -2361,11 +1920,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA))
-
-        def action151():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Horiz_FPA")
-
-        TryCatchAssertBlock.DoAssert("", action151)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_LATITUDE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_LATITUDE))
@@ -2374,11 +1930,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_LATITUDE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_LATITUDE))
-
-        def action152():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Latitude")
-
-        TryCatchAssertBlock.DoAssert("", action152)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE))
@@ -2387,11 +1940,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE))
-
-        def action153():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Longitude")
-
-        TryCatchAssertBlock.DoAssert("", action153)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FPA)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FPA))
@@ -2400,11 +1950,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FPA)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FPA))
-
-        def action154():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Vertical_FPA")
-
-        TryCatchAssertBlock.DoAssert("", action154)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_V_MAGNITUDE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_V_MAGNITUDE))
@@ -2413,11 +1960,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_V_MAGNITUDE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_V_MAGNITUDE))
-
-        def action155():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.VMag")
-
-        TryCatchAssertBlock.DoAssert("", action155)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE))
@@ -2426,11 +1970,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE))
-
-        def action156():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.ApoapsisAltShape")
-
-        TryCatchAssertBlock.DoAssert("", action156)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SIZE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SIZE))
@@ -2439,11 +1980,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SIZE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SIZE))
-
-        def action157():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.ApoapsisAltSize")
-
-        TryCatchAssertBlock.DoAssert("", action157)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SHAPE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SHAPE))
@@ -2452,11 +1990,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SHAPE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SHAPE))
-
-        def action158():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.ApoapsisRadShape")
-
-        TryCatchAssertBlock.DoAssert("", action158)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SIZE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SIZE))
@@ -2465,11 +2000,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SIZE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SIZE))
-
-        def action159():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.ApoapsisRadSize")
-
-        TryCatchAssertBlock.DoAssert("", action159)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_ARG_LAT)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_ARG_LAT))
@@ -2478,11 +2010,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_ARG_LAT)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_ARG_LAT))
-
-        def action160():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.ArgLat")
-
-        TryCatchAssertBlock.DoAssert("", action160)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY_ANOMALY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY_ANOMALY))
@@ -2491,11 +2020,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY_ANOMALY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY_ANOMALY))
-
-        def action161():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.EccAnomaly")
-
-        TryCatchAssertBlock.DoAssert("", action161)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_LAN)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_LAN))
@@ -2504,11 +2030,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_LAN)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_LAN))
-
-        def action162():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.LAN")
-
-        TryCatchAssertBlock.DoAssert("", action162)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_MEAN_ANOMALY)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_MEAN_ANOMALY))
@@ -2517,11 +2040,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_MEAN_ANOMALY)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_MEAN_ANOMALY))
-
-        def action163():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.MeanAnomaly")
-
-        TryCatchAssertBlock.DoAssert("", action163)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_MEAN_MOTION)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_MEAN_MOTION))
@@ -2530,11 +2050,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_MEAN_MOTION)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_MEAN_MOTION))
-
-        def action164():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.MeanMotion")
-
-        TryCatchAssertBlock.DoAssert("", action164)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SHAPE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SHAPE))
@@ -2545,11 +2062,8 @@ class GatorHelper(object):
         Assert.assertFalse(
             initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SHAPE)
         )
-
-        def action165():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.PeriapsisAltShape")
-
-        TryCatchAssertBlock.DoAssert("", action165)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE))
@@ -2558,11 +2072,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE))
-
-        def action166():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.PeriapsisAltSize")
-
-        TryCatchAssertBlock.DoAssert("", action166)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SHAPE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SHAPE))
@@ -2571,11 +2082,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SHAPE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SHAPE))
-
-        def action167():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.PeriapsisRadShape")
-
-        TryCatchAssertBlock.DoAssert("", action167)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SIZE)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SIZE))
@@ -2584,11 +2092,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SIZE)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SIZE))
-
-        def action168():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.PeriapsisRadSize")
-
-        TryCatchAssertBlock.DoAssert("", action168)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIOD)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIOD))
@@ -2597,11 +2102,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_PERIOD)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_PERIOD))
-
-        def action169():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.Period")
-
-        TryCatchAssertBlock.DoAssert("", action169)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_AN)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_AN))
@@ -2610,11 +2112,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_AN)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_AN))
-
-        def action170():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.TimePastAN")
-
-        TryCatchAssertBlock.DoAssert("", action170)
 
         initState.enable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_PERIAPSIS)
         Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_PERIAPSIS))
@@ -2623,11 +2122,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         initState.disable_control_parameter(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_PERIAPSIS)
         Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_PERIAPSIS))
-
-        def action171():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Keplerian.TimePastPeriapsis")
-
-        TryCatchAssertBlock.DoAssert("", action171)
 
     @staticmethod
     def TestManeuverControls(
@@ -2652,11 +2148,8 @@ class GatorHelper(object):
 
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS))
-
-        def action172():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.BurnCenterBias")
-
-        TryCatchAssertBlock.DoAssert("", action172)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_THRUST_EFFICIENCY)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_THRUST_EFFICIENCY))
@@ -2665,11 +2158,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_THRUST_EFFICIENCY)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_THRUST_EFFICIENCY))
-
-        def action173():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.ThrustEfficiency")
-
-        TryCatchAssertBlock.DoAssert("", action173)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_CARTESIAN_X)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_CARTESIAN_X))
@@ -2678,11 +2168,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_CARTESIAN_X)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_CARTESIAN_X))
-
-        def action174():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.Cartesian.X")
-
-        TryCatchAssertBlock.DoAssert("", action174)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_CARTESIAN_Y)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_CARTESIAN_Y))
@@ -2691,11 +2178,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_CARTESIAN_Y)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_CARTESIAN_Y))
-
-        def action175():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.Cartesian.Y")
-
-        TryCatchAssertBlock.DoAssert("", action175)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_CARTESIAN_Z)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_CARTESIAN_Z))
@@ -2704,11 +2188,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_CARTESIAN_Z)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_CARTESIAN_Z))
-
-        def action176():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.Cartesian.Z")
-
-        TryCatchAssertBlock.DoAssert("", action176)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EULER_ANGLES1)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EULER_ANGLES1))
@@ -2717,11 +2198,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EULER_ANGLES1)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EULER_ANGLES1))
-
-        def action177():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.EulerAngles.Angle1")
-
-        TryCatchAssertBlock.DoAssert("", action177)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EULER_ANGLES2)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EULER_ANGLES2))
@@ -2730,11 +2208,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EULER_ANGLES2)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EULER_ANGLES2))
-
-        def action178():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.EulerAngles.Angle2")
-
-        TryCatchAssertBlock.DoAssert("", action178)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EULER_ANGLES3)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EULER_ANGLES3))
@@ -2743,11 +2218,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EULER_ANGLES3)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EULER_ANGLES3))
-
-        def action179():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.EulerAngles.Angle3")
-
-        TryCatchAssertBlock.DoAssert("", action179)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_SPHERICAL_AZ)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_SPHERICAL_AZ))
@@ -2756,11 +2228,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_SPHERICAL_AZ)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_SPHERICAL_AZ))
-
-        def action180():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.Spherical.Azimuth")
-
-        TryCatchAssertBlock.DoAssert("", action180)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_SPHERICAL_ELEV)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_SPHERICAL_ELEV))
@@ -2769,11 +2238,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_SPHERICAL_ELEV)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_SPHERICAL_ELEV))
-
-        def action181():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.Spherical.Elevation")
-
-        TryCatchAssertBlock.DoAssert("", action181)
 
         sc: "IStoppingConditionElement" = finite.propagator.stopping_conditions[0]
         sc.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
@@ -2783,11 +2249,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         sc.disable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
         Assert.assertFalse(sc.is_control_parameter_enabled(CONTROL_STOPPING_CONDITION.TRIP_VALUE))
-
-        def action182():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.StoppingConditions.Duration.TripValue")
-
-        TryCatchAssertBlock.DoAssert("", action182)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ0)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ0))
@@ -2796,11 +2259,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ0)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ0))
-
-        def action183():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.Az0")
-
-        TryCatchAssertBlock.DoAssert("", action183)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ1)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ1))
@@ -2809,11 +2269,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ1)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ1))
-
-        def action184():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.Az1")
-
-        TryCatchAssertBlock.DoAssert("", action184)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ2)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ2))
@@ -2822,11 +2279,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ2)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ2))
-
-        def action185():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.Az2")
-
-        TryCatchAssertBlock.DoAssert("", action185)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ3)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ3))
@@ -2835,11 +2289,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ3)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ3))
-
-        def action186():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.Az3")
-
-        TryCatchAssertBlock.DoAssert("", action186)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ4)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ4))
@@ -2848,11 +2299,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ4)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ4))
-
-        def action187():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.Az4")
-
-        TryCatchAssertBlock.DoAssert("", action187)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ_A)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ_A))
@@ -2861,11 +2309,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ_A)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ_A))
-
-        def action188():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.AzA")
-
-        TryCatchAssertBlock.DoAssert("", action188)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ_F)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ_F))
@@ -2874,11 +2319,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ_F)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ_F))
-
-        def action189():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.AzF")
-
-        TryCatchAssertBlock.DoAssert("", action189)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_AZ_P)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ_P))
@@ -2887,11 +2329,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_AZ_P)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_AZ_P))
-
-        def action190():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.AzP")
-
-        TryCatchAssertBlock.DoAssert("", action190)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL0)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL0))
@@ -2900,11 +2339,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL0)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL0))
-
-        def action191():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.El0")
-
-        TryCatchAssertBlock.DoAssert("", action191)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL1)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL1))
@@ -2913,11 +2349,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL1)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL1))
-
-        def action192():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.El1")
-
-        TryCatchAssertBlock.DoAssert("", action192)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL2)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL2))
@@ -2926,11 +2359,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL2)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL2))
-
-        def action193():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.El2")
-
-        TryCatchAssertBlock.DoAssert("", action193)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL3)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL3))
@@ -2939,11 +2369,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL3)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL3))
-
-        def action194():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.El3")
-
-        TryCatchAssertBlock.DoAssert("", action194)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL4)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL4))
@@ -2952,11 +2379,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL4)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL4))
-
-        def action195():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.El4")
-
-        TryCatchAssertBlock.DoAssert("", action195)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL_A)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL_A))
@@ -2965,11 +2389,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL_A)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL_A))
-
-        def action196():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.ElA")
-
-        TryCatchAssertBlock.DoAssert("", action196)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL_F)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL_F))
@@ -2978,11 +2399,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL_F)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL_F))
-
-        def action197():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.ElF")
-
-        TryCatchAssertBlock.DoAssert("", action197)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_EL_P)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL_P))
@@ -2991,11 +2409,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_EL_P)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.FINITE_EL_P))
-
-        def action198():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "FiniteMnvr.TimeVarying.ElP")
-
-        TryCatchAssertBlock.DoAssert("", action198)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X))
@@ -3004,11 +2419,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X))
-
-        def action199():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "ImpulsiveMnvr.Cartesian.X")
-
-        TryCatchAssertBlock.DoAssert("", action199)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Y)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Y))
@@ -3017,11 +2429,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Y)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Y))
-
-        def action200():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "ImpulsiveMnvr.Cartesian.Y")
-
-        TryCatchAssertBlock.DoAssert("", action200)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Z)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Z))
@@ -3030,11 +2439,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Z)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Z))
-
-        def action201():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "ImpulsiveMnvr.Cartesian.Z")
-
-        TryCatchAssertBlock.DoAssert("", action201)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES1)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES1))
@@ -3043,11 +2449,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES1)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES1))
-
-        def action202():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "ImpulsiveMnvr.EulerAngles.Angle1")
-
-        TryCatchAssertBlock.DoAssert("", action202)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES2)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES2))
@@ -3056,11 +2459,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES2)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES2))
-
-        def action203():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "ImpulsiveMnvr.EulerAngles.Angle2")
-
-        TryCatchAssertBlock.DoAssert("", action203)
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES3)
         Assert.assertTrue(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES3))
@@ -3069,11 +2469,8 @@ class GatorHelper(object):
         GatorHelper.TestDCControlParameter(cp)
         maneuver.disable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES3)
         Assert.assertFalse(maneuver.is_control_parameter_enabled(CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES3))
-
-        def action204():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("TMan", "ImpulsiveMnvr.EulerAngles.Angle3")
-
-        TryCatchAssertBlock.DoAssert("", action204)
 
     @staticmethod
     def TestTargetSequence(ts: "IMissionControlSequenceTargetSequence", isFromCM: bool, root: "IStkObjectRoot"):
@@ -3083,10 +2480,8 @@ class GatorHelper(object):
         ts.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
         Assert.assertEqual(TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ, ts.action)
 
-        def action205():
+        with pytest.raises(Exception):
             ts.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_STOP
-
-        TryCatchAssertBlock.DoAssert("", action205)
 
         ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
         Assert.assertEqual(TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES, ts.action)
@@ -3228,15 +2623,11 @@ class GatorHelper(object):
 
             profile2: "IProfile" = ts.profiles["Differential Corrector"]
 
-            def action206():
+            with pytest.raises(Exception):
                 profile3: "IProfile" = ts.profiles[count]
 
-            TryCatchAssertBlock.DoAssert("", action206)
-
-            def action207():
+            with pytest.raises(Exception):
                 profile4: "IProfile" = ts.profiles["Bogus"]
-
-            TryCatchAssertBlock.DoAssert("", action207)
 
             ts.profiles.remove(0)
             Assert.assertEqual((count - 1), ts.profiles.count)
@@ -3244,15 +2635,11 @@ class GatorHelper(object):
             ts.profiles.remove_all()
             Assert.assertEqual(0, ts.profiles.count)
 
-            def action208():
+            with pytest.raises(Exception):
                 ts.profiles.remove(0)
 
-            TryCatchAssertBlock.DoAssert("", action208)
-
-            def action209():
+            with pytest.raises(Exception):
                 ts.profiles.remove("Bogus")
-
-            TryCatchAssertBlock.DoAssert("", action209)
 
     @staticmethod
     def TestSNOPTResult(eq: "ISNOPTResult"):
@@ -3278,15 +2665,10 @@ class GatorHelper(object):
         eq.weight = 2.0
         Assert.assertEqual(2.0, eq.weight)
 
-        def action210():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             eq.lower_bound = "1 Jul 2000 00:00:00.000"
-
-        TryCatchAssertBlock.ExpectedException("read only", action210)
-
-        def action211():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             eq.upper_bound = "2 Jul 2000 00:00:00.000"
-
-        TryCatchAssertBlock.ExpectedException("read only", action211)
 
         eq.goal = SNOPT_GOAL.BOUND
         Assert.assertEqual(SNOPT_GOAL.BOUND, eq.goal)
@@ -3301,10 +2683,8 @@ class GatorHelper(object):
         eq.upper_bound = "30 Jun 2099 23:59:58.000"
         Assert.assertEqual("30 Jun 2099 23:59:58.000", eq.upper_bound)
 
-        def action212():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             eq.weight = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action212)
 
         eq.scaling_value = 0.01
         Assert.assertEqual(0.01, eq.scaling_value)
@@ -3314,21 +2694,16 @@ class GatorHelper(object):
         eq.use_custom_display_unit = False
         Assert.assertFalse(eq.use_custom_display_unit)
 
-        def action213():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             eq.custom_display_unit = "JDate"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action213)
 
         eq.use_custom_display_unit = True
         Assert.assertTrue(eq.use_custom_display_unit)
 
         eq.custom_display_unit = "JDate"
         Assert.assertEqual("JDate", eq.custom_display_unit)
-
-        def action214():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid Unit")):
             eq.custom_display_unit = "m"
-
-        TryCatchAssertBlock.ExpectedException("Invalid Unit", action214)
 
     @staticmethod
     def TestIPOPTResult(eq: "IIPOPTResult"):
@@ -3354,15 +2729,10 @@ class GatorHelper(object):
         eq.weight = 2.0
         Assert.assertEqual(2.0, eq.weight)
 
-        def action215():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             eq.lower_bound = "1 Jul 2000 00:00:00.000"
-
-        TryCatchAssertBlock.ExpectedException("read only", action215)
-
-        def action216():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             eq.upper_bound = "2 Jul 2000 00:00:00.000"
-
-        TryCatchAssertBlock.ExpectedException("read only", action216)
 
         eq.goal = IPOPT_GOAL.BOUND
         Assert.assertEqual(IPOPT_GOAL.BOUND, eq.goal)
@@ -3377,10 +2747,8 @@ class GatorHelper(object):
         eq.upper_bound = "30 Jun 2099 23:59:58.000"
         Assert.assertEqual("30 Jun 2099 23:59:58.000", eq.upper_bound)
 
-        def action217():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             eq.weight = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action217)
 
         eq.scaling_value = 0.01
         Assert.assertEqual(0.01, eq.scaling_value)
@@ -3390,21 +2758,16 @@ class GatorHelper(object):
         eq.use_custom_display_unit = False
         Assert.assertFalse(eq.use_custom_display_unit)
 
-        def action218():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             eq.custom_display_unit = "JDate"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action218)
 
         eq.use_custom_display_unit = True
         Assert.assertTrue(eq.use_custom_display_unit)
 
         eq.custom_display_unit = "JDate"
         Assert.assertEqual("JDate", eq.custom_display_unit)
-
-        def action219():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid Unit")):
             eq.custom_display_unit = "m"
-
-        TryCatchAssertBlock.ExpectedException("Invalid Unit", action219)
 
     @staticmethod
     def Test_IAgVAProfile(ts: "IMissionControlSequenceTargetSequence", profile: "IProfile", mode: "PROFILE_MODE"):
@@ -3439,11 +2802,8 @@ class GatorHelper(object):
 
         searchPluginControl.use_custom_display_unit = False
         Assert.assertFalse(searchPluginControl.use_custom_display_unit)
-
-        def action220():
+        with pytest.raises(Exception):
             searchPluginControl.custom_display_unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("Set of read-only attr should fail", action220)
 
         searchPluginControl.use_custom_display_unit = True
         Assert.assertTrue(searchPluginControl.use_custom_display_unit)
@@ -3482,10 +2842,8 @@ class GatorHelper(object):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.SEARCH_PLUGIN)
         controlCollection: "ISearchPluginControlCollection" = profileSearchPlugin.controls
 
-        def action221():
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
             control: "ISearchPluginControl" = controlCollection.get_control_by_paths("myProp", "BogusControlPath")
-
-        TryCatchAssertBlock.ExpectedException("could not be found", action221)
 
         count: int = controlCollection.count
 
@@ -3498,10 +2856,8 @@ class GatorHelper(object):
 
             i += 1
 
-        def action222():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             spc: "ISearchPluginControl" = controlCollection[5]
-
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action222)
 
         searchPluginControl: "ISearchPluginControl"
 
@@ -3524,20 +2880,12 @@ class GatorHelper(object):
         pluginProperties.set_property("MaxIterations", 99)
         Assert.assertEqual(99, int(pluginProperties.get_property("MaxIterations")))
 
-        def action223():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pluginProperties.set_property("PluginName", "NewName")
-
-        TryCatchAssertBlock.ExpectedException("read-only", action223)
-
-        def action224():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Undefined symbol")):
             pluginProperties.set_property("BogusProperty", "DummyValue")
-
-        TryCatchAssertBlock.ExpectedException("Undefined symbol", action224)
-
-        def action225():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pluginProperties.set_property("PluginName", 123)
-
-        TryCatchAssertBlock.ExpectedException("read-only", action225)
         pluginIdentifier: str = profileSearchPlugin.plugin_identifier
 
         pluginResultsCollection: "ISearchPluginResultCollection" = profileSearchPlugin.results
@@ -3551,21 +2899,16 @@ class GatorHelper(object):
             Assert.assertTrue(result.use_custom_display_unit)
             result.use_custom_display_unit = False
             Assert.assertFalse(result.use_custom_display_unit)
-
-            def action226():
+            with pytest.raises(Exception):
                 result.custom_display_unit = "hr"
-
-            TryCatchAssertBlock.DoAssert("Set of read-only attr should fail", action226)
             result.use_custom_display_unit = True
             result.custom_display_unit = "EpSec"
             Assert.assertEqual("EpSec", result.custom_display_unit)
 
             i += 1
 
-        def action227():
+        with pytest.raises(Exception):
             result2: "ISearchPluginResult" = pluginResultsCollection[5]
-
-        TryCatchAssertBlock.DoAssert("", action227)
 
         result: "ISearchPluginResult"
 
@@ -3583,12 +2926,10 @@ class GatorHelper(object):
             Assert.assertEqual("AGI.SearchResult.Plugin.Examples.CSharp.BisectionResult", result.plugin_identifier)
             Assert.assertEqual(0, Array.Length(result.values))
 
-        def action228():
+        with pytest.raises(Exception):
             pluginResult: "ISearchPluginResult" = pluginResultsCollection.get_result_by_paths(
                 "ObjectPath", "ResultPath"
             )
-
-        TryCatchAssertBlock.DoAssert("", action228)
         if not OSHelper.IsLinux():
             scriptingTool: "IScriptingTool" = profileSearchPlugin.scripting_tool
 
@@ -3627,10 +2968,8 @@ class GatorHelper(object):
 
             i += 1
 
-        def action229():
+        with pytest.raises(Exception):
             name3: str = optimizer.control_parameters[-1].name
-
-        TryCatchAssertBlock.DoAssert("", action229)
         if not OSHelper.IsLinux():
             scriptingTool: "IScriptingTool" = optimizer.scripting_tool
             scriptingTool.enable = True
@@ -3655,29 +2994,19 @@ class GatorHelper(object):
         dec1 = optimizer.control_parameters.get_control_by_paths(objName, decName)
         GatorHelper.TestSNOPTControlParameter(dec1, objName, decName)
 
-        def action230():
+        with pytest.raises(Exception):
             decX: "ISNOPTControl" = optimizer.control_parameters.get_control_by_paths(objName, "Bogus")
-
-        TryCatchAssertBlock.DoAssert("", action230)
-
-        def action231():
+        with pytest.raises(Exception):
             decY: "ISNOPTControl" = optimizer.control_parameters.get_control_by_paths("Bogus", decName)
-
-        TryCatchAssertBlock.DoAssert("", action231)
 
         dec2: "ISNOPTControl" = None
         dec2 = optimizer.control_parameters[0]
         GatorHelper.TestSNOPTControlParameter(dec2, objName, decName)
 
-        def action232():
+        with pytest.raises(Exception):
             eq2: "ISNOPTResult" = optimizer.results.get_result_by_paths("TMan", "ResultPath")
-
-        TryCatchAssertBlock.DoAssert("", action232)
-
-        def action233():
+        with pytest.raises(Exception):
             eq2: "ISNOPTResult" = optimizer.results.get_result_by_paths("ObjectPath", "Epoch")
-
-        TryCatchAssertBlock.DoAssert("", action233)
 
         manSegment: "IMissionControlSequenceSegment" = clr.CastAs(maneuver, IMissionControlSequenceSegment)
         manSegment.results.add("Epoch")
@@ -3692,10 +3021,8 @@ class GatorHelper(object):
 
             i += 1
 
-        def action234():
+        with pytest.raises(Exception):
             result: "ISNOPTResult" = optimizer.results[10]
-
-        TryCatchAssertBlock.DoAssert("", action234)
 
         result: "ISNOPTResult"
 
@@ -3711,11 +3038,8 @@ class GatorHelper(object):
 
         optimizer.max_major_iterations = 100
         Assert.assertEqual(100, optimizer.max_major_iterations)
-
-        def action235():
+        with pytest.raises(Exception):
             optimizer.max_major_iterations = -1
-
-        TryCatchAssertBlock.DoAssert("MaxMajorIterations must not be negative.", action235)
 
         optimizer.tolerance_on_major_feasibility = 1
         Assert.assertEqual(1, optimizer.tolerance_on_major_feasibility)
@@ -3725,11 +3049,8 @@ class GatorHelper(object):
 
         optimizer.max_minor_iterations = 200
         Assert.assertEqual(200, optimizer.max_minor_iterations)
-
-        def action236():
+        with pytest.raises(Exception):
             optimizer.max_minor_iterations = -1
-
-        TryCatchAssertBlock.DoAssert("MaxMinorIterations must not be negative.", action236)
 
         optimizer.tolerance_on_minor_feasibility = 3
         Assert.assertEqual(3, optimizer.tolerance_on_minor_feasibility)
@@ -3737,10 +3058,8 @@ class GatorHelper(object):
         optimizer.tolerance_on_minor_optimality = 4
         Assert.assertEqual(4, optimizer.tolerance_on_minor_optimality)
 
-        def action237():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             optimizer.options_filename = r"C:\Pat\bogus.txt"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action237)
         optimizer.options_filename = TestBase.GetScenarioFile("gp_marker.bmp")
         Assert.assertTrue(("gp_marker.bmp" in optimizer.options_filename))
 
@@ -3772,10 +3091,8 @@ class GatorHelper(object):
 
             i += 1
 
-        def action238():
+        with pytest.raises(Exception):
             name3: str = optimizer.control_parameters[-1].name
-
-        TryCatchAssertBlock.DoAssert("", action238)
         if not OSHelper.IsLinux():
             scriptingTool: "IScriptingTool" = optimizer.scripting_tool
             scriptingTool.enable = True
@@ -3800,29 +3117,19 @@ class GatorHelper(object):
         dec1 = optimizer.control_parameters.get_control_by_paths(objName, decName)
         GatorHelper.TestIPOPTControlParameter(dec1, objName, decName)
 
-        def action239():
+        with pytest.raises(Exception):
             decX: "IIPOPTControl" = optimizer.control_parameters.get_control_by_paths(objName, "Bogus")
-
-        TryCatchAssertBlock.DoAssert("", action239)
-
-        def action240():
+        with pytest.raises(Exception):
             decY: "IIPOPTControl" = optimizer.control_parameters.get_control_by_paths("Bogus", decName)
-
-        TryCatchAssertBlock.DoAssert("", action240)
 
         dec2: "IIPOPTControl" = None
         dec2 = optimizer.control_parameters[0]
         GatorHelper.TestIPOPTControlParameter(dec2, objName, decName)
 
-        def action241():
+        with pytest.raises(Exception):
             eq2: "IIPOPTResult" = optimizer.results.get_result_by_paths("TMan", "ResultPath")
-
-        TryCatchAssertBlock.DoAssert("", action241)
-
-        def action242():
+        with pytest.raises(Exception):
             eq2: "IIPOPTResult" = optimizer.results.get_result_by_paths("ObjectPath", "Epoch")
-
-        TryCatchAssertBlock.DoAssert("", action242)
 
         manSegment: "IMissionControlSequenceSegment" = clr.CastAs(maneuver, IMissionControlSequenceSegment)
         manSegment.results.add("Epoch")
@@ -3837,10 +3144,8 @@ class GatorHelper(object):
 
             i += 1
 
-        def action243():
+        with pytest.raises(Exception):
             result: "IIPOPTResult" = optimizer.results[10]
-
-        TryCatchAssertBlock.DoAssert("", action243)
 
         result: "IIPOPTResult"
 
@@ -3856,48 +3161,31 @@ class GatorHelper(object):
 
         optimizer.tolerance_on_convergence = 1
         Assert.assertEqual(1, optimizer.tolerance_on_convergence)
-
-        def action244():
+        with pytest.raises(Exception):
             optimizer.tolerance_on_convergence = -1
-
-        TryCatchAssertBlock.DoAssert("must not be negative", action244)
 
         optimizer.maximum_iterations = 2
         Assert.assertEqual(2, optimizer.maximum_iterations)
-
-        def action245():
+        with pytest.raises(Exception):
             optimizer.maximum_iterations = -1
-
-        TryCatchAssertBlock.DoAssert("MaxMinorIterations must not be negative.", action245)
 
         optimizer.tolerance_on_constraint_violation = 3
         Assert.assertEqual(3, optimizer.tolerance_on_constraint_violation)
-
-        def action246():
+        with pytest.raises(Exception):
             optimizer.tolerance_on_constraint_violation = -1
-
-        TryCatchAssertBlock.DoAssert("must not be negative", action246)
 
         optimizer.tolerance_on_dual_infeasibility = 4
         Assert.assertEqual(4, optimizer.tolerance_on_dual_infeasibility)
-
-        def action247():
+        with pytest.raises(Exception):
             optimizer.tolerance_on_dual_infeasibility = -1
-
-        TryCatchAssertBlock.DoAssert("must not be negative", action247)
 
         optimizer.tolerance_on_complementary_infeasibility = 5
         Assert.assertEqual(5, optimizer.tolerance_on_complementary_infeasibility)
-
-        def action248():
+        with pytest.raises(Exception):
             optimizer.tolerance_on_complementary_infeasibility = -1
 
-        TryCatchAssertBlock.DoAssert("must not be negative", action248)
-
-        def action249():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             optimizer.options_filename = r"C:\Pat\bogus.txt"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action249)
         optimizer.options_filename = TestBase.GetScenarioFile("gp_marker.bmp")
         Assert.assertTrue(("gp_marker.bmp" in optimizer.options_filename))
 
@@ -3926,10 +3214,8 @@ class GatorHelper(object):
         Assert.assertEqual("Graph1", tgColl[1].name)
         Assert.assertEqual("Graph3", tgColl[2].name)
 
-        def action250():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             tgColl.remove_graph(3)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action250)
         tgColl.remove_graph(0)
         Assert.assertEqual(2, tgColl.count)
         Assert.assertEqual("Graph1", tgColl[0].name)
@@ -3966,10 +3252,8 @@ class GatorHelper(object):
         Assert.assertEqual("Graph1", tgColl[1].name)
         Assert.assertEqual("Graph3", tgColl[2].name)
 
-        def action251():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             tgColl.remove_graph(3)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action251)
         tgColl.remove_graph(0)
         Assert.assertEqual(2, tgColl.count)
         Assert.assertEqual("Graph1", tgColl[0].name)
@@ -3999,10 +3283,8 @@ class GatorHelper(object):
         tg.user_comment = "My User Comment"
         Assert.assertEqual("My User Comment", tg.user_comment)
 
-        def action252():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             tg.independent_variable = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("must be in", action252)
         tg.independent_variable = "TMan : Epoch"
         Assert.assertEqual("TMan : Epoch", tg.independent_variable)
 
@@ -4011,15 +3293,11 @@ class GatorHelper(object):
         tg.show_label_iterations = True
         Assert.assertTrue(tg.show_label_iterations)
 
-        def action253():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             tg.show_desired_value = False
 
-        TryCatchAssertBlock.ExpectedException("read-only", action253)
-
-        def action254():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             tg.show_tolerance_band = False
-
-        TryCatchAssertBlock.ExpectedException("read-only", action254)
 
         GatorHelper.TestIAgVATargeterGraphActiveControlCollection(
             tg.active_controls, "TMan", "FiniteMnvr BurnCenterBias"
@@ -4045,45 +3323,25 @@ class GatorHelper(object):
         Assert.assertEqual(((sObject + " : ") + sControlName), active.name)
         Assert.assertEqual(sObject, active.parent_name)
         if TestBase.NoGraphicsMode:
-
-            def action255():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.show_graph_value = True
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action255)
-
-            def action256():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.line_color = Color.Blue
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action256)
-
-            def action257():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.point_style = "Square"
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action257)
-
-            def action258():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.y_axis = "Y2"
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action258)
 
         else:
             active.show_graph_value = False
             Assert.assertFalse(active.show_graph_value)
 
-            def action259():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 active.line_color = Color.Blue
-
-            TryCatchAssertBlock.ExpectedException("read-only", action259)
-
-            def action260():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 active.point_style = "Square"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action260)
-
-            def action261():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 active.y_axis = "Y2"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action261)
 
             active.show_graph_value = True
             Assert.assertTrue(active.show_graph_value)
@@ -4113,11 +3371,8 @@ class GatorHelper(object):
         Assert.assertEqual(sObject, result.parent_name)
         if TestBase.NoGraphicsMode:
             result.graph_option = GRAPH_OPTION.GRAPH_VALUE
-
-            def action262():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 result.line_color = Color.Blue
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action262)
             result.point_style = "Square"
             result.y_axis = "Y2"
 
@@ -4125,20 +3380,12 @@ class GatorHelper(object):
             result.graph_option = GRAPH_OPTION.NO_GRAPH
             Assert.assertEqual(GRAPH_OPTION.NO_GRAPH, result.graph_option)
 
-            def action263():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 result.line_color = Color.Blue
-
-            TryCatchAssertBlock.ExpectedException("read-only", action263)
-
-            def action264():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 result.point_style = "Square"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action264)
-
-            def action265():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 result.y_axis = "Y2"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action265)
 
             result.graph_option = GRAPH_OPTION.GRAPH_VALUE
             Assert.assertEqual(GRAPH_OPTION.GRAPH_VALUE, result.graph_option)
@@ -4160,16 +3407,10 @@ class GatorHelper(object):
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, cp.mode)
         (clr.Convert(cp, IProfile)).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, cp.mode)
-
-        def action266():
+        with pytest.raises(Exception):
             (clr.Convert(cp, IProfile)).mode = PROFILE_MODE.ITERATE
-
-        TryCatchAssertBlock.DoAssert("", action266)
-
-        def action267():
+        with pytest.raises(Exception):
             (clr.Convert(cp, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-        TryCatchAssertBlock.DoAssert("", action267)
         cp.name = "MyChangePropagator"
         Assert.assertEqual("MyChangePropagator", cp.name)
 
@@ -4196,16 +3437,10 @@ class GatorHelper(object):
             Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, scriptingTool.mode)
             (clr.Convert(scriptingTool, IProfile)).mode = PROFILE_MODE.ACTIVE
             Assert.assertEqual(PROFILE_MODE.ACTIVE, scriptingTool.mode)
-
-            def action268():
+            with pytest.raises(Exception):
                 (clr.Convert(scriptingTool, IProfile)).mode = PROFILE_MODE.ITERATE
-
-            TryCatchAssertBlock.DoAssert("", action268)
-
-            def action269():
+            with pytest.raises(Exception):
                 (clr.Convert(scriptingTool, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-            TryCatchAssertBlock.DoAssert("", action269)
             scriptingTool.enable = True
             Assert.assertTrue(scriptingTool.enable)
 
@@ -4354,25 +3589,18 @@ class GatorHelper(object):
 
             i += 1
 
-        def action270():
+        with pytest.raises(Exception):
             result: "IDifferentialCorrectorResult" = dc.results[10]
-
-        TryCatchAssertBlock.DoAssert("", action270)
 
         result: "IDifferentialCorrectorResult"
 
         for result in dc.results:
             pass
 
-        def action271():
+        with pytest.raises(Exception):
             eq2: "IDifferentialCorrectorResult" = dc.results.get_result_by_paths("TMan", "ResultPath")
-
-        TryCatchAssertBlock.DoAssert("", action271)
-
-        def action272():
+        with pytest.raises(Exception):
             eq2: "IDifferentialCorrectorResult" = dc.results.get_result_by_paths("ObjectPath", "Epoch")
-
-        TryCatchAssertBlock.DoAssert("", action272)
 
         eq: "IDifferentialCorrectorResult" = dc.results.get_result_by_paths("TMan", "Epoch")
         GatorHelper.m_logger.WriteLine(eq.name)
@@ -4412,16 +3640,10 @@ class GatorHelper(object):
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, ro.mode)
         (clr.Convert(ro, IProfile)).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, ro.mode)
-
-        def action273():
+        with pytest.raises(Exception):
             (clr.Convert(ro, IProfile)).mode = PROFILE_MODE.ITERATE
-
-        TryCatchAssertBlock.DoAssert("", action273)
-
-        def action274():
+        with pytest.raises(Exception):
             (clr.Convert(ro, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-        TryCatchAssertBlock.DoAssert("", action274)
         ro.name = "Run Target Sequence Once"
         Assert.assertEqual("Run Target Sequence Once", ro.name)
         GatorHelper.m_logger.WriteLine(ro.status)
@@ -4447,16 +3669,10 @@ class GatorHelper(object):
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, sfm.mode)
         (clr.Convert(sfm, IProfile)).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, sfm.mode)
-
-        def action275():
+        with pytest.raises(Exception):
             (clr.Convert(sfm, IProfile)).mode = PROFILE_MODE.ITERATE
-
-        TryCatchAssertBlock.DoAssert("", action275)
-
-        def action276():
+        with pytest.raises(Exception):
             (clr.Convert(sfm, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-        TryCatchAssertBlock.DoAssert("", action276)
         sfm.set_segment(maneuver)
         Assert.assertEqual((clr.Convert(maneuver, IComponentInfo)).name, sfm.segment_name)
         sfm.segment_name = (clr.Convert(maneuver, IComponentInfo)).name
@@ -4486,16 +3702,10 @@ class GatorHelper(object):
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, css.mode)
         (clr.Convert(css, IProfile)).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, css.mode)
-
-        def action277():
+        with pytest.raises(Exception):
             (clr.Convert(css, IProfile)).mode = PROFILE_MODE.ITERATE
-
-        TryCatchAssertBlock.DoAssert("", action277)
-
-        def action278():
+        with pytest.raises(Exception):
             (clr.Convert(css, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-        TryCatchAssertBlock.DoAssert("", action278)
         css.state = STATE.DISABLED
         Assert.assertEqual(STATE.DISABLED, css.state)
         css.state = STATE.ENABLED
@@ -4520,10 +3730,8 @@ class GatorHelper(object):
         GatorHelper.Test_IAgVAProfile(ts, crs, PROFILE_MODE.NOT_ACTIVE)
         GatorHelper.TestRuntimeTypeInfo(crs)
 
-        def action279():
+        with pytest.raises(Exception):
             crs.segment_name = ""
-
-        TryCatchAssertBlock.DoAssert("", action279)
 
         crs.set_segment(returnSeg)
         Assert.assertEqual("myReturn", crs.segment_name)
@@ -4532,16 +3740,10 @@ class GatorHelper(object):
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, crs.mode)
         (clr.Convert(crs, IProfile)).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, crs.mode)
-
-        def action280():
+        with pytest.raises(Exception):
             (clr.Convert(crs, IProfile)).mode = PROFILE_MODE.ITERATE
-
-        TryCatchAssertBlock.DoAssert("", action280)
-
-        def action281():
+        with pytest.raises(Exception):
             (clr.Convert(crs, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-        TryCatchAssertBlock.DoAssert("", action281)
         crs.state = RETURN_CONTROL.DISABLE
         Assert.assertEqual(RETURN_CONTROL.DISABLE, crs.state)
         crs.state = RETURN_CONTROL.ENABLE
@@ -4577,11 +3779,8 @@ class GatorHelper(object):
                 state.set_segment(seg)
 
             else:
-
-                def action282():
+                with pytest.raises(Exception):
                     state.set_segment(seg)
-
-                TryCatchAssertBlock.DoAssert("", action282)
 
         state.set_segment(maneuver)
 
@@ -4594,36 +3793,26 @@ class GatorHelper(object):
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, state.mode)
         (clr.Convert(state, IProfile)).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, state.mode)
-
-        def action283():
+        with pytest.raises(Exception):
             (clr.Convert(state, IProfile)).mode = PROFILE_MODE.ITERATE
-
-        TryCatchAssertBlock.DoAssert("", action283)
-
-        def action284():
+        with pytest.raises(Exception):
             (clr.Convert(state, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-        TryCatchAssertBlock.DoAssert("", action284)
 
         state.state = STATE.ENABLED
         Assert.assertEqual(STATE.ENABLED, state.state)
         state.state = STATE.DISABLED
         Assert.assertEqual(STATE.DISABLED, state.state)
 
-        def action285():
+        with pytest.raises(Exception):
             state.set_trigger(clr.CastAs(condition, IStoppingCondition))
-
-        TryCatchAssertBlock.DoAssert("", action285)
 
         state.set_trigger(clr.CastAs(condition.properties, IStoppingCondition))
         Assert.assertEqual((clr.Convert(condition, IComponentInfo)).name, state.trigger_name)
         state.trigger_name = "Duration"
         Assert.assertEqual("Duration", state.trigger_name)
 
-        def action286():
+        with pytest.raises(Exception):
             state.trigger_name = "Bogus"
-
-        TryCatchAssertBlock.DoAssert("", action286)
 
         stateCopy: "IProfileChangeStoppingConditionState" = clr.Convert(
             state.copy(), IProfileChangeStoppingConditionState
@@ -4651,16 +3840,10 @@ class GatorHelper(object):
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, cmt.mode)
         (clr.Convert(cmt, IProfile)).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, cmt.mode)
-
-        def action287():
+        with pytest.raises(Exception):
             (clr.Convert(cmt, IProfile)).mode = PROFILE_MODE.ITERATE
-
-        TryCatchAssertBlock.DoAssert("", action287)
-
-        def action288():
+        with pytest.raises(Exception):
             (clr.Convert(cmt, IProfile)).mode = PROFILE_MODE.RUN_ONCE
-
-        TryCatchAssertBlock.DoAssert("", action288)
         cmt.segment = maneuver
         Assert.assertEqual("TMan", (clr.Convert(cmt.segment, IComponentInfo)).name)
         cmt.maneuver_type = MANEUVER_TYPE.FINITE
@@ -4732,15 +3915,11 @@ class GatorHelper(object):
 
         objectName2: str = segCol["Tester1"].object_name
 
-        def action289():
+        with pytest.raises(Exception):
             objectName3: "IScriptingSegment" = segCol[5]
 
-        TryCatchAssertBlock.DoAssert("", action289)
-
-        def action290():
+        with pytest.raises(Exception):
             objectName4: "IScriptingSegment" = segCol["Bogus"]
-
-        TryCatchAssertBlock.DoAssert("", action290)
 
         # Choose segment
         objNameWantToUse: str = objName
@@ -4814,15 +3993,11 @@ class GatorHelper(object):
         segCol.remove_all()
         Assert.assertEqual(0, segCol.count)
 
-        def action291():
+        with pytest.raises(Exception):
             segCol.remove(0)
 
-        TryCatchAssertBlock.DoAssert("", action291)
-
-        def action292():
+        with pytest.raises(Exception):
             segCol.remove("Bogus")
-
-        TryCatchAssertBlock.DoAssert("", action292)
 
         GatorHelper.TestRuntimeTypeInfo(segCol)
 
@@ -4855,15 +4030,11 @@ class GatorHelper(object):
         for scriptingParam in paramCol:
             scriptingParamName3: str = scriptingParam.name
 
-        def action293():
+        with pytest.raises(Exception):
             comp3: "IScriptingParameter" = paramCol[5]
 
-        TryCatchAssertBlock.DoAssert("", action293)
-
-        def action294():
+        with pytest.raises(Exception):
             comp4: "IScriptingParameter" = paramCol["Bogus"]
-
-        TryCatchAssertBlock.DoAssert("", action294)
 
         Assert.assertEqual(name, param.name)
 
@@ -4882,15 +4053,11 @@ class GatorHelper(object):
         paramCol.remove_all()
         Assert.assertEqual(0, paramCol.count)
 
-        def action295():
+        with pytest.raises(Exception):
             paramCol.remove(0)
 
-        TryCatchAssertBlock.DoAssert("", action295)
-
-        def action296():
+        with pytest.raises(Exception):
             paramCol.remove("Bogus")
-
-        TryCatchAssertBlock.DoAssert("", action296)
 
     @staticmethod
     def TestScriptingToolCalcObjects(coCol: "IScriptingCalcObjectCollection"):
@@ -4944,15 +4111,11 @@ class GatorHelper(object):
 
         wrapper2: "IScriptingCalcObject" = coCol["Test1"]
 
-        def action297():
+        with pytest.raises(Exception):
             wrapper3: "IScriptingCalcObject" = coCol[5]
 
-        TryCatchAssertBlock.DoAssert("", action297)
-
-        def action298():
+        with pytest.raises(Exception):
             wrapper4: "IScriptingCalcObject" = coCol["Bogus"]
-
-        TryCatchAssertBlock.DoAssert("", action298)
 
         GatorHelper.m_logger.WriteLine("CalcObjectWrappers test the enumerator:")
         enumWrapper: "IScriptingCalcObject"
@@ -4973,10 +4136,8 @@ class GatorHelper(object):
         newWrapper.unit = "mi/hr"
         Assert.assertEqual("mi/hr", newWrapper.unit)
 
-        def action299():
+        with pytest.raises(Exception):
             newWrapper.unit = "deg/sec"
-
-        TryCatchAssertBlock.DoAssert("", action299)
 
         coCol.remove(0)
         Assert.assertEqual(1, coCol.count)
@@ -4992,15 +4153,11 @@ class GatorHelper(object):
         coCol.remove_all()
         Assert.assertEqual(0, coCol.count)
 
-        def action300():
+        with pytest.raises(Exception):
             coCol.remove(0)
 
-        TryCatchAssertBlock.DoAssert("", action300)
-
-        def action301():
+        with pytest.raises(Exception):
             coCol.remove("Bogus")
-
-        TryCatchAssertBlock.DoAssert("", action301)
 
     @staticmethod
     def TestRuntimeTypeInfo(obj: typing.Any):
@@ -5041,10 +4198,8 @@ class GatorHelper(object):
 
             i += 1
 
-        def action302():
+        with pytest.raises(Exception):
             pi: "IPropertyInfo" = rtti.properties[rtti.properties.count]
-
-        TryCatchAssertBlock.DoAssert("", action302)
 
     @staticmethod
     def RecursePropertyInfo(pi: "IPropertyInfo"):
@@ -5195,11 +4350,8 @@ class GatorHelper(object):
 
         att.reference_axes_name = "Satellite/Satellite1 LVLH(Earth)"
         Assert.assertEqual("Satellite/Satellite1 LVLH(Earth)", att.reference_axes_name)
-
-        def action303():
+        with pytest.raises(Exception):
             att.reference_axes_name = "Bogus"
-
-        TryCatchAssertBlock.DoAssert("Bogus RefAxesName", action303)
 
         orientation: "IOrientation" = att.orientation
         Assert.assertIsNotNone(orientation)
@@ -5277,13 +4429,11 @@ class GatorHelper(object):
         thrust.allow_negative_spherical_magnitude = True
         Assert.assertEqual(True, thrust.allow_negative_spherical_magnitude)
 
-        def action304():
-            impulse.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
-
         # thrust.Position  DEPRECATED
 
         # eVAAttitudeControlPlugin (not supported for Impulsive)
-        TryCatchAssertBlock.DoAssert("No Impulsive Plugins", action304)
+        with pytest.raises(Exception):
+            impulse.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
 
         # FINITE
         maneuver.set_maneuver_type(MANEUVER_TYPE.FINITE)
@@ -5370,11 +4520,8 @@ class GatorHelper(object):
 
         fAtt.reference_axes_name = "Satellite/Satellite1 LVLH(Earth)"
         Assert.assertEqual("Satellite/Satellite1 LVLH(Earth)", fAtt.reference_axes_name)
-
-        def action305():
+        with pytest.raises(Exception):
             fAtt.reference_axes_name = "Bogus"
-
-        TryCatchAssertBlock.DoAssert("Bogus RefAxesName", action305)
 
         orientation = fAtt.orientation
         Assert.assertIsNotNone(orientation)
@@ -5403,11 +4550,8 @@ class GatorHelper(object):
 
         fthrust.thrust_axes_name = "Satellite/Satellite1 LVLH(Earth)"
         Assert.assertEqual("Satellite/Satellite1 LVLH(Earth)", fthrust.thrust_axes_name)
-
-        def action306():
+        with pytest.raises(Exception):
             fthrust.thrust_axes_name = "Bogus"
-
-        TryCatchAssertBlock.DoAssert("Bogus RefAxesName", action306)
 
         direction = fthrust.thrust_vector
         Assert.assertIsNotNone(direction)
@@ -5436,11 +4580,8 @@ class GatorHelper(object):
 
         ftimevary.thrust_axes_name = "Satellite/Satellite1 LVLH(Earth)"
         Assert.assertEqual("Satellite/Satellite1 LVLH(Earth)", ftimevary.thrust_axes_name)
-
-        def action307():
+        with pytest.raises(Exception):
             ftimevary.thrust_axes_name = "Bogus"
-
-        TryCatchAssertBlock.DoAssert("Bogus RefAxesName", action307)
 
         ftimevary.az0 = 0.1
         Assert.assertAlmostEqual(0.1, ftimevary.az0, delta=Math2.Epsilon12)
@@ -5503,11 +4644,8 @@ class GatorHelper(object):
 
         plugin.select_plugin_by_name("Plugin Attitude Controller")  # Built in
         Assert.assertEqual("Plugin Attitude Controller", plugin.plugin_name)
-
-        def action308():
+        with pytest.raises(Exception):
             plugin.select_plugin_by_name("Plugin Bogus")
-
-        TryCatchAssertBlock.DoAssert("Bogus PluginName", action308)
         if not OSHelper.IsLinux():
             # CSharp AttCtl Plugin
             finite.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
@@ -5623,12 +4761,10 @@ class GatorHelper(object):
         optFinite.seed_method = OPTIMAL_FINITE_SEED_METHOD.FINITE_MANEUVER
         optFinite.run_seed()
 
-        def action309():
-            optFinite.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, "bogus")
-
         # Engine tab
 
-        TryCatchAssertBlock.ExpectedException("Invalid", action309)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            optFinite.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, "bogus")
         optFinite.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, "Polynomial Thrust and Isp")
         Assert.assertEqual(PROPULSION_METHOD.ENGINE_MODEL, optFinite.propulsion_method)
         Assert.assertEqual("Polynomial Thrust and Isp", optFinite.propulsion_method_value)
@@ -5636,10 +4772,8 @@ class GatorHelper(object):
         Assert.assertEqual(PROPULSION_METHOD.ENGINE_MODEL, optFinite.propulsion_method)
         Assert.assertEqual("Throttle Table Engine", optFinite.propulsion_method_value)
 
-        def action310():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             optFinite.set_propulsion_method(PROPULSION_METHOD.THRUSTER_SET, "bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action310)
         optFinite.set_propulsion_method(PROPULSION_METHOD.THRUSTER_SET, "Single Thruster")
         Assert.assertEqual(PROPULSION_METHOD.THRUSTER_SET, optFinite.propulsion_method)
         Assert.assertEqual("Single Thruster", optFinite.propulsion_method_value)
@@ -5656,11 +4790,8 @@ class GatorHelper(object):
         Assert.assertEqual(0, optFinite.thrust_efficiency)
         optFinite.thrust_efficiency = 10
         Assert.assertEqual(10, optFinite.thrust_efficiency)
-
-        def action311():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optFinite.thrust_efficiency = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action311)
 
         optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW
         Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW, optFinite.thrust_efficiency_mode)
@@ -5673,11 +4804,8 @@ class GatorHelper(object):
         Assert.assertEqual(3, optFinite.number_of_nodes)
         optFinite.number_of_nodes = 10
         Assert.assertEqual(10, optFinite.number_of_nodes)
-
-        def action312():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optFinite.number_of_nodes = 2
-
-        TryCatchAssertBlock.ExpectedException("invalid", action312)
 
         optFinite.discretization_strategy = OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_LOBATTO
         Assert.assertEqual(
@@ -5704,21 +4832,16 @@ class GatorHelper(object):
         Assert.assertEqual(
             OPTIMAL_FINITE_GUESS_METHOD.LAGRANGE_POLYNOMIAL, optFinite.initial_guess_interpolation_method
         )
-
-        def action313():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             optFinite.initial_guess_interpolation_method = OPTIMAL_FINITE_GUESS_METHOD.PIECEWISE_LINEAR
-
-        TryCatchAssertBlock.ExpectedException("must be in", action313)
 
         optFinite.enable_unit_vector_controls = True
         Assert.assertTrue(optFinite.enable_unit_vector_controls)
         optFinite.enable_unit_vector_controls = False
         Assert.assertFalse(optFinite.enable_unit_vector_controls)
 
-        def action314():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             optFinite.initial_guess_file_name = TestBase.GetScenarioFile("bogus.nod")
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action314)
         optFinite.initial_guess_file_name = TestBase.GetScenarioFile("intervals.int")  # invalid file
         Assert.assertTrue(("intervals.int" in optFinite.initial_guess_file_name))
 
@@ -5736,15 +4859,10 @@ class GatorHelper(object):
         optFinite.run_mode = OPTIMAL_FINITE_RUN_MODE.RUN_CURRENT_NODES
         Assert.assertEqual(OPTIMAL_FINITE_RUN_MODE.RUN_CURRENT_NODES, optFinite.run_mode)
 
-        def action315():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             optFinite.halt_mission_control_sequence_when_no_convergence = False
-
-        TryCatchAssertBlock.ExpectedException("read only", action315)
-
-        def action316():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             GatorHelper.Test_IAgVAManeuverOptimalFiniteSNOPTOptimizer(optFinite.snopt_optimizer)
-
-        TryCatchAssertBlock.ExpectedException("read only", action316)
 
         optFinite.run_mode = OPTIMAL_FINITE_RUN_MODE.OPTIMIZE_VIA_DIRECT_TRANSCRIPTION
         Assert.assertEqual(OPTIMAL_FINITE_RUN_MODE.OPTIMIZE_VIA_DIRECT_TRANSCRIPTION, optFinite.run_mode)
@@ -6035,65 +5153,30 @@ class GatorHelper(object):
         initBoundary.set_from_initial_guess = True
         Assert.assertTrue(initBoundary.set_from_initial_guess)
 
-        def action317():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.a.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action317)
-
-        def action318():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.a.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action318)
-
-        def action319():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.h.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action319)
-
-        def action320():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.h.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action320)
-
-        def action321():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.k.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action321)
-
-        def action322():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.k.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action322)
-
-        def action323():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.p.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action323)
-
-        def action324():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.p.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action324)
-
-        def action325():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.q.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action325)
-
-        def action326():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.q.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action326)
-
-        def action327():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.l.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action327)
-
-        def action328():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             initBoundary.l.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action328)
 
         initBoundary.set_from_initial_guess = False
         Assert.assertFalse(initBoundary.set_from_initial_guess)
@@ -6135,65 +5218,30 @@ class GatorHelper(object):
         finalBoundary.set_from_final_guess = True
         Assert.assertTrue(finalBoundary.set_from_final_guess)
 
-        def action329():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.a.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action329)
-
-        def action330():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.a.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action330)
-
-        def action331():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.h.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action331)
-
-        def action332():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.h.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action332)
-
-        def action333():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.k.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action333)
-
-        def action334():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.k.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action334)
-
-        def action335():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.p.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action335)
-
-        def action336():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.p.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action336)
-
-        def action337():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.q.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action337)
-
-        def action338():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.q.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action338)
-
-        def action339():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.l.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action339)
-
-        def action340():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             finalBoundary.l.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action340)
 
         finalBoundary.set_from_final_guess = False
         Assert.assertFalse(finalBoundary.set_from_final_guess)
@@ -6240,65 +5288,30 @@ class GatorHelper(object):
         pathBoundary.compute_from_initial_guess = True
         Assert.assertTrue(pathBoundary.compute_from_initial_guess)
 
-        def action341():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.a.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action341)
-
-        def action342():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.a.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action342)
-
-        def action343():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.h.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action343)
-
-        def action344():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.h.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action344)
-
-        def action345():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.k.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action345)
-
-        def action346():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.k.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action346)
-
-        def action347():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.p.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action347)
-
-        def action348():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.p.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action348)
-
-        def action349():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.q.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action349)
-
-        def action350():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.q.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action350)
-
-        def action351():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.l.lower_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action351)
-
-        def action352():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             pathBoundary.l.upper_bound = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action352)
 
         pathBoundary.compute_from_initial_guess = False
         Assert.assertFalse(pathBoundary.compute_from_initial_guess)
@@ -6364,51 +5377,36 @@ class GatorHelper(object):
         Assert.assertEqual(1, optimizer.max_major_iterations)
         optimizer.max_major_iterations = 10
         Assert.assertEqual(10, optimizer.max_major_iterations)
-
-        def action353():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optimizer.max_major_iterations = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action353)
 
         optimizer.tolerance_on_major_feasibility = 1e-15
         Assert.assertEqual(1e-15, optimizer.tolerance_on_major_feasibility)
         optimizer.tolerance_on_major_feasibility = 1e-05
         Assert.assertEqual(1e-05, optimizer.tolerance_on_major_feasibility)
-
-        def action354():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optimizer.tolerance_on_major_feasibility = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action354)
 
         optimizer.tolerance_on_major_optimality = 1e-15
         Assert.assertEqual(1e-15, optimizer.tolerance_on_major_optimality)
         optimizer.tolerance_on_major_optimality = 0.0001
         Assert.assertEqual(0.0001, optimizer.tolerance_on_major_optimality)
-
-        def action355():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optimizer.tolerance_on_major_optimality = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action355)
 
         optimizer.max_minor_iterations = 1
         Assert.assertEqual(1, optimizer.max_minor_iterations)
         optimizer.max_minor_iterations = 10
         Assert.assertEqual(10, optimizer.max_minor_iterations)
-
-        def action356():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optimizer.max_minor_iterations = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action356)
 
         optimizer.tolerance_on_minor_feasibility = 1e-15
         Assert.assertEqual(1e-15, optimizer.tolerance_on_minor_feasibility)
         optimizer.tolerance_on_minor_feasibility = 0.001
         Assert.assertEqual(0.001, optimizer.tolerance_on_minor_feasibility)
-
-        def action357():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optimizer.tolerance_on_minor_feasibility = 0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action357)
 
         optimizer.snopt_scaling = OPTIMAL_FINITE_SNOPT_SCALING.NONE
         Assert.assertEqual(OPTIMAL_FINITE_SNOPT_SCALING.NONE, optimizer.snopt_scaling)
@@ -6422,10 +5420,8 @@ class GatorHelper(object):
         optimizer.allow_internal_primal_infeasibility_measure_normalization = True
         Assert.assertTrue(optimizer.allow_internal_primal_infeasibility_measure_normalization)
 
-        def action358():
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             optimizer.options_filename = r"C:\Pat\bogus.txt"
-
-        TryCatchAssertBlock.ExpectedException("does not exist", action358)
         optimizer.options_filename = TestBase.GetScenarioFile("gp_marker.bmp")
         Assert.assertTrue(("gp_marker.bmp" in optimizer.options_filename))
 
@@ -6466,51 +5462,24 @@ class GatorHelper(object):
     def TestSpaceCraftParameters(scParams: "ISpacecraftParameters", isReadOnly: bool):
         GatorHelper.TestRuntimeTypeInfo(scParams)
         if isReadOnly:
-
-            def action359():
+            with pytest.raises(Exception):
                 scParams.cd = 2.3
-
-            TryCatchAssertBlock.DoAssert("", action359)
-
-            def action360():
+            with pytest.raises(Exception):
                 scParams.ck = 1.1
-
-            TryCatchAssertBlock.DoAssert("", action360)
-
-            def action361():
+            with pytest.raises(Exception):
                 scParams.cr = 1.3
-
-            TryCatchAssertBlock.DoAssert("", action361)
-
-            def action362():
+            with pytest.raises(Exception):
                 scParams.drag_area = 21
-
-            TryCatchAssertBlock.DoAssert("", action362)
-
-            def action363():
+            with pytest.raises(Exception):
                 scParams.dry_mass = 501
-
-            TryCatchAssertBlock.DoAssert("", action363)
-
-            def action364():
+            with pytest.raises(Exception):
                 scParams.k1 = 2
-
-            TryCatchAssertBlock.DoAssert("", action364)
-
-            def action365():
+            with pytest.raises(Exception):
                 scParams.k2 = 3
-
-            TryCatchAssertBlock.DoAssert("", action365)
-
-            def action366():
+            with pytest.raises(Exception):
                 scParams.radiation_pressure_area = 23
-
-            TryCatchAssertBlock.DoAssert("", action366)
-
-            def action367():
+            with pytest.raises(Exception):
                 scParams.solar_radiation_pressure_area = 2.3
-
-            TryCatchAssertBlock.DoAssert("", action367)
 
         else:
             scParams.cd = 2.3
@@ -6536,36 +5505,18 @@ class GatorHelper(object):
     def TestFuelTank(fuel: "IFuelTank", isReadOnly: bool, isFromCM: bool):
         GatorHelper.TestRuntimeTypeInfo(fuel)
         if isReadOnly:
-
-            def action368():
+            with pytest.raises(Exception):
                 fuel.fuel_density = 1001
-
-            TryCatchAssertBlock.DoAssert("", action368)
-
-            def action369():
+            with pytest.raises(Exception):
                 fuel.fuel_mass = 500
-
-            TryCatchAssertBlock.DoAssert("", action369)
-
-            def action370():
+            with pytest.raises(Exception):
                 fuel.maximum_fuel_mass = 1501
-
-            TryCatchAssertBlock.DoAssert("", action370)
-
-            def action371():
+            with pytest.raises(Exception):
                 fuel.tank_pressure = 5001
-
-            TryCatchAssertBlock.DoAssert("", action371)
-
-            def action372():
+            with pytest.raises(Exception):
                 fuel.tank_temperature = 292
-
-            TryCatchAssertBlock.DoAssert("", action372)
-
-            def action373():
+            with pytest.raises(Exception):
                 fuel.tank_volume = 1.4
-
-            TryCatchAssertBlock.DoAssert("", action373)
             GatorHelper.m_logger.WriteLine2(fuel.fuel_density)
             GatorHelper.m_logger.WriteLine2(fuel.fuel_mass)
             GatorHelper.m_logger.WriteLine2(fuel.maximum_fuel_mass)
@@ -6583,16 +5534,10 @@ class GatorHelper(object):
             fuel.tank_temperature = 292
             Assert.assertEqual(292, fuel.tank_temperature)
             if isFromCM:
-
-                def action374():
+                with pytest.raises(Exception):
                     fuel.tank_volume = 1.4
-
-                TryCatchAssertBlock.DoAssert("", action374)
-
-                def action375():
+                with pytest.raises(Exception):
                     fuel.maximum_fuel_mass = 1501
-
-                TryCatchAssertBlock.DoAssert("", action375)
 
             else:
                 fuel.maximum_fuel_mass = 1501
@@ -6765,36 +5710,18 @@ class GatorHelper(object):
         spherical.vertical_flight_path_angle = 8
         Assert.assertAlmostEqual(8, float(spherical.vertical_flight_path_angle), delta=0.001)
         GatorHelper.m_logger.WriteLine("Spherical Bad Values")
-
-        def action376():
+        with pytest.raises(Exception):
             spherical.declination = 100
-
-        TryCatchAssertBlock.DoAssert("", action376)
-
-        def action377():
+        with pytest.raises(Exception):
             spherical.declination = -100
-
-        TryCatchAssertBlock.DoAssert("", action377)
-
-        def action378():
+        with pytest.raises(Exception):
             spherical.radius_magnitude = -10
-
-        TryCatchAssertBlock.DoAssert("", action378)
-
-        def action379():
+        with pytest.raises(Exception):
             spherical.horizontal_flight_path_angle = 100
-
-        TryCatchAssertBlock.DoAssert("", action379)
-
-        def action380():
+        with pytest.raises(Exception):
             spherical.horizontal_flight_path_angle = -100
-
-        TryCatchAssertBlock.DoAssert("", action380)
-
-        def action381():
+        with pytest.raises(Exception):
             spherical.velocity_magnitude = -5
-
-        TryCatchAssertBlock.DoAssert("", action381)
 
         initState.set_element_type(ELEMENT_TYPE.CARTESIAN)
         Assert.assertEqual(ELEMENT_TYPE.CARTESIAN, initState.element_type)
@@ -6836,21 +5763,12 @@ class GatorHelper(object):
         outgoing.true_anomaly = 1
         Assert.assertAlmostEqual(1, float(outgoing.true_anomaly), delta=0.001)
         GatorHelper.m_logger.WriteLine("Target Vector Outgoing bad values")
-
-        def action382():
+        with pytest.raises(Exception):
             outgoing.radius_of_periapsis = -5
-
-        TryCatchAssertBlock.DoAssert("", action382)
-
-        def action383():
+        with pytest.raises(Exception):
             outgoing.declination_outgoing_asymptote = 120
-
-        TryCatchAssertBlock.DoAssert("", action383)
-
-        def action384():
+        with pytest.raises(Exception):
             outgoing.declination_outgoing_asymptote = -120
-
-        TryCatchAssertBlock.DoAssert("", action384)
 
         initState.set_element_type(ELEMENT_TYPE.TARGET_VECTOR_INCOMING_ASYMPTOTE)
         Assert.assertEqual(ELEMENT_TYPE.TARGET_VECTOR_INCOMING_ASYMPTOTE, initState.element_type)
@@ -6870,21 +5788,12 @@ class GatorHelper(object):
         incoming.true_anomaly = 1
         Assert.assertAlmostEqual(1, float(incoming.true_anomaly), delta=0.001)
         GatorHelper.m_logger.WriteLine("Target vector incoming bad values")
-
-        def action385():
+        with pytest.raises(Exception):
             incoming.radius_of_periapsis = -5
-
-        TryCatchAssertBlock.DoAssert("", action385)
-
-        def action386():
+        with pytest.raises(Exception):
             incoming.declination_incoming_asymptote = 300
-
-        TryCatchAssertBlock.DoAssert("", action386)
-
-        def action387():
+        with pytest.raises(Exception):
             incoming.declination_incoming_asymptote = -300
-
-        TryCatchAssertBlock.DoAssert("", action387)
 
         initState.set_element_type(ELEMENT_TYPE.KEPLERIAN)
         Assert.assertEqual(ELEMENT_TYPE.KEPLERIAN, initState.element_type)
@@ -6947,26 +5856,14 @@ class GatorHelper(object):
         Assert.assertEqual(ELEMENT.OSCULATING, kep.element_type)
 
         GatorHelper.m_logger.WriteLine("Keplerian bad values")
-
-        def action388():
+        with pytest.raises(Exception):
             kep.eccentricity = -0.1
-
-        TryCatchAssertBlock.DoAssert("", action388)
-
-        def action389():
+        with pytest.raises(Exception):
             kep.eccentricity = 1
-
-        TryCatchAssertBlock.DoAssert("", action389)
-
-        def action390():
+        with pytest.raises(Exception):
             kep.inclination = -2
-
-        TryCatchAssertBlock.DoAssert("", action390)
-
-        def action391():
+        with pytest.raises(Exception):
             kep.inclination = 200
-
-        TryCatchAssertBlock.DoAssert("", action391)
 
         initState.set_element_type(ELEMENT_TYPE.DELAUNAY)
         Assert.assertEqual(ELEMENT_TYPE.DELAUNAY, initState.element_type)
@@ -7056,19 +5953,17 @@ class GatorHelper(object):
         elemBPlane.b_dot_r_first_b_vector = 840.0
         Assert.assertAlmostEqual(840.0, elemBPlane.b_dot_r_first_b_vector, delta=0.0001)
 
-        def action392():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("Can't set B Magnitude in combination with B dot R or B dot T.")
+        ):
             elemBPlane.b_magnitude_second_b_vector = 29000.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "Can't set B Magnitude in combination with B dot R or B dot T.", action392
-        )
-
-        def action393():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "Cannot set B dot R when B dot R is already being used as the first B Vector option."
+            ),
+        ):
             elemBPlane.b_dot_r_second_b_vector = 2000.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "Cannot set B dot R when B dot R is already being used as the first B Vector option.", action393
-        )
         elemBPlane.b_dot_t_second_b_vector = 30000.0
         Assert.assertAlmostEqual(30000.0, elemBPlane.b_dot_t_second_b_vector, delta=0.0001)
 
@@ -7094,15 +5989,12 @@ class GatorHelper(object):
         elemBPlane.b_dot_t_second_b_vector = 30000.0
         Assert.assertAlmostEqual(30000.0, elemBPlane.b_dot_t_second_b_vector, delta=0.0001)
 
-        def action394():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set hyperbolic V infinity for closed orbits.")):
             elemBPlane.hyperbolic_v_infinity = 3.0
-
-        TryCatchAssertBlock.ExpectedException("Cannot set hyperbolic V infinity for closed orbits.", action394)
-
-        def action395():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("Cannot set hyperbolic turning angle for closed orbits.")
+        ):
             elemBPlane.hyperbolic_turning_angle = 100.0
-
-        TryCatchAssertBlock.ExpectedException("Cannot set hyperbolic turning angle for closed orbits.", action395)
         elemBPlane.orbital_c3_energy = 12.0
         Assert.assertAlmostEqual(12.0, elemBPlane.orbital_c3_energy, delta=0.0001)
         elemBPlane.semi_major_axis = 35000.0
@@ -7114,32 +6006,28 @@ class GatorHelper(object):
         elemBPlane.b_dot_t_first_b_vector = 30000.0
         Assert.assertAlmostEqual(30000.0, elemBPlane.b_dot_t_first_b_vector, delta=0.0001)
 
-        def action396():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("Can't set B Magnitude in combination with B dot R or B dot T.")
+        ):
             elemBPlane.b_magnitude_second_b_vector = 29000.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "Can't set B Magnitude in combination with B dot R or B dot T.", action396
-        )
 
         elemBPlane.b_dot_r_second_b_vector = 2000.0
         Assert.assertAlmostEqual(2000.0, elemBPlane.b_dot_r_second_b_vector, delta=0.0001)
 
-        def action397():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "Cannot set B dot T when B dot T is already being used as the first B Vector option."
+            ),
+        ):
             elemBPlane.b_dot_t_second_b_vector = 30000.0
 
-        TryCatchAssertBlock.ExpectedException(
-            "Cannot set B dot T when B dot T is already being used as the first B Vector option.", action397
-        )
-
-        def action398():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set hyperbolic V infinity for closed orbits.")):
             elemBPlane.hyperbolic_v_infinity = 3.0
-
-        TryCatchAssertBlock.ExpectedException("Cannot set hyperbolic V infinity for closed orbits.", action398)
-
-        def action399():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("Cannot set hyperbolic turning angle for closed orbits.")
+        ):
             elemBPlane.hyperbolic_turning_angle = 100.0
-
-        TryCatchAssertBlock.ExpectedException("Cannot set hyperbolic turning angle for closed orbits.", action399)
         elemBPlane.orbital_c3_energy = 12.0
         Assert.assertAlmostEqual(12.0, elemBPlane.orbital_c3_energy, delta=0.0001)
         elemBPlane.semi_major_axis = 35000.0
@@ -7246,19 +6134,15 @@ class GatorHelper(object):
 
         lambert.coord_system_name = "CentralBody/Earth Fixed"
         Assert.assertEqual("CentralBody/Earth Fixed", lambert.coord_system_name)
-
-        def action400():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("only available when an inertial Coordinate System is chosen")
+        ):
             lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
-
-        TryCatchAssertBlock.ExpectedException("only available when an inertial Coordinate System is chosen", action400)
 
         lambert.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", lambert.coord_system_name)
-
-        def action401():
+        with pytest.raises(Exception, match=RegexSubstringMatch("link assignment failed")):
             lambert.coord_system_name = "CentralBody/Earth Bogus"
-
-        TryCatchAssertBlock.ExpectedException("link assignment failed", action401)
 
         lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
         Assert.assertEqual(LAMBERT_TARGET_COORD_TYPE.CARTESIAN, lambert.target_coord_type)
@@ -7273,29 +6157,27 @@ class GatorHelper(object):
         lambert.target_position_z = 30.0
         Assert.assertEqual(30.0, lambert.target_position_z)
 
-        def action402():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_x = 40.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action402,
-        )
-
-        def action403():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_y = 50.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action403,
-        )
-
-        def action404():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_z = 60.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action404,
-        )
 
         lambert.enable_second_maneuver = True
         Assert.assertTrue(lambert.enable_second_maneuver)
@@ -7313,35 +6195,18 @@ class GatorHelper(object):
         lambert.target_velocity_z = 60.0
         Assert.assertEqual(60.0, lambert.target_velocity_z)
 
-        def action405():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_semimajor_axis = 70.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action405)
-
-        def action406():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_eccentricity = 80.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action406)
-
-        def action407():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_inclination = 90.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action407)
-
-        def action408():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_right_ascension_of_ascending_node = 100.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action408)
-
-        def action409():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_argument_of_periapsis = 110.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action409)
-
-        def action410():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_true_anomaly = 120.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action410)
 
         lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.KEPLERIAN)
         Assert.assertEqual(LAMBERT_TARGET_COORD_TYPE.KEPLERIAN, lambert.target_coord_type)
@@ -7359,44 +6224,33 @@ class GatorHelper(object):
         lambert.target_true_anomaly = 120.0
         Assert.assertEqual(120.0, lambert.target_true_anomaly)
 
-        def action411():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Cartesian")):
             lambert.target_position_x = 10.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Cartesian", action411)
-
-        def action412():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Cartesian")):
             lambert.target_position_y = 20.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Cartesian", action412)
-
-        def action413():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Cartesian")):
             lambert.target_position_z = 30.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Cartesian", action413)
-
-        def action414():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_x = 40.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action414,
-        )
-
-        def action415():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_y = 50.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action415,
-        )
-
-        def action416():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_z = 60.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action416,
-        )
 
         lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
         Assert.assertEqual(LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME, lambert.solution_option)
@@ -7404,13 +6258,10 @@ class GatorHelper(object):
         Assert.assertEqual(0.0, lambert.time_of_flight)
         Assert.assertEqual(0, lambert.revolutions)
         Assert.assertEqual(LAMBERT_ORBITAL_ENERGY_TYPE.LOW, lambert.orbital_energy)
-
-        def action417():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("only available when Number of Revolutions is greater than zero")
+        ):
             lambert.orbital_energy = LAMBERT_ORBITAL_ENERGY_TYPE.HIGH
-
-        TryCatchAssertBlock.ExpectedException(
-            "only available when Number of Revolutions is greater than zero", action417
-        )
 
         lambert.time_of_flight = 10.0
         Assert.assertEqual(10.0, lambert.time_of_flight)
@@ -7426,36 +6277,24 @@ class GatorHelper(object):
 
         lambert.time_of_flight = 20.0
         Assert.assertEqual(20.0, lambert.time_of_flight)
-
-        def action418():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             lambert.revolutions = 10
-
-        TryCatchAssertBlock.ExpectedException("read-only", action418)
-
-        def action419():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("only available when Number of Revolutions is greater than zero")
+        ):
             lambert.orbital_energy = LAMBERT_ORBITAL_ENERGY_TYPE.HIGH
-
-        TryCatchAssertBlock.ExpectedException(
-            "only available when Number of Revolutions is greater than zero", action419
-        )
 
         lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.MIN_ENERGY
         Assert.assertEqual(LAMBERT_SOLUTION_OPTION_TYPE.MIN_ENERGY, lambert.solution_option)
 
         lambert.time_of_flight = 30.0
         Assert.assertEqual(30.0, lambert.time_of_flight)
-
-        def action420():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             lambert.revolutions = 10
-
-        TryCatchAssertBlock.ExpectedException("read-only", action420)
-
-        def action421():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("only available when Number of Revolutions is greater than zero")
+        ):
             lambert.orbital_energy = LAMBERT_ORBITAL_ENERGY_TYPE.HIGH
-
-        TryCatchAssertBlock.ExpectedException(
-            "only available when Number of Revolutions is greater than zero", action421
-        )
 
         lambert.direction_of_motion = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
         Assert.assertEqual(LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT, lambert.direction_of_motion)
@@ -7470,10 +6309,10 @@ class GatorHelper(object):
         lambert.enable_write_to_first_maneuver = False
         Assert.assertFalse(lambert.enable_write_to_first_maneuver)
 
-        def action422():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Initial Delta-V to Maneuver is enabled")
+        ):
             lambert.first_maneuver_segment = "Maneuver"
-
-        TryCatchAssertBlock.ExpectedException("available when Write Initial Delta-V to Maneuver is enabled", action422)
 
         lambert.enable_write_to_first_maneuver = True
         Assert.assertTrue(lambert.enable_write_to_first_maneuver)
@@ -7486,15 +6325,14 @@ class GatorHelper(object):
         lambert.enable_write_duration_to_propagate = False
         Assert.assertFalse(lambert.enable_write_duration_to_propagate)
 
-        def action423():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Duration to Propagate is enabled")
+        ):
             lambert.disable_non_lambert_propagate_stop_conditions = True
-
-        TryCatchAssertBlock.ExpectedException("available when Write Duration to Propagate is enabled", action423)
-
-        def action424():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Duration to Propagate is enabled")
+        ):
             lambert.propagate_segment = "myProp"
-
-        TryCatchAssertBlock.ExpectedException("available when Write Duration to Propagate is enabled", action424)
 
         lambert.enable_write_duration_to_propagate = True
         Assert.assertTrue(lambert.enable_write_duration_to_propagate)
@@ -7512,30 +6350,24 @@ class GatorHelper(object):
         lambert.enable_second_maneuver = False
         Assert.assertFalse(lambert.enable_second_maneuver)
 
-        def action425():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Calculate Second Maneuver at Destination is enabled")
+        ):
             lambert.enable_write_to_second_maneuver = True
-
-        TryCatchAssertBlock.ExpectedException(
-            "available when Calculate Second Maneuver at Destination is enabled", action425
-        )
-
-        def action426():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Calculate Second Maneuver at Destination is enabled")
+        ):
             lambert.second_maneuver_segment = "Maneuver1"
-
-        TryCatchAssertBlock.ExpectedException(
-            "available when Calculate Second Maneuver at Destination is enabled", action426
-        )
 
         lambert.enable_second_maneuver = True
         Assert.assertTrue(lambert.enable_second_maneuver)
 
         lambert.enable_write_to_second_maneuver = False
         Assert.assertFalse(lambert.enable_write_to_second_maneuver)
-
-        def action427():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Final Delta-V to Maneuver is enabled")
+        ):
             lambert.second_maneuver_segment = "Maneuver1"
-
-        TryCatchAssertBlock.ExpectedException("available when Write Final Delta-V to Maneuver is enabled", action427)
 
         lambert.enable_write_to_second_maneuver = True
         Assert.assertTrue(lambert.enable_write_to_second_maneuver)
@@ -7572,19 +6404,15 @@ class GatorHelper(object):
 
         lambert.coord_system_name = "CentralBody/Earth Fixed"
         Assert.assertEqual("CentralBody/Earth Fixed", lambert.coord_system_name)
-
-        def action428():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("only available when an inertial Coordinate System is chosen")
+        ):
             lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
-
-        TryCatchAssertBlock.ExpectedException("only available when an inertial Coordinate System is chosen", action428)
 
         lambert.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", lambert.coord_system_name)
-
-        def action429():
+        with pytest.raises(Exception, match=RegexSubstringMatch("link assignment failed")):
             lambert.coord_system_name = "CentralBody/Earth Bogus"
-
-        TryCatchAssertBlock.ExpectedException("link assignment failed", action429)
 
         lambert.enable_target_match_phase = True
         Assert.assertTrue(lambert.enable_target_match_phase)
@@ -7604,29 +6432,27 @@ class GatorHelper(object):
         lambert.target_position_z = 30.0
         Assert.assertEqual(30.0, lambert.target_position_z)
 
-        def action430():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_x = 40.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action430,
-        )
-
-        def action431():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_y = 50.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action431,
-        )
-
-        def action432():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_z = 60.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "only allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action432,
-        )
 
         lambert.enable_second_maneuver = True
         Assert.assertTrue(lambert.enable_second_maneuver)
@@ -7644,35 +6470,18 @@ class GatorHelper(object):
         lambert.target_velocity_z = 60.0
         Assert.assertEqual(60.0, lambert.target_velocity_z)
 
-        def action433():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_semimajor_axis = 70.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action433)
-
-        def action434():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_eccentricity = 80.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action434)
-
-        def action435():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_inclination = 90.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action435)
-
-        def action436():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_right_ascension_of_ascending_node = 100.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action436)
-
-        def action437():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_argument_of_periapsis = 110.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action437)
-
-        def action438():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Keplerian")):
             lambert.target_true_anomaly = 120.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Keplerian", action438)
 
         lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.KEPLERIAN)
         Assert.assertEqual(LAMBERT_TARGET_COORD_TYPE.KEPLERIAN, lambert.target_coord_type)
@@ -7690,61 +6499,45 @@ class GatorHelper(object):
         lambert.target_true_anomaly = 120.0
         Assert.assertEqual(120.0, lambert.target_true_anomaly)
 
-        def action439():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Cartesian")):
             lambert.target_position_x = 10.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Cartesian", action439)
-
-        def action440():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Cartesian")):
             lambert.target_position_y = 20.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Cartesian", action440)
-
-        def action441():
+        with pytest.raises(Exception, match=RegexSubstringMatch("allowed when Target Coordinate Type is Cartesian")):
             lambert.target_position_z = 30.0
-
-        TryCatchAssertBlock.ExpectedException("allowed when Target Coordinate Type is Cartesian", action441)
-
-        def action442():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_x = 40.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action442,
-        )
-
-        def action443():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_y = 50.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action443,
-        )
-
-        def action444():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch(
+                "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian"
+            ),
+        ):
             lambert.target_velocity_z = 60.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "allowed when Calculate Second Maneuver at Destination is enabled and Target Coordinate Type is Cartesian",
-            action444,
-        )
 
         lambert.enable_write_departure_delay_to_first_propagate = False
         Assert.assertFalse(lambert.enable_write_departure_delay_to_first_propagate)
 
-        def action445():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Departure Delay to First Propagate is enabled")
+        ):
             lambert.disable_first_propagate_non_lambert_stop_conditions = True
-
-        TryCatchAssertBlock.ExpectedException(
-            "available when Write Departure Delay to First Propagate is enabled", action445
-        )
-
-        def action446():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Departure Delay to First Propagate is enabled")
+        ):
             lambert.first_propagate_segment = "Propagate"
-
-        TryCatchAssertBlock.ExpectedException(
-            "available when Write Departure Delay to First Propagate is enabled", action446
-        )
 
         lambert.enable_write_departure_delay_to_first_propagate = True
         Assert.assertTrue(lambert.enable_write_departure_delay_to_first_propagate)
@@ -7758,19 +6551,16 @@ class GatorHelper(object):
         Assert.assertEqual("Propagate", lambert.first_propagate_segment)
         lambert.first_propagate_segment = "Propagate1"
         Assert.assertEqual("Propagate1", lambert.first_propagate_segment)
-
-        def action447():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             lambert.first_propagate_segment = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action447)
 
         lambert.enable_write_to_first_maneuver = False
         Assert.assertFalse(lambert.enable_write_to_first_maneuver)
 
-        def action448():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Initial Delta-V to Maneuver is enabled")
+        ):
             lambert.first_maneuver_segment = "Maneuver"
-
-        TryCatchAssertBlock.ExpectedException("available when Write Initial Delta-V to Maneuver is enabled", action448)
 
         lambert.enable_write_to_first_maneuver = True
         Assert.assertTrue(lambert.enable_write_to_first_maneuver)
@@ -7779,28 +6569,20 @@ class GatorHelper(object):
         Assert.assertEqual("TMan", lambert.first_maneuver_segment)
         lambert.first_maneuver_segment = "Maneuver"
         Assert.assertEqual("Maneuver", lambert.first_maneuver_segment)
-
-        def action449():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             lambert.first_maneuver_segment = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action449)
 
         lambert.enable_write_duration_to_second_propagate = False
         Assert.assertFalse(lambert.enable_write_duration_to_second_propagate)
 
-        def action450():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Flight Duration to Second Propagate is enabled")
+        ):
             lambert.disable_second_propagate_non_lambert_stop_conditions = True
-
-        TryCatchAssertBlock.ExpectedException(
-            "available when Write Flight Duration to Second Propagate is enabled", action450
-        )
-
-        def action451():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Flight Duration to Second Propagate is enabled")
+        ):
             lambert.second_propagate_segment = "Propagate"
-
-        TryCatchAssertBlock.ExpectedException(
-            "available when Write Flight Duration to Second Propagate is enabled", action451
-        )
 
         lambert.enable_write_duration_to_second_propagate = True
         Assert.assertTrue(lambert.enable_write_duration_to_second_propagate)
@@ -7814,21 +6596,16 @@ class GatorHelper(object):
         Assert.assertEqual("Propagate", lambert.second_propagate_segment)
         lambert.second_propagate_segment = "Propagate1"
         Assert.assertEqual("Propagate1", lambert.second_propagate_segment)
-
-        def action452():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             lambert.second_propagate_segment = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action452)
 
         lambert.enable_write_to_second_maneuver = False
         Assert.assertFalse(lambert.enable_write_to_second_maneuver)
 
-        def action453():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("available when Write Final Inertial Delta-V to Maneuver is enabled")
+        ):
             lambert.second_maneuver_segment = "Maneuver"
-
-        TryCatchAssertBlock.ExpectedException(
-            "available when Write Final Inertial Delta-V to Maneuver is enabled", action453
-        )
 
         lambert.enable_write_to_second_maneuver = True
         Assert.assertTrue(lambert.enable_write_to_second_maneuver)
@@ -7837,51 +6614,33 @@ class GatorHelper(object):
         Assert.assertEqual("TMan", lambert.second_maneuver_segment)
         lambert.second_maneuver_segment = "Maneuver"
         Assert.assertEqual("Maneuver", lambert.second_maneuver_segment)
-
-        def action454():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             lambert.second_maneuver_segment = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("Invalid", action454)
 
         lambert.latest_departure_time = 200.0
         Assert.assertEqual(200.0, lambert.latest_departure_time)
-
-        def action455():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             lambert.latest_departure_time = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action455)
 
         lambert.earliest_arrival_time = 300.0
         Assert.assertEqual(300.0, lambert.earliest_arrival_time)
-
-        def action456():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             lambert.earliest_arrival_time = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action456)
 
         lambert.latest_arrival_time = 400.0
         Assert.assertEqual(400.0, lambert.latest_arrival_time)
-
-        def action457():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             lambert.latest_arrival_time = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action457)
 
         lambert.grid_search_time_step = 500.0
         Assert.assertEqual(500.0, lambert.grid_search_time_step)
-
-        def action458():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             lambert.grid_search_time_step = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action458)
 
         lambert.max_revolutions = 600
         Assert.assertEqual(600, lambert.max_revolutions)
-
-        def action459():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             lambert.max_revolutions = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action459)
 
         lambert.central_body_collision_altitude_padding = 700.0
         Assert.assertEqual(700.0, lambert.central_body_collision_altitude_padding)
@@ -7915,11 +6674,8 @@ class GatorHelper(object):
             Assert.assertEqual(10000, profGoldenSection.max_iterations)
             profGoldenSection.max_iterations = 5000
             Assert.assertEqual(5000, profGoldenSection.max_iterations)
-
-            def action460():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 profGoldenSection.max_iterations = -5000
-
-            TryCatchAssertBlock.ExpectedException("invalid", action460)
 
             Assert.assertEqual(
                 TestBase.GetScenarioFile("ENG116918", "GoldenSection_Target_Sequence._Golden_Section_Search_Log.txt"),
@@ -7940,12 +6696,10 @@ class GatorHelper(object):
             GoldenSectionControlCollection: "IGoldenSectionControlCollection" = profGoldenSection.controls
             Assert.assertEqual(1, GoldenSectionControlCollection.count)
 
-            def action461():
+            with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
                 GoldenSectionControlByPathsX: "IGoldenSectionControl" = (
                     GoldenSectionControlCollection.get_control_by_paths("Maneuver", "Bogus")
                 )
-
-            TryCatchAssertBlock.ExpectedException("could not be found", action461)
 
             GoldenSectionControlByPaths: "IGoldenSectionControl" = GoldenSectionControlCollection.get_control_by_paths(
                 "Maneuver", "ImpulsiveMnvr.Pointing.Spherical.Magnitude"
@@ -7976,10 +6730,8 @@ class GatorHelper(object):
             GoldenSectionControl.use_custom_display_unit = False
             Assert.assertFalse(GoldenSectionControl.use_custom_display_unit)
 
-            def action462():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 GoldenSectionControl.custom_display_unit = "km/sec"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action462)
 
             GoldenSectionControl.use_custom_display_unit = True
             Assert.assertTrue(GoldenSectionControl.use_custom_display_unit)
@@ -8024,10 +6776,8 @@ class GatorHelper(object):
             GoldenSectionResult.use_custom_display_unit = False
             Assert.assertFalse(GoldenSectionResult.use_custom_display_unit)
 
-            def action463():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 GoldenSectionResult.custom_display_unit = "km/sec"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action463)
 
             GoldenSectionResult.use_custom_display_unit = True
             Assert.assertTrue(GoldenSectionResult.use_custom_display_unit)
@@ -8096,10 +6846,8 @@ class GatorHelper(object):
             GridSearchControl.use_custom_display_unit = False
             Assert.assertFalse(GridSearchControl.use_custom_display_unit)
 
-            def action464():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 GridSearchControl.custom_display_unit = "min"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action464)
 
             GridSearchControl.use_custom_display_unit = True
             Assert.assertTrue(GridSearchControl.use_custom_display_unit)
@@ -8124,21 +6872,16 @@ class GatorHelper(object):
             GridSearchResult.use_custom_display_unit = False
             Assert.assertFalse(GridSearchResult.use_custom_display_unit)
 
-            def action465():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 GridSearchResult.custom_display_unit = "UTCJ"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action465)
 
             GridSearchResult.use_custom_display_unit = True
             Assert.assertTrue(GridSearchResult.use_custom_display_unit)
 
             GridSearchResult.custom_display_unit = "UTCJ"
             Assert.assertEqual("UTCJ", GridSearchResult.custom_display_unit)
-
-            def action466():
+            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
                 GridSearchResult.custom_display_unit = "Bogus"
-
-            TryCatchAssertBlock.ExpectedException("Invalid", action466)
 
             # Cleanup
             (clr.CastAs(man1, IMissionControlSequenceSegment)).results.remove("Epoch")
@@ -8170,11 +6913,8 @@ class GatorHelper(object):
             Assert.assertEqual(100, profBisection.maximum_iterations)
             profBisection.maximum_iterations = 200
             Assert.assertEqual(200, profBisection.maximum_iterations)
-
-            def action467():
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 profBisection.maximum_iterations = -500
-
-            TryCatchAssertBlock.ExpectedException("invalid", action467)
 
             profBisection.reset_controls_before_run = False
             Assert.assertFalse(profBisection.reset_controls_before_run)
@@ -8186,12 +6926,10 @@ class GatorHelper(object):
             BisectionControlCollection: "IBisectionControlCollection" = profBisection.control_parameters
             Assert.assertEqual(1, BisectionControlCollection.count)
 
-            def action468():
+            with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
                 BisectionControlByPathsX: "IBisectionControl" = BisectionControlCollection.get_control_by_paths(
                     "Maneuver", "Bogus"
                 )
-
-            TryCatchAssertBlock.ExpectedException("could not be found", action468)
 
             BisectionControlByPaths: "IBisectionControl" = profBisection.control_parameters.get_control_by_paths(
                 "Maneuver", "ImpulsiveMnvr.Pointing.Spherical.Magnitude"
@@ -8216,10 +6954,8 @@ class GatorHelper(object):
             BiSectionControl.use_custom_display_unit = False
             Assert.assertFalse(BiSectionControl.use_custom_display_unit)
 
-            def action469():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 BiSectionControl.custom_display_unit = "km/sec"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action469)
 
             BiSectionControl.use_custom_display_unit = True
             Assert.assertTrue(BiSectionControl.use_custom_display_unit)
@@ -8261,10 +6997,8 @@ class GatorHelper(object):
             BiectionResult.use_custom_display_unit = False
             Assert.assertFalse(BiectionResult.use_custom_display_unit)
 
-            def action470():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 BiectionResult.custom_display_unit = "km"
-
-            TryCatchAssertBlock.ExpectedException("read-only", action470)
 
             BiectionResult.use_custom_display_unit = True
             Assert.assertTrue(BiectionResult.use_custom_display_unit)
@@ -8319,10 +7053,8 @@ class GatorHelper(object):
 
         Assert.assertEqual("Graph2Graph1Graph3", allNames)
 
-        def action471():
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             tgColl.remove_graph(3)
-
-        TryCatchAssertBlock.ExpectedException("out of range", action471)
         tgColl.remove_graph(0)
         Assert.assertEqual(2, tgColl.count)
         Assert.assertEqual("Graph1", tgColl[0].name)
@@ -8347,22 +7079,15 @@ class GatorHelper(object):
         tg.user_comment = "My User Comment"
         Assert.assertEqual("My User Comment", tg.user_comment)
 
-        def action472():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             tg.show_desired_value = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action472)
-
-        def action473():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             tg.show_tolerance_band = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action473)
 
         Assert.assertEqual("Iteration", tg.independent_variable)
 
-        def action474():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             tg.show_label_iterations = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action474)
         if profileName == "GoldenSection":
             tg.independent_variable = "Maneuver : DeltaV"
             Assert.assertEqual("Maneuver : DeltaV", tg.independent_variable)
@@ -8372,10 +7097,8 @@ class GatorHelper(object):
             tg.show_label_iterations = True
             Assert.assertTrue(tg.show_label_iterations)
 
-            def action475():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 tg.independent_variable = "Bogus"
-
-            TryCatchAssertBlock.ExpectedException("must be in", action475)
 
             GatorHelper.TestIAgVATargeterGraphActiveControlCollection(
                 tg.active_controls, "Maneuver", "ImpulsiveMnvr Pointing Spherical Magnitude"
@@ -8392,10 +7115,8 @@ class GatorHelper(object):
             tg.show_label_iterations = True
             Assert.assertTrue(tg.show_label_iterations)
 
-            def action476():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 tg.independent_variable = "Bogus"
-
-            TryCatchAssertBlock.ExpectedException("must be in", action476)
 
             GatorHelper.TestIAgVATargeterGraphActiveControlCollection(
                 tg.active_controls, "TMan", "FiniteMnvr BurnCenterBias"
@@ -8412,10 +7133,8 @@ class GatorHelper(object):
             tg.show_label_iterations = True
             Assert.assertTrue(tg.show_label_iterations)
 
-            def action477():
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 tg.independent_variable = "Bogus"
-
-            TryCatchAssertBlock.ExpectedException("must be in", action477)
 
             GatorHelper.TestIAgVATargeterGraphActiveControlCollection(
                 tg.active_controls, "myProp", "StoppingConditions Duration TripValue"

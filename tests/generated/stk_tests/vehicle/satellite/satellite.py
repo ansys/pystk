@@ -14,6 +14,7 @@ from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
 from parameterized import *
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -478,10 +479,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SAT.pass_break.coordinate_system = VEHICLE_COORDINATE_SYSTEM.TRUE_OF_EPOCH
         Assert.assertEqual(EarlyBoundTests.AG_SAT.pass_break.coordinate_system, VEHICLE_COORDINATE_SYSTEM.TRUE_OF_EPOCH)
 
-        def action1():
+        with pytest.raises(Exception):
             EarlyBoundTests.AG_SAT.pass_break.coordinate_system = VEHICLE_COORDINATE_SYSTEM.CENTRAL_BODY_FIXED
-
-        TryCatchAssertBlock.DoAssert("Fixed should not be available.", action1)
 
     # endregion
 
@@ -636,10 +635,8 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertEqual(-1.23, (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd)
 
-        def action2():
+        with pytest.raises(Exception):
             (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).cd = 120.34
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action2)
 
         # AreaMassRatio
         TestBase.logger.WriteLine6(
@@ -653,10 +650,8 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertEqual(123, (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio)
 
-        def action3():
+        with pytest.raises(Exception):
             (clr.Convert((oDrag.drag_model), IVehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action3)
 
         TestBase.logger.WriteLine("----- THE DRAG MODEL TEST ----- END -----")
 
@@ -1037,11 +1032,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(EarlyBoundTests.AG_SAT.propagator_type, VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
         hpop: "IVehiclePropagatorHPOP" = clr.Convert(EarlyBoundTests.AG_SAT.propagator, IVehiclePropagatorHPOP)
         Assert.assertEqual(hpop.initial_state.propagation_frame, VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_UNKNOWN)
-
-        def action4():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             hpop.initial_state.propagation_frame = VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL
-
-        TryCatchAssertBlock.ExpectedException("read-only", action4)
 
         # ------------------------------------------------------------------------------------------
         # Verify propagation frame with LOP propagator (See 76432: read-only, and value = Unknown)
@@ -1050,11 +1042,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(EarlyBoundTests.AG_SAT.propagator_type, VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_LOP)
         lop: "IVehiclePropagatorLOP" = clr.Convert(EarlyBoundTests.AG_SAT.propagator, IVehiclePropagatorLOP)
         Assert.assertEqual(lop.initial_state.propagation_frame, VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_UNKNOWN)
-
-        def action5():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             lop.initial_state.propagation_frame = VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL
-
-        TryCatchAssertBlock.ExpectedException("read-only", action5)
 
     # endregion
 
@@ -1063,10 +1052,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations = False
         Assert.assertFalse(EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations)
 
-        def action6():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_SAT.lighting_max_step = 0
-
-        TryCatchAssertBlock.ExpectedException("read only", action6)
 
         EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations = True
         Assert.assertTrue(EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations)
@@ -1076,44 +1063,26 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, EarlyBoundTests.AG_SAT.lighting_max_step)
         EarlyBoundTests.AG_SAT.lighting_max_step = 31557600
         Assert.assertEqual(31557600, EarlyBoundTests.AG_SAT.lighting_max_step)
-
-        def action7():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SAT.lighting_max_step = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action7)
-
-        def action8():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SAT.lighting_max_step = 31557601
-
-        TryCatchAssertBlock.ExpectedException("invalid", action8)
 
         EarlyBoundTests.AG_SAT.lighting_max_step_terrain = 10
         Assert.assertEqual(10, EarlyBoundTests.AG_SAT.lighting_max_step_terrain)
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SAT.lighting_max_step_terrain = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action9)
-
-        def action10():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SAT.lighting_max_step_terrain = 31557601
-
-        TryCatchAssertBlock.ExpectedException("invalid", action10)
 
         EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations = False
         Assert.assertFalse(EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations)
         EarlyBoundTests.AG_SAT.lighting_max_step_central_body_shape = 3600
         Assert.assertEqual(3600, EarlyBoundTests.AG_SAT.lighting_max_step_central_body_shape)
-
-        def action11():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SAT.lighting_max_step_central_body_shape = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action11)
-
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SAT.lighting_max_step_central_body_shape = 31557601
-
-        TryCatchAssertBlock.ExpectedException("invalid", action12)
 
         Assert.assertEqual(
             10, EarlyBoundTests.AG_SAT.lighting_max_step_terrain
@@ -1669,18 +1638,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual((iLength - 1), Array.Length(arAssignedBodies))
         # IsCentralBodyAssigned
         Assert.assertFalse(oBodies.is_central_body_assigned("Invalid CentralBody"))
-
-        def action13():
-            oBodies.assign_central_body("Invalid CentralBody")
-
         # AssignCentralBody
-        TryCatchAssertBlock.DoAssert("Should return error.", action13)
-
-        def action14():
-            oBodies.remove_central_body("Invalid CentralBody")
-
+        with pytest.raises(Exception):
+            oBodies.assign_central_body("Invalid CentralBody")
         # RemoveCentralBody
-        TryCatchAssertBlock.DoAssert("Should return error.", action14)
+        with pytest.raises(Exception):
+            oBodies.remove_central_body("Invalid CentralBody")
         # RemoveAll
         TestBase.logger.WriteLine3(
             "\tBefore RemoveAll the Assigned CentralBodies array contains: {0} elements", Array.Length(arAssignedBodies)
@@ -2112,17 +2075,12 @@ class EarlyBoundTests(TestBase):
             oBPlaneInstance: "IVehicleGraphics3DBPlaneInstance" = oBPlanes.instances.add(oBPlanes.templates[0].name)
             Assert.assertIsNotNone(oBPlaneInstance)
 
-        def action15():
-            oBPlanes.templates.remove_at(0)
-
         # Attempts to remove a b-plane template currently being used shall fail.
-        TryCatchAssertBlock.DoAssert("Should not be able to remove templates!", action15)
+        with pytest.raises(Exception):
+            oBPlanes.templates.remove_at(0)
         TestBase.logger.WriteLine("Trying to remove all bplane templates...")
-
-        def action16():
+        with pytest.raises(Exception):
             oBPlanes.templates.remove_all()
-
-        TryCatchAssertBlock.DoAssert("Should not be able to remove templates!", action16)
 
     # endregion
 
@@ -2209,10 +2167,8 @@ class EarlyBoundTests(TestBase):
                 bPlaneTemplate.reference_vector,
             )
 
-        def action17():
+        with pytest.raises(Exception):
             oCollection.remove_at(12)
-
-        TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action17)
         # VOBPlaneTemplateTest
         self.VOBPlaneTemplateTest(oCollection[0])
         if bClearCollection:
@@ -2243,11 +2199,8 @@ class EarlyBoundTests(TestBase):
         oTemplate.central_body = "Pluto"
         TestBase.logger.WriteLine5("\tThe new CentralBody is: {0}", oTemplate.central_body)
         Assert.assertEqual("Pluto", oTemplate.central_body)
-
-        def action18():
+        with pytest.raises(Exception):
             oTemplate.central_body = "AbstractBody"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set illegal value!", action18)
         # AvailableCentralBodies
         arBodies = oTemplate.available_central_bodies
         TestBase.logger.WriteLine3("\tAvailable CentralBodies array contains: {0} elements", Array.Length(arBodies))
@@ -2316,11 +2269,8 @@ class EarlyBoundTests(TestBase):
         oTemplate.grid_spacing = 123.456
         TestBase.logger.WriteLine6("\tThe new GridSpacing is: {0}", oTemplate.grid_spacing)
         Assert.assertEqual(123.456, oTemplate.grid_spacing)
-
-        def action19():
+        with pytest.raises(Exception):
             oTemplate.grid_spacing = -123.456
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set illegal value!", action19)
         # restore DistanceUnit
         self.Units.set_current_unit("DistanceUnit", strDistanceUnit)
         TestBase.logger.WriteLine5("\tThe new DistanceUnit (restored) is: {0}", strDistanceUnit)
@@ -2363,24 +2313,15 @@ class EarlyBoundTests(TestBase):
             bPlaneTemplateDisplayElement.is_visible = False
             TestBase.logger.WriteLine4("\t\tThe new IsVisible is: {0}", bPlaneTemplateDisplayElement.is_visible)
             Assert.assertEqual(False, bPlaneTemplateDisplayElement.is_visible)
-
-            def action20():
-                bPlaneTemplateDisplayElement.color = Color.FromArgb(1193046)
-
             # Color (readonly)
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action20)
-
-            def action21():
-                bPlaneTemplateDisplayElement.scale_factor = 12.3456
-
+            with pytest.raises(Exception):
+                bPlaneTemplateDisplayElement.color = Color.FromArgb(1193046)
             # ScaleFactor (readonly)
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action21)
-
-            def action22():
-                bPlaneTemplateDisplayElement.is_label_visible = True
-
+            with pytest.raises(Exception):
+                bPlaneTemplateDisplayElement.scale_factor = 12.3456
             # IsLabelVisible (readonly)
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action22)
+            with pytest.raises(Exception):
+                bPlaneTemplateDisplayElement.is_label_visible = True
             # IsVisible (true)
             bPlaneTemplateDisplayElement.is_visible = True
             TestBase.logger.WriteLine4("\t\tThe new IsVisible is: {0}", bPlaneTemplateDisplayElement.is_visible)
@@ -2397,11 +2338,8 @@ class EarlyBoundTests(TestBase):
                 "\t\t\tThe current ScaleFactor is: {0}", bPlaneTemplateDisplayElement.scale_factor
             )
             if bPlaneTemplateDisplayElement.name == "BVector":
-
-                def action23():
+                with pytest.raises(Exception):
                     bPlaneTemplateDisplayElement.scale_factor = 98.7654
-
-                TryCatchAssertBlock.DoAssert("Property should be readonly!", action23)
 
             else:
                 bPlaneTemplateDisplayElement.scale_factor = 98.7654
@@ -2409,11 +2347,8 @@ class EarlyBoundTests(TestBase):
                     "\t\t\tThe new ScaleFactor is: {0}", bPlaneTemplateDisplayElement.scale_factor
                 )
                 Assert.assertEqual(98.7654, bPlaneTemplateDisplayElement.scale_factor)
-
-                def action24():
+                with pytest.raises(Exception):
                     bPlaneTemplateDisplayElement.scale_factor = -123.456
-
-                TryCatchAssertBlock.DoAssert("Should not allow to set illegal value!", action24)
 
             # IsLabelVisible
             TestBase.logger.WriteLine4(
@@ -2504,11 +2439,9 @@ class EarlyBoundTests(TestBase):
                 bPlaneInstance.graphics_3d_window,
             )
 
-        def action25():
-            oCollection.add("Something")
-
         # Add (illegal value)
-        TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action25)
+        with pytest.raises(Exception):
+            oCollection.add("Something")
         # RemoveAt
         Assert.assertEqual(2, oCollection.count)
         oCollection.remove_at(1)
@@ -2527,10 +2460,8 @@ class EarlyBoundTests(TestBase):
                 bPlaneInstance.graphics_3d_window,
             )
 
-        def action26():
+        with pytest.raises(Exception):
             oCollection.remove_at(12)
-
-        TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action26)
         # VOBPlaneInstanceTest
         self.VOBPlaneInstanceTest(oCollection[0])
 
@@ -2548,72 +2479,39 @@ class EarlyBoundTests(TestBase):
         oInstance.is_visible = False
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oInstance.is_visible)
         Assert.assertEqual(False, oInstance.is_visible)
-
-        def action27():
-            oInstance.name = "Name"
-
         # Name
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action27)
-
-        def action28():
-            oInstance.description = "Description"
-
+        with pytest.raises(Exception):
+            oInstance.name = "Name"
         # Description
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action28)
-
-        def action29():
-            oInstance.event_name = "EventName"
-
+        with pytest.raises(Exception):
+            oInstance.description = "Description"
         # EventName
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action29)
-
-        def action30():
-            oInstance.additional_points.point_color = Color.FromArgb(2241348)
-
+        with pytest.raises(Exception):
+            oInstance.event_name = "EventName"
         # PointColor
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action30)
-
-        def action31():
-            oInstance.is_label_visible = True
-
+        with pytest.raises(Exception):
+            oInstance.additional_points.point_color = Color.FromArgb(2241348)
         # IsLabelVisible
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action31)
-
-        def action32():
-            oInstance.point_size = 3
-
+        with pytest.raises(Exception):
+            oInstance.is_label_visible = True
         # PointSize
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action32)
-
-        def action33():
-            oInstance.additional_points.first_point_color = Color.FromArgb(3359829)
-
+        with pytest.raises(Exception):
+            oInstance.point_size = 3
         # FirstPointColor
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action33)
-
-        def action34():
-            oInstance.is_connect_points_visible = True
-
+        with pytest.raises(Exception):
+            oInstance.additional_points.first_point_color = Color.FromArgb(3359829)
         # IsConnectPointsVisible
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action34)
-
-        def action35():
-            oInstance.connect_points_color = Color.FromArgb(4478310)
-
+        with pytest.raises(Exception):
+            oInstance.is_connect_points_visible = True
         # ConnectPointsColor
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action35)
-
-        def action36():
-            oInstance.connect_point_line_width = LINE_WIDTH.WIDTH1
-
+        with pytest.raises(Exception):
+            oInstance.connect_points_color = Color.FromArgb(4478310)
         # ConnectPointLineWidth
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action36)
-
-        def action37():
-            oInstance.graphics_3d_window = "All"
-
+        with pytest.raises(Exception):
+            oInstance.connect_point_line_width = LINE_WIDTH.WIDTH1
         # VOWindow
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action37)
+        with pytest.raises(Exception):
+            oInstance.graphics_3d_window = "All"
         # Event
         self.VOBPlaneEventTest(oInstance.event, True)
         # TargetPoint
@@ -2630,11 +2528,8 @@ class EarlyBoundTests(TestBase):
         oInstance.name = "NewInstanceName"
         TestBase.logger.WriteLine5("\t\tThe new Name is: {0}", oInstance.name)
         Assert.assertEqual("NewInstanceName", oInstance.name)
-
-        def action38():
+        with pytest.raises(Exception):
             oInstance.name = "New Instance Name"
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set illegal value!", action38)
         # Description
         TestBase.logger.WriteLine5("\t\tThe current Description is: {0}", oInstance.description)
         oInstance.description = "There is a new description."
@@ -2665,11 +2560,8 @@ class EarlyBoundTests(TestBase):
         oInstance.point_size = 7
         TestBase.logger.WriteLine6("\t\tThe new PointSize is: {0}", oInstance.point_size)
         Assert.assertEqual(7, oInstance.point_size)
-
-        def action39():
+        with pytest.raises(Exception):
             oInstance.point_size = 17
-
-        TryCatchAssertBlock.DoAssert("Should not allow to set illegal value!", action39)
         # FirstPointColor
         TestBase.logger.WriteLine6(
             "\t\tThe current FirstPointColor is: {0}", oInstance.additional_points.first_point_color
@@ -2684,18 +2576,12 @@ class EarlyBoundTests(TestBase):
         oInstance.is_connect_points_visible = False
         TestBase.logger.WriteLine4("\t\tThe new IsConnectPointsVisible is: {0}", oInstance.is_connect_points_visible)
         Assert.assertEqual(False, oInstance.is_connect_points_visible)
-
-        def action40():
-            oInstance.connect_points_color = Color.FromArgb(4478310)
-
         # ConnectPointsColor
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action40)
-
-        def action41():
-            oInstance.connect_point_line_width = LINE_WIDTH.WIDTH1
-
+        with pytest.raises(Exception):
+            oInstance.connect_points_color = Color.FromArgb(4478310)
         # ConnectPointLineWidth
-        TryCatchAssertBlock.DoAssert("Property should be readonly!", action41)
+        with pytest.raises(Exception):
+            oInstance.connect_point_line_width = LINE_WIDTH.WIDTH1
         # IsConnectPointsVisible (true)
         oInstance.is_connect_points_visible = True
         TestBase.logger.WriteLine4("\t\tThe new IsConnectPointsVisible is: {0}", oInstance.is_connect_points_visible)
@@ -2751,30 +2637,18 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\tThe new TimeUnit is: {0}", self.Units.get_current_unit_abbrv("TimeUnit"))
         Assert.assertEqual("hr", self.Units.get_current_unit_abbrv("TimeUnit"))
         if bReadOnly:
-
-            def action42():
-                oEvent.event_epoch = "1 Jul 1999 01:00:00.000"
-
             # EventEpoch
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action42)
-
-            def action43():
-                oEvent.always_display = False
-
+            with pytest.raises(Exception):
+                oEvent.event_epoch = "1 Jul 1999 01:00:00.000"
             # AlwaysDisplay
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action43)
-
-            def action44():
-                oEvent.before_event = 1
-
+            with pytest.raises(Exception):
+                oEvent.always_display = False
             # BeforeEvent
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action44)
-
-            def action45():
-                oEvent.after_event = 2
-
+            with pytest.raises(Exception):
+                oEvent.before_event = 1
             # AfterEvent
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action45)
+            with pytest.raises(Exception):
+                oEvent.after_event = 2
 
         else:
             # EventEpoch
@@ -2787,18 +2661,12 @@ class EarlyBoundTests(TestBase):
             oEvent.always_display = True
             TestBase.logger.WriteLine4("\t\tThe new AlwaysDisplay is: {0}", oEvent.always_display)
             Assert.assertEqual(True, oEvent.always_display)
-
-            def action46():
-                oEvent.before_event = 1
-
             # BeforeEvent
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action46)
-
-            def action47():
-                oEvent.after_event = 2
-
+            with pytest.raises(Exception):
+                oEvent.before_event = 1
             # AfterEvent
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action47)
+            with pytest.raises(Exception):
+                oEvent.after_event = 2
             # AlwaysDisplay (false)
             oEvent.always_display = False
             TestBase.logger.WriteLine4("\t\tThe new AlwaysDisplay is: {0}", oEvent.always_display)
@@ -2808,21 +2676,15 @@ class EarlyBoundTests(TestBase):
             oEvent.before_event = 12
             TestBase.logger.WriteLine6("\t\tThe new BeforeEvent is: {0}", oEvent.before_event)
             Assert.assertEqual(12, oEvent.before_event)
-
-            def action48():
+            with pytest.raises(Exception):
                 oEvent.before_event = 1200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action48)
             # AfterEvent
             TestBase.logger.WriteLine6("\t\tThe current AfterEvent is: {0}", oEvent.after_event)
             oEvent.after_event = 21
             TestBase.logger.WriteLine6("\t\tThe new AfterEvent is: {0}", oEvent.after_event)
             Assert.assertEqual(21, oEvent.after_event)
-
-            def action49():
+            with pytest.raises(Exception):
                 oEvent.after_event = 2300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action49)
 
         # restore TimeUnit
         self.Units.set_current_unit("TimeUnit", strTime)
@@ -2840,24 +2702,15 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("IVehicleGraphics3DBPlaneTargetPoint test: ReadOnly = {0}", bReadOnly)
         Assert.assertIsNotNone(oPoint)
         if bReadOnly:
-
-            def action50():
-                oPoint.is_visible = True
-
             # IsVisible
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action50)
-
-            def action51():
-                oPoint.color = Color.FromArgb(11189196)
-
+            with pytest.raises(Exception):
+                oPoint.is_visible = True
             # Color
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action51)
-
-            def action52():
-                oPoint.set_position_type(oPoint.position_type)
-
+            with pytest.raises(Exception):
+                oPoint.color = Color.FromArgb(11189196)
             # SetPositionType
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action52)
+            with pytest.raises(Exception):
+                oPoint.set_position_type(oPoint.position_type)
             if oPoint.position_type == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
                 # Position
                 oCartesian: "IVehicleGraphics3DBPlaneTargetPointPositionCartesian" = clr.Convert(
@@ -2881,18 +2734,12 @@ class EarlyBoundTests(TestBase):
             oPoint.is_visible = False
             TestBase.logger.WriteLine4("\t\tThe new IsVisible is: {0}", oPoint.is_visible)
             Assert.assertEqual(False, oPoint.is_visible)
-
-            def action53():
-                oPoint.color = Color.FromArgb(11189196)
-
             # Color
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action53)
-
-            def action54():
-                oPoint.set_position_type(oPoint.position_type)
-
+            with pytest.raises(Exception):
+                oPoint.color = Color.FromArgb(11189196)
             # SetPositionType
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action54)
+            with pytest.raises(Exception):
+                oPoint.set_position_type(oPoint.position_type)
             if oPoint.position_type == VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION.POSITION_CARTESIAN:
                 # Position
                 oCartesian: "IVehicleGraphics3DBPlaneTargetPointPositionCartesian" = clr.Convert(
@@ -2974,16 +2821,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\tThe new DistanceUnit is: {0}", self.Units.get_current_unit_abbrv("DistanceUnit"))
         Assert.assertEqual("kft", self.Units.get_current_unit_abbrv("DistanceUnit"))
         if bReadOnly:
-
-            def action55():
+            with pytest.raises(Exception):
                 oPosition.b_mul_t = 1234.56789
-
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action55)
-
-            def action56():
+            with pytest.raises(Exception):
                 oPosition.b_mul_r = 1234.56789
-
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action56)
 
         else:
             # BMulT
@@ -2991,21 +2832,15 @@ class EarlyBoundTests(TestBase):
             oPosition.b_mul_t = 123.456
             TestBase.logger.WriteLine6("\tThe new BMulT is: {0}", oPosition.b_mul_t)
             Assert.assertEqual(123.456, oPosition.b_mul_t)
-
-            def action57():
+            with pytest.raises(Exception):
                 oPosition.b_mul_t = 1234000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set invalid value!", action57)
             # BMulR
             TestBase.logger.WriteLine6("\tThe current BMulR is: {0}", oPosition.b_mul_r)
             oPosition.b_mul_r = 123.456
             TestBase.logger.WriteLine6("\tThe new BMulR is: {0}", oPosition.b_mul_r)
             Assert.assertEqual(123.456, oPosition.b_mul_r)
-
-            def action58():
+            with pytest.raises(Exception):
                 oPosition.b_mul_r = 1234000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set invalid value!", action58)
 
         # restore DistanceUnit
         self.Units.set_current_unit("DistanceUnit", strDistance)
@@ -3033,16 +2868,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\tThe new AngleUnit is: {0}", self.Units.get_current_unit_abbrv("AngleUnit"))
         Assert.assertEqual("rad", self.Units.get_current_unit_abbrv("AngleUnit"))
         if bReadOnly:
-
-            def action59():
+            with pytest.raises(Exception):
                 oPosition.b_magnitude = 1234.56789
-
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action59)
-
-            def action60():
+            with pytest.raises(Exception):
                 oPosition.theta = 1.234
-
-            TryCatchAssertBlock.DoAssert("Property should be readonly!", action60)
 
         else:
             # BMag
@@ -3050,21 +2879,15 @@ class EarlyBoundTests(TestBase):
             oPosition.b_magnitude = 123.456
             TestBase.logger.WriteLine6("\tThe new BMag is: {0}", oPosition.b_magnitude)
             Assert.assertEqual(123.456, oPosition.b_magnitude)
-
-            def action61():
+            with pytest.raises(Exception):
                 oPosition.b_magnitude = 1234000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set invalid value!", action61)
             # Theta
             TestBase.logger.WriteLine6("\tThe current Theta is: {0}", oPosition.theta)
             oPosition.theta = 3.456
             TestBase.logger.WriteLine6("\tThe new Theta is: {0}", oPosition.theta)
             Assert.assertEqual(3.456, oPosition.theta)
-
-            def action62():
+            with pytest.raises(Exception):
                 oPosition.theta = 12.34
-
-            TryCatchAssertBlock.DoAssert("Should not allow to set invalid value!", action62)
 
         # restore AngleUnit
         self.Units.set_current_unit("AngleUnit", strAngle)
@@ -3100,36 +2923,21 @@ class EarlyBoundTests(TestBase):
             iIndex += 1
 
         if bReadOnly:
-
-            def action63():
-                oCollection.point_color = Color.FromArgb(65535)
-
             # PointColor
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action63)
-
-            def action64():
-                oCollection.first_point_color = Color.FromArgb(16776960)
-
+            with pytest.raises(Exception):
+                oCollection.point_color = Color.FromArgb(65535)
             # FirstPointColor
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action64)
-
-            def action65():
-                oCollection.remove_all()
-
+            with pytest.raises(Exception):
+                oCollection.first_point_color = Color.FromArgb(16776960)
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action65)
-
-            def action66():
-                oCollection.add()
-
+            with pytest.raises(Exception):
+                oCollection.remove_all()
             # Add
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action66)
+            with pytest.raises(Exception):
+                oCollection.add()
             if oCollection.count > 0:
-
-                def action67():
+                with pytest.raises(Exception):
                     oCollection.remove_at(0)
-
-                TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action67)
 
             if oCollection.count > 0:
                 self.VOBPlanePointTest(oCollection[0], True)
@@ -3199,15 +3007,11 @@ class EarlyBoundTests(TestBase):
                     bPlanePoint.theta,
                 )
 
-            def action68():
+            with pytest.raises(Exception):
                 oCollection.remove_at(12)
 
-            TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action68)
-
-            def action69():
+            with pytest.raises(Exception):
                 oCollection[23].name = "CartesianPoint"
-
-            TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action69)
 
             self.VOBPlanePointTest(oCollection[0], False)
 
@@ -3230,36 +3034,21 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\tThe new AngleUnit is: {0}", self.Units.get_current_unit_abbrv("AngleUnit"))
         Assert.assertEqual("rad", self.Units.get_current_unit_abbrv("AngleUnit"))
         if bReadOnly:
-
-            def action70():
-                oPoint.name = "CartesianPoint"
-
             # Name
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action70)
-
-            def action71():
-                oPoint.b_mul_t = 12.34
-
+            with pytest.raises(Exception):
+                oPoint.name = "CartesianPoint"
             # BMulT
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action71)
-
-            def action72():
-                oPoint.b_mul_r = 34.12
-
+            with pytest.raises(Exception):
+                oPoint.b_mul_t = 12.34
             # BMulR
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action72)
-
-            def action73():
-                oPoint.b_magnitude = 12.34
-
+            with pytest.raises(Exception):
+                oPoint.b_mul_r = 34.12
             # BMag
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action73)
-
-            def action74():
-                oPoint.theta = 34.12
-
+            with pytest.raises(Exception):
+                oPoint.b_magnitude = 12.34
             # Theta
-            TryCatchAssertBlock.DoAssert("Should not allow to modify readonly property!", action74)
+            with pytest.raises(Exception):
+                oPoint.theta = 34.12
 
         else:
             # Name
@@ -3272,41 +3061,29 @@ class EarlyBoundTests(TestBase):
             oPoint.b_mul_t = 12.34
             TestBase.logger.WriteLine6("\tThe new BMulT is: {0}", oPoint.b_mul_t)
             Assert.assertEqual(12.34, oPoint.b_mul_t)
-
-            def action75():
+            with pytest.raises(Exception):
                 oPoint.b_mul_t = 12340000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action75)
             # BMulR
             TestBase.logger.WriteLine6("\tThe current BMulR is: {0}", oPoint.b_mul_r)
             oPoint.b_mul_r = 34.12
             TestBase.logger.WriteLine6("\tThe new BMulR is: {0}", oPoint.b_mul_r)
             Assert.assertEqual(34.12, oPoint.b_mul_r)
-
-            def action76():
+            with pytest.raises(Exception):
                 oPoint.b_mul_r = 34120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action76)
             # BMag
             TestBase.logger.WriteLine6("\tThe current BMag is: {0}", oPoint.b_magnitude)
             oPoint.b_magnitude = 12.34
             TestBase.logger.WriteLine6("\tThe new BMag is: {0}", oPoint.b_magnitude)
             Assert.assertEqual(12.34, oPoint.b_magnitude)
-
-            def action77():
+            with pytest.raises(Exception):
                 oPoint.b_magnitude = 12340000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action77)
             # Theta
             TestBase.logger.WriteLine6("\tThe current Theta is: {0}", oPoint.theta)
             oPoint.theta = 3.412
             TestBase.logger.WriteLine6("\tThe new Theta is: {0}", oPoint.theta)
             Assert.assertEqual(3.412, oPoint.theta)
-
-            def action78():
+            with pytest.raises(Exception):
                 oPoint.theta = 34120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
-
-            TryCatchAssertBlock.DoAssert("Should not allow to use invalid values!", action78)
 
         # restore AngleUnit
         self.Units.set_current_unit("AngleUnit", strAngle)
@@ -3335,11 +3112,8 @@ class EarlyBoundTests(TestBase):
         # Step size cannot be larger than 1200.0 for vehicles with Earth as their central body
         hpop.step = 1200.0
         if centralBody == EarlyBoundTests.CentralBodyType.Earth:
-
-            def action79():
+            with pytest.raises(Exception):
                 hpop.step = 1201.0
-
-            TryCatchAssertBlock.DoAssert("Invalid step size", action79)
 
         elif centralBody == EarlyBoundTests.CentralBodyType.Sun:
             hpop.force_model.central_body_gravity.file = r"STKData\CentralBodies\Sun\ZonalsToJ4.grv"
@@ -3363,11 +3137,8 @@ class EarlyBoundTests(TestBase):
             cart.y_velocity = 171.962
             cart.z_velocity = 171.962
             hpop.initial_state.representation.assign(cart)
-
-            def action80():
+            with pytest.raises(Exception):
                 hpop.step = (10 * 86400.0) + 1
-
-            TryCatchAssertBlock.DoAssert("Invalid step size", action80)
 
         else:
             hpop.force_model.central_body_gravity.file = r"STKData\CentralBodies\Moon\ZonalsToJ4.grv"
@@ -3386,10 +3157,8 @@ class EarlyBoundTests(TestBase):
                 Assert.assertEqual("Central Body was not Earth.", msg)
                 TestBase.logger.WriteLine5("EXPECTED EXCEPTION: {0}", msg)
 
-            def action81():
+            with pytest.raises(Exception):
                 hpop.step = 86400.0 + 1
-
-            TryCatchAssertBlock.DoAssert("Invalid step size", action81)
 
         sStartTime: str = str((clr.CastAs(TestBase.Application.current_scenario, IScenario)).start_time)
         sStopTime: str = str((clr.CastAs(TestBase.Application.current_scenario, IScenario)).stop_time)
@@ -3402,11 +3171,8 @@ class EarlyBoundTests(TestBase):
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 1199).format("UTCG")
         )
         hpop.step = 1200.0
-
-        def action82():
+        with pytest.raises(Exception):
             hpop.propagate()
-
-        TryCatchAssertBlock.DoAssert("Should not allow interval be smaller than the step.", action82)
         # Move the stop time so that the interval exceeds the step
         hpop.ephemeris_interval.set_start_and_stop_times(
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 86400).format("UTCG")
@@ -3423,11 +3189,8 @@ class EarlyBoundTests(TestBase):
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 1199).format("UTCG")
         )
         twobody.step = 1200.0
-
-        def action83():
+        with pytest.raises(Exception):
             twobody.propagate()
-
-        TryCatchAssertBlock.DoAssert("Should not allow interval be smaller than the step.", action83)
         # Move the stop time so that the interval exceeds the step
         twobody.ephemeris_interval.set_start_and_stop_times(
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 86400).format("UTCG")
@@ -3444,11 +3207,8 @@ class EarlyBoundTests(TestBase):
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 1199).format("UTCG")
         )
         j2.step = 1200.0
-
-        def action84():
+        with pytest.raises(Exception):
             j2.propagate()
-
-        TryCatchAssertBlock.DoAssert("Should not allow interval be smaller than the step.", action84)
         # Move the stop time so that the interval exceeds the step
         j2.ephemeris_interval.set_start_and_stop_times(
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 86400).format("UTCG")
@@ -3465,11 +3225,8 @@ class EarlyBoundTests(TestBase):
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 1199).format("UTCG")
         )
         j4.step = 1200.0
-
-        def action85():
+        with pytest.raises(Exception):
             j4.propagate()
-
-        TryCatchAssertBlock.DoAssert("Should not allow interval be smaller than the step.", action85)
         # Move the stop time so that the interval exceeds the step
         j4.ephemeris_interval.set_start_and_stop_times(
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 86400).format("UTCG")
@@ -3492,11 +3249,8 @@ class EarlyBoundTests(TestBase):
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 1199).format("UTCG")
         )
         sgp4.step = 1200.0
-
-        def action86():
+        with pytest.raises(Exception):
             sgp4.propagate()
-
-        TryCatchAssertBlock.DoAssert("Should not allow interval be smaller than the step.", action86)
         # Move the stop time so that the interval exceeds the step
         sgp4.ephemeris_interval.set_start_and_stop_times(
             oScenarioStart.format("UTCG"), oScenarioStart.add("sec", 86400).format("UTCG")
@@ -3517,11 +3271,8 @@ class EarlyBoundTests(TestBase):
         sgp4.settings.use_sgp4_one_point_interpolation = False
         sgp4.step = 1200
         Assert.assertEqual(1200, sgp4.step)
-
-        def action87():
+        with pytest.raises(Exception):
             sgp4.step = 1201
-
-        TryCatchAssertBlock.DoAssert("Should not allow step size >1200.", action87)
 
     # endregion
 
@@ -3762,11 +3513,8 @@ class EarlyBoundTests(TestBase):
             (clr.Convert(TestBase.Application, IAnimation)).rewind()
 
         else:
-
-            def action88():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 (clr.Convert(TestBase.Application, IAnimation)).rewind()
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action88)
 
         TestBase.LoadTestScenario(Path.Combine("SatelliteTests", "SatelliteTests.sc"))
 
@@ -3996,7 +3744,7 @@ class EarlyBoundTests(TestBase):
 
             self._o.root.execute_command("SetUnits / km Latitude deg Longitude deg")
 
-            def action89(point):
+            def action1(point):
                 utcg: str = self._o.root.conversion_utility.convert_date(
                     "EpSec", "UTCG", Double.ToString(((point[0] + self._increment)))
                 )
@@ -4076,7 +3824,7 @@ class EarlyBoundTests(TestBase):
                             )
                         )
 
-            Array.ForEach(self._llaPoints, action89)
+            Array.ForEach(self._llaPoints, action1)
 
             rptComparer.TakeConnectSnapshot(self._o.root)
 
@@ -4092,87 +3840,60 @@ class EarlyBoundTests(TestBase):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
-
-            def action90():
+            with pytest.raises(Exception):
                 ptBuilder.lla.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
-
-            TryCatchAssertBlock.DoAssert("bogus", action90)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.lla.add_position(point[0], point[1], point[2], point[3])
-
-            def action91():
+            with pytest.raises(Exception):
                 ptBuilder.lla.add_position("bogus", point[1], point[2], point[3])
-
-            TryCatchAssertBlock.DoAssert("bogus", action91)
 
     def AddAGL_LLAPoint(self, template, point):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.agl_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
-
-            def action92():
+            with pytest.raises(Exception):
                 ptBuilder.agl_lla.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
-
-            TryCatchAssertBlock.DoAssert("bogus", action92)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.agl_lla.add_position(point[0], point[1], point[2], point[3])
-
-            def action93():
+            with pytest.raises(Exception):
                 ptBuilder.agl_lla.add_position("bogus", point[1], point[2], point[3])
-
-            TryCatchAssertBlock.DoAssert("bogus", action93)
 
     def AddLLAHPSPoint(self, template, point):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.llahps.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
-
-            def action94():
+            with pytest.raises(Exception):
                 ptBuilder.llahps.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
-
-            TryCatchAssertBlock.DoAssert("bogus", action94)
 
     def AddMSL_LLAPoint(self, template, point):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.msl_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
-
-            def action95():
+            with pytest.raises(Exception):
                 ptBuilder.msl_lla.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
-
-            TryCatchAssertBlock.DoAssert("bogus", action95)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.msl_lla.add_position(point[0], point[1], point[2], point[3])
-
-            def action96():
+            with pytest.raises(Exception):
                 ptBuilder.msl_lla.add_position("bogus", point[1], point[2], point[3])
-
-            TryCatchAssertBlock.DoAssert("bogus", action96)
 
     def AddB1950Point(self, template, xyz):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.b1950.add(xyz[0], xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
-
-            def action97():
+            with pytest.raises(Exception):
                 ptBuilder.b1950.add("bogus", xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
-
-            TryCatchAssertBlock.DoAssert("bogus", action97)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.b1950.add_position(xyz[0], xyz[1], xyz[2], xyz[3])
-
-            def action98():
+            with pytest.raises(Exception):
                 ptBuilder.b1950.add_position("bogus", xyz[1], xyz[2], xyz[3])
-
-            TryCatchAssertBlock.DoAssert("bogus", action98)
 
     def AddCustomReferencePoint(self, template, xyz):
         if not template.UsePositionOnly:
@@ -4180,70 +3901,49 @@ class EarlyBoundTests(TestBase):
             ptBuilder.get_points_in_frame("Facility/Facility1 Body").add(
                 xyz[0], xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6]
             )
-
-            def action99():
+            with pytest.raises(Exception):
                 ptBuilder.get_points_in_frame("Facility/Facility1 Body").add(
                     "bogus", xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6]
                 )
-
-            TryCatchAssertBlock.DoAssert("bogus", action99)
 
     def AddECFPoint(self, template, xyz):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.ecf.add(xyz[0], xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
-
-            def action100():
+            with pytest.raises(Exception):
                 ptBuilder.ecf.add("bogus", xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
-
-            TryCatchAssertBlock.DoAssert("bogus", action100)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.ecf.add_position(xyz[0], xyz[1], xyz[2], xyz[3])
-
-            def action101():
+            with pytest.raises(Exception):
                 ptBuilder.ecf.add_position("bogus", xyz[1], xyz[2], xyz[3])
-
-            TryCatchAssertBlock.DoAssert("bogus", action101)
 
     def AddECIPoint(self, template, xyz):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.eci.add(xyz[0], xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
-
-            def action102():
+            with pytest.raises(Exception):
                 ptBuilder.eci.add("bogus", xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
-
-            TryCatchAssertBlock.DoAssert("bogus", action102)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.eci.add_position(xyz[0], xyz[1], xyz[2], xyz[3])
-
-            def action103():
+            with pytest.raises(Exception):
                 ptBuilder.eci.add_position("bogus", xyz[1], xyz[2], xyz[3])
-
-            TryCatchAssertBlock.DoAssert("bogus", action103)
 
     def AddUTMPoint(self, template, xyz):
         if not template.UsePositionOnly:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.utm.add(xyz[0], "18S", 523.222, 3706.636, 0.0, 0.0, 0.0, 0.0)
-
-            def action104():
+            with pytest.raises(Exception):
                 ptBuilder.utm.add("bogus", "18S", 523.222, 3706.636, 0.0, 0.0, 0.0, 0.0)
-
-            TryCatchAssertBlock.DoAssert("Invalid date.", action104)
 
         else:
             ptBuilder: "IVehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.utm.add_position(xyz[0], "18S", 523.222, 3706.636, 0.0)
-
-            def action105():
+            with pytest.raises(Exception):
                 ptBuilder.utm.add_position("bogus", "18S", 523.222, 3706.636, 0.0)
-
-            TryCatchAssertBlock.DoAssert("Invalid date.", action105)
 
     def test_RealtimePointBuilders(self):
         TestBase.Application.close_scenario()
@@ -4277,11 +3977,8 @@ class EarlyBoundTests(TestBase):
             (clr.CastAs(sat.graphics.attributes, IVehicleGraphics2DAttributesRealtime)).spline.is_visible = True
 
         else:
-
-            def action106():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action106)
 
         # --------------------------------------------------------------
         # Testing the point builders and make sure
@@ -4412,7 +4109,7 @@ class EarlyBoundTests(TestBase):
     def test_AddEarthToLunarSatelliteThirdBodyGravity(self):
         satelliteName: str = "Satellite12345678"
 
-        def action107():
+        def action2():
             sat: "ISatellite" = clr.Convert(
                 TestBase.Application.current_scenario.children.new_on_central_body(
                     STK_OBJECT_TYPE.SATELLITE, satelliteName, "Moon"
@@ -4442,13 +4139,13 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satelliteName)
 
         #        #             * Verifies that the list of third body gravities contains Earth for lunar satellite.        #             *
-        TryCatchAssertBlock.DoActionRunFinalize(action107, finalizer1)
+        TryCatchAssertBlock.DoActionRunFinalize(action2, finalizer1)
 
     @category("BUG60013: Lunar HPOP satellite cant add earth as a third body if it gets removed")
     def test_AddMoonToGeoSatelliteThirdBodyGravity(self):
         satelliteName: str = "Satellite12345678"
 
-        def action108():
+        def action3():
             sat: "ISatellite" = clr.Convert(
                 TestBase.Application.current_scenario.children.new_on_central_body(
                     STK_OBJECT_TYPE.SATELLITE, satelliteName, "Earth"
@@ -4478,18 +4175,15 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satelliteName)
 
         #        #             * Verifies that the list of third body gravities contains Moon for geocentric satellite.        #             *
-        TryCatchAssertBlock.DoActionRunFinalize(action108, finalizer2)
+        TryCatchAssertBlock.DoActionRunFinalize(action3, finalizer2)
 
     # endregion
 
     # region RF_Radar_Clutter
     def test_RF_Radar_Clutter(self):
         helper = RadarClutterMapInheritableHelper()
-
-        def action109():
+        with pytest.raises(Exception, match=RegexSubstringMatch("obsolete")):
             helper.Run(EarlyBoundTests.AG_SAT.radar_clutter_map)
-
-        TryCatchAssertBlock.ExpectedException("obsolete", action109)
 
     # endregion
 

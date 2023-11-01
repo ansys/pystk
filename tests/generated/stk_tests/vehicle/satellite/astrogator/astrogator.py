@@ -7,6 +7,7 @@ from logger import *
 from math2 import *
 from stk_util_helper import *
 
+
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkutil import *
@@ -170,26 +171,14 @@ class EarlyBoundTests(TestBase):
             Console.WriteLine(str(e))
 
         if TestBase.NoGraphicsMode:
-
-            def action1():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.show_graph_value = True
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action1)
-
-            def action2():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.line_color = Color.Blue
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action2)
-
-            def action3():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.point_style = "Square"
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action3)
-
-            def action4():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.y_axis = "Y2"
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action4)
 
         else:
             Assert.assertFalse(active.show_graph_value)
@@ -215,39 +204,23 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("prop1", result.parent_name)
         Assert.assertEqual(GRAPH_OPTION.NO_GRAPH, result.graph_option)
 
-        def action5():
-            result.show_desired_value = True
-
         # all options are read only.
-        TryCatchAssertBlock.ExpectedException("read-only", action5)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            result.show_desired_value = True
         if not TestBase.NoGraphicsMode:
-
-            def action6():
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 result.line_color = Color.Green
-
-            TryCatchAssertBlock.ExpectedException("read-only", action6)
 
         else:
-
-            def action7():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 result.line_color = Color.Green
 
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action7)
-
-        def action8():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             result.point_style = "Plus"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action8)
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             result.y_axis = "Y2"
-
-        TryCatchAssertBlock.ExpectedException("read-only", action9)
-
-        def action10():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             result.show_tolerance_band = True
-
-        TryCatchAssertBlock.ExpectedException("read-only", action10)
 
         result.graph_option = GRAPH_OPTION.GRAPH_VALUE
         Assert.assertEqual(GRAPH_OPTION.GRAPH_VALUE, result.graph_option)
@@ -272,11 +245,8 @@ class EarlyBoundTests(TestBase):
             AssertEx.AreEqual(Color.Yellow, result.line_color)
 
         else:
-
-            def action11():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 result.line_color = Color.Yellow
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action11)
 
         result.point_style = "Diamond"
         Assert.assertEqual("Diamond", result.point_style)
@@ -468,11 +438,8 @@ class EarlyBoundTests(TestBase):
         options.enable_segment_results = False
         Assert.assertFalse(options.enable_segment_results)
         if TestBase.NoGraphicsMode:
-
-            def action12():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 options.enable_trajectory_segment_colors = True
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action12)
 
         else:
             options.enable_trajectory_segment_colors = False
@@ -540,10 +507,8 @@ class EarlyBoundTests(TestBase):
         userVarDefnColl.add("Param1")
         Assert.assertEqual((countOrig + 1), userVarDefnColl.count)
 
-        def action13():
+        with pytest.raises(Exception):
             userVarDefnColl.remove("BogusParam")
-
-        TryCatchAssertBlock.DoAssert("Remove of BogusParam should fail", action13)
 
         userVarDefn: "IUserVariableDefinition" = userVarDefnColl[0]
         userVarDefn.variable_name = "VarName"
@@ -552,11 +517,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("DistanceUnit", userVarDefn.unit_dimension)
         userVarDefn.unit_dimension = "AngleUnit"
         Assert.assertEqual("AngleUnit", userVarDefn.unit_dimension)
-
-        def action14():
+        with pytest.raises(Exception):
             userVarDefn.unit_dimension = "BogusUnit"
-
-        TryCatchAssertBlock.DoAssert("UnitDimension set to BogusUnit", action14)
 
         userVarDefnColl.remove("VarName")
         Assert.assertEqual(countOrig, userVarDefnColl.count)
@@ -590,18 +552,13 @@ class EarlyBoundTests(TestBase):
                 "propget and GetItemByName should return same IUserVariableDefinition",
             )
 
-        def action15():
+        with pytest.raises(Exception):
             userVarDefn4: "IUserVariableDefinition" = userVarDefnColl[userVarDefnColl.count]
-
-        TryCatchAssertBlock.DoAssert("IUserVariableDefinition access bad index", action15)
 
         userVarDefnColl.add("ForRemoveByIndex")
         userVarDefnColl.remove((userVarDefnColl.count - 1))
-
-        def action16():
+        with pytest.raises(Exception):
             userVarDefnColl.remove(userVarDefnColl.count)
-
-        TryCatchAssertBlock.DoAssert("bad userVarDefnColl.Remove", action16)
 
         userVarDefnColl.remove_all()
         Assert.assertEqual(0, userVarDefnColl.count)
@@ -633,10 +590,8 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        def action17():
+        with pytest.raises(Exception):
             userVar2: "IUserVariable" = userVarColl[userVarColl.count]
-
-        TryCatchAssertBlock.DoAssert("IUserVariable access bad index", action17)
 
     # endregion
 
@@ -667,10 +622,8 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        def action18():
+        with pytest.raises(Exception):
             userVarUpdate2: "IUserVariableUpdate" = userVarUpdateColl[userVarUpdateColl.count]
-
-        TryCatchAssertBlock.DoAssert("IUserVariable access bad index", action18)
 
     # endregion
 
@@ -838,15 +791,10 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        def action19():
+        with pytest.raises(Exception, match=RegexSubstringMatch("not found")):
             compInfo: "IComponentInfo" = clr.Convert(mcsSegColl.get_item_by_index(mcsSegColl.count), IComponentInfo)
-
-        TryCatchAssertBlock.ExpectedException("not found", action19)
-
-        def action20():
+        with pytest.raises(Exception, match=RegexSubstringMatch("value was not found")):
             compInfo: "IComponentInfo" = clr.Convert(mcsSegColl.get_item_by_name("Bogus"), IComponentInfo)
-
-        TryCatchAssertBlock.ExpectedException("value was not found", action20)
 
         mcsSegColl.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Seg1", "-")
         mcsSegColl.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Seg2", "Seg1")
@@ -858,28 +806,20 @@ class EarlyBoundTests(TestBase):
         mcsSegColl.remove("Launch")
         Assert.assertEqual((initialSegCount + 3), mcsSegColl.count, "count1b is wrong")
 
-        def action21():
+        with pytest.raises(Exception):
             mcsSegColl.insert_by_name("Launch", "BogusSeg")
 
-        TryCatchAssertBlock.DoAssert("InsertByName of BogusSeg should fail", action21)
-
-        def action22():
+        with pytest.raises(Exception):
             mcsSegColl.insert_by_name("LaunchBogus", "Seg2")
-
-        TryCatchAssertBlock.DoAssert("InsertByName of LaunchBogus should fail", action22)
 
         mcsSegColl.remove("Seg2")
         Assert.assertEqual((initialSegCount + 2), mcsSegColl.count, "count2 is wrong")
 
-        def action23():
+        with pytest.raises(Exception):
             mcsSegColl.remove("BogusSeg")
 
-        TryCatchAssertBlock.DoAssert("Remove of BogusSeg should fail", action23)
-
-        def action24():
+        with pytest.raises(Exception):
             mcsSegColl.remove("-")
-
-        TryCatchAssertBlock.DoAssert("Should not remove the End of Sequence segment.", action24)
 
         mcsSegColl.remove_all()
         Assert.assertEqual(1, mcsSegColl.count, "count should be 1")  # End of Sequence segment should remain.
@@ -916,25 +856,15 @@ class EarlyBoundTests(TestBase):
                 as3.name, as3b.name, "Indexing collection with propget and GetItemByName should return same AutoSeq"
             )
 
-        def action25():
+        with pytest.raises(Exception):
             as4: "IAutomaticSequence" = autoSeqColl[3]
-
-        TryCatchAssertBlock.DoAssert("Reference bad index should fail.", action25)
-
-        def action26():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             as4a: "IAutomaticSequence" = autoSeqColl.get_item_by_index(3)
 
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action26)
-
-        def action27():
+        with pytest.raises(Exception):
             as5: "IAutomaticSequence" = autoSeqColl["Bogus"]
-
-        TryCatchAssertBlock.DoAssert("Reference bogus should fail.", action27)
-
-        def action28():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by ItemOrName could not be found")):
             as5a: "IAutomaticSequence" = autoSeqColl.get_item_by_name("Bogus")
-
-        TryCatchAssertBlock.ExpectedException("Item specified by ItemOrName could not be found", action28)
 
         bFirstTime: bool = True
         autoSeq: "IAutomaticSequence"
@@ -953,15 +883,11 @@ class EarlyBoundTests(TestBase):
         autoSeqColl.remove(1)
         Assert.assertEqual(2, autoSeqColl.count)
 
-        def action29():
+        with pytest.raises(Exception):
             autoSeqColl.remove(2)
 
-        TryCatchAssertBlock.DoAssert("Remove bad index should fail.", action29)
-
-        def action30():
+        with pytest.raises(Exception):
             autoSeqColl.remove("Bogus")
-
-        TryCatchAssertBlock.DoAssert("Remove bogus should fail.", action30)
 
         copyAutoSeq: "IAutomaticSequence" = autoSeqColl[0].make_copy("MyCopyName")
         Assert.assertEqual("MyCopyName", copyAutoSeq.name, "unexpected MyCopyName")
@@ -1000,10 +926,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Launch.Epoch", cp.name)
         EarlyBoundTests.AG_VA.options.promote_controls = False
 
-        def action31():
+        with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("Tg2.Launch", "Launch.Epoch")
-
-        TryCatchAssertBlock.DoAssert("Launch.Epoch Control Paramter should not be available.", action31)
 
         try:
             seg: "IMissionControlSequenceSegment" = ts2.segments["SegBogus"]
@@ -1104,18 +1028,13 @@ class EarlyBoundTests(TestBase):
         sc1.target_object.bind_to("Star/Star1")
         Assert.assertEqual("Star/Star1", sc1.target_object.name)
 
-        def action32():
+        with pytest.raises(Exception):
             sc1.base_selection.bind_to("Planet/Planet1")
-
-        TryCatchAssertBlock.DoAssert("Can not set both base and target to planet and star.", action32)
 
         sc1.target_object.bind_to("Facility/Facility1")
         sc1.base_selection.bind_to("Planet/Planet1")
-
-        def action33():
+        with pytest.raises(Exception):
             sc1.target_object.bind_to("Star/Star1")
-
-        TryCatchAssertBlock.DoAssert("Can not set both base and target to planet and star.", action33)
 
         sc1.base_selection.bind_to("Aircraft/Boing737")
 
@@ -1130,33 +1049,21 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(IV_CLOCK_HOST.BASE, sc1.clock_host)
 
         sc1.base_selection.bind_to("Satellite/Satellite1")
-
-        def action34():
+        with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
-
-        TryCatchAssertBlock.DoAssert("Can not set clock host when base is sat.", action34)
 
         sc1.base_selection.bind_to("Planet/Planet1")
-
-        def action35():
+        with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
-
-        TryCatchAssertBlock.DoAssert("Can not set clock host when base is celestial.", action35)
 
         sc1.base_selection.bind_to("Aircraft/Boing737")
         sc1.target_object.bind_to("Satellite/Satellite1")
-
-        def action36():
+        with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
-
-        TryCatchAssertBlock.DoAssert("Can not set clock host when target is sat.", action36)
 
         sc1.target_object.bind_to("Planet/Planet1")
-
-        def action37():
+        with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
-
-        TryCatchAssertBlock.DoAssert("Can not set clock host when target is celestial.", action37)
 
         sc1.target_object.bind_to("Facility/Facility1")
 
@@ -1187,10 +1094,8 @@ class EarlyBoundTests(TestBase):
         sc1.inherited = True
         Assert.assertTrue(sc1.inherited)
 
-        def action38():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             sc1.max_trip_times = 10001
-
-        TryCatchAssertBlock.ExpectedException("read-only", action38)
 
         sc1.repeat_count = 2
         Assert.assertEqual(2, sc1.repeat_count)
@@ -1215,11 +1120,8 @@ class EarlyBoundTests(TestBase):
         sc.eclipsing_bodies_list_source = ECLIPSING_BODIES_SOURCE.USER_DEFINED
         Assert.assertEqual(ECLIPSING_BODIES_SOURCE.USER_DEFINED, sc.eclipsing_bodies_list_source)
         sc.add_eclipsing_body("Sun")
-
-        def action39():
+        with pytest.raises(Exception):
             sc.add_eclipsing_body("Bogus")
-
-        TryCatchAssertBlock.DoAssert("AddEclipsingBody Bogus", action39)
 
         assigned = sc.eclipsing_bodies
 
@@ -1230,11 +1132,8 @@ class EarlyBoundTests(TestBase):
             i += 1
 
         sc.remove_eclipsing_body("Sun")
-
-        def action40():
+        with pytest.raises(Exception):
             sc.remove_eclipsing_body("Bogus")
-
-        TryCatchAssertBlock.DoAssert("RemoveEclipsingBody Bogus", action40)
 
         available = sc.available_eclipsing_bodies
 
@@ -1247,10 +1146,8 @@ class EarlyBoundTests(TestBase):
         sc.inherited = True
         Assert.assertTrue(sc.inherited)
 
-        def action41():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             sc.max_trip_times = 10001.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action41)
 
         sc.repeat_count = 1.0
         Assert.assertEqual(1.0, sc.repeat_count)
@@ -1459,16 +1356,10 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertFalse(hold.control_parameters_available)
         Assert.assertFalse(hold.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME))
-
-        def action42():
+        with pytest.raises(Exception):
             hold.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-
-        TryCatchAssertBlock.DoAssert("hold.EnableControlParameter should fail", action42)
-
-        def action43():
+        with pytest.raises(Exception):
             hold.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-
-        TryCatchAssertBlock.DoAssert("hold.DisableControlParameter should fail", action43)
 
         EarlyBoundTests.AG_VA.main_sequence.remove("Holder1")
 
@@ -1597,22 +1488,16 @@ class EarlyBoundTests(TestBase):
         sequenceDeltaV: "IStateCalcSequenceDeltaV" = clr.CastAs(
             seg.results.add(r"Segments/Sequence DeltaV"), IStateCalcSequenceDeltaV
         )
-
-        def action44():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object specified")):
             sequenceDeltaV.sequence_name = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("Invalid object specified", action44)
         sequenceDeltaV.sequence_name = "ts2"
         Assert.assertEqual("ts2", sequenceDeltaV.sequence_name)
 
         sequenceDeltaVSquared: "IStateCalcSequenceDeltaVSquared" = clr.CastAs(
             seg.results.add(r"Segments/Sequence DeltaV Squared"), IStateCalcSequenceDeltaVSquared
         )
-
-        def action45():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object specified")):
             sequenceDeltaVSquared.sequence_name = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("Invalid object specified", action45)
         sequenceDeltaVSquared.sequence_name = "ts2"
         Assert.assertEqual("ts2", sequenceDeltaVSquared.sequence_name)
 
@@ -1638,11 +1523,8 @@ class EarlyBoundTests(TestBase):
             (clr.Convert(TestBase.Application, IAnimation)).rewind()
 
         else:
-
-            def action46():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 scene.animation.start_time = "1 Jan 1993 00:00:00.00"
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action46)
 
         #
         sun: "IPlanet" = clr.Convert(
@@ -1692,16 +1574,10 @@ class EarlyBoundTests(TestBase):
             sat.graphics_3d.model.detail_threshold.point = 1000000000000.0
 
         else:
-
-            def action47():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action47)
-
-            def action48():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action48)
 
         #
         driver.main_sequence.remove_all()
@@ -1792,13 +1668,11 @@ class EarlyBoundTests(TestBase):
 
         # This shouldn't let us set the negative value when false.
         thrustVector.allow_negative_spherical_magnitude = False
-
-        def action49():
+        with pytest.raises(
+            Exception,
+            match=RegexSubstringMatch("Value -1000.00000000 m*sec^-1 is invalid. Value minimum is 0 m*sec^-1"),
+        ):
             thrustVector.magnitude = -1000.0
-
-        TryCatchAssertBlock.ExpectedException(
-            "Value -1000.00000000 m*sec^-1 is invalid. Value minimum is 0 m*sec^-1", action49
-        )
 
         # The radio buttons that control access to the Cartesian/spherical parameters are not enforced through the API, only in the GUI.
         # The attribute flags have been set such that the inactive parameter set is 'hidden' but not 'readonly' - readonly would
@@ -1829,20 +1703,15 @@ class EarlyBoundTests(TestBase):
 
         # This shouldn't let us set the negative value when false.
         thrustVector.allow_negative_spherical_magnitude = False
-
-        def action50():
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("Value -500.00000000 m*sec^-1 is invalid. Value minimum is 0 m*sec^-1")
+        ):
             thrustVector.assign_spherical(100.0, 80.0, -500.0)
-
-        TryCatchAssertBlock.ExpectedException(
-            "Value -500.00000000 m*sec^-1 is invalid. Value minimum is 0 m*sec^-1", action50
-        )
         thrustVector.allow_negative_spherical_magnitude = True
         thrustVector.assign_spherical(100.0, 80.0, -500.0)
 
-        def action51():
+        with pytest.raises(Exception):
             thrustVector.assign_spherical(100.0, 100.0, -500.0)
-
-        TryCatchAssertBlock.DoAssert("Elevation can't be greater than 90 degrees.", action51)
 
         # end ENG98248, BUG98514
 
@@ -1979,13 +1848,10 @@ class EarlyBoundTests(TestBase):
             (clr.Convert(toPersilene, IMissionControlSequenceSegment)).properties.b_planes.add("LunarBPlane")
 
         else:
-
-            def action52():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 template: "IVehicleGraphics3DBPlaneTemplate" = clr.Convert(
                     sat.graphics_3d.b_planes.templates.add(), IVehicleGraphics3DBPlaneTemplate
                 )
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action52)
 
         # Test BPlane collection iteration
         bplaneColl: "IBPlaneCollection" = (clr.Convert(toPersilene, IMissionControlSequenceSegment)).properties.b_planes
@@ -2100,11 +1966,8 @@ class EarlyBoundTests(TestBase):
             (clr.Convert(TestBase.Application, IAnimation)).rewind()
 
         else:
-
-            def action53():
+            with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 (clr.Convert(TestBase.Application, IAnimation)).rewind()
-
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action53)
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], ISatellite)
@@ -2259,11 +2122,8 @@ class EarlyBoundTests(TestBase):
         # the follow segment needs the leader to be set with a long enough ephemeris
         EarlyBoundTests.AG_VA.begin_run()
         if clr.Is(seg, IMissionControlSequenceFollow):
-
-            def action54():
+            with pytest.raises(Exception):
                 orbitState: "IState" = seg.run()
-
-            TryCatchAssertBlock.DoAssert("Run should fail for Follow and TargetSequence", action54)
 
         elif clr.Is(seg, IMissionControlSequenceTargetSequence):
             pass
@@ -2315,44 +2175,27 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        def action55():
+        with pytest.raises(Exception):
             compInfo: "IComponentInfo" = calcObjColl[calcObjColl.count]
-
-        TryCatchAssertBlock.DoAssert("bad ICalcObjectCollection index", action55)
-
-        def action56():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             compInfoA: "IComponentInfo" = calcObjColl.get_item_by_index(calcObjColl.count)
-
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action56)
-
-        def action57():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by ItemOrName could not be found")):
             compInfoA: "IComponentInfo" = calcObjColl.get_item_by_name("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Item specified by ItemOrName could not be found", action57)
 
         compInfo2: "IComponentInfo" = calcObjColl["BTheta"]
         Assert.assertIsNotNone(compInfo2)
-
-        def action58():
+        with pytest.raises(Exception):
             compInfo3: "IComponentInfo" = calcObjColl["Item3"]
-
-        TryCatchAssertBlock.DoAssert("bad ICalcObjectCollection name", action58)
 
         calcObjColl.remove((calcObjColl.count - 1))
         Assert.assertEqual((origCount + 1), calcObjColl.count)
-
-        def action59():
+        with pytest.raises(Exception):
             calcObjColl.remove(calcObjColl.count)
-
-        TryCatchAssertBlock.DoAssert("bad ICalcObjectCollection Remove index", action59)
 
         calcObjColl.remove("BTheta")
         Assert.assertEqual(origCount, calcObjColl.count)
-
-        def action60():
+        with pytest.raises(Exception):
             calcObjColl.remove("Item3")
-
-        TryCatchAssertBlock.DoAssert("bad ICalcObjectCollection Remove name", action60)
 
     # endregion
 
@@ -2779,11 +2622,8 @@ longitude = 121;"""
         refSat: "ILinkToObject" = diffAcrossSegs.reference_sat
         refSat.bind_to("Satellite/DiffAcross")
         Assert.assertEqual("Satellite/DiffAcross", refSat.name)
-
-        def action61():
+        with pytest.raises(Exception):
             refSat.bind_to("Satellite/NonGator")
-
-        TryCatchAssertBlock.DoAssert("Selection of non Astrogator Satellite should fail", action61)
         diffAcrossSegs.calc_object_name = "Keplerian Elems/Eccentricity"
         Assert.assertEqual("Eccentricity", diffAcrossSegs.calc_object_name)
         diffAcrossSegs.other_segment_name = "Propagate"
@@ -2799,11 +2639,8 @@ longitude = 121;"""
         refSat = valueAtSegment.reference_sat
         refSat.bind_to("Satellite/DiffAcross")
         Assert.assertEqual("Satellite/DiffAcross", refSat.name)
-
-        def action62():
+        with pytest.raises(Exception):
             refSat.bind_to("Satellite/NonGator")
-
-        TryCatchAssertBlock.DoAssert("Selection of non Astrogator Satellite should fail", action62)
         valueAtSegment.calc_object_name = "Keplerian Elems/Eccentricity"
         Assert.assertEqual("Eccentricity", valueAtSegment.calc_object_name)
         valueAtSegment.other_segment_name = "Propagate"
@@ -3570,11 +3407,8 @@ longitude = 121;"""
         Assert.assertTrue(control.use_custom_display_unit)
         control.use_custom_display_unit = False
         Assert.assertFalse(control.use_custom_display_unit)
-
-        def action63():
+        with pytest.raises(Exception):
             control.custom_display_unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("Set of read-only attr should fail", action63)
         control.use_custom_display_unit = True
         control.custom_display_unit = "hr"
         Assert.assertEqual("hr", control.custom_display_unit)
@@ -3585,11 +3419,8 @@ longitude = 121;"""
         Assert.assertTrue(result.use_custom_display_unit)
         result.use_custom_display_unit = False
         Assert.assertFalse(result.use_custom_display_unit)
-
-        def action64():
+        with pytest.raises(Exception):
             result.custom_display_unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("Set of read only attr should fail", action64)
         result.use_custom_display_unit = True
         result.custom_display_unit = "hr"
         Assert.assertEqual("hr", result.custom_display_unit)
@@ -3611,11 +3442,8 @@ longitude = 121;"""
             driver.main_sequence["Initial_State"], IMissionControlSequenceInitialState
         )
         initState.coord_system_name = "CentralBody/Earth Inertial"
-
-        def action65():
+        with pytest.raises(Exception):
             initState.set_element_type(ELEMENT_TYPE.GEODETIC)
-
-        TryCatchAssertBlock.DoAssert("Should not be able to set Geodetic with inertial frame.", action65)
         initState.coord_system_name = "CentralBody/Earth Fixed"
         initState.set_element_type(ELEMENT_TYPE.GEODETIC)
         Assert.assertEqual(ELEMENT_TYPE.GEODETIC, initState.element_type)
@@ -3624,30 +3452,21 @@ longitude = 121;"""
 
         geodetic.latitude = 45
         Assert.assertAlmostEqual(45, float(geodetic.latitude), delta=1e-09)
-
-        def action66():
+        with pytest.raises(Exception):
             geodetic.latitude = 100
-
-        TryCatchAssertBlock.DoAssert("Should be unable to set greater than 90", action66)
 
         geodetic.longitude = 135
         Assert.assertAlmostEqual(135, float(geodetic.longitude), delta=1e-09)
 
         geodetic.altitude = 150
         Assert.assertAlmostEqual(150, float(geodetic.altitude), delta=1e-09)
-
-        def action67():
+        with pytest.raises(Exception):
             geodetic.altitude = -1000
-
-        TryCatchAssertBlock.DoAssert("Should be unable to set altitude below surface", action67)
 
         geodetic.radius_magnitude = 7000
         Assert.assertAlmostEqual(7000, float(geodetic.radius_magnitude), delta=1e-09)
-
-        def action68():
+        with pytest.raises(Exception):
             geodetic.radius_magnitude = 5000
-
-        TryCatchAssertBlock.DoAssert("Should be unable to set altitude below surface", action68)
 
         geodetic.latitude_rate = 0.001
         Assert.assertAlmostEqual(0.001, float(geodetic.latitude_rate), delta=1e-09)
@@ -4017,19 +3836,13 @@ longitude = 121;"""
         Assert.assertEqual("TimeUnit", parameter.dimension)
         parameter.unit = "hr"
         Assert.assertEqual("hr", parameter.unit)
-
-        def action69():
+        with pytest.raises(Exception):
             parameter.unit = "km"
-
-        TryCatchAssertBlock.DoAssert("param type/unit mismatch", action69)
 
         # this should be 60 seconds because of the object model unit prefs
         parameter.param_value = 60
-
-        def action70():
+        with pytest.raises(Exception):
             parameter.param_value = "bogus"
-
-        TryCatchAssertBlock.DoAssert("Bogus param value", action70)
 
         attribute: "IScriptingSegment" = sequence.scripting_tool.segment_properties.add("Attribute")
         attribute.object_name = "Propagate"
@@ -4066,162 +3879,96 @@ longitude = 121;"""
         # region Boolean
         parameter.type = SCRIPTING_PARAMETER_TYPE.BOOLEAN
         Assert.assertEqual(SCRIPTING_PARAMETER_TYPE.BOOLEAN, parameter.type)
-
-        def action71():
+        with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
-
-        TryCatchAssertBlock.DoAssert("No dimension on booleans", action71)
-
-        def action72():
+        with pytest.raises(Exception):
             parameter.unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("No unit on booleans", action72)
         parameter.param_value = True
         Assert.assertEqual(True, parameter.param_value)
         parameter.param_value = False
         Assert.assertEqual(False, parameter.param_value)
-
-        def action73():
+        with pytest.raises(Exception):
             parameter.use_min_value = True
-
-        TryCatchAssertBlock.DoAssert("Can't use min value on booleans", action73)
-
-        def action74():
+        with pytest.raises(Exception):
             parameter.use_max_value = True
-
-        TryCatchAssertBlock.DoAssert("Can't use max value on booleans", action74)
-
-        def action75():
+        with pytest.raises(Exception):
             parameter.min_value = -1
-
-        TryCatchAssertBlock.DoAssert("No min value on booleans", action75)
-
-        def action76():
+        with pytest.raises(Exception):
             parameter.max_value = 1
-
-        TryCatchAssertBlock.DoAssert("No max value on booleans", action76)
         # endregion
 
         # region Integer
         parameter.type = SCRIPTING_PARAMETER_TYPE.INTEGER
-
-        def action77():
+        with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
-
-        TryCatchAssertBlock.DoAssert("No dimension on integers", action77)
-
-        def action78():
+        with pytest.raises(Exception):
             parameter.unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("No unit on integers", action78)
         parameter.param_value = True
         Assert.assertEqual(-1, parameter.param_value)  # VARIANT_TRUE is -1
         parameter.param_value = 1
         Assert.assertEqual(1, parameter.param_value)
         parameter.param_value = 2.1
         Assert.assertEqual(2, parameter.param_value)  # converted to int
-
-        def action79():
+        with pytest.raises(Exception):
             parameter.param_value = "integer"
-
-        TryCatchAssertBlock.DoAssert("String can't be converted to int", action79)
         parameter.param_value = "5"
         Assert.assertEqual(5, parameter.param_value)
         parameter.use_max_value = True
         Assert.assertEqual(True, parameter.use_max_value)
         parameter.max_value = 100
         Assert.assertEqual(100, parameter.max_value)
-
-        def action80():
+        with pytest.raises(Exception):
             parameter.param_value = 101
-
-        TryCatchAssertBlock.DoAssert("Value is greater than maximum", action80)
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100
         Assert.assertEqual(-100, parameter.min_value)
-
-        def action81():
+        with pytest.raises(Exception):
             parameter.param_value = -101
-
-        TryCatchAssertBlock.DoAssert("Value is less than minimum", action81)
         parameter.use_min_value = False
         parameter.use_max_value = False
-
-        def action82():
+        with pytest.raises(Exception):
             parameter.max_value = 100
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action82)
-
-        def action83():
+        with pytest.raises(Exception):
             parameter.min_value = 100
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action83)
         # endregion
 
         # region Double
         parameter.type = SCRIPTING_PARAMETER_TYPE.DOUBLE
-
-        def action84():
+        with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
-
-        TryCatchAssertBlock.DoAssert("No dimension on double", action84)
-
-        def action85():
+        with pytest.raises(Exception):
             parameter.unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("No unit on double", action85)
         parameter.param_value = True
         Assert.assertEqual(-1, parameter.param_value)  # VARIANT_TRUE is -1
         parameter.param_value = 1.1
         Assert.assertEqual(1.1, parameter.param_value)
-
-        def action86():
+        with pytest.raises(Exception):
             parameter.param_value = "integer"
-
-        TryCatchAssertBlock.DoAssert("String can't be converted to int", action86)
         parameter.param_value = "5.4"
         Assert.assertEqual(5.4, parameter.param_value)
-
-        def action87():
+        with pytest.raises(Exception):
             parameter.max_value = 100.4
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action87)
-
-        def action88():
+        with pytest.raises(Exception):
             parameter.min_value = 100.4
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action88)
         parameter.use_max_value = True
         Assert.assertEqual(True, parameter.use_max_value)
         parameter.max_value = 100.4
         Assert.assertAlmostEqual(100.4, float(parameter.max_value), delta=1e-13)
-
-        def action89():
+        with pytest.raises(Exception):
             parameter.param_value = 101.8
-
-        TryCatchAssertBlock.DoAssert("Value is greater than maximum", action89)
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100.4
         Assert.assertAlmostEqual(-100.4, float(parameter.min_value), delta=1e-13)
-
-        def action90():
+        with pytest.raises(Exception):
             parameter.param_value = -101.8
-
-        TryCatchAssertBlock.DoAssert("Value is less than minimum", action90)
         parameter.use_min_value = False
         parameter.use_max_value = False
-
-        def action91():
+        with pytest.raises(Exception):
             parameter.max_value = 100
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action91)
-
-        def action92():
+        with pytest.raises(Exception):
             parameter.min_value = 100
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action92)
         # endregion
 
         # region Quantity
@@ -4230,214 +3977,124 @@ longitude = 121;"""
         Assert.assertEqual("TimeUnit", parameter.dimension)
         parameter.unit = "hr"
         Assert.assertEqual("hr", parameter.unit)
-
-        def action93():
+        with pytest.raises(Exception):
             parameter.dimension = "NoDimension"
-
-        TryCatchAssertBlock.DoAssert("No Dimension of this type.", action93)
-
-        def action94():
+        with pytest.raises(Exception):
             parameter.unit = "km"
-
-        TryCatchAssertBlock.DoAssert("No unit of this name in this dimension.", action94)
         parameter.param_value = 1.1
         Assert.assertEqual(1.1, parameter.param_value)
-
-        def action95():
+        with pytest.raises(Exception):
             parameter.param_value = "quantity"
-
-        TryCatchAssertBlock.DoAssert("String can't be converted to int", action95)
         parameter.param_value = "5.4"
         Assert.assertEqual(5.4, parameter.param_value)
-
-        def action96():
+        with pytest.raises(Exception):
             parameter.max_value = 100.4
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action96)
-
-        def action97():
+        with pytest.raises(Exception):
             parameter.min_value = 100.4
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action97)
         parameter.use_max_value = True
         Assert.assertEqual(True, parameter.use_max_value)
         parameter.max_value = 100.4
         Assert.assertAlmostEqual(100.4, float(parameter.max_value), delta=1e-13)
-
-        def action98():
+        with pytest.raises(Exception):
             parameter.param_value = 101.8
-
-        TryCatchAssertBlock.DoAssert("Value is greater than maximum", action98)
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100.4
         Assert.assertAlmostEqual(-100.4, float(parameter.min_value), delta=1e-13)
-
-        def action99():
+        with pytest.raises(Exception):
             parameter.param_value = -101.8
-
-        TryCatchAssertBlock.DoAssert("Value is less than minimum", action99)
         parameter.use_min_value = False
         parameter.use_max_value = False
-
-        def action100():
+        with pytest.raises(Exception):
             parameter.max_value = 100
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action100)
-
-        def action101():
+        with pytest.raises(Exception):
             parameter.min_value = 100
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action101)
         # endregion
 
         # region Date
         parameter.type = SCRIPTING_PARAMETER_TYPE.DATE
-
-        def action102():
+        with pytest.raises(Exception):
             parameter.dimension = "DateFormat"
-
-        TryCatchAssertBlock.DoAssert("No Dimension on dates", action102)
         parameter.unit = "EpSec"
         Assert.assertEqual("EpSec", parameter.unit)
 
         # switch object model to use epsec
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
         parameter.param_value = 0.0
-
-        def action103():
+        with pytest.raises(Exception):
             parameter.max_value = 100.4
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action103)
-
-        def action104():
+        with pytest.raises(Exception):
             parameter.min_value = 100.4
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action104)
         parameter.use_max_value = True
         Assert.assertEqual(True, parameter.use_max_value)
         Console.WriteLine(("param date value is " + str(parameter.param_value)))
         parameter.max_value = 100.4
         Assert.assertAlmostEqual(100.4, float(parameter.max_value), delta=1e-13)
-
-        def action105():
+        with pytest.raises(Exception):
             parameter.param_value = 101.8
-
-        TryCatchAssertBlock.DoAssert("Value is greater than maximum", action105)
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100.4
         Assert.assertAlmostEqual(-100.4, float(parameter.min_value), delta=1e-13)
-
-        def action106():
+        with pytest.raises(Exception):
             parameter.param_value = -101.8
-
-        TryCatchAssertBlock.DoAssert("Value is less than minimum", action106)
         parameter.use_min_value = False
         parameter.use_max_value = False
-
-        def action107():
+        with pytest.raises(Exception):
             parameter.max_value = 100
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action107)
-
-        def action108():
+        with pytest.raises(Exception):
             parameter.min_value = 100
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action108)
 
         parameter.unit = "UTCG"
         Assert.assertEqual("UTCG", parameter.unit)
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
         parameter.param_value = "21 Dec 2012 12:00:00"
         Assert.assertEqual("21 Dec 2012 12:00:00.000", parameter.param_value)
-
-        def action109():
+        with pytest.raises(Exception):
             parameter.max_value = "21 Dec 2012 13:00:00"
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action109)
-
-        def action110():
+        with pytest.raises(Exception):
             parameter.min_value = "21 Dec 2012 11:00:00"
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action110)
         parameter.use_max_value = True
         Assert.assertEqual(True, parameter.use_max_value)
-
-        def action111():
+        with pytest.raises(Exception):
             parameter.max_value = 100.4
-
-        TryCatchAssertBlock.DoAssert("Real value used for string date format", action111)
 
         parameter.max_value = "21 Dec 2012 13:00:00"
         Assert.assertEqual("21 Dec 2012 13:00:00.000", parameter.max_value)
-
-        def action112():
+        with pytest.raises(Exception):
             parameter.param_value = "21 Dec 2012 13:01:00"
-
-        TryCatchAssertBlock.DoAssert("Value is greater than maximum", action112)
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
-
-        def action113():
+        with pytest.raises(Exception):
             parameter.min_value = -100.4
-
-        TryCatchAssertBlock.DoAssert("Real value used for string date formath", action113)
         parameter.min_value = "21 Dec 2012 11:00:00"
         Assert.assertEqual("21 Dec 2012 11:00:00.000", parameter.min_value)
-
-        def action114():
+        with pytest.raises(Exception):
             parameter.param_value = "21 Dec 2012 10:59:00.000"
-
-        TryCatchAssertBlock.DoAssert("Value is less than minimum", action114)
         parameter.use_min_value = False
         parameter.use_max_value = False
-
-        def action115():
+        with pytest.raises(Exception):
             parameter.max_value = "21 Dec 2012 10:59:00.000"
-
-        TryCatchAssertBlock.DoAssert("MaxValue is not enabled", action115)
-
-        def action116():
+        with pytest.raises(Exception):
             parameter.min_value = "21 Dec 2012 10:59:00.000"
-
-        TryCatchAssertBlock.DoAssert("MinValue is not enabled", action116)
         # endregion
 
         # region String
         parameter.type = SCRIPTING_PARAMETER_TYPE.STRING
         parameter.param_value = "Awesome"
-
-        def action117():
+        with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
-
-        TryCatchAssertBlock.DoAssert("No dimension on string", action117)
-
-        def action118():
+        with pytest.raises(Exception):
             parameter.unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("No unit on string", action118)
         Assert.assertEqual("Awesome", parameter.param_value)
-
-        def action119():
+        with pytest.raises(Exception):
             parameter.use_min_value = True
-
-        TryCatchAssertBlock.DoAssert("Can't use min value on strings", action119)
-
-        def action120():
+        with pytest.raises(Exception):
             parameter.use_max_value = True
-
-        TryCatchAssertBlock.DoAssert("Can't use max value on strings", action120)
-
-        def action121():
+        with pytest.raises(Exception):
             parameter.min_value = "min"
-
-        TryCatchAssertBlock.DoAssert("No min value on strings", action121)
-
-        def action122():
+        with pytest.raises(Exception):
             parameter.max_value = "max"
-
-        TryCatchAssertBlock.DoAssert("No max value on string", action122)
         # endregion
 
         # region Enumeration
@@ -4475,36 +4132,18 @@ longitude = 121;"""
         enumChoices.add("Enum3")
         parameter.param_value = "Enum2"
         Assert.assertEqual("Enum2", parameter.param_value)
-
-        def action123():
+        with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
-
-        TryCatchAssertBlock.DoAssert("No dimension on enum", action123)
-
-        def action124():
+        with pytest.raises(Exception):
             parameter.unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("No unit on enum", action124)
-
-        def action125():
+        with pytest.raises(Exception):
             parameter.use_min_value = True
-
-        TryCatchAssertBlock.DoAssert("Can't use min value on strings", action125)
-
-        def action126():
+        with pytest.raises(Exception):
             parameter.use_max_value = True
-
-        TryCatchAssertBlock.DoAssert("Can't use max value on strings", action126)
-
-        def action127():
+        with pytest.raises(Exception):
             parameter.min_value = "min"
-
-        TryCatchAssertBlock.DoAssert("No min value on strings", action127)
-
-        def action128():
+        with pytest.raises(Exception):
             parameter.max_value = "max"
-
-        TryCatchAssertBlock.DoAssert("No max value on string", action128)
         # endregion
 
         rttip: "IRuntimeTypeInfoProvider" = clr.CastAs(enumChoices, IRuntimeTypeInfoProvider)
@@ -4558,29 +4197,21 @@ longitude = 121;"""
         param.unit = "hr"
         param.param_value = "21"
 
-        def action129():
-            param.inherit_value = True
-
         # places you shouldn't be able to inherit:  first profile, standalone profiles, sequence scripting tools
-        TryCatchAssertBlock.DoAssert("Should not be able to inherit since parameter is in first profile", action129)
+        with pytest.raises(Exception):
+            param.inherit_value = True
         scriptTool: "IProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), IProfileScriptingTool)
         scriptTool.enable = True
         standAloneParam: "IScriptingParameter" = scriptTool.parameters.add("Parameter")
-
-        def action130():
+        with pytest.raises(Exception):
             standAloneParam.inherit_value = True
-
-        TryCatchAssertBlock.DoAssert("Should not be able to inherit inside standalone profile", action130)
         standAloneSeq: "IMissionControlSequenceSequence" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
         )
         standAloneSeq.scripting_tool.enable = True
         seqParam: "IScriptingParameter" = standAloneSeq.scripting_tool.parameters.add("Parameter")
-
-        def action131():
+        with pytest.raises(Exception):
             seqParam.inherit_value = True
-
-        TryCatchAssertBlock.DoAssert("Should not be able to inherit inside sequence scripting tool", action131)
         targSeq.profiles.remove("Scripting Tool")
         driver.main_sequence.remove("Sequence")
 
@@ -4626,29 +4257,17 @@ longitude = 121;"""
         param.param_value = "21"
         param2.inherit_value = True
         Assert.assertEqual(SCRIPTING_PARAMETER_TYPE.QUANTITY, param2.type)
-
-        def action132():
+        with pytest.raises(Exception):
             param2.type = SCRIPTING_PARAMETER_TYPE.INTEGER
-
-        TryCatchAssertBlock.DoAssert("Shouldn't be able to set type", action132)
         Assert.assertEqual("TimeUnit", param2.dimension)
-
-        def action133():
+        with pytest.raises(Exception):
             param2.dimension = "TimeUnit"
-
-        TryCatchAssertBlock.DoAssert("Shouldn't be able to set type", action133)
         Assert.assertEqual("hr", param2.unit)
-
-        def action134():
+        with pytest.raises(Exception):
             param2.unit = "hr"
-
-        TryCatchAssertBlock.DoAssert("Shouldn't be able to set unit", action134)
         Assert.assertEqual(21, param2.param_value)
-
-        def action135():
+        with pytest.raises(Exception):
             param2.param_value = 21
-
-        TryCatchAssertBlock.DoAssert("Shouldn't be able to set value", action135)
 
         # rename the first guy and see that inherit is disabled
         param.name = "Rename"
@@ -4977,23 +4596,14 @@ longitude = 121;"""
         Assert.assertTrue((graphs.count == 2))
         graphs.remove("Classical Orbit Elements")
         Assert.assertTrue((graphs.count == 1))
-
-        def action136():
+        with pytest.raises(Exception):
             badindex: str = graphs[1]
-
-        TryCatchAssertBlock.DoAssert("reference bad index", action136)
-
-        def action137():
+        with pytest.raises(Exception):
             graphs.remove("Invalid")
-
-        TryCatchAssertBlock.DoAssert("remove bad name", action137)
         graphs.remove_all()
         Assert.assertTrue((graphs.count == 0))
-
-        def action138():
+        with pytest.raises(Exception):
             graphs.add("Invalid")
-
-        TryCatchAssertBlock.DoAssert("Shouldn't be able to add invalid graph", action138)
         graphs.add("Classical Orbit Elements")
         graphs.add("Inertial Position Velocity")
         interesting: str = graphs[0]
@@ -5083,15 +4693,12 @@ longitude = 121;"""
             clr.Convert(satellite, IStkObject)
         ).data_providers.get_data_provider_interval_from_path("Astrogator MCS Ephemeris Segments")
         elements4 = ["Bogus"]
-
-        def action139():
+        with pytest.raises(Exception):
             result4: "IDataProviderResult" = interval4.exec_elements(
                 (clr.Convert(TestBase.Application.current_scenario, IScenario)).start_time,
                 (clr.Convert(TestBase.Application.current_scenario, IScenario)).stop_time,
                 elements4,
             )
-
-        TryCatchAssertBlock.DoAssert("Should not allow bogus element name", action139)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "TestSat")
 
@@ -5126,36 +4733,26 @@ longitude = 121;"""
         apo: "IStoppingCondition" = clr.CastAs(apoElem.properties, IStoppingCondition)
         apo.central_body_name = "Moon"
 
-        def action140():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             prop1.stopping_conditions.get_item_by_index(prop1.stopping_conditions.count)
-
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action140)
-
-        def action141():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by IndexOrName could not be found")):
             prop1.stopping_conditions.get_item_by_name("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Item specified by IndexOrName could not be found", action141)
 
         conditionA: "IStoppingConditionElement" = prop1.stopping_conditions.get_item_by_index(0)
         conditionB: "IStoppingConditionElement" = prop1.stopping_conditions.get_item_by_name("Apoapsis")
         Assert.assertIsNotNone(conditionA)
         Assert.assertIsNotNone(conditionB)
 
-        def action142():
+        with pytest.raises(Exception):
             prop2.stopping_conditions.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action142)
 
         apoElem2: "IStoppingConditionElement" = prop2.stopping_conditions.insert_copy(apoElem)
         apo2: "IStoppingCondition" = clr.CastAs(apoElem2.properties, IStoppingCondition)
         Assert.assertEqual(2, prop2.stopping_conditions.count)
         Assert.assertEqual(apo.central_body_name, apo2.central_body_name)
         apoElem2 = prop2.stopping_conditions.insert_copy(apoElem)
-
-        def action143():
+        with pytest.raises(Exception):
             apoElem2 = prop2.stopping_conditions.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy of null", action143)
 
         prop1.stopping_conditions.cut(1)
         prop2.stopping_conditions.paste()
@@ -5167,15 +4764,10 @@ longitude = 121;"""
         Assert.assertEqual(2, prop1.stopping_conditions.count)
         Assert.assertEqual(3, prop2.stopping_conditions.count)
 
-        def action144():
+        with pytest.raises(Exception):
             prop1.stopping_conditions.cut(4)
-
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action144)
-
-        def action145():
+        with pytest.raises(Exception):
             prop2.stopping_conditions.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bad name", action145)
 
         # IConstraintCollection test
 
@@ -5186,10 +4778,8 @@ longitude = 121;"""
         cond1.calc_object_name = "Cartesian Elems/X"
         Assert.assertEqual(1, apo.constraints.count)
 
-        def action146():
+        with pytest.raises(Exception):
             apo.constraints.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action146)
 
         # test copy within stopping condition
         cond2: "IAsTriggerCondition" = apo.constraints.insert_copy(cond1)
@@ -5214,15 +4804,10 @@ longitude = 121;"""
         Assert.assertEqual(2, apo.constraints.count)
         Assert.assertEqual(1, apo2.constraints.count)
 
-        def action147():
+        with pytest.raises(Exception):
             apo.constraints.cut(4)
-
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action147)
-
-        def action148():
+        with pytest.raises(Exception):
             apo2.constraints.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bad name", action148)
 
         # IProfileCollection test
 
@@ -5235,33 +4820,19 @@ longitude = 121;"""
         )
         (clr.Convert(diffCorr, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
 
-        def action149():
+        with pytest.raises(Exception):
             targSeq.profiles.paste(0, PROFILE_INSERT_DIRECTION.AFTER)
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action149)
-
-        def action150():
+        with pytest.raises(Exception):
             targSeq.profiles.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus profile", action150)
-
-        def action151():
+        with pytest.raises(Exception):
             targSeq.profiles.cut(3)
-
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action151)
 
         targSeq.profiles.cut("Differential Corrector")
         Assert.assertEqual(0, targSeq.profiles.count)
-
-        def action152():
+        with pytest.raises(Exception):
             targSeq.profiles.paste("Differential Corrector", PROFILE_INSERT_DIRECTION.BEFORE)
-
-        TryCatchAssertBlock.DoAssert("Should fail by not finding named profile", action152)
-
-        def action153():
+        with pytest.raises(Exception):
             targSeq.profiles.paste(5, PROFILE_INSERT_DIRECTION.BEFORE)
-
-        TryCatchAssertBlock.DoAssert("Paste after bad index", action153)
 
         targSeq.profiles.add("Scripting Tool")
         targSeq.profiles.paste(0, PROFILE_INSERT_DIRECTION.AFTER)
@@ -5272,15 +4843,10 @@ longitude = 121;"""
         Assert.assertEqual(4, targSeq.profiles.count)
         targSeq.profiles.remove_all()
 
-        def action154():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             targSeq.profiles.get_item_by_index(targSeq.profiles.count)
-
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action154)
-
-        def action155():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by IndexOrName could not be found")):
             targSeq.profiles.get_item_by_name("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Item specified by IndexOrName could not be found", action155)
 
         targSeq.profiles.add("Scripting Tool")
         profile: "IProfile" = targSeq.profiles.get_item_by_index(0)
@@ -5354,11 +4920,9 @@ longitude = 121;"""
         Assert.assertEqual("NewThirdProfile", targSeq.profiles[2].name)
         Assert.assertEqual(4, targSeq.profiles.count)
 
-        def action156():
-            dc6: "IProfile" = targSeq.profiles.add2("Differential Corrector", 5, PROFILE_INSERT_DIRECTION.AFTER)
-
         # what happens if I Add2 after a nonexistent index
-        TryCatchAssertBlock.DoAssert("Should fail, there is no index 5", action156)
+        with pytest.raises(Exception):
+            dc6: "IProfile" = targSeq.profiles.add2("Differential Corrector", 5, PROFILE_INSERT_DIRECTION.AFTER)
 
         # what happens if I Add2 after the last index?
         dc7: "IProfile" = targSeq.profiles.add2("Differential Corrector", 3, PROFILE_INSERT_DIRECTION.AFTER)
@@ -5398,15 +4962,10 @@ longitude = 121;"""
         Assert.assertEqual(7, targSeq.profiles.count)
         Assert.assertEqual(targSeq.profiles[6].name, "Scripting Tool3")
 
-        def action157():
+        with pytest.raises(Exception):
             targSeq.profiles.insert_copy(profile0, "bogus", PROFILE_INSERT_DIRECTION.AFTER)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy after bad name", action157)
-
-        def action158():
+        with pytest.raises(Exception):
             targSeq.profiles.insert_copy(profile0, 8, PROFILE_INSERT_DIRECTION.AFTER)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy after bad index", action158)
 
         # IThrusterSetCollection test
 
@@ -5420,10 +4979,8 @@ longitude = 121;"""
         thrusterSetColl: "IThrusterSetCollection" = newThrusterSet.thrusters
         thrusterSetColl.remove_all()
 
-        def action159():
+        with pytest.raises(Exception):
             thrusterSetColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action159)
 
         thrusterSetColl.add("Thruster1")
         thrusterSetColl.add("Thruster2")
@@ -5440,17 +4997,12 @@ longitude = 121;"""
         thrusterSetColl.cut(0)
         Assert.assertEqual(1, thrusterSetColl.count)
 
-        def action160():
-            thrusterSetColl.cut("NonExistent Thruster")
-
         # and now, try to remove guys that aren't there
 
-        TryCatchAssertBlock.DoAssert("Thruster doesn't exist", action160)
-
-        def action161():
+        with pytest.raises(Exception):
+            thrusterSetColl.cut("NonExistent Thruster")
+        with pytest.raises(Exception):
             thrusterSetColl.cut(1)
-
-        TryCatchAssertBlock.DoAssert("Index off end of collection", action161)
 
         newThruster: "IThruster" = thrusterSetColl.paste()
         Assert.assertEqual(2, thrusterSetColl.count)
@@ -5461,10 +5013,8 @@ longitude = 121;"""
         Assert.assertEqual(3, thrusterSetColl.count)
         Assert.assertEqual(0.5, anotherNewThruster.thruster_efficiency)
 
-        def action162():
+        with pytest.raises(Exception):
             thrusterSetColl.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy null", action162)
 
         # IPropagatorFunctionCollection test
 
@@ -5478,20 +5028,12 @@ longitude = 121;"""
 
         propFuncColl: "IPropagatorFunctionCollection" = newPropagator.propagator_functions
 
-        def action163():
+        with pytest.raises(Exception):
             propFuncColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action163)
-
-        def action164():
+        with pytest.raises(Exception):
             propFuncColl.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus prop func", action164)
-
-        def action165():
+        with pytest.raises(Exception):
             propFuncColl.cut(3)
-
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action165)
 
         ci0: "IComponentInfo" = propFuncColl["WGS84"]
         ci1: "IComponentInfo" = propFuncColl.get_item_by_index(0)
@@ -5507,32 +5049,22 @@ longitude = 121;"""
         Assert.assertEqual(16, sameGravField.degree)
         Assert.assertEqual(1, propFuncColl.count)
 
-        def action166():
+        with pytest.raises(Exception):
             propFuncColl.cut("NonExistent Prop Func")
-
-        TryCatchAssertBlock.DoAssert("Prop Func doesn't exist", action166)
-
-        def action167():
+        with pytest.raises(Exception):
             propFuncColl.cut(99)
-
-        TryCatchAssertBlock.DoAssert("Index off end of collection", action167)
 
         anotherNewPropagator: "INumericalPropagatorWrapper" = clr.CastAs(
             (clr.Convert(propagators["Earth J2"], ICloneable)).clone_object(), INumericalPropagatorWrapper
         )
         propFuncColl2: "IPropagatorFunctionCollection" = anotherNewPropagator.propagator_functions
-
-        def action168():
+        with pytest.raises(Exception):
             propFuncColl2.paste()
-
-        TryCatchAssertBlock.DoAssert("Already a GravField, shouldn't allow paste", action168)
         propFuncColl2.remove(0)
         Assert.assertEqual(0, propFuncColl2.count)
 
-        def action169():
+        with pytest.raises(Exception):
             propFuncColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste already in list", action169)
 
         anotherFunc: "IGravityFieldFunction" = clr.CastAs(propFuncColl2.paste(), IGravityFieldFunction)
         Assert.assertEqual(16, anotherFunc.degree)
@@ -5544,30 +5076,20 @@ longitude = 121;"""
         )
         Assert.assertEqual(16, lastFunc.degree)
 
-        def action170():
+        with pytest.raises(Exception):
             propFuncColl2.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy null", action170)
 
         # ICalcObjectCollection test
 
         initState: "IMissionControlSequenceSegment" = driver.main_sequence["Initial State"]
         calcObjColl: "ICalcObjectCollection" = initState.results
 
-        def action171():
+        with pytest.raises(Exception):
             calcObjColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action171)
-
-        def action172():
+        with pytest.raises(Exception):
             calcObjColl.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action172)
-
-        def action173():
+        with pytest.raises(Exception):
             calcObjColl.cut(3)
-
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action173)
 
         alt: "IStateCalcGeodeticElem" = clr.CastAs(calcObjColl.add("Geodetic/Altitude"), IStateCalcGeodeticElem)
         alt.central_body_name = "Mars"
@@ -5586,10 +5108,8 @@ longitude = 121;"""
         prop.results.remove(0)
         Assert.assertEqual(0, prop.results.count)
 
-        def action174():
+        with pytest.raises(Exception):
             calcObjColl.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy null", action174)
 
         pasted = clr.CastAs(prop.results.insert_copy(clr.Convert(alt, IComponentInfo)), IStateCalcGeodeticElem)
         Assert.assertEqual("Mars", pasted.central_body_name)
@@ -5604,30 +5124,17 @@ longitude = 121;"""
         diffCorr: "IProfileDifferentialCorrector" = clr.Convert(dc8, IProfileDifferentialCorrector)
         targGraphColl: "ITargeterGraphCollection" = diffCorr.targeter_graphs
 
-        def action175():
+        with pytest.raises(Exception):
             targGraphColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action175)
-
-        def action176():
+        with pytest.raises(Exception):
             targGraphColl.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action176)
-
-        def action177():
+        with pytest.raises(Exception):
             targGraphColl.cut(3)
 
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action177)
-
-        def action178():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             targGraphColl.get_item_by_index(targGraphColl.count)
-
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action178)
-
-        def action179():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by IndexOrName could not be found")):
             targGraphColl.get_item_by_name("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Item specified by IndexOrName could not be found", action179)
 
         targGraphColl.remove_graph(0)
         graph: "ITargeterGraph" = targGraphColl.add_graph()
@@ -5654,10 +5161,8 @@ longitude = 121;"""
         Assert.assertEqual(1, targGraphColl.count)
         Assert.assertEqual("NewGraph", pastedGraph2.name)
 
-        def action180():
+        with pytest.raises(Exception):
             targGraphColl.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy null", action180)
 
         newPastedGraph: "ITargeterGraph" = targGraphColl.insert_copy(pastedGraph)
         Assert.assertEqual("NewGraph1", newPastedGraph.name)
@@ -5676,30 +5181,17 @@ longitude = 121;"""
         scriptTool: "IProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), IProfileScriptingTool)
         ssColl: "IScriptingSegmentCollection" = scriptTool.segment_properties
 
-        def action181():
+        with pytest.raises(Exception):
             ssColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action181)
-
-        def action182():
+        with pytest.raises(Exception):
             ssColl.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action182)
-
-        def action183():
+        with pytest.raises(Exception):
             ssColl.cut(3)
 
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action183)
-
-        def action184():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             ssColl.get_item_by_index(ssColl.count)
-
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action184)
-
-        def action185():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by IndexOrName could not be found")):
             ssColl.get_item_by_name("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Item specified by IndexOrName could not be found", action185)
 
         ssColl.add("TestProperty")
         scriptingSegment: "IScriptingSegment" = ssColl.get_item_by_index(0)
@@ -5718,10 +5210,8 @@ longitude = 121;"""
         Assert.assertEqual("ObjectProperty1", objProp2.component_name)
         Assert.assertEqual(2, ssColl.count)
 
-        def action186():
+        with pytest.raises(Exception):
             ssColl.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy null", action186)
 
         ssColl.cut(objProp2.component_name)
         Assert.assertEqual(1, ssColl.count)
@@ -5750,39 +5240,26 @@ longitude = 121;"""
         scriptTool: "IProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), IProfileScriptingTool)
         coColl: "IScriptingCalcObjectCollection" = scriptTool.calc_objects
 
-        def action187():
+        with pytest.raises(Exception):
             coColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action187)
-
-        def action188():
+        with pytest.raises(Exception):
             coColl.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action188)
-
-        def action189():
+        with pytest.raises(Exception):
             coColl.cut(3)
-
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action189)
 
         calcObj: "IScriptingCalcObject" = coColl.add("NewCalcObj")
         calcObj2: "IScriptingCalcObject" = coColl.insert_copy(calcObj)
         Assert.assertEqual("NewCalcObj1", calcObj2.component_name)
 
-        def action190():
+        with pytest.raises(Exception):
             coColl.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy null", action190)
 
         scriptTool.calc_objects.cut("NewCalcObj1")
         Assert.assertEqual(1, coColl.count)
 
         scriptTool.enable = False
-
-        def action191():
+        with pytest.raises(Exception):
             scriptTool.calc_objects.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste when disabled", action191)
 
         scriptTool.enable = True
         newCalcObj: "IScriptingCalcObject" = scriptTool.calc_objects.paste()
@@ -5808,30 +5285,17 @@ longitude = 121;"""
         scriptTool: "IProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), IProfileScriptingTool)
         paramColl: "IScriptingParameterCollection" = scriptTool.parameters
 
-        def action192():
+        with pytest.raises(Exception):
             paramColl.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action192)
-
-        def action193():
+        with pytest.raises(Exception):
             paramColl.cut("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action193)
-
-        def action194():
+        with pytest.raises(Exception):
             paramColl.cut(3)
 
-        TryCatchAssertBlock.DoAssert("Cut of bad index", action194)
-
-        def action195():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
             paramColl.get_item_by_index(paramColl.count)
-
-        TryCatchAssertBlock.ExpectedException("Index Out of Range", action195)
-
-        def action196():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by IndexOrName could not be found")):
             paramColl.get_item_by_name("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Item specified by IndexOrName could not be found", action196)
 
         paramColl.add("TestParam")
         paramA: "IScriptingParameter" = paramColl.get_item_by_index(0)
@@ -5847,20 +5311,15 @@ longitude = 121;"""
         param2: "IScriptingParameter" = scriptTool.parameters.insert_copy(param)
         Assert.assertEqual("NewParam1", param2.name)
 
-        def action197():
+        with pytest.raises(Exception):
             paramColl.insert_copy(None)
-
-        TryCatchAssertBlock.DoAssert("InsertCopy null", action197)
 
         paramColl.cut("NewParam1")
         Assert.assertEqual(1, paramColl.count)
 
         scriptTool.enable = False
-
-        def action198():
+        with pytest.raises(Exception):
             scriptTool.parameters.paste()
-
-        TryCatchAssertBlock.DoAssert("Paste when disabled", action198)
 
         scriptTool.enable = True
         newParam: "IScriptingParameter" = scriptTool.parameters.paste()
@@ -5892,32 +5351,18 @@ longitude = 121;"""
         psTool.paste_from_clipboard()
         Assert.assertEqual("TestParameterWoot", psTool.parameters[0].name)
 
-        def action199():
+        with pytest.raises(Exception):
             psTool.calc_objects.paste()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a calc object", action199)
-
-        def action200():
+        with pytest.raises(Exception):
             psTool.segment_properties.paste()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a segment property", action200)
         calcObj: "IScriptingCalcObject" = psTool.calc_objects.add("NewCalcObj")
         psTool.calc_objects.cut(0)
-
-        def action201():
+        with pytest.raises(Exception):
             psTool.parameters.paste()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a parameter", action201)
-
-        def action202():
+        with pytest.raises(Exception):
             psTool.paste_from_clipboard()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a scripting tool", action202)
-
-        def action203():
+        with pytest.raises(Exception):
             psTool.paste_from_clipboard()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a scripting tool", action203)
 
         # IScriptingTool - CopyToClipboard and PasteFromClipboard
 
@@ -5939,32 +5384,18 @@ longitude = 121;"""
         scriptTool.paste_from_clipboard()
         Assert.assertEqual("TestParameterWoot", scriptTool.parameters[0].name)
 
-        def action204():
+        with pytest.raises(Exception):
             scriptTool.calc_objects.paste()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a calc object", action204)
-
-        def action205():
+        with pytest.raises(Exception):
             scriptTool.segment_properties.paste()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a segment property", action205)
         calcObj: "IScriptingCalcObject" = scriptTool.calc_objects.add("NewCalcObj")
         scriptTool.calc_objects.cut(0)
-
-        def action206():
+        with pytest.raises(Exception):
             scriptTool.parameters.paste()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a parameter", action206)
-
-        def action207():
+        with pytest.raises(Exception):
             scriptTool.paste_from_clipboard()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a scripting tool", action207)
-
-        def action208():
+        with pytest.raises(Exception):
             scriptTool.paste_from_clipboard()
-
-        TryCatchAssertBlock.DoAssert("Clipboard Item isn't a scripting tool", action208)
 
         # test copying calc objects in UserSelect stopping conditions, stopping condition constraints, calc object wrappers
         apoElem: "IStoppingConditionElement" = prop1.stopping_conditions["Apoapsis"]
@@ -5986,20 +5417,12 @@ longitude = 121;"""
         stopCondElem: "IStoppingConditionElement" = prop1.stopping_conditions.add("UserSelect")
         stopCond: "IStoppingCondition" = clr.Convert(stopCondElem.properties, IStoppingCondition)
 
-        def action209():
+        with pytest.raises(Exception):
             stopCond.paste_user_calc_object_from_clipboard()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action209)
-
-        def action210():
+        with pytest.raises(Exception):
             cond1.paste_calc_object_from_clipboard()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action210)
-
-        def action211():
+        with pytest.raises(Exception):
             newCalcObj.paste_calc_object_from_clipboard()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action211)
 
         # user select stopping condition
         stopCond.user_calc_object_name = "Cartesian Elems/X"
@@ -6059,20 +5482,12 @@ longitude = 121;"""
         model: "ICentralBodyGravityModel" = cb.add_gravity_model(CENTRAL_BODY_GRAVITY_MODEL.EARTH_SIMPLE, "NewGrav")
         model.gravitational_param = 1337
 
-        def action212():
+        with pytest.raises(Exception):
             cb.paste_gravity_model()
-
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action212)
-
-        def action213():
+        with pytest.raises(Exception):
             cb.cut_gravity_model_by_name("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action213)
-
-        def action214():
+        with pytest.raises(Exception):
             cb.add_copy_of_gravity_model(None)
-
-        TryCatchAssertBlock.DoAssert("AddCopy of null", action214)
 
         # cut
         cb.cut_gravity_model_by_name("NewGrav")
@@ -6095,21 +5510,13 @@ longitude = 121;"""
         copiedGrav.gravitational_param = 1336
         Assert.assertEqual(1337, pastedGrav.gravitational_param)
 
-        def action215():
-            cb.paste_shape()
-
         # Shape
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action215)
-
-        def action216():
+        with pytest.raises(Exception):
+            cb.paste_shape()
+        with pytest.raises(Exception):
             cb.cut_shape_by_name("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action216)
-
-        def action217():
+        with pytest.raises(Exception):
             cb.add_copy_of_shape(None)
-
-        TryCatchAssertBlock.DoAssert("AddCopy of null", action217)
 
         shape: "ICentralBodyShapeOblateSpheroid" = clr.CastAs(
             cb.add_shape(CENTRAL_BODY_SHAPE.OBLATE_SPHEROID, "NewShape"), ICentralBodyShapeOblateSpheroid
@@ -6137,21 +5544,13 @@ longitude = 121;"""
         copiedShape.min_radius = 1336
         Assert.assertEqual(1337, pastedShape.min_radius)
 
-        def action218():
-            cb.paste_attitude()
-
         # Attitude Definition
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action218)
-
-        def action219():
+        with pytest.raises(Exception):
+            cb.paste_attitude()
+        with pytest.raises(Exception):
             cb.cut_attitude_by_name("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action219)
-
-        def action220():
+        with pytest.raises(Exception):
             cb.add_copy_of_attitude(None)
-
-        TryCatchAssertBlock.DoAssert("AddCopy of null", action220)
 
         newAtt: "ICentralBodyAttitudeIAU1994" = clr.CastAs(
             cb.add_attitude(CENTRAL_BODY_ATTITUDE.IAU1994, "NewAttitude"), ICentralBodyAttitudeIAU1994
@@ -6178,21 +5577,13 @@ longitude = 121;"""
         copiedAtt.rotation_rate = 1.1
         Assert.assertEqual(1, pastedAttitude.rotation_rate)
 
-        def action221():
-            cb.paste_ephemeris()
-
         # Ephemeris Definition
-        TryCatchAssertBlock.DoAssert("Paste of nothing", action221)
-
-        def action222():
+        with pytest.raises(Exception):
+            cb.paste_ephemeris()
+        with pytest.raises(Exception):
             cb.cut_ephemeris_by_name("bogus")
-
-        TryCatchAssertBlock.DoAssert("Cut of bogus", action222)
-
-        def action223():
+        with pytest.raises(Exception):
             cb.add_copy_of_ephemeris(None)
-
-        TryCatchAssertBlock.DoAssert("AddCopy of null", action223)
 
         newEphem: "ICentralBodyEphemerisAnalyticOrbit" = clr.CastAs(
             cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.ANALYTIC_ORBIT, "NewEphem"), ICentralBodyEphemerisAnalyticOrbit
@@ -6256,21 +5647,12 @@ longitude = 121;"""
         propFuncColl.add("General Relativity")
         Assert.assertIsNotNone(propFuncColl["General Relativity"])
         propFuncColl.remove("General Relativity")
-
-        def action224():
+        with pytest.raises(Exception):
             propFuncColl.add("Nonexistent")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent top level component", action224)
-
-        def action225():
+        with pytest.raises(Exception):
             propFuncColl.add("Nonexistent/Cira72")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent folder", action225)
-
-        def action226():
+        with pytest.raises(Exception):
             propFuncColl.add("Atmospheric Models/Nonexistent")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent model", action226)
 
         # tests Calc Object Collection
         propagate: "IMissionControlSequenceSegment" = driver.main_sequence["Propagate"]
@@ -6278,21 +5660,12 @@ longitude = 121;"""
         propagate.results.add("Inclination")
         propagate.results.add("Epoch")  # top level component
         Assert.assertEqual(3, propagate.results.count)
-
-        def action227():
+        with pytest.raises(Exception):
             propagate.results.add("Nonexistent")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent top level component", action227)
-
-        def action228():
+        with pytest.raises(Exception):
             propagate.results.add("Nonexistent/Inclination")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent folder", action228)
-
-        def action229():
+        with pytest.raises(Exception):
             propagate.results.add("Keplerian Elems/Nonexistent")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent component", action229)
 
         # tests embeds
         userSel: "IStoppingCondition" = clr.Convert(
@@ -6321,42 +5694,25 @@ longitude = 121;"""
         Assert.assertEqual(
             "Earth HPOP Default v8-1-1", (clr.Convert(propagate, IMissionControlSequencePropagate)).propagator_name
         )
-
-        def action230():
+        with pytest.raises(Exception):
             (clr.Convert(propagate, IMissionControlSequencePropagate)).propagator_name = "Nonexistent"
-
-        TryCatchAssertBlock.DoAssert("Nonexistent top level component", action230)
-
-        def action231():
+        with pytest.raises(Exception):
             (
                 clr.Convert(propagate, IMissionControlSequencePropagate)
             ).propagator_name = "Nonexistent/Earth HPOP Default v11"
-
-        TryCatchAssertBlock.DoAssert("Nonexistent folder", action231)
-
-        def action232():
+        with pytest.raises(Exception):
             (clr.Convert(propagate, IMissionControlSequencePropagate)).propagator_name = "Previous Versions/Nonexistent"
-
-        TryCatchAssertBlock.DoAssert("Nonexistent component", action232)
 
         # test segment collection
         driver.main_sequence.insert_by_name("Hohmann Transfer", "-")
         Assert.assertIsNotNone(driver.main_sequence["Hohmann Transfer"])
 
-        def action233():
+        with pytest.raises(Exception):
             driver.main_sequence.insert_by_name("Nonexistent", "-")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent top level segment", action233)
-
-        def action234():
+        with pytest.raises(Exception):
             driver.main_sequence.insert_by_name("Nonexistent/Propagate", "-")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent folder", action234)
-
-        def action235():
+        with pytest.raises(Exception):
             driver.main_sequence.insert_by_name("Examples/Propagate", "-")
-
-        TryCatchAssertBlock.DoAssert("Nonexistent segment", action235)
 
         driver.main_sequence.insert_by_name("Examples/Hohmann Transfer", "-")
         Assert.assertIsNotNone(driver.main_sequence["Hohmann Transfer1"])
@@ -6389,26 +5745,14 @@ longitude = 121;"""
         Assert.assertEqual("CentralBody/Earth BBR_Axes.X", vecX.vector_name)
         vecX.vector_name = "CentralBody/Earth BBR_Axes.X"
         Assert.assertEqual("CentralBody/Earth BBR_Axes.X", vecX.vector_name)
-
-        def action236():
+        with pytest.raises(Exception):
             vecX.vector_name = "Satellite/Invalid Position"
-
-        TryCatchAssertBlock.DoAssert("Invalid object", action236)
-
-        def action237():
+        with pytest.raises(Exception):
             vecX.vector_name = "Invalid/Invalid Position"
-
-        TryCatchAssertBlock.DoAssert("Invalid class and object", action237)
-
-        def action238():
+        with pytest.raises(Exception):
             vecX.vector_name = "Invalid/VGT Position"
-
-        TryCatchAssertBlock.DoAssert("Invalid class", action238)
-
-        def action239():
+        with pytest.raises(Exception):
             vecX.vector_name = "Satellite/VGT Invalid"
-
-        TryCatchAssertBlock.DoAssert("Invalid component", action239)
         (clr.Convert(satWithSpaces, IStkObject)).unload()
         (clr.Convert(sat, IStkObject)).unload()
 

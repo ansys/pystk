@@ -10,6 +10,7 @@ from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+
 from ansys.stk.core.stkobjects import *
 
 
@@ -128,16 +129,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(20, azel.display_range_maximum)
         azel.display_range_minimum = 10
         Assert.assertEqual(10, azel.display_range_minimum)
-
-        def action1():
+        with pytest.raises(Exception):
             azel.altitude_color = Color.Yellow
-
-        TryCatchAssertBlock.DoAssert("Can not modify read only property.", action1)
-
-        def action2():
+        with pytest.raises(Exception):
             azel.range_color = Color.Yellow
-
-        TryCatchAssertBlock.DoAssert("Can not modify read only property.", action2)
         azel.altitude_color_visible = True
         Assert.assertTrue(azel.altitude_color_visible)
         azel.altitude_color = Color.Yellow
@@ -284,11 +279,8 @@ class EarlyBoundTests(TestBase):
     # region RF_Radar_Clutter
     def test_RF_Radar_Clutter(self):
         helper = RadarClutterMapInheritableHelper()
-
-        def action3():
+        with pytest.raises(Exception, match=RegexSubstringMatch("obsolete")):
             helper.Run(EarlyBoundTests.AG_TG.radar_clutter_map)
-
-        TryCatchAssertBlock.ExpectedException("obsolete", action3)
 
     # endregion
 

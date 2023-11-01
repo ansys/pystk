@@ -1,4 +1,5 @@
 import enum
+import inspect
 import math
 import os
 import pytz
@@ -6,6 +7,7 @@ import re
 import unittest
 import sys
 import typing
+import pytest
 
 from datetime import datetime, timedelta
 
@@ -179,22 +181,8 @@ class GC:
 
 class Assert:
     @staticmethod
-    def _getTestCaseFromStack():
-        import inspect
-
-        frameinfos = inspect.getouterframes(inspect.currentframe())
-        for frameinfo in frameinfos:
-            frame = frameinfo[0]
-            locals = frame.f_locals
-            if "self" in locals:
-                candidate = locals["self"]
-                if isinstance(candidate, unittest.TestCase):
-                    return candidate
-        return None
-
-    @staticmethod
     def assertIsNone(obj, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIsNone(obj, msg)
         elif obj is not None:
@@ -202,7 +190,7 @@ class Assert:
 
     @staticmethod
     def assertIsNotNone(obj, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIsNotNone(obj, msg)
         elif obj is None:
@@ -210,7 +198,7 @@ class Assert:
 
     @staticmethod
     def assertIsNotEmpty(obj, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             if isinstance(obj, list):
                 testCase.assertNotEqual(len(obj), 0)
@@ -226,7 +214,7 @@ class Assert:
 
     @staticmethod
     def assertTrue(condition, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertTrue(condition, msg)
         elif not condition:
@@ -234,7 +222,7 @@ class Assert:
 
     @staticmethod
     def assertFalse(condition, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertFalse(condition, msg)
         elif condition:
@@ -242,8 +230,8 @@ class Assert:
 
     @staticmethod
     def assertEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertEqual(first, second, msg)
         elif first != second:
@@ -251,7 +239,7 @@ class Assert:
 
     @staticmethod
     def assertNotEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertNotEqual(first, second, msg)
         elif first == second:
@@ -259,7 +247,7 @@ class Assert:
 
     @staticmethod
     def assertAlmostEqual(first, second, delta=None, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertAlmostEqual(first, second, msg=msg, delta=delta)
         elif abs(second - first) > (delta if delta is not None else 0):
@@ -267,7 +255,7 @@ class Assert:
 
     @staticmethod
     def assertIs(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIs(first, second, msg=msg)
         elif first is not second:
@@ -275,7 +263,7 @@ class Assert:
 
     @staticmethod
     def assertIsNot(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIsNot(first, second, msg=msg)
         elif first is second:
@@ -283,7 +271,7 @@ class Assert:
 
     @staticmethod
     def assertRaises(fun):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertRaises(Exception, fun)
         else:
@@ -295,8 +283,8 @@ class Assert:
 
     @staticmethod
     def assertGreater(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertGreater(first, second, msg)
         elif first <= second:
@@ -304,8 +292,8 @@ class Assert:
 
     @staticmethod
     def assertGreaterEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertGreaterEqual(first, second, msg)
         elif first < second:
@@ -313,8 +301,8 @@ class Assert:
 
     @staticmethod
     def assertLess(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertLess(first, second, msg)
         elif first >= second:
@@ -322,8 +310,8 @@ class Assert:
 
     @staticmethod
     def assertLessEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertLessEqual(first, second, msg)
         elif first > second:
@@ -335,7 +323,7 @@ class Assert:
             msg = String.Format(*args)
         else:
             msg = None
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.fail(msg)
         else:
@@ -1696,6 +1684,22 @@ def category(name):
             return obj
 
         return _identity
+
+
+def GetTestCase():
+
+    frame = inspect.currentframe()
+    while frame:
+        candidate = frame.f_locals.get('self', None)
+        if candidate and isinstance(candidate, unittest.TestCase):
+            return candidate
+        frame = frame.f_back
+
+    return None
+
+
+def RegexSubstringMatch(substr):
+    return "^.*" + re.escape(substr) + ".*$"
 
 
 class ExceptionMessageMatch(enum.IntEnum):
