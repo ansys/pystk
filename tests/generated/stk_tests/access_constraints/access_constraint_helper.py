@@ -1,17 +1,17 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from display_times_helper import *
 from logger import *
-
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
 
 class AccessConstraintHelper(object):
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # region BasePropertiesTest
     # ////////////////////////////////////////////////////////////////////////
@@ -45,7 +45,7 @@ class AccessConstraintHelper(object):
     # region ConstraintTest
     # ////////////////////////////////////////////////////////////////////////
     def ConstraintTest(
-        self, oCollection: "IAccessConstraintCollection", eType: "ACCESS_CONSTRAINTS", temporaryDirectory: str
+        self, oCollection: "AccessConstraintCollection", eType: "ACCESS_CONSTRAINTS", temporaryDirectory: str
     ):
         Assert.assertIsNotNone(oCollection)
         oConstraint: "IAccessConstraint" = None
@@ -380,7 +380,7 @@ class AccessConstraintHelper(object):
             self.TestConstraintMinMaxDistance(oMinMax)
 
         elif eType == ACCESS_CONSTRAINTS.CSTR_GRAZING_ALTITUDE:
-            oGrazingAlt: "IAccessConstraintGrazingAltitude" = clr.Convert(oConstraint, IAccessConstraintGrazingAltitude)
+            oGrazingAlt: "AccessConstraintGrazingAltitude" = clr.Convert(oConstraint, AccessConstraintGrazingAltitude)
             Assert.assertIsNotNone(oGrazingAlt)
             self.TestConstraintMinMaxGrazingAlt(oGrazingAlt)
 
@@ -423,13 +423,13 @@ class AccessConstraintHelper(object):
 
             else:
                 # Area Target or Line Target
-                oAngle: "IAccessConstraintAngle" = clr.CastAs(oConstraint, IAccessConstraintAngle)
+                oAngle: "AccessConstraintAngle" = clr.CastAs(oConstraint, AccessConstraintAngle)
                 Assert.assertIsNotNone(oAngle)
                 self.TestConstraintAngle(oConstraint, "LatitudeUnit")
 
         elif eType == ACCESS_CONSTRAINTS.CSTR_CENTRAL_BODY_OBSTRUCTION:
-            oCb: "IAccessConstraintCentralBodyObstruction" = clr.Convert(
-                oConstraint, IAccessConstraintCentralBodyObstruction
+            oCb: "AccessConstraintCentralBodyObstruction" = clr.Convert(
+                oConstraint, AccessConstraintCentralBodyObstruction
             )
             Assert.assertIsNotNone(oCb)
             self.TestConstraintCbObstruction(oCb)
@@ -448,7 +448,7 @@ class AccessConstraintHelper(object):
     # endregion
 
     # region TestPluginConstraints
-    def TestPluginConstraints(self, oCollection: "IAccessConstraintCollection", oObject: "IStkObject"):
+    def TestPluginConstraints(self, oCollection: "AccessConstraintCollection", oObject: "IStkObject"):
         # IsNamedConstraintSupported
         Assert.assertFalse(oCollection.is_named_constraint_supported("InvalidConstraintName"))
         if oObject.class_name == "Facility":
@@ -469,7 +469,7 @@ class AccessConstraintHelper(object):
                     Assert.assertIsNotNone(oSecond)
                     Assert.assertEqual(oConstraint.constraint_name, oSecond.constraint_name)
 
-                    self.TestPluginConstraint(clr.CastAs(oConstraint, IAccessConstraintPluginMinMax))
+                    self.TestPluginConstraint(clr.CastAs(oConstraint, AccessConstraintPluginMinMax))
 
                     # RemoveNamedConstraint
                     oCollection.remove_named_constraint(namedConstraint)
@@ -494,7 +494,7 @@ class AccessConstraintHelper(object):
                     Assert.assertIsNotNone(oSecond)
                     Assert.assertEqual(oConstraint.constraint_name, oSecond.constraint_name)
 
-                    self.TestPluginConstraint(clr.CastAs(oConstraint, IAccessConstraintPluginMinMax))
+                    self.TestPluginConstraint(clr.CastAs(oConstraint, AccessConstraintPluginMinMax))
 
                     # RemoveNamedConstraint
                     oCollection.remove_named_constraint(namedConstraint)
@@ -519,7 +519,7 @@ class AccessConstraintHelper(object):
                     Assert.assertIsNotNone(oSecond)
                     Assert.assertEqual(oConstraint.constraint_name, oSecond.constraint_name)
 
-                    self.TestPluginConstraint(clr.CastAs(oConstraint, IAccessConstraintPluginMinMax))
+                    self.TestPluginConstraint(clr.CastAs(oConstraint, AccessConstraintPluginMinMax))
 
                     # RemoveNamedConstraint
                     oCollection.remove_named_constraint(namedConstraint)
@@ -531,7 +531,7 @@ class AccessConstraintHelper(object):
     # endregion
 
     # region TestPluginConstraint
-    def TestPluginConstraint(self, oPlugin: "IAccessConstraintPluginMinMax"):
+    def TestPluginConstraint(self, oPlugin: "AccessConstraintPluginMinMax"):
         Assert.assertIsNotNone(oPlugin)
 
         self.BasePropertiesTest(oPlugin)
@@ -583,7 +583,7 @@ class AccessConstraintHelper(object):
 
     # region DoTest
     # ////////////////////////////////////////////////////////////////////////
-    def DoTest(self, oCollection: "IAccessConstraintCollection", oObject: "IStkObject", temporaryDirectory: str):
+    def DoTest(self, oCollection: "AccessConstraintCollection", oObject: "IStkObject", temporaryDirectory: str):
         self.m_logger.WriteLine("----- THE ACCESS CONSTRAINTS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oObject)
@@ -1495,7 +1495,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxGrazingAlt
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxGrazingAlt(self, oGrazingAlt: "IAccessConstraintGrazingAltitude"):
+    def TestConstraintMinMaxGrazingAlt(self, oGrazingAlt: "AccessConstraintGrazingAltitude"):
         Assert.assertIsNotNone(oGrazingAlt)
 
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
@@ -1551,7 +1551,7 @@ class AccessConstraintHelper(object):
 
         try:
             Assert.assertIsNotNone(oConstraint)
-            oIntervals: "IAccessConstraintIntervals" = clr.Convert(oConstraint, IAccessConstraintIntervals)
+            oIntervals: "AccessConstraintIntervals" = clr.Convert(oConstraint, AccessConstraintIntervals)
             Assert.assertIsNotNone(oIntervals)
 
             # Filename
@@ -1593,7 +1593,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintAngle(self, oConstraint: "IAccessConstraint", strUnitName: str):
         Assert.assertIsNotNone(oConstraint)
-        oAngle: "IAccessConstraintAngle" = clr.Convert(oConstraint, IAccessConstraintAngle)
+        oAngle: "AccessConstraintAngle" = clr.Convert(oConstraint, AccessConstraintAngle)
         Assert.assertIsNotNone(oAngle)
 
         # set unit
@@ -1618,7 +1618,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintObjectExclusion(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oObject: "IAccessConstraintObjExAngle" = clr.Convert(oConstraint, IAccessConstraintObjExAngle)
+        oObject: "AccessConstraintObjExAngle" = clr.Convert(oConstraint, AccessConstraintObjExAngle)
         Assert.assertIsNotNone(oObject)
 
         # AvailableObjects
@@ -1667,7 +1667,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintCondition(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oCondition: "IAccessConstraintCondition" = clr.Convert(oConstraint, IAccessConstraintCondition)
+        oCondition: "AccessConstraintCondition" = clr.Convert(oConstraint, AccessConstraintCondition)
         Assert.assertIsNotNone(oCondition)
         # eDirectSun
         oCondition.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
@@ -1694,7 +1694,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintThirdBody(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oThirdBody: "IAccessConstraintThirdBody" = clr.Convert(oConstraint, IAccessConstraintThirdBody)
+        oThirdBody: "AccessConstraintThirdBody" = clr.Convert(oConstraint, AccessConstraintThirdBody)
         Assert.assertIsNotNone(oThirdBody)
         arAvailable = oThirdBody.available_obstructions
         arAssigned = oThirdBody.assigned_obstructions
@@ -1726,7 +1726,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintCrdnCn(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oCrdnCn: "IAccessConstraintCrdnConstellation" = clr.Convert(oConstraint, IAccessConstraintCrdnConstellation)
+        oCrdnCn: "AccessConstraintCrdnConstellation" = clr.Convert(oConstraint, AccessConstraintCrdnConstellation)
         Assert.assertIsNotNone(oCrdnCn)
         if oCrdnCn.constraint_name == "CrdnAngle":
             self.CrdnCnWithAngleUnit(oCrdnCn)
@@ -1771,7 +1771,7 @@ class AccessConstraintHelper(object):
 
     # region CrdnCnWithAngleUnit
     # ////////////////////////////////////////////////////////////////////////
-    def CrdnCnWithAngleUnit(self, oCrdnCn: "IAccessConstraintCrdnConstellation"):
+    def CrdnCnWithAngleUnit(self, oCrdnCn: "AccessConstraintCrdnConstellation"):
         Assert.assertIsNotNone(oCrdnCn)
 
         # set AngleUnit
@@ -1827,7 +1827,7 @@ class AccessConstraintHelper(object):
 
     # region CrdnCnWithUnitLess
     # ////////////////////////////////////////////////////////////////////////
-    def CrdnCnWithUnitLess(self, oCrdnCn: "IAccessConstraintCrdnConstellation"):
+    def CrdnCnWithUnitLess(self, oCrdnCn: "AccessConstraintCrdnConstellation"):
         Assert.assertIsNotNone(oCrdnCn)
 
         # EnableMax
@@ -1874,7 +1874,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintAWBCollection
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintAWBCollection(self, awbCol: "IAccessConstraintAnalysisWorkbenchCollection", eType: int):
+    def TestConstraintAWBCollection(self, awbCol: "AccessConstraintAnalysisWorkbenchCollection", eType: int):
         arReferences = awbCol.get_available_references(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS))
         Assert.assertTrue((Array.Length(arReferences) > 0))
 
@@ -1889,18 +1889,18 @@ class AccessConstraintHelper(object):
         Assert.assertEqual((origCount + 1), awbCol.count)
         if clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE:
             self.TestAWBConstraintMinMaxUnitLess(
-                clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), 0.0, 2000.0
+                clr.Convert(accConstraint, AccessConstraintAnalysisWorkbench), 0.0, 2000.0
             )
 
         elif clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_ANGLE:
-            self.TestAWBConstraintMinMaxAngle(clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench))
+            self.TestAWBConstraintMinMaxAngle(clr.Convert(accConstraint, AccessConstraintAnalysisWorkbench))
 
         elif clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_CRDN_CALC_SCALAR:
             self.TestAWBConstraintMinMaxUnitLess(
-                clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), -2000.0, 2000.0
+                clr.Convert(accConstraint, AccessConstraintAnalysisWorkbench), -2000.0, 2000.0
             )
 
-        Assert.assertEqual(reference, (clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench)).reference)
+        Assert.assertEqual(reference, (clr.Convert(accConstraint, AccessConstraintAnalysisWorkbench)).reference)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Specified reference cannot be found")):
             awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), "Bogus")
@@ -1919,7 +1919,7 @@ class AccessConstraintHelper(object):
             awbCol.add_constraint(clr.Convert(eType, ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS), reference)
 
         found: bool = False
-        awbConstraint: "IAccessConstraintAnalysisWorkbench"
+        awbConstraint: "AccessConstraintAnalysisWorkbench"
         for awbConstraint in awbCol:
             if awbConstraint.reference == reference:
                 found = True
@@ -1930,7 +1930,7 @@ class AccessConstraintHelper(object):
 
         i: int = 0
         while i < awbCol.count:
-            if (clr.Convert(awbCol[i], IAccessConstraintAnalysisWorkbench)).reference == reference:
+            if (clr.Convert(awbCol[i], AccessConstraintAnalysisWorkbench)).reference == reference:
                 found = True
 
             i += 1
@@ -1944,7 +1944,7 @@ class AccessConstraintHelper(object):
 
     # region TestAWBConstraintMinMaxAngle
     # ////////////////////////////////////////////////////////////////////////
-    def TestAWBConstraintMinMaxAngle(self, oMinMax: "IAccessConstraintAnalysisWorkbench"):
+    def TestAWBConstraintMinMaxAngle(self, oMinMax: "AccessConstraintAnalysisWorkbench"):
         Assert.assertIsNotNone(oMinMax)
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
         self.m_oUnits.set_current_unit("AngleUnit", "deg")
@@ -2030,7 +2030,7 @@ class AccessConstraintHelper(object):
 
     # region TestAWBConstraintMinMaxUnitLess
     # ////////////////////////////////////////////////////////////////////////
-    def TestAWBConstraintMinMaxUnitLess(self, oMinMax: "IAccessConstraintAnalysisWorkbench", dMin: float, dMax: float):
+    def TestAWBConstraintMinMaxUnitLess(self, oMinMax: "AccessConstraintAnalysisWorkbench", dMin: float, dMax: float):
         Assert.assertIsNotNone(oMinMax)
         bRange: bool = dMin == 0.345
 
@@ -2097,7 +2097,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintBackground(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oBackground: "IAccessConstraintBackground" = clr.Convert(oConstraint, IAccessConstraintBackground)
+        oBackground: "AccessConstraintBackground" = clr.Convert(oConstraint, AccessConstraintBackground)
         Assert.assertIsNotNone(oBackground)
         # eBackgroundGround
         oBackground.background = CONSTRAINT_BACKGROUND.BACKGROUND_GROUND
@@ -2112,7 +2112,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintGroundTrack(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oGroundTrack: "IAccessConstraintGroundTrack" = clr.Convert(oConstraint, IAccessConstraintGroundTrack)
+        oGroundTrack: "AccessConstraintGroundTrack" = clr.Convert(oConstraint, AccessConstraintGroundTrack)
         Assert.assertIsNotNone(oGroundTrack)
         # eDirectionAscending
         oGroundTrack.direction = CONSTRAINT_GROUND_TRACK.DIRECTION_ASCENDING
@@ -2127,12 +2127,12 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintExclusionZonesCollection(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oZones: "IAccessConstraintExclZonesCollection" = clr.Convert(oConstraint, IAccessConstraintExclZonesCollection)
+        oZones: "AccessConstraintExclZonesCollection" = clr.Convert(oConstraint, AccessConstraintExclZonesCollection)
         Assert.assertIsNotNone(oZones)
 
         iIndex: int = 0
         while iIndex < oZones.count:
-            zone: "IAccessConstraintZone" = oZones[iIndex]
+            zone: "AccessConstraintZone" = oZones[iIndex]
 
             iIndex += 1
 
@@ -2183,7 +2183,7 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintZone(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
-        oZone: "IAccessConstraintZone" = clr.Convert(oConstraint, IAccessConstraintZone)
+        oZone: "AccessConstraintZone" = clr.Convert(oConstraint, AccessConstraintZone)
         Assert.assertIsNotNone(oZone)
 
         # LatitudeUnit
@@ -2232,7 +2232,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintCbObstruction
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintCbObstruction(self, oCb: "IAccessConstraintCentralBodyObstruction"):
+    def TestConstraintCbObstruction(self, oCb: "AccessConstraintCentralBodyObstruction"):
         Assert.assertIsNotNone(oCb)
         # AvailableObstructions
         available = oCb.available_obstructions
@@ -2260,7 +2260,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintCollection
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintCollection(self, collection: "IAccessConstraintCollection"):
+    def TestConstraintCollection(self, collection: "AccessConstraintCollection"):
         Assert.assertIsNotNone(collection)
 
         i: int = 0

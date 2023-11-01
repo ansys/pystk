@@ -1,17 +1,17 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from display_times_helper import *
 from math2 import *
 from orientation_helper import *
 
-
 from ansys.stk.core.stkobjects import *
 
 
 # region AntennaHelper
 class AntennaHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
@@ -148,203 +148,203 @@ class AntennaHelper(object):
 
         if antennaModelName == "ANSYS ffd Format":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ANSY_SFFD_FORMAT, antennaModel.type)
-            self.Test_IAgAntennaModelANSYSffdFormat(clr.CastAs(antennaModel, IAntennaModelANSYSffdFormat))
+            self.Test_IAgAntennaModelANSYSffdFormat(clr.CastAs(antennaModel, AntennaModelANSYSffdFormat))
         elif antennaModelName == "Antenna Script":
             if not OSHelper.IsLinux():
                 # script plugins do not work on linux
                 Assert.assertEqual(ANTENNA_MODEL_TYPE.SCRIPT_PLUGIN, antennaModel.type)
-                self.Test_IAgAntennaModelScriptPlugin(clr.CastAs(antennaModel, IAntennaModelScriptPlugin))
+                self.Test_IAgAntennaModelScriptPlugin(clr.CastAs(antennaModel, AntennaModelScriptPlugin))
 
         elif antennaModelName == "Bessel Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_BESSEL, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularBessel(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularBessel)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularBessel)
             )
         elif antennaModelName == "Bessel Envelope Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_BESSEL_ENVELOPE, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularBesselEnvelope(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularBesselEnvelope)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularBesselEnvelope)
             )
         elif antennaModelName == "Cosecant Squared":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.COSECANT_SQUARED, antennaModel.type)
-            self.Test_IAgAntennaModelCosecantSquared(clr.CastAs(antennaModel, IAntennaModelCosecantSquared))
+            self.Test_IAgAntennaModelCosecantSquared(clr.CastAs(antennaModel, AntennaModelCosecantSquared))
         elif antennaModelName == "Cosine Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_COSINE, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularCosine(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularCosine)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularCosine)
             )
         elif antennaModelName == "Cosine Aperture Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_COSINE, antennaModel.type)
             self.Test_IAgAntennaModelApertureRectangularCosine(
-                clr.CastAs(antennaModel, IAntennaModelApertureRectangularCosine)
+                clr.CastAs(antennaModel, AntennaModelApertureRectangularCosine)
             )
         elif antennaModelName == "Cosine Pedestal Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_COSINE_PEDESTAL, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularCosinePedestal(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularCosinePedestal)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularCosinePedestal)
             )
         elif antennaModelName == "Cosine Pedestal Aperture Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_COSINE_PEDESTAL, antennaModel.type)
             self.Test_IAgAntennaModelApertureRectangularCosinePedestal(
-                clr.CastAs(antennaModel, IAntennaModelApertureRectangularCosinePedestal)
+                clr.CastAs(antennaModel, AntennaModelApertureRectangularCosinePedestal)
             )
         elif antennaModelName == "Cosine Squared Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_COSINE_SQUARED, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularCosineSquared(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularCosineSquared)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularCosineSquared)
             )
         elif antennaModelName == "Cosine Squared Aperture Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_COSINE_SQUARED, antennaModel.type)
             self.Test_IAgAntennaModelApertureRectangularCosineSquared(
-                clr.CastAs(antennaModel, IAntennaModelApertureRectangularCosineSquared)
+                clr.CastAs(antennaModel, AntennaModelApertureRectangularCosineSquared)
             )
         elif antennaModelName == "Cosine Squared Pedestal Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_COSINE_SQUARED_PEDESTAL, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularCosineSquaredPedestal(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularCosineSquaredPedestal)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularCosineSquaredPedestal)
             )
         elif antennaModelName == "Cosine Squared Pedestal Aperture Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_COSINE_SQUARED_PEDESTAL, antennaModel.type)
             self.Test_IAgAntennaModelApertureRectangularCosineSquaredPedestal(
-                clr.CastAs(antennaModel, IAntennaModelApertureRectangularCosineSquaredPedestal)
+                clr.CastAs(antennaModel, AntennaModelApertureRectangularCosineSquaredPedestal)
             )
         elif antennaModelName == "Dipole":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.DIPOLE, antennaModel.type)
-            self.Test_IAgAntennaModelDipole(clr.CastAs(antennaModel, IAntennaModelDipole))
+            self.Test_IAgAntennaModelDipole(clr.CastAs(antennaModel, AntennaModelDipole))
         elif antennaModelName == "Elevation Azimuth Cuts":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ELEVATION_AZIMUTH_CUTS, antennaModel.type)
-            self.Test_IAgAntennaModelElevationAzimuthCuts(clr.CastAs(antennaModel, IAntennaModelElevationAzimuthCuts))
+            self.Test_IAgAntennaModelElevationAzimuthCuts(clr.CastAs(antennaModel, AntennaModelElevationAzimuthCuts))
         elif antennaModelName == "External Antenna Pattern":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.EXTERNAL, antennaModel.type)
-            self.Test_IAgAntennaModelExternal(clr.CastAs(antennaModel, IAntennaModelExternal))
+            self.Test_IAgAntennaModelExternal(clr.CastAs(antennaModel, AntennaModelExternal))
         elif antennaModelName == "Gaussian":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.GAUSSIAN, antennaModel.type)
-            self.Test_IAgAntennaModelGaussian(clr.CastAs(antennaModel, IAntennaModelGaussian))
+            self.Test_IAgAntennaModelGaussian(clr.CastAs(antennaModel, AntennaModelGaussian))
         elif antennaModelName == "Gaussian Optical":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.OPTICAL_GAUSSIAN, antennaModel.type)
             self.Test_IAgAntennaModelOpticalSimple(clr.CastAs(antennaModel, IAntennaModelOpticalSimple))
         elif antennaModelName == "GIMROC Antenna Pattern":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.GIMROC, antennaModel.type)
-            self.Test_IAgAntennaModelGimroc(clr.CastAs(antennaModel, IAntennaModelGimroc))
+            self.Test_IAgAntennaModelGimroc(clr.CastAs(antennaModel, AntennaModelGimroc))
         elif antennaModelName == "GPS FRPA":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.GPS_FRPA, antennaModel.type)
-            self.Test_IAgAntennaModelGpsFrpa(clr.CastAs(antennaModel, IAntennaModelGpsFrpa))
+            self.Test_IAgAntennaModelGpsFrpa(clr.CastAs(antennaModel, AntennaModelGpsFrpa))
         elif antennaModelName == "GPS Global":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.GPS_GLOBAL, antennaModel.type)
-            self.Test_IAgAntennaModelGpsGlobal(clr.CastAs(antennaModel, IAntennaModelGpsGlobal))
+            self.Test_IAgAntennaModelGpsGlobal(clr.CastAs(antennaModel, AntennaModelGpsGlobal))
         elif antennaModelName == "Helix":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.HELIX, antennaModel.type)
-            self.Test_IAgAntennaModelHelix(clr.CastAs(antennaModel, IAntennaModelHelix))
+            self.Test_IAgAntennaModelHelix(clr.CastAs(antennaModel, AntennaModelHelix))
         elif antennaModelName == "Hemispherical":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.HEMISPHERICAL, antennaModel.type)
-            self.Test_IAgAntennaModelHemispherical(clr.CastAs(antennaModel, IAntennaModelHemispherical))
+            self.Test_IAgAntennaModelHemispherical(clr.CastAs(antennaModel, AntennaModelHemispherical))
         elif antennaModelName == "IEEE 1979":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.IEEE1979, antennaModel.type)
-            self.Test_IAgAntennaModelIeee1979(clr.CastAs(antennaModel, IAntennaModelIeee1979))
+            self.Test_IAgAntennaModelIeee1979(clr.CastAs(antennaModel, AntennaModelIeee1979))
         elif antennaModelName == "IntelSat Antenna Pattern":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.INTEL_SAT, antennaModel.type)
-            self.Test_IAgAntennaModelIntelSat(clr.CastAs(antennaModel, IAntennaModelIntelSat))
+            self.Test_IAgAntennaModelIntelSat(clr.CastAs(antennaModel, AntennaModelIntelSat))
         elif antennaModelName == "Isotropic":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ISOTROPIC, antennaModel.type)
-            self.Test_IAgAntennaModelIsotropic(clr.CastAs(antennaModel, IAntennaModelIsotropic))
+            self.Test_IAgAntennaModelIsotropic(clr.CastAs(antennaModel, AntennaModelIsotropic))
         elif antennaModelName == "ITU-R BO1213 Co-Polar":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_BO1213_CO_POLAR, antennaModel.type)
-            self.Test_IAgAntennaModelItuBO1213CoPolar(clr.CastAs(antennaModel, IAntennaModelItuBO1213CoPolar))
+            self.Test_IAgAntennaModelItuBO1213CoPolar(clr.CastAs(antennaModel, AntennaModelItuBO1213CoPolar))
         elif antennaModelName == "ITU-R BO1213 Cross-Polar":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_BO1213_CROSS_POLAR, antennaModel.type)
-            self.Test_IAgAntennaModelItuBO1213CrossPolar(clr.CastAs(antennaModel, IAntennaModelItuBO1213CrossPolar))
+            self.Test_IAgAntennaModelItuBO1213CrossPolar(clr.CastAs(antennaModel, AntennaModelItuBO1213CrossPolar))
         elif antennaModelName == "ITU-R F1245-3":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_F1245, antennaModel.type)
-            self.Test_IAgAntennaModelItuF1245(clr.CastAs(antennaModel, IAntennaModelItuF1245))
+            self.Test_IAgAntennaModelItuF1245(clr.CastAs(antennaModel, AntennaModelItuF1245))
         elif antennaModelName == "ITU-R S1528 1.2 Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S1528R12_CIRCULAR, antennaModel.type)
-            self.Test_IAgAntennaModelItuS1528R12Circular(clr.CastAs(antennaModel, IAntennaModelItuS1528R12Circular))
+            self.Test_IAgAntennaModelItuS1528R12Circular(clr.CastAs(antennaModel, AntennaModelItuS1528R12Circular))
         elif antennaModelName == "ITU-R S1528 1.2 Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S1528R12_RECTANGULAR, antennaModel.type)
             self.Test_IAgAntennaModelItuS1528R12Rectangular(
-                clr.CastAs(antennaModel, IAntennaModelItuS1528R12Rectangular)
+                clr.CastAs(antennaModel, AntennaModelItuS1528R12Rectangular)
             )
         elif antennaModelName == "ITU-R S1528 1.3":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S1528R13, antennaModel.type)
-            self.Test_IAgAntennaModelItuS1528R13(clr.CastAs(antennaModel, IAntennaModelItuS1528R13))
+            self.Test_IAgAntennaModelItuS1528R13(clr.CastAs(antennaModel, AntennaModelItuS1528R13))
         elif antennaModelName == "ITU-R S465-6":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S465, antennaModel.type)
-            self.Test_IAgAntennaModelItuS465(clr.CastAs(antennaModel, IAntennaModelItuS465))
+            self.Test_IAgAntennaModelItuS465(clr.CastAs(antennaModel, AntennaModelItuS465))
         elif antennaModelName == "ITU-R S580-6":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S580, antennaModel.type)
-            self.Test_IAgAntennaModelItuS580(clr.CastAs(antennaModel, IAntennaModelItuS580))
+            self.Test_IAgAntennaModelItuS580(clr.CastAs(antennaModel, AntennaModelItuS580))
         elif antennaModelName == "ITU-R S672-4 Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S672_CIRCULAR, antennaModel.type)
-            self.Test_IAgAntennaModelItuS672Circular(clr.CastAs(antennaModel, IAntennaModelItuS672Circular))
+            self.Test_IAgAntennaModelItuS672Circular(clr.CastAs(antennaModel, AntennaModelItuS672Circular))
         elif antennaModelName == "ITU-R S672-4 Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S672_RECTANGULAR, antennaModel.type)
-            self.Test_IAgAntennaModelItuS672Rectangular(clr.CastAs(antennaModel, IAntennaModelItuS672Rectangular))
+            self.Test_IAgAntennaModelItuS672Rectangular(clr.CastAs(antennaModel, AntennaModelItuS672Rectangular))
         elif antennaModelName == "ITU-R S731":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S731, antennaModel.type)
-            self.Test_IAgAntennaModelItuS731(clr.CastAs(antennaModel, IAntennaModelItuS731))
+            self.Test_IAgAntennaModelItuS731(clr.CastAs(antennaModel, AntennaModelItuS731))
         elif antennaModelName == "Parabolic":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.PARABOLIC, antennaModel.type)
-            self.Test_IAgAntennaModelParabolic(clr.CastAs(antennaModel, IAntennaModelParabolic))
+            self.Test_IAgAntennaModelParabolic(clr.CastAs(antennaModel, AntennaModelParabolic))
         elif antennaModelName == "Pencil Beam":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.PENCIL_BEAM, antennaModel.type)
-            self.Test_IAgAntennaModelPencilBeam(clr.CastAs(antennaModel, IAntennaModelPencilBeam))
+            self.Test_IAgAntennaModelPencilBeam(clr.CastAs(antennaModel, AntennaModelPencilBeam))
         elif antennaModelName == "Phased Array":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.PHASED_ARRAY, antennaModel.type)
-            self.Test_IAgAntennaModelPhasedArray(clr.CastAs(antennaModel, IAntennaModelPhasedArray))
+            self.Test_IAgAntennaModelPhasedArray(clr.CastAs(antennaModel, AntennaModelPhasedArray))
         elif antennaModelName == "Rectangular Pattern":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.RECTANGULAR_PATTERN, antennaModel.type)
-            self.Test_IAgAntennaModelRectangularPattern(clr.CastAs(antennaModel, IAntennaModelRectangularPattern))
+            self.Test_IAgAntennaModelRectangularPattern(clr.CastAs(antennaModel, AntennaModelRectangularPattern))
         elif antennaModelName == "Remcom Uan Format":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.REMCOM_UAN_FORMAT, antennaModel.type)
-            self.Test_IAgAntennaModelRemcomUanFormat(clr.CastAs(antennaModel, IAntennaModelRemcomUanFormat))
+            self.Test_IAgAntennaModelRemcomUanFormat(clr.CastAs(antennaModel, AntennaModelRemcomUanFormat))
         elif antennaModelName == "Simple Optical":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.OPTICAL_SIMPLE, antennaModel.type)
             self.Test_IAgAntennaModelOpticalSimple(clr.CastAs(antennaModel, IAntennaModelOpticalSimple))
         elif antennaModelName == "Sinc Integer Power Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_SINC_INT_POWER, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularSincIntPower(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularSincIntPower)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularSincIntPower)
             )
         elif antennaModelName == "Sinc Integer Power Aperture Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_SINC_INT_POWER, antennaModel.type)
             self.Test_IAgAntennaModelApertureRectangularSincIntPower(
-                clr.CastAs(antennaModel, IAntennaModelApertureRectangularSincIntPower)
+                clr.CastAs(antennaModel, AntennaModelApertureRectangularSincIntPower)
             )
         elif antennaModelName == "Sinc Real Power Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_SINC_REAL_POWER, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularSincRealPower(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularSincRealPower)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularSincRealPower)
             )
         elif antennaModelName == "Sinc Real Power Aperture Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_SINC_REAL_POWER, antennaModel.type)
             self.Test_IAgAntennaModelApertureRectangularSincRealPower(
-                clr.CastAs(antennaModel, IAntennaModelApertureRectangularSincRealPower)
+                clr.CastAs(antennaModel, AntennaModelApertureRectangularSincRealPower)
             )
         elif antennaModelName == "Square Horn":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.SQUARE_HORN, antennaModel.type)
-            self.Test_IAgAntennaModelSquareHorn(clr.CastAs(antennaModel, IAntennaModelSquareHorn))
+            self.Test_IAgAntennaModelSquareHorn(clr.CastAs(antennaModel, AntennaModelSquareHorn))
         elif antennaModelName == "Ticra GRASP Format":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.TICRA_GRASP_FORMAT, antennaModel.type)
-            self.Test_IAgAntennaModelTicraGRASPFormat(clr.CastAs(antennaModel, IAntennaModelTicraGRASPFormat))
+            self.Test_IAgAntennaModelTicraGRASPFormat(clr.CastAs(antennaModel, AntennaModelTicraGRASPFormat))
         elif antennaModelName == "Uniform Aperture Circular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_CIRCULAR_UNIFORM, antennaModel.type)
             self.Test_IAgAntennaModelApertureCircularUniform(
-                clr.CastAs(antennaModel, IAntennaModelApertureCircularUniform)
+                clr.CastAs(antennaModel, AntennaModelApertureCircularUniform)
             )
         elif antennaModelName == "Uniform Aperture Rectangular":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_UNIFORM, antennaModel.type)
             self.Test_IAgAntennaModelApertureRectangularUniform(
-                clr.CastAs(antennaModel, IAntennaModelApertureRectangularUniform)
+                clr.CastAs(antennaModel, AntennaModelApertureRectangularUniform)
             )
         elif antennaModelName == "ITU-R F1245-1":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_F1245, antennaModel.type)
-            self.Test_IAgAntennaModelItuF1245(clr.CastAs(antennaModel, IAntennaModelItuF1245))
+            self.Test_IAgAntennaModelItuF1245(clr.CastAs(antennaModel, AntennaModelItuF1245))
         elif antennaModelName == "ITU-R S465-5":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S465, antennaModel.type)
-            self.Test_IAgAntennaModelItuS465(clr.CastAs(antennaModel, IAntennaModelItuS465))
+            self.Test_IAgAntennaModelItuS465(clr.CastAs(antennaModel, AntennaModelItuS465))
         elif antennaModelName == "ITU-R S580-5":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.ITU_S580, antennaModel.type)
-            self.Test_IAgAntennaModelItuS580(clr.CastAs(antennaModel, IAntennaModelItuS580))
+            self.Test_IAgAntennaModelItuS580(clr.CastAs(antennaModel, AntennaModelItuS580))
         else:
             Assert.fail(("Unknown or untested antenna model: " + antennaModelName))
 
@@ -352,7 +352,7 @@ class AntennaHelper(object):
 
     # region Antenna Model Interface tests
 
-    def Test_IAgAntennaModelANSYSffdFormat(self, ansys: "IAntennaModelANSYSffdFormat"):
+    def Test_IAgAntennaModelANSYSffdFormat(self, ansys: "AntennaModelANSYSffdFormat"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             ansys.filename = r"C:\bogus.ffd"
 
@@ -360,7 +360,7 @@ class AntennaHelper(object):
         ansys.filename = TestBase.GetScenarioFile(FilePath)
         Assert.assertEqual(FilePath, ansys.filename)
 
-    def Test_IAgAntennaModelScriptPlugin(self, scriptPlugin: "IAntennaModelScriptPlugin"):
+    def Test_IAgAntennaModelScriptPlugin(self, scriptPlugin: "AntennaModelScriptPlugin"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
@@ -369,7 +369,7 @@ class AntennaHelper(object):
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_GaussianAntennaGain.vbs")
         Assert.assertEqual(r"CommRad\VB_GaussianAntennaGain.vbs", scriptPlugin.filename)
 
-    def Test_IAgAntennaModelApertureCircularBessel(self, acb: "IAntennaModelApertureCircularBessel"):
+    def Test_IAgAntennaModelApertureCircularBessel(self, acb: "AntennaModelApertureCircularBessel"):
         acb.function_power = 0
         Assert.assertEqual(0, acb.function_power)
         acb.function_power = 3
@@ -467,7 +467,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acb.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelApertureCircularBesselEnvelope(self, acbe: "IAntennaModelApertureCircularBesselEnvelope"):
+    def Test_IAgAntennaModelApertureCircularBesselEnvelope(self, acbe: "AntennaModelApertureCircularBesselEnvelope"):
         acbe.function_power = 0
         Assert.assertEqual(0, acbe.function_power)
         acbe.function_power = 3
@@ -565,7 +565,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acbe.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelCosecantSquared(self, cosequentSquared: "IAntennaModelCosecantSquared"):
+    def Test_IAgAntennaModelCosecantSquared(self, cosequentSquared: "AntennaModelCosecantSquared"):
         cosequentSquared.cutoff_angle = 0.1
         Assert.assertEqual(0.1, cosequentSquared.cutoff_angle)
         cosequentSquared.cutoff_angle = 50
@@ -618,7 +618,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosequentSquared.backlobe_gain = 1
 
-    def Test_IAgAntennaModelApertureCircularCosine(self, acc: "IAntennaModelApertureCircularCosine"):
+    def Test_IAgAntennaModelApertureCircularCosine(self, acc: "AntennaModelApertureCircularCosine"):
         acc.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, acc.input_type)
         acc.beamwidth = 0.001
@@ -698,7 +698,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acc.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelApertureRectangularCosine(self, arc: "IAntennaModelApertureRectangularCosine"):
+    def Test_IAgAntennaModelApertureRectangularCosine(self, arc: "AntennaModelApertureRectangularCosine"):
         arc.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS, arc.input_type)
 
@@ -804,7 +804,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arc.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelApertureCircularCosinePedestal(self, accp: "IAntennaModelApertureCircularCosinePedestal"):
+    def Test_IAgAntennaModelApertureCircularCosinePedestal(self, accp: "AntennaModelApertureCircularCosinePedestal"):
         accp.pedestal_level = -300.0
         Assert.assertEqual(-300.0, accp.pedestal_level)
         accp.pedestal_level = 0.0
@@ -894,7 +894,7 @@ class AntennaHelper(object):
             accp.mainlobe_gain = 1001.0
 
     def Test_IAgAntennaModelApertureRectangularCosinePedestal(
-        self, arcp: "IAntennaModelApertureRectangularCosinePedestal"
+        self, arcp: "AntennaModelApertureRectangularCosinePedestal"
     ):
         arcp.pedestal_level = -300.0
         Assert.assertEqual(-300.0, arcp.pedestal_level)
@@ -1010,7 +1010,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arcp.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelApertureCircularCosineSquared(self, accs: "IAntennaModelApertureCircularCosineSquared"):
+    def Test_IAgAntennaModelApertureCircularCosineSquared(self, accs: "AntennaModelApertureCircularCosineSquared"):
         accs.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, accs.input_type)
         accs.beamwidth = 0.001
@@ -1091,7 +1091,7 @@ class AntennaHelper(object):
             accs.mainlobe_gain = 1001.0
 
     def Test_IAgAntennaModelApertureRectangularCosineSquared(
-        self, arcs: "IAntennaModelApertureRectangularCosineSquared"
+        self, arcs: "AntennaModelApertureRectangularCosineSquared"
     ):
         arcs.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS, arcs.input_type)
@@ -1199,7 +1199,7 @@ class AntennaHelper(object):
             arcs.mainlobe_gain = 1001.0
 
     def Test_IAgAntennaModelApertureCircularCosineSquaredPedestal(
-        self, ccsp: "IAntennaModelApertureCircularCosineSquaredPedestal"
+        self, ccsp: "AntennaModelApertureCircularCosineSquaredPedestal"
     ):
         ccsp.pedestal_level = -300.0
         Assert.assertEqual(-300.0, ccsp.pedestal_level)
@@ -1290,7 +1290,7 @@ class AntennaHelper(object):
             ccsp.mainlobe_gain = 1001.0
 
     def Test_IAgAntennaModelApertureRectangularCosineSquaredPedestal(
-        self, rcsp: "IAntennaModelApertureRectangularCosineSquaredPedestal"
+        self, rcsp: "AntennaModelApertureRectangularCosineSquaredPedestal"
     ):
         rcsp.pedestal_level = -300.0
         Assert.assertEqual(-300.0, rcsp.pedestal_level)
@@ -1406,7 +1406,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcsp.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelDipole(self, dipole: "IAntennaModelDipole"):
+    def Test_IAgAntennaModelDipole(self, dipole: "AntennaModelDipole"):
         dipole.length = 0.001
         Assert.assertEqual(0.001, dipole.length)
         dipole.length = 1000000.0
@@ -1434,7 +1434,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             dipole.efficiency = 101.0
 
-    def Test_IAgAntennaModelExternal(self, external: "IAntennaModelExternal"):
+    def Test_IAgAntennaModelExternal(self, external: "AntennaModelExternal"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             external.filename = r"C:\bogus.ant"
         with pytest.raises(Exception, match=RegexSubstringMatch("Error loading external")):
@@ -1443,7 +1443,7 @@ class AntennaHelper(object):
         external.filename = TestBase.GetScenarioFile("CommRad", "SymmetricAntenna.ant")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "SymmetricAntenna.ant"), external.filename)
 
-    def Test_IAgAntennaModelGimroc(self, gimroc: "IAntennaModelGimroc"):
+    def Test_IAgAntennaModelGimroc(self, gimroc: "AntennaModelGimroc"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             gimroc.filename = r"C:\bogus.ant"
         with pytest.raises(Exception, match=RegexSubstringMatch("data parsing error")):
@@ -1452,7 +1452,7 @@ class AntennaHelper(object):
         gimroc.filename = TestBase.GetScenarioFile("CommRad", "Gimconc_Test_4-30dbgain_HiRes.gxt")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "Gimconc_Test_4-30dbgain_HiRes.gxt"), gimroc.filename)
 
-    def Test_IAgAntennaModelGpsFrpa(self, gpsFrpa: "IAntennaModelGpsFrpa"):
+    def Test_IAgAntennaModelGpsFrpa(self, gpsFrpa: "AntennaModelGpsFrpa"):
         gpsFrpa.efficiency = 0.0
         Assert.assertEqual(0.0, gpsFrpa.efficiency)
         gpsFrpa.efficiency = 100.0
@@ -1462,7 +1462,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gpsFrpa.efficiency = 101.0
 
-    def Test_IAgAntennaModelGpsGlobal(self, gpsGlobal: "IAntennaModelGpsGlobal"):
+    def Test_IAgAntennaModelGpsGlobal(self, gpsGlobal: "AntennaModelGpsGlobal"):
         Assert.assertEqual(14, len(gpsGlobal.supported_block_types))
         blockType: str
         for blockType in gpsGlobal.supported_block_types:
@@ -1523,7 +1523,7 @@ class AntennaHelper(object):
             else:
                 Assert.fail(("Unknown BlockType: " + gpsGlobal.block_type))
 
-    def Test_IAgAntennaModelHelix(self, helix: "IAntennaModelHelix"):
+    def Test_IAgAntennaModelHelix(self, helix: "AntennaModelHelix"):
         helix.use_backlobe_as_mainlobe_atten = True
         Assert.assertTrue(helix.use_backlobe_as_mainlobe_atten)
         helix.use_backlobe_as_mainlobe_atten = False
@@ -1581,7 +1581,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             helix.turn_spacing = 1001.0
 
-    def Test_IAgAntennaModelHemispherical(self, hemis: "IAntennaModelHemispherical"):
+    def Test_IAgAntennaModelHemispherical(self, hemis: "AntennaModelHemispherical"):
         Assert.assertAlmostEqual(3.0, hemis.mainlobe_gain, delta=1e-05)  # never changes
 
         hemis.efficiency = 0.0
@@ -1593,7 +1593,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hemis.efficiency = 101.0
 
-    def Test_IAgAntennaModelGaussian(self, gaussian: "IAntennaModelGaussian"):
+    def Test_IAgAntennaModelGaussian(self, gaussian: "AntennaModelGaussian"):
         gaussian.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH, gaussian.input_type)
         gaussian.beamwidth = 0.001
@@ -1720,7 +1720,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             opticalSimple.max_gain = 2891.0
 
-    def Test_IAgAntennaModelIeee1979(self, ieee1979: "IAntennaModelIeee1979"):
+    def Test_IAgAntennaModelIeee1979(self, ieee1979: "AntennaModelIeee1979"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             ieee1979.filename = r"C:\bogus.ant"
         with pytest.raises(Exception, match=RegexSubstringMatch("Error loading")):
@@ -1729,7 +1729,7 @@ class AntennaHelper(object):
         ieee1979.filename = TestBase.GetScenarioFile("CommRad", "IEEE1979.ant")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "IEEE1979.ant"), ieee1979.filename)
 
-    def Test_IAgAntennaModelItuBO1213CoPolar(self, ItuBO1213CoPolar: "IAntennaModelItuBO1213CoPolar"):
+    def Test_IAgAntennaModelItuBO1213CoPolar(self, ItuBO1213CoPolar: "AntennaModelItuBO1213CoPolar"):
         # Depends on Design Frequency
         ItuBO1213CoPolar.diameter = 0.001
         Assert.assertEqual(0.001, ItuBO1213CoPolar.diameter)
@@ -1765,7 +1765,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CoPolar.efficiency = 101
 
-    def Test_IAgAntennaModelItuBO1213CrossPolar(self, ItuBO1213CrossPolar: "IAntennaModelItuBO1213CrossPolar"):
+    def Test_IAgAntennaModelItuBO1213CrossPolar(self, ItuBO1213CrossPolar: "AntennaModelItuBO1213CrossPolar"):
         ItuBO1213CrossPolar.diameter = 0.001
         Assert.assertEqual(0.001, ItuBO1213CrossPolar.diameter)
         ItuBO1213CrossPolar.diameter = 1000
@@ -1800,7 +1800,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuBO1213CrossPolar.efficiency = 101
 
-    def Test_IAgAntennaModelItuF1245(self, ItuF1245: "IAntennaModelItuF1245"):
+    def Test_IAgAntennaModelItuF1245(self, ItuF1245: "AntennaModelItuF1245"):
         # Depends on Design Frequency
         ItuF1245.diameter = 0.001
         Assert.assertEqual(0.001, ItuF1245.diameter)
@@ -1841,7 +1841,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuF1245.efficiency = 101
 
-    def Test_IAgAntennaModelItuS1528R12Circular(self, ItuS1528R12Circular: "IAntennaModelItuS1528R12Circular"):
+    def Test_IAgAntennaModelItuS1528R12Circular(self, ItuS1528R12Circular: "AntennaModelItuS1528R12Circular"):
         ItuS1528R12Circular.diameter = 0.001
         Assert.assertEqual(0.001, ItuS1528R12Circular.diameter)
         ItuS1528R12Circular.diameter = 1000.0
@@ -1924,7 +1924,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Circular.efficiency = 101
 
-    def Test_IAgAntennaModelItuS1528R12Rectangular(self, ItuS1528R12Rectangular: "IAntennaModelItuS1528R12Rectangular"):
+    def Test_IAgAntennaModelItuS1528R12Rectangular(self, ItuS1528R12Rectangular: "AntennaModelItuS1528R12Rectangular"):
         ItuS1528R12Rectangular.major_dimension = 1
         Assert.assertEqual(1, ItuS1528R12Rectangular.major_dimension)
         ItuS1528R12Rectangular.major_dimension = 46
@@ -2017,7 +2017,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R12Rectangular.efficiency = 101
 
-    def Test_IAgAntennaModelItuS1528R13(self, ItuS1528R13: "IAntennaModelItuS1528R13"):
+    def Test_IAgAntennaModelItuS1528R13(self, ItuS1528R13: "AntennaModelItuS1528R13"):
         ItuS1528R13.diameter = 0.001
         Assert.assertEqual(0.001, ItuS1528R13.diameter)
         ItuS1528R13.diameter = 1000.0
@@ -2100,7 +2100,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS1528R13.efficiency = 101
 
-    def Test_IAgAntennaModelItuS465(self, ItuS465: "IAntennaModelItuS465"):
+    def Test_IAgAntennaModelItuS465(self, ItuS465: "AntennaModelItuS465"):
         ItuS465.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS465.diameter)
         ItuS465.diameter = 0.001
@@ -2164,7 +2164,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS465.efficiency = 101
 
-    def Test_IAgAntennaModelItuS580(self, ItuS580: "IAntennaModelItuS580"):
+    def Test_IAgAntennaModelItuS580(self, ItuS580: "AntennaModelItuS580"):
         ItuS580.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS580.diameter)
         ItuS580.diameter = 0.001
@@ -2219,7 +2219,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS580.efficiency = 101
 
-    def Test_IAgAntennaModelItuS672Circular(self, ItuS672Circular: "IAntennaModelItuS672Circular"):
+    def Test_IAgAntennaModelItuS672Circular(self, ItuS672Circular: "AntennaModelItuS672Circular"):
         ItuS672Circular.diameter = 0.001
         Assert.assertEqual(0.001, ItuS672Circular.diameter)
         ItuS672Circular.diameter = 1000.0
@@ -2302,7 +2302,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Circular.efficiency = 101
 
-    def Test_IAgAntennaModelItuS672Rectangular(self, ItuS672Rectangular: "IAntennaModelItuS672Rectangular"):
+    def Test_IAgAntennaModelItuS672Rectangular(self, ItuS672Rectangular: "AntennaModelItuS672Rectangular"):
         ItuS672Rectangular.major_dimension = 1
         Assert.assertEqual(1, ItuS672Rectangular.major_dimension)
         ItuS672Rectangular.major_dimension = 17
@@ -2395,7 +2395,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS672Rectangular.efficiency = 101
 
-    def Test_IAgAntennaModelItuS731(self, ItuS731: "IAntennaModelItuS731"):
+    def Test_IAgAntennaModelItuS731(self, ItuS731: "AntennaModelItuS731"):
         ItuS731.diameter = 1000.0
         Assert.assertEqual(1000.0, ItuS731.diameter)
         ItuS731.diameter = 0.001
@@ -2450,7 +2450,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             ItuS731.efficiency = 101
 
-    def Test_IAgAntennaModelIntelSat(self, intelSat: "IAntennaModelIntelSat"):
+    def Test_IAgAntennaModelIntelSat(self, intelSat: "AntennaModelIntelSat"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             intelSat.filename = r"C:\bogus.ant"
         with pytest.raises(Exception, match=RegexSubstringMatch("Aborting file load")):
@@ -2459,7 +2459,7 @@ class AntennaHelper(object):
         intelSat.filename = TestBase.GetScenarioFile("CommRad", "trga0c.f03")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "trga0c.f03"), intelSat.filename)
 
-    def Test_IAgAntennaModelIsotropic(self, isotropic: "IAntennaModelIsotropic"):
+    def Test_IAgAntennaModelIsotropic(self, isotropic: "AntennaModelIsotropic"):
         Assert.assertEqual(0, isotropic.mainlobe_gain)  # read only
 
         isotropic.efficiency = 0.0
@@ -2471,7 +2471,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             isotropic.efficiency = 101
 
-    def Test_IAgAntennaModelParabolic(self, parabolic: "IAntennaModelParabolic"):
+    def Test_IAgAntennaModelParabolic(self, parabolic: "AntennaModelParabolic"):
         parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH, parabolic.input_type)
         parabolic.beamwidth = 0.001
@@ -2558,7 +2558,7 @@ class AntennaHelper(object):
         Assert.assertFalse(parabolic.use_backlobe_as_mainlobe_atten)
 
     # Used by Phased Array test
-    def Test_IAgDirectionProviderAsciiFile(self, asciiFile: "IDirectionProviderAsciiFile", IsBeamDirection: bool):
+    def Test_IAgDirectionProviderAsciiFile(self, asciiFile: "DirectionProviderAsciiFile", IsBeamDirection: bool):
         asciiFile.enabled = False
         Assert.assertFalse(asciiFile.enabled)
 
@@ -2588,7 +2588,7 @@ class AntennaHelper(object):
             )
 
     # Used by Phased Array test
-    def Test_IAgDirectionProviderObject(self, objectx: "IDirectionProviderObject", bRestrictToOneElement: bool):
+    def Test_IAgDirectionProviderObject(self, objectx: "DirectionProviderObject", bRestrictToOneElement: bool):
         objectx.enabled = False
         Assert.assertFalse(objectx.enabled)
 
@@ -2602,7 +2602,7 @@ class AntennaHelper(object):
         oOLCHelper.Run(objectx.directions, self.m_root)
 
     # Used by Phased Array test
-    def Test_IAgDirectionProviderScript(self, script: "IDirectionProviderScript", filename: str):
+    def Test_IAgDirectionProviderScript(self, script: "DirectionProviderScript", filename: str):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             script.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
@@ -2616,7 +2616,7 @@ class AntennaHelper(object):
             oOLCHelper.Run(script.members, self.m_root)
 
     # Used by Phased Array test
-    def Test_IAgElementConfigurationAsciiFile(self, asciiFile: "IElementConfigurationAsciiFile"):
+    def Test_IAgElementConfigurationAsciiFile(self, asciiFile: "ElementConfigurationAsciiFile"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             asciiFile.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("incorrect")):
@@ -2626,7 +2626,7 @@ class AntennaHelper(object):
         Assert.assertEqual(TestBase.PathCombine("CommRad", "elementPositions.pae"), asciiFile.filename)
 
     # Used by Phased Array test
-    def Test_IAgElementConfigurationCircular(self, circular: "IElementConfigurationCircular"):
+    def Test_IAgElementConfigurationCircular(self, circular: "ElementConfigurationCircular"):
         circular.num_elements = 3
         Assert.assertEqual(3, circular.num_elements)
         circular.num_elements = 10  # Actual max is 5000, but this can cause out-of-memory exceptions
@@ -2645,7 +2645,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be from")):
             circular.spacing = 1.1
 
-    def Test_IAgElementConfigurationLinear(self, linear: "IElementConfigurationLinear"):
+    def Test_IAgElementConfigurationLinear(self, linear: "ElementConfigurationLinear"):
         linear.num_elements = 2
         Assert.assertEqual(2, linear.num_elements)
         linear.num_elements = 10  # Actual max is 5000, but this can cause out-of-memory exceptions
@@ -2746,7 +2746,7 @@ class AntennaHelper(object):
         Assert.assertEqual(0, polygon.max_look_angle_az)
         Assert.assertEqual(0, polygon.max_look_angle_el)
 
-    def Test_IAgAntennaModelPhasedArray(self, phasedArray: "IAntennaModelPhasedArray"):
+    def Test_IAgAntennaModelPhasedArray(self, phasedArray: "AntennaModelPhasedArray"):
         phasedArray.backlobe_suppression = 0
         Assert.assertEqual(0, phasedArray.backlobe_suppression)
         if not OSHelper.IsLinux():
@@ -2804,11 +2804,11 @@ class AntennaHelper(object):
 
         # Element Configuration sub-tab
 
-        eleColl: "IElementCollection" = phasedArray.elements
+        eleColl: "ElementCollection" = phasedArray.elements
 
         i: int = 0
         while i < eleColl.count:
-            e: "IElement" = eleColl[i]
+            e: "Element" = eleColl[i]
             Console.WriteLine(
                 ((((((((str(i) + "  ") + str(e.x)) + "  ") + str(e.y)) + "  ") + str(e.enabled)) + "  ") + str(e.id))
             )
@@ -2877,7 +2877,7 @@ class AntennaHelper(object):
         Assert.assertEqual(eleColl[14].enabled, False)
         Assert.assertEqual(eleColl[14].id, 14)
 
-        ele: "IElement"
+        ele: "Element"
 
         for ele in eleColl:
             Assert.assertIsNotNone(ele)
@@ -2886,7 +2886,7 @@ class AntennaHelper(object):
 
         i: int = 0
         while i < eleColl.count:
-            ele2: "IElement" = eleColl[i]
+            ele2: "Element" = eleColl[i]
             Assert.assertEqual(i, ele2.id)
             if i == (eleColl.count - 1):
                 with pytest.raises(Exception, match=RegexSubstringMatch("Cannot disable the last element")):
@@ -2905,13 +2905,13 @@ class AntennaHelper(object):
                 phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.ASCII_FILE
                 Assert.assertEqual(ELEMENT_CONFIGURATION_TYPE.ASCII_FILE, phasedArray.element_configuration_type)
                 self.Test_IAgElementConfigurationAsciiFile(
-                    clr.CastAs(phasedArray.element_configuration, IElementConfigurationAsciiFile)
+                    clr.CastAs(phasedArray.element_configuration, ElementConfigurationAsciiFile)
                 )
             elif elementConfigurationType == ELEMENT_CONFIGURATION_TYPE.CIRCULAR:
                 phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.CIRCULAR
                 Assert.assertEqual(ELEMENT_CONFIGURATION_TYPE.CIRCULAR, phasedArray.element_configuration_type)
                 self.Test_IAgElementConfigurationCircular(
-                    clr.CastAs(phasedArray.element_configuration, IElementConfigurationCircular)
+                    clr.CastAs(phasedArray.element_configuration, ElementConfigurationCircular)
                 )
             elif elementConfigurationType == ELEMENT_CONFIGURATION_TYPE.HEXAGON:
                 phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.HEXAGON
@@ -2923,7 +2923,7 @@ class AntennaHelper(object):
                 phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.LINEAR
                 Assert.assertEqual(ELEMENT_CONFIGURATION_TYPE.LINEAR, phasedArray.element_configuration_type)
                 self.Test_IAgElementConfigurationLinear(
-                    clr.CastAs(phasedArray.element_configuration, IElementConfigurationLinear)
+                    clr.CastAs(phasedArray.element_configuration, ElementConfigurationLinear)
                 )
             elif elementConfigurationType == ELEMENT_CONFIGURATION_TYPE.POLYGON:
                 phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.POLYGON
@@ -2947,7 +2947,7 @@ class AntennaHelper(object):
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, phasedArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderAsciiFile(
-                    clr.CastAs(phasedArray.beam_direction_provider, IDirectionProviderAsciiFile), True
+                    clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderAsciiFile), True
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.LINK:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.LINK
@@ -2956,14 +2956,14 @@ class AntennaHelper(object):
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, phasedArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderObject(
-                    clr.CastAs(phasedArray.beam_direction_provider, IDirectionProviderObject), False
+                    clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderObject), False
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.SCRIPT:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, phasedArray.beam_direction_provider_type)
                 filename: str = r"CommRad\VB_BeamDirectionProvider.vbs"
                 self.Test_IAgDirectionProviderScript(
-                    clr.CastAs(phasedArray.beam_direction_provider, IDirectionProviderScript), filename
+                    clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderScript), filename
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
@@ -2983,20 +2983,20 @@ class AntennaHelper(object):
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, phasedArray.null_direction_provider_type)
                 self.Test_IAgDirectionProviderAsciiFile(
-                    clr.CastAs(phasedArray.null_direction_provider, IDirectionProviderAsciiFile), False
+                    clr.CastAs(phasedArray.null_direction_provider, DirectionProviderAsciiFile), False
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.OBJECT:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, phasedArray.null_direction_provider_type)
                 self.Test_IAgDirectionProviderObject(
-                    clr.CastAs(phasedArray.null_direction_provider, IDirectionProviderObject), False
+                    clr.CastAs(phasedArray.null_direction_provider, DirectionProviderObject), False
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.SCRIPT:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, phasedArray.null_direction_provider_type)
                 filename: str = r"CommRad\VB_NullDirectionProvider.vbs"
                 self.Test_IAgDirectionProviderScript(
-                    clr.CastAs(phasedArray.null_direction_provider, IDirectionProviderScript), filename
+                    clr.CastAs(phasedArray.null_direction_provider, DirectionProviderScript), filename
                 )
             elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
@@ -3011,7 +3011,7 @@ class AntennaHelper(object):
         phasedArray.beamformer_type = BEAMFORMER_TYPE.ASCII_FILE
         Assert.assertEqual(BEAMFORMER_TYPE.ASCII_FILE, phasedArray.beamformer_type)
 
-        asciiFile: "IBeamformerAsciiFile" = clr.CastAs(phasedArray.beamformer, IBeamformerAsciiFile)
+        asciiFile: "BeamformerAsciiFile" = clr.CastAs(phasedArray.beamformer, BeamformerAsciiFile)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             asciiFile.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Error File Type")):
@@ -3022,7 +3022,7 @@ class AntennaHelper(object):
         phasedArray.beamformer_type = BEAMFORMER_TYPE.MVDR
         Assert.assertEqual(BEAMFORMER_TYPE.MVDR, phasedArray.beamformer_type)
 
-        mvdr: "IBeamformerMvdr" = clr.CastAs(phasedArray.beamformer, IBeamformerMvdr)
+        mvdr: "BeamformerMvdr" = clr.CastAs(phasedArray.beamformer, BeamformerMvdr)
         mvdr.constraint = 0.001
         Assert.assertAlmostEqual(0.001, mvdr.constraint, delta=1e-06)
         mvdr.constraint = 10
@@ -3035,7 +3035,7 @@ class AntennaHelper(object):
         phasedArray.beamformer_type = BEAMFORMER_TYPE.SCRIPT
         Assert.assertEqual(BEAMFORMER_TYPE.SCRIPT, phasedArray.beamformer_type)
 
-        script: "IBeamformerScript" = clr.CastAs(phasedArray.beamformer, IBeamformerScript)
+        script: "BeamformerScript" = clr.CastAs(phasedArray.beamformer, BeamformerScript)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             script.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
@@ -3045,7 +3045,7 @@ class AntennaHelper(object):
             script.filename = TestBase.GetScenarioFile("CommRad", "VB_Beamformer.vbs")
             Assert.assertEqual(r"CommRad\VB_Beamformer.vbs", script.filename)
 
-    def Test_IAgAntennaModelPencilBeam(self, pencilBeam: "IAntennaModelPencilBeam"):
+    def Test_IAgAntennaModelPencilBeam(self, pencilBeam: "AntennaModelPencilBeam"):
         Assert.assertAlmostEqual(1.62, float(pencilBeam.beamwidth), delta=0.01)  # read only
 
         pencilBeam.mainlobe_gain = 0
@@ -3064,7 +3064,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             pencilBeam.mainlobe_gain = 1001
 
-    def Test_IAgAntennaModelElevationAzimuthCuts(self, cuts: "IAntennaModelElevationAzimuthCuts"):
+    def Test_IAgAntennaModelElevationAzimuthCuts(self, cuts: "AntennaModelElevationAzimuthCuts"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             cuts.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Error loading")):
@@ -3073,7 +3073,7 @@ class AntennaHelper(object):
         cuts.filename = TestBase.GetScenarioFile("CommRad", "Pattern_Elev_Azi_Cuts_1Beam.Ant")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "Pattern_Elev_Azi_Cuts_1Beam.Ant"), cuts.filename)
 
-    def Test_IAgAntennaModelRectangularPattern(self, rp: "IAntennaModelRectangularPattern"):
+    def Test_IAgAntennaModelRectangularPattern(self, rp: "AntennaModelRectangularPattern"):
         Assert.assertEqual(20.0, rp.mainlobe_gain)
         Assert.assertEqual(10.0, rp.phi_angle)
         Assert.assertEqual(10.0, rp.theta_angle)
@@ -3097,7 +3097,7 @@ class AntennaHelper(object):
         Assert.assertEqual(5.0, rp.theta_angle)
         Assert.assertAlmostEqual(-0.2, rp.sidelobe_gain, delta=0.1)
 
-    def Test_IAgAntennaModelRemcomUanFormat(self, remcom: "IAntennaModelRemcomUanFormat"):
+    def Test_IAgAntennaModelRemcomUanFormat(self, remcom: "AntennaModelRemcomUanFormat"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             remcom.filename = r"C:\bogus.uan"
 
@@ -3107,7 +3107,7 @@ class AntennaHelper(object):
         remcom.filename = TestBase.GetScenarioFile(FilePath)
         Assert.assertEqual(FilePath, remcom.filename)
 
-    def Test_IAgAntennaModelTicraGRASPFormat(self, ticra: "IAntennaModelTicraGRASPFormat"):
+    def Test_IAgAntennaModelTicraGRASPFormat(self, ticra: "AntennaModelTicraGRASPFormat"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             ticra.filename = r"C:\bogus.grd"
 
@@ -3115,7 +3115,7 @@ class AntennaHelper(object):
         ticra.filename = TestBase.GetScenarioFile(FilePath)
         Assert.assertEqual(FilePath, ticra.filename)
 
-    def Test_IAgAntennaModelApertureCircularSincIntPower(self, acsip: "IAntennaModelApertureCircularSincIntPower"):
+    def Test_IAgAntennaModelApertureCircularSincIntPower(self, acsip: "AntennaModelApertureCircularSincIntPower"):
         acsip.function_power = 1
         Assert.assertEqual(1, acsip.function_power)
         acsip.function_power = 10
@@ -3204,9 +3204,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acsip.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelApertureRectangularSincIntPower(
-        self, arsip: "IAntennaModelApertureRectangularSincIntPower"
-    ):
+    def Test_IAgAntennaModelApertureRectangularSincIntPower(self, arsip: "AntennaModelApertureRectangularSincIntPower"):
         arsip.function_power = 1
         Assert.assertEqual(1, arsip.function_power)
         arsip.function_power = 10
@@ -3321,7 +3319,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsip.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelApertureCircularSincRealPower(self, acsrp: "IAntennaModelApertureCircularSincRealPower"):
+    def Test_IAgAntennaModelApertureCircularSincRealPower(self, acsrp: "AntennaModelApertureCircularSincRealPower"):
         acsrp.function_power = 1
         Assert.assertEqual(1, acsrp.function_power)
         acsrp.function_power = 10
@@ -3411,7 +3409,7 @@ class AntennaHelper(object):
             acsrp.mainlobe_gain = 1001.0
 
     def Test_IAgAntennaModelApertureRectangularSincRealPower(
-        self, arsrp: "IAntennaModelApertureRectangularSincRealPower"
+        self, arsrp: "AntennaModelApertureRectangularSincRealPower"
     ):
         arsrp.function_power = 1
         Assert.assertEqual(1, arsrp.function_power)
@@ -3527,7 +3525,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             arsrp.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelSquareHorn(self, squareHorn: "IAntennaModelSquareHorn"):
+    def Test_IAgAntennaModelSquareHorn(self, squareHorn: "AntennaModelSquareHorn"):
         squareHorn.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH, squareHorn.input_type)
         squareHorn.beamwidth = 0.001
@@ -3613,7 +3611,7 @@ class AntennaHelper(object):
         squareHorn.use_backlobe_as_mainlobe_atten = False
         Assert.assertFalse(squareHorn.use_backlobe_as_mainlobe_atten)
 
-    def Test_IAgAntennaModelApertureCircularUniform(self, acu: "IAntennaModelApertureCircularUniform"):
+    def Test_IAgAntennaModelApertureCircularUniform(self, acu: "AntennaModelApertureCircularUniform"):
         acu.input_type = CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH
         Assert.assertEqual(CIRCULAR_APERTURE_INPUT_TYPE.BEAMWIDTH, acu.input_type)
         acu.beamwidth = 0.001
@@ -3693,7 +3691,7 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             acu.mainlobe_gain = 1001.0
 
-    def Test_IAgAntennaModelApertureRectangularUniform(self, aru: "IAntennaModelApertureRectangularUniform"):
+    def Test_IAgAntennaModelApertureRectangularUniform(self, aru: "AntennaModelApertureRectangularUniform"):
         aru.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS
         Assert.assertEqual(RECTANGULAR_APERTURE_INPUT_TYPE.DIMENSIONS, aru.input_type)
 
@@ -3805,8 +3803,8 @@ class AntennaHelper(object):
 
 # region RFFilterModelHelper
 class RFFilterModelHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
@@ -3858,77 +3856,75 @@ class RFFilterModelHelper(object):
                 filterModel.insertion_loss = 1001
             if filterName == "Bessel":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.BESSEL, filterModel.type)
-                self.Test_IAgRFFilterModelBessel(clr.CastAs(filterModel, IRFFilterModelBessel))
+                self.Test_IAgRFFilterModelBessel(clr.CastAs(filterModel, RFFilterModelBessel))
             elif filterName == "Butterworth":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.BUTTERWORTH, filterModel.type)
-                self.Test_IAgRFFilterModelButterworth(clr.CastAs(filterModel, IRFFilterModelButterworth))
+                self.Test_IAgRFFilterModelButterworth(clr.CastAs(filterModel, RFFilterModelButterworth))
             elif filterName == "Chebyshev":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.CHEBYSHEV, filterModel.type)
-                self.Test_IAgRFFilterModelChebyshev(clr.CastAs(filterModel, IRFFilterModelChebyshev))
+                self.Test_IAgRFFilterModelChebyshev(clr.CastAs(filterModel, RFFilterModelChebyshev))
             elif filterName == "Cosine Window":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.COSINE_WINDOW, filterModel.type)
-                self.Test_IAgRFFilterModelCosineWindow(clr.CastAs(filterModel, IRFFilterModelCosineWindow))
+                self.Test_IAgRFFilterModelCosineWindow(clr.CastAs(filterModel, RFFilterModelCosineWindow))
             elif filterName == "Elliptic":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.ELLIPTIC, filterModel.type)
-                self.Test_IAgRFFilterModelElliptic(clr.CastAs(filterModel, IRFFilterModelElliptic))
+                self.Test_IAgRFFilterModelElliptic(clr.CastAs(filterModel, RFFilterModelElliptic))
             elif filterName == "External":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.EXTERNAL, filterModel.type)
-                self.Test_IAgRFFilterModelExternal(clr.CastAs(filterModel, IRFFilterModelExternal))
+                self.Test_IAgRFFilterModelExternal(clr.CastAs(filterModel, RFFilterModelExternal))
             elif filterName == "FIR":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.FIR, filterModel.type)
-                self.Test_IAgRFFilterModelFir(clr.CastAs(filterModel, IRFFilterModelFir))
+                self.Test_IAgRFFilterModelFir(clr.CastAs(filterModel, RFFilterModelFir))
             elif filterName == "FIR Box Car":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.FIR_BOX_CAR, filterModel.type)
-                self.Test_IAgRFFilterModelFirBoxCar(clr.CastAs(filterModel, IRFFilterModelFirBoxCar))
+                self.Test_IAgRFFilterModelFirBoxCar(clr.CastAs(filterModel, RFFilterModelFirBoxCar))
             elif filterName == "Gaussian Window":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.GAUSSIAN_WINDOW, filterModel.type)
-                self.Test_IAgRFFilterModelGaussianWindow(clr.CastAs(filterModel, IRFFilterModelGaussianWindow))
+                self.Test_IAgRFFilterModelGaussianWindow(clr.CastAs(filterModel, RFFilterModelGaussianWindow))
             elif filterName == "Hamming Window":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.HAMMING_WINDOW, filterModel.type)
-                self.Test_IAgRFFilterModelHammingWindow(clr.CastAs(filterModel, IRFFilterModelHammingWindow))
+                self.Test_IAgRFFilterModelHammingWindow(clr.CastAs(filterModel, RFFilterModelHammingWindow))
             elif filterName == "IIR":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.IIR, filterModel.type)
-                self.Test_IAgRFFilterModelIir(clr.CastAs(filterModel, IRFFilterModelIir))
+                self.Test_IAgRFFilterModelIir(clr.CastAs(filterModel, RFFilterModelIir))
             elif filterName == "RC Low-Pass":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.RC_LOW_PASS, filterModel.type)
-                self.Test_IAgRFFilterModelRcLowPass(clr.CastAs(filterModel, IRFFilterModelRcLowPass))
+                self.Test_IAgRFFilterModelRcLowPass(clr.CastAs(filterModel, RFFilterModelRcLowPass))
             elif filterName == "Raised Cosine":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.RAISED_COSINE, filterModel.type)
-                self.Test_IAgRFFilterModelRaisedCosine(clr.CastAs(filterModel, IRFFilterModelRaisedCosine))
+                self.Test_IAgRFFilterModelRaisedCosine(clr.CastAs(filterModel, RFFilterModelRaisedCosine))
             elif filterName == "Rectangular":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.RECTANGULAR, filterModel.type)
             elif filterName == "Root Raised Cosine":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.ROOT_RAISED_COSINE, filterModel.type)
-                self.Test_IAgRFFilterModelRootRaisedCosine(clr.CastAs(filterModel, IRFFilterModelRootRaisedCosine))
+                self.Test_IAgRFFilterModelRootRaisedCosine(clr.CastAs(filterModel, RFFilterModelRootRaisedCosine))
             elif filterName == "Script":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.SCRIPT_PLUGIN, filterModel.type)
-                self.Test_IAgRFFilterModelScriptPlugin(clr.CastAs(filterModel, IRFFilterModelScriptPlugin))
+                self.Test_IAgRFFilterModelScriptPlugin(clr.CastAs(filterModel, RFFilterModelScriptPlugin))
             elif filterName == "Sinc":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.SINC, filterModel.type)
-                self.Test_IAgRFFilterModelIAgRFFilterModelSinc(clr.CastAs(filterModel, IRFFilterModelSinc))
+                self.Test_IAgRFFilterModelIAgRFFilterModelSinc(clr.CastAs(filterModel, RFFilterModelSinc))
             elif filterName == "Sinc Envelope Sinc":
                 Assert.assertEqual(RF_FILTER_MODEL_TYPE.SINC_ENV_SINC, filterModel.type)
-                self.Test_IAgRFFilterModelIAgRFFilterModelSincEnvSinc(
-                    clr.CastAs(filterModel, IRFFilterModelSincEnvSinc)
-                )
+                self.Test_IAgRFFilterModelIAgRFFilterModelSincEnvSinc(clr.CastAs(filterModel, RFFilterModelSincEnvSinc))
             else:
                 Assert.fail("Unknown Filter name")
 
     # endregion
 
     # region Filter Model Interface Tests
-    def Test_IAgCRComplexCollection(self, crComplexCollection: "ICRComplexCollection"):
-        entry1: "ICRComplex" = crComplexCollection.add(11, 12)
+    def Test_IAgCRComplexCollection(self, crComplexCollection: "CRComplexCollection"):
+        entry1: "CRComplex" = crComplexCollection.add(11, 12)
         Assert.assertEqual(1, crComplexCollection.count)
         Assert.assertEqual(11, entry1.real)
         Assert.assertEqual(12, entry1.imaginary)
 
-        entry2: "ICRComplex" = crComplexCollection.add(13, 14)
+        entry2: "CRComplex" = crComplexCollection.add(13, 14)
         Assert.assertEqual(2, crComplexCollection.count)
         Assert.assertEqual(13, entry2.real)
         Assert.assertEqual(14, entry2.imaginary)
 
-        entry3: "ICRComplex" = crComplexCollection.insert_at(1, 15, 16)
+        entry3: "CRComplex" = crComplexCollection.insert_at(1, 15, 16)
         Assert.assertEqual(3, crComplexCollection.count)
         Assert.assertEqual(15, entry3.real)
         Assert.assertEqual(16, entry3.imaginary)
@@ -3945,7 +3941,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             crComplexCollection.insert_at(3, 21, 22)
 
-        entry: "ICRComplex"
+        entry: "CRComplex"
 
         for entry in crComplexCollection:
             Assert.assertIsNotNone(entry)
@@ -3966,7 +3962,7 @@ class RFFilterModelHelper(object):
         crComplexCollection.clear()
         Assert.assertEqual(0, crComplexCollection.count)
 
-    def Test_IAgRFFilterModelBessel(self, bessel: "IRFFilterModelBessel"):
+    def Test_IAgRFFilterModelBessel(self, bessel: "RFFilterModelBessel"):
         bessel.order = 1
         Assert.assertEqual(1, bessel.order)
         bessel.order = 1000
@@ -3985,7 +3981,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             bessel.cutoff_frequency = 10000000000
 
-    def Test_IAgRFFilterModelButterworth(self, butterworth: "IRFFilterModelButterworth"):
+    def Test_IAgRFFilterModelButterworth(self, butterworth: "RFFilterModelButterworth"):
         butterworth.order = 1
         Assert.assertEqual(1, butterworth.order)
         butterworth.order = 1000
@@ -4004,7 +4000,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             butterworth.cutoff_frequency = 10000000000
 
-    def Test_IAgRFFilterModelChebyshev(self, chebyshev: "IRFFilterModelChebyshev"):
+    def Test_IAgRFFilterModelChebyshev(self, chebyshev: "RFFilterModelChebyshev"):
         chebyshev.order = 1
         Assert.assertEqual(1, chebyshev.order)
         chebyshev.order = 1000
@@ -4039,7 +4035,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             chebyshev.ripple = 1001
 
-    def Test_IAgRFFilterModelCosineWindow(self, cosineWindow: "IRFFilterModelCosineWindow"):
+    def Test_IAgRFFilterModelCosineWindow(self, cosineWindow: "RFFilterModelCosineWindow"):
         cosineWindow.sampling_frequency = 0
         Assert.assertEqual(0, cosineWindow.sampling_frequency)
         cosineWindow.sampling_frequency = 1000000000
@@ -4049,7 +4045,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cosineWindow.sampling_frequency = 1000000001
 
-    def Test_IAgRFFilterModelElliptic(self, elliptic: "IRFFilterModelElliptic"):
+    def Test_IAgRFFilterModelElliptic(self, elliptic: "RFFilterModelElliptic"):
         elliptic.order = 1
         Assert.assertEqual(1, elliptic.order)
         elliptic.order = 1000
@@ -4084,7 +4080,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             elliptic.ripple = 1001
 
-    def Test_IAgRFFilterModelExternal(self, external: "IRFFilterModelExternal"):
+    def Test_IAgRFFilterModelExternal(self, external: "RFFilterModelExternal"):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             external.override_bandwidth_limits = True
 
@@ -4101,7 +4097,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("did not find required tag")):
             external.filename = r"ChainTest\ChainTest.sc"
 
-    def Test_IAgRFFilterModelFir(self, fir: "IRFFilterModelFir"):
+    def Test_IAgRFFilterModelFir(self, fir: "RFFilterModelFir"):
         fir.sampling_frequency = 0
         Assert.assertEqual(0, fir.sampling_frequency)
         fir.sampling_frequency = 1000000000
@@ -4113,7 +4109,7 @@ class RFFilterModelHelper(object):
 
         self.Test_IAgCRComplexCollection(fir.numerator_complex_polynomial)
 
-    def Test_IAgRFFilterModelFirBoxCar(self, firBoxCar: "IRFFilterModelFirBoxCar"):
+    def Test_IAgRFFilterModelFirBoxCar(self, firBoxCar: "RFFilterModelFirBoxCar"):
         firBoxCar.order = 1
         Assert.assertEqual(1, firBoxCar.order)
         firBoxCar.order = 1000
@@ -4132,7 +4128,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             firBoxCar.sampling_frequency = 1000000001
 
-    def Test_IAgRFFilterModelGaussianWindow(self, gaussianWindow: "IRFFilterModelGaussianWindow"):
+    def Test_IAgRFFilterModelGaussianWindow(self, gaussianWindow: "RFFilterModelGaussianWindow"):
         gaussianWindow.order = 1
         Assert.assertEqual(1, gaussianWindow.order)
         gaussianWindow.order = 1000
@@ -4151,7 +4147,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             gaussianWindow.sampling_frequency = 1000000001
 
-    def Test_IAgRFFilterModelHammingWindow(self, hammingWindow: "IRFFilterModelHammingWindow"):
+    def Test_IAgRFFilterModelHammingWindow(self, hammingWindow: "RFFilterModelHammingWindow"):
         hammingWindow.order = 1
         Assert.assertEqual(1, hammingWindow.order)
         hammingWindow.order = 1000
@@ -4170,7 +4166,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             hammingWindow.sampling_frequency = 1000000001
 
-    def Test_IAgRFFilterModelIir(self, iir: "IRFFilterModelIir"):
+    def Test_IAgRFFilterModelIir(self, iir: "RFFilterModelIir"):
         iir.sampling_frequency = 0
         Assert.assertEqual(0, iir.sampling_frequency)
         iir.sampling_frequency = 1000000000
@@ -4184,7 +4180,7 @@ class RFFilterModelHelper(object):
 
         self.Test_IAgCRComplexCollection(iir.denominator_complex_polynomial)
 
-    def Test_IAgRFFilterModelRcLowPass(self, rcLowPass: "IRFFilterModelRcLowPass"):
+    def Test_IAgRFFilterModelRcLowPass(self, rcLowPass: "RFFilterModelRcLowPass"):
         rcLowPass.cutoff_frequency = 0
         Assert.assertEqual(0, rcLowPass.cutoff_frequency)
         rcLowPass.cutoff_frequency = 1000000000
@@ -4194,7 +4190,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rcLowPass.cutoff_frequency = 10000000000
 
-    def Test_IAgRFFilterModelRaisedCosine(self, raisedCosine: "IRFFilterModelRaisedCosine"):
+    def Test_IAgRFFilterModelRaisedCosine(self, raisedCosine: "RFFilterModelRaisedCosine"):
         raisedCosine.roll_off_factor = 1e-07
         Assert.assertAlmostEqual(1e-07, raisedCosine.roll_off_factor, delta=1e-10)
         raisedCosine.roll_off_factor = 100
@@ -4213,7 +4209,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             raisedCosine.symbol_rate = 10000001
 
-    def Test_IAgRFFilterModelRootRaisedCosine(self, rootRaisedCosine: "IRFFilterModelRootRaisedCosine"):
+    def Test_IAgRFFilterModelRootRaisedCosine(self, rootRaisedCosine: "RFFilterModelRootRaisedCosine"):
         rootRaisedCosine.roll_off_factor = 1e-07
         Assert.assertAlmostEqual(1e-07, rootRaisedCosine.roll_off_factor, delta=1e-10)
         rootRaisedCosine.roll_off_factor = 100
@@ -4232,14 +4228,14 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             rootRaisedCosine.symbol_rate = 10000001
 
-    def Test_IAgRFFilterModelScriptPlugin(self, scriptPlugin: "IRFFilterModelScriptPlugin"):
+    def Test_IAgRFFilterModelScriptPlugin(self, scriptPlugin: "RFFilterModelScriptPlugin"):
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_DynamicFilter.vbs")
         Assert.assertEqual(r"CommRad\VB_DynamicFilter.vbs", scriptPlugin.filename)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("file does not exist")):
             scriptPlugin.filename = "Bogus"
 
-    def Test_IAgRFFilterModelIAgRFFilterModelSinc(self, sinc: "IRFFilterModelSinc"):
+    def Test_IAgRFFilterModelIAgRFFilterModelSinc(self, sinc: "RFFilterModelSinc"):
         sinc.cutoff_frequency = 0
         Assert.assertEqual(0, sinc.cutoff_frequency)
         sinc.cutoff_frequency = 1000000000
@@ -4249,7 +4245,7 @@ class RFFilterModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             sinc.cutoff_frequency = 10000000000
 
-    def Test_IAgRFFilterModelIAgRFFilterModelSincEnvSinc(self, sincEnvSinc: "IRFFilterModelSincEnvSinc"):
+    def Test_IAgRFFilterModelIAgRFFilterModelSincEnvSinc(self, sincEnvSinc: "RFFilterModelSincEnvSinc"):
         sincEnvSinc.order = 0
         Assert.assertEqual(0, sincEnvSinc.order)
         sincEnvSinc.order = 1000
@@ -4290,13 +4286,13 @@ class RFFilterModelHelper(object):
 
 # region AntennaControlHelper
 class AntennaControlHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run
-    def Run(self, antennaControl: "IAntennaControl", designFrequencyEnabled: bool, IsRadar: bool):
+    def Run(self, antennaControl: "AntennaControl", designFrequencyEnabled: bool, IsRadar: bool):
         # Antenna tab (Embed or Link)
 
         antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.EMBED
@@ -4312,7 +4308,7 @@ class AntennaControlHelper(object):
             Assert.assertEqual(modelName, antennaControl.embedded_model.name)
 
         antennaControl.set_embedded_model("Dipole")
-        Assert.assertIsNotNone(clr.CastAs(antennaControl.embedded_model, IAntennaModelDipole))
+        Assert.assertIsNotNone(clr.CastAs(antennaControl.embedded_model, AntennaModelDipole))
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             antennaControl.set_embedded_model("Bogus")
 
@@ -4376,16 +4372,16 @@ class AntennaControlHelper(object):
 
 # region AdditionalGainLossCollectionHelper
 class AdditionalGainLossCollectionHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run
-    def Run(self, gainLossColl: "IAdditionalGainLossCollection"):
+    def Run(self, gainLossColl: "AdditionalGainLossCollection"):
         Assert.assertEqual(0, gainLossColl.count)
 
-        gainLoss: "IAdditionalGainLoss" = None
+        gainLoss: "AdditionalGainLoss" = None
         gainLoss = gainLossColl.add(1.0)
         gainLoss.gain = 1.1
         gainLoss.identifier = "Id1"
@@ -4406,7 +4402,7 @@ class AdditionalGainLossCollectionHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             d: float = gainLossColl[3].gain
 
-        gl: "IAdditionalGainLoss"
+        gl: "AdditionalGainLoss"
 
         for gl in gainLossColl:
             Assert.assertTrue((gl.gain > 1.0))
@@ -4429,8 +4425,8 @@ class AdditionalGainLossCollectionHelper(object):
 
 # region PolarizationHelper
 class PolarizationHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
@@ -4513,13 +4509,13 @@ class PolarizationHelper(object):
 
 # region SystemNoiseTemperatureHelper
 class SystemNoiseTemperatureHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run
-    def Run(self, snt: "ISystemNoiseTemperature"):
+    def Run(self, snt: "SystemNoiseTemperature"):
         snt.compute_type = NOISE_TEMP_COMPUTE_TYPE.CONSTANT
         Assert.assertEqual(NOISE_TEMP_COMPUTE_TYPE.CONSTANT, snt.compute_type)
 
@@ -4590,7 +4586,7 @@ class SystemNoiseTemperatureHelper(object):
     # endregion
 
     # region Test_IAgAntennaNoiseTemperature
-    def Test_IAgAntennaNoiseTemperature(self, ant: "IAntennaNoiseTemperature", readOnly: bool):
+    def Test_IAgAntennaNoiseTemperature(self, ant: "AntennaNoiseTemperature", readOnly: bool):
         if readOnly:
             with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 ant.compute_type = NOISE_TEMP_COMPUTE_TYPE.CONSTANT
@@ -4743,13 +4739,13 @@ class SystemNoiseTemperatureHelper(object):
 
 # region AntennaBeamSelectionStrategyScriptPluginHelper
 class AntennaBeamSelectionStrategyScriptPluginHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run
-    def Run(self, scriptPlugin: "IAntennaBeamSelectionStrategyScriptPlugin"):
+    def Run(self, scriptPlugin: "AntennaBeamSelectionStrategyScriptPlugin"):
         if not OSHelper.IsLinux():
             # script plugins do not work on linux
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -4766,13 +4762,13 @@ class AntennaBeamSelectionStrategyScriptPluginHelper(object):
 
 # region AntennaBeamHelper
 class AntennaBeamHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run
-    def Run(self, beams: "IAntennaBeamCollection", beam: "IAntennaBeam", bIsTransmitter: bool):
+    def Run(self, beams: "AntennaBeamCollection", beam: "IAntennaBeam", bIsTransmitter: bool):
         holdId: str = beam.id
         beam.id = "Test Id"
         Assert.assertEqual("Test Id", beam.id)
@@ -4802,7 +4798,7 @@ class AntennaBeamHelper(object):
         beam.frequency = 1.0  # set to this for consistency with properties that depend on this in other tests
         if bIsTransmitter:
             # This interface is on Transmitter, not Receiver.
-            beamTransmit: "IAntennaBeamTransmit" = clr.CastAs(beam, IAntennaBeamTransmit)
+            beamTransmit: "AntennaBeamTransmit" = clr.CastAs(beam, AntennaBeamTransmit)
             beamTransmit.power = -2890
             Assert.assertEqual(-2890, beamTransmit.power)
             if not OSHelper.IsLinux():
@@ -4874,13 +4870,13 @@ class AntennaBeamHelper(object):
 
 # region AntennaBeamCollectionHelper
 class AntennaBeamCollectionHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run
-    def Run(self, beams: "IAntennaBeamCollection", bIsTransmitter: bool):
+    def Run(self, beams: "AntennaBeamCollection", bIsTransmitter: bool):
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             beams.remove_at(0)
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
@@ -4964,8 +4960,8 @@ class RadarClutterMapInheritableHelper(object):
         Assert.assertEqual(RADAR_CLUTTER_MAP_MODEL_TYPE.CONSTANT_COEFFICIENT, model.type)
         Assert.assertEqual("Constant Coefficient", model.name)
 
-        constantCoefficient: "IRadarClutterMapModelConstantCoefficient" = clr.CastAs(
-            model, IRadarClutterMapModelConstantCoefficient
+        constantCoefficient: "ScatteringPointModelConstantCoefficient" = clr.CastAs(
+            model, ScatteringPointModelConstantCoefficient
         )
         constantCoefficient.constant_coefficient = -200
         Assert.assertEqual(-200, constantCoefficient.constant_coefficient)
@@ -4988,7 +4984,7 @@ class RadarCrossSectionInheritableHelper(object):
     # endregion
 
     # region Run
-    def Run(self, crossSectionInheritable: "IRadarCrossSectionInheritable"):
+    def Run(self, crossSectionInheritable: "RadarCrossSectionInheritable"):
         crossSectionInheritable.inherit = True
         Assert.assertTrue(crossSectionInheritable.inherit)
 
@@ -5003,7 +4999,7 @@ class RadarCrossSectionInheritableHelper(object):
         rcsModelName: str
         for rcsModelName in arSupportedModels:
             crossSectionInheritable.set_model(rcsModelName)
-            rcsModel: "IRadarCrossSectionModel" = crossSectionInheritable.model
+            rcsModel: "RadarCrossSectionModel" = crossSectionInheritable.model
             Assert.assertEqual(rcsModelName, rcsModel.name)
             if rcsModelName == "Radar Cross Section":
                 self.Test_IAgRadarCrossSectionModel(rcsModel)
@@ -5012,17 +5008,17 @@ class RadarCrossSectionInheritableHelper(object):
 
     # endregion
 
-    def Test_IAgRadarCrossSectionModel(self, rcsModel: "IRadarCrossSectionModel"):
-        bandColl: "IRadarCrossSectionFrequencyBandCollection" = rcsModel.frequency_bands
+    def Test_IAgRadarCrossSectionModel(self, rcsModel: "RadarCrossSectionModel"):
+        bandColl: "RadarCrossSectionFrequencyBandCollection" = rcsModel.frequency_bands
         Assert.assertEqual(1, bandColl.count)
-        band: "IRadarCrossSectionFrequencyBand" = bandColl[0]
+        band: "RadarCrossSectionFrequencyBand" = bandColl[0]
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             band.minimum_frequency = 250000
         with pytest.raises(Exception, match=RegexSubstringMatch("delete the last")):
             bandColl.remove_at(0)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            bandX: "IRadarCrossSectionFrequencyBand" = bandColl.add(200000, 3000000000000.0)
-        band1: "IRadarCrossSectionFrequencyBand" = bandColl.add(200000, 300000000000.0)
+            bandX: "RadarCrossSectionFrequencyBand" = bandColl.add(200000, 3000000000000.0)
+        band1: "RadarCrossSectionFrequencyBand" = bandColl.add(200000, 300000000000.0)
         Assert.assertEqual(2, bandColl.count)
 
         band = bandColl[1]
@@ -5063,8 +5059,8 @@ class RadarCrossSectionInheritableHelper(object):
                 Assert.assertEqual(RCS_COMPUTE_STRATEGY.CONSTANT_VALUE, band.compute_strategy.type)
                 Assert.assertTrue(self.IsSupportedComputeStrategy("Constant Value", band.supported_compute_strategies))
 
-                strategyConstantValue: "IRadarCrossSectionComputeStrategyConstantValue" = clr.CastAs(
-                    band.compute_strategy, IRadarCrossSectionComputeStrategyConstantValue
+                strategyConstantValue: "RadarCrossSectionComputeStrategyConstantValue" = clr.CastAs(
+                    band.compute_strategy, RadarCrossSectionComputeStrategyConstantValue
                 )
                 strategyConstantValue.constant_value = 123
                 Assert.assertAlmostEqual(123, strategyConstantValue.constant_value, delta=Math2.Epsilon12)
@@ -5074,8 +5070,8 @@ class RadarCrossSectionInheritableHelper(object):
                 Assert.assertEqual(RCS_COMPUTE_STRATEGY.EXTERNAL_FILE, band.compute_strategy.type)
                 Assert.assertTrue(self.IsSupportedComputeStrategy("External File", band.supported_compute_strategies))
 
-                strategyExternalFile: "IRadarCrossSectionComputeStrategyExternalFile" = clr.CastAs(
-                    band.compute_strategy, IRadarCrossSectionComputeStrategyExternalFile
+                strategyExternalFile: "RadarCrossSectionComputeStrategyExternalFile" = clr.CastAs(
+                    band.compute_strategy, RadarCrossSectionComputeStrategyExternalFile
                 )
                 with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                     strategyExternalFile.filename = r"C:\bogus.vbs"
@@ -5095,8 +5091,8 @@ class RadarCrossSectionInheritableHelper(object):
                         self.IsSupportedComputeStrategy("Script Plugin", band.supported_compute_strategies)
                     )
 
-                    strategyScriptPlugin: "IRadarCrossSectionComputeStrategyScriptPlugin" = clr.CastAs(
-                        band.compute_strategy, IRadarCrossSectionComputeStrategyScriptPlugin
+                    strategyScriptPlugin: "RadarCrossSectionComputeStrategyScriptPlugin" = clr.CastAs(
+                        band.compute_strategy, RadarCrossSectionComputeStrategyScriptPlugin
                     )
                     with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                         strategyScriptPlugin.filename = r"C:\bogus.vbs"
@@ -5119,8 +5115,8 @@ class RadarCrossSectionInheritableHelper(object):
                     self.IsSupportedComputeStrategy("Ansys HFSS CSV File", band.supported_compute_strategies)
                 )
 
-                ansys: "IRadarCrossSectionComputeStrategyAnsysCsvFile" = clr.CastAs(
-                    band.compute_strategy, IRadarCrossSectionComputeStrategyAnsysCsvFile
+                ansys: "RadarCrossSectionComputeStrategyAnsysCsvFile" = clr.CastAs(
+                    band.compute_strategy, RadarCrossSectionComputeStrategyAnsysCsvFile
                 )
                 with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                     ansys.filename = TestBase.GetScenarioFile("CommRad, bogus.csv")
@@ -5140,7 +5136,7 @@ class RadarCrossSectionInheritableHelper(object):
                     band.set_compute_strategy("Unknown")
                 Assert.assertFalse(self.IsSupportedComputeStrategy("Unknown", band.supported_compute_strategies))
 
-        band2: "IRadarCrossSectionFrequencyBand" = bandColl.add(100000, 200000)  # This adds two bands
+        band2: "RadarCrossSectionFrequencyBand" = bandColl.add(100000, 200000)  # This adds two bands
         Assert.assertEqual(4, bandColl.count)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
@@ -5148,13 +5144,13 @@ class RadarCrossSectionInheritableHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             bandColl.add(100000, -200000)
 
-        bandx: "IRadarCrossSectionFrequencyBand"
+        bandx: "RadarCrossSectionFrequencyBand"
 
         for bandx in bandColl:
             Assert.assertTrue((bandx.minimum_frequency > 2))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
-            band3: "IRadarCrossSectionFrequencyBand" = bandColl[4]
+            band3: "RadarCrossSectionFrequencyBand" = bandColl[4]
 
         bandColl.remove_at(3)
         Assert.assertEqual(3, bandColl.count)
@@ -5180,7 +5176,7 @@ class IAgAntennaContourGain_Helper(object):
     # region SetNumPoints
     def SetNumPoints(
         self,
-        antennaContourGain: "IAntennaContourGain",
+        antennaContourGain: "AntennaContourGain",
         azStart: float,
         azStop: float,
         azNumPoints: int,
@@ -5210,7 +5206,7 @@ class IAgAntennaContourGain_Helper(object):
     # region SetNumPoints_ExpectedException
     def SetNumPoints_ExpectedException(
         self,
-        antennaContourGain: "IAntennaContourGain",
+        antennaContourGain: "AntennaContourGain",
         azStart: float,
         azStop: float,
         azNumPoints: int,
@@ -5227,7 +5223,7 @@ class IAgAntennaContourGain_Helper(object):
     # region SetResolution
     def SetResolution(
         self,
-        antennaContourGain: "IAntennaContourGain",
+        antennaContourGain: "AntennaContourGain",
         azStart: float,
         azStop: float,
         azExpectedNumPoints: float,
@@ -5270,7 +5266,7 @@ class IAgAntennaContourGain_Helper(object):
     # [ExpectedException(typeof(COMException), ExpectedMessage = "is invalid", MatchType = MessageMatch.Contains)]
     def SetResolution_ExpectedException(
         self,
-        antennaContourGain: "IAntennaContourGain",
+        antennaContourGain: "AntennaContourGain",
         azStart: float,
         azStop: float,
         azRes: float,
@@ -5284,7 +5280,7 @@ class IAgAntennaContourGain_Helper(object):
     # endregion
 
     # region CoordinateSystem
-    def CoordinateSystem(self, antennaContourGain: "IAntennaContourGain"):
+    def CoordinateSystem(self, antennaContourGain: "AntennaContourGain"):
         antennaContourGain.coordinate_system = (
             ANTENNA_GRAPHICS_COORDINATE_SYSTEM.AG_E_ANTENNA_GRAPHICS_COORDINATE_SYSTEM_POLAR
         )
@@ -5316,7 +5312,7 @@ class IAgAntennaContourEirp_Helper(object):
     # region SetNumPoints
     def SetNumPoints(
         self,
-        antennaContourEirp: "IAntennaContourEirp",
+        antennaContourEirp: "AntennaContourEirp",
         azStart: float,
         azStop: float,
         azNumPoints: int,
@@ -5346,7 +5342,7 @@ class IAgAntennaContourEirp_Helper(object):
     # region SetNumPoints_ExpectedException
     def SetNumPoints_ExpectedException(
         self,
-        antennaContourEirp: "IAntennaContourEirp",
+        antennaContourEirp: "AntennaContourEirp",
         azStart: float,
         azStop: float,
         azNumPoints: int,
@@ -5363,7 +5359,7 @@ class IAgAntennaContourEirp_Helper(object):
     # region SetResolution
     def SetResolution(
         self,
-        antennaContourEirp: "IAntennaContourEirp",
+        antennaContourEirp: "AntennaContourEirp",
         azStart: float,
         azStop: float,
         azExpectedNumPoints: float,
@@ -5406,7 +5402,7 @@ class IAgAntennaContourEirp_Helper(object):
     # [ExpectedException(typeof(COMException), ExpectedMessage = "is invalid", MatchType = MessageMatch.Contains)]
     def SetResolution_ExpectedException(
         self,
-        antennaContourEirp: "IAntennaContourEirp",
+        antennaContourEirp: "AntennaContourEirp",
         azStart: float,
         azStop: float,
         azRes: float,
@@ -5420,7 +5416,7 @@ class IAgAntennaContourEirp_Helper(object):
     # endregion
 
     # region CoordinateSystem
-    def CoordinateSystem(self, antennaContourEirp: "IAntennaContourEirp"):
+    def CoordinateSystem(self, antennaContourEirp: "AntennaContourEirp"):
         antennaContourEirp.coordinate_system = (
             ANTENNA_GRAPHICS_COORDINATE_SYSTEM.AG_E_ANTENNA_GRAPHICS_COORDINATE_SYSTEM_POLAR
         )
@@ -5451,7 +5447,7 @@ class IAgAntennaContourEirp_Helper(object):
 class IAgAntennaContourFluxDensity_Helper(object):
     # region SetResolution
     def SetResolution(
-        self, antennaContourFluxDensity: "IAntennaContourFluxDensity", azRes: float, elRes: float, maxEl: float
+        self, antennaContourFluxDensity: "AntennaContourFluxDensity", azRes: float, elRes: float, maxEl: float
     ):
         antennaContourFluxDensity.set_resolution(azRes, elRes, maxEl)
         Assert.assertAlmostEqual(azRes, float(antennaContourFluxDensity.azimuth_resolution), delta=0.0001)
@@ -5462,7 +5458,7 @@ class IAgAntennaContourFluxDensity_Helper(object):
 
     # region SetResolution_ExpectedException
     def SetResolution_ExpectedException(
-        self, antennaContourFluxDensity: "IAntennaContourFluxDensity", azRes: float, elRes: float, maxEl: float
+        self, antennaContourFluxDensity: "AntennaContourFluxDensity", azRes: float, elRes: float, maxEl: float
     ):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             antennaContourFluxDensity.set_resolution(azRes, elRes, maxEl)
@@ -5474,7 +5470,7 @@ class IAgAntennaContourFluxDensity_Helper(object):
 # region IAgAntennaContourRip_Helper
 class IAgAntennaContourRip_Helper(object):
     # region SetResolution
-    def SetResolution(self, antennaContourRip: "IAntennaContourRip", azRes: float, elRes: float, maxEl: float):
+    def SetResolution(self, antennaContourRip: "AntennaContourRip", azRes: float, elRes: float, maxEl: float):
         antennaContourRip.set_resolution(azRes, elRes, maxEl)
         Assert.assertAlmostEqual(azRes, float(antennaContourRip.azimuth_resolution), delta=0.0001)
         Assert.assertAlmostEqual(elRes, float(antennaContourRip.elevation_resolution), delta=0.0001)
@@ -5484,7 +5480,7 @@ class IAgAntennaContourRip_Helper(object):
 
     # region SetResolution_ExpectedException
     def SetResolution_ExpectedException(
-        self, antennaContourRip: "IAntennaContourRip", azRes: float, elRes: float, maxEl: float
+        self, antennaContourRip: "AntennaContourRip", azRes: float, elRes: float, maxEl: float
     ):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             antennaContourRip.set_resolution(azRes, elRes, maxEl)
@@ -5498,7 +5494,7 @@ class IAgAntennaContourSpectralFluxDensity_Helper(object):
     # region SetResolution
     def SetResolution(
         self,
-        antennaContourSpectralFluxDensity: "IAntennaContourSpectralFluxDensity",
+        antennaContourSpectralFluxDensity: "AntennaContourSpectralFluxDensity",
         azRes: float,
         elRes: float,
         maxEl: float,
@@ -5513,7 +5509,7 @@ class IAgAntennaContourSpectralFluxDensity_Helper(object):
     # region SetResolution_ExpectedException
     def SetResolution_ExpectedException(
         self,
-        antennaContourSpectralFluxDensity: "IAntennaContourSpectralFluxDensity",
+        antennaContourSpectralFluxDensity: "AntennaContourSpectralFluxDensity",
         azRes: float,
         elRes: float,
         maxEl: float,
@@ -5528,7 +5524,7 @@ class IAgAntennaContourSpectralFluxDensity_Helper(object):
 # region AtmosphereLocalRainDataHelper
 class AtmosphereLocalRainDataHelper(object):
     # region Run
-    def Run(self, atmosphere: "IAtmosphere", root: "IStkObjectRoot"):
+    def Run(self, atmosphere: "Atmosphere", root: "StkObjectRoot"):
         abbr: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -5580,13 +5576,13 @@ class AtmosphereLocalRainDataHelper(object):
 
 # region AtmosphereHelper
 class AtmosphereHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self.m_root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
 
     # endregion
 
     # region Run
-    def Run(self, atmosphere: "IAtmosphere"):
+    def Run(self, atmosphere: "Atmosphere"):
         atmosphere.inherit_atmos_absorption_model = True
         Assert.assertTrue(atmosphere.inherit_atmos_absorption_model)
 
@@ -5605,20 +5601,20 @@ class AtmosphereHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SCRIPT_PLUGIN, aaModel.type)
                     self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
-                        clr.CastAs(aaModel, IAtmosphericAbsorptionModelScriptPlugin)
+                        clr.CastAs(aaModel, AtmosphericAbsorptionModelScriptPlugin)
                     )
 
             elif aaModelName == "Simple Satcom":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SIMPLE_SATCOM, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelSimpleSatcom)
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
                 )
             elif aaModelName == "TIREM 3.31":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM331, aaModel.type)
@@ -5631,7 +5627,7 @@ class AtmosphereHelper(object):
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, IAtmosphericAbsorptionModelVoacap))
+                self.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
             else:
                 Assert.fail(String.Format("Unknown model type ({0})", aaModelName))
 
@@ -5640,7 +5636,7 @@ class AtmosphereHelper(object):
 
     # endregion
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -5651,7 +5647,7 @@ class AtmosphereHelper(object):
         iturp676.seasonal_regional_method = True
         Assert.assertTrue(iturp676.seasonal_regional_method)
 
-    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "IAtmosphericAbsorptionModelScriptPlugin"):
+    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "AtmosphericAbsorptionModelScriptPlugin"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
@@ -5660,7 +5656,7 @@ class AtmosphereHelper(object):
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.filename)
 
-    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "IAtmosphericAbsorptionModelSimpleSatcom"):
+    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "AtmosphericAbsorptionModelSimpleSatcom"):
         self.m_root.unit_preferences.set_current_unit("DistanceUnit", "m")
         simpleSatcom.water_vapor_concentration = 0
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
@@ -5748,7 +5744,7 @@ class AtmosphereHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 11
 
-    def Test_IAgAtmosphericAbsorptionModelVoacap(self, voacap: "IAtmosphericAbsorptionModelVoacap"):
+    def Test_IAgAtmosphericAbsorptionModelVoacap(self, voacap: "AtmosphericAbsorptionModelVoacap"):
         with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
             voacap.solar_activity_configuration_type = VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE.UNKNOWN
 
@@ -5757,13 +5753,13 @@ class AtmosphereHelper(object):
             VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE.SUNSPOT_NUMBER, voacap.solar_activity_configuration_type
         )
 
-        configSolarFlux1: "ISolarActivityConfigurationSolarFlux" = clr.CastAs(
-            voacap.solar_activity_configuration, ISolarActivityConfigurationSolarFlux
+        configSolarFlux1: "SolarActivityConfigurationSolarFlux" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSolarFlux
         )
         Assert.assertIsNone(configSolarFlux1)
 
-        configSunspotNumber: "ISolarActivityConfigurationSunspotNumber" = clr.CastAs(
-            voacap.solar_activity_configuration, ISolarActivityConfigurationSunspotNumber
+        configSunspotNumber: "SolarActivityConfigurationSunspotNumber" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSunspotNumber
         )
         configSunspotNumber.sunspot_number = 0
         Assert.assertEqual(0, configSunspotNumber.sunspot_number)
@@ -5790,13 +5786,13 @@ class AtmosphereHelper(object):
             VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE.SOLAR_FLUX, voacap.solar_activity_configuration_type
         )
 
-        configSunspotNumber1: "ISolarActivityConfigurationSunspotNumber" = clr.CastAs(
-            voacap.solar_activity_configuration, ISolarActivityConfigurationSunspotNumber
+        configSunspotNumber1: "SolarActivityConfigurationSunspotNumber" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSunspotNumber
         )
         Assert.assertIsNone(configSunspotNumber1)
 
-        configSolarFlux: "ISolarActivityConfigurationSolarFlux" = clr.CastAs(
-            voacap.solar_activity_configuration, ISolarActivityConfigurationSolarFlux
+        configSolarFlux: "SolarActivityConfigurationSolarFlux" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSolarFlux
         )
         configSolarFlux.solar_flux = 0.0
         Assert.assertEqual(0.0, configSolarFlux.solar_flux)
@@ -5851,9 +5847,9 @@ class AtmosphereHelper(object):
 # region LaserEnvAtmosLossBBLLHelper
 class LaserEnvAtmosLossBBLLHelper(object):
     # region Run
-    def Run(self, laserEnv: "IObjectLaserEnvironment"):
-        # ILaserEnvironment laserEnv = AG_SC.LaserEnvironment;
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+    def Run(self, laserEnv: "ObjectLaserEnvironment"):
+        # LaserEnvironment laserEnv = AG_SC.LaserEnvironment;
+        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -5872,14 +5868,14 @@ class LaserEnvAtmosLossBBLLHelper(object):
             LASER_PROPAGATION_LOSS_MODEL_TYPE.BEER_BOUGUER_LAMBERT_LAW, laserPropChan.atmospheric_loss_model.type
         )
 
-        bbll: "ILaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
-            laserPropChan.atmospheric_loss_model, ILaserAtmosphericLossModelBeerBouguerLambertLaw
+        bbll: "LaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
+            laserPropChan.atmospheric_loss_model, LaserAtmosphericLossModelBeerBouguerLambertLaw
         )
 
         bbll.create_evenly_spaced_layers(5, 100)
         Assert.assertTrue(bbll.enable_evenly_spaced_heights)
         Assert.assertEqual(100, bbll.maximum_altitude)
-        bbllLayerColl: "IBeerBouguerLambertLawLayerCollection" = bbll.atmosphere_layers
+        bbllLayerColl: "BeerBouguerLambertLawLayerCollection" = bbll.atmosphere_layers
         Assert.assertEqual(5, bbllLayerColl.count)
         Assert.assertEqual(100, bbllLayerColl[0].top_height)
         Assert.assertEqual(0, bbllLayerColl[0].extinction_coefficient)
@@ -5940,8 +5936,8 @@ class LaserEnvAtmosLossBBLLHelper(object):
 # region LaserEnvAtmosLossModtranHelper
 class LaserEnvAtmosLossModtranHelper(object):
     # region Run
-    def Run(self, laserEnv: "IObjectLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+    def Run(self, laserEnv: "ObjectLaserEnvironment"):
+        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -5963,8 +5959,8 @@ class LaserEnvAtmosLossModtranHelper(object):
             LASER_PROPAGATION_LOSS_MODEL_TYPE.MODTRAN_LOOKUP_TABLE_TYPE, laserPropChan.atmospheric_loss_model.type
         )
 
-        modtran: "IModtranLookupTablePropagationModel" = clr.CastAs(
-            laserPropChan.atmospheric_loss_model, IModtranLookupTablePropagationModel
+        modtran: "ModtranLookupTablePropagationModel" = clr.CastAs(
+            laserPropChan.atmospheric_loss_model, ModtranLookupTablePropagationModel
         )
 
         modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.MARITIME
@@ -6010,8 +6006,8 @@ class LaserEnvAtmosLossModtranHelper(object):
 # region LaserEnvTropoScintLossHelper
 class LaserEnvTropoScintLossHelper(object):
     # region Run
-    def Run(self, laserEnv: "IObjectLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+    def Run(self, laserEnv: "ObjectLaserEnvironment"):
+        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -6035,15 +6031,15 @@ class LaserEnvTropoScintLossHelper(object):
             laserPropChan.tropospheric_scintillation_loss_model.type,
         )
 
-        iturp1814: "ILaserTroposphericScintillationLossModelITURP1814" = clr.CastAs(
-            laserTropoScint, ILaserTroposphericScintillationLossModelITURP1814
+        iturp1814: "LaserTroposphericScintillationLossModelITURP1814" = clr.CastAs(
+            laserTropoScint, LaserTroposphericScintillationLossModelITURP1814
         )
 
         iturp1814.set_atmospheric_turbulence_model_type(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT)
         Assert.assertEqual(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT, iturp1814.atmospheric_turbulence_model.type)
 
-        cnst: "IAtmosphericTurbulenceModelConstant" = clr.CastAs(
-            iturp1814.atmospheric_turbulence_model, IAtmosphericTurbulenceModelConstant
+        cnst: "AtmosphericTurbulenceModelConstant" = clr.CastAs(
+            iturp1814.atmospheric_turbulence_model, AtmosphericTurbulenceModelConstant
         )
         cnst.constant_refractive_index_structure_parameter = 99
         Assert.assertEqual(99, cnst.constant_refractive_index_structure_parameter)
@@ -6053,8 +6049,8 @@ class LaserEnvTropoScintLossHelper(object):
             ATMOSPHERIC_TURBULENCE_MODEL_TYPE.HUFNAGEL_VALLEY, iturp1814.atmospheric_turbulence_model.type
         )
 
-        huf: "IAtmosphericTurbulenceModelHufnagelValley" = clr.CastAs(
-            iturp1814.atmospheric_turbulence_model, IAtmosphericTurbulenceModelHufnagelValley
+        huf: "AtmosphericTurbulenceModelHufnagelValley" = clr.CastAs(
+            iturp1814.atmospheric_turbulence_model, AtmosphericTurbulenceModelHufnagelValley
         )
         huf.wind_speed = 98
         Assert.assertEqual(98, huf.wind_speed)
@@ -6068,8 +6064,8 @@ class LaserEnvTropoScintLossHelper(object):
 # region RF_Environment_EnvironmentalDataHelper
 class RF_Environment_EnvironmentalDataHelper(object):
     # region Run
-    def Run(self, rfEnv: "IObjectRFEnvironment"):
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+    def Run(self, rfEnv: "ObjectRFEnvironment"):
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_itu_618_section2_p5 = False
         Assert.assertFalse(propChan.enable_itu_618_section2_p5)
@@ -6083,11 +6079,11 @@ class RF_Environment_EnvironmentalDataHelper(object):
 # region RF_Environment_RainCloudFog_RainModelHelper
 class RF_Environment_RainCloudFog_RainModelHelper(object):
     # region Run
-    def Run(self, rfEnv: "IObjectRFEnvironment", root: "IStkObjectRoot"):
+    def Run(self, rfEnv: "ObjectRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_rain_loss = False
         Assert.assertFalse(propChan.enable_rain_loss)
@@ -6106,7 +6102,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
             Assert.assertEqual(rainLossModelName, rainLossModel.name)
             if rainLossModelName == "Crane 1985":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1985, rainLossModel.type)
-                crane85: "IRainLossModelCrane1985" = clr.CastAs(rainLossModel, IRainLossModelCrane1985)
+                crane85: "RainLossModelCrane1985" = clr.CastAs(rainLossModel, RainLossModelCrane1985)
                 crane85.surface_temperature = -100
                 Assert.assertEqual(-100, crane85.surface_temperature)
                 crane85.surface_temperature = 100
@@ -6120,7 +6116,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.SCRIPT_PLUGIN, rainLossModel.type)
-                    scriptPlugin: "IRainLossModelScriptPlugin" = clr.CastAs(rainLossModel, IRainLossModelScriptPlugin)
+                    scriptPlugin: "RainLossModelScriptPlugin" = clr.CastAs(rainLossModel, RainLossModelScriptPlugin)
                     with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                         scriptPlugin.filename = r"C:\bogus.vbs"
                     with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
@@ -6130,7 +6126,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "CCIR 1983":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CCIR1983, rainLossModel.type)
-                ccir83: "IRainLossModelCCIR1983" = clr.CastAs(rainLossModel, IRainLossModelCCIR1983)
+                ccir83: "RainLossModelCCIR1983" = clr.CastAs(rainLossModel, RainLossModelCCIR1983)
                 ccir83.surface_temperature = -100
                 Assert.assertEqual(-100, ccir83.surface_temperature)
                 ccir83.surface_temperature = 100
@@ -6142,7 +6138,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "Crane 1982":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1982, rainLossModel.type)
-                crane82: "IRainLossModelCrane1982" = clr.CastAs(rainLossModel, IRainLossModelCrane1982)
+                crane82: "RainLossModelCrane1982" = clr.CastAs(rainLossModel, RainLossModelCrane1982)
                 crane82.surface_temperature = -100
                 Assert.assertEqual(-100, crane82.surface_temperature)
                 crane82.surface_temperature = 100
@@ -6154,7 +6150,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-10":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_10, rainLossModel.type)
-                itu618_10: "IRainLossModelITURP618_10" = clr.CastAs(rainLossModel, IRainLossModelITURP618_10)
+                itu618_10: "RainLossModelITURP618_10" = clr.CastAs(rainLossModel, RainLossModelITURP618_10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
                 itu618_10.surface_temperature = 100
@@ -6170,7 +6166,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-12":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_12, rainLossModel.type)
-                itu618_12: "IRainLossModelITURP618_12" = clr.CastAs(rainLossModel, IRainLossModelITURP618_12)
+                itu618_12: "RainLossModelITURP618_12" = clr.CastAs(rainLossModel, RainLossModelITURP618_12)
 
                 itu618_12.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
@@ -6188,7 +6184,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-13":
                 Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_13, rainLossModel.type)
-                itu618_13: "IRainLossModelITURP618_13" = clr.CastAs(rainLossModel, IRainLossModelITURP618_13)
+                itu618_13: "RainLossModelITURP618_13" = clr.CastAs(rainLossModel, RainLossModelITURP618_13)
 
                 itu618_13.enable_itu_1510 = False
                 Assert.assertFalse(itu618_13.enable_itu_1510)
@@ -6249,12 +6245,12 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
 
 # region RF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def Run(self, rfEnv: "IObjectRFEnvironment", root: "IStkObjectRoot"):
+    def Run(self, rfEnv: "ObjectRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
         root.unit_preferences.set_current_unit("MassUnit", "g")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         arSupportedCFFLM = propChan.supported_clouds_and_fog_fading_loss_models
         Assert.assertEqual(2, Array.Length(arSupportedCFFLM))
@@ -6274,17 +6270,17 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-7", cfflm.name)
         Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_7_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, ICloudsAndFogFadingLossModelP840_7))
+        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_7))
 
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-6")
         cfflm = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-6", cfflm.name)
         Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_6_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, ICloudsAndFogFadingLossModelP840_6))
+        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_6))
 
         root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "ICloudsAndFogFadingLossModelP840_7"):
+    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "CloudsAndFogFadingLossModelP840_7"):
         cfflm7.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm7.cloud_ceiling)
         cfflm7.cloud_ceiling = 20
@@ -6388,7 +6384,7 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_annual_exceeded = 1
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "ICloudsAndFogFadingLossModelP840_6"):
+    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "CloudsAndFogFadingLossModelP840_6"):
         cfflm6.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm6.cloud_ceiling)
         cfflm6.cloud_ceiling = 20
@@ -6488,16 +6484,16 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
 # region RF_Environment_AtmosphericAbsorptionHelper
 class RF_Environment_AtmosphericAbsorptionHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IObjectRFEnvironment"):
+    def Run(self, rfEnv: "ObjectRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
         atmosAbsorb: "IAtmosphericAbsorptionModel" = propChan.atmos_absorption_model
 
         propChan.enable_atmos_absorption = False
@@ -6518,20 +6514,20 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SCRIPT_PLUGIN, aaModel.type)
                     self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
-                        clr.CastAs(aaModel, IAtmosphericAbsorptionModelScriptPlugin)
+                        clr.CastAs(aaModel, AtmosphericAbsorptionModelScriptPlugin)
                     )
 
             elif aaModelName == "Simple Satcom":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SIMPLE_SATCOM, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelSimpleSatcom)
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
                 )
             elif aaModelName == "TIREM 3.31":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM331, aaModel.type)
@@ -6545,7 +6541,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
                 helper = AtmosphereHelper(self._root)
-                helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, IAtmosphericAbsorptionModelVoacap))
+                helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
             else:
                 Assert.fail("Unknown model type")
 
@@ -6554,7 +6550,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -6565,7 +6561,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         iturp676.seasonal_regional_method = True
         Assert.assertTrue(iturp676.seasonal_regional_method)
 
-    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "IAtmosphericAbsorptionModelScriptPlugin"):
+    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "AtmosphericAbsorptionModelScriptPlugin"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
@@ -6574,7 +6570,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(r"CommRad\VB_AbsorpModel.vbs", scriptPlugin.filename)
 
-    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "IAtmosphericAbsorptionModelSimpleSatcom"):
+    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "AtmosphericAbsorptionModelSimpleSatcom"):
         self._root.unit_preferences.set_current_unit("DistanceUnit", "m")
         simpleSatcom.water_vapor_concentration = 0
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
@@ -6666,16 +6662,16 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
 
 # region RF_Environment_UrbanAndTerrestrialHelper
 class RF_Environment_UrbanAndTerrestrialHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IObjectRFEnvironment"):
+    def Run(self, rfEnv: "ObjectRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_urban_terrestrial_loss = False
         Assert.assertFalse(propChan.enable_urban_terrestrial_loss)
@@ -6694,11 +6690,11 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             Assert.assertEqual(utModelName, utModel.name)
             if utModelName == "Two Ray":
                 Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.TWO_RAY, utModel.type)
-                self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, IUrbanTerrestrialLossModelTwoRay))
+                self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
             elif utModelName == "Urban Propagation Wireless InSite RT":
                 Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE_RT, utModel.type)
                 self.Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(
-                    clr.CastAs(utModel, IUrbanTerrestrialLossModelWirelessInSiteRT)
+                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSiteRT)
                 )
             else:
                 Assert.fail("Unknown model type")
@@ -6707,7 +6703,7 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             propChan.set_urban_terrestrial_loss_model("bogus")
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "IUrbanTerrestrialLossModelTwoRay"):
+    def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "UrbanTerrestrialLossModelTwoRay"):
         twoRay.loss_factor = 0.1
         Assert.assertEqual(0.1, twoRay.loss_factor)
         twoRay.loss_factor = 10
@@ -6726,7 +6722,7 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = 101
 
-    def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "IUrbanTerrestrialLossModelWirelessInSiteRT"):
+    def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "UrbanTerrestrialLossModelWirelessInSiteRT"):
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
         Assert.assertEqual(5, Array.Length(arSupportedCalculationMethods))
         sCalcMethod: str
@@ -6754,7 +6750,7 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 wisRT.surface_temperature = 101
 
-            geometryData: "IWirelessInSiteRTGeometryData" = wisRT.geometry_data
+            geometryData: "WirelessInSiteRTGeometryData" = wisRT.geometry_data
 
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
@@ -6830,16 +6826,16 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
 
 # region RF_Environment_TropoScintillationHelper
 class RF_Environment_TropoScintillationHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IObjectRFEnvironment"):
+    def Run(self, rfEnv: "ObjectRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         arSupportedTSFLM = propChan.supported_tropospheric_scintillation_fading_loss_models
         Assert.assertEqual(2, Array.Length(arSupportedTSFLM))
@@ -6860,7 +6856,7 @@ class RF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual("ITU-R P618-12", tsflm.name)
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_12_TYPE, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
-            clr.CastAs(tsflm, ITroposphericScintillationFadingLossModelP618_12)
+            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_12)
         )
 
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-8")
@@ -6868,11 +6864,11 @@ class RF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual("ITU-R P618-8", tsflm.name)
         Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_8_TYPE, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
-            clr.CastAs(tsflm, ITroposphericScintillationFadingLossModelP618_8)
+            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_8)
         )
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_12(
-        self, tsflm12: "ITroposphericScintillationFadingLossModelP618_12"
+        self, tsflm12: "TroposphericScintillationFadingLossModelP618_12"
     ):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # Deprecated and should not be used.
             tsflm12.compute_deep_fade = True
@@ -6921,7 +6917,7 @@ class RF_Environment_TropoScintillationHelper(object):
             tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.UNKNOWN
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
-        self, tsflm8: "ITroposphericScintillationFadingLossModelP618_8"
+        self, tsflm8: "TroposphericScintillationFadingLossModelP618_8"
     ):
         tsflm8.compute_deep_fade = False
         Assert.assertFalse(tsflm8.compute_deep_fade)
@@ -6967,19 +6963,19 @@ class RF_Environment_TropoScintillationHelper(object):
 
 # region RF_Environment_CustomModelsHelper
 class RF_Environment_CustomModelsHelper(object):
-    def __init__(self, root: "IStkObjectRoot"):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot"):
+        self._root: "StkObjectRoot" = root
 
     # endregion
 
-    def Run(self, rfEnv: "IObjectRFEnvironment"):
-        propChan: "IPropagationChannel" = rfEnv.propagation_channel
+    def Run(self, rfEnv: "ObjectRFEnvironment"):
+        propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         self.Test_IAgCustomPropagationModel(propChan.custom_a)
         self.Test_IAgCustomPropagationModel(propChan.custom_b)
         self.Test_IAgCustomPropagationModel(propChan.custom_c)
 
-    def Test_IAgCustomPropagationModel(self, customModel: "ICustomPropagationModel"):
+    def Test_IAgCustomPropagationModel(self, customModel: "CustomPropagationModel"):
         if not OSHelper.IsLinux():
             customModel.enable = False
             Assert.assertFalse(customModel.enable)

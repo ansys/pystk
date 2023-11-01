@@ -1,7 +1,7 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from logger import *
-
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
@@ -9,10 +9,10 @@ from ansys.stk.core.vgt import *
 
 # region DisplayTimesHelper
 class DisplayTimesHelper(object):
-    def __init__(self, oRoot: "IStkObjectRoot"):
+    def __init__(self, oRoot: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "IStkObjectRoot" = oRoot
+        self.m_oRoot: "StkObjectRoot" = oRoot
 
     # endregion
 
@@ -65,15 +65,15 @@ class DisplayTimesHelper(object):
                 Assert.assertIsNone(displayTimesData)
                 self.m_logger.WriteLine("\t\tNo DisplayTimesData available.")
             elif eType == DISPLAY_TIMES_TYPE.DURING_ACCESS:
-                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, IDuringAccess))
+                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, DuringAccess))
             elif eType == DISPLAY_TIMES_TYPE.USE_INTERVALS:
                 oHelper = IntervalCollectionHelper(self.m_oRoot.unit_preferences)
                 oHelper.Run(
-                    clr.Convert(oDisplay.display_times_data, IIntervalCollection),
+                    clr.Convert(oDisplay.display_times_data, IntervalCollection),
                     IntervalCollectionHelper.IntervalCollectionType.Intervals,
                 )
             elif eType == DISPLAY_TIMES_TYPE.USE_TIME_COMPONENT:
-                self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, IDisplayTimesTimeComponent))
+                self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, DisplayTimesTimeComponent))
             else:
                 Assert.fail("Unknown DISPLAY_TIMES_TYPE")
 
@@ -82,7 +82,7 @@ class DisplayTimesHelper(object):
     # endregion
 
     # region DuringAccess method
-    def DuringAccess(self, oAccess: "IDuringAccess"):
+    def DuringAccess(self, oAccess: "DuringAccess"):
         Assert.assertIsNotNone(oAccess)
         # AccessObjects
         oOLCHelper = ObjectLinkCollectionHelper()
@@ -95,7 +95,7 @@ class DisplayTimesHelper(object):
     # endregion
 
     # region DisplayTimesTimeComponent method
-    def DisplayTimesTimeComponent(self, dttc: "IDisplayTimesTimeComponent"):
+    def DisplayTimesTimeComponent(self, dttc: "DisplayTimesTimeComponent"):
         # Only Intervals and Interval Lists are supported.
 
         Assert.assertIsNotNone(dttc)
@@ -178,10 +178,10 @@ class IntervalCollectionHelper(object):
         LabelNotes = 2
         Constraint = 3
 
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
         self.m_bReadOnlyFile: bool = False
 
     # endregion
@@ -193,7 +193,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IIntervalCollection", eType):
+    def Run(self, oCollection: "IntervalCollection", eType):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine("IntervalCollection test:")
         # set DateFormat
@@ -234,7 +234,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region DuringAccess
-    def DuringAccess(self, oCollection: "IIntervalCollection"):
+    def DuringAccess(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         with pytest.raises(Exception):
@@ -292,7 +292,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Constraint
-    def Constraint(self, oCollection: "IIntervalCollection"):
+    def Constraint(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         if self.m_bReadOnlyFile:
             # RemoveAll
@@ -530,7 +530,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Intervals
-    def Intervals(self, oCollection: "IIntervalCollection"):
+    def Intervals(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
@@ -730,7 +730,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region LabelNotes
-    def LabelNotes(self, oCollection: "IIntervalCollection"):
+    def LabelNotes(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
@@ -888,7 +888,7 @@ class ObjectLinkCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IObjectLinkCollection", oRoot: "IStkObjectRoot"):
+    def Run(self, oCollection: "ObjectLinkCollection", oRoot: "StkObjectRoot"):
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oRoot)
         self.m_logger.WriteLine("ObjectLinkCollection test:")
@@ -944,7 +944,7 @@ class ObjectLinkCollectionHelper(object):
             self.m_logger.WriteLine6("\t\tObject {0} was added to collection.", arAvailable[1])
             Assert.assertEqual(2, oCollection.count)
             self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
-            oLink: "IObjectLink"
+            oLink: "ObjectLink"
             for oLink in oCollection:
                 Console.WriteLine(
                     "\t\tElement: Name = {0}, Path = {1}, Type = {2}, LinkedObject = {3}",

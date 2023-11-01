@@ -15,8 +15,8 @@ from jupyter_rfb import RemoteFrameBuffer
 from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
     addressof, Structure, cast, pointer
 
-from ...stkx import IUiAxGraphics3DCntrl, IUiAx2DCntrl, \
-    IUiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
+from ...stkx import UiAxGraphics3DCntrl, UiAx2DCntrl, \
+    UiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import ole32lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
@@ -351,7 +351,7 @@ class WidgetBase(RemoteFrameBuffer):
         return self.frame
 
 
-class GlobeWidget(IUiAxGraphics3DCntrl, WidgetBase):
+class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     '''
     The 3D Globe widget for jupyter.
     '''
@@ -368,7 +368,7 @@ class GlobeWidget(IUiAxGraphics3DCntrl, WidgetBase):
     #   g
 
     _progid = "STKX12.VOControl.1"
-    _interface = IUiAxGraphics3DCntrl
+    _interface = UiAxGraphics3DCntrl
 
     def __init__(self, stk: STKEngineApplication, w: int, h: int):
         WidgetBase.__init__(self, stk, w, h)
@@ -377,12 +377,12 @@ class GlobeWidget(IUiAxGraphics3DCntrl, WidgetBase):
         WidgetBase.__setattr__(self, attrname, value)
 
 
-class MapWidget(IUiAx2DCntrl, WidgetBase):
+class MapWidget(UiAx2DCntrl, WidgetBase):
     '''
     The 2D Map widget for jupyter.
     '''
     _progid = "STKX12.2DControl.1"
-    _interface = IUiAx2DCntrl
+    _interface = UiAx2DCntrl
 
     def __init__(self, stk: STKEngineApplication, w: int, h: int):
         WidgetBase.__init__(self, stk, w, h)
@@ -391,12 +391,12 @@ class MapWidget(IUiAx2DCntrl, WidgetBase):
         WidgetBase.__setattr__(self, attrname, value)
 
 
-class GfxAnalysisWidget(IUiAxGraphics2DAnalysisCntrl, WidgetBase):
+class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     '''
     The Graphics Analysis widget for jupyter.
     '''
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = IUiAxGraphics2DAnalysisCntrl
+    _interface = UiAxGraphics2DAnalysisCntrl
 
     def __init__(self, stk: STKEngineApplication, w: int, h: int):
         WidgetBase.__init__(self, stk, w, h)

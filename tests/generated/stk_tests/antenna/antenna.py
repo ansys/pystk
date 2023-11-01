@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from antenna.antenna_helper import *
@@ -7,7 +8,6 @@ from interfaces.stk_objects import *
 from orientation_helper import *
 from vehicle.vehicle_vo import *
 from parameterized import *
-
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -25,14 +25,14 @@ class EarlyBoundTests(TestBase):
     ANTENNA_NAME: str = "AntennaTest"
     oSat: "IStkObject" = None
     oAntenna: "IStkObject" = None
-    antenna: "IAntenna" = None
-    antennaVO: "IAntennaGraphics3D" = None
-    VOVector: "IGraphics3DVector" = None
-    antennaVolumeGraphics: "IAntennaVolumeGraphics" = None
-    antennaGraphics: "IAntennaGraphics" = None
-    antennaContourGraphics: "IAntennaContourGraphics" = None
+    antenna: "Antenna" = None
+    antennaVO: "AntennaGraphics3D" = None
+    VOVector: "Graphics3DVector" = None
+    antennaVolumeGraphics: "AntennaVolumeGraphics" = None
+    antennaGraphics: "AntennaGraphics" = None
+    antennaContourGraphics: "AntennaContourGraphics" = None
     antennaContour: "IAntennaContour" = None
-    antennaContourGain: "IAntennaContourGain" = None
+    antennaContourGain: "AntennaContourGain" = None
     antennaOrientation: "IOrientation" = None
     # endregion
 
@@ -47,7 +47,7 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.oAntenna = EarlyBoundTests.oSat.children.new(
                 STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA_NAME
             )
-            EarlyBoundTests.antenna = clr.CastAs(EarlyBoundTests.oAntenna, IAntenna)
+            EarlyBoundTests.antenna = clr.CastAs(EarlyBoundTests.oAntenna, Antenna)
             EarlyBoundTests.antennaOrientation = EarlyBoundTests.antenna.orientation
             if not TestBase.NoGraphicsMode:
                 EarlyBoundTests.antennaVO = EarlyBoundTests.antenna.graphics_3d
@@ -56,7 +56,7 @@ class EarlyBoundTests(TestBase):
                 EarlyBoundTests.antennaGraphics = EarlyBoundTests.antenna.graphics
                 EarlyBoundTests.antennaContourGraphics = EarlyBoundTests.antennaGraphics.contour_graphics
                 EarlyBoundTests.antennaContour = EarlyBoundTests.antennaContourGraphics.contour
-                EarlyBoundTests.antennaContourGain = clr.CastAs(EarlyBoundTests.antennaContour, IAntennaContourGain)
+                EarlyBoundTests.antennaContourGain = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourGain)
 
         except Exception as e:
             raise e
@@ -167,7 +167,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
         oHelper.Run(EarlyBoundTests.VOVector, True)
 
     # endregion
@@ -723,8 +723,8 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaContour_Levels
     @category("Graphics Tests")
     def test_IAgAntennaContour_Levels(self):
-        levelCollection: "IAntennaContourLevelCollection" = clr.CastAs(
-            EarlyBoundTests.antennaContour.levels, IAntennaContourLevelCollection
+        levelCollection: "AntennaContourLevelCollection" = clr.CastAs(
+            EarlyBoundTests.antennaContour.levels, AntennaContourLevelCollection
         )
         Assert.assertEqual(0, levelCollection.count)
 
@@ -749,22 +749,22 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("already exists")):
             levelCollection.add(4.0)
 
-        level: "IAntennaContourLevel"
+        level: "AntennaContourLevel"
 
         for level in levelCollection:
             Assert.assertIsNotNone(level)
 
         i: int = 0
         while i < levelCollection.count:
-            level: "IAntennaContourLevel" = levelCollection[i]
+            level: "AntennaContourLevel" = levelCollection[i]
             Assert.assertIsNotNone(level)
 
             i += 1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
-            level: "IAntennaContourLevel" = levelCollection[5]
+            level: "AntennaContourLevel" = levelCollection[5]
 
-        level4: "IAntennaContourLevel" = levelCollection.get_level(4.0)
+        level4: "AntennaContourLevel" = levelCollection.get_level(4.0)
         Assert.assertEqual(4.0, level4.value)
         level4.line_style = LINE_STYLE.DASH_DOT_DOTTED
         Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, level4.line_style)
@@ -776,7 +776,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             level4.color = Color.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("Unable to find")):
-            level8: "IAntennaContourLevel" = levelCollection.get_level(8.0)
+            level8: "AntennaContourLevel" = levelCollection.get_level(8.0)
 
         levelCollection.remove_at(1)
         Assert.assertEqual(2, levelCollection.count)
@@ -1316,7 +1316,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region RefractionModel Interface tests
-    def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "IRefractionModelEffectiveRadiusMethod"):
+    def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod"):
         EffectiveRadiusMethod.eff_rad = 0.1
         Assert.assertEqual(0.1, EffectiveRadiusMethod.eff_rad)
         EffectiveRadiusMethod.eff_rad = 100
@@ -1345,7 +1345,7 @@ class EarlyBoundTests(TestBase):
         EffectiveRadiusMethod.use_extrapolation = False
         Assert.assertFalse(EffectiveRadiusMethod.use_extrapolation)
 
-    def Test_IAgRfModelITURP8344(self, ITURP8344: "IRefractionModelITURP8344"):
+    def Test_IAgRfModelITURP8344(self, ITURP8344: "RefractionModelITURP8344"):
         ITURP8344.ceiling = 0.0
         Assert.assertEqual(0.0, ITURP8344.ceiling)
         ITURP8344.ceiling = 1000000000
@@ -1369,7 +1369,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.knee_bend_factor = 1.1
 
-    def Test_IAgRfModelSCFMethod(self, SCFMethod: "IRefractionModelSCFMethod"):
+    def Test_IAgRfModelSCFMethod(self, SCFMethod: "RefractionModelSCFMethod"):
         SCFMethod.use_refraction_index = True
         Assert.assertTrue(SCFMethod.use_refraction_index)
 
@@ -1485,15 +1485,15 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(eSnRefractionType, EarlyBoundTests.antenna.refraction)
             if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD:
                 self.Test_IAgRfModelEffectiveRadiusMethod(
-                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, IRefractionModelEffectiveRadiusMethod)
+                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelEffectiveRadiusMethod)
                 )
             elif eSnRefractionType == SENSOR_REFRACTION_TYPE.ITU_R_P834_4:
                 self.Test_IAgRfModelITURP8344(
-                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, IRefractionModelITURP8344)
+                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelITURP8344)
                 )
             elif eSnRefractionType == SENSOR_REFRACTION_TYPE.SCF_METHOD:
                 self.Test_IAgRfModelSCFMethod(
-                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, IRefractionModelSCFMethod)
+                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelSCFMethod)
                 )
 
         else:
@@ -1589,28 +1589,28 @@ class EarlyBoundTests(TestBase):
                 TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest"),
                 IStkObject,
             )
-            satellite: "ISatellite" = clr.CastAs(satelliteObj, ISatellite)
+            satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
             satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            satelliteProp: "IVehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, IVehiclePropagatorTwoBody)
-            ephemInterval: "ITimeToolEventIntervalSmartInterval" = clr.CastAs(
-                satelliteProp.ephemeris_interval, ITimeToolEventIntervalSmartInterval
+            satelliteProp: "VehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)
+            ephemInterval: "TimeToolEventIntervalSmartInterval" = clr.CastAs(
+                satelliteProp.ephemeris_interval, TimeToolEventIntervalSmartInterval
             )
             ephemInterval.set_explicit_interval("1 Jan 2022 10:00:00.000", "2 Jan 2022 10:00:00.000")
             satelliteProp.propagate()
-            antenna: "IAntenna" = clr.CastAs(
-                satelliteObj.children.new(STK_OBJECT_TYPE.ANTENNA, "AntennaPreDataTest"), IAntenna
+            antenna: "Antenna" = clr.CastAs(
+                satelliteObj.children.new(STK_OBJECT_TYPE.ANTENNA, "AntennaPreDataTest"), Antenna
             )
 
             dp: "IDataProvider" = clr.CastAs(
                 (clr.CastAs(antenna, IStkObject)).data_providers["Antenna Gain"], IDataProvider
             )
-            dpFixed: "IDataProviderFixed" = clr.CastAs(dp, IDataProviderFixed)
+            dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "GainCutType Elevation MinAzimuth '-90:00:00.0000' MaxAzimuth '90:00:00.0000' AzimuthStep '01:00:00.0000' ElevationValue '01:00:00.0000' Time '1 Jan 2022 10:00:00.000'"
-            result: "IDataProviderResult" = dpFixed.exec()
+            result: "DataProviderResult" = dpFixed.exec()
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp = clr.CastAs((clr.CastAs(antenna, IStkObject)).data_providers["Antenna Gain Matrix"], IDataProvider)
-            dpFixed = clr.CastAs(dp, IDataProviderFixed)
+            dpFixed = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "MinAzimuth '-90:00:00.0000' MaxAzimuth '90:00:00.0000' AzimuthStep '01:00:00.0000' ElevationStep '01:00:00.0000' MinElevation '-90:00:00.0000' MaxElevation '90:00:00.0000' Time '1 Jan 2022 10:00:00.000'"
             result = dpFixed.exec()
             Assert.assertEqual("OK", str(result.message.messages[0]))
