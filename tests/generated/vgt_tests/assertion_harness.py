@@ -10,7 +10,7 @@ class Unit(object):
 
 class TryCatchAssertBlock(object):
     @staticmethod
-    def DoAssert(message: str, action):
+    def DoAssert(action):
         TryCatchAssertBlock.ExpectedException("", action)
 
     @staticmethod
@@ -44,10 +44,6 @@ class TryCatchAssertBlock(object):
         Assert.fail("Expected exception: {0}", message)
 
     @staticmethod
-    def DoAssert2(action):
-        TryCatchAssertBlock.ExpectedException("", action)
-
-    @staticmethod
     def DoActionRunFinalize(action, finalizer):
         try:
             action()
@@ -56,7 +52,7 @@ class TryCatchAssertBlock(object):
             finalizer()
 
     @staticmethod
-    def DoActionRunFinalize2(root: "IStkObjectRoot", action, finalizer, *units):
+    def DoActionRunFinalize2(root: "StkObjectRoot", action, finalizer, *units):
         try:
             runner = CodeRunner(root)
             runner.DoWithUnits(action, units)
@@ -66,8 +62,8 @@ class TryCatchAssertBlock(object):
 
 
 class CodeRunner(object):
-    def __init__(self, root: "IStkObjectRoot", bBeginEndUpdate: bool = False):
-        self._root: "IStkObjectRoot" = root
+    def __init__(self, root: "StkObjectRoot", bBeginEndUpdate: bool = False):
+        self._root: "StkObjectRoot" = root
         self._bBeginEndUpdate: bool = bBeginEndUpdate
 
     def DoWithUnits(self, action, *units):

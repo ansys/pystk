@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from assert_extension import *
@@ -30,7 +31,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Initialize()
 
         TestBase.LoadTestScenario(Path.Combine("AreaTargetTests", "AreaTargetTests.sc"))
-        EarlyBoundTests.AG_AT = clr.Convert(TestBase.Application.current_scenario.children["AreaTarget1"], IAreaTarget)
+        EarlyBoundTests.AG_AT = clr.Convert(TestBase.Application.current_scenario.children["AreaTarget1"], AreaTarget)
 
     # endregion
 
@@ -43,20 +44,20 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_AT: "IAreaTarget" = None
+    AG_AT: "AreaTarget" = None
     # endregion
 
     # region CommonTasks
     def test_CommonTasks(self):
         EarlyBoundTests.AG_AT.common_tasks.set_area_type_ellipse(1, 2, 12)
         Assert.assertEqual(AREA_TYPE.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
-        ellipse: "IAreaTypeEllipse" = clr.CastAs(EarlyBoundTests.AG_AT.area_type_data, IAreaTypeEllipse)
+        ellipse: "AreaTypeEllipse" = clr.CastAs(EarlyBoundTests.AG_AT.area_type_data, AreaTypeEllipse)
         Assert.assertEqual(1, ellipse.semi_major_axis)
         Assert.assertEqual(2, ellipse.semi_minor_axis)
         Assert.assertEqual(12, ellipse.bearing)
 
         latlons = [[0, 0], [1, 0]]
-        patterns: "IAreaTypePatternCollection" = EarlyBoundTests.AG_AT.common_tasks.set_area_type_pattern(latlons)
+        patterns: "AreaTypePatternCollection" = EarlyBoundTests.AG_AT.common_tasks.set_area_type_pattern(latlons)
         Assert.assertEqual(2, patterns.count)
         patterns.remove_all()
         Assert.assertEqual(0, patterns.count)
@@ -69,7 +70,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TEST ----- BEGIN -----")
         EarlyBoundTests.AG_AT.area_type = AREA_TYPE.ELLIPSE
         Assert.assertEqual(AREA_TYPE.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
-        ellipse: "IAreaTypeEllipse" = clr.Convert(EarlyBoundTests.AG_AT.area_type_data, IAreaTypeEllipse)
+        ellipse: "AreaTypeEllipse" = clr.Convert(EarlyBoundTests.AG_AT.area_type_data, AreaTypeEllipse)
         ellipse.bearing = 1
         Assert.assertEqual(1, ellipse.bearing)
         ellipse.semi_major_axis = 301
@@ -79,8 +80,8 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_AT.area_type = AREA_TYPE.PATTERN
         Assert.assertEqual(AREA_TYPE.PATTERN, EarlyBoundTests.AG_AT.area_type)
-        patterns: "IAreaTypePatternCollection" = clr.Convert(
-            EarlyBoundTests.AG_AT.area_type_data, IAreaTypePatternCollection
+        patterns: "AreaTypePatternCollection" = clr.Convert(
+            EarlyBoundTests.AG_AT.area_type_data, AreaTypePatternCollection
         )
         Assert.assertIsNotNone(patterns)
         self.Units.set_current_unit("LongitudeUnit", "deg")
@@ -90,7 +91,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3("The new Area Type Pattern collection contains: {0} elements", patterns.count)
         TestBase.logger.WriteLine7("Element 0: Lattitude = {0}, Longitude = {1}", patterns[0].lat, patterns[0].lon)
         idx: int = 1
-        pattern: "IAreaTypePattern"
+        pattern: "AreaTypePattern"
         for pattern in patterns:
             Assert.assertIsNotNone(pattern)
             pattern.lat = (idx * idx) / 100
@@ -100,7 +101,7 @@ class EarlyBoundTests(TestBase):
             idx += 1
 
         size: int = patterns.count
-        pattern2: "IAreaTypePattern" = patterns.add(0.02, 0.02)
+        pattern2: "AreaTypePattern" = patterns.add(0.02, 0.02)
         Assert.assertEqual((size + 1), patterns.count)
         patterns.remove(size)
         Assert.assertEqual(size, patterns.count)
@@ -121,12 +122,12 @@ class EarlyBoundTests(TestBase):
 
             iIndex += 1
 
-        pattern3: "IAreaTypePattern" = patterns.insert(3, 4, 2)
+        pattern3: "AreaTypePattern" = patterns.insert(3, 4, 2)
         Assert.assertEqual(5, patterns.count)
         Assert.assertEqual(pattern3.lat, 3)
         Assert.assertEqual(pattern3.lon, 4)
 
-        pattern4: "IAreaTypePattern" = patterns[2]
+        pattern4: "AreaTypePattern" = patterns[2]
         Assert.assertEqual(pattern4.lat, 3)
         Assert.assertEqual(pattern4.lon, 4)
 
@@ -170,7 +171,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(bIsAllowed, EarlyBoundTests.AG_AT.allow_object_access)
 
         pl: "IStkObject" = TestBase.Application.current_scenario.children["JupiterAnalytic"]
-        fa: "IFacility" = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], IFacility)
+        fa: "Facility" = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
         Assert.assertIsNotNone(pl)
         areaTargetObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AT, IStkObject)
         if areaTargetObject.is_access_supported():
@@ -178,7 +179,7 @@ class EarlyBoundTests(TestBase):
             areaTargetObject.get_access("*/Planet/Planet1").compute_access()
             areaTargetObject.get_access(pl.path).compute_access()
 
-            dpc: "IDataProviderCollection" = areaTargetObject.get_access(pl.path).data_providers
+            dpc: "DataProviderCollection" = areaTargetObject.get_access(pl.path).data_providers
             TestBase.logger.WriteLine3("The Data Provider collection contains: {0} elements", dpc.count)
 
             i: int = 0
@@ -188,7 +189,7 @@ class EarlyBoundTests(TestBase):
                 i += 1
 
             if areaTargetObject.is_object_coverage_supported():
-                cov: "IStkObjectCoverage" = areaTargetObject.object_coverage
+                cov: "StkObjectCoverage" = areaTargetObject.object_coverage
                 TestBase.logger.WriteLine(cov.data_providers[0].name)
 
             (clr.Convert(EarlyBoundTests.AG_AT, IStkObject)).get_access_to_object(
@@ -204,10 +205,8 @@ class EarlyBoundTests(TestBase):
         st.get_access(areaTargetObject.path)
         st.get_access_to_object(clr.CastAs(EarlyBoundTests.AG_AT, IStkObject))
 
-        def action1():
+        with pytest.raises(Exception):
             areaTargetObject.get_access(TestBase.Application.current_scenario.path)
-
-        TryCatchAssertBlock.DoAssert("", action1)
 
         TestBase.logger.WriteLine("----- BASIC TEST ----- END -----")
 
@@ -217,7 +216,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- GRAPHICS TEST ----- BEGIN -----")
-        gfx: "IAreaTargetGraphics" = clr.Convert(EarlyBoundTests.AG_AT.graphics, IAreaTargetGraphics)
+        gfx: "AreaTargetGraphics" = clr.Convert(EarlyBoundTests.AG_AT.graphics, AreaTargetGraphics)
         gfx.is_object_graphics_visible = False
         Assert.assertFalse(gfx.is_object_graphics_visible)
         gfx.is_object_graphics_visible = True
@@ -289,7 +288,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
         oHelper.Run(EarlyBoundTests.AG_AT.graphics_3d.vector, True)
 
     # endregion
@@ -298,7 +297,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
-        vo: "IAreaTargetGraphics3D" = EarlyBoundTests.AG_AT.graphics_3d
+        vo: "AreaTargetGraphics3D" = EarlyBoundTests.AG_AT.graphics_3d
         Assert.assertIsNotNone(vo)
         # set DistanceUnit
         TestBase.logger.WriteLine5(
@@ -321,12 +320,9 @@ class EarlyBoundTests(TestBase):
         vo.enable_label_max_viewing_dist = False
         TestBase.logger.WriteLine4("\tThe new EnableLabelMaxViewingDist is: {0}", vo.enable_label_max_viewing_dist)
         Assert.assertFalse(vo.enable_label_max_viewing_dist)
-
-        def action2():
-            vo.label_max_viewing_dist = 1000000000000.0
-
         # LabelMaxViewingDist
-        TryCatchAssertBlock.DoAssert("", action2)
+        with pytest.raises(Exception):
+            vo.label_max_viewing_dist = 1000000000000.0
         # EnableLabelMaxViewingDist (true)
         vo.enable_label_max_viewing_dist = True
         TestBase.logger.WriteLine4("\tThe new EnableLabelMaxViewingDist is: {0}", vo.enable_label_max_viewing_dist)
@@ -341,18 +337,12 @@ class EarlyBoundTests(TestBase):
         vo.fill_interior = False
         TestBase.logger.WriteLine4("\tThe new FillInterior is: {0}", vo.fill_interior)
         Assert.assertFalse(vo.fill_interior)
-
-        def action3():
-            vo.percent_translucency_interior = 34
-
         # LabelMaxViewingDist
-        TryCatchAssertBlock.DoAssert("", action3)
-
-        def action4():
-            vo.fill_granularity = 44
-
+        with pytest.raises(Exception):
+            vo.percent_translucency_interior = 34
         # FillGranularity
-        TryCatchAssertBlock.DoAssert("", action4)
+        with pytest.raises(Exception):
+            vo.fill_granularity = 44
         # FillInterior (true)
         vo.fill_interior = True
         TestBase.logger.WriteLine4("\tThe new FillInterior is: {0}", vo.fill_interior)
@@ -369,16 +359,10 @@ class EarlyBoundTests(TestBase):
         vo.fill_granularity = 0.345
         TestBase.logger.WriteLine6("\tThe new FillGranularity is: {0}", vo.fill_granularity)
         Assert.assertEqual(0.345, vo.fill_granularity)
-
-        def action5():
+        with pytest.raises(Exception):
             vo.fill_granularity = 0.001
-
-        TryCatchAssertBlock.DoAssert("", action5)
-
-        def action6():
+        with pytest.raises(Exception):
             vo.fill_granularity = 6.1
-
-        TryCatchAssertBlock.DoAssert("", action6)
         TestBase.logger.WriteLine("----- THE VO TEST ----- END -----")
 
     # endregion
@@ -417,18 +401,18 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_AccessDataDisplay(self):
         # test Access VO DataDisplays
-        oSatellite: "ISatellite" = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], ISatellite)
+        oSatellite: "Satellite" = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
         Assert.assertNotEqual(None, oSatellite)
         oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
-        oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, IVehiclePropagatorTwoBody)
+        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, VehiclePropagatorTwoBody)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()
 
         # get access to satellite
-        oAccess: "IStkAccess" = clr.Convert(
+        oAccess: "StkAccess" = clr.Convert(
             (clr.Convert(EarlyBoundTests.AG_AT, IStkObject)).get_access_to_object(clr.CastAs(oSatellite, IStkObject)),
-            IStkAccess,
+            StkAccess,
         )
         Assert.assertNotEqual(None, oAccess)
         oAccess.compute_access()

@@ -10,16 +10,16 @@ class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
 
-    AG_MSL: "IMissile" = None
-    AG_SENSOR: "ISensor" = None
+    AG_MSL: "Missile" = None
+    AG_SENSOR: "Sensor" = None
 
     @staticmethod
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("MissileTests", "MissileTests.sc"))
-        EarlyBoundTests.AG_MSL = clr.Convert(TestBase.Application.current_scenario.children["Missile1"], IMissile)
+        EarlyBoundTests.AG_MSL = clr.Convert(TestBase.Application.current_scenario.children["Missile1"], Missile)
         EarlyBoundTests.AG_SENSOR = clr.Convert(
-            (clr.Convert(EarlyBoundTests.AG_MSL, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"), ISensor
+            (clr.Convert(EarlyBoundTests.AG_MSL, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"), Sensor
         )
 
     @staticmethod
@@ -48,18 +48,18 @@ class EarlyBoundTests(TestBase):
             if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.MISSILE, "Test"):
                 TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, "Test")
 
-            missile: "IMissile" = clr.Convert(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Test"), IMissile
+            missile: "Missile" = clr.Convert(
+                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Test"), Missile
             )
             Assert.assertIsNotNone(missile)
 
             missile.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
 
-            propagator: "IVehiclePropagatorBallistic" = clr.Convert(missile.trajectory, IVehiclePropagatorBallistic)
+            propagator: "VehiclePropagatorBallistic" = clr.Convert(missile.trajectory, VehiclePropagatorBallistic)
             Assert.assertIsNotNone(propagator)
 
             propagator.set_launch_type(VEHICLE_LAUNCH.LAUNCH_LLA)
-            launch: "IVehicleLaunchLLA" = clr.Convert(propagator.launch, IVehicleLaunchLLA)
+            launch: "VehicleLaunchLLA" = clr.Convert(propagator.launch, VehicleLaunchLLA)
             Assert.assertIsNotNone(launch)
 
             launch.lat = 37.9249
@@ -67,8 +67,8 @@ class EarlyBoundTests(TestBase):
             launch.altitude = 0.0
 
             propagator.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL)
-            impact: "IVehicleImpactLocationLaunchAzEl" = clr.Convert(
-                propagator.impact_location, IVehicleImpactLocationLaunchAzEl
+            impact: "VehicleImpactLocationLaunchAzEl" = clr.Convert(
+                propagator.impact_location, VehicleImpactLocationLaunchAzEl
             )
 
             impact.azimuth = azimuthInDeg
@@ -81,7 +81,7 @@ class EarlyBoundTests(TestBase):
 
             propagator.propagate()
 
-            impact = clr.Convert(propagator.impact_location, IVehicleImpactLocationLaunchAzEl)
+            impact = clr.Convert(propagator.impact_location, VehicleImpactLocationLaunchAzEl)
 
             Assert.assertAlmostEqual(azimuthInDeg, impact.azimuth, delta=Math2.Epsilon9)
             Assert.assertAlmostEqual(elevationInDeg, impact.elevation, delta=Math2.Epsilon9)
@@ -89,30 +89,30 @@ class EarlyBoundTests(TestBase):
 
     # region BUG97203
     def test_BUG97203(self):
-        missile: "IMissile" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "mymissile"), IMissile
+        missile: "Missile" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "mymissile"), Missile
         )
-        traj: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
+        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
         traj.set_launch_type(VEHICLE_LAUNCH.LAUNCH_LLA)
-        launch: "IVehicleLaunchLLA" = clr.CastAs(traj.launch, IVehicleLaunchLLA)
+        launch: "VehicleLaunchLLA" = clr.CastAs(traj.launch, VehicleLaunchLLA)
         launch.lat = 77
         launch.lon = 77
         launch.altitude = 7
         traj.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL)
-        impact: "IVehicleImpactLocationLaunchAzEl" = clr.CastAs(traj.impact_location, IVehicleImpactLocationLaunchAzEl)
+        impact: "VehicleImpactLocationLaunchAzEl" = clr.CastAs(traj.impact_location, VehicleImpactLocationLaunchAzEl)
         impact.azimuth = 77
         impact.delta_v = 7
         impact.elevation = 77
         traj.propagate()
 
-        dpGroup: "IDataProviderGroup" = clr.CastAs(
-            TestBase.Application.current_scenario.children["mymissile"].data_providers["LLA State"], IDataProviderGroup
+        dpGroup: "DataProviderGroup" = clr.CastAs(
+            TestBase.Application.current_scenario.children["mymissile"].data_providers["LLA State"], DataProviderGroup
         )
         dp: "IDataProvider" = clr.CastAs(dpGroup.group["Fixed"], IDataProvider)
-        dpTimeVar: "IDataProviderTimeVarying" = clr.CastAs(dp, IDataProviderTimeVarying)
+        dpTimeVar: "DataProviderTimeVarying" = clr.CastAs(dp, DataProviderTimeVarying)
         elems = ["Time", "Lat", "Lon", "Alt"]
 
-        result: "IDataProviderResult" = dpTimeVar.exec_elements(
+        result: "DataProviderResult" = dpTimeVar.exec_elements(
             traj.ephemeris_interval.find_start_time(), traj.ephemeris_interval.find_stop_time(), 240, elems
         )
         arTime = result.data_sets[0].get_values()

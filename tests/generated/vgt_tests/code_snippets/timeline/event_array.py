@@ -12,10 +12,10 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_DetermineTimesOfEventArray(self):
         self.DetermineTimesOfEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def DetermineTimesOfEventArray(self, provider: "IAnalysisWorkbenchProvider"):
+    def DetermineTimesOfEventArray(self, provider: "AnalysisWorkbenchProvider"):
         eventArray: "ITimeToolEventArray" = provider.event_arrays["Orbit.Classical.SemimajorAxis.TimesOfLocalMax"]
 
-        foundTimes: "ITimeToolFindTimesResult" = eventArray.find_times()
+        foundTimes: "TimeToolFindTimesResult" = eventArray.find_times()
         if foundTimes.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(foundTimes.times)
@@ -26,7 +26,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in foundTimes.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -38,11 +38,11 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateFilteredEventArray(self):
         self.CreateFilteredEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateFilteredEventArray(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateFilteredEventArray(self, provider: "AnalysisWorkbenchProvider"):
         eventArray: "ITimeToolEventArray" = provider.event_arrays.factory.create_event_array_filtered(
             "MyEventArrayFiltered", "MyDescription"
         )
-        asFiltered: "ITimeToolEventArrayFiltered" = clr.CastAs(eventArray, ITimeToolEventArrayFiltered)
+        asFiltered: "TimeToolEventArrayFiltered" = clr.CastAs(eventArray, TimeToolEventArrayFiltered)
 
         asFiltered.original_time_array = provider.event_arrays["EphemerisTimes"]
 
@@ -52,7 +52,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
         # Uses current Time unit preference, this code snippet assumes seconds.
         asFiltered.step = 240
 
-        timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
+        timeArrays: "TimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
@@ -63,7 +63,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in timeArrays.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -75,11 +75,11 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateFixedStepEventArray(self):
         self.CreateFixedStepEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateFixedStepEventArray(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateFixedStepEventArray(self, provider: "AnalysisWorkbenchProvider"):
         eventArray: "ITimeToolEventArray" = provider.event_arrays.factory.create_event_array_fixed_step(
             "MyEventArrayFixedStep", "MyDescription"
         )
-        asFixedStep: "ITimeToolEventArrayFixedStep" = clr.CastAs(eventArray, ITimeToolEventArrayFixedStep)
+        asFixedStep: "TimeToolEventArrayFixedStep" = clr.CastAs(eventArray, TimeToolEventArrayFixedStep)
 
         asFixedStep.bounding_interval_list = provider.event_interval_lists["AfterStart.SatisfactionIntervals"]
         asFixedStep.include_interval_edges = True
@@ -92,7 +92,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
         asFixedStep.reference_type = CRDN_SAMPLED_REFERENCE_TIME.REFERENCE_EVENT
         asFixedStep.reference_time_instant = provider.events["EphemerisStartTime"]
 
-        timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
+        timeArrays: "TimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
@@ -103,7 +103,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in timeArrays.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -115,16 +115,16 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateMergedEventArray(self):
         self.CreateMergedEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateMergedEventArray(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateMergedEventArray(self, provider: "AnalysisWorkbenchProvider"):
         eventArray: "ITimeToolEventArray" = provider.event_arrays.factory.create_event_array_merged(
             "MyEventArrayMerged", "MyDescription"
         )
-        asMerged: "ITimeToolEventArrayMerged" = clr.CastAs(eventArray, ITimeToolEventArrayMerged)
+        asMerged: "TimeToolEventArrayMerged" = clr.CastAs(eventArray, TimeToolEventArrayMerged)
 
         asMerged.time_array_a = provider.event_arrays["GroundTrajectory.Detic.LLA.Altitude.TimesOfLocalMin"]
         asMerged.time_array_b = provider.event_arrays["GroundTrajectory.Detic.LLA.Altitude.TimesOfLocalMax"]
 
-        timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
+        timeArrays: "TimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
@@ -135,7 +135,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in timeArrays.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -145,29 +145,29 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateSignaledEventArray
     def test_CreateSignaledEventArray(self):
-        self.CreateSignaledEventArray(clr.Convert(TestBase.Application, IStkObjectRoot))
+        self.CreateSignaledEventArray(clr.Convert(TestBase.Application, StkObjectRoot))
 
-    def CreateSignaledEventArray(self, stkRoot: "IStkObjectRoot"):
-        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+    def CreateSignaledEventArray(self, stkRoot: "StkObjectRoot"):
+        satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
+        aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
 
         eventArray: "ITimeToolEventArray" = satelliteVgtProvider.event_arrays.factory.create_event_array_signaled(
             "MyEventArraySignaled", "MyDescription"
         )
-        asSignaled: "ITimeToolEventArraySignaled" = clr.CastAs(eventArray, ITimeToolEventArraySignaled)
+        asSignaled: "TimeToolEventArraySignaled" = clr.CastAs(eventArray, TimeToolEventArraySignaled)
 
         asSignaled.original_time_array = aircraftVgtProvider.event_arrays["OneMinuteSampleTimes"]
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
         asSignaled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
-        basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, TimeToolSignalDelayBasic)
         basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.01
 
-        timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
+        timeArrays: "TimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
@@ -178,7 +178,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in timeArrays.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -190,18 +190,16 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateStartStopTimesEventArray(self):
         self.CreateStartStopTimesEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateStartStopTimesEventArray(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateStartStopTimesEventArray(self, provider: "AnalysisWorkbenchProvider"):
         eventArray: "ITimeToolEventArray" = provider.event_arrays.factory.create_event_array_start_stop_times(
             "MyEventArrayStartStopTimes", "MyDescription"
         )
-        asStartStopTimes: "ITimeToolEventArrayStartStopTimes" = clr.CastAs(
-            eventArray, ITimeToolEventArrayStartStopTimes
-        )
+        asStartStopTimes: "TimeToolEventArrayStartStopTimes" = clr.CastAs(eventArray, TimeToolEventArrayStartStopTimes)
 
         asStartStopTimes.reference_intervals = provider.event_interval_lists["LightingIntervals.Sunlight"]
         asStartStopTimes.start_stop_option = CRDN_START_STOP_OPTION.COUNT_START_ONLY
 
-        timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
+        timeArrays: "TimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
@@ -212,7 +210,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in timeArrays.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -224,19 +222,19 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateConditionCrossingsEventArray(self):
         self.CreateConditionCrossingsEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateConditionCrossingsEventArray(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateConditionCrossingsEventArray(self, provider: "AnalysisWorkbenchProvider"):
         eventArray: "ITimeToolEventArray" = provider.event_arrays.factory.create_event_array_condition_crossings(
             "MyEventArrayConditionCrossings", "MyDescription"
         )
-        asConditionCrossings: "ITimeToolEventArrayConditionCrossings" = clr.CastAs(
-            eventArray, ITimeToolEventArrayConditionCrossings
+        asConditionCrossings: "TimeToolEventArrayConditionCrossings" = clr.CastAs(
+            eventArray, TimeToolEventArrayConditionCrossings
         )
 
         scalarBound: "ICalculationToolCondition" = provider.conditions.factory.create_condition_scalar_bounds(
             "Bound", "MyDescription"
         )
-        asScalarBounds: "ICalculationToolConditionScalarBounds" = clr.CastAs(
-            scalarBound, ICalculationToolConditionScalarBounds
+        asScalarBounds: "CalculationToolConditionScalarBounds" = clr.CastAs(
+            scalarBound, CalculationToolConditionScalarBounds
         )
         asScalarBounds.scalar = provider.calc_scalars["GroundTrajectory.Detic.LLA.Latitude"]
         asScalarBounds.operation = CRDN_CONDITION_THRESHOLD_OPTION.INSIDE_MIN_MAX
@@ -244,7 +242,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
         asConditionCrossings.condition = scalarBound
 
-        timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
+        timeArrays: "TimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
@@ -255,7 +253,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in timeArrays.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -267,18 +265,18 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateExtremaEventArray(self):
         self.CreateExtremaEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateExtremaEventArray(self, provider: "IAnalysisWorkbenchProvider"):
+    def CreateExtremaEventArray(self, provider: "AnalysisWorkbenchProvider"):
         eventArray: "ITimeToolEventArray" = provider.event_arrays.factory.create_event_array_extrema(
             "MyEventArrayExtrema", "MyDescription"
         )
-        asExtrema: "ITimeToolEventArrayExtrema" = clr.CastAs(eventArray, ITimeToolEventArrayExtrema)
+        asExtrema: "TimeToolEventArrayExtrema" = clr.CastAs(eventArray, TimeToolEventArrayExtrema)
 
         asExtrema.calculation = provider.calc_scalars["GroundTrajectory.Detic.LLA.Altitude"]
 
         asExtrema.is_global = True
         asExtrema.extremum_type = CRDN_EXTREMUM_CONSTANTS.MAXIMUM
 
-        timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
+        timeArrays: "TimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
@@ -289,7 +287,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
                 i += 1
 
-            timeArray: "ITimeToolInterval"
+            timeArray: "TimeToolInterval"
 
             for timeArray in timeArrays.intervals:
                 Console.WriteLine(("Start: " + str(timeArray.start)))
@@ -299,9 +297,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region DetermineAltitudeOfAircraftAtOneCertainSample
     def test_DetermineAltitudeOfAircraftAtOneCertainSample(self):
-        self.DetermineAltitudeOfAircraftAtOneCertainSample(clr.Convert(TestBase.Application, IStkObjectRoot))
+        self.DetermineAltitudeOfAircraftAtOneCertainSample(clr.Convert(TestBase.Application, StkObjectRoot))
 
-    def DetermineAltitudeOfAircraftAtOneCertainSample(self, stkRoot: "IStkObjectRoot"):
+    def DetermineAltitudeOfAircraftAtOneCertainSample(self, stkRoot: "StkObjectRoot"):
         # Get the aircraft
         aircraft: "IStkObject" = stkRoot.get_object_from_path("Aircraft/UAV")
 
@@ -309,13 +307,13 @@ class EventArray(TimelineCodeSnippetsTestBase):
         twentySecondSample: "ITimeToolEventArray" = aircraft.vgt.event_arrays.factory.create_event_array_fixed_step(
             "TwentySecondSample", "MyDescription"
         )
-        asFixedStep: "ITimeToolEventArrayFixedStep" = clr.CastAs(twentySecondSample, ITimeToolEventArrayFixedStep)
+        asFixedStep: "TimeToolEventArrayFixedStep" = clr.CastAs(twentySecondSample, TimeToolEventArrayFixedStep)
         asFixedStep.bounding_interval_list = aircraft.vgt.event_interval_lists["AvailabilityIntervals"]
         asFixedStep.sampling_time_step = 20
         asFixedStep.reference_type = CRDN_SAMPLED_REFERENCE_TIME.START_OF_INTERVAL_LIST
 
         # At each time step, get the aircraft's altitude and print the value.
-        timeArrays: "ITimeToolFindTimesResult" = twentySecondSample.find_times()
+        timeArrays: "TimeToolFindTimesResult" = twentySecondSample.find_times()
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)

@@ -49,7 +49,7 @@ def required_package(package_name: str):
 
 
 @required_package("numpy")
-def to_numpy_array(results: "IDataProviderResultDataSetCollection") -> "ndarray":
+def to_numpy_array(results: "DataProviderResultDataSetCollection") -> "ndarray":
     results_arr = np.array([])
 
     # create numpy array from row formatted dataset elements
@@ -68,8 +68,8 @@ def to_numpy_array(results: "IDataProviderResultDataSetCollection") -> "ndarray"
 
 
 @required_package("pandas")
-def to_pandas_dataframe(results: "IDataProviderResultDataSetCollection", index_element_name: str = None,
-                 data_provider_elements: "IDataProviderElements" = None) -> "DataFrame":
+def to_pandas_dataframe(results: "DataProviderResultDataSetCollection", index_element_name: str = None,
+                 data_provider_elements: "DataProviderElements" = None) -> "DataFrame":
     results_df = pd.DataFrame()
     results_arr = to_numpy_array(results)
 
@@ -119,7 +119,7 @@ def to_pandas_dataframe(results: "IDataProviderResultDataSetCollection", index_e
     return results_df
 
 
-def _get_unique_element_names(results: "IDataProviderResultDataSetCollection") -> Set:
+def _get_unique_element_names(results: "DataProviderResultDataSetCollection") -> Set:
     """Returns a unique set of element names as a set."""
 
     unique_element_names = set(results.ElementNames)
@@ -128,7 +128,7 @@ def _get_unique_element_names(results: "IDataProviderResultDataSetCollection") -
 
 
 @required_package("numpy")
-def _map_element_types_to_pandas_dtypes(data_provider_elements: "IDataProviderElements",
+def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderElements",
                                         index_element_name: str = None) -> Dict[str, object]:
     """
     Returns a mapping of STK data provider element names and their types to corresponding pandas dtypes.

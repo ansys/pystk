@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from logger import *
@@ -8,10 +9,10 @@ from ansys.stk.core.vgt import *
 
 # region DisplayTimesHelper
 class DisplayTimesHelper(object):
-    def __init__(self, oRoot: "IStkObjectRoot"):
+    def __init__(self, oRoot: "StkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "IStkObjectRoot" = oRoot
+        self.m_oRoot: "StkObjectRoot" = oRoot
 
     # endregion
 
@@ -35,17 +36,12 @@ class DisplayTimesHelper(object):
             iIndex += 1
 
         if not oDisplay.is_display_status_type_supported(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS):
-
-            def action1():
+            with pytest.raises(Exception):
                 oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
 
-            TryCatchAssertBlock.DoAssert("Cannot set eDuringChainAccess type!", action1)
-
-        def action2():
-            oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.TYPE_UNKNOWN)
-
         # eDisplayTypeUnknown
-        TryCatchAssertBlock.DoAssert("Cannot set eDisplayTypeUnknown type!", action2)
+        with pytest.raises(Exception):
+            oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.TYPE_UNKNOWN)
         # DisplayStatusType
         self.m_logger.WriteLine6("\tThe current DisplayStatusType is: {0}", oDisplay.display_status_type)
 
@@ -69,15 +65,15 @@ class DisplayTimesHelper(object):
                 Assert.assertIsNone(displayTimesData)
                 self.m_logger.WriteLine("\t\tNo DisplayTimesData available.")
             elif eType == DISPLAY_TIMES_TYPE.DURING_ACCESS:
-                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, IDuringAccess))
+                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, DuringAccess))
             elif eType == DISPLAY_TIMES_TYPE.USE_INTERVALS:
                 oHelper = IntervalCollectionHelper(self.m_oRoot.unit_preferences)
                 oHelper.Run(
-                    clr.Convert(oDisplay.display_times_data, IIntervalCollection),
+                    clr.Convert(oDisplay.display_times_data, IntervalCollection),
                     IntervalCollectionHelper.IntervalCollectionType.Intervals,
                 )
             elif eType == DISPLAY_TIMES_TYPE.USE_TIME_COMPONENT:
-                self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, IDisplayTimesTimeComponent))
+                self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, DisplayTimesTimeComponent))
             else:
                 Assert.fail("Unknown DISPLAY_TIMES_TYPE")
 
@@ -86,7 +82,7 @@ class DisplayTimesHelper(object):
     # endregion
 
     # region DuringAccess method
-    def DuringAccess(self, oAccess: "IDuringAccess"):
+    def DuringAccess(self, oAccess: "DuringAccess"):
         Assert.assertIsNotNone(oAccess)
         # AccessObjects
         oOLCHelper = ObjectLinkCollectionHelper()
@@ -99,36 +95,22 @@ class DisplayTimesHelper(object):
     # endregion
 
     # region DisplayTimesTimeComponent method
-    def DisplayTimesTimeComponent(self, dttc: "IDisplayTimesTimeComponent"):
+    def DisplayTimesTimeComponent(self, dttc: "DisplayTimesTimeComponent"):
         # Only Intervals and Interval Lists are supported.
 
         Assert.assertIsNotNone(dttc)
         Assert.assertEqual("", dttc.get_qualified_path())
 
-        def action3():
+        with pytest.raises(Exception):
             dttc.set_qualified_path("")
-
-        TryCatchAssertBlock.DoAssert("Setting blank component", action3)
-
-        def action4():
+        with pytest.raises(Exception):
             dttc.set_qualified_path("Scenario/Scenario1 Bogus Interval")
-
-        TryCatchAssertBlock.DoAssert("Setting bogus component", action4)
-
-        def action5():
+        with pytest.raises(Exception):
             dttc.set_qualified_path("Scenario/Scenario1 AnalysisStartTime Event")
-
-        TryCatchAssertBlock.DoAssert("Setting event component", action5)
-
-        def action6():
+        with pytest.raises(Exception):
             dttc.set_qualified_path("Facility/Facility1 LightingIntervals EventIntervalCollection")
-
-        TryCatchAssertBlock.DoAssert("Setting IntervalCollection component", action6)
-
-        def action7():
+        with pytest.raises(Exception):
             dttc.set_qualified_path("Scenario/Scenario1 OneMinuteSampleTimes EventArray")
-
-        TryCatchAssertBlock.DoAssert("Setting EventArray component", action7)
 
         dttc.set_qualified_path(
             (("Scenario/" + self.m_oRoot.current_scenario.instance_name) + " AnalysisInterval EventInterval")
@@ -148,28 +130,19 @@ class DisplayTimesHelper(object):
         crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
             self.m_oRoot.current_scenario.vgt.events["AnalysisStartTime"], IAnalysisWorkbenchComponent
         )
-
-        def action8():
+        with pytest.raises(Exception):
             dttc.set_time_component(crdn)
-
-        TryCatchAssertBlock.DoAssert("Setting event component", action8)
         crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
             self.m_oRoot.current_scenario.children["Facility1"].vgt.event_interval_collections["LightingIntervals"],
             IAnalysisWorkbenchComponent,
         )
-
-        def action9():
+        with pytest.raises(Exception):
             dttc.set_time_component(crdnFac)
-
-        TryCatchAssertBlock.DoAssert("Setting IntervalCollection component", action9)
         crdn = clr.CastAs(
             self.m_oRoot.current_scenario.vgt.event_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
         )
-
-        def action10():
+        with pytest.raises(Exception):
             dttc.set_time_component(crdn)
-
-        TryCatchAssertBlock.DoAssert("Setting EventArray component", action10)
 
         crdn = clr.CastAs(
             self.m_oRoot.current_scenario.vgt.event_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
@@ -205,10 +178,10 @@ class IntervalCollectionHelper(object):
         LabelNotes = 2
         Constraint = 3
 
-    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
         self.m_bReadOnlyFile: bool = False
 
     # endregion
@@ -220,7 +193,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IIntervalCollection", eType):
+    def Run(self, oCollection: "IntervalCollection", eType):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine("IntervalCollection test:")
         # set DateFormat
@@ -261,25 +234,19 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region DuringAccess
-    def DuringAccess(self, oCollection: "IIntervalCollection"):
+    def DuringAccess(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
-
-        def action11():
-            oCollection.remove_all()
-
         # RemoveAll
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action11)
+        with pytest.raises(Exception):
+            oCollection.remove_all()
 
         oStart: typing.Any = None
         oStop: typing.Any = None
 
         oStart = "1 Jul 1999 00:00:00.00"
         oStop = "1 Jul 1999 01:00:00.000"
-
-        def action12():
+        with pytest.raises(Exception):
             iIndex: int = oCollection.add(oStart, oStop)
-
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action12)
         if oCollection.count > 0:
             # ToArray
             arIntervals = oCollection.to_array(0, -1)
@@ -302,66 +269,43 @@ class IntervalCollectionHelper(object):
             (oStart, oStop) = oCollection.get_interval(0)
             oNewStart: typing.Any = "1 Jun 2004 12:34:56.789"
             oNewStop: typing.Any = "2 Jun 2004 00:00:00.000"
-
-            def action13():
-                oCollection.change_interval(0, oNewStart, oNewStop)
-
             # ChangeInterval
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action13)
-
-            def action14():
-                oCollection.deconflict()
-
+            with pytest.raises(Exception):
+                oCollection.change_interval(0, oNewStart, oNewStop)
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action14)
-
-            def action15():
-                oCollection.remove_interval(oStart, oStop)
-
+            with pytest.raises(Exception):
+                oCollection.deconflict()
             # RemoveInterval
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action15)
-
-            def action16():
+            with pytest.raises(Exception):
+                oCollection.remove_interval(oStart, oStop)
+            # RemoveIndex
+            with pytest.raises(Exception):
                 oCollection.remove_index(0)
 
-            # RemoveIndex
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action16)
-
-        def action17():
-            oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
-
         # LoadIntervals
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action17)
-
-        def action18():
-            oCollection.deconflict()
-
+        with pytest.raises(Exception):
+            oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
         # Deconflict
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action18)
+        with pytest.raises(Exception):
+            oCollection.deconflict()
 
     # endregion
 
     # region Constraint
-    def Constraint(self, oCollection: "IIntervalCollection"):
+    def Constraint(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         if self.m_bReadOnlyFile:
-
-            def action19():
-                oCollection.remove_all()
-
             # RemoveAll
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action19)
+            with pytest.raises(Exception):
+                oCollection.remove_all()
 
             oStart: typing.Any = None
             oStop: typing.Any = None
 
             oStart = "1 Jul 1999 00:00:00.00"
             oStop = "1 Jul 1999 01:00:00.000"
-
-            def action20():
+            with pytest.raises(Exception):
                 iIndex: int = oCollection.add(oStart, oStop)
-
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action20)
             # ToArray
             arIntervals = oCollection.to_array(0, -1)
             self.m_logger.WriteLine3(
@@ -384,30 +328,18 @@ class IntervalCollectionHelper(object):
                 (oStart, oStop) = oCollection.get_interval(0)
                 oNewStart: typing.Any = "1 Jun 2004 12:34:56.789"
                 oNewStop: typing.Any = "2 Jun 2004 00:00:00.000"
-
-                def action21():
-                    oCollection.change_interval(0, oNewStart, oNewStop)
-
                 # ChangeInterval
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action21)
-
-                def action22():
-                    oCollection.deconflict()
-
+                with pytest.raises(Exception):
+                    oCollection.change_interval(0, oNewStart, oNewStop)
                 # Deconflict
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action22)
-
-                def action23():
-                    oCollection.remove_interval(oStart, oStop)
-
+                with pytest.raises(Exception):
+                    oCollection.deconflict()
                 # RemoveInterval
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action23)
-
-                def action24():
-                    oCollection.remove_index(0)
-
+                with pytest.raises(Exception):
+                    oCollection.remove_interval(oStart, oStop)
                 # RemoveIndex
-                TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action24)
+                with pytest.raises(Exception):
+                    oCollection.remove_index(0)
 
             # LoadIntervals
             oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
@@ -429,11 +361,9 @@ class IntervalCollectionHelper(object):
 
                 iIndex += 1
 
-            def action25():
-                oCollection.deconflict()
-
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action25)
+            with pytest.raises(Exception):
+                oCollection.deconflict()
 
         else:
             # RemoveAll
@@ -505,12 +435,9 @@ class IntervalCollectionHelper(object):
                 )
 
                 iIndex += 1
-
-            def action26():
-                oCollection.deconflict()
-
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action26)
+            with pytest.raises(Exception):
+                oCollection.deconflict()
             # RemoveInterval
             (oStart, oStop) = oCollection.get_interval(0)
             oCollection.remove_interval(oStart, oStop)
@@ -596,17 +523,14 @@ class IntervalCollectionHelper(object):
                 )
 
                 iIndex += 1
-
-            def action27():
-                oCollection.deconflict()
-
             # Deconflict
-            TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action27)
+            with pytest.raises(Exception):
+                oCollection.deconflict()
 
     # endregion
 
     # region Intervals
-    def Intervals(self, oCollection: "IIntervalCollection"):
+    def Intervals(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
@@ -806,7 +730,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region LabelNotes
-    def LabelNotes(self, oCollection: "IIntervalCollection"):
+    def LabelNotes(self, oCollection: "IntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
@@ -890,11 +814,9 @@ class IntervalCollectionHelper(object):
 
             iIndex += 1
 
-        def action28():
-            oCollection.deconflict()
-
         # Deconflict
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action28)
+        with pytest.raises(Exception):
+            oCollection.deconflict()
         # RemoveInterval
         oCollection.remove_interval(oStart, oStop)
         self.m_logger.WriteLine8(
@@ -947,18 +869,12 @@ class IntervalCollectionHelper(object):
         oCollection.remove_all()
         self.m_logger.WriteLine3("\tAfter RemoveAll() collection contains: {0} elements", oCollection.count)
         Assert.assertEqual(0, oCollection.count)
-
-        def action29():
-            oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
-
         # LoadIntervals
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action29)
-
-        def action30():
-            oCollection.deconflict()
-
+        with pytest.raises(Exception):
+            oCollection.load_intervals(TestBase.GetScenarioFile("intervals.int"))
         # Deconflict
-        TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action30)
+        with pytest.raises(Exception):
+            oCollection.deconflict()
 
 
 # endregion
@@ -972,7 +888,7 @@ class ObjectLinkCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IObjectLinkCollection", oRoot: "IStkObjectRoot"):
+    def Run(self, oCollection: "ObjectLinkCollection", oRoot: "StkObjectRoot"):
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oRoot)
         self.m_logger.WriteLine("ObjectLinkCollection test:")
@@ -999,11 +915,8 @@ class ObjectLinkCollectionHelper(object):
         self.m_logger.WriteLine6("\t\tObject {0} was added to collection.", arAvailable[0])
         Assert.assertEqual(1, oCollection.count)
         if not self._bAllowDuplicates:
-
-            def action31():
+            with pytest.raises(Exception):
                 oCollection.add(str(arAvailable[0]))
-
-            TryCatchAssertBlock.DoAssert("Should not allow to add duplicated objects to collection.", action31)
             Assert.assertEqual(1, oCollection.count)
 
         else:
@@ -1016,19 +929,14 @@ class ObjectLinkCollectionHelper(object):
             oCollection.add(str(arAvailable[0]))
             Assert.assertEqual(1, oCollection.count)
 
-        def action32():
+        with pytest.raises(Exception):
             oCollection.add("InvalidObject")
-
-        TryCatchAssertBlock.DoAssert("Should not allow to add invalid object to collection.", action32)
         Assert.assertEqual(1, oCollection.count)
         self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
         if self._bRestrictToOneElement:
-
-            def action33():
-                oCollection.add(str(arAvailable[1]))
-
             # BUG83611 exception message below should be more descriptive
-            TryCatchAssertBlock.ExpectedException("trying to add", action33)
+            with pytest.raises(Exception, match=RegexSubstringMatch("trying to add")):
+                oCollection.add(str(arAvailable[1]))
 
         else:
             # Add 1
@@ -1036,7 +944,7 @@ class ObjectLinkCollectionHelper(object):
             self.m_logger.WriteLine6("\t\tObject {0} was added to collection.", arAvailable[1])
             Assert.assertEqual(2, oCollection.count)
             self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
-            oLink: "IObjectLink"
+            oLink: "ObjectLink"
             for oLink in oCollection:
                 Console.WriteLine(
                     "\t\tElement: Name = {0}, Path = {1}, Type = {2}, LinkedObject = {3}",
@@ -1108,15 +1016,10 @@ class ObjectLinkCollectionHelper(object):
         else:
             Assert.assertEqual(0, oCollection.count)
 
-        def action34():
+        with pytest.raises(Exception):
             oCollection.remove_name(str(arAvailable[0]))
-
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid object from collection.", action34)
-
-        def action35():
+        with pytest.raises(Exception):
             oCollection.remove_name("InvalidObject")
-
-        TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid object from collection.", action35)
         self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
 
         # Remove
@@ -1126,11 +1029,8 @@ class ObjectLinkCollectionHelper(object):
             oCollection.remove(0)
             self.m_logger.WriteLine5("\t\tObject {0} was removed from collection.", strName)
             Assert.assertEqual(0, oCollection.count)
-
-            def action36():
+            with pytest.raises(Exception):
                 oCollection.remove((Array.Length(arAvailable) + 1))
-
-            TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid object from collection.", action36)
             Assert.assertEqual(0, oCollection.count)
             self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.count)
 

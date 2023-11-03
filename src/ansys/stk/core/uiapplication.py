@@ -219,7 +219,7 @@ class IUiFileOpenExt(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiFileOpenExt.")
     
     @property
-    def file_name(self) -> "IUiFileOpenExtCollection":
+    def file_name(self) -> "UiFileOpenExtCollection":
         """Gets/sets the multiple file open collection."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_file_name"](byref(arg_pVal.COM_val)))
@@ -262,7 +262,7 @@ agcls.AgClassCatalog.add_catalog_entry("{42DFA066-8474-4FAA-9F66-E4477DBD44E2}",
 agcls.AgTypeNameMap["IUiFileOpenExt"] = IUiFileOpenExt
 
 class IUiApplication(object):
-    """IUiApplication represents a root of the Application Model."""
+    """UiApplication represents a root of the Application Model."""
     _uuid = "{769EDAA1-8767-4781-BC43-D968B0D67C02}"
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -481,7 +481,7 @@ class IUiApplication(object):
         agcls.evaluate_hresult(self.__dict__["_activate"]())
 
     @property
-    def mru_list(self) -> "IMRUCollection":
+    def mru_list(self) -> "MRUCollection":
         """Returns a collection most recently used files."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_get_mru_list"](byref(arg_ppVal.COM_val)))
@@ -524,7 +524,7 @@ class IUiApplication(object):
         """Shuts down the application."""
         agcls.evaluate_hresult(self.__dict__["_quit"]())
 
-    def file_open_dialog_ext(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "IUiFileOpenExt":
+    def file_open_dialog_ext(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "UiFileOpenExt":
         """Brings up a standard File Open Dialog and returns an object representing the selected file."""
         with agmarshall.VARIANT_BOOL_arg(allowMultiSelect) as arg_allowMultiSelect, \
              agmarshall.BSTR_arg(defaultExt) as arg_defaultExt, \
@@ -603,7 +603,7 @@ class IUiApplication(object):
         with agmarshall.VARIANT_BOOL_arg(displayAlerts) as arg_displayAlerts:
             agcls.evaluate_hresult(self.__dict__["_set_display_alerts"](arg_displayAlerts.COM_val))
 
-    def create_application(self) -> "IUiApplication":
+    def create_application(self) -> "UiApplication":
         """Create a new instance of the application model root object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create_application"](byref(arg_ppRetVal.COM_val)))
@@ -767,7 +767,7 @@ class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiApplication.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}", UiApplication)
-
+agcls.AgTypeNameMap["UiApplication"] = UiApplication
 
 class MRUCollection(IMRUCollection):
     """Provides information about most recently used (MRU) list."""
@@ -788,7 +788,7 @@ class MRUCollection(IMRUCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in MRUCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8033C4FF-4A7D-4416-9B07-6807EA9C794E}", MRUCollection)
-
+agcls.AgTypeNameMap["MRUCollection"] = MRUCollection
 
 class UiFileOpenExtCollection(IUiFileOpenExtCollection):
     """Multiple file open collection."""
@@ -809,7 +809,7 @@ class UiFileOpenExtCollection(IUiFileOpenExtCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExtCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A733AF99-E82E-42D8-AD9A-29BB005B3703}", UiFileOpenExtCollection)
-
+agcls.AgTypeNameMap["UiFileOpenExtCollection"] = UiFileOpenExtCollection
 
 class UiFileOpenExt(IUiFileOpenExt):
     """Access to file open dialog that allows multiple file specifications."""
@@ -830,7 +830,7 @@ class UiFileOpenExt(IUiFileOpenExt):
             raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26A2C933-DB59-434E-85FD-2D92A97AA8AD}", UiFileOpenExt)
-
+agcls.AgTypeNameMap["UiFileOpenExt"] = UiFileOpenExt
 
 
 ################################################################################

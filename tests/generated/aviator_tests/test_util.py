@@ -179,22 +179,8 @@ class GC:
 
 class Assert:
     @staticmethod
-    def _getTestCaseFromStack():
-        import inspect
-
-        frameinfos = inspect.getouterframes(inspect.currentframe())
-        for frameinfo in frameinfos:
-            frame = frameinfo[0]
-            locals = frame.f_locals
-            if "self" in locals:
-                candidate = locals["self"]
-                if isinstance(candidate, unittest.TestCase):
-                    return candidate
-        return None
-
-    @staticmethod
     def assertIsNone(obj, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIsNone(obj, msg)
         elif obj is not None:
@@ -202,7 +188,7 @@ class Assert:
 
     @staticmethod
     def assertIsNotNone(obj, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIsNotNone(obj, msg)
         elif obj is None:
@@ -210,7 +196,7 @@ class Assert:
 
     @staticmethod
     def assertIsNotEmpty(obj, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             if isinstance(obj, list):
                 testCase.assertNotEqual(len(obj), 0)
@@ -226,7 +212,7 @@ class Assert:
 
     @staticmethod
     def assertTrue(condition, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertTrue(condition, msg)
         elif not condition:
@@ -234,7 +220,7 @@ class Assert:
 
     @staticmethod
     def assertFalse(condition, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertFalse(condition, msg)
         elif condition:
@@ -242,8 +228,8 @@ class Assert:
 
     @staticmethod
     def assertEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertEqual(first, second, msg)
         elif first != second:
@@ -251,7 +237,7 @@ class Assert:
 
     @staticmethod
     def assertNotEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertNotEqual(first, second, msg)
         elif first == second:
@@ -259,7 +245,7 @@ class Assert:
 
     @staticmethod
     def assertAlmostEqual(first, second, delta=None, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertAlmostEqual(first, second, msg=msg, delta=delta)
         elif abs(second - first) > (delta if delta is not None else 0):
@@ -267,7 +253,7 @@ class Assert:
 
     @staticmethod
     def assertIs(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIs(first, second, msg=msg)
         elif first is not second:
@@ -275,7 +261,7 @@ class Assert:
 
     @staticmethod
     def assertIsNot(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertIsNot(first, second, msg=msg)
         elif first is second:
@@ -283,7 +269,7 @@ class Assert:
 
     @staticmethod
     def assertRaises(fun):
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.assertRaises(Exception, fun)
         else:
@@ -295,8 +281,8 @@ class Assert:
 
     @staticmethod
     def assertGreater(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertGreater(first, second, msg)
         elif first <= second:
@@ -304,8 +290,8 @@ class Assert:
 
     @staticmethod
     def assertGreaterEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertGreaterEqual(first, second, msg)
         elif first < second:
@@ -313,8 +299,8 @@ class Assert:
 
     @staticmethod
     def assertLess(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertLess(first, second, msg)
         elif first >= second:
@@ -322,8 +308,8 @@ class Assert:
 
     @staticmethod
     def assertLessEqual(first, second, msg=None):
-        testCase = Assert._getTestCaseFromStack()
-        Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
+        GetTestCase()
         if testCase is not None:
             testCase.assertLessEqual(first, second, msg)
         elif first > second:
@@ -335,7 +321,7 @@ class Assert:
             msg = String.Format(*args)
         else:
             msg = None
-        testCase = Assert._getTestCaseFromStack()
+        testCase = GetTestCase()
         if testCase is not None:
             testCase.fail(msg)
         else:
@@ -905,13 +891,13 @@ class Application:
 
 
 class IAgAppProvider:
-    def CreateApplication(self, ignored) -> "IStkObjectRoot":
+    def CreateApplication(self, ignored) -> "StkObjectRoot":
         return None
 
-    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
         return None
 
-    def InstantiateSTKXApplication(self) -> "ISTKXApplication":
+    def InstantiateSTKXApplication(self) -> "STKXApplication":
         return None
 
 
@@ -924,10 +910,10 @@ class PythonStkApplicationProvider(IAgAppProvider):
         self.stk = stk
         PythonStkApplicationProvider.Application = root
 
-    def CreateApplication(self, ignored) -> "IStkObjectRoot":
+    def CreateApplication(self, ignored) -> "StkObjectRoot":
         return self.stk.Root
 
-    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
         return self.stk.NewObjectModelContext()
 
 
@@ -940,13 +926,13 @@ class PythonStkXApplicationProvider(IAgAppProvider):
         self.stk = stk
         PythonStkXApplicationProvider.Application = root
 
-    def CreateApplication(self, ignored) -> "IStkObjectRoot":
+    def CreateApplication(self, ignored) -> "StkObjectRoot":
         return self.stk.NewObjectRoot()
 
-    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
         return self.stk.NewObjectModelContext()
 
-    def InstantiateSTKXApplication(self) -> "ISTKXApplication":
+    def InstantiateSTKXApplication(self) -> "STKXApplication":
         return self.stk
 
 
@@ -959,20 +945,20 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
         self.stk = stk
         PythonStkXNoGfxApplicationProvider.Application = root
 
-    def CreateApplication(self, ignored) -> "IStkObjectRoot":
+    def CreateApplication(self, ignored) -> "StkObjectRoot":
         return self.stk.NewObjectRoot()
 
-    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
         return self.stk.NewObjectModelContext()
 
 
 class TestBase(unittest.TestCase):
-    Application: "IStkObjectRoot" = None
+    Application: "StkObjectRoot" = None
     stk = None
-    root: "IStkObjectRoot" = None
+    root: "StkObjectRoot" = None
     logger = Logger()
     NoGraphicsMode = True
-    Units: "IUnitPreferencesDimensionCollection" = None
+    Units: "UnitPreferencesDimensionCollection" = None
     OriginalAccConstraintPaths = []
 
     CurrentDirectory = None
@@ -1003,8 +989,8 @@ class TestBase(unittest.TestCase):
             TestBase.root.close_scenario()
 
         TestBase.root.new_scenario("Snippet")
-        parent: ISatellite = TestBase.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "parent")
-        clr.CastAs(parent.propagator, IVehiclePropagatorTwoBody).propagate()
+        parent: Satellite = TestBase.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "parent")
+        clr.CastAs(parent.propagator, VehiclePropagatorTwoBody).propagate()
         accessConstraints = parent.access_constraints
 
         TestBase.Application = TestBase.root
@@ -1062,9 +1048,9 @@ class TestBase(unittest.TestCase):
         TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.LoadTestScenario("Scenario1.sc")
 
-        ac1: IAircraft = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], IAircraft)
+        ac1: Aircraft = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], Aircraft)
         ac1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(ac1.route, IVehiclePropagatorGreatArc)
+        ga: VehiclePropagatorGreatArc = clr.CastAs(ac1.route, VehiclePropagatorGreatArc)
         ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
@@ -1075,11 +1061,9 @@ class TestBase(unittest.TestCase):
         wpe.longitude = 20
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
-        gv1: IGroundVehicle = clr.CastAs(
-            TestBase.Application.current_scenario.children["GroundVehicle1"], IGroundVehicle
-        )
+        gv1: GroundVehicle = clr.CastAs(TestBase.Application.current_scenario.children["GroundVehicle1"], GroundVehicle)
         gv1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv1.route, IVehiclePropagatorGreatArc)
+        ga: VehiclePropagatorGreatArc = clr.CastAs(gv1.route, VehiclePropagatorGreatArc)
         ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
@@ -1090,9 +1074,9 @@ class TestBase(unittest.TestCase):
         wpe.longitude = 20
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
-        sh1: IShip = clr.CastAs(TestBase.Application.current_scenario.children["Ship1"], IShip)
+        sh1: Ship = clr.CastAs(TestBase.Application.current_scenario.children["Ship1"], Ship)
         sh1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(sh1.route, IVehiclePropagatorGreatArc)
+        ga: VehiclePropagatorGreatArc = clr.CastAs(sh1.route, VehiclePropagatorGreatArc)
         ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
@@ -1103,12 +1087,12 @@ class TestBase(unittest.TestCase):
         wpe.longitude = 20
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
-        ms1: IMissile = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], IMissile)
+        ms1: Missile = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], Missile)
         ms1.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
-        ballistic: IVehiclePropagatorBallistic = clr.CastAs(ms1.trajectory, IVehiclePropagatorBallistic)
+        ballistic: VehiclePropagatorBallistic = clr.CastAs(ms1.trajectory, VehiclePropagatorBallistic)
         ballistic.step = 59
         ballistic.propagate()
-        lt: ILineTarget = clr.CastAs(TestBase.Application.current_scenario.children["LineTarget2"], ILineTarget)
+        lt: LineTarget = clr.CastAs(TestBase.Application.current_scenario.children["LineTarget2"], LineTarget)
         lt.points.add(0, 0)
         lt.points.add(2, 2)
 
@@ -1177,10 +1161,10 @@ class TestBase(unittest.TestCase):
 
     @property
     def EarthGravModel(self):
-        sc = clr.Convert(TestBase.Application.current_scenario, IScenario)
-        cbEarth: IAstrogatorCentralBody = clr.CastAs(
+        sc = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        cbEarth: AstrogatorCentralBody = clr.CastAs(
             sc.component_directory.get_components(COMPONENT.ASTROGATOR).get_folder("Central Bodies")["Earth"],
-            IAstrogatorCentralBody,
+            AstrogatorCentralBody,
         )
         if cbEarth.default_gravity_model_name == "EGM2008":
             return TestBase.GravModel.EGM2008
@@ -1213,9 +1197,9 @@ class TestBase(unittest.TestCase):
         return True
 
     @staticmethod
-    def PropagateGreatArc(ga: "IVehiclePropagatorGreatArc"):
+    def PropagateGreatArc(ga: "VehiclePropagatorGreatArc"):
         ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
-        wpe: "IVehicleWaypointsElement" = ga.waypoints.add()
+        wpe: "VehicleWaypointsElement" = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
         wpe.time = "1 Jul 1999 00:00:00.000"
@@ -1544,43 +1528,43 @@ class CSToJavaArrayHelper:
 
 
 class DataProviderResultWriter(object):
-    def __init__(self, result: IDataProviderResult):
+    def __init__(self, result: DataProviderResult):
         self.outStr = ""
-        self._result: IDataProviderResult = result
+        self._result: DataProviderResult = result
 
     def Dump(self):
         self.WriteLine(0, "Result Info")
         self.WriteLine(0, "-----------")
         self.WriteLine(0, ("Category:" + str(self._result.category)))
         if self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.INTERVAL_LIST:
-            self.DumpDPIntervalList(clr.Convert(self._result.value, IDataProviderResultIntervalCollection), 1)
+            self.DumpDPIntervalList(clr.Convert(self._result.value, DataProviderResultIntervalCollection), 1)
         elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.SUB_SECTION_LIST:
-            self.DumpDPSubSectionList(clr.Convert(self._result.value, IDataProviderResultSubSectionCollection), 1)
+            self.DumpDPSubSectionList(clr.Convert(self._result.value, DataProviderResultSubSectionCollection), 1)
         elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.MESSAGE:
-            self.DumpDPMessage(clr.Convert(self._result.value, IDataProviderResultTextMessage), 1)
+            self.DumpDPMessage(clr.Convert(self._result.value, DataProviderResultTextMessage), 1)
         return Regex.Replace(self.outStr, "\n", "")
 
-    def DumpDPIntervalList(self, intList: IDataProviderResultIntervalCollection, indent):
+    def DumpDPIntervalList(self, intList: DataProviderResultIntervalCollection, indent):
         index = 0
-        intrvl: IDataProviderResultInterval
+        intrvl: DataProviderResultInterval
         for intrvl in intList:
             index += 1
             self.DumpInterval(intrvl, index, (indent + 1))
 
-    def DumpDPSubSectionList(self, sections: IDataProviderResultSubSectionCollection, indent):
+    def DumpDPSubSectionList(self, sections: DataProviderResultSubSectionCollection, indent):
         index = 0
-        section: IDataProviderResultSubSection
+        section: DataProviderResultSubSection
         for section in sections:
             index += 1
             self.DumpDPSection(section, index, (indent + 1))
 
-    def DumpDPSection(self, section: IDataProviderResultSubSection, index, indent):
+    def DumpDPSection(self, section: DataProviderResultSubSection, index, indent):
         self.WriteLine(indent, ((("Section #" + str(index)) + ": ") + section.title))
         self.WriteLine(indent, "{")
         self.DumpDPIntervalList(section.intervals, (indent + 1))
         self.WriteLine(indent, "}")
 
-    def DumpDPMessage(self, msgContainer: IDataProviderResultTextMessage, indent):
+    def DumpDPMessage(self, msgContainer: DataProviderResultTextMessage, indent):
         self.WriteLine(indent, "Message ")
         self.WriteLine(indent, "{")
         i = 0
@@ -1589,7 +1573,7 @@ class DataProviderResultWriter(object):
             i += 1
         self.WriteLine(indent, "}")
 
-    def DumpDPDataSet(self, ds: IDataProviderResultDataSet, index, indent):
+    def DumpDPDataSet(self, ds: DataProviderResultDataSet, index, indent):
         self.WriteLine(indent, ("  DataSet #" + str(index)))
         self.WriteLine(indent, "  {")
         self.WriteLine(indent, ("    Element Name:  " + ds.element_name))
@@ -1604,11 +1588,11 @@ class DataProviderResultWriter(object):
         Console.WriteLine("]")
         self.WriteLine(indent, "  }")
 
-    def DumpDPDataSetList(self, datasets: IDataProviderResultDataSetCollection, indent):
+    def DumpDPDataSetList(self, datasets: DataProviderResultDataSetCollection, indent):
         Console.WriteLine("DumpDPDataSetList: Num elements in collection: {0}", str(datasets.count))
         i = 0
         while i < datasets.count:
-            dataset: IDataProviderResultDataSet = datasets[i]
+            dataset: DataProviderResultDataSet = datasets[i]
             Console.WriteLine(dataset.element_name)
             i += 1
         Console.WriteLine("DumpDPDataSetList: Num rows in datasetcollection: {0}", str(datasets.row_count))
@@ -1625,14 +1609,14 @@ class DataProviderResultWriter(object):
         for elementName in arElementNames:
             Console.WriteLine("DumpDPDataSetList: elementName: {0}", elementName)
         index = 0
-        ds: IDataProviderResultDataSet
+        ds: DataProviderResultDataSet
         for ds in datasets:
             index += 1
             self.DumpDPDataSet(ds, index, indent)
             self.WriteLine(indent, "DataSets Count: " + str(ds.count))
             self.WriteLine(indent, "DataSets GetValues Length: " + str(len(ds.get_values())))
 
-    def DumpInterval(self, interval: IDataProviderResultInterval, index, indent):
+    def DumpInterval(self, interval: DataProviderResultInterval, index, indent):
         self.WriteLine(indent, ("Interval #" + str(index)))
         self.WriteLine(indent, "{")
         self.WriteLine(
@@ -1696,6 +1680,24 @@ def category(name):
             return obj
 
         return _identity
+
+
+def GetTestCase():
+    import inspect
+
+    frameinfos = inspect.getouterframes(inspect.currentframe())
+    for frameinfo in frameinfos:
+        frame = frameinfo[0]
+        locals = frame.f_locals
+        if "self" in locals:
+            candidate = locals["self"]
+            if isinstance(candidate, unittest.TestCase):
+                return candidate
+    return None
+
+
+def RegexSubstringMatch(substr):
+    return "^.*" + re.escape(substr) + ".*$"
 
 
 class ExceptionMessageMatch(enum.IntEnum):

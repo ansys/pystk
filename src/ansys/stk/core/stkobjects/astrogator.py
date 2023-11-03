@@ -3211,14 +3211,14 @@ class IUserVariableDefinitionCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IUserVariableDefinition":
+    def item(self, indexOrName:typing.Any) -> "UserVariableDefinition":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableDefinition:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppVAUserVariableDefinition.COM_val)))
             return arg_ppVAUserVariableDefinition.python_val
 
-    def add(self, parameterName:str) -> "IUserVariableDefinition":
+    def add(self, parameterName:str) -> "UserVariableDefinition":
         """Adds a user variable to the collection."""
         with agmarshall.BSTR_arg(parameterName) as arg_parameterName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableDefinition:
@@ -3248,14 +3248,14 @@ class IUserVariableDefinitionCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IUserVariableDefinition":
+    def get_item_by_index(self, index:int) -> "UserVariableDefinition":
         """Retrieves a user variable definition in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableDefinition:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAUserVariableDefinition.COM_val)))
             return arg_ppVAUserVariableDefinition.python_val
 
-    def get_item_by_name(self, name:str) -> "IUserVariableDefinition":
+    def get_item_by_name(self, name:str) -> "UserVariableDefinition":
         """Retrieves a user variable definition in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableDefinition:
@@ -3322,7 +3322,7 @@ class IUserVariableCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IUserVariable":
+    def item(self, indexOrName:typing.Any) -> "UserVariable":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariable:
@@ -3343,14 +3343,14 @@ class IUserVariableCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IUserVariable":
+    def get_item_by_index(self, index:int) -> "UserVariable":
         """Retrieves a user variable in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariable:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAUserVariable.COM_val)))
             return arg_ppVAUserVariable.python_val
 
-    def get_item_by_name(self, name:str) -> "IUserVariable":
+    def get_item_by_name(self, name:str) -> "UserVariable":
         """Retrieves a user variable in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariable:
@@ -3417,7 +3417,7 @@ class IUserVariableUpdateCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IUserVariableUpdate":
+    def item(self, indexOrName:typing.Any) -> "UserVariableUpdate":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableUpdate:
@@ -3438,14 +3438,14 @@ class IUserVariableUpdateCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IUserVariableUpdate":
+    def get_item_by_index(self, index:int) -> "UserVariableUpdate":
         """Retrieves a user variable update in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableUpdate:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAUserVariableUpdate.COM_val)))
             return arg_ppVAUserVariableUpdate.python_val
 
-    def get_item_by_name(self, name:str) -> "IUserVariableUpdate":
+    def get_item_by_name(self, name:str) -> "UserVariableUpdate":
         """Retrieves a user variable update in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableUpdate:
@@ -3619,14 +3619,14 @@ class IConstraintCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def add(self, resultName:str) -> "IAsTriggerCondition":
+    def add(self, resultName:str) -> "AsTriggerCondition":
         """Adds a constraint to the collection."""
         with agmarshall.BSTR_arg(resultName) as arg_resultName, \
              agmarshall.AgInterface_out_arg() as arg_ppResult:
             agcls.evaluate_hresult(self.__dict__["_add"](arg_resultName.COM_val, byref(arg_ppResult.COM_val)))
             return arg_ppResult.python_val
 
-    def item(self, indexOrName:typing.Any) -> "IAsTriggerCondition":
+    def item(self, indexOrName:typing.Any) -> "AsTriggerCondition":
         """A property that allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
@@ -3657,27 +3657,27 @@ class IConstraintCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "IAsTriggerCondition":
+    def paste(self) -> "AsTriggerCondition":
         """Pastes the constraint from the clipboard and inserts into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def insert_copy(self, cond:"IAsTriggerCondition") -> "IAsTriggerCondition":
+    def insert_copy(self, cond:"IAsTriggerCondition") -> "AsTriggerCondition":
         """Copies the constraint and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(cond, IAsTriggerCondition) as arg_cond, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_cond.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IAsTriggerCondition":
+    def get_item_by_index(self, index:int) -> "AsTriggerCondition":
         """Retrieves a constraint from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppComponent.COM_val)))
             return arg_ppComponent.python_val
 
-    def get_item_by_name(self, name:str) -> "IAsTriggerCondition":
+    def get_item_by_name(self, name:str) -> "AsTriggerCondition":
         """Retrieves a constraint from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
@@ -3803,7 +3803,7 @@ class ISNOPTControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "ISNOPTControl":
+    def item(self, index:int) -> "SNOPTControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_sNOPTControl:
@@ -3824,7 +3824,7 @@ class ISNOPTControlCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "ISNOPTControl":
+    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "SNOPTControl":
         """Returns the control specified by the object/control path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(controlPath) as arg_controlPath, \
@@ -3890,7 +3890,7 @@ class ISNOPTResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "ISNOPTResult":
+    def item(self, index:int) -> "SNOPTResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_sNOPTResult:
@@ -3911,7 +3911,7 @@ class ISNOPTResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "ISNOPTResult":
+    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "SNOPTResult":
         """Returns the result specified by the object/result names."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(resultPath) as arg_resultPath, \
@@ -3977,7 +3977,7 @@ class IIPOPTControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IIPOPTControl":
+    def item(self, index:int) -> "IPOPTControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_iPOPTControl:
@@ -3998,7 +3998,7 @@ class IIPOPTControlCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "IIPOPTControl":
+    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "IPOPTControl":
         """Returns the control specified by the object/control path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(controlPath) as arg_controlPath, \
@@ -4064,7 +4064,7 @@ class IIPOPTResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IIPOPTResult":
+    def item(self, index:int) -> "IPOPTResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_iPOPTResult:
@@ -4085,7 +4085,7 @@ class IIPOPTResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "IIPOPTResult":
+    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "IPOPTResult":
         """Returns the result specified by the object/result names."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(resultPath) as arg_resultPath, \
@@ -4259,7 +4259,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4367,42 +4367,42 @@ class IManeuverOptimalFiniteInitialBoundaryConditions(object):
             agcls.evaluate_hresult(self.__dict__["_set_set_from_initial_guess"](arg_newVal.COM_val))
 
     @property
-    def a(self) -> "IManeuverOptimalFiniteBounds":
+    def a(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element a."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_a"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def h(self) -> "IManeuverOptimalFiniteBounds":
+    def h(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element h."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_h"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def k(self) -> "IManeuverOptimalFiniteBounds":
+    def k(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element k."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_k"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def p(self) -> "IManeuverOptimalFiniteBounds":
+    def p(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element p."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_p"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def q(self) -> "IManeuverOptimalFiniteBounds":
+    def q(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element q."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_q"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def l(self) -> "IManeuverOptimalFiniteBounds":
+    def l(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element L."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_l"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
@@ -4410,7 +4410,7 @@ class IManeuverOptimalFiniteInitialBoundaryConditions(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4489,42 +4489,42 @@ class IManeuverOptimalFiniteFinalBoundaryConditions(object):
             agcls.evaluate_hresult(self.__dict__["_set_set_from_final_guess"](arg_newVal.COM_val))
 
     @property
-    def a(self) -> "IManeuverOptimalFiniteBounds":
+    def a(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element a."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_a"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def h(self) -> "IManeuverOptimalFiniteBounds":
+    def h(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element h."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_h"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def k(self) -> "IManeuverOptimalFiniteBounds":
+    def k(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element k."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_k"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def p(self) -> "IManeuverOptimalFiniteBounds":
+    def p(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element p."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_p"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def q(self) -> "IManeuverOptimalFiniteBounds":
+    def q(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element q."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_q"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def l(self) -> "IManeuverOptimalFiniteBounds":
+    def l(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element L."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_l"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
@@ -4556,7 +4556,7 @@ class IManeuverOptimalFiniteFinalBoundaryConditions(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4643,42 +4643,42 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
             agcls.evaluate_hresult(self.__dict__["_set_compute_from_initial_guess"](arg_newVal.COM_val))
 
     @property
-    def a(self) -> "IManeuverOptimalFiniteBounds":
+    def a(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element a."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_a"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def h(self) -> "IManeuverOptimalFiniteBounds":
+    def h(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element h."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_h"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def k(self) -> "IManeuverOptimalFiniteBounds":
+    def k(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element k."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_k"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def p(self) -> "IManeuverOptimalFiniteBounds":
+    def p(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element p."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_p"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def q(self) -> "IManeuverOptimalFiniteBounds":
+    def q(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element q."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_q"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteBounds.python_val
 
     @property
-    def l(self) -> "IManeuverOptimalFiniteBounds":
+    def l(self) -> "ManeuverOptimalFiniteBounds":
         """Bound limits for element L."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteBounds:
             agcls.evaluate_hresult(self.__dict__["_get_l"](byref(arg_ppAgVAManeuverOptimalFiniteBounds.COM_val)))
@@ -4734,7 +4734,7 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4792,7 +4792,7 @@ class IManeuverOptimalFiniteSteeringNodeCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IManeuverOptimalFiniteSteeringNodeElement":
+    def item(self, index:int) -> "ManeuverOptimalFiniteSteeringNodeElement":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_steeringNodeElement:
@@ -4938,7 +4938,7 @@ class IGoldenSectionControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IGoldenSectionControl":
+    def item(self, index:int) -> "GoldenSectionControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_goldenSectionControl:
@@ -4959,7 +4959,7 @@ class IGoldenSectionControlCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "IGoldenSectionControl":
+    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "GoldenSectionControl":
         """Returns the control specified by the object/control path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(controlPath) as arg_controlPath, \
@@ -5183,7 +5183,7 @@ class IGoldenSectionResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IGoldenSectionResult":
+    def item(self, index:int) -> "GoldenSectionResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_goldenSectionControl:
@@ -5204,7 +5204,7 @@ class IGoldenSectionResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "IGoldenSectionResult":
+    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "GoldenSectionResult":
         """Returns the result specified by the object/result path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(resultPath) as arg_resultPath, \
@@ -5396,7 +5396,7 @@ class IGridSearchControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IGridSearchControl":
+    def item(self, index:int) -> "GridSearchControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_gridSearchControl:
@@ -5417,7 +5417,7 @@ class IGridSearchControlCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "IGridSearchControl":
+    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "GridSearchControl":
         """Returns the control specified by the object/control path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(controlPath) as arg_controlPath, \
@@ -5641,7 +5641,7 @@ class IGridSearchResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IGridSearchResult":
+    def item(self, index:int) -> "GridSearchResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_gridSearchControl:
@@ -5662,7 +5662,7 @@ class IGridSearchResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "IGridSearchResult":
+    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "GridSearchResult":
         """Returns the result specified by the object/result path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(resultPath) as arg_resultPath, \
@@ -5854,7 +5854,7 @@ class IBisectionControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IBisectionControl":
+    def item(self, index:int) -> "BisectionControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_bisectionControl:
@@ -5875,7 +5875,7 @@ class IBisectionControlCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "IBisectionControl":
+    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "BisectionControl":
         """Returns the control specified by the object/control path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(controlPath) as arg_controlPath, \
@@ -6083,7 +6083,7 @@ class IBisectionResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IBisectionResult":
+    def item(self, index:int) -> "BisectionResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_sNOPTResult:
@@ -6104,7 +6104,7 @@ class IBisectionResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "IBisectionResult":
+    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "BisectionResult":
         """Returns the result specified by the object/result names."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(resultPath) as arg_resultPath, \
@@ -6274,14 +6274,14 @@ class IStoppingConditionCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IStoppingConditionElement":
+    def item(self, indexOrName:typing.Any) -> "StoppingConditionElement":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAStoppingCondition:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppVAStoppingCondition.COM_val)))
             return arg_ppVAStoppingCondition.python_val
 
-    def add(self, conditionName:str) -> "IStoppingConditionElement":
+    def add(self, conditionName:str) -> "StoppingConditionElement":
         """Adds a stopping condition."""
         with agmarshall.BSTR_arg(conditionName) as arg_conditionName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAStoppingCondition:
@@ -6312,27 +6312,27 @@ class IStoppingConditionCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "IStoppingConditionElement":
+    def paste(self) -> "StoppingConditionElement":
         """Pastes the stopping condition from the clipboard and inserts into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def insert_copy(self, stopCond:"IStoppingConditionElement") -> "IStoppingConditionElement":
+    def insert_copy(self, stopCond:"IStoppingConditionElement") -> "StoppingConditionElement":
         """Copies the stopping condition and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(stopCond, IStoppingConditionElement) as arg_stopCond, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_stopCond.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IStoppingConditionElement":
+    def get_item_by_index(self, index:int) -> "StoppingConditionElement":
         """Retrieves a stopping condition in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAStoppingCondition:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAStoppingCondition.COM_val)))
             return arg_ppVAStoppingCondition.python_val
 
-    def get_item_by_name(self, name:str) -> "IStoppingConditionElement":
+    def get_item_by_name(self, name:str) -> "StoppingConditionElement":
         """Retrieves a stopping condition in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAStoppingCondition:
@@ -6484,7 +6484,7 @@ class IMissionControlSequenceSegmentCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -6801,7 +6801,7 @@ class IState(object):
         with agmarshall.DOUBLE_arg(k2) as arg_k2:
             agcls.evaluate_hresult(self.__dict__["_set_k2"](arg_k2.COM_val))
 
-    def get_in_frame_name(self, frameName:str) -> "IState":
+    def get_in_frame_name(self, frameName:str) -> "State":
         """Gets the orbit state in the specified frame."""
         with agmarshall.BSTR_arg(frameName) as arg_frameName, \
              agmarshall.AgInterface_out_arg() as arg_ppOrbitState:
@@ -6899,7 +6899,7 @@ class IAutomaticSequence(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IAutomaticSequence.")
     
-    def make_copy(self, uniqueName:str) -> "IAutomaticSequence":
+    def make_copy(self, uniqueName:str) -> "AutomaticSequence":
         """Makes a copy of the sequence."""
         with agmarshall.BSTR_arg(uniqueName) as arg_uniqueName, \
              agmarshall.AgInterface_out_arg() as arg_ppAutomaticSequence:
@@ -6931,7 +6931,7 @@ class IAutomaticSequence(object):
             agcls.evaluate_hresult(self.__dict__["_set_user_comment"](arg_newVal.COM_val))
 
     @property
-    def sequence(self) -> "IMissionControlSequenceSegmentCollection":
+    def sequence(self) -> "MissionControlSequenceSegmentCollection":
         """Returns the segment collection of the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAMCSSegmentCollection:
             agcls.evaluate_hresult(self.__dict__["_get_sequence"](byref(arg_ppVAMCSSegmentCollection.COM_val)))
@@ -6998,14 +6998,14 @@ class IAutomaticSequenceCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IAutomaticSequence":
+    def item(self, indexOrName:typing.Any) -> "AutomaticSequence":
         """Returns the given automatic sequence."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAAutomaticSequence:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppVAAutomaticSequence.COM_val)))
             return arg_ppVAAutomaticSequence.python_val
 
-    def add(self, name:str) -> "IAutomaticSequence":
+    def add(self, name:str) -> "AutomaticSequence":
         """Creates a new sequence."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAAutomaticSequence:
@@ -7031,14 +7031,14 @@ class IAutomaticSequenceCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IAutomaticSequence":
+    def get_item_by_index(self, index:int) -> "AutomaticSequence":
         """Retrieves the given automatic sequence found by the index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAAutomaticSequence:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAAutomaticSequence.COM_val)))
             return arg_ppVAAutomaticSequence.python_val
 
-    def get_item_by_name(self, name:str) -> "IAutomaticSequence":
+    def get_item_by_name(self, name:str) -> "AutomaticSequence":
         """Retrieves the given automatic sequence found by the name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAAutomaticSequence:
@@ -7370,7 +7370,7 @@ class IManeuverFinitePropagator(object):
             agcls.evaluate_hresult(self.__dict__["_set_propagator_name"](arg_newVal.COM_val))
 
     @property
-    def stopping_conditions(self) -> "IStoppingConditionCollection":
+    def stopping_conditions(self) -> "StoppingConditionCollection":
         """The stopping conditions list."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_stopping_conditions"](byref(arg_ppVAStoppingConditionCollection.COM_val)))
@@ -8198,14 +8198,14 @@ class IScriptingSegmentCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IScriptingSegment":
+    def item(self, indexOrName:typing.Any) -> "ScriptingSegment":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingSegment:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppVAScriptingSegment.COM_val)))
             return arg_ppVAScriptingSegment.python_val
 
-    def add(self, componentName:str) -> "IScriptingSegment":
+    def add(self, componentName:str) -> "ScriptingSegment":
         """Adds an object property to the collection."""
         with agmarshall.BSTR_arg(componentName) as arg_componentName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingSegment:
@@ -8237,7 +8237,7 @@ class IScriptingSegmentCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -8247,27 +8247,27 @@ class IScriptingSegmentCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "IScriptingSegment":
+    def paste(self) -> "ScriptingSegment":
         """Pastes the object property from the clipboard and inserts into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def insert_copy(self, objProperty:"IScriptingSegment") -> "IScriptingSegment":
+    def insert_copy(self, objProperty:"IScriptingSegment") -> "ScriptingSegment":
         """Copies the object property and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(objProperty, IScriptingSegment) as arg_objProperty, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_objProperty.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IScriptingSegment":
+    def get_item_by_index(self, index:int) -> "ScriptingSegment":
         """Retrieves a scripting segment in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingSegment:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAScriptingSegment.COM_val)))
             return arg_ppVAScriptingSegment.python_val
 
-    def get_item_by_name(self, name:str) -> "IScriptingSegment":
+    def get_item_by_name(self, name:str) -> "ScriptingSegment":
         """Retrieves a scripting segment in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingSegment:
@@ -8413,14 +8413,14 @@ class IScriptingParameterEnumerationChoiceCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IScriptingParameterEnumerationChoice":
+    def item(self, indexOrName:typing.Any) -> "ScriptingParameterEnumerationChoice":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppChoice:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppChoice.COM_val)))
             return arg_ppChoice.python_val
 
-    def add(self, choiceName:str) -> "IScriptingParameterEnumerationChoice":
+    def add(self, choiceName:str) -> "ScriptingParameterEnumerationChoice":
         """Adds an enumeration choice to the collection."""
         with agmarshall.BSTR_arg(choiceName) as arg_choiceName, \
              agmarshall.AgInterface_out_arg() as arg_ppChoice:
@@ -8451,13 +8451,13 @@ class IScriptingParameterEnumerationChoiceCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "IScriptingParameterEnumerationChoice":
+    def paste(self) -> "ScriptingParameterEnumerationChoice":
         """Pastes the enumeration choice from the clipboard and inserts into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def insert_copy(self, choice:"IScriptingParameterEnumerationChoice") -> "IScriptingParameterEnumerationChoice":
+    def insert_copy(self, choice:"IScriptingParameterEnumerationChoice") -> "ScriptingParameterEnumerationChoice":
         """Copies the enumeration choice and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(choice, IScriptingParameterEnumerationChoice) as arg_choice, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -8466,19 +8466,19 @@ class IScriptingParameterEnumerationChoiceCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IScriptingParameterEnumerationChoice":
+    def get_item_by_index(self, index:int) -> "ScriptingParameterEnumerationChoice":
         """Retrieves a scripting parameter enumeration choice in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppChoice:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppChoice.COM_val)))
             return arg_ppChoice.python_val
 
-    def get_item_by_name(self, name:str) -> "IScriptingParameterEnumerationChoice":
+    def get_item_by_name(self, name:str) -> "ScriptingParameterEnumerationChoice":
         """Retrieves a scripting parameter enumeration choice in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppChoice:
@@ -8654,7 +8654,7 @@ class IScriptingParameter(object):
             agcls.evaluate_hresult(self.__dict__["_set_dimension"](arg_inVal.COM_val))
 
     @property
-    def enumeration_choices(self) -> "IScriptingParameterEnumerationChoiceCollection":
+    def enumeration_choices(self) -> "ScriptingParameterEnumerationChoiceCollection":
         """The collection of enumerations to use when parameter type is eVAScriptingParameterTypeEnumeration."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_enumeration_choices"](byref(arg_ppRetVal.COM_val)))
@@ -8779,14 +8779,14 @@ class IScriptingParameterCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IScriptingParameter":
+    def item(self, indexOrName:typing.Any) -> "ScriptingParameter":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingParameter:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppVAScriptingParameter.COM_val)))
             return arg_ppVAScriptingParameter.python_val
 
-    def add(self, parameterName:str) -> "IScriptingParameter":
+    def add(self, parameterName:str) -> "ScriptingParameter":
         """Adds a parameter to the collection."""
         with agmarshall.BSTR_arg(parameterName) as arg_parameterName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingParameter:
@@ -8818,7 +8818,7 @@ class IScriptingParameterCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -8828,27 +8828,27 @@ class IScriptingParameterCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "IScriptingParameter":
+    def paste(self) -> "ScriptingParameter":
         """Pastes the parameter from the clipboard and inserts into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def insert_copy(self, parameter:"IScriptingParameter") -> "IScriptingParameter":
+    def insert_copy(self, parameter:"IScriptingParameter") -> "ScriptingParameter":
         """Copies the parameter and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(parameter, IScriptingParameter) as arg_parameter, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_parameter.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IScriptingParameter":
+    def get_item_by_index(self, index:int) -> "ScriptingParameter":
         """Retrieves a scripting parameter in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingParameter:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAScriptingParameter.COM_val)))
             return arg_ppVAScriptingParameter.python_val
 
-    def get_item_by_name(self, name:str) -> "IScriptingParameter":
+    def get_item_by_name(self, name:str) -> "ScriptingParameter":
         """Retrieves a scripting parameter in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingParameter:
@@ -9038,14 +9038,14 @@ class IScriptingCalcObjectCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IScriptingCalcObject":
+    def item(self, indexOrName:typing.Any) -> "ScriptingCalcObject":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppCalcObjectWrapper:
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppCalcObjectWrapper.COM_val)))
             return arg_ppCalcObjectWrapper.python_val
 
-    def add(self, componentName:str) -> "IScriptingCalcObject":
+    def add(self, componentName:str) -> "ScriptingCalcObject":
         """Adds a calculation object to the collection."""
         with agmarshall.BSTR_arg(componentName) as arg_componentName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingParameter:
@@ -9080,27 +9080,27 @@ class IScriptingCalcObjectCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "IScriptingCalcObject":
+    def paste(self) -> "ScriptingCalcObject":
         """Pastes the calc object from the clipboard and inserts into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def insert_copy(self, calcObj:"IScriptingCalcObject") -> "IScriptingCalcObject":
+    def insert_copy(self, calcObj:"IScriptingCalcObject") -> "ScriptingCalcObject":
         """Copies the calc object and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(calcObj, IScriptingCalcObject) as arg_calcObj, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_calcObj.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IScriptingCalcObject":
+    def get_item_by_index(self, index:int) -> "ScriptingCalcObject":
         """Retrieves a scripting calc object from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_name(self, componentName:str) -> "IScriptingCalcObject":
+    def get_item_by_name(self, componentName:str) -> "ScriptingCalcObject":
         """Retrieves a scripting calc object from the collection by name."""
         with agmarshall.BSTR_arg(componentName) as arg_componentName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -9182,21 +9182,21 @@ class IScriptingTool(object):
             agcls.evaluate_hresult(self.__dict__["_set_enable"](arg_inVal.COM_val))
 
     @property
-    def segment_properties(self) -> "IScriptingSegmentCollection":
+    def segment_properties(self) -> "ScriptingSegmentCollection":
         """Returns the collection of the segment properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_properties"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def calc_objects(self) -> "IScriptingCalcObjectCollection":
+    def calc_objects(self) -> "ScriptingCalcObjectCollection":
         """Returns the collection of the calculation objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_calc_objects"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def parameters(self) -> "IScriptingParameterCollection":
+    def parameters(self) -> "ScriptingParameterCollection":
         """Returns the collection of parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_parameters"](byref(arg_ppRetVal.COM_val)))
@@ -9678,7 +9678,7 @@ class IMissionControlSequenceSegmentProperties(object):
         agcls.evaluate_hresult(self.__dict__["_apply_final_state_to_b_planes"]())
 
     @property
-    def b_planes(self) -> "IBPlaneCollection":
+    def b_planes(self) -> "BPlaneCollection":
         """The B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition."""
         with agmarshall.AgInterface_out_arg() as arg_ppVABPlaneCollection:
             agcls.evaluate_hresult(self.__dict__["_get_b_planes"](byref(arg_ppVABPlaneCollection.COM_val)))
@@ -9814,14 +9814,14 @@ class IMissionControlSequenceInitialState(object):
             agcls.evaluate_hresult(self.__dict__["_set_orbit_epoch"](arg_newVal.COM_val))
 
     @property
-    def spacecraft_parameters(self) -> "ISpacecraftParameters":
+    def spacecraft_parameters(self) -> "SpacecraftParameters":
         """The spacecraft  parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppSpacecraftParameters:
             agcls.evaluate_hresult(self.__dict__["_get_spacecraft_parameters"](byref(arg_ppSpacecraftParameters.COM_val)))
             return arg_ppSpacecraftParameters.python_val
 
     @property
-    def fuel_tank(self) -> "IFuelTank":
+    def fuel_tank(self) -> "FuelTank":
         """The fuel tank parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAFuelTank:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_tank"](byref(arg_ppVAFuelTank.COM_val)))
@@ -9871,7 +9871,7 @@ class IMissionControlSequenceInitialState(object):
             return arg_pVal.python_val
 
     @property
-    def user_variables(self) -> "IUserVariableCollection":
+    def user_variables(self) -> "UserVariableCollection":
         """Interface used to modify user variables for the initial state segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_variables"](byref(arg_ppRetVal.COM_val)))
@@ -9936,21 +9936,21 @@ class IMissionControlSequenceSegment(object):
             return arg_pSegmentType.python_val
 
     @property
-    def properties(self) -> "IMissionControlSequenceSegmentProperties":
+    def properties(self) -> "MissionControlSequenceSegmentProperties":
         """Returns the properties of the segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAMCSSegmentProperties:
             agcls.evaluate_hresult(self.__dict__["_get_properties"](byref(arg_ppVAMCSSegmentProperties.COM_val)))
             return arg_ppVAMCSSegmentProperties.python_val
 
     @property
-    def initial_state(self) -> "IState":
+    def initial_state(self) -> "State":
         """The initial state of the segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_initial_state"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def final_state(self) -> "IState":
+    def final_state(self) -> "State":
         """The final state of the segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_state"](byref(arg_ppRetVal.COM_val)))
@@ -9963,14 +9963,14 @@ class IMissionControlSequenceSegment(object):
             agcls.evaluate_hresult(self.__dict__["_get_result_value"](arg_resultName.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def run(self) -> "IState":
-        """Runs the segment in individual segment mode.  See IDriverMissionControlSequence."""
+    def run(self) -> "State":
+        """Runs the segment in individual segment mode.  See DriverMissionControlSequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_run"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def results(self) -> "ICalcObjectCollection":
+    def results(self) -> "CalcObjectCollection":
         """The results of the segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppVACalcObjectCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppVACalcObjectCollection.COM_val)))
@@ -10297,7 +10297,7 @@ class IMissionControlSequenceOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_generate_ephemeris"](arg_newVal.COM_val))
 
     @property
-    def user_variables(self) -> "IUserVariableDefinitionCollection":
+    def user_variables(self) -> "UserVariableDefinitionCollection":
         """Interface used to add/remove user variables."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_variables"](byref(arg_ppRetVal.COM_val)))
@@ -10380,21 +10380,21 @@ class IDriverMissionControlSequence(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IDriverMissionControlSequence.")
     
     @property
-    def main_sequence(self) -> "IMissionControlSequenceSegmentCollection":
+    def main_sequence(self) -> "MissionControlSequenceSegmentCollection":
         """The Mission Control Sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAMCSSegmentCollection:
             agcls.evaluate_hresult(self.__dict__["_get_main_sequence"](byref(arg_ppVAMCSSegmentCollection.COM_val)))
             return arg_ppVAMCSSegmentCollection.python_val
 
     @property
-    def options(self) -> "IMissionControlSequenceOptions":
+    def options(self) -> "MissionControlSequenceOptions":
         """The Mission Control Sequence options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAMCSOptions:
             agcls.evaluate_hresult(self.__dict__["_get_options"](byref(arg_ppVAMCSOptions.COM_val)))
             return arg_ppVAMCSOptions.python_val
 
     @property
-    def auto_sequence(self) -> "IAutomaticSequenceCollection":
+    def auto_sequence(self) -> "AutomaticSequenceCollection":
         """The Automatic Sequences."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAAutomaticSequenceCollection:
             agcls.evaluate_hresult(self.__dict__["_get_auto_sequence"](byref(arg_ppVAAutomaticSequenceCollection.COM_val)))
@@ -10447,7 +10447,7 @@ class IDriverMissionControlSequence(object):
             return arg_pRunCode.python_val
 
     @property
-    def calculation_graphs(self) -> "ICalculationGraphCollection":
+    def calculation_graphs(self) -> "CalculationGraphCollection":
         """The calculation graphs."""
         with agmarshall.AgInterface_out_arg() as arg_ppVACalculationGraphCollection:
             agcls.evaluate_hresult(self.__dict__["_get_calculation_graphs"](byref(arg_ppVACalculationGraphCollection.COM_val)))
@@ -12484,7 +12484,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             agcls.evaluate_hresult(self.__dict__["_set_sequence"](arg_newVal.COM_val))
 
     @property
-    def constraints(self) -> "IConstraintCollection":
+    def constraints(self) -> "ConstraintCollection":
         """Further conditions that must be met in order for the stopping condition to be deemed satisfied."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAConstraintCollection:
             agcls.evaluate_hresult(self.__dict__["_get_constraints"](byref(arg_ppVAConstraintCollection.COM_val)))
@@ -12539,7 +12539,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             agcls.evaluate_hresult(self.__dict__["_set_criterion"](arg_newVal.COM_val))
 
     @property
-    def before_conditions(self) -> "IStoppingConditionCollection":
+    def before_conditions(self) -> "StoppingConditionCollection":
         """A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition."""
         with agmarshall.AgInterface_out_arg() as arg_ppStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_before_conditions"](byref(arg_ppStoppingConditionCollection.COM_val)))
@@ -12677,14 +12677,14 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             agcls.evaluate_hresult(self.__dict__["_set_repeat_count"](arg_newVal.COM_val))
 
     @property
-    def constraints(self) -> "IConstraintCollection":
+    def constraints(self) -> "ConstraintCollection":
         """Further conditions that must be met in order for the stopping condition to be deemed satisfied."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAConstraintCollection:
             agcls.evaluate_hresult(self.__dict__["_get_constraints"](byref(arg_ppVAConstraintCollection.COM_val)))
             return arg_ppVAConstraintCollection.python_val
 
     @property
-    def before_conditions(self) -> "IStoppingConditionCollection":
+    def before_conditions(self) -> "StoppingConditionCollection":
         """A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition."""
         with agmarshall.AgInterface_out_arg() as arg_ppStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_before_conditions"](byref(arg_ppStoppingConditionCollection.COM_val)))
@@ -12915,7 +12915,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             agcls.evaluate_hresult(self.__dict__["_set_sequence"](arg_newVal.COM_val))
 
     @property
-    def constraints(self) -> "IConstraintCollection":
+    def constraints(self) -> "ConstraintCollection":
         """Further conditions that must be met in order for the stopping condition to be deemed satisfied."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAConstraintCollection:
             agcls.evaluate_hresult(self.__dict__["_get_constraints"](byref(arg_ppVAConstraintCollection.COM_val)))
@@ -12934,7 +12934,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             agcls.evaluate_hresult(self.__dict__["_set_criterion"](arg_newVal.COM_val))
 
     @property
-    def before_conditions(self) -> "IStoppingConditionCollection":
+    def before_conditions(self) -> "StoppingConditionCollection":
         """A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition."""
         with agmarshall.AgInterface_out_arg() as arg_ppStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_before_conditions"](byref(arg_ppStoppingConditionCollection.COM_val)))
@@ -13116,7 +13116,7 @@ class IMissionControlSequencePropagate(object):
             agcls.evaluate_hresult(self.__dict__["_set_propagator_name"](arg_newVal.COM_val))
 
     @property
-    def stopping_conditions(self) -> "IStoppingConditionCollection":
+    def stopping_conditions(self) -> "StoppingConditionCollection":
         """The list of stopping conditions defined for the segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_stopping_conditions"](byref(arg_ppVAStoppingConditionCollection.COM_val)))
@@ -13308,7 +13308,7 @@ class IMissionControlSequenceSequence(object):
             agcls.evaluate_hresult(self.__dict__["_set_generate_ephemeris"](arg_newVal.COM_val))
 
     @property
-    def segments(self) -> "IMissionControlSequenceSegmentCollection":
+    def segments(self) -> "MissionControlSequenceSegmentCollection":
         """The list of segments defined for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAMCSSegmentCollection:
             agcls.evaluate_hresult(self.__dict__["_get_segments"](byref(arg_ppVAMCSSegmentCollection.COM_val)))
@@ -13327,7 +13327,7 @@ class IMissionControlSequenceSequence(object):
             agcls.evaluate_hresult(self.__dict__["_set_sequence_state_to_pass"](arg_inVal.COM_val))
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
@@ -13557,14 +13557,14 @@ class IMissionControlSequenceLaunch(object):
             agcls.evaluate_hresult(self.__dict__["_set_initial_acceleration"](arg_newVal.COM_val))
 
     @property
-    def spacecraft_parameters(self) -> "ISpacecraftParameters":
+    def spacecraft_parameters(self) -> "SpacecraftParameters":
         """Satellite Properties - the spacecraft's physical properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppVASpacecraftParameters:
             agcls.evaluate_hresult(self.__dict__["_get_spacecraft_parameters"](byref(arg_ppVASpacecraftParameters.COM_val)))
             return arg_ppVASpacecraftParameters.python_val
 
     @property
-    def fuel_tank(self) -> "IFuelTank":
+    def fuel_tank(self) -> "FuelTank":
         """The spacecraft's fuel tank properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAFuelTank:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_tank"](byref(arg_ppVAFuelTank.COM_val)))
@@ -13633,7 +13633,7 @@ class IMissionControlSequenceLaunch(object):
             return arg_ppVABurnout.python_val
 
     @property
-    def burnout_velocity(self) -> "IBurnoutVelocity":
+    def burnout_velocity(self) -> "BurnoutVelocity":
         """The burnout velocity definition."""
         with agmarshall.AgInterface_out_arg() as arg_ppVABurnoutVelocity:
             agcls.evaluate_hresult(self.__dict__["_get_burnout_velocity"](byref(arg_ppVABurnoutVelocity.COM_val)))
@@ -13664,7 +13664,7 @@ class IMissionControlSequenceLaunch(object):
             agcls.evaluate_hresult(self.__dict__["_set_set_met_epoch"](arg_newVal.COM_val))
 
     @property
-    def user_variables(self) -> "IUserVariableCollection":
+    def user_variables(self) -> "UserVariableCollection":
         """Interface used to modify user variables for the launch segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_variables"](byref(arg_ppRetVal.COM_val)))
@@ -14429,21 +14429,21 @@ class IMissionControlSequenceFollow(object):
             agcls.evaluate_hresult(self.__dict__["_set_z_offset"](arg_newVal.COM_val))
 
     @property
-    def separation_conditions(self) -> "IStoppingConditionCollection":
+    def separation_conditions(self) -> "StoppingConditionCollection":
         """If separation conditions are specified, the list of separation conditions."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_separation_conditions"](byref(arg_ppVAStoppingConditionCollection.COM_val)))
             return arg_ppVAStoppingConditionCollection.python_val
 
     @property
-    def spacecraft_parameters(self) -> "ISpacecraftParameters":
+    def spacecraft_parameters(self) -> "SpacecraftParameters":
         """The spacecraft's physical properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppVASpacecraftParameters:
             agcls.evaluate_hresult(self.__dict__["_get_spacecraft_parameters"](byref(arg_ppVASpacecraftParameters.COM_val)))
             return arg_ppVASpacecraftParameters.python_val
 
     @property
-    def fuel_tank(self) -> "IFuelTank":
+    def fuel_tank(self) -> "FuelTank":
         """The spacecraft's fuel tank properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAFuelTank:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_tank"](byref(arg_ppVAFuelTank.COM_val)))
@@ -14486,7 +14486,7 @@ class IMissionControlSequenceFollow(object):
             agcls.evaluate_hresult(self.__dict__["_set_spacecraft_and_fuel_tank_type"](arg_newVal.COM_val))
 
     @property
-    def joining_conditions(self) -> "IStoppingConditionCollection":
+    def joining_conditions(self) -> "StoppingConditionCollection":
         """If joining conditions are specified, the list of joining conditions."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_joining_conditions"](byref(arg_ppVAStoppingConditionCollection.COM_val)))
@@ -14517,7 +14517,7 @@ class IMissionControlSequenceFollow(object):
             return arg_pVal.python_val
 
     @property
-    def user_variables(self) -> "IUserVariableCollection":
+    def user_variables(self) -> "UserVariableCollection":
         """Interface used to modify user variables for the follow segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_variables"](byref(arg_ppRetVal.COM_val)))
@@ -14702,7 +14702,7 @@ class IManeuverFinite(IManeuver):
             agcls.evaluate_hresult(self.__dict__["_set_thrust_efficiency_mode"](arg_newVal.COM_val))
 
     @property
-    def propagator(self) -> "IManeuverFinitePropagator":
+    def propagator(self) -> "ManeuverFinitePropagator":
         """The propagator."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAManeuverFinitePropagator:
             agcls.evaluate_hresult(self.__dict__["_get_propagator"](byref(arg_ppVAManeuverFinitePropagator.COM_val)))
@@ -16009,7 +16009,7 @@ class IAttitudeControlFinitePlugin(IAttitudeControlFinite):
             return arg_pVal.python_val
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -16178,7 +16178,7 @@ class IMissionControlSequenceHold(object):
             agcls.evaluate_hresult(self.__dict__["_set_enable_hold_attitude"](arg_newVal.COM_val))
 
     @property
-    def stopping_conditions(self) -> "IStoppingConditionCollection":
+    def stopping_conditions(self) -> "StoppingConditionCollection":
         """The stopping conditions defined for the segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAStoppingConditionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_stopping_conditions"](byref(arg_ppVAStoppingConditionCollection.COM_val)))
@@ -16393,7 +16393,7 @@ class IMissionControlSequenceUpdate(object):
             return arg_pVal.python_val
 
     @property
-    def user_variables(self) -> "IUserVariableUpdateCollection":
+    def user_variables(self) -> "UserVariableUpdateCollection":
         """Interface used to modify user variables for the update segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_user_variables"](byref(arg_ppRetVal.COM_val)))
@@ -16731,7 +16731,7 @@ class IProfileCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -16888,14 +16888,14 @@ class IMissionControlSequenceTargetSequence(object):
             agcls.evaluate_hresult(self.__dict__["_set_continue_on_failure"](arg_newVal.COM_val))
 
     @property
-    def segments(self) -> "IMissionControlSequenceSegmentCollection":
+    def segments(self) -> "MissionControlSequenceSegmentCollection":
         """Returns the segments contained within the target sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAMCSSegmentCollection:
             agcls.evaluate_hresult(self.__dict__["_get_segments"](byref(arg_ppVAMCSSegmentCollection.COM_val)))
             return arg_ppVAMCSSegmentCollection.python_val
 
     @property
-    def profiles(self) -> "IProfileCollection":
+    def profiles(self) -> "ProfileCollection":
         """Returns the profiles used within the target sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAProfileCollection:
             agcls.evaluate_hresult(self.__dict__["_get_profiles"](byref(arg_ppVAProfileCollection.COM_val)))
@@ -17497,7 +17497,7 @@ class ISearchPluginControl(object):
             return arg_pVal.python_val
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -17632,7 +17632,7 @@ class ISearchPluginResult(object):
             return arg_pVal.python_val
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -17731,7 +17731,7 @@ class ISearchPluginResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "ISearchPluginResult":
+    def item(self, index:int) -> "SearchPluginResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_searchConstraintResult:
@@ -17752,7 +17752,7 @@ class ISearchPluginResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "ISearchPluginResult":
+    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "SearchPluginResult":
         """Returns the result specified by the object/result path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(resultPath) as arg_resultPath, \
@@ -17818,7 +17818,7 @@ class ISearchPluginControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "ISearchPluginControl":
+    def item(self, index:int) -> "SearchPluginControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_searchPluginControl:
@@ -17839,7 +17839,7 @@ class ISearchPluginControlCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "ISearchPluginControl":
+    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "SearchPluginControl":
         """Returns the control specified by the object/control path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(controlPath) as arg_controlPath, \
@@ -17907,7 +17907,7 @@ class IDifferentialCorrectorControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IDifferentialCorrectorControl":
+    def item(self, index:int) -> "DifferentialCorrectorControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_dCControl:
@@ -17928,7 +17928,7 @@ class IDifferentialCorrectorControlCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "IDifferentialCorrectorControl":
+    def get_control_by_paths(self, objectPath:str, controlPath:str) -> "DifferentialCorrectorControl":
         """Returns the control specified by the object/control path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(controlPath) as arg_controlPath, \
@@ -17938,7 +17938,7 @@ class IDifferentialCorrectorControlCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18003,7 +18003,7 @@ class IDifferentialCorrectorResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "IDifferentialCorrectorResult":
+    def item(self, index:int) -> "DifferentialCorrectorResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_dCResult:
@@ -18024,7 +18024,7 @@ class IDifferentialCorrectorResultCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "IDifferentialCorrectorResult":
+    def get_result_by_paths(self, objectPath:str, resultPath:str) -> "DifferentialCorrectorResult":
         """Returns the result specified by the object/result path."""
         with agmarshall.BSTR_arg(objectPath) as arg_objectPath, \
              agmarshall.BSTR_arg(resultPath) as arg_resultPath, \
@@ -18034,7 +18034,7 @@ class IDifferentialCorrectorResultCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18373,7 +18373,7 @@ class ITargeterGraphActiveControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "ITargeterGraphActiveControl":
+    def item(self, index:int) -> "TargeterGraphActiveControl":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_dCControl:
@@ -18396,7 +18396,7 @@ class ITargeterGraphActiveControlCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18459,7 +18459,7 @@ class ITargeterGraphResultCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, index:int) -> "ITargeterGraphResult":
+    def item(self, index:int) -> "TargeterGraphResult":
         """Allows you to iterate through the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_dCControl:
@@ -18482,7 +18482,7 @@ class ITargeterGraphResultCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18649,14 +18649,14 @@ class ITargeterGraph(object):
             agcls.evaluate_hresult(self.__dict__["_set_independent_variable"](arg_inVal.COM_val))
 
     @property
-    def active_controls(self) -> "ITargeterGraphActiveControlCollection":
+    def active_controls(self) -> "TargeterGraphActiveControlCollection":
         """Active Controls."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_active_controls"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def results(self) -> "ITargeterGraphResultCollection":
+    def results(self) -> "TargeterGraphResultCollection":
         """Results."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppRetVal.COM_val)))
@@ -18731,7 +18731,7 @@ class ITargeterGraphCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "ITargeterGraph":
+    def item(self, indexOrName:typing.Any) -> "TargeterGraph":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_targeterGraph:
@@ -18752,7 +18752,7 @@ class ITargeterGraphCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def add_graph(self) -> "ITargeterGraph":
+    def add_graph(self) -> "TargeterGraph":
         """Adds a new targeter graph."""
         with agmarshall.AgInterface_out_arg() as arg_targeterGraph:
             agcls.evaluate_hresult(self.__dict__["_add_graph"](byref(arg_targeterGraph.COM_val)))
@@ -18765,7 +18765,7 @@ class ITargeterGraphCollection(object):
 
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18775,27 +18775,27 @@ class ITargeterGraphCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "ITargeterGraph":
+    def paste(self) -> "TargeterGraph":
         """Pastes a targeter graph from the clipboard into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppGraph:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppGraph.COM_val)))
             return arg_ppGraph.python_val
 
-    def insert_copy(self, graph:"ITargeterGraph") -> "ITargeterGraph":
+    def insert_copy(self, graph:"ITargeterGraph") -> "TargeterGraph":
         """Copies a targeter graph and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(graph, ITargeterGraph) as arg_graph, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_graph.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "ITargeterGraph":
+    def get_item_by_index(self, index:int) -> "TargeterGraph":
         """Retrieves a targeter graph from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppTargeterGraph:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppTargeterGraph.COM_val)))
             return arg_ppTargeterGraph.python_val
 
-    def get_item_by_name(self, name:str) -> "ITargeterGraph":
+    def get_item_by_name(self, name:str) -> "TargeterGraph":
         """Retrieves a targeter graph from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppTargeterGraph:
@@ -18860,21 +18860,21 @@ class IProfileSearchPlugin(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def controls(self) -> "ISearchPluginControlCollection":
+    def controls(self) -> "SearchPluginControlCollection":
         """The selected control parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppSearchPluginControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_controls"](byref(arg_ppSearchPluginControlCollection.COM_val)))
             return arg_ppSearchPluginControlCollection.python_val
 
     @property
-    def results(self) -> "ISearchPluginResultCollection":
+    def results(self) -> "SearchPluginResultCollection":
         """The selected equality constraints."""
         with agmarshall.AgInterface_out_arg() as arg_ppSearchPluginResultCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppSearchPluginResultCollection.COM_val)))
             return arg_ppSearchPluginResultCollection.python_val
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -18888,7 +18888,7 @@ class IProfileSearchPlugin(IProfile):
             return arg_pRetVal.python_val
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
@@ -18907,7 +18907,7 @@ class IProfileSearchPlugin(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_reset_controls_before_run"](arg_newVal.COM_val))
 
     @property
-    def targeter_graphs(self) -> "ITargeterGraphCollection":
+    def targeter_graphs(self) -> "TargeterGraphCollection":
         """Graphs"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_targeter_graphs"](byref(arg_ppRetVal.COM_val)))
@@ -19035,14 +19035,14 @@ class IProfileDifferentialCorrector(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def control_parameters(self) -> "IDifferentialCorrectorControlCollection":
+    def control_parameters(self) -> "DifferentialCorrectorControlCollection":
         """The list of control parameters defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVADCControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_control_parameters"](byref(arg_ppVADCControlCollection.COM_val)))
             return arg_ppVADCControlCollection.python_val
 
     @property
-    def results(self) -> "IDifferentialCorrectorResultCollection":
+    def results(self) -> "DifferentialCorrectorResultCollection":
         """The list of results defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVADCResultCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppVADCResultCollection.COM_val)))
@@ -19229,7 +19229,7 @@ class IProfileDifferentialCorrector(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_draw_perturbation"](arg_newVal.COM_val))
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
@@ -19255,7 +19255,7 @@ class IProfileDifferentialCorrector(IProfile):
             return arg_pVal.python_val
 
     @property
-    def targeter_graphs(self) -> "ITargeterGraphCollection":
+    def targeter_graphs(self) -> "TargeterGraphCollection":
         """Graphs"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_targeter_graphs"](byref(arg_ppRetVal.COM_val)))
@@ -19318,7 +19318,7 @@ class IProfileChangeManeuverType(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def segment(self) -> "IMissionControlSequenceManeuver":
+    def segment(self) -> "MissionControlSequenceManeuver":
         """The targeted maneuver segment."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAMCSManeuver:
             agcls.evaluate_hresult(self.__dict__["_get_segment"](byref(arg_ppVAMCSManeuver.COM_val)))
@@ -19410,21 +19410,21 @@ class IProfileScriptingTool(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_enable"](arg_inVal.COM_val))
 
     @property
-    def segment_properties(self) -> "IScriptingSegmentCollection":
+    def segment_properties(self) -> "ScriptingSegmentCollection":
         """Returns the collection of the segment properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_properties"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def calc_objects(self) -> "IScriptingCalcObjectCollection":
+    def calc_objects(self) -> "ScriptingCalcObjectCollection":
         """Returns the collection of the calc objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_calc_objects"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def parameters(self) -> "IScriptingParameterCollection":
+    def parameters(self) -> "ScriptingParameterCollection":
         """Returns the collection of parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_parameters"](byref(arg_ppRetVal.COM_val)))
@@ -20252,28 +20252,28 @@ class IProfileSNOPTOptimizer(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def control_parameters(self) -> "ISNOPTControlCollection":
+    def control_parameters(self) -> "SNOPTControlCollection":
         """The list of control parameters defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVASNOPTControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_control_parameters"](byref(arg_ppVASNOPTControlCollection.COM_val)))
             return arg_ppVASNOPTControlCollection.python_val
 
     @property
-    def results(self) -> "ISNOPTResultCollection":
+    def results(self) -> "SNOPTResultCollection":
         """The list of results defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVASNOPTResultCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppVASNOPTResultCollection.COM_val)))
             return arg_ppVASNOPTResultCollection.python_val
 
     @property
-    def targeter_graphs(self) -> "ITargeterGraphCollection":
+    def targeter_graphs(self) -> "TargeterGraphCollection":
         """Graphs"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_targeter_graphs"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
@@ -20824,28 +20824,28 @@ class IProfileIPOPTOptimizer(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def control_parameters(self) -> "IIPOPTControlCollection":
+    def control_parameters(self) -> "IPOPTControlCollection":
         """The list of control parameters defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAIPOPTControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_control_parameters"](byref(arg_ppVAIPOPTControlCollection.COM_val)))
             return arg_ppVAIPOPTControlCollection.python_val
 
     @property
-    def results(self) -> "IIPOPTResultCollection":
+    def results(self) -> "IPOPTResultCollection":
         """The list of results defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAIPOPTResultCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppVAIPOPTResultCollection.COM_val)))
             return arg_ppVAIPOPTResultCollection.python_val
 
     @property
-    def targeter_graphs(self) -> "ITargeterGraphCollection":
+    def targeter_graphs(self) -> "TargeterGraphCollection":
         """Graphs"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_targeter_graphs"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
@@ -21579,28 +21579,28 @@ class IManeuverOptimalFinite(IManeuver):
             return arg_pVal.python_val
 
     @property
-    def snopt_optimizer(self) -> "IManeuverOptimalFiniteSNOPTOptimizer":
+    def snopt_optimizer(self) -> "ManeuverOptimalFiniteSNOPTOptimizer":
         """SNOPT Optimizer Options."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteSNOPTOptimizer:
             agcls.evaluate_hresult(self.__dict__["_get_snopt_optimizer"](byref(arg_ppAgVAManeuverOptimalFiniteSNOPTOptimizer.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteSNOPTOptimizer.python_val
 
     @property
-    def initial_boundary_conditions(self) -> "IManeuverOptimalFiniteInitialBoundaryConditions":
+    def initial_boundary_conditions(self) -> "ManeuverOptimalFiniteInitialBoundaryConditions":
         """Initial Boundary Conditions."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteInitialBoundaryConditions:
             agcls.evaluate_hresult(self.__dict__["_get_initial_boundary_conditions"](byref(arg_ppAgVAManeuverOptimalFiniteInitialBoundaryConditions.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteInitialBoundaryConditions.python_val
 
     @property
-    def final_boundary_conditions(self) -> "IManeuverOptimalFiniteFinalBoundaryConditions":
+    def final_boundary_conditions(self) -> "ManeuverOptimalFiniteFinalBoundaryConditions":
         """Final Boundary Conditions."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFiniteFinalBoundaryConditions:
             agcls.evaluate_hresult(self.__dict__["_get_final_boundary_conditions"](byref(arg_ppAgVAManeuverOptimalFiniteFinalBoundaryConditions.COM_val)))
             return arg_ppAgVAManeuverOptimalFiniteFinalBoundaryConditions.python_val
 
     @property
-    def path_boundary_conditions(self) -> "IManeuverOptimalFinitePathBoundaryConditions":
+    def path_boundary_conditions(self) -> "ManeuverOptimalFinitePathBoundaryConditions":
         """Path Boundary Conditions."""
         with agmarshall.AgInterface_out_arg() as arg_ppAgVAManeuverOptimalFinitePathBoundaryConditions:
             agcls.evaluate_hresult(self.__dict__["_get_path_boundary_conditions"](byref(arg_ppAgVAManeuverOptimalFinitePathBoundaryConditions.COM_val)))
@@ -21626,7 +21626,7 @@ class IManeuverOptimalFinite(IManeuver):
             agcls.evaluate_hresult(self.__dict__["_set_export_format"](arg_newVal.COM_val))
 
     @property
-    def steering_nodes(self) -> "IManeuverOptimalFiniteSteeringNodeCollection":
+    def steering_nodes(self) -> "ManeuverOptimalFiniteSteeringNodeCollection":
         """The list of steering nodes."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAManeuverOptimalFiniteFinalSteeringNodeCollection:
             agcls.evaluate_hresult(self.__dict__["_get_steering_nodes"](byref(arg_ppVAManeuverOptimalFiniteFinalSteeringNodeCollection.COM_val)))
@@ -22909,28 +22909,28 @@ class IProfileGoldenSection(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def targeter_graphs(self) -> "ITargeterGraphCollection":
+    def targeter_graphs(self) -> "TargeterGraphCollection":
         """Graphs"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_targeter_graphs"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def controls(self) -> "IGoldenSectionControlCollection":
+    def controls(self) -> "GoldenSectionControlCollection":
         """The list of control parameters defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAGoldenSectionControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_controls"](byref(arg_ppVAGoldenSectionControlCollection.COM_val)))
             return arg_ppVAGoldenSectionControlCollection.python_val
 
     @property
-    def results(self) -> "IGoldenSectionResultCollection":
+    def results(self) -> "GoldenSectionResultCollection":
         """The list of results defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAGoldenSectionResultCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppVAGoldenSectionResultCollection.COM_val)))
@@ -23022,28 +23022,28 @@ class IProfileGridSearch(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def targeter_graphs(self) -> "ITargeterGraphCollection":
+    def targeter_graphs(self) -> "TargeterGraphCollection":
         """Graphs"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_targeter_graphs"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def controls(self) -> "IGridSearchControlCollection":
+    def controls(self) -> "GridSearchControlCollection":
         """The list of control parameters defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAGridSearchControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_controls"](byref(arg_ppVAGridSearchControlCollection.COM_val)))
             return arg_ppVAGridSearchControlCollection.python_val
 
     @property
-    def results(self) -> "IGridSearchResultCollection":
+    def results(self) -> "GridSearchResultCollection":
         """The list of results defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAGridSearchResultCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppVAGridSearchResultCollection.COM_val)))
@@ -23269,28 +23269,28 @@ class IProfileBisection(IProfile):
             IProfile.__setattr__(self, attrname, value)
     
     @property
-    def control_parameters(self) -> "IBisectionControlCollection":
+    def control_parameters(self) -> "BisectionControlCollection":
         """The list of control parameters defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVABisectionControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_control_parameters"](byref(arg_ppVABisectionControlCollection.COM_val)))
             return arg_ppVABisectionControlCollection.python_val
 
     @property
-    def results(self) -> "IBisectionResultCollection":
+    def results(self) -> "BisectionResultCollection":
         """The list of results defined for the profile."""
         with agmarshall.AgInterface_out_arg() as arg_ppVABisectionResultCollection:
             agcls.evaluate_hresult(self.__dict__["_get_results"](byref(arg_ppVABisectionResultCollection.COM_val)))
             return arg_ppVABisectionResultCollection.python_val
 
     @property
-    def targeter_graphs(self) -> "ITargeterGraphCollection":
+    def targeter_graphs(self) -> "TargeterGraphCollection":
         """Graphs"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_targeter_graphs"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def scripting_tool(self) -> "IScriptingTool":
+    def scripting_tool(self) -> "ScriptingTool":
         """Returns the Scripting tool for the sequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_scripting_tool"](byref(arg_ppRetVal.COM_val)))
@@ -31560,7 +31560,7 @@ class IStateCalcScript(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStateCalcScript.")
     
     @property
-    def calc_arguments(self) -> "ICalcObjectCollection":
+    def calc_arguments(self) -> "CalcObjectCollection":
         """The arguments to be applied to the function."""
         with agmarshall.AgInterface_out_arg() as arg_ppVACalcObjectCollection:
             agcls.evaluate_hresult(self.__dict__["_get_calc_arguments"](byref(arg_ppVACalcObjectCollection.COM_val)))
@@ -31591,7 +31591,7 @@ class IStateCalcScript(object):
             agcls.evaluate_hresult(self.__dict__["_set_unit_dimension"](arg_inVal.COM_val))
 
     @property
-    def calc_arguments_link_embed(self) -> "ICalcObjectLinkEmbedControlCollection":
+    def calc_arguments_link_embed(self) -> "CalcObjectLinkEmbedControlCollection":
         """The arguments to be applied to the function."""
         with agmarshall.AgInterface_out_arg() as arg_ppVACalcObjectLinkEmbedControlCollection:
             agcls.evaluate_hresult(self.__dict__["_get_calc_arguments_link_embed"](byref(arg_ppVACalcObjectLinkEmbedControlCollection.COM_val)))
@@ -34111,7 +34111,7 @@ class ICentralBodyCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrCbName:typing.Any) -> "IAstrogatorCentralBody":
+    def item(self, indexOrCbName:typing.Any) -> "AstrogatorCentralBody":
         """Allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrCbName) as arg_indexOrCbName, \
              agmarshall.AgInterface_out_arg() as arg_ppCentralBody:
@@ -34146,14 +34146,14 @@ class ICentralBodyCollection(object):
         """Remove all central bodies from the collection."""
         agcls.evaluate_hresult(self.__dict__["_remove_all"]())
 
-    def get_item_by_index(self, index:int) -> "IAstrogatorCentralBody":
+    def get_item_by_index(self, index:int) -> "AstrogatorCentralBody":
         """Retrieves a central body from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppCentralBody:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppCentralBody.COM_val)))
             return arg_ppCentralBody.python_val
 
-    def get_item_by_name(self, cbName:str) -> "IAstrogatorCentralBody":
+    def get_item_by_name(self, cbName:str) -> "AstrogatorCentralBody":
         """Retrieves a central body from the collection by name."""
         with agmarshall.BSTR_arg(cbName) as arg_cbName, \
              agmarshall.AgInterface_out_arg() as arg_ppCentralBody:
@@ -35374,7 +35374,7 @@ class IAstrogatorCentralBody(object):
             agcls.evaluate_hresult(self.__dict__["_set_parent_name"](arg_newVal.COM_val))
 
     @property
-    def children(self) -> "ICentralBodyCollection":
+    def children(self) -> "CentralBodyCollection":
         """The children of this central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_children"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -35393,13 +35393,13 @@ class IAstrogatorCentralBody(object):
             agcls.evaluate_hresult(self.__dict__["_set_default_gravity_model_by_name"](arg_gravityModelName.COM_val))
 
     @property
-    def default_gravity_model_data(self) -> "ICentralBodyGravityModel":
+    def default_gravity_model_data(self) -> "CentralBodyGravityModel":
         """The gravity model parameters."""
         with agmarshall.AgInterface_out_arg() as arg_ppCbGravityModel:
             agcls.evaluate_hresult(self.__dict__["_get_default_gravity_model_data"](byref(arg_ppCbGravityModel.COM_val)))
             return arg_ppCbGravityModel.python_val
 
-    def add_gravity_model(self, eGravityModel:"CENTRAL_BODY_GRAVITY_MODEL", uniqueName:str) -> "ICentralBodyGravityModel":
+    def add_gravity_model(self, eGravityModel:"CENTRAL_BODY_GRAVITY_MODEL", uniqueName:str) -> "CentralBodyGravityModel":
         """Adds a central body gravity model type."""
         with agmarshall.AgEnum_arg(CENTRAL_BODY_GRAVITY_MODEL, eGravityModel) as arg_eGravityModel, \
              agmarshall.BSTR_arg(uniqueName) as arg_uniqueName, \
@@ -35518,13 +35518,13 @@ class IAstrogatorCentralBody(object):
         with agmarshall.BSTR_arg(gravityModelName) as arg_gravityModelName:
             agcls.evaluate_hresult(self.__dict__["_copy_gravity_model_by_name"](arg_gravityModelName.COM_val))
 
-    def paste_gravity_model(self) -> "ICentralBodyGravityModel":
+    def paste_gravity_model(self) -> "CentralBodyGravityModel":
         """Adds the gravity model in the clipboard to the central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppCbGravityModel:
             agcls.evaluate_hresult(self.__dict__["_paste_gravity_model"](byref(arg_ppCbGravityModel.COM_val)))
             return arg_ppCbGravityModel.python_val
 
-    def add_copy_of_gravity_model(self, gravityModel:"ICentralBodyGravityModel") -> "ICentralBodyGravityModel":
+    def add_copy_of_gravity_model(self, gravityModel:"ICentralBodyGravityModel") -> "CentralBodyGravityModel":
         """Adds the gravity model to the central body"""
         with agmarshall.AgInterface_in_arg(gravityModel, ICentralBodyGravityModel) as arg_gravityModel, \
              agmarshall.AgInterface_out_arg() as arg_ppCbGravityModel:
@@ -36685,7 +36685,7 @@ class IDragModelPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_plugin_identifier"](arg_inVal.COM_val))
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -36931,7 +36931,7 @@ class ICira72Function(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -37103,7 +37103,7 @@ class IExponential(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -37309,7 +37309,7 @@ class IHarrisPriester(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -37489,7 +37489,7 @@ class IDensityModelPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_plugin_identifier"](arg_inVal.COM_val))
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -37750,7 +37750,7 @@ class IDensityModelPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -38027,7 +38027,7 @@ class IJacchiaRoberts(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -38359,7 +38359,7 @@ class IJacchiaBowman2008(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -38517,7 +38517,7 @@ class IJacchia_1960(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -38787,7 +38787,7 @@ class IJacchia_1970(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -39057,7 +39057,7 @@ class IJacchia_1971(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -39327,7 +39327,7 @@ class IMSISE_1990(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -39597,7 +39597,7 @@ class IMSIS_1986(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -39867,7 +39867,7 @@ class INRLMSISE_2000(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -40009,7 +40009,7 @@ class IUS_Standard_Atmosphere(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -40263,7 +40263,7 @@ class IMarsGRAM37(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -40517,7 +40517,7 @@ class IMarsGRAM2005(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -40707,7 +40707,7 @@ class IVenusGRAM2005(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -40961,7 +40961,7 @@ class IMarsGRAM2010(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -41215,7 +41215,7 @@ class IMarsGRAM2001(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -41469,7 +41469,7 @@ class IMarsGRAM2000(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -41691,7 +41691,7 @@ class IDTM2012(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -41961,7 +41961,7 @@ class IDTM2020(object):
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_plugin_name"](arg_pVal.COM_val))
 
     @property
-    def drag_model_plugin(self) -> "IDragModelPlugin":
+    def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_plugin"](byref(arg_ppRetVal.COM_val)))
@@ -42563,7 +42563,7 @@ class IHPOPPluginFunction(object):
             agcls.evaluate_hresult(self.__dict__["_set_plugin_identifier"](arg_inVal.COM_val))
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -42623,7 +42623,7 @@ class IEOMFuncPluginFunction(object):
             agcls.evaluate_hresult(self.__dict__["_set_plugin_identifier"](arg_inVal.COM_val))
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -42727,7 +42727,7 @@ class ISRPAeroT20(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -42867,7 +42867,7 @@ class ISRPAeroT30(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -43007,7 +43007,7 @@ class ISRPGSPM04aIIA(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -43147,7 +43147,7 @@ class ISRPGSPM04aIIR(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -43287,7 +43287,7 @@ class ISRPGSPM04aeIIA(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -43427,7 +43427,7 @@ class ISRPGSPM04aeIIR(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -43579,7 +43579,7 @@ class ISRPSpherical(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -43771,7 +43771,7 @@ class ISRPNPlate(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -43979,7 +43979,7 @@ class ISRPTabAreaVec(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -44195,7 +44195,7 @@ class ISRPVariableArea(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -44290,7 +44290,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4124EBC1-ABC6-4933-84D2-0F1232D8B630}",
 agcls.AgTypeNameMap["ISRPVariableArea"] = ISRPVariableArea
 
 class IThirdBodyFunction(object):
-    """Properties for a Third Body propagator function. The IComponentInfo object returned by the mode property can be cast to IGravityFieldFunction or IPointMassFunction depending on the selected ModeType."""
+    """Properties for a Third Body propagator function. The IComponentInfo object returned by the mode property can be cast to GravityFieldFunction or PointMassFunction depending on the selected ModeType."""
     _uuid = "{86FDAC1D-8E57-4915-AA9B-E6C35E06C9BC}"
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -44362,7 +44362,7 @@ class IThirdBodyFunction(object):
 
     @property
     def mode(self) -> "IComponentInfo":
-        """The third body gravity mode. The IComponentInfo object returned by this property can be cast to IGravityFieldFunction or IPointMassFunction depending on the selected ModeType."""
+        """The third body gravity mode. The IComponentInfo object returned by this property can be cast to GravityFieldFunction or PointMassFunction depending on the selected ModeType."""
         with agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_get_mode"](byref(arg_ppComponent.COM_val)))
             return arg_ppComponent.python_val
@@ -44466,7 +44466,7 @@ class ISRPReflectionPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_plugin_identifier"](arg_inVal.COM_val))
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the selected plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -44509,7 +44509,7 @@ class ISRPReflectionPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def eclipsing_bodies(self) -> "ICentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
         with agmarshall.AgInterface_out_arg() as arg_ppCentralBodyCollection:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies"](byref(arg_ppCentralBodyCollection.COM_val)))
@@ -46075,7 +46075,7 @@ class IEngineIon(object):
             agcls.evaluate_hresult(self.__dict__["_set_percent_throttle"](arg_inVal.COM_val))
 
     @property
-    def engine_definition(self) -> "IEngineDefinition":
+    def engine_definition(self) -> "EngineDefinition":
         """The engine definition."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAEngineDefinition:
             agcls.evaluate_hresult(self.__dict__["_get_engine_definition"](byref(arg_ppVAEngineDefinition.COM_val)))
@@ -46338,7 +46338,7 @@ class IEnginePlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_plugin_identifier"](arg_inVal.COM_val))
 
     @property
-    def plugin_config(self) -> "IPluginProperties":
+    def plugin_config(self) -> "PluginProperties":
         """The properties of the plugin."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_plugin_config"](byref(arg_ppRetVal.COM_val)))
@@ -46408,14 +46408,14 @@ class IEngineModelPoly(object):
             agcls.evaluate_hresult(self.__dict__["_set_g"](arg_inVal.COM_val))
 
     @property
-    def thrust_coefficients(self) -> "IEngineModelThrustCoefficients":
+    def thrust_coefficients(self) -> "EngineModelThrustCoefficients":
         """The thrust Coefficients."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAEngineModelThrustCoefficients:
             agcls.evaluate_hresult(self.__dict__["_get_thrust_coefficients"](byref(arg_ppVAEngineModelThrustCoefficients.COM_val)))
             return arg_ppVAEngineModelThrustCoefficients.python_val
 
     @property
-    def isp_coefficients(self) -> "IEngineModelIspCoefficients":
+    def isp_coefficients(self) -> "EngineModelIspCoefficients":
         """The Isp Coefficients."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAEngineModelIspCoefficients:
             agcls.evaluate_hresult(self.__dict__["_get_isp_coefficients"](byref(arg_ppVAEngineModelIspCoefficients.COM_val)))
@@ -46502,7 +46502,7 @@ class IDesignCR3BPObjectCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IDesignCR3BPObject":
+    def item(self, indexOrName:typing.Any) -> "DesignCR3BPObject":
         """A property that allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVADesignCR3BPObject:
@@ -46523,14 +46523,14 @@ class IDesignCR3BPObjectCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IDesignCR3BPObject":
+    def get_item_by_index(self, index:int) -> "DesignCR3BPObject":
         """Retrieves an associated object from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVADesignCR3BPObject:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVADesignCR3BPObject.COM_val)))
             return arg_ppVADesignCR3BPObject.python_val
 
-    def get_item_by_name(self, name:str) -> "IDesignCR3BPObject":
+    def get_item_by_name(self, name:str) -> "DesignCR3BPObject":
         """Retrieves an associated object from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVADesignCR3BPObject:
@@ -46761,7 +46761,7 @@ class IDesignCR3BPSetup(object):
         agcls.evaluate_hresult(self.__dict__["_delete_calculation_objects"]())
 
     @property
-    def associated_objects(self) -> "IDesignCR3BPObjectCollection":
+    def associated_objects(self) -> "DesignCR3BPObjectCollection":
         """The list of associated objects."""
         with agmarshall.AgInterface_out_arg() as arg_ppVADesignCR3BPObjectCollection:
             agcls.evaluate_hresult(self.__dict__["_get_associated_objects"](byref(arg_ppVADesignCR3BPObjectCollection.COM_val)))
@@ -46920,7 +46920,7 @@ class IThruster(object):
         with agmarshall.BSTR_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_user_comment"](arg_inVal.COM_val))
 
-    def copy(self) -> "IThruster":
+    def copy(self) -> "Thruster":
         """Makes a copy of the specified thruster."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
             agcls.evaluate_hresult(self.__dict__["_copy"](byref(arg_ppVAThruster.COM_val)))
@@ -47062,7 +47062,7 @@ class IThrusterSetCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def item(self, indexOrName:typing.Any) -> "IThruster":
+    def item(self, indexOrName:typing.Any) -> "Thruster":
         """A property that allows you to iterate through the collection."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
@@ -47083,7 +47083,7 @@ class IThrusterSetCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def add(self, thrusterName:str) -> "IThruster":
+    def add(self, thrusterName:str) -> "Thruster":
         """Adds a new thruster."""
         with agmarshall.BSTR_arg(thrusterName) as arg_thrusterName, \
              agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
@@ -47104,27 +47104,27 @@ class IThrusterSetCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self) -> "IThruster":
+    def paste(self) -> "Thruster":
         """Pastes a thruster from the clipboard into the list."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
             agcls.evaluate_hresult(self.__dict__["_paste"](byref(arg_ppVAThruster.COM_val)))
             return arg_ppVAThruster.python_val
 
-    def insert_copy(self, thruster:"IThruster") -> "IThruster":
+    def insert_copy(self, thruster:"IThruster") -> "Thruster":
         """Copies a thruster and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(thruster, IThruster) as arg_thruster, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_thruster.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_item_by_index(self, index:int) -> "IThruster":
+    def get_item_by_index(self, index:int) -> "Thruster":
         """Retrieves a thruster from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
             agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVAThruster.COM_val)))
             return arg_ppVAThruster.python_val
 
-    def get_item_by_name(self, name:str) -> "IThruster":
+    def get_item_by_name(self, name:str) -> "Thruster":
         """Retrieves a thruster from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
@@ -47188,7 +47188,7 @@ class IThrusterSet(object):
             agcls.evaluate_hresult(self.__dict__["_set_direction_definition"](arg_inVal.COM_val))
 
     @property
-    def thrusters(self) -> "IThrusterSetCollection":
+    def thrusters(self) -> "ThrusterSetCollection":
         """The list of thrusters."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAThrusterSetCollection:
             agcls.evaluate_hresult(self.__dict__["_get_thrusters"](byref(arg_ppVAThrusterSetCollection.COM_val)))
@@ -47704,7 +47704,7 @@ class INumericalPropagatorWrapper(object):
             agcls.evaluate_hresult(self.__dict__["_set_regularized_time_steps_per_orbit"](arg_inVal.COM_val))
 
     @property
-    def propagator_functions(self) -> "IPropagatorFunctionCollection":
+    def propagator_functions(self) -> "PropagatorFunctionCollection":
         """The list of propagator functions."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAPropagatorFunctionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_propagator_functions"](byref(arg_ppVAPropagatorFunctionCollection.COM_val)))
@@ -47789,7 +47789,7 @@ class INumericalPropagatorWrapperCR3BP(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def propagator_functions(self) -> "IPropagatorFunctionCollection":
+    def propagator_functions(self) -> "PropagatorFunctionCollection":
         """The list of propagator functions."""
         with agmarshall.AgInterface_out_arg() as arg_ppVAPropagatorFunctionCollection:
             agcls.evaluate_hresult(self.__dict__["_get_propagator_functions"](byref(arg_ppVAPropagatorFunctionCollection.COM_val)))
@@ -49395,7 +49395,7 @@ class DriverMissionControlSequence(IDriverMissionControlSequence, IVehiclePropag
             raise STKAttributeError(attrname + " is not a recognized attribute in DriverMissionControlSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{56D84C70-9D0D-4ACA-8CE5-C41E951E024C}", DriverMissionControlSequence)
-
+agcls.AgTypeNameMap["DriverMissionControlSequence"] = DriverMissionControlSequence
 
 class MissionControlSequenceSegmentCollection(IMissionControlSequenceSegmentCollection, IRuntimeTypeInfoProvider):
     """The Mission Control Sequence."""
@@ -49419,7 +49419,7 @@ class MissionControlSequenceSegmentCollection(IMissionControlSequenceSegmentColl
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceSegmentCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2F91182-1E74-4422-A660-6250A42732C3}", MissionControlSequenceSegmentCollection)
-
+agcls.AgTypeNameMap["MissionControlSequenceSegmentCollection"] = MissionControlSequenceSegmentCollection
 
 class MissionControlSequenceEnd(IMissionControlSequenceEnd, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo):
     """The End segment."""
@@ -49449,7 +49449,7 @@ class MissionControlSequenceEnd(IMissionControlSequenceEnd, IMissionControlSeque
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceEnd.")
         
 agcls.AgClassCatalog.add_catalog_entry("{048FE652-88E7-4000-B371-A2D708599F34}", MissionControlSequenceEnd)
-
+agcls.AgTypeNameMap["MissionControlSequenceEnd"] = MissionControlSequenceEnd
 
 class MissionControlSequenceInitialState(IMissionControlSequenceInitialState, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable):
     """The Initial State segment."""
@@ -49482,7 +49482,7 @@ class MissionControlSequenceInitialState(IMissionControlSequenceInitialState, IM
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceInitialState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E3010ADE-CB96-470C-B380-3C58B23173AC}", MissionControlSequenceInitialState)
-
+agcls.AgTypeNameMap["MissionControlSequenceInitialState"] = MissionControlSequenceInitialState
 
 class SpacecraftParameters(ISpacecraftParameters, IRuntimeTypeInfoProvider):
     """Spacecraft parameters."""
@@ -49506,7 +49506,7 @@ class SpacecraftParameters(ISpacecraftParameters, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in SpacecraftParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75F1E929-B0B9-4AE8-8C84-7273B9211771}", SpacecraftParameters)
-
+agcls.AgTypeNameMap["SpacecraftParameters"] = SpacecraftParameters
 
 class FuelTank(IFuelTank, IRuntimeTypeInfoProvider):
     """Fuel Tank parameters."""
@@ -49530,7 +49530,7 @@ class FuelTank(IFuelTank, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in FuelTank.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03CC0FE4-A9E2-4F80-8AC8-C510F9691D3B}", FuelTank)
-
+agcls.AgTypeNameMap["FuelTank"] = FuelTank
 
 class ElementCartesian(IElementCartesian, IElement, IRuntimeTypeInfoProvider):
     """Cartesian elements."""
@@ -49557,7 +49557,7 @@ class ElementCartesian(IElementCartesian, IElement, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementCartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8C98158E-6B98-4C50-8500-7ABCE96A049E}", ElementCartesian)
-
+agcls.AgTypeNameMap["ElementCartesian"] = ElementCartesian
 
 class ElementKeplerian(IElementKeplerian, IElement):
     """Keplerian elements."""
@@ -49581,7 +49581,7 @@ class ElementKeplerian(IElementKeplerian, IElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementKeplerian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F34624C5-E351-4321-B16E-04DB098F9E29}", ElementKeplerian)
-
+agcls.AgTypeNameMap["ElementKeplerian"] = ElementKeplerian
 
 class ElementEquinoctial(IElementEquinoctial, IElement):
     """Equinoctial elements."""
@@ -49605,7 +49605,7 @@ class ElementEquinoctial(IElementEquinoctial, IElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementEquinoctial.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5588137F-A05E-4011-A219-925F175F1447}", ElementEquinoctial)
-
+agcls.AgTypeNameMap["ElementEquinoctial"] = ElementEquinoctial
 
 class ElementDelaunay(IElementDelaunay, IElement):
     """Delaunay elements."""
@@ -49629,7 +49629,7 @@ class ElementDelaunay(IElementDelaunay, IElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementDelaunay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FDE891B2-2C91-48A8-B4C0-956BD55B8496}", ElementDelaunay)
-
+agcls.AgTypeNameMap["ElementDelaunay"] = ElementDelaunay
 
 class ElementMixedSpherical(IElementMixedSpherical, IElement):
     """Mixed Spherical elements."""
@@ -49653,7 +49653,7 @@ class ElementMixedSpherical(IElementMixedSpherical, IElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementMixedSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C6E11D55-8708-4667-AC84-8FC413A32FF0}", ElementMixedSpherical)
-
+agcls.AgTypeNameMap["ElementMixedSpherical"] = ElementMixedSpherical
 
 class ElementSpherical(IElementSpherical, IElement):
     """Spherical elements."""
@@ -49677,7 +49677,7 @@ class ElementSpherical(IElementSpherical, IElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ECF59D66-A748-47DD-BD0E-C8FD0CD78D05}", ElementSpherical)
-
+agcls.AgTypeNameMap["ElementSpherical"] = ElementSpherical
 
 class ElementTargetVectorIncomingAsymptote(IElementTargetVectorIncomingAsymptote, IElement):
     """Target Vector Incoming Asymptote elements."""
@@ -49701,7 +49701,7 @@ class ElementTargetVectorIncomingAsymptote(IElementTargetVectorIncomingAsymptote
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementTargetVectorIncomingAsymptote.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E05BEA68-902F-427F-9E65-A33FBE044A75}", ElementTargetVectorIncomingAsymptote)
-
+agcls.AgTypeNameMap["ElementTargetVectorIncomingAsymptote"] = ElementTargetVectorIncomingAsymptote
 
 class ElementTargetVectorOutgoingAsymptote(IElementTargetVectorOutgoingAsymptote, IElement):
     """Target Vector Outgoing Asymptote elements."""
@@ -49725,7 +49725,7 @@ class ElementTargetVectorOutgoingAsymptote(IElementTargetVectorOutgoingAsymptote
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementTargetVectorOutgoingAsymptote.")
         
 agcls.AgClassCatalog.add_catalog_entry("{95B24C8E-7781-4FA6-8A70-49443C5FFCF9}", ElementTargetVectorOutgoingAsymptote)
-
+agcls.AgTypeNameMap["ElementTargetVectorOutgoingAsymptote"] = ElementTargetVectorOutgoingAsymptote
 
 class ElementGeodetic(IElementGeodetic, IElement):
     """Geodetic elements."""
@@ -49749,7 +49749,7 @@ class ElementGeodetic(IElementGeodetic, IElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6E74D006-FB3C-4085-810E-9B1E5AE73905}", ElementGeodetic)
-
+agcls.AgTypeNameMap["ElementGeodetic"] = ElementGeodetic
 
 class ElementBPlane(IElementBPlane, IElement):
     """Bplane elements."""
@@ -49773,7 +49773,7 @@ class ElementBPlane(IElementBPlane, IElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in ElementBPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F43BB61-B15A-479A-AE38-567C7FEE6A7B}", ElementBPlane)
-
+agcls.AgTypeNameMap["ElementBPlane"] = ElementBPlane
 
 class MissionControlSequencePropagate(IMissionControlSequenceSegment, IMissionControlSequencePropagate, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider):
     """The Propagate segment."""
@@ -49806,7 +49806,7 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IMissionCo
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequencePropagate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{172B88CD-3CDC-4818-A03E-6538C4FD3B8D}", MissionControlSequencePropagate)
-
+agcls.AgTypeNameMap["MissionControlSequencePropagate"] = MissionControlSequencePropagate
 
 class State(IState, IRuntimeTypeInfoProvider):
     """The orbit state."""
@@ -49830,7 +49830,7 @@ class State(IState, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in State.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D09183D5-B72C-428B-B586-CD67D09B7BC1}", State)
-
+agcls.AgTypeNameMap["State"] = State
 
 class StoppingConditionCollection(IStoppingConditionCollection, IRuntimeTypeInfoProvider):
     """The stopping conditions collection."""
@@ -49854,7 +49854,7 @@ class StoppingConditionCollection(IStoppingConditionCollection, IRuntimeTypeInfo
             raise STKAttributeError(attrname + " is not a recognized attribute in StoppingConditionCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9301C787-450F-49B9-B5BD-E263F5DEF4AF}", StoppingConditionCollection)
-
+agcls.AgTypeNameMap["StoppingConditionCollection"] = StoppingConditionCollection
 
 class AccessStoppingCondition(IComponentInfo, ICloneable, IAccessStoppingCondition, IStoppingConditionComponent, IRuntimeTypeInfoProvider):
     """The Access stopping condition."""
@@ -49887,7 +49887,7 @@ class AccessStoppingCondition(IComponentInfo, ICloneable, IAccessStoppingConditi
             raise STKAttributeError(attrname + " is not a recognized attribute in AccessStoppingCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7526A10E-68CF-42C7-A1B6-DC58E4C83F8B}", AccessStoppingCondition)
-
+agcls.AgTypeNameMap["AccessStoppingCondition"] = AccessStoppingCondition
 
 class LightingStoppingCondition(IComponentInfo, ICloneable, ILightingStoppingCondition, IStoppingConditionComponent, IRuntimeTypeInfoProvider):
     """The Lighting stopping condition."""
@@ -49920,7 +49920,7 @@ class LightingStoppingCondition(IComponentInfo, ICloneable, ILightingStoppingCon
             raise STKAttributeError(attrname + " is not a recognized attribute in LightingStoppingCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9AE4C815-0880-4912-A024-7A326AF7F9BB}", LightingStoppingCondition)
-
+agcls.AgTypeNameMap["LightingStoppingCondition"] = LightingStoppingCondition
 
 class StoppingCondition(IStoppingCondition, IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider):
     """A stopping condition."""
@@ -49953,7 +49953,7 @@ class StoppingCondition(IStoppingCondition, IComponentInfo, ICloneable, IStoppin
             raise STKAttributeError(attrname + " is not a recognized attribute in StoppingCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87FDFED8-E83F-4963-92BD-4F151BE3E5CA}", StoppingCondition)
-
+agcls.AgTypeNameMap["StoppingCondition"] = StoppingCondition
 
 class StoppingConditionElement(IStoppingConditionElement, IComponentInfo, IRuntimeTypeInfoProvider):
     """A stopping condition."""
@@ -49980,7 +49980,7 @@ class StoppingConditionElement(IStoppingConditionElement, IComponentInfo, IRunti
             raise STKAttributeError(attrname + " is not a recognized attribute in StoppingConditionElement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EBE02320-241C-462D-93F5-1BE2B72C8FB5}", StoppingConditionElement)
-
+agcls.AgTypeNameMap["StoppingConditionElement"] = StoppingConditionElement
 
 class MissionControlSequenceSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceSequence, IComponentInfo, ICloneable):
     """The Sequence segment."""
@@ -50013,7 +50013,7 @@ class MissionControlSequenceSequence(IMissionControlSequenceSegment, IRuntimeTyp
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D98B9CE-047C-419E-9A58-5939ECD853EF}", MissionControlSequenceSequence)
-
+agcls.AgTypeNameMap["MissionControlSequenceSequence"] = MissionControlSequenceSequence
 
 class MissionControlSequenceBackwardSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceBackwardSequence, IMissionControlSequenceSequence, IComponentInfo, ICloneable):
     """The Backward Sequence segment."""
@@ -50049,7 +50049,7 @@ class MissionControlSequenceBackwardSequence(IMissionControlSequenceSegment, IRu
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceBackwardSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EDA33DE4-2AE3-4C19-87A4-2A3215ADB6FE}", MissionControlSequenceBackwardSequence)
-
+agcls.AgTypeNameMap["MissionControlSequenceBackwardSequence"] = MissionControlSequenceBackwardSequence
 
 class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceLaunch, IComponentInfo, ICloneable):
     """The Launch segment."""
@@ -50082,7 +50082,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceLaunch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1540C136-4AA5-449B-A845-A822E99422E2}", MissionControlSequenceLaunch)
-
+agcls.AgTypeNameMap["MissionControlSequenceLaunch"] = MissionControlSequenceLaunch
 
 class DisplaySystemGeodetic(IDisplaySystemGeodetic, IDisplaySystem):
     """The geodetic launch location."""
@@ -50106,7 +50106,7 @@ class DisplaySystemGeodetic(IDisplaySystemGeodetic, IDisplaySystem):
             raise STKAttributeError(attrname + " is not a recognized attribute in DisplaySystemGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{792B26D7-7643-47F5-8BBD-B4FE0708F3AB}", DisplaySystemGeodetic)
-
+agcls.AgTypeNameMap["DisplaySystemGeodetic"] = DisplaySystemGeodetic
 
 class DisplaySystemGeocentric(IDisplaySystemGeocentric, IDisplaySystem):
     """The geocentric launch location."""
@@ -50130,7 +50130,7 @@ class DisplaySystemGeocentric(IDisplaySystemGeocentric, IDisplaySystem):
             raise STKAttributeError(attrname + " is not a recognized attribute in DisplaySystemGeocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32F981ED-81EA-4C65-87DF-DC725A979056}", DisplaySystemGeocentric)
-
+agcls.AgTypeNameMap["DisplaySystemGeocentric"] = DisplaySystemGeocentric
 
 class BurnoutGeodetic(IBurnoutGeodetic, IBurnout):
     """The geodetic burnout point."""
@@ -50154,7 +50154,7 @@ class BurnoutGeodetic(IBurnoutGeodetic, IBurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in BurnoutGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{011100E5-8DE0-4CE1-BC6D-F66B77814B78}", BurnoutGeodetic)
-
+agcls.AgTypeNameMap["BurnoutGeodetic"] = BurnoutGeodetic
 
 class BurnoutCBFCartesian(IBurnoutCBFCartesian, IBurnout):
     """The burnout state in CBF Cartesian coordinates."""
@@ -50178,7 +50178,7 @@ class BurnoutCBFCartesian(IBurnoutCBFCartesian, IBurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in BurnoutCBFCartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3EE3ED29-6154-49CA-93C4-8623E801B58F}", BurnoutCBFCartesian)
-
+agcls.AgTypeNameMap["BurnoutCBFCartesian"] = BurnoutCBFCartesian
 
 class BurnoutGeocentric(IBurnoutGeocentric, IBurnout):
     """The geocentric burnout point."""
@@ -50202,7 +50202,7 @@ class BurnoutGeocentric(IBurnoutGeocentric, IBurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in BurnoutGeocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B7BD1F63-9D91-4DA5-9099-D6BE607F2702}", BurnoutGeocentric)
-
+agcls.AgTypeNameMap["BurnoutGeocentric"] = BurnoutGeocentric
 
 class BurnoutLaunchAzAltitude(IBurnoutLaunchAzAltitude, IBurnout):
     """The launch azimuth and altitude burnout point."""
@@ -50226,7 +50226,7 @@ class BurnoutLaunchAzAltitude(IBurnoutLaunchAzAltitude, IBurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in BurnoutLaunchAzAltitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E5A780AE-0173-4FF8-AD0F-43886E1FAE85}", BurnoutLaunchAzAltitude)
-
+agcls.AgTypeNameMap["BurnoutLaunchAzAltitude"] = BurnoutLaunchAzAltitude
 
 class BurnoutLaunchAzRadius(IBurnoutLaunchAzRadius, IBurnout):
     """The launch azimuth and radius burnout point."""
@@ -50250,7 +50250,7 @@ class BurnoutLaunchAzRadius(IBurnoutLaunchAzRadius, IBurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in BurnoutLaunchAzRadius.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ABC361CE-B104-427C-BDDB-CF77EBDC9B8E}", BurnoutLaunchAzRadius)
-
+agcls.AgTypeNameMap["BurnoutLaunchAzRadius"] = BurnoutLaunchAzRadius
 
 class BurnoutVelocity(IBurnoutVelocity):
     """The burnout velocity."""
@@ -50271,7 +50271,7 @@ class BurnoutVelocity(IBurnoutVelocity):
             raise STKAttributeError(attrname + " is not a recognized attribute in BurnoutVelocity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DFD439A9-42BD-4A59-9681-A70BBC94E083}", BurnoutVelocity)
-
+agcls.AgTypeNameMap["BurnoutVelocity"] = BurnoutVelocity
 
 class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceFollow, IComponentInfo, ICloneable):
     """The Follow segment."""
@@ -50304,7 +50304,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceFollow.")
         
 agcls.AgClassCatalog.add_catalog_entry("{322FC7F6-FCDF-408B-A31C-F25A1F5456EB}", MissionControlSequenceFollow)
-
+agcls.AgTypeNameMap["MissionControlSequenceFollow"] = MissionControlSequenceFollow
 
 class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceManeuver, IComponentInfo, ICloneable):
     """The Maneuver segment."""
@@ -50337,7 +50337,7 @@ class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTyp
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceManeuver.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1EE05100-A5B8-4820-9C6D-F4AE0639E1EE}", MissionControlSequenceManeuver)
-
+agcls.AgTypeNameMap["MissionControlSequenceManeuver"] = MissionControlSequenceManeuver
 
 class ManeuverFinite(IManeuverFinite, IManeuver, IRuntimeTypeInfoProvider):
     """The Finite Maneuver."""
@@ -50364,7 +50364,7 @@ class ManeuverFinite(IManeuverFinite, IManeuver, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverFinite.")
         
 agcls.AgClassCatalog.add_catalog_entry("{22EAD08A-6355-48BA-96EC-5DD996A5D926}", ManeuverFinite)
-
+agcls.AgTypeNameMap["ManeuverFinite"] = ManeuverFinite
 
 class ManeuverImpulsive(IManeuverImpulsive, IManeuver, IRuntimeTypeInfoProvider):
     """The Impulsive Maneuver."""
@@ -50391,7 +50391,7 @@ class ManeuverImpulsive(IManeuverImpulsive, IManeuver, IRuntimeTypeInfoProvider)
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverImpulsive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E4DCF8C5-987F-4739-9592-E4C49B9A827E}", ManeuverImpulsive)
-
+agcls.AgTypeNameMap["ManeuverImpulsive"] = ManeuverImpulsive
 
 class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsiveVelocityVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The velocity vector attitude control for an impulsive maneuver."""
@@ -50421,7 +50421,7 @@ class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsiveVelocityVe
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlImpulsiveVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C466E73A-E301-43C8-8402-700D0CE8DE41}", AttitudeControlImpulsiveVelocityVector)
-
+agcls.AgTypeNameMap["AttitudeControlImpulsiveVelocityVector"] = AttitudeControlImpulsiveVelocityVector
 
 class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsiveAntiVelocityVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The anti-velocity vector attitude control for an impulsive maneuver."""
@@ -50451,7 +50451,7 @@ class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsiveAntiVe
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlImpulsiveAntiVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B51D8BDC-E2A5-484C-8CB8-88E4D1BBC5A1}", AttitudeControlImpulsiveAntiVelocityVector)
-
+agcls.AgTypeNameMap["AttitudeControlImpulsiveAntiVelocityVector"] = AttitudeControlImpulsiveAntiVelocityVector
 
 class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsiveAttitude, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The attitude attitude control for an impulsive maneuver."""
@@ -50481,7 +50481,7 @@ class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsiveAttitude, IAttit
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlImpulsiveAttitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8854FD36-7CEA-4FBC-B699-E47007BA7825}", AttitudeControlImpulsiveAttitude)
-
+agcls.AgTypeNameMap["AttitudeControlImpulsiveAttitude"] = AttitudeControlImpulsiveAttitude
 
 class AttitudeControlImpulsiveFile(IAttitudeControlImpulsiveFile, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The file attitude control for an impulsive maneuver."""
@@ -50511,7 +50511,7 @@ class AttitudeControlImpulsiveFile(IAttitudeControlImpulsiveFile, IAttitudeContr
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlImpulsiveFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{18E769AB-177B-4575-A9E0-BBB5BEEA78AE}", AttitudeControlImpulsiveFile)
-
+agcls.AgTypeNameMap["AttitudeControlImpulsiveFile"] = AttitudeControlImpulsiveFile
 
 class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsiveThrustVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The thrust vector attitude control for an impulsive maneuver."""
@@ -50541,7 +50541,7 @@ class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsiveThrustVector
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlImpulsiveThrustVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B17F3D0C-2021-4D60-80B7-1F55934FACAF}", AttitudeControlImpulsiveThrustVector)
-
+agcls.AgTypeNameMap["AttitudeControlImpulsiveThrustVector"] = AttitudeControlImpulsiveThrustVector
 
 class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFiniteAntiVelocityVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The anti-velocity vector attitude control for a finite maneuver."""
@@ -50571,7 +50571,7 @@ class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFiniteAntiVelocity
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlFiniteAntiVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2C11B410-A573-446A-9637-A472B987A987}", AttitudeControlFiniteAntiVelocityVector)
-
+agcls.AgTypeNameMap["AttitudeControlFiniteAntiVelocityVector"] = AttitudeControlFiniteAntiVelocityVector
 
 class AttitudeControlFiniteAttitude(IAttitudeControlFiniteAttitude, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The attitude attitude control for a finite maneuver."""
@@ -50601,7 +50601,7 @@ class AttitudeControlFiniteAttitude(IAttitudeControlFiniteAttitude, IAttitudeCon
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlFiniteAttitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EA2C6994-7191-4CEF-9C8D-3BE0AA6BB756}", AttitudeControlFiniteAttitude)
-
+agcls.AgTypeNameMap["AttitudeControlFiniteAttitude"] = AttitudeControlFiniteAttitude
 
 class AttitudeControlFiniteFile(IAttitudeControlFiniteFile, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The file attitude control for a finite maneuver."""
@@ -50631,7 +50631,7 @@ class AttitudeControlFiniteFile(IAttitudeControlFiniteFile, IAttitudeControlFini
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlFiniteFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F2333DC-4E2B-499C-9F14-A4F1932F9C62}", AttitudeControlFiniteFile)
-
+agcls.AgTypeNameMap["AttitudeControlFiniteFile"] = AttitudeControlFiniteFile
 
 class AttitudeControlFiniteThrustVector(IAttitudeControlFiniteThrustVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The thrust vector attitude control for a finite maneuver."""
@@ -50661,7 +50661,7 @@ class AttitudeControlFiniteThrustVector(IAttitudeControlFiniteThrustVector, IAtt
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlFiniteThrustVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B31C16F-C862-498D-ADFB-5C4F50D45DF1}", AttitudeControlFiniteThrustVector)
-
+agcls.AgTypeNameMap["AttitudeControlFiniteThrustVector"] = AttitudeControlFiniteThrustVector
 
 class AttitudeControlFiniteTimeVarying(IAttitudeControlFiniteTimeVarying, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The time varying attitude control for a finite maneuver."""
@@ -50691,7 +50691,7 @@ class AttitudeControlFiniteTimeVarying(IAttitudeControlFiniteTimeVarying, IAttit
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlFiniteTimeVarying.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F28DCCA6-0AFE-4142-BDB1-0957F1B3CB6F}", AttitudeControlFiniteTimeVarying)
-
+agcls.AgTypeNameMap["AttitudeControlFiniteTimeVarying"] = AttitudeControlFiniteTimeVarying
 
 class AttitudeControlFiniteVelocityVector(IAttitudeControlFiniteVelocityVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The velocity vector attitude control for a finite maneuver."""
@@ -50721,7 +50721,7 @@ class AttitudeControlFiniteVelocityVector(IAttitudeControlFiniteVelocityVector, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlFiniteVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{90EE5B69-A270-4A1D-862F-C7A9A532F33F}", AttitudeControlFiniteVelocityVector)
-
+agcls.AgTypeNameMap["AttitudeControlFiniteVelocityVector"] = AttitudeControlFiniteVelocityVector
 
 class AttitudeControlFinitePlugin(IAttitudeControlFinitePlugin, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The plugin attitude control for a finite maneuver."""
@@ -50751,7 +50751,7 @@ class AttitudeControlFinitePlugin(IAttitudeControlFinitePlugin, IAttitudeControl
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlFinitePlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{41C29436-C581-4FD2-BFFB-090FCDA9C090}", AttitudeControlFinitePlugin)
-
+agcls.AgTypeNameMap["AttitudeControlFinitePlugin"] = AttitudeControlFinitePlugin
 
 class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFiniteLagrange, IAttitudeControlOptimalFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The Lagrange Interpolation attitude control for a optimal finite maneuver."""
@@ -50781,7 +50781,7 @@ class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFiniteLagrange
             raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeControlOptimalFiniteLagrange.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE88E914-B911-41DB-9811-37CFBC7DAECC}", AttitudeControlOptimalFiniteLagrange)
-
+agcls.AgTypeNameMap["AttitudeControlOptimalFiniteLagrange"] = AttitudeControlOptimalFiniteLagrange
 
 class ManeuverFinitePropagator(IManeuverFinitePropagator, IRuntimeTypeInfoProvider):
     """Propagation for a finite maneuver."""
@@ -50805,7 +50805,7 @@ class ManeuverFinitePropagator(IManeuverFinitePropagator, IRuntimeTypeInfoProvid
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverFinitePropagator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F2C7CA9-D775-4CE0-8297-A8806F56F094}", ManeuverFinitePropagator)
-
+agcls.AgTypeNameMap["ManeuverFinitePropagator"] = ManeuverFinitePropagator
 
 class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceHold, IComponentInfo, ICloneable):
     """The Hold segment."""
@@ -50838,7 +50838,7 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceHold.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51159257-B7FD-45E5-AB02-7FEB20D924E5}", MissionControlSequenceHold)
-
+agcls.AgTypeNameMap["MissionControlSequenceHold"] = MissionControlSequenceHold
 
 class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceUpdate, IComponentInfo, ICloneable):
     """The Update segment."""
@@ -50871,7 +50871,7 @@ class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeI
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceUpdate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3A975A07-EB14-4231-B8E7-C977B091D8B0}", MissionControlSequenceUpdate)
-
+agcls.AgTypeNameMap["MissionControlSequenceUpdate"] = MissionControlSequenceUpdate
 
 class MissionControlSequenceReturn(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceReturn, IComponentInfo, ICloneable):
     """The Return segment."""
@@ -50904,7 +50904,7 @@ class MissionControlSequenceReturn(IMissionControlSequenceSegment, IRuntimeTypeI
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceReturn.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D4E769A-CBA7-4A17-89BA-F61B59F15D09}", MissionControlSequenceReturn)
-
+agcls.AgTypeNameMap["MissionControlSequenceReturn"] = MissionControlSequenceReturn
 
 class MissionControlSequenceStop(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceStop, IComponentInfo, ICloneable):
     """The Stop segment."""
@@ -50937,7 +50937,7 @@ class MissionControlSequenceStop(IMissionControlSequenceSegment, IRuntimeTypeInf
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceStop.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59CF0A59-0E77-4D5F-BE88-E151D8899331}", MissionControlSequenceStop)
-
+agcls.AgTypeNameMap["MissionControlSequenceStop"] = MissionControlSequenceStop
 
 class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceTargetSequence, IComponentInfo, ICloneable):
     """The Target Sequence segment."""
@@ -50970,7 +50970,7 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceTargetSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DF528E2E-3CFD-4935-9A24-B9C9D8C0E727}", MissionControlSequenceTargetSequence)
-
+agcls.AgTypeNameMap["MissionControlSequenceTargetSequence"] = MissionControlSequenceTargetSequence
 
 class ProfileCollection(IProfileCollection, IRuntimeTypeInfoProvider):
     """The Profiles of a Target Sequence."""
@@ -50994,7 +50994,7 @@ class ProfileCollection(IProfileCollection, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{37B58077-200F-4763-8ED2-C4B5AFA97B2E}", ProfileCollection)
-
+agcls.AgTypeNameMap["ProfileCollection"] = ProfileCollection
 
 class MissionControlSequenceOptions(IMissionControlSequenceOptions):
     """The MCS Options."""
@@ -51015,7 +51015,7 @@ class MissionControlSequenceOptions(IMissionControlSequenceOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0A469F1B-225A-48E3-9B89-0EC63C95D705}", MissionControlSequenceOptions)
-
+agcls.AgTypeNameMap["MissionControlSequenceOptions"] = MissionControlSequenceOptions
 
 class CalcObjectCollection(ICalcObjectCollection):
     """The Calculation Object component folder."""
@@ -51036,7 +51036,7 @@ class CalcObjectCollection(ICalcObjectCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalcObjectCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C6165FC-8537-4B53-AC20-66F2C670A7A9}", CalcObjectCollection)
-
+agcls.AgTypeNameMap["CalcObjectCollection"] = CalcObjectCollection
 
 class ConstraintCollection(IConstraintCollection):
     """The Constraint component folder."""
@@ -51057,7 +51057,7 @@ class ConstraintCollection(IConstraintCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ConstraintCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D992E5D5-AE65-4041-B3A8-DF2244DE2068}", ConstraintCollection)
-
+agcls.AgTypeNameMap["ConstraintCollection"] = ConstraintCollection
 
 class PluginProperties(IPluginProperties):
     """The plugin attitude control type."""
@@ -51078,7 +51078,7 @@ class PluginProperties(IPluginProperties):
             raise STKAttributeError(attrname + " is not a recognized attribute in PluginProperties.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A115E060-4BB8-430F-AB23-2BBE3C0C2087}", PluginProperties)
-
+agcls.AgTypeNameMap["PluginProperties"] = PluginProperties
 
 class ProfileSearchPlugin(IProfileSearchPlugin, IProfile, IRuntimeTypeInfoProvider):
     """The plugin search profile."""
@@ -51105,7 +51105,7 @@ class ProfileSearchPlugin(IProfileSearchPlugin, IProfile, IRuntimeTypeInfoProvid
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileSearchPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{25E94763-B5B1-4964-B563-9AEED96D9D54}", ProfileSearchPlugin)
-
+agcls.AgTypeNameMap["ProfileSearchPlugin"] = ProfileSearchPlugin
 
 class TargeterGraph(ITargeterGraph, IRuntimeTypeInfoProvider):
     """Targeter Graph."""
@@ -51129,7 +51129,7 @@ class TargeterGraph(ITargeterGraph, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in TargeterGraph.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BF6E6956-1E2A-42E5-A56C-1BEF9EFB8A29}", TargeterGraph)
-
+agcls.AgTypeNameMap["TargeterGraph"] = TargeterGraph
 
 class TargeterGraphCollection(ITargeterGraphCollection, IRuntimeTypeInfoProvider):
     """Targeter Graphs."""
@@ -51153,7 +51153,7 @@ class TargeterGraphCollection(ITargeterGraphCollection, IRuntimeTypeInfoProvider
             raise STKAttributeError(attrname + " is not a recognized attribute in TargeterGraphCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{322FC0D0-8F69-4F4B-9247-2558D6AFF63F}", TargeterGraphCollection)
-
+agcls.AgTypeNameMap["TargeterGraphCollection"] = TargeterGraphCollection
 
 class TargeterGraphResultCollection(ITargeterGraphResultCollection, IRuntimeTypeInfoProvider):
     """Targeter Graph Result Collection."""
@@ -51177,7 +51177,7 @@ class TargeterGraphResultCollection(ITargeterGraphResultCollection, IRuntimeType
             raise STKAttributeError(attrname + " is not a recognized attribute in TargeterGraphResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87090DB9-4866-40E4-BA58-BDF7C8EACCEB}", TargeterGraphResultCollection)
-
+agcls.AgTypeNameMap["TargeterGraphResultCollection"] = TargeterGraphResultCollection
 
 class TargeterGraphActiveControlCollection(ITargeterGraphActiveControlCollection, IRuntimeTypeInfoProvider):
     """Targeter Graph Active Control Collection."""
@@ -51201,7 +51201,7 @@ class TargeterGraphActiveControlCollection(ITargeterGraphActiveControlCollection
             raise STKAttributeError(attrname + " is not a recognized attribute in TargeterGraphActiveControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7FB70374-2313-463C-A69E-C5111C4BC1E4}", TargeterGraphActiveControlCollection)
-
+agcls.AgTypeNameMap["TargeterGraphActiveControlCollection"] = TargeterGraphActiveControlCollection
 
 class TargeterGraphActiveControl(ITargeterGraphActiveControl, IRuntimeTypeInfoProvider):
     """Targeter Graph Active Control."""
@@ -51225,7 +51225,7 @@ class TargeterGraphActiveControl(ITargeterGraphActiveControl, IRuntimeTypeInfoPr
             raise STKAttributeError(attrname + " is not a recognized attribute in TargeterGraphActiveControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6457FA2-28BF-471B-9DCF-575B27BF588B}", TargeterGraphActiveControl)
-
+agcls.AgTypeNameMap["TargeterGraphActiveControl"] = TargeterGraphActiveControl
 
 class TargeterGraphResult(ITargeterGraphResult, IRuntimeTypeInfoProvider):
     """Targeter Graph Result."""
@@ -51249,7 +51249,7 @@ class TargeterGraphResult(ITargeterGraphResult, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in TargeterGraphResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AB6CA723-1634-4A90-AD8C-4DB34D7A2925}", TargeterGraphResult)
-
+agcls.AgTypeNameMap["TargeterGraphResult"] = TargeterGraphResult
 
 class ProfileDifferentialCorrector(IProfileDifferentialCorrector, IProfile, IRuntimeTypeInfoProvider):
     """The Differential Corrector profile."""
@@ -51276,7 +51276,7 @@ class ProfileDifferentialCorrector(IProfileDifferentialCorrector, IProfile, IRun
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileDifferentialCorrector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4446E46E-A169-4F12-AE14-562D35A6BC60}", ProfileDifferentialCorrector)
-
+agcls.AgTypeNameMap["ProfileDifferentialCorrector"] = ProfileDifferentialCorrector
 
 class ProfileScriptingTool(IProfileScriptingTool, IProfile, IRuntimeTypeInfoProvider):
     """The Scripting Tool profile."""
@@ -51303,7 +51303,7 @@ class ProfileScriptingTool(IProfileScriptingTool, IProfile, IRuntimeTypeInfoProv
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileScriptingTool.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EC9D1E6F-4155-4685-AFE9-785DE109564A}", ProfileScriptingTool)
-
+agcls.AgTypeNameMap["ProfileScriptingTool"] = ProfileScriptingTool
 
 class DifferentialCorrectorControl(IDifferentialCorrectorControl, IRuntimeTypeInfoProvider):
     """Control Parameters for a Target Sequence."""
@@ -51327,7 +51327,7 @@ class DifferentialCorrectorControl(IDifferentialCorrectorControl, IRuntimeTypeIn
             raise STKAttributeError(attrname + " is not a recognized attribute in DifferentialCorrectorControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5D59626C-A2D6-4D23-91C8-43D3764115C9}", DifferentialCorrectorControl)
-
+agcls.AgTypeNameMap["DifferentialCorrectorControl"] = DifferentialCorrectorControl
 
 class DifferentialCorrectorResult(IDifferentialCorrectorResult, IRuntimeTypeInfoProvider):
     """Differential Corrector equality constraints."""
@@ -51351,7 +51351,7 @@ class DifferentialCorrectorResult(IDifferentialCorrectorResult, IRuntimeTypeInfo
             raise STKAttributeError(attrname + " is not a recognized attribute in DifferentialCorrectorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1F4606B6-6EB5-4349-90AD-E607DBBC6AB5}", DifferentialCorrectorResult)
-
+agcls.AgTypeNameMap["DifferentialCorrectorResult"] = DifferentialCorrectorResult
 
 class DifferentialCorrectorControlCollection(IDifferentialCorrectorControlCollection, IRuntimeTypeInfoProvider):
     """The collection of Control Parameters for a differential corrector profile."""
@@ -51375,7 +51375,7 @@ class DifferentialCorrectorControlCollection(IDifferentialCorrectorControlCollec
             raise STKAttributeError(attrname + " is not a recognized attribute in DifferentialCorrectorControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{61729FE0-729A-461C-8C94-6816EC0F88E8}", DifferentialCorrectorControlCollection)
-
+agcls.AgTypeNameMap["DifferentialCorrectorControlCollection"] = DifferentialCorrectorControlCollection
 
 class DifferentialCorrectorResultCollection(IDifferentialCorrectorResultCollection, IRuntimeTypeInfoProvider):
     """The collection of results for a differential corrector."""
@@ -51399,7 +51399,7 @@ class DifferentialCorrectorResultCollection(IDifferentialCorrectorResultCollecti
             raise STKAttributeError(attrname + " is not a recognized attribute in DifferentialCorrectorResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{703FFB61-063E-4B38-AC0A-968903E6E929}", DifferentialCorrectorResultCollection)
-
+agcls.AgTypeNameMap["DifferentialCorrectorResultCollection"] = DifferentialCorrectorResultCollection
 
 class SearchPluginControl(ISearchPluginControl):
     """Control parameters for a plugin search profile."""
@@ -51420,7 +51420,7 @@ class SearchPluginControl(ISearchPluginControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in SearchPluginControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C127E67D-2078-4605-BB16-BF4049CBDEF0}", SearchPluginControl)
-
+agcls.AgTypeNameMap["SearchPluginControl"] = SearchPluginControl
 
 class SearchPluginControlCollection(ISearchPluginControlCollection):
     """The list of search plugin control parameters"""
@@ -51441,7 +51441,7 @@ class SearchPluginControlCollection(ISearchPluginControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in SearchPluginControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{78A7975A-C0F5-434A-9902-411C3E975F7E}", SearchPluginControlCollection)
-
+agcls.AgTypeNameMap["SearchPluginControlCollection"] = SearchPluginControlCollection
 
 class SearchPluginResult(ISearchPluginResult):
     """Equality constraints for a plugin search profile."""
@@ -51462,7 +51462,7 @@ class SearchPluginResult(ISearchPluginResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in SearchPluginResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7A3345FE-C088-4CFA-84BE-5E997BB15CF8}", SearchPluginResult)
-
+agcls.AgTypeNameMap["SearchPluginResult"] = SearchPluginResult
 
 class SearchPluginResultCollection(ISearchPluginResultCollection):
     """The list of search plugin equality constraints."""
@@ -51483,7 +51483,7 @@ class SearchPluginResultCollection(ISearchPluginResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in SearchPluginResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D37CDE6-2358-4419-9297-0032314ACB35}", SearchPluginResultCollection)
-
+agcls.AgTypeNameMap["SearchPluginResultCollection"] = SearchPluginResultCollection
 
 class ProfileChangeManeuverType(IProfileChangeManeuverType, IProfile, IRuntimeTypeInfoProvider):
     """The Change Maneuver Type profile."""
@@ -51510,7 +51510,7 @@ class ProfileChangeManeuverType(IProfileChangeManeuverType, IProfile, IRuntimeTy
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileChangeManeuverType.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FCD3010-988A-4C88-A3E8-FB0D991B1DA3}", ProfileChangeManeuverType)
-
+agcls.AgTypeNameMap["ProfileChangeManeuverType"] = ProfileChangeManeuverType
 
 class ProfileChangeReturnSegment(IProfileChangeReturnSegment, IProfile, IRuntimeTypeInfoProvider):
     """The Change Return Segment profile."""
@@ -51537,7 +51537,7 @@ class ProfileChangeReturnSegment(IProfileChangeReturnSegment, IProfile, IRuntime
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileChangeReturnSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D7436885-84AD-41DE-9D0F-7A6F001A863B}", ProfileChangeReturnSegment)
-
+agcls.AgTypeNameMap["ProfileChangeReturnSegment"] = ProfileChangeReturnSegment
 
 class ProfileChangePropagator(IProfileChangePropagator, IProfile, IRuntimeTypeInfoProvider):
     """The Change Propagator profile."""
@@ -51564,7 +51564,7 @@ class ProfileChangePropagator(IProfileChangePropagator, IProfile, IRuntimeTypeIn
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileChangePropagator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3EB69307-370B-443E-AB4F-1463A80142CD}", ProfileChangePropagator)
-
+agcls.AgTypeNameMap["ProfileChangePropagator"] = ProfileChangePropagator
 
 class ProfileChangeStopSegment(IProfileChangeStopSegment, IProfile, IRuntimeTypeInfoProvider):
     """The Change Stop Segment profile."""
@@ -51591,7 +51591,7 @@ class ProfileChangeStopSegment(IProfileChangeStopSegment, IProfile, IRuntimeType
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileChangeStopSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{73CD0F57-2A67-47D7-BFAD-4E07D5045AB1}", ProfileChangeStopSegment)
-
+agcls.AgTypeNameMap["ProfileChangeStopSegment"] = ProfileChangeStopSegment
 
 class ProfileChangeStoppingConditionState(IProfileChangeStoppingConditionState, IProfile, IRuntimeTypeInfoProvider):
     """The Change Stopping Condition State profile."""
@@ -51618,7 +51618,7 @@ class ProfileChangeStoppingConditionState(IProfileChangeStoppingConditionState, 
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileChangeStoppingConditionState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{593BF97D-DA25-40EC-832A-2514939CCCCB}", ProfileChangeStoppingConditionState)
-
+agcls.AgTypeNameMap["ProfileChangeStoppingConditionState"] = ProfileChangeStoppingConditionState
 
 class ProfileSeedFiniteManeuver(IProfileSeedFiniteManeuver, IProfile, IRuntimeTypeInfoProvider):
     """The Seed Finite Maneuver profile."""
@@ -51645,7 +51645,7 @@ class ProfileSeedFiniteManeuver(IProfileSeedFiniteManeuver, IProfile, IRuntimeTy
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileSeedFiniteManeuver.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4524367A-A29D-401A-8B98-82FB06E4D2B3}", ProfileSeedFiniteManeuver)
-
+agcls.AgTypeNameMap["ProfileSeedFiniteManeuver"] = ProfileSeedFiniteManeuver
 
 class ProfileRunOnce(IProfileRunOnce, IProfile, IRuntimeTypeInfoProvider):
     """The Run Once profile."""
@@ -51672,7 +51672,7 @@ class ProfileRunOnce(IProfileRunOnce, IProfile, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileRunOnce.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6B7DC440-DAE4-4F68-BD3A-D431EF7460B4}", ProfileRunOnce)
-
+agcls.AgTypeNameMap["ProfileRunOnce"] = ProfileRunOnce
 
 class BPlaneCollection(IBPlaneCollection):
     """The collection of B-Planes."""
@@ -51693,7 +51693,7 @@ class BPlaneCollection(IBPlaneCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in BPlaneCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A33E12D-FC24-46EB-8AD4-752E5534168D}", BPlaneCollection)
-
+agcls.AgTypeNameMap["BPlaneCollection"] = BPlaneCollection
 
 class StateCalcDamageFlux(IStateCalcDamageFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcDamageFlux."""
@@ -51720,7 +51720,7 @@ class StateCalcDamageFlux(IStateCalcDamageFlux, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDamageFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EFD8FBFA-6ACF-463D-9857-7C272440314F}", StateCalcDamageFlux)
-
+agcls.AgTypeNameMap["StateCalcDamageFlux"] = StateCalcDamageFlux
 
 class StateCalcDamageMassFlux(IStateCalcDamageMassFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcDamageMassFlux."""
@@ -51747,7 +51747,7 @@ class StateCalcDamageMassFlux(IStateCalcDamageMassFlux, IComponentInfo, ICloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDamageMassFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05A46EDD-2B3D-4505-BD42-DB7516899060}", StateCalcDamageMassFlux)
-
+agcls.AgTypeNameMap["StateCalcDamageMassFlux"] = StateCalcDamageMassFlux
 
 class StateCalcMagnitudeFieldDipoleL(IStateCalcMagnitudeFieldDipoleL, IComponentInfo, ICloneable):
     """CoClass StateCalcMagFieldDipoleL."""
@@ -51774,7 +51774,7 @@ class StateCalcMagnitudeFieldDipoleL(IStateCalcMagnitudeFieldDipoleL, IComponent
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMagnitudeFieldDipoleL.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C1FD9D99-42EF-40F2-9E53-AEBAEC1A5573}", StateCalcMagnitudeFieldDipoleL)
-
+agcls.AgTypeNameMap["StateCalcMagnitudeFieldDipoleL"] = StateCalcMagnitudeFieldDipoleL
 
 class StateCalcSEETMagnitudeFieldFieldLineSepAngle(IComponentInfo, ICloneable, IStateCalcSEETMagnitudeFieldFieldLineSepAngle):
     """SEETMagFieldFieldLineSepAngle Calc object."""
@@ -51801,7 +51801,7 @@ class StateCalcSEETMagnitudeFieldFieldLineSepAngle(IComponentInfo, ICloneable, I
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSEETMagnitudeFieldFieldLineSepAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{585BF1E2-E8E0-4D8B-9101-7BDC793D6E68}", StateCalcSEETMagnitudeFieldFieldLineSepAngle)
-
+agcls.AgTypeNameMap["StateCalcSEETMagnitudeFieldFieldLineSepAngle"] = StateCalcSEETMagnitudeFieldFieldLineSepAngle
 
 class StateCalcImpactFlux(IStateCalcImpactFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcImpactFlux."""
@@ -51828,7 +51828,7 @@ class StateCalcImpactFlux(IStateCalcImpactFlux, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcImpactFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2F537C47-80E4-483C-9C6F-A82F91EC5F24}", StateCalcImpactFlux)
-
+agcls.AgTypeNameMap["StateCalcImpactFlux"] = StateCalcImpactFlux
 
 class StateCalcImpactMassFlux(IStateCalcImpactMassFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcImpactMassFlux."""
@@ -51855,7 +51855,7 @@ class StateCalcImpactMassFlux(IStateCalcImpactMassFlux, IComponentInfo, ICloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcImpactMassFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D64EF8C-63C9-4924-BE13-8176E3DAB180}", StateCalcImpactMassFlux)
-
+agcls.AgTypeNameMap["StateCalcImpactMassFlux"] = StateCalcImpactMassFlux
 
 class StateCalcSEETSAAFlux(IStateCalcSEETSAAFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcSEETSAAFlux."""
@@ -51882,7 +51882,7 @@ class StateCalcSEETSAAFlux(IStateCalcSEETSAAFlux, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSEETSAAFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3C766F5E-9727-4ACD-9E5D-D08684116A79}", StateCalcSEETSAAFlux)
-
+agcls.AgTypeNameMap["StateCalcSEETSAAFlux"] = StateCalcSEETSAAFlux
 
 class StateCalcSEETVehTemp(IStateCalcSEETVehTemp, IComponentInfo, ICloneable):
     """CoClass StateCalcSEETVehTemp."""
@@ -51909,7 +51909,7 @@ class StateCalcSEETVehTemp(IStateCalcSEETVehTemp, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSEETVehTemp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{082CAA56-3DB0-4BA5-BE14-B84D93A32504}", StateCalcSEETVehTemp)
-
+agcls.AgTypeNameMap["StateCalcSEETVehTemp"] = StateCalcSEETVehTemp
 
 class StateCalcEpoch(IComponentInfo, ICloneable, IStateCalcEpoch):
     """Epoch Calc objects."""
@@ -51936,7 +51936,7 @@ class StateCalcEpoch(IComponentInfo, ICloneable, IStateCalcEpoch):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CC140708-1576-4CFA-9A28-BC454B33DE02}", StateCalcEpoch)
-
+agcls.AgTypeNameMap["StateCalcEpoch"] = StateCalcEpoch
 
 class StateCalcJacobiConstant(IComponentInfo, ICloneable, IStateCalcJacobiConstant):
     """Jacobi Constant Calc objects."""
@@ -51963,7 +51963,7 @@ class StateCalcJacobiConstant(IComponentInfo, ICloneable, IStateCalcJacobiConsta
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcJacobiConstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FFF1FA69-1E24-445E-A239-41E2AB0D373B}", StateCalcJacobiConstant)
-
+agcls.AgTypeNameMap["StateCalcJacobiConstant"] = StateCalcJacobiConstant
 
 class StateCalcCartesianElem(IComponentInfo, ICloneable, IStateCalcCartesianElem):
     """Cartesian Elements Calc objects."""
@@ -51990,7 +51990,7 @@ class StateCalcCartesianElem(IComponentInfo, ICloneable, IStateCalcCartesianElem
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCartesianElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AECA6CA7-7D04-4EB5-95D9-216BBCCD0EC1}", StateCalcCartesianElem)
-
+agcls.AgTypeNameMap["StateCalcCartesianElem"] = StateCalcCartesianElem
 
 class StateCalcCartSTMElem(IComponentInfo, ICloneable, IStateCalcCartSTMElem):
     """Cartesian STM Elements Calc objects."""
@@ -52017,7 +52017,7 @@ class StateCalcCartSTMElem(IComponentInfo, ICloneable, IStateCalcCartSTMElem):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCartSTMElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84EAF6DB-A535-421E-8CCF-95A142E3B2FE}", StateCalcCartSTMElem)
-
+agcls.AgTypeNameMap["StateCalcCartSTMElem"] = StateCalcCartSTMElem
 
 class StateCalcSTMEigenval(IComponentInfo, ICloneable, IStateCalcSTMEigenval):
     """Cartesian STM Eigenvalues Calc objects."""
@@ -52044,7 +52044,7 @@ class StateCalcSTMEigenval(IComponentInfo, ICloneable, IStateCalcSTMEigenval):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSTMEigenval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F3AC2C6F-7A0A-40CA-A7EC-230D9EC2D75E}", StateCalcSTMEigenval)
-
+agcls.AgTypeNameMap["StateCalcSTMEigenval"] = StateCalcSTMEigenval
 
 class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, IStateCalcSTMEigenvecElem):
     """Cartesian STM Eigenvector Calc objects."""
@@ -52071,7 +52071,7 @@ class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, IStateCalcSTMEigenvec
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSTMEigenvecElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{53BF2ADA-8B4D-4E64-BC61-AFA201DAB3C7}", StateCalcSTMEigenvecElem)
-
+agcls.AgTypeNameMap["StateCalcSTMEigenvecElem"] = StateCalcSTMEigenvecElem
 
 class StateCalcEnvironment(IComponentInfo, ICloneable, IStateCalcEnvironment):
     """Environment Calc objects."""
@@ -52098,7 +52098,7 @@ class StateCalcEnvironment(IComponentInfo, ICloneable, IStateCalcEnvironment):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEnvironment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A8319DEC-F018-4890-AC98-9F7B2AF96DF6}", StateCalcEnvironment)
-
+agcls.AgTypeNameMap["StateCalcEnvironment"] = StateCalcEnvironment
 
 class StateCalcOrbitDelaunayG(IStateCalcOrbitDelaunayG, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitDelaunayG."""
@@ -52125,7 +52125,7 @@ class StateCalcOrbitDelaunayG(IStateCalcOrbitDelaunayG, IComponentInfo, ICloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOrbitDelaunayG.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5DE99D8D-DB40-4107-9D79-03D51AEAA4E8}", StateCalcOrbitDelaunayG)
-
+agcls.AgTypeNameMap["StateCalcOrbitDelaunayG"] = StateCalcOrbitDelaunayG
 
 class StateCalcOrbitDelaunayH(IStateCalcOrbitDelaunayH, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitDelaunayH."""
@@ -52152,7 +52152,7 @@ class StateCalcOrbitDelaunayH(IStateCalcOrbitDelaunayH, IComponentInfo, ICloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOrbitDelaunayH.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4C7CDC1F-79EA-412B-A1E3-7E519CCAA4F0}", StateCalcOrbitDelaunayH)
-
+agcls.AgTypeNameMap["StateCalcOrbitDelaunayH"] = StateCalcOrbitDelaunayH
 
 class StateCalcOrbitDelaunayL(IStateCalcOrbitDelaunayL, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitDelaunayL."""
@@ -52179,7 +52179,7 @@ class StateCalcOrbitDelaunayL(IStateCalcOrbitDelaunayL, IComponentInfo, ICloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOrbitDelaunayL.")
         
 agcls.AgClassCatalog.add_catalog_entry("{299A4FF6-0636-4A25-AC74-4FF7D0A33F30}", StateCalcOrbitDelaunayL)
-
+agcls.AgTypeNameMap["StateCalcOrbitDelaunayL"] = StateCalcOrbitDelaunayL
 
 class StateCalcOrbitSemiLatusRectum(IStateCalcOrbitSemiLatusRectum, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitSemiLatusRectum."""
@@ -52206,7 +52206,7 @@ class StateCalcOrbitSemiLatusRectum(IStateCalcOrbitSemiLatusRectum, IComponentIn
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOrbitSemiLatusRectum.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9A0EF481-BE9B-47B7-81D5-CAFF636B8E31}", StateCalcOrbitSemiLatusRectum)
-
+agcls.AgTypeNameMap["StateCalcOrbitSemiLatusRectum"] = StateCalcOrbitSemiLatusRectum
 
 class StateCalcEquinoctialElem(IComponentInfo, ICloneable, IStateCalcEquinoctialElem):
     """Equinoctial Elements Calc objects."""
@@ -52233,7 +52233,7 @@ class StateCalcEquinoctialElem(IComponentInfo, ICloneable, IStateCalcEquinoctial
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEquinoctialElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5C90B745-3002-4AEC-9613-0FE8168F2903}", StateCalcEquinoctialElem)
-
+agcls.AgTypeNameMap["StateCalcEquinoctialElem"] = StateCalcEquinoctialElem
 
 class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, IStateCalcCloseApproachBearing):
     """CloseApproachBearing Calc objects."""
@@ -52260,7 +52260,7 @@ class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, IStateCalcCloseA
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCloseApproachBearing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E0AD9FFF-8F9D-4EBD-A41D-2982A60968AB}", StateCalcCloseApproachBearing)
-
+agcls.AgTypeNameMap["StateCalcCloseApproachBearing"] = StateCalcCloseApproachBearing
 
 class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, IStateCalcCloseApproachMagnitude):
     """CloseApproachMag Calc objects."""
@@ -52287,7 +52287,7 @@ class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, IStateCalcClos
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCloseApproachMagnitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{70461F34-33C2-42B4-9591-5A2F2C5EB8D2}", StateCalcCloseApproachMagnitude)
-
+agcls.AgTypeNameMap["StateCalcCloseApproachMagnitude"] = StateCalcCloseApproachMagnitude
 
 class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, IStateCalcCloseApproachTheta):
     """CloseApproachTheta Calc objects."""
@@ -52314,7 +52314,7 @@ class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, IStateCalcCloseApp
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCloseApproachTheta.")
         
 agcls.AgClassCatalog.add_catalog_entry("{950DA5FA-29AA-4422-B760-AD23CB6A33FB}", StateCalcCloseApproachTheta)
-
+agcls.AgTypeNameMap["StateCalcCloseApproachTheta"] = StateCalcCloseApproachTheta
 
 class StateCalcCloseApproachX(IComponentInfo, ICloneable, IStateCalcCloseApproachX):
     """CloseApproachX Calc objects."""
@@ -52341,7 +52341,7 @@ class StateCalcCloseApproachX(IComponentInfo, ICloneable, IStateCalcCloseApproac
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCloseApproachX.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD980AD5-6212-4A4A-AC05-4453F9015301}", StateCalcCloseApproachX)
-
+agcls.AgTypeNameMap["StateCalcCloseApproachX"] = StateCalcCloseApproachX
 
 class StateCalcCloseApproachY(IComponentInfo, ICloneable, IStateCalcCloseApproachY):
     """CloseApproachY Calc objects."""
@@ -52368,7 +52368,7 @@ class StateCalcCloseApproachY(IComponentInfo, ICloneable, IStateCalcCloseApproac
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCloseApproachY.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D04565A4-C1F2-4A3D-A304-FB3CB2887087}", StateCalcCloseApproachY)
-
+agcls.AgTypeNameMap["StateCalcCloseApproachY"] = StateCalcCloseApproachY
 
 class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, IStateCalcCloseApproachCosBearing):
     """CloseApproachCosBearing Calc objects."""
@@ -52395,7 +52395,7 @@ class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, IStateCalcClo
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCloseApproachCosBearing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EDAFFF24-75C9-4C68-9E4B-00DEFD89DAE1}", StateCalcCloseApproachCosBearing)
-
+agcls.AgTypeNameMap["StateCalcCloseApproachCosBearing"] = StateCalcCloseApproachCosBearing
 
 class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, IStateCalcRelGroundTrackError):
     """RelGroundTrackError Calc objects."""
@@ -52422,7 +52422,7 @@ class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, IStateCalcRelGrou
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRelGroundTrackError.")
         
 agcls.AgClassCatalog.add_catalog_entry("{42632E47-2FF5-4183-BB7F-9A3CDAB5E80D}", StateCalcRelGroundTrackError)
-
+agcls.AgTypeNameMap["StateCalcRelGroundTrackError"] = StateCalcRelGroundTrackError
 
 class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, IStateCalcRelAtAOLMaster):
     """RelAOLMaster Calc objects."""
@@ -52449,7 +52449,7 @@ class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, IStateCalcRelAtAOLMast
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRelAtAOLMaster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4ADF0E11-ECD1-434B-AD01-57FD9F0A692A}", StateCalcRelAtAOLMaster)
-
+agcls.AgTypeNameMap["StateCalcRelAtAOLMaster"] = StateCalcRelAtAOLMaster
 
 class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, IStateCalcDeltaFromMaster):
     """DeltaFromMaster Calc objects."""
@@ -52476,7 +52476,7 @@ class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, IStateCalcDeltaFromMa
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDeltaFromMaster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F88A3044-F12D-4147-8609-B71F3AD972F4}", StateCalcDeltaFromMaster)
-
+agcls.AgTypeNameMap["StateCalcDeltaFromMaster"] = StateCalcDeltaFromMaster
 
 class StateCalcLonDriftRate(IComponentInfo, ICloneable, IStateCalcLonDriftRate):
     """LongDriftRate Calc objects."""
@@ -52503,7 +52503,7 @@ class StateCalcLonDriftRate(IComponentInfo, ICloneable, IStateCalcLonDriftRate):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcLonDriftRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87C78155-DC4F-42C1-B2A6-D48E10F79594}", StateCalcLonDriftRate)
-
+agcls.AgTypeNameMap["StateCalcLonDriftRate"] = StateCalcLonDriftRate
 
 class StateCalcMeanEarthLon(IComponentInfo, ICloneable, IStateCalcMeanEarthLon):
     """MeanEarthLon Calc objects."""
@@ -52530,7 +52530,7 @@ class StateCalcMeanEarthLon(IComponentInfo, ICloneable, IStateCalcMeanEarthLon):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMeanEarthLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D4E3AF8-45A3-4000-BB8A-B6D8323627AD}", StateCalcMeanEarthLon)
-
+agcls.AgTypeNameMap["StateCalcMeanEarthLon"] = StateCalcMeanEarthLon
 
 class StateCalcRectifiedLon(IComponentInfo, ICloneable, IStateCalcRectifiedLon):
     """RectifiedLongitude Calc objects."""
@@ -52557,7 +52557,7 @@ class StateCalcRectifiedLon(IComponentInfo, ICloneable, IStateCalcRectifiedLon):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRectifiedLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ED61CCC5-71C7-4D2D-BB7D-BF177E6B9D7A}", StateCalcRectifiedLon)
-
+agcls.AgTypeNameMap["StateCalcRectifiedLon"] = StateCalcRectifiedLon
 
 class StateCalcTrueLongitude(IComponentInfo, ICloneable, IStateCalcTrueLongitude):
     """TrueLongitude Calc objects."""
@@ -52584,7 +52584,7 @@ class StateCalcTrueLongitude(IComponentInfo, ICloneable, IStateCalcTrueLongitude
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcTrueLongitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EB667B87-04A5-4685-9F72-DBB764F488B5}", StateCalcTrueLongitude)
-
+agcls.AgTypeNameMap["StateCalcTrueLongitude"] = StateCalcTrueLongitude
 
 class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, IStateCalcGeodeticTrueLongitude):
     """GeodeticTrueLongitude Calc objects."""
@@ -52611,7 +52611,7 @@ class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, IStateCalcGeode
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcGeodeticTrueLongitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{619B549B-4824-4D2D-A11B-EB8398871C67}", StateCalcGeodeticTrueLongitude)
-
+agcls.AgTypeNameMap["StateCalcGeodeticTrueLongitude"] = StateCalcGeodeticTrueLongitude
 
 class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee):
     """GeodeticTrueLongitudeAtTimeOfPerigee Calc objects."""
@@ -52638,7 +52638,7 @@ class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, 
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcGeodeticTrueLongitudeAtTimeOfPerigee.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C6C19B72-22D7-4871-A658-5A2C46FA1DE5}", StateCalcGeodeticTrueLongitudeAtTimeOfPerigee)
-
+agcls.AgTypeNameMap["StateCalcGeodeticTrueLongitudeAtTimeOfPerigee"] = StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
 
 class StateCalcMeanRightAscension(IComponentInfo, ICloneable, IStateCalcMeanRightAscension):
     """MeanRightAscension Calc objects."""
@@ -52665,7 +52665,7 @@ class StateCalcMeanRightAscension(IComponentInfo, ICloneable, IStateCalcMeanRigh
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMeanRightAscension.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A98B4722-77F9-4EB8-B9BC-D36C8D56AEA9}", StateCalcMeanRightAscension)
-
+agcls.AgTypeNameMap["StateCalcMeanRightAscension"] = StateCalcMeanRightAscension
 
 class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, IStateCalcGeodeticMeanRightAscension):
     """GeodeticMeanRightAscension Calc objects."""
@@ -52692,7 +52692,7 @@ class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, IStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcGeodeticMeanRightAscension.")
         
 agcls.AgClassCatalog.add_catalog_entry("{143B6D03-5CAE-4AA3-84EE-3D83A1BA9BD9}", StateCalcGeodeticMeanRightAscension)
-
+agcls.AgTypeNameMap["StateCalcGeodeticMeanRightAscension"] = StateCalcGeodeticMeanRightAscension
 
 class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, IStateCalcTwoBodyDriftRate):
     """TwoBodyDriftRate Calc objects."""
@@ -52719,7 +52719,7 @@ class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, IStateCalcTwoBodyDri
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcTwoBodyDriftRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{117D07A4-0253-4AB7-B96C-17B1350EB663}", StateCalcTwoBodyDriftRate)
-
+agcls.AgTypeNameMap["StateCalcTwoBodyDriftRate"] = StateCalcTwoBodyDriftRate
 
 class StateCalcDriftRateFactor(IComponentInfo, ICloneable, IStateCalcDriftRateFactor):
     """DriftRateFactor Calc objects."""
@@ -52746,7 +52746,7 @@ class StateCalcDriftRateFactor(IComponentInfo, ICloneable, IStateCalcDriftRateFa
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDriftRateFactor.")
         
 agcls.AgClassCatalog.add_catalog_entry("{01BCEE54-F8E9-4E89-B154-951ECD5A0A3D}", StateCalcDriftRateFactor)
-
+agcls.AgTypeNameMap["StateCalcDriftRateFactor"] = StateCalcDriftRateFactor
 
 class StateCalcEccentricityX(IComponentInfo, ICloneable, IStateCalcEccentricityX):
     """EccentricityX Calc objects."""
@@ -52773,7 +52773,7 @@ class StateCalcEccentricityX(IComponentInfo, ICloneable, IStateCalcEccentricityX
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEccentricityX.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4BBA291A-C5F4-43DC-8394-34BC45F744A5}", StateCalcEccentricityX)
-
+agcls.AgTypeNameMap["StateCalcEccentricityX"] = StateCalcEccentricityX
 
 class StateCalcEccentricityY(IComponentInfo, ICloneable, IStateCalcEccentricityY):
     """EccentricityY Calc objects."""
@@ -52800,7 +52800,7 @@ class StateCalcEccentricityY(IComponentInfo, ICloneable, IStateCalcEccentricityY
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEccentricityY.")
         
 agcls.AgClassCatalog.add_catalog_entry("{807AD8EE-0486-481B-9EEC-C9406E8D1FF1}", StateCalcEccentricityY)
-
+agcls.AgTypeNameMap["StateCalcEccentricityY"] = StateCalcEccentricityY
 
 class StateCalcInclinationX(IComponentInfo, ICloneable, IStateCalcInclinationX):
     """InclinationX Calc objects."""
@@ -52827,7 +52827,7 @@ class StateCalcInclinationX(IComponentInfo, ICloneable, IStateCalcInclinationX):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInclinationX.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0041C813-5B5A-4A26-A56F-A9823EF778E3}", StateCalcInclinationX)
-
+agcls.AgTypeNameMap["StateCalcInclinationX"] = StateCalcInclinationX
 
 class StateCalcInclinationY(IComponentInfo, ICloneable, IStateCalcInclinationY):
     """InclinationY Calc objects."""
@@ -52854,7 +52854,7 @@ class StateCalcInclinationY(IComponentInfo, ICloneable, IStateCalcInclinationY):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInclinationY.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ED938D28-BA63-437E-B1DB-A7D8115B328C}", StateCalcInclinationY)
-
+agcls.AgTypeNameMap["StateCalcInclinationY"] = StateCalcInclinationY
 
 class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumX):
     """UnitAngularMomentumX Calc objects."""
@@ -52881,7 +52881,7 @@ class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, IStateCalcUnitAn
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcUnitAngularMomentumX.")
         
 agcls.AgClassCatalog.add_catalog_entry("{53357EF4-239F-4B9A-A438-B51790C448BF}", StateCalcUnitAngularMomentumX)
-
+agcls.AgTypeNameMap["StateCalcUnitAngularMomentumX"] = StateCalcUnitAngularMomentumX
 
 class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumY):
     """UnitAngularMomentumY Calc objects."""
@@ -52908,7 +52908,7 @@ class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, IStateCalcUnitAn
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcUnitAngularMomentumY.")
         
 agcls.AgClassCatalog.add_catalog_entry("{900693FD-BAAC-426E-8682-EEC85D239CB6}", StateCalcUnitAngularMomentumY)
-
+agcls.AgTypeNameMap["StateCalcUnitAngularMomentumY"] = StateCalcUnitAngularMomentumY
 
 class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumZ):
     """UnitAngularMomentumZ Calc objects."""
@@ -52935,7 +52935,7 @@ class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, IStateCalcUnitAn
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcUnitAngularMomentumZ.")
         
 agcls.AgClassCatalog.add_catalog_entry("{560184A9-46F4-4B62-8742-E72700D90640}", StateCalcUnitAngularMomentumZ)
-
+agcls.AgTypeNameMap["StateCalcUnitAngularMomentumZ"] = StateCalcUnitAngularMomentumZ
 
 class StateCalcHeightAboveTerrain(IStateCalcHeightAboveTerrain, IComponentInfo, ICloneable):
     """CoClass AsStateCalcHeightAboveTerrain."""
@@ -52962,7 +52962,7 @@ class StateCalcHeightAboveTerrain(IStateCalcHeightAboveTerrain, IComponentInfo, 
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcHeightAboveTerrain.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3212361D-8A8B-4ED0-94C8-2D6F69BC3A12}", StateCalcHeightAboveTerrain)
-
+agcls.AgTypeNameMap["StateCalcHeightAboveTerrain"] = StateCalcHeightAboveTerrain
 
 class StateCalcGeodeticElem(IComponentInfo, ICloneable, IStateCalcGeodeticElem):
     """Geodetic Elements Calc objects."""
@@ -52989,7 +52989,7 @@ class StateCalcGeodeticElem(IComponentInfo, ICloneable, IStateCalcGeodeticElem):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcGeodeticElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C22E7F23-171B-4A81-AF2B-6A3747D92FDA}", StateCalcGeodeticElem)
-
+agcls.AgTypeNameMap["StateCalcGeodeticElem"] = StateCalcGeodeticElem
 
 class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, IStateCalcRepeatingGroundTrackErr):
     """RepeatingGrTrackErr Calc objects."""
@@ -53016,7 +53016,7 @@ class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, IStateCalcRep
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRepeatingGroundTrackErr.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2D4ADF81-8403-42A7-9CD8-969B9C5FEF33}", StateCalcRepeatingGroundTrackErr)
-
+agcls.AgTypeNameMap["StateCalcRepeatingGroundTrackErr"] = StateCalcRepeatingGroundTrackErr
 
 class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, IStateCalcAltitudeOfApoapsis):
     """AltitudeOfApoapsis Calc objects."""
@@ -53043,7 +53043,7 @@ class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, IStateCalcAltitude
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcAltitudeOfApoapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9398A62-DC62-40F2-8C71-C4D10D180C28}", StateCalcAltitudeOfApoapsis)
-
+agcls.AgTypeNameMap["StateCalcAltitudeOfApoapsis"] = StateCalcAltitudeOfApoapsis
 
 class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, IStateCalcAltitudeOfPeriapsis):
     """AltitudeOfPeriapsis Calc objects."""
@@ -53070,7 +53070,7 @@ class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, IStateCalcAltitud
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcAltitudeOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{700481E3-804B-4F43-B0AB-D58472F26302}", StateCalcAltitudeOfPeriapsis)
-
+agcls.AgTypeNameMap["StateCalcAltitudeOfPeriapsis"] = StateCalcAltitudeOfPeriapsis
 
 class StateCalcArgOfLat(IComponentInfo, ICloneable, IStateCalcArgOfLat):
     """Argument of Latitude Calc objects."""
@@ -53097,7 +53097,7 @@ class StateCalcArgOfLat(IComponentInfo, ICloneable, IStateCalcArgOfLat):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcArgOfLat.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E3D0D3CF-1181-4F67-98D9-2CA6A5530372}", StateCalcArgOfLat)
-
+agcls.AgTypeNameMap["StateCalcArgOfLat"] = StateCalcArgOfLat
 
 class StateCalcArgOfPeriapsis(IComponentInfo, ICloneable, IStateCalcArgOfPeriapsis):
     """Argument of Periapsis Calc objects."""
@@ -53124,7 +53124,7 @@ class StateCalcArgOfPeriapsis(IComponentInfo, ICloneable, IStateCalcArgOfPeriaps
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcArgOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64C0F0D2-889C-4EE2-BD26-B32BC6880733}", StateCalcArgOfPeriapsis)
-
+agcls.AgTypeNameMap["StateCalcArgOfPeriapsis"] = StateCalcArgOfPeriapsis
 
 class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, IStateCalcEccentricityAnomaly):
     """EccAnomaly Calc objects."""
@@ -53151,7 +53151,7 @@ class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, IStateCalcEccentr
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEccentricityAnomaly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{56C8EC47-95B0-4BF3-8D07-1F51630C285B}", StateCalcEccentricityAnomaly)
-
+agcls.AgTypeNameMap["StateCalcEccentricityAnomaly"] = StateCalcEccentricityAnomaly
 
 class StateCalcLonOfAscNode(IComponentInfo, ICloneable, IStateCalcLonOfAscNode):
     """LongitudeOfAscendingNode Calc objects."""
@@ -53178,7 +53178,7 @@ class StateCalcLonOfAscNode(IComponentInfo, ICloneable, IStateCalcLonOfAscNode):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcLonOfAscNode.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B606060-6816-4394-B4C5-C527490F9329}", StateCalcLonOfAscNode)
-
+agcls.AgTypeNameMap["StateCalcLonOfAscNode"] = StateCalcLonOfAscNode
 
 class StateCalcMeanMotion(IComponentInfo, ICloneable, IStateCalcMeanMotion):
     """MeanMotion Calc objects."""
@@ -53205,7 +53205,7 @@ class StateCalcMeanMotion(IComponentInfo, ICloneable, IStateCalcMeanMotion):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMeanMotion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B18119FD-D9C9-41E2-A7EB-46ACDA5CA8D5}", StateCalcMeanMotion)
-
+agcls.AgTypeNameMap["StateCalcMeanMotion"] = StateCalcMeanMotion
 
 class StateCalcOrbitPeriod(IComponentInfo, ICloneable, IStateCalcOrbitPeriod):
     """OrbitPeriod Calc objects."""
@@ -53232,7 +53232,7 @@ class StateCalcOrbitPeriod(IComponentInfo, ICloneable, IStateCalcOrbitPeriod):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOrbitPeriod.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D7563267-B5E5-43C5-8062-E07CCA0F2B84}", StateCalcOrbitPeriod)
-
+agcls.AgTypeNameMap["StateCalcOrbitPeriod"] = StateCalcOrbitPeriod
 
 class StateCalcNumRevs(IComponentInfo, ICloneable, IStateCalcNumRevs):
     """NumRevs Calc objects."""
@@ -53259,7 +53259,7 @@ class StateCalcNumRevs(IComponentInfo, ICloneable, IStateCalcNumRevs):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcNumRevs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D0585F2A-3F22-472C-B134-5A6DE1873010}", StateCalcNumRevs)
-
+agcls.AgTypeNameMap["StateCalcNumRevs"] = StateCalcNumRevs
 
 class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, IStateCalcRadOfApoapsis):
     """RadiusOfApoapsis Calc objects."""
@@ -53286,7 +53286,7 @@ class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, IStateCalcRadOfApoapsis
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRadOfApoapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C0BE1DA2-4518-4DDC-9E9F-C270EECC9CD9}", StateCalcRadOfApoapsis)
-
+agcls.AgTypeNameMap["StateCalcRadOfApoapsis"] = StateCalcRadOfApoapsis
 
 class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, IStateCalcRadOfPeriapsis):
     """RadiusOfPeriapsis Calc objects."""
@@ -53313,7 +53313,7 @@ class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, IStateCalcRadOfPeriaps
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRadOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3992203A-6D30-4430-AB47-184058ADB753}", StateCalcRadOfPeriapsis)
-
+agcls.AgTypeNameMap["StateCalcRadOfPeriapsis"] = StateCalcRadOfPeriapsis
 
 class StateCalcSemiMajorAxis(IComponentInfo, ICloneable, IStateCalcSemiMajorAxis):
     """SemiMajorAxis Calc objects."""
@@ -53340,7 +53340,7 @@ class StateCalcSemiMajorAxis(IComponentInfo, ICloneable, IStateCalcSemiMajorAxis
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSemiMajorAxis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2E89613E-B6BE-4708-9642-8C1A7734E695}", StateCalcSemiMajorAxis)
-
+agcls.AgTypeNameMap["StateCalcSemiMajorAxis"] = StateCalcSemiMajorAxis
 
 class StateCalcTimePastAscNode(IComponentInfo, ICloneable, IStateCalcTimePastAscNode):
     """TimePastAscNode Calc objects."""
@@ -53367,7 +53367,7 @@ class StateCalcTimePastAscNode(IComponentInfo, ICloneable, IStateCalcTimePastAsc
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcTimePastAscNode.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D19A235-5062-4D39-9D24-5BE1951E8982}", StateCalcTimePastAscNode)
-
+agcls.AgTypeNameMap["StateCalcTimePastAscNode"] = StateCalcTimePastAscNode
 
 class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, IStateCalcTimePastPeriapsis):
     """TimePastPeriapsis Calc objects."""
@@ -53394,7 +53394,7 @@ class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, IStateCalcTimePastP
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcTimePastPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{98C81CE6-0D11-4B0B-A6E6-3BD36BBCB98E}", StateCalcTimePastPeriapsis)
-
+agcls.AgTypeNameMap["StateCalcTimePastPeriapsis"] = StateCalcTimePastPeriapsis
 
 class StateCalcTrueAnomaly(IComponentInfo, ICloneable, IStateCalcTrueAnomaly):
     """TrueAnomaly Calc objects."""
@@ -53421,7 +53421,7 @@ class StateCalcTrueAnomaly(IComponentInfo, ICloneable, IStateCalcTrueAnomaly):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcTrueAnomaly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F084E44-4214-46EF-B67C-0A0B160F6475}", StateCalcTrueAnomaly)
-
+agcls.AgTypeNameMap["StateCalcTrueAnomaly"] = StateCalcTrueAnomaly
 
 class StateCalcDeltaV(IComponentInfo, ICloneable, IStateCalcDeltaV):
     """DeltaV Calc objects."""
@@ -53448,7 +53448,7 @@ class StateCalcDeltaV(IComponentInfo, ICloneable, IStateCalcDeltaV):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDeltaV.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1609A9CD-8AA8-4F97-A00F-35F014FCCE44}", StateCalcDeltaV)
-
+agcls.AgTypeNameMap["StateCalcDeltaV"] = StateCalcDeltaV
 
 class StateCalcDeltaVSquared(IComponentInfo, ICloneable, IStateCalcDeltaVSquared):
     """DeltaV Squared Calc objects."""
@@ -53475,7 +53475,7 @@ class StateCalcDeltaVSquared(IComponentInfo, ICloneable, IStateCalcDeltaVSquared
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDeltaVSquared.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CF7792EC-113B-45A7-AD9E-ECC908EBE1FD}", StateCalcDeltaVSquared)
-
+agcls.AgTypeNameMap["StateCalcDeltaVSquared"] = StateCalcDeltaVSquared
 
 class StateCalcMissionControlSequenceDeltaV(IComponentInfo, ICloneable, IStateCalcMissionControlSequenceDeltaV):
     """MCS DeltaV Calc objects."""
@@ -53502,7 +53502,7 @@ class StateCalcMissionControlSequenceDeltaV(IComponentInfo, ICloneable, IStateCa
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMissionControlSequenceDeltaV.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8E6614E7-7F46-4A9C-B155-FD8ED6C08D94}", StateCalcMissionControlSequenceDeltaV)
-
+agcls.AgTypeNameMap["StateCalcMissionControlSequenceDeltaV"] = StateCalcMissionControlSequenceDeltaV
 
 class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, IStateCalcMissionControlSequenceDeltaVSquared):
     """MCS DeltaV Squared Calc objects."""
@@ -53529,7 +53529,7 @@ class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, I
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMissionControlSequenceDeltaVSquared.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA10B4C1-62C7-4E1C-8B86-A355667DF9AE}", StateCalcMissionControlSequenceDeltaVSquared)
-
+agcls.AgTypeNameMap["StateCalcMissionControlSequenceDeltaVSquared"] = StateCalcMissionControlSequenceDeltaVSquared
 
 class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, IStateCalcSequenceDeltaV):
     """Sequence DeltaV Calc objects."""
@@ -53556,7 +53556,7 @@ class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, IStateCalcSequenceDelt
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSequenceDeltaV.")
         
 agcls.AgClassCatalog.add_catalog_entry("{138B7BC6-2338-46BE-83E9-5099C4D45811}", StateCalcSequenceDeltaV)
-
+agcls.AgTypeNameMap["StateCalcSequenceDeltaV"] = StateCalcSequenceDeltaV
 
 class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, IStateCalcSequenceDeltaVSquared):
     """Sequence DeltaV Squared Calc objects."""
@@ -53583,7 +53583,7 @@ class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, IStateCalcSeque
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSequenceDeltaVSquared.")
         
 agcls.AgClassCatalog.add_catalog_entry("{27E104DF-B5FF-4E24-B397-06D264C0EADA}", StateCalcSequenceDeltaVSquared)
-
+agcls.AgTypeNameMap["StateCalcSequenceDeltaVSquared"] = StateCalcSequenceDeltaVSquared
 
 class StateCalcFuelMass(IComponentInfo, ICloneable, IStateCalcFuelMass):
     """FuelMass Calc objects."""
@@ -53610,7 +53610,7 @@ class StateCalcFuelMass(IComponentInfo, ICloneable, IStateCalcFuelMass):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcFuelMass.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3C37AFCA-696D-4A00-9E7B-7DCE928F0E7E}", StateCalcFuelMass)
-
+agcls.AgTypeNameMap["StateCalcFuelMass"] = StateCalcFuelMass
 
 class StateCalcDensity(IComponentInfo, ICloneable, IStateCalcDensity):
     """Density  Calc objects."""
@@ -53637,7 +53637,7 @@ class StateCalcDensity(IComponentInfo, ICloneable, IStateCalcDensity):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDensity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{61D869F6-7B1C-4B5D-A046-AE495AE0FA7E}", StateCalcDensity)
-
+agcls.AgTypeNameMap["StateCalcDensity"] = StateCalcDensity
 
 class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, IStateCalcInertialDeltaVMagnitude):
     """InertialDeltaVMag Calc objects."""
@@ -53664,7 +53664,7 @@ class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, IStateCalcIne
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInertialDeltaVMagnitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E12A8E9C-C11A-43D1-AE06-C659B87574D3}", StateCalcInertialDeltaVMagnitude)
-
+agcls.AgTypeNameMap["StateCalcInertialDeltaVMagnitude"] = StateCalcInertialDeltaVMagnitude
 
 class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, IStateCalcInertialDeltaVx):
     """InertialDeltaVx Calc objects."""
@@ -53691,7 +53691,7 @@ class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, IStateCalcInertialDel
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInertialDeltaVx.")
         
 agcls.AgClassCatalog.add_catalog_entry("{43875512-BFCF-42E9-ACC8-BA7AE9E498A9}", StateCalcInertialDeltaVx)
-
+agcls.AgTypeNameMap["StateCalcInertialDeltaVx"] = StateCalcInertialDeltaVx
 
 class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, IStateCalcInertialDeltaVy):
     """InertialDeltaVy Calc objects."""
@@ -53718,7 +53718,7 @@ class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, IStateCalcInertialDel
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInertialDeltaVy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{04689A0A-12D1-4362-B5C8-497CF2E4D72E}", StateCalcInertialDeltaVy)
-
+agcls.AgTypeNameMap["StateCalcInertialDeltaVy"] = StateCalcInertialDeltaVy
 
 class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, IStateCalcInertialDeltaVz):
     """InertialDeltaVz Calc objects."""
@@ -53745,7 +53745,7 @@ class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, IStateCalcInertialDel
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInertialDeltaVz.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A160495-31AE-42EE-8D2D-B945D10E86B8}", StateCalcInertialDeltaVz)
-
+agcls.AgTypeNameMap["StateCalcInertialDeltaVz"] = StateCalcInertialDeltaVz
 
 class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, IStateCalcManeuverSpecificImpulse):
     """ManeuverSpecificImpulse Calc objects."""
@@ -53772,7 +53772,7 @@ class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, IStateCalcMan
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcManeuverSpecificImpulse.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FEFF2C1-6E15-4026-95B3-1985DB40C154}", StateCalcManeuverSpecificImpulse)
-
+agcls.AgTypeNameMap["StateCalcManeuverSpecificImpulse"] = StateCalcManeuverSpecificImpulse
 
 class StateCalcPressure(IComponentInfo, ICloneable, IStateCalcPressure):
     """Pressure Calc objects."""
@@ -53799,7 +53799,7 @@ class StateCalcPressure(IComponentInfo, ICloneable, IStateCalcPressure):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcPressure.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B12DCC30-F655-428A-BDE1-6D46900A7152}", StateCalcPressure)
-
+agcls.AgTypeNameMap["StateCalcPressure"] = StateCalcPressure
 
 class StateCalcTemperature(IComponentInfo, ICloneable, IStateCalcTemperature):
     """Temperature Calc objects."""
@@ -53826,7 +53826,7 @@ class StateCalcTemperature(IComponentInfo, ICloneable, IStateCalcTemperature):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcTemperature.")
         
 agcls.AgClassCatalog.add_catalog_entry("{130771EF-F7FE-4CD3-B547-DE13FDF54E94}", StateCalcTemperature)
-
+agcls.AgTypeNameMap["StateCalcTemperature"] = StateCalcTemperature
 
 class StateCalcVectorY(IComponentInfo, ICloneable, IStateCalcVectorY):
     """VectorY Calc objects."""
@@ -53853,7 +53853,7 @@ class StateCalcVectorY(IComponentInfo, ICloneable, IStateCalcVectorY):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorY.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7DC4C32E-1F4B-4B3E-A11C-7ECACCC602F8}", StateCalcVectorY)
-
+agcls.AgTypeNameMap["StateCalcVectorY"] = StateCalcVectorY
 
 class StateCalcVectorZ(IComponentInfo, ICloneable, IStateCalcVectorZ):
     """VectorZ Calc objects."""
@@ -53880,7 +53880,7 @@ class StateCalcVectorZ(IComponentInfo, ICloneable, IStateCalcVectorZ):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorZ.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32E8F7E7-ECDE-4864-B380-D5A293458898}", StateCalcVectorZ)
-
+agcls.AgTypeNameMap["StateCalcVectorZ"] = StateCalcVectorZ
 
 class StateCalcMass(IComponentInfo, ICloneable, IStateCalcMass):
     """Mass Calc objects."""
@@ -53907,7 +53907,7 @@ class StateCalcMass(IComponentInfo, ICloneable, IStateCalcMass):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMass.")
         
 agcls.AgClassCatalog.add_catalog_entry("{99DD4422-3EB6-455B-9FE8-459FD65D2431}", StateCalcMass)
-
+agcls.AgTypeNameMap["StateCalcMass"] = StateCalcMass
 
 class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, IStateCalcManeuverTotalMassFlowRate):
     """ManeuverTotalMassFlowRate Calc objects."""
@@ -53934,7 +53934,7 @@ class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, IStateCalcM
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcManeuverTotalMassFlowRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{049DA4A7-E8EB-4C62-AF0F-FFF566CB662F}", StateCalcManeuverTotalMassFlowRate)
-
+agcls.AgTypeNameMap["StateCalcManeuverTotalMassFlowRate"] = StateCalcManeuverTotalMassFlowRate
 
 class StateCalcAbsoluteValue(IComponentInfo, ICloneable, IStateCalcAbsoluteValue):
     """AbsoluteValue Calc objects."""
@@ -53961,7 +53961,7 @@ class StateCalcAbsoluteValue(IComponentInfo, ICloneable, IStateCalcAbsoluteValue
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcAbsoluteValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9CA8D97F-2F2D-4E66-B141-D5F8E3524B56}", StateCalcAbsoluteValue)
-
+agcls.AgTypeNameMap["StateCalcAbsoluteValue"] = StateCalcAbsoluteValue
 
 class StateCalcDifference(IComponentInfo, ICloneable, IStateCalcDifference):
     """Difference Calc objects."""
@@ -53988,7 +53988,7 @@ class StateCalcDifference(IComponentInfo, ICloneable, IStateCalcDifference):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDifference.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D579CBD-FB96-4CA1-9276-0ECF1E8A2854}", StateCalcDifference)
-
+agcls.AgTypeNameMap["StateCalcDifference"] = StateCalcDifference
 
 class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcDifferenceOtherSegment):
     """DifferenceOtherSegment Calc objects."""
@@ -54015,7 +54015,7 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcDiff
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{36A3C1BA-F2AB-4F4C-887C-CF81C4E2BE52}", StateCalcDifferenceOtherSegment)
-
+agcls.AgTypeNameMap["StateCalcDifferenceOtherSegment"] = StateCalcDifferenceOtherSegment
 
 class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcPositionDifferenceOtherSegment):
     """PosDifferenceOtherSegment Calc objects."""
@@ -54042,7 +54042,7 @@ class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, IState
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcPositionDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C09C061-9C4A-4B14-A9DC-C802A44A8AF1}", StateCalcPositionDifferenceOtherSegment)
-
+agcls.AgTypeNameMap["StateCalcPositionDifferenceOtherSegment"] = StateCalcPositionDifferenceOtherSegment
 
 class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcVelDifferenceOtherSegment):
     """VelDifferenceOtherSegment Calc objects."""
@@ -54069,7 +54069,7 @@ class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcV
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVelDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C884D996-39EF-413B-9CF7-A8C927291B66}", StateCalcVelDifferenceOtherSegment)
-
+agcls.AgTypeNameMap["StateCalcVelDifferenceOtherSegment"] = StateCalcVelDifferenceOtherSegment
 
 class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcPositionVelDifferenceOtherSegment):
     """PosVelDifferenceOtherSegment Calc objects."""
@@ -54096,7 +54096,7 @@ class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, ISt
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcPositionVelDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7AFF6F3-C2C7-4132-BEB5-9A714E763A11}", StateCalcPositionVelDifferenceOtherSegment)
-
+agcls.AgTypeNameMap["StateCalcPositionVelDifferenceOtherSegment"] = StateCalcPositionVelDifferenceOtherSegment
 
 class StateCalcValueAtSegment(IComponentInfo, ICloneable, IStateCalcValueAtSegment):
     """ValueAtSegment Calc objects."""
@@ -54123,7 +54123,7 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, IStateCalcValueAtSegme
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcValueAtSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80E8AAA2-2782-4176-9656-61AC3485096B}", StateCalcValueAtSegment)
-
+agcls.AgTypeNameMap["StateCalcValueAtSegment"] = StateCalcValueAtSegment
 
 class StateCalcMaxValue(IComponentInfo, ICloneable, IStateCalcMaxValue):
     """MaximumValue Calc objects."""
@@ -54150,7 +54150,7 @@ class StateCalcMaxValue(IComponentInfo, ICloneable, IStateCalcMaxValue):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMaxValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CC82EA8F-373C-4A0D-A753-96CFD4AE73CF}", StateCalcMaxValue)
-
+agcls.AgTypeNameMap["StateCalcMaxValue"] = StateCalcMaxValue
 
 class StateCalcMinValue(IComponentInfo, ICloneable, IStateCalcMinValue):
     """MinimumValue Calc objects."""
@@ -54177,7 +54177,7 @@ class StateCalcMinValue(IComponentInfo, ICloneable, IStateCalcMinValue):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMinValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F9C57411-482D-49E9-BE13-CC93E34FB0D4}", StateCalcMinValue)
-
+agcls.AgTypeNameMap["StateCalcMinValue"] = StateCalcMinValue
 
 class StateCalcMeanValue(IComponentInfo, ICloneable, IStateCalcMeanValue):
     """MeanValue Calc objects."""
@@ -54204,7 +54204,7 @@ class StateCalcMeanValue(IComponentInfo, ICloneable, IStateCalcMeanValue):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMeanValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B5472A7-799A-43E6-BDE7-99CB2C8C6E0C}", StateCalcMeanValue)
-
+agcls.AgTypeNameMap["StateCalcMeanValue"] = StateCalcMeanValue
 
 class StateCalcMedianValue(IComponentInfo, ICloneable, IStateCalcMedianValue):
     """MedianValue Calc objects."""
@@ -54231,7 +54231,7 @@ class StateCalcMedianValue(IComponentInfo, ICloneable, IStateCalcMedianValue):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMedianValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE3A18D7-5A69-45A1-AA76-AD7C2CF5259A}", StateCalcMedianValue)
-
+agcls.AgTypeNameMap["StateCalcMedianValue"] = StateCalcMedianValue
 
 class StateCalcStandardDeviation(IComponentInfo, ICloneable, IStateCalcStandardDeviation):
     """StandardDeviation Calc objects."""
@@ -54258,7 +54258,7 @@ class StateCalcStandardDeviation(IComponentInfo, ICloneable, IStateCalcStandardD
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcStandardDeviation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B33D3070-060B-4F32-AF2A-1F9BDD57F365}", StateCalcStandardDeviation)
-
+agcls.AgTypeNameMap["StateCalcStandardDeviation"] = StateCalcStandardDeviation
 
 class StateCalcNegative(IComponentInfo, ICloneable, IStateCalcNegative):
     """Negative Calc objects."""
@@ -54285,7 +54285,7 @@ class StateCalcNegative(IComponentInfo, ICloneable, IStateCalcNegative):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcNegative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3E13FEC3-D60F-4203-86F2-42BCBC8EAFDF}", StateCalcNegative)
-
+agcls.AgTypeNameMap["StateCalcNegative"] = StateCalcNegative
 
 class StateCalcEccentricity(IComponentInfo, ICloneable, IStateCalcEccentricity):
     """Eccentricity Calc objects."""
@@ -54312,7 +54312,7 @@ class StateCalcEccentricity(IComponentInfo, ICloneable, IStateCalcEccentricity):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEccentricity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9D98D60-E73E-4C59-9328-DFC5A12EF52B}", StateCalcEccentricity)
-
+agcls.AgTypeNameMap["StateCalcEccentricity"] = StateCalcEccentricity
 
 class StateCalcMeanAnomaly(IComponentInfo, ICloneable, IStateCalcMeanAnomaly):
     """MeanAnomaly Calc objects."""
@@ -54339,7 +54339,7 @@ class StateCalcMeanAnomaly(IComponentInfo, ICloneable, IStateCalcMeanAnomaly):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcMeanAnomaly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8787D9AA-FBE1-43E4-932F-CB7B98D23D5B}", StateCalcMeanAnomaly)
-
+agcls.AgTypeNameMap["StateCalcMeanAnomaly"] = StateCalcMeanAnomaly
 
 class StateCalcRAAN(IComponentInfo, ICloneable, IStateCalcRAAN):
     """RAAN Calc objects."""
@@ -54366,7 +54366,7 @@ class StateCalcRAAN(IComponentInfo, ICloneable, IStateCalcRAAN):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRAAN.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05B5185A-C8F3-4B02-AE8B-B5D58744323C}", StateCalcRAAN)
-
+agcls.AgTypeNameMap["StateCalcRAAN"] = StateCalcRAAN
 
 class BDotRCalc(IComponentInfo, ICloneable, IBDotRCalc):
     """BDotR Calc objects."""
@@ -54393,7 +54393,7 @@ class BDotRCalc(IComponentInfo, ICloneable, IBDotRCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in BDotRCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{18A16428-2959-4220-A4A2-571D1F5A67FC}", BDotRCalc)
-
+agcls.AgTypeNameMap["BDotRCalc"] = BDotRCalc
 
 class BDotTCalc(IComponentInfo, ICloneable, IBDotTCalc):
     """BDotT Calc objects."""
@@ -54420,7 +54420,7 @@ class BDotTCalc(IComponentInfo, ICloneable, IBDotTCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in BDotTCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59ACA04A-9B85-43DF-82FF-B58CFD985158}", BDotTCalc)
-
+agcls.AgTypeNameMap["BDotTCalc"] = BDotTCalc
 
 class BMagnitudeCalc(IComponentInfo, ICloneable, IBMagnitudeCalc):
     """BMag Calc objects."""
@@ -54447,7 +54447,7 @@ class BMagnitudeCalc(IComponentInfo, ICloneable, IBMagnitudeCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in BMagnitudeCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87EF9CCA-2D0E-4742-8354-79E977FFD067}", BMagnitudeCalc)
-
+agcls.AgTypeNameMap["BMagnitudeCalc"] = BMagnitudeCalc
 
 class BThetaCalc(IComponentInfo, ICloneable, IBThetaCalc):
     """BTheta Calc objects."""
@@ -54474,7 +54474,7 @@ class BThetaCalc(IComponentInfo, ICloneable, IBThetaCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in BThetaCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C5C6EC0C-6F2D-4DAB-9DCD-2A8FD810C642}", BThetaCalc)
-
+agcls.AgTypeNameMap["BThetaCalc"] = BThetaCalc
 
 class StateCalcDeltaDec(IComponentInfo, ICloneable, IStateCalcDeltaDec):
     """DeltaDec Calc objects."""
@@ -54501,7 +54501,7 @@ class StateCalcDeltaDec(IComponentInfo, ICloneable, IStateCalcDeltaDec):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDeltaDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4EA9E58A-9900-41CF-BFA8-8BF7849C9187}", StateCalcDeltaDec)
-
+agcls.AgTypeNameMap["StateCalcDeltaDec"] = StateCalcDeltaDec
 
 class StateCalcDeltaRA(IComponentInfo, ICloneable, IStateCalcDeltaRA):
     """DeltaRA Calc objects."""
@@ -54528,7 +54528,7 @@ class StateCalcDeltaRA(IComponentInfo, ICloneable, IStateCalcDeltaRA):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDeltaRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B1EAA2E-8FA2-4EF2-B7AB-377157AD0505}", StateCalcDeltaRA)
-
+agcls.AgTypeNameMap["StateCalcDeltaRA"] = StateCalcDeltaRA
 
 class StateCalcBetaAngle(IComponentInfo, ICloneable, IStateCalcBetaAngle):
     """BetaAngle Calc objects."""
@@ -54555,7 +54555,7 @@ class StateCalcBetaAngle(IComponentInfo, ICloneable, IStateCalcBetaAngle):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcBetaAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B51815A6-AEDE-468C-B282-EEA255DAF822}", StateCalcBetaAngle)
-
+agcls.AgTypeNameMap["StateCalcBetaAngle"] = StateCalcBetaAngle
 
 class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, IStateCalcLocalApparentSolarLon):
     """LocalApparentSolarLon Calc objects."""
@@ -54582,7 +54582,7 @@ class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, IStateCalcLocal
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcLocalApparentSolarLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E7AC3C2D-5E4C-447F-8A56-C9CFCDBB2143}", StateCalcLocalApparentSolarLon)
-
+agcls.AgTypeNameMap["StateCalcLocalApparentSolarLon"] = StateCalcLocalApparentSolarLon
 
 class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, IStateCalcLonOfPeriapsis):
     """LonOfPeriapsis Calc objects."""
@@ -54609,7 +54609,7 @@ class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, IStateCalcLonOfPeriaps
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcLonOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3DBA2AA2-6A87-4ACE-9F8D-C03001E1DBD1}", StateCalcLonOfPeriapsis)
-
+agcls.AgTypeNameMap["StateCalcLonOfPeriapsis"] = StateCalcLonOfPeriapsis
 
 class StateCalcOrbitStateValue(IComponentInfo, ICloneable, IStateCalcOrbitStateValue):
     """OrbitStateValue Calc objects."""
@@ -54636,7 +54636,7 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, IStateCalcOrbitStateV
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOrbitStateValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{10879C56-0D1C-4E8E-B7CA-F059FB935366}", StateCalcOrbitStateValue)
-
+agcls.AgTypeNameMap["StateCalcOrbitStateValue"] = StateCalcOrbitStateValue
 
 class StateCalcSignedEccentricity(IComponentInfo, ICloneable, IStateCalcSignedEccentricity):
     """SignedEccentricity Calc objects."""
@@ -54663,7 +54663,7 @@ class StateCalcSignedEccentricity(IComponentInfo, ICloneable, IStateCalcSignedEc
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSignedEccentricity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{469C3DB7-C322-480A-82E2-4763AD59E470}", StateCalcSignedEccentricity)
-
+agcls.AgTypeNameMap["StateCalcSignedEccentricity"] = StateCalcSignedEccentricity
 
 class StateCalcInclination(IComponentInfo, ICloneable, IStateCalcInclination):
     """Inclination Calc objects."""
@@ -54690,7 +54690,7 @@ class StateCalcInclination(IComponentInfo, ICloneable, IStateCalcInclination):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInclination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1B8A0935-D9A7-4710-8C02-8A827F7D85DF}", StateCalcInclination)
-
+agcls.AgTypeNameMap["StateCalcInclination"] = StateCalcInclination
 
 class StateCalcTrueLon(IComponentInfo, ICloneable, IStateCalcTrueLon):
     """TrueLong Calc objects."""
@@ -54717,7 +54717,7 @@ class StateCalcTrueLon(IComponentInfo, ICloneable, IStateCalcTrueLon):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcTrueLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1D740A4-341A-40AA-83E8-4456207A0D98}", StateCalcTrueLon)
-
+agcls.AgTypeNameMap["StateCalcTrueLon"] = StateCalcTrueLon
 
 class StateCalcPower(IComponentInfo, ICloneable, IStateCalcPower):
     """Power Calc objects."""
@@ -54744,7 +54744,7 @@ class StateCalcPower(IComponentInfo, ICloneable, IStateCalcPower):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcPower.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE828349-BB26-44C8-9603-ED89F108DF82}", StateCalcPower)
-
+agcls.AgTypeNameMap["StateCalcPower"] = StateCalcPower
 
 class StateCalcRelMotion(IComponentInfo, ICloneable, IStateCalcRelMotion):
     """Relative Motion Calc objects."""
@@ -54771,7 +54771,7 @@ class StateCalcRelMotion(IComponentInfo, ICloneable, IStateCalcRelMotion):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRelMotion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1BE88040-9A43-40B0-9A3F-28C1AE4FCC33}", StateCalcRelMotion)
-
+agcls.AgTypeNameMap["StateCalcRelMotion"] = StateCalcRelMotion
 
 class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, IStateCalcSolarBetaAngle):
     """Solar Beta Angle objects."""
@@ -54798,7 +54798,7 @@ class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, IStateCalcSolarBetaAng
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSolarBetaAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A2AFBF81-9B6D-4675-B8A3-2995530B257F}", StateCalcSolarBetaAngle)
-
+agcls.AgTypeNameMap["StateCalcSolarBetaAngle"] = StateCalcSolarBetaAngle
 
 class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, IStateCalcSolarInPlaneAngle):
     """Solar In Plane Angle objects."""
@@ -54825,7 +54825,7 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, IStateCalcSolarInPl
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSolarInPlaneAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AF76B597-61AE-41E7-B7F9-47AB9FA06A23}", StateCalcSolarInPlaneAngle)
-
+agcls.AgTypeNameMap["StateCalcSolarInPlaneAngle"] = StateCalcSolarInPlaneAngle
 
 class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, IStateCalcRelPositionDecAngle):
     """Relative Position Declination Angle objects."""
@@ -54852,7 +54852,7 @@ class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, IStateCalcRelPosi
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRelPositionDecAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75D53DB6-15AE-43CE-8ABC-5B8568CEE035}", StateCalcRelPositionDecAngle)
-
+agcls.AgTypeNameMap["StateCalcRelPositionDecAngle"] = StateCalcRelPositionDecAngle
 
 class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, IStateCalcRelPositionInPlaneAngle):
     """Relative Position Declination Angle objects."""
@@ -54879,7 +54879,7 @@ class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, IStateCalcRel
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRelPositionInPlaneAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F7C4C55-BAB3-484D-B110-4A34A6F1A006}", StateCalcRelPositionInPlaneAngle)
-
+agcls.AgTypeNameMap["StateCalcRelPositionInPlaneAngle"] = StateCalcRelPositionInPlaneAngle
 
 class StateCalcRelativeInclination(IComponentInfo, ICloneable, IStateCalcRelativeInclination):
     """Relative Inclination Angle objects."""
@@ -54906,7 +54906,7 @@ class StateCalcRelativeInclination(IComponentInfo, ICloneable, IStateCalcRelativ
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRelativeInclination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2BAF85F-8B05-4261-8E40-428FD9F6A237}", StateCalcRelativeInclination)
-
+agcls.AgTypeNameMap["StateCalcRelativeInclination"] = StateCalcRelativeInclination
 
 class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, IStateCalcCurvilinearRelMotion):
     """Curvilinear Relative Motion objects."""
@@ -54933,7 +54933,7 @@ class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, IStateCalcCurvil
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCurvilinearRelMotion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FBB6D32-A2AD-4914-940D-30E548147C35}", StateCalcCurvilinearRelMotion)
-
+agcls.AgTypeNameMap["StateCalcCurvilinearRelMotion"] = StateCalcCurvilinearRelMotion
 
 class StateCalcCustomFunction(IComponentInfo, ICloneable, IStateCalcCustomFunction):
     """Custom Function Calc objects."""
@@ -54960,7 +54960,7 @@ class StateCalcCustomFunction(IComponentInfo, ICloneable, IStateCalcCustomFuncti
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCustomFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{85022653-0E1C-4116-AC71-AE8AE17AD8AB}", StateCalcCustomFunction)
-
+agcls.AgTypeNameMap["StateCalcCustomFunction"] = StateCalcCustomFunction
 
 class StateCalcScript(IComponentInfo, ICloneable, IStateCalcScript):
     """Script Calc objects."""
@@ -54987,7 +54987,7 @@ class StateCalcScript(IComponentInfo, ICloneable, IStateCalcScript):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcScript.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5D44239C-5296-4B55-B0A6-810D2A709B20}", StateCalcScript)
-
+agcls.AgTypeNameMap["StateCalcScript"] = StateCalcScript
 
 class StateCalcCd(IComponentInfo, ICloneable, IStateCalcCd):
     """Cd Calc objects."""
@@ -55014,7 +55014,7 @@ class StateCalcCd(IComponentInfo, ICloneable, IStateCalcCd):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCd.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9672871F-3A83-41E8-851E-509DD513C3E3}", StateCalcCd)
-
+agcls.AgTypeNameMap["StateCalcCd"] = StateCalcCd
 
 class StateCalcCr(IComponentInfo, ICloneable, IStateCalcCr):
     """Cr Calc objects."""
@@ -55041,7 +55041,7 @@ class StateCalcCr(IComponentInfo, ICloneable, IStateCalcCr):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCr.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AAFF1B0-616E-4A1C-9CE0-075D24C3B170}", StateCalcCr)
-
+agcls.AgTypeNameMap["StateCalcCr"] = StateCalcCr
 
 class StateCalcDragArea(IComponentInfo, ICloneable, IStateCalcDragArea):
     """DragArea Calc objects."""
@@ -55068,7 +55068,7 @@ class StateCalcDragArea(IComponentInfo, ICloneable, IStateCalcDragArea):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDragArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3ED247EF-6E67-4883-A2FE-B2A7BF19E14E}", StateCalcDragArea)
-
+agcls.AgTypeNameMap["StateCalcDragArea"] = StateCalcDragArea
 
 class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, IStateCalcRadiationPressureArea):
     """RadPressureArea Calc objects."""
@@ -55095,7 +55095,7 @@ class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, IStateCalcRadia
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRadiationPressureArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7973875-9EFC-41FC-98CF-CCB7AE0C611F}", StateCalcRadiationPressureArea)
-
+agcls.AgTypeNameMap["StateCalcRadiationPressureArea"] = StateCalcRadiationPressureArea
 
 class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, IStateCalcRadiationPressureCoefficient):
     """RadiationPressureCoefficient Calc objects."""
@@ -55122,7 +55122,7 @@ class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, IStateCa
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRadiationPressureCoefficient.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7FDC4AD9-E570-4820-BFB3-939EA5FF7D82}", StateCalcRadiationPressureCoefficient)
-
+agcls.AgTypeNameMap["StateCalcRadiationPressureCoefficient"] = StateCalcRadiationPressureCoefficient
 
 class StateCalcSRPArea(IComponentInfo, ICloneable, IStateCalcSRPArea):
     """SRPArea Calc objects."""
@@ -55149,7 +55149,7 @@ class StateCalcSRPArea(IComponentInfo, ICloneable, IStateCalcSRPArea):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSRPArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6A0BF963-BD8C-46F9-8C87-F6E0FF16D057}", StateCalcSRPArea)
-
+agcls.AgTypeNameMap["StateCalcSRPArea"] = StateCalcSRPArea
 
 class StateCalcCosOfVerticalFPA(IComponentInfo, ICloneable, IStateCalcCosOfVerticalFPA):
     """CosineOfVerticalFPA Calc objects."""
@@ -55176,7 +55176,7 @@ class StateCalcCosOfVerticalFPA(IComponentInfo, ICloneable, IStateCalcCosOfVerti
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCosOfVerticalFPA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{779C8E84-1667-442C-BFD9-F20271803FE5}", StateCalcCosOfVerticalFPA)
-
+agcls.AgTypeNameMap["StateCalcCosOfVerticalFPA"] = StateCalcCosOfVerticalFPA
 
 class StateCalcDec(IComponentInfo, ICloneable, IStateCalcDec):
     """Dec Calc objects."""
@@ -55203,7 +55203,7 @@ class StateCalcDec(IComponentInfo, ICloneable, IStateCalcDec):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F821D80-1156-46EB-950F-FF965EB54C3C}", StateCalcDec)
-
+agcls.AgTypeNameMap["StateCalcDec"] = StateCalcDec
 
 class StateCalcFPA(IComponentInfo, ICloneable, IStateCalcFPA):
     """FPA Calc objects."""
@@ -55230,7 +55230,7 @@ class StateCalcFPA(IComponentInfo, ICloneable, IStateCalcFPA):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcFPA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BAB717ED-41A9-4D2A-ADB3-F2D0F5BD67D6}", StateCalcFPA)
-
+agcls.AgTypeNameMap["StateCalcFPA"] = StateCalcFPA
 
 class StateCalcRMagnitude(IComponentInfo, ICloneable, IStateCalcRMagnitude):
     """RMag Calc objects."""
@@ -55257,7 +55257,7 @@ class StateCalcRMagnitude(IComponentInfo, ICloneable, IStateCalcRMagnitude):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRMagnitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4EED7719-E95B-4482-936C-9940FF6EE774}", StateCalcRMagnitude)
-
+agcls.AgTypeNameMap["StateCalcRMagnitude"] = StateCalcRMagnitude
 
 class StateCalcRA(IComponentInfo, ICloneable, IStateCalcRA):
     """RA Calc objects."""
@@ -55284,7 +55284,7 @@ class StateCalcRA(IComponentInfo, ICloneable, IStateCalcRA):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2482280B-347A-49C7-BEEB-044CD8F8C899}", StateCalcRA)
-
+agcls.AgTypeNameMap["StateCalcRA"] = StateCalcRA
 
 class StateCalcVMagnitude(IComponentInfo, ICloneable, IStateCalcVMagnitude):
     """VMag Calc objects."""
@@ -55311,7 +55311,7 @@ class StateCalcVMagnitude(IComponentInfo, ICloneable, IStateCalcVMagnitude):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVMagnitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2DD548E-6DD5-4C33-9EDC-8275A4711B70}", StateCalcVMagnitude)
-
+agcls.AgTypeNameMap["StateCalcVMagnitude"] = StateCalcVMagnitude
 
 class StateCalcVelAz(IComponentInfo, ICloneable, IStateCalcVelAz):
     """Velocity Azimuth Calc objects."""
@@ -55338,7 +55338,7 @@ class StateCalcVelAz(IComponentInfo, ICloneable, IStateCalcVelAz):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVelAz.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51BBAEBF-08A7-47B0-82A2-49DD3B47C0DA}", StateCalcVelAz)
-
+agcls.AgTypeNameMap["StateCalcVelAz"] = StateCalcVelAz
 
 class StateCalcC3Energy(IComponentInfo, ICloneable, IStateCalcC3Energy):
     """C3Energy Calc objects."""
@@ -55365,7 +55365,7 @@ class StateCalcC3Energy(IComponentInfo, ICloneable, IStateCalcC3Energy):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcC3Energy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F05AC7C-3565-44C8-BD75-A9F26F5DEBE7}", StateCalcC3Energy)
-
+agcls.AgTypeNameMap["StateCalcC3Energy"] = StateCalcC3Energy
 
 class StateCalcInAsympDec(IComponentInfo, ICloneable, IStateCalcInAsympDec):
     """InAsymptoteDec Calc objects."""
@@ -55392,7 +55392,7 @@ class StateCalcInAsympDec(IComponentInfo, ICloneable, IStateCalcInAsympDec):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInAsympDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{74C3D08C-5CBE-4182-9C50-5607CFAE3C29}", StateCalcInAsympDec)
-
+agcls.AgTypeNameMap["StateCalcInAsympDec"] = StateCalcInAsympDec
 
 class StateCalcInAsympRA(IComponentInfo, ICloneable, IStateCalcInAsympRA):
     """InAsymptoteRA Calc objects."""
@@ -55419,7 +55419,7 @@ class StateCalcInAsympRA(IComponentInfo, ICloneable, IStateCalcInAsympRA):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInAsympRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FA6F2B49-B25B-4726-A72B-EB01DA9A40FA}", StateCalcInAsympRA)
-
+agcls.AgTypeNameMap["StateCalcInAsympRA"] = StateCalcInAsympRA
 
 class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, IStateCalcInVelAzAtPeriapsis):
     """InVelocityAzAtPeriapsis Calc objects."""
@@ -55446,7 +55446,7 @@ class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, IStateCalcInVelAzA
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcInVelAzAtPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F425CF2E-5BD8-47E0-86FB-8E6911450DC2}", StateCalcInVelAzAtPeriapsis)
-
+agcls.AgTypeNameMap["StateCalcInVelAzAtPeriapsis"] = StateCalcInVelAzAtPeriapsis
 
 class StateCalcOutAsympDec(IComponentInfo, ICloneable, IStateCalcOutAsympDec):
     """OutAsymptoteDec Calc objects."""
@@ -55473,7 +55473,7 @@ class StateCalcOutAsympDec(IComponentInfo, ICloneable, IStateCalcOutAsympDec):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOutAsympDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6479974-FCA0-4BB3-9218-5EA7FBC6B309}", StateCalcOutAsympDec)
-
+agcls.AgTypeNameMap["StateCalcOutAsympDec"] = StateCalcOutAsympDec
 
 class StateCalcOutAsympRA(IComponentInfo, ICloneable, IStateCalcOutAsympRA):
     """OutAsymptoteRA Calc objects."""
@@ -55500,7 +55500,7 @@ class StateCalcOutAsympRA(IComponentInfo, ICloneable, IStateCalcOutAsympRA):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOutAsympRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5FD80B29-8811-4669-9830-E00AC6A65B7A}", StateCalcOutAsympRA)
-
+agcls.AgTypeNameMap["StateCalcOutAsympRA"] = StateCalcOutAsympRA
 
 class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, IStateCalcOutVelAzAtPeriapsis):
     """OutVelocityAzAtPeriapsis Calc objects."""
@@ -55527,7 +55527,7 @@ class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, IStateCalcOutVelA
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOutVelAzAtPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6FACAD87-7615-433A-BED5-B79F771BF045}", StateCalcOutVelAzAtPeriapsis)
-
+agcls.AgTypeNameMap["StateCalcOutVelAzAtPeriapsis"] = StateCalcOutVelAzAtPeriapsis
 
 class StateCalcDuration(IComponentInfo, ICloneable, IStateCalcDuration):
     """Duration Calc objects."""
@@ -55554,7 +55554,7 @@ class StateCalcDuration(IComponentInfo, ICloneable, IStateCalcDuration):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDuration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8A31F99F-B1EA-4818-B3F7-6485F142BEDA}", StateCalcDuration)
-
+agcls.AgTypeNameMap["StateCalcDuration"] = StateCalcDuration
 
 class StateCalcUserValue(IStateCalcUserValue, IComponentInfo, ICloneable):
     """CoClass StateCalcUserValue."""
@@ -55581,7 +55581,7 @@ class StateCalcUserValue(IStateCalcUserValue, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcUserValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DF6CDC8E-3271-4671-851E-6D8916364D04}", StateCalcUserValue)
-
+agcls.AgTypeNameMap["StateCalcUserValue"] = StateCalcUserValue
 
 class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, IStateCalcVectorGeometryToolAngle):
     """Vector Geometry Tool Angle Calc objects."""
@@ -55608,7 +55608,7 @@ class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, IStateCalcVec
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorGeometryToolAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{382A3B1B-6CB2-4E54-A066-C0B62EF241C8}", StateCalcVectorGeometryToolAngle)
-
+agcls.AgTypeNameMap["StateCalcVectorGeometryToolAngle"] = StateCalcVectorGeometryToolAngle
 
 class StateCalcAngle(IComponentInfo, ICloneable, IStateCalcAngle):
     """Angle Calc objects."""
@@ -55635,7 +55635,7 @@ class StateCalcAngle(IComponentInfo, ICloneable, IStateCalcAngle):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C19A5EF8-79AF-48F2-9D09-86AE97CC689A}", StateCalcAngle)
-
+agcls.AgTypeNameMap["StateCalcAngle"] = StateCalcAngle
 
 class StateCalcDotProduct(IComponentInfo, ICloneable, IStateCalcDotProduct):
     """DotProduct Calc objects."""
@@ -55662,7 +55662,7 @@ class StateCalcDotProduct(IComponentInfo, ICloneable, IStateCalcDotProduct):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDotProduct.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B8E6B301-8959-44D9-B9EC-70FEA1B5B12D}", StateCalcDotProduct)
-
+agcls.AgTypeNameMap["StateCalcDotProduct"] = StateCalcDotProduct
 
 class StateCalcVectorDec(IComponentInfo, ICloneable, IStateCalcVectorDec):
     """VectorDec Calc objects."""
@@ -55689,7 +55689,7 @@ class StateCalcVectorDec(IComponentInfo, ICloneable, IStateCalcVectorDec):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5F90539-F030-4840-A78F-7BFE9FE6852F}", StateCalcVectorDec)
-
+agcls.AgTypeNameMap["StateCalcVectorDec"] = StateCalcVectorDec
 
 class StateCalcVectorMagnitude(IComponentInfo, ICloneable, IStateCalcVectorMagnitude):
     """VectorMag Calc objects."""
@@ -55716,7 +55716,7 @@ class StateCalcVectorMagnitude(IComponentInfo, ICloneable, IStateCalcVectorMagni
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorMagnitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE89CDB6-F735-4DAB-88D3-7F2DD834C1E4}", StateCalcVectorMagnitude)
-
+agcls.AgTypeNameMap["StateCalcVectorMagnitude"] = StateCalcVectorMagnitude
 
 class StateCalcVectorRA(IComponentInfo, ICloneable, IStateCalcVectorRA):
     """VectorRA Calc objects."""
@@ -55743,7 +55743,7 @@ class StateCalcVectorRA(IComponentInfo, ICloneable, IStateCalcVectorRA):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE22AAAD-F51C-4E90-8E74-5DCEE756020C}", StateCalcVectorRA)
-
+agcls.AgTypeNameMap["StateCalcVectorRA"] = StateCalcVectorRA
 
 class StateCalcVectorX(IComponentInfo, ICloneable, IStateCalcVectorX):
     """VectorX Calc objects."""
@@ -55770,7 +55770,7 @@ class StateCalcVectorX(IComponentInfo, ICloneable, IStateCalcVectorX):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorX.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9CC56135-C9E6-4A99-B0E2-70EA81E9AB08}", StateCalcVectorX)
-
+agcls.AgTypeNameMap["StateCalcVectorX"] = StateCalcVectorX
 
 class StateCalcOnePointAccess(IComponentInfo, ICloneable, IStateCalcOnePointAccess):
     """Access Calc objects."""
@@ -55797,7 +55797,7 @@ class StateCalcOnePointAccess(IComponentInfo, ICloneable, IStateCalcOnePointAcce
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcOnePointAccess.")
         
 agcls.AgClassCatalog.add_catalog_entry("{19CBB92F-B6BE-4F6B-A2F9-056AD2EF7940}", StateCalcOnePointAccess)
-
+agcls.AgTypeNameMap["StateCalcOnePointAccess"] = StateCalcOnePointAccess
 
 class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, IStateCalcDifferenceAcrossSegmentsOtherSat):
     """DifferenceAcrossSegmentsOtherSat Calc objects."""
@@ -55824,7 +55824,7 @@ class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, ISta
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDifferenceAcrossSegmentsOtherSat.")
         
 agcls.AgClassCatalog.add_catalog_entry("{83FAC79B-477F-4CD0-83AD-A0A2A9ECA782}", StateCalcDifferenceAcrossSegmentsOtherSat)
-
+agcls.AgTypeNameMap["StateCalcDifferenceAcrossSegmentsOtherSat"] = StateCalcDifferenceAcrossSegmentsOtherSat
 
 class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, IStateCalcValueAtSegmentOtherSat):
     """ValueAtSegmentOtherSat Calc objects."""
@@ -55851,7 +55851,7 @@ class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, IStateCalcValu
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcValueAtSegmentOtherSat.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5F9F3194-5AC1-46C9-8FB9-F076747180E7}", StateCalcValueAtSegmentOtherSat)
-
+agcls.AgTypeNameMap["StateCalcValueAtSegmentOtherSat"] = StateCalcValueAtSegmentOtherSat
 
 class StateCalcRARate(IStateCalcRARate, IComponentInfo, ICloneable):
     """RightAscensionRate Calc objects."""
@@ -55878,7 +55878,7 @@ class StateCalcRARate(IStateCalcRARate, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcRARate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B9AD865-10A2-4B52-BDC7-7BE11A2CD36D}", StateCalcRARate)
-
+agcls.AgTypeNameMap["StateCalcRARate"] = StateCalcRARate
 
 class StateCalcDecRate(IStateCalcDecRate, IComponentInfo, ICloneable):
     """DeclinationRate Calc objects."""
@@ -55905,7 +55905,7 @@ class StateCalcDecRate(IStateCalcDecRate, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcDecRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CCE41365-840A-4B9A-967F-A7D1E761B2DF}", StateCalcDecRate)
-
+agcls.AgTypeNameMap["StateCalcDecRate"] = StateCalcDecRate
 
 class StateCalcGravitationalParameter(IStateCalcGravitationalParameter, IComponentInfo, ICloneable):
     """GravitationalParameter Calc objects."""
@@ -55932,7 +55932,7 @@ class StateCalcGravitationalParameter(IStateCalcGravitationalParameter, ICompone
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcGravitationalParameter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B3B8CA7-E0BC-4A0E-A0BE-026946EBF0A6}", StateCalcGravitationalParameter)
-
+agcls.AgTypeNameMap["StateCalcGravitationalParameter"] = StateCalcGravitationalParameter
 
 class StateCalcReferenceRadius(IStateCalcReferenceRadius, IComponentInfo, ICloneable):
     """Reference Radius Calc objects."""
@@ -55959,7 +55959,7 @@ class StateCalcReferenceRadius(IStateCalcReferenceRadius, IComponentInfo, IClone
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcReferenceRadius.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C90B0911-1B88-4809-A9AD-B1F083E18808}", StateCalcReferenceRadius)
-
+agcls.AgTypeNameMap["StateCalcReferenceRadius"] = StateCalcReferenceRadius
 
 class StateCalcGravCoeff(IStateCalcGravCoeff, IComponentInfo, ICloneable):
     """Gravity Coefficient Calc objects."""
@@ -55986,7 +55986,7 @@ class StateCalcGravCoeff(IStateCalcGravCoeff, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcGravCoeff.")
         
 agcls.AgClassCatalog.add_catalog_entry("{30223DC9-7946-4480-8E8A-DB3393DFEFC8}", StateCalcGravCoeff)
-
+agcls.AgTypeNameMap["StateCalcGravCoeff"] = StateCalcGravCoeff
 
 class StateCalcSpeedOfLight(IStateCalcSpeedOfLight, IComponentInfo, ICloneable):
     """Speed Of Light Calc objects."""
@@ -56013,7 +56013,7 @@ class StateCalcSpeedOfLight(IStateCalcSpeedOfLight, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcSpeedOfLight.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BB3D0551-655B-43D3-89BE-59816A9B2DF4}", StateCalcSpeedOfLight)
-
+agcls.AgTypeNameMap["StateCalcSpeedOfLight"] = StateCalcSpeedOfLight
 
 class StateCalcPi(IStateCalcPi, IComponentInfo, ICloneable):
     """Pi Calc objects."""
@@ -56040,7 +56040,7 @@ class StateCalcPi(IStateCalcPi, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcPi.")
         
 agcls.AgClassCatalog.add_catalog_entry("{81779742-2FD6-4E22-81C5-05F1D271944F}", StateCalcPi)
-
+agcls.AgTypeNameMap["StateCalcPi"] = StateCalcPi
 
 class StateCalcScalar(IStateCalcScalar, IComponentInfo, ICloneable):
     """Scalar Calc objects."""
@@ -56067,7 +56067,7 @@ class StateCalcScalar(IStateCalcScalar, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcScalar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C6136D77-3185-4A4C-83AA-90CC6713A07A}", StateCalcScalar)
-
+agcls.AgTypeNameMap["StateCalcScalar"] = StateCalcScalar
 
 class StateCalcApparentSolarTime(IComponentInfo, ICloneable, IStateCalcApparentSolarTime):
     """Apparent Solar Time Calc objects."""
@@ -56094,7 +56094,7 @@ class StateCalcApparentSolarTime(IComponentInfo, ICloneable, IStateCalcApparentS
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcApparentSolarTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EF933369-A9DC-4A8C-B361-615A7A8B852D}", StateCalcApparentSolarTime)
-
+agcls.AgTypeNameMap["StateCalcApparentSolarTime"] = StateCalcApparentSolarTime
 
 class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, IStateCalcEarthMeanSolarTime):
     """EarthMeanSolarTime Calc objects."""
@@ -56121,7 +56121,7 @@ class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, IStateCalcEarthMea
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEarthMeanSolarTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A36F3E6D-DD64-4089-A0B9-CDDECA9F31BF}", StateCalcEarthMeanSolarTime)
-
+agcls.AgTypeNameMap["StateCalcEarthMeanSolarTime"] = StateCalcEarthMeanSolarTime
 
 class StateCalcEarthMeanLocTimeAN(IComponentInfo, ICloneable, IStateCalcEarthMeanLocTimeAN):
     """EarthMeanLocTimeAN Calc objects."""
@@ -56148,7 +56148,7 @@ class StateCalcEarthMeanLocTimeAN(IComponentInfo, ICloneable, IStateCalcEarthMea
             raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcEarthMeanLocTimeAN.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B52530C-09B1-48BB-A644-2564B3F9A23F}", StateCalcEarthMeanLocTimeAN)
-
+agcls.AgTypeNameMap["StateCalcEarthMeanLocTimeAN"] = StateCalcEarthMeanLocTimeAN
 
 class AutomaticSequenceCollection(IAutomaticSequenceCollection):
     """Automatic Sequence Collection."""
@@ -56169,7 +56169,7 @@ class AutomaticSequenceCollection(IAutomaticSequenceCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AutomaticSequenceCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{364BDB62-ECD6-4661-A8EB-D6943F5BD5BF}", AutomaticSequenceCollection)
-
+agcls.AgTypeNameMap["AutomaticSequenceCollection"] = AutomaticSequenceCollection
 
 class AutomaticSequence(IAutomaticSequence):
     """Automatic Sequence."""
@@ -56190,7 +56190,7 @@ class AutomaticSequence(IAutomaticSequence):
             raise STKAttributeError(attrname + " is not a recognized attribute in AutomaticSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8755DF12-EDDB-468E-92AF-D98C5C1B1534}", AutomaticSequence)
-
+agcls.AgTypeNameMap["AutomaticSequence"] = AutomaticSequence
 
 class CentralBodyCollection(ICentralBodyCollection):
     """Central Body Collection."""
@@ -56211,7 +56211,7 @@ class CentralBodyCollection(ICentralBodyCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{393D9C77-A9A2-4E5A-B285-9292EAF77559}", CentralBodyCollection)
-
+agcls.AgTypeNameMap["CentralBodyCollection"] = CentralBodyCollection
 
 class AstrogatorCentralBody(IAstrogatorCentralBody, IComponentInfo, ICloneable):
     """Central Body."""
@@ -56238,7 +56238,7 @@ class AstrogatorCentralBody(IAstrogatorCentralBody, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AstrogatorCentralBody.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BB18EA4F-DF6E-44A3-B547-CD21EC10120C}", AstrogatorCentralBody)
-
+agcls.AgTypeNameMap["AstrogatorCentralBody"] = AstrogatorCentralBody
 
 class CentralBodyGravityModel(ICentralBodyGravityModel):
     """Central Body Gravity Model."""
@@ -56259,7 +56259,7 @@ class CentralBodyGravityModel(ICentralBodyGravityModel):
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyGravityModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B235689A-958C-42EA-BACA-DF03ED880C5B}", CentralBodyGravityModel)
-
+agcls.AgTypeNameMap["CentralBodyGravityModel"] = CentralBodyGravityModel
 
 class CentralBodyShapeSphere(ICentralBodyShapeSphere, ICentralBodyShape):
     """Central Body Shape - Sphere."""
@@ -56283,7 +56283,7 @@ class CentralBodyShapeSphere(ICentralBodyShapeSphere, ICentralBodyShape):
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyShapeSphere.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0AC87F61-8DFA-48FF-A1D2-D7DCD7133900}", CentralBodyShapeSphere)
-
+agcls.AgTypeNameMap["CentralBodyShapeSphere"] = CentralBodyShapeSphere
 
 class CentralBodyShapeOblateSpheroid(ICentralBodyShapeOblateSpheroid, ICentralBodyShape):
     """Central Body Shape - Spheroid."""
@@ -56307,7 +56307,7 @@ class CentralBodyShapeOblateSpheroid(ICentralBodyShapeOblateSpheroid, ICentralBo
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyShapeOblateSpheroid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1C606CEB-7C36-486E-A123-42AF0BCB2C8F}", CentralBodyShapeOblateSpheroid)
-
+agcls.AgTypeNameMap["CentralBodyShapeOblateSpheroid"] = CentralBodyShapeOblateSpheroid
 
 class CentralBodyShapeTriaxialEllipsoid(ICentralBodyShapeTriaxialEllipsoid, ICentralBodyShape):
     """Central Body Shape - Triaxial Ellipsoid."""
@@ -56331,7 +56331,7 @@ class CentralBodyShapeTriaxialEllipsoid(ICentralBodyShapeTriaxialEllipsoid, ICen
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyShapeTriaxialEllipsoid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{286452CC-4917-4618-B2B7-D4C4B226AEAE}", CentralBodyShapeTriaxialEllipsoid)
-
+agcls.AgTypeNameMap["CentralBodyShapeTriaxialEllipsoid"] = CentralBodyShapeTriaxialEllipsoid
 
 class CentralBodyAttitudeRotationCoefficientsFile(ICentralBodyAttitudeRotationCoefficientsFile, ICentralBodyAttitude):
     """Central Body Attitude - Rotation Coefficients File."""
@@ -56355,7 +56355,7 @@ class CentralBodyAttitudeRotationCoefficientsFile(ICentralBodyAttitudeRotationCo
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyAttitudeRotationCoefficientsFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC7D0575-6607-4103-8957-0B791534526D}", CentralBodyAttitudeRotationCoefficientsFile)
-
+agcls.AgTypeNameMap["CentralBodyAttitudeRotationCoefficientsFile"] = CentralBodyAttitudeRotationCoefficientsFile
 
 class CentralBodyAttitudeIAU1994(ICentralBodyAttitudeIAU1994, ICentralBodyAttitude):
     """Central Body Attitude - IAU1994."""
@@ -56379,7 +56379,7 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitudeIAU1994, ICentralBodyAttitu
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyAttitudeIAU1994.")
         
 agcls.AgClassCatalog.add_catalog_entry("{147ABE46-6F5E-45D9-8279-5D01B0D78B88}", CentralBodyAttitudeIAU1994)
-
+agcls.AgTypeNameMap["CentralBodyAttitudeIAU1994"] = CentralBodyAttitudeIAU1994
 
 class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemerisAnalyticOrbit, ICentralBodyEphemeris):
     """Central Body Ephemeris - Analytic Orbit."""
@@ -56403,7 +56403,7 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemerisAnalyticOrbit, ICen
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyEphemerisAnalyticOrbit.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D2E09031-DB7F-480B-A361-73713F45EB70}", CentralBodyEphemerisAnalyticOrbit)
-
+agcls.AgTypeNameMap["CentralBodyEphemerisAnalyticOrbit"] = CentralBodyEphemerisAnalyticOrbit
 
 class CentralBodyEphemerisJPLSpice(ICentralBodyEphemerisJPLSpice, ICentralBodyEphemeris):
     """Central Body Ephemeris - JPLSpice."""
@@ -56427,7 +56427,7 @@ class CentralBodyEphemerisJPLSpice(ICentralBodyEphemerisJPLSpice, ICentralBodyEp
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyEphemerisJPLSpice.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A75A2A9B-F225-43D5-A259-30C9B0488EB8}", CentralBodyEphemerisJPLSpice)
-
+agcls.AgTypeNameMap["CentralBodyEphemerisJPLSpice"] = CentralBodyEphemerisJPLSpice
 
 class CentralBodyEphemerisFile(ICentralBodyEphemerisFile, ICentralBodyEphemeris):
     """Central Body Ephemeris - File."""
@@ -56451,7 +56451,7 @@ class CentralBodyEphemerisFile(ICentralBodyEphemerisFile, ICentralBodyEphemeris)
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyEphemerisFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{063BA11E-7F73-40FA-B691-B12EC38DE29B}", CentralBodyEphemerisFile)
-
+agcls.AgTypeNameMap["CentralBodyEphemerisFile"] = CentralBodyEphemerisFile
 
 class CentralBodyEphemerisJPLDesignExplorerOptimizer(ICentralBodyEphemerisJPLDesignExplorerOptimizer, ICentralBodyEphemeris):
     """Central Body Ephemeris - JPL DE."""
@@ -56475,7 +56475,7 @@ class CentralBodyEphemerisJPLDesignExplorerOptimizer(ICentralBodyEphemerisJPLDes
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyEphemerisJPLDesignExplorerOptimizer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6426E9EA-5ED2-46C9-95BB-447955306CA7}", CentralBodyEphemerisJPLDesignExplorerOptimizer)
-
+agcls.AgTypeNameMap["CentralBodyEphemerisJPLDesignExplorerOptimizer"] = CentralBodyEphemerisJPLDesignExplorerOptimizer
 
 class CentralBodyEphemerisPlanetary(ICentralBodyEphemerisPlanetary, ICentralBodyEphemeris):
     """Central Body Ephemeris - Planetary."""
@@ -56499,7 +56499,7 @@ class CentralBodyEphemerisPlanetary(ICentralBodyEphemerisPlanetary, ICentralBody
             raise STKAttributeError(attrname + " is not a recognized attribute in CentralBodyEphemerisPlanetary.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B3946E55-049C-4314-B6E1-1B3E4BD4F660}", CentralBodyEphemerisPlanetary)
-
+agcls.AgTypeNameMap["CentralBodyEphemerisPlanetary"] = CentralBodyEphemerisPlanetary
 
 class MissionControlSequenceSegmentProperties(IMissionControlSequenceSegmentProperties, IRuntimeTypeInfoProvider):
     """Segment Properties."""
@@ -56523,7 +56523,7 @@ class MissionControlSequenceSegmentProperties(IMissionControlSequenceSegmentProp
             raise STKAttributeError(attrname + " is not a recognized attribute in MissionControlSequenceSegmentProperties.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9740187E-A60E-4440-952F-46FCEF10879C}", MissionControlSequenceSegmentProperties)
-
+agcls.AgTypeNameMap["MissionControlSequenceSegmentProperties"] = MissionControlSequenceSegmentProperties
 
 class PowerInternal(IPowerInternal, IComponentInfo, ICloneable):
     """Power - Internal."""
@@ -56550,7 +56550,7 @@ class PowerInternal(IPowerInternal, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in PowerInternal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{269F510C-DE85-4BD7-B09C-15B573F83F31}", PowerInternal)
-
+agcls.AgTypeNameMap["PowerInternal"] = PowerInternal
 
 class PowerProcessed(IPowerProcessed, IComponentInfo, ICloneable):
     """Power - Processed Power Unit."""
@@ -56577,7 +56577,7 @@ class PowerProcessed(IPowerProcessed, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in PowerProcessed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F9B2570A-E760-4C58-B95A-6654FA264F43}", PowerProcessed)
-
+agcls.AgTypeNameMap["PowerProcessed"] = PowerProcessed
 
 class PowerSolarArray(IPowerSolarArray, IComponentInfo, ICloneable):
     """Power - Solar Array."""
@@ -56604,7 +56604,7 @@ class PowerSolarArray(IPowerSolarArray, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in PowerSolarArray.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EFF8A0BD-0BEA-4A4C-B486-3BC0DDA2B96E}", PowerSolarArray)
-
+agcls.AgTypeNameMap["PowerSolarArray"] = PowerSolarArray
 
 class GeneralRelativityFunction(IGeneralRelativityFunction, IComponentInfo, ICloneable):
     """General Relativity Propagator Function."""
@@ -56631,7 +56631,7 @@ class GeneralRelativityFunction(IGeneralRelativityFunction, IComponentInfo, IClo
             raise STKAttributeError(attrname + " is not a recognized attribute in GeneralRelativityFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2388EABA-68BE-4071-A6FC-5DF5E6913E09}", GeneralRelativityFunction)
-
+agcls.AgTypeNameMap["GeneralRelativityFunction"] = GeneralRelativityFunction
 
 class StateTransformationFunction(IStateTransformationFunction, IComponentInfo, ICloneable):
     """State Transition Propagator Function."""
@@ -56658,7 +56658,7 @@ class StateTransformationFunction(IStateTransformationFunction, IComponentInfo, 
             raise STKAttributeError(attrname + " is not a recognized attribute in StateTransformationFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC9BCE93-D459-43A4-B996-0710520ECD35}", StateTransformationFunction)
-
+agcls.AgTypeNameMap["StateTransformationFunction"] = StateTransformationFunction
 
 class CR3BPFunc(ICR3BPFunc, IComponentInfo, ICloneable):
     """CR3BP Function."""
@@ -56685,7 +56685,7 @@ class CR3BPFunc(ICR3BPFunc, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in CR3BPFunc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0CB5F652-0A94-4493-8397-78E8B147A600}", CR3BPFunc)
-
+agcls.AgTypeNameMap["CR3BPFunc"] = CR3BPFunc
 
 class RadiationPressureFunction(IRadiationPressureFunction, IComponentInfo, ICloneable):
     """Radiation Pressure Propagator Function."""
@@ -56712,7 +56712,7 @@ class RadiationPressureFunction(IRadiationPressureFunction, IComponentInfo, IClo
             raise STKAttributeError(attrname + " is not a recognized attribute in RadiationPressureFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{129DFCA0-E241-4BF5-947C-34D311459876}", RadiationPressureFunction)
-
+agcls.AgTypeNameMap["RadiationPressureFunction"] = RadiationPressureFunction
 
 class YarkovskyFunc(IYarkovskyFunc, IComponentInfo, ICloneable):
     """Yarkovsky Effect Propagator Function."""
@@ -56739,7 +56739,7 @@ class YarkovskyFunc(IYarkovskyFunc, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in YarkovskyFunc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{991BA5B1-ED2F-4633-8493-5AD584CBD4FC}", YarkovskyFunc)
-
+agcls.AgTypeNameMap["YarkovskyFunc"] = YarkovskyFunc
 
 class BlendedDensity(IBlendedDensity, IComponentInfo, ICloneable):
     """Blended atmospheric density propagator function."""
@@ -56766,7 +56766,7 @@ class BlendedDensity(IBlendedDensity, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in BlendedDensity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8262277E-56CE-4780-8EF3-08324A1A06FD}", BlendedDensity)
-
+agcls.AgTypeNameMap["BlendedDensity"] = BlendedDensity
 
 class Cira72Function(ICira72Function, IComponentInfo, ICloneable):
     """Cira72 atmospheric propagator function."""
@@ -56793,7 +56793,7 @@ class Cira72Function(ICira72Function, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in Cira72Function.")
         
 agcls.AgClassCatalog.add_catalog_entry("{995263CD-4163-4EDA-8012-310821C8A332}", Cira72Function)
-
+agcls.AgTypeNameMap["Cira72Function"] = Cira72Function
 
 class Exponential(IExponential, IComponentInfo, ICloneable):
     """Exponential atmospheric propagator function."""
@@ -56820,7 +56820,7 @@ class Exponential(IExponential, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in Exponential.")
         
 agcls.AgClassCatalog.add_catalog_entry("{701C6D24-1D0E-4D08-9A3B-61566AABDE02}", Exponential)
-
+agcls.AgTypeNameMap["Exponential"] = Exponential
 
 class HarrisPriester(IHarrisPriester, IComponentInfo, ICloneable):
     """Harris-Priester atmospheric propagator function."""
@@ -56847,7 +56847,7 @@ class HarrisPriester(IHarrisPriester, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in HarrisPriester.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2C45FE9A-0EE9-46B0-B0A5-79A052FDE189}", HarrisPriester)
-
+agcls.AgTypeNameMap["HarrisPriester"] = HarrisPriester
 
 class DensityModelPlugin(IDensityModelPlugin, IComponentInfo, ICloneable):
     """Plugin atmospheric density propagator function."""
@@ -56874,7 +56874,7 @@ class DensityModelPlugin(IDensityModelPlugin, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in DensityModelPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5331D02B-13E5-4609-BFE6-9BF842E6096F}", DensityModelPlugin)
-
+agcls.AgTypeNameMap["DensityModelPlugin"] = DensityModelPlugin
 
 class JacchiaRoberts(IJacchiaRoberts, IComponentInfo, ICloneable):
     """Jacchia Roberts atmospheric propagator function."""
@@ -56901,7 +56901,7 @@ class JacchiaRoberts(IJacchiaRoberts, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in JacchiaRoberts.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6227B561-C892-4BB5-A835-9619EB144173}", JacchiaRoberts)
-
+agcls.AgTypeNameMap["JacchiaRoberts"] = JacchiaRoberts
 
 class JacchiaBowman2008(IJacchiaBowman2008, IComponentInfo, ICloneable):
     """Jacchia Bowman 2008 atmospheric propagator function."""
@@ -56928,7 +56928,7 @@ class JacchiaBowman2008(IJacchiaBowman2008, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in JacchiaBowman2008.")
         
 agcls.AgClassCatalog.add_catalog_entry("{19461979-5C67-4840-8DB9-902EC47E6105}", JacchiaBowman2008)
-
+agcls.AgTypeNameMap["JacchiaBowman2008"] = JacchiaBowman2008
 
 class Jacchia_1960(IJacchia_1960, IComponentInfo, ICloneable):
     """Jacchia_1960 atmospheric propagator function."""
@@ -56955,7 +56955,7 @@ class Jacchia_1960(IJacchia_1960, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in Jacchia_1960.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E803E9D5-31AB-4D5C-B93E-AB9975E2402B}", Jacchia_1960)
-
+agcls.AgTypeNameMap["Jacchia_1960"] = Jacchia_1960
 
 class Jacchia_1970(IJacchia_1970, IComponentInfo, ICloneable):
     """Jacchia_1970 atmospheric propagator function."""
@@ -56982,7 +56982,7 @@ class Jacchia_1970(IJacchia_1970, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in Jacchia_1970.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9E716F44-73D2-4A22-97C9-04C20386D575}", Jacchia_1970)
-
+agcls.AgTypeNameMap["Jacchia_1970"] = Jacchia_1970
 
 class Jacchia_1971(IJacchia_1971, IComponentInfo, ICloneable):
     """Jacchia_1971 atmospheric propagator function."""
@@ -57009,7 +57009,7 @@ class Jacchia_1971(IJacchia_1971, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in Jacchia_1971.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50FFBB4C-124F-4DC6-BEED-F2EC4930B4E7}", Jacchia_1971)
-
+agcls.AgTypeNameMap["Jacchia_1971"] = Jacchia_1971
 
 class MSISE_1990(IMSISE_1990, IComponentInfo, ICloneable):
     """MSISE 1990 atmospheric propagator function."""
@@ -57036,7 +57036,7 @@ class MSISE_1990(IMSISE_1990, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in MSISE_1990.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A46341F0-9384-4A1D-970A-77B1B683359D}", MSISE_1990)
-
+agcls.AgTypeNameMap["MSISE_1990"] = MSISE_1990
 
 class MSIS_1986(IMSIS_1986, IComponentInfo, ICloneable):
     """MSIS 1986 atmospheric propagator function."""
@@ -57063,7 +57063,7 @@ class MSIS_1986(IMSIS_1986, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in MSIS_1986.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFAC9D69-5B78-48BA-8CFA-5D6A30BBF371}", MSIS_1986)
-
+agcls.AgTypeNameMap["MSIS_1986"] = MSIS_1986
 
 class NRLMSISE_2000(INRLMSISE_2000, IComponentInfo, ICloneable):
     """NRLMSISE 2000 atmospheric propagator function."""
@@ -57090,7 +57090,7 @@ class NRLMSISE_2000(INRLMSISE_2000, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in NRLMSISE_2000.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2EEE9C88-FF61-497A-AD40-2429DBA0A581}", NRLMSISE_2000)
-
+agcls.AgTypeNameMap["NRLMSISE_2000"] = NRLMSISE_2000
 
 class US_Standard_Atmosphere(IUS_Standard_Atmosphere, IComponentInfo, ICloneable):
     """US_Standard_Atmosphere atmospheric propagator function."""
@@ -57117,7 +57117,7 @@ class US_Standard_Atmosphere(IUS_Standard_Atmosphere, IComponentInfo, ICloneable
             raise STKAttributeError(attrname + " is not a recognized attribute in US_Standard_Atmosphere.")
         
 agcls.AgClassCatalog.add_catalog_entry("{14714C17-B360-42E1-86EE-99EB95C71B69}", US_Standard_Atmosphere)
-
+agcls.AgTypeNameMap["US_Standard_Atmosphere"] = US_Standard_Atmosphere
 
 class MarsGRAM37(IMarsGRAM37, IComponentInfo, ICloneable):
     """Mars-GRAM 3.7 atmospheric propagator function."""
@@ -57144,7 +57144,7 @@ class MarsGRAM37(IMarsGRAM37, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in MarsGRAM37.")
         
 agcls.AgClassCatalog.add_catalog_entry("{69A9AE89-0133-4410-A486-1ADEFBE56F49}", MarsGRAM37)
-
+agcls.AgTypeNameMap["MarsGRAM37"] = MarsGRAM37
 
 class MarsGRAM2000(IMarsGRAM2000, IComponentInfo, ICloneable):
     """Mars-GRAM 2000 atmospheric propagator function."""
@@ -57171,7 +57171,7 @@ class MarsGRAM2000(IMarsGRAM2000, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in MarsGRAM2000.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FB31A16E-8E6F-4F8F-8D2D-0E3D0C0020FC}", MarsGRAM2000)
-
+agcls.AgTypeNameMap["MarsGRAM2000"] = MarsGRAM2000
 
 class MarsGRAM2001(IMarsGRAM2001, IComponentInfo, ICloneable):
     """Mars-GRAM 2001 atmospheric propagator function."""
@@ -57198,7 +57198,7 @@ class MarsGRAM2001(IMarsGRAM2001, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in MarsGRAM2001.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F7A3F4ED-100F-463F-A9F5-177F49E44BA9}", MarsGRAM2001)
-
+agcls.AgTypeNameMap["MarsGRAM2001"] = MarsGRAM2001
 
 class MarsGRAM2005(IMarsGRAM2005, IComponentInfo, ICloneable):
     """Mars-GRAM 2005 atmospheric propagator function."""
@@ -57225,7 +57225,7 @@ class MarsGRAM2005(IMarsGRAM2005, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in MarsGRAM2005.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD314E36-8513-484A-B46A-FC8794E939AC}", MarsGRAM2005)
-
+agcls.AgTypeNameMap["MarsGRAM2005"] = MarsGRAM2005
 
 class MarsGRAM2010(IMarsGRAM2010, IComponentInfo, ICloneable):
     """Mars-GRAM 2010 atmospheric propagator function."""
@@ -57252,7 +57252,7 @@ class MarsGRAM2010(IMarsGRAM2010, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in MarsGRAM2010.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EE0F710B-25B2-4423-86BE-892E0F221376}", MarsGRAM2010)
-
+agcls.AgTypeNameMap["MarsGRAM2010"] = MarsGRAM2010
 
 class VenusGRAM2005(IVenusGRAM2005, IComponentInfo, ICloneable):
     """Venus-GRAM 2005 atmospheric propagator function."""
@@ -57279,7 +57279,7 @@ class VenusGRAM2005(IVenusGRAM2005, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in VenusGRAM2005.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2360812C-F645-4237-889F-EF487FFC20D7}", VenusGRAM2005)
-
+agcls.AgTypeNameMap["VenusGRAM2005"] = VenusGRAM2005
 
 class DTM2012(IDTM2012, IComponentInfo, ICloneable):
     """DTM 2012 atmospheric propagator function."""
@@ -57306,7 +57306,7 @@ class DTM2012(IDTM2012, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in DTM2012.")
         
 agcls.AgClassCatalog.add_catalog_entry("{131D3F3F-8444-4017-B12F-D57DF1262F58}", DTM2012)
-
+agcls.AgTypeNameMap["DTM2012"] = DTM2012
 
 class DTM2020(IDTM2020, IComponentInfo, ICloneable):
     """DTM 2020 atmospheric propagator function."""
@@ -57333,7 +57333,7 @@ class DTM2020(IDTM2020, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in DTM2020.")
         
 agcls.AgClassCatalog.add_catalog_entry("{68457876-1EF6-4DD4-9295-E72570C4F97B}", DTM2020)
-
+agcls.AgTypeNameMap["DTM2020"] = DTM2020
 
 class GravityFieldFunction(IGravityFieldFunction, IComponentInfo, ICloneable):
     """Gravity Field gravity propagator function."""
@@ -57360,7 +57360,7 @@ class GravityFieldFunction(IGravityFieldFunction, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in GravityFieldFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C2C24055-1B50-4BD9-A7F7-0AA5FCE8969E}", GravityFieldFunction)
-
+agcls.AgTypeNameMap["GravityFieldFunction"] = GravityFieldFunction
 
 class PointMassFunction(IPointMassFunction, IComponentInfo, ICloneable):
     """Point Mass function."""
@@ -57387,7 +57387,7 @@ class PointMassFunction(IPointMassFunction, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in PointMassFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E0A1592D-68C0-43DB-A338-DE22A591872A}", PointMassFunction)
-
+agcls.AgTypeNameMap["PointMassFunction"] = PointMassFunction
 
 class TwoBodyFunction(ITwoBodyFunction, IComponentInfo, ICloneable):
     """Two Body gravity propagator function."""
@@ -57414,7 +57414,7 @@ class TwoBodyFunction(ITwoBodyFunction, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in TwoBodyFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5C71D8C2-4A14-4D93-A8E5-5384AAB05E92}", TwoBodyFunction)
-
+agcls.AgTypeNameMap["TwoBodyFunction"] = TwoBodyFunction
 
 class HPOPPluginFunction(IHPOPPluginFunction, IComponentInfo, ICloneable):
     """HPOP Plugin propagator function."""
@@ -57441,7 +57441,7 @@ class HPOPPluginFunction(IHPOPPluginFunction, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in HPOPPluginFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{01BF5EA2-376F-49B2-B6DF-3017F30D8205}", HPOPPluginFunction)
-
+agcls.AgTypeNameMap["HPOPPluginFunction"] = HPOPPluginFunction
 
 class EOMFuncPluginFunction(IEOMFuncPluginFunction, IComponentInfo, ICloneable):
     """EOM Function Plugin propagator function."""
@@ -57468,7 +57468,7 @@ class EOMFuncPluginFunction(IEOMFuncPluginFunction, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EOMFuncPluginFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6FCCD724-B386-487C-A2AD-6153FF4756FF}", EOMFuncPluginFunction)
-
+agcls.AgTypeNameMap["EOMFuncPluginFunction"] = EOMFuncPluginFunction
 
 class SRPAeroT20(ISRPAeroT20, IComponentInfo, ICloneable):
     """AeroT20 SRP propagator function."""
@@ -57495,7 +57495,7 @@ class SRPAeroT20(ISRPAeroT20, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPAeroT20.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6DB3E760-F774-45F3-A6E5-EA2A7E34416F}", SRPAeroT20)
-
+agcls.AgTypeNameMap["SRPAeroT20"] = SRPAeroT20
 
 class SRPAeroT30(ISRPAeroT30, IComponentInfo, ICloneable):
     """AeroT30 SRP propagator function."""
@@ -57522,7 +57522,7 @@ class SRPAeroT30(ISRPAeroT30, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPAeroT30.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E4DF0601-9442-4649-AE24-516F20E819EF}", SRPAeroT30)
-
+agcls.AgTypeNameMap["SRPAeroT30"] = SRPAeroT30
 
 class SRPGSPM04aIIA(ISRPGSPM04aIIA, IComponentInfo, ICloneable):
     """GSPM04aIIA SRP propagator function."""
@@ -57549,7 +57549,7 @@ class SRPGSPM04aIIA(ISRPGSPM04aIIA, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPGSPM04aIIA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F6767C08-2100-464C-B18A-0528243E37DC}", SRPGSPM04aIIA)
-
+agcls.AgTypeNameMap["SRPGSPM04aIIA"] = SRPGSPM04aIIA
 
 class SRPGSPM04aIIR(ISRPGSPM04aIIR, IComponentInfo, ICloneable):
     """GSPM04aIIR SRP propagator function."""
@@ -57576,7 +57576,7 @@ class SRPGSPM04aIIR(ISRPGSPM04aIIR, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPGSPM04aIIR.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FFF24BB0-8E3E-479A-957A-06719DF68A56}", SRPGSPM04aIIR)
-
+agcls.AgTypeNameMap["SRPGSPM04aIIR"] = SRPGSPM04aIIR
 
 class SRPGSPM04aeIIA(ISRPGSPM04aeIIA, IComponentInfo, ICloneable):
     """GSPM04aeIIA SRP propagator function."""
@@ -57603,7 +57603,7 @@ class SRPGSPM04aeIIA(ISRPGSPM04aeIIA, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPGSPM04aeIIA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82530B89-B383-4148-8606-BBA0EBA825CE}", SRPGSPM04aeIIA)
-
+agcls.AgTypeNameMap["SRPGSPM04aeIIA"] = SRPGSPM04aeIIA
 
 class SRPGSPM04aeIIR(ISRPGSPM04aeIIR, IComponentInfo, ICloneable):
     """GSPM04aeIIR SRP propagator function."""
@@ -57630,7 +57630,7 @@ class SRPGSPM04aeIIR(ISRPGSPM04aeIIR, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPGSPM04aeIIR.")
         
 agcls.AgClassCatalog.add_catalog_entry("{17C9AD04-9981-4541-9515-59A597003348}", SRPGSPM04aeIIR)
-
+agcls.AgTypeNameMap["SRPGSPM04aeIIR"] = SRPGSPM04aeIIR
 
 class SRPSpherical(ISRPSpherical, IComponentInfo, ICloneable):
     """Spherical SRP propagator function."""
@@ -57657,7 +57657,7 @@ class SRPSpherical(ISRPSpherical, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4318B037-C619-4722-A0F5-4FFDFA7D9474}", SRPSpherical)
-
+agcls.AgTypeNameMap["SRPSpherical"] = SRPSpherical
 
 class SRPNPlate(ISRPNPlate, IComponentInfo, ICloneable):
     """NPlate SRP propagator function."""
@@ -57684,7 +57684,7 @@ class SRPNPlate(ISRPNPlate, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPNPlate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{81962DC5-1A26-4077-AC39-E8E75145858A}", SRPNPlate)
-
+agcls.AgTypeNameMap["SRPNPlate"] = SRPNPlate
 
 class SRPTabAreaVec(ISRPTabAreaVec, IComponentInfo, ICloneable):
     """Tabulated area vector SRP propagator function."""
@@ -57711,7 +57711,7 @@ class SRPTabAreaVec(ISRPTabAreaVec, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPTabAreaVec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{77FAE0BD-36AF-4140-B62E-7B2865841152}", SRPTabAreaVec)
-
+agcls.AgTypeNameMap["SRPTabAreaVec"] = SRPTabAreaVec
 
 class SRPVariableArea(ISRPVariableArea, IComponentInfo, ICloneable):
     """Variable Area SRP propagator function."""
@@ -57738,7 +57738,7 @@ class SRPVariableArea(ISRPVariableArea, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPVariableArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{193838B2-807F-4E24-A05D-2E0BAB03B497}", SRPVariableArea)
-
+agcls.AgTypeNameMap["SRPVariableArea"] = SRPVariableArea
 
 class ThirdBodyFunction(IThirdBodyFunction, IComponentInfo, ICloneable):
     """ThirdBody propagator function."""
@@ -57765,7 +57765,7 @@ class ThirdBodyFunction(IThirdBodyFunction, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in ThirdBodyFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7E7DF54F-A10B-4B57-9919-ACD123F69001}", ThirdBodyFunction)
-
+agcls.AgTypeNameMap["ThirdBodyFunction"] = ThirdBodyFunction
 
 class DragModelPlugin(IDragModelPlugin, IComponentInfo, ICloneable):
     """Drag Model Plugin."""
@@ -57792,7 +57792,7 @@ class DragModelPlugin(IDragModelPlugin, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in DragModelPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C48CB2A8-A6E1-4E7B-ABB2-179D1E06D541}", DragModelPlugin)
-
+agcls.AgTypeNameMap["DragModelPlugin"] = DragModelPlugin
 
 class SRPReflectionPlugin(ISRPReflectionPlugin, IComponentInfo, ICloneable):
     """SRP Reflection Plugin."""
@@ -57819,7 +57819,7 @@ class SRPReflectionPlugin(ISRPReflectionPlugin, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in SRPReflectionPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{926296A2-EA6B-4FC8-A75C-15B9F24B85E5}", SRPReflectionPlugin)
-
+agcls.AgTypeNameMap["SRPReflectionPlugin"] = SRPReflectionPlugin
 
 class EngineConstAcc(IEngineConstAcc, IComponentInfo, ICloneable):
     """Constant Acceleration engine model."""
@@ -57846,7 +57846,7 @@ class EngineConstAcc(IEngineConstAcc, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineConstAcc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{359488A0-BCA3-4739-8614-E99B675553AF}", EngineConstAcc)
-
+agcls.AgTypeNameMap["EngineConstAcc"] = EngineConstAcc
 
 class EngineConstant(IEngineConstant, IComponentInfo, ICloneable):
     """Constant Thrust engine model."""
@@ -57873,7 +57873,7 @@ class EngineConstant(IEngineConstant, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineConstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{31105070-4B5A-4870-A45B-6F6CF13042DD}", EngineConstant)
-
+agcls.AgTypeNameMap["EngineConstant"] = EngineConstant
 
 class EngineIon(IEngineIon, IComponentInfo, ICloneable):
     """Ion Engine engine model."""
@@ -57900,7 +57900,7 @@ class EngineIon(IEngineIon, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineIon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6AD7EC4F-2E59-4D7B-9FC2-9022CB8540B6}", EngineIon)
-
+agcls.AgTypeNameMap["EngineIon"] = EngineIon
 
 class EngineThrottleTable(IEngineThrottleTable, IComponentInfo, ICloneable):
     """Throttle Table engine model."""
@@ -57927,7 +57927,7 @@ class EngineThrottleTable(IEngineThrottleTable, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineThrottleTable.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FB947497-4C0D-4F39-9942-31A9A0D3025F}", EngineThrottleTable)
-
+agcls.AgTypeNameMap["EngineThrottleTable"] = EngineThrottleTable
 
 class EngineCustom(IEngineCustom, IComponentInfo, ICloneable):
     """Custom engine model."""
@@ -57954,7 +57954,7 @@ class EngineCustom(IEngineCustom, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineCustom.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5C0367CE-254E-4BDB-8056-ED27D584258E}", EngineCustom)
-
+agcls.AgTypeNameMap["EngineCustom"] = EngineCustom
 
 class EnginePlugin(IEnginePlugin, IComponentInfo, ICloneable):
     """Plugin engine model."""
@@ -57981,7 +57981,7 @@ class EnginePlugin(IEnginePlugin, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EnginePlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D7755FC3-1A9F-4DB5-B735-030256F4AE24}", EnginePlugin)
-
+agcls.AgTypeNameMap["EnginePlugin"] = EnginePlugin
 
 class EngineModelPoly(IEngineModelPoly, IComponentInfo, ICloneable):
     """Polynomial Thrust and Isp engine model."""
@@ -58008,7 +58008,7 @@ class EngineModelPoly(IEngineModelPoly, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineModelPoly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D23F634-A8B8-4376-99AE-F8287C267EDC}", EngineModelPoly)
-
+agcls.AgTypeNameMap["EngineModelPoly"] = EngineModelPoly
 
 class EngineModelThrustCoefficients(IEngineModelThrustCoefficients):
     """Engine Model Thrust Coefficients."""
@@ -58029,7 +58029,7 @@ class EngineModelThrustCoefficients(IEngineModelThrustCoefficients):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineModelThrustCoefficients.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1B8E6E69-F100-4A4B-A24A-FFC3C8B0AF70}", EngineModelThrustCoefficients)
-
+agcls.AgTypeNameMap["EngineModelThrustCoefficients"] = EngineModelThrustCoefficients
 
 class EngineModelIspCoefficients(IEngineModelIspCoefficients):
     """Engine Model Isp Coefficients."""
@@ -58050,7 +58050,7 @@ class EngineModelIspCoefficients(IEngineModelIspCoefficients):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineModelIspCoefficients.")
         
 agcls.AgClassCatalog.add_catalog_entry("{279B11AE-A5F8-4548-9401-95981B21C61C}", EngineModelIspCoefficients)
-
+agcls.AgTypeNameMap["EngineModelIspCoefficients"] = EngineModelIspCoefficients
 
 class EngineDefinition(IEngineDefinition):
     """Engine definition."""
@@ -58071,7 +58071,7 @@ class EngineDefinition(IEngineDefinition):
             raise STKAttributeError(attrname + " is not a recognized attribute in EngineDefinition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F87429C7-51DC-4AD8-8481-468C14F38AB4}", EngineDefinition)
-
+agcls.AgTypeNameMap["EngineDefinition"] = EngineDefinition
 
 class DesignCR3BPSetup(IDesignCR3BPSetup, IComponentInfo, ICloneable):
     """CR3BP Setup Tool."""
@@ -58098,7 +58098,7 @@ class DesignCR3BPSetup(IDesignCR3BPSetup, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in DesignCR3BPSetup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{97419F0F-66BA-4C13-800E-56D8856CAAA3}", DesignCR3BPSetup)
-
+agcls.AgTypeNameMap["DesignCR3BPSetup"] = DesignCR3BPSetup
 
 class DesignCR3BPObject(IDesignCR3BPObject):
     """CR3BP associated object definition."""
@@ -58119,7 +58119,7 @@ class DesignCR3BPObject(IDesignCR3BPObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in DesignCR3BPObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2256C391-AE04-462C-8A4F-5D00D522112D}", DesignCR3BPObject)
-
+agcls.AgTypeNameMap["DesignCR3BPObject"] = DesignCR3BPObject
 
 class DesignCR3BPObjectCollection(IDesignCR3BPObjectCollection):
     """CR3BP associated object Collection."""
@@ -58140,7 +58140,7 @@ class DesignCR3BPObjectCollection(IDesignCR3BPObjectCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in DesignCR3BPObjectCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A70D32B8-E717-449E-8A79-29E429BED03F}", DesignCR3BPObjectCollection)
-
+agcls.AgTypeNameMap["DesignCR3BPObjectCollection"] = DesignCR3BPObjectCollection
 
 class Thruster(IThruster):
     """Thruster definition."""
@@ -58161,7 +58161,7 @@ class Thruster(IThruster):
             raise STKAttributeError(attrname + " is not a recognized attribute in Thruster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{749FEA15-5BD9-4466-BADF-E917D640E6D8}", Thruster)
-
+agcls.AgTypeNameMap["Thruster"] = Thruster
 
 class ThrusterSetCollection(IThrusterSetCollection):
     """Thruster Set Collection."""
@@ -58182,7 +58182,7 @@ class ThrusterSetCollection(IThrusterSetCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ThrusterSetCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8C1B379E-8092-48BE-A401-651464239B27}", ThrusterSetCollection)
-
+agcls.AgTypeNameMap["ThrusterSetCollection"] = ThrusterSetCollection
 
 class ThrusterSet(IThrusterSet, IComponentInfo, ICloneable):
     """Thruster Set."""
@@ -58209,7 +58209,7 @@ class ThrusterSet(IThrusterSet, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in ThrusterSet.")
         
 agcls.AgClassCatalog.add_catalog_entry("{00FB61C4-5A63-439B-A030-171588D7CFED}", ThrusterSet)
-
+agcls.AgTypeNameMap["ThrusterSet"] = ThrusterSet
 
 class AsTriggerCondition(IAsTriggerCondition, IComponentInfo, ICloneable):
     """Constraint."""
@@ -58236,7 +58236,7 @@ class AsTriggerCondition(IAsTriggerCondition, IComponentInfo, ICloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AsTriggerCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32E146B0-C168-4BD3-A2D9-ECF7096687E5}", AsTriggerCondition)
-
+agcls.AgTypeNameMap["AsTriggerCondition"] = AsTriggerCondition
 
 class CustomFunctionScriptEngine(ICustomFunctionScriptEngine, IComponentInfo, ICloneable):
     """Custom Function Script Engine."""
@@ -58263,7 +58263,7 @@ class CustomFunctionScriptEngine(ICustomFunctionScriptEngine, IComponentInfo, IC
             raise STKAttributeError(attrname + " is not a recognized attribute in CustomFunctionScriptEngine.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F4CD79CC-CFAA-4EEE-A01A-0F846D6F6674}", CustomFunctionScriptEngine)
-
+agcls.AgTypeNameMap["CustomFunctionScriptEngine"] = CustomFunctionScriptEngine
 
 class NumericalPropagatorWrapper(INumericalPropagatorWrapper, IComponentInfo, ICloneable):
     """Numerical Propagator."""
@@ -58290,7 +58290,7 @@ class NumericalPropagatorWrapper(INumericalPropagatorWrapper, IComponentInfo, IC
             raise STKAttributeError(attrname + " is not a recognized attribute in NumericalPropagatorWrapper.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6F733B37-D5A3-4D83-844B-34A35BA937CC}", NumericalPropagatorWrapper)
-
+agcls.AgTypeNameMap["NumericalPropagatorWrapper"] = NumericalPropagatorWrapper
 
 class NumericalPropagatorWrapperCR3BP(INumericalPropagatorWrapperCR3BP, IComponentInfo, ICloneable):
     """Numerical CR3BP Propagator."""
@@ -58317,7 +58317,7 @@ class NumericalPropagatorWrapperCR3BP(INumericalPropagatorWrapperCR3BP, ICompone
             raise STKAttributeError(attrname + " is not a recognized attribute in NumericalPropagatorWrapperCR3BP.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C4823BEE-E898-47D3-8C29-9CCE6DB490FE}", NumericalPropagatorWrapperCR3BP)
-
+agcls.AgTypeNameMap["NumericalPropagatorWrapperCR3BP"] = NumericalPropagatorWrapperCR3BP
 
 class PropagatorFunctionCollection(IPropagatorFunctionCollection):
     """Propagator Function Collection."""
@@ -58338,7 +58338,7 @@ class PropagatorFunctionCollection(IPropagatorFunctionCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in PropagatorFunctionCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{41440862-0DA5-41B0-9A84-073FBC64D47A}", PropagatorFunctionCollection)
-
+agcls.AgTypeNameMap["PropagatorFunctionCollection"] = PropagatorFunctionCollection
 
 class BulirschStoerIntegrator(IBulirschStoerIntegrator, INumericalIntegrator):
     """Bulirsch-Stoer Numerical Integrator."""
@@ -58362,7 +58362,7 @@ class BulirschStoerIntegrator(IBulirschStoerIntegrator, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in BulirschStoerIntegrator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B98456C5-48DE-41AB-867B-FD713A325418}", BulirschStoerIntegrator)
-
+agcls.AgTypeNameMap["BulirschStoerIntegrator"] = BulirschStoerIntegrator
 
 class GaussJacksonIntegrator(IGaussJacksonIntegrator, INumericalIntegrator):
     """Gauss-Jackson Numerical Integrator."""
@@ -58386,7 +58386,7 @@ class GaussJacksonIntegrator(IGaussJacksonIntegrator, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in GaussJacksonIntegrator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{034F55EC-4D6E-4C22-9811-C3DEBC83ABD9}", GaussJacksonIntegrator)
-
+agcls.AgTypeNameMap["GaussJacksonIntegrator"] = GaussJacksonIntegrator
 
 class RungeKutta2nd3rd(IRungeKutta2nd3rd, INumericalIntegrator):
     """RK2nd3rd Numerical Integrator."""
@@ -58410,7 +58410,7 @@ class RungeKutta2nd3rd(IRungeKutta2nd3rd, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in RungeKutta2nd3rd.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F3511C10-B4F1-4592-81AC-41D387A9589B}", RungeKutta2nd3rd)
-
+agcls.AgTypeNameMap["RungeKutta2nd3rd"] = RungeKutta2nd3rd
 
 class RungeKutta4th(IRungeKutta4th, INumericalIntegrator):
     """RK4th Numerical Integrator."""
@@ -58434,7 +58434,7 @@ class RungeKutta4th(IRungeKutta4th, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in RungeKutta4th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{019C798B-5AB2-42F1-847E-AC64438C8341}", RungeKutta4th)
-
+agcls.AgTypeNameMap["RungeKutta4th"] = RungeKutta4th
 
 class RungeKutta4th5th(IRungeKutta4th5th, INumericalIntegrator):
     """RK4th5th Numerical Integrator."""
@@ -58458,7 +58458,7 @@ class RungeKutta4th5th(IRungeKutta4th5th, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in RungeKutta4th5th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{25B6537D-FF33-45E7-A314-F6E4EFA34CD5}", RungeKutta4th5th)
-
+agcls.AgTypeNameMap["RungeKutta4th5th"] = RungeKutta4th5th
 
 class RungeKutta4thAdapt(IRungeKutta4thAdapt, INumericalIntegrator):
     """RK4thAdapt Numerical Integrator."""
@@ -58482,7 +58482,7 @@ class RungeKutta4thAdapt(IRungeKutta4thAdapt, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in RungeKutta4thAdapt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03F69912-84E6-4209-8AF5-FD2C4B009C44}", RungeKutta4thAdapt)
-
+agcls.AgTypeNameMap["RungeKutta4thAdapt"] = RungeKutta4thAdapt
 
 class RungeKuttaF7th8th(IRungeKuttaF7th8th, INumericalIntegrator):
     """RKF7th8th Numerical Integrator."""
@@ -58506,7 +58506,7 @@ class RungeKuttaF7th8th(IRungeKuttaF7th8th, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in RungeKuttaF7th8th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{78A98F0E-B687-4D64-B0F6-5608105504CC}", RungeKuttaF7th8th)
-
+agcls.AgTypeNameMap["RungeKuttaF7th8th"] = RungeKuttaF7th8th
 
 class RungeKuttaV8th9th(IRungeKuttaV8th9th, INumericalIntegrator):
     """RKV8th9th Numerical Integrator."""
@@ -58530,7 +58530,7 @@ class RungeKuttaV8th9th(IRungeKuttaV8th9th, INumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in RungeKuttaV8th9th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26857B4B-40C9-4EC2-B5F7-AFEB6103128D}", RungeKuttaV8th9th)
-
+agcls.AgTypeNameMap["RungeKuttaV8th9th"] = RungeKuttaV8th9th
 
 class ScriptingTool(IScriptingTool, IRuntimeTypeInfoProvider):
     """Scripting Tool."""
@@ -58554,7 +58554,7 @@ class ScriptingTool(IScriptingTool, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingTool.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FB508B7-F4D9-4ABF-8EA8-B44AECAEE9C0}", ScriptingTool)
-
+agcls.AgTypeNameMap["ScriptingTool"] = ScriptingTool
 
 class ScriptingSegmentCollection(IScriptingSegmentCollection, IRuntimeTypeInfoProvider):
     """Scripting Segment Collection."""
@@ -58578,7 +58578,7 @@ class ScriptingSegmentCollection(IScriptingSegmentCollection, IRuntimeTypeInfoPr
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingSegmentCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2D397364-3CD3-4FC2-8B11-D74D7A348687}", ScriptingSegmentCollection)
-
+agcls.AgTypeNameMap["ScriptingSegmentCollection"] = ScriptingSegmentCollection
 
 class ScriptingSegment(IScriptingSegment, IRuntimeTypeInfoProvider):
     """Scripting Segment."""
@@ -58602,7 +58602,7 @@ class ScriptingSegment(IScriptingSegment, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD68184D-BA0A-41EC-B03E-E63514058625}", ScriptingSegment)
-
+agcls.AgTypeNameMap["ScriptingSegment"] = ScriptingSegment
 
 class ScriptingParameterCollection(IScriptingParameterCollection, IRuntimeTypeInfoProvider):
     """Scripting Parameter Collection."""
@@ -58626,7 +58626,7 @@ class ScriptingParameterCollection(IScriptingParameterCollection, IRuntimeTypeIn
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingParameterCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F7B45439-8E25-43DE-882F-844F8645F015}", ScriptingParameterCollection)
-
+agcls.AgTypeNameMap["ScriptingParameterCollection"] = ScriptingParameterCollection
 
 class ScriptingParameter(IScriptingParameter, IRuntimeTypeInfoProvider):
     """Scripting Parameter."""
@@ -58650,7 +58650,7 @@ class ScriptingParameter(IScriptingParameter, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingParameter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92BFA902-938E-48E0-B402-C6DEE9169BEE}", ScriptingParameter)
-
+agcls.AgTypeNameMap["ScriptingParameter"] = ScriptingParameter
 
 class ScriptingCalcObject(IScriptingCalcObject):
     """Calc Object."""
@@ -58671,7 +58671,7 @@ class ScriptingCalcObject(IScriptingCalcObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingCalcObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D9895635-D8A5-497F-9C4D-E0A18AF49983}", ScriptingCalcObject)
-
+agcls.AgTypeNameMap["ScriptingCalcObject"] = ScriptingCalcObject
 
 class ScriptingCalcObjectCollection(IScriptingCalcObjectCollection):
     """Calc Object Collection."""
@@ -58692,7 +58692,7 @@ class ScriptingCalcObjectCollection(IScriptingCalcObjectCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingCalcObjectCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9FC08736-F254-451E-9292-C003D5601780}", ScriptingCalcObjectCollection)
-
+agcls.AgTypeNameMap["ScriptingCalcObjectCollection"] = ScriptingCalcObjectCollection
 
 class UserVariableDefinition(IUserVariableDefinition):
     """User Variable Definition"""
@@ -58713,7 +58713,7 @@ class UserVariableDefinition(IUserVariableDefinition):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVariableDefinition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{659E4C4D-E224-47D7-A899-C9B5DCF7241F}", UserVariableDefinition)
-
+agcls.AgTypeNameMap["UserVariableDefinition"] = UserVariableDefinition
 
 class UserVariable(IUserVariable):
     """User Variable"""
@@ -58734,7 +58734,7 @@ class UserVariable(IUserVariable):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVariable.")
         
 agcls.AgClassCatalog.add_catalog_entry("{437599F8-0E00-4984-81CA-B450200257BC}", UserVariable)
-
+agcls.AgTypeNameMap["UserVariable"] = UserVariable
 
 class UserVariableUpdate(IUserVariableUpdate):
     """User Variable Update"""
@@ -58755,7 +58755,7 @@ class UserVariableUpdate(IUserVariableUpdate):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVariableUpdate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EB1FC76A-82D7-43C1-919B-05F53CEFC2ED}", UserVariableUpdate)
-
+agcls.AgTypeNameMap["UserVariableUpdate"] = UserVariableUpdate
 
 class UserVariableDefinitionCollection(IUserVariableDefinitionCollection):
     """User Variable Definition Collection."""
@@ -58776,7 +58776,7 @@ class UserVariableDefinitionCollection(IUserVariableDefinitionCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVariableDefinitionCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1D09185-E7EC-4E3F-BFEF-52AC92FEEC75}", UserVariableDefinitionCollection)
-
+agcls.AgTypeNameMap["UserVariableDefinitionCollection"] = UserVariableDefinitionCollection
 
 class UserVariableCollection(IUserVariableCollection):
     """User Variable Initial Value Collection."""
@@ -58797,7 +58797,7 @@ class UserVariableCollection(IUserVariableCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVariableCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{801C61FA-C0FE-4BFD-8001-3335211F7328}", UserVariableCollection)
-
+agcls.AgTypeNameMap["UserVariableCollection"] = UserVariableCollection
 
 class UserVariableUpdateCollection(IUserVariableUpdateCollection):
     """User Variable Update Collection"""
@@ -58818,7 +58818,7 @@ class UserVariableUpdateCollection(IUserVariableUpdateCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in UserVariableUpdateCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD7D6D39-4E5B-41E1-84E2-CBCAE8ECCF41}", UserVariableUpdateCollection)
-
+agcls.AgTypeNameMap["UserVariableUpdateCollection"] = UserVariableUpdateCollection
 
 class CalculationGraphCollection(ICalculationGraphCollection):
     """Calculation Graph Collection."""
@@ -58839,7 +58839,7 @@ class CalculationGraphCollection(ICalculationGraphCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in CalculationGraphCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{40E20BE7-7961-468B-B396-8F6E980BE49E}", CalculationGraphCollection)
-
+agcls.AgTypeNameMap["CalculationGraphCollection"] = CalculationGraphCollection
 
 class ScriptingParameterEnumerationChoice(IScriptingParameterEnumerationChoice, IRuntimeTypeInfoProvider):
     """Scripting Parameter Enumeration Choice."""
@@ -58863,7 +58863,7 @@ class ScriptingParameterEnumerationChoice(IScriptingParameterEnumerationChoice, 
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingParameterEnumerationChoice.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82A982C2-A2AD-4FD8-AB46-A54866F56AEA}", ScriptingParameterEnumerationChoice)
-
+agcls.AgTypeNameMap["ScriptingParameterEnumerationChoice"] = ScriptingParameterEnumerationChoice
 
 class ScriptingParameterEnumerationChoiceCollection(IScriptingParameterEnumerationChoiceCollection, IRuntimeTypeInfoProvider):
     """Scripting Parameter Enumeration Choice Collection"""
@@ -58887,7 +58887,7 @@ class ScriptingParameterEnumerationChoiceCollection(IScriptingParameterEnumerati
             raise STKAttributeError(attrname + " is not a recognized attribute in ScriptingParameterEnumerationChoiceCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E4F13182-12CE-420B-AC3A-8530CC46BE35}", ScriptingParameterEnumerationChoiceCollection)
-
+agcls.AgTypeNameMap["ScriptingParameterEnumerationChoiceCollection"] = ScriptingParameterEnumerationChoiceCollection
 
 class ProfileSNOPTOptimizer(IProfileSNOPTOptimizer, IProfile, IRuntimeTypeInfoProvider):
     """SNOPT optimizer profile"""
@@ -58914,7 +58914,7 @@ class ProfileSNOPTOptimizer(IProfileSNOPTOptimizer, IProfile, IRuntimeTypeInfoPr
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileSNOPTOptimizer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6F7AFA8D-FC45-4955-BEFB-BDE94553C02E}", ProfileSNOPTOptimizer)
-
+agcls.AgTypeNameMap["ProfileSNOPTOptimizer"] = ProfileSNOPTOptimizer
 
 class SNOPTControl(ISNOPTControl):
     """Control parameters for SNOPT optimizer profile"""
@@ -58935,7 +58935,7 @@ class SNOPTControl(ISNOPTControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in SNOPTControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5CD8E3EB-8BCA-4D53-A361-484285E62C96}", SNOPTControl)
-
+agcls.AgTypeNameMap["SNOPTControl"] = SNOPTControl
 
 class SNOPTResult(ISNOPTResult):
     """Properties for objecvtive and constraints of a SNOPT profile."""
@@ -58956,7 +58956,7 @@ class SNOPTResult(ISNOPTResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in SNOPTResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F739575C-EF90-4B58-917A-BD0C12C95055}", SNOPTResult)
-
+agcls.AgTypeNameMap["SNOPTResult"] = SNOPTResult
 
 class SNOPTControlCollection(ISNOPTControlCollection):
     """SNOPT control collection."""
@@ -58977,7 +58977,7 @@ class SNOPTControlCollection(ISNOPTControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in SNOPTControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{99EECA52-DE6C-4E2C-805E-725A3A009E4B}", SNOPTControlCollection)
-
+agcls.AgTypeNameMap["SNOPTControlCollection"] = SNOPTControlCollection
 
 class SNOPTResultCollection(ISNOPTResultCollection):
     """SNOPT result collection."""
@@ -58998,7 +58998,7 @@ class SNOPTResultCollection(ISNOPTResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in SNOPTResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D27CBF33-3EC4-40A0-A138-5F41720B0B08}", SNOPTResultCollection)
-
+agcls.AgTypeNameMap["SNOPTResultCollection"] = SNOPTResultCollection
 
 class ProfileIPOPTOptimizer(IProfileIPOPTOptimizer, IProfile, IRuntimeTypeInfoProvider):
     """IPOPT optimizer profile"""
@@ -59025,7 +59025,7 @@ class ProfileIPOPTOptimizer(IProfileIPOPTOptimizer, IProfile, IRuntimeTypeInfoPr
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileIPOPTOptimizer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59AB8108-2D2E-4D46-8B96-F1F43175CC77}", ProfileIPOPTOptimizer)
-
+agcls.AgTypeNameMap["ProfileIPOPTOptimizer"] = ProfileIPOPTOptimizer
 
 class IPOPTControl(IIPOPTControl):
     """Control parameters for IPOPT optimizer profile"""
@@ -59046,7 +59046,7 @@ class IPOPTControl(IIPOPTControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPOPTControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F7FF56DA-D284-4B28-88EC-BEE49D7E0CFD}", IPOPTControl)
-
+agcls.AgTypeNameMap["IPOPTControl"] = IPOPTControl
 
 class IPOPTResult(IIPOPTResult):
     """Properties for objecvtive and constraints of a IPOPT profile."""
@@ -59067,7 +59067,7 @@ class IPOPTResult(IIPOPTResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPOPTResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DCFD15D6-9ACF-4FCB-B968-CB74B5E95B33}", IPOPTResult)
-
+agcls.AgTypeNameMap["IPOPTResult"] = IPOPTResult
 
 class IPOPTControlCollection(IIPOPTControlCollection):
     """Properties for the list of IPOPT control parameters."""
@@ -59088,7 +59088,7 @@ class IPOPTControlCollection(IIPOPTControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPOPTControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{522C81BC-6FFF-40FE-90C7-E4368FD1548D}", IPOPTControlCollection)
-
+agcls.AgTypeNameMap["IPOPTControlCollection"] = IPOPTControlCollection
 
 class IPOPTResultCollection(IIPOPTResultCollection):
     """IPOPT result collection."""
@@ -59109,7 +59109,7 @@ class IPOPTResultCollection(IIPOPTResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPOPTResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A10E1B9-87A1-4370-AAD8-F7856B099B5C}", IPOPTResultCollection)
-
+agcls.AgTypeNameMap["IPOPTResultCollection"] = IPOPTResultCollection
 
 class ManeuverOptimalFinite(IManeuverOptimalFinite, IManeuver, IRuntimeTypeInfoProvider):
     """The Optimal Finite Maneuver."""
@@ -59136,7 +59136,7 @@ class ManeuverOptimalFinite(IManeuverOptimalFinite, IManeuver, IRuntimeTypeInfoP
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFinite.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6666593F-246D-4263-A0E4-78EFD0C04C7B}", ManeuverOptimalFinite)
-
+agcls.AgTypeNameMap["ManeuverOptimalFinite"] = ManeuverOptimalFinite
 
 class ManeuverOptimalFiniteSNOPTOptimizer(IManeuverOptimalFiniteSNOPTOptimizer):
     """Properties of SNOPT Optimizer options for optimal finite maneuver."""
@@ -59157,7 +59157,7 @@ class ManeuverOptimalFiniteSNOPTOptimizer(IManeuverOptimalFiniteSNOPTOptimizer):
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFiniteSNOPTOptimizer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{54E41ADE-C090-4C19-8B09-94F5030260C6}", ManeuverOptimalFiniteSNOPTOptimizer)
-
+agcls.AgTypeNameMap["ManeuverOptimalFiniteSNOPTOptimizer"] = ManeuverOptimalFiniteSNOPTOptimizer
 
 class ManeuverOptimalFiniteInitialBoundaryConditions(IManeuverOptimalFiniteInitialBoundaryConditions):
     """Properties of initial boundary conditions for optimal finite maneuver."""
@@ -59178,7 +59178,7 @@ class ManeuverOptimalFiniteInitialBoundaryConditions(IManeuverOptimalFiniteIniti
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFiniteInitialBoundaryConditions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3A8835CC-D4EF-4AFE-B198-FC4992E17D6B}", ManeuverOptimalFiniteInitialBoundaryConditions)
-
+agcls.AgTypeNameMap["ManeuverOptimalFiniteInitialBoundaryConditions"] = ManeuverOptimalFiniteInitialBoundaryConditions
 
 class ManeuverOptimalFiniteFinalBoundaryConditions(IManeuverOptimalFiniteFinalBoundaryConditions):
     """Properties of final boundary conditions for optimal finite maneuver."""
@@ -59199,7 +59199,7 @@ class ManeuverOptimalFiniteFinalBoundaryConditions(IManeuverOptimalFiniteFinalBo
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFiniteFinalBoundaryConditions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FF880BEA-2B6E-40ED-B7BC-85ED2367FC9C}", ManeuverOptimalFiniteFinalBoundaryConditions)
-
+agcls.AgTypeNameMap["ManeuverOptimalFiniteFinalBoundaryConditions"] = ManeuverOptimalFiniteFinalBoundaryConditions
 
 class ManeuverOptimalFinitePathBoundaryConditions(IManeuverOptimalFinitePathBoundaryConditions):
     """Properties of path boundary conditions for optimal finite maneuver."""
@@ -59220,7 +59220,7 @@ class ManeuverOptimalFinitePathBoundaryConditions(IManeuverOptimalFinitePathBoun
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFinitePathBoundaryConditions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C8E16C04-1A5A-43F9-B770-A67666512F8A}", ManeuverOptimalFinitePathBoundaryConditions)
-
+agcls.AgTypeNameMap["ManeuverOptimalFinitePathBoundaryConditions"] = ManeuverOptimalFinitePathBoundaryConditions
 
 class ManeuverOptimalFiniteSteeringNodeElement(IManeuverOptimalFiniteSteeringNodeElement):
     """The elements of the steering node."""
@@ -59241,7 +59241,7 @@ class ManeuverOptimalFiniteSteeringNodeElement(IManeuverOptimalFiniteSteeringNod
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFiniteSteeringNodeElement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE276E86-B321-4F0D-B657-852143B3F3EE}", ManeuverOptimalFiniteSteeringNodeElement)
-
+agcls.AgTypeNameMap["ManeuverOptimalFiniteSteeringNodeElement"] = ManeuverOptimalFiniteSteeringNodeElement
 
 class ManeuverOptimalFiniteSteeringNodeCollection(IManeuverOptimalFiniteSteeringNodeCollection):
     """Steering/nodes collection."""
@@ -59262,7 +59262,7 @@ class ManeuverOptimalFiniteSteeringNodeCollection(IManeuverOptimalFiniteSteering
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFiniteSteeringNodeCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{23249624-8EFC-4AD8-9E67-A564A49D2D67}", ManeuverOptimalFiniteSteeringNodeCollection)
-
+agcls.AgTypeNameMap["ManeuverOptimalFiniteSteeringNodeCollection"] = ManeuverOptimalFiniteSteeringNodeCollection
 
 class ManeuverOptimalFiniteBounds(IManeuverOptimalFiniteBounds):
     """The elements of the steering node."""
@@ -59283,7 +59283,7 @@ class ManeuverOptimalFiniteBounds(IManeuverOptimalFiniteBounds):
             raise STKAttributeError(attrname + " is not a recognized attribute in ManeuverOptimalFiniteBounds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F56E447-2391-476B-863C-8B8596486F03}", ManeuverOptimalFiniteBounds)
-
+agcls.AgTypeNameMap["ManeuverOptimalFiniteBounds"] = ManeuverOptimalFiniteBounds
 
 class ProfileLambertProfile(IProfileLambertProfile, IProfile, IRuntimeTypeInfoProvider):
     """The Lambert profile."""
@@ -59310,7 +59310,7 @@ class ProfileLambertProfile(IProfileLambertProfile, IProfile, IRuntimeTypeInfoPr
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileLambertProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3FA3162E-C38E-46D8-8F7C-B8421110EEB2}", ProfileLambertProfile)
-
+agcls.AgTypeNameMap["ProfileLambertProfile"] = ProfileLambertProfile
 
 class ProfileLambertSearchProfile(IProfileLambertSearchProfile, IProfile, IRuntimeTypeInfoProvider):
     """The Lambert profile."""
@@ -59337,7 +59337,7 @@ class ProfileLambertSearchProfile(IProfileLambertSearchProfile, IProfile, IRunti
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileLambertSearchProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9E98EFA2-5913-4BFA-8293-C294B80DFD4E}", ProfileLambertSearchProfile)
-
+agcls.AgTypeNameMap["ProfileLambertSearchProfile"] = ProfileLambertSearchProfile
 
 class ProfileGoldenSection(IProfileGoldenSection, IProfile, IRuntimeTypeInfoProvider):
     """The Golden Section profile."""
@@ -59364,7 +59364,7 @@ class ProfileGoldenSection(IProfileGoldenSection, IProfile, IRuntimeTypeInfoProv
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileGoldenSection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8A0E8056-D72B-4C82-85F0-945A96AC4E2E}", ProfileGoldenSection)
-
+agcls.AgTypeNameMap["ProfileGoldenSection"] = ProfileGoldenSection
 
 class GoldenSectionControlCollection(IGoldenSectionControlCollection):
     """Properties for the list of Golden Section control parameters."""
@@ -59385,7 +59385,7 @@ class GoldenSectionControlCollection(IGoldenSectionControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in GoldenSectionControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E3FCD6D-E592-4610-9831-87D9ABD81889}", GoldenSectionControlCollection)
-
+agcls.AgTypeNameMap["GoldenSectionControlCollection"] = GoldenSectionControlCollection
 
 class GoldenSectionControl(IGoldenSectionControl):
     """Control parameters for Golden Section profile"""
@@ -59406,7 +59406,7 @@ class GoldenSectionControl(IGoldenSectionControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in GoldenSectionControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{00EBADDE-16F1-4FAC-8014-6952CBF0832E}", GoldenSectionControl)
-
+agcls.AgTypeNameMap["GoldenSectionControl"] = GoldenSectionControl
 
 class GoldenSectionResultCollection(IGoldenSectionResultCollection):
     """Properties for the list of Golden Section result parameters."""
@@ -59427,7 +59427,7 @@ class GoldenSectionResultCollection(IGoldenSectionResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in GoldenSectionResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{72ADF8B9-9BE8-4112-B295-30B86DAF11F3}", GoldenSectionResultCollection)
-
+agcls.AgTypeNameMap["GoldenSectionResultCollection"] = GoldenSectionResultCollection
 
 class GoldenSectionResult(IGoldenSectionResult):
     """Result parameters for Golden Section profile"""
@@ -59448,7 +59448,7 @@ class GoldenSectionResult(IGoldenSectionResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in GoldenSectionResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A6F34FB1-1740-4EBB-B4FB-E6BB0B9EE427}", GoldenSectionResult)
-
+agcls.AgTypeNameMap["GoldenSectionResult"] = GoldenSectionResult
 
 class ProfileGridSearch(IProfileGridSearch, IProfile, IRuntimeTypeInfoProvider):
     """The Grid Search profile."""
@@ -59475,7 +59475,7 @@ class ProfileGridSearch(IProfileGridSearch, IProfile, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileGridSearch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7C28EA98-702E-4CA9-8DE6-C49CEC2932E0}", ProfileGridSearch)
-
+agcls.AgTypeNameMap["ProfileGridSearch"] = ProfileGridSearch
 
 class GridSearchControlCollection(IGridSearchControlCollection):
     """Properties for the list of Grid Search control parameters."""
@@ -59496,7 +59496,7 @@ class GridSearchControlCollection(IGridSearchControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in GridSearchControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0A1300B1-D35A-46C5-BE62-3AFB811157C5}", GridSearchControlCollection)
-
+agcls.AgTypeNameMap["GridSearchControlCollection"] = GridSearchControlCollection
 
 class GridSearchControl(IGridSearchControl):
     """Control parameters for Grid Search profile"""
@@ -59517,7 +59517,7 @@ class GridSearchControl(IGridSearchControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in GridSearchControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA10881F-2D20-41DF-88DD-F49F9A41BA76}", GridSearchControl)
-
+agcls.AgTypeNameMap["GridSearchControl"] = GridSearchControl
 
 class GridSearchResultCollection(IGridSearchResultCollection):
     """Properties for the list of Grid Search result parameters."""
@@ -59538,7 +59538,7 @@ class GridSearchResultCollection(IGridSearchResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in GridSearchResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E189AD76-0BE9-4922-8D76-3E28FAE74507}", GridSearchResultCollection)
-
+agcls.AgTypeNameMap["GridSearchResultCollection"] = GridSearchResultCollection
 
 class GridSearchResult(IGridSearchResult):
     """Result parameters for Grid Search profile"""
@@ -59559,7 +59559,7 @@ class GridSearchResult(IGridSearchResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in GridSearchResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B37527F8-1781-4484-985E-4F2BE2E8810A}", GridSearchResult)
-
+agcls.AgTypeNameMap["GridSearchResult"] = GridSearchResult
 
 class CalcObjectLinkEmbedControlCollection(ICalcObjectLinkEmbedControlCollection):
     """The Calculation Object link/embed component folder."""
@@ -59580,7 +59580,7 @@ class CalcObjectLinkEmbedControlCollection(ICalcObjectLinkEmbedControlCollection
             raise STKAttributeError(attrname + " is not a recognized attribute in CalcObjectLinkEmbedControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8EFFF2BC-B4AA-4F5E-BDF2-7218EBBE10FF}", CalcObjectLinkEmbedControlCollection)
-
+agcls.AgTypeNameMap["CalcObjectLinkEmbedControlCollection"] = CalcObjectLinkEmbedControlCollection
 
 class ProfileBisection(IProfileBisection, IProfile, IRuntimeTypeInfoProvider):
     """Single Parameter Bisection profile"""
@@ -59607,7 +59607,7 @@ class ProfileBisection(IProfileBisection, IProfile, IRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in ProfileBisection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A29B6D5-AF0C-4516-B362-5D111388524F}", ProfileBisection)
-
+agcls.AgTypeNameMap["ProfileBisection"] = ProfileBisection
 
 class BisectionControl(IBisectionControl):
     """Control parameters for  Bisection Seacrh Profile"""
@@ -59628,7 +59628,7 @@ class BisectionControl(IBisectionControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in BisectionControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC9B72FF-9317-4F85-B7C4-04D39B082CE2}", BisectionControl)
-
+agcls.AgTypeNameMap["BisectionControl"] = BisectionControl
 
 class BisectionControlCollection(IBisectionControlCollection):
     """Bisection control collection."""
@@ -59649,7 +59649,7 @@ class BisectionControlCollection(IBisectionControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in BisectionControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{331CFC1C-3359-4B22-930F-19E3C152AB33}", BisectionControlCollection)
-
+agcls.AgTypeNameMap["BisectionControlCollection"] = BisectionControlCollection
 
 class BisectionResult(IBisectionResult):
     """Result parameters for Bisection profile."""
@@ -59670,7 +59670,7 @@ class BisectionResult(IBisectionResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in BisectionResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{56010C30-D445-40EF-9BFC-6CE97FCFD032}", BisectionResult)
-
+agcls.AgTypeNameMap["BisectionResult"] = BisectionResult
 
 class BisectionResultCollection(IBisectionResultCollection):
     """Bisection result collection."""
@@ -59691,7 +59691,7 @@ class BisectionResultCollection(IBisectionResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in BisectionResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F25CF16-ED89-486D-8F60-8F4F3729D41F}", BisectionResultCollection)
-
+agcls.AgTypeNameMap["BisectionResultCollection"] = BisectionResultCollection
 
 
 ################################################################################

@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
 from antenna.antenna_helper import *
@@ -24,14 +25,14 @@ class EarlyBoundTests(TestBase):
     ANTENNA_NAME: str = "AntennaTest"
     oSat: "IStkObject" = None
     oAntenna: "IStkObject" = None
-    antenna: "IAntenna" = None
-    antennaVO: "IAntennaGraphics3D" = None
-    VOVector: "IGraphics3DVector" = None
-    antennaVolumeGraphics: "IAntennaVolumeGraphics" = None
-    antennaGraphics: "IAntennaGraphics" = None
-    antennaContourGraphics: "IAntennaContourGraphics" = None
+    antenna: "Antenna" = None
+    antennaVO: "AntennaGraphics3D" = None
+    VOVector: "Graphics3DVector" = None
+    antennaVolumeGraphics: "AntennaVolumeGraphics" = None
+    antennaGraphics: "AntennaGraphics" = None
+    antennaContourGraphics: "AntennaContourGraphics" = None
     antennaContour: "IAntennaContour" = None
-    antennaContourGain: "IAntennaContourGain" = None
+    antennaContourGain: "AntennaContourGain" = None
     antennaOrientation: "IOrientation" = None
     # endregion
 
@@ -46,7 +47,7 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.oAntenna = EarlyBoundTests.oSat.children.new(
                 STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA_NAME
             )
-            EarlyBoundTests.antenna = clr.CastAs(EarlyBoundTests.oAntenna, IAntenna)
+            EarlyBoundTests.antenna = clr.CastAs(EarlyBoundTests.oAntenna, Antenna)
             EarlyBoundTests.antennaOrientation = EarlyBoundTests.antenna.orientation
             if not TestBase.NoGraphicsMode:
                 EarlyBoundTests.antennaVO = EarlyBoundTests.antenna.graphics_3d
@@ -55,14 +56,7 @@ class EarlyBoundTests(TestBase):
                 EarlyBoundTests.antennaGraphics = EarlyBoundTests.antenna.graphics
                 EarlyBoundTests.antennaContourGraphics = EarlyBoundTests.antennaGraphics.contour_graphics
                 EarlyBoundTests.antennaContour = EarlyBoundTests.antennaContourGraphics.contour
-                EarlyBoundTests.antennaContourGain = clr.CastAs(EarlyBoundTests.antennaContour, IAntennaContourGain)
-
-            else:
-
-                def action1():
-                    EarlyBoundTests.antennaVO = EarlyBoundTests.antenna.graphics_3d
-
-                TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action1)
+                EarlyBoundTests.antennaContourGain = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourGain)
 
         except Exception as e:
             raise e
@@ -173,7 +167,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
         oHelper.Run(EarlyBoundTests.VOVector, True)
 
     # endregion
@@ -590,10 +584,8 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_Model(self, modelName: str):
-        def action2():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             EarlyBoundTests.antenna.set_model("bogus")
-
-        TryCatchAssertBlock.ExpectedException("Invalid model name", action2)
         TestBase.Application.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
 
         EarlyBoundTests.antenna.set_model(modelName)
@@ -635,10 +627,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.antennaGraphics.boresight_marker_style = "Square"
         Assert.assertEqual("Square", EarlyBoundTests.antennaGraphics.boresight_marker_style)
 
-        def action3():
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             EarlyBoundTests.antennaGraphics.boresight_marker_style = "Bogus"
-
-        TryCatchAssertBlock.ExpectedException("must be in", action3)
 
     # endregion
 
@@ -686,11 +676,8 @@ class EarlyBoundTests(TestBase):
                 Assert.assertEqual(contourType, EarlyBoundTests.antennaContourGraphics.contour.type)
 
             else:
-
-                def action4():
+                with pytest.raises(Exception, match=RegexSubstringMatch("is not supported")):
                     EarlyBoundTests.antennaContourGraphics.set_contour_type(contourType)
-
-                TryCatchAssertBlock.ExpectedException("is not supported", action4)
 
     # endregion
 
@@ -712,18 +699,14 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.antennaContour.altitude = 100
         Assert.assertEqual(100, EarlyBoundTests.antennaContour.altitude)
 
-        def action5():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.antennaContour.altitude = -100
-
-        TryCatchAssertBlock.ExpectedException("invalid", action5)
 
         EarlyBoundTests.antennaContour.show_at_altitude = False
         Assert.assertFalse(EarlyBoundTests.antennaContour.show_at_altitude)
 
-        def action6():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.antennaContour.altitude = 100
-
-        TryCatchAssertBlock.ExpectedException("read only", action6)
 
     # endregion
 
@@ -740,8 +723,8 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaContour_Levels
     @category("Graphics Tests")
     def test_IAgAntennaContour_Levels(self):
-        levelCollection: "IAntennaContourLevelCollection" = clr.CastAs(
-            EarlyBoundTests.antennaContour.levels, IAntennaContourLevelCollection
+        levelCollection: "AntennaContourLevelCollection" = clr.CastAs(
+            EarlyBoundTests.antennaContour.levels, AntennaContourLevelCollection
         )
         Assert.assertEqual(0, levelCollection.count)
 
@@ -763,29 +746,25 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(levelCollection.contains(4.0))
         Assert.assertTrue(levelCollection.contains(6.0))
 
-        def action7():
+        with pytest.raises(Exception, match=RegexSubstringMatch("already exists")):
             levelCollection.add(4.0)
 
-        TryCatchAssertBlock.ExpectedException("already exists", action7)
-
-        level: "IAntennaContourLevel"
+        level: "AntennaContourLevel"
 
         for level in levelCollection:
             Assert.assertIsNotNone(level)
 
         i: int = 0
         while i < levelCollection.count:
-            level: "IAntennaContourLevel" = levelCollection[i]
+            level: "AntennaContourLevel" = levelCollection[i]
             Assert.assertIsNotNone(level)
 
             i += 1
 
-        def action8():
-            level: "IAntennaContourLevel" = levelCollection[5]
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
+            level: "AntennaContourLevel" = levelCollection[5]
 
-        TryCatchAssertBlock.ExpectedException("out of range", action8)
-
-        level4: "IAntennaContourLevel" = levelCollection.get_level(4.0)
+        level4: "AntennaContourLevel" = levelCollection.get_level(4.0)
         Assert.assertEqual(4.0, level4.value)
         level4.line_style = LINE_STYLE.DASH_DOT_DOTTED
         Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, level4.line_style)
@@ -794,16 +773,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(Color.Red, level4.color)
         EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
         color = level4.color
-
-        def action9():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             level4.color = Color.Red
-
-        TryCatchAssertBlock.ExpectedException("read-only", action9)
-
-        def action10():
-            level8: "IAntennaContourLevel" = levelCollection.get_level(8.0)
-
-        TryCatchAssertBlock.ExpectedException("Unable to find", action10)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unable to find")):
+            level8: "AntennaContourLevel" = levelCollection.get_level(8.0)
 
         levelCollection.remove_at(1)
         Assert.assertEqual(2, levelCollection.count)
@@ -836,23 +809,16 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.antennaContour.num_label_dec_digits = 12
         Assert.assertEqual(12, EarlyBoundTests.antennaContour.num_label_dec_digits)
 
-        def action11():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.antennaContour.num_label_dec_digits = -1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action11)
-
-        def action12():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.antennaContour.num_label_dec_digits = 13
-
-        TryCatchAssertBlock.ExpectedException("invalid", action12)
 
         EarlyBoundTests.antennaContour.show_labels = False
         Assert.assertFalse(EarlyBoundTests.antennaContour.show_labels)
 
-        def action13():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.antennaContour.num_label_dec_digits = 1
-
-        TryCatchAssertBlock.ExpectedException("read-only", action13)
 
     # endregion
 
@@ -864,10 +830,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.antennaContour.line_width = LINE_WIDTH.WIDTH5
         Assert.assertEqual(LINE_WIDTH.WIDTH5, EarlyBoundTests.antennaContour.line_width)
 
-        def action14():
+        with pytest.raises(Exception, match=RegexSubstringMatch("maximum value")):
             EarlyBoundTests.antennaContour.line_width = LINE_WIDTH.WIDTH6
-
-        TryCatchAssertBlock.ExpectedException("maximum value", action14)
 
     # endregion
 
@@ -889,15 +853,10 @@ class EarlyBoundTests(TestBase):
             FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT, EarlyBoundTests.antennaContour.color_method
         )
 
-        def action15():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.antennaContour.start_color = Color.Red
-
-        TryCatchAssertBlock.ExpectedException("read-only", action15)
-
-        def action16():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.antennaContour.stop_color = Color.Red
-
-        TryCatchAssertBlock.ExpectedException("read-only", action16)
 
     # endregion
 
@@ -1100,10 +1059,8 @@ class EarlyBoundTests(TestBase):
     def test_IAgAntennaVolumeGraphics_Wireframe(self):
         EarlyBoundTests.antennaVolumeGraphics.show = False
 
-        def action17():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify read-only")):
             EarlyBoundTests.antennaVolumeGraphics.wireframe = True
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action17)
 
         EarlyBoundTests.antennaVolumeGraphics.show = True
 
@@ -1119,10 +1076,8 @@ class EarlyBoundTests(TestBase):
     def test_IAgAntennaVolumeGraphics_GainScale(self):
         EarlyBoundTests.antennaVolumeGraphics.show = False
 
-        def action18():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             EarlyBoundTests.antennaVolumeGraphics.gain_scale = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action18)
 
         EarlyBoundTests.antennaVolumeGraphics.show = True
 
@@ -1130,16 +1085,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, EarlyBoundTests.antennaVolumeGraphics.gain_scale)
         EarlyBoundTests.antennaVolumeGraphics.gain_scale = 10000.0
         Assert.assertEqual(10000.0, EarlyBoundTests.antennaVolumeGraphics.gain_scale)
-
-        def action19():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             EarlyBoundTests.antennaVolumeGraphics.gain_scale = 0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action19)
-
-        def action20():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             EarlyBoundTests.antennaVolumeGraphics.gain_scale = 10001.0
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action20)
 
     # endregion
 
@@ -1148,10 +1097,8 @@ class EarlyBoundTests(TestBase):
     def test_IAgAntennaVolumeGraphics_GainOffset(self):
         EarlyBoundTests.antennaVolumeGraphics.show = False
 
-        def action21():
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action21)
 
         EarlyBoundTests.antennaVolumeGraphics.show = True
 
@@ -1159,16 +1106,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(-100, EarlyBoundTests.antennaVolumeGraphics.gain_offset)
         EarlyBoundTests.antennaVolumeGraphics.gain_offset = 200
         Assert.assertEqual(200, EarlyBoundTests.antennaVolumeGraphics.gain_offset)
-
-        def action22():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = -101
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action22)
-
-        def action23():
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 201
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action23)
 
     # endregion
 
@@ -1375,84 +1316,60 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region RefractionModel Interface tests
-    def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "IRefractionModelEffectiveRadiusMethod"):
+    def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod"):
         EffectiveRadiusMethod.eff_rad = 0.1
         Assert.assertEqual(0.1, EffectiveRadiusMethod.eff_rad)
         EffectiveRadiusMethod.eff_rad = 100
         Assert.assertEqual(100, EffectiveRadiusMethod.eff_rad)
-
-        def action24():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.eff_rad = 0.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action24)
-
-        def action25():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.eff_rad = 101.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action25)
 
         EffectiveRadiusMethod.ceiling = 0.0
         Assert.assertEqual(0.0, EffectiveRadiusMethod.ceiling)
         EffectiveRadiusMethod.ceiling = 1000000000
         Assert.assertEqual(1000000000, EffectiveRadiusMethod.ceiling)
-
-        def action26():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.ceiling = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action26)
 
         EffectiveRadiusMethod.max_target_altitude = 0.0
         Assert.assertEqual(0.0, EffectiveRadiusMethod.max_target_altitude)
         EffectiveRadiusMethod.max_target_altitude = 1000000000
         Assert.assertEqual(1000000000, EffectiveRadiusMethod.max_target_altitude)
-
-        def action27():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.max_target_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action27)
 
         EffectiveRadiusMethod.use_extrapolation = True
         Assert.assertTrue(EffectiveRadiusMethod.use_extrapolation)
         EffectiveRadiusMethod.use_extrapolation = False
         Assert.assertFalse(EffectiveRadiusMethod.use_extrapolation)
 
-    def Test_IAgRfModelITURP8344(self, ITURP8344: "IRefractionModelITURP8344"):
+    def Test_IAgRfModelITURP8344(self, ITURP8344: "RefractionModelITURP8344"):
         ITURP8344.ceiling = 0.0
         Assert.assertEqual(0.0, ITURP8344.ceiling)
         ITURP8344.ceiling = 1000000000
         Assert.assertEqual(1000000000, ITURP8344.ceiling)
-
-        def action28():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.ceiling = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action28)
 
         ITURP8344.atmos_altitude = 0.0
         Assert.assertEqual(0.0, ITURP8344.atmos_altitude)
         ITURP8344.atmos_altitude = 1000000000
         Assert.assertEqual(1000000000, ITURP8344.atmos_altitude)
-
-        def action29():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.atmos_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action29)
 
         ITURP8344.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, ITURP8344.knee_bend_factor)
         ITURP8344.knee_bend_factor = 1.0
         Assert.assertEqual(1.0, ITURP8344.knee_bend_factor)
-
-        def action30():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.knee_bend_factor = -0.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action30)
-
-        def action31():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.knee_bend_factor = 1.1
 
-        TryCatchAssertBlock.ExpectedException("invalid", action31)
-
-    def Test_IAgRfModelSCFMethod(self, SCFMethod: "IRefractionModelSCFMethod"):
+    def Test_IAgRfModelSCFMethod(self, SCFMethod: "RefractionModelSCFMethod"):
         SCFMethod.use_refraction_index = True
         Assert.assertTrue(SCFMethod.use_refraction_index)
 
@@ -1460,79 +1377,39 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1.0, SCFMethod.refraction_index)
         SCFMethod.refraction_index = 10000.0
         Assert.assertEqual(10000.0, SCFMethod.refraction_index)
-
-        def action32():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.refraction_index = 0.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action32)
-
-        def action33():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.refraction_index = 10001.0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action33)
-
-        def action34():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c0 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action34)
-
-        def action35():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c1 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action35)
-
-        def action36():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c2 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action36)
-
-        def action37():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c3 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action37)
-
-        def action38():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c4 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action38)
-
-        def action39():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c5 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action39)
-
-        def action40():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c6 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action40)
-
-        def action41():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c7 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action41)
-
-        def action42():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c8 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action42)
-
-        def action43():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c9 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action43)
-
-        def action44():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.coefficients.c10 = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action44)
 
         SCFMethod.use_refraction_index = False
         Assert.assertFalse(SCFMethod.use_refraction_index)
 
-        def action45():
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             SCFMethod.refraction_index = 1.0
-
-        TryCatchAssertBlock.ExpectedException("read-only", action45)
 
         SCFMethod.coefficients.c0 = 1.0
         Assert.assertEqual(1.0, SCFMethod.coefficients.c0)
@@ -1561,46 +1438,31 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.0, SCFMethod.ceiling)
         SCFMethod.ceiling = 1000000000
         Assert.assertEqual(1000000000, SCFMethod.ceiling)
-
-        def action46():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.ceiling = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action46)
 
         SCFMethod.atmos_altitude = 0.0
         Assert.assertEqual(0.0, SCFMethod.atmos_altitude)
         SCFMethod.atmos_altitude = 1000000000
         Assert.assertEqual(1000000000, SCFMethod.atmos_altitude)
-
-        def action47():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.atmos_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action47)
 
         SCFMethod.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, SCFMethod.knee_bend_factor)
         SCFMethod.knee_bend_factor = 1.0
         Assert.assertEqual(1.0, SCFMethod.knee_bend_factor)
-
-        def action48():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.knee_bend_factor = -0.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action48)
-
-        def action49():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.knee_bend_factor = 1.1
-
-        TryCatchAssertBlock.ExpectedException("invalid", action49)
 
         SCFMethod.min_target_altitude = 0.0
         Assert.assertEqual(0.0, SCFMethod.min_target_altitude)
         SCFMethod.min_target_altitude = 1000000000
         Assert.assertEqual(1000000000, SCFMethod.min_target_altitude)
-
-        def action50():
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.min_target_altitude = -1.0
-
-        TryCatchAssertBlock.ExpectedException("invalid", action50)
 
         SCFMethod.use_extrapolation = True
         Assert.assertTrue(SCFMethod.use_extrapolation)
@@ -1623,23 +1485,20 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(eSnRefractionType, EarlyBoundTests.antenna.refraction)
             if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD:
                 self.Test_IAgRfModelEffectiveRadiusMethod(
-                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, IRefractionModelEffectiveRadiusMethod)
+                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelEffectiveRadiusMethod)
                 )
             elif eSnRefractionType == SENSOR_REFRACTION_TYPE.ITU_R_P834_4:
                 self.Test_IAgRfModelITURP8344(
-                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, IRefractionModelITURP8344)
+                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelITURP8344)
                 )
             elif eSnRefractionType == SENSOR_REFRACTION_TYPE.SCF_METHOD:
                 self.Test_IAgRfModelSCFMethod(
-                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, IRefractionModelSCFMethod)
+                    clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelSCFMethod)
                 )
 
         else:
-
-            def action51():
+            with pytest.raises(Exception, match=RegexSubstringMatch("deprecated")):
                 EarlyBoundTests.antenna.refraction = eSnRefractionType
-
-            TryCatchAssertBlock.ExpectedException("deprecated", action51)
 
     # endregion
 
@@ -1730,28 +1589,28 @@ class EarlyBoundTests(TestBase):
                 TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest"),
                 IStkObject,
             )
-            satellite: "ISatellite" = clr.CastAs(satelliteObj, ISatellite)
+            satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
             satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            satelliteProp: "IVehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, IVehiclePropagatorTwoBody)
-            ephemInterval: "ITimeToolEventIntervalSmartInterval" = clr.CastAs(
-                satelliteProp.ephemeris_interval, ITimeToolEventIntervalSmartInterval
+            satelliteProp: "VehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)
+            ephemInterval: "TimeToolEventIntervalSmartInterval" = clr.CastAs(
+                satelliteProp.ephemeris_interval, TimeToolEventIntervalSmartInterval
             )
             ephemInterval.set_explicit_interval("1 Jan 2022 10:00:00.000", "2 Jan 2022 10:00:00.000")
             satelliteProp.propagate()
-            antenna: "IAntenna" = clr.CastAs(
-                satelliteObj.children.new(STK_OBJECT_TYPE.ANTENNA, "AntennaPreDataTest"), IAntenna
+            antenna: "Antenna" = clr.CastAs(
+                satelliteObj.children.new(STK_OBJECT_TYPE.ANTENNA, "AntennaPreDataTest"), Antenna
             )
 
             dp: "IDataProvider" = clr.CastAs(
                 (clr.CastAs(antenna, IStkObject)).data_providers["Antenna Gain"], IDataProvider
             )
-            dpFixed: "IDataProviderFixed" = clr.CastAs(dp, IDataProviderFixed)
+            dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "GainCutType Elevation MinAzimuth '-90:00:00.0000' MaxAzimuth '90:00:00.0000' AzimuthStep '01:00:00.0000' ElevationValue '01:00:00.0000' Time '1 Jan 2022 10:00:00.000'"
-            result: "IDataProviderResult" = dpFixed.exec()
+            result: "DataProviderResult" = dpFixed.exec()
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp = clr.CastAs((clr.CastAs(antenna, IStkObject)).data_providers["Antenna Gain Matrix"], IDataProvider)
-            dpFixed = clr.CastAs(dp, IDataProviderFixed)
+            dpFixed = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "MinAzimuth '-90:00:00.0000' MaxAzimuth '90:00:00.0000' AzimuthStep '01:00:00.0000' ElevationStep '01:00:00.0000' MinElevation '-90:00:00.0000' MaxElevation '90:00:00.0000' Time '1 Jan 2022 10:00:00.000'"
             result = dpFixed.exec()
             Assert.assertEqual("OK", str(result.message.messages[0]))

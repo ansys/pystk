@@ -65,7 +65,7 @@ class STKEngineApplication(STKXApplication):
             stkxinit_unk = IUnknown()
             if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
                 stkxinit_unk.TakeOwnership()
-                pInit = ISTKXInitialize()
+                pInit = STKXInitialize()
                 pInit._private_init(stkxinit_unk)
                 install_dir = self.__dict__["_stk_install_dir"] if self.__dict__["_stk_install_dir"] is not None else os.getenv("STK_INSTALL_DIR")
                 if install_dir is None:

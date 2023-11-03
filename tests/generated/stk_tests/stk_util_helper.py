@@ -1,3 +1,4 @@
+import pytest
 from test_util import *
 from assertion_harness import *
 from logger import *
@@ -14,16 +15,10 @@ class STKUtilHelper(object):
         Assert.assertIsNotNone(comp.name)
         Assert.assertIsNotNone(comp.user_comment)
         if isReadOnly:
-
-            def action1():
+            with pytest.raises(Exception):
                 comp.name = "Test"
-
-            TryCatchAssertBlock.DoAssert("", action1)
-
-            def action2():
+            with pytest.raises(Exception):
                 comp.user_comment = "Test"
-
-            TryCatchAssertBlock.DoAssert("", action2)
             desc: str = comp.description
             readOnly: bool = comp.is_read_only()
 
@@ -46,25 +41,17 @@ class STKUtilHelper(object):
                 clone: typing.Any = cloneable.clone_object()
 
     @staticmethod
-    def TestDoublesCollection(dc: "IDoublesCollection", value: float, min: float, max: float):
-        def action3():
+    def TestDoublesCollection(dc: "DoublesCollection", value: float, min: float, max: float):
+        with pytest.raises(Exception):
             dc.add((min - 1e-06))
-
-        TryCatchAssertBlock.DoAssert("", action3)
-
-        def action4():
+        with pytest.raises(Exception):
             dc.add((max + 1e-06))
-
-        TryCatchAssertBlock.DoAssert("", action4)
 
         origCount: int = dc.count
         arDoubles = dc.to_array()  # save off the doubles
         if dc.count > 0:
-
-            def action5():
+            with pytest.raises(Exception):
                 dc.remove_at(dc.count)
-
-            TryCatchAssertBlock.DoAssert("", action5)
 
             dHold: float = dc[0]
             dc.remove_at(0)
@@ -78,10 +65,8 @@ class STKUtilHelper(object):
             dc.set_at(0, value)  # change the first element to the new value (then the collection is sorted)
             Assert.assertEqual(origCount, dc.count)
 
-            def action6():
+            with pytest.raises(Exception):
                 dc.set_at(dc.count, value)
-
-            TryCatchAssertBlock.DoAssert("", action6)
 
             found: bool = False
             d: float
