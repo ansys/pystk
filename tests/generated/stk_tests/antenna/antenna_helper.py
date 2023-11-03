@@ -6691,10 +6691,10 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             if utModelName == "Two Ray":
                 Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.TWO_RAY, utModel.type)
                 self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
-            elif utModelName == "Urban Propagation Wireless InSite RT":
-                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE_RT, utModel.type)
-                self.Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(
-                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSiteRT)
+            elif utModelName == "Urban Propagation Wireless InSite 64":
+                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE64, utModel.type)  # was RT
+                self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
+                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64)
                 )
             else:
                 Assert.fail("Unknown model type")
@@ -6722,9 +6722,10 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = 101
 
-    def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "UrbanTerrestrialLossModelWirelessInSiteRT"):
+    def Test_IAgUrbanTerrestrialLossModelWirelessInSite64(self, wisRT: "UrbanTerrestrialLossModelWirelessInSite64"):
+        # System.Windows.Forms.MessageBox.Show("A");
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
-        Assert.assertEqual(5, Array.Length(arSupportedCalculationMethods))
+        Assert.assertEqual(4, Array.Length(arSupportedCalculationMethods))  # was 5 in WirelessInSiteRT
         sCalcMethod: str
         for sCalcMethod in arSupportedCalculationMethods:
             if (
@@ -6750,7 +6751,7 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 wisRT.surface_temperature = 101
 
-            geometryData: "WirelessInSiteRTGeometryData" = wisRT.geometry_data
+            geometryData: "WirelessInSite64GeometryData" = wisRT.geometry_data
 
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")

@@ -1,38 +1,57 @@
 ################################################################################
-#          Copyright 2020-2020, Ansys Government Initiatives
+#          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################
 
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
-import os
-import typing
+import atexit
 from ctypes import byref
+import os
+import subprocess
+import typing
 
-from .internal.comutil       import (ole32lib, oleaut32lib, GUID, IUnknown, CoInitializeManager, Succeeded,
-                                 CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
-from .internal.coclassutil   import attach_to_stk_by_pid
-from .internal.eventutil     import EventSubscriptionManager
-from .utilities.exceptions   import *
-from .graphics               import *
-from .stkobjects             import *
-from .stkobjects.astrogator  import *
-from .stkobjects.aviator     import *
-from .stkutil                import *
-from .uiapplication          import *
-from .uicore                 import *
-from .vgt                    import *
+if os.name == "nt":
+    import winreg
+
+from .graphics import *
+from .internal.apiutil import interface_proxy
+from .internal.coclassutil import attach_to_stk_by_pid
+from .internal.comutil import (
+    CLSCTX_LOCAL_SERVER,
+    COINIT_APARTMENTTHREADED,
+    GUID,
+    PVOID,
+    CoInitializeManager,
+    IUnknown,
+    ObjectLifetimeManager,
+    Succeeded,
+    ole32lib,
+    oleaut32lib,
+)
+from .internal.eventutil import EventSubscriptionManager
+from .stkobjects import *
+from .stkobjects.astrogator import *
+from .stkobjects.aviator import *
+from .stkutil import *
+from .uiapplication import *
+from .uicore import *
+from .utilities.exceptions import *
+from .vgt import *
+
 
 class ThreadMarshaller(object):
     _iid_IUnknown = GUID.from_registry_format(IUnknown._guid)
     def __init__(self, obj):
         if os.name != "nt":
             raise RuntimeError("ThreadMarshaller is only available on Windows.")
-        if not hasattr(obj, "_pUnk"):
+        if not hasattr(obj, "_intf"):
             raise STKRuntimeError("Invalid object to passed to ThreadMarshaller.")
+        if type(obj._intf) != IUnknown:
+            raise STKRuntimeError("ThreadMarshaller is not available on the gRPC API.")
         self._obj = obj
         self._obj_type = type(obj)
         self._pStream = PVOID()
-        if not Succeeded(ole32lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._pUnk.p, byref(self._pStream))):
+        if not Succeeded(ole32lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._intf.p, byref(self._pStream))):
             raise STKRuntimeError("ThreadMarshaller failed to initialize.")
            
     def __del__(self):
@@ -68,8 +87,7 @@ class ThreadMarshaller(object):
         ole32lib.CoUninitialize()
 
 class STKDesktopApplication(UiApplication):
-    """
-    Interact with an STK Desktop application.
+    """Interact with an STK Desktop application.
 
     Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication() 
     to obtain an initialized STKDesktopApplication object.
@@ -77,98 +95,158 @@ class STKDesktopApplication(UiApplication):
     def __init__(self):
         if os.name != "nt":
             raise RuntimeError("STKDesktopApplication is only available on Windows. Use STKEngine.")
-        self.__dict__["_pUnk"] = None
+        self.__dict__["_intf"] = interface_proxy()
         UiApplication.__init__(self)
-        self.__dict__["_initialized"] = False
         self.__dict__["_root"] = None
         
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        UiApplication._private_init(self, pUnk)
-        self.__dict__["_initialized"] = True
+    def _private_init(self, intf:interface_proxy):
+        UiApplication._private_init(self, intf)
         
     def __del__(self):
-        if self.__dict__["_initialized"]:
+        if self._intf and type(self._intf) == IUnknown:
             CoInitializeManager.uninitialize()
 
     @property
     def Root(self) -> StkObjectRoot:
         """Get the object model root associated with this instance of STK Desktop application."""
-        if not self.__dict__["_initialized"]:
-            raise RuntimeError("STKDesktopApplication has not been properly initialized.  Use StartApplication() or AttachToApplication() to obtain the STKDesktopApplication object.")
-        if self.__dict__["_root"] is not None:
-            return self.__dict__["_root"]
-        if self.__dict__["_pUnk"] is not None:
+        if not self._intf:
+            raise RuntimeError("STKDesktopApplication has not been properly initialized.  Use STKDesktop to obtain the STKDesktopApplication object.")
+        if self._root is not None:
+            return self._root
+        if self._intf:
             self.__dict__["_root"] = self.personality2
             return self.__dict__["_root"]
             
     def NewObjectModelContext(self) -> StkObjectModelContext:
-        '''
-        Create a new object model context for the STK Desktop application.
-        '''
+        '''Create a new object model context for the STK Desktop application.'''
         return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
     
     def ShutDown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
-        if self.__dict__["_pUnk"] is not None:
-            if self.__dict__["_root"] is not None:
-                self.__dict__["_root"].CloseScenario()
-            self.quit()
+        if self._root is not None:
+            self._root.CloseScenario()
             self.__dict__["_root"] = None
-            self.__dict__["_pUnk"] = None
+        if hasattr(self._intf, "client"):
+            self.user_control = False
+            self._disconnect_grpc()
+        else:
+            self.quit()
+            self.__dict__["_intf"] = interface_proxy()
             
+    def _disconnect_grpc(self) -> None:
+        """Safely disconnect from STK."""
+        if self._intf:
+            self._intf.client.TerminateConnection()
+            self.__dict__["_intf"] = interface_proxy()
+
 
 class STKDesktop(object):
     """Create, initialize, and manage STK Desktop application instances."""
+    
+    @staticmethod
+    def _read_registry_key(root, key, value=None, silent_exception=False):
+        try:
+            with winreg.OpenKey(root, key) as hkey:
+                (val, typ) = winreg.QueryValueEx(hkey, value)
+            return val
+        except Exception as e:
+            if not silent_exception:
+                raise STKInitializationError(f"Error Reading Registry for {key}: {e}")
+            return None
 
     @staticmethod
-    def StartApplication(visible:bool=False, userControl:bool=False) -> STKDesktopApplication:
-        """
-        Create a new STK Desktop application instance.  
+    def StartApplication(visible:bool=False, \
+                         userControl:bool=False, \
+                         grpc_server:bool=False, \
+                         grpc_host:str="0.0.0.0", \
+                         grpc_port:int=40704, \
+                         grpc_timeout_sec:int=60, \
+                         grpc_desktop_options:str="") -> STKDesktopApplication:
+        """Create a new STK Desktop application instance.
 
         Specify visible = True to show the application window.
-        Specify userControl = True to return the application to the user's control 
+        Specify userControl = True to return the application to the user's control .
         (the application remains open) after terminating the Python API connection.
+        Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
+        grpc_host is the IP address or DNS name of the gRPC server.
+        grpc_port is the integral port number that the gRPC server is using.
+        grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+        grpc_desktop_options passes extra command line options to UiApplication.
         Only available on Windows.
         """
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
 
         CoInitializeManager.initialize()
-        CLSID_AgUiApplication = GUID()
-        if Succeeded(ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
-            pUnk = IUnknown()
-            IID_IUnknown = GUID(IUnknown._guid)
-            if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
-                pUnk.TakeOwnership(isApplication=True)
-                app = STKDesktopApplication()
-                app._private_init(pUnk)
-                app.visible = visible
-                app.user_control = userControl
-                return app
-        raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
+        if grpc_server:
+            try:
+                pass
+            except ModuleNotFoundError:
+                raise STKInitializationError("gRPC use requires Python modules grpcio and protobuf.")
+            executable = STKDesktop._read_registry_key(winreg.HKEY_CLASSES_ROOT, 'CLSID\{7ADA6C22-FA34-4578-8BE8-65405A55EE15}\LocalServer32')
+            cmd_line = f"{executable} /pers STK /grpcServer On /grpcHost {grpc_host} /grpcPort {grpc_port} {grpc_desktop_options}"
+            app_process = subprocess.Popen(cmd_line)
+            host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
+            app = STKDesktop.AttachToApplication(None, grpc_server, host, grpc_port, grpc_timeout_sec)
+            app.visible = visible
+            app.user_control = userControl
+            return app
+        else:
+            CLSID_AgUiApplication = GUID()
+            if Succeeded(ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
+                pUnk = IUnknown()
+                IID_IUnknown = GUID(IUnknown._guid)
+                if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
+                    pUnk.take_ownership(isApplication=True)
+                    app = STKDesktopApplication()
+                    app._private_init(pUnk)
+                    app.visible = visible
+                    app.user_control = userControl
+                    return app
+            raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
         
     @staticmethod
-    def AttachToApplication(pid:int=None) -> STKDesktopApplication:
-        """
-        Attach to an existing STK Desktop instance. 
+    def AttachToApplication(pid:int=None, \
+                            grpc_server:bool=False, \
+                            grpc_host:str="localhost", \
+                            grpc_port:int=40704, \
+                            grpc_timeout_sec:int=60) -> STKDesktopApplication:
+        """Attach to an existing STK Desktop instance.
 
         Specify the Process ID (PID) in case multiple processes are open.
-        Specify userControl = True to return the application to the user's control 
-        (the application remains open) after terminating the Python API connection.
+        Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
+        grpc_host is the IP address or DNS name of the gRPC server.
+        grpc_port is the integral port number that the gRPC server is using.
+        grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         Only available on Windows.
         """
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
 
         CoInitializeManager.initialize()
-        if pid is None:
+        if grpc_server:
+            if pid is not None:
+                raise STKInitializationError("Retry using either 'pid' or 'grpc_server'. Cannot initialize using both.")
+            try:
+                from .internal.grpcutil import grpc_client
+            except ModuleNotFoundError:
+                raise STKInitializationError("gRPC use requires Python modules grpcio and protobuf.")
+            client = grpc_client.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+            if client is not None:
+                pAppImpl = client.GetStkApplicationInterface()
+                app = STKDesktopApplication()
+                app._private_init(pAppImpl)
+                atexit.register(app._disconnect_grpc)
+                return app
+            else:
+                raise STKInitializationError(f"Could not connect to gRPC server at {grpc_host}:{grpc_port}.")
+        elif pid is None:
             CLSID_AgUiApplication = GUID()
             if Succeeded(ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
                 pUnk = IUnknown()
                 IID_IUnknown = GUID(IUnknown._guid)
                 if Succeeded(oleaut32lib.GetActiveObject(byref(CLSID_AgUiApplication), None, byref(pUnk.p))):
-                    pUnk.TakeOwnership(isApplication=True)
+                    pUnk.take_ownership(isApplication=True)
                     app = STKDesktopApplication()
                     app._private_init(pUnk)
                     return app
@@ -185,7 +263,10 @@ class STKDesktop(object):
 
     @staticmethod
     def ReleaseAll() -> None:
-        """Releases all handles from Python to STK Desktop applications."""
+        """Releases all handles from Python to STK Desktop applications.
+
+        Not applicable to gRPC connections.
+        """
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows.")
         EventSubscriptionManager.UnsubscribeAll()
@@ -193,12 +274,15 @@ class STKDesktop(object):
         
     @staticmethod
     def CreateThreadMarshaller(stk_object:typing.Any) -> ThreadMarshaller:
-        """Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread."""
+        """Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
+
+        Not applicable to gRPC connections.
+        """
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows.")
         return ThreadMarshaller(stk_object)
 
 
 ################################################################################
-#          Copyright 2020-2020, Ansys Government Initiatives
+#          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################

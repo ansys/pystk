@@ -1600,6 +1600,7 @@ class EarlyBoundTests(TestBase):
     # region GridInspectorFastVsSlow
     @category("Basic Tests")
     @category("Grid Inspector")
+    @category("ExcludeWithGrpc")
     def test_GridInspectorFastVsSlow(self):
         TestBase.Application.close_scenario()
         EarlyBoundTests.InitHelper()
@@ -1709,6 +1710,7 @@ class EarlyBoundTests(TestBase):
     # region GridInspectorFastVsSlow2
     @category("Basic Tests")
     @category("Grid Inspector")
+    @category("ExcludeWithGrpc")
     def test_GridInspectorFastVsSlow2(self):
         TestBase.Application.close_scenario()
         EarlyBoundTests.InitHelper()

@@ -4,27 +4,37 @@
 
 __all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 
-import os
+import atexit
 from ctypes import byref
 from enum import IntEnum
+import os
+
 from ..internal.timerutil import *
 
 if os.name != "nt":
-    from ctypes                       import CFUNCTYPE, cdll
-    from ctypes.util                  import find_library
+    from ctypes import CFUNCTYPE, cdll
+    from ctypes.util import find_library
 
-from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
-from ..internal.comutil            import ole32lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
-from ..internal.eventutil          import EventSubscriptionManager
+from ..graphics import *
+from ..internal.comutil import (
+    CLSCTX_INPROC_SERVER,
+    GUID,
+    CoInitializeManager,
+    IUnknown,
+    ObjectLifetimeManager,
+    Succeeded,
+    ole32lib,
+)
+from ..internal.eventutil import EventSubscriptionManager
 from ..internal.stkxinitialization import *
-from ..utilities.exceptions        import *
-from ..graphics                    import *
-from ..stkobjects                  import *
-from ..stkobjects.astrogator       import *
-from ..stkobjects.aviator          import *
-from ..stkutil                     import *
-from ..stkx                        import *
-from ..vgt                         import *
+from ..stkobjects import *
+from ..stkobjects.astrogator import *
+from ..stkobjects.aviator import *
+from ..stkutil import *
+from ..stkx import *
+from ..utilities.exceptions import *
+from ..vgt import *
+
 
 class STKEngineTimerType(IntEnum):
     DisableTimers     = 1
@@ -34,21 +44,16 @@ class STKEngineTimerType(IntEnum):
     SigRt             = 5
 
 class STKEngineApplication(STKXApplication):
-    """
-    Interact with STK Engine.
+    """Interact with STK Engine.
 
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
     def __init__(self):
         STKXApplication.__init__(self)
-        self.__dict__["_stk_install_dir"] = None
-        self.__dict__["_stk_config_dir"] = None
         self.__dict__["_initialized"] = False
 
-    def _private_init(self, pUnk:IUnknown, stk_install_dir, stk_config_dir, noGraphics):
+    def _private_init(self, pUnk:IUnknown, noGraphics):
         STKXApplication._private_init(self, pUnk)
-        self.__dict__["_stk_install_dir"] = stk_install_dir
-        self.__dict__["_stk_config_dir"] = stk_config_dir
         self._STKXInitialize()
         self._STKXInitializeTimer(noGraphics)
         self.__dict__["_initialized"] = True
@@ -64,13 +69,13 @@ class STKEngineApplication(STKXApplication):
             IID_IUnknown = GUID(IUnknown._guid)
             stkxinit_unk = IUnknown()
             if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
-                stkxinit_unk.TakeOwnership()
+                stkxinit_unk.take_ownership()
                 pInit = STKXInitialize()
                 pInit._private_init(stkxinit_unk)
-                install_dir = self.__dict__["_stk_install_dir"] if self.__dict__["_stk_install_dir"] is not None else os.getenv("STK_INSTALL_DIR")
+                install_dir = os.getenv("STK_INSTALL_DIR")
                 if install_dir is None:
                     raise STKInitializationError("Please set a valid STK_INSTALL_DIR environment variable.")
-                config_dir = self.__dict__["_stk_config_dir"] if self.__dict__["_stk_config_dir"] is not None else os.getenv("STK_CONFIG_DIR")
+                config_dir = os.getenv("STK_CONFIG_DIR")
                 if config_dir is None:
                     raise STKInitializationError("Please set a valid STK_CONFIG_DIR environment variable.")
                 pInit.initialize_data(install_dir, config_dir)
@@ -122,7 +127,7 @@ class STKEngineApplication(STKXApplication):
             IID_IUnknown = GUID(IUnknown._guid)
             root_unk = IUnknown()
             ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
-            root_unk.TakeOwnership()
+            root_unk.take_ownership()
             root = StkObjectRoot()
             root._private_init(root_unk)
             return root
@@ -136,7 +141,7 @@ class STKEngineApplication(STKXApplication):
             IID_IUnknown = GUID(IUnknown._guid)
             context_unk = IUnknown()
             ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectModelContext), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(context_unk.p))
-            context_unk.TakeOwnership()
+            context_unk.take_ownership()
             context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
@@ -156,8 +161,6 @@ class STKEngineApplication(STKXApplication):
 class STKEngine(object):
     """Initialize and manage the STK Engine application."""
     _is_engine_running = False
-    _stk_config_dir = None
-    _stk_install_dir = None
             
     @staticmethod
     def _initX11(noGraphics):
@@ -172,8 +175,7 @@ class STKEngine(object):
             
     @staticmethod
     def StartApplication(noGraphics:bool=True) -> STKEngineApplication:
-        """
-        Initialize STK Engine in-process and return the instance.
+        """Initialize STK Engine in-process and return the instance.
 
         Must only be used once per Python process.
         """
@@ -185,38 +187,15 @@ class STKEngine(object):
             pUnk = IUnknown()
             IID_IUnknown = GUID(IUnknown._guid)
             if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
-                pUnk.TakeOwnership(isApplication=True)
+                pUnk.take_ownership(isApplication=True)
                 STKEngine._is_engine_running = True
                 STKEngine._initX11(noGraphics)
                 engine = STKEngineApplication()
-                engine._private_init(pUnk, STKEngine._stk_install_dir, STKEngine._stk_config_dir, noGraphics)
+                engine._private_init(pUnk, noGraphics)
                 engine.no_graphics = noGraphics
+                atexit.register(engine.ShutDown)
                 return engine
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")
-                
-    if os.name != "nt":
-        @staticmethod
-        def SetSTKInstallDir(stkInstallDir:str) -> None:
-            """
-            Set the STK install directory.
-
-            Setting the install directory using this method will override the STK_INSTALL_DIR environment variable.
-            If this method is not called, STK_INSTALL_DIR will be used instead.  This method must be called before
-            StartApplication().
-            """
-            STKEngine._stk_install_dir = stkInstallDir
-            
-        @staticmethod
-        def SetSTKConfigDir(stkConfigDir:str) -> None:
-            """
-            Set the STK config directory.
-
-            Setting the config directory using this method will override the STK_CONFIG_DIR environment variable.
-            If this method is not called, STK_CONFIG_DIR will be used instead.  This method must be called before
-            StartApplication().
-            """
-            STKEngine._stk_config_dir = stkConfigDir
-        
        
 ################################################################################
 #          Copyright 2020-2020, Ansys Government Initiatives

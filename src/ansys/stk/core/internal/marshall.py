@@ -71,7 +71,7 @@ def pytype_to_vartype(item: typing.Any) -> int:
             return agcom.VT_ARRAY|vt
         else:
             return agcom.VT_ARRAY|agcom.VT_NULL
-    elif hasattr(item, "_pUnk") and type(item._pUnk)==agcom.IUnknown:
+    elif hasattr(item, "_intf") and type(item._intf)==agcom.IUnknown:
         return agcom.VT_UNKNOWN
 
 def VARIANT_from_python_data(data:typing.Any) -> agcom.VARIANT:
@@ -95,8 +95,8 @@ def VARIANT_from_python_data(data:typing.Any) -> agcom.VARIANT:
         elif var.vt == agcom.VT_R8:
             union_val.dblVal = agcom.DOUBLE(data)
         elif var.vt == agcom.VT_UNKNOWN:
-            union_val.punkVal = data._pUnk.p
-            agcom._CreateAgObjectLifetimeManager._AddRefImpl(data._pUnk)
+            union_val.punkVal = data._intf.p
+            agcom._CreateAgObjectLifetimeManager._AddRefImpl(data._intf)
         elif var.vt & agcom.VT_ARRAY:
             union_val.parray = SAFEARRAY_from_list(data, True)
         var.buffer = union_val.buffer
@@ -223,7 +223,7 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
             pUnk = ctypes_val
         ret = agcom.IUnknown()
         ret.p = pUnk
-        ret.CreateOwnership()
+        ret.create_ownership()
         return agcoclass.get_concrete_class(ret)
     elif vt & agcom.VT_ARRAY:
         if vt & agcom.VT_BYREF:
@@ -260,7 +260,7 @@ def SAFEARRAY_elem_from_python_elem(python_elem:typing.Any, as_VARIANT:bool = Tr
         else:
             raise RuntimeError("Unexpected Safearray element type.")
 
-def _create_SAFEARRAY(vt:int, dim:int, num_elems_dim1:int, num_elems_dim2:int = 0) -> agcom.SAFEARRAY:
+def _create_SAFEARRAY(vt:int, dim:int, num_elems_dim1:int, num_elems_dim2:int = 0) -> agcom.LPSAFEARRAY:
     rgsabound = (agcom.SAFEARRAYBOUND*dim)()
     num_elems = [num_elems_dim1]
     if dim == 2:
@@ -268,10 +268,10 @@ def _create_SAFEARRAY(vt:int, dim:int, num_elems_dim1:int, num_elems_dim2:int = 
     for i in range(dim):
         rgsabound[i].lLbound = agcom.LONG(0)
         rgsabound[i].cElements = agcom.ULONG(num_elems[i])
-    sa = agcom.SAFEARRAY(agcom.oleaut32lib.SafeArrayCreate(vt, agcom.UINT(dim), cast(pointer(rgsabound), POINTER(agcom.SAFEARRAYBOUND))))
+    sa = agcom.LPSAFEARRAY(agcom.oleaut32lib.SafeArrayCreate(vt, agcom.UINT(dim), cast(pointer(rgsabound), POINTER(agcom.SAFEARRAYBOUND))))
     return sa
 
-def SAFEARRAY_from_list(data:list, as_VARIANT:bool=True) -> agcom.SAFEARRAY:
+def SAFEARRAY_from_list(data:list, as_VARIANT:bool=True) -> agcom.LPSAFEARRAY:
     if len(data) == 0:
         return _create_SAFEARRAY(agcom.VT_VARIANT, 1, 0)
     elif type(data[0]) == list:
@@ -381,43 +381,33 @@ def _vartype_to_ctypes_type(vt:agcom.INT) -> typing.Any:
     else:
         raise RuntimeError("Unrecognized variant type: " + str(vt))
 
-def _single_dimension_list_from_SAFEARRAY(sa:agcom.SAFEARRAY, index:int, from_2d_array=False) -> list:
+def _single_dimension_list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY, index:int, from_2d_array=False) -> list:
     python_array = list()
     vt = agcom.VARTYPE()
-    lb = agcom.LONG()
-    ub = agcom.LONG()
     agcom.oleaut32lib.SafeArrayGetVartype(sa, byref(vt))
-    indices = (agcom.LONG*2)()
+    lb1 = agcom.LONG()
+    ub1 = agcom.LONG()
+    agcom.oleaut32lib.SafeArrayGetLBound(sa, agcom.UINT(1), byref(lb1))
+    agcom.oleaut32lib.SafeArrayGetUBound(sa, agcom.UINT(1), byref(ub1))
+    nElem1 = int(ub1.value)+1-int(lb1.value)
+    pVoid = agcom.LPVOID()
+    hr = agcom.oleaut32lib.SafeArrayAccessData(sa, byref(pVoid))
+    pElem = cast(pVoid, POINTER(_vartype_to_ctypes_type(vt.value)))
     if not from_2d_array:
-        agcom.oleaut32lib.SafeArrayGetLBound(sa, agcom.UINT(1), byref(lb))
-        agcom.oleaut32lib.SafeArrayGetUBound(sa, agcom.UINT(1), byref(ub))
-        indices[0] = 0
-        indices[1] = agcom.LONG(index)
+        for i in range(int(lb1.value), int(lb1.value)+nElem1):
+            python_array.append(python_val_from_ctypes_val(pElem[i], vt.value))
     else:
-        agcom.oleaut32lib.SafeArrayGetLBound(sa, agcom.UINT(2), byref(lb))
-        agcom.oleaut32lib.SafeArrayGetUBound(sa, agcom.UINT(2), byref(ub))
-        indices[0] = agcom.LONG(index)
-        indices[1] = 0
-    pIndx = cast(pointer(indices), POINTER(agcom.LONG))
-    for i in range(int(lb.value), int(ub.value)+1):
-        pElem = _vartype_to_ctypes_type(vt.value)()
-        if vt.value == agcom.VT_VARIANT:
-            agcom.oleaut32lib.VariantInit(pElem)
-        indices[0 if not from_2d_array else 1] = agcom.LONG(i)
-        hr = agcom.oleaut32lib.SafeArrayGetElement(sa, pIndx, byref(pElem))
-        python_elem = python_val_from_ctypes_val(pElem, vt.value)
-        if vt.value == agcom.VT_VARIANT:
-            hr = agcom.oleaut32lib.VariantClear(pElem)
-        elif vt.value == agcom.VT_BSTR:
-            agcom.oleaut32lib.SysFreeString(pElem)
-        elif vt.value == agcom.VT_ARRAY:
-            agcom.oleaut32lib.SafeArrayDestroy(pElem)
-        elif vt.value == agcom.VT_UNKNOWN or vt.value == agcom.VT_DISPATCH or vt.value & agcom.VT_BYREF:
-            raise RuntimeError(f"Unsupported SAFEARRAY type detected: vt = {vt.value}.")
-        python_array.append(python_elem)
+        lb2 = agcom.LONG()
+        ub2 = agcom.LONG()
+        agcom.oleaut32lib.SafeArrayGetLBound(sa, agcom.UINT(2), byref(lb2))
+        agcom.oleaut32lib.SafeArrayGetUBound(sa, agcom.UINT(2), byref(ub2))
+        nElem2 = int(ub2.value)+1-int(lb2.value)
+        for i in range(int(lb2.value), int(lb2.value)+nElem2):
+            python_array.append(python_val_from_ctypes_val(pElem[(i * nElem1) + index], vt.value))
+    hr = agcom.oleaut32lib.SafeArrayUnaccessData(sa)
     return python_array
 
-def list_from_SAFEARRAY(sa:agcom.SAFEARRAY) -> list:
+def list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
     dim = agcom.oleaut32lib.SafeArrayGetDim(sa)
     if dim == 0:
         return list()
@@ -670,10 +660,14 @@ class BSTR_arg(object):
             self.bstr = agcom.BSTR()
         else:
             self.bstr = agcom.BSTR(agcom.oleaut32lib.SysAllocString(val))
+    def _cleanup(self):
+        agcom.oleaut32lib.SysFreeString(self.bstr)
+    def __del__(self):
+        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        agcom.oleaut32lib.SysFreeString(self.bstr)
+        self._cleanup()
         return False
     @property
     def COM_val(self) -> agcom.BSTR:
@@ -734,10 +728,14 @@ class VARIANT_arg(object):
             agcom.oleaut32lib.VariantCopy(byref(self.var), byref(val))
         else:
             self.var = VARIANT_from_python_data(val)
+    def _cleanup(self):
+        agcom.oleaut32lib.VariantClear(self.var)
+    def __del__(self):
+        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        agcom.oleaut32lib.VariantClear(self.var)
+        self._cleanup()
         return False
     @property
     def COM_val(self) -> agcom.VARIANT:
@@ -747,37 +745,46 @@ class VARIANT_arg(object):
         return python_val_from_VARIANT(self.var)
 
 class AgInterface_in_arg(object):
-    def __init__(self, val, as_interface):
+    def __init__(self, as_interface):
+        self.pIntf = None
+        self.as_interface = as_interface
+    def __call__(self, val):
         """
         Initialize an AgInterface_in_arg object.
 
         val should be a python CoClass object (e.g. Facility)
         as_interface is the interface class to send to STK
         """
-        self.pIntf = None
+        new_inst = AgInterface_in_arg(self.as_interface)
+        new_inst.pIntf = None
         if type(val) == agcomobj.COMObject:
-            self.val = val
-            self.rawptr = val.GetPointer()
-        elif val is not None and hasattr(val, "_pUnk"):
-            self.val = val
-            if as_interface==agcom.IDispatch:
-                self.pIntf = val._pUnk.QueryInterface(agcom.GUID(agcom.IDispatch._guid))
-            elif as_interface==agcom.IUnknown:
-                self.pIntf = val._pUnk.QueryInterface(agcom.GUID(agcom.IUnknown._guid))
+            new_inst.val = val
+            new_inst.rawptr = val.GetPointer()
+        elif val is not None and hasattr(val, "_intf"):
+            new_inst.val = val
+            if new_inst.as_interface=="IDispatch":
+                new_inst.pIntf = val._intf.query_interface(agcom.GUID(agcom.IDispatch._guid))
+            elif new_inst.as_interface=="IUnknown":
+                new_inst.pIntf = val._intf.query_interface(agcom.GUID(agcom.IUnknown._guid))
             else:
-                clsid = agcoclass.AgClassCatalog.get_clsid_from_pyclass(as_interface)
-                iid = agcom.GUID(clsid)
-                self.pIntf = val._pUnk.QueryInterface(iid)
-            self.rawptr = self.pIntf.p
+                intf_class = agcoclass.AgTypeNameMap[new_inst.as_interface]
+                iid = agcom.GUID(intf_class._metadata["uuid"])
+                new_inst.pIntf = val._intf.query_interface(iid)
+            new_inst.rawptr = new_inst.pIntf.p
         else:
-            self.val = None
-            self.pIntf = agcom.IUnknown()
-            self.rawptr = self.pIntf.p
+            new_inst.val = None
+            new_inst.pIntf = agcom.IUnknown()
+            new_inst.rawptr = new_inst.pIntf.p
+        return new_inst
+    def _cleanup(self):
+        if self.pIntf is not None:
+            del(self.pIntf)
+    def __del__(self):
+        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        if self.pIntf is not None:
-            del(self.pIntf)
+        self._cleanup()
         return False
     @property
     def COM_val(self) -> agcom.PVOID:
@@ -792,10 +799,14 @@ class AgInterface_in_arg(object):
 class AgInterface_out_arg(object):
     def __init__(self):
         self.ptr = agcom.IUnknown()
+    def _cleanup(self):
+        del(self.ptr)
+    def __del__(self):
+        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        del(self.ptr)
+        self._cleanup()
         return False
     @property
     def COM_val(self) -> agcom.PVOID:
@@ -803,10 +814,27 @@ class AgInterface_out_arg(object):
     @property
     def python_val(self) -> typing.Any:
         if self.ptr:
-            self.ptr.TakeOwnership()
+            self.ptr.take_ownership()
             return agcoclass.get_concrete_class(self.ptr)
         else:
             return None
+            
+class PVOID_arg(object):
+    def __init__(self, val: agcom.PVOID = None):
+        if val is None:
+            self.p = agcom.PVOID()
+        else:
+            self.p = val
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value, tb):
+        return False
+    @property
+    def COM_val(self) -> agcom.PVOID:
+        return self.p
+    @property
+    def python_val(self) -> agcom.PVOID:
+        return self.p
             
 class AgInterface_event_callback_arg(object):
     def __init__(self, pUnk:agcom.PVOID, as_interface):
@@ -821,14 +849,18 @@ class AgInterface_event_callback_arg(object):
         self.intf = as_interface()
         self.intf._private_init(ptr)
         del(ptr)
+    def _cleanup(self):
+        del(self.intf)
+    def __del__(self):
+        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        del(self.intf)
+        self._cleanup()
         return False
     @property
     def COM_val(self) -> agcom.PVOID:
-        return self.intf.__dict__["_pUnk"].p
+        return self.intf.__dict__["_intf"].p
     @property
     def python_val(self) -> typing.Any:
         return self.intf
@@ -836,10 +868,14 @@ class AgInterface_event_callback_arg(object):
 class IEnumVARIANT_arg(object):
     def __init__(self):
         self.ptr = agcom.IUnknown()
+    def _cleanup(self):
+        del(self.ptr)
+    def __del__(self):
+        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        del(self.ptr)
+        self._cleanup()
         return False
     @property
     def COM_val(self) -> agcom.PVOID:
@@ -847,20 +883,22 @@ class IEnumVARIANT_arg(object):
     @property
     def python_val(self) -> agcom.IEnumVARIANT:
         if self.ptr:
-            self.ptr.TakeOwnership()
+            self.ptr.take_ownership()
             return agcom.IEnumVARIANT(self.ptr)
         else:
             return None
 
 class AgEnum_arg(object):
-    def __init__(self, enum_type: IntEnum, val: typing.Any = None):
-        self.enum_type = enum_type
+    def __init__(self, enum_type: IntEnum):
+        self.enum_type = enum_type  
+    def __call__(self, val: typing.Any = None):
         if val is None:
             self.val = agcom.LONG()
         elif type(val) == agcom.LONG:
             self.val = val
         else:
             self.val = agcom.LONG(val)
+        return self
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
@@ -872,19 +910,23 @@ class AgEnum_arg(object):
     def python_val(self) -> IntEnum:
         return self.enum_type(self.val.value)
 
-class SAFEARRAY_arg(object):
+class LPSAFEARRAY_arg(object):
     def __init__(self, val: list = None):
         if val is None:
-            self.sa = agcom.SAFEARRAY()
+            self.sa = agcom.LPSAFEARRAY()
         else:
             self.sa = SAFEARRAY_from_list(val, True)
+    def _cleanup(self):
+        agcom.oleaut32lib.SafeArrayDestroy(self.sa)
+    def __del__(self):
+        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        agcom.oleaut32lib.SafeArrayDestroy(self.sa)
+        self._cleanup()
         return False
     @property
-    def COM_val(self) -> agcom.SAFEARRAY:
+    def COM_val(self) -> agcom.LPSAFEARRAY:
         return self.sa
     @property
     def python_val(self) -> list:
@@ -892,6 +934,7 @@ class SAFEARRAY_arg(object):
         
 class IPictureDisp_arg(object):
     def __init__(self, val: agcom.IPictureDisp = None):
+        raise STKPluginMethodNotImplementedError(f"Methods with the argument type \"IPictureDisp\" are not available using Python")
         if val is None:
             self.ipd = agcom.IPictureDisp()
         else:
@@ -974,20 +1017,3 @@ class OLE_YPOS_PIXELS_arg(object):
     @property
     def python_val(self) -> int:
         return self.OLE_YPOS_PIXELS.value
-
-class PVOID_arg(object):
-    def __init__(self, val: agcom.PVOID = None):
-        if val is None:
-            self.ipd = agcom.PVOID()
-        else:
-            self.ipd = val
-    def __enter__(self):
-        return self
-    def __exit__(self, type, value, tb):
-        return False
-    @property
-    def COM_val(self) -> agcom.PVOID:
-        return self.ipd
-    @property
-    def python_val(self) -> agcom.PVOID:
-        return self.ipd
