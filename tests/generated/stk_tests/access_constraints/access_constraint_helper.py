@@ -1,5 +1,6 @@
 import pytest
 from test_util import *
+from app_provider import *
 from assertion_harness import *
 from display_times_helper import *
 from logger import *
@@ -537,7 +538,11 @@ class AccessConstraintHelper(object):
         self.BasePropertiesTest(oPlugin)
         if (oPlugin.constraint_name == "CSharp.NIIRS") or (oPlugin.constraint_name == "PythonRangeExample"):
             oRawPlugin: typing.Any = oPlugin.get_raw_plugin_object()
-            Assert.assertIsNotNone(oRawPlugin)
+            if (
+                (EngineLifetimeManager.target != TestTarget.eStkGrpc)
+                and (EngineLifetimeManager.target != TestTarget.eStkRuntime)
+            ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
+                Assert.assertIsNotNone(oRawPlugin)
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("Failed to get a raw pointer")):

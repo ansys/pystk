@@ -5098,6 +5098,11 @@ class VOVectorsHelper(object):
         for refCrdn in oCollection:
             self.m_logger.WriteLine7("\tElement: Name = {0}, Type = {1}", refCrdn.name, refCrdn.type_id)
 
+        moonVector: "Graphics3DReferenceVectorGeometryToolVector" = clr.CastAs(
+            oCollection.add(GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/Satellite1 Moon Vector"),
+            Graphics3DReferenceVectorGeometryToolVector,
+        )  # add for Vector test
+
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -5379,100 +5384,75 @@ class VOVectorsHelper(object):
 
     # region RefCrdnAxes method
     def RefCrdnAxes(self, oAxes: "Graphics3DReferenceVectorGeometryToolAxes"):
-        Assert.assertIsNotNone(oAxes)
-        self.m_logger.WriteLine("\tRefCrdnAxes test:")
-        # set TimeUnit
-        strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
-        self.m_logger.WriteLine5("\t\tThe current TimeUnit is: {0}", strUnit)
-        self.m_oUnits.set_current_unit("TimeUnit", "hr")
-        self.m_logger.WriteLine5("\t\tThe new TimeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        Assert.assertEqual("hr", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        # DrawAtCB
-        self.m_logger.WriteLine4("\t\tThe current DrawAtCB flag is: {0}", oAxes.draw_at_cb)
+        availableAxes = oAxes.available_axes
+        Assert.assertTrue((Array.Length(availableAxes) > 0))
+
+        oAxes.axes = "Satellite/Satellite1 Equinoctial Axes"
+        Assert.assertEqual("Satellite/Satellite1 Equinoctial Axes", oAxes.axes)
+
+        # BUG121438
+        # for (int i=0; i<10; i++)
+        # {
+        #    Console.WriteLine("XXX " + availableAxes.GetValue(i).ToString());
+        # }
+
+        oAxes.draw_at_point = False
+        Assert.assertFalse(oAxes.draw_at_point)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAxes.point = "Satellite/Satellite1 SunGlint Point"
+
+        oAxes.draw_at_cb = False
+        Assert.assertFalse(oAxes.draw_at_cb)
         oAxes.draw_at_cb = True
-        self.m_logger.WriteLine4("\t\tThe new DrawAtCB flag is: {0}", oAxes.draw_at_cb)
-        Assert.assertEqual(True, oAxes.draw_at_cb)
-        # Axes
-        self.m_logger.WriteLine5("\t\tThe current Axes is: {0}", oAxes.axes)
-        # AvailableAxes
-        arAxes = oAxes.available_axes
-        self.m_logger.WriteLine3("\t\tThe AvailableAxes array contains: {0} elements.", len(arAxes))
-        # PersistenceVisible (false)
-        self.m_logger.WriteLine4("\t\tThe current PersistenceVisible flag is: {0}", oAxes.persistence_visible)
+        Assert.assertTrue(oAxes.draw_at_cb)
+
+        oAxes.draw_at_point = True
+        Assert.assertTrue(oAxes.draw_at_point)
+
+        oAxes.point = "Satellite/Satellite1 SunGlint Point"
+        Assert.assertEqual("Satellite/Satellite1 SunGlint Point", oAxes.point)
+        with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
+            oAxes.point = "Satellite/Satellite1 Bogus Point"
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAxes.draw_at_cb = False
+
+        #
+        #  BUG121436 - Thickness property
+        #
+
         oAxes.persistence_visible = False
-        self.m_logger.WriteLine4("\t\tThe new PersistenceVisible flag is: {0}", oAxes.persistence_visible)
-        Assert.assertEqual(False, oAxes.persistence_visible)
-        bCaught: bool = False
-        try:
-            bCaught = False
-            oAxes.duration = 123.456
+        Assert.assertFalse(oAxes.persistence_visible)
 
-        except Exception as e:
-            bCaught = True
-            self.m_logger.WriteLine5("\t\tExpected exception: {0}", str(e))
-
-        if not bCaught:
-            Assert.fail("The Duration should be readonly.")
-
-        try:
-            bCaught = False
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # "Fade" checkbox in GUI
+            oAxes.transparent = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oAxes.duration = 600
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAxes.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
 
-        except Exception as e:
-            bCaught = True
-            self.m_logger.WriteLine5("\t\tExpected exception: {0}", str(e))
-
-        if not bCaught:
-            Assert.fail("The Connect should be readonly.")
-
-        try:
-            bCaught = False
-            oAxes.transparent = True
-
-        except Exception as e:
-            bCaught = True
-            self.m_logger.WriteLine5("\t\tExpected exception: {0}", str(e))
-
-        if not bCaught:
-            Assert.fail("The Transparent should be readonly.")
-
-        # PersistenceVisible (true)
         oAxes.persistence_visible = True
-        self.m_logger.WriteLine4("\t\tThe new PersistenceVisible flag is: {0}", oAxes.persistence_visible)
-        Assert.assertEqual(True, oAxes.persistence_visible)
-        # Transparent
-        self.m_logger.WriteLine4("\t\tThe current Transparent flag is: {0}", oAxes.transparent)
-        oAxes.transparent = False
-        self.m_logger.WriteLine4("\t\tThe new Transparent flag is: {0}", oAxes.transparent)
-        Assert.assertEqual(False, oAxes.transparent)
-        # Connect
-        self.m_logger.WriteLine6("\t\tThe current Connect is: {0}", oAxes.connect)
+        Assert.assertTrue(oAxes.persistence_visible)
+
+        oAxes.transparent = False  # "Fade" checkbox in GUI
+        Assert.assertFalse(oAxes.transparent)
+        oAxes.transparent = True  # "Fade" checkbox in GUI
+        Assert.assertTrue(oAxes.transparent)
+
+        oAxes.duration = 0
+        Assert.assertEqual(0, oAxes.duration)
+        oAxes.duration = 10000000
+        Assert.assertEqual(10000000, oAxes.duration)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oAxes.duration = -1
+
+        oAxes.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_SWEEP
+        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_SWEEP, oAxes.connect)
         oAxes.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE
-        self.m_logger.WriteLine6("\t\tThe new Connect is: {0}", oAxes.connect)
         Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE, oAxes.connect)
-        # Duration
-        self.m_logger.WriteLine6("\t\tThe current Duration is: {0}", oAxes.duration)
-        oAxes.duration = 12345.6789
-        self.m_logger.WriteLine6("\t\tThe new Duration is: {0}", oAxes.duration)
-        Assert.assertAlmostEqual(12345.6789, oAxes.duration, delta=1e-05)
-        # range test
-        try:
-            bCaught = False
-            oAxes.duration = -1234.56789
-
-        except Exception as e:
-            bCaught = True
-            self.m_logger.WriteLine5("\t\tExpected exception: {0}", str(e))
-
-        if not bCaught:
-            Assert.fail("Cannot set value out of range!")
-
-        # restore TimeUnit
-        self.m_oUnits.set_current_unit("TimeUnit", strUnit)
-        self.m_logger.WriteLine5(
-            "\t\tThe new (restored) TimeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("TimeUnit")
-        )
-        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
+        oAxes.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
+        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE, oAxes.connect)
 
     # endregion
 
@@ -6016,161 +5996,148 @@ class VOVectorsHelper(object):
 
     # region RefCrdnVector method
     def RefCrdnVector(self, oVector: "Graphics3DReferenceVectorGeometryToolVector"):
-        Assert.assertIsNotNone(oVector)
-        self.m_logger.WriteLine("\tRefCrdnVector test:")
-        # DrawAtCB
-        self.m_logger.WriteLine4("\t\tThe current DrawAtCB flag is: {0}", oVector.draw_at_cb)
-        oVector.draw_at_cb = False
-        self.m_logger.WriteLine4("\t\tThe new DrawAtCB flag is: {0}", oVector.draw_at_cb)
-        Assert.assertEqual(False, oVector.draw_at_cb)
-        oVector.draw_at_cb = True
-        self.m_logger.WriteLine4("\t\tThe new DrawAtCB flag is: {0}", oVector.draw_at_cb)
-        Assert.assertEqual(True, oVector.draw_at_cb)
-        # TrueScale
-        self.m_logger.WriteLine4("\t\tThe current TrueScale flag is: {0}", oVector.true_scale)
-        if oVector.magnitude_dimension == "DistanceUnit":
-            oVector.true_scale = False
-            self.m_logger.WriteLine4("\t\tThe new TrueScale flag is: {0}", oVector.true_scale)
-            Assert.assertEqual(False, oVector.true_scale)
-            oVector.true_scale = True
-            self.m_logger.WriteLine4("\t\tThe new TrueScale flag is: {0}", oVector.true_scale)
-            Assert.assertEqual(True, oVector.true_scale)
+        availableAxes = oVector.available_axes
+        Assert.assertTrue((Array.Length(availableAxes) > 0))
 
-        else:
-            with pytest.raises(Exception):
+        oVector.axes = "Satellite/Satellite1 Equinoctial Axes"
+        Assert.assertEqual("Satellite/Satellite1 Equinoctial Axes", oVector.axes)
+
+        # BUG121438
+        # for (int i = 0; i < 10; i++)
+        # {
+        #    Console.WriteLine("XXX " + availableAxes.GetValue(i).ToString());
+        # }
+
+        oVector.draw_at_point = False
+        Assert.assertFalse(oVector.draw_at_point)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oVector.point = "Satellite/Satellite1 SunGlint Point"
+
+        oVector.draw_at_cb = False
+        Assert.assertFalse(oVector.draw_at_cb)
+        oVector.draw_at_cb = True
+        Assert.assertTrue(oVector.draw_at_cb)
+
+        oVector.draw_at_point = True
+        Assert.assertTrue(oVector.draw_at_point)
+
+        oVector.point = "Satellite/Satellite1 SunGlint Point"
+        Assert.assertEqual("Satellite/Satellite1 SunGlint Point", oVector.point)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oVector.draw_at_cb = False
+
+        #
+        #  BUG121436 - Thickness property
+        #
+
+        oVector.persistence_visible = False
+        Assert.assertFalse(oVector.persistence_visible)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # "Fade" checkbox in GUI
+            oVector.transparent = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oVector.duration = 600
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
+
+        oVector.persistence_visible = True
+        Assert.assertTrue(oVector.persistence_visible)
+
+        oVector.transparent = False  # "Fade" checkbox in GUI
+        Assert.assertFalse(oVector.transparent)
+        oVector.transparent = True  # "Fade" checkbox in GUI
+        Assert.assertTrue(oVector.transparent)
+
+        oVector.duration = 0
+        Assert.assertEqual(0, oVector.duration)
+        oVector.duration = 10000000
+        Assert.assertEqual(10000000, oVector.duration)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oVector.duration = -1
+
+        oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_SWEEP
+        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_SWEEP, oVector.connect)
+        oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE
+        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE, oVector.connect)
+        oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
+        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE, oVector.connect)
+
+        oVector.ra_dec_visible = False
+        Assert.assertFalse(oVector.ra_dec_visible)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oVector.ra_dec_unit_abrv = "rad"
+
+        oVector.ra_dec_visible = True
+        Assert.assertTrue(oVector.ra_dec_visible)
+
+        oVector.ra_dec_unit_abrv = "rad"
+        Assert.assertEqual("rad", oVector.ra_dec_unit_abrv)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            oVector.ra_dec_unit_abrv = "bogus"
+        if (
+            clr.CastAs(oVector, IGraphics3DReferenceAnalysisWorkbenchComponent)
+        ).name == "Aircraft/Boing737 Body.-X Vector":
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # because not a distance unit vector
                 oVector.true_scale = False
 
-        # AvailableAxes
-        arAxes = oVector.available_axes
-        self.m_logger.WriteLine3("\t\tThe Vector has {0} available Axes", Array.Length(arAxes))
-        # Axes
-        self.m_logger.WriteLine5("\t\tThe current Axes is: {0}", oVector.axes)
-        if Array.Length(arAxes) > 0:
-            oVector.axes = str(arAxes[0])
-            self.m_logger.WriteLine5("\t\tThe new Axes is: {0}", oVector.axes)
-            Assert.assertEqual(arAxes[0], oVector.axes)
+            Assert.assertEqual("Unitless", oVector.magnitude_dimension)
 
-        else:
-            self.m_logger.WriteLine("\t\tNo available Axes")
-
-        with pytest.raises(Exception):
-            oVector.axes = "Abcdefgh"
-        # DrawAtPoint
-        self.m_logger.WriteLine4("\t\tThe current DrawAtPoint flag is: {0}", oVector.draw_at_point)
-        oVector.draw_at_point = False
-        self.m_logger.WriteLine4("\t\tThe new DrawAtPoint flag is: {0}", oVector.draw_at_point)
-        Assert.assertEqual(False, oVector.draw_at_point)
-        with pytest.raises(Exception):
-            oVector.point = "Satellite/Satellite1 Center Point"
-        oVector.draw_at_point = True
-        self.m_logger.WriteLine4("\t\tThe new DrawAtPoint flag is: {0}", oVector.draw_at_point)
-        Assert.assertEqual(True, oVector.draw_at_point)
-        # AvailablePoints
-        arPoints = oVector.available_points
-        self.m_logger.WriteLine3("\t\tThe Vector has {0} available Points", Array.Length(arPoints))
-        # Point
-        self.m_logger.WriteLine5("\t\tThe current Point is: {0}", oVector.point)
-        if Array.Length(arPoints) > 0:
-            oVector.point = str(arPoints[0])
-            self.m_logger.WriteLine5("\t\tThe new Point is: {0}", oVector.point)
-            Assert.assertEqual(arPoints[0], oVector.point)
-
-        else:
-            self.m_logger.WriteLine("\t\tNo available Points")
-
-        with pytest.raises(Exception):
-            oVector.point = "Abcdefgh"
-        # RADecVisible
-        self.m_logger.WriteLine4("\t\tThe current RADecVisible flag is: {0}", oVector.ra_dec_visible)
-        oVector.ra_dec_visible = False
-        self.m_logger.WriteLine4("\t\tThe new RADecVisible flag is: {0}", oVector.ra_dec_visible)
-        Assert.assertEqual(False, oVector.ra_dec_visible)
-        with pytest.raises(Exception):
-            oVector.ra_dec_unit_abrv = "mdeg"
-        oVector.ra_dec_visible = True
-        self.m_logger.WriteLine4("\t\tThe new RADecVisible flag is: {0}", oVector.ra_dec_visible)
-        Assert.assertEqual(True, oVector.ra_dec_visible)
-        # RADecUnitAbrv
-        self.m_logger.WriteLine5("\t\tThe current RADecUnitAbrv is: {0}", oVector.ra_dec_unit_abrv)
-        oVector.ra_dec_unit_abrv = "rad"
-        self.m_logger.WriteLine5("\t\tThe new RADecUnitAbrv is: {0}", oVector.ra_dec_unit_abrv)
-        Assert.assertEqual("rad", oVector.ra_dec_unit_abrv)
-        with pytest.raises(Exception):
-            oVector.ra_dec_unit_abrv = "Abc"
-        # MagnitudeDimension
-        strMagnitudeDim: str = oVector.magnitude_dimension
-        self.m_logger.WriteLine5("\t\tThe MagnitudeDimension is: {0}", strMagnitudeDim)
-        if (strMagnitudeDim != "Unitless") and (strMagnitudeDim.find("Rate") == -1):
-            strCurrentDimensionAbrv: str = self.m_oUnits.get_current_unit_abbrv(strMagnitudeDim)
-            self.m_logger.WriteLine5("\t\tThe current DimensionAbbreviature is: {0}", strCurrentDimensionAbrv)
-            # MagnitudeVisible
-            self.m_logger.WriteLine4("\t\tThe current MagnitudeVisible flag is: {0}", oVector.magnitude_visible)
             oVector.magnitude_visible = False
-            self.m_logger.WriteLine4("\t\tThe new MagnitudeVisible flag is: {0}", oVector.magnitude_visible)
-            Assert.assertEqual(False, oVector.magnitude_visible)
-            with pytest.raises(Exception):
-                oVector.magnitude_unit_abrv = strCurrentDimensionAbrv
+            Assert.assertFalse(oVector.magnitude_visible)
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oVector.magnitude_unit_abrv = "rad"
+
             oVector.magnitude_visible = True
-            self.m_logger.WriteLine4("\t\tThe new MagnitudeVisible flag is: {0}", oVector.magnitude_visible)
-            Assert.assertEqual(True, oVector.magnitude_visible)
-            # MagnitudeUnitAbrv
-            self.m_logger.WriteLine5("\t\tThe current MagnitudeUnitAbrv is: {0}", oVector.magnitude_unit_abrv)
-            try:
-                oVector.magnitude_unit_abrv = strCurrentDimensionAbrv
-                self.m_logger.WriteLine5("\t\tThe new MagnitudeUnitAbrv is: {0}", oVector.magnitude_unit_abrv)
+            Assert.assertTrue(oVector.magnitude_visible)
 
-            except Exception as e:
-                self.m_logger.WriteLine5("\t\tThe MagnitudeUnitAbrv is readonly in: {0}", oVector.name)
-                self.m_logger.WriteLine5("\t\tExpected exception: {0}", str(e))
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # because Unitless
+                oVector.magnitude_unit_abrv = "rad"
+        elif (
+            clr.CastAs(oVector, IGraphics3DReferenceAnalysisWorkbenchComponent)
+        ).name == "Aircraft/Boing737 MagField(IGRF) Vector":
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # because not a distance unit vector
+                oVector.true_scale = False
 
-            with pytest.raises(Exception):
-                oVector.magnitude_unit_abrv = "Abc"
+            Assert.assertEqual("MagneticFieldUnit", oVector.magnitude_dimension)
 
-        # set TimeUnit
-        strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
-        self.m_logger.WriteLine5("\t\tThe current TimeUnit is: {0}", strUnit)
-        self.m_oUnits.set_current_unit("TimeUnit", "hr")
-        self.m_logger.WriteLine5("\t\tThe new TimeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        Assert.assertEqual("hr", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        # PersistenceVisible (false)
-        self.m_logger.WriteLine4("\t\tThe current PersistenceVisible flag is: {0}", oVector.persistence_visible)
-        oVector.persistence_visible = False
-        self.m_logger.WriteLine4("\t\tThe new PersistenceVisible flag is: {0}", oVector.persistence_visible)
-        Assert.assertEqual(False, oVector.persistence_visible)
-        with pytest.raises(Exception):
-            oVector.duration = 123.456
-        with pytest.raises(Exception):
-            oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
-        with pytest.raises(Exception):
-            oVector.transparent = True
-        # PersistenceVisible (true)
-        oVector.persistence_visible = True
-        self.m_logger.WriteLine4("\t\tThe new PersistenceVisible flag is: {0}", oVector.persistence_visible)
-        Assert.assertEqual(True, oVector.persistence_visible)
-        # Transparent
-        self.m_logger.WriteLine4("\t\tThe current Transparent flag is: {0}", oVector.transparent)
-        oVector.transparent = False
-        self.m_logger.WriteLine4("\t\tThe new Transparent flag is: {0}", oVector.transparent)
-        Assert.assertEqual(False, oVector.transparent)
-        # Connect
-        self.m_logger.WriteLine6("\t\tThe current Connect is: {0}", oVector.connect)
-        oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE
-        self.m_logger.WriteLine6("\t\tThe new Connect is: {0}", oVector.connect)
-        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE, oVector.connect)
-        # Duration
-        self.m_logger.WriteLine6("\t\tThe current Duration is: {0}", oVector.duration)
-        oVector.duration = 12345.6789
-        self.m_logger.WriteLine6("\t\tThe new Duration is: {0}", oVector.duration)
-        Assert.assertAlmostEqual(12345.6789, oVector.duration, delta=1e-05)
-        # range test
-        with pytest.raises(Exception):
-            oVector.duration = -1234.56789
-        # restore TimeUnit
-        self.m_oUnits.set_current_unit("TimeUnit", strUnit)
-        self.m_logger.WriteLine5(
-            "\t\tThe new (restored) TimeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("TimeUnit")
-        )
-        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
+            oVector.magnitude_visible = False
+            Assert.assertFalse(oVector.magnitude_visible)
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oVector.magnitude_unit_abrv = "gauss"
+
+            oVector.magnitude_visible = True
+            Assert.assertTrue(oVector.magnitude_visible)
+
+            oVector.magnitude_unit_abrv = "gauss"
+            Assert.assertEqual("gauss", oVector.magnitude_unit_abrv)
+        elif (
+            clr.CastAs(oVector, IGraphics3DReferenceAnalysisWorkbenchComponent)
+        ).name == "Satellite/Satellite1 Moon Vector":
+            oVector.true_scale = False
+            Assert.assertFalse(oVector.true_scale)
+            oVector.true_scale = True
+            Assert.assertTrue(oVector.true_scale)
+
+            Assert.assertEqual("DistanceUnit", oVector.magnitude_dimension)
+
+            oVector.magnitude_visible = False
+            Assert.assertFalse(oVector.magnitude_visible)
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oVector.magnitude_unit_abrv = "m"
+
+            oVector.magnitude_visible = True
+            Assert.assertTrue(oVector.magnitude_visible)
+
+            oVector.magnitude_unit_abrv = "m"
+            Assert.assertEqual("m", oVector.magnitude_unit_abrv)
+        else:
+            pass
 
 
 # endregion

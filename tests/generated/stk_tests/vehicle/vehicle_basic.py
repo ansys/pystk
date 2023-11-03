@@ -1,5 +1,6 @@
 import pytest
 from test_util import *
+from app_provider import *
 from antenna.antenna_helper import *
 from assertion_harness import *
 from interfaces.stk_objects import *
@@ -1695,7 +1696,7 @@ class PropagatorGreatArcHelper(object):
         Assert.assertEqual(VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC, oGreatArc.method)
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
-        # start/stop times are overriden with the scenario's start/stop times.
+        # start/stop times are overridden with the scenario's start/stop times.
         sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
         oGreatArc.ephemeris_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00.000", oGreatArc.ephemeris_interval.find_stop_time()
@@ -2024,7 +2025,7 @@ class PropagatorSimpleAscentHelper(object):
 
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
-        # start/stop times are overriden with the scenario's start/stop times.
+        # start/stop times are overridden with the scenario's start/stop times.
         sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
         oSimple.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
@@ -2110,7 +2111,7 @@ class PropagatorTwoBodyHelper(object):
 
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
-        # start/stop times are overriden with the scenario's start/stop times.
+        # start/stop times are overridden with the scenario's start/stop times.
         sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
         oTwoBody.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_start_time())
@@ -2524,7 +2525,7 @@ class PropagatorJ2PerturbationHelper(object):
 
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
-        # start/stop times are overriden with the scenario's start/stop times.
+        # start/stop times are overridden with the scenario's start/stop times.
         sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
         oJ2.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oJ2.ephemeris_interval.find_start_time())
@@ -2615,7 +2616,7 @@ class PropagatorJ4PerturbationHelper(object):
 
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
-        # start/stop times are overriden with the scenario's start/stop times.
+        # start/stop times are overridden with the scenario's start/stop times.
         sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
         oJ4.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oJ4.ephemeris_interval.find_start_time())
@@ -2938,14 +2939,14 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.ONLINE_AUTO_LOAD, oSegments.load_method_type)
 
-        # this is backwards compatability using a deprecated interface
+        # this is backwards compatibility using a deprecated interface
         # the current interface is VehicleSGP4OnlineLoad
 
         # LoadMethod
         oLoader: "VehicleSGP4OnlineAutoLoad" = clr.CastAs(oSegments.load_method, VehicleSGP4OnlineAutoLoad)
         Assert.assertIsNotNone(oLoader)
         # AddLatestSegFromOnline
-        oLoader.add_latest_seg_from_online("123")  # this curently does nothing!
+        oLoader.add_latest_seg_from_online("123")  # this currently does nothing!
         # Propagate
         oSGP4.propagate()
 
@@ -3328,7 +3329,7 @@ class PropagatorSGP4Helper(object):
         Assert.assertEqual("20 Jul 2000 15:00:00.000", oLoader.stop_time)
         # GetSegsFromOnline
         # 2006-11-02 panlvyayko: changed the SSCNumber to a number of one of USA's GPS satellites.
-        # This way the unit test wont fail here for a few (million) years.
+        # This way the unit test won't fail here for a few (million) years.
         arSegs = oLoader.get_segs_from_online("11054")
         self.m_logger.WriteLine3("\t\tThe Segs array contains: {0} elements.", Array.Length(arSegs))
 
@@ -4728,7 +4729,11 @@ class PropagatorHPOPHelper(object):
 
             # GetRawPluginObject
             oRawPluginObject: typing.Any = oPlugin.get_raw_plugin_object()
-            Assert.assertIsNotNone(oRawPluginObject)
+            if (
+                (EngineLifetimeManager.target != TestTarget.eStkGrpc)
+                and (EngineLifetimeManager.target != TestTarget.eStkRuntime)
+            ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
+                Assert.assertIsNotNone(oRawPluginObject)
 
         # ApplyPluginChanges
         oPlugin.apply_plugin_changes()
@@ -6078,7 +6083,7 @@ class PropagatorBallisticHelper(object):
 
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
-        # start/stop times are overriden with the scenario's start/stop times.
+        # start/stop times are overridden with the scenario's start/stop times.
         sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
         oBallistic.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "1 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oBallistic.ephemeris_interval.find_start_time())
@@ -7100,7 +7105,7 @@ class BasicAttitudeStandardHelper(object):
         # AttStart
         self.m_logger.WriteLine6("\t\tThe new AttitudeStart is: {0}", oExternal.attitude_start_epoch.time_instant)
 
-        # set a new time instant but since not overriden, file times are unchanged
+        # set a new time instant but since not overridden, file times are unchanged
         self.m_logger.WriteLine("\tWhile override off, set new time instant--should have no effect")
         attStart2: str = "1 Jul 1999 22:22:22.000"
         oExternal.attitude_start_epoch.set_explicit_time(attStart2)
@@ -7132,7 +7137,7 @@ class BasicAttitudeStandardHelper(object):
 
         # use a time component
         attStart3: str = "1 Jul 1999 03:33:33.000"
-        self.m_logger.WriteLine("\tCreate a time component for use with att overrride")
+        self.m_logger.WriteLine("\tCreate a time component for use with att override")
         scen: "IStkObject" = self.m_oApplication.current_scenario
         prv: "AnalysisWorkbenchProvider" = scen.vgt
         grp: "TimeToolEventGroup" = prv.events
@@ -7142,7 +7147,7 @@ class BasicAttitudeStandardHelper(object):
         evtEpoch: "TimeToolEventEpoch" = clr.CastAs(evt, TimeToolEventEpoch)
         evtEpoch.epoch = attStart3
 
-        self.m_logger.WriteLine("\tUse the time component for att overrride")
+        self.m_logger.WriteLine("\tUse the time component for att override")
         oExternal.attitude_start_epoch.set_implicit_time(evt)
         # override
         self.m_logger.WriteLine4("\t\tThe new Override value is: {0}", oExternal.override)
@@ -7159,9 +7164,9 @@ class BasicAttitudeStandardHelper(object):
         self.m_logger.WriteLine7("\t\tThe new AttitudeStart is: {0} and isValid: {1}", res.epoch, res.is_valid)
 
         # delete the time component
-        self.m_logger.WriteLine("\tRemove the time component used with att overrride")
+        self.m_logger.WriteLine("\tRemove the time component used with att override")
         grp.remove("AttOverrideTest")
-        self.m_logger.WriteLine("\tAtt overrride should mainatin previous value, but be an explicit time")
+        self.m_logger.WriteLine("\tAtt override should mainatin previous value, but be an explicit time")
         # override
         self.m_logger.WriteLine4("\t\tThe current Override value is: {0}", oExternal.override)
         # Enabled
@@ -8636,10 +8641,10 @@ class SpatialInfoHelper(object):
         Assert.assertIsNotNone(spatialState.inertial_position)
 
         # Text the orientation
-        fo: "IOrientation" = spatialState.fixed_orientation.convert_to(ORIENTATION_TYPE.AZ_EL)
-        Assert.assertIsNotNone(fo)
+        fixedOrientation: "IOrientation" = spatialState.fixed_orientation.convert_to(ORIENTATION_TYPE.AZ_EL)
+        Assert.assertIsNotNone(fixedOrientation)
         with pytest.raises(Exception):
-            spatialState.fixed_orientation.assign(fo)
+            spatialState.fixed_orientation.assign(fixedOrientation)
 
         vx: float = 0.0
         vy: float = 0.0
@@ -9741,10 +9746,10 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             if utModelName == "Two Ray":
                 Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.TWO_RAY, utModel.type)
                 self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
-            elif utModelName == "Urban Propagation Wireless InSite RT":
-                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE_RT, utModel.type)
-                self.Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(
-                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSiteRT)
+            elif utModelName == "Urban Propagation Wireless InSite 64":
+                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE64, utModel.type)  # was RT
+                self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
+                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64)
                 )
             else:
                 Assert.fail("Unknown model type")
@@ -9772,9 +9777,9 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = 101
 
-    def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "UrbanTerrestrialLossModelWirelessInSiteRT"):
+    def Test_IAgUrbanTerrestrialLossModelWirelessInSite64(self, wisRT: "UrbanTerrestrialLossModelWirelessInSite64"):
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
-        Assert.assertEqual(5, Array.Length(arSupportedCalculationMethods))
+        Assert.assertEqual(4, Array.Length(arSupportedCalculationMethods))  # was 5 in WirelessInSiteRT
         sCalcMethod: str
         for sCalcMethod in arSupportedCalculationMethods:
             if (
@@ -9800,7 +9805,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 wisRT.surface_temperature = 101
 
-            geometryData: "WirelessInSiteRTGeometryData" = wisRT.geometry_data
+            geometryData: "WirelessInSite64GeometryData" = wisRT.geometry_data
 
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")

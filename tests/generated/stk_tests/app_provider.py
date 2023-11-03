@@ -3,6 +3,9 @@ class TestTarget:
     eStkX = 1
     sStkXStandalone = 2
     eStkNoGfx = 3
+    eStkGrpc = 4
+    eStkRuntime = 5
+    eStkRuntimeNoGfx = 6
 
 
 class IAgAppProvider:
