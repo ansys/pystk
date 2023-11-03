@@ -162,6 +162,7 @@ Interfaces
     IAdvFixedWingPowerplant
     ISiteUnknown
     IAircraftTerrainFollowModel
+    IBasicManeuverTargetPositionVel
     IPropulsionThrust
     IBasicManeuverAirspeedOptions
     IBasicManeuverStrategyAileronRoll
@@ -191,6 +192,8 @@ Interfaces
     IBasicManeuverStrategyWeave
     IBasicManeuverStrategyBallistic3D
     IBasicManeuverStrategyPitch3D
+    IBasicManeuverTargetPositionVelNoisyBrnRng
+    IBasicManeuverTargetPositionVelNoisySurfTgt
     ITakeoffNormal
     ITakeoffDeparturePoint
     ITakeoffLowTransition
@@ -390,6 +393,7 @@ Enumerations
     PITCH_3D_CONTROL_MODE
     REFUEL_DUMP_MODE
     BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
+    TARGET_POSITION_VEL_TYPE
 
 
 Classes
@@ -632,6 +636,9 @@ Classes
     BasicManeuverStrategyPitch3D
     RefuelDumpProperties
     ProcedureFastTimeOptions
+    BasicManeuverTargetPositionVel
+    BasicManeuverTargetPositionVelNoisyBrnRng
+    BasicManeuverTargetPositionVelNoisySurfTgt
 
 
 Reference
@@ -1099,6 +1106,9 @@ Interfaces
 .. autoclass:: IAircraftTerrainFollowModel
     :members:
     :exclude-members: __init__
+.. autoclass:: IBasicManeuverTargetPositionVel
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IPropulsionThrust
     :members:
     :exclude-members: __init__
@@ -1184,6 +1194,12 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IBasicManeuverStrategyPitch3D
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBasicManeuverTargetPositionVelNoisyBrnRng
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBasicManeuverTargetPositionVelNoisySurfTgt
     :members:
     :exclude-members: __init__
 .. autoclass:: ITakeoffNormal
@@ -1635,6 +1651,8 @@ Enumerations
 .. autoenum:: REFUEL_DUMP_MODE
     :members:
 .. autoenum:: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
+    :members:
+.. autoenum:: TARGET_POSITION_VEL_TYPE
     :members:
 
 
@@ -2344,6 +2362,15 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: ProcedureFastTimeOptions
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BasicManeuverTargetPositionVel
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BasicManeuverTargetPositionVelNoisyBrnRng
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BasicManeuverTargetPositionVelNoisySurfTgt
     :members:
     :exclude-members: __init__
 

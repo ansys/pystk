@@ -678,7 +678,25 @@ Classes
     VectorGeometryToolWellKnownSunAxes
     VectorGeometryToolWellKnownSystems
     VectorGeometryToolWellKnownAxes
-    AnalysisWorkbenchMethodCallResult
+    AnalysisWorkbenchMethodCallAngleFindResult
+    AnalysisWorkbenchMethodCallAngleFindWithRateResult
+    AnalysisWorkbenchMethodCallAxesTransformResult
+    AnalysisWorkbenchMethodCallAxesTransformWithRateResult
+    AnalysisWorkbenchMethodCallAxesFindInAxesResult
+    AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult
+    AnalysisWorkbenchMethodCallPlaneFindInAxesResult
+    AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult
+    AnalysisWorkbenchMethodCallPlaneFindInSystemResult
+    AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult
+    AnalysisWorkbenchMethodCallPointLocateInSystemResult
+    AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult
+    AnalysisWorkbenchMethodCallSystemTransformResult
+    AnalysisWorkbenchMethodCallSystemTransformWithRateResult
+    AnalysisWorkbenchMethodCallSystemFindInSystemResult
+    AnalysisWorkbenchMethodCallVectorFindInAxesResult
+    AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult
+    AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult
+    AnalysisWorkbenchMethodCallAngleFindAngleResult
     TimeToolInterval
     TimeToolIntervalCollection
     AnalysisWorkbenchCentralBody
@@ -2600,7 +2618,61 @@ Classes
 .. autoclass:: VectorGeometryToolWellKnownAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: AnalysisWorkbenchMethodCallResult
+.. autoclass:: AnalysisWorkbenchMethodCallAngleFindResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallAngleFindWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallAxesTransformResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallAxesTransformWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallAxesFindInAxesResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallPlaneFindInAxesResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallPlaneFindInSystemResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallPointLocateInSystemResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallSystemTransformResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallSystemTransformWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallSystemFindInSystemResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallVectorFindInAxesResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AnalysisWorkbenchMethodCallAngleFindAngleResult
     :members:
     :exclude-members: __init__
 .. autoclass:: TimeToolInterval

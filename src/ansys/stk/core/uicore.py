@@ -1,31 +1,29 @@
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
 __all__ = ["ARRANGE_STYLE", "DOCK_STYLE", "FLOAT_STATE", "IUiToolbar", "IUiToolbarCollection", "IUiWindow", "IUiWindowGlobeObject", 
 "IUiWindowMapObject", "IUiWindowsCollection", "UiToolbar", "UiToolbarCollection", "UiWindow", "UiWindowGlobeObject", "UiWindowMapObject", 
 "UiWindowsCollection", "WINDOW_SERVICE", "WINDOW_STATE"]
 
+from ctypes import POINTER
+from enum import IntEnum
 import typing
 
-from ctypes   import byref, POINTER
-from enum     import IntEnum
-
 try:
-    from numpy import ndarray 
+    from numpy import ndarray
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame 
+    from pandas import DataFrame
 except ModuleNotFoundError:
     pass
 
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch, IAGFUNCTYPE, IEnumVARIANT
-from .internal.eventutil   import *
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import enumerator_proxy, interface_proxy, out_arg
+from .internal.comutil import IDispatch, IUnknown
+from .internal.eventutil import *
 from .utilities.exceptions import *
 
 
@@ -113,34 +111,29 @@ agcls.AgTypeNameMap["FLOAT_STATE"] = FLOAT_STATE
 
 class IUiToolbar(object):
     """Provides methods and properties to control a toolbar."""
-    _uuid = "{69C72C16-36F2-42d4-A183-6879BB5B8070}"
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "uuid" : "{69C72C16-36F2-42d4-A183-6879BB5B8070}",
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "method_offsets" : { "get_id" : 1,
+                             "get_caption" : 2,
+                             "get_visible" : 3,
+                             "set_visible" : 4,
+                             "get_float_state" : 5,
+                             "set_float_state" : 6, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_get_id"] = _raise_uninitialized_error
-        self.__dict__["_get_caption"] = _raise_uninitialized_error
-        self.__dict__["_get_visible"] = _raise_uninitialized_error
-        self.__dict__["_set_visible"] = _raise_uninitialized_error
-        self.__dict__["_get_float_state"] = _raise_uninitialized_error
-        self.__dict__["_set_float_state"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiToolbar._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiToolbar._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiToolbar from source object.")
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiToolbar = agcom.GUID(IUiToolbar._uuid)
-        vtable_offset_local = IUiToolbar._vtable_offset - 1
-        self.__dict__["_get_id"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_get_caption"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_get_visible"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_visible"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+4, agcom.VARIANT_BOOL)
-        self.__dict__["_get_float_state"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_set_float_state"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+6, agcom.LONG)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -154,43 +147,51 @@ class IUiToolbar(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiToolbar.")
     
+    _get_id_metadata = { "name" : "id",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def id(self) -> int:
         """The identity."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_id"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiToolbar._metadata, IUiToolbar._get_id_metadata)
 
+    _get_caption_metadata = { "name" : "caption",
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def caption(self) -> str:
         """The caption."""
-        with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_caption"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiToolbar._metadata, IUiToolbar._get_caption_metadata)
 
+    _get_visible_metadata = { "name" : "visible",
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def visible(self) -> bool:
         """The visibility."""
-        with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_visible"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiToolbar._metadata, IUiToolbar._get_visible_metadata)
 
+    _set_visible_metadata = { "name" : "visible",
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @visible.setter
     def visible(self, newVal:bool) -> None:
-        with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_visible"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiToolbar._metadata, IUiToolbar._set_visible_metadata, newVal)
 
+    _get_float_state_metadata = { "name" : "float_state",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.AgEnum_arg(FLOAT_STATE),) }
     @property
     def float_state(self) -> "FLOAT_STATE":
         """The float state."""
-        with agmarshall.AgEnum_arg(FLOAT_STATE) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_float_state"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiToolbar._metadata, IUiToolbar._get_float_state_metadata)
 
+    _set_float_state_metadata = { "name" : "float_state",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.AgEnum_arg(FLOAT_STATE),) }
     @float_state.setter
     def float_state(self, newVal:"FLOAT_STATE") -> None:
-        with agmarshall.AgEnum_arg(FLOAT_STATE, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_float_state"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiToolbar._metadata, IUiToolbar._set_float_state_metadata, newVal)
 
 
 agcls.AgClassCatalog.add_catalog_entry("{69C72C16-36F2-42d4-A183-6879BB5B8070}", IUiToolbar)
@@ -198,35 +199,30 @@ agcls.AgTypeNameMap["IUiToolbar"] = IUiToolbar
 
 class IUiToolbarCollection(object):
     """Provides methods and properties to obtain a window's toolbars."""
-    _uuid = "{62AA135B-4F2F-45de-94A6-31BB0984AD28}"
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _metadata = {
+        "uuid" : "{62AA135B-4F2F-45de-94A6-31BB0984AD28}",
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+        "method_offsets" : { "item" : 1,
+                             "get_count" : 2,
+                             "get__NewEnum" : 3,
+                             "get_toolbar_by_id" : 4,
+                             "get_item_by_index" : 5,
+                             "get_item_by_name" : 6, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_item"] = _raise_uninitialized_error
-        self.__dict__["_get_count"] = _raise_uninitialized_error
-        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_get_toolbar_by_id"] = _raise_uninitialized_error
-        self.__dict__["_get_item_by_index"] = _raise_uninitialized_error
-        self.__dict__["_get_item_by_name"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiToolbarCollection._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiToolbarCollection._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiToolbarCollection from source object.")
-        self.__dict__["enumerator"] = None
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiToolbarCollection = agcom.GUID(IUiToolbarCollection._uuid)
-        vtable_offset_local = IUiToolbarCollection._vtable_offset - 1
-        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_get_toolbar_by_id"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_get_item_by_index"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+5, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_get_item_by_name"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+6, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_enumerator"] = None
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -240,58 +236,60 @@ class IUiToolbarCollection(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiToolbarCollection.")
     def __iter__(self):
-        self.__dict__["enumerator"] = self._NewEnum
-        self.__dict__["enumerator"].Reset()
+        self.__dict__["_enumerator"] = self._NewEnum
+        self._enumerator.reset()
         return self
     def __next__(self) -> "IUiToolbar":
-        if self.__dict__["enumerator"] is None:
+        if self._enumerator is None:
             raise StopIteration
-        nextval = self.__dict__["enumerator"].Next()
+        nextval = self._enumerator.next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
+        return nextval
     
+    _item_metadata = { "name" : "item",
+            "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrCaption:typing.Any) -> "UiToolbar":
         """Retrieves a toolbar object."""
-        with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
-             agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._item_metadata, indexOrCaption, out_arg())
 
+    _get_count_metadata = { "name" : "count",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
         """Returns a total number of toolbars in the collection."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiToolbarCollection._metadata, IUiToolbarCollection._get_count_metadata)
 
+    _get__NewEnum_metadata = { "name" : "_NewEnum",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
-    def _NewEnum(self) -> IEnumVARIANT:
+    def _NewEnum(self) -> enumerator_proxy:
         """Enumerates the toolbars in the collection."""
-        with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.get_property(IUiToolbarCollection._metadata, IUiToolbarCollection._get__NewEnum_metadata)
 
+    _get_toolbar_by_id_metadata = { "name" : "get_toolbar_by_id",
+            "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def get_toolbar_by_id(self, id:int) -> "UiToolbar":
         """Returns a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object."""
-        with agmarshall.LONG_arg(id) as arg_id, \
-             agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_toolbar_by_id"](arg_id.COM_val, byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._get_toolbar_by_id_metadata, id, out_arg())
 
+    _get_item_by_index_metadata = { "name" : "get_item_by_index",
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "UiToolbar":
         """Retrieves a toolbar object based on the index in the collection."""
-        with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._get_item_by_index_metadata, index, out_arg())
 
+    _get_item_by_name_metadata = { "name" : "get_item_by_name",
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "UiToolbar":
         """Retrieves a toolbar object based on the name of the Toolbar in the collection."""
-        with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get_item_by_name"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
 
@@ -302,70 +300,47 @@ agcls.AgTypeNameMap["IUiToolbarCollection"] = IUiToolbarCollection
 
 class IUiWindow(object):
     """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
-    _uuid = "{05F59555-F74C-48b2-AAB4-1E6C58D7AEB7}"
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "uuid" : "{05F59555-F74C-48b2-AAB4-1E6C58D7AEB7}",
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "method_offsets" : { "get_caption" : 1,
+                             "set_caption" : 2,
+                             "activate" : 3,
+                             "get_window_state" : 4,
+                             "set_window_state" : 5,
+                             "close" : 6,
+                             "get_height" : 7,
+                             "set_height" : 8,
+                             "get_width" : 9,
+                             "set_width" : 10,
+                             "get_left" : 11,
+                             "set_left" : 12,
+                             "get_top" : 13,
+                             "set_top" : 14,
+                             "get_dock_style" : 15,
+                             "set_dock_style" : 16,
+                             "get_no_wb_close" : 17,
+                             "set_no_wb_close" : 18,
+                             "get_un_pinned" : 19,
+                             "set_un_pinned" : 20,
+                             "get_supports_pinning" : 21,
+                             "get_toolbars" : 22,
+                             "get_service_by_name" : 23,
+                             "get_service_by_type" : 24, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_get_caption"] = _raise_uninitialized_error
-        self.__dict__["_set_caption"] = _raise_uninitialized_error
-        self.__dict__["_activate"] = _raise_uninitialized_error
-        self.__dict__["_get_window_state"] = _raise_uninitialized_error
-        self.__dict__["_set_window_state"] = _raise_uninitialized_error
-        self.__dict__["_close"] = _raise_uninitialized_error
-        self.__dict__["_get_height"] = _raise_uninitialized_error
-        self.__dict__["_set_height"] = _raise_uninitialized_error
-        self.__dict__["_get_width"] = _raise_uninitialized_error
-        self.__dict__["_set_width"] = _raise_uninitialized_error
-        self.__dict__["_get_left"] = _raise_uninitialized_error
-        self.__dict__["_set_left"] = _raise_uninitialized_error
-        self.__dict__["_get_top"] = _raise_uninitialized_error
-        self.__dict__["_set_top"] = _raise_uninitialized_error
-        self.__dict__["_get_dock_style"] = _raise_uninitialized_error
-        self.__dict__["_set_dock_style"] = _raise_uninitialized_error
-        self.__dict__["_get_no_wb_close"] = _raise_uninitialized_error
-        self.__dict__["_set_no_wb_close"] = _raise_uninitialized_error
-        self.__dict__["_get_un_pinned"] = _raise_uninitialized_error
-        self.__dict__["_set_un_pinned"] = _raise_uninitialized_error
-        self.__dict__["_get_supports_pinning"] = _raise_uninitialized_error
-        self.__dict__["_get_toolbars"] = _raise_uninitialized_error
-        self.__dict__["_get_service_by_name"] = _raise_uninitialized_error
-        self.__dict__["_get_service_by_type"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindow._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindow._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiWindow from source object.")
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiWindow = agcom.GUID(IUiWindow._uuid)
-        vtable_offset_local = IUiWindow._vtable_offset - 1
-        self.__dict__["_get_caption"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_set_caption"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_activate"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+3, )
-        self.__dict__["_get_window_state"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+4, POINTER(agcom.LONG))
-        self.__dict__["_set_window_state"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+5, agcom.LONG)
-        self.__dict__["_close"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+6, )
-        self.__dict__["_get_height"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+7, POINTER(agcom.LONG))
-        self.__dict__["_set_height"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+8, agcom.LONG)
-        self.__dict__["_get_width"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+9, POINTER(agcom.LONG))
-        self.__dict__["_set_width"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+10, agcom.LONG)
-        self.__dict__["_get_left"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+11, POINTER(agcom.LONG))
-        self.__dict__["_set_left"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+12, agcom.LONG)
-        self.__dict__["_get_top"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+13, POINTER(agcom.LONG))
-        self.__dict__["_set_top"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+14, agcom.LONG)
-        self.__dict__["_get_dock_style"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+15, POINTER(agcom.LONG))
-        self.__dict__["_set_dock_style"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+16, agcom.LONG)
-        self.__dict__["_get_no_wb_close"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_no_wb_close"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+18, agcom.VARIANT_BOOL)
-        self.__dict__["_get_un_pinned"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+19, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_un_pinned"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+20, agcom.VARIANT_BOOL)
-        self.__dict__["_get_supports_pinning"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+21, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_get_toolbars"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+22, POINTER(agcom.PVOID))
-        self.__dict__["_get_service_by_name"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+23, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_get_service_by_type"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+24, agcom.LONG, POINTER(agcom.PVOID))
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -379,150 +354,185 @@ class IUiWindow(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindow.")
     
+    _get_caption_metadata = { "name" : "caption",
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def caption(self) -> str:
         """The window caption. Can only be set within UI plugins for the non unique windows they own."""
-        with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_caption"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_caption_metadata)
 
+    _set_caption_metadata = { "name" : "caption",
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @caption.setter
     def caption(self, caption:str) -> None:
         """The window caption. Can only be set within UI plugins for the non unique windows they own."""
-        with agmarshall.BSTR_arg(caption) as arg_caption:
-            agcls.evaluate_hresult(self.__dict__["_set_caption"](arg_caption.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_caption_metadata, caption)
 
+    _activate_metadata = { "name" : "activate",
+            "arg_types" : (),
+            "marshallers" : () }
     def activate(self) -> None:
         """Activates the window."""
-        agcls.evaluate_hresult(self.__dict__["_activate"]())
+        return self._intf.invoke(IUiWindow._metadata, IUiWindow._activate_metadata, )
 
+    _get_window_state_metadata = { "name" : "window_state",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.AgEnum_arg(WINDOW_STATE),) }
     @property
     def window_state(self) -> "WINDOW_STATE":
         """The window state."""
-        with agmarshall.AgEnum_arg(WINDOW_STATE) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_window_state"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_window_state_metadata)
 
+    _set_window_state_metadata = { "name" : "window_state",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.AgEnum_arg(WINDOW_STATE),) }
     @window_state.setter
     def window_state(self, newVal:"WINDOW_STATE") -> None:
-        with agmarshall.AgEnum_arg(WINDOW_STATE, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_window_state"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_window_state_metadata, newVal)
 
+    _close_metadata = { "name" : "close",
+            "arg_types" : (),
+            "marshallers" : () }
     def close(self) -> None:
         """Closes the window."""
-        agcls.evaluate_hresult(self.__dict__["_close"]())
+        return self._intf.invoke(IUiWindow._metadata, IUiWindow._close_metadata, )
 
+    _get_height_metadata = { "name" : "height",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def height(self) -> int:
         """The window height."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_height"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_height_metadata)
 
+    _set_height_metadata = { "name" : "height",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @height.setter
     def height(self, newVal:int) -> None:
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_height"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_height_metadata, newVal)
 
+    _get_width_metadata = { "name" : "width",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def width(self) -> int:
         """The window width."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_width"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_width_metadata)
 
+    _set_width_metadata = { "name" : "width",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @width.setter
     def width(self, newVal:int) -> None:
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_width"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_width_metadata, newVal)
 
+    _get_left_metadata = { "name" : "left",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def left(self) -> int:
         """The window horizontal position."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_left"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_left_metadata)
 
+    _set_left_metadata = { "name" : "left",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @left.setter
     def left(self, newVal:int) -> None:
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_left"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_left_metadata, newVal)
 
+    _get_top_metadata = { "name" : "top",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def top(self) -> int:
         """The window vertical position"""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_top"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_top_metadata)
 
+    _set_top_metadata = { "name" : "top",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @top.setter
     def top(self, newVal:int) -> None:
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_top"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_top_metadata, newVal)
 
+    _get_dock_style_metadata = { "name" : "dock_style",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.AgEnum_arg(DOCK_STYLE),) }
     @property
     def dock_style(self) -> "DOCK_STYLE":
         """The window docking style."""
-        with agmarshall.AgEnum_arg(DOCK_STYLE) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_dock_style"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_dock_style_metadata)
 
+    _set_dock_style_metadata = { "name" : "dock_style",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.AgEnum_arg(DOCK_STYLE),) }
     @dock_style.setter
     def dock_style(self, newVal:"DOCK_STYLE") -> None:
-        with agmarshall.AgEnum_arg(DOCK_STYLE, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_dock_style"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_dock_style_metadata, newVal)
 
+    _get_no_wb_close_metadata = { "name" : "no_wb_close",
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def no_wb_close(self) -> bool:
         """Whether to close the window when the application workbook is loaded/closed."""
-        with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_no_wb_close"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_no_wb_close_metadata)
 
+    _set_no_wb_close_metadata = { "name" : "no_wb_close",
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @no_wb_close.setter
     def no_wb_close(self, newVal:bool) -> None:
-        with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_no_wb_close"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_no_wb_close_metadata, newVal)
 
+    _get_un_pinned_metadata = { "name" : "un_pinned",
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def un_pinned(self) -> bool:
         """The window's pinned state."""
-        with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_un_pinned"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_un_pinned_metadata)
 
+    _set_un_pinned_metadata = { "name" : "un_pinned",
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @un_pinned.setter
     def un_pinned(self, newVal:bool) -> None:
-        with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_un_pinned"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_un_pinned_metadata, newVal)
 
+    _get_supports_pinning_metadata = { "name" : "supports_pinning",
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def supports_pinning(self) -> bool:
         """Returns whether the window supports pinning."""
-        with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_supports_pinning"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_supports_pinning_metadata)
 
+    _get_toolbars_metadata = { "name" : "toolbars",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def toolbars(self) -> "UiToolbarCollection":
         """Returns the window's toolbar collection."""
-        with agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get_toolbars"](byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_toolbars_metadata)
 
+    _get_service_by_name_metadata = { "name" : "get_service_by_name",
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_service_by_name(self, name:str) -> typing.Any:
         """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name."""
-        with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_get_service_by_name"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
-            return arg_ppRetVal.python_val
+        return self._intf.invoke(IUiWindow._metadata, IUiWindow._get_service_by_name_metadata, name, out_arg())
 
+    _get_service_by_type_metadata = { "name" : "get_service_by_type",
+            "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgEnum_arg(WINDOW_SERVICE), agmarshall.AgInterface_out_arg,) }
     def get_service_by_type(self, serviceType:"WINDOW_SERVICE") -> typing.Any:
         """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
-        with agmarshall.AgEnum_arg(WINDOW_SERVICE, serviceType) as arg_serviceType, \
-             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_get_service_by_type"](arg_serviceType.COM_val, byref(arg_ppRetVal.COM_val)))
-            return arg_ppRetVal.python_val
+        return self._intf.invoke(IUiWindow._metadata, IUiWindow._get_service_by_type_metadata, serviceType, out_arg())
 
 
 agcls.AgClassCatalog.add_catalog_entry("{05F59555-F74C-48b2-AAB4-1E6C58D7AEB7}", IUiWindow)
@@ -530,37 +540,31 @@ agcls.AgTypeNameMap["IUiWindow"] = IUiWindow
 
 class IUiWindowsCollection(object):
     """Provides methods and properties to manage the application's windows."""
-    _uuid = "{4DD6FB87-C329-41a5-A359-8A9C03569635}"
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _metadata = {
+        "uuid" : "{4DD6FB87-C329-41a5-A359-8A9C03569635}",
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+        "method_offsets" : { "item" : 1,
+                             "get_count" : 2,
+                             "arrange" : 3,
+                             "add" : 4,
+                             "get__NewEnum" : 5,
+                             "get_item_by_index" : 6,
+                             "get_item_by_name" : 7, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_item"] = _raise_uninitialized_error
-        self.__dict__["_get_count"] = _raise_uninitialized_error
-        self.__dict__["_arrange"] = _raise_uninitialized_error
-        self.__dict__["_add"] = _raise_uninitialized_error
-        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_get_item_by_index"] = _raise_uninitialized_error
-        self.__dict__["_get_item_by_name"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindowsCollection._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindowsCollection._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiWindowsCollection from source object.")
-        self.__dict__["enumerator"] = None
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiWindowsCollection = agcom.GUID(IUiWindowsCollection._uuid)
-        vtable_offset_local = IUiWindowsCollection._vtable_offset - 1
-        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_arrange"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+3, agcom.LONG)
-        self.__dict__["_add"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+4, agcom.BSTR, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+5, POINTER(agcom.PVOID))
-        self.__dict__["_get_item_by_index"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+6, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_get_item_by_name"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+7, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_enumerator"] = None
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -574,64 +578,67 @@ class IUiWindowsCollection(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowsCollection.")
     def __iter__(self):
-        self.__dict__["enumerator"] = self._NewEnum
-        self.__dict__["enumerator"].Reset()
+        self.__dict__["_enumerator"] = self._NewEnum
+        self._enumerator.reset()
         return self
     def __next__(self) -> "IUiWindow":
-        if self.__dict__["enumerator"] is None:
+        if self._enumerator is None:
             raise StopIteration
-        nextval = self.__dict__["enumerator"].Next()
+        nextval = self._enumerator.next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
+        return nextval
     
+    _item_metadata = { "name" : "item",
+            "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrCaption:typing.Any) -> "UiWindow":
         """Retrieves a window object."""
-        with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
-             agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._item_metadata, indexOrCaption, out_arg())
 
+    _get_count_metadata = { "name" : "count",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
         """Returns a total number of window objects in the collection."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiWindowsCollection._metadata, IUiWindowsCollection._get_count_metadata)
 
+    _arrange_metadata = { "name" : "arrange",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.AgEnum_arg(ARRANGE_STYLE),) }
     def arrange(self, arrangeStyle:"ARRANGE_STYLE") -> None:
         """Arranges the application windows using the specified style."""
-        with agmarshall.AgEnum_arg(ARRANGE_STYLE, arrangeStyle) as arg_arrangeStyle:
-            agcls.evaluate_hresult(self.__dict__["_arrange"](arg_arrangeStyle.COM_val))
+        return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._arrange_metadata, arrangeStyle)
 
+    _add_metadata = { "name" : "add",
+            "arg_types" : (agcom.BSTR, agcom.VARIANT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, pluginID:str, initData:typing.Any) -> "UiWindow":
         """Creates a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
-        with agmarshall.BSTR_arg(pluginID) as arg_pluginID, \
-             agmarshall.VARIANT_arg(initData) as arg_initData, \
-             agmarshall.AgInterface_out_arg() as arg_pNewWin:
-            agcls.evaluate_hresult(self.__dict__["_add"](arg_pluginID.COM_val, arg_initData.COM_val, byref(arg_pNewWin.COM_val)))
-            return arg_pNewWin.python_val
+        return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._add_metadata, pluginID, initData, out_arg())
 
+    _get__NewEnum_metadata = { "name" : "_NewEnum",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
-    def _NewEnum(self) -> IEnumVARIANT:
+    def _NewEnum(self) -> enumerator_proxy:
         """Enumerates the windows in the collection."""
-        with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.get_property(IUiWindowsCollection._metadata, IUiWindowsCollection._get__NewEnum_metadata)
 
+    _get_item_by_index_metadata = { "name" : "get_item_by_index",
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "UiWindow":
         """Retrieves a window object by index in collection."""
-        with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._get_item_by_index_metadata, index, out_arg())
 
+    _get_item_by_name_metadata = { "name" : "get_item_by_name",
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "UiWindow":
         """Retrieves a window object by name of window object."""
-        with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get_item_by_name"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
 
@@ -642,24 +649,24 @@ agcls.AgTypeNameMap["IUiWindowsCollection"] = IUiWindowsCollection
 
 class IUiWindowMapObject(object):
     """Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties."""
-    _uuid = "{A94C0929-7448-4e9e-BEB8-8F7A8F252D0D}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "uuid" : "{A94C0929-7448-4e9e-BEB8-8F7A8F252D0D}",
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "method_offsets" : { "get_map_id" : 1, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_get_map_id"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindowMapObject._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindowMapObject._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiWindowMapObject from source object.")
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiWindowMapObject = agcom.GUID(IUiWindowMapObject._uuid)
-        vtable_offset_local = IUiWindowMapObject._vtable_offset - 1
-        self.__dict__["_get_map_id"] = IAGFUNCTYPE(pUnk, IID_IUiWindowMapObject, vtable_offset_local+1, POINTER(agcom.LONG))
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -673,12 +680,13 @@ class IUiWindowMapObject(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowMapObject.")
     
+    _get_map_id_metadata = { "name" : "map_id",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def map_id(self) -> int:
         """A unique identifier associated with the window that can be used with Connect to control the 2D map."""
-        with agmarshall.LONG_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_get_map_id"](byref(arg_pRetVal.COM_val)))
-            return arg_pRetVal.python_val
+        return self._intf.get_property(IUiWindowMapObject._metadata, IUiWindowMapObject._get_map_id_metadata)
 
 
 agcls.AgClassCatalog.add_catalog_entry("{A94C0929-7448-4e9e-BEB8-8F7A8F252D0D}", IUiWindowMapObject)
@@ -686,24 +694,24 @@ agcls.AgTypeNameMap["IUiWindowMapObject"] = IUiWindowMapObject
 
 class IUiWindowGlobeObject(object):
     """Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties."""
-    _uuid = "{B958EDBD-0569-4596-A253-BD90328844D0}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "uuid" : "{B958EDBD-0569-4596-A253-BD90328844D0}",
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "method_offsets" : { "get_scene_id" : 1, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_get_scene_id"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindowGlobeObject._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindowGlobeObject._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiWindowGlobeObject from source object.")
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiWindowGlobeObject = agcom.GUID(IUiWindowGlobeObject._uuid)
-        vtable_offset_local = IUiWindowGlobeObject._vtable_offset - 1
-        self.__dict__["_get_scene_id"] = IAGFUNCTYPE(pUnk, IID_IUiWindowGlobeObject, vtable_offset_local+1, POINTER(agcom.LONG))
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -717,12 +725,13 @@ class IUiWindowGlobeObject(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowGlobeObject.")
     
+    _get_scene_id_metadata = { "name" : "scene_id",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def scene_id(self) -> int:
         """A unique identifier associated with the window that can be used with Connect to control the 3D globe."""
-        with agmarshall.LONG_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_get_scene_id"](byref(arg_pRetVal.COM_val)))
-            return arg_pRetVal.python_val
+        return self._intf.get_property(IUiWindowGlobeObject._metadata, IUiWindowGlobeObject._get_scene_id_metadata)
 
 
 agcls.AgClassCatalog.add_catalog_entry("{B958EDBD-0569-4596-A253-BD90328844D0}", IUiWindowGlobeObject)
@@ -734,9 +743,9 @@ class UiWindowsCollection(IUiWindowsCollection):
     """Provides methods and properties to manage the windows."""
     def __init__(self, sourceObject=None):
         IUiWindowsCollection.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiWindowsCollection._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiWindowsCollection._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -747,7 +756,7 @@ class UiWindowsCollection(IUiWindowsCollection):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowsCollection.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{82F7DB8A-A761-4C3E-95DF-37300A3738CB}", UiWindowsCollection)
 agcls.AgTypeNameMap["UiWindowsCollection"] = UiWindowsCollection
 
@@ -755,9 +764,9 @@ class UiWindow(IUiWindow):
     """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
     def __init__(self, sourceObject=None):
         IUiWindow.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiWindow._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiWindow._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -768,7 +777,7 @@ class UiWindow(IUiWindow):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindow.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{BD72ECC3-A4A2-42FB-95AC-AE25633BB9F6}", UiWindow)
 agcls.AgTypeNameMap["UiWindow"] = UiWindow
 
@@ -776,9 +785,9 @@ class UiToolbar(IUiToolbar):
     """Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar."""
     def __init__(self, sourceObject=None):
         IUiToolbar.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiToolbar._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiToolbar._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -789,7 +798,7 @@ class UiToolbar(IUiToolbar):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiToolbar.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{C20AB584-ABCC-4BF3-96D4-D2A4AA880FBB}", UiToolbar)
 agcls.AgTypeNameMap["UiToolbar"] = UiToolbar
 
@@ -797,9 +806,9 @@ class UiToolbarCollection(IUiToolbarCollection):
     """Provides methods and properties to manage the toolbars."""
     def __init__(self, sourceObject=None):
         IUiToolbarCollection.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiToolbarCollection._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiToolbarCollection._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -810,7 +819,7 @@ class UiToolbarCollection(IUiToolbarCollection):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiToolbarCollection.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{28F000E7-D13E-485E-8484-0BCB359BBC55}", UiToolbarCollection)
 agcls.AgTypeNameMap["UiToolbarCollection"] = UiToolbarCollection
 
@@ -818,9 +827,9 @@ class UiWindowMapObject(IUiWindowMapObject):
     """Provides methods and properties to manipulate the 2D map."""
     def __init__(self, sourceObject=None):
         IUiWindowMapObject.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiWindowMapObject._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiWindowMapObject._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -831,7 +840,7 @@ class UiWindowMapObject(IUiWindowMapObject):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowMapObject.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{D20C704C-0763-4CC9-9485-A2EA23C84E6B}", UiWindowMapObject)
 agcls.AgTypeNameMap["UiWindowMapObject"] = UiWindowMapObject
 
@@ -839,9 +848,9 @@ class UiWindowGlobeObject(IUiWindowGlobeObject):
     """Provides methods and properties to manipulate the 3D globe."""
     def __init__(self, sourceObject=None):
         IUiWindowGlobeObject.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiWindowGlobeObject._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiWindowGlobeObject._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -852,11 +861,11 @@ class UiWindowGlobeObject(IUiWindowGlobeObject):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowGlobeObject.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{4F69FA5F-30E8-4A07-9D8C-1AD163A3DE0D}", UiWindowGlobeObject)
 agcls.AgTypeNameMap["UiWindowGlobeObject"] = UiWindowGlobeObject
 
 
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################

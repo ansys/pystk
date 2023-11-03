@@ -1,34 +1,31 @@
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
 __all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IMRUCollection", "IUiApplication", "IUiApplicationPartnerAccess", "IUiFileOpenExt", 
 "IUiFileOpenExtCollection", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", "UiApplication", "UiFileOpenExt", 
 "UiFileOpenExtCollection"]
 
+from ctypes import POINTER
+from enum import IntEnum
 import typing
 
-from ctypes   import byref, POINTER
-from enum     import IntEnum
-
 try:
-    from numpy import ndarray 
+    from numpy import ndarray
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame 
+    from pandas import DataFrame
 except ModuleNotFoundError:
     pass
 
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch, IAGFUNCTYPE, IEnumVARIANT
-from .internal.eventutil   import *
-from .utilities.exceptions import *
-
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import enumerator_proxy, interface_proxy, out_arg
+from .internal.comutil import IDispatch, IUnknown
+from .internal.eventutil import *
 from .uicore import *
+from .utilities.exceptions import *
 
 
 def _raise_uninitialized_error(*args):
@@ -100,29 +97,27 @@ agcls.AgTypeNameMap["APP_ERROR_CODES"] = APP_ERROR_CODES
 
 class IMRUCollection(object):
     """Provides information about most recently used (MRU) list."""
-    _uuid = "{68FAF906-BAD0-4C7C-80D5-26E6765800F7}"
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _metadata = {
+        "uuid" : "{68FAF906-BAD0-4C7C-80D5-26E6765800F7}",
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+        "method_offsets" : { "item" : 1,
+                             "get_count" : 2,
+                             "get__NewEnum" : 3, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_item"] = _raise_uninitialized_error
-        self.__dict__["_get_count"] = _raise_uninitialized_error
-        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IMRUCollection._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IMRUCollection._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IMRUCollection from source object.")
-        self.__dict__["enumerator"] = None
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IMRUCollection = agcom.GUID(IMRUCollection._uuid)
-        vtable_offset_local = IMRUCollection._vtable_offset - 1
-        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IMRUCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.BSTR))
-        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IMRUCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IMRUCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_enumerator"] = None
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -136,37 +131,39 @@ class IMRUCollection(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IMRUCollection.")
     def __iter__(self):
-        self.__dict__["enumerator"] = self._NewEnum
-        self.__dict__["enumerator"].Reset()
+        self.__dict__["_enumerator"] = self._NewEnum
+        self._enumerator.reset()
         return self
     def __next__(self) -> str:
-        if self.__dict__["enumerator"] is None:
+        if self._enumerator is None:
             raise StopIteration
-        nextval = self.__dict__["enumerator"].Next()
+        nextval = self._enumerator.next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
+        return nextval
     
+    _item_metadata = { "name" : "item",
+            "arg_types" : (agcom.VARIANT, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.VARIANT_arg, agmarshall.BSTR_arg,) }
     def item(self, index:typing.Any) -> str:
         """Gets the MRU at the specified index."""
-        with agmarshall.VARIANT_arg(index) as arg_index, \
-             agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.invoke(IMRUCollection._metadata, IMRUCollection._item_metadata, index, out_arg())
 
+    _get_count_metadata = { "name" : "count",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
         """Gets the total count of MRUs in the collection."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IMRUCollection._metadata, IMRUCollection._get_count_metadata)
 
+    _get__NewEnum_metadata = { "name" : "_NewEnum",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
-    def _NewEnum(self) -> IEnumVARIANT:
+    def _NewEnum(self) -> enumerator_proxy:
         """Enumerates through the MRU collection."""
-        with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.get_property(IMRUCollection._metadata, IMRUCollection._get__NewEnum_metadata)
 
     __getitem__ = item
 
@@ -177,34 +174,29 @@ agcls.AgTypeNameMap["IMRUCollection"] = IMRUCollection
 
 class IUiFileOpenExt(object):
     """Access to file open dialog that allows multiple file specifications."""
-    _uuid = "{42DFA066-8474-4FAA-9F66-E4477DBD44E2}"
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "uuid" : "{42DFA066-8474-4FAA-9F66-E4477DBD44E2}",
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "method_offsets" : { "get_file_name" : 1,
+                             "set_file_name" : 2,
+                             "get_filter_description" : 3,
+                             "set_filter_description" : 4,
+                             "get_filter_pattern" : 5,
+                             "set_filter_pattern" : 6, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_get_file_name"] = _raise_uninitialized_error
-        self.__dict__["_set_file_name"] = _raise_uninitialized_error
-        self.__dict__["_get_filter_description"] = _raise_uninitialized_error
-        self.__dict__["_set_filter_description"] = _raise_uninitialized_error
-        self.__dict__["_get_filter_pattern"] = _raise_uninitialized_error
-        self.__dict__["_set_filter_pattern"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiFileOpenExt._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiFileOpenExt._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiFileOpenExt from source object.")
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiFileOpenExt = agcom.GUID(IUiFileOpenExt._uuid)
-        vtable_offset_local = IUiFileOpenExt._vtable_offset - 1
-        self.__dict__["_get_file_name"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+1, POINTER(agcom.PVOID))
-        self.__dict__["_set_file_name"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+2, agcom.PVOID)
-        self.__dict__["_get_filter_description"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+3, POINTER(agcom.BSTR))
-        self.__dict__["_set_filter_description"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+4, agcom.BSTR)
-        self.__dict__["_get_filter_pattern"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+5, POINTER(agcom.BSTR))
-        self.__dict__["_set_filter_pattern"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+6, agcom.BSTR)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -218,44 +210,53 @@ class IUiFileOpenExt(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiFileOpenExt.")
     
+    _get_file_name_metadata = { "name" : "file_name",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def file_name(self) -> "UiFileOpenExtCollection":
         """Gets/sets the multiple file open collection."""
-        with agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_file_name"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_file_name_metadata)
 
+    _set_file_name_metadata = { "name" : "file_name",
+            "arg_types" : (agcom.PVOID,),
+            "marshallers" : (agmarshall.AgInterface_in_arg("IUiFileOpenExtCollection"),) }
     @file_name.setter
     def file_name(self, newVal:"IUiFileOpenExtCollection") -> None:
         """Gets/sets the multiple file open collection."""
-        with agmarshall.AgInterface_in_arg(newVal, IUiFileOpenExtCollection) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_file_name"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_file_name_metadata, newVal)
 
+    _get_filter_description_metadata = { "name" : "filter_description",
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def filter_description(self) -> str:
         """Gets/sets the file open dialog filter description."""
-        with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_filter_description"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_filter_description_metadata)
 
+    _set_filter_description_metadata = { "name" : "filter_description",
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @filter_description.setter
     def filter_description(self, newVal:str) -> None:
         """Gets/sets the file open dialog filter description."""
-        with agmarshall.BSTR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_filter_description"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_filter_description_metadata, newVal)
 
+    _get_filter_pattern_metadata = { "name" : "filter_pattern",
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def filter_pattern(self) -> str:
         """Gets/sets the file open dialog filter pattern."""
-        with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_filter_pattern"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_filter_pattern_metadata)
 
+    _set_filter_pattern_metadata = { "name" : "filter_pattern",
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @filter_pattern.setter
     def filter_pattern(self, newVal:str) -> None:
         """Gets/sets the file open dialog filter pattern."""
-        with agmarshall.BSTR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_filter_pattern"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_filter_pattern_metadata, newVal)
 
 
 agcls.AgClassCatalog.add_catalog_entry("{42DFA066-8474-4FAA-9F66-E4477DBD44E2}", IUiFileOpenExt)
@@ -263,96 +264,60 @@ agcls.AgTypeNameMap["IUiFileOpenExt"] = IUiFileOpenExt
 
 class IUiApplication(object):
     """UiApplication represents a root of the Application Model."""
-    _uuid = "{769EDAA1-8767-4781-BC43-D968B0D67C02}"
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "uuid" : "{769EDAA1-8767-4781-BC43-D968B0D67C02}",
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "method_offsets" : { "load_personality" : 1,
+                             "get_personality" : 2,
+                             "get_visible" : 3,
+                             "set_visible" : 4,
+                             "get_user_control" : 5,
+                             "set_user_control" : 6,
+                             "get_windows" : 7,
+                             "get_height" : 8,
+                             "set_height" : 9,
+                             "get_width" : 10,
+                             "set_width" : 11,
+                             "get_left" : 12,
+                             "set_left" : 13,
+                             "get_top" : 14,
+                             "set_top" : 15,
+                             "get_window_state" : 16,
+                             "set_window_state" : 17,
+                             "activate" : 18,
+                             "get_mru_list" : 19,
+                             "file_open_dialog" : 20,
+                             "get_path" : 21,
+                             "create_object" : 22,
+                             "file_save_as_dialog" : 23,
+                             "quit" : 24,
+                             "file_open_dialog_ext" : 25,
+                             "get_hwnd" : 26,
+                             "directory_picker_dialog" : 27,
+                             "get_message_pending_delay" : 28,
+                             "set_message_pending_delay" : 29,
+                             "get_personality2" : 30,
+                             "open_log_file" : 31,
+                             "log_msg" : 32,
+                             "get_log_file" : 33,
+                             "get_display_alerts" : 34,
+                             "set_display_alerts" : 35,
+                             "create_application" : 36,
+                             "get_process_id" : 37, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_load_personality"] = _raise_uninitialized_error
-        self.__dict__["_get_personality"] = _raise_uninitialized_error
-        self.__dict__["_get_visible"] = _raise_uninitialized_error
-        self.__dict__["_set_visible"] = _raise_uninitialized_error
-        self.__dict__["_get_user_control"] = _raise_uninitialized_error
-        self.__dict__["_set_user_control"] = _raise_uninitialized_error
-        self.__dict__["_get_windows"] = _raise_uninitialized_error
-        self.__dict__["_get_height"] = _raise_uninitialized_error
-        self.__dict__["_set_height"] = _raise_uninitialized_error
-        self.__dict__["_get_width"] = _raise_uninitialized_error
-        self.__dict__["_set_width"] = _raise_uninitialized_error
-        self.__dict__["_get_left"] = _raise_uninitialized_error
-        self.__dict__["_set_left"] = _raise_uninitialized_error
-        self.__dict__["_get_top"] = _raise_uninitialized_error
-        self.__dict__["_set_top"] = _raise_uninitialized_error
-        self.__dict__["_get_window_state"] = _raise_uninitialized_error
-        self.__dict__["_set_window_state"] = _raise_uninitialized_error
-        self.__dict__["_activate"] = _raise_uninitialized_error
-        self.__dict__["_get_mru_list"] = _raise_uninitialized_error
-        self.__dict__["_file_open_dialog"] = _raise_uninitialized_error
-        self.__dict__["_get_path"] = _raise_uninitialized_error
-        self.__dict__["_create_object"] = _raise_uninitialized_error
-        self.__dict__["_file_save_as_dialog"] = _raise_uninitialized_error
-        self.__dict__["_quit"] = _raise_uninitialized_error
-        self.__dict__["_file_open_dialog_ext"] = _raise_uninitialized_error
-        self.__dict__["_get_hwnd"] = _raise_uninitialized_error
-        self.__dict__["_directory_picker_dialog"] = _raise_uninitialized_error
-        self.__dict__["_get_message_pending_delay"] = _raise_uninitialized_error
-        self.__dict__["_set_message_pending_delay"] = _raise_uninitialized_error
-        self.__dict__["_get_personality2"] = _raise_uninitialized_error
-        self.__dict__["_open_log_file"] = _raise_uninitialized_error
-        self.__dict__["_log_msg"] = _raise_uninitialized_error
-        self.__dict__["_get_log_file"] = _raise_uninitialized_error
-        self.__dict__["_get_display_alerts"] = _raise_uninitialized_error
-        self.__dict__["_set_display_alerts"] = _raise_uninitialized_error
-        self.__dict__["_create_application"] = _raise_uninitialized_error
-        self.__dict__["_get_process_id"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiApplication._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiApplication._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiApplication from source object.")
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiApplication = agcom.GUID(IUiApplication._uuid)
-        vtable_offset_local = IUiApplication._vtable_offset - 1
-        self.__dict__["_load_personality"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+1, agcom.BSTR)
-        self.__dict__["_get_personality"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+2, POINTER(agcom.PVOID))
-        self.__dict__["_get_visible"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_visible"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+4, agcom.VARIANT_BOOL)
-        self.__dict__["_get_user_control"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_user_control"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+6, agcom.VARIANT_BOOL)
-        self.__dict__["_get_windows"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+7, POINTER(agcom.PVOID))
-        self.__dict__["_get_height"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+8, POINTER(agcom.LONG))
-        self.__dict__["_set_height"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+9, agcom.LONG)
-        self.__dict__["_get_width"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_set_width"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+11, agcom.LONG)
-        self.__dict__["_get_left"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+12, POINTER(agcom.LONG))
-        self.__dict__["_set_left"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+13, agcom.LONG)
-        self.__dict__["_get_top"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+14, POINTER(agcom.LONG))
-        self.__dict__["_set_top"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+15, agcom.LONG)
-        self.__dict__["_get_window_state"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+16, POINTER(agcom.LONG))
-        self.__dict__["_set_window_state"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+17, agcom.LONG)
-        self.__dict__["_activate"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+18, )
-        self.__dict__["_get_mru_list"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+19, POINTER(agcom.PVOID))
-        self.__dict__["_file_open_dialog"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+20, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_get_path"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+21, POINTER(agcom.BSTR))
-        self.__dict__["_create_object"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+22, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_file_save_as_dialog"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+23, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_quit"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+24, )
-        self.__dict__["_file_open_dialog_ext"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+25, agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_get_hwnd"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+26, POINTER(agcom.LONG))
-        self.__dict__["_directory_picker_dialog"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+27, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_get_message_pending_delay"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+28, POINTER(agcom.LONG))
-        self.__dict__["_set_message_pending_delay"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+29, agcom.LONG)
-        self.__dict__["_get_personality2"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+30, POINTER(agcom.PVOID))
-        self.__dict__["_open_log_file"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+31, agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_log_msg"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+32, agcom.LONG, agcom.BSTR)
-        self.__dict__["_get_log_file"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+33, POINTER(agcom.BSTR))
-        self.__dict__["_get_display_alerts"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+34, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_set_display_alerts"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+35, agcom.VARIANT_BOOL)
-        self.__dict__["_create_application"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+36, POINTER(agcom.PVOID))
-        self.__dict__["_get_process_id"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+37, POINTER(agcom.LONG))
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -366,255 +331,290 @@ class IUiApplication(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiApplication.")
     
+    _load_personality_metadata = { "name" : "load_personality",
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     def load_personality(self, persName:str) -> None:
         """Loads a personality by its name."""
-        with agmarshall.BSTR_arg(persName) as arg_persName:
-            agcls.evaluate_hresult(self.__dict__["_load_personality"](arg_persName.COM_val))
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._load_personality_metadata, persName)
 
+    _get_personality_metadata = { "name" : "personality",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def personality(self) -> typing.Any:
         """Returns a reference to the currently loaded personality."""
-        with agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_personality"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_personality_metadata)
 
+    _get_visible_metadata = { "name" : "visible",
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def visible(self) -> bool:
         """Gets/sets whether the main window is visible."""
-        with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_visible"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_visible_metadata)
 
+    _set_visible_metadata = { "name" : "visible",
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @visible.setter
     def visible(self, newVal:bool) -> None:
         """Gets/sets whether the main window is visible."""
-        with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_visible"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_visible_metadata, newVal)
 
+    _get_user_control_metadata = { "name" : "user_control",
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def user_control(self) -> bool:
         """Gets/sets whether the application is user controlled."""
-        with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_user_control"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_user_control_metadata)
 
+    _set_user_control_metadata = { "name" : "user_control",
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @user_control.setter
     def user_control(self, newVal:bool) -> None:
         """Gets/sets whether the application is user controlled."""
-        with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_user_control"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_user_control_metadata, newVal)
 
+    _get_windows_metadata = { "name" : "windows",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def windows(self) -> "IUiWindowsCollection":
         """Returns a collection of windows."""
-        with agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_windows"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_windows_metadata)
 
+    _get_height_metadata = { "name" : "height",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def height(self) -> int:
         """Gets/sets a height of the main window."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_height"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_height_metadata)
 
+    _set_height_metadata = { "name" : "height",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @height.setter
     def height(self, newVal:int) -> None:
         """Gets/sets a height of the main window."""
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_height"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_height_metadata, newVal)
 
+    _get_width_metadata = { "name" : "width",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def width(self) -> int:
         """Gets/sets a width of the main window."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_width"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_width_metadata)
 
+    _set_width_metadata = { "name" : "width",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @width.setter
     def width(self, newVal:int) -> None:
         """Gets/sets a width of the main window."""
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_width"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_width_metadata, newVal)
 
+    _get_left_metadata = { "name" : "left",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def left(self) -> int:
         """Gets/sets a vertical coordinate of the main window."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_left"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_left_metadata)
 
+    _set_left_metadata = { "name" : "left",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @left.setter
     def left(self, newVal:int) -> None:
         """Gets/sets a vertical coordinate of the main window."""
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_left"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_left_metadata, newVal)
 
+    _get_top_metadata = { "name" : "top",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def top(self) -> int:
         """Gets/sets a horizontal coordinate of the main window."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_top"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_top_metadata)
 
+    _set_top_metadata = { "name" : "top",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @top.setter
     def top(self, newVal:int) -> None:
         """Gets/sets a horizontal coordinate of the main window."""
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_top"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_top_metadata, newVal)
 
+    _get_window_state_metadata = { "name" : "window_state",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.AgEnum_arg(WINDOW_STATE),) }
     @property
     def window_state(self) -> "WINDOW_STATE":
         """Gets/sets the state of the main window."""
-        with agmarshall.AgEnum_arg(WINDOW_STATE) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_window_state"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_window_state_metadata)
 
+    _set_window_state_metadata = { "name" : "window_state",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.AgEnum_arg(WINDOW_STATE),) }
     @window_state.setter
     def window_state(self, newVal:"WINDOW_STATE") -> None:
         """Gets/sets the state of the main window."""
-        with agmarshall.AgEnum_arg(WINDOW_STATE, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_window_state"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_window_state_metadata, newVal)
 
+    _activate_metadata = { "name" : "activate",
+            "arg_types" : (),
+            "marshallers" : () }
     def activate(self) -> None:
         """Activates the application's main window."""
-        agcls.evaluate_hresult(self.__dict__["_activate"]())
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._activate_metadata, )
 
+    _get_mru_list_metadata = { "name" : "mru_list",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def mru_list(self) -> "MRUCollection":
         """Returns a collection most recently used files."""
-        with agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_get_mru_list"](byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_mru_list_metadata)
 
+    _file_open_dialog_metadata = { "name" : "file_open_dialog",
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg,) }
     def file_open_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str:
         """Brings up a common File Open dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
-        with agmarshall.BSTR_arg(defaultExt) as arg_defaultExt, \
-             agmarshall.BSTR_arg(filter) as arg_filter, \
-             agmarshall.BSTR_arg(initialDir) as arg_initialDir, \
-             agmarshall.BSTR_arg() as arg_pFileName:
-            agcls.evaluate_hresult(self.__dict__["_file_open_dialog"](arg_defaultExt.COM_val, arg_filter.COM_val, arg_initialDir.COM_val, byref(arg_pFileName.COM_val)))
-            return arg_pFileName.python_val
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._file_open_dialog_metadata, defaultExt, filter, initialDir, out_arg())
 
+    _get_path_metadata = { "name" : "path",
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def path(self) -> str:
         """Returns the complete path to the application, excluding the final separator and name of the application. Read-only String."""
-        with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_path"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_path_metadata)
 
+    _create_object_metadata = { "name" : "create_object",
+            "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_object(self, progID:str, remoteServer:str) -> typing.Any:
         """Only works from local HTML pages and scripts"""
-        with agmarshall.BSTR_arg(progID) as arg_progID, \
-             agmarshall.BSTR_arg(remoteServer) as arg_remoteServer, \
-             agmarshall.AgInterface_out_arg() as arg_ppObject:
-            agcls.evaluate_hresult(self.__dict__["_create_object"](arg_progID.COM_val, arg_remoteServer.COM_val, byref(arg_ppObject.COM_val)))
-            return arg_ppObject.python_val
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._create_object_metadata, progID, remoteServer, out_arg())
 
+    _file_save_as_dialog_metadata = { "name" : "file_save_as_dialog",
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg,) }
     def file_save_as_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str:
         """Brings up a common File SaveAs dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
-        with agmarshall.BSTR_arg(defaultExt) as arg_defaultExt, \
-             agmarshall.BSTR_arg(filter) as arg_filter, \
-             agmarshall.BSTR_arg(initialDir) as arg_initialDir, \
-             agmarshall.BSTR_arg() as arg_pFileName:
-            agcls.evaluate_hresult(self.__dict__["_file_save_as_dialog"](arg_defaultExt.COM_val, arg_filter.COM_val, arg_initialDir.COM_val, byref(arg_pFileName.COM_val)))
-            return arg_pFileName.python_val
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._file_save_as_dialog_metadata, defaultExt, filter, initialDir, out_arg())
 
+    _quit_metadata = { "name" : "quit",
+            "arg_types" : (),
+            "marshallers" : () }
     def quit(self) -> None:
         """Shuts down the application."""
-        agcls.evaluate_hresult(self.__dict__["_quit"]())
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._quit_metadata, )
 
+    _file_open_dialog_ext_metadata = { "name" : "file_open_dialog_ext",
+            "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def file_open_dialog_ext(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "UiFileOpenExt":
         """Brings up a standard File Open Dialog and returns an object representing the selected file."""
-        with agmarshall.VARIANT_BOOL_arg(allowMultiSelect) as arg_allowMultiSelect, \
-             agmarshall.BSTR_arg(defaultExt) as arg_defaultExt, \
-             agmarshall.BSTR_arg(filter) as arg_filter, \
-             agmarshall.BSTR_arg(initialDir) as arg_initialDir, \
-             agmarshall.AgInterface_out_arg() as arg_ppObject:
-            agcls.evaluate_hresult(self.__dict__["_file_open_dialog_ext"](arg_allowMultiSelect.COM_val, arg_defaultExt.COM_val, arg_filter.COM_val, arg_initialDir.COM_val, byref(arg_ppObject.COM_val)))
-            return arg_ppObject.python_val
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._file_open_dialog_ext_metadata, allowMultiSelect, defaultExt, filter, initialDir, out_arg())
 
+    _get_hwnd_metadata = { "name" : "hwnd",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def hwnd(self) -> int:
         """Returns an HWND handle associated with the application main window."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_hwnd"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_hwnd_metadata)
 
+    _directory_picker_dialog_metadata = { "name" : "directory_picker_dialog",
+            "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg,) }
     def directory_picker_dialog(self, title:str, initialDir:str) -> str:
         """Brings up the Directory Picker Dialog and returns a selected directory name."""
-        with agmarshall.BSTR_arg(title) as arg_title, \
-             agmarshall.BSTR_arg(initialDir) as arg_initialDir, \
-             agmarshall.BSTR_arg() as arg_pDirName:
-            agcls.evaluate_hresult(self.__dict__["_directory_picker_dialog"](arg_title.COM_val, arg_initialDir.COM_val, byref(arg_pDirName.COM_val)))
-            return arg_pDirName.python_val
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._directory_picker_dialog_metadata, title, initialDir, out_arg())
 
+    _get_message_pending_delay_metadata = { "name" : "message_pending_delay",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def message_pending_delay(self) -> int:
         """Gets/Sets message-pending delay for server busy dialog (in milliseconds )"""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_message_pending_delay"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_message_pending_delay_metadata)
 
+    _set_message_pending_delay_metadata = { "name" : "message_pending_delay",
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @message_pending_delay.setter
     def message_pending_delay(self, newVal:int) -> None:
         """Gets/Sets message-pending delay for server busy dialog (in milliseconds)"""
-        with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_set_message_pending_delay"](arg_newVal.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_message_pending_delay_metadata, newVal)
 
+    _get_personality2_metadata = { "name" : "personality2",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def personality2(self) -> typing.Any:
         """Returns an new instance of the root object of the STK Object Model"""
-        with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_get_personality2"](byref(arg_ppRetVal.COM_val)))
-            return arg_ppRetVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_personality2_metadata)
 
+    _open_log_file_metadata = { "name" : "open_log_file",
+            "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgEnum_arg(OPEN_LOG_FILE_MODE), agmarshall.VARIANT_BOOL_arg,) }
     def open_log_file(self, logFileName:str, logFileMode:"OPEN_LOG_FILE_MODE") -> bool:
         """Specifies the current log file to be written to."""
-        with agmarshall.BSTR_arg(logFileName) as arg_logFileName, \
-             agmarshall.AgEnum_arg(OPEN_LOG_FILE_MODE, logFileMode) as arg_logFileMode, \
-             agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_open_log_file"](arg_logFileName.COM_val, arg_logFileMode.COM_val, byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._open_log_file_metadata, logFileName, logFileMode, out_arg())
 
+    _log_msg_metadata = { "name" : "log_msg",
+            "arg_types" : (agcom.LONG, agcom.BSTR,),
+            "marshallers" : (agmarshall.AgEnum_arg(UI_LOG_MSG_TYPE), agmarshall.BSTR_arg,) }
     def log_msg(self, msgType:"UI_LOG_MSG_TYPE", msg:str) -> None:
         """Logs the Message specified."""
-        with agmarshall.AgEnum_arg(UI_LOG_MSG_TYPE, msgType) as arg_msgType, \
-             agmarshall.BSTR_arg(msg) as arg_msg:
-            agcls.evaluate_hresult(self.__dict__["_log_msg"](arg_msgType.COM_val, arg_msg.COM_val))
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._log_msg_metadata, msgType, msg)
 
+    _get_log_file_metadata = { "name" : "log_file",
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def log_file(self) -> str:
         """Gets the current log files full path."""
-        with agmarshall.BSTR_arg() as arg_pLogFilePath:
-            agcls.evaluate_hresult(self.__dict__["_get_log_file"](byref(arg_pLogFilePath.COM_val)))
-            return arg_pLogFilePath.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_log_file_metadata)
 
+    _get_display_alerts_metadata = { "name" : "display_alerts",
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_alerts(self) -> bool:
         """Set to true to display certain alerts and messages. Otherwise false. The default value is True."""
-        with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_get_display_alerts"](byref(arg_pRetVal.COM_val)))
-            return arg_pRetVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_display_alerts_metadata)
 
+    _set_display_alerts_metadata = { "name" : "display_alerts",
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @display_alerts.setter
     def display_alerts(self, displayAlerts:bool) -> None:
         """Set to true to display certain alerts and messages. Otherwise false. The default value is True."""
-        with agmarshall.VARIANT_BOOL_arg(displayAlerts) as arg_displayAlerts:
-            agcls.evaluate_hresult(self.__dict__["_set_display_alerts"](arg_displayAlerts.COM_val))
+        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_display_alerts_metadata, displayAlerts)
 
+    _create_application_metadata = { "name" : "create_application",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def create_application(self) -> "UiApplication":
         """Create a new instance of the application model root object."""
-        with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_create_application"](byref(arg_ppRetVal.COM_val)))
-            return arg_ppRetVal.python_val
+        return self._intf.invoke(IUiApplication._metadata, IUiApplication._create_application_metadata, out_arg())
 
+    _get_process_id_metadata = { "name" : "process_id",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def process_id(self) -> int:
         """Gets process id for the current instance."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_process_id"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_process_id_metadata)
 
 
 agcls.AgClassCatalog.add_catalog_entry("{769EDAA1-8767-4781-BC43-D968B0D67C02}", IUiApplication)
@@ -622,24 +622,24 @@ agcls.AgTypeNameMap["IUiApplication"] = IUiApplication
 
 class IUiApplicationPartnerAccess(object):
     """Access to the application object model for business partners."""
-    _uuid = "{DFC7DB2A-FA00-47B7-95D8-0E1171705A0F}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "uuid" : "{DFC7DB2A-FA00-47B7-95D8-0E1171705A0F}",
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "method_offsets" : { "grant_partner_access" : 1, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_grant_partner_access"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiApplicationPartnerAccess._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiApplicationPartnerAccess._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiApplicationPartnerAccess from source object.")
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiApplicationPartnerAccess = agcom.GUID(IUiApplicationPartnerAccess._uuid)
-        vtable_offset_local = IUiApplicationPartnerAccess._vtable_offset - 1
-        self.__dict__["_grant_partner_access"] = IAGFUNCTYPE(pUnk, IID_IUiApplicationPartnerAccess, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -653,14 +653,12 @@ class IUiApplicationPartnerAccess(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiApplicationPartnerAccess.")
     
+    _grant_partner_access_metadata = { "name" : "grant_partner_access",
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def grant_partner_access(self, vendor:str, product:str, key:str) -> typing.Any:
         """Provide object model root for authorized business partners."""
-        with agmarshall.BSTR_arg(vendor) as arg_vendor, \
-             agmarshall.BSTR_arg(product) as arg_product, \
-             agmarshall.BSTR_arg(key) as arg_key, \
-             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_grant_partner_access"](arg_vendor.COM_val, arg_product.COM_val, arg_key.COM_val, byref(arg_ppRetVal.COM_val)))
-            return arg_ppRetVal.python_val
+        return self._intf.invoke(IUiApplicationPartnerAccess._metadata, IUiApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, out_arg())
 
 
 agcls.AgClassCatalog.add_catalog_entry("{DFC7DB2A-FA00-47B7-95D8-0E1171705A0F}", IUiApplicationPartnerAccess)
@@ -668,29 +666,27 @@ agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
 
 class IUiFileOpenExtCollection(object):
     """Multiple file open collection."""
-    _uuid = "{564BF89D-F0F8-4E98-A5A4-033DB16FC659}"
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _metadata = {
+        "uuid" : "{564BF89D-F0F8-4E98-A5A4-033DB16FC659}",
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+        "method_offsets" : { "get_count" : 1,
+                             "get__NewEnum" : 2,
+                             "item" : 3, }
+    }
     def __init__(self, sourceObject=None):
-        self.__dict__["_pUnk"] = None
-        self.__dict__["_get_count"] = _raise_uninitialized_error
-        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_item"] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiFileOpenExtCollection._uuid))
-            if pUnk is not None:
-                self._private_init(pUnk)
-                del(pUnk)
+        self.__dict__["_intf"] = interface_proxy()
+        if sourceObject is not None and sourceObject._intf is not None:
+            intf = sourceObject._intf.query_interface(agcom.GUID(IUiFileOpenExtCollection._metadata["uuid"]))
+            if intf is not None:
+                self._private_init(intf)
+                del(intf)
             else:
                 raise STKInvalidCastError("Failed to create IUiFileOpenExtCollection from source object.")
-        self.__dict__["enumerator"] = None
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IID_IUiFileOpenExtCollection = agcom.GUID(IUiFileOpenExtCollection._uuid)
-        vtable_offset_local = IUiFileOpenExtCollection._vtable_offset - 1
-        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExtCollection, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExtCollection, vtable_offset_local+2, POINTER(agcom.PVOID))
-        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExtCollection, vtable_offset_local+3, agcom.LONG, POINTER(agcom.BSTR))
+        self.__dict__["_enumerator"] = None
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -704,37 +700,39 @@ class IUiFileOpenExtCollection(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiFileOpenExtCollection.")
     def __iter__(self):
-        self.__dict__["enumerator"] = self._NewEnum
-        self.__dict__["enumerator"].Reset()
+        self.__dict__["_enumerator"] = self._NewEnum
+        self._enumerator.reset()
         return self
     def __next__(self) -> str:
-        if self.__dict__["enumerator"] is None:
+        if self._enumerator is None:
             raise StopIteration
-        nextval = self.__dict__["enumerator"].Next()
+        nextval = self._enumerator.next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
+        return nextval
     
+    _get_count_metadata = { "name" : "count",
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
         """Gets the total count of files in the collection."""
-        with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._get_count_metadata)
 
+    _get__NewEnum_metadata = { "name" : "_NewEnum",
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
-    def _NewEnum(self) -> IEnumVARIANT:
+    def _NewEnum(self) -> enumerator_proxy:
         """Enumerates through the file collection."""
-        with agmarshall.IEnumVARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_pVal.COM_val)))
-            return arg_pVal.python_val
+        return self._intf.get_property(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._get__NewEnum_metadata)
 
+    _item_metadata = { "name" : "item",
+            "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, nIndex:int) -> str:
         """Gets the file at the specified index."""
-        with agmarshall.LONG_arg(nIndex) as arg_nIndex, \
-             agmarshall.BSTR_arg() as arg_pBSTR:
-            agcls.evaluate_hresult(self.__dict__["_item"](arg_nIndex.COM_val, byref(arg_pBSTR.COM_val)))
-            return arg_pBSTR.python_val
+        return self._intf.invoke(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._item_metadata, nIndex, out_arg())
 
     __getitem__ = item
 
@@ -750,10 +748,10 @@ class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
     def __init__(self, sourceObject=None):
         IUiApplication.__init__(self, sourceObject)
         IUiApplicationPartnerAccess.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiApplication._private_init(self, pUnk)
-        IUiApplicationPartnerAccess._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiApplication._private_init(self, intf)
+        IUiApplicationPartnerAccess._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -765,7 +763,7 @@ class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiApplication.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}", UiApplication)
 agcls.AgTypeNameMap["UiApplication"] = UiApplication
 
@@ -773,9 +771,9 @@ class MRUCollection(IMRUCollection):
     """Provides information about most recently used (MRU) list."""
     def __init__(self, sourceObject=None):
         IMRUCollection.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IMRUCollection._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IMRUCollection._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -786,7 +784,7 @@ class MRUCollection(IMRUCollection):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in MRUCollection.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{8033C4FF-4A7D-4416-9B07-6807EA9C794E}", MRUCollection)
 agcls.AgTypeNameMap["MRUCollection"] = MRUCollection
 
@@ -794,9 +792,9 @@ class UiFileOpenExtCollection(IUiFileOpenExtCollection):
     """Multiple file open collection."""
     def __init__(self, sourceObject=None):
         IUiFileOpenExtCollection.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiFileOpenExtCollection._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiFileOpenExtCollection._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -807,7 +805,7 @@ class UiFileOpenExtCollection(IUiFileOpenExtCollection):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExtCollection.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{A733AF99-E82E-42D8-AD9A-29BB005B3703}", UiFileOpenExtCollection)
 agcls.AgTypeNameMap["UiFileOpenExtCollection"] = UiFileOpenExtCollection
 
@@ -815,9 +813,9 @@ class UiFileOpenExt(IUiFileOpenExt):
     """Access to file open dialog that allows multiple file specifications."""
     def __init__(self, sourceObject=None):
         IUiFileOpenExt.__init__(self, sourceObject)
-    def _private_init(self, pUnk:IUnknown):
-        self.__dict__["_pUnk"] = pUnk
-        IUiFileOpenExt._private_init(self, pUnk)
+    def _private_init(self, intf:interface_proxy):
+        self.__dict__["_intf"] = intf
+        IUiFileOpenExt._private_init(self, intf)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -828,11 +826,11 @@ class UiFileOpenExt(IUiFileOpenExt):
             found_prop.__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExt.")
-        
+
 agcls.AgClassCatalog.add_catalog_entry("{26A2C933-DB59-434E-85FD-2D92A97AA8AD}", UiFileOpenExt)
 agcls.AgTypeNameMap["UiFileOpenExt"] = UiFileOpenExt
 
 
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################

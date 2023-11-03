@@ -598,8 +598,8 @@ Interfaces
     IRainLossModelITURP618_13
     IUrbanTerrestrialLossModel
     IUrbanTerrestrialLossModelTwoRay
-    IWirelessInSiteRTGeometryData
-    IUrbanTerrestrialLossModelWirelessInSiteRT
+    IWirelessInSite64GeometryData
+    IUrbanTerrestrialLossModelWirelessInSite64
     ITroposphericScintillationFadingLossModel
     ITroposphericScintillationFadingLossModelP618_8
     ITroposphericScintillationFadingLossModelP618_12
@@ -1468,6 +1468,7 @@ Enumerations
     LIMITS_EXCEEDED_BEHAVIOR_TYPE
     ANTENNA_GRAPHICS_COORDINATE_SYSTEM
     ANTENNA_MODEL_INPUT_TYPE
+    HFSS_FFD_GAIN_TYPE
     ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE
     BEAM_SELECTION_STRATEGY_TYPE
     TRANSMITTER_MODEL_TYPE
@@ -2516,8 +2517,8 @@ Classes
     IonosphericFadingLossModelP531_13
     UrbanTerrestrialLossModel
     UrbanTerrestrialLossModelTwoRay
-    UrbanTerrestrialLossModelWirelessInSiteRT
-    WirelessInSiteRTGeometryData
+    UrbanTerrestrialLossModelWirelessInSite64
+    WirelessInSite64GeometryData
     PointingStrategy
     PointingStrategyFixed
     PointingStrategySpinning
@@ -4484,10 +4485,10 @@ Interfaces
 .. autoclass:: IUrbanTerrestrialLossModelTwoRay
     :members:
     :exclude-members: __init__
-.. autoclass:: IWirelessInSiteRTGeometryData
+.. autoclass:: IWirelessInSite64GeometryData
     :members:
     :exclude-members: __init__
-.. autoclass:: IUrbanTerrestrialLossModelWirelessInSiteRT
+.. autoclass:: IUrbanTerrestrialLossModelWirelessInSite64
     :members:
     :exclude-members: __init__
 .. autoclass:: ITroposphericScintillationFadingLossModel
@@ -6800,6 +6801,8 @@ Enumerations
 .. autoenum:: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
     :members:
 .. autoenum:: ANTENNA_MODEL_INPUT_TYPE
+    :members:
+.. autoenum:: HFSS_FFD_GAIN_TYPE
     :members:
 .. autoenum:: ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE
     :members:
@@ -9854,10 +9857,10 @@ Classes
 .. autoclass:: UrbanTerrestrialLossModelTwoRay
     :members:
     :exclude-members: __init__
-.. autoclass:: UrbanTerrestrialLossModelWirelessInSiteRT
+.. autoclass:: UrbanTerrestrialLossModelWirelessInSite64
     :members:
     :exclude-members: __init__
-.. autoclass:: WirelessInSiteRTGeometryData
+.. autoclass:: WirelessInSite64GeometryData
     :members:
     :exclude-members: __init__
 .. autoclass:: PointingStrategy

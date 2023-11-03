@@ -1,4 +1,4 @@
-# Copyright 2020-2020, Ansys Government Initiatives 
+# Copyright 2020-2023, Ansys Government Initiatives 
 
 import os
 import typing
@@ -72,7 +72,7 @@ def evaluate_hresult(hr:HRESULT) -> None:
         punk = IUnknown()
         msg = None
         if oleaut32lib.GetErrorInfo(DWORD(), byref(punk.p)) == S_OK:
-            punk.TakeOwnership()
+            punk.take_ownership()
             ierrorinfo = _IErrorInfo(punk)
             msg = ierrorinfo.GetDescription()
             del(ierrorinfo)
@@ -91,7 +91,7 @@ class _IAgProvideClassId(object):
     guid = "{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}"
     def __init__(self, pUnk):
         IID__IAgProvideClassId = GUID(_IAgProvideClassId.guid)
-        pIntf = pUnk.QueryInterface(iid=IID__IAgProvideClassId)
+        pIntf = pUnk.query_interface(iid=IID__IAgProvideClassId)
         self.valid = False
         if pIntf is not None:
             self.valid = True
@@ -165,7 +165,7 @@ class _IProvideClassInfo(object):
     guid = "{B196B283-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
         IID__IProvideClassInfo = GUID(_IProvideClassInfo.guid)
-        pIntf = pUnk.QueryInterface(iid=IID__IProvideClassInfo)
+        pIntf = pUnk.query_interface(iid=IID__IProvideClassInfo)
         self.valid = False
         if pIntf is not None:
             self.valid = True
@@ -183,7 +183,7 @@ class _IProvideClassInfo(object):
             pUnk = IUnknown()
             hr = self._GetClassInfo(byref(pUnk.p))
             if Succeeded(hr):
-                pUnk.TakeOwnership()
+                pUnk.take_ownership()
                 type_info = _ITypeInfo(pUnk)
                 type_attr = type_info.GetTypeAttr()
                 if type_attr is not None:
@@ -222,10 +222,10 @@ def compare_com_objects(first, second) -> bool:
         return True
     elif first is None or second is None:
         return False
-    if hasattr(first, "_pUnk") and hasattr(second, "_pUnk"):
+    if hasattr(first, "_intf") and hasattr(second, "_intf"):
         iid_IUnknown = GUID(IUnknown._guid)
-        first_pUnk = first.__dict__["_pUnk"].QueryInterface(iid_IUnknown)
-        second_pUnk = second.__dict__["_pUnk"].QueryInterface(iid_IUnknown)
+        first_pUnk = first._intf.query_interface(iid_IUnknown)
+        second_pUnk = second._intf.query_interface(iid_IUnknown)
         result = (first_pUnk == second_pUnk)
         del(first_pUnk)
         del(second_pUnk)
@@ -274,7 +274,7 @@ class IConnectionPointContainer(object):
         pUnk = IUnknown()
         hr = self._FindConnectionPoint(iid, byref(pUnk.p))
         if Succeeded(hr):
-            pUnk.TakeOwnership()
+            pUnk.take_ownership()
             conn_point = IConnectionPoint(pUnk)
             del(pUnk)
             return conn_point
@@ -304,12 +304,12 @@ class _IRunningObjectTable(object):
     def GetObject(self, pmkObjectName: "_IMoniker") -> "IUnknown":
         ppunkObject = IUnknown()
         self._GetObject(pmkObjectName.pUnk.p, byref(ppunkObject.p))
-        ppunkObject.TakeOwnership(isApplication=self.gettingAnApplication) 
+        ppunkObject.take_ownership(isApplication=self.gettingAnApplication) 
         return ppunkObject
     def EnumRunning(self) -> "_IEnumMoniker":
         ppenumMoniker = IUnknown()
         self._EnumRunning(byref(ppenumMoniker.p))
-        ppenumMoniker.TakeOwnership()
+        ppenumMoniker.take_ownership()
         iEnumMon = _IEnumMoniker(ppenumMoniker)
         del(ppenumMoniker)
         return iEnumMon
@@ -334,7 +334,7 @@ class _IEnumMoniker(object):
         CLSID_AgUiApplication = GUID()
         ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
         ole32lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
-        pUnk.TakeOwnership()
+        pUnk.take_ownership()
         self._Next(one_obj, byref(pUnk.p), byref(num_fetched))
         if num_fetched.value == 1:
             iMon = _IMoniker(pUnk)
@@ -389,7 +389,7 @@ class _IMoniker(object):
     def _FreeDisplayName(self, ppszDisplayName):
         pMalloc = IUnknown()
         ole32lib.CoGetMalloc(DWORD(1), byref(pMalloc.p))
-        pMalloc.TakeOwnership()
+        pMalloc.take_ownership()
         iMalloc = _IMalloc(pMalloc)
         iMalloc.Free(ppszDisplayName)
         del(iMalloc)
@@ -398,7 +398,7 @@ class _IMoniker(object):
         pbc = IUnknown()
         pmkToLeft = IUnknown()
         ole32lib.CreateBindCtx(DWORD(0), byref(pbc.p))
-        pbc.TakeOwnership()
+        pbc.take_ownership()
         ppszDisplayName = BSTR()
         self._GetDisplayName(pbc.p, pmkToLeft.p, byref(ppszDisplayName))
         display_name = ppszDisplayName.value
@@ -413,7 +413,7 @@ def attach_to_stk_by_pid(pid:int) -> IUnknown:
     runningObjectTable = IUnknown()
     str_prog_id = "!STK.Application:" + str(pid)
     if Succeeded(ole32lib.GetRunningObjectTable(DWORD(0), byref(runningObjectTable.p))):
-        runningObjectTable.TakeOwnership()
+        runningObjectTable.take_ownership()
         runningObjectTable = _IRunningObjectTable(runningObjectTable)
         enumMoniker = runningObjectTable.EnumRunning()
         enumMoniker.Reset()
@@ -433,4 +433,3 @@ def attach_to_stk_by_pid(pid:int) -> IUnknown:
         del(runningObjectTable)
     else:
         raise RuntimeError("Failed to retrieve the Running Object Table.")
-       

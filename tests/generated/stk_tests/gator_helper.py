@@ -423,6 +423,42 @@ class GatorHelper(object):
             cp.custom_display_unit = "m"
 
     @staticmethod
+    def TestBisectionControlParameter(cp: "BisectionControl", objName: str, decName: str):
+        Assert.assertEqual(decName, cp.name)
+        Console.WriteLine(cp.name)
+
+        Assert.assertEqual(objName, cp.parent_name)
+        Console.WriteLine(cp.parent_name)
+
+        initialValue: typing.Any = cp.initial_value
+        Console.WriteLine(str(cp.initial_value))
+
+        cp.enable = False
+        Assert.assertFalse(cp.enable)
+        cp.enable = True
+        Assert.assertTrue(cp.enable)
+
+        cp.current_value = 5
+        Assert.assertEqual(5, cp.current_value)
+
+        cp.bound_search_step = 111
+        Assert.assertEqual(111, cp.bound_search_step)
+
+        cp.use_custom_display_unit = False
+        Assert.assertFalse(cp.use_custom_display_unit)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            cp.custom_display_unit = "m"
+
+        cp.use_custom_display_unit = True
+        Assert.assertTrue(cp.use_custom_display_unit)
+
+        cp.custom_display_unit = "min"
+        Assert.assertEqual("min", cp.custom_display_unit)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid Unit")):
+            cp.custom_display_unit = "m"
+
+    @staticmethod
     def TestDCControlParameter(cp: "DifferentialCorrectorControl"):
         GatorHelper.TestRuntimeTypeInfo(cp)
 
@@ -2770,6 +2806,42 @@ class GatorHelper(object):
             eq.custom_display_unit = "m"
 
     @staticmethod
+    def TestBisectionResult(eq: "BisectionResult"):
+        currentValue: typing.Any = eq.current_value
+        Assert.assertEqual("-Not Set-", eq.current_value)
+
+        name: str = eq.name
+        Assert.assertEqual("Epoch", eq.name)
+
+        parentName: str = eq.parent_name
+        Assert.assertEqual("TMan", eq.parent_name)
+
+        eq.enable = False
+        Assert.assertFalse(eq.enable)
+        eq.enable = True
+        Assert.assertTrue(eq.enable)
+
+        eq.desired_value = "2 Jul 1999 00:00:00.000"
+        Assert.assertEqual("2 Jul 1999 00:00:00.000", eq.desired_value)
+
+        eq.tolerance = 0.02
+        Assert.assertEqual(0.02, eq.tolerance)
+
+        eq.use_custom_display_unit = False
+        Assert.assertFalse(eq.use_custom_display_unit)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            eq.custom_display_unit = "JDate"
+
+        eq.use_custom_display_unit = True
+        Assert.assertTrue(eq.use_custom_display_unit)
+
+        eq.custom_display_unit = "JDate"
+        Assert.assertEqual("JDate", eq.custom_display_unit)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid Unit")):
+            eq.custom_display_unit = "m"
+
+    @staticmethod
     def Test_IAgVAProfile(ts: "MissionControlSequenceTargetSequence", profile: "IProfile", mode: "PROFILE_MODE"):
         newProfile: "IProfile" = profile.copy()
         newProfile.mode = mode
@@ -3025,7 +3097,7 @@ class GatorHelper(object):
         for result in optimizer.results:
             GatorHelper.m_logger.WriteLine(result.name)
 
-        GatorHelper.TestSNOPTTargeterGraphs(optimizer.targeter_graphs)  # ???
+        GatorHelper.TestSNOPTTargeterGraphs(optimizer.targeter_graphs)
 
         optimizer.reset_controls_before_run = False
         Assert.assertFalse(optimizer.reset_controls_before_run)
@@ -3267,6 +3339,44 @@ class GatorHelper(object):
         GatorHelper.TestIAgVATargeterGraph(tgColl[0])
 
     @staticmethod
+    def TestBisectionTargeterGraphs(tgColl: "TargeterGraphCollection"):
+        Assert.assertEqual(1, tgColl.count)
+        Assert.assertEqual("Graph1", tgColl[0].name)
+
+        tg1: "TargeterGraph" = tgColl.add_graph()
+        tg1.name = "Graph2"
+        Assert.assertEqual(2, tgColl.count)
+        tgColl.cut(0)
+        tgColl.paste()
+
+        Assert.assertEqual("Graph2", tgColl[0].name)
+        Assert.assertEqual("Graph1", tgColl[1].name)
+
+        tgColl.insert_copy(tgColl["Graph2"])
+        Assert.assertEqual(3, tgColl.count)
+        Assert.assertEqual("Graph2", tgColl[0].name)
+        Assert.assertEqual("Graph1", tgColl[1].name)
+        Assert.assertEqual("Graph3", tgColl[2].name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
+            tgColl.remove_graph(3)
+        tgColl.remove_graph(0)
+        Assert.assertEqual(2, tgColl.count)
+        Assert.assertEqual("Graph1", tgColl[0].name)
+        Assert.assertEqual("Graph3", tgColl[1].name)
+
+        tgColl.remove_graph(1)
+        Assert.assertEqual(1, tgColl.count)
+        Assert.assertEqual("Graph1", tgColl[0].name)
+
+        tg: "TargeterGraph"
+
+        for tg in tgColl:
+            name: str = tg.name
+
+        GatorHelper.TestIAgVABisectionTargeterGraph(tgColl[0])
+
+    @staticmethod
     def TestIAgVATargeterGraph(tg: "TargeterGraph"):
         tg.name = "NewName"
         Assert.assertEqual("NewName", tg.name)
@@ -3294,6 +3404,45 @@ class GatorHelper(object):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             tg.show_tolerance_band = False
+
+        GatorHelper.TestIAgVATargeterGraphActiveControlCollection(
+            tg.active_controls, "TMan", "FiniteMnvr BurnCenterBias"
+        )
+
+        GatorHelper.TestIAgVATargeterGraphResultCollection(tg.results, "TMan", "Epoch", 0)
+
+    @staticmethod
+    def TestIAgVABisectionTargeterGraph(tg: "TargeterGraph"):
+        tg.name = "NewName"
+        Assert.assertEqual("NewName", tg.name)
+
+        tg.generate_on_run = False
+        Assert.assertFalse(tg.generate_on_run)
+        tg.generate_on_run = True
+        Assert.assertTrue(tg.generate_on_run)
+
+        tg.user_comment = "My User Comment"
+        Assert.assertEqual("My User Comment", tg.user_comment)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            tg.independent_variable = "Bogus"
+        tg.independent_variable = "TMan : Epoch"
+        Assert.assertEqual("TMan : Epoch", tg.independent_variable)
+
+        tg.show_label_iterations = False
+        Assert.assertFalse(tg.show_label_iterations)
+        tg.show_label_iterations = True
+        Assert.assertTrue(tg.show_label_iterations)
+
+        tg.show_desired_value = False
+        Assert.assertFalse(tg.show_desired_value)
+        tg.show_desired_value = True
+        Assert.assertTrue(tg.show_desired_value)
+
+        tg.show_tolerance_band = False
+        Assert.assertFalse(tg.show_tolerance_band)
+        tg.show_tolerance_band = True
+        Assert.assertTrue(tg.show_tolerance_band)
 
         GatorHelper.TestIAgVATargeterGraphActiveControlCollection(
             tg.active_controls, "TMan", "FiniteMnvr BurnCenterBias"
@@ -6882,123 +7031,103 @@ class GatorHelper(object):
         iAgVAProfile: "IProfile", ts: "MissionControlSequenceTargetSequence", root: "StkObjectRoot"
     ):
         if root != None:
-            oSat: "Satellite" = clr.CastAs(
-                root.current_scenario.children.import_object(
-                    TestBase.GetScenarioFile(TestBase.PathCombine("FEA120058", "Bisection.sa"))
-                ),
-                Satellite,
-            )
-            driver: "DriverMissionControlSequence" = clr.Convert(oSat.propagator, DriverMissionControlSequence)
-            _ts: "MissionControlSequenceTargetSequence" = clr.CastAs(
-                driver.main_sequence["Target Sequence"], MissionControlSequenceTargetSequence
-            )
-            profBisection: "ProfileBisection" = clr.Convert(
-                _ts.profiles["Single Parameter Bisection"], ProfileBisection
-            )
+            profBisection: "ProfileBisection" = clr.CastAs(ts.profiles["Single Parameter Bisection"], ProfileBisection)
             Assert.assertEqual("Single Parameter Bisection", profBisection.name)
 
             GatorHelper.TestRuntimeTypeInfo(profBisection)
             GatorHelper.Test_IAgVAProfile(ts, iAgVAProfile, PROFILE_MODE.NOT_ACTIVE)
 
-            Assert.assertEqual(100, profBisection.maximum_iterations)
-            profBisection.maximum_iterations = 200
-            Assert.assertEqual(200, profBisection.maximum_iterations)
-            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                profBisection.maximum_iterations = -500
+            loop: "BisectionControl"
+
+            for loop in profBisection.control_parameters:
+                name1: str = loop.name
+
+            i: int = 0
+            while i < profBisection.control_parameters.count:
+                name2: str = profBisection.control_parameters[i].name
+
+                i += 1
+
+            with pytest.raises(Exception):
+                name3: str = profBisection.control_parameters[-1].name
+            if not OSHelper.IsLinux():
+                scriptingTool: "ScriptingTool" = profBisection.scripting_tool
+                scriptingTool.enable = True
+                Assert.assertTrue(scriptingTool.enable)
+
+                GatorHelper.TestScriptingToolSegmentProperties(scriptingTool.segment_properties, "Segments.myProp")
+
+                GatorHelper.TestScriptingToolParameters(scriptingTool.parameters)
+
+                GatorHelper.TestScriptingToolCalcObjects(scriptingTool.calc_objects)
+
+                scriptingTool.language_type = LANGUAGE.J_SCRIPT
+                Assert.assertEqual(LANGUAGE.J_SCRIPT, scriptingTool.language_type)
+                scriptingTool.script_text("int j = 2;")
+
+            maneuver: "MissionControlSequenceManeuver" = clr.CastAs(ts.segments["TMan"], MissionControlSequenceManeuver)
+            maneuver.enable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
+
+            objName: str = "TMan"
+            decName: str = "FiniteMnvr.BurnCenterBias"
+            dec1: "BisectionControl" = None
+            dec1 = profBisection.control_parameters.get_control_by_paths(objName, decName)
+
+            GatorHelper.TestBisectionControlParameter(dec1, objName, decName)
+
+            with pytest.raises(Exception):
+                decX: "BisectionControl" = profBisection.control_parameters.get_control_by_paths(objName, "Bogus")
+            with pytest.raises(Exception):
+                decY: "BisectionControl" = profBisection.control_parameters.get_control_by_paths("Bogus", decName)
+
+            dec2: "BisectionControl" = None
+            dec2 = profBisection.control_parameters[0]
+            GatorHelper.TestBisectionControlParameter(dec2, objName, decName)
+
+            with pytest.raises(Exception):
+                eq2: "BisectionResult" = profBisection.results.get_result_by_paths("TMan", "ResultPath")
+            with pytest.raises(Exception):
+                eq2: "BisectionResult" = profBisection.results.get_result_by_paths("ObjectPath", "Epoch")
+
+            manSegment: "IMissionControlSequenceSegment" = clr.CastAs(maneuver, IMissionControlSequenceSegment)
+            manSegment.results.add("Epoch")
+            eq: "BisectionResult" = profBisection.results.get_result_by_paths("TMan", "Epoch")
+
+            GatorHelper.TestBisectionResult(eq)
+
+            i: int = 0
+            while i < profBisection.results.count:
+                result: "BisectionResult" = profBisection.results[i]
+                GatorHelper.m_logger.WriteLine(result.name)
+
+                i += 1
+
+            with pytest.raises(Exception):
+                result: "BisectionResult" = profBisection.results[10]
+
+            result: "BisectionResult"
+
+            for result in profBisection.results:
+                GatorHelper.m_logger.WriteLine(result.name)
+
+            GatorHelper.TestBisectionTargeterGraphs(profBisection.targeter_graphs)
 
             profBisection.reset_controls_before_run = False
             Assert.assertFalse(profBisection.reset_controls_before_run)
             profBisection.reset_controls_before_run = True
             Assert.assertTrue(profBisection.reset_controls_before_run)
 
-            # Control parameters
-            root.unit_preferences.set_current_unit("DistanceUnit", "m")
-            BisectionControlCollection: "BisectionControlCollection" = profBisection.control_parameters
-            Assert.assertEqual(1, BisectionControlCollection.count)
+            profBisection.maximum_iterations = 100
+            Assert.assertEqual(100, profBisection.maximum_iterations)
+            profBisection.maximum_iterations = 200
+            Assert.assertEqual(200, profBisection.maximum_iterations)
+            with pytest.raises(Exception):
+                profBisection.maximum_iterations = -1
 
-            with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
-                BisectionControlByPathsX: "BisectionControl" = BisectionControlCollection.get_control_by_paths(
-                    "Maneuver", "Bogus"
-                )
+            spCopy: "ProfileBisection" = clr.Convert(profBisection.copy(), ProfileBisection)
 
-            BisectionControlByPaths: "BisectionControl" = profBisection.control_parameters.get_control_by_paths(
-                "Maneuver", "ImpulsiveMnvr.Pointing.Spherical.Magnitude"
-            )
-            Assert.assertEqual("ImpulsiveMnvr.Pointing.Spherical.Magnitude", BisectionControlByPaths.name)
-
-            BiSectionControl: "BisectionControl" = BisectionControlCollection[0]
-            Assert.assertEqual("ImpulsiveMnvr.Pointing.Spherical.Magnitude", BiSectionControl.name)
-            Assert.assertEqual("Maneuver", BiSectionControl.parent_name)
-
-            BiSectionControl.enable = False
-            Assert.assertFalse(BiSectionControl.enable)
-            BiSectionControl.enable = True
-            Assert.assertTrue(BiSectionControl.enable)
-
-            Assert.assertEqual(500.0, BiSectionControl.initial_value)
-            Assert.assertAlmostEqual(738.47, float(BiSectionControl.current_value), delta=0.01)
-
-            BiSectionControl.bound_search_step = 129.0
-            Assert.assertEqual(129.0, BiSectionControl.bound_search_step)
-
-            BiSectionControl.use_custom_display_unit = False
-            Assert.assertFalse(BiSectionControl.use_custom_display_unit)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                BiSectionControl.custom_display_unit = "km/sec"
-
-            BiSectionControl.use_custom_display_unit = True
-            Assert.assertTrue(BiSectionControl.use_custom_display_unit)
-
-            BiSectionControl.custom_display_unit = "km/sec"
-            Assert.assertEqual("km/sec", BiSectionControl.custom_display_unit)
-            BiSectionControl.custom_display_unit = "m/sec"
-            Assert.assertEqual("m/sec", BiSectionControl.custom_display_unit)
-
-            # // available results
-            root.unit_preferences.set_current_unit("DistanceUnit", "km")
-            BisectionResultCollection: "BisectionResultCollection" = profBisection.results
-            Assert.assertEqual(1, BisectionResultCollection.count)
-
-            BisectionResultByPaths: "BisectionResult" = BisectionResultCollection.get_result_by_paths(
-                "Propagate", "R Mag"
-            )
-            Assert.assertEqual("R Mag", BisectionResultByPaths.name)
-            Assert.assertEqual("Propagate", BisectionResultByPaths.parent_name)
-
-            BiectionResult: "BisectionResult" = BisectionResultCollection[0]
-            Assert.assertEqual("R Mag", BiectionResult.name)
-            Assert.assertEqual("Propagate", BiectionResult.parent_name)
-
-            BiectionResult.enable = False
-            Assert.assertFalse(BiectionResult.enable)
-            BiectionResult.enable = True
-            Assert.assertTrue(BiectionResult.enable)
-            Assert.assertAlmostEqual(10000, float(BiectionResult.current_value), delta=0.0001)
-
-            Assert.assertAlmostEqual(10000, float(BiectionResult.desired_value), delta=0.0001)
-            BiectionResult.desired_value = 11000.0
-            Assert.assertAlmostEqual(11000, float(BiectionResult.desired_value), delta=0.0001)
-
-            Assert.assertEqual(1e-05, BiectionResult.tolerance)
-            BiectionResult.tolerance = 2e-05
-            Assert.assertEqual(2e-05, BiectionResult.tolerance)
-
-            BiectionResult.use_custom_display_unit = False
-            Assert.assertFalse(BiectionResult.use_custom_display_unit)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                BiectionResult.custom_display_unit = "km"
-
-            BiectionResult.use_custom_display_unit = True
-            Assert.assertTrue(BiectionResult.use_custom_display_unit)
-
-            BiectionResult.custom_display_unit = "m"
-            Assert.assertEqual("m", BiectionResult.custom_display_unit)
-            BiectionResult.custom_display_unit = "km"
-            Assert.assertEqual("km", BiectionResult.custom_display_unit)
-
-            root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Bisection")
+            manSegment.results.remove("Epoch")
+            maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
 
     @staticmethod
     def Test_IAgVATargeterGraphCollection(tgColl: "TargeterGraphCollection", profileName: str):

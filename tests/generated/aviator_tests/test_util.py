@@ -47,18 +47,25 @@ class EngineLifetimeManager:
     locked = False
     target = None
     ctrlWindow = None
+    app = None
 
     @staticmethod
     def Initialize(lock=False, target="StkXNoGfx"):
         if os.name != "nt" and target == "Stk":
             raise RuntimeError("Stk target not supported on Linux.")
         if EngineLifetimeManager.target is None:
-            if target == "Stk":
+            if target.upper() == "STK":
                 EngineLifetimeManager.target = TestTarget.eStk
-            elif target == "StkX":
+            elif target.upper() == "STKX":
                 EngineLifetimeManager.target = TestTarget.eStkX
-            elif target == "StkXNoGfx":
+            elif target.upper() == "STKXNOGFX":
                 EngineLifetimeManager.target = TestTarget.eStkNoGfx
+            elif target.upper() == "STKGRPC":
+                EngineLifetimeManager.target = TestTarget.eStkGrpc
+            elif target.upper() == "STKRUNTIME":
+                EngineLifetimeManager.target = TestTarget.eStkRuntime
+            elif target.upper() == "STKRUNTIMENOGFX":
+                EngineLifetimeManager.target = TestTarget.eStkRuntimeNoGfx
         if EngineLifetimeManager.stk is None:
             if EngineLifetimeManager.target == TestTarget.eStk:
                 EngineLifetimeManager.stk = STKDesktop.StartApplication(userControl=False, visible=True)
@@ -69,6 +76,18 @@ class EngineLifetimeManager:
             elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
                 EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=True)
                 print(EngineLifetimeManager.stk.execute_command("GetStkVersion /")[0])
+            elif EngineLifetimeManager.target == TestTarget.eStkGrpc:
+                EngineLifetimeManager.stk = STKDesktop.StartApplication(
+                    userControl=False, visible=True, grpc_server=True, grpc_desktop_options="/Automation"
+                )
+            elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
+                import ansys.stk.core.stkruntime
+
+                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=False)
+            elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
+                import ansys.stk.core.stkruntime
+
+                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=True)
             EngineLifetimeManager.locked = lock
         return EngineLifetimeManager.stk
 
@@ -979,7 +998,7 @@ class TestBase(unittest.TestCase):
     @staticmethod
     def Initialize():
         TestBase.stk = EngineLifetimeManager.Initialize()
-        if EngineLifetimeManager.target == TestTarget.eStk:
+        if EngineLifetimeManager.target == TestTarget.eStk or EngineLifetimeManager.target == TestTarget.eStkGrpc:
             TestBase.root = TestBase.stk.Root
         else:
             TestBase.root = TestBase.stk.NewObjectRoot()
@@ -1002,7 +1021,7 @@ class TestBase(unittest.TestCase):
         TestBase.NonSupportedDirectory = Path.Combine(TestBase.ScenarioDirectory, "NonSupportedScen")
         TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProviders")
 
-        if EngineLifetimeManager.target == TestTarget.eStk:
+        if EngineLifetimeManager.target == TestTarget.eStk or EngineLifetimeManager.target == TestTarget.eStkGrpc:
             TestBase.ApplicationProvider = PythonStkApplicationProvider(TestBase.stk, TestBase.root)
             TestBase.NoGraphicsMode = False
         elif EngineLifetimeManager.target == TestTarget.eStkX:
@@ -1010,6 +1029,12 @@ class TestBase(unittest.TestCase):
             TestBase.NoGraphicsMode = False
         elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
             TestBase.ApplicationProvider = PythonStkXNoGfxApplicationProvider(TestBase.stk, TestBase.root)
+        elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
+            TestBase.ApplicationProvider = PythonStkXApplicationProvider(TestBase.stk, TestBase.root)
+            TestBase.NoGraphicsMode = False
+        elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
+            TestBase.ApplicationProvider = PythonStkXApplicationProvider(TestBase.stk, TestBase.root)
+            TestBase.NoGraphicsMode = True
         TestBase.Target = TestBase.ApplicationProvider.Target
 
     @staticproperty

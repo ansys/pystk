@@ -8,7 +8,7 @@ def pytest_addoption(parser):
         dest="target",
         help="target application to run the tests with",
         default="StkXNoGfx",
-        choices=["Stk", "StkX", "StkXNoGfx"],
+        choices=["Stk", "StkX", "StkXNoGfx", "StkGrpc", "StkRuntime", "StkRuntimeNoGfx"],
     )
 
     parser.addoption(

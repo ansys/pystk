@@ -63,6 +63,9 @@ Enumerations
     YPR_ANGLES_SEQUENCE
     ORBIT_STATE_TYPE
     COORDINATE_SYSTEM
+    DELAUNAY_L_TYPE_TEMP
+    DELAUNAY_H_TYPE_TEMP
+    DELAUNAY_G_TYPE_TEMP
     LOG_MSG_TYPE
     LOG_MSG_DISP_ID
     LINE_STYLE
@@ -257,6 +260,12 @@ Enumerations
 .. autoenum:: ORBIT_STATE_TYPE
     :members:
 .. autoenum:: COORDINATE_SYSTEM
+    :members:
+.. autoenum:: DELAUNAY_L_TYPE_TEMP
+    :members:
+.. autoenum:: DELAUNAY_H_TYPE_TEMP
+    :members:
+.. autoenum:: DELAUNAY_G_TYPE_TEMP
     :members:
 .. autoenum:: LOG_MSG_TYPE
     :members:

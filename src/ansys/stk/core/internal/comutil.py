@@ -1,10 +1,11 @@
-# Copyright 2020-2020, Ansys Government Initiatives 
+# Copyright 2020-2023, Ansys Government Initiatives 
 
 import os
 
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
 from ctypes import POINTER, Structure, Union, byref, cast, pointer 
 
+from .apiutil import out_arg
 
 ###############################################################################
 #   COM Types
@@ -44,7 +45,7 @@ OLE_COLOR = ULONG
 OLE_HANDLE = UINT
 OLE_XPOS_PIXELS = LONG
 OLE_YPOS_PIXELS = LONG
-SAFEARRAY = PVOID
+LPSAFEARRAY = PVOID
 LPSTREAM = PVOID
 
 
@@ -201,7 +202,7 @@ class varUnion(Union):
                 ("boolVal", VARIANT_BOOL), #VT_BOOL
                 ("bstrVal", BSTR), #VT_BSTR
                 ("punkVal", PVOID), #VT_UNKNOWN
-                ("parray", SAFEARRAY), #VT_ARRAY
+                ("parray", LPSAFEARRAY), #VT_ARRAY
                 ("pbVal", POINTER(BYTE)), #VT_UI1|VT_BYREF
                 ("piVal", POINTER(SHORT)), #VT_I2|VT_BYREF
                 ("plVal", POINTER(LONG)), #VT_I4|VT_BYREF
@@ -211,7 +212,7 @@ class varUnion(Union):
                 ("pboolVal", POINTER(VARIANT_BOOL)), #VT_BOOL|VT_BYREF
                 ("pbstrVal", POINTER(BSTR)), #VT_BSTR|VT_BYREF
                 ("ppunkVal", POINTER(PVOID)), #VT_UNKNOWN|VT_BYREF
-                ("pparray", POINTER(SAFEARRAY)), #VT_ARRAY|VT_BYREF
+                ("pparray", POINTER(LPSAFEARRAY)), #VT_ARRAY|VT_BYREF
                 ("cVal", CHAR), #VT_I1
                 ("uiVal", USHORT), #VT_UI2
                 ("ulVal", ULONG), #VT_UI4
@@ -357,14 +358,16 @@ class oleaut32lib:
         oleaut32lib.GetActiveObject     = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, POINTER(LPVOID))(("GetActiveObject", oleaut32lib._handle),
                                        ((1, "rclsid"), (1, "pvReserved"), (1, "ppunk"))) if os.name=="nt" else None
         oleaut32lib.GetErrorInfo        = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetErrorInfo", oleaut32lib._handle), ((1, "dwReserved"), (1, "ppErrorInfo")))
-        oleaut32lib.SafeArrayCreate     = WINFUNCTYPE(SAFEARRAY, VARTYPE, UINT, POINTER(SAFEARRAYBOUND))(("SafeArrayCreate", oleaut32lib._handle), ((1, "vt"), (1, "cDims"), (1, "rgsabound")))
-        oleaut32lib.SafeArrayDestroy    = WINFUNCTYPE(HRESULT, SAFEARRAY)(("SafeArrayDestroy", oleaut32lib._handle), ((1, "pSafeArray"),))
-        oleaut32lib.SafeArrayGetDim     = WINFUNCTYPE(UINT,    SAFEARRAY)(("SafeArrayGetDim", oleaut32lib._handle), ((1, "pSafeArray"),))
-        oleaut32lib.SafeArrayGetLBound  = WINFUNCTYPE(HRESULT, SAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetLBound", oleaut32lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pLBound")))
-        oleaut32lib.SafeArrayGetUBound  = WINFUNCTYPE(HRESULT, SAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetUBound", oleaut32lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pUBound")))
-        oleaut32lib.SafeArrayGetVartype = WINFUNCTYPE(HRESULT, SAFEARRAY, POINTER(VARTYPE))(("SafeArrayGetVartype", oleaut32lib._handle), ((1, "pSafeArray"), (1, "vt")))
-        oleaut32lib.SafeArrayGetElement = WINFUNCTYPE(HRESULT, SAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayGetElement", oleaut32lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
-        oleaut32lib.SafeArrayPutElement = WINFUNCTYPE(HRESULT, SAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayPutElement", oleaut32lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
+        oleaut32lib.SafeArrayAccessData = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LPVOID))(("SafeArrayAccessData", oleaut32lib._handle), ((1, "pSafeArray"), (1, "ppvData")))
+        oleaut32lib.SafeArrayCreate     = WINFUNCTYPE(LPSAFEARRAY, VARTYPE, UINT, POINTER(SAFEARRAYBOUND))(("SafeArrayCreate", oleaut32lib._handle), ((1, "vt"), (1, "cDims"), (1, "rgsabound")))
+        oleaut32lib.SafeArrayDestroy    = WINFUNCTYPE(HRESULT, LPSAFEARRAY)(("SafeArrayDestroy", oleaut32lib._handle), ((1, "pSafeArray"),))
+        oleaut32lib.SafeArrayGetDim     = WINFUNCTYPE(UINT,    LPSAFEARRAY)(("SafeArrayGetDim", oleaut32lib._handle), ((1, "pSafeArray"),))
+        oleaut32lib.SafeArrayGetLBound  = WINFUNCTYPE(HRESULT, LPSAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetLBound", oleaut32lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pLBound")))
+        oleaut32lib.SafeArrayGetUBound  = WINFUNCTYPE(HRESULT, LPSAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetUBound", oleaut32lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pUBound")))
+        oleaut32lib.SafeArrayGetVartype = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(VARTYPE))(("SafeArrayGetVartype", oleaut32lib._handle), ((1, "pSafeArray"), (1, "vt")))
+        oleaut32lib.SafeArrayGetElement = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayGetElement", oleaut32lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
+        oleaut32lib.SafeArrayPutElement = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayPutElement", oleaut32lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
+        oleaut32lib.SafeArrayUnaccessData = WINFUNCTYPE(HRESULT, LPSAFEARRAY)(("SafeArrayUnaccessData", oleaut32lib._handle), ((1, "pSafeArray"),))
         oleaut32lib.SysAllocString      = WINFUNCTYPE(LPVOID, LPOLESTR)(("SysAllocString", oleaut32lib._handle), ((1, "psz"),))
         oleaut32lib.SysFreeString       = WINFUNCTYPE(None, LPOLESTR)(("SysFreeString", oleaut32lib._handle), ((1, "bstrString"),))
         oleaut32lib.VariantClear        = WINFUNCTYPE(HRESULT, POINTER(VARIANT))(("VariantClear", oleaut32lib._handle), ((1, "pVariant"),))
@@ -394,19 +397,31 @@ class _CreateAgObjectLifetimeManager(object):
         
     @staticmethod
     def _ReleaseImpl(pUnk:"IUnknown"):
+        """Calls Release in STK."""
         _CreateAgObjectLifetimeManager._Release(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
         
     @staticmethod
     def _AddRefImpl(pUnk:"IUnknown"):
+        """Calls AddRef in STK."""
         _CreateAgObjectLifetimeManager._AddRef(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
                 
-    def CreateOwnership(self, pUnk:"IUnknown"):
+    def create_ownership(self, pUnk:"IUnknown"):
+        """
+        Adds pUnk to the reference manager and calls AddRef in STK.
+
+        Use if pUnk has a ref-count of 0.
+        """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
             _CreateAgObjectLifetimeManager._AddRefImpl(pUnk)
-            self.TakeOwnership(pUnk, False)
+            self.take_ownership(pUnk, False)
                 
-    def TakeOwnership(self, pUnk:"IUnknown", isApplication=False):
+    def take_ownership(self, pUnk:"IUnknown", isApplication=False):
+        """
+        Adds pUnk to the reference manager; does not call AddRef in STK.
+
+        Use if pUnk has a ref-count of 1.
+        """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
             if isApplication:
@@ -418,11 +433,17 @@ class _CreateAgObjectLifetimeManager(object):
                 self._ref_counts[ptraddress] = 1
                 
     def InternalAddRef(self, pUnk:"IUnknown"):
+        """Increments the internal reference count of pUnk."""
         ptraddress = pUnk.p.value
         if ptraddress in self._ref_counts:
             self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
 
     def Release(self, pUnk:"IUnknown"):
+        """
+        Decrements the internal reference count of pUnk.
+        
+        If the internal reference count reaches zero, calls Release in STK.
+        """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
             if ptraddress in self._ref_counts:
@@ -495,37 +516,85 @@ class IUnknown(object):
             self.Release()
     def __eq__(self, other):
         return self.p.value == other.p.value
+    def __hash__(self):
+        return self.p.value
     def __bool__(self):
         return self.p.value is not None and self.p.value > 0
     def _getVtblEntry(self, index):
         vptr = cast(self.p, POINTER(c_void_p))
         vtbl = cast(vptr.contents, POINTER(c_void_p))
         return vtbl[index]
-    def QueryInterface(self, iid:GUID) -> "IUnknown":
+    def query_interface(self, iid:GUID) -> "IUnknown":
         pIntf = IUnknown()
         hr = IUnknown._QueryInterface(self._getVtblEntry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
         if not Succeeded(hr):
             return None
-        pIntf.TakeOwnership()
+        pIntf.take_ownership()
         return pIntf
-    def CreateOwnership(self):
+    def create_ownership(self):
         """Calls AddRef on the pointer, and registers the pointer to be Released when the ref count goes to zero."""
-        ObjectLifetimeManager.CreateOwnership(self) 
-    def TakeOwnership(self, isApplication=False):
+        ObjectLifetimeManager.create_ownership(self) 
+    def take_ownership(self, isApplication=False):
         """Registers the pointer to be Released when the ref count goes to zero but does not call AddRef."""
-        ObjectLifetimeManager.TakeOwnership(self, isApplication) 
+        ObjectLifetimeManager.take_ownership(self, isApplication) 
     def AddRef(self):
         """Increments the ref count if the pointer was registered.
         
-        Pointer registration must be done by CreateOwnership or TakeOwnership.
+        Pointer registration must be done by create_ownership or take_ownership.
         """
         ObjectLifetimeManager.InternalAddRef(self)  
     def Release(self):
         """Decrements the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
         
-        Pointer registration must be done by CreateOwnership or TakeOwnership.
+        Pointer registration must be done by create_ownership or take_ownership.
         """
-        ObjectLifetimeManager.Release(self)          
+        ObjectLifetimeManager.Release(self)   
+
+    def invoke(self, intf_metatdata:dict, method_metadata:dict, *args):
+        method_offset = intf_metatdata["method_offsets"][method_metadata["name"]]
+        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, *args)
+
+    def get_property(self, intf_metatdata:dict, method_metadata:dict):
+        method_offset = intf_metatdata["method_offsets"]["get_" + method_metadata["name"]]
+        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, out_arg())
+
+    def set_property(self, intf_metatdata:dict, method_metadata:dict, value):
+        method_offset = intf_metatdata["method_offsets"]["set_" + method_metadata["name"]]
+        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, value)
+
+    def _invoke_impl(self, intf_metatdata:dict, method_metadata:dict, method_offset:int, *args):
+        from .coclassutil import evaluate_hresult
+        guid = GUID(intf_metatdata["uuid"])
+        vtable_index = intf_metatdata["vtable_reference"] + method_offset
+        arg_types = method_metadata["arg_types"]
+        marshaller_classes = method_metadata["marshallers"]
+        method = IAGFUNCTYPE(self, guid, vtable_index, *arg_types)
+        marshallers = []
+        for arg, marshaller_class in zip(args, marshaller_classes):
+            if type(arg) is out_arg:
+                marshaller = marshaller_class()
+                marshallers.append(marshaller)
+            else:
+                marshaller = marshaller_class(arg)
+                marshallers.append(marshaller)
+        call_args = []
+        for marshaller, arg_type in zip(marshallers, arg_types):
+            if type(arg_type) == type(POINTER(PVOID)): # type(POINTER(X)) == type(POINTER(Y)) for all X,Y. the choice of PVOID was arbitrary
+                call_args.append(byref(marshaller.COM_val))
+            else:
+                call_args.append(marshaller.COM_val)
+        evaluate_hresult(method(*call_args))
+        return_vals = []
+        for arg, marshaller in zip(args, marshallers):
+            if type(arg) is out_arg:
+                return_vals.append(marshaller.python_val)  
+        del(marshallers)
+        if len(return_vals) == 0:
+            return
+        elif len(return_vals) == 1:
+            return return_vals[0]
+        else:
+            return tuple(return_vals)      
 
 class IDispatch(IUnknown):
     _guid = "{00020400-0000-0000-C000-000000000046}"
@@ -548,16 +617,17 @@ class IEnumVARIANT(object):
         vtable_offset_local = IEnumVARIANT._vtable_offset - 1
         self._Next  = IAGFUNCTYPE(pUnk, IID_IEnumVARIANT, vtable_offset_local+1, ULONG, POINTER(VARIANT), POINTER(ULONG))
         self._Reset = IAGFUNCTYPE(pUnk, IID_IEnumVARIANT, vtable_offset_local+3)
-    def Next(self) -> VARIANT:
+    def next(self) -> VARIANT:
+        from .marshall import python_val_from_VARIANT
         one_obj = ULONG(1)
         num_fetched = ULONG()
         obj = VARIANT()
         oleaut32lib.VariantInit(obj)
         if self._Next(one_obj, byref(obj), byref(num_fetched)) == S_OK:
-            return obj
+            return python_val_from_VARIANT(obj, clear_variant=True)
         else:
             return None
-    def Reset(self) -> None:
+    def reset(self) -> None:
         self._Reset()
           
 class IAGFUNCTYPE(object):
@@ -568,7 +638,7 @@ class IAGFUNCTYPE(object):
         self.index = method_index
         self.method = WINFUNCTYPE(HRESULT, LPVOID, *argtypes)
     def __call__(self, *args):
-        pIntf = self.pUnk.QueryInterface(self.iid)
+        pIntf = self.pUnk.query_interface(self.iid)
         ret = self.method(pIntf._getVtblEntry(self.index))(pIntf.p, *args)
         del(pIntf)
         return ret
