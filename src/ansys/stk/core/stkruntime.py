@@ -5,21 +5,20 @@
 __all__ = ["STKRuntime", "STKRuntimeApplication"]
 
 import atexit
-import os
 import subprocess
-
+import os
 if os.name == "nt":
     import winreg
 
-from .internal.apiutil import interface_proxy
-from .internal.grpcutil import grpc_client
-from .stkobjects import StkObjectModelContext, StkObjectRoot
 from .stkx import STKXApplication
+from .stkobjects import StkObjectRoot, StkObjectModelContext
 from .utilities.exceptions import *
-
+from .internal.grpcutil import grpc_client
+from .internal.apiutil import interface_proxy
 
 class STKRuntimeApplication(STKXApplication):
-    """Interact with STK Runtime.
+    """
+    Interact with STK Runtime.
 
     Use STKRuntime.StartApplication() or STKRuntime.AttachToApplication() 
     to obtain an initialized STKRuntimeApplication object.
@@ -44,7 +43,7 @@ class STKRuntimeApplication(STKXApplication):
             root = StkObjectRoot()
             root._private_init(root_unk)
             return root
-        raise STKInitializationError("Not connected to the gRPC server.")
+        raise STKInitializationError(f"Not connected to the gRPC server.")
             
     def NewObjectModelContext(self) -> StkObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
@@ -53,7 +52,7 @@ class STKRuntimeApplication(STKXApplication):
             context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
-        raise STKInitializationError("Not connected to the gRPC server.")
+        raise STKInitializationError(f"Not connected to the gRPC server.")
 
     def ShutDown(self) -> None:
         """Shut down the STKRuntime application."""
@@ -87,7 +86,8 @@ class STKRuntime(object):
                          grpc_timeout_sec:int=60, \
                          userControl:bool=False, \
                          noGraphics:bool=True) -> STKRuntimeApplication:
-        """Create a new STK Runtime instance and attach to the remote host.
+        """
+        Create a new STK Runtime instance and attach to the remote host.  
 
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using.
@@ -121,7 +121,8 @@ class STKRuntime(object):
     def AttachToApplication(grpc_host:str="localhost", \
                             grpc_port:int=40704, \
                             grpc_timeout_sec:int=60) -> STKRuntimeApplication:
-        """Attach to STKRuntime.
+        """
+        Attach to STKRuntime.
 
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using.

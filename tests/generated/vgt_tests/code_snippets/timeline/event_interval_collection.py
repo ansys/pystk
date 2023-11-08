@@ -8,11 +8,13 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(EventIntervalCollection, self).__init__(*args, **kwargs)
 
-    # region DetermineIfEpochOccuredInIntervalCollection
-    def test_DetermineIfEpochOccuredInIntervalCollection(self):
-        self.DetermineIfEpochOccuredInIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+    # region DetermineIfEpochOccurredInIntervalCollection
+    def test_DetermineIfEpochOccurredInIntervalCollection(self):
+        self.DetermineIfEpochOccurredInIntervalCollection(
+            TestBase.Application.get_object_from_path("Satellite/LEO").vgt
+        )
 
-    def DetermineIfEpochOccuredInIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
+    def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
         eventCollName: str = "LightingIntervals"
         intervalVectorCollection: "ITimeToolEventIntervalCollection" = provider.event_interval_collections[
             eventCollName

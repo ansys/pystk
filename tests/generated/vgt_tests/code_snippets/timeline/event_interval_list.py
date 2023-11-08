@@ -8,11 +8,13 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(EventIntervalList, self).__init__(*args, **kwargs)
 
-    # region DetermineIfEpochOccuredInIntervalCollection
-    def test_DetermineIfEpochOccuredInIntervalCollection(self):
-        self.DetermineIfEpochOccuredInIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+    # region DetermineIfEpochOccurredInIntervalCollection
+    def test_DetermineIfEpochOccurredInIntervalCollection(self):
+        self.DetermineIfEpochOccurredInIntervalCollection(
+            TestBase.Application.get_object_from_path("Satellite/LEO").vgt
+        )
 
-    def DetermineIfEpochOccuredInIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
+    def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
         intervalList: "ITimeToolEventIntervalList" = provider.event_interval_lists["AttitudeIntervals"]
 
         # The reference event you want to determine if event of interest happened before.

@@ -7,31 +7,21 @@
 __all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']
 
 import asyncio
-from ctypes import CFUNCTYPE, Structure, addressof, byref, c_int, c_size_t, c_void_p, cast, cdll, pointer
+import numpy as np
 import os
 import time
 
 from jupyter_rfb import RemoteFrameBuffer
-import numpy as np
+from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
+    addressof, Structure, cast, pointer
 
-from ...internal.comutil import (
-    CLSCTX_INPROC_SERVER,
-    E_NOINTERFACE,
-    GUID,
-    HRESULT,
-    LPVOID,
-    POINTER,
-    PVOID,
-    REFIID,
-    S_OK,
-    ULONG,
-    IUnknown,
-    Succeeded,
-    ole32lib,
-)
+from ...stkx import UiAxGraphics3DCntrl, UiAx2DCntrl, \
+    UiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
+from ...internal.comutil import ole32lib, \
+    IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
+    GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
 from ...stkengine import STKEngineApplication
-from ...stkx import BUTTON_VALUES, SHIFT_VALUES, UiAx2DCntrl, UiAxGraphics2DAnalysisCntrl, UiAxGraphics3DCntrl
 from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
@@ -108,7 +98,7 @@ class AsyncioTimerManager(object):
         self._FireTimers()
 
     def _NextTimerProc(self):
-        '''Return time in sec until next timer proc'''
+        ''' Return time in sec until next timer proc '''
         tempTimers = self._timers.copy()
         if len(tempTimers) == 0:
             return 0.050
@@ -134,7 +124,8 @@ asyncioTimerManager = None
 
 
 class AgRemoteFrameBufferHostVTable(Structure):
-    '''Structure of the vtable for IRemoteFrameBufferHost
+    '''
+    Structure of the vtable for IRemoteFrameBufferHost
     '''
     _fields_ = [("IUnknown1",        c_void_p),
                 ("IUnknown2",        c_void_p),
@@ -143,7 +134,8 @@ class AgRemoteFrameBufferHostVTable(Structure):
 
 
 class AgRemoteFrameBufferHost(object):
-    '''Implements IRemoteFrameBufferHost
+    '''
+    Implements IRemoteFrameBufferHost 
     
     Assemble a vtable following the layout of that interface
     '''
@@ -205,7 +197,8 @@ class AgRemoteFrameBufferHost(object):
 
 
 class WidgetBase(RemoteFrameBuffer):
-    '''Base class for Jupyter controls.
+    '''
+    Base class for Jupyter controls.
     '''
     _shift = 0x0001
     _control = 0x0004
@@ -359,7 +352,8 @@ class WidgetBase(RemoteFrameBuffer):
 
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
-    '''The 3D Globe widget for jupyter.
+    '''
+    The 3D Globe widget for jupyter.
     '''
 
     # Example:
@@ -384,7 +378,8 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
 
 
 class MapWidget(UiAx2DCntrl, WidgetBase):
-    '''The 2D Map widget for jupyter.
+    '''
+    The 2D Map widget for jupyter.
     '''
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
@@ -397,7 +392,8 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
 
 
 class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
-    '''The Graphics Analysis widget for jupyter.
+    '''
+    The Graphics Analysis widget for jupyter.
     '''
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl

@@ -10,40 +10,6 @@ class Unit(object):
 
 class TryCatchAssertBlock(object):
     @staticmethod
-    def DoAssert(action):
-        TryCatchAssertBlock.ExpectedException("", action)
-
-    @staticmethod
-    def DoAssertInvalidCast(action):
-        exceptionType: str = "No exception"
-        try:
-            action()
-
-        except STKInvalidCastError:
-            # OK
-            return
-
-        except Exception as e:
-            exceptionType = type(e).ToString()
-            Assert.fail((str(type(e)) + " was thrown rather than InvalidCastException"))
-
-        Assert.fail("{0} was thrown. InvalidCastException was expected.", exceptionType)
-
-    @staticmethod
-    def ExpectedException(message: str, action):
-        try:
-            action()
-
-        except Exception as ex:
-            if str(ex).find(message) == -1:
-                raise
-            # Otherwise, the exception is expected
-            # Console.WriteLine(ex.Message);
-            return
-
-        Assert.fail("Expected exception: {0}", message)
-
-    @staticmethod
     def DoActionRunFinalize(action, finalizer):
         try:
             action()

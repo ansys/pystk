@@ -4,37 +4,28 @@
 
 __all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 
+import os
 import atexit
 from ctypes import byref
 from enum import IntEnum
-import os
-
 from ..internal.timerutil import *
 
 if os.name != "nt":
-    from ctypes import CFUNCTYPE, cdll
-    from ctypes.util import find_library
+    from ctypes                       import CFUNCTYPE, cdll
+    from ctypes.util                  import find_library
 
-from ..graphics import *
-from ..internal.comutil import (
-    CLSCTX_INPROC_SERVER,
-    GUID,
-    CoInitializeManager,
-    IUnknown,
-    ObjectLifetimeManager,
-    Succeeded,
-    ole32lib,
-)
-from ..internal.eventutil import EventSubscriptionManager
+from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
+from ..internal.comutil            import ole32lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
+from ..internal.eventutil          import EventSubscriptionManager
 from ..internal.stkxinitialization import *
-from ..stkobjects import *
-from ..stkobjects.astrogator import *
-from ..stkobjects.aviator import *
-from ..stkutil import *
-from ..stkx import *
-from ..utilities.exceptions import *
-from ..vgt import *
-
+from ..utilities.exceptions        import *
+from ..graphics                    import *
+from ..stkobjects                  import *
+from ..stkobjects.astrogator       import *
+from ..stkobjects.aviator          import *
+from ..stkutil                     import *
+from ..stkx                        import *
+from ..vgt                         import *
 
 class STKEngineTimerType(IntEnum):
     DisableTimers     = 1
@@ -44,7 +35,8 @@ class STKEngineTimerType(IntEnum):
     SigRt             = 5
 
 class STKEngineApplication(STKXApplication):
-    """Interact with STK Engine.
+    """
+    Interact with STK Engine.
 
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
@@ -175,7 +167,8 @@ class STKEngine(object):
             
     @staticmethod
     def StartApplication(noGraphics:bool=True) -> STKEngineApplication:
-        """Initialize STK Engine in-process and return the instance.
+        """
+        Initialize STK Engine in-process and return the instance.
 
         Must only be used once per Python process.
         """

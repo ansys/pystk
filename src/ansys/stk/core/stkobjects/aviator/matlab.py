@@ -5,25 +5,29 @@
 __all__ = ["BasicManeuverMATLABFactory", "IStrategyMATLAB3DGuidance", "IStrategyMATLABFull3D", "IStrategyMATLABNav", "IStrategyMATLABProfile", 
 "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNav", "StrategyMATLABProfile"]
 
-from ctypes import POINTER
 import typing
 
+from ctypes   import POINTER
+
 try:
-    from numpy import ndarray
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
-from ...internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
-from ...internal.apiutil import interface_proxy, out_arg
-from ...internal.comutil import IUnknown
-from ...internal.eventutil import *
-from ...stkobjects.aviator import *
+from ...internal  import comutil          as agcom
+from ...internal  import coclassutil      as agcls
+from ...internal  import marshall         as agmarshall
+from ...internal.comutil     import IUnknown
+from ...internal.apiutil     import interface_proxy, out_arg
+from ...internal.eventutil   import *
 from ...utilities.exceptions import *
+
+from ...stkobjects.aviator import *
 
 
 def _raise_uninitialized_error(*args):

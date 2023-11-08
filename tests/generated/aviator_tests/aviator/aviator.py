@@ -519,7 +519,7 @@ class EarlyBoundTests(TestBase):
         )
         EarlyBoundTests.AG_Mission.vehicle = clr.CastAs(missileTest, IAviatorVehicle)
         acc = currentPhase.get_performance_model_by_type("Acceleration")
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             perfModel: "IPerformanceModel" = acc.properties
 
         rotorcraftTest: "RotorcraftModel" = (
@@ -529,7 +529,7 @@ class EarlyBoundTests(TestBase):
         )
         EarlyBoundTests.AG_Mission.vehicle = clr.CastAs(rotorcraftTest, IAviatorVehicle)
         acc = currentPhase.get_performance_model_by_type("Acceleration")
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             perfModel: "IPerformanceModel" = acc.properties
 
         EarlyBoundTests.AG_Mission.vehicle = clr.CastAs(EarlyBoundTests.AG_AvtrAircraft, IAviatorVehicle)
@@ -4921,7 +4921,7 @@ class EarlyBoundTests(TestBase):
         runway.altitude = 5
         Assert.assertEqual(5, runway.altitude)
 
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             runway.add_to_catalog(False)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -5218,7 +5218,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, EarlyBoundTests.AG_Mission.is_valid)
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.flightprocs")
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             superProc.load_procedures_from_file(nonexistingfilepath)
 
         filepath: str = TestBase.GetScenarioFile("basicManeuver.flightprocs")
@@ -5993,7 +5993,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             accAsCI.remove()
 
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             accAsCI.duplicate()
 
     # endregion
@@ -6062,9 +6062,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1.2, aero.lift_factor)
 
         aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_ADVANCED_MISSILE
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             aero.lift_factor = 1.2
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             aero.drag_factor = 1.3
 
         newAC.get_as_catalog_item().remove()
@@ -6171,13 +6171,13 @@ class EarlyBoundTests(TestBase):
         externalAero: "AircraftExternalAero" = aero.mode_as_external
         Assert.assertIs(None, externalAero.forward_flight_filepath)
         Assert.assertIs(None, externalAero.takeoff_landing_filepath)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalAero.set_forward_flight_filepath("")
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalAero.set_takeoff_landing_filepath("")
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalAero.reload_forward_flight_file()
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalAero.reload_takeoff_landing_file()
         Assert.assertEqual(False, externalAero.is_forward_flight_valid)
         Assert.assertEqual(False, externalAero.is_takeoff_landing_valid)
@@ -6197,14 +6197,14 @@ class EarlyBoundTests(TestBase):
         returnMsg: str = externalAero.set_forward_flight_filepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalAero.can_set_forward_flight_reference_area)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalAero.forward_flight_reference_area = 0.05
         Assert.assertTrue(externalAero.is_forward_flight_valid)
 
         returnMsg2: str = externalAero.set_takeoff_landing_filepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg2))
         Assert.assertEqual(False, externalAero.can_set_takeoff_landing_reference_area)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalAero.takeoff_landing_reference_area = 0.07
         Assert.assertTrue(externalAero.is_takeoff_landing_valid)
 
@@ -6241,9 +6241,9 @@ class EarlyBoundTests(TestBase):
         prop: "AircraftProp" = basicAcc.propulsion
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE
         Assert.assertEqual(AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE, prop.prop_strategy)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             prop.lift_factor = 1.2
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             prop.drag_factor = 1.3
 
         prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING
@@ -6300,9 +6300,9 @@ class EarlyBoundTests(TestBase):
 
         externalProp: "AircraftExternalProp" = prop.mode_as_external
         Assert.assertIs(None, externalProp.prop_filepath)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalProp.set_prop_filepath("")
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalProp.reload_prop_file()
         Assert.assertEqual(False, externalProp.is_valid)
 
@@ -6320,7 +6320,7 @@ class EarlyBoundTests(TestBase):
         returnMsg: str = externalProp.set_prop_filepath(propFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalProp.can_set_accel_decel)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalProp.max_thrust_accel = 0.6
         Assert.assertTrue(externalProp.is_valid)
 
@@ -6345,11 +6345,11 @@ class EarlyBoundTests(TestBase):
         bfwProp: "AircraftBasicFixedWingProp" = prop.mode_as_basic_fixed_wing
         bfwProp.propulsion_mode = BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST
         Assert.assertEqual(BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST, bfwProp.propulsion_mode)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             bfwProp.propeller_count = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             bfwProp.propeller_diameter = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             bfwProp.propeller_rpm = 1
 
         bfwProp.min_power_thrust = 1
@@ -7402,7 +7402,7 @@ class EarlyBoundTests(TestBase):
         returnMsg: str = externalAero.set_filepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalAero.can_set_reference_area)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             externalAero.reference_area = 0.05
         Assert.assertTrue(externalAero.is_valid)
 
@@ -8450,7 +8450,7 @@ class EarlyBoundTests(TestBase):
         names = catalogSource.child_names
         Assert.assertTrue((Array.Length(names) > 0))
         Assert.assertTrue(catalogSource.contains(childName))
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             catalogSource.remove_child(childName)
 
     def TestPropulsionEfficiencies(self, propEffs: "PropulsionEfficiencies"):

@@ -13,28 +13,32 @@ __all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollecti
 "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGraphics2DAnalysisCntrl", 
 "UiAxGraphics3DCntrl", "WinProjectionPosition"]
 
-from ctypes import POINTER
-from datetime import datetime
-from enum import IntEnum, IntFlag
 import typing
 
+from ctypes   import POINTER
+from datetime import datetime
+from enum     import IntEnum, IntFlag
+
 try:
-    from numpy import ndarray
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
-from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
-from .internal.apiutil import enumerator_proxy, interface_proxy, out_arg
-from .internal.comutil import IDispatch, IPictureDisp
-from .internal.eventutil import *
-from .stkutil import *
-from .utilities import colors as agcolor
+from .internal  import comutil          as agcom
+from .internal  import coclassutil      as agcls
+from .internal  import marshall         as agmarshall
+from .utilities import colors           as agcolor
+from .internal.comutil     import IDispatch, IPictureDisp
+from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.eventutil   import *
 from .utilities.exceptions import *
+
+from .stkutil import *
 
 
 def _raise_uninitialized_error(*args):
