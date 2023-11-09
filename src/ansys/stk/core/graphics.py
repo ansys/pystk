@@ -103,27 +103,31 @@ __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProc
 "TriangleMeshPrimitiveOptionalParameters", "TriangleMeshPrimitiveOptionalParametersFactory", "TriangulatorResult", "VIDEO_PLAYBACK", 
 "VISIBILITY", "VectorPrimitive", "VectorPrimitiveFactory", "VideoStream", "VideoStreamFactory", "VisualEffects", "WINDING_ORDER"]
 
-from ctypes import POINTER
-from enum import IntEnum, IntFlag
 import typing
 
+from ctypes   import POINTER
+from enum     import IntEnum, IntFlag
+
 try:
-    from numpy import ndarray
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
-from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
-from .internal.apiutil import enumerator_proxy, interface_proxy, out_arg
-from .internal.comutil import IPictureDisp, IUnknown
-from .internal.eventutil import *
-from .stkutil import *
-from .utilities import colors as agcolor
+from .internal  import comutil          as agcom
+from .internal  import coclassutil      as agcls
+from .internal  import marshall         as agmarshall
+from .utilities import colors           as agcolor
+from .internal.comutil     import IUnknown, IPictureDisp
+from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.eventutil   import *
 from .utilities.exceptions import *
+
+from .stkutil import *
 from .vgt import *
 
 
@@ -7134,7 +7138,7 @@ agcls.AgClassCatalog.add_catalog_entry("{afe0e66f-0fc5-46ad-801f-22670cfe99a9}",
 agcls.AgTypeNameMap["ICompositeDisplayCondition"] = ICompositeDisplayCondition
 
 class ICompositePrimitive(object):
-    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10891,7 +10895,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0b66ea82-dd0d-444f-b097-dda9427e1b87}",
 agcls.AgTypeNameMap["IKmlNetworkLink"] = IKmlNetworkLink
 
 class IMarkerBatchPrimitive(object):
-    """Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
     _num_methods = 54
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13139,7 +13143,7 @@ agcls.AgClassCatalog.add_catalog_entry("{e5ccd610-a3b3-4f0c-9d51-e367a9ea5abf}",
 agcls.AgTypeNameMap["IPixelSizeDisplayCondition"] = IPixelSizeDisplayCondition
 
 class IPointBatchPrimitive(object):
-    """Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16003,7 +16007,7 @@ agcls.AgClassCatalog.add_catalog_entry("{dfe57e34-7b31-4360-a7a8-8db856882670}",
 agcls.AgTypeNameMap["ITerrainOverlay"] = ITerrainOverlay
 
 class ITextBatchPrimitive(object):
-    """Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18503,7 +18507,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a2ca541e-a860-4e47-b0e9-f0e973733e67}",
 agcls.AgTypeNameMap["ICompositeDisplayConditionFactory"] = ICompositeDisplayConditionFactory
 
 class ICompositePrimitiveFactory(object):
-    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20356,7 +20360,7 @@ agcls.AgClassCatalog.add_catalog_entry("{fbde7847-ccff-4c4e-83cf-5f7b05468709}",
 agcls.AgTypeNameMap["IVideoStreamFactory"] = IVideoStreamFactory
 
 class IMarkerBatchPrimitiveFactory(object):
-    """Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20726,7 +20730,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2c7bb493-89f9-40f9-b562-feed771d08b7}",
 agcls.AgTypeNameMap["IPixelSizeDisplayConditionFactory"] = IPixelSizeDisplayConditionFactory
 
 class IPointBatchPrimitiveFactory(object):
-    """Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21491,7 +21495,7 @@ agcls.AgClassCatalog.add_catalog_entry("{74c0acde-8d75-49df-87c1-2c39e3240283}",
 agcls.AgTypeNameMap["ITerrainOverlayInitializer"] = ITerrainOverlayInitializer
 
 class ITextBatchPrimitiveFactory(object):
-    """Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23206,7 +23210,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B59D2316-7712-462C-BB2F-3C882D18388E}",
 agcls.AgTypeNameMap["CompositeDisplayCondition"] = CompositeDisplayCondition
 
 class CompositePrimitive(ICompositePrimitive, IPrimitive):
-    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
     def __init__(self, sourceObject=None):
         ICompositePrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -24304,7 +24308,7 @@ agcls.AgClassCatalog.add_catalog_entry("{BD2ECA7D-919B-4C64-8AA1-E503A80EF3EA}",
 agcls.AgTypeNameMap["KmlNetworkLink"] = KmlNetworkLink
 
 class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
-    """Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -24553,7 +24557,7 @@ agcls.AgClassCatalog.add_catalog_entry("{26B1DA4F-DA20-4E44-A98D-D54CC67821B8}",
 agcls.AgTypeNameMap["PixelSizeDisplayCondition"] = PixelSizeDisplayCondition
 
 class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
-    """Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
     def __init__(self, sourceObject=None):
         IPointBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -25036,7 +25040,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C1640FF1-07BB-4584-940C-50BDD48CFE14}",
 agcls.AgTypeNameMap["TerrainOverlay"] = TerrainOverlay
 
 class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
-    """Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
     def __init__(self, sourceObject=None):
         ITextBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -25633,7 +25637,7 @@ agcls.AgClassCatalog.add_catalog_entry("{375A535B-557C-4E7B-A2AD-0905381BA46F}",
 agcls.AgTypeNameMap["CompositeDisplayConditionFactory"] = CompositeDisplayConditionFactory
 
 class CompositePrimitiveFactory(ICompositePrimitiveFactory):
-    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
     def __init__(self, sourceObject=None):
         ICompositePrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26368,7 +26372,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A977E2D9-785B-4AB0-B01F-927486E3170B}",
 agcls.AgTypeNameMap["VideoStreamFactory"] = VideoStreamFactory
 
 class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
-    """Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26494,7 +26498,7 @@ agcls.AgClassCatalog.add_catalog_entry("{52EC4EAD-B9A0-4940-BAE8-BD115805BB46}",
 agcls.AgTypeNameMap["PixelSizeDisplayConditionFactory"] = PixelSizeDisplayConditionFactory
 
 class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
-    """Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
     def __init__(self, sourceObject=None):
         IPointBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26746,7 +26750,7 @@ agcls.AgClassCatalog.add_catalog_entry("{8D76F5E3-BACE-4CA4-9C4D-9F14464ACAFD}",
 agcls.AgTypeNameMap["TerrainOverlayInitializer"] = TerrainOverlayInitializer
 
 class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
-    """Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
     def __init__(self, sourceObject=None):
         ITextBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

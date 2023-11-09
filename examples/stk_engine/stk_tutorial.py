@@ -709,7 +709,7 @@ class STKTutorial:
         access = self.horizon.get_access_to_object(self.baikonur)
         access.compute_access()
         minMax = self.horizon.access_constraints.add_constraint(
-            ACCESS_CONSTRAINTS.CSTR_RANGE
+            ACCESS_CONSTRAINTS.RANGE
         )
 
         minMax.EnableMax = True

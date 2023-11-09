@@ -2723,7 +2723,7 @@ class VOProximityHelper(object):
             (clr.CastAs(oBox.reference_frame, IAnalysisWorkbenchComponent)).name,
         )
         # ENG113854
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             oBox.reference_frame = None
         self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
 

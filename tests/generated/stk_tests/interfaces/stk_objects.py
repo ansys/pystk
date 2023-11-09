@@ -1062,7 +1062,7 @@ class StkAccessHelper(object):
 
         oAdvanced.time_light_delay_convergence = 0.0123
         Assert.assertEqual(0.0123, oAdvanced.time_light_delay_convergence)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             oAdvanced.time_light_delay_convergence = 12.34
 
         oAdvanced.aberration_type = ABERRATION_TYPE.ANNUAL
@@ -1071,7 +1071,7 @@ class StkAccessHelper(object):
         Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
         oAdvanced.aberration_type = ABERRATION_TYPE.TOTAL
         Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             oAdvanced.aberration_type = ABERRATION_TYPE.UNKNOWN
 
         # Signal Path

@@ -1527,9 +1527,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             reTransmitterModel.c_over_im_transfer_function_type = TRANSFER_FUNCTION_TYPE.TABLE_DATA
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            self.Test_IAgTransferFunctionPolynomialCollection(reTransmitterModel.c_over_im_transfer_function_polynomial)
+            reTransmitterModel.c_over_im_transfer_function_polynomial.remove_at(0)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            self.Test_IAgTransferFunctionInputBackOffCOverImTable(reTransmitterModel.c_over_im_transfer_function_table)
+            reTransmitterModel.c_over_im_transfer_function_table.remove_at(0)
 
         reTransmitterModel.enable_c_over_im = True
         Assert.assertTrue(reTransmitterModel.enable_c_over_im)

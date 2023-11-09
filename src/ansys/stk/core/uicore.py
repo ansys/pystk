@@ -6,24 +6,27 @@ __all__ = ["ARRANGE_STYLE", "DOCK_STYLE", "FLOAT_STATE", "IUiToolbar", "IUiToolb
 "IUiWindowMapObject", "IUiWindowsCollection", "UiToolbar", "UiToolbarCollection", "UiWindow", "UiWindowGlobeObject", "UiWindowMapObject", 
 "UiWindowsCollection", "WINDOW_SERVICE", "WINDOW_STATE"]
 
-from ctypes import POINTER
-from enum import IntEnum
 import typing
 
+from ctypes   import POINTER
+from enum     import IntEnum
+
 try:
-    from numpy import ndarray
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
-from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
-from .internal.apiutil import enumerator_proxy, interface_proxy, out_arg
-from .internal.comutil import IDispatch, IUnknown
-from .internal.eventutil import *
+from .internal  import comutil          as agcom
+from .internal  import coclassutil      as agcls
+from .internal  import marshall         as agmarshall
+from .internal.comutil     import IUnknown, IDispatch
+from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.eventutil   import *
 from .utilities.exceptions import *
 
 

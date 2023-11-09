@@ -122,24 +122,27 @@ __all__ = ["ACCELERATION_ADV_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCE
 "VerticalPlaneOptions", "WIND_ATMOS_MODEL_SOURCE", "WIND_MODEL_TYPE", "WaypointCategory", "WindModel", "WindModelADDS", 
 "WindModelConstant"]
 
-from ctypes import POINTER
-from enum import IntEnum
 import typing
 
+from ctypes   import POINTER
+from enum     import IntEnum
+
 try:
-    from numpy import ndarray
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
-from ...internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
-from ...internal.apiutil import enumerator_proxy, interface_proxy, out_arg
-from ...internal.comutil import IDispatch, IUnknown
-from ...internal.eventutil import *
+from ...internal  import comutil          as agcom
+from ...internal  import coclassutil      as agcls
+from ...internal  import marshall         as agmarshall
+from ...internal.comutil     import IUnknown, IDispatch
+from ...internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from ...internal.eventutil   import *
 from ...utilities.exceptions import *
 
 
@@ -156,7 +159,7 @@ class ERROR_CODES(IntEnum):
     """The attribute is invalid."""
     COMMAND_FAILED = (((1 << 31) | (4 << 16)) | (0x200 + 4))
     """The command failed."""
-    AVTR_ERROR_INVALID_ARG = (((1 << 31) | (4 << 16)) | (0x200 + 5))
+    ERROR_INVALID_ARG = (((1 << 31) | (4 << 16)) | (0x200 + 5))
     """Invalid argument."""
     EMPTY_ARG = (((1 << 31) | (4 << 16)) | (0x200 + 6))
     """Empty argument."""
@@ -174,9 +177,9 @@ class ERROR_CODES(IntEnum):
     """No choices available."""
     READ_ONLY_ATTRIBUTE = (((1 << 31) | (4 << 16)) | (0x200 + 13))
     """Read only attribute."""
-    CSTR_INVALID_CSTR_LIST = (((1 << 31) | (4 << 16)) | (0x200 + 14))
+    INVALID_CSTR_LIST = (((1 << 31) | (4 << 16)) | (0x200 + 14))
     """Invalid constraint list."""
-    CSTR_INVALID_CONSTRAINT = (((1 << 31) | (4 << 16)) | (0x200 + 15))
+    INVALID_CONSTRAINT = (((1 << 31) | (4 << 16)) | (0x200 + 15))
     """InvalidConstraint."""
     LIST_READ_ONLY = (((1 << 31) | (4 << 16)) | (0x200 + 16))
     """List if read only."""
@@ -197,7 +200,7 @@ ERROR_CODES.OBJECT_NOT_FOUND.__doc__ = "Object not found."
 ERROR_CODES.INDEX_OUT_OF_RANGE.__doc__ = "Index out of range."
 ERROR_CODES.INVALID_ATTRIBUTE.__doc__ = "The attribute is invalid."
 ERROR_CODES.COMMAND_FAILED.__doc__ = "The command failed."
-ERROR_CODES.AVTR_ERROR_INVALID_ARG.__doc__ = "Invalid argument."
+ERROR_CODES.ERROR_INVALID_ARG.__doc__ = "Invalid argument."
 ERROR_CODES.EMPTY_ARG.__doc__ = "Empty argument."
 ERROR_CODES.OBJECT_NOT_REMOVED.__doc__ = "Object was not removed."
 ERROR_CODES.FAILED_TO_RENAME_OBJECT.__doc__ = "Error renaming object."
@@ -206,8 +209,8 @@ ERROR_CODES.FAILED_TO_CREATE_OBJECT.__doc__ = "Failed to create the object."
 ERROR_CODES.OBJECT_LINK_INVALID_CHOICE.__doc__ = "Invalid choice for object link."
 ERROR_CODES.OBJECT_LINK_NO_CHOICES.__doc__ = "No choices available."
 ERROR_CODES.READ_ONLY_ATTRIBUTE.__doc__ = "Read only attribute."
-ERROR_CODES.CSTR_INVALID_CSTR_LIST.__doc__ = "Invalid constraint list."
-ERROR_CODES.CSTR_INVALID_CONSTRAINT.__doc__ = "InvalidConstraint."
+ERROR_CODES.INVALID_CSTR_LIST.__doc__ = "Invalid constraint list."
+ERROR_CODES.INVALID_CONSTRAINT.__doc__ = "InvalidConstraint."
 ERROR_CODES.LIST_READ_ONLY.__doc__ = "List if read only."
 ERROR_CODES.LIST_INSERT_FAILED.__doc__ = "Failed to insert the item into the list."
 ERROR_CODES.INVALID_LENGTH.__doc__ = "Length is invalid."
@@ -3529,7 +3532,7 @@ class ILevelTurns(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def turn_rate(self) -> float:
-        """Get the turn rate."""
+        """get the turn rate."""
         return self._intf.get_property(ILevelTurns._metadata, ILevelTurns._get_turn_rate_metadata)
 
     _set_level_turn_metadata = { "name" : "set_level_turn",
@@ -9306,7 +9309,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def afterburner_on(self) -> bool:
-        """Opt whether to specify the design point with the afterburner on."""
+        """Opt whether to specify the design point with the afterburner on. """
         return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "name" : "afterburner_on",
@@ -9569,7 +9572,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def afterburner_on(self) -> bool:
-        """Opt whether to specify the design point with the afterburner on."""
+        """Opt whether to specify the design point with the afterburner on. """
         return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "name" : "afterburner_on",
@@ -27689,7 +27692,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
-        """Method NewRandomEngineSeed"""
+        """method NewRandomEngineSeed"""
         return self._intf.invoke(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._new_random_engine_seed_metadata, )
 
     _get_smoothing_constant_metadata = { "name" : "smoothing_constant",
@@ -27697,7 +27700,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def smoothing_constant(self) -> float:
-        """Property SmoothingConstant"""
+        """property SmoothingConstant"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_smoothing_constant_metadata)
 
     _set_smoothing_constant_metadata = { "name" : "smoothing_constant",
@@ -27705,7 +27708,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @smoothing_constant.setter
     def smoothing_constant(self, newVal:float) -> None:
-        """Property SmoothingConstant"""
+        """property SmoothingConstant"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_smoothing_constant_metadata, newVal)
 
     _get_velocity_time_step_metadata = { "name" : "velocity_time_step",
@@ -27713,7 +27716,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def velocity_time_step(self) -> float:
-        """Property VelocityTimeStep"""
+        """property VelocityTimeStep"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_velocity_time_step_metadata)
 
     _set_velocity_time_step_metadata = { "name" : "velocity_time_step",
@@ -27721,7 +27724,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @velocity_time_step.setter
     def velocity_time_step(self, newVal:float) -> None:
-        """Property VelocityTimeStep"""
+        """property VelocityTimeStep"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_velocity_time_step_metadata, newVal)
 
     _get_angle_error_std_dev_metadata = { "name" : "angle_error_std_dev",
@@ -27729,7 +27732,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def angle_error_std_dev(self) -> float:
-        """Property AngleErrorStdDev"""
+        """property AngleErrorStdDev"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_angle_error_std_dev_metadata)
 
     _set_angle_error_std_dev_metadata = { "name" : "angle_error_std_dev",
@@ -27737,7 +27740,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @angle_error_std_dev.setter
     def angle_error_std_dev(self, newVal:float) -> None:
-        """Property AngleErrorStdDev"""
+        """property AngleErrorStdDev"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_angle_error_std_dev_metadata, newVal)
 
     _get_range_error_std_dev_metadata = { "name" : "range_error_std_dev",
@@ -27745,7 +27748,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def range_error_std_dev(self) -> float:
-        """Property RangeErrorStdDev"""
+        """property RangeErrorStdDev"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_range_error_std_dev_metadata)
 
     _set_range_error_std_dev_metadata = { "name" : "range_error_std_dev",
@@ -27753,7 +27756,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @range_error_std_dev.setter
     def range_error_std_dev(self, newVal:float) -> None:
-        """Property RangeErrorStdDev"""
+        """property RangeErrorStdDev"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_range_error_std_dev_metadata, newVal)
 
 
@@ -27805,7 +27808,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
-        """Method NewRandomEngineSeed"""
+        """method NewRandomEngineSeed"""
         return self._intf.invoke(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._new_random_engine_seed_metadata, )
 
     _get_measurement_time_step_metadata = { "name" : "measurement_time_step",
@@ -27813,7 +27816,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def measurement_time_step(self) -> float:
-        """Property MeasurementTimeStep"""
+        """property MeasurementTimeStep"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_measurement_time_step_metadata)
 
     _set_measurement_time_step_metadata = { "name" : "measurement_time_step",
@@ -27821,7 +27824,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @measurement_time_step.setter
     def measurement_time_step(self, newVal:float) -> None:
-        """Property MeasurementTimeStep"""
+        """property MeasurementTimeStep"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_measurement_time_step_metadata, newVal)
 
     _get_position_cep_metadata = { "name" : "position_cep",
@@ -27829,7 +27832,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def position_cep(self) -> float:
-        """Property PositionCEP"""
+        """property PositionCEP"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_position_cep_metadata)
 
     _set_position_cep_metadata = { "name" : "position_cep",
@@ -27837,7 +27840,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @position_cep.setter
     def position_cep(self, newVal:float) -> None:
-        """Property PositionCEP"""
+        """property PositionCEP"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_position_cep_metadata, newVal)
 
     _get_course_error_metadata = { "name" : "course_error",
@@ -27845,7 +27848,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def course_error(self) -> float:
-        """Property CourseError"""
+        """property CourseError"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_course_error_metadata)
 
     _set_course_error_metadata = { "name" : "course_error",
@@ -27853,7 +27856,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @course_error.setter
     def course_error(self, newVal:float) -> None:
-        """Property CourseError"""
+        """property CourseError"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_course_error_metadata, newVal)
 
     _get_speed_error_metadata = { "name" : "speed_error",
@@ -27861,7 +27864,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def speed_error(self) -> float:
-        """Property SpeedError"""
+        """property SpeedError"""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_speed_error_metadata)
 
     _set_speed_error_metadata = { "name" : "speed_error",
@@ -27869,7 +27872,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @speed_error.setter
     def speed_error(self, newVal:float) -> None:
-        """Property SpeedError"""
+        """property SpeedError"""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_speed_error_metadata, newVal)
 
 

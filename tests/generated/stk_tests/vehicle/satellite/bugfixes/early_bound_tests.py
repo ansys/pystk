@@ -86,19 +86,18 @@ class EarlyBoundTests(TestBase):
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
         cnstrAngle: "AccessConstraintCrdnConstellation" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_ANGLE),
+            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.VECTOR_GEOMETRY_TOOL_ANGLE),
             AccessConstraintCrdnConstellation,
         )
         Assert.assertEqual("Satellite/BUG65831 VelocityAzimuth Angle", cnstrAngle.reference)
 
         cnstrCondition: "AccessConstraintCrdnConstellation" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_CRDN_CONDITION),
-            AccessConstraintCrdnConstellation,
+            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CRDN_CONDITION), AccessConstraintCrdnConstellation
         )
         Assert.assertEqual("Satellite/BUG65831 AfterStart Condition", cnstrCondition.reference)
 
         cnstrVectorMag: "AccessConstraintCrdnConstellation" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE),
+            sat.access_constraints.add_constraint(ACCESS_CONSTRAINTS.VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE),
             AccessConstraintCrdnConstellation,
         )
         Assert.assertEqual("Satellite/BUG65831 Velocity Vector", cnstrVectorMag.reference)

@@ -6,26 +6,30 @@ __all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IMRUCollection", "IUiApplication
 "IUiFileOpenExtCollection", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", "UiApplication", "UiFileOpenExt", 
 "UiFileOpenExtCollection"]
 
-from ctypes import POINTER
-from enum import IntEnum
 import typing
 
+from ctypes   import POINTER
+from enum     import IntEnum
+
 try:
-    from numpy import ndarray
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
-from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
-from .internal.apiutil import enumerator_proxy, interface_proxy, out_arg
-from .internal.comutil import IDispatch, IUnknown
-from .internal.eventutil import *
-from .uicore import *
+from .internal  import comutil          as agcom
+from .internal  import coclassutil      as agcls
+from .internal  import marshall         as agmarshall
+from .internal.comutil     import IUnknown, IDispatch
+from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.eventutil   import *
 from .utilities.exceptions import *
+
+from .uicore import *
 
 
 def _raise_uninitialized_error(*args):

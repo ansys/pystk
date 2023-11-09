@@ -1232,7 +1232,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("1 Jul 1999 01:00:00.000", oInterval.analysis_interval.find_start_time())
         TestBase.logger.WriteLine6("\tThe new Stop is: {0}", oInterval.analysis_interval.find_stop_time())
         Assert.assertEqual("1 Jul 1999 04:00:00.000", oInterval.analysis_interval.find_stop_time())
-        with pytest.raises(Exception, match=RegexSubstringMatch("")):
+        with pytest.raises(Exception):
             oInterval.analysis_interval.set_explicit_interval("2 Jul 1999 01:00:00.000", "1 Jul 1999 00:01:00.000")
         TestBase.logger.WriteLine("----- INTERVAL TEST ----- END -----")
 
@@ -2438,7 +2438,7 @@ class EarlyBoundTests(TestBase):
         fac: "Facility" = clr.Convert(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Fac_PointAltitude"), Facility
         )
-        constraint: "IAccessConstraint" = fac.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LIGHTING)
+        constraint: "IAccessConstraint" = fac.access_constraints.add_constraint(ACCESS_CONSTRAINTS.LIGHTING)
         cnstrCondition: "AccessConstraintCondition" = clr.Convert(constraint, AccessConstraintCondition)
         cnstrCondition.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
 

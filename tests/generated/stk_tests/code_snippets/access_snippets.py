@@ -45,7 +45,7 @@ class AccessSnippets(CodeSnippetsTestBase):
     def AddAndConfigureSunElevationAngleConstraint(self, accessConstraints: "AccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
         minmax: "IAccessConstraintMinMax" = clr.CastAs(
-            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE), IAccessConstraintMinMax
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.SUN_ELEVATION_ANGLE), IAccessConstraintMinMax
         )
         minmax.enable_min = True
         minmax.min = 22.2
@@ -65,7 +65,7 @@ class AccessSnippets(CodeSnippetsTestBase):
     def AddAndConfigureLunarElevationAngleConstraint(self, accessConstraints: "AccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
         minmax: "IAccessConstraintMinMax" = clr.CastAs(
-            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LUNAR_ELEVATION_ANGLE), IAccessConstraintMinMax
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.LUNAR_ELEVATION_ANGLE), IAccessConstraintMinMax
         )
         minmax.enable_min = True
         minmax.min = 11.1
@@ -85,7 +85,7 @@ class AccessSnippets(CodeSnippetsTestBase):
     def AddAndConfigureLOSSunExclConstraint(self, accessConstraints: "AccessConstraintCollection"):
         # Angle constraint
         cnstrAngle: "AccessConstraintAngle" = clr.CastAs(
-            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LOS_SUN_EXCLUSION), AccessConstraintAngle
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.LOS_SUN_EXCLUSION), AccessConstraintAngle
         )
         cnstrAngle.angle = 176.0
 
@@ -102,7 +102,7 @@ class AccessSnippets(CodeSnippetsTestBase):
     def AddAndConfigureLightingConstraint(self, accessConstraints: "AccessConstraintCollection"):
         # Condition constraint
         light: "AccessConstraintCondition" = clr.CastAs(
-            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LIGHTING), AccessConstraintCondition
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.LIGHTING), AccessConstraintCondition
         )
         light.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
 
@@ -120,7 +120,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
         # Attitude constraint
         altitude: "IAccessConstraintMinMax" = clr.CastAs(
-            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE), IAccessConstraintMinMax
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.ALTITUDE), IAccessConstraintMinMax
         )
         altitude.enable_min = True
         altitude.min = 20.5
@@ -139,7 +139,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         accessConstraints: "AccessConstraintCollection" = stkobject.access_constraints
 
         # Add constraints
-        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE)
+        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.SUN_ELEVATION_ANGLE)
 
     # endregion
 
@@ -155,7 +155,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         accessConstraints: "AccessConstraintCollection" = stkobject.access_constraints
 
         # Remove constraints
-        accessConstraints.remove_constraint(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE)
+        accessConstraints.remove_constraint(ACCESS_CONSTRAINTS.SUN_ELEVATION_ANGLE)
 
     # endregion
 
@@ -171,7 +171,7 @@ class AccessSnippets(CodeSnippetsTestBase):
     def AddAndConfigureThirdBodyObstructionConstraint(self, accessconstraints: "AccessConstraintCollection"):
         # Get AccessConstraintThirdBody interface
         thirdBodyConstraint: "AccessConstraintThirdBody" = clr.CastAs(
-            accessconstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_THIRD_BODY_OBSTRUCTION), AccessConstraintThirdBody
+            accessconstraints.add_constraint(ACCESS_CONSTRAINTS.THIRD_BODY_OBSTRUCTION), AccessConstraintThirdBody
         )
 
         # AvailableObstructions returns a one dimensional array of obstruction paths
@@ -201,14 +201,14 @@ class AccessSnippets(CodeSnippetsTestBase):
             STK_OBJECT_TYPE.SATELLITE, satelliteName
         )
 
-        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
-        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
-        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
-        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
-        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.EXCLUSION_ZONE)
 
         excZones: "AccessConstraintExclZonesCollection" = clr.CastAs(
-            stkobject.access_constraints.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE),
+            stkobject.access_constraints.get_active_constraint(ACCESS_CONSTRAINTS.EXCLUSION_ZONE),
             AccessConstraintExclZonesCollection,
         )
         excZones.change_excl_zone(0, -20, -30, 40, 50)
@@ -223,7 +223,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     def ListAllConstraintExclusiveZones(self, accessconstraints: "AccessConstraintCollection"):
         excZones: "AccessConstraintExclZonesCollection" = clr.CastAs(
-            accessconstraints.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE),
+            accessconstraints.get_active_constraint(ACCESS_CONSTRAINTS.EXCLUSION_ZONE),
             AccessConstraintExclZonesCollection,
         )
         if excZones != None:
@@ -609,8 +609,8 @@ class AccessSnippets(CodeSnippetsTestBase):
         # Add constraints
         # Only the eCstrApparentTime, eCstrDuration, eCstrGMT, eCstrIntervals, eCstrLocalTime constraint
         # types can be added multiple times to the constraint collection.
-        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LOCAL_TIME)
-        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LOCAL_TIME)
+        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.LOCAL_TIME)
+        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.LOCAL_TIME)
 
     # endregion
 
@@ -632,8 +632,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
         awbConst: "AccessConstraintAnalysisWorkbench" = clr.CastAs(
             awbAccessConstraints.add_constraint(
-                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
-                (objectPath + " East Vector"),
+                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE, (objectPath + " East Vector")
             ),
             AccessConstraintAnalysisWorkbench,
         )
@@ -642,7 +641,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
         awbConst2: "AccessConstraintAnalysisWorkbench" = clr.CastAs(
             awbAccessConstraints.add_constraint(
-                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
+                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
                 (objectPath + " North Vector"),
             ),
             AccessConstraintAnalysisWorkbench,
@@ -665,8 +664,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         # Add constraints
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
         awbAccessConstraints.add_constraint(
-            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
-            (objectPath + " East Vector"),
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE, (objectPath + " East Vector")
         )
         self.RemoveAWBAccessConstraint(stkobject)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
@@ -679,8 +677,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
         awbAccessConstraints.remove_constraint(
-            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
-            (objectPath + " East Vector"),
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE, (objectPath + " East Vector")
         )
 
     # endregion
@@ -698,15 +695,13 @@ class AccessSnippets(CodeSnippetsTestBase):
         # Add constraints
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
         awbAccessConstraints.add_constraint(
-            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
-            (objectPath + " East Vector"),
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE, (objectPath + " East Vector")
         )
         awbAccessConstraints.add_constraint(
-            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_ANGLE, (objectPath + " SunAzimuth Angle")
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_ANGLE, (objectPath + " SunAzimuth Angle")
         )
         awbAccessConstraints.add_constraint(
-            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_CONDITION,
-            (objectPath + " BeforeStop Condition"),
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_CONDITION, (objectPath + " BeforeStop Condition")
         )
 
         self.ListAllAWBConstraints(stkobject)
@@ -737,7 +732,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         )
         availableReference: str
         for availableReference in awbaccessconstraints.get_available_references(
-            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_ANGLE
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_ANGLE
         ):
             Console.WriteLine("Available Reference: {0}", availableReference)
 
@@ -763,8 +758,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
             awbConst: "AccessConstraintAnalysisWorkbench" = clr.CastAs(
                 awbAccessConstraints.add_constraint(
-                    ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.CSTR_ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE,
-                    crdnVec.qualified_path,
+                    ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS.ANALYSIS_WORKBENCH_VECTOR_MAGNITUDE, crdnVec.qualified_path
                 ),
                 AccessConstraintAnalysisWorkbench,
             )

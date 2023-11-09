@@ -18,25 +18,28 @@ __all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "C
 "PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
 "UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPR_ANGLES_SEQUENCE"]
 
-from ctypes import POINTER
-from datetime import datetime
-from enum import IntEnum, IntFlag
 import typing
 
+from ctypes   import POINTER
+from datetime import datetime
+from enum     import IntEnum, IntFlag
+
 try:
-    from numpy import ndarray
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
-from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
-from .internal.apiutil import enumerator_proxy, interface_proxy, out_arg
-from .internal.comutil import IDispatch, IUnknown
-from .internal.eventutil import *
+from .internal  import comutil          as agcom
+from .internal  import coclassutil      as agcls
+from .internal  import marshall         as agmarshall
+from .internal.comutil     import IUnknown, IDispatch
+from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.eventutil   import *
 from .utilities.exceptions import *
 
 

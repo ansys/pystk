@@ -4,40 +4,28 @@
 
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
+import os
+import typing
 import atexit
 from ctypes import byref
-import os
 import subprocess
-import typing
-
 if os.name == "nt":
     import winreg
 
-from .graphics import *
-from .internal.apiutil import interface_proxy
-from .internal.coclassutil import attach_to_stk_by_pid
-from .internal.comutil import (
-    CLSCTX_LOCAL_SERVER,
-    COINIT_APARTMENTTHREADED,
-    GUID,
-    PVOID,
-    CoInitializeManager,
-    IUnknown,
-    ObjectLifetimeManager,
-    Succeeded,
-    ole32lib,
-    oleaut32lib,
-)
-from .internal.eventutil import EventSubscriptionManager
-from .stkobjects import *
-from .stkobjects.astrogator import *
-from .stkobjects.aviator import *
-from .stkutil import *
-from .uiapplication import *
-from .uicore import *
-from .utilities.exceptions import *
-from .vgt import *
-
+from .internal.comutil       import (ole32lib, oleaut32lib, GUID, IUnknown, CoInitializeManager, Succeeded,
+                                 CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
+from .internal.coclassutil   import attach_to_stk_by_pid
+from .internal.eventutil     import EventSubscriptionManager
+from .internal.apiutil       import interface_proxy
+from .utilities.exceptions   import *
+from .graphics               import *
+from .stkobjects             import *
+from .stkobjects.astrogator  import *
+from .stkobjects.aviator     import *
+from .stkutil                import *
+from .uiapplication          import *
+from .uicore                 import *
+from .vgt                    import *
 
 class ThreadMarshaller(object):
     _iid_IUnknown = GUID.from_registry_format(IUnknown._guid)
@@ -87,7 +75,8 @@ class ThreadMarshaller(object):
         ole32lib.CoUninitialize()
 
 class STKDesktopApplication(UiApplication):
-    """Interact with an STK Desktop application.
+    """
+    Interact with an STK Desktop application.
 
     Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication() 
     to obtain an initialized STKDesktopApplication object.
@@ -162,7 +151,8 @@ class STKDesktop(object):
                          grpc_port:int=40704, \
                          grpc_timeout_sec:int=60, \
                          grpc_desktop_options:str="") -> STKDesktopApplication:
-        """Create a new STK Desktop application instance.
+        """
+        Create a new STK Desktop application instance.  
 
         Specify visible = True to show the application window.
         Specify userControl = True to return the application to the user's control .
@@ -182,7 +172,7 @@ class STKDesktop(object):
             try:
                 pass
             except ModuleNotFoundError:
-                raise STKInitializationError("gRPC use requires Python modules grpcio and protobuf.")
+                raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
             executable = STKDesktop._read_registry_key(winreg.HKEY_CLASSES_ROOT, 'CLSID\{7ADA6C22-FA34-4578-8BE8-65405A55EE15}\LocalServer32')
             cmd_line = f"{executable} /pers STK /grpcServer On /grpcHost {grpc_host} /grpcPort {grpc_port} {grpc_desktop_options}"
             app_process = subprocess.Popen(cmd_line)
@@ -211,7 +201,8 @@ class STKDesktop(object):
                             grpc_host:str="localhost", \
                             grpc_port:int=40704, \
                             grpc_timeout_sec:int=60) -> STKDesktopApplication:
-        """Attach to an existing STK Desktop instance.
+        """
+        Attach to an existing STK Desktop instance. 
 
         Specify the Process ID (PID) in case multiple processes are open.
         Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
@@ -226,11 +217,11 @@ class STKDesktop(object):
         CoInitializeManager.initialize()
         if grpc_server:
             if pid is not None:
-                raise STKInitializationError("Retry using either 'pid' or 'grpc_server'. Cannot initialize using both.")
+                raise STKInitializationError(f"Retry using either 'pid' or 'grpc_server'. Cannot initialize using both.")
             try:
                 from .internal.grpcutil import grpc_client
             except ModuleNotFoundError:
-                raise STKInitializationError("gRPC use requires Python modules grpcio and protobuf.")
+                raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
             client = grpc_client.new_client(grpc_host, grpc_port, grpc_timeout_sec)
             if client is not None:
                 pAppImpl = client.GetStkApplicationInterface()
@@ -263,7 +254,8 @@ class STKDesktop(object):
 
     @staticmethod
     def ReleaseAll() -> None:
-        """Releases all handles from Python to STK Desktop applications.
+        """
+        Releases all handles from Python to STK Desktop applications.
 
         Not applicable to gRPC connections.
         """
@@ -274,7 +266,8 @@ class STKDesktop(object):
         
     @staticmethod
     def CreateThreadMarshaller(stk_object:typing.Any) -> ThreadMarshaller:
-        """Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
+        """
+        Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
 
         Not applicable to gRPC connections.
         """
