@@ -1,0 +1,142 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "MCSSegment" Name = "MyHold">
+    <OBJECT Class = "double" Name = "AverageStep"> 0 sec </OBJECT>
+    <OBJECT Class = "bool" Name = "BeenRun"> False </OBJECT>
+    <OBJECT Class = "container" Name = "BPlanes" />
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Holds state constant in some frame&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "DisplayCoordSystem">
+        <OBJECT Class = "string" Name = ""> &quot;CentralBody/Earth Inertial&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "double" Name = "FinalDeltaV"> 0 m*sec^-1 </OBJECT>
+    <OBJECT Class = "double" Name = "FinalInertialDeltaVx"> 0 m*sec^-1 </OBJECT>
+    <OBJECT Class = "double" Name = "FinalInertialDeltaVy"> 0 m*sec^-1 </OBJECT>
+    <OBJECT Class = "double" Name = "FinalInertialDeltaVz"> 0 m*sec^-1 </OBJECT>
+    <OBJECT Class = "AttrCon" Name = "FinalState">
+        <OBJECT Class = "Orbit_State" Name = "Orbit_State">
+            <OBJECT Class = "container" Name = "Cartesian">
+                <OBJECT Class = "double" Name = "X"> 6678137 m </OBJECT>
+                <OBJECT Class = "double" Name = "Y"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "Z"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "Vx"> 0 m*sec^-1 </OBJECT>
+                <OBJECT Class = "double" Name = "Vy"> 6789.530300272665 m*sec^-1 </OBJECT>
+                <OBJECT Class = "double" Name = "Vz"> 3686.414174400911 m*sec^-1 </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "Cd"> 2.2 &quot;&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "CoordSysRep">
+                <OBJECT Class = "string" Name = ""> &quot;None&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "Cr"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "DragArea"> 20 m^2 </OBJECT>
+            <OBJECT Class = "double" Name = "DryMass"> 500 kg </OBJECT>
+            <OBJECT Class = "date" Name = "Epoch"> &quot;1 Jul 2009 15:00:34.000000000&quot; TAIG </OBJECT>
+            <OBJECT Class = "double" Name = "FuelDensity"> 1000 kg*m^-3 </OBJECT>
+            <OBJECT Class = "double" Name = "FuelMass"> 500 kg </OBJECT>
+            <OBJECT Class = "double" Name = "K1"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "K2"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "RadPressureArea"> 20 m^2 </OBJECT>
+            <OBJECT Class = "double" Name = "RadPressureCoeff"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "SRPArea"> 20 m^2 </OBJECT>
+            <OBJECT Class = "double" Name = "TankPressure"> 5000 Pa </OBJECT>
+            <OBJECT Class = "double" Name = "TankTemperature"> 293.15 K </OBJECT>
+            <OBJECT Class = "container" Name = "UserVariables" />
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "link" Name = "HoldFrame">
+        <OBJECT Class = "string" Name = ""> &quot;CentralBody/Earth Inertial&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "AttrCon" Name = "InitialState">
+        <OBJECT Class = "Orbit_State" Name = "Orbit_State">
+            <OBJECT Class = "container" Name = "Cartesian">
+                <OBJECT Class = "double" Name = "X"> 6678137 m </OBJECT>
+                <OBJECT Class = "double" Name = "Y"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "Z"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "Vx"> 0 m*sec^-1 </OBJECT>
+                <OBJECT Class = "double" Name = "Vy"> 6789.530300272665 m*sec^-1 </OBJECT>
+                <OBJECT Class = "double" Name = "Vz"> 3686.414174400911 m*sec^-1 </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "Cd"> 2.2 &quot;&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "CoordSysRep">
+                <OBJECT Class = "string" Name = ""> &quot;None&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "Cr"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "DragArea"> 20 m^2 </OBJECT>
+            <OBJECT Class = "double" Name = "DryMass"> 500 kg </OBJECT>
+            <OBJECT Class = "date" Name = "Epoch"> &quot;1 Jul 2009 15:00:34.000000000&quot; TAIG </OBJECT>
+            <OBJECT Class = "double" Name = "FuelDensity"> 1000 kg*m^-3 </OBJECT>
+            <OBJECT Class = "double" Name = "FuelMass"> 500 kg </OBJECT>
+            <OBJECT Class = "double" Name = "K1"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "K2"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "RadPressureArea"> 20 m^2 </OBJECT>
+            <OBJECT Class = "double" Name = "RadPressureCoeff"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "SRPArea"> 20 m^2 </OBJECT>
+            <OBJECT Class = "double" Name = "TankPressure"> 5000 Pa </OBJECT>
+            <OBJECT Class = "double" Name = "TankTemperature"> 293.15 K </OBJECT>
+            <OBJECT Class = "container" Name = "UserVariables" />
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "double" Name = "LargestStep"> 0 sec </OBJECT>
+    <OBJECT Class = "string" Name = "LastRunCode"> &quot;Marching&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "MaxPropTime"> 8640000 sec </OBJECT>
+    <OBJECT Class = "double" Name = "MinPropTime"> 0 sec </OBJECT>
+    <OBJECT Class = "int" Name = "NumSteps"> 0 </OBJECT>
+    <OBJECT Class = "bool" Name = "OverrideAttitude"> True </OBJECT>
+    <OBJECT Class = "bool" Name = "OverrideMaxPropTime"> True </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ResultsSelected" />
+    <OBJECT Class = "ListLink" Name = "Results" />
+    <OBJECT Class = "string" Name = "RunDirection"> &quot;Forward&quot; </OBJECT>
+    <OBJECT Class = "int" Name = "SegmentColor"> 65280 </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "double" Name = "SmallestStep"> 0 sec </OBJECT>
+    <OBJECT Class = "double" Name = "StepSize"> 60 sec </OBJECT>
+    <OBJECT Class = "container" Name = "StoppingConditionsSelected" />
+    <OBJECT Class = "ListLink" Name = "StoppingConditions">
+        <OBJECT Class = "AsStateTrigger" Name = "Duration">
+            <OBJECT Class = "bool" Name = "Active"> True </OBJECT>
+            <OBJECT Class = "container" Name = "BeforeConditionsSelected" />
+            <OBJECT Class = "ListLink" Name = "BeforeConditions" />
+            <OBJECT Class = "AttrCon" Name = "CalcObjectAttributes">
+                <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+                <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+                <OBJECT Class = "string" Name = "Description"> &quot;Duration from an epoch&quot; </OBJECT>
+                <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+                <OBJECT Class = "container" Name = "ShooterControls" />
+                <OBJECT Class = "string" Name = "Type"> &quot;AsStateCalcDuration&quot; </OBJECT>
+                <OBJECT Class = "string" Name = "UserComment"> &quot;Duration from an epoch&quot; </OBJECT>
+                <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "Comment"> &quot;User-supplied comment&quot; </OBJECT>
+            <OBJECT Class = "container" Name = "ConstraintsSelected" />
+            <OBJECT Class = "ListLink" Name = "Constraints" />
+            <OBJECT Class = "string" Name = "Description"> &quot;Stop after a specified duration&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Dimension"> &quot;TimeUnit&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Inherited"> True </OBJECT>
+            <OBJECT Class = "int" Name = "MaxTripTimes"> 10000 </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "link" Name = "Sequence">
+                <OBJECT Class = "string" Name = ""> &quot;STOP&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "double" Name = "Tolerance"> 1e-08 sec </OBJECT>
+            <OBJECT Class = "double" Name = "TripValue"> 43200 sec </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;Duration&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Stop after a specified duration&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "TreeNodeExpanded"> False </OBJECT>
+    <OBJECT Class = "ListLink" Name = "TriggerLog" />
+    <OBJECT Class = "string" Name = "Type"> &quot;Hold&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "UpdateAnimationTimeAfterRunning"> False </OBJECT>
+    <OBJECT Class = "bool" Name = "UsedRegTime"> False </OBJECT>
+    <OBJECT Class = "bool" Name = "UseMaxPropTimeWarn"> True </OBJECT>
+    <OBJECT Class = "bool" Name = "UseMaxPropTime"> True </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Holds state constant in some frame&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

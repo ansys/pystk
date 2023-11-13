@@ -1,0 +1,23 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "EOMFuncWrapper" Name = "MySphericalSRP">
+    <OBJECT Class = "double" Name = "AtmosphereAlt"> 0 m </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;SRP Models&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Spherical solar radiation pressure model&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "IncludeBoundaryMitigation"> False </OBJECT>
+    <OBJECT Class = "double" Name = "Luminosity"> 3.839e+26 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "MeanFlux"> 1365.077876072655 &quot;&quot; </OBJECT>
+    <OBJECT Class = "ListLink" Name = "OtherEclipsingBodies" />
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "ShadowModel"> &quot;Dual Cone&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "SolarForceMethod"> &quot;Use Luminosity&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "SolarRadius"> 695508000 m </OBJECT>
+    <OBJECT Class = "string" Name = "SunPosition"> &quot;ApparentSunToTrueCB&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;SRPSpherical&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Spherical solar radiation pressure model&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "UseSunCbFileValues"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

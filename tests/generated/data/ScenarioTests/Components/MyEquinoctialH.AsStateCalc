@@ -1,0 +1,17 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyEquinoctialH">
+    <OBJECT Class = "string" Name = "Category"> &quot;Equinoctial Elems&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "link" Name = "CoordSystem">
+        <OBJECT Class = "string" Name = ""> &quot;CentralBody/Earth Inertial&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;eccentricity * sin(ascending node right ascension + periapsis argument)&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "ElementType"> &quot;Osculating&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;AgAsStateCalcEquinoctialH&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;eccentricity * sin(ascending node right ascension + periapsis argument)&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

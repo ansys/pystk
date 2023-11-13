@@ -1,0 +1,19 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyAtmosPressure">
+    <OBJECT Class = "link" Name = "AtmosModel">
+        <OBJECT Class = "string" Name = ""> &quot;US_Standard_Atmosphere&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;Environment&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "CentralBody">
+        <OBJECT Class = "string" Name = ""> &quot;Earth&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Atmospheric pressure&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcAtmosPressure&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Atmospheric pressure&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

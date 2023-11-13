@@ -1,0 +1,247 @@
+<?xml version = "1.0" standalone = "yes"?>
+<Component>
+    <Type>ScatteringPointProviderList</Type>
+    <SpecificType>Scattering Point Provider List</SpecificType>
+    <Data>
+        <VAR name = "myScatteringPointProviderList">
+            <SCOPE Class = "ScatteringPointProviderList">
+                <VAR name = "Version">
+                    <STRING>&quot;1.0.0 a&quot;</STRING>
+                </VAR>
+                <VAR name = "IdentifierInformation">
+                    <SCOPE>
+                        <VAR name = "Identifier">
+                            <STRING>&quot;{CDD9DA83-B625-494B-A64D-DF057C6DB874}&quot;</STRING>
+                        </VAR>
+                        <VAR name = "Version">
+                            <STRING>&quot;1&quot;</STRING>
+                        </VAR>
+                        <VAR name = "SdfInformation">
+                            <SCOPE>
+                                <VAR name = "Version">
+                                    <STRING>&quot;0.0&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Url">
+                                    <STRING>&quot;&quot;</STRING>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                        <VAR name = "SourceIdentifierInformation">
+                            <SCOPE>
+                                <VAR name = "Identifier">
+                                    <STRING>&quot;{6EA87FB1-D35B-49B0-BFF5-2BB0D07585B5}&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Version">
+                                    <STRING>&quot;1&quot;</STRING>
+                                </VAR>
+                                <VAR name = "SdfInformation">
+                                    <SCOPE>
+                                        <VAR name = "Version">
+                                            <STRING>&quot;0.0&quot;</STRING>
+                                        </VAR>
+                                        <VAR name = "Url">
+                                            <STRING>&quot;&quot;</STRING>
+                                        </VAR>
+                                    </SCOPE>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </SCOPE>
+                </VAR>
+                <VAR name = "ComponentName">
+                    <STRING>&quot;myScatteringPointProviderList&quot;</STRING>
+                </VAR>
+                <VAR name = "Description">
+                    <STRING>&quot;A list of scattering point providers.&quot;</STRING>
+                </VAR>
+                <VAR name = "Type">
+                    <STRING>&quot;Scattering Point Provider List&quot;</STRING>
+                </VAR>
+                <VAR name = "UserComment">
+                    <STRING>&quot;A list of scattering point providers.&quot;</STRING>
+                </VAR>
+                <VAR name = "ReadOnly">
+                    <BOOL>false</BOOL>
+                </VAR>
+                <VAR name = "Clonable">
+                    <BOOL>true</BOOL>
+                </VAR>
+                <VAR name = "Category">
+                    <STRING>&quot;@Top&quot;</STRING>
+                </VAR>
+                <VAR name = "PointProviderList">
+                    <LIST>
+                        <SCOPE>
+                            <VAR name = "Enabled">
+                                <BOOL>true</BOOL>
+                            </VAR>
+                            <VAR name = "PointProvider">
+                                <VAR name = "Single_Point">
+                                    <SCOPE Class = "LinkEmbedControl">
+                                        <VAR name = "ReferenceType">
+                                            <STRING>&quot;Unlinked&quot;</STRING>
+                                        </VAR>
+                                        <VAR name = "Component">
+                                            <VAR name = "Single_Point">
+                                                <SCOPE Class = "ScatteringPointProvider">
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1.0.0 a&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "IdentifierInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Identifier">
+                                                                <STRING>&quot;{D5B666F8-12A9-4901-9C69-140584F08CC0}&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;1&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "SdfInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Url">
+                                                                        <STRING>&quot;&quot;</STRING>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                            <VAR name = "SourceIdentifierInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Identifier">
+                                                                        <STRING>&quot;{256DA706-1EA3-436C-8785-7E323186E482}&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;1&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "SdfInformation">
+                                                                        <SCOPE>
+                                                                            <VAR name = "Version">
+                                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                                            </VAR>
+                                                                            <VAR name = "Url">
+                                                                                <STRING>&quot;&quot;</STRING>
+                                                                            </VAR>
+                                                                        </SCOPE>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                    <VAR name = "ComponentName">
+                                                        <STRING>&quot;Single_Point&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Description">
+                                                        <STRING>&quot;Single point scattering point provider.&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Type">
+                                                        <STRING>&quot;Single Point&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "UserComment">
+                                                        <STRING>&quot;Single point scattering point provider.&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "ReadOnly">
+                                                        <BOOL>false</BOOL>
+                                                    </VAR>
+                                                    <VAR name = "Clonable">
+                                                        <BOOL>true</BOOL>
+                                                    </VAR>
+                                                    <VAR name = "Category">
+                                                        <STRING>&quot;@Top&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "ScatteringPointModel">
+                                                        <VAR name = "Constant_Coefficient">
+                                                            <SCOPE Class = "LinkEmbedControl">
+                                                                <VAR name = "ReferenceType">
+                                                                    <STRING>&quot;Unlinked&quot;</STRING>
+                                                                </VAR>
+                                                                <VAR name = "Component">
+                                                                    <VAR name = "Constant_Coefficient">
+                                                                        <SCOPE Class = "ScatteringPointModel">
+                                                                            <VAR name = "Version">
+                                                                                <STRING>&quot;1.0.0 a&quot;</STRING>
+                                                                            </VAR>
+                                                                            <VAR name = "IdentifierInformation">
+                                                                                <SCOPE>
+                                                                                    <VAR name = "Identifier">
+                                                                                        <STRING>&quot;{E41227DC-824B-4452-96F3-7457DF98BEED}&quot;</STRING>
+                                                                                    </VAR>
+                                                                                    <VAR name = "Version">
+                                                                                        <STRING>&quot;1&quot;</STRING>
+                                                                                    </VAR>
+                                                                                    <VAR name = "SdfInformation">
+                                                                                        <SCOPE>
+                                                                                            <VAR name = "Version">
+                                                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                                                            </VAR>
+                                                                                            <VAR name = "Url">
+                                                                                                <STRING>&quot;&quot;</STRING>
+                                                                                            </VAR>
+                                                                                        </SCOPE>
+                                                                                    </VAR>
+                                                                                    <VAR name = "SourceIdentifierInformation">
+                                                                                        <SCOPE>
+                                                                                            <VAR name = "Identifier">
+                                                                                                <STRING>&quot;{B5AAA4A1-F9E6-4347-84C1-08485C04C016}&quot;</STRING>
+                                                                                            </VAR>
+                                                                                            <VAR name = "Version">
+                                                                                                <STRING>&quot;1&quot;</STRING>
+                                                                                            </VAR>
+                                                                                            <VAR name = "SdfInformation">
+                                                                                                <SCOPE>
+                                                                                                    <VAR name = "Version">
+                                                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                                                    </VAR>
+                                                                                                    <VAR name = "Url">
+                                                                                                        <STRING>&quot;&quot;</STRING>
+                                                                                                    </VAR>
+                                                                                                </SCOPE>
+                                                                                            </VAR>
+                                                                                        </SCOPE>
+                                                                                    </VAR>
+                                                                                </SCOPE>
+                                                                            </VAR>
+                                                                            <VAR name = "ComponentName">
+                                                                                <STRING>&quot;Constant_Coefficient&quot;</STRING>
+                                                                            </VAR>
+                                                                            <VAR name = "Description">
+                                                                                <STRING>&quot;A constant coefficient scattering model.&quot;</STRING>
+                                                                            </VAR>
+                                                                            <VAR name = "Type">
+                                                                                <STRING>&quot;Constant Coefficient&quot;</STRING>
+                                                                            </VAR>
+                                                                            <VAR name = "UserComment">
+                                                                                <STRING>&quot;A constant coefficient scattering model.&quot;</STRING>
+                                                                            </VAR>
+                                                                            <VAR name = "ReadOnly">
+                                                                                <BOOL>false</BOOL>
+                                                                            </VAR>
+                                                                            <VAR name = "Clonable">
+                                                                                <BOOL>true</BOOL>
+                                                                            </VAR>
+                                                                            <VAR name = "Category">
+                                                                                <STRING>&quot;@Top&quot;</STRING>
+                                                                            </VAR>
+                                                                            <VAR name = "ClutterCoefficient">
+                                                                                <QUANTITY Dimension = "RatioUnit" Unit = "units">
+                                                                                    <REAL>1</REAL>
+                                                                                </QUANTITY>
+                                                                            </VAR>
+                                                                        </SCOPE>
+                                                                    </VAR>
+                                                                </VAR>
+                                                            </SCOPE>
+                                                        </VAR>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                        </VAR>
+                                    </SCOPE>
+                                </VAR>
+                            </VAR>
+                        </SCOPE>
+                    </LIST>
+                </VAR>
+            </SCOPE>
+        </VAR>
+    </Data>
+</Component>

@@ -1,0 +1,19 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "lambda1Realb">
+    <OBJECT Class = "string" Name = "Category"> &quot;STM Eigenvalues&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "link" Name = "CoordSystem">
+        <OBJECT Class = "string" Name = ""> &quot;CentralBody/Earth Inertial&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;The real component of the first Eigenvalue of the STM.&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "EigenvalueNumber"> &quot;lambda1&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "EigenvalueReal"> &quot;real&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "int" Name = "STKVersion"> 1210 </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;AsStateCalcSTMEigenvalue1Real&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;The real component of the first Eigenvalue of the STM.&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

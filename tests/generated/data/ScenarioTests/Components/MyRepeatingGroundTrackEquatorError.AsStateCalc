@@ -1,0 +1,18 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyRepeatingGroundTrackEquatorError">
+    <OBJECT Class = "string" Name = "Category"> &quot;Ground Track&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "CentralBody">
+        <OBJECT Class = "string" Name = ""> &quot;Earth&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Repeating Ground Track Error to be measured at the equator (as a distance)&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "double" Name = "ReferenceLongitude"> 0 rad </OBJECT>
+    <OBJECT Class = "double" Name = "Repeat_Count"> 255 &quot;&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcRepGrTrackErr&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Repeating Ground Track Error to be measured at the equator (as a distance)&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

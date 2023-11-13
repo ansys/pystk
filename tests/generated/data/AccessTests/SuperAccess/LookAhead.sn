@@ -1,0 +1,132 @@
+stk.v.6.0
+
+BEGIN Sensor
+
+    Name            LookAhead
+
+BEGIN Pattern
+
+    BEGIN Conical
+
+        InnerConeAngle         0.000000000000e+000
+        OuterConeAngle         9.000000000000e+001
+        MinClockAngle          0.000000000000e+000
+        MaxClockAngle          3.600000000000e+002
+
+    END Conical
+
+END Pattern
+
+BEGIN Pointing
+
+    BEGIN Fixed
+
+    PointingMethod          AzEl
+    Sequence                323
+    Qx                      0.000000000000e+000
+    Qy                      7.071067811865e-001
+    Qz                      0.000000000000e+000
+    Qs                      7.071067811865e-001
+
+    END Fixed
+
+END Pointing
+
+BEGIN Optics
+
+    FocalLength             0.000000000000e+000
+    DetectorPitch           0.000000000000e+000
+    IQConstant              0.000000000000e+000
+    GsdCoefficient          0.000000000000e+000
+
+END Optics
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+		BEGIN Attributes
+
+			Inherit             Yes
+			Show                Yes
+			LineStyle           0
+			LineWidth           1.000000
+			PatternColor        #4169e1
+
+		END Attributes
+
+		BEGIN Display
+
+			NumberOfPatterns        1
+			PersistenceDuration     0.000000000000e+000
+			MinDisplayAltitude      0.000000000000e+000
+			MaxDisplayAltitude      1.000000000000e+007
+			IntersectType           CentralBody
+			ForwardPersist          No
+			SpaceLength             5.000000000000e+007
+			TgtExtLength            0.000000000000e+000
+			FOVHalfAngle            No
+			HalfAngle               0.000000000000e+000
+			FOV                     No
+			ProjDisplay             Sphere
+			DisplayType             ConstantRadius
+			TerrainNorth            0.000000000000e+000
+			TerrainSouth            0.000000000000e+000
+			TerrainEast             0.000000000000e+000
+			TerrainWest             0.000000000000e+000
+			DisplayFOVWithConstraints           No
+			ShowBoresight           No
+			BoresightMarker         4
+			BoresightColor          7
+
+		END Display
+    END Graphics
+    
+    BEGIN Swath
+        ShowSwath    No
+        Color        #00ffff
+        LineStyle    0
+        LineWidth    1.000000
+    END Swath
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		AtFieldOfView   IncludeIntervals 
+		FieldOfView   IncludeIntervals 
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN ObjectCoverage
+    END ObjectCoverage
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN Refraction
+		RefractionModel	4/3 Earth Radius Method
+    END Refraction
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN DIS
+    END DIS
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+BEGIN SubObjects
+
+END SubObjects
+
+END Sensor
+

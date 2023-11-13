@@ -1,0 +1,20 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyValueAtSegment">
+    <OBJECT Class = "link" Name = "CalcObject">
+        <OBJECT Class = "string" Name = ""> &quot;Epoch&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;Segments&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Value of a specified function at another segment&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "OtherSegment">
+        <OBJECT Class = "string" Name = ""> &quot;-Not Set-&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "SegmentStateToUse"> &quot;Final&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcValueOtherSegment&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Value of a specified function at another segment&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

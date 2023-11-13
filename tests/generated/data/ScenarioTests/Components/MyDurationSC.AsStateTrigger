@@ -1,0 +1,37 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateTrigger" Name = "MyDurationSC">
+    <OBJECT Class = "bool" Name = "Active"> True </OBJECT>
+    <OBJECT Class = "container" Name = "BeforeConditionsSelected" />
+    <OBJECT Class = "ListLink" Name = "BeforeConditions" />
+    <OBJECT Class = "AttrCon" Name = "CalcObjectAttributes">
+        <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+        <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+        <OBJECT Class = "string" Name = "Description"> &quot;Duration from an epoch&quot; </OBJECT>
+        <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+        <OBJECT Class = "container" Name = "ShooterControls" />
+        <OBJECT Class = "string" Name = "Type"> &quot;AsStateCalcDuration&quot; </OBJECT>
+        <OBJECT Class = "string" Name = "UserComment"> &quot;Duration from an epoch&quot; </OBJECT>
+        <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Comment"> &quot;User-supplied comment&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "ConstraintsSelected" />
+    <OBJECT Class = "ListLink" Name = "Constraints" />
+    <OBJECT Class = "string" Name = "Description"> &quot;Stop after a specified duration&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Dimension"> &quot;TimeUnit&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Inherited"> True </OBJECT>
+    <OBJECT Class = "int" Name = "MaxTripTimes"> 10000 </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "link" Name = "Sequence">
+        <OBJECT Class = "string" Name = ""> &quot;STOP&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "double" Name = "Tolerance"> 1e-08 sec </OBJECT>
+    <OBJECT Class = "double" Name = "TripValue"> 43200 sec </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Duration&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Stop after a specified duration&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

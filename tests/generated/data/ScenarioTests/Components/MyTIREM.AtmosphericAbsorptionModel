@@ -1,0 +1,20 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AtmosphericAbsorptionModel" Name = "MyTIREM">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyTIREM&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;TIREM 3.31 (Terrain Integrated Rough Earth Model) gaseous absorption model&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "OverrideTerrainSampleResolution"> False </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "double" Name = "RelativePermittivity"> 15 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "SurfaceConductivity"> 0.005 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "SurfaceHumidity"> 64 g*m^-3 </OBJECT>
+    <OBJECT Class = "double" Name = "SurfaceRefractivity"> 310 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "Temperature"> 273.15 K </OBJECT>
+    <OBJECT Class = "double" Name = "TerrainSampleResolution"> 100 m </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;TIREM 3.31&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;TIREM 3.31 (Terrain Integrated Rough Earth Model) gaseous absorption model&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.1 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

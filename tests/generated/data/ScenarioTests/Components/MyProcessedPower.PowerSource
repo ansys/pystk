@@ -1,0 +1,18 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "PowerSource" Name = "MyProcessedPower">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Power available from a power processing unit (PPU)&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "Efficiency"> 0.9 &quot;&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "InputPowerSource">
+        <OBJECT Class = "string" Name = ""> &quot;SolarArrayPower&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "double" Name = "Load"> 100 W </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgPowerPPU&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Power available from a power processing unit (PPU)&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

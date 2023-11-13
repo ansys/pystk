@@ -1,0 +1,18 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyRefRad">
+    <OBJECT Class = "string" Name = "Category"> &quot;Constants&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "CentralBody">
+        <OBJECT Class = "string" Name = ""> &quot;Earth&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Reference radius of a central body&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "GravityFile"> &quot;STKData\CentralBodies\Earth\WGS84_EGM96.grv&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "RefRadSource"> &quot;Cb File&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;AsStateCalcRefRad&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Reference radius of a central body&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

@@ -1,0 +1,31 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "EOMFuncWrapper" Name = "MyJacchia1960">
+    <OBJECT Class = "string" Name = "Category"> &quot;Atmospheric Models&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Drag with Jacchia 1960 Atmospheric Density Model&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "DragModelPlugin">
+        <OBJECT Class = "DragPluginFunc" Name = "Drag_Model_Plugin">
+            <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;Drag model that uses a COM interface to compute effective drag area and direction&quot; </OBJECT>
+            <OBJECT Class = "AttrCon" Name = "PluginConfig" />
+            <OBJECT Class = "string" Name = "PluginIdentifier"> &quot;&lt;servername&gt;.&lt;objectname&gt;.&lt;version&gt;&quot; </OBJECT>
+            <OBJECT Class = "ListLink" Name = "PluginParameters" />
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "string" Name = "Type"> &quot;DragPluginFunc&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Drag model that uses a COM interface to compute effective drag area and direction&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "DragModelType"> &quot;Spherical&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "SunPosition"> &quot;ApparentSunToTrueCB&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Jacchia_1960&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "UseApproximateAltitude"> True </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Drag with Jacchia 1960 Atmospheric Density Model&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

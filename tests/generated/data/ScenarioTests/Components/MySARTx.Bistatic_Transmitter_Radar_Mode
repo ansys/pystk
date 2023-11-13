@@ -1,0 +1,30 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Bistatic Transmitter Radar Mode" Name = "MySARTx">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MySARTx&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;SAR&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;SAR&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;SAR&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+    <OBJECT Class = "AttrCon" Name = "Waveform">
+        <OBJECT Class = "AttrCon" Name = "Modulator">
+            <OBJECT Class = "int" Name = "PSDLimitMultiplier"> 15 </OBJECT>
+            <OBJECT Class = "bool" Name = "UseSignalPSD"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "AttrCon" Name = "PulseDefinition">
+            <OBJECT Class = "double" Name = "IfBandwidth"> 100000000 Hz </OBJECT>
+            <OBJECT Class = "int" Name = "NumberOfPulses"> 20 </OBJECT>
+            <OBJECT Class = "string" Name = "PrfMode"> &quot;PRF&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "PRF"> 1000 Hz </OBJECT>
+            <OBJECT Class = "string" Name = "PulseCompressionRatioMode"> &quot;Pulse Compression Ratio&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "PulseCompressionRatio"> 1000 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "RangeBroadeningFactor"> 1.2 &quot;&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "RangeResolutionMode"> &quot;Range Resolution&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "RangeResolution"> 10 m </OBJECT>
+        </OBJECT>
+    </OBJECT>
+</OBJECT>
+</STKOBJECT>

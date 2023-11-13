@@ -1,0 +1,17 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyScalar">
+    <OBJECT Class = "string" Name = "Category"> &quot;Scalar&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Scalar calculation component&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "link" Name = "Scalar">
+        <OBJECT Class = "string" Name = ""> &quot;None&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcScalar&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UnitDimension"> &quot;Unitless&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Scalar calculation component&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

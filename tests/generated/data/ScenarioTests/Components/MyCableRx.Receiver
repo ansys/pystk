@@ -1,0 +1,16 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Receiver" Name = "MyCableRx">
+    <OBJECT Class = "double" Name = "BER"> 1e-30 &quot;&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyCableRx&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Cable model of a receiver&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "ExtraCableFactor"> 0 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "PropagationSpeedFactor"> 1 &quot;&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Cable Receiver Model&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Cable model of a receiver&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

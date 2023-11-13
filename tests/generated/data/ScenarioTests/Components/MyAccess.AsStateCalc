@@ -1,0 +1,24 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyAccess">
+    <OBJECT Class = "string" Name = "AberrationType"> &quot;Annual&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "BaseSelection"> &quot;Use Current Satellite&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;Access&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "ClockHost"> &quot;Base&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComputeMode"> &quot;Satisfaction&quot; </OBJECT>
+    <OBJECT Class = "int" Name = "ConstraintIndex"> 0 </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Access between objects&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "SignalSense"> &quot;Transmit&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "TargetObject">
+        <OBJECT Class = "string" Name = ""> &quot;&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "double" Name = "TimeDelayConvergenceTolerance"> 5e-05 sec </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;AgAsStateCalc1PtAccess&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "UseLightTimeDelay"> True </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Access between objects&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>
