@@ -48,7 +48,8 @@ tox -e docker-build-linux_images
 This will result in the following images:
 
 ```bash
-(.venv) pystk$ docker images
+~$ docker images
+
 REPOSITORY   TAG                         IMAGE ID       CREATED          SIZE
 ansys/stk    latest-centos7-python3.8    bffb1a81b5ba   31 seconds ago   2.75GB
 ansys/stk    latest-centos7-python3.10   f045f5453c31   43 seconds ago   2.77GB
@@ -56,7 +57,6 @@ ansys/stk    latest-centos7-python3.9    48c6275abedb   49 seconds ago   2.76GB
 ansys/stk    latest-centos7-pybase       85117878fee1   2 minutes ago    3.22GB
 ansys/stk    latest-centos7              bf55f684403c   6 minutes ago    2.37GB
 centos       7                           f87a3c43c945   10 minutes ago   205MB
-(.venv) pystk$
 ```
 ## Running an STK container with Tox
 
