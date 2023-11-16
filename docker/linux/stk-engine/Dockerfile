@@ -9,6 +9,9 @@ RUN set -e; \
     mkdir -p /stk; \
     find /tmp -name stk*.tgz -exec tar -zxf {} --strip-components=1 -C /stk \;
 
+# Copy shared library to enable Code 500 Ephemeris file format support
+RUN mkdir -p /stk/Modules && cp -f /stk/bin/libagascode500.so /stk/Modules/
+
 # Reduce image size by removing unnecessary components
 RUN set -e; \
     rm -rf /stk/Data/ExampleScenarios/; \
