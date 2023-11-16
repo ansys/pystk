@@ -9,9 +9,14 @@ RUN set -e; \
     mkdir -p /stk; \
     find /tmp -name stk*.tgz -exec tar -zxf {} --strip-components=1 -C /stk \;
 
-# Reduce image size by removing unnecessary components
+# Copy shared library to enable Code 500 Ephemeris file format support
+# which is used by some of the tests
+RUN mkdir -p /stk/Modules && cp -f /stk/bin/libagascode500.so /stk/Modules/
+
+# Reduce image size by removing unnecessary components but keep 
+# Intro_STK_Aircraft_Systems.vdf as it is required to run the tests
 RUN set -e; \
-    rm -rf /stk/Data/ExampleScenarios/; \
+    find /stk/Data/ExampleScenarios/ -type f -not -name 'Intro_STK_Aircraft_Systems.vdf' -exec rm -rf {} \;; \
     rm -rf /stk/Data/HtmlInterface/; \
     rm -rf /stk/Data/HtmlUtilities/; \
     rm -rf /stk/Data/LicAndReg/; \
