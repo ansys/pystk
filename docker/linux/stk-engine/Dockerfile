@@ -34,7 +34,9 @@ LABEL ANSYSLMD_LICENSE_FILE='Specifies the location of the Ansys Licensing Serve
 ENV STK_USER_HOME=/home/stk
 
 # Setup non-root STK user
-RUN useradd -ms /bin/bash stk
+RUN set -e; \
+    useradd -ms /bin/bash stk; \
+    yum -y install libgfortran5
 
 # Switch to STK user
 WORKDIR "${STK_USER_HOME}"
