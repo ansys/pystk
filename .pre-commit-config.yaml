@@ -1,7 +1,7 @@
 repos:
 
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.1.2
+  rev: v0.1.6
   hooks:
     - id: ruff
       args: [--fix]
@@ -10,5 +10,4 @@ repos:
   rev: v2.2.6
   hooks:
   - id: codespell
-    additional_dependencies:
-      - tomli
+    args: ["--ignore-words='doc/styles/Vocab/ANSYS/accept.txt'",  "--skip='./tests,./doc/_build,./doc/styles'"]

@@ -57,37 +57,38 @@ Tracker = "https://github.com/pyansys/pystk/issues"
 [tool.ruff]
 line-length = 120
 select = [
-    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
-    "D",    # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
-    "F",    # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
-    "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
-    "N",    # pep8-naming, see https://beta.ruff.rs/docs/rules/#pep8-naming-n
-    "PTH",  # flake8-use-pathlib, https://beta.ruff.rs/docs/rules/#flake8-use-pathlib-pth
+#    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
+#    "D",    # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
+#    "F",    # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
+#    "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
+#    "N",    # pep8-naming, see https://beta.ruff.rs/docs/rules/#pep8-naming-n
+#    "PTH",  # flake8-use-pathlib, https://beta.ruff.rs/docs/rules/#flake8-use-pathlib-pth
 ]
 ignore = [
-    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
-    "D203",  # One blank line required before class docstring.
-    "D204"  # One blank line required after class docstring.
+#    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
+#    "D203",  # One blank line required before class docstring.
+#    "D204"  # One blank line required after class docstring.
 ]
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
     "tests/**/*.py",
 ]
 
-[tool.ruff.format]
-quote-style = "single"
-indent-style = "tab"
+# [tool.ruff.format]
+# quote-style = "single"
+# indent-style = "tab"
 
-[tool.ruff.isort]
-combine-as-imports = true
-force-sort-within-sections = true
-known-first-party = ["ansys"]
+# [tool.ruff.isort]
+# combine-as-imports = true
+# force-sort-within-sections = true
+# known-first-party = ["ansys"]
 
-[tool.codespell]
-ignore-words = "doc/styles/Vocab/ANSYS/accept.txt"
-
-[tool.ruff.mccabe]
-max-complexity = 10
+# TODO: the following configuration has no effect, see issue
+# https://github.com/codespell-project/codespell/issues/2375
+# At the moment, all codespell configuration is done in the pre-commit file.
+# [tool.codespell]
+# skip = './src/ansys/stk/core/internal,./tests,./doc/_build,./doc/styles'
+# ignore-words = "./doc/styles/Vocab/ANSYS/accept.txt"
 
 [tool.coverage.run]
 relative_files = true
