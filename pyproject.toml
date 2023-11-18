@@ -86,6 +86,8 @@ extend-exclude = [
 # TODO: the following configuration has no effect, see issue
 # https://github.com/codespell-project/codespell/issues/2375
 # At the moment, all codespell configuration is done in the pre-commit file.
+# Run: `pre-commit run codespell --all-files --show-diff-on-failure` to recreate
+# the conditions under which codespell runs during CI/CD.
 # [tool.codespell]
 # skip = './src/ansys/stk/core/internal,./tests,./doc/_build,./doc/styles'
 # ignore-words = "./doc/styles/Vocab/ANSYS/accept.txt"
