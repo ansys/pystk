@@ -10,6 +10,15 @@ repos:
   rev: v2.2.6
   hooks:
   - id: codespell
-    #args: ["--ignore-words='doc/styles/Vocab/ANSYS/accept.txt'",  "--skip='./tests,./doc/_build,./doc/styles'"]
-    additional_dependencies:
-      - tomli
+    # HACK: pre-commit is used during the code-style job in CI/CD. This job
+    # executes `pre-commit run --all-files --show-diff-on-failure`.
+    # As per this issue https://github.com/pre-commit/pre-commit/issues/2936,
+    # it looks like the `--all-files` only listens for the `exclude` option in a
+    # pre-commit hook, ignoring `pyproject.toml` excludes.
+    exclude: ^(src/ansys/stk/core/internal/|tests/|doc/_build|doc/styles/)
+    args: [--ignore-words=./doc/styles/Vocab/ANSYS/accept.txt]
+    # TODO: pre-commit seems to ignore the configuration declared for codespell
+    # in the `pyproject.toml` file. For more details, see `[tool.codespell]` in
+    # the `pyproject.toml` file.
+    # additional_dependencies:
+    #   - tomli
