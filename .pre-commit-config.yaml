@@ -10,4 +10,6 @@ repos:
   rev: v2.2.6
   hooks:
   - id: codespell
-    args: ["--ignore-words='doc/styles/Vocab/ANSYS/accept.txt'",  "--skip='./tests,./doc/_build,./doc/styles'"]
+    #args: ["--ignore-words='doc/styles/Vocab/ANSYS/accept.txt'",  "--skip='./tests,./doc/_build,./doc/styles'"]
+    additional_dependencies:
+      - tomli
