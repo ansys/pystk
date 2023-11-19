@@ -30,6 +30,7 @@ RUN yum -y install xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
     yum -y install mesa-dri-drivers mesa-libGLU; \
     yum -y install glxinfo; \
     yum -y install tk; \
+    yum -y install dos2unix; \
     yum clean all;
 
 # Set the display environment variable to allow GUI applications
@@ -53,5 +54,6 @@ ENV PATH="${STK_USER_HOME}/.local/bin:${PATH}" \
 
 # Use the entrypoint script
 COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
-RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
+    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 ENTRYPOINT [ "docker-entrypoint.sh" ]
