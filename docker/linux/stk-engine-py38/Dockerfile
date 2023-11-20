@@ -41,14 +41,14 @@ COPY --from=builder /usr/local/bin/python3.8 /usr/local/bin/python3.8
 COPY --from=builder /usr/local/lib/python3.8 /usr/local/lib/python3.8 
 COPY --from=builder /usr/local/bin/pip3.8 /usr/local/bin/pip3.8 
 
-RUN ln -sfn /usr/local/bin/python3.8 /usr/bin/python && \
-    ln -sfn /usr/local/bin/pip3.8 /usr/bin/pip
+RUN ln -sfn /usr/local/bin/python3.8 /usr/local/bin/python && \
+    ln -sfn /usr/local/bin/pip3.8 /usr/local/bin/pip
 
 # Switch back to non-root user
 USER stk
 
 # Update the path to include Python executables
-ENV PATH="${STK_USER_HOME}/.local/bin:${PATH}" \
+ENV PATH="/usr/local/bin:${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_DEFAULT_TIMEOUT=600 \
     PIP_RETRY=50
 
