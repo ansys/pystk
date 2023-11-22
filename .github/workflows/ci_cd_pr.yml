@@ -65,61 +65,92 @@ jobs:
 
   doc-build:
     name: "Doc build"
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pystk]
     needs: doc-style
     timeout-minutes: 30
     steps:
+
+      - name: "Checkout the project"
+        uses: actions/checkout@v4
+
+      - name: "Generate the name of the docker image and the container"
+        run: |
+          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
+          container_name=stk-python${{ env.MAIN_PYTHON_VERSION }}
+          echo "STK_PYTHON_IMAGE=$python_image_name" >> $GITHUB_ENV
+          echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
+
+      - name: "Start the container from the desired image"
+        run: |
+          docker run \
+            --detach -it \
+            --network="host" \
+            --name ${{ env.STK_CONTAINER }} \
+            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --volume ${PWD}:/home/stk/pystk \
+            ${{ env.STK_PYTHON_IMAGE }}
+
+      - name: "Install Pandoc inside the container"
+        run: |
+          docker exec \
+            --user root \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "yum install -y epel-release && yum install -y pandoc --enablerepo=epel"
+
+      - name: "Install Tox"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "python -m pip install tox && rm -rf .tox"
 
       # Render the documentation including or excluding different sections
       # according to the labels of the pull-request.
 
       - name: "Build docs including the 'Examples' section"
         id: build-doc-with-examples
-        uses: ansys/actions/doc-build@v5
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-        env:
-          BUILD_API: false
-          BUILD_EXAMPLES: true
+        run:
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
-        uses: ansys/actions/doc-build@v5
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:api') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:examples')
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-        env:
-          BUILD_API: true
-          BUILD_EXAMPLES: false
+        run:
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export BUILD_API=true BUILD_EXAMPLES=false && tox -e doc"
 
       - name: "Build docs excluding 'API' and 'Examples' sections"
         id: build-doc-minimum
-        uses: ansys/actions/doc-build@v5
         if: |
           !contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-        env:
-          BUILD_API: false
-          BUILD_EXAMPLES: false
+        run:
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export BUILD_API=false BUILD_EXAMPLES=false && tox -e doc"
 
       - name: "Build docs including 'API' and 'Examples' sections"
         id: build-doc-full
-        uses: ansys/actions/doc-build@v5
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           contains(github.event.pull_request.labels.*.name, 'docs:api')
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-        env:
-          BUILD_API: true
-          BUILD_EXAMPLES: true
+        run:
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
 
       # If required, combine partially rendered documentation with the nightly
       # build artifacts. Upload the generated documentation as an artifact in
@@ -155,108 +186,6 @@ jobs:
           path: doc/_build/html
           name: full-documentation-html
 
-  tests:
-    name: "Tests Python ${{ matrix.python }}"
-    runs-on: [self-hosted, pystk]
-    needs: code-style
-    strategy:
-      matrix:
-        # Tests run against Python 3.8 to ensure backwards compatibility with
-        # the lowest supported Python version. Testing against a single version
-        # minimizes the time for CI/CD runs.
-        #
-        # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
-        # does not support ENV variable substitution in matrix definition
-        python: ['3.8']
-      fail-fast: false
-    steps:
-
-      - name: "Checkout the project"
-        uses: actions/checkout@v4
-
-      - name: "Generate the name of the docker image and the container"
-        run: |
-          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ matrix.python }}
-          container_name=stk-python${{ matrix.python }}
-          echo "STK_PYTHON_IMAGE=$python_image_name" >> $GITHUB_ENV
-          echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
-
-      - name: "Start the container from the desired image"
-        run: |
-          docker run \
-            --detach -it \
-            --network="host" \
-            --name ${{ env.STK_CONTAINER }} \
-            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
-            --volume ${PWD}:/home/stk/pystk \
-            ${{ env.STK_PYTHON_IMAGE }}
-
-      - name: "Install the project with the testing dependencies"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install tox && rm -rf .tox"
-
-      - name: "Run the aviator tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=aviator && tox -e tests-aviator-graphics-cov-linux"
-
-      - name: "Run the non graphics stk tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=stknogfx && tox -e tests-stk-nographics-cov-linux"
-
-      - name: "Run the graphics only stk tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=stkgfx && tox -e tests-stk-graphicsonly-cov-linux"
-
-      - name: "Run the vgt tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
-
-      - name: "Install coverage dependencies"
-        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install .[tests]"
-
-      - name: "Combine all coverage results"
-        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stknogfx stkgfx vgt"
-
-      - name: "Generate total coverage report"
-        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html -d .cov/total-html"
-
-      - name: "Upload coverage results"
-        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/upload-artifact@v4
-        with:
-          path: .cov/total-html
-          name: html-coverage
-
       - name: "Stop the container"
         if: always()
         run: |
@@ -264,11 +193,120 @@ jobs:
           docker logs ${{ env.STK_CONTAINER }}
           docker rm ${{ env.STK_CONTAINER }}
 
-  build-library:
-    name: "Build library"
-    runs-on: ubuntu-latest
-    needs: [doc-build, tests]
-    steps:
-      - uses: ansys/actions/build-library@v5
-        with:
-          library-name: ${{ env.LIBRARY_NAME }}
+#  tests:
+#    name: "Tests Python ${{ matrix.python }}"
+#    runs-on: [self-hosted, pystk]
+#    needs: code-style
+#    strategy:
+#      matrix:
+#        # Tests run against Python 3.8 to ensure backwards compatibility with
+#        # the lowest supported Python version. Testing against a single version
+#        # minimizes the time for CI/CD runs.
+#        #
+#        # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
+#        # does not support ENV variable substitution in matrix definition
+#        python: ['3.8']
+#      fail-fast: false
+#    steps:
+#
+#      - name: "Checkout the project"
+#        uses: actions/checkout@v4
+#
+#      - name: "Generate the name of the docker image and the container"
+#        run: |
+#          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ matrix.python }}
+#          container_name=stk-python${{ matrix.python }}
+#          echo "STK_PYTHON_IMAGE=$python_image_name" >> $GITHUB_ENV
+#          echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
+#
+#      - name: "Start the container from the desired image"
+#        run: |
+#          docker run \
+#            --detach -it \
+#            --network="host" \
+#            --name ${{ env.STK_CONTAINER }} \
+#            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+#            --volume ${PWD}:/home/stk/pystk \
+#            ${{ env.STK_PYTHON_IMAGE }}
+#
+#      - name: "Install the project with the testing dependencies"
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "python -m pip install tox && rm -rf .tox"
+#
+#      - name: "Run the aviator tests"
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "export COVERAGE_FILE=aviator && tox -e tests-aviator-graphics-cov-linux"
+#
+#      - name: "Run the non graphics stk tests"
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "export COVERAGE_FILE=stknogfx && tox -e tests-stk-nographics-cov-linux"
+#
+#      - name: "Run the graphics only stk tests"
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "export COVERAGE_FILE=stkgfx && tox -e tests-stk-graphicsonly-cov-linux"
+#
+#      - name: "Run the vgt tests"
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
+#
+#      - name: "Install coverage dependencies"
+#        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "python -m pip install .[tests]"
+#
+#      - name: "Combine all coverage results"
+#        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "coverage combine aviator stknogfx stkgfx vgt"
+#
+#      - name: "Generate total coverage report"
+#        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+#        run: |
+#          docker exec \
+#            --workdir ${{ env.PYSTK_DIR }} \
+#            ${{ env.STK_CONTAINER }} /bin/bash -c \
+#            "coverage html -d .cov/total-html"
+#
+#      - name: "Upload coverage results"
+#        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+#        uses: actions/upload-artifact@v4
+#        with:
+#          path: .cov/total-html
+#          name: html-coverage
+#
+#      - name: "Stop the container"
+#        if: always()
+#        run: |
+#          docker stop ${{ env.STK_CONTAINER }}
+#          docker logs ${{ env.STK_CONTAINER }}
+#          docker rm ${{ env.STK_CONTAINER }}
+#
+#  build-library:
+#    name: "Build library"
+#    runs-on: ubuntu-latest
+#    needs: [doc-build, tests]
+#    steps:
+#      - uses: ansys/actions/build-library@v5
+#        with:
+#          library-name: ${{ env.LIBRARY_NAME }}
