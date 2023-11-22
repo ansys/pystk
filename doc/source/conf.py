@@ -149,6 +149,9 @@ else:
     nbsphinx_custom_formats = {
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
     }
+    nbsphinx_thumbnails = {
+        "examples/applications/hohmann-transfer-using-targeter/index": "./_static/thumbnails/hohmann-transfer-using-targeter.png",
+    }
 
 # -- Jinja context configuration ---------------------------------------------
 jinja_contexts = {
