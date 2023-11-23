@@ -113,7 +113,7 @@ jobs:
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
-        run:
+        run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
@@ -124,7 +124,7 @@ jobs:
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:api') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:examples')
-        run:
+        run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
@@ -135,7 +135,7 @@ jobs:
         if: |
           !contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
-        run:
+        run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
@@ -146,7 +146,7 @@ jobs:
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           contains(github.event.pull_request.labels.*.name, 'docs:api')
-        run:
+        run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
