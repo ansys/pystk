@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Hohmann trasfer using targeter
+# Hohmann transfer using targeter
 
 This example provides a practical example of how to leverage STK with [Tkinter](https://docs.python.org/es/3/library/tkinter.html), a Python library for creating graphical user interfaces, to solve a Hohmann transfer problem.
 
