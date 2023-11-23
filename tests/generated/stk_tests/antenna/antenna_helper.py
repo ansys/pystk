@@ -2570,7 +2570,7 @@ class AntennaHelper(object):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             asciiFile.filename = r"C:\bogus.vbs"
-        with pytest.raises(Exception, match=RegexSubstringMatch("Error File Type")):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error file type")):
             asciiFile.filename = r"ChainTest\ChainTest.sc"
         if IsBeamDirection:
             # Beam Direction Provider
@@ -3014,7 +3014,7 @@ class AntennaHelper(object):
         asciiFile: "BeamformerAsciiFile" = clr.CastAs(phasedArray.beamformer, BeamformerAsciiFile)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             asciiFile.filename = r"C:\bogus.vbs"
-        with pytest.raises(Exception, match=RegexSubstringMatch("Error File Type")):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error file type")):
             asciiFile.filename = r"ChainTest\ChainTest.sc"
         asciiFile.filename = TestBase.GetScenarioFile("CommRad", "weights_7El2-8.ewf")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "weights_7El2-8.ewf"), asciiFile.filename)
