@@ -117,7 +117,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=false BUILD_EXAMPLES=true && xvfb-run tox -e doc"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
@@ -150,7 +150,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=true BUILD_EXAMPLES=true && xvfb-run tox -e doc"
 
       # If required, combine partially rendered documentation with the nightly
       # build artifacts. Upload the generated documentation as an artifact in
