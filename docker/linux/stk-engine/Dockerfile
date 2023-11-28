@@ -13,8 +13,18 @@ RUN set -e; \
 # which is used by some of the tests
 RUN mkdir -p /stk/Modules && cp -f /stk/bin/libagascode500.so /stk/Modules/
 
-# Reduce image size by removing unnecessary components but keep 
-# Intro_STK_Aircraft_Systems.vdf as it is required to run the tests
+# Reduce image size by removing unnecessary components 
+#
+# Keep Intro_STK_Aircraft_Systems.vdf as it is required to
+# run sone of the tests
+# If this VDF is not needed in your use case, replace the
+# find command with:
+#     rm -rf /stk/Data/ExampleScenarios/
+#
+# Also keep the VO directory as it is required to run the
+# 2D and 3D tests
+# If the VO directory is not needed in your use case, add:
+#     rm -rf /stk/STKData/VO; \
 RUN set -e; \
     find /stk/Data/ExampleScenarios/ -type f -not -name 'Intro_STK_Aircraft_Systems.vdf' -exec rm -rf {} \;; \
     rm -rf /stk/Data/HtmlInterface/; \
@@ -22,7 +32,6 @@ RUN set -e; \
     rm -rf /stk/Data/LicAndReg/; \
     rm -rf /stk/Data/Resources/; \
     rm -rf /stk/Data/Viewer/; \
-    rm -rf /stk/STKData/VO; \
     rm -rf /stk/licensingclient/linx64/ClientSettings
 
 # Set the base image for the next stage
