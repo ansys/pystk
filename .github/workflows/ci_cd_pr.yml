@@ -157,8 +157,7 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    # needs: code-style
-    needs: branch-name-style
+    needs: code-style
     strategy:
       matrix:
         # Tests run against Python 3.8 to ensure backwards compatibility with

@@ -98,13 +98,25 @@ Here are a few additional examples:
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
+- Running the Aviator tests with graphics:
+    ```console
+    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    ```
 - Running the VGT tests in no graphics mode:
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
+- Running the VGT tests with graphics:
+    ```console
+    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    ```
 - Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
     ```
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
+    ```
+- Running the STK tests with graphics:
+    ```console
+    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
 
 ## Launching Jupyter Lab with Tox
@@ -118,7 +130,21 @@ tox -f docker-lab-linux_container-{py38,py39,py310}
 In the previous command, you need to select the Python version you want to
 use, for instance `tox -f docker-lab-linux_container-py310` will start a Linux container configured with Python 3.10.
 
-Once Jupyter Lab is running, use your browser to navigate to [[http://127.0.0.1:8888/lab?token=pystk]].
+Once Jupyter Lab is running, use your browser to navigate to http://127.0.0.1:8888/lab?token=pystk.
+
+## Troubleshooting an STK container in UI mode with Tox 
+
+After building the images and running a container, you can also start a desktop manager inside the container. This provides access to the X graphical user interface. This is particularly useful to troubleshoot any issue arising inside the container. A use case is debugging the graphics tests, as STK's 2D and 3D graphics are rendered inside the container using `xvfb` which is not visible by default.
+
+To start the container in User Interface mode, run the following command:
+
+```
+tox -f docker-novnc-linux_container-{py38,py39,py310}
+```
+
+Once the container is ready, use your browser to navigate to http://127.0.0.1:8888/vnc_auto.html. This will give you access to a simple X11 desktop based on [fluxbox](http://fluxbox.org/), a lightweight windows manager. The user interface is served to your browser using VNC and [novnc](https://novnc.com/info.html). An xterm is also opened on the desktop, with the virtual environment required to run the Python tests activated.
+
+In addition to running the UI, this configuration also enables `sudo` for the stk user (password identical as user name), so you can install any additional debugging tools required (for instance `gdb` or `valgrind`).
 
 ## Stopping an STK container with Tox
 

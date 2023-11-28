@@ -30,6 +30,7 @@ RUN yum -y install xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
     yum -y install mesa-dri-drivers mesa-libGLU; \
     yum -y install glxinfo; \
     yum -y install tk; \
+    yum -y install dos2unix; \
     yum clean all;
 
 # Set the display environment variable to allow GUI applications
@@ -40,18 +41,19 @@ COPY --from=builder /usr/local/bin/python3.9 /usr/local/bin/python3.9
 COPY --from=builder /usr/local/lib/python3.9 /usr/local/lib/python3.9 
 COPY --from=builder /usr/local/bin/pip3.9 /usr/local/bin/pip3.9 
 
-RUN ln -sfn /usr/local/bin/python3.9 /usr/bin/python && \
-    ln -sfn /usr/local/bin/pip3.9 /usr/bin/pip
+RUN ln -sfn /usr/local/bin/python3.9 /usr/local/bin/python && \
+    ln -sfn /usr/local/bin/pip3.9 /usr/local/bin/pip
 
 # Switch back to non-root user
 USER stk
 
 # Update the path to include Python executables
-ENV PATH="${STK_USER_HOME}/.local/bin:${PATH}" \
+ENV PATH="/usr/local/bin:${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_DEFAULT_TIMEOUT=600 \
     PIP_RETRY=50
 
 # Use the entrypoint script
 COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
-RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
+    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 ENTRYPOINT [ "docker-entrypoint.sh" ]
