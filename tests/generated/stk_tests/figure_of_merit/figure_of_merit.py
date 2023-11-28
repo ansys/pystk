@@ -216,7 +216,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
-        # BoundsType (eBoundsLat)
+        # BoundsType (BOUNDS_LAT)
         TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
@@ -239,13 +239,13 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_COV.asset_list.remove_all()
         assetListElement: "CoverageAssetListElement" = EarlyBoundTests.AG_COV.asset_list.add("Satellite/sat2")
         Assert.assertIsNotNone(assetListElement)
-        # AssetStatus (eActive)
+        # AssetStatus (ACTIVE)
         TestBase.logger.WriteLine6("\tThe current AssetStatus is: {0}", assetListElement.asset_status)
         assetListElement.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
         TestBase.logger.WriteLine6("\tThe new AssetStatus is: {0}", assetListElement.asset_status)
         Assert.assertEqual(COVERAGE_ASSET_STATUS.ACTIVE, assetListElement.asset_status)
 
-        # SetDefinitionType (eFmNAssetCoverage)
+        # SetDefinitionType (N_ASSET_COVERAGE)
         TestBase.logger.WriteLine6("\tThe current DefinitionType is: {0}", EarlyBoundTests.AG_FOM.definition_type)
         EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
         TestBase.logger.WriteLine6("\tThe new DefinitionType is: {0}", EarlyBoundTests.AG_FOM.definition_type)
@@ -305,7 +305,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\n\tThe ClearSelection message:{0}", oInspector.message)
         Assert.assertEqual("", oInspector.message)
 
-        # BoundsType (eBoundsCustomRegions)
+        # BoundsType (BOUNDS_CUSTOM_REGIONS)
         EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
@@ -551,7 +551,7 @@ class EarlyBoundTests(TestBase):
 
     # region TestFOMGfxContours
     def TestFOMGfxContours(self, fom: "FigureOfMerit", bIsSmoothFillSupported: bool):
-        # SetDefinitionType (eFmAccessDuration)
+        # SetDefinitionType (ACCESS_DURATION)
         TestBase.logger.WriteLine6("\t\tThe current DefinitionType is: {0}", fom.definition_type)
         fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION)
         TestBase.logger.WriteLine6("\t\tThe new DefinitionType is: {0}", fom.definition_type)
@@ -743,10 +743,7 @@ class EarlyBoundTests(TestBase):
 
         except Exception as e:
             msg: str = str(e)
-            Assert.assertEqual(
-                "eFmAccessConstraintPlugin not a valid parameter, use SetAccessConstraintDefintionName() with name of plugin.",
-                msg,
-            )
+            Assert.assertEqual("For Access Constraint Plugins, set the definition using the name of the plugin.", msg)
             TestBase.logger.WriteLine(("Expected exception: " + msg))
 
         # ===================================================================

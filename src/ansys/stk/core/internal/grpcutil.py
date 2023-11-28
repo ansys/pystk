@@ -211,7 +211,7 @@ class grpc_client(object):
         connect_request = AgGrpcServices_pb2.EmptyMessage()
         connect_response = self.stub.GetConnectionMetadata(connect_request)
         server_version = f"{connect_response.version}.{connect_response.release}.{connect_response.update}"
-        expected_version = "12.8.0"
+        expected_version = "12.9.0"
         if server_version != expected_version:
             raise STKRuntimeError(f"Version mismatch between Python client and gRPC server. Expected STK {expected_version}, found STK {server_version}.")
         self._connection_id = connect_response.connection_id

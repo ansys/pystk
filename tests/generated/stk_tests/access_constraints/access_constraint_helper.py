@@ -1666,22 +1666,22 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oCondition: "AccessConstraintCondition" = clr.Convert(oConstraint, AccessConstraintCondition)
         Assert.assertIsNotNone(oCondition)
-        # eDirectSun
+        # DIRECT_SUN
         oCondition.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
         Assert.assertEqual(CONSTRAINT_LIGHTING.DIRECT_SUN, oCondition.condition)
-        # ePenumbra
+        # PENUMBRA
         oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA
         Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA, oCondition.condition)
-        # ePenumbraOrDirectSun
+        # PENUMBRA_OR_DIRECT_SUN
         oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
         Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN, oCondition.condition)
-        # ePenumbraOrUmbra
+        # PENUMBRA_OR_UMBRA
         oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_UMBRA
         Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA_OR_UMBRA, oCondition.condition)
-        # eUmbra
+        # UMBRA
         oCondition.condition = CONSTRAINT_LIGHTING.UMBRA
         Assert.assertEqual(CONSTRAINT_LIGHTING.UMBRA, oCondition.condition)
-        # eUmbraOrDirectSun
+        # UMBRA_OR_DIRECT_SUN
         oCondition.condition = CONSTRAINT_LIGHTING.UMBRA_OR_DIRECT_SUN
         Assert.assertEqual(CONSTRAINT_LIGHTING.UMBRA_OR_DIRECT_SUN, oCondition.condition)
 
@@ -2096,10 +2096,10 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oBackground: "AccessConstraintBackground" = clr.Convert(oConstraint, AccessConstraintBackground)
         Assert.assertIsNotNone(oBackground)
-        # eBackgroundGround
+        # BACKGROUND_GROUND
         oBackground.background = CONSTRAINT_BACKGROUND.BACKGROUND_GROUND
         Assert.assertEqual(CONSTRAINT_BACKGROUND.BACKGROUND_GROUND, oBackground.background)
-        # eBackgroundSpace
+        # BACKGROUND_SPACE
         oBackground.background = CONSTRAINT_BACKGROUND.BACKGROUND_SPACE
         Assert.assertEqual(CONSTRAINT_BACKGROUND.BACKGROUND_SPACE, oBackground.background)
 
@@ -2111,10 +2111,10 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oGroundTrack: "AccessConstraintGroundTrack" = clr.Convert(oConstraint, AccessConstraintGroundTrack)
         Assert.assertIsNotNone(oGroundTrack)
-        # eDirectionAscending
+        # DIRECTION_ASCENDING
         oGroundTrack.direction = CONSTRAINT_GROUND_TRACK.DIRECTION_ASCENDING
         Assert.assertEqual(CONSTRAINT_GROUND_TRACK.DIRECTION_ASCENDING, oGroundTrack.direction)
-        # eDirectionDescending
+        # DIRECTION_DESCENDING
         oGroundTrack.direction = CONSTRAINT_GROUND_TRACK.DIRECTION_DESCENDING
         Assert.assertEqual(CONSTRAINT_GROUND_TRACK.DIRECTION_DESCENDING, oGroundTrack.direction)
 

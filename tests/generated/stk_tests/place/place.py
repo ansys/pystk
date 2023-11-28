@@ -434,7 +434,7 @@ class EarlyBoundTests(TestBase):
     # region RF_Environment_UrbanAndTerrestrial
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = PlatformRF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment)
+        helper.Run(EarlyBoundTests.AG_PLC.rf_environment, False)
 
     # endregion
 

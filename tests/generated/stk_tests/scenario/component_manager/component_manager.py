@@ -333,7 +333,7 @@ class EarlyBoundTests(TestBase):
         map["Relative Motion"] = TestBase.GetScenarioFile("Components", "MyInTrack.AsStateCalc")
         map["SEET"] = TestBase.GetScenarioFile("Components", "MyGeoMagFieldDipoleL.AsStateCalc")
         map["Scalar"] = TestBase.GetScenarioFile("Components", "MyScalar.AsStateCalc")
-        map["Scripts"] = TestBase.GetScenarioFile("Components", "MyPerl.AsStateCalc")
+        map["Scripts"] = TestBase.GetScenarioFile("Components", "MyJScript.AsStateCalc")
         map["Segments"] = TestBase.GetScenarioFile("Components", "MyValueAtSegment.AsStateCalc")
         map["Spacecraft Properties"] = TestBase.GetScenarioFile("Components", "MyCr.AsStateCalc")
         map["Spherical Elems"] = TestBase.GetScenarioFile("Components", "MyVerticalFPA.AsStateCalc")
@@ -345,7 +345,7 @@ class EarlyBoundTests(TestBase):
         map["Vector"] = TestBase.GetScenarioFile("Components", "MyAngle.AsStateCalc")
         map["Cloud & Fog Loss Models"] = TestBase.GetScenarioFile("Components", "MyCloud.CloudFogLossModel")
         map["Constraints"] = TestBase.GetScenarioFile("Components", "MyConstraint.AsTriggerCondition")
-        map["Custom Functions"] = TestBase.GetScenarioFile("Components", "MyPerlCustom.CustomFunction")
+        map["Custom Functions"] = TestBase.GetScenarioFile("Components", "MyPythonCustomFunction.CustomFunction")
         map["Engine Models"] = TestBase.GetScenarioFile("Components", "MyEngineModel.EngineModel")
         map["Filter Models"] = TestBase.GetScenarioFile("Components", "MyBessel.Filter")
         map["Laser Atmospheric Models"] = TestBase.GetScenarioFile(
@@ -641,7 +641,7 @@ class EarlyBoundTests(TestBase):
     #    }
     #    Directory.CreateDirectory(exportDir);
 
-    #    ComponentInfoCollection components = AG_COM.GetComponents(COMPONENT.eComponentAll);
+    #    ComponentInfoCollection components = AG_COM.GetComponents(COMPONENT.ALL);
     #    Array aAvailFolders = components.AvailableFolders;
     #    foreach (string sFolder in aAvailFolders)
     #    {
@@ -986,7 +986,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(
                 Exception,
                 match=RegexSubstringMatch(
-                    "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                    "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
                 ),
             ):
                 curvRelMotion.reference.bind_to("Satellite/Satellite1")
@@ -1924,7 +1924,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(deltaDec)
         deltaDec.central_body_name = "Sun"
         Assert.assertEqual("Sun", deltaDec.central_body_name)
-        # deltaDec.ReferenceType = CALC_OBJECT_CENTRAL_BODY_REFERENCE.eVACalcObjectCentralBodyReferenceSpecified;
+        # deltaDec.ReferenceType = CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED;
         Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaDec.reference_type)
         deltaDec.reference_body = "Moon"
         Assert.assertEqual("Moon", deltaDec.reference_body)
@@ -1954,7 +1954,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(deltaRA)
         deltaRA.central_body_name = "Sun"
         Assert.assertEqual("Sun", deltaRA.central_body_name)
-        # deltaRA.ReferenceType = CALC_OBJECT_CENTRAL_BODY_REFERENCE.eVACalcObjectCentralBodyReferenceSpecified;
+        # deltaRA.ReferenceType = CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED;
         Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaRA.reference_type)
         deltaRA.reference_body = "Moon"
         Assert.assertEqual("Moon", deltaRA.reference_body)
@@ -2154,7 +2154,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
-                "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
             crossTrack.reference.bind_to("Satellite/Satellite1")
@@ -2186,7 +2186,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
-                "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
             solarBetaAngle.reference.bind_to("Satellite/Satellite1")
@@ -2226,7 +2226,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
-                "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
             solarInPlanlaneAngle.reference.bind_to("Satellite/Satellite1")
@@ -2270,7 +2270,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
-                "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
             relPosDecAngle.reference.bind_to("Satellite/Satellite1")
@@ -2309,7 +2309,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
-                "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
             relPosInPlaneAngle.reference.bind_to("Satellite/Satellite1")
@@ -2356,7 +2356,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
-                "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
             relativeInclination.reference.bind_to("Satellite/Satellite1")
@@ -2543,8 +2543,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(customFunc)
         customFunc.eval_function_name = "MatlabCustomFunction"
         Assert.assertEqual("MatlabCustomFunction", customFunc.eval_function_name)
-        customFunc.reset_function_name = "PerlCustomFunction"
-        Assert.assertEqual("PerlCustomFunction", customFunc.reset_function_name)
+        # CHG119630 - remove Perl support
+        customFunc.reset_function_name = "PythonCustomFunction"
+        Assert.assertEqual("PythonCustomFunction", customFunc.reset_function_name)
         customFunc.unit_dimension = "DateFormat"
         Assert.assertEqual("DateFormat", customFunc.unit_dimension)
         scripts.remove((clr.CastAs(customFunc, IComponentInfo)).name)
@@ -3053,24 +3054,26 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
+        # CHG119630 - remove Perl support; changing to Python
         script: "CustomFunctionScriptEngine" = clr.CastAs(
-            (clr.Convert(components["PerlCustomFunction"], ICloneable)).clone_object(), CustomFunctionScriptEngine
+            (clr.Convert(components["PythonCustomFunction"], ICloneable)).clone_object(), CustomFunctionScriptEngine
         )
         script.file_extension_name = ".dummy"
         Assert.assertEqual(".dummy", script.file_extension_name)
-        script.file_extension_name = ".pl"
-        Assert.assertEqual(".pl", script.file_extension_name)
+        script.file_extension_name = ".py"
+        Assert.assertEqual(".py", script.file_extension_name)
 
-        script.script_filename = TestBase.GetScenarioFile("MarsJPL.pl")
+        # The following Python file is not a custom function script, just a Python file (this is also how we used to check Perl).
+        script.script_filename = TestBase.GetScenarioFile("AccConstraintPlugin.py")
         # CL 225802 introduced the changes that broke the object model test.
         # The path returned by the ScriptFile is pre-processed to make
         # it relative to the user data directory; when the data directory
         # and the file match the value returned by the property is always
         # in the format '.\' followed by the file name. Hence the test
         # needed to be modified to reflect the changes.
-        Assert.assertEqual("MarsJPL.pl", Path.GetFileName(script.script_filename))
+        Assert.assertEqual("AccConstraintPlugin.py", Path.GetFileName(script.script_filename))
 
-        components.remove("PerlCustomFunction1")
+        components.remove("PythonCustomFunction1")
 
     def test_Constraints(self):
         TestBase.logger.WriteLine2(EarlyBoundTests.AG_COM.get_components(COMPONENT.ASTROGATOR).count)
@@ -3917,8 +3920,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(access.use_light_time_delay)
 
         # BUG120758 - should be read only
-        # TryCatchAssertBlock.ExpectedException("read only", delegate () { access.SignalSense = IV_TIME_SENSE.eIvReceive; });
-        # TryCatchAssertBlock.ExpectedException("read only", delegate () { access.ClockHost = IV_CLOCK_HOST.eIvBase; });
+        # TryCatchAssertBlock.ExpectedException("read only", delegate () { access.SignalSense = IV_TIME_SENSE.RECEIVE; });
+        # TryCatchAssertBlock.ExpectedException("read only", delegate () { access.ClockHost = IV_CLOCK_HOST.BASE; });
         # TryCatchAssertBlock.ExpectedException("read only", delegate () { access.AberrationType = ABERRATION_TYPE.eAberrationAnnual; });
         # TryCatchAssertBlock.ExpectedException("read only", delegate () { access.TimeDelayConvergenceTolerance = .01; });
 
@@ -8610,17 +8613,17 @@ class EarlyBoundTests(TestBase):
         # TryCatchAssertBlock.DoAssert(delegate(){ custom.UpdateFunctionName = "BogusCustomFunction";});
 
         # Assert.IsTrue(custom.ControlParametersAvailable);
-        # custom.EnableControlParameter(CONTROL_ENGINE_CUSTOM.eVAControlEngineCustomGrav);
-        # Assert.IsTrue(custom.IsControlParameterEnabled(CONTROL_ENGINE_CUSTOM.eVAControlEngineCustomGrav));
-        # impulse.SetPropulsionMethod(PROPULSION_METHOD.eVAPropulsionMethodEngineModel, ((IComponentInfo)custom).Name);
+        # custom.EnableControlParameter(CONTROL_ENGINE_CUSTOM.GRAV);
+        # Assert.IsTrue(custom.IsControlParameterEnabled(CONTROL_ENGINE_CUSTOM.GRAV));
+        # impulse.SetPropulsionMethod(PROPULSION_METHOD.ENGINE_MODEL, ((IComponentInfo)custom).Name);
 
         # param = dc.ControlParameters.GetControlByPaths("Component Browser.Custom Engine1", "g");
         # Assert.IsNotNull(param);
         # Assert.AreEqual("Component Browser.Custom Engine1", param.ParentName);
         # Assert.AreEqual("g", param.Name);
 
-        # custom.DisableControlParameter(CONTROL_ENGINE_CUSTOM.eVAControlEngineCustomGrav);
-        # Assert.IsFalse(custom.IsControlParameterEnabled(CONTROL_ENGINE_CUSTOM.eVAControlEngineCustomGrav));
+        # custom.DisableControlParameter(CONTROL_ENGINE_CUSTOM.GRAV);
+        # Assert.IsFalse(custom.IsControlParameterEnabled(CONTROL_ENGINE_CUSTOM.GRAV));
         # TryCatchAssertBlock.DoAssert(delegate(){ param = dc.ControlParameters.GetControlByPaths("Component Browser.Custom Engine1", "g");});
 
         # IComponentInfo compCustom = custom as IComponentInfo;

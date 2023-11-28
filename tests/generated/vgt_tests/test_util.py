@@ -1,5 +1,6 @@
 import enum
 import math
+import inspect
 import os
 import pytz
 import re
@@ -44,6 +45,7 @@ class frmStkX:
 
 class EngineLifetimeManager:
     stk = None
+    root: "StkObjectRoot" = None
     locked = False
     target = None
     ctrlWindow = None
@@ -53,6 +55,7 @@ class EngineLifetimeManager:
     def Initialize(lock=False, target="StkXNoGfx"):
         if os.name != "nt" and target == "Stk":
             raise RuntimeError("Stk target not supported on Linux.")
+
         if EngineLifetimeManager.target is None:
             if target.upper() == "STK":
                 EngineLifetimeManager.target = TestTarget.eStk
@@ -66,30 +69,38 @@ class EngineLifetimeManager:
                 EngineLifetimeManager.target = TestTarget.eStkRuntime
             elif target.upper() == "STKRUNTIMENOGFX":
                 EngineLifetimeManager.target = TestTarget.eStkRuntimeNoGfx
+
         if EngineLifetimeManager.stk is None:
             if EngineLifetimeManager.target == TestTarget.eStk:
                 EngineLifetimeManager.stk = STKDesktop.StartApplication(userControl=False, visible=True)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.Root
             elif EngineLifetimeManager.target == TestTarget.eStkX:
                 EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=False)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
                 EngineLifetimeManager.ctrlWindow = frmStkX()
-                print(EngineLifetimeManager.stk.execute_command("GetStkVersion /")[0])
             elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
                 EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=True)
-                print(EngineLifetimeManager.stk.execute_command("GetStkVersion /")[0])
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
             elif EngineLifetimeManager.target == TestTarget.eStkGrpc:
                 EngineLifetimeManager.stk = STKDesktop.StartApplication(
                     userControl=False, visible=True, grpc_server=True, grpc_desktop_options="/Automation"
                 )
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.Root
             elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
                 import ansys.stk.core.stkruntime
 
                 EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=False)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
             elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
                 import ansys.stk.core.stkruntime
 
                 EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=True)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
             EngineLifetimeManager.locked = lock
-        return EngineLifetimeManager.stk
+
+            print(EngineLifetimeManager.root.execute_command("GetStkVersion /")[0])
+
+        return (EngineLifetimeManager.stk, EngineLifetimeManager.root)
 
     @staticmethod
     def Uninitialize(force=False):
@@ -995,13 +1006,11 @@ class TestBase(unittest.TestCase):
     _stkHomeDir = None
     _stkDbDir = None
 
+    UsingLatestICRFDataFiles: bool = False
+
     @staticmethod
     def Initialize():
-        TestBase.stk = EngineLifetimeManager.Initialize()
-        if EngineLifetimeManager.target == TestTarget.eStk or EngineLifetimeManager.target == TestTarget.eStkGrpc:
-            TestBase.root = TestBase.stk.Root
-        else:
-            TestBase.root = TestBase.stk.NewObjectRoot()
+        (TestBase.stk, TestBase.root) = EngineLifetimeManager.Initialize()
 
         # Try to recover if previous test aborted with a scenario loaded
         if TestBase.root.current_scenario != None:
@@ -1020,6 +1029,8 @@ class TestBase(unittest.TestCase):
         TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.NonSupportedDirectory = Path.Combine(TestBase.ScenarioDirectory, "NonSupportedScen")
         TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProviders")
+
+        TestBase.CheckICRFDataFilesVersion()
 
         if EngineLifetimeManager.target == TestTarget.eStk or EngineLifetimeManager.target == TestTarget.eStkGrpc:
             TestBase.ApplicationProvider = PythonStkApplicationProvider(TestBase.stk, TestBase.root)
@@ -1168,6 +1179,17 @@ class TestBase(unittest.TestCase):
             TestBase._stkHomeDir = TestBase.Application.execute_command("GetSTKHomeDir /")[0]
             print(f"Using STKHOMEDIR={TestBase._stkHomeDir}")
         return TestBase._stkHomeDir
+
+    @staticmethod
+    def CheckICRFDataFilesVersion():
+        """
+        Check which ICRF data files are being used to run the tests.
+        This will be used to select expected results for some of the tests.
+        """
+        with open(os.path.join(TestBase.GetSTKHomeDir(), "STKData", "ICRF", "IAU2000A_XYS.dat"), "rt") as f:
+            skippedLine = f.readline()
+            timeStampLine = f.readline()
+            TestBase.UsingLatestICRFDataFiles = "2023" in timeStampLine
 
     def setUp(self):
         TestBase.Application.unit_preferences.reset_units()
@@ -1504,8 +1526,6 @@ class Environment:
 
 class StackFrame:
     def __init__(self):
-        import inspect
-
         self.frameinfos = inspect.getouterframes(inspect.currentframe())
 
     def GetMethod(self):
@@ -1708,16 +1728,15 @@ def category(name):
 
 
 def GetTestCase():
-    import inspect
-
-    frameinfos = inspect.getouterframes(inspect.currentframe())
-    for frameinfo in frameinfos:
-        frame = frameinfo[0]
-        locals = frame.f_locals
-        if "self" in locals:
-            candidate = locals["self"]
-            if isinstance(candidate, unittest.TestCase):
-                return candidate
+    # No circular dependency because we do not store the
+    # current frame in a local variable and therefore it is
+    # not part of the frame locals
+    frame = inspect.currentframe().f_back  # start with this function caller
+    while frame:
+        candidate = frame.f_locals.get("self", None)
+        if candidate and isinstance(candidate, unittest.TestCase):
+            return candidate
+        frame = frame.f_back
     return None
 
 

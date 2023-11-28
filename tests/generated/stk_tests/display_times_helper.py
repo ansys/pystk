@@ -39,7 +39,7 @@ class DisplayTimesHelper(object):
             with pytest.raises(Exception):
                 oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
 
-        # eDisplayTypeUnknown
+        # TYPE_UNKNOWN
         with pytest.raises(Exception):
             oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.TYPE_UNKNOWN)
         # DisplayStatusType
@@ -57,7 +57,7 @@ class DisplayTimesHelper(object):
             eType1: "DISPLAY_TIMES_TYPE" = oDisplay.display_status_type
             Assert.assertEqual(eType, eType1)
             if eType == DISPLAY_TIMES_TYPE.TYPE_UNKNOWN:
-                Assert.fail("eDisplayTypeUnknown should not be supported!")
+                Assert.fail("TYPE_UNKNOWN should not be supported!")
             elif (((eType == DISPLAY_TIMES_TYPE.ALWAYS_OFF)) or ((eType == DISPLAY_TIMES_TYPE.ALWAYS_ON))) or (
                 (eType == DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
             ):

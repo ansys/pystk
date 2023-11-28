@@ -79,7 +79,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         self.ConfigureAccessDurationFigureOfMerit(FigureOfMeritSnipets.m_Object)
 
     def ConfigureAccessDurationFigureOfMerit(self, fom: "FigureOfMerit"):
-        # Set figure of merit definition to eFmAccessDuration
+        # Set figure of merit definition to ACCESS_DURATION
         fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION)
 
         # Get IFigureOfMeritDefinitionCompute interface
@@ -101,7 +101,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         self.ConfigureCoverageTimeFigureOfMerit(FigureOfMeritSnipets.m_Object)
 
     def ConfigureCoverageTimeFigureOfMerit(self, fom: "FigureOfMerit"):
-        # Set figure of merit definition to eFmCoverageTime
+        # Set figure of merit definition to COVERAGE_TIME
         fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.COVERAGE_TIME)
 
         # Get IFigureOfMeritDefinitionCompute interface

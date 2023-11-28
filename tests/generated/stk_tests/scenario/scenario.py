@@ -211,18 +211,18 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertTrue(EarlyBoundTests.AG_SC.msl_stop_time_warning)
 
-        # AcWGS84Warning (eAlways)
+        # AcWGS84Warning (ALWAYS)
         TestBase.logger.WriteLine6(
             "The current AcWGS84Warning flag is: {0}", EarlyBoundTests.AG_SC.aircraft_wgs84_warning
         )
         EarlyBoundTests.AG_SC.aircraft_wgs84_warning = AIRCRAFT_WGS84_WARNING_TYPE.ALWAYS
         TestBase.logger.WriteLine6("The new AcWGS84Warning flag is: {0}", EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
         Assert.assertEqual(AIRCRAFT_WGS84_WARNING_TYPE.ALWAYS, EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
-        # AcWGS84Warning (eNever)
+        # AcWGS84Warning (NEVER)
         EarlyBoundTests.AG_SC.aircraft_wgs84_warning = AIRCRAFT_WGS84_WARNING_TYPE.NEVER
         TestBase.logger.WriteLine6("The new AcWGS84Warning flag is: {0}", EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
         Assert.assertEqual(AIRCRAFT_WGS84_WARNING_TYPE.NEVER, EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
-        # AcWGS84Warning (eOnlyOnce)
+        # AcWGS84Warning (ONLY_ONCE)
         EarlyBoundTests.AG_SC.aircraft_wgs84_warning = AIRCRAFT_WGS84_WARNING_TYPE.ONLY_ONCE
         TestBase.logger.WriteLine6("The new AcWGS84Warning flag is: {0}", EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
         Assert.assertEqual(AIRCRAFT_WGS84_WARNING_TYPE.ONLY_ONCE, EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
@@ -646,8 +646,6 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Sat1")
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Sat2")
 
-    # endregion
-
     @category("Basic Tests")
     def test_TerrainCollection(self):
         strADFFilePath: str = "w001001.adf"
@@ -670,7 +668,7 @@ class EarlyBoundTests(TestBase):
         # try
         # {
         # This will hang:
-        #    Terrain t = tc.Add( GetScenarioFile("ny512.dte"), TERRAIN_FILE_TYPE.eMOLATerrain);
+        #    Terrain t = tc.Add( GetScenarioFile("ny512.dte"), TERRAIN_FILE_TYPE.MOLA_TERRAIN);
         # }
         # catch (Exception e)
         # {
@@ -709,10 +707,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("ny512.dte", Path.GetFileName(oTerrain.location))
         # RemoveAll
         tc.remove_all()
-
         TestBase.logger.WriteLine3("\tAfter RemoveAll() the Terrain collection contains: {0} elements.", tc.count)
 
-        # Add (eArcInfoBinGridMSLFile)
+        # Add (ARC_INFO_BIN_GRID_MSL_FILE)
         oTerrain = tc.add(TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_MSL_FILE)
         Assert.assertIsNotNone(oTerrain)
         TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
@@ -738,7 +735,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3("\tAfter Remove(0) the Terrain collection contains: {0} elements.", tc.count)
         Assert.assertEqual(0, tc.count)
 
-        # Add (eArcInfoGridDepthMSLFile)
+        # Add (ARC_INFO_GRID_DEPTH_MSL_FILE)
         oTerrain = tc.add(
             TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_GRID_DEPTH_MSL_FILE
         )
@@ -766,7 +763,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3("\tAfter Remove(0) the Terrain collection contains: {0} elements.", tc.count)
         Assert.assertEqual(0, tc.count)
 
-        # Add (eTIFFTerrainFile)
+        # Add (TIFF_TERRAIN_FILE)
         oTerrain = tc.add(TestBase.GetScenarioFile("NED", strTIFFilePath), TERRAIN_FILE_TYPE.TIFF_TERRAIN_FILE)
         Assert.assertIsNotNone(oTerrain)
         TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
@@ -792,7 +789,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3("\tAfter Remove(0) the Terrain collection contains: {0} elements.", tc.count)
         Assert.assertEqual(0, tc.count)
 
-        # Add (eTIFFMSLTerrainFile)
+        # Add (TIFFMSL_TERRAIN_FILE)
         oTerrain = tc.add(TestBase.GetScenarioFile("NED", strTIFFilePath), TERRAIN_FILE_TYPE.TIFFMSL_TERRAIN_FILE)
         Assert.assertIsNotNone(oTerrain)
         TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
@@ -836,7 +833,7 @@ class EarlyBoundTests(TestBase):
 
                 iIndex += 1
 
-        # Add (eArcInfoBinGridFile)
+        # Add (ARC_INFO_BIN_GRID_FILE)
         oTerrain = tc.add(TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_FILE)
         Assert.assertIsNotNone(oTerrain)
         TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
@@ -1800,7 +1797,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             radEnv.crres_proton_activity = SPACE_ENVIRONMENT_CRRES_PROTON_ACTIVITY.UNKNOWN
-            Assert.fail("Invalid eSpEnvCrresProtonActivityUnknown")
+            Assert.fail("Invalid UNKNOWN")
 
         except AssertionError as e:
             raise e
@@ -1815,7 +1812,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             radEnv.crres_radiation_activity = SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY.UNKNOWN
-            Assert.fail("Invalid eSpEnvCrresRadiationUnknown")
+            Assert.fail("Invalid UNKNOWN")
 
         except AssertionError as e:
             raise e
@@ -1832,7 +1829,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             radEnv.nasa_models_activity = SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.UNKNOWN
-            Assert.fail("Invalid eSpEnvNasaModelsActivityUnknown")
+            Assert.fail("Invalid UNKNOWN")
 
         except AssertionError as e:
             raise e
@@ -3103,10 +3100,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(4, Array.Length(arSupportedCalculationMethods))  # was 5 in WirelessInSiteRT
         sCalcMethod: str
         for sCalcMethod in arSupportedCalculationMethods:
-            if (
-                ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "OPAR")))
-                or ((sCalcMethod == "TPGEODESIC"))
-            ) or ((sCalcMethod == "WALFISCH_IKEGAMI")):
+            if ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "TPGEODESIC"))) or (
+                (sCalcMethod == "WALFISCH_IKEGAMI")
+            ):
                 wisRT.calculation_method = sCalcMethod
                 Assert.assertEqual(sCalcMethod, wisRT.calculation_method)
             else:
@@ -3130,15 +3126,16 @@ class EarlyBoundTests(TestBase):
 
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
-            geometryData.filename = TestBase.GetScenarioFile("Cochise.shp")
+            geometryData.filename = TestBase.GetScenarioFile("Skopje.shp")
+            Assert.assertEqual("Skopje.shp", geometryData.filename)
 
             geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84
             Assert.assertEqual(PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84, geometryData.projection_horizontal_datum)
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.UTMWGS84
 
-            geometryData.building_height_data_attribute = "STATE_NAME"
-            Assert.assertEqual("STATE_NAME", geometryData.building_height_data_attribute)
+            geometryData.building_height_data_attribute = "GM_LAYER"
+            Assert.assertEqual("GM_LAYER", geometryData.building_height_data_attribute)
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.building_height_data_attribute = "Some"
 
@@ -3153,10 +3150,10 @@ class EarlyBoundTests(TestBase):
 
             # option removed because Remcom (UProp) needs special transform for processing
             # This will be reviewed with the new Wireless Insight library from Remcom.
-            # geometryData.BuildingHeightUnit = BUILD_HEIGHT_UNIT.eBuildHeightUnitFeet;
-            # Assert.AreEqual(BUILD_HEIGHT_UNIT.eBuildHeightUnitFeet, geometryData.BuildingHeightUnit);
-            # geometryData.BuildingHeightUnit = BUILD_HEIGHT_UNIT.eBuildHeightUnitMeters;
-            # Assert.AreEqual(BUILD_HEIGHT_UNIT.eBuildHeightUnitMeters, geometryData.BuildingHeightUnit);
+            # geometryData.BuildingHeightUnit = BUILD_HEIGHT_UNIT.FEET;
+            # Assert.AreEqual(BUILD_HEIGHT_UNIT.FEET, geometryData.BuildingHeightUnit);
+            # geometryData.BuildingHeightUnit = BUILD_HEIGHT_UNIT.METERS;
+            # Assert.AreEqual(BUILD_HEIGHT_UNIT.METERS, geometryData.BuildingHeightUnit);
 
             geometryData.override_geometry_tile_origin = False
             Assert.assertFalse(geometryData.override_geometry_tile_origin)
@@ -3190,18 +3187,18 @@ class EarlyBoundTests(TestBase):
             geometryData.use_terrain_data = False
             Assert.assertFalse(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(32.43, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-109.05, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(31.33, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-110.46, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
 
             geometryData.use_terrain_data = True
             Assert.assertTrue(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(32.43, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-109.05, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(31.33, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-110.46, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
 
     # endregion
 

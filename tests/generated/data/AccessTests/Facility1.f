@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.8.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Facility
 
@@ -45,8 +45,8 @@ BEGIN Facility
             RFIDataBase		 STKData\Databases\Satellite\stkAllActive.rfi
             UseGeomFilters		 Yes
             UseOutOfDate		 Yes
-            NearEarthOutOfDate		  9.9999999999999361e+00
-            DeepSpaceOutOfDate		  3.9999999999999744e+01
+            NearEarthOutOfDate		  9.9999999999998739e+00
+            DeepSpaceOutOfDate		  3.9999999999999496e+01
             LoadPotVictims		 No
             UsePotVictimList		 No
         END LaserCAT
@@ -73,8 +73,8 @@ BEGIN Facility
             RFIDataBase		 STKData\Databases\Satellite\stkAllActive.rfi
             UseGeomFilters		 Yes
             UseOutOfDate		 Yes
-            NearEarthOutOfDate		  9.9999999999999361e+00
-            DeepSpaceOutOfDate		  3.9999999999999744e+01
+            NearEarthOutOfDate		  9.9999999999998739e+00
+            DeepSpaceOutOfDate		  3.9999999999999496e+01
             LoadPotVictims		 No
             UsePotVictimList		 No
         END RFI
@@ -407,10 +407,7 @@ BEGIN Facility
                                                 <BOOL>false</BOOL>
                                             </VAR>
                                             <VAR name = "AlternateAPDataFile">
-                                                <STRING>
-                                                    <PROP name = "FullName">
-                                                        <STRING>&quot;&quot;</STRING>
-                                                    </PROP>&quot;&quot;</STRING>
+                                                <STRING>&quot;&quot;</STRING>
                                             </VAR>
                                         </SCOPE>
                                     </VAR>
@@ -963,6 +960,10 @@ BEGIN Facility
         BEGIN Crdn
         END Crdn
 
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
+
         BEGIN Graphics
 
             BEGIN Attributes
@@ -1125,8 +1126,8 @@ BEGIN Facility
                     MaxElevation		 180
                 END AzElPatternDef
                 ColorMethod		 1
-                MinToMaxStartColor		 #ff0000
-                MinToMaxStopColor		 #0000ff
+                MinimumColor		 16711680
+                MaximumColor		 255
                 RelativeToMaximum		 0
             END VolumeSet
             BEGIN VolumeGraphics

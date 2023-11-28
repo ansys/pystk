@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.8.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Satellite
 
@@ -1694,27 +1694,6 @@ BEGIN Satellite
 
     BEGIN Extensions
 
-        BEGIN SaEOIR
-            BEGIN StageShape
-                StageName		 Component1
-                Shape		 Sphere
-                A		 1
-                B		 1
-                C		 1
-                CustomMeshModelFile		 EOIR_Databases\PropertyFiles\sample_custom_mesh.obj
-                TargetSignatureFile		 EOIR_Databases\PropertyFiles\sample_target_signature.tsf
-                MaterialSpecification		 SingleElement
-                BEGIN MaterialElement
-                    Temperature		 273
-                    Reflectance		 0.5
-                    Material		 GrayBody
-                    ThermalMode		 Constant
-                    TemperatureProfileFile		 EOIR_Databases\PropertyFiles\sample_time_profile.tpf
-                    ReflectanceFunctionFile		 EOIR_Databases\PropertyFiles\sample_material.srf
-                END MaterialElement
-            END StageShape
-        END SaEOIR
-
         BEGIN ClsApp
             RangeConstraint		 5000
             ApoPeriPad		 30000
@@ -2092,8 +2071,8 @@ BEGIN Satellite
                     Name		 AvailabilityIntervals
                 END EVENTINTERVALLIST
                 UseObjectEclipsingBodies		 Yes
-                EclipsingBody		 CentralBody/Moon
                 EclipsingBody		 CentralBody/Earth
+                EclipsingBody		 CentralBody/Moon
                 SaveDataType		 Yes
                 BEGIN ComputedData
                     NumberOfIntervalData		 3
@@ -2276,6 +2255,10 @@ BEGIN Satellite
             END SEPSettings
 
         END SpaceEnvironment
+
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
 
         BEGIN Graphics
 
@@ -2575,8 +2558,8 @@ BEGIN Satellite
                     MaxElevation		 180
                 END AzElPatternDef
                 ColorMethod		 1
-                MinToMaxStartColor		 #ff0000
-                MinToMaxStopColor		 #0000ff
+                MinimumColor		 16711680
+                MaximumColor		 255
                 RelativeToMaximum		 0
             END VolumeSet
             BEGIN VolumeGraphics

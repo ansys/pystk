@@ -142,7 +142,7 @@ class FOMHelper(object):
             Assert.assertIsNotNone(assetListElement)
             # MethodType
             self.m_logger.WriteLine6("\t\t\tThe current MethodType is: {0}", assetListElement.method_type)
-            # SetMethodType (eFmNAConstant)
+            # SetMethodType (CONSTANT)
             assetListElement.method_type = FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.CONSTANT
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
             Assert.assertEqual(FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.CONSTANT, assetListElement.method_type)
@@ -158,7 +158,7 @@ class FOMHelper(object):
             Assert.assertEqual(12.34, oMC.value)
             with pytest.raises(Exception):
                 oMC.value = -1.2
-            # SetMethodType (eFmNAConstant)
+            # SetMethodType (CONSTANT)
             assetListElement.method_type = FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.ELEVATION_ANGLE
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
             Assert.assertEqual(
@@ -1428,7 +1428,7 @@ class FOMHelper(object):
             Assert.assertEqual(34, oOptions.color_square_width)
             with pytest.raises(Exception):
                 oOptions.color_square_width = 123
-            # Direction (eHorizontalMaxToMin)
+            # Direction (HORIZONTAL_MAX_TO_MIN)
             self.m_logger.WriteLine6("\tThe current Direction is: {0}", oOptions.direction)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
@@ -1443,7 +1443,7 @@ class FOMHelper(object):
             # MaxSquaresPerColumn
             with pytest.raises(Exception):
                 oOptions.max_squares_per_column = 34
-            # Direction (eHorizontalMinToMax)
+            # Direction (HORIZONTAL_MIN_TO_MAX)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
             Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX, oOptions.direction)
@@ -1457,7 +1457,7 @@ class FOMHelper(object):
             # MaxSquaresPerColumn
             with pytest.raises(Exception):
                 oOptions.max_squares_per_column = 12
-            # Direction (eVerticalMaxToMin)
+            # Direction (VERTICAL_MAX_TO_MIN)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
             Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN, oOptions.direction)
@@ -1471,7 +1471,7 @@ class FOMHelper(object):
             # MaxSquaresPerRow
             with pytest.raises(Exception):
                 oOptions.max_squares_per_row = 12
-            # Direction (eVerticalMinToMax)
+            # Direction (VERTICAL_MIN_TO_MAX)
             oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
             Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX, oOptions.direction)

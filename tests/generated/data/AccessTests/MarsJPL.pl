@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.8.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Planet
 
@@ -60,6 +60,10 @@ BEGIN Planet
 
         BEGIN Crdn
         END Crdn
+
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
 
         BEGIN Graphics
 

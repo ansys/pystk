@@ -374,7 +374,7 @@ class VOCovarianceHelper(object):
         oSSPHelper = VOSigmaScaleProbabilityHelper()
         oSSPHelper.Run(clr.Convert(oCovariance.sigma_scale, VehicleGraphics3DSigmaScaleProbability))
         if oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_UNKNOWN):
-            Assert.fail("The eSigmaScaleUnknown type should be unsupported!")
+            Assert.fail("The SIGMA_SCALE_UNKNOWN type should be unsupported!")
 
         with pytest.raises(Exception):
             oCovariance.set_sigma_scale_type(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_UNKNOWN)
@@ -422,7 +422,7 @@ class VOCovarianceHelper(object):
         oAIHelper = VOAttributesIntervalsHelper()
         oAIHelper.Run(clr.Convert(oCovariance.attributes, VehicleGraphics3DAttributesIntervals))
         if oCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN):
-            Assert.fail("The eVOAttributesUnknown type should be unsupported!")
+            Assert.fail("The GRAPHICS_3D_ATTRIBUTES_UNKNOWN type should be unsupported!")
 
         with pytest.raises(Exception):
             oCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN)
@@ -499,7 +499,7 @@ class VOVelocityCovarianceHelper(object):
         oAIHelper = VOAttributesIntervalsHelper()
         oAIHelper.Run(clr.Convert(oVelCovariance.attributes, VehicleGraphics3DAttributesIntervals))
         if oVelCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN):
-            Assert.fail("The eVOAttributesUnknown type should be unsupported!")
+            Assert.fail("The GRAPHICS_3D_ATTRIBUTES_UNKNOWN type should be unsupported!")
 
         with pytest.raises(Exception):
             oVelCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN)
@@ -568,7 +568,7 @@ class VOCovariancePointingContourHelper(object):
             iIndex += 1
 
         if oCPContour.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN):
-            Assert.fail("The eVOAttributesUnknown type should be unsupported!")
+            Assert.fail("The GRAPHICS_3D_ATTRIBUTES_UNKNOWN type should be unsupported!")
 
         try:
             bCaught = False
@@ -579,7 +579,7 @@ class VOCovariancePointingContourHelper(object):
             self.m_logger.WriteLine5("\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Allows to set eVOAttributesUnknown type!")
+            Assert.fail("Allows to set GRAPHICS_3D_ATTRIBUTES_UNKNOWN type!")
 
         # SigmaScale test
         arSupportedTypes = oCPContour.sigma_scale_supported_types
@@ -626,7 +626,7 @@ class VOCovariancePointingContourHelper(object):
             iIndex += 1
 
         if oCPContour.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_UNKNOWN):
-            Assert.fail("The eSigmaScaleUnknown type should be unsupported!")
+            Assert.fail("The SIGMA_SCALE_UNKNOWN type should be unsupported!")
 
         try:
             bCaught = False
@@ -637,7 +637,7 @@ class VOCovariancePointingContourHelper(object):
             self.m_logger.WriteLine5("\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Allows to set eSigmaScaleUnknown type!")
+            Assert.fail("Allows to set SIGMA_SCALE_UNKNOWN type!")
 
         # ConeVisible test
         self.m_logger.WriteLine4("The current Cone Visible flag is: {0}", oCPContour.is_cone_visible)
@@ -1164,7 +1164,7 @@ class VOMarkerHelper(object):
         )  # This property will not be set to this enum. See below, and see helpstrings.
         oMarker.set_marker_image_file(
             TestBase.PathCombine("STKData", "VO", "Markers", "Ship.ppm")
-        )  # This will set the MarkerType to eImageFile
+        )  # This will set the MarkerType to IMAGE_FILE
 
         Assert.assertEqual(MARKER_TYPE.IMAGE_FILE, oMarker.marker_type)
         oFile: "Graphics3DMarkerFile" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerFile)
@@ -3436,25 +3436,25 @@ class VOBorderWallHelper(object):
         Assert.assertEqual("mi", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
         # IsAltRefTypeSupported
         self.m_logger.WriteLine4(
-            "\tIsAltRefTypeSupported eAltRefMSL is: {0}",
+            "\tIsAltRefTypeSupported ALTITUDE_REFERENCE_MSL is: {0}",
             oWall.is_altitude_reference_type_supported(
                 BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_MSL
             ),
         )
         self.m_logger.WriteLine4(
-            "\tIsAltRefTypeSupported eAltRefObject is: {0}",
+            "\tIsAltRefTypeSupported ALTITUDE_REFERENCE_OBJECT is: {0}",
             oWall.is_altitude_reference_type_supported(
                 BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_OBJECT
             ),
         )
         self.m_logger.WriteLine4(
-            "\tIsAltRefTypeSupported eAltRefTerrain is: {0}",
+            "\tIsAltRefTypeSupported ALTITUDE_REFERENCE_TERRAIN is: {0}",
             oWall.is_altitude_reference_type_supported(
                 BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_TERRAIN
             ),
         )
         self.m_logger.WriteLine4(
-            "\tIsAltRefTypeSupported eAltRefWGS84 is: {0}",
+            "\tIsAltRefTypeSupported ALTITUDE_REFERENCE_WGS84 is: {0}",
             oWall.is_altitude_reference_type_supported(
                 BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_WGS84
             ),
@@ -3945,7 +3945,7 @@ class VOWaypointMarkersHelper(object):
             if not bCaught:
                 Assert.fail("Cannot set value out of range!")
 
-            # MarkerType (eMarker)
+            # MarkerType (MARKER)
             waypointMarkersElement.marker_type = ROUTE_GRAPHICS_3D_MARKER_TYPE.MARKER
             Assert.assertEqual(ROUTE_GRAPHICS_3D_MARKER_TYPE.MARKER, waypointMarkersElement.marker_type)
             # Shape
@@ -3973,7 +3973,7 @@ class VOWaypointMarkersHelper(object):
             if not bCaught:
                 Assert.fail("The IsTransparent should be readonly.")
 
-            # MarkerType (eImage)
+            # MarkerType (IMAGE)
             self.Application.begin_update()
             try:
                 waypointMarkersElement.marker_type = ROUTE_GRAPHICS_3D_MARKER_TYPE.IMAGE
@@ -4248,7 +4248,7 @@ class VOPathTickMarksHelper(object):
             # TickDataType
             self.m_logger.WriteLine6("\t\tNew Type is: {0}", oPath.tick_data_type)
             if oPath.tick_data_type == TICK_DATA.UNKNOWN:
-                Assert.fail("The eTickDataUnknown type should not be supported!")
+                Assert.fail("The UNKNOWN type should not be supported!")
             elif oPath.tick_data_type == TICK_DATA.POINT:
                 oPoint: "VehicleGraphics3DTickDataPoint" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataPoint)
                 Assert.assertIsNotNone(oPoint)
@@ -4496,35 +4496,35 @@ class VOLabelSwapDistanceHelper(object):
             oSwapDist.distance_value = -34.56789
         # DistanceLevel
         self.m_logger.WriteLine6("\tThe current DistanceLevel is: {0}", oSwapDist.distance_level)
-        # SetDistanceLevel (eSwapAll)
+        # SetDistanceLevel (SWAP_ALL)
         oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_ALL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
         Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_ALL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
-        # SetDistanceLevel (eSwapMarker)
+        # SetDistanceLevel (SWAP_MARKER)
         oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_MARKER)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
         Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_MARKER, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
-        # SetDistanceLevel (eSwapMarkerLabel)
+        # SetDistanceLevel (SWAP_MARKER_LABEL)
         oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_MARKER_LABEL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
         Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_MARKER_LABEL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
-        # SetDistanceLevel (eSwapModelLabel)
+        # SetDistanceLevel (SWAP_MODEL_LABEL)
         oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_MODEL_LABEL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
         Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_MODEL_LABEL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
-        # SetDistanceLevel (eSwapPoint)
+        # SetDistanceLevel (SWAP_POINT)
         oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_POINT)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
         Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_POINT, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
-        # SetDistanceLevel (eSwapCustom)
+        # SetDistanceLevel (SWAP_CUSTOM)
         with pytest.raises(Exception):
             oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_CUSTOM)
-        # SetDistanceLevel (eSwapUnknown)
+        # SetDistanceLevel (SWAP_UNKNOWN)
         with pytest.raises(Exception):
             oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.SWAP_UNKNOWN)
         self.m_logger.WriteLine("----- VO LABEL SWAP DISTANCE TEST ----- END -----")

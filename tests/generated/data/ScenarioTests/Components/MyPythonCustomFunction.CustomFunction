@@ -1,0 +1,87 @@
+<?xml version = "1.0" standalone = "yes"?>
+<Component>
+    <Type>CustomFunction</Type>
+    <SpecificType>CAgCustomFunctionScriptEngine</SpecificType>
+    <Data>
+        <VAR name = "MyPythonCustomFunction">
+            <SCOPE Class = "CustomFunction">
+                <VAR name = "Version">
+                    <STRING>&quot;1.0.0 a&quot;</STRING>
+                </VAR>
+                <VAR name = "STKVersion">
+                    <INT>1280</INT>
+                </VAR>
+                <VAR name = "Description">
+                    <STRING>&quot;Custom function implemented using Python&quot;</STRING>
+                </VAR>
+                <VAR name = "Type">
+                    <STRING>&quot;CAgCustomFunctionScriptEngine&quot;</STRING>
+                </VAR>
+                <VAR name = "UserComment">
+                    <STRING>&quot;Custom function implemented using Python&quot;</STRING>
+                </VAR>
+                <VAR name = "ReadOnly">
+                    <BOOL>false</BOOL>
+                </VAR>
+                <VAR name = "Clonable">
+                    <BOOL>true</BOOL>
+                </VAR>
+                <VAR name = "Category">
+                    <STRING>&quot;@Top&quot;</STRING>
+                </VAR>
+                <VAR name = "IdentifierInformation">
+                    <SCOPE>
+                        <VAR name = "Identifier">
+                            <STRING>&quot;{EA718644-C989-43EA-BBA8-CB5EC96F6542}&quot;</STRING>
+                        </VAR>
+                        <VAR name = "Version">
+                            <STRING>&quot;1&quot;</STRING>
+                        </VAR>
+                        <VAR name = "SdfInformation">
+                            <SCOPE>
+                                <VAR name = "Version">
+                                    <STRING>&quot;0.0&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Url">
+                                    <STRING>&quot;&quot;</STRING>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                        <VAR name = "SourceIdentifierInformation">
+                            <SCOPE>
+                                <VAR name = "Identifier">
+                                    <STRING>&quot;{53B95787-740F-481C-82E8-07C02DD212E5}&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Version">
+                                    <STRING>&quot;1&quot;</STRING>
+                                </VAR>
+                                <VAR name = "SdfInformation">
+                                    <SCOPE>
+                                        <VAR name = "Version">
+                                            <STRING>&quot;0.0&quot;</STRING>
+                                        </VAR>
+                                        <VAR name = "Url">
+                                            <STRING>&quot;&quot;</STRING>
+                                        </VAR>
+                                    </SCOPE>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </SCOPE>
+                </VAR>
+                <VAR name = "ShooterControls">
+                    <LIST />
+                </VAR>
+                <VAR name = "ScriptFile">
+                    <STRING>&quot;&quot;</STRING>
+                </VAR>
+                <VAR name = "ScriptName">
+                    <STRING>&quot;&quot;</STRING>
+                </VAR>
+                <VAR name = "FileExtension">
+                    <STRING>&quot;.py&quot;</STRING>
+                </VAR>
+            </SCOPE>
+        </VAR>
+    </Data>
+</Component>

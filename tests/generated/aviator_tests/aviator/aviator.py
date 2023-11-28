@@ -3059,12 +3059,24 @@ class EarlyBoundTests(TestBase):
             basicManeuver.navigation, BasicManeuverStrategyAutopilotNav
         )
 
-        autopilot.active_mode = AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE
-        autopilot.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 1000)
-        turnRad: float = autopilot.control_limit_turn_radius
-        Assert.assertEqual(1000, turnRad)
+        mode: "AUTOPILOT_HORIZ_PLANE_MODE"
+
+        for mode in Enum.GetValues(clr.TypeOf(AUTOPILOT_HORIZ_PLANE_MODE)):
+            autopilot.active_mode = mode
+            autopilot.stop_when_conditions_met = False
+            Assert.assertFalse(autopilot.stop_when_conditions_met)
+
+            autopilot.stop_when_conditions_met = True
+            Assert.assertTrue(autopilot.stop_when_conditions_met)
+
+            autopilot.active_heading_course_value = 10
+            Assert.assertEqual(10, autopilot.active_heading_course_value)
 
         autopilot.active_mode = AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_COURSE_RATE
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
+            autopilot.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 1000)
+
+        autopilot.active_mode = AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_HEADING_RATE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             autopilot.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 1000)
 
@@ -3155,6 +3167,16 @@ class EarlyBoundTests(TestBase):
 
         autopilot.compensate_for_coriolis_accel = True
         Assert.assertTrue(autopilot.compensate_for_coriolis_accel)
+
+        mode: "AUTOPILOT_ALTITUDE_MODE"
+
+        for mode in Enum.GetValues(clr.TypeOf(AUTOPILOT_ALTITUDE_MODE)):
+            autopilot.altitude_mode = mode
+            autopilot.stop_when_conditions_met = False
+            Assert.assertFalse(autopilot.stop_when_conditions_met)
+
+            autopilot.stop_when_conditions_met = True
+            Assert.assertTrue(autopilot.stop_when_conditions_met)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -3456,7 +3478,7 @@ class EarlyBoundTests(TestBase):
         glide.set_glide_speed_control_mode(
             BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE.GLIDE_SPEED_AT_ALTITUDE, 2000
         )  # BUG - this should throw an exception, but does not, and does not change values in the GUI.
-        # TryCatchAssertBlock.ExpectedException("Hold Initial Airspeed must be disabled", delegate () { glide.SetGlideSpeedControlMode(BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE.eGlideSpeedAtAltitude, 2000); });
+        # TryCatchAssertBlock.ExpectedException("Hold Initial Airspeed must be disabled", delegate () { glide.SetGlideSpeedControlMode(BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE.GLIDE_SPEED_AT_ALTITUDE, 2000); });
 
         glide.hold_initial_airspeed = False
         Assert.assertFalse(glide.hold_initial_airspeed)
@@ -3687,6 +3709,8 @@ class EarlyBoundTests(TestBase):
 
         intercept.compensate_for_coriolis_accel = True
         Assert.assertTrue(intercept.compensate_for_coriolis_accel)
+
+        self.Test_IAgAvtrBasicManeuverTargetPosVel(intercept.position_vel_strategies)
 
         missileObj: "IStkObject" = clr.CastAs(missile, IStkObject)
         missileObj.unload()
@@ -8629,7 +8653,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(10000, altitudeOpts.msl_altitude)
 
         altitudeOpts.must_level_off = False
-        # TryCatchAssertBlock.ExpectedException("must be ", delegate () { altitudeOpts.LevelOffMode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.eLevelOffLeftTurnManeuver; });
+        # TryCatchAssertBlock.ExpectedException("must be ", delegate () { altitudeOpts.LevelOffMode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER; });
         altitudeOpts.must_level_off = True
         altitudeOpts.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER
         Assert.assertEqual(ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER, altitudeOpts.level_off_mode)
@@ -8994,5 +9018,68 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(waypointName, siteWaypointFromCatalog.get_as_site().name)
         catWaypoint2: "ICatalogItem" = clr.CastAs(siteWaypointFromCatalog.get_catalog_waypoint(), ICatalogItem)
         Assert.assertEqual(waypointName, catWaypoint2.name)
+
+    # endregion
+
+    # region Test_IAgAvtrBasicManeuverTargetPosVel
+    def Test_IAgAvtrBasicManeuverTargetPosVel(self, targetPosVel: "BasicManeuverTargetPositionVel"):
+        # Air-413 Console.WriteLine("INITIAL TargetPosVelTypeString:  " + targetPosVel.TargetPosVelTypeString);   // empty string
+        # Air-413 Console.WriteLine("TargetPosVelType:  " + targetPosVel.TargetPosVelType.ToString());            // Invalid parameters for TargetPosVel
+
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL
+        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
+        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.SURFACE
+        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
+        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.BEARING
+        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
+        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+
+        targetPosVel.target_position_vel_type_string = "Disabled Target PosVel."  # Air-413 Should not need the period
+        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
+        # Air-413 Console.WriteLine("TargetPosVelTypeString:  " + targetPosVel.TargetPosVelTypeString);        // Invalid parameters for TargetPosVel
+        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+
+        targetPosVel.target_position_vel_type_string = "Noisy Surface Target PosVel"
+        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
+        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+
+        targetPosVel.target_position_vel_type_string = "Noisy Bearing Range Target PosVel"
+        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
+        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+
+        # Air-413 TryCatchAssertBlock.ExpectedException("invalid", delegate() {targetPosVel.TargetPosVelTypeString = "Bogus Target PosVel"; } );    // Should throw, does not
+
+        # Air-414
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL
+        # BasicManeuverTargetPositionVelNoisyBrnRng nbr = targetPosVel.ModeAsNoisyBrnRng;   // Exception: "The server threw an exception."
+        # BasicManeuverTargetPositionVelNoisySurfTgt nst = targetPosVel.ModeAsNoisySurfTgt; // Exception: "The server threw an exception."
+
+        # Air-414
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.SURFACE
+        # BasicManeuverTargetPositionVelNoisyBrnRng nbr = targetPosVel.ModeAsNoisyBrnRng;   // Exception: "The server threw an exception."
+        # BasicManeuverTargetPositionVelNoisySurfTgt nst = targetPosVel.ModeAsNoisySurfTgt; // Exception: "The server threw an exception."
+
+        # Air-414
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.BEARING
+
+    # endregion
+
+    # region Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng
+    def Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(
+        self, noisyBrnRng: "BasicManeuverTargetPositionVelNoisyBrnRng"
+    ):
+        pass
+
+    # endregion
+
+    # region Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt
+    def Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(
+        self, noisySurfTgt: "BasicManeuverTargetPositionVelNoisySurfTgt"
+    ):
+        pass
 
     # endregion

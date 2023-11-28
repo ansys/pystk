@@ -4578,6 +4578,62 @@ longitude = 121;"""
 
     # endregion
 
+    # region BUG121530
+    def test_ZZZ_BUG121530(self):
+        TestBase.Application.close_scenario()
+        TestBase.Application.load_scenario(TestBase.GetScenarioFile("BUG121530", "debug_stk_euler_angles_template.sc"))
+
+        depl_sat: "Satellite" = clr.CastAs(
+            TestBase.Application.current_scenario.children["deployed_template"], Satellite
+        )
+        deuler0: typing.Any = 10
+        deuler1: typing.Any = 20
+        deuler2: typing.Any = 30
+        driver: "DriverMissionControlSequence" = clr.CastAs(depl_sat.propagator, DriverMissionControlSequence)
+        maneuver: "MissionControlSequenceManeuver" = clr.CastAs(
+            driver.main_sequence["Maneuver"], MissionControlSequenceManeuver
+        )
+        impulse: "ManeuverImpulsive" = clr.Convert(maneuver.maneuver, ManeuverImpulsive)
+        att: "AttitudeControlImpulsiveAttitude" = clr.Convert(
+            impulse.attitude_control, AttitudeControlImpulsiveAttitude
+        )
+        att.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, deuler0, deuler1, deuler2)
+
+        a: typing.Any = None
+        b: typing.Any = None
+        c: typing.Any = None
+
+        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        a = arEulerAngles[0]
+        b = arEulerAngles[1]
+        c = arEulerAngles[2]
+        Assert.assertEqual(10.0, Math.Round(float(a), 4))
+        Assert.assertEqual(20.0, Math.Round(float(b), 4))
+        Assert.assertEqual(30.0, Math.Round(float(c), 4))
+
+        ref_sat: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["ref_template"], Satellite)
+        euler0: typing.Any = -90
+        euler1: typing.Any = 0
+        euler2: typing.Any = 120
+        driver2: "DriverMissionControlSequence" = clr.CastAs(ref_sat.propagator, DriverMissionControlSequence)
+        settle: "MissionControlSequenceManeuver" = clr.CastAs(
+            driver2.main_sequence["Settle"], MissionControlSequenceManeuver
+        )
+        impulse2: "ManeuverImpulsive" = clr.Convert(maneuver.maneuver, ManeuverImpulsive)
+        att2: "AttitudeControlImpulsiveAttitude" = clr.Convert(
+            impulse2.attitude_control, AttitudeControlImpulsiveAttitude
+        )
+        att2.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, euler0, euler1, euler2)
+        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        a = arEulerAngles[0]
+        b = arEulerAngles[1]
+        c = arEulerAngles[2]
+        Assert.assertEqual(-90.0, Math.Round(float(a), 4))
+        Assert.assertEqual(0.0, Math.Round(float(b), 4))
+        Assert.assertEqual(120.0, Math.Round(float(c), 4))
+
+    # endregion
+
     # region CalculationGraphs
 
     def test_CalculationGraphs(self):
@@ -4705,6 +4761,7 @@ longitude = 121;"""
 
     # region CompBrowsCutCopyPaste
     @category("NUNITTestFails")
+    @category("ExcludeWithGrpc")
     def test_CompBrowsCutCopyPaste(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Calculation Graphs START")
         sat: "Satellite" = clr.CastAs(

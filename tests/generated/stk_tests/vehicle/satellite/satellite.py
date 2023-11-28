@@ -383,7 +383,7 @@ class EarlyBoundTests(TestBase):
         oPassBreak: "VehiclePassBreak" = EarlyBoundTests.AG_SAT.pass_break
         Assert.assertIsNotNone(oPassBreak)
         TestBase.logger.WriteLine6("The current Pass Numbering type is: {0}", oPassBreak.pass_numbering_type)
-        # ePassNumberingFirstPassNum
+        # PASS_NUMBERING_FIRST_PASS_NUM
         oPassBreak.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_FIRST_PASS_NUM)
         TestBase.logger.WriteLine6("The new Pass Numbering type is: {0}", oPassBreak.pass_numbering_type)
         Assert.assertEqual(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_FIRST_PASS_NUM, oPassBreak.pass_numbering_type)
@@ -395,7 +395,7 @@ class EarlyBoundTests(TestBase):
         oPass1.first_pass_num = 4
         TestBase.logger.WriteLine3("The new First Pass Num is: {0}", oPass1.first_pass_num)
         Assert.assertEqual(4, oPass1.first_pass_num)
-        # ePassNumberingDateOfFirstPass
+        # PASS_NUMBERING_DATE_OF_FIRST_PASS
         oPassBreak.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_DATE_OF_FIRST_PASS)
         TestBase.logger.WriteLine6("The new Pass Numbering type is: {0}", oPassBreak.pass_numbering_type)
         Assert.assertEqual(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_DATE_OF_FIRST_PASS, oPassBreak.pass_numbering_type)
@@ -413,18 +413,18 @@ class EarlyBoundTests(TestBase):
         oPass2.pass_data_epoch.set_explicit_time("12 Oct 2005 12:34:56.789")
         TestBase.logger.WriteLine6("The new Pass Data Epoch Time Instant is: {0}", oPass2.pass_data_epoch.time_instant)
         Assert.assertEqual("12 Oct 2005 12:34:56.789", oPass2.pass_data_epoch.time_instant)
-        # ePassNumberingMaintainPassNum
+        # PASS_NUMBERING_MAINTAIN_PASS_NUM
         oPassBreak.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_MAINTAIN_PASS_NUM)
         TestBase.logger.WriteLine6("The new Pass Numbering type is: {0}", oPassBreak.pass_numbering_type)
         Assert.assertEqual(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_MAINTAIN_PASS_NUM, oPassBreak.pass_numbering_type)
         oPass3: "IVehiclePassNumbering" = oPassBreak.pass_numbering
         if oPass3 == None:
-            TestBase.logger.WriteLine("The PassNumbering returned NULL for the ePassNumberingMaintainPassNum type.")
+            TestBase.logger.WriteLine("The PassNumbering returned NULL for the PASS_NUMBERING_MAINTAIN_PASS_NUM type.")
 
         else:
             Assert.fail("The PassNumbering should return NULL!")
 
-        # ePassNumberingUsePropagatorPassData
+        # PASS_NUMBERING_USE_PROPAGATOR_PASS_DATA
         oPassBreak.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_USE_PROPAGATOR_PASS_DATA)
         TestBase.logger.WriteLine6("The new Pass Numbering type is: {0}", oPassBreak.pass_numbering_type)
         Assert.assertEqual(
@@ -433,13 +433,13 @@ class EarlyBoundTests(TestBase):
         oPass3 = oPassBreak.pass_numbering
         if oPass3 == None:
             TestBase.logger.WriteLine(
-                "The PassNumbering returned NULL for the ePassNumberingUsePropagatorPassData type."
+                "The PassNumbering returned NULL for the PASS_NUMBERING_USE_PROPAGATOR_PASS_DATA type."
             )
 
         else:
             Assert.fail("The PassNumbering should return NULL!")
 
-        # ePassNumberingUnknown
+        # PASS_NUMBERING_UNKNOWN
         try:
             bCaught = False
             oPassBreak.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.PASS_NUMBERING_UNKNOWN)
@@ -599,20 +599,20 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\t\tThe new PropagatorType is: {0}", dragSat.propagator_type)
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP, dragSat.propagator_type)
         # Drag
-        # AtmosphericDensityModel (eCira72)
+        # AtmosphericDensityModel (CIRA72)
         oDrag: "VehicleHPOPForceModelDrag" = (clr.Convert((dragSat.propagator), VehiclePropagatorHPOP)).force_model.drag
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.CIRA72
         TestBase.logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.CIRA72, oDrag.atmospheric_density_model)
 
-        # LowAltAtmosphericDensityModel (eMSIS00)
+        # LowAltAtmosphericDensityModel (MSIS00)
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
         TestBase.logger.WriteLine6(
             "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
         )
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS00, oDrag.low_altitude_atmospheric_density_model)
 
-        # LowAltAtmosDensityModel (eMSIS00)
+        # LowAltAtmosDensityModel (MSIS00)
         oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_MSISE1990
         TestBase.logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
         Assert.assertEqual(
@@ -1136,7 +1136,7 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(oSatellite)
         try:
-            # SetPropagatorType (ePropagatorHPOP)
+            # SetPropagatorType (PROPAGATOR_HPOP)
             TestBase.logger.WriteLine6("\tThe current PropagatorType is: {0}", oSatellite.propagator_type)
             oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
             TestBase.logger.WriteLine6("\tThe new PropagatorType is: {0}", oSatellite.propagator_type)
@@ -1368,7 +1368,7 @@ class EarlyBoundTests(TestBase):
                 TestBase.logger.WriteLine5("Expected exception: {0}", str(e))
 
             if not bCaught:
-                Assert.fail("The SetAttributesType should not allow to set eAttributesRealtime value!")
+                Assert.fail("The SetAttributesType should not allow to set ATTRIBUTES_REALTIME value!")
 
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
         (clr.CastAs(EarlyBoundTests.AG_SAT.propagator, VehiclePropagatorRealtime)).propagate()
@@ -1478,10 +1478,10 @@ class EarlyBoundTests(TestBase):
             i += 1
 
         if not oPasses.is_pass_type_supported(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL):
-            Assert.fail("The ePassShowAll type should be supported!")
+            Assert.fail("The PASS_SHOW_ALL type should be supported!")
 
         if not oPasses.is_pass_type_supported(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES):
-            Assert.fail("The ePassShowPasses type should be supported!")
+            Assert.fail("The PASS_SHOW_PASSES type should be supported!")
 
         # PassType
         TestBase.logger.WriteLine6("The current PassType is: {0}", oPasses.pass_type)
@@ -1812,7 +1812,7 @@ class EarlyBoundTests(TestBase):
     # region VOModelPointing
     @category("VO Tests")
     def test_VOModelPointing(self):
-        # set VO.Model type to eModelFile
+        # set VO.Model type to FILE
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_SAT.graphics_3d.model
         TestBase.logger.WriteLine6("The current ModelType is: {0}", oModel.model_type)
         oModel.model_type = MODEL_TYPE.FILE
@@ -4072,8 +4072,8 @@ class EarlyBoundTests(TestBase):
         seetSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twobody: "VehiclePropagatorTwoBody" = clr.Convert(seetSat.propagator, VehiclePropagatorTwoBody)
         # OrbitStateClassical classical =
-        #    (OrbitStateClassical)twobody.InitialState.Representation.ConvertTo(AgEOrbitStateType.eOrbitStateClassical);
-        # classical.SizeShapeType = AgEClassicalSizeShape.eSizeShapePeriod;
+        #    (OrbitStateClassical)twobody.InitialState.Representation.ConvertTo(AgEOrbitStateType.CLASSICAL);
+        # classical.SizeShapeType = AgEClassicalSizeShape.SIZE_SHAPE_PERIOD;
         # ClassicalSizeShapePeriod period = (ClassicalSizeShapePeriod)classical.SizeShape;
         # period.Eccentricity = 0.01;
         # period.Period = 10000;

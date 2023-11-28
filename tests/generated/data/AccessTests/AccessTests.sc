@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.8.0
+WrittenBy    STK_v12.9.0
 BEGIN Scenario
     Name		 AccessTests
 
@@ -88,13 +88,6 @@ BEGIN Scenario
     END ScenarioLicenses
 
     BEGIN Extensions
-
-        BEGIN ScenarioEOIR
-            BEGIN EOIRCloudData Earth
-            END EOIRCloudData
-            BEGIN EOIRTEXTUREMAPSDATA Earth
-            END EOIRTEXTUREMAPSDATA
-        END ScenarioEOIR
 
         BEGIN ClsApp
             RangeConstraint		 5000
@@ -231,7 +224,6 @@ BEGIN Scenario
             VoltageUnit		 Volts
             RadiationShieldThickness		 Mils
             ParticleEnergy		 MeV
-            RepeatCount		 Cycles
         END Units
 
         BEGIN ReportUnits
@@ -286,7 +278,6 @@ BEGIN Scenario
             VoltageUnit		 Volts
             RadiationShieldThickness		 Mils
             ParticleEnergy		 MeV
-            RepeatCount		 Cycles
         END ReportUnits
 
         BEGIN ConnectReportUnits
@@ -341,7 +332,6 @@ BEGIN Scenario
             VoltageUnit		 Volts
             RadiationShieldThickness		 Mils
             ParticleEnergy		 MeV
-            RepeatCount		 Cycles
         END ConnectReportUnits
 
         BEGIN ReportFavorites
@@ -479,7 +469,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{869A3022-871C-4231-80CB-F066E746CDE0}&quot;</STRING>
+                                                <STRING>&quot;{BD57CED0-130D-4B6D-A881-42E49FB06903}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -600,7 +590,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{54A5C903-7821-4803-A5CF-2341C986B4D5}&quot;</STRING>
+                                                <STRING>&quot;{FA846F65-84C0-4CFD-8341-104D89536D0E}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -700,7 +690,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{2133F3F8-9AC9-48DD-A2DC-F9C2B13C7D6D}&quot;</STRING>
+                                                <STRING>&quot;{676CF54F-E9C8-4B7E-8891-D1BCFA34051A}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -762,10 +752,7 @@ BEGIN Scenario
                                         <BOOL>false</BOOL>
                                     </VAR>
                                     <VAR name = "AlternateAPDataFile">
-                                        <STRING>
-                                            <PROP name = "FullName">
-                                                <STRING>&quot;&quot;</STRING>
-                                            </PROP>&quot;&quot;</STRING>
+                                        <STRING>&quot;&quot;</STRING>
                                     </VAR>
                                 </SCOPE>
                             </VAR>
@@ -791,7 +778,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{949C0DB3-33FF-45BF-99ED-915A3E081479}&quot;</STRING>
+                                                <STRING>&quot;{C6DF54E3-F1E6-425D-B46D-6E41A1300F06}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -890,7 +877,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{F8EF3254-815E-4E16-8160-60EE11E77A19}&quot;</STRING>
+                                                <STRING>&quot;{2795EE5A-E35E-4801-A085-4664E1039FFB}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -982,7 +969,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{696DEC09-FB44-4133-ADAC-CFED0F95812A}&quot;</STRING>
+                                                <STRING>&quot;{52602CFD-A931-4729-8492-23BC673D9D5A}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1113,7 +1100,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{9E0F2432-9759-453D-A946-F3679EDC80D8}&quot;</STRING>
+                                                <STRING>&quot;{1C1C23B5-D266-454B-8A26-2331E30CD5F4}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1222,7 +1209,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{84C4EDC1-5D32-4EF5-814A-1433B5F293DE}&quot;</STRING>
+                                                <STRING>&quot;{5E541D62-E03C-4548-AF83-31C65B3FFD29}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1323,7 +1310,7 @@ BEGIN Scenario
                             <VAR name = "IdentifierInformation">
                                 <SCOPE>
                                     <VAR name = "Identifier">
-                                        <STRING>&quot;{1AE5DA35-648F-4349-A19E-FED0276D9EF0}&quot;</STRING>
+                                        <STRING>&quot;{DB911029-EDA5-4CF1-895F-E5C4F9FA08B3}&quot;</STRING>
                                     </VAR>
                                     <VAR name = "Version">
                                         <STRING>&quot;1&quot;</STRING>
@@ -3543,7 +3530,7 @@ BEGIN Scenario
                     MapNum		 1
                     TrackingMode		 LatLon
                     PickEnabled		 On
-                    PanEnabled		 On
+                    PanEnabled		 Off
 
                     BEGIN MapAttributes
                         PrimaryBody		 Earth
@@ -3572,7 +3559,7 @@ BEGIN Scenario
                         ShowImageNames		 Off
                         ImageNameFont		 0
                         Projection		 EquidistantCylindrical
-                        Resolution		 VeryLow
+                        Resolution		 Low
                         CoordinateSys		 ECF
                         UseBackgroundImage		 On
                         UseBingForBackground		 Off
@@ -3729,7 +3716,7 @@ BEGIN Scenario
                         TextTranslucency		 0
                         ShowBackground		 0
                         BackColor		 #4d4d4d
-                        BackTranslucency		 0.4
+                        BackTranslucency		 0
                         XPosition		 20
                         YPosition		 -20
                     END TimeDisplay
@@ -3752,10 +3739,10 @@ BEGIN Scenario
                         SunlightLineWidth		 2
                         FillSunlight		 Off
                         SunlightFillColor		 #ffff00
-                        SunlightMinOpacity		 0
-                        SunlightMaxOpacity		 0.2
-                        UmbraMaxOpacity		 0.7
-                        UmbraMinOpacity		 0.4
+                        SunlightMinOpacity		 0.1
+                        SunlightMaxOpacity		 0.5
+                        UmbraMaxOpacity		 0.5
+                        UmbraMinOpacity		 0.2
                     END LightingData
                 END Map
 

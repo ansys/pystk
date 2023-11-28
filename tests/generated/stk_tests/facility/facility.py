@@ -165,7 +165,7 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_FA.set_az_el_mask(
             AZ_EL_MASK_TYPE.TERRAIN_DATA, 22
-        )  #  BUG120275 Data value?  Helpstring says: "If Type is eTerrainData then it is the Height above ground"
+        )  #  BUG120275 Data value?  Helpstring says: "If Type is TERRAIN_DATA then it is the Height above ground"
         Assert.assertEqual(AZ_EL_MASK_TYPE.TERRAIN_DATA, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual(22, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
@@ -537,7 +537,7 @@ class EarlyBoundTests(TestBase):
     # region RF_Environment_UrbanAndTerrestrial
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = PlatformRF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_FA.rf_environment)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment, False)
 
     # endregion
 

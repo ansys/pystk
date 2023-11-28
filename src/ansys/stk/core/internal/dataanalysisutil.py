@@ -3,18 +3,6 @@ from functools import wraps
 
 import importlib
 
-try:
-    import numpy as np
-    from numpy import ndarray
-except ModuleNotFoundError:
-    pass
-    
-try:
-    import pandas as pd
-    from pandas import DataFrame
-except ModuleNotFoundError:
-    pass
-
 
 def required_package(package_name: str):
     """
@@ -50,11 +38,13 @@ def required_package(package_name: str):
 
 @required_package("numpy")
 def to_numpy_array(results: "DataProviderResultDataSetCollection") -> "ndarray":
-    results_arr = np.array([])
+    import numpy
+
+    results_arr = numpy.array([])
 
     # create numpy array from row formatted dataset elements
     row_elements = results.ToArray()
-    unshaped_elements_arr = np.array(row_elements)
+    unshaped_elements_arr = numpy.array(row_elements)
 
     # get unique element names and unique element count
     unique_element_names = _get_unique_element_names(results)
@@ -70,7 +60,9 @@ def to_numpy_array(results: "DataProviderResultDataSetCollection") -> "ndarray":
 @required_package("pandas")
 def to_pandas_dataframe(results: "DataProviderResultDataSetCollection", index_element_name: str = None,
                  data_provider_elements: "DataProviderElements" = None) -> "DataFrame":
-    results_df = pd.DataFrame()
+    import pandas
+
+    results_df = pandas.DataFrame()
     results_arr = to_numpy_array(results)
 
     if results_arr.size > 0:
@@ -86,7 +78,7 @@ def to_pandas_dataframe(results: "DataProviderResultDataSetCollection", index_el
         # case sensitive
         normalized_unique_element_names = [name.lower() for name in unique_element_names]
 
-        results_df = pd.DataFrame(data=results_arr, columns=normalized_unique_element_names)
+        results_df = pandas.DataFrame(data=results_arr, columns=normalized_unique_element_names)
 
         # set DataFrame index column
         if index_element_name:
@@ -137,6 +129,7 @@ def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderEle
     -----
     This function requires ``numpy``.
     """
+    import numpy
 
     dtype_element_name_mapping = dict()
 
@@ -149,9 +142,9 @@ def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderEle
         # dimension elements as string dtypes in pandas. Future work plans to implement more robust datetime support
         # for pandas.
         if element_type_name == "ereal" and element_dimensions_name not in "date":
-            pd_dtype = np.float64
+            pd_dtype = numpy.float64
         elif element_type_name == "eint":
-            pd_dtype = np.int64
+            pd_dtype = numpy.int64
         else:
             # by default make everything else a str, strings like datatime strings can be handled/parsed
             # separately

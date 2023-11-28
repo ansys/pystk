@@ -76,7 +76,7 @@ class TargetSnippets(CodeSnippetsTestBase):
         target.use_local_time_offset = True
         target.local_time_offset = 200.0
         target.use_terrain = True
-        # Note, if SetAzElMask is set to a type other than AZ_EL_MASK_TYPE.eMaskFile,
+        # Note, if SetAzElMask is set to a type other than AZ_EL_MASK_TYPE.MASK_FILE,
         # the second parameter is ignored.
         target.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, maskfile)
         target.terrain_norm = TERRAIN_NORM_TYPE.SLOPE_AZIMUTH
