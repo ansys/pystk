@@ -34,6 +34,7 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     if: inputs.run-doc || github.event_name == 'schedule'
     steps:
       - name: "Building project documentation"
