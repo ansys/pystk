@@ -1,0 +1,14 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyUserValue">
+    <OBJECT Class = "string" Name = "Category"> &quot;UserValues&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Value of a user variable&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcUserValue&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Value of a user variable&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "VariableName"> &quot;&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

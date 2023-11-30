@@ -1,0 +1,48 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "EOMFuncWrapper" Name = "MyHyperion">
+    <OBJECT Class = "string" Name = "Category"> &quot;Third Bodies&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Third body effect&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "EphemerisSource"> &quot;Cb File&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "GravityField">
+        <OBJECT Class = "EOMFuncWrapper" Name = "Gravitational_Force">
+            <OBJECT Class = "string" Name = "Category"> &quot;Gravity Models&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "CentralBody">
+                <OBJECT Class = "string" Name = ""> &quot;Hyperion&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "int" Name = "Degree"> 0 </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;Gravitational force from central body&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "GravityFile"> &quot;STKData\CentralBodies\Hyperion\ZonalsToJ4.grv&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "IncludeTimeDependentSolidTides"> False </OBJECT>
+            <OBJECT Class = "double" Name = "MinRadiusPercent"> 0.99 unitValue </OBJECT>
+            <OBJECT Class = "int" Name = "OceanTideMaxDegree"> 4 </OBJECT>
+            <OBJECT Class = "int" Name = "OceanTideMaxOrder"> 4 </OBJECT>
+            <OBJECT Class = "double" Name = "OceanTideMinAmp"> 0 m </OBJECT>
+            <OBJECT Class = "int" Name = "Order"> 0 </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "double" Name = "SolidTideMinAmp"> 0 m </OBJECT>
+            <OBJECT Class = "string" Name = "SolidTideType"> &quot;Permanent tide only&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "TruncateSolidTides"> True </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;GravityFieldFunc&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseOceanTides"> False </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Gravitational force from central body&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseSecularVariations"> False </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "GravSource"> &quot;Cb File&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Mode"> &quot;Point Mass&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "Mu"> 372368036.3576141 m^3*sec^-2 </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "link" Name = "ThirdBody">
+        <OBJECT Class = "string" Name = ""> &quot;Hyperion&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;ThirdBodyFunc&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Hyperion third body effect&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.1 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

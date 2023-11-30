@@ -1,0 +1,88 @@
+<?xml version = "1.0" standalone = "yes"?>
+<Component>
+    <Type>AsStateCalc</Type>
+    <SpecificType>CAgAsStateCalcJScript</SpecificType>
+    <Category>Scripts</Category>
+    <Data>
+        <VAR name = "MyJScript">
+            <SCOPE Class = "AsStateCalc">
+                <VAR name = "Version">
+                    <STRING>&quot;1.0.0 a&quot;</STRING>
+                </VAR>
+                <VAR name = "STKVersion">
+                    <INT>1280</INT>
+                </VAR>
+                <VAR name = "Description">
+                    <STRING>&quot;Calculation produced by a JScript inline function&quot;</STRING>
+                </VAR>
+                <VAR name = "Type">
+                    <STRING>&quot;CAgAsStateCalcJScript&quot;</STRING>
+                </VAR>
+                <VAR name = "UserComment">
+                    <STRING>&quot;Calculation produced by a JScript inline function&quot;</STRING>
+                </VAR>
+                <VAR name = "ReadOnly">
+                    <BOOL>false</BOOL>
+                </VAR>
+                <VAR name = "Clonable">
+                    <BOOL>true</BOOL>
+                </VAR>
+                <VAR name = "Category">
+                    <STRING>&quot;Scripts&quot;</STRING>
+                </VAR>
+                <VAR name = "IdentifierInformation">
+                    <SCOPE>
+                        <VAR name = "Identifier">
+                            <STRING>&quot;{7F17F388-DA33-42E0-8D1A-3601D853AAAE}&quot;</STRING>
+                        </VAR>
+                        <VAR name = "Version">
+                            <STRING>&quot;1&quot;</STRING>
+                        </VAR>
+                        <VAR name = "SdfInformation">
+                            <SCOPE>
+                                <VAR name = "Version">
+                                    <STRING>&quot;0.0&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Url">
+                                    <STRING>&quot;&quot;</STRING>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                        <VAR name = "SourceIdentifierInformation">
+                            <SCOPE>
+                                <VAR name = "Identifier">
+                                    <STRING>&quot;{4C704349-7AE0-4F19-A757-23187863A520}&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Version">
+                                    <STRING>&quot;1&quot;</STRING>
+                                </VAR>
+                                <VAR name = "SdfInformation">
+                                    <SCOPE>
+                                        <VAR name = "Version">
+                                            <STRING>&quot;0.0&quot;</STRING>
+                                        </VAR>
+                                        <VAR name = "Url">
+                                            <STRING>&quot;&quot;</STRING>
+                                        </VAR>
+                                    </SCOPE>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </SCOPE>
+                </VAR>
+                <VAR name = "ShooterControls">
+                    <LIST />
+                </VAR>
+                <VAR name = "CalcArguments">
+                    <LIST />
+                </VAR>
+                <VAR name = "InlineFunc">
+                    <STRING>&quot;&quot;</STRING>
+                </VAR>
+                <VAR name = "UnitDimension">
+                    <STRING>&quot;Unitless&quot;</STRING>
+                </VAR>
+            </SCOPE>
+        </VAR>
+    </Data>
+</Component>

@@ -46,7 +46,8 @@ class STKEngineApplication(STKXApplication):
 
     def _private_init(self, pUnk:IUnknown, noGraphics):
         STKXApplication._private_init(self, pUnk)
-        self._STKXInitialize()
+        if os.name!="nt":
+            self._STKXInitialize()
         self._STKXInitializeTimer(noGraphics)
         self.__dict__["_initialized"] = True
         
@@ -54,8 +55,6 @@ class STKEngineApplication(STKXApplication):
         self.ShutDown()
         
     def _STKXInitialize(self):
-        if os.name=="nt":
-            return
         CLSID_AgSTKXInitialize = GUID()
         if Succeeded(ole32lib.CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", CLSID_AgSTKXInitialize)):
             IID_IUnknown = GUID(IUnknown._guid)

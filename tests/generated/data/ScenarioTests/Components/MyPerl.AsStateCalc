@@ -1,0 +1,17 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyPerl">
+    <OBJECT Class = "container" Name = "CalcArgumentsSelected" />
+    <OBJECT Class = "ListLink" Name = "CalcArguments" />
+    <OBJECT Class = "string" Name = "Category"> &quot;Scripts&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Calculation produced by a Perl inline function&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "InlineFunc"> &quot;&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcPerl&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UnitDimension"> &quot;Unitless&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Calculation produced by a Perl inline function&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

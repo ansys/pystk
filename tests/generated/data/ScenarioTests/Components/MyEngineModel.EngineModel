@@ -1,0 +1,16 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "EngineModel" Name = "MyEngineModel">
+    <OBJECT Class = "double" Name = "Acceleration"> 0.5 m*sec^-2 </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Engine that has a constant Acceleration and Isp&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "g"> 9.806649999999999 m*sec^-2 </OBJECT>
+    <OBJECT Class = "double" Name = "Isp"> 300 s </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;EngineConstAcc&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Engine that has a constant Acceleration and Isp&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

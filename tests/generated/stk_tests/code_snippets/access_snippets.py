@@ -607,7 +607,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         accessConstraints: "AccessConstraintCollection" = stkobject.access_constraints
 
         # Add constraints
-        # Only the eCstrApparentTime, eCstrDuration, eCstrGMT, eCstrIntervals, eCstrLocalTime constraint
+        # Only the APPARENT_TIME, DURATION, GMT, INTERVALS, LOCAL_TIME constraint
         # types can be added multiple times to the constraint collection.
         accessConstraints.add_constraint(ACCESS_CONSTRAINTS.LOCAL_TIME)
         accessConstraints.add_constraint(ACCESS_CONSTRAINTS.LOCAL_TIME)

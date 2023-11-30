@@ -1,0 +1,122 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Radar System" Name = "MyBistatRadarSystem">
+    <OBJECT Class = "AttrCon" Name = "AntennaControl">
+        <OBJECT Class = "string" Name = "AntennaReferenceType"> &quot;Embed&quot; </OBJECT>
+        <OBJECT Class = "link" Name = "Antenna">
+            <OBJECT Class = "Antenna" Name = "Parabolic">
+                <OBJECT Class = "double" Name = "BacklobeGain"> 0.001 units </OBJECT>
+                <OBJECT Class = "double" Name = "Beamwidth"> 0.1029448481674586 rad </OBJECT>
+                <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+                <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+                <OBJECT Class = "string" Name = "ComponentName"> &quot;Parabolic&quot; </OBJECT>
+                <OBJECT Class = "string" Name = "Description"> &quot;Analytical model of a uniformly illuminated parabolic antenna&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "DesignFrequency"> 2997924580 Hz </OBJECT>
+                <OBJECT Class = "double" Name = "Diameter"> 1 m </OBJECT>
+                <OBJECT Class = "double" Name = "Efficiency"> 0.55 unitValue </OBJECT>
+                <OBJECT Class = "string" Name = "InputType"> &quot;Use Diameter&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "MainlobeGain"> 542.8282420599147 units </OBJECT>
+                <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+                <OBJECT Class = "string" Name = "Type"> &quot;Parabolic&quot; </OBJECT>
+                <OBJECT Class = "bool" Name = "UseAsMainlobeAttenuation"> False </OBJECT>
+                <OBJECT Class = "string" Name = "UserComment"> &quot;Analytical model of a uniformly illuminated parabolic antenna&quot; </OBJECT>
+                <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+            </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "link" Name = "Orientation">
+            <OBJECT Class = "Orientation" Name = "Azimuth Elevation">
+                <OBJECT Class = "string" Name = "AboutBoresight"> &quot;Rotate&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "AzimuthAngle"> 0 rad </OBJECT>
+                <OBJECT Class = "double" Name = "ElevationAngle"> 1.570796326794897 rad </OBJECT>
+                <OBJECT Class = "string" Name = "Type"> &quot;Azimuth Elevation&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "XPositionOffset"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "YPositionOffset"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "ZPositionOffset"> 0 m </OBJECT>
+            </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "link" Name = "BistaticReceiverSelectionStrategy">
+        <OBJECT Class = "Bistatic Receiver Selection Strategy" Name = "Static Receiver">
+            <OBJECT Class = "AttrCon" Name = "BistaticReceivers">
+                <OBJECT Class = "ListLink" Name = "ObjectList" />
+            </OBJECT>
+            <OBJECT Class = "string" Name = "ComponentName"> &quot;Static Receiver&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;Static Receiver&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyBistatRadarSystem&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Bistatic Transmitter&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "Mode">
+        <OBJECT Class = "Bistatic Transmitter Radar Mode" Name = "Search_Track">
+            <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "ComponentName"> &quot;Search_Track&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;Search Track&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;Search Track&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Search Track&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "Waveform">
+                <OBJECT Class = "SearchTrackBistaticTransmitterWaveform" Name = "Fixed PRF">
+                    <OBJECT Class = "AttrCon" Name = "Modulator">
+                        <OBJECT Class = "int" Name = "PSDLimitMultiplier"> 15 </OBJECT>
+                        <OBJECT Class = "bool" Name = "UseSignalPSD"> False </OBJECT>
+                    </OBJECT>
+                    <OBJECT Class = "AttrCon" Name = "PulseDefinition">
+                        <OBJECT Class = "int" Name = "NumberOfPulses"> 20 </OBJECT>
+                        <OBJECT Class = "double" Name = "PRF"> 1000 Hz </OBJECT>
+                        <OBJECT Class = "string" Name = "PulseWidthDutyFactorMode"> &quot;Pulse Width&quot; </OBJECT>
+                        <OBJECT Class = "double" Name = "PulseWidth"> 1e-07 sec </OBJECT>
+                        <OBJECT Class = "string" Name = "SubMode"> &quot;PRF&quot; </OBJECT>
+                    </OBJECT>
+                    <OBJECT Class = "string" Name = "Type"> &quot;Fixed PRF&quot; </OBJECT>
+                </OBJECT>
+            </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "AttrCon" Name = "Transmitter">
+        <OBJECT Class = "AttrCon" Name = "AdditionalGainsLosses">
+            <OBJECT Class = "container" Name = "GainLossList" />
+        </OBJECT>
+        <OBJECT Class = "bool" Name = "EnableOrthoPolarization"> False </OBJECT>
+        <OBJECT Class = "link" Name = "Filter">
+            <OBJECT Class = "Filter" Name = "Butterworth">
+                <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+                <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+                <OBJECT Class = "string" Name = "ComponentName"> &quot;Butterworth&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "CutoffFrequency"> 10000000 Hz </OBJECT>
+                <OBJECT Class = "string" Name = "Description"> &quot;General form of nth order Butterworth filter with flat passband and stopband regions&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "InsertionLoss"> 1 units </OBJECT>
+                <OBJECT Class = "double" Name = "LowerBandwidthLimit"> -20000000 Hz </OBJECT>
+                <OBJECT Class = "int" Name = "Order"> 4 </OBJECT>
+                <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+                <OBJECT Class = "string" Name = "Type"> &quot;Butterworth&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "UpperBandwidthLimit"> 20000000 Hz </OBJECT>
+                <OBJECT Class = "string" Name = "UserComment"> &quot;General form of nth order Butterworth filter with flat passband and stopband regions&quot; </OBJECT>
+                <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+            </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "string" Name = "FrequencySpecification"> &quot;Frequency&quot; </OBJECT>
+        <OBJECT Class = "double" Name = "Frequency"> 2997924580 Hz </OBJECT>
+        <OBJECT Class = "link" Name = "Polarization">
+            <OBJECT Class = "Polarization" Name = "Linear">
+                <OBJECT Class = "double" Name = "CrossPolLeakage"> 1e-06 units </OBJECT>
+                <OBJECT Class = "string" Name = "ReferenceAxis"> &quot;X Axis&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "TiltAngle"> 0 rad </OBJECT>
+                <OBJECT Class = "string" Name = "Type"> &quot;Linear&quot; </OBJECT>
+            </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "double" Name = "PowerAmpBandwidth"> 30000000 Hz </OBJECT>
+        <OBJECT Class = "double" Name = "Power"> 10000 W </OBJECT>
+        <OBJECT Class = "bool" Name = "UseFilter"> False </OBJECT>
+        <OBJECT Class = "bool" Name = "UsePolarization"> False </OBJECT>
+        <OBJECT Class = "double" Name = "Wavelength"> 0.1 m </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Bistatic Transmitter&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Bistatic Transmitter&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

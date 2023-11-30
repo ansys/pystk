@@ -374,11 +374,13 @@ class STKObjectHelper(object):
             oCollection.unload(STK_OBJECT_TYPE.SENSOR, "Radar")
 
         if oObject.class_type == STK_OBJECT_TYPE.SCENARIO:
-            oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTests", "at2.at"))
+            oCollection.import_object(TestBase.PathCombine(TestBase.GetScenarioRootDir(), "AreaTargetTests", "at2.at"))
 
         else:
             with pytest.raises(Exception):
-                oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
+                oCollection.import_object(
+                    TestBase.PathCombine(TestBase.GetScenarioRootDir(), "AreaTargetTests", "at2.at")
+                )
 
         # _NewEnum
         stkObject1: "IStkObject"

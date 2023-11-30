@@ -1,0 +1,49 @@
+<?xml version = "1.0" standalone = "yes"?>
+<VAR name = "MyCrossrangePosition">
+    <SCOPE Class = "AsStateCalc">
+        <VAR name = "Version">
+            <STRING>&quot;1.0.0 a&quot;</STRING>
+        </VAR>
+        <VAR name = "STKVersion">
+            <INT>1220</INT>
+        </VAR>
+        <VAR name = "Description">
+            <STRING>&quot;Crossrange position of location source relative to reference ellipse (i.e., point on ellipse closest to the projection of location into plane of ellipse)&quot;</STRING>
+        </VAR>
+        <VAR name = "Type">
+            <STRING>&quot;CAgAsStateCalcCrossrangePosition&quot;</STRING>
+        </VAR>
+        <VAR name = "UserComment">
+            <STRING>&quot;Crossrange position of location source relative to reference ellipse (i.e., point on ellipse closest to the projection of location into plane of ellipse)&quot;</STRING>
+        </VAR>
+        <VAR name = "ReadOnly">
+            <BOOL>false</BOOL>
+        </VAR>
+        <VAR name = "Clonable">
+            <BOOL>true</BOOL>
+        </VAR>
+        <VAR name = "Category">
+            <STRING>&quot;Curvilinear Relative Motion&quot;</STRING>
+        </VAR>
+        <VAR name = "ShooterControls">
+            <LIST />
+        </VAR>
+        <VAR name = "CentralBody">
+            <LINKTOOBJ>
+                <STRING>&quot;Earth&quot;</STRING>
+            </LINKTOOBJ>
+        </VAR>
+        <VAR name = "ReferenceEllipse">
+            <STRING>&quot;Reference Satellite Orbit&quot;</STRING>
+        </VAR>
+        <VAR name = "LocationSource">
+            <STRING>&quot;Satellite&quot;</STRING>
+        </VAR>
+        <VAR name = "ReferenceSelection">
+            <STRING>&quot;Use Basic-&gt;Reference&quot;</STRING>
+        </VAR>
+        <VAR name = "SignConvention">
+            <STRING>&quot;Positive&quot;</STRING>
+        </VAR>
+    </SCOPE>
+</VAR>

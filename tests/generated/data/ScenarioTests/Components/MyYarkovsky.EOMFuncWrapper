@@ -1,0 +1,21 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "EOMFuncWrapper" Name = "MyYarkovsky">
+    <OBJECT Class = "double" Name = "A1"> 0 m*sec^-2 </OBJECT>
+    <OBJECT Class = "double" Name = "A2"> 0 m*sec^-2 </OBJECT>
+    <OBJECT Class = "double" Name = "A3"> 0 m*sec^-2 </OBJECT>
+    <OBJECT Class = "double" Name = "alpha"> 0.111262 &quot;&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Correction to acceleration due to non-gravitational effects on comets and asteroids&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "NK"> 4.6142 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "NM"> 2.15 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "NN"> 5.093 &quot;&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "R0"> 420070820925.6 m </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;YarkovskyFunc&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Correction to acceleration due to non-gravitational effects on comets and asteroids&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

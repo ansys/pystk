@@ -468,7 +468,7 @@ class EarlyBoundTests(TestBase):
                 TestBase.logger.WriteLine5("Expected exception: {0}", str(e))
 
             if not bCaught:
-                Assert.fail("The SetAttributesType should not allow to set eAttributesRealtime value!")
+                Assert.fail("The SetAttributesType should not allow to set ATTRIBUTES_REALTIME value!")
 
         EarlyBoundTests.AG_GV.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
         (clr.CastAs(EarlyBoundTests.AG_GV.route, VehiclePropagatorRealtime)).propagate()
@@ -698,7 +698,7 @@ class EarlyBoundTests(TestBase):
     # region VOModelPointing
     @category("VO Tests")
     def test_VOModelPointing(self):
-        # set VO.Model type to eModelFile
+        # set VO.Model type to FILE
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_GV.graphics_3d.model
         TestBase.logger.WriteLine6("The current ModelType is: {0}", oModel.model_type)
         oModel.model_type = MODEL_TYPE.FILE
@@ -896,7 +896,7 @@ class EarlyBoundTests(TestBase):
     # region RF_Environment_UrbanAndTerrestrial
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = PlatformRF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_GV.rf_environment)
+        helper.Run(EarlyBoundTests.AG_GV.rf_environment, True)
 
     # endregion
 

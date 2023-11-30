@@ -4499,7 +4499,7 @@ class PolarizationHelper(object):
 
             Assert.assertEqual(90, vert.tilt_angle)
         elif type == POLARIZATION_TYPE.UNKNOWN:
-            Assert.fail("Should never get here: POLARIZATION_TYPE.ePolarizationTypeUnknown")
+            Assert.fail("Should never get here: POLARIZATION_TYPE.UNKNOWN")
         else:
             Assert.fail("Unknown or untested POLARIZATION_TYPE")
 
@@ -6728,10 +6728,9 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
         Assert.assertEqual(4, Array.Length(arSupportedCalculationMethods))  # was 5 in WirelessInSiteRT
         sCalcMethod: str
         for sCalcMethod in arSupportedCalculationMethods:
-            if (
-                ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "OPAR")))
-                or ((sCalcMethod == "TPGEODESIC"))
-            ) or ((sCalcMethod == "WALFISCH_IKEGAMI")):
+            if ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "TPGEODESIC"))) or (
+                (sCalcMethod == "WALFISCH_IKEGAMI")
+            ):
                 wisRT.calculation_method = sCalcMethod
                 Assert.assertEqual(sCalcMethod, wisRT.calculation_method)
             else:
@@ -6755,15 +6754,16 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
 
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
-            geometryData.filename = TestBase.GetScenarioFile("Cochise.shp")
+            geometryData.filename = TestBase.GetScenarioFile("Skopje.shp")
+            Assert.assertEqual("Skopje.shp", geometryData.filename)
 
             geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84
             Assert.assertEqual(PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84, geometryData.projection_horizontal_datum)
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.UTMWGS84
 
-            geometryData.building_height_data_attribute = "STATE_NAME"
-            Assert.assertEqual("STATE_NAME", geometryData.building_height_data_attribute)
+            geometryData.building_height_data_attribute = "GM_LAYER"
+            Assert.assertEqual("GM_LAYER", geometryData.building_height_data_attribute)
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.building_height_data_attribute = "Some"
 
@@ -6808,18 +6808,18 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             geometryData.use_terrain_data = False
             Assert.assertFalse(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(32.43, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-109.05, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(31.33, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-110.46, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
 
             geometryData.use_terrain_data = True
             Assert.assertTrue(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(32.43, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-109.05, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(31.33, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-110.46, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
 
 
 # endregion

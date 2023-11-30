@@ -1,0 +1,19 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyBTheta">
+    <OBJECT Class = "string" Name = "Category"> &quot;MultiBody&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;B-Plane theta angle&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "link" Name = "ReferenceVector">
+        <OBJECT Class = "string" Name = ""> &quot;CentralBody/Moon Orbit_Normal&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "link" Name = "TargetBody">
+        <OBJECT Class = "string" Name = ""> &quot;Moon&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;BThetaCalc&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;B-Plane theta angle&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

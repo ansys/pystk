@@ -420,39 +420,39 @@ class OrbitStateHelper(object):
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oCartesian.coordinate_system_type)
-        # eCoordinateSystemAlignmentAtEpoch
+        # ALIGNMENT_AT_EPOCH
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
-        # eCoordinateSystemB1950
+        # B1950
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.B1950)
-        # eCoordinateSystemFixed
+        # FIXED
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.FIXED)
-        # eCoordinateSystemJ2000
+        # J2000
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.J2000)
-        # eCoordinateSystemICRF;
+        # ICRF;
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.ICRF)
-        # eCoordinateSystemMeanOfDate
+        # MEAN_OF_DATE
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
-        # eCoordinateSystemMeanOfEpoch
+        # MEAN_OF_EPOCH
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
-        # eCoordinateSystemTEMEOfDate
+        # TEME_OF_DATE
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
-        # eCoordinateSystemTEMEOfEpoch
+        # TEME_OF_EPOCH
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
-        # eCoordinateSystemTrueOfDate
+        # TRUE_OF_DATE
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
-        # eCoordinateSystemTrueOfEpoch
+        # TRUE_OF_EPOCH
         self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
-            # eCoordinateSystemTrueOfRefDate
+            # TRUE_OF_REFERENCE_DATE
             self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
-            self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
+            self.m_logger.WriteLine("\t\tThe TRUE_OF_REFERENCE_DATE does not supported by current licenses.")
 
-        # eCoordinateSystemUnknown
+        # UNKNOWN
         try:
             self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
-            Assert.fail("Cannot set eCoordinateSystemUnknown coordinate system.")
+            Assert.fail("Cannot set UNKNOWN coordinate system.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -476,7 +476,7 @@ class OrbitStateHelper(object):
         self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS)
         try:
             self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_UNKNOWN)
-            Assert.fail("Cannot set CLASSICAL_SIZE_SHAPE.eSizeShapeUnknown.")
+            Assert.fail("Cannot set CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -497,7 +497,7 @@ class OrbitStateHelper(object):
         self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY)
         try:
             self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_UNKNOWN)
-            Assert.fail("Cannot set CLASSICAL_LOCATION.eLocationUnknown.")
+            Assert.fail("Cannot set CLASSICAL_LOCATION.LOCATION_UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -521,11 +521,11 @@ class OrbitStateHelper(object):
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oClassical.coordinate_system_type)
-        # eCoordinateSystemAlignmentAtEpoch
+        # ALIGNMENT_AT_EPOCH
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
-        # eCoordinateSystemB1950
+        # B1950
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.B1950)
-        # eCoordinateSystemFixed
+        # FIXED
         bCaught: bool = False
         try:
             bCaught = False
@@ -536,25 +536,25 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemFixed")
+            Assert.fail("Cannot set FIXED")
 
-        # eCoordinateSystemJ2000
+        # J2000
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.J2000)
-        # eCoordinateSystemICRF
+        # ICRF
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.ICRF)
-        # eCoordinateSystemMeanOfDate
+        # MEAN_OF_DATE
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
-        # eCoordinateSystemMeanOfEpoch
+        # MEAN_OF_EPOCH
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
-        # eCoordinateSystemTEMEOfDate
+        # TEME_OF_DATE
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
-        # eCoordinateSystemTEMEOfEpoch
+        # TEME_OF_EPOCH
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
-        # eCoordinateSystemTrueOfDate
+        # TRUE_OF_DATE
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
-        # eCoordinateSystemTrueOfEpoch
+        # TRUE_OF_EPOCH
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
-        # eCoordinateSystemTrueOfRefDate
+        # TRUE_OF_REFERENCE_DATE
         # GetLicenses
         oLicenses: "ExecCmdResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
@@ -577,7 +577,7 @@ class OrbitStateHelper(object):
                         self.m_logger.Write2("\t\t\tExpected exception: {0}", str(e))
 
                     if not bCaught:
-                        Assert.fail("Cannot set eCoordinateSystemTrueOfRefDate")
+                        Assert.fail("Cannot set TRUE_OF_REFERENCE_DATE")
 
                 else:
                     # License available
@@ -589,10 +589,10 @@ class OrbitStateHelper(object):
 
             iI += 1
 
-        # eCoordinateSystemUnknown
+        # UNKNOWN
         try:
             self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
-            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
+            Assert.fail("Cannot set COORDINATE_SYSTEM.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1026,10 +1026,10 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set RAAN.Value out of bounds")
 
-        # eAscNodeUnknown test
+        # ASC_NODE_UNKNOWN test
         try:
             oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_UNKNOWN
-            Assert.fail("Cannot set ORIENTATION_ASC_NODE.eAscNodeUnknown.")
+            Assert.fail("Cannot set ORIENTATION_ASC_NODE.ASC_NODE_UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1348,7 +1348,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oGeodetic.coordinate_system_type)
         try:
             bCaught = False
-            # eCoordinateSystemAlignmentAtEpoch
+            # ALIGNMENT_AT_EPOCH
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
 
         except Exception as e:
@@ -1356,11 +1356,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemAlignmentAtEpoch")
+            Assert.fail("Cannot set ALIGNMENT_AT_EPOCH")
 
         try:
             bCaught = False
-            # eCoordinateSystemB1950
+            # B1950
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.B1950)
 
         except Exception as e:
@@ -1368,13 +1368,13 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemB1950")
+            Assert.fail("Cannot set B1950")
 
-        # eCoordinateSystemFixed
+        # FIXED
         self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.FIXED)
         try:
             bCaught = False
-            # eCoordinateSystemJ2000
+            # J2000
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.J2000)
 
         except Exception as e:
@@ -1382,11 +1382,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemJ2000")
+            Assert.fail("Cannot set J2000")
 
         try:
             bCaught = False
-            # eCoordinateSystemMeanOfDate
+            # MEAN_OF_DATE
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
 
         except Exception as e:
@@ -1394,11 +1394,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemMeanOfDate")
+            Assert.fail("Cannot set MEAN_OF_DATE")
 
         try:
             bCaught = False
-            # eCoordinateSystemMeanOfEpoch
+            # MEAN_OF_EPOCH
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
 
         except Exception as e:
@@ -1406,11 +1406,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemMeanOfEpoch")
+            Assert.fail("Cannot set MEAN_OF_EPOCH")
 
         try:
             bCaught = False
-            # eCoordinateSystemTEMEOfDate
+            # TEME_OF_DATE
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
 
         except Exception as e:
@@ -1418,11 +1418,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemTEMEOfDate")
+            Assert.fail("Cannot set TEME_OF_DATE")
 
         try:
             bCaught = False
-            # eCoordinateSystemTEMEOfEpoch
+            # TEME_OF_EPOCH
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
 
         except Exception as e:
@@ -1430,11 +1430,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemTEMEOfEpoch")
+            Assert.fail("Cannot set TEME_OF_EPOCH")
 
         try:
             bCaught = False
-            # eCoordinateSystemTrueOfDate
+            # TRUE_OF_DATE
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
 
         except Exception as e:
@@ -1442,11 +1442,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemTrueOfDate")
+            Assert.fail("Cannot set TRUE_OF_DATE")
 
         try:
             bCaught = False
-            # eCoordinateSystemTrueOfEpoch
+            # TRUE_OF_EPOCH
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
 
         except Exception as e:
@@ -1454,11 +1454,11 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemTrueOfEpoch")
+            Assert.fail("Cannot set TRUE_OF_EPOCH")
 
         try:
             bCaught = False
-            # eCoordinateSystemTrueOfRefDate
+            # TRUE_OF_REFERENCE_DATE
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except Exception as e:
@@ -1466,12 +1466,12 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemTrueOfRefDate")
+            Assert.fail("Cannot set TRUE_OF_REFERENCE_DATE")
 
-        # eCoordinateSystemUnknown
+        # UNKNOWN
         try:
             self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
-            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
+            Assert.fail("Cannot set COORDINATE_SYSTEM.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1566,7 +1566,7 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eGeodeticSizeUnknown")
+            Assert.fail("Cannot set UNKNOWN")
 
     # endregion
 
@@ -1662,15 +1662,15 @@ class OrbitStateHelper(object):
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oDelaunay.coordinate_system_type)
-        # eCoordinateSystemAlignmentAtEpoch
+        # ALIGNMENT_AT_EPOCH
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
 
-        # eCoordinateSystemB1950
+        # B1950
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.B1950)
-        # eCoordinateSystemFixed
+        # FIXED
         try:
             self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.FIXED)
-            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemFixed.")
+            Assert.fail("Cannot set COORDINATE_SYSTEM.FIXED.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1678,23 +1678,23 @@ class OrbitStateHelper(object):
         except Exception as e:
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
-        # eCoordinateSystemJ2000
+        # J2000
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.J2000)
-        # eCoordinateSystemICRF
+        # ICRF
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.ICRF)
-        # eCoordinateSystemMeanOfDate
+        # MEAN_OF_DATE
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
-        # eCoordinateSystemMeanOfEpoch
+        # MEAN_OF_EPOCH
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
-        # eCoordinateSystemTEMEOfDate
+        # TEME_OF_DATE
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
-        # eCoordinateSystemTEMEOfEpoch
+        # TEME_OF_EPOCH
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
-        # eCoordinateSystemTrueOfDate
+        # TRUE_OF_DATE
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
-        # eCoordinateSystemTrueOfEpoch
+        # TRUE_OF_EPOCH
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
-        # eCoordinateSystemTrueOfRefDate
+        # TRUE_OF_REFERENCE_DATE
         # GetLicenses
         oLicenses: "ExecCmdResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
@@ -1717,7 +1717,7 @@ class OrbitStateHelper(object):
                         self.m_logger.Write2("\t\t\tExpected exception: {0}", str(e))
 
                     if not bCaught:
-                        Assert.fail("Cannot set eCoordinateSystemTrueOfRefDate")
+                        Assert.fail("Cannot set TRUE_OF_REFERENCE_DATE")
 
                 else:
                     # License available
@@ -1729,10 +1729,10 @@ class OrbitStateHelper(object):
 
             iI += 1
 
-        # eCoordinateSystemUnknown
+        # UNKNOWN
         try:
             self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
-            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
+            Assert.fail("Cannot set COORDINATE_SYSTEM.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1800,7 +1800,7 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eDelaunayLTypeUnknown")
+            Assert.fail("Cannot set UNKNOWN")
 
     # endregion
 
@@ -1862,7 +1862,7 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eDelaunayHTypeUnknown")
+            Assert.fail("Cannot set UNKNOWN")
 
     # endregion
 
@@ -1924,7 +1924,7 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eDelaunayGTypeUnknown")
+            Assert.fail("Cannot set UNKNOWN")
 
     # endregion
 
@@ -1953,13 +1953,13 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6(
             "\t\tCurrent CoordinateSystem type is: {0}", self.m_oEquinoctial.coordinate_system_type
         )
-        # eCoordinateSystemAlignmentAtEpoch
+        # ALIGNMENT_AT_EPOCH
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
-        # eCoordinateSystemB1950
+        # B1950
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.B1950)
         try:
             bCaught = False
-            # eCoordinateSystemFixed
+            # FIXED
             self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.FIXED)
 
         except Exception as e:
@@ -1967,35 +1967,35 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemFixed")
+            Assert.fail("Cannot set FIXED")
 
-        # eCoordinateSystemJ2000
+        # J2000
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.J2000)
-        # eCoordinateSystemICRF
+        # ICRF
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ICRF)
-        # eCoordinateSystemMeanOfDate
+        # MEAN_OF_DATE
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
-        # eCoordinateSystemMeanOfEpoch
+        # MEAN_OF_EPOCH
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
-        # eCoordinateSystemTEMEOfDate
+        # TEME_OF_DATE
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
-        # eCoordinateSystemTEMEOfEpoch
+        # TEME_OF_EPOCH
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
-        # eCoordinateSystemTrueOfDate
+        # TRUE_OF_DATE
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
-        # eCoordinateSystemTrueOfEpoch
+        # TRUE_OF_EPOCH
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
-            # eCoordinateSystemTrueOfRefDate
+            # TRUE_OF_REFERENCE_DATE
             self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
-            self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
+            self.m_logger.WriteLine("\t\tThe TRUE_OF_REFERENCE_DATE does not supported by current licenses.")
 
-        # eCoordinateSystemUnknown
+        # UNKNOWN
         try:
             self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
-            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
+            Assert.fail("Cannot set COORDINATE_SYSTEM.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2107,7 +2107,7 @@ class OrbitStateHelper(object):
         self.EquinoctialSizeShape(EQUINOCTIAL_SIZE_SHAPE.SEMIMAJOR_AXIS)
         try:
             self.EquinoctialSizeShape(EQUINOCTIAL_SIZE_SHAPE.UNKNOWN)
-            Assert.fail("Cannot set EQUINOCTIAL_SIZE_SHAPE.eEquinoctialSizeShapeUnknown.")
+            Assert.fail("Cannot set EQUINOCTIAL_SIZE_SHAPE.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2221,13 +2221,13 @@ class OrbitStateHelper(object):
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oMixed.coordinate_system_type)
-        # eCoordinateSystemAlignmentAtEpoch
+        # ALIGNMENT_AT_EPOCH
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
-        # eCoordinateSystemB1950
+        # B1950
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.B1950)
         try:
             bCaught = False
-            # eCoordinateSystemFixed
+            # FIXED
             self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.FIXED)
 
         except Exception as e:
@@ -2235,35 +2235,35 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         if not bCaught:
-            Assert.fail("Cannot set eCoordinateSystemFixed")
+            Assert.fail("Cannot set FIXED")
 
-        # eCoordinateSystemJ2000
+        # J2000
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.J2000)
-        # eCoordinateSystemICRF
+        # ICRF
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ICRF)
-        # eCoordinateSystemMeanOfDate
+        # MEAN_OF_DATE
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
-        # eCoordinateSystemMeanOfEpoch
+        # MEAN_OF_EPOCH
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
-        # eCoordinateSystemTEMEOfDate
+        # TEME_OF_DATE
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
-        # eCoordinateSystemTEMEOfEpoch
+        # TEME_OF_EPOCH
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
-        # eCoordinateSystemTrueOfDate
+        # TRUE_OF_DATE
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
-        # eCoordinateSystemTrueOfEpoch
+        # TRUE_OF_EPOCH
         self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
-            # eCoordinateSystemTrueOfRefDate
+            # TRUE_OF_REFERENCE_DATE
             self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
-            self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
+            self.m_logger.WriteLine("\t\tThe TRUE_OF_REFERENCE_DATE does not supported by current licenses.")
 
-        # eCoordinateSystemUnknown
+        # UNKNOWN
         try:
             self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
-            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
+            Assert.fail("Cannot set COORDINATE_SYSTEM.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2403,7 +2403,7 @@ class OrbitStateHelper(object):
         # FPA (Vertical) test
         try:
             self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_UNKNOWN
-            Assert.fail("Cannot set MIXED_SPHERICAL_FPA.eFPAUnknown.")
+            Assert.fail("Cannot set MIXED_SPHERICAL_FPA.FPA_UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2441,39 +2441,39 @@ class OrbitStateHelper(object):
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oSpherical.coordinate_system_type)
-        # eCoordinateSystemAlignmentAtEpoch
+        # ALIGNMENT_AT_EPOCH
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
-        # eCoordinateSystemB1950
+        # B1950
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.B1950)
-        # eCoordinateSystemFixed
+        # FIXED
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.FIXED)
-        # eCoordinateSystemJ2000
+        # J2000
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.J2000)
-        # eCoordinateSystemICRF
+        # ICRF
         self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ICRF)
-        # eCoordinateSystemMeanOfDate
+        # MEAN_OF_DATE
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
-        # eCoordinateSystemMeanOfEpoch
+        # MEAN_OF_EPOCH
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
-        # eCoordinateSystemTEMEOfDate
+        # TEME_OF_DATE
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
-        # eCoordinateSystemTEMEOfEpoch
+        # TEME_OF_EPOCH
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
-        # eCoordinateSystemTrueOfDate
+        # TRUE_OF_DATE
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
-        # eCoordinateSystemTrueOfEpoch
+        # TRUE_OF_EPOCH
         self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
-            # eCoordinateSystemTrueOfRefDate
+            # TRUE_OF_REFERENCE_DATE
             self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE)
 
         except:
-            self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
+            self.m_logger.WriteLine("\t\tThe TRUE_OF_REFERENCE_DATE does not supported by current licenses.")
 
-        # eCoordinateSystemUnknown
+        # UNKNOWN
         try:
             self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
-            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
+            Assert.fail("Cannot set COORDINATE_SYSTEM.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2613,7 +2613,7 @@ class OrbitStateHelper(object):
         # FPA (Vertical) test
         try:
             self.m_oSpherical.fpa_type = SPHERICAL_FPA.UNKNOWN
-            Assert.fail("Cannot set SPHERICAL_FPA.eSphericalFPAUnknown.")
+            Assert.fail("Cannot set SPHERICAL_FPA.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))

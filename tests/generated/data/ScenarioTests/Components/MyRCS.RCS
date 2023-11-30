@@ -1,0 +1,26 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "RCS" Name = "MyRCS">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyRCS&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Radar Cross Section&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "FrequencyBandList">
+        <OBJECT>
+            <OBJECT Class = "link" Name = "ComputeTypeStrategy">
+                <OBJECT Class = "RCS Compute Strategy" Name = "Constant Value">
+                    <OBJECT Class = "string" Name = "ComponentName"> &quot;Constant Value&quot; </OBJECT>
+                    <OBJECT Class = "double" Name = "ConstantValue"> 1 sqm </OBJECT>
+                    <OBJECT Class = "string" Name = "Type"> &quot;Constant Value&quot; </OBJECT>
+                </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "MinFrequency"> 2997920 Hz </OBJECT>
+            <OBJECT Class = "string" Name = "SwerlingCase"> &quot;0&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Radar Cross Section&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Radar Cross Section&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

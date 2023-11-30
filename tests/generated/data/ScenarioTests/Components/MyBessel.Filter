@@ -1,0 +1,18 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Filter" Name = "MyBessel">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyBessel&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "CutoffFrequency"> 10000000 Hz </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;An analytical filter frequency response with linear phase in the passband&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "InsertionLoss"> 1 units </OBJECT>
+    <OBJECT Class = "double" Name = "LowerBandwidthLimit"> -20000000 Hz </OBJECT>
+    <OBJECT Class = "int" Name = "Order"> 4 </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Bessel&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "UpperBandwidthLimit"> 20000000 Hz </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;An analytical filter frequency response with linear phase in the passband&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

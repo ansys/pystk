@@ -1,0 +1,80 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "ThrusterSet" Name = "MyThrusterSet">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;A collection of engine thrusters&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "DirectionDefinition"> &quot;Acceleration&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "container" Name = "ThrustersSelected" />
+    <OBJECT Class = "ListLink" Name = "Thrusters">
+        <OBJECT Class = "ThrusterSingle" Name = "Thruster1">
+            <OBJECT Class = "AttrCon" Name = "Cartesian">
+                <OBJECT Class = "double" Name = "X"> 1 &quot;&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "Y"> 0 &quot;&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "Z"> 0 &quot;&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "CoordType"> &quot;Cartesian&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;A single thruster&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "EngineModel">
+                <OBJECT Class = "string" Name = ""> &quot;Constant_Thrust_and_Isp&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "EquivOnTime"> 100 &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "double" Name = "ThrustEfficiency"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;ThrusterSingle&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;X-Axis Thruster&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "ThrusterSingle" Name = "Thruster2">
+            <OBJECT Class = "AttrCon" Name = "Cartesian">
+                <OBJECT Class = "double" Name = "X"> 0 &quot;&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "Y"> 1 &quot;&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "Z"> 0 &quot;&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "CoordType"> &quot;Cartesian&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;A single thruster&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "EngineModel">
+                <OBJECT Class = "string" Name = ""> &quot;Constant_Thrust_and_Isp&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "EquivOnTime"> 100 &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "double" Name = "ThrustEfficiency"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;ThrusterSingle&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Y-Axis Thruster&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "ThrusterSingle" Name = "Thruster3">
+            <OBJECT Class = "AttrCon" Name = "Cartesian">
+                <OBJECT Class = "double" Name = "X"> 0 &quot;&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "Y"> 0 &quot;&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "Z"> 1 &quot;&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "CoordType"> &quot;Cartesian&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;A single thruster&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "EngineModel">
+                <OBJECT Class = "string" Name = ""> &quot;Constant_Thrust_and_Isp&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "double" Name = "EquivOnTime"> 100 &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "double" Name = "ThrustEfficiency"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;ThrusterSingle&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Z-Axis Thruster&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;ThrusterSet&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;A collection of engine thrusters&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

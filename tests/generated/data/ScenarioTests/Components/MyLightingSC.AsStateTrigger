@@ -1,0 +1,29 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateTrigger" Name = "MyLightingSC">
+    <OBJECT Class = "bool" Name = "Active"> True </OBJECT>
+    <OBJECT Class = "container" Name = "BeforeConditionsSelected" />
+    <OBJECT Class = "ListLink" Name = "BeforeConditions" />
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Comment"> &quot;User-supplied comment&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "ConstraintsSelected" />
+    <OBJECT Class = "ListLink" Name = "Constraints" />
+    <OBJECT Class = "string" Name = "Description"> &quot;Stop on lighting condition&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Dimension"> &quot;&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "EclipsingBodiesSource"> &quot;Propagator Central Body List&quot; </OBJECT>
+    <OBJECT Class = "ListLink" Name = "EclipsingBodies" />
+    <OBJECT Class = "bool" Name = "Inherited"> True </OBJECT>
+    <OBJECT Class = "string" Name = "LightingCondition"> &quot;Exit Direct Sun&quot; </OBJECT>
+    <OBJECT Class = "int" Name = "MaxTripTimes"> 10000 </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "int" Name = "RepeatCount"> 1 </OBJECT>
+    <OBJECT Class = "link" Name = "Sequence">
+        <OBJECT Class = "string" Name = ""> &quot;STOP&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;Lighting&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Stop on lighting condition&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

@@ -1572,7 +1572,7 @@ class PropagatorGreatArcHelper(object):
     def Run(self, oGreatArc: "VehiclePropagatorGreatArc"):
         self.m_logger.WriteLine("----- GREAT ARC PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oGreatArc)
-        # Method (eDetermineVelFromTime)
+        # Method (DETERMINE_VEL_FROM_TIME)
         self.m_logger.WriteLine6("\tThe current Calculation Method is: {0}", oGreatArc.method)
         oGreatArc.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         self.m_logger.WriteLine6("\tThe new Calculation Method is: {0}", oGreatArc.method)
@@ -1581,14 +1581,14 @@ class PropagatorGreatArcHelper(object):
         oWPHelper = BasicWaypointsHelper(self.m_oUnits)
         oWPHelper.Run(oGreatArc.waypoints, oGreatArc.method)
 
-        # Method (eDetermineTimeAccFromVel)
+        # Method (DETERMINE_TIME_ACC_FROM_VEL)
         oGreatArc.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
         self.m_logger.WriteLine6("\tThe new Calculation Method is: {0}", oGreatArc.method)
         Assert.assertEqual(VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL, oGreatArc.method)
         # Waypoints
         oWPHelper.Run(oGreatArc.waypoints, oGreatArc.method)
 
-        # Method (eDetermineTimeFromVelAcc)
+        # Method (DETERMINE_TIME_FROM_VEL_ACC)
         oGreatArc.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC
         self.m_logger.WriteLine6("\tThe new Calculation Method is: {0}", oGreatArc.method)
         Assert.assertEqual(VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC, oGreatArc.method)
@@ -1663,12 +1663,12 @@ class PropagatorGreatArcHelper(object):
                 Assert.assertAlmostEqual(123.456, oTerrain.granularity, delta=0.0001)
                 with pytest.raises(Exception):
                     oTerrain.granularity = -65.4321
-                # InterpMethod (eWayPtEllipsoidHeight)
+                # InterpMethod (WAYPOINT_ELLIPSOID_HEIGHT)
                 self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interp_method)
                 oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
                 self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interp_method)
                 Assert.assertEqual(VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT, oTerrain.interp_method)
-                # InterpMethod (eWayPtTerrainHeight)
+                # InterpMethod (WAYPOINT_TERRAIN_HEIGHT)
                 oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_TERRAIN_HEIGHT
                 self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interp_method)
                 Assert.assertEqual(VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_TERRAIN_HEIGHT, oTerrain.interp_method)
@@ -1680,7 +1680,7 @@ class PropagatorGreatArcHelper(object):
             iIndex += 1
 
         # UseScenarioAnalysisTime property is read-only if the
-        # method for computing the waypoints is not eDetermineVelFromTime
+        # method for computing the waypoints is not DETERMINE_VEL_FROM_TIME
         methods: "VEHICLE_WAYPOINT_COMP_METHOD[]" = [
             VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL,
             VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC,
@@ -2302,7 +2302,7 @@ class PropagatorLOPHelper(object):
             self.ExponentialModelParamsTest(oAdvanved.exp_dens_model_params, True)
 
         else:
-            # AtmosphericDensityModel (e1976StandardAtmosModel)
+            # AtmosphericDensityModel (STANDARD_ATMOS_MODEL_1976)
             self.m_logger.WriteLine6(
                 "\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model
             )
@@ -2313,7 +2313,7 @@ class PropagatorLOPHelper(object):
             with pytest.raises(Exception):
                 oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER
 
-            # AtmosDensityModel (e1976StandardAtmosModel)
+            # AtmosDensityModel (STANDARD_ATMOS_MODEL_1976)
             self.m_logger.WriteLine6("\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmos_density_model)
             oAdvanved.atmos_density_model = LOP_ATMOSPHERIC_DENSITY_MODEL.LOP1976_STANDARD_ATMOS_MODEL
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmos_density_model)
@@ -2343,11 +2343,11 @@ class PropagatorLOPHelper(object):
             Assert.assertEqual(43.21, oAdvanved.density_weighing_factor)
             with pytest.raises(Exception):
                 oAdvanved.density_weighing_factor = -43.21
-            # AtmosphericDensityModel (eExponentialModel)
+            # AtmosphericDensityModel (EXPONENTIAL_MODEL)
             oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
             Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL, oAdvanved.atmospheric_density_model)
-            # AtmosDensityModel (eExponentialModel)
+            # AtmosDensityModel (EXPONENTIAL_MODEL)
             oAdvanved.atmos_density_model = LOP_ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
             self.m_logger.WriteLine6("\tThe new AtmosDensityModel is:  {0}", oAdvanved.atmos_density_model)
             Assert.assertEqual(LOP_ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL, oAdvanved.atmos_density_model)
@@ -2506,12 +2506,12 @@ class PropagatorJ2PerturbationHelper(object):
         (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
 
-        # EllipseOptions (eOsculating)
+        # EllipseOptions (OSCULATING)
         self.m_logger.WriteLine6("\tThe current EllipseOptions is:  {0}", oInitState.ellipse_options)
         oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTIONS.OSCULATING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
         Assert.assertEqual(VEHICLE_ELLIPSE_OPTIONS.OSCULATING, oInitState.ellipse_options)
-        # EllipseOptions (eSecularlyPrecessing)
+        # EllipseOptions (SECULARLY_PRECESSING)
         oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
         Assert.assertEqual(VEHICLE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING, oInitState.ellipse_options)
@@ -2597,12 +2597,12 @@ class PropagatorJ4PerturbationHelper(object):
         (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
         oInitState.representation.assign(cart)
-        # EllipseOptions (eOsculating)
+        # EllipseOptions (OSCULATING)
         self.m_logger.WriteLine6("\tThe current EllipseOptions is:  {0}", oInitState.ellipse_options)
         oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTIONS.OSCULATING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
         Assert.assertEqual(VEHICLE_ELLIPSE_OPTIONS.OSCULATING, oInitState.ellipse_options)
-        # EllipseOptions (eSecularlyPrecessing)
+        # EllipseOptions (SECULARLY_PRECESSING)
         oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
         Assert.assertEqual(VEHICLE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING, oInitState.ellipse_options)
@@ -2749,7 +2749,7 @@ class PropagatorSGP4Helper(object):
             oSegments.remove_seg(12)
         oSegments.remove_seg(0)
         Assert.assertEqual(0, oSegments.count)
-        # LoadMethodType (eAutoLoad)
+        # LoadMethodType (AUTO_LOAD)
         self.m_logger.WriteLine6("\tThe current LoadMethodType is:  {0}", oSegments.load_method_type)
         oSegments.load_method_type = LOAD_METHOD_TYPE.AUTO_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
@@ -2761,7 +2761,7 @@ class PropagatorSGP4Helper(object):
         # RemoveAllSegs
         oSegments.remove_all_segs()
         Assert.assertEqual(0, oSegments.count)
-        # LoadMethodType (eFileInsert)
+        # LoadMethodType (FILE_INSERT)
         oSegments.load_method_type = LOAD_METHOD_TYPE.FILE_INSERT
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.FILE_INSERT, oSegments.load_method_type)
@@ -2772,7 +2772,7 @@ class PropagatorSGP4Helper(object):
         # RemoveAllSegs
         oSegments.remove_all_segs()
         Assert.assertEqual(0, oSegments.count)
-        # LoadMethodType (eFileLoad)
+        # LoadMethodType (FILE_LOAD)
         oSegments.load_method_type = LOAD_METHOD_TYPE.FILE_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.FILE_LOAD, oSegments.load_method_type)
@@ -2933,7 +2933,7 @@ class PropagatorSGP4Helper(object):
         preview = oSGP4.auto_update.file_source.preview()
         oSGP4.propagate()
 
-        # LoadMethodType (eOnlineAutoLoad)
+        # LoadMethodType (ONLINE_AUTO_LOAD)
         oSGP4.ephemeris_interval.set_explicit_interval("18 Jan 2003 01:23:45.678", "19 Jan 2003 02:46:24.680")
         oSegments.load_method_type = LOAD_METHOD_TYPE.ONLINE_AUTO_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
@@ -2950,7 +2950,7 @@ class PropagatorSGP4Helper(object):
         # Propagate
         oSGP4.propagate()
 
-        # LoadMethodType (eOnlineLoad)
+        # LoadMethodType (ONLINE_LOAD)
         oSegments.load_method_type = LOAD_METHOD_TYPE.ONLINE_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
         Assert.assertEqual(LOAD_METHOD_TYPE.ONLINE_LOAD, oSegments.load_method_type)
@@ -3043,8 +3043,8 @@ class PropagatorSGP4Helper(object):
         oSGP4.auto_update.properties.switch_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_MIDPOINT
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_MIDPOINT, oSGP4.auto_update.properties.switch_method)
         # Override is not supported
-        # oSGP4.AutoUpdate.Properties.SwitchMethod = VEHICLE_SGP4_SWITCH_METHOD.eSGP4Override;
-        # Assert.AreEqual(VEHICLE_SGP4_SWITCH_METHOD.eSGP4Override, oSGP4.AutoUpdate.Properties.SwitchMethod);
+        # oSGP4.AutoUpdate.Properties.SwitchMethod = VEHICLE_SGP4_SWITCH_METHOD.SGP4_OVERRIDE;
+        # Assert.AreEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_OVERRIDE, oSGP4.AutoUpdate.Properties.SwitchMethod);
         oSGP4.auto_update.properties.switch_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4TCA
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4TCA, oSGP4.auto_update.properties.switch_method)
 
@@ -3184,7 +3184,7 @@ class PropagatorSGP4Helper(object):
         # Range
         self.m_logger.WriteLine6("\tThe current Range is:  {0}", oSegment.range)
 
-        # SwitchingMethod (eSGP4Disable)
+        # SwitchingMethod (SGP4_DISABLE)
         self.m_logger.WriteLine6("\tThe current SwitchingMethod is:  {0}", oSegment.switching_method)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_DISABLE
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
@@ -3192,21 +3192,21 @@ class PropagatorSGP4Helper(object):
         with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
-        # SwitchingMethod (eSGP4Epoch)
+        # SwitchingMethod (SGP4_EPOCH)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_EPOCH
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_EPOCH, oSegment.switching_method)
         with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
-        # SwitchingMethod (eSGP4Midpoint)
+        # SwitchingMethod (SGP4_MIDPOINT)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_MIDPOINT
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_MIDPOINT, oSegment.switching_method)
         with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
-        # SwitchingMethod (eSGP4Override)
+        # SwitchingMethod (SGP4_OVERRIDE)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4_OVERRIDE
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4_OVERRIDE, oSegment.switching_method)
@@ -3217,7 +3217,7 @@ class PropagatorSGP4Helper(object):
         self.m_logger.WriteLine6("\tThe new SwitchTime is:  {0}", oSegment.switch_time)
         Assert.assertEqual("24 Jan 2003 02:46:24.680", oSegment.switch_time)
 
-        # SwitchingMethod (eSGP4TCA)
+        # SwitchingMethod (SGP4TCA)
         oSegment.switching_method = VEHICLE_SGP4_SWITCH_METHOD.SGP4TCA
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
         Assert.assertEqual(VEHICLE_SGP4_SWITCH_METHOD.SGP4TCA, oSegment.switching_method)
@@ -3963,17 +3963,17 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(DRAG_MODEL.PLUGIN, oDrag.drag_model_type)
 
         self.m_logger.WriteLine6("\tThe current AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        # AtmosphericDensityModel (eExponentialModel)
+        # AtmosphericDensityModel (EXPONENTIAL_MODEL)
         with pytest.raises(Exception):
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
-        # AtmosphericDensityModel (eUserDefined)
+        # AtmosphericDensityModel (USER_DEFINED)
         with pytest.raises(Exception):
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.USER_DEFINED
-        # AtmosphericDensityModel (eUnknownDensModel)
+        # AtmosphericDensityModel (UNKNOWN_DENS_MODEL)
         with pytest.raises(Exception):
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL
 
-        # AtmosphericDensityModel (eCira72)
+        # AtmosphericDensityModel (CIRA72)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.CIRA72
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.CIRA72, oDrag.atmospheric_density_model)
@@ -3999,7 +3999,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eHarrisPriester)
+        # AtmosphericDensityModel (HARRIS_PRIESTER)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER, oDrag.atmospheric_density_model)
@@ -4025,7 +4025,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eJacchia60)
+        # AtmosphericDensityModel (JACCHIA60)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA60
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA60, oDrag.atmospheric_density_model)
@@ -4044,7 +4044,7 @@ class PropagatorHPOPHelper(object):
         else:
             self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, True)
 
-        # AtmosphericDensityModel (eJacchia70)
+        # AtmosphericDensityModel (JACCHIA70)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA70
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA70, oDrag.atmospheric_density_model)
@@ -4070,7 +4070,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eJacchia71)
+        # AtmosphericDensityModel (JACCHIA71)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA71
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA71, oDrag.atmospheric_density_model)
@@ -4096,7 +4096,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eJacchiaRoberts)
+        # AtmosphericDensityModel (JACCHIA_ROBERTS)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA_ROBERTS
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA_ROBERTS, oDrag.atmospheric_density_model)
@@ -4122,7 +4122,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eMSIS00)
+        # AtmosphericDensityModel (MSIS00)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS00, oDrag.atmospheric_density_model)
@@ -4148,7 +4148,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eMSIS86)
+        # AtmosphericDensityModel (MSIS86)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS86
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS86, oDrag.atmospheric_density_model)
@@ -4174,7 +4174,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eMSIS90)
+        # AtmosphericDensityModel (MSIS90)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS90, oDrag.atmospheric_density_model)
@@ -4200,7 +4200,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (eDTM2012)
+        # AtmosphericDensityModel (DTM2012)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.DTM2012
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.DTM2012, oDrag.atmospheric_density_model)
@@ -4226,7 +4226,7 @@ class PropagatorHPOPHelper(object):
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # AtmosphericDensityModel (e1976StandardAtmosModel)
+        # AtmosphericDensityModel (STANDARD_ATMOS_MODEL_1976)
         oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976, oDrag.atmospheric_density_model)
@@ -4243,7 +4243,7 @@ class PropagatorHPOPHelper(object):
         else:
             self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # LowAltAtmosphericDensityModel (eUnknownDensModel)
+        # LowAltAtmosphericDensityModel (UNKNOWN_DENS_MODEL)
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL, oDrag.low_altitude_atmospheric_density_model)
         self.m_logger.WriteLine6(
@@ -4252,7 +4252,7 @@ class PropagatorHPOPHelper(object):
         with pytest.raises(Exception):
             oDrag.blending_range = 50.0
 
-        # LowAltAtmosphericDensityModel (eMSIS90)
+        # LowAltAtmosphericDensityModel (MSIS90)
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS90, oDrag.low_altitude_atmospheric_density_model)
         self.m_logger.WriteLine6(
@@ -4263,7 +4263,7 @@ class PropagatorHPOPHelper(object):
         oDrag.blending_range = 50.0
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
 
-        # LowAltAtmosphericDensityModel (eMSIS00)
+        # LowAltAtmosphericDensityModel (MSIS00)
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
         Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS00, oDrag.low_altitude_atmospheric_density_model)
         self.m_logger.WriteLine6(
@@ -4276,7 +4276,7 @@ class PropagatorHPOPHelper(object):
         # Reset LowAltAtmosphericDensityModel
         oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN_DENS_MODEL
 
-        # LowAltAtmosDensityModel (eUnknownDensModel)
+        # LowAltAtmosDensityModel (UNKNOWN_DENS_MODEL)
         oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_NONE
         Assert.assertEqual(
             LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_NONE, oDrag.low_altitude_atmos_density_model
@@ -4285,7 +4285,7 @@ class PropagatorHPOPHelper(object):
         with pytest.raises(Exception):
             oDrag.blending_range = 50.0
 
-        # LowAltAtmosDensityModel (eMSIS90)
+        # LowAltAtmosDensityModel (MSIS90)
         oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_MSISE1990
         Assert.assertEqual(
             LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_MSISE1990, oDrag.low_altitude_atmos_density_model
@@ -4296,7 +4296,7 @@ class PropagatorHPOPHelper(object):
         oDrag.blending_range = 50.0
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
 
-        # LowAltAtmosDensityModel (eMSIS00)
+        # LowAltAtmosDensityModel (MSIS00)
         oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_NRLMSISE2000
         Assert.assertEqual(
             LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.DEN_MODEL_NRLMSISE2000, oDrag.low_altitude_atmos_density_model
@@ -4597,7 +4597,7 @@ class PropagatorHPOPHelper(object):
         # Item
         oBody: "VehicleThirdBodyGravityElement" = oGravity[0]
         Assert.assertIsNotNone(oBody)
-        # Source (eCBFile)
+        # Source (CB_FILE)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.CB_FILE
         with pytest.raises(Exception):
             oBody.gravity_value = 123.456
@@ -4607,7 +4607,7 @@ class PropagatorHPOPHelper(object):
             oBody.source,
             oBody.gravity_value,
         )
-        # Source (eHPOPHistorical)
+        # Source (HPOP_HISTORICAL)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.HPOP_HISTORICAL
         with pytest.raises(Exception):
             oBody.gravity_value = 123.456
@@ -4617,7 +4617,7 @@ class PropagatorHPOPHelper(object):
             oBody.source,
             oBody.gravity_value,
         )
-        # Source (eJPLDE)
+        # Source (JPLDE)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.JPLDE
         with pytest.raises(Exception):
             oBody.gravity_value = 123.456
@@ -4627,7 +4627,7 @@ class PropagatorHPOPHelper(object):
             oBody.source,
             oBody.gravity_value,
         )
-        # Source (eUserSpecified)
+        # Source (USER_SPECIFIED)
         oBody.source = THIRD_BODY_GRAV_SOURCE_TYPE.USER_SPECIFIED
         oBody.gravity_value = 123.456
         Assert.assertEqual(123.456, oBody.gravity_value)
@@ -5013,7 +5013,7 @@ class PropagatorHPOPHelper(object):
         # Interpolation
         self.Interpolation(oIntegrator.interpolation, oIntegrator.use_graphics_3d_p)
 
-        # IntegrationModel (eBulirschStoer)
+        # IntegrationModel (BULIRSCH_STOER)
         self.m_logger.WriteLine6("\tThe current IntegrationModel is: {0}", oIntegrator.integration_model)
         oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.BULIRSCH_STOER
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
@@ -5024,7 +5024,7 @@ class PropagatorHPOPHelper(object):
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
-        # IntegrationModel (eGaussJackson)
+        # IntegrationModel (GAUSS_JACKSON)
         oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.GAUSS_JACKSON
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
         Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.GAUSS_JACKSON, oIntegrator.integration_model)
@@ -5051,7 +5051,7 @@ class PropagatorHPOPHelper(object):
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, True)
 
-        # IntegrationModel (eRKF78)
+        # IntegrationModel (RUNGE_KUTTA_F78)
         oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_F78
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
         Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_F78, oIntegrator.integration_model)
@@ -5116,7 +5116,7 @@ class PropagatorHPOPHelper(object):
             oInterpolation.order = 29
             Assert.assertEqual(29, oInterpolation.order)
 
-            # Method (eHermitian)
+            # Method (HERMITIAN)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
             Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.HERMITIAN, oInterpolation.method)
@@ -5130,7 +5130,7 @@ class PropagatorHPOPHelper(object):
             # VOPmu
             with pytest.raises(Exception):
                 oInterpolation.graphics_3d_pmu = 12.34
-            # Method (eLagrange)
+            # Method (LAGRANGE)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.LAGRANGE
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
             Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.LAGRANGE, oInterpolation.method)
@@ -5144,7 +5144,7 @@ class PropagatorHPOPHelper(object):
             # VOPmu
             with pytest.raises(Exception):
                 oInterpolation.graphics_3d_pmu = 12.34
-            # Method (eVOP)
+            # Method (GRAPHICS_3D_P)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.GRAPHICS_3D_P
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
             Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.GRAPHICS_3D_P, oInterpolation.method)
@@ -5186,7 +5186,7 @@ class PropagatorHPOPHelper(object):
         Assert.assertIsNotNone(oControl)
         self.m_logger.WriteLine6("\tThe current Method is: {0}", oControl.method)
         if not bReadOnly:
-            # Method (eRelativeError)
+            # Method (RELATIVE_ERROR)
             oControl.method = VEHICLE_METHOD.RELATIVE_ERROR
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oControl.method)
             Assert.assertEqual(VEHICLE_METHOD.RELATIVE_ERROR, oControl.method)
@@ -5215,13 +5215,13 @@ class PropagatorHPOPHelper(object):
                 oControl.min_step_size = 23
             with pytest.raises(Exception):
                 oControl.max_step_size = 2
-            # Method (eFixedStep)
+            # Method (FIXED_STEP)
             oControl.method = VEHICLE_METHOD.FIXED_STEP
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oControl.method)
             Assert.assertEqual(VEHICLE_METHOD.FIXED_STEP, oControl.method)
 
         else:
-            # Method (eFixedStep)
+            # Method (FIXED_STEP)
             with pytest.raises(Exception):
                 oControl.method = VEHICLE_METHOD.FIXED_STEP
 
@@ -5530,7 +5530,7 @@ class PropagatorHPOPHelper(object):
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
             Assert.assertEqual(0, oCollection.count)
-            # Add (eConsiderAnalysisDrag)
+            # Add (CONSIDER_ANALYSIS_DRAG)
             oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_DRAG)
             Assert.assertEqual(1, oCollection.count)
             with pytest.raises(Exception):
@@ -5538,7 +5538,7 @@ class PropagatorHPOPHelper(object):
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
-            # Add (eConsiderAnalysisSRP)
+            # Add (CONSIDER_ANALYSIS_SRP)
             oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.CONSIDER_ANALYSIS_SRP)
             Assert.assertEqual(2, oCollection.count)
             with pytest.raises(Exception):
@@ -6599,7 +6599,7 @@ class PropagatorGPSHelper(object):
 
         try:
             gps.auto_update.selected_source = VEHICLE_GPS_AUTO_UPDATE_SOURCE.GPS_AUTO_UPDATE_SOURCE_UNKNOWN
-            Assert.fail("Should have failed - eGPSAutoUpdateSourceUnknown.")
+            Assert.fail("Should have failed - GPS_AUTO_UPDATE_SOURCE_UNKNOWN.")
 
         except AssertionError:
             raise
@@ -6609,7 +6609,7 @@ class PropagatorGPSHelper(object):
 
         try:
             gps.auto_update.selected_source = VEHICLE_GPS_AUTO_UPDATE_SOURCE.GPS_AUTO_UPDATE_SOURCE_NONE
-            Assert.fail("Should have failed - eGPSAutoUpdateSourceNone.")
+            Assert.fail("Should have failed - GPS_AUTO_UPDATE_SOURCE_NONE.")
 
         except AssertionError:
             raise
@@ -8002,12 +8002,12 @@ class BasicAttitudeRealTimeHelper(object):
 
         self.m_logger.WriteLine("----- REALTIME ATTITUDE TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oAttitude)
-        # LookAheadMethod (eExtrapolate)
+        # LookAheadMethod (EXTRAPOLATE)
         self.m_logger.WriteLine6("\tThe current LookAheadMethod is: {0}", oAttitude.look_ahead_method)
         oAttitude.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE
         self.m_logger.WriteLine6("\tThe new LookAheadMethod is: {0}", oAttitude.look_ahead_method)
         Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oAttitude.look_ahead_method)
-        # LookAheadMethod (eHold)
+        # LookAheadMethod (HOLD)
         oAttitude.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.HOLD
         self.m_logger.WriteLine6("\tThe new LookAheadMethod is: {0}", oAttitude.look_ahead_method)
         Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.HOLD, oAttitude.look_ahead_method)
@@ -9722,7 +9722,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "Atmosphere", IsVehicle: bool):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9749,7 +9749,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             elif utModelName == "Urban Propagation Wireless InSite 64":
                 Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE64, utModel.type)  # was RT
                 self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
-                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64)
+                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64), IsVehicle
                 )
             else:
                 Assert.fail("Unknown model type")
@@ -9777,15 +9777,16 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             twoRay.surface_temperature = 101
 
-    def Test_IAgUrbanTerrestrialLossModelWirelessInSite64(self, wisRT: "UrbanTerrestrialLossModelWirelessInSite64"):
+    def Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
+        self, wisRT: "UrbanTerrestrialLossModelWirelessInSite64", IsVehicle: bool
+    ):
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
         Assert.assertEqual(4, Array.Length(arSupportedCalculationMethods))  # was 5 in WirelessInSiteRT
         sCalcMethod: str
         for sCalcMethod in arSupportedCalculationMethods:
-            if (
-                ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "OPAR")))
-                or ((sCalcMethod == "TPGEODESIC"))
-            ) or ((sCalcMethod == "WALFISCH_IKEGAMI")):
+            if ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "TPGEODESIC"))) or (
+                (sCalcMethod == "WALFISCH_IKEGAMI")
+            ):
                 wisRT.calculation_method = sCalcMethod
                 Assert.assertEqual(sCalcMethod, wisRT.calculation_method)
             else:
@@ -9809,15 +9810,23 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
-            geometryData.filename = TestBase.GetScenarioFile("Cochise.shp")
+            filename: str = None
+            if IsVehicle:
+                filename = TestBase.GetScenarioFile("Skopje.shp")
+
+            else:
+                filename = TestBase.GetScenarioFile("..", "Skopje.shp")
+
+            geometryData.filename = filename
+            Assert.assertTrue(("Skopje.shp" in geometryData.filename))
 
             geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84
             Assert.assertEqual(PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84, geometryData.projection_horizontal_datum)
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.UTMWGS84
 
-            geometryData.building_height_data_attribute = "STATE_NAME"
-            Assert.assertEqual("STATE_NAME", geometryData.building_height_data_attribute)
+            geometryData.building_height_data_attribute = "GM_LAYER"
+            Assert.assertEqual("GM_LAYER", geometryData.building_height_data_attribute)
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.building_height_data_attribute = "Some"
 
@@ -9862,18 +9871,18 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             geometryData.use_terrain_data = False
             Assert.assertFalse(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(32.43, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-109.05, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(31.33, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-110.46, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
 
             geometryData.use_terrain_data = True
             Assert.assertTrue(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(32.43, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-109.05, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(31.33, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(-110.46, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
 
 
 # endregion

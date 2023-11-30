@@ -1,0 +1,25 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Waveform" Name = "My_Long_Range_Rectangular">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;My_Long_Range_Rectangular&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Waveform with low PRF rectangular pulses for long range tracking tasks.&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "FrequencySpecification"> &quot;Wavelength&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "Frequency"> 2997924580 Hz </OBJECT>
+    <OBJECT Class = "double" Name = "Power"> 10000 W </OBJECT>
+    <OBJECT Class = "AttrCon" Name = "PulseDefinition">
+        <OBJECT Class = "int" Name = "NumberOfPulses"> 20 </OBJECT>
+        <OBJECT Class = "double" Name = "PRF"> 500 Hz </OBJECT>
+        <OBJECT Class = "string" Name = "PulseWidthDutyFactorMode"> &quot;Pulse Width&quot; </OBJECT>
+        <OBJECT Class = "double" Name = "PulseWidth"> 0.002 sec </OBJECT>
+        <OBJECT Class = "string" Name = "SubMode"> &quot;PRF&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "int" Name = "STKVersion"> 1170 </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Rectangular&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Waveform with low PRF rectangular pulses for long range tracking tasks.&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "Wavelength"> 0.1 m </OBJECT>
+</OBJECT>
+</STKOBJECT>

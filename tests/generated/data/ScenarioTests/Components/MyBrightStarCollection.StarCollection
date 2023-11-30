@@ -1,0 +1,81 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "StarCollection" Name = "MyBrightStarCollection">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "container" Name = "Constraint">
+        <OBJECT Class = "VisualMagnitude" Name = "VisualMagnitude">
+            <OBJECT Class = "double" Name = "Max"> 6 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> -10 &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> True </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "RightAscension" Name = "RightAscension">
+            <OBJECT Class = "double" Name = "Max"> 6.283185307179586 deg </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> -6.283185307179586 deg </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "Declination" Name = "Declination">
+            <OBJECT Class = "double" Name = "Max"> 1.570796326794897 deg </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> -1.570796326794897 deg </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "ProperMotionRA" Name = "ProperMotionRA">
+            <OBJECT Class = "double" Name = "Max"> 1.536281865610611e-11 arcSec*yr^-1 </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> -1.536281865610611e-11 arcSec*yr^-1 </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "ProperMotionDec" Name = "ProperMotionDec">
+            <OBJECT Class = "double" Name = "Max"> 1.536281865610611e-11 arcSec*yr^-1 </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> -1.536281865610611e-11 arcSec*yr^-1 </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "RadialVelocity" Name = "RadialVelocity">
+            <OBJECT Class = "double" Name = "Max"> 1000000 km*sec^-1 </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> -1000000 km*sec^-1 </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "Parallax" Name = "Parallax">
+            <OBJECT Class = "double" Name = "Max"> 0.0004848136741202325 arcSec </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> 0 arcSec </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "Constellation" Name = "Constellation">
+            <OBJECT Class = "bool" Name = "Use"> False </OBJECT>
+            <OBJECT Class = "string" Name = "Value"> &quot;Andromeda&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "B-V" Name = "B-V">
+            <OBJECT Class = "double" Name = "Max"> 100 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> -100 &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "EffectiveTemperature" Name = "EffectiveTemperature">
+            <OBJECT Class = "double" Name = "Max"> 1e+30 K </OBJECT>
+            <OBJECT Class = "double" Name = "Min"> 0 K </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMax"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMin"> False </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "ID" Name = "ID">
+            <OBJECT Class = "bool" Name = "Use"> False </OBJECT>
+            <OBJECT Class = "string" Name = "Value"> &quot;&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "CommonName" Name = "CommonName">
+            <OBJECT Class = "bool" Name = "Use"> False </OBJECT>
+            <OBJECT Class = "string" Name = "Value"> &quot;&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Bright Star Catalog Version 5 to magnitude 6&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "StarCatalog"> &quot;Bright Star v5&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;StarCollection&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Bright Star Catalog Version 5 to magnitude 6&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

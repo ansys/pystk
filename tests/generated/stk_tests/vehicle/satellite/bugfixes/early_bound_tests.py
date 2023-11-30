@@ -108,13 +108,13 @@ class EarlyBoundTests(TestBase):
     # public void BUG68243_CoordinateEpoch()
     # {
     #    Satellite sat = Application.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "BUG68243") as Satellite;
-    #    sat.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation);
+    #    sat.SetPropagatorType(AgEVePropagatorType.PROPAGATOR_J2_PERTURBATION);
     #    VehiclePropagatorJ2Perturbation j2prop = sat.Propagator as VehiclePropagatorJ2Perturbation;
 
     #    OrbitStateCartesian cart = (OrbitStateCartesian)j2prop.InitialState.Representation.ConvertTo(
-    #        AgEOrbitStateType.eOrbitStateCartesian);
+    #        AgEOrbitStateType.CARTESIAN);
 
-    #    cart.CoordinateSystemType = AgECoordinateSystem.eCoordinateSystemMeanOfEpoch;
+    #    cart.CoordinateSystemType = AgECoordinateSystem.MEAN_OF_EPOCH;
     #    OrbitStateCoordinateSystem coordsys = (OrbitStateCoordinateSystem)cart.CoordinateSystem;
     #    ITimeToolEvent referenceEvent = Application.CurrentScenario.Vgt.Events["AnalysisStartTime"];
     #    cart.CoordinateSystem.CoordinateSystemEpoch.SetImplicitTime(referenceEvent);

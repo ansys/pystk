@@ -1,0 +1,16 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyAngle">
+    <OBJECT Class = "link" Name = "Angle">
+        <OBJECT Class = "string" Name = ""> &quot;None&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;Vector&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;An angle from Vector Geometry Tool&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcVGTAngle&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;An angle from Vector Geometry Tool&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

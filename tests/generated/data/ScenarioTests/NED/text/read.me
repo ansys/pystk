@@ -1,0 +1,253 @@
+ This disc contains all of the level 2 DTED cells which fall 
+
+ within the rectangle bounded by 18S, 0N, 12E, and 24E   
+
+               There are 1 cells total.      
+
+                 1 cells are 1X1 data. 
+ Map of existing cells within the rectangle:
+
+##############
+#            #
+#            #
+#            #
+#            #
+#   X        #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+#            #
+##############
+
+
+ORGANIZATION of COMPACT DISC, and FILE STRUCTURES
+
+   A. Directory Organization
+
+At the highest level, there are three directories and one file.
+The directories are:  DTED, GAZETTE, and TEXT.  DTED is the only
+one containing subdirectories.  The one file is DMED.
+
+      1. Subdirectory Naming
+
+Within the DTED directory, there is a subdirectory for each
+longitude containing cells.  The subdirectory name format is:
+<E/W>DDD
+where DDD is degrees.  For example, the subdirectory name for
+DTED files contained between the meridians 127E and 128E would
+be:  E127
+
+      2. File Naming
+
+The DTED cell file name format is: <N/S>DD.DT1 where DD is
+degrees.  For example, the file name for a DTED cell whose
+southwest corner is 38N and 127E would be:
+
+     N38.DT1, or starting from the root, \DTED\E127\N38.DT1
+
+
+   B. DTED Cell Format
+
+A Level 1 DTED cell is a single file containing the following
+information obtained from the standard DMA DTED distribution
+format with the following changes: VOL1, HDR1, EOF1, UTL1, and
+hardware end of file marks are not included in the file.
+
+                                                   Starting Byte
+(1) User Header Label (UHL: 80 bytes)                       1
+(2) Data Set Identification Record (DSI: 648 bytes)        81
+(3) Accuracy Record (ACC: 2700 bytes)*                    729
+(4) Data Records (1201 records at 2414                   3429,5843,
+    bytes/record)**                                      8257,etc.
+
+* To meet current distribution security requirements of producing
+only unclassified CD DTED, when there are multiple accuracy
+subregions they are left blank (bytes 58-2613 of the ACC record)
+and the multiple accuracy outline flag is set to 10 (bytes 56-57
+of the ACC record).
+
+** The number of records is a function of the latitude.  A count
+of 1201 is for cells between latitudes S50 and N49 degrees.
+There are no sparse cells.  Elevations are two-byte integers,
+high order first, and negatives are signed magnitude.  Users may
+have to switch the bytes and convert negatives to the complement
+they use.  This can be done by putting the low order byte first,
+then turning off bit 15 (the high order bit), then multiplying by
+-1.  For positive numbers, only the bytes are switched.
+
+   C. DMED File. \DMED
+
+The Digital Mean Elevation Data (DMED) file is a series of
+394-byte records.  The first record is a header giving the
+extremes of the minimum bounding rectangle (MBR) (in degrees)
+encompassing the cells on the CD.  For example, N30N36E020E032
+followed by 380 spaces indicates that the MBR is 6 degrees high
+and 12 degrees wide.  The next record has the data for the
+extreme southwest 1-degree cell in the MBR.  The third record is
+for the 1-degree cell above that, and so forth, to the top of the
+MBR.  Moving eastwardly, and until the edge of the MBR is
+reached, the next column of cells is added to the file, with
+placement being from south to north.  If a cell in the MBR is not
+on the CD, its DMED record consists of its coordinates followed
+by 387 spaces (ASCII blanks).  A record gives the cell's
+southwest corner, the data edition number and match/merge version
+of the cell from which the DMED is calculated, and the following
+information about each 15' x 15' area of the cell: minimum and
+maximum elevations, mean elevation and standard deviation of the
+elevations.  Data are all upper-case ASCII characters.  Elevation
+values are to the nearest meter.  In a 1-degree cell, the
+elevations in the three rows and three columns which divide the
+15' x 15' areas from each other are counted in two areas.
+
+The order in which the 16 areas of a cell follow the header is:
+
+                 4 8 12 16
+                 3 7 11 15
+                 2 6 10 14
+                 1 5  9 13
+
+Field      Field Length  Character
+Contents   in Characters Start        Description
+
+N or S           1          1         Hemisphere
+DD               2          2         Latitude of SW corner of cell
+E or W           1          4         Hemisphere
+DDD              3          5         Longitude of SW corner of cell
+01-99            2          8         Data edition number
+A-Z              1          10        Match/merge version
+integer          6          11        Minimum elevation, in meters
+                                      of SW area. If negative, sign
+                                      will be the next place left
+                                      of most significant digit.
+integer          6          17        Maximum elevation
+                                      of SW area
+integer          6          23        Mean elevation of SW area
+space            1          29        Not used
+integer          5          30        Std deviation about mean for
+                                      SW area
+integer          6          35        Minimum elevation of area 2
+                            41        Continue as for area 1
+                 24         59        Repeat for area 3
+                 24         83        Repeat for areas 4-16
+
+
+
+   D. Gazette Directory
+In the gazette directory are files GAZETTE.KEY and GAZETTE.DIR,
+plus two files for each gazette (country) with the name
+convention <country>.GAZ and <country>.HSH.  The country name may
+be abbreviated.  If the minimum bounding rectangle of a CD
+touches any country, the entire gazetteer for that country is
+included, resulting possibly in coordinates extraneous to the
+geographic coverage.
+
+      1. <country>.GAZ
+This is the primary file.  It consists of variable length ASCII
+alphanumeric records, one entry for each name.  Alphabetic
+characters are upper case.  Each record consists of a designation
+code in bytes 1-4, the latitude in bytes 5-11 (DDMMSSN/S), the
+longitude in bytes 12-19 (DDDMMSSE/W), a space in byte 20, and a
+variable length name field starting in byte 21.  The name field
+contains a name, or a name followed by "SEE" followed by another
+name.  The name field is followed by a carriage return (CR), a
+line feed (LF), then the next record.  Even though most
+coordinates are rounded to the nearest minute, seconds are
+included in the format to accommodate future data.  The seconds
+contain the digits 00.  Entries are ordered by the ASCII
+collating sequence of the names.
+
+
+Field      Field Length  Character
+Contents   in Characters Start        Description
+
+alpha            4           1        Designation code
+integer          2           5        Degrees latitude (00-90)
+integer          2           7        Minutes latitude (00-59)
+integer          2           9        Seconds latitude (00-59)
+alpha            1          11        Hemisphere (N or S)
+integer          3          12        Degrees longitude (000-180)
+integer          2          15        Minutes longitude (00-59)
+integer          2          17        Seconds longitude (00-59)
+alpha            1          19        Hemisphere (E or W)
+alpha            1          20        Space
+alpha            var        21        Name field
+ASCII            2          var       CR LF, hex OD OA
+
+      2. <country>.HSH
+
+This is the hash, or index, file.  The hash file is a convenience
+for the user who wants a quick pointer into the primary file.  It
+consists of four-byte records which are 32-bit integers (high
+byte first).  It is based on the first three or four characters
+of the names in the primary file.  Three characters are used for
+gazetteers with less than 50,000 entries, and four are used for
+larger ones.  The binary integer in bytes 1-4 of the hash file
+tells how many characters were used.  Characters considered for
+the computation are given in the following table along with the
+hexadecimal ASCII value and the decimal hash value.  All other
+characters take the value of the space.
+
+           Character   ASCII   Hash
+
+           space       20      0
+           '           27      1
+           ,           2C      2
+           -           2D      3
+           .           2E      4
+           /           2F      5
+           A-Z         41-5A   6-31
+           grave       60      32
+           tilde       7E      33
+
+Assuming a 4-character hash, to find a record in the primary file
+you compute the value of the first four characters of a
+geographic name, go to that record number in the hash file, read
+an address, and go to that byte number in the primary file.
+From there you read records sequentially until you find the
+desired place name.   To compute the value of 4 characters, give
+each a value of 0-33 (see table above), then multiply the
+first by 34**3, the second by 34**2, the third by 34, and the
+fourth by 1, then add the values and +2 together.  EXAMPLE: WRAN
+= 28x39304 + 23x1156 + 6x34 + 19x1 + 2 = 1127325.  Assume that
+hash record number 1127325 is the integer 4023300.  In the
+primary file read the record starting at byte 4023300, and read
+down the file by records until finding WRANGEL BAY, or one of the
+islands.  The first byte of the file is byte one, not zero.  In
+the 3-character scheme multiply the first three characters by
+34**2, 34**1, and 1.
+
+      3. GAZETTE.KEY
+The key file is a dictionary of the 4-letter designation codes.
+It is a text file of variable length records with designation
+code in bytes 1-4, space in 5, variable length explanation, and
+CR LF.
+
+      4. GAZETTE.DIR
+This text file gives the abbreviated country names, and expands
+them to their full length.
+
+   E. Text Directory
+
+      1. READ.ME
+
+An ASCII text file named READ.ME, contains a description of the
+disc contents including the geographic limits of the compact
+disc, a count of the cells, a location diagram (text array)
+showing which cells in the minimum bounding rectangle are
+resident on the disc, and a user's guide.
+
+       2. ONC.DIR
+
+ONC.DIR is an ASCII file that provides, via ONC tiles, a
+directory to the DTED cells on the CD-ROM.
+
+

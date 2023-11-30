@@ -1,0 +1,45 @@
+stk.v.11.0
+
+BEGIN ThrottleTable
+
+FormatVersion    1.0.0
+
+EngineName       NSTAR
+
+#Columns ThrottleLevel ThrusterPower(kW) Isp(s) Thrust(mN) 
+
+ThrottleLevelPowerIspThrust
+
+15 2.29 3120 92.4 
+
+14 2.17 3157 87.6 
+
+13 2.06 3185 82.9 
+
+12 1.94 3174 78.2 
+
+11 1.82 3189 73.4 
+
+10 1.70 3177 68.2 
+
+9  1.57 3136 63.0 
+
+8  1.44 3109 57.8 
+
+7  1.33 3067 52.5 
+
+6  1.21 3058 47.7 
+
+5  1.09 3002 42.5 
+
+4  0.97 2935 37.2 
+
+3  0.85 2836 32.0 
+
+2  0.74 2671 27.4 
+
+1  0.60 2376 24.5 
+
+0 0.47 1972  20.6 
+
+END	ThrottleTable

@@ -19,16 +19,6 @@ from ctypes   import POINTER
 from datetime import datetime
 from enum     import IntEnum, IntFlag
 
-try:
-    from numpy import ndarray 
-except ModuleNotFoundError:
-    pass
-    
-try:
-    from pandas import DataFrame 
-except ModuleNotFoundError:
-    pass
-
 from .internal  import comutil          as agcom
 from .internal  import coclassutil      as agcls
 from .internal  import marshall         as agmarshall

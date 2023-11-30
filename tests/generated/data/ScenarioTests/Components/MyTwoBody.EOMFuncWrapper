@@ -1,0 +1,16 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "EOMFuncWrapper" Name = "MyTwoBody">
+    <OBJECT Class = "string" Name = "Category"> &quot;Gravity Models&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Force from point mass of central body&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "GravSource"> &quot;Cb File&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "MinRadiusPercent"> 0.99 unitValue </OBJECT>
+    <OBJECT Class = "double" Name = "Mu"> 0 m^3*sec^-2 </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;TwoBodyFunc&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Force from point mass of central body&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

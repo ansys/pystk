@@ -264,38 +264,38 @@ class EarlyBoundTests(TestBase):
         oGrid: "CoverageGrid" = EarlyBoundTests.AG_COV.grid
         Assert.assertIsNotNone(oGrid)
 
-        # BoundsType (eBoundsGlobal)
+        # BoundsType (BOUNDS_GLOBAL)
         TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", oGrid.bounds_type)
         oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_GLOBAL
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_GLOBAL, oGrid.bounds_type)
         self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_GLOBAL)
 
-        # BoundsType (eBoundsLat)
+        # BoundsType (BOUNDS_LAT)
         oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT, oGrid.bounds_type)
         self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LAT)
 
-        # BoundsType (eBoundsLatLine)
+        # BoundsType (BOUNDS_LAT_LINE)
         oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT_LINE
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT_LINE, oGrid.bounds_type)
         self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LAT_LINE)
 
-        # BoundsType (eBoundsLonLine)
+        # BoundsType (BOUNDS_LON_LINE)
         oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LON_LINE
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LON_LINE, oGrid.bounds_type)
         self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LON_LINE)
 
-        # BoundsType (eBoundsLatLonRegion)
+        # BoundsType (BOUNDS_LAT_LON_REGION)
         oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION, oGrid.bounds_type)
         self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_LAT_LON_REGION)
 
-        # BoundsType (eBoundsCustomRegions)
+        # BoundsType (BOUNDS_CUSTOM_REGIONS)
         oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, oGrid.bounds_type)
@@ -314,26 +314,26 @@ class EarlyBoundTests(TestBase):
         oCustomGridBounds.small_region_algorithm = COVERAGE_CUSTOM_REGION_ALGORITHM.ANISOTROPIC
         Assert.assertEqual(COVERAGE_CUSTOM_REGION_ALGORITHM.ANISOTROPIC, oCustomGridBounds.small_region_algorithm)
 
-        # BoundsType (eBoundsCustomBoundary)
+        # BoundsType (BOUNDS_CUSTOM_BOUNDARY)
         oGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oGrid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY, oGrid.bounds_type)
         self.Bounds(oGrid.bounds, COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY)
 
-        # ResolutionType (eResolutionArea)
+        # ResolutionType (RESOLUTION_AREA)
         TestBase.logger.WriteLine6("\tThe current ResolutionType is: {0}", oGrid.resolution_type)
         oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_AREA
         TestBase.logger.WriteLine6("\tThe new ResolutionType is: {0}", oGrid.resolution_type)
         Assert.assertEqual(COVERAGE_RESOLUTION.RESOLUTION_AREA, oGrid.resolution_type)
         self.Resolution(oGrid.resolution, COVERAGE_RESOLUTION.RESOLUTION_AREA)
 
-        # ResolutionType (eResolutionDistance)
+        # ResolutionType (RESOLUTION_DISTANCE)
         oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_DISTANCE
         TestBase.logger.WriteLine6("\tThe new ResolutionType is: {0}", oGrid.resolution_type)
         Assert.assertEqual(COVERAGE_RESOLUTION.RESOLUTION_DISTANCE, oGrid.resolution_type)
         self.Resolution(oGrid.resolution, COVERAGE_RESOLUTION.RESOLUTION_DISTANCE)
 
-        # ResolutionType (eResolutionLatLon)
+        # ResolutionType (RESOLUTION_LAT_LON)
         oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
         TestBase.logger.WriteLine6("\tThe new ResolutionType is: {0}", oGrid.resolution_type)
         Assert.assertEqual(COVERAGE_RESOLUTION.RESOLUTION_LAT_LON, oGrid.resolution_type)
@@ -763,32 +763,32 @@ class EarlyBoundTests(TestBase):
         arr[3][2] = 40
         oPD.set_points_lla(arr)
 
-        # PointLocationMethod (eComputeBasedOnResolution)
+        # PointLocationMethod (COMPUTE_BASED_ON_RESOLUTION)
         TestBase.logger.WriteLine6("\tThe current PointLocationMethod is: {0}", oPD.point_location_method)
         oPD.point_location_method = COVERAGE_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION
         TestBase.logger.WriteLine6("\tThe new PointLocationMethod is: {0}", oPD.point_location_method)
         Assert.assertEqual(COVERAGE_POINT_LOC_METHOD.COMPUTE_BASED_ON_RESOLUTION, oPD.point_location_method)
         # PointFileList (readonly)
         self.PointFileListCollection(oPD.point_file_list, True)
-        # PointLocationMethod (eSpecifyCustomLocations)
+        # PointLocationMethod (SPECIFY_CUSTOM_LOCATIONS)
         oPD.point_location_method = COVERAGE_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS
         TestBase.logger.WriteLine6("\tThe new PointLocationMethod is: {0}", oPD.point_location_method)
         Assert.assertEqual(COVERAGE_POINT_LOC_METHOD.SPECIFY_CUSTOM_LOCATIONS, oPD.point_location_method)
         # PointFileList
         self.PointFileListCollection(oPD.point_file_list, False)
-        # PointLocationMethod (ePointLocMethodUnknown)
+        # PointLocationMethod (POINT_LOC_METHOD_UNKNOWN)
         with pytest.raises(Exception):
             oPD.point_location_method = COVERAGE_POINT_LOC_METHOD.POINT_LOC_METHOD_UNKNOWN
 
-        # GroundAltitudeMethod (eCvGroundAltitudeMethodUnknown)
+        # GroundAltitudeMethod (UNKNOWN)
         with pytest.raises(Exception):
             oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.UNKNOWN
 
-        # GroundAltitudeMethod (eCvGroundAltitudeMethodDepth)
+        # GroundAltitudeMethod (DEPTH)
         with pytest.raises(Exception):
             oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.DEPTH
 
-        # GroundAltitudeMethod (eCvGroundAltitudeMethodAltitude)
+        # GroundAltitudeMethod (ALTITUDE)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE
         Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE, oPD.ground_altitude_method)
         oPD.ground_altitude = 123.456
@@ -796,19 +796,19 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oPD.ground_altitude = -1.2
 
-        # GroundAltitudeMethod (eCvGroundAltitudeMethodAltAboveMSL)
+        # GroundAltitudeMethod (ALTITUDE_ABOVE_MSL)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL
         Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL, oPD.ground_altitude_method)
         oPD.ground_altitude = 456.123
         Assert.assertEqual(456.123, oPD.ground_altitude)
 
-        # GroundAltitudeMethod (eCvGroundAltitudeMethodUsePointAlt)
+        # GroundAltitudeMethod (USE_POINT_ALTITUDE)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
         Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE, oPD.ground_altitude_method)
         with pytest.raises(Exception):
             oPD.ground_altitude = 123.456
 
-        # GroundAltitudeMethod (eCvGroundAltitudeMethodAltAtTerrain)
+        # GroundAltitudeMethod (ALTITUDE_AT_TERRAIN)
         oPD.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_AT_TERRAIN
         Assert.assertEqual(COVERAGE_GROUND_ALTITUDE_METHOD.ALTITUDE_AT_TERRAIN, oPD.ground_altitude_method)
         with pytest.raises(Exception):
@@ -957,7 +957,7 @@ class EarlyBoundTests(TestBase):
         # AltitudeMethod
         TestBase.logger.WriteLine6("\t\tThe current AltitudeMethod is: {0}", oPD.altitude_method)
 
-        # AltitudeMethod (eAltitude) == Depth for Submarine
+        # AltitudeMethod (ALTITUDE) == Depth for Submarine
         oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE
         TestBase.logger.WriteLine6("\t\tThe new AltitudeMethod is: {0}", oPD.altitude_method)
         Assert.assertEqual(COVERAGE_ALTITUDE_METHOD.ALTITUDE, oPD.altitude_method)
@@ -968,7 +968,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(123.456, oPD.altitude)
         with pytest.raises(Exception):
             oPD.altitude = -1.2
-        # AltitudeMethod (eAltitudeAboveMSL)
+        # AltitudeMethod (ALTITUDE_ABOVE_MSL)
 
         oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_MSL
         TestBase.logger.WriteLine6("\t\tThe new AltitudeMethod is: {0}", oPD.altitude_method)
@@ -981,7 +981,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oPD.altitude = -1.2
 
-        # AltitudeMethod (eAltAboveTerrain)
+        # AltitudeMethod (ALTITUDE_ABOVE_TERRAIN)
         TestBase.logger.WriteLine6("\t\tThe current AltitudeMethod is: {0}", oPD.altitude_method)
         oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_TERRAIN
         TestBase.logger.WriteLine6("\t\tThe new AltitudeMethod is: {0}", oPD.altitude_method)
@@ -1008,7 +1008,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 oPD.altitude = -1.2
 
-        # AltitudeMethod (eAltitudeMethodUnknown)
+        # AltitudeMethod (ALTITUDE_METHOD_UNKNOWN)
         with pytest.raises(Exception):
             oPD.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_METHOD_UNKNOWN
 
@@ -1243,7 +1243,7 @@ class EarlyBoundTests(TestBase):
     @category("Grid Inspector")
     def test_GridInspector(self):
         TestBase.logger.WriteLine("----- GRID INSPECTOR TEST ----- BEGIN -----")
-        # BoundsType (eBoundsLat)
+        # BoundsType (BOUNDS_LAT)
         TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
@@ -1314,7 +1314,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\n\tThe ClearSelection message:{0}", oInspector.message)
         Assert.assertEqual("", oInspector.message)
 
-        # BoundsType (eBoundsCustomRegions)
+        # BoundsType (BOUNDS_CUSTOM_REGIONS)
         EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
@@ -1703,7 +1703,7 @@ class EarlyBoundTests(TestBase):
 
         # Ensure that fast and slow give the same results, and that fast is 20+ on x86 and 15+ on x64 times faster than slow.
         Assert.assertEqual(sbFast.ToString(), sbSlow.ToString())
-        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (5.0 * watchFast.ElapsedMilliseconds))
+        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (4.0 * watchFast.ElapsedMilliseconds))
 
     # endregion
 

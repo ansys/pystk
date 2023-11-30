@@ -1,0 +1,16 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyPower">
+    <OBJECT Class = "string" Name = "Category"> &quot;Power&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Power produced by a power source&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "PowerSource">
+        <OBJECT Class = "string" Name = ""> &quot;Unresolved-Link&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcPower&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Power produced by a power source&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

@@ -1,0 +1,16 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Antenna" Name = "MyDipole">
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyDipole&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Analytical model found in standard texts&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "DesignFrequency"> 14500000000 Hz </OBJECT>
+    <OBJECT Class = "double" Name = "Efficiency"> 1 unitValue </OBJECT>
+    <OBJECT Class = "double" Name = "Length"> 1 m </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Dipole&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Analytical model found in standard texts&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

@@ -4430,7 +4430,7 @@ class GatorHelper(object):
         impulse.update_mass = True
         Assert.assertTrue(impulse.update_mass)
 
-        # eVAAttitudeControlVelocityVector
+        # VELOCITY_VECTOR
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.VELOCITY_VECTOR, impulse.attitude_control_type)
         velVec: "AttitudeControlImpulsiveVelocityVector" = clr.Convert(
@@ -4455,7 +4455,7 @@ class GatorHelper(object):
         Assert.assertEqual(2, y)
         Assert.assertEqual(3, z)
 
-        # eVAAttitudeControlAntiVelocityVector
+        # ANTI_VELOCITY_VECTOR
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR, impulse.attitude_control_type)
         antiVelVec: "AttitudeControlImpulsiveAntiVelocityVector" = clr.Convert(
@@ -4475,7 +4475,7 @@ class GatorHelper(object):
         Assert.assertEqual(5, y)
         Assert.assertEqual(6, z)
 
-        # eVAAttitudeControlAttitude
+        # ATTITUDE
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.ATTITUDE)
         Assert.assertEqual(ATTITUDE_CONTROL.ATTITUDE, impulse.attitude_control_type)
         att: "AttitudeControlImpulsiveAttitude" = clr.Convert(
@@ -4507,7 +4507,7 @@ class GatorHelper(object):
         Assert.assertEqual(0.0, qz)
         Assert.assertEqual(1.0, qs)
 
-        # eVAAttitudeControlFile
+        # FILE
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.FILE)
         Assert.assertEqual(ATTITUDE_CONTROL.FILE, impulse.attitude_control_type)
         file: "AttitudeControlImpulsiveFile" = clr.Convert(impulse.attitude_control, AttitudeControlImpulsiveFile)
@@ -4525,7 +4525,7 @@ class GatorHelper(object):
 
         GatorHelper.m_logger.WriteLine(file.full_filename)
 
-        # eVAAttitudeControlThrustVector
+        # THRUST_VECTOR
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.THRUST_VECTOR, impulse.attitude_control_type)
         thrust: "AttitudeControlImpulsiveThrustVector" = clr.Convert(
@@ -4570,7 +4570,7 @@ class GatorHelper(object):
 
         # thrust.Position  DEPRECATED
 
-        # eVAAttitudeControlPlugin (not supported for Impulsive)
+        # PLUGIN (not supported for Impulsive)
         with pytest.raises(Exception):
             impulse.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
 
@@ -4595,7 +4595,7 @@ class GatorHelper(object):
         finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_ONLY
         Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_ONLY, finite.thrust_efficiency_mode)
 
-        # eVAAttitudeControlAntiVelocityVector
+        # ANTI_VELOCITY_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR, finite.attitude_control_type)
         fAntiVel: "AttitudeControlFiniteAntiVelocityVector" = clr.Convert(
@@ -4619,7 +4619,7 @@ class GatorHelper(object):
         Assert.assertEqual(2, y)
         Assert.assertEqual(3, z)
 
-        # eVAAttitudeControlVelocityVector
+        # VELOCITY_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.VELOCITY_VECTOR, finite.attitude_control_type)
         fVelVec: "AttitudeControlFiniteVelocityVector" = clr.Convert(
@@ -4643,7 +4643,7 @@ class GatorHelper(object):
         Assert.assertEqual(2, y)
         Assert.assertEqual(3, z)
 
-        # eVAAttitudeControlAttitude
+        # ATTITUDE
         finite.set_attitude_control_type(ATTITUDE_CONTROL.ATTITUDE)
         Assert.assertEqual(ATTITUDE_CONTROL.ATTITUDE, finite.attitude_control_type)
         fAtt: "AttitudeControlFiniteAttitude" = clr.Convert(finite.attitude_control, AttitudeControlFiniteAttitude)
@@ -4671,7 +4671,7 @@ class GatorHelper(object):
         Assert.assertEqual(0.0, qz)
         Assert.assertEqual(1.0, qs)
 
-        # eVAAttitudeControlThrustVector
+        # THRUST_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.THRUST_VECTOR, finite.attitude_control_type)
         fthrust: "AttitudeControlFiniteThrustVector" = clr.Convert(
@@ -4708,7 +4708,7 @@ class GatorHelper(object):
         Assert.assertEqual(2, y)
         Assert.assertEqual(3, z)
 
-        # eVAAttitudeControlTimeVarying
+        # TIME_VARYING
         finite.set_attitude_control_type(ATTITUDE_CONTROL.TIME_VARYING)
         Assert.assertEqual(ATTITUDE_CONTROL.TIME_VARYING, finite.attitude_control_type)
         ftimevary: "AttitudeControlFiniteTimeVarying" = clr.Convert(
@@ -4756,7 +4756,7 @@ class GatorHelper(object):
         ftimevary.el_p = 0.03
         Assert.assertAlmostEqual(0.03, ftimevary.el_p, delta=Math2.Epsilon12)
 
-        # eVAAttitudeControlFile
+        # FILE
         finite.set_attitude_control_type(ATTITUDE_CONTROL.FILE)
         Assert.assertEqual(ATTITUDE_CONTROL.FILE, finite.attitude_control_type)
         ffile: "AttitudeControlFiniteFile" = clr.Convert(finite.attitude_control, AttitudeControlFiniteFile)
@@ -4771,7 +4771,7 @@ class GatorHelper(object):
         ffile.file_time_offset = 2
         Assert.assertEqual(2, ffile.file_time_offset)
 
-        # eVAAttitudeControlPlugin
+        # PLUGIN
         finite.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
         Assert.assertEqual(ATTITUDE_CONTROL.PLUGIN, finite.attitude_control_type)
         plugin: "AttitudeControlFinitePlugin" = clr.Convert(finite.attitude_control, AttitudeControlFinitePlugin)

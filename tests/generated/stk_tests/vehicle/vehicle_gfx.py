@@ -1969,7 +1969,7 @@ class GfxSwathHelper(object):
 
             iIndex += 1
 
-        # SetElevationType(eElevationUnknown)
+        # SetElevationType(ELEVATION_UNKNOWN)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             oSwath.set_elevation_type(VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_UNKNOWN)
 

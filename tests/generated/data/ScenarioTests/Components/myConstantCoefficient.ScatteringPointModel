@@ -1,0 +1,80 @@
+<?xml version = "1.0" standalone = "yes"?>
+<Component>
+    <Type>ScatteringPointModel</Type>
+    <SpecificType>Constant Coefficient</SpecificType>
+    <Data>
+        <VAR name = "myConstantCoefficient">
+            <SCOPE Class = "ScatteringPointModel">
+                <VAR name = "Version">
+                    <STRING>&quot;1.0.0 a&quot;</STRING>
+                </VAR>
+                <VAR name = "IdentifierInformation">
+                    <SCOPE>
+                        <VAR name = "Identifier">
+                            <STRING>&quot;{DAEDBD50-F954-4A27-82F6-2BF7FF1EAF0C}&quot;</STRING>
+                        </VAR>
+                        <VAR name = "Version">
+                            <STRING>&quot;1&quot;</STRING>
+                        </VAR>
+                        <VAR name = "SdfInformation">
+                            <SCOPE>
+                                <VAR name = "Version">
+                                    <STRING>&quot;0.0&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Url">
+                                    <STRING>&quot;&quot;</STRING>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                        <VAR name = "SourceIdentifierInformation">
+                            <SCOPE>
+                                <VAR name = "Identifier">
+                                    <STRING>&quot;{B5AAA4A1-F9E6-4347-84C1-08485C04C016}&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Version">
+                                    <STRING>&quot;1&quot;</STRING>
+                                </VAR>
+                                <VAR name = "SdfInformation">
+                                    <SCOPE>
+                                        <VAR name = "Version">
+                                            <STRING>&quot;0.0&quot;</STRING>
+                                        </VAR>
+                                        <VAR name = "Url">
+                                            <STRING>&quot;&quot;</STRING>
+                                        </VAR>
+                                    </SCOPE>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </SCOPE>
+                </VAR>
+                <VAR name = "ComponentName">
+                    <STRING>&quot;myConstantCoefficient&quot;</STRING>
+                </VAR>
+                <VAR name = "Description">
+                    <STRING>&quot;A constant coefficient scattering model.&quot;</STRING>
+                </VAR>
+                <VAR name = "Type">
+                    <STRING>&quot;Constant Coefficient&quot;</STRING>
+                </VAR>
+                <VAR name = "UserComment">
+                    <STRING>&quot;A constant coefficient scattering model.&quot;</STRING>
+                </VAR>
+                <VAR name = "ReadOnly">
+                    <BOOL>false</BOOL>
+                </VAR>
+                <VAR name = "Clonable">
+                    <BOOL>true</BOOL>
+                </VAR>
+                <VAR name = "Category">
+                    <STRING>&quot;@Top&quot;</STRING>
+                </VAR>
+                <VAR name = "ClutterCoefficient">
+                    <QUANTITY Dimension = "RatioUnit" Unit = "units">
+                        <REAL>1</REAL>
+                    </QUANTITY>
+                </VAR>
+            </SCOPE>
+        </VAR>
+    </Data>
+</Component>

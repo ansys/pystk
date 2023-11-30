@@ -1,0 +1,98 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Transmitter" Name = "MyLaserTxModel">
+    <OBJECT Class = "AttrCon" Name = "AntennaControl">
+        <OBJECT Class = "string" Name = "AntennaReferenceType"> &quot;Embed&quot; </OBJECT>
+        <OBJECT Class = "link" Name = "Antenna">
+            <OBJECT Class = "Antenna" Name = "Gaussian_Optical">
+                <OBJECT Class = "double" Name = "Area"> 0.1 m^2 </OBJECT>
+                <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+                <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+                <OBJECT Class = "string" Name = "ComponentName"> &quot;Gaussian_Optical&quot; </OBJECT>
+                <OBJECT Class = "bool" Name = "ComputeGain"> False </OBJECT>
+                <OBJECT Class = "string" Name = "Description"> &quot;Gaussian optical antenna pattern&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "DesignFrequency"> 375000000000000 Hz </OBJECT>
+                <OBJECT Class = "double" Name = "Efficiency"> 0.7 unitValue </OBJECT>
+                <OBJECT Class = "double" Name = "MaxGain"> 1000000 units </OBJECT>
+                <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+                <OBJECT Class = "string" Name = "Type"> &quot;Gaussian Optical&quot; </OBJECT>
+                <OBJECT Class = "string" Name = "UserComment"> &quot;Gaussian optical antenna pattern&quot; </OBJECT>
+                <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+            </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "link" Name = "Orientation">
+            <OBJECT Class = "Orientation" Name = "Azimuth Elevation">
+                <OBJECT Class = "string" Name = "AboutBoresight"> &quot;Rotate&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "AzimuthAngle"> 0 rad </OBJECT>
+                <OBJECT Class = "double" Name = "ElevationAngle"> 1.570796326794897 rad </OBJECT>
+                <OBJECT Class = "string" Name = "Type"> &quot;Azimuth Elevation&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "XPositionOffset"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "YPositionOffset"> 0 m </OBJECT>
+                <OBJECT Class = "double" Name = "ZPositionOffset"> 0 m </OBJECT>
+            </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "link" Name = "Polarization">
+            <OBJECT Class = "Polarization" Name = "Linear">
+                <OBJECT Class = "double" Name = "CrossPolLeakage"> 1e-06 units </OBJECT>
+                <OBJECT Class = "string" Name = "ReferenceAxis"> &quot;X Axis&quot; </OBJECT>
+                <OBJECT Class = "double" Name = "TiltAngle"> 0 rad </OBJECT>
+                <OBJECT Class = "string" Name = "Type"> &quot;Linear&quot; </OBJECT>
+            </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "bool" Name = "UsePolarization"> False </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyLaserTxModel&quot; </OBJECT>
+    <OBJECT Class = "double" Name = "DataRate"> 16000000 b*sec^-1 </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Laser model of a transmitter&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "Filter">
+        <OBJECT Class = "Filter" Name = "Butterworth">
+            <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "ComponentName"> &quot;Butterworth&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "CutoffFrequency"> 10000000 Hz </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;General form of nth order Butterworth filter with flat passband and stopband regions&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "InsertionLoss"> 1 units </OBJECT>
+            <OBJECT Class = "double" Name = "LowerBandwidthLimit"> -20000000 Hz </OBJECT>
+            <OBJECT Class = "int" Name = "Order"> 4 </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;Butterworth&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "UpperBandwidthLimit"> 20000000 Hz </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;General form of nth order Butterworth filter with flat passband and stopband regions&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "double" Name = "Frequency"> 375000000000000 Hz </OBJECT>
+    <OBJECT Class = "link" Name = "Modulator">
+        <OBJECT Class = "Modulator" Name = "BPSK">
+            <OBJECT Class = "bool" Name = "AutoScaleBandwidth"> True </OBJECT>
+            <OBJECT Class = "double" Name = "Bandwidth"> 32000000 Hz </OBJECT>
+            <OBJECT Class = "string" Name = "Category"> &quot;&quot; </OBJECT>
+            <OBJECT Class = "int" Name = "ChipsPerBit"> 1 </OBJECT>
+            <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+            <OBJECT Class = "string" Name = "ComponentName"> &quot;BPSK&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;Modulator capable of modulating a signal using BPSK modulation&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "LowerBandwidthLimit"> -16000000 Hz </OBJECT>
+            <OBJECT Class = "int" Name = "NumPSDNulls"> 15 </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "bool" Name = "SymmetricBandwidth"> True </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;BPSK&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "UpperBandwidthLimit"> 16000000 Hz </OBJECT>
+            <OBJECT Class = "bool" Name = "UseCDMASpread"> False </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Modulator capable of modulating a signal using BPSK modulation&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseSignalPSD"> False </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.1 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "AttrCon" Name = "PostTransmitGainsLosses">
+        <OBJECT Class = "container" Name = "GainLossList" />
+    </OBJECT>
+    <OBJECT Class = "double" Name = "Power"> 1 W </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "Type"> &quot;Laser Transmitter Model&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "UseFilter"> False </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Laser model of a transmitter&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.1 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

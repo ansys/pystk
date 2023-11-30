@@ -1,0 +1,17 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "AsStateCalc" Name = "MyCloseApproachY">
+    <OBJECT Class = "string" Name = "Category"> &quot;Formation&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "CentralBody">
+        <OBJECT Class = "string" Name = ""> &quot;Earth&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Y component of close approach vector on close approach plane&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "string" Name = "ReferenceSelection"> &quot;Use Basic-&gt;Reference&quot; </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;CAgAsStateCalcCloseApproachY&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Y component of close approach vector on close approach plane&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>
