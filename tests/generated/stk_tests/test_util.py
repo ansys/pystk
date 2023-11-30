@@ -852,7 +852,8 @@ class File:
 
     @staticmethod
     def Delete(filename):
-        os.remove(filename)
+        if os.path.exists(filename):
+            os.remove(filename)
 
     @staticmethod
     def ReadAllBytes(filename):

@@ -1,8 +1,0 @@
-Begin MultihopRules
-    DefaultRule Never
-    
-    Begin Rules
-        Always Satellite/Satellite1 Satellite/Satellite2
-        Always Satellite/Satellite2 Satellite/Satellite3
-    End Rules
-End OutgoingRules
