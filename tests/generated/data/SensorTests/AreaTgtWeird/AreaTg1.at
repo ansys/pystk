@@ -1,0 +1,125 @@
+stk.v.4.1.1
+
+BEGIN AreaTarget
+
+Name        AreaTg1
+
+	BEGIN CentroidPosition
+
+		CentralBody            Earth
+		AutoCentroid           On
+		EcfLatitude            3.000775e+01
+		EcfLongitude           1.100000e+02
+		EcfAltitude            0.000000e+00
+		DisplayCoords          Geodetic
+
+		AreaType               Pattern
+		NumberOfPolygonPts     37
+
+		BEGIN PolygonPoints
+
+			3.2000000000e+01	1.1000000000e+02	0.0000000000e+00
+			3.1969616000e+01	1.1034729600e+02	0.0000000000e+00
+			3.1879385000e+01	1.1068404000e+02	0.0000000000e+00
+			3.1732051000e+01	1.1100000000e+02	0.0000000000e+00
+			3.1532089000e+01	1.1128557500e+02	0.0000000000e+00
+			3.1285575000e+01	1.1153208900e+02	0.0000000000e+00
+			3.1000000000e+01	1.1173205100e+02	0.0000000000e+00
+			3.0684040000e+01	1.1187938500e+02	0.0000000000e+00
+			3.0347296000e+01	1.1196961600e+02	0.0000000000e+00
+			3.0000000000e+01	1.1200000000e+02	0.0000000000e+00
+			2.9652704000e+01	1.1196961600e+02	0.0000000000e+00
+			2.9315960000e+01	1.1187938500e+02	0.0000000000e+00
+			2.9000000000e+01	1.1173205100e+02	0.0000000000e+00
+			2.8714425000e+01	1.1153208900e+02	0.0000000000e+00
+			2.8467911000e+01	1.1128557500e+02	0.0000000000e+00
+			2.8267949000e+01	1.1100000000e+02	0.0000000000e+00
+			2.8120615000e+01	1.1068404000e+02	0.0000000000e+00
+			2.8030384000e+01	1.1034729600e+02	0.0000000000e+00
+			2.8000000000e+01	1.1000000000e+02	0.0000000000e+00
+			2.8030384000e+01	1.0965270400e+02	0.0000000000e+00
+			2.8120615000e+01	1.0931596000e+02	0.0000000000e+00
+			2.8267949000e+01	1.0900000000e+02	0.0000000000e+00
+			2.8467911000e+01	1.0871442500e+02	0.0000000000e+00
+			2.8714425000e+01	1.0846791100e+02	0.0000000000e+00
+			2.9000000000e+01	1.0826794900e+02	0.0000000000e+00
+			2.9315960000e+01	1.0812061500e+02	0.0000000000e+00
+			2.9652704000e+01	1.0803038400e+02	0.0000000000e+00
+			3.0000000000e+01	1.0800000000e+02	0.0000000000e+00
+			3.0347296000e+01	1.0803038400e+02	0.0000000000e+00
+			3.0684040000e+01	1.0812061500e+02	0.0000000000e+00
+			3.1000000000e+01	1.0826794900e+02	0.0000000000e+00
+			3.1285575000e+01	1.0846791100e+02	0.0000000000e+00
+			3.1532089000e+01	1.0871442500e+02	0.0000000000e+00
+			3.1732051000e+01	1.0900000000e+02	0.0000000000e+00
+			3.1879385000e+01	1.0931596000e+02	0.0000000000e+00
+			3.1969616000e+01	1.0965270400e+02	0.0000000000e+00
+			3.2000000000e+01	1.1000000000e+02	0.0000000000e+00
+
+		END PolygonPoints
+
+
+	END CentroidPosition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                MarkerColor             4
+                PolygonColor            4
+                LabelColor              4
+                LineStyle               0
+                LineWidth               1.0
+                MarkerStyle             1
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowLabel               On
+                Filled                  Off
+
+            END Graphics
+    END Graphics
+    
+    BEGIN Shapefiles
+    END Shapefiles
+    
+    BEGIN AccessConstraints
+		LineOfSight
+    END AccessConstraints
+    
+    BEGIN Report
+    END Report
+    
+    BEGIN DynData
+    END DynData
+    
+    BEGIN Desc
+        ShortText    13
+Area Target#1
+        LongText    65
+Small circular area target
+
+tests access to small, regular shapes
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN AsyncIPC
+    END AsyncIPC
+
+END Extensions
+
+END AreaTarget
+

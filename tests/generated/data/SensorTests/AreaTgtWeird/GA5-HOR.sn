@@ -1,0 +1,121 @@
+stk.v.4.1.1
+
+BEGIN Sensor
+
+    Name            GA5-HOR
+
+BEGIN Pattern
+
+    BEGIN Conical
+
+        InnerConeAngle         0.000000000000e+00
+        OuterConeAngle         9.000000000000e+01
+        MinClockAngle          0.000000000000e+00
+        MaxClockAngle          3.600000000000e+02
+
+    END Conical
+
+END Pattern
+
+BEGIN Pointing
+
+    BEGIN Fixed
+
+    PointingMethod          AzEl
+    Sequence                323
+    Qx                      0.000000000000e+00
+    Qy                      1.000000000000e+00
+    Qz                      0.000000000000e+00
+    Qs                      6.123233995737e-17
+
+    END Fixed
+
+END Pointing
+
+BEGIN Optics
+
+    FocalLength             0.000000000000e+00
+    DetectorPitch           0.000000000000e+00
+    IQConstant              0.000000000000e+00
+    GsdCoefficient          0.000000000000e+00
+
+END Optics
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+		BEGIN Attributes
+
+			LineStyle           0
+			LineWidth           1.000000
+			PatternColor        4
+
+		END Attributes
+
+		BEGIN Display
+
+			ShowStaticDisplay       No
+			ShowAnimationDisplay    No
+			NumberOfPatterns        0
+			PersistenceDuration     0.000000000000e+00
+			MinDisplayAltitude      0.000000000000e+00
+			MaxDisplayAltitude      0.000000000000e+00
+			IgnoreIntersect         No
+			SpaceLength             5.000000000000e+07
+			TgtExtLength            0.000000000000e+00
+			FOVHalfAngle            No
+			HalfAngle               0.000000000000e+00
+			FOV                     No
+			ProjDisplay             Sphere
+
+		END Display
+    END Graphics
+    
+    BEGIN Swath
+    END Swath
+    
+    BEGIN Shapefiles
+    END Shapefiles
+    
+    BEGIN AccessConstraints
+		AtFieldOfView
+		FieldOfView
+		LineOfSight
+    END AccessConstraints
+    
+    BEGIN Report
+    END Report
+    
+    BEGIN DynData
+    END DynData
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN Refraction
+		RefractionModel	4/3 Earth Radius Method
+    END Refraction
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN DIS
+    END DIS
+    
+    BEGIN AsyncIPC
+    END AsyncIPC
+
+END Extensions
+
+BEGIN SubObjects
+
+END SubObjects
+
+END Sensor
+

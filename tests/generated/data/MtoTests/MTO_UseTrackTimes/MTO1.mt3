@@ -1,0 +1,167 @@
+VO_V110		
+Show		 Yes
+ShowAllLabels		 Yes
+ShowAllTrackLines		 Yes
+ShowAllModels		 Yes
+ShowAllMarkers		 Yes
+ShowAllPoints		 No
+DrawRelToEye		 No
+UseNameInAsyncPick		 No
+RangeLblSwapDist		 1e+18
+UseMarkerDistScale		 No
+
+BEGIN Default3dTrack
+    Show		 On
+    UseSwapDist		 Off
+    MarkerOnDist		 0
+    MarkerOffDist		 2e+07
+    LabelOnDist		 0
+    LabelOffDist		 2e+06
+    PointOnDist		 2e+07
+    PointOffDist		 4e+07
+    UseAttachPt		 Off
+    ReadArticFileOnLoad		 Off
+    SaveArticFileOnSave		 Off
+    DefaultAzimuth		 0
+    ZAxisTowardsNadir		 On
+    UseDefaultAzimuthLast		 Off
+    BEGIN Marker
+        Show		 Yes
+        Type		 LineGraphic
+        Shape		 Point
+        IsTransparent		 No
+        OneOneBlend		 No
+        Rotate		 No
+        Angle		 0
+        HorizOrigin		 Center
+        VertOrigin		 Center
+        MinSize		 5
+        SizeInMeters		 No
+        RotateRelToNorth		 No
+        UseDirectionAngle		 No
+    END
+    BEGIN Point
+        Show		 No
+        Size		 5
+    END Point
+    PixelOffset		 Off
+    UseLabelOffset		 Off
+    LabelOffset		 0 10 10
+END Default3dTrack
+BEGIN Track
+    Show		 On
+    UseSwapDist		 Off
+    MarkerOnDist		 0
+    MarkerOffDist		 2e+07
+    LabelOnDist		 0
+    LabelOffDist		 2e+06
+    PointOnDist		 2e+07
+    PointOffDist		 4e+07
+    UseAttachPt		 Off
+    ReadArticFileOnLoad		 Off
+    SaveArticFileOnSave		 Off
+    DefaultAzimuth		 0
+    ZAxisTowardsNadir		 On
+    UseDefaultAzimuthLast		 Off
+    BEGIN Marker
+        Show		 Yes
+        Type		 LineGraphic
+        Shape		 Point
+        IsTransparent		 No
+        OneOneBlend		 No
+        Rotate		 No
+        Angle		 0
+        HorizOrigin		 Center
+        VertOrigin		 Center
+        MinSize		 5
+        SizeInMeters		 No
+        RotateRelToNorth		 No
+        UseDirectionAngle		 No
+    END
+    BEGIN Point
+        Show		 No
+        Size		 5
+    END Point
+    PixelOffset		 Off
+    UseLabelOffset		 Off
+    LabelOffset		 0 10 10
+END Track
+
+BEGIN Track
+    Show		 On
+    UseSwapDist		 Off
+    MarkerOnDist		 0
+    MarkerOffDist		 2e+07
+    LabelOnDist		 0
+    LabelOffDist		 2e+06
+    PointOnDist		 2e+07
+    PointOffDist		 4e+07
+    UseAttachPt		 Off
+    ReadArticFileOnLoad		 Off
+    SaveArticFileOnSave		 Off
+    DefaultAzimuth		 0
+    ZAxisTowardsNadir		 On
+    UseDefaultAzimuthLast		 Off
+    BEGIN Marker
+        Show		 Yes
+        Type		 LineGraphic
+        Shape		 Point
+        IsTransparent		 No
+        OneOneBlend		 No
+        Rotate		 No
+        Angle		 0
+        HorizOrigin		 Center
+        VertOrigin		 Center
+        MinSize		 5
+        SizeInMeters		 No
+        RotateRelToNorth		 No
+        UseDirectionAngle		 No
+    END
+    BEGIN Point
+        Show		 No
+        Size		 5
+    END Point
+    PixelOffset		 Off
+    UseLabelOffset		 Off
+    LabelOffset		 0 10 10
+END Track
+
+BEGIN Track
+    Show		 On
+    UseSwapDist		 Off
+    MarkerOnDist		 0
+    MarkerOffDist		 2e+07
+    LabelOnDist		 0
+    LabelOffDist		 2e+06
+    PointOnDist		 2e+07
+    PointOffDist		 4e+07
+    UseAttachPt		 Off
+    ReadArticFileOnLoad		 Off
+    SaveArticFileOnSave		 Off
+    DefaultAzimuth		 0
+    ZAxisTowardsNadir		 On
+    UseDefaultAzimuthLast		 Off
+    BEGIN Marker
+        Show		 Yes
+        Type		 LineGraphic
+        Shape		 Point
+        IsTransparent		 No
+        OneOneBlend		 No
+        Rotate		 No
+        Angle		 0
+        HorizOrigin		 Center
+        VertOrigin		 Center
+        MinSize		 5
+        SizeInMeters		 No
+        RotateRelToNorth		 No
+        UseDirectionAngle		 No
+    END
+    BEGIN Point
+        Show		 No
+        Size		 5
+    END Point
+    PixelOffset		 Off
+    UseLabelOffset		 Off
+    LabelOffset		 0 10 10
+END Track
+

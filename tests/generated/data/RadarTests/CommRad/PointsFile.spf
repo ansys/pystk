@@ -1,0 +1,5 @@
+ScatteringPointProviderPointsFile v1
+DataFormatType LatLonAlt
+1.0 1.0 5.0 Constant_Coefficient #Name with no spaces
+1.1 1.1 15.0 #using the default clutter map
+1.2 1.2 25.0 "Wind Turbine" #Name with a space in quotes

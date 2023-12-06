@@ -4159,7 +4159,8 @@ longitude = 121;"""
                     name: "PropertyInfo" = rtti2.properties[0]
                     Assert.assertEqual(enumChoices[i].name, clr.Convert(name.get_value(), str))
                     value: "PropertyInfo" = rtti2.properties[1]
-                    Assert.assertEqual(enumChoices[i].value, int(value.get_value()))
+                    rttiValue: typing.Any = value.get_value()
+                    Assert.assertEqual(enumChoices[i].value, int(rttiValue))
 
                 i += 1
 
