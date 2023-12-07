@@ -3070,8 +3070,8 @@ class AntennaHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("Error loading")):
             cuts.filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
 
-        cuts.filename = TestBase.GetScenarioFile("CommRad", "Pattern_Elev_Azi_Cuts_1Beam.Ant")
-        Assert.assertEqual(TestBase.PathCombine("CommRad", "Pattern_Elev_Azi_Cuts_1Beam.Ant"), cuts.filename)
+        cuts.filename = TestBase.GetScenarioFile("CommRad", "azelCutsPattern.ant")
+        Assert.assertEqual(TestBase.PathCombine("CommRad", "azelCutsPattern.ant"), cuts.filename)
 
     def Test_IAgAntennaModelRectangularPattern(self, rp: "AntennaModelRectangularPattern"):
         Assert.assertEqual(20.0, rp.mainlobe_gain)
@@ -4732,6 +4732,215 @@ class SystemNoiseTemperatureHelper(object):
                 ant.other_noise_temperature = -1.0
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 ant.other_noise_temperature = 100000001
+
+
+# endregion
+
+
+# region STCHelper
+class STCHelper(object):
+    def __init__(self, root: "StkObjectRoot"):
+        self.m_root: "StkObjectRoot" = root
+
+    # endregion
+
+    # region Run_RF
+    def Run_RF(self, radarReceiver: "RadarReceiver"):
+        stcType: str
+        for stcType in radarReceiver.supported_rf_stc_types:
+            radarReceiver.set_rf_stc_type(stcType)
+            if stcType == "Decay Factor":
+                Assert.assertEqual("Decay Factor", radarReceiver.rf_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.DECAY_FACTOR, radarReceiver.rf_stc.type)
+                self.Test_IAgRadarStcAttenuationDecayFactor(
+                    clr.CastAs(radarReceiver.rf_stc, RadarStcAttenuationDecayFactor)
+                )
+
+            elif stcType == "Decay Slope":
+                Assert.assertEqual("Decay Slope", radarReceiver.rf_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.DECAY_SLOPE, radarReceiver.rf_stc.type)
+                self.Test_IAgRadarStcAttenuationDecaySlope(
+                    clr.CastAs(radarReceiver.rf_stc, RadarStcAttenuationDecaySlope)
+                )
+
+            elif stcType == "Map Azi Range":
+                Assert.assertEqual("Map Azi Range", radarReceiver.rf_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.MAP_AZIMUTH_RANGE, radarReceiver.rf_stc.type)
+                map: "IRadarStcAttenuationMap" = clr.CastAs(radarReceiver.rf_stc, IRadarStcAttenuationMap)
+                map.filename = TestBase.GetScenarioFile("CommRad", "STCAzimuthRange.txt")
+                Assert.assertEqual(TestBase.PathCombine("CommRad", "STCAzimuthRange.txt"), map.filename)
+
+            elif stcType == "Map Elev Range":
+                Assert.assertEqual("Map Elev Range", radarReceiver.rf_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.MAP_ELEVATION_RANGE, radarReceiver.rf_stc.type)
+                map: "IRadarStcAttenuationMap" = clr.CastAs(radarReceiver.rf_stc, IRadarStcAttenuationMap)
+                map.filename = TestBase.GetScenarioFile("CommRad", "STCElevationRange.txt")
+                Assert.assertEqual(TestBase.PathCombine("CommRad", "STCElevationRange.txt"), map.filename)
+
+            elif stcType == "Map Range":
+                Assert.assertEqual("Map Range", radarReceiver.rf_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.MAP_RANGE, radarReceiver.rf_stc.type)
+                map: "IRadarStcAttenuationMap" = clr.CastAs(radarReceiver.rf_stc, IRadarStcAttenuationMap)
+                map.filename = TestBase.GetScenarioFile("CommRad", "STCRange.txt")
+                Assert.assertEqual(TestBase.PathCombine("CommRad", "STCRange.txt"), map.filename)
+
+            else:
+                Assert.fail(("Unknown STC Type: " + stcType))
+
+    def Test_IAgRadarStcAttenuationDecayFactor(self, decayFactor: "RadarStcAttenuationDecayFactor"):
+        decayFactor.maximum_value = 0
+        Assert.assertEqual(0, decayFactor.maximum_value)
+        decayFactor.maximum_value = 200
+        Assert.assertEqual(200, decayFactor.maximum_value)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.maximum_value = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.maximum_value = 201
+
+        decayFactor.start_value = 0
+        Assert.assertEqual(0, decayFactor.start_value)
+        decayFactor.start_value = 200
+        Assert.assertEqual(200, decayFactor.start_value)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.start_value = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.start_value = 201
+
+        decayFactor.step_size = 0.01
+        Assert.assertAlmostEqual(0.01, decayFactor.step_size, delta=0.001)
+        decayFactor.step_size = 20
+        Assert.assertEqual(20, decayFactor.step_size)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.step_size = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.step_size = 21
+
+        decayFactor.decay_factor = 1
+        Assert.assertEqual(1, decayFactor.decay_factor)
+        decayFactor.decay_factor = 10
+        Assert.assertEqual(10, decayFactor.decay_factor)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.decay_factor = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.decay_factor = 11
+
+        decayFactor.start_range = 0.2
+        Assert.assertEqual(0.2, decayFactor.start_range)
+        decayFactor.start_range = 46
+        Assert.assertEqual(46, decayFactor.start_range)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.start_range = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.start_range = 100
+
+        decayFactor.stop_range = 2
+        Assert.assertEqual(2, decayFactor.stop_range)
+        decayFactor.stop_range = 900
+        Assert.assertEqual(900, decayFactor.stop_range)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.stop_range = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decayFactor.stop_range = 1000
+
+    def Test_IAgRadarStcAttenuationDecaySlope(self, decaySlope: "RadarStcAttenuationDecaySlope"):
+        decaySlope.maximum_value = 0
+        Assert.assertEqual(0, decaySlope.maximum_value)
+        decaySlope.maximum_value = 200
+        Assert.assertEqual(200, decaySlope.maximum_value)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.maximum_value = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.maximum_value = 201
+
+        decaySlope.start_value = 0
+        Assert.assertEqual(0, decaySlope.start_value)
+        decaySlope.start_value = 200
+        Assert.assertEqual(200, decaySlope.start_value)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.start_value = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.start_value = 201
+
+        decaySlope.step_size = 0.01
+        Assert.assertAlmostEqual(0.01, decaySlope.step_size, delta=0.001)
+        decaySlope.step_size = 20
+        Assert.assertEqual(20, decaySlope.step_size)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.step_size = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.step_size = 21
+
+        decaySlope.decay_slope = 0.1
+        Assert.assertAlmostEqual(0.1, decaySlope.decay_slope, delta=1e-05)
+        decaySlope.decay_slope = 30
+        Assert.assertEqual(30, decaySlope.decay_slope)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.decay_slope = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.decay_slope = 31
+
+        decaySlope.start_range = 0.2
+        Assert.assertEqual(0.2, decaySlope.start_range)
+        decaySlope.start_range = 46
+        Assert.assertEqual(46, decaySlope.start_range)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.start_range = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.start_range = 100
+
+        decaySlope.stop_range = 2
+        Assert.assertEqual(2, decaySlope.stop_range)
+        decaySlope.stop_range = 900
+        Assert.assertEqual(900, decaySlope.stop_range)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.stop_range = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            decaySlope.stop_range = 1000
+
+    # endregion
+
+    # region Run_IF
+    def Run_IF(self, radarReceiver: "RadarReceiver"):
+        stcType: str
+        for stcType in radarReceiver.supported_if_stc_types:
+            radarReceiver.set_if_stc_type(stcType)
+            if stcType == "Decay Factor":
+                Assert.assertEqual("Decay Factor", radarReceiver.if_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.DECAY_FACTOR, radarReceiver.if_stc.type)
+                self.Test_IAgRadarStcAttenuationDecayFactor(
+                    clr.CastAs(radarReceiver.if_stc, RadarStcAttenuationDecayFactor)
+                )
+
+            elif stcType == "Decay Slope":
+                Assert.assertEqual("Decay Slope", radarReceiver.if_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.DECAY_SLOPE, radarReceiver.if_stc.type)
+                self.Test_IAgRadarStcAttenuationDecaySlope(
+                    clr.CastAs(radarReceiver.if_stc, RadarStcAttenuationDecaySlope)
+                )
+
+            elif stcType == "Map Azi Range":
+                Assert.assertEqual("Map Azi Range", radarReceiver.if_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.MAP_AZIMUTH_RANGE, radarReceiver.if_stc.type)
+                map: "IRadarStcAttenuationMap" = clr.CastAs(radarReceiver.if_stc, IRadarStcAttenuationMap)
+                map.filename = TestBase.GetScenarioFile("CommRad", "STCAzimuthRange.txt")
+                Assert.assertEqual(TestBase.PathCombine("CommRad", "STCAzimuthRange.txt"), map.filename)
+
+            elif stcType == "Map Elev Range":
+                Assert.assertEqual("Map Elev Range", radarReceiver.if_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.MAP_ELEVATION_RANGE, radarReceiver.if_stc.type)
+                map: "IRadarStcAttenuationMap" = clr.CastAs(radarReceiver.if_stc, IRadarStcAttenuationMap)
+                map.filename = TestBase.GetScenarioFile("CommRad", "STCElevationRange.txt")
+                Assert.assertEqual(TestBase.PathCombine("CommRad", "STCElevationRange.txt"), map.filename)
+
+            elif stcType == "Map Range":
+                Assert.assertEqual("Map Range", radarReceiver.if_stc.name)
+                Assert.assertEqual(RADAR_STC_ATTENUATION_TYPE.MAP_RANGE, radarReceiver.if_stc.type)
+                map: "IRadarStcAttenuationMap" = clr.CastAs(radarReceiver.if_stc, IRadarStcAttenuationMap)
+                map.filename = TestBase.GetScenarioFile("CommRad", "STCRange.txt")
+                Assert.assertEqual(TestBase.PathCombine("CommRad", "STCRange.txt"), map.filename)
+
+            else:
+                Assert.fail(("Unknown STC Type: " + stcType))
 
 
 # endregion

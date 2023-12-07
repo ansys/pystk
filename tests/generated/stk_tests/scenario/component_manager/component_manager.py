@@ -986,7 +986,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(
                 Exception,
                 match=RegexSubstringMatch(
-                    "Reference is not available if ReferenceSelection is set to eVACalcObjectReferenceBasic."
+                    "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
                 ),
             ):
                 curvRelMotion.reference.bind_to("Satellite/Satellite1")

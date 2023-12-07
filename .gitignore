@@ -161,3 +161,6 @@ cython_debug/
 
 # Ignore any distributions directory to prevent accidental publications
 distributions/
+
+# Backup files
+*.bak

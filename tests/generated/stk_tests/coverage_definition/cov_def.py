@@ -1701,7 +1701,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", curDateUnit)
 
-        # Ensure that fast and slow give the same results, and that fast is 20+ on x86 and 15+ on x64 times faster than slow.
+        # Ensure that fast and slow give the same results, and that fast is faster than slow.
         Assert.assertEqual(sbFast.ToString(), sbSlow.ToString())
         Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (4.0 * watchFast.ElapsedMilliseconds))
 

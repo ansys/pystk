@@ -743,7 +743,7 @@ class EarlyBoundTests(TestBase):
 
         except Exception as e:
             msg: str = str(e)
-            Assert.assertEqual("eFmAccessConstraintPlugin not a valid parameter, use SetAccessConstraintDefintionName() with name of plugin.", msg)
+            Assert.assertEqual("For Access Constraint Plugins, set the definition using the name of the plugin.", msg)
             TestBase.logger.WriteLine(("Expected exception: " + msg))
 
         # ===================================================================

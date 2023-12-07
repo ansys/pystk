@@ -1,0 +1,106 @@
+stk.v.6.1
+
+BEGIN AdvCAT
+
+Name        AdvCAT1
+
+    BEGIN Interval
+
+        UseScenarioTimeInterval   Yes
+        StartTime                 1 Jun 2004 12:00:00.000000000
+        StopTime                  2 Jun 2004 12:00:00.000000000
+        DisplayComputeAck         No
+        MsgAlertOnHit             No
+        ForceRePropOnSatFileLoad  No
+
+    END Interval
+
+
+    BEGIN FilterSettings
+
+        Threshold                 1.000000000000e+004
+        ApogeePerigeePad          3.000000000000e+004
+        OrbitPathPad              3.000000000000e+004
+        TimeDistancePad           3.000000000000e+004
+        OutOfDateDuration         2.592000000000e+006
+        UseOutOfDateFilter        No
+        UseApogeePerigeeFilter    Yes
+        UsePathFilter             Yes
+        UseTimeFilter             Yes
+
+    END FilterSettings
+
+    BEGIN GlobalEllipsoidProperties
+
+         ScaleFactor            	 1.000000000000e+000
+         QuadraticDB            	 stkQuadDB.qdb
+         FixedByOrbitClassDB    	 stkFxdOrbCls.foc
+         QuadraticByOrbitClassDB	 stkQuadOrbCls.qoc
+         CrossReferenceDB       	 stkAllTLE.sd
+        UseCrossRefDb             No
+
+    END GlobalEllipsoidProperties
+
+    BEGIN LogFileSettings
+
+        OutputToLogFile             No
+        BufferOutput                Yes
+        FileMode                    Overwrite
+
+    END LogFileSettings
+
+
+    BEGIN RelationFile
+
+        UseRelFile         No
+
+    END RelationFile
+
+    BEGIN SSCHardBodyRadFile
+
+        UseSSCFile         No
+
+    END SSCHardBodyRadFile
+
+    BEGIN Primaries
+
+
+        BEGIN DefaultEllipsoid
+
+             Tangential            2.000000000000e+004
+             CrossTrack            1.000000000000e+004
+             Normal                5.000000000000e+003
+             EllipsoidType         Fixed
+
+        END DefaultEllipsoid
+
+
+    END Primaries
+
+    BEGIN Secondaries
+
+
+        BEGIN DefaultEllipsoid
+
+             Tangential            2.000000000000e+004
+             CrossTrack            1.000000000000e+004
+             Normal                5.000000000000e+003
+             EllipsoidType         Fixed
+
+        END DefaultEllipsoid
+
+
+    END Secondaries
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END AdvCAT
+

@@ -1,0 +1,36 @@
+STCRangeMap            v1
+AngleUnits             Degrees
+RangeUnits             NauticalMiles
+NumberOfRangePoints    30
+STCData
+ 
+0.5	30	   
+1	24	   
+1.5	20	   
+2	18	   
+2.5	16	   
+3	14	   
+3.5	14	   
+4	12	   
+4.5	10	   
+5	10	   
+5.5	10	   
+6	8	   
+6.5	8	   
+7	8	   
+7.5	6	   
+8	6	   
+8.5	6	   
+9	4	   
+9.5	4	   
+10	4	   
+10.5	4	   
+11	4	   
+11.5	2	   
+12	2	   
+12.5	2	   
+13	2	   
+13.5	2	   
+14	2	   
+14.5	0	   
+15	0	 
