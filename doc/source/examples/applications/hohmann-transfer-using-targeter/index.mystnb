@@ -13,7 +13,7 @@ kernelspec:
 
 # Hohmann transfer using targeter
 
-This example provides a practical example of how to leverage STK with [Tkinter](https://docs.python.org/es/3/library/tkinter.html), a Python library for creating graphical user interfaces, to solve a Hohmann transfer problem.
+This example provides a practical example of how to use PySTK to solve for a Hohmann transfer problem. The the satellite presents an circular and equatorial orbit with a periapsis radius of 6700 kilometers. Its desired final orbit has an apoapsis radius of 42238 kilometers.
 
 +++
 
@@ -25,275 +25,165 @@ The transfer is typically modeled under the two-body assumption. This means that
 
 +++
 
-## Creating the application
+## Launch a new STK instance
 
-To create a class for hosting the application and define various methods linked to buttons for executing different steps of solving the Hohmann transfer, you can use the following cell. This class will serve as the backbone of your Tkinter application and encapsulate the functionality:
+Start by launching a new STK instance. In this example, `STKEngine` is used in `noGraphics` mode. This means that the graphic user interface (GUI) of the product is not launched:
 
 ```{code-cell} ipython3
-import os
-import tkinter as tk
-
 from ansys.stk.core.stkengine import STKEngine
-from ansys.stk.core.stkengine.tkcontrols import GlobeControl
-from ansys.stk.core.stkobjects import (
-    STK_OBJECT_TYPE,
-    VEHICLE_PROPAGATOR_TYPE,
-)
-from ansys.stk.core.utilities.colors import Color, Colors
-from ansys.stk.core.stkobjects.astrogator import (
-    ATTITUDE_CONTROL,
-    CONTROL_MANEUVER,
-    ELEMENT_TYPE,
-    MANEUVER_TYPE,
-    PROFILE_MODE,
-    SEGMENT_TYPE,
-    TARGET_SEQ_ACTION,
-)
 
 
-class HohmannTransferUsingTargeter:
-    """Demonstrates how to use Hohmann Transfer using Targeter with STK Engine."""
-
-    def __init__(self):
-        """Create a new instance and initialize the user interface."""
-        self.stk = STKEngine.StartApplication(noGraphics=False)
-        self.root = self.stk.NewObjectRoot()
-        self.window = tk.Tk()
-        self.window.title("Hohmann Transfer Using Targeter")
-        self.window.protocol("WM_DELETE_WINDOW", self._exit)
-        self.controlFrame = tk.Frame()
-        self.globeControl = GlobeControl(self.controlFrame, width=800, height=600)
-        self.globeControl.back_color = Color.FromRGB(217, 217, 217)
-        self.globeControl.pack(fill=tk.BOTH, expand=tk.YES)
-        self.controlFrame.pack(fill=tk.BOTH, expand=tk.YES, side=tk.LEFT)
-        self.buttonFrame = tk.Frame()
-        self.newScenarioBtn = tk.Button(self.buttonFrame, text="New Scenario", width=15, command=self._new_scenario)
-        self.newScenarioBtn.pack(side=tk.TOP, pady=6)
-        self.initialStateBtn = tk.Button(
-            self.buttonFrame, text="Define the Initial State", width=15, wraplength=100, command=self._initial_state
-        )
-        self.initialStateBtn.pack(side=tk.TOP, pady=6)
-        self.initialStateBtn["state"] = "disabled"
-        self.parkingOrbitBtn = tk.Button(
-            self.buttonFrame, text="Propagate the Parking Orbit", width=15, wraplength=100, command=self._parking_orbit
-        )
-        self.parkingOrbitBtn.pack(side=tk.TOP, pady=6)
-        self.parkingOrbitBtn["state"] = "disabled"
-        self.targetSequenceBtn = tk.Button(
-            self.buttonFrame,
-            text="Target Sequence containing Maneuver into the Transfer Ellipse",
-            width=15,
-            wraplength=100,
-            command=self._target_sequence,
-        )
-        self.targetSequenceBtn.pack(side=tk.TOP, pady=6)
-        self.targetSequenceBtn["state"] = "disabled"
-        self.transferOrbitBtn = tk.Button(
-            self.buttonFrame,
-            text="Propagate the Transfer Orbit to Apogee",
-            width=15,
-            wraplength=100,
-            command=self._transfer_orbit,
-        )
-        self.transferOrbitBtn.pack(side=tk.TOP, pady=6)
-        self.transferOrbitBtn["state"] = "disabled"
-        self.outerOrbitBtn = tk.Button(
-            self.buttonFrame,
-            text="Target Sequence containing Maneuver into the Outer Orbit",
-            width=15,
-            wraplength=100,
-            command=self._ts_outer_orbit,
-        )
-        self.outerOrbitBtn.pack(side=tk.TOP, pady=6)
-        self.outerOrbitBtn["state"] = "disabled"
-        self.propagateOuterBtn = tk.Button(
-            self.buttonFrame, text="Propagate the Outer Orbit", width=15, wraplength=100, command=self._propagate_outer
-        )
-        self.propagateOuterBtn.pack(side=tk.TOP, pady=6)
-        self.propagateOuterBtn["state"] = "disabled"
-        self.runMCSBtn = tk.Button(self.buttonFrame, text="Run MCS", width=15, command=self._run_mcs)
-        self.runMCSBtn.pack(side=tk.TOP, pady=6)
-        self.runMCSBtn["state"] = "disabled"
-        self.displayResultsBtn = tk.Button(
-            self.buttonFrame, text="Display Results", width=15, command=self._display_results
-        )
-        self.displayResultsBtn.pack(side=tk.TOP, pady=6)
-        self.displayResultsBtn["state"] = "disabled"
-        self.buttonFrame.pack(fill=tk.BOTH, expand=tk.YES, side=tk.LEFT, padx=10)
-
-    def _run(self):
-        self.window.mainloop()
-
-    def _exit(self):
-        self.root.close_scenario()
-        self.window.destroy()
-        self.stk.ShutDown()
-
-    def _new_scenario(self):
-        self.root.new_scenario("HohmannTransfer")
-        sat1 = self.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
-        sat1.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        self._driver = sat1.propagator
-        self._driver.main_sequence.remove_all()
-        self._driver.options.draw_trajectory_in_3d = True
-        self.newScenarioBtn["state"] = "disabled"
-        self.initialStateBtn["state"] = "normal"
-
-    def _initial_state(self):
-        initState = self._driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Inner Orbit", "-")
-        initState.set_element_type(ELEMENT_TYPE.KEPLERIAN)
-        modKep = initState.element
-        modKep.periapsis_radius_size = 6700
-        modKep.arg_of_periapsis = 0
-        modKep.eccentricity = 0
-        modKep.inclination = 0
-        modKep.raan = 0
-        modKep.true_anomaly = 0
-        self.initialStateBtn["state"] = "disabled"
-        self.parkingOrbitBtn["state"] = "normal"
-
-    def _parking_orbit(self):
-        propagate = self._driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
-        propagate.propagator_name = "Earth Point Mass"
-        propagate.properties.color = Colors.Blue
-        propagate.stopping_conditions["Duration"].properties.trip = 7200
-        self.parkingOrbitBtn["state"] = "disabled"
-        self.targetSequenceBtn["state"] = "normal"
-
-    def _target_sequence(self):
-        ts = self._driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-")
-        dv1 = ts.segments.insert(SEGMENT_TYPE.MANEUVER, "DV1", "-")
-        dv1.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-        impulsive = dv1.maneuver
-        impulsive.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
-        thrustVector = impulsive.attitude_control
-        thrustVector.thrust_axes_name = "Satellite/Satellite1 VNC(Earth)"
-        dv1.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-        dv1.results.add("Keplerian Elems/Radius of Apoapsis")
-        dc = ts.profiles["Differential Corrector"]
-        xControlParam = dc.control_parameters.get_control_by_paths("DV1", "ImpulsiveMnvr.Cartesian.X")
-        xControlParam.enable = True
-        xControlParam.max_step = 0.3
-        roaResult = dc.results.get_result_by_paths("DV1", "Radius Of Apoapsis")
-        roaResult.enable = True
-        roaResult.desired_value = 42238
-        roaResult.tolerance = 0.1
-        dc.max_iterations = 50
-        dc.enable_display_status = True
-        dc.mode = PROFILE_MODE.ITERATE
-        ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-        self.targetSequenceBtn["state"] = "disabled"
-        self.transferOrbitBtn["state"] = "normal"
-
-    def _transfer_orbit(self):
-        transferEllipse = self._driver.main_sequence.insert(
-            SEGMENT_TYPE.PROPAGATE, "Transfer Ellipse", "-"
-        )
-        transferEllipse.properties.color = Colors.Red
-        transferEllipse.propagator_name = "Earth Point Mass"
-        transferEllipse.stopping_conditions.add("Apoapsis")
-        transferEllipse.stopping_conditions.remove("Duration")
-        self.transferOrbitBtn["state"] = "disabled"
-        self.outerOrbitBtn["state"] = "normal"
-
-    def _ts_outer_orbit(self):
-        ts2 = self._driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Finish Transfer", "-")
-        dv2 = ts2.segments.insert(SEGMENT_TYPE.MANEUVER, "DV2", "-")
-        dv2.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-        impulsive2 = dv2.maneuver
-        impulsive2.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
-        thrustVector2 = impulsive2.attitude_control
-        thrustVector2.thrust_axes_name = "Satellite/Satellite1 VNC(Earth)"
-        dv2.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-        dv2.results.add("Keplerian Elems/Eccentricity")
-        dc2 = ts2.profiles["Differential Corrector"]
-        xControlParam2 = dc2.control_parameters.get_control_by_paths("DV2", "ImpulsiveMnvr.Cartesian.X")
-        xControlParam2.enable = True
-        xControlParam2.max_step = 0.3
-        eccResult = dc2.results.get_result_by_paths("DV2", "Eccentricity")
-        eccResult.enable = True
-        eccResult.desired_value = 0
-        dc2.enable_display_status = True
-        dc2.mode = PROFILE_MODE.ITERATE
-        ts2.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-        self.outerOrbitBtn["state"] = "disabled"
-        self.propagateOuterBtn["state"] = "normal"
-
-    def _propagate_outer(self):
-        outerOrbit = self._driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Outer Orbit", "-")
-        outerOrbit.properties.color = Colors.Green
-        outerOrbit.propagator_name = "Earth Point Mass"
-        outerOrbit.stopping_conditions["Duration"].properties.trip = 86400
-        self.propagateOuterBtn["state"] = "disabled"
-        self.runMCSBtn["state"] = "normal"
-
-    def _run_mcs(self):
-        self._driver.run_mission_control_sequence()
-        startTransfer = self._driver.main_sequence["Start Transfer"]
-        finishTransfer = self._driver.main_sequence["Finish Transfer"]
-        startDC = startTransfer.profiles["Differential Corrector"]
-        print(startDC.control_parameters.get_control_by_paths("DV1", "ImpulsiveMnvr.Cartesian.X").final_value)
-        finishDC = finishTransfer.profiles["Differential Corrector"]
-        print(finishDC.control_parameters.get_control_by_paths("DV2", "ImpulsiveMnvr.Cartesian.X").final_value)
-        dv1 = startTransfer.segments["DV1"]
-        dv1Impulsive = dv1.maneuver
-        dv1ThrustVector = dv1Impulsive.attitude_control
-        print(dv1ThrustVector.x)
-        startTransfer.apply_profiles()
-        print(dv1ThrustVector.x)
-
-        dv2 = finishTransfer.segments["DV2"]
-        dv2Impulsive = dv2.maneuver
-        dv2ThrustVector = dv2Impulsive.attitude_control
-        print(dv2ThrustVector.x)
-        finishTransfer.apply_profiles()
-        print(dv2ThrustVector.x)
-        self.runMCSBtn["state"] = "disabled"
-        self.displayResultsBtn["state"] = "normal"
-
-    def _display_results(self):
-        self.reportWindow = tk.Toplevel(self.window)
-        self.reportWindow.title("Astrogator MCS Segment Summary")
-        self.reportText = tk.Text(self.reportWindow)
-        self.reportData = ""
-        outerOrbit = self._driver.main_sequence["Outer Orbit"]
-        result = outerOrbit.exec_summary
-        intervals = result.value
-        for interval in intervals:
-            datasets = interval.data_sets
-            for dataset in datasets:
-                for obj in dataset.get_values():
-                    self.reportData += obj + os.linesep
-        self.reportText.insert("0.0", self.reportData)
-        self.reportText.pack(fill=tk.BOTH, expand=tk.YES)
-        self.reportText["state"] = "disabled"
-        self.reportWindow.update()
-
-# Instantiate and run the application
-hohmannTransferUsingTargeter = HohmannTransferUsingTargeter()
-hohmannTransferUsingTargeter._run()
+stk = STKEngine.StartApplication(noGraphics=False)
+print(f"Using {stk.version}")
 ```
 
-## Results
+## Creating a new scenario
 
-The application launches showing an empty scene. To create a new scenario click on the ``New Scenario`` button. Once created, the application displays a new scene focused on the Earth:
+Start by creating a new scenario in STK by running:
 
-+++
+```{code-cell} ipython3
+root = stk.NewObjectRoot()
+root.new_scenario("HohmannTransfer")
+```
 
-![Window state when after launching the application](img/new_scenario.png)
+## Adding a satellite to the scenario
 
-+++
+Now that a new scenario is available, add a new satellite:
 
-Finally, you can run your through the different steps of the application. The final results after running the mission control sequence look like this:
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 
-+++
+satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite")
+```
 
-![Computed Hohmann transfer](img/run_mcs.png)
+Then, declare the type of propagator used for the satellite:
 
-+++
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
 
-You can get a summary of the results by clicking on the ``Display Results`` button. This action triggers a small window containing different numerical values computed during the simulation:
+satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+```
 
-+++
+Initialize the propagator by making sure that no previous sequence is present. Add any additional configurations for the propagator. For this example, its is requested to draw the maneuver in 3D.
 
-![Summary of the results](img/mcs_summary.png)
+```{code-cell} ipython3
+satellite.propagator.main_sequence.remove_all()
+satellite.propagator.options.draw_trajectory_in_3d = True
+```
+
+## Set up the initial state of the satellite
+
+### Available element sets
+
+To declare the initial state of a satellite, a total of six elements are required. STK supports multiple sets of elements. List them by running:
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE
+
+element_types = [element_type for element_type, _ in ELEMENT_TYPE.__members__.items()]
+print(element_types)
+```
+
+### Available segment types
+
+The segment type is also requied for specifying the initial state of the satellite. List the supported segment types by running:
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
+
+segment_types = [segment_type for segment_type, _ in SEGMENT_TYPE.__members__.items()]
+print(segment_types)
+```
+
+### Selecting the element and segment types
+
+```{code-cell} ipython3
+initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Inner orbit", "-")
+initial_state.set_element_type(ELEMENT_TYPE.KEPLERIAN)
+```
+
+### Listing the elements in a set
+
+You can list the names of the different elements of this set by filtering the public attributes of the set:
+
+```{code-cell} ipython3
+is_element = lambda element: not element.startswith("_") and element != "element_type"
+elements = [element for element in dir(initial_state.element) if is_element(element)]
+print(elements)
+```
+
+Now, set at least six of the previous elements. Since the initial orbit of the satellite is a
+
+```{code-cell} ipython3
+initial_state.element.periapsis_radius_size = 6700
+initial_state.element.eccentricity = 0
+initial_state.element.inclination = 0
+initial_state.element.raan = 0
+initial_state.element.arg_of_periapsis = 0
+initial_state.element.true_anomaly = 0
+```
+
+## Set up the parking orbit of the satellite
+
+The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires to create a new segment in the main sequence. This segment must be of the propagate type. The total duration of the propagation is set in this example for 7200 seconds.
+
+```{code-cell} ipython3
+transfer_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Transfer orbit", "-")
+transfer_state.stopping_conditions["Duration"].properties.trip = 7200
+```
+
+Additional configurations, like the name for this propagation and its color can also be declared in this step:
+
+```{code-cell} ipython3
+from ansys.stk.core.utilities.colors import Color, Colors
+
+
+transfer_state.propagator_name = "Earth point mass"
+transfer_state.properties.color = Colors.Blue
+```
+
+## Define the target sequence for solving transfer orbit
+
+The target sequence is the set of steps defining the complete maneuver.
+
+```{code-cell} ipython3
+target_sequence = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Start transfer", "-")
+```
+
+Hohmann maneuver is an impulsive maneuver. Thus, define a maneuver of impulsive type in the target sequence:
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE
+
+
+delta_v1 = target_sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "First impulse", "-")
+delta_v1.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
+```
+
+This first impulse takes place in the direction of the velocity vector at the periapsis. For this reason, it is convenient to define the thrust impulse in the Velocity-Normal-CoNormal (VNC) frame. By selecting the VNC frame, the velocity vector is now aligned with the X-axis.
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects.astrogator import ATTITUDE_CONTROL, CONTROL_MANEUVER
+
+
+delta_v1.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
+delta_v1.maneuver.attitude_control.se = "VNC (Earth)"
+#delta_v1.maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
+```
+
+```{code-cell} ipython3
+delta_v1.name
+```
+
+```{code-cell} ipython3
+
+```
+
+Now, configure the solver for this target sequence. A differential corrector can be used to solve for the desired final radius at apoapsis. The desired value is
+
+```{code-cell} ipython3
+differential_corrector = target_sequence.profiles["Differential Corrector"]
+
+# Reference
+# https://help.agi.com/stkdevkit/11.4.0/LinkedDocuments/STK_Astrogator_OM_Tutorial.pdf
+```
