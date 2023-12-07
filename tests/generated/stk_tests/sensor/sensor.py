@@ -166,13 +166,6 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region EOIR
-    def test_EOIR(self):
-        oHelper = EOIRHelper(TestBase.Application, TestBase.ApplicationProvider.Target)
-        oHelper.Run()
-
-    # endregion
-
     def test_SpatialInfoTest(self):
         helper = SpatialInfoHelper(TestBase.Application)
         o: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
