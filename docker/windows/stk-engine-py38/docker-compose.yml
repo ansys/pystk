@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  stk-python3.8:
+    image: ansys/stk:latest-centos7-python3.8
+    container_name: stk-python3.8
+    build: 
+      context: .
+      args:
+        baseImage: ansys/stk:latest-centos7
+        basePythonImage: ansys/stk:latest-centos7-pybase
+    environment:
+      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
