@@ -47,7 +47,7 @@ class ThreadMarshaller(object):
             ole32lib.CoReleaseMarshalData(self._pStream)
         del(self._obj)
        
-    def GetMarshalledToCurrentThread(self) -> typing.Any:
+    def get_marshalled_to_current_thread(self) -> typing.Any:
         """Returns an instance of the original stk_object that may be used on the current thread. May only be called once."""
         if self._pStream is None:
             raise STKRuntimeError(f"{self._obj_type} object has already been marshalled to a thread.")
@@ -66,11 +66,11 @@ class ThreadMarshaller(object):
         del(pUnk)
         return marshalled_obj
         
-    def InitializeThread(self) -> None:
+    def initialize_thread(self) -> None:
         """Must be called on the destination thread prior to calling GetMarshalledToCurrentThread()."""
         ole32lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         
-    def ReleaseThread(self) -> None:
+    def release_thread(self) -> None:
         """Call in the destination thread after all calls to STK are finished."""
         ole32lib.CoUninitialize()
 
@@ -96,7 +96,7 @@ class STKDesktopApplication(UiApplication):
             CoInitializeManager.uninitialize()
 
     @property
-    def Root(self) -> StkObjectRoot:
+    def root(self) -> StkObjectRoot:
         """Get the object model root associated with this instance of STK Desktop application."""
         if not self._intf:
             raise RuntimeError("STKDesktopApplication has not been properly initialized.  Use STKDesktop to obtain the STKDesktopApplication object.")
@@ -106,11 +106,11 @@ class STKDesktopApplication(UiApplication):
             self.__dict__["_root"] = self.personality2
             return self.__dict__["_root"]
             
-    def NewObjectModelContext(self) -> StkObjectModelContext:
+    def new_object_model_context(self) -> StkObjectModelContext:
         '''Create a new object model context for the STK Desktop application.'''
         return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
     
-    def ShutDown(self) -> None:
+    def shutdown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self._root is not None:
             self._root.CloseScenario()
@@ -144,7 +144,7 @@ class STKDesktop(object):
             return None
 
     @staticmethod
-    def StartApplication(visible:bool=False, \
+    def start_application(visible:bool=False, \
                          userControl:bool=False, \
                          grpc_server:bool=False, \
                          grpc_host:str="0.0.0.0", \
@@ -177,7 +177,7 @@ class STKDesktop(object):
             cmd_line = f"{executable} /pers STK /grpcServer On /grpcHost {grpc_host} /grpcPort {grpc_port} {grpc_desktop_options}"
             app_process = subprocess.Popen(cmd_line)
             host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
-            app = STKDesktop.AttachToApplication(None, grpc_server, host, grpc_port, grpc_timeout_sec)
+            app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec)
             app.visible = visible
             app.user_control = userControl
             return app
@@ -196,7 +196,7 @@ class STKDesktop(object):
             raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
         
     @staticmethod
-    def AttachToApplication(pid:int=None, \
+    def attach_to_application(pid:int=None, \
                             grpc_server:bool=False, \
                             grpc_host:str="localhost", \
                             grpc_port:int=40704, \
@@ -253,7 +253,7 @@ class STKDesktop(object):
                 raise STKInitializationError("Failed to attach to STK with pid " + str(pid) + ".")
 
     @staticmethod
-    def ReleaseAll() -> None:
+    def release_all() -> None:
         """
         Releases all handles from Python to STK Desktop applications.
 
@@ -265,7 +265,7 @@ class STKDesktop(object):
         ObjectLifetimeManager.ReleaseAll()
         
     @staticmethod
-    def CreateThreadMarshaller(stk_object:typing.Any) -> ThreadMarshaller:
+    def create_thread_marshaller(stk_object:typing.Any) -> ThreadMarshaller:
         """
         Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
 

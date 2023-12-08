@@ -1,6 +1,7 @@
 # Copyright 2020-2023, Ansys Government Initiatives 
 
 import os
+import gc
 
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
 from ctypes import POINTER, Structure, Union, byref, cast, pointer 
@@ -379,6 +380,19 @@ class oleaut32lib:
 ###############################################################################
 def Succeeded(hr):
     return hr >= S_OK
+    
+class _gc_disabler(object):
+    def __init__(self):
+        self._is_gc_enabled = False
+    def __enter__(self):
+        if gc.isenabled():
+            self._is_gc_enabled = True
+            gc.disable()
+        return self
+    def __exit__(self, type, value, tb):
+        if self._is_gc_enabled:
+            gc.enable()
+        return False
 
 class _CreateAgObjectLifetimeManager(object):
     """Singleton class for managing reference counts on COM interfaces."""
@@ -424,19 +438,21 @@ class _CreateAgObjectLifetimeManager(object):
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
-            if isApplication:
-                self._applications.append(ptraddress)
-            if ptraddress in self._ref_counts:
-                _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
-                self.InternalAddRef(pUnk)
-            else:
-                self._ref_counts[ptraddress] = 1
+            with _gc_disabler() as gc_lock:
+                if isApplication:
+                    self._applications.append(ptraddress)
+                if ptraddress in self._ref_counts:
+                    _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+                    self.InternalAddRef(pUnk)
+                else:
+                    self._ref_counts[ptraddress] = 1
                 
     def InternalAddRef(self, pUnk:"IUnknown"):
         """Increments the internal reference count of pUnk."""
         ptraddress = pUnk.p.value
-        if ptraddress in self._ref_counts:
-            self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
+        with _gc_disabler() as gc_lock:
+            if ptraddress in self._ref_counts:
+                self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
 
     def Release(self, pUnk:"IUnknown"):
         """
@@ -446,26 +462,28 @@ class _CreateAgObjectLifetimeManager(object):
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
-            if ptraddress in self._ref_counts:
-                if self._ref_counts[ptraddress] == 1:
-                    _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
-                    del(self._ref_counts[ptraddress])
-                else:
-                    self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
+            with _gc_disabler() as gc_lock:
+                if ptraddress in self._ref_counts:
+                    if self._ref_counts[ptraddress] == 1:
+                        _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+                        del(self._ref_counts[ptraddress])
+                    else:
+                        self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
                 
     def ReleaseAll(self, releaseApplication=True):
-        preserved_app_ref_counts = dict()
-        while len(self._ref_counts) > 0:
-            ref_count = self._ref_counts.popitem()
-            ptraddress = ref_count[0]
-            if not releaseApplication and ptraddress in self._applications:
-                preserved_app_ref_counts[ptraddress] = ref_count[1]
-                continue
-            pUnk = IUnknown()
-            pUnk.p = c_void_p(ptraddress)
-            _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
-            pUnk.p = c_void_p(0)
-        self._ref_counts = preserved_app_ref_counts
+        with _gc_disabler() as gc_lock:
+            preserved_app_ref_counts = dict()
+            while len(self._ref_counts) > 0:
+                ref_count = self._ref_counts.popitem()
+                ptraddress = ref_count[0]
+                if not releaseApplication and ptraddress in self._applications:
+                    preserved_app_ref_counts[ptraddress] = ref_count[1]
+                    continue
+                pUnk = IUnknown()
+                pUnk.p = c_void_p(ptraddress)
+                _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+                pUnk.p = c_void_p(0)
+            self._ref_counts = preserved_app_ref_counts
 
 ObjectLifetimeManager = _CreateAgObjectLifetimeManager()
 

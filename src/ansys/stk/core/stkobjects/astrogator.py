@@ -2260,36 +2260,36 @@ agcls.AgTypeNameMap["SQUARED_TYPE"] = SQUARED_TYPE
 class GEO_STATIONARY_DRIFT_RATE_MODEL(IntEnum):
     """Gravity models used to compute geostationary drift rate."""
     POINT_MASS = 0
-    """Computes drift rate using two-body point mass gravity model."""
+    """Compute drift rate using two-body point mass gravity model."""
     POINT_MASS_PLUS_J2 = 1
-    """Computes drift rate using gravity model that includes point mass plus secular effect of J2."""
+    """Compute drift rate using gravity model that includes point mass plus secular effect of J2."""
 
-GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS.__doc__ = "Computes drift rate using two-body point mass gravity model."
-GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS_PLUS_J2.__doc__ = "Computes drift rate using gravity model that includes point mass plus secular effect of J2."
+GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS.__doc__ = "Compute drift rate using two-body point mass gravity model."
+GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS_PLUS_J2.__doc__ = "Compute drift rate using gravity model that includes point mass plus secular effect of J2."
 
 agcls.AgTypeNameMap["GEO_STATIONARY_DRIFT_RATE_MODEL"] = GEO_STATIONARY_DRIFT_RATE_MODEL
 
 class GEO_STATIONARY_INCLINATION_MAGNITUDE(IntEnum):
     """Magnitude to use when computing the inclination vector."""
     INCLINATION_ANGLE = 0
-    """Computes inclination vector magnitude as the inclination angle itself (in radins)."""
+    """Compute inclination vector magnitude as the inclination angle itself (in radins)."""
     SIN_INCLINATION = 1
-    """Computes inclination vector magnitude as sin(inclination)."""
+    """Compute inclination vector magnitude as sin(inclination)."""
     SIN_HALF_INCLINATION = 2
-    """Computes inclination vector magnitude as sin(0.5*inclination)."""
+    """Compute inclination vector magnitude as sin(0.5*inclination)."""
     TWICE_SIN_HALF_INCLINATION = 3
-    """Computes inclination vector magnitude as 2*sin(0.5*inclination)."""
+    """Compute inclination vector magnitude as 2*sin(0.5*inclination)."""
     TAN_HALF_INCLINATION = 4
-    """Computes inclination vector magnitude as tan(0.5*inclination)."""
+    """Compute inclination vector magnitude as tan(0.5*inclination)."""
     TWICE_TAN_HALF_INCLINATION = 5
-    """Computes inclination vector magnitude as 2*tan(0.5*inclination)."""
+    """Compute inclination vector magnitude as 2*tan(0.5*inclination)."""
 
-GEO_STATIONARY_INCLINATION_MAGNITUDE.INCLINATION_ANGLE.__doc__ = "Computes inclination vector magnitude as the inclination angle itself (in radins)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.SIN_INCLINATION.__doc__ = "Computes inclination vector magnitude as sin(inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.SIN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as sin(0.5*inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.TWICE_SIN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as 2*sin(0.5*inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.TAN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as tan(0.5*inclination)."
-GEO_STATIONARY_INCLINATION_MAGNITUDE.TWICE_TAN_HALF_INCLINATION.__doc__ = "Computes inclination vector magnitude as 2*tan(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.INCLINATION_ANGLE.__doc__ = "Compute inclination vector magnitude as the inclination angle itself (in radins)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.SIN_INCLINATION.__doc__ = "Compute inclination vector magnitude as sin(inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.SIN_HALF_INCLINATION.__doc__ = "Compute inclination vector magnitude as sin(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.TWICE_SIN_HALF_INCLINATION.__doc__ = "Compute inclination vector magnitude as 2*sin(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.TAN_HALF_INCLINATION.__doc__ = "Compute inclination vector magnitude as tan(0.5*inclination)."
+GEO_STATIONARY_INCLINATION_MAGNITUDE.TWICE_TAN_HALF_INCLINATION.__doc__ = "Compute inclination vector magnitude as 2*tan(0.5*inclination)."
 
 agcls.AgTypeNameMap["GEO_STATIONARY_INCLINATION_MAGNITUDE"] = GEO_STATIONARY_INCLINATION_MAGNITUDE
 
@@ -2509,12 +2509,12 @@ agcls.AgTypeNameMap["CONTROL_POWER_SOLAR_ARRAY"] = CONTROL_POWER_SOLAR_ARRAY
 class THIRD_BODY_MODE(IntEnum):
     """The third body gravity mode."""
     GRAVITY_FIELD = 0
-    """Defines the gravitational effect as a full Gravitational Force model"""
+    """Define the gravitational effect as a full Gravitational Force model"""
     POINT_MASS = 1
-    """Defines the gravitational effect as a third body point mass effect."""
+    """Define the gravitational effect as a third body point mass effect."""
 
-THIRD_BODY_MODE.GRAVITY_FIELD.__doc__ = "Defines the gravitational effect as a full Gravitational Force model"
-THIRD_BODY_MODE.POINT_MASS.__doc__ = "Defines the gravitational effect as a third body point mass effect."
+THIRD_BODY_MODE.GRAVITY_FIELD.__doc__ = "Define the gravitational effect as a full Gravitational Force model"
+THIRD_BODY_MODE.POINT_MASS.__doc__ = "Define the gravitational effect as a third body point mass effect."
 
 agcls.AgTypeNameMap["THIRD_BODY_MODE"] = THIRD_BODY_MODE
 
@@ -3199,28 +3199,28 @@ class IUserVariableDefinitionCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "UserVariableDefinition":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._item_metadata, indexOrName, out_arg())
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, parameterName:str) -> "UserVariableDefinition":
-        """Adds a user variable to the collection."""
+        """Add a user variable to the collection."""
         return self._intf.invoke(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._add_metadata, parameterName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a user variable."""
+        """Remove a user variable."""
         return self._intf.invoke(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all user variables."""
+        """Remove all user variables."""
         return self._intf.invoke(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._remove_all_metadata, )
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3228,7 +3228,7 @@ class IUserVariableDefinitionCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -3236,21 +3236,21 @@ class IUserVariableDefinitionCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._get_count_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "UserVariableDefinition":
-        """Retrieves a user variable definition in the collection by index."""
+        """Retrieve a user variable definition in the collection by index."""
         return self._intf.invoke(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "UserVariableDefinition":
-        """Retrieves a user variable definition in the collection by name."""
+        """Retrieve a user variable definition in the collection by name."""
         return self._intf.invoke(IUserVariableDefinitionCollection._metadata, IUserVariableDefinitionCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3313,7 +3313,7 @@ class IUserVariableCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "UserVariable":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IUserVariableCollection._metadata, IUserVariableCollection._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3321,7 +3321,7 @@ class IUserVariableCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IUserVariableCollection._metadata, IUserVariableCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -3329,21 +3329,21 @@ class IUserVariableCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IUserVariableCollection._metadata, IUserVariableCollection._get_count_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "UserVariable":
-        """Retrieves a user variable in the collection by index."""
+        """Retrieve a user variable in the collection by index."""
         return self._intf.invoke(IUserVariableCollection._metadata, IUserVariableCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "UserVariable":
-        """Retrieves a user variable in the collection by name."""
+        """Retrieve a user variable in the collection by name."""
         return self._intf.invoke(IUserVariableCollection._metadata, IUserVariableCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3406,7 +3406,7 @@ class IUserVariableUpdateCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "UserVariableUpdate":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IUserVariableUpdateCollection._metadata, IUserVariableUpdateCollection._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3414,7 +3414,7 @@ class IUserVariableUpdateCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IUserVariableUpdateCollection._metadata, IUserVariableUpdateCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -3422,21 +3422,21 @@ class IUserVariableUpdateCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IUserVariableUpdateCollection._metadata, IUserVariableUpdateCollection._get_count_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "UserVariableUpdate":
-        """Retrieves a user variable update in the collection by index."""
+        """Retrieve a user variable update in the collection by index."""
         return self._intf.invoke(IUserVariableUpdateCollection._metadata, IUserVariableUpdateCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "UserVariableUpdate":
-        """Retrieves a user variable update in the collection by name."""
+        """Retrieve a user variable update in the collection by name."""
         return self._intf.invoke(IUserVariableUpdateCollection._metadata, IUserVariableUpdateCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3500,7 +3500,7 @@ class ICalculationGraphCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, index:int) -> str:
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ICalculationGraphCollection._metadata, ICalculationGraphCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3508,28 +3508,28 @@ class ICalculationGraphCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ICalculationGraphCollection._metadata, ICalculationGraphCollection._get__NewEnum_metadata)
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def add(self, graphName:str) -> None:
-        """Adds a calculation graph"""
+        """Add a calculation graph"""
         return self._intf.invoke(ICalculationGraphCollection._metadata, ICalculationGraphCollection._add_metadata, graphName)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, graphName:str) -> None:
-        """Removes a parameter."""
+        """Remove a parameter."""
         return self._intf.invoke(ICalculationGraphCollection._metadata, ICalculationGraphCollection._remove_metadata, graphName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all parameters."""
+        """Remove all parameters."""
         return self._intf.invoke(ICalculationGraphCollection._metadata, ICalculationGraphCollection._remove_all_metadata, )
 
     _get_count_metadata = { "name" : "count",
@@ -3537,7 +3537,7 @@ class ICalculationGraphCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ICalculationGraphCollection._metadata, ICalculationGraphCollection._get_count_metadata)
 
     __getitem__ = item
@@ -3605,7 +3605,7 @@ class IConstraintCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, resultName:str) -> "AsTriggerCondition":
-        """Adds a constraint to the collection."""
+        """Add a constraint to the collection."""
         return self._intf.invoke(IConstraintCollection._metadata, IConstraintCollection._add_metadata, resultName, out_arg())
 
     _item_metadata = { "name" : "item",
@@ -3619,7 +3619,7 @@ class IConstraintCollection(object):
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a specified constraint from the collection."""
+        """Remove a specified constraint from the collection."""
         return self._intf.invoke(IConstraintCollection._metadata, IConstraintCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3635,14 +3635,14 @@ class IConstraintCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IConstraintCollection._metadata, IConstraintCollection._get_count_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies the constraint into the clipboard and removes the constraint from the list."""
+        """Copy the constraint into the clipboard and removes the constraint from the list."""
         return self._intf.invoke(IConstraintCollection._metadata, IConstraintCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -3656,21 +3656,21 @@ class IConstraintCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IAsTriggerCondition"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, cond:"IAsTriggerCondition") -> "AsTriggerCondition":
-        """Copies the constraint and inserts the copy into the list."""
+        """Copy the constraint and inserts the copy into the list."""
         return self._intf.invoke(IConstraintCollection._metadata, IConstraintCollection._insert_copy_metadata, cond, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "AsTriggerCondition":
-        """Retrieves a constraint from the collection by index."""
+        """Retrieve a constraint from the collection by index."""
         return self._intf.invoke(IConstraintCollection._metadata, IConstraintCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "AsTriggerCondition":
-        """Retrieves a constraint from the collection by name."""
+        """Retrieve a constraint from the collection by name."""
         return self._intf.invoke(IConstraintCollection._metadata, IConstraintCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3734,7 +3734,7 @@ class IPluginProperties(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def available_properties(self) -> list:
-        """Returns an array of all available properties."""
+        """Return an array of all available properties."""
         return self._intf.get_property(IPluginProperties._metadata, IPluginProperties._get_available_properties_metadata)
 
 
@@ -3793,7 +3793,7 @@ class ISNOPTControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "SNOPTControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ISNOPTControlCollection._metadata, ISNOPTControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3801,7 +3801,7 @@ class ISNOPTControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ISNOPTControlCollection._metadata, ISNOPTControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -3809,14 +3809,14 @@ class ISNOPTControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ISNOPTControlCollection._metadata, ISNOPTControlCollection._get_count_metadata)
 
     _get_control_by_paths_metadata = { "name" : "get_control_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_control_by_paths(self, objectPath:str, controlPath:str) -> "SNOPTControl":
-        """Returns the control specified by the object/control path."""
+        """Return the control specified by the object/control path."""
         return self._intf.invoke(ISNOPTControlCollection._metadata, ISNOPTControlCollection._get_control_by_paths_metadata, objectPath, controlPath, out_arg())
 
     __getitem__ = item
@@ -3878,7 +3878,7 @@ class ISNOPTResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "SNOPTResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ISNOPTResultCollection._metadata, ISNOPTResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3886,7 +3886,7 @@ class ISNOPTResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ISNOPTResultCollection._metadata, ISNOPTResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -3894,14 +3894,14 @@ class ISNOPTResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ISNOPTResultCollection._metadata, ISNOPTResultCollection._get_count_metadata)
 
     _get_result_by_paths_metadata = { "name" : "get_result_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_result_by_paths(self, objectPath:str, resultPath:str) -> "SNOPTResult":
-        """Returns the result specified by the object/result names."""
+        """Return the result specified by the object/result names."""
         return self._intf.invoke(ISNOPTResultCollection._metadata, ISNOPTResultCollection._get_result_by_paths_metadata, objectPath, resultPath, out_arg())
 
     __getitem__ = item
@@ -3963,7 +3963,7 @@ class IIPOPTControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "IPOPTControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IIPOPTControlCollection._metadata, IIPOPTControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3971,7 +3971,7 @@ class IIPOPTControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IIPOPTControlCollection._metadata, IIPOPTControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -3979,14 +3979,14 @@ class IIPOPTControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IIPOPTControlCollection._metadata, IIPOPTControlCollection._get_count_metadata)
 
     _get_control_by_paths_metadata = { "name" : "get_control_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_control_by_paths(self, objectPath:str, controlPath:str) -> "IPOPTControl":
-        """Returns the control specified by the object/control path."""
+        """Return the control specified by the object/control path."""
         return self._intf.invoke(IIPOPTControlCollection._metadata, IIPOPTControlCollection._get_control_by_paths_metadata, objectPath, controlPath, out_arg())
 
     __getitem__ = item
@@ -4048,7 +4048,7 @@ class IIPOPTResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "IPOPTResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IIPOPTResultCollection._metadata, IIPOPTResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4056,7 +4056,7 @@ class IIPOPTResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IIPOPTResultCollection._metadata, IIPOPTResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -4064,14 +4064,14 @@ class IIPOPTResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IIPOPTResultCollection._metadata, IIPOPTResultCollection._get_count_metadata)
 
     _get_result_by_paths_metadata = { "name" : "get_result_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_result_by_paths(self, objectPath:str, resultPath:str) -> "IPOPTResult":
-        """Returns the result specified by the object/result names."""
+        """Return the result specified by the object/result names."""
         return self._intf.invoke(IIPOPTResultCollection._metadata, IIPOPTResultCollection._get_result_by_paths_metadata, objectPath, resultPath, out_arg())
 
     __getitem__ = item
@@ -4169,7 +4169,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def tolerance_on_major_feasibility(self) -> float:
-        """Specifies how accurately the nonlinear constraints should be satisfied."""
+        """Specify how accurately the nonlinear constraints should be satisfied."""
         return self._intf.get_property(IManeuverOptimalFiniteSNOPTOptimizer._metadata, IManeuverOptimalFiniteSNOPTOptimizer._get_tolerance_on_major_feasibility_metadata)
 
     _set_tolerance_on_major_feasibility_metadata = { "name" : "tolerance_on_major_feasibility",
@@ -4184,7 +4184,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def tolerance_on_major_optimality(self) -> float:
-        """Specifies the final accuracy of the dual variables."""
+        """Specify the final accuracy of the dual variables."""
         return self._intf.get_property(IManeuverOptimalFiniteSNOPTOptimizer._metadata, IManeuverOptimalFiniteSNOPTOptimizer._get_tolerance_on_major_optimality_metadata)
 
     _set_tolerance_on_major_optimality_metadata = { "name" : "tolerance_on_major_optimality",
@@ -4244,7 +4244,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IManeuverOptimalFiniteSNOPTOptimizer._metadata, IManeuverOptimalFiniteSNOPTOptimizer._get_provide_runtime_type_info_metadata)
 
     _get_use_console_monitor_metadata = { "name" : "use_console_monitor",
@@ -4406,7 +4406,7 @@ class IManeuverOptimalFiniteInitialBoundaryConditions(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IManeuverOptimalFiniteInitialBoundaryConditions._metadata, IManeuverOptimalFiniteInitialBoundaryConditions._get_provide_runtime_type_info_metadata)
 
 
@@ -4556,7 +4556,7 @@ class IManeuverOptimalFiniteFinalBoundaryConditions(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IManeuverOptimalFiniteFinalBoundaryConditions._metadata, IManeuverOptimalFiniteFinalBoundaryConditions._get_provide_runtime_type_info_metadata)
 
 
@@ -4740,7 +4740,7 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IManeuverOptimalFinitePathBoundaryConditions._metadata, IManeuverOptimalFinitePathBoundaryConditions._get_provide_runtime_type_info_metadata)
 
 
@@ -4798,7 +4798,7 @@ class IManeuverOptimalFiniteSteeringNodeCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "ManeuverOptimalFiniteSteeringNodeElement":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IManeuverOptimalFiniteSteeringNodeCollection._metadata, IManeuverOptimalFiniteSteeringNodeCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4806,7 +4806,7 @@ class IManeuverOptimalFiniteSteeringNodeCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeCollection._metadata, IManeuverOptimalFiniteSteeringNodeCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -4814,7 +4814,7 @@ class IManeuverOptimalFiniteSteeringNodeCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeCollection._metadata, IManeuverOptimalFiniteSteeringNodeCollection._get_count_metadata)
 
     __getitem__ = item
@@ -4946,7 +4946,7 @@ class IGoldenSectionControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "GoldenSectionControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IGoldenSectionControlCollection._metadata, IGoldenSectionControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4954,7 +4954,7 @@ class IGoldenSectionControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IGoldenSectionControlCollection._metadata, IGoldenSectionControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -4962,14 +4962,14 @@ class IGoldenSectionControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IGoldenSectionControlCollection._metadata, IGoldenSectionControlCollection._get_count_metadata)
 
     _get_control_by_paths_metadata = { "name" : "get_control_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_control_by_paths(self, objectPath:str, controlPath:str) -> "GoldenSectionControl":
-        """Returns the control specified by the object/control path."""
+        """Return the control specified by the object/control path."""
         return self._intf.invoke(IGoldenSectionControlCollection._metadata, IGoldenSectionControlCollection._get_control_by_paths_metadata, objectPath, controlPath, out_arg())
 
     __getitem__ = item
@@ -5196,7 +5196,7 @@ class IGoldenSectionResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "GoldenSectionResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IGoldenSectionResultCollection._metadata, IGoldenSectionResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -5204,7 +5204,7 @@ class IGoldenSectionResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IGoldenSectionResultCollection._metadata, IGoldenSectionResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -5212,14 +5212,14 @@ class IGoldenSectionResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IGoldenSectionResultCollection._metadata, IGoldenSectionResultCollection._get_count_metadata)
 
     _get_result_by_paths_metadata = { "name" : "get_result_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_result_by_paths(self, objectPath:str, resultPath:str) -> "GoldenSectionResult":
-        """Returns the result specified by the object/result path."""
+        """Return the result specified by the object/result path."""
         return self._intf.invoke(IGoldenSectionResultCollection._metadata, IGoldenSectionResultCollection._get_result_by_paths_metadata, objectPath, resultPath, out_arg())
 
     __getitem__ = item
@@ -5412,7 +5412,7 @@ class IGridSearchControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "GridSearchControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IGridSearchControlCollection._metadata, IGridSearchControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -5420,7 +5420,7 @@ class IGridSearchControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IGridSearchControlCollection._metadata, IGridSearchControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -5428,14 +5428,14 @@ class IGridSearchControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IGridSearchControlCollection._metadata, IGridSearchControlCollection._get_count_metadata)
 
     _get_control_by_paths_metadata = { "name" : "get_control_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_control_by_paths(self, objectPath:str, controlPath:str) -> "GridSearchControl":
-        """Returns the control specified by the object/control path."""
+        """Return the control specified by the object/control path."""
         return self._intf.invoke(IGridSearchControlCollection._metadata, IGridSearchControlCollection._get_control_by_paths_metadata, objectPath, controlPath, out_arg())
 
     __getitem__ = item
@@ -5596,7 +5596,7 @@ class IGridSearchControl(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def step(self) -> typing.Any:
-        """Specifies the step size to use when evaluating the grid search. Dimension depends on context."""
+        """Specify the step size to use when evaluating the grid search. Dimension depends on context."""
         return self._intf.get_property(IGridSearchControl._metadata, IGridSearchControl._get_step_metadata)
 
     _set_step_metadata = { "name" : "step",
@@ -5662,7 +5662,7 @@ class IGridSearchResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "GridSearchResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IGridSearchResultCollection._metadata, IGridSearchResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -5670,7 +5670,7 @@ class IGridSearchResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IGridSearchResultCollection._metadata, IGridSearchResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -5678,14 +5678,14 @@ class IGridSearchResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IGridSearchResultCollection._metadata, IGridSearchResultCollection._get_count_metadata)
 
     _get_result_by_paths_metadata = { "name" : "get_result_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_result_by_paths(self, objectPath:str, resultPath:str) -> "GridSearchResult":
-        """Returns the result specified by the object/result path."""
+        """Return the result specified by the object/result path."""
         return self._intf.invoke(IGridSearchResultCollection._metadata, IGridSearchResultCollection._get_result_by_paths_metadata, objectPath, resultPath, out_arg())
 
     __getitem__ = item
@@ -5878,7 +5878,7 @@ class IBisectionControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "BisectionControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IBisectionControlCollection._metadata, IBisectionControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -5886,7 +5886,7 @@ class IBisectionControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IBisectionControlCollection._metadata, IBisectionControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -5894,14 +5894,14 @@ class IBisectionControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IBisectionControlCollection._metadata, IBisectionControlCollection._get_count_metadata)
 
     _get_control_by_paths_metadata = { "name" : "get_control_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_control_by_paths(self, objectPath:str, controlPath:str) -> "BisectionControl":
-        """Returns the control specified by the object/control path."""
+        """Return the control specified by the object/control path."""
         return self._intf.invoke(IBisectionControlCollection._metadata, IBisectionControlCollection._get_control_by_paths_metadata, objectPath, controlPath, out_arg())
 
     __getitem__ = item
@@ -6111,7 +6111,7 @@ class IBisectionResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "BisectionResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IBisectionResultCollection._metadata, IBisectionResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -6119,7 +6119,7 @@ class IBisectionResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IBisectionResultCollection._metadata, IBisectionResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -6127,14 +6127,14 @@ class IBisectionResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IBisectionResultCollection._metadata, IBisectionResultCollection._get_count_metadata)
 
     _get_result_by_paths_metadata = { "name" : "get_result_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_result_by_paths(self, objectPath:str, resultPath:str) -> "BisectionResult":
-        """Returns the result specified by the object/result names."""
+        """Return the result specified by the object/result names."""
         return self._intf.invoke(IBisectionResultCollection._metadata, IBisectionResultCollection._get_result_by_paths_metadata, objectPath, resultPath, out_arg())
 
     __getitem__ = item
@@ -6202,7 +6202,7 @@ class IStoppingConditionElement(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_STOPPING_CONDITION),) }
     def enable_control_parameter(self, param:"CONTROL_STOPPING_CONDITION") -> None:
-        """Enables or disables the specified control parameter"""
+        """Enable or disables the specified control parameter"""
         return self._intf.invoke(IStoppingConditionElement._metadata, IStoppingConditionElement._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -6224,7 +6224,7 @@ class IStoppingConditionElement(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IStoppingConditionElement._metadata, IStoppingConditionElement._get_control_parameters_available_metadata)
 
     _get_properties_metadata = { "name" : "properties",
@@ -6297,21 +6297,21 @@ class IStoppingConditionCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "StoppingConditionElement":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IStoppingConditionCollection._metadata, IStoppingConditionCollection._item_metadata, indexOrName, out_arg())
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, conditionName:str) -> "StoppingConditionElement":
-        """Adds a stopping condition."""
+        """Add a stopping condition."""
         return self._intf.invoke(IStoppingConditionCollection._metadata, IStoppingConditionCollection._add_metadata, conditionName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a stopping condition."""
+        """Remove a stopping condition."""
         return self._intf.invoke(IStoppingConditionCollection._metadata, IStoppingConditionCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -6319,7 +6319,7 @@ class IStoppingConditionCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IStoppingConditionCollection._metadata, IStoppingConditionCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -6327,14 +6327,14 @@ class IStoppingConditionCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IStoppingConditionCollection._metadata, IStoppingConditionCollection._get_count_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies the stopping condition into the clipboard and removes the stopping condition from the list."""
+        """Copy the stopping condition into the clipboard and removes the stopping condition from the list."""
         return self._intf.invoke(IStoppingConditionCollection._metadata, IStoppingConditionCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -6348,21 +6348,21 @@ class IStoppingConditionCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IStoppingConditionElement"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, stopCond:"IStoppingConditionElement") -> "StoppingConditionElement":
-        """Copies the stopping condition and inserts the copy into the list."""
+        """Copy the stopping condition and inserts the copy into the list."""
         return self._intf.invoke(IStoppingConditionCollection._metadata, IStoppingConditionCollection._insert_copy_metadata, stopCond, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "StoppingConditionElement":
-        """Retrieves a stopping condition in the collection by index."""
+        """Retrieve a stopping condition in the collection by index."""
         return self._intf.invoke(IStoppingConditionCollection._metadata, IStoppingConditionCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "StoppingConditionElement":
-        """Retrieves a stopping condition in the collection by name."""
+        """Retrieve a stopping condition in the collection by name."""
         return self._intf.invoke(IStoppingConditionCollection._metadata, IStoppingConditionCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -6433,28 +6433,28 @@ class IMissionControlSequenceSegmentCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IMissionControlSequenceSegment":
-        """Returns the specified segment(using segment name or index number)."""
+        """Return the specified segment(using segment name or index number)."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._item_metadata, indexOrName, out_arg())
 
     _insert_metadata = { "name" : "insert",
             "arg_types" : (agcom.LONG, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SEGMENT_TYPE), agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def insert(self, segmentType:"SEGMENT_TYPE", segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
-        """Adds a segment to the segment collection."""
+        """Add a segment to the segment collection."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._insert_metadata, segmentType, segmentName, segmentToInsertBefore, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, segmentNameToRemove:str) -> None:
-        """Removes a segment; the End segment cannot be deleted."""
+        """Remove a segment; the End segment cannot be deleted."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._remove_metadata, segmentNameToRemove)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all segments; the End segment cannot be deleted."""
+        """Remove all segments; the End segment cannot be deleted."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._remove_all_metadata, )
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -6462,7 +6462,7 @@ class IMissionControlSequenceSegmentCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -6470,14 +6470,14 @@ class IMissionControlSequenceSegmentCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._get_count_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut(self, segmentNameToCut:str) -> None:
-        """Copies the segment into the clipboard and removes the segment from the sequence."""
+        """Copy the segment into the clipboard and removes the segment from the sequence."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._cut_metadata, segmentNameToCut)
 
     _paste_metadata = { "name" : "paste",
@@ -6491,14 +6491,14 @@ class IMissionControlSequenceSegmentCollection(object):
             "arg_types" : (agcom.PVOID, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IMissionControlSequenceSegment"), agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, segment:"IMissionControlSequenceSegment", segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
-        """Copies the segment pointer and inserts the copy before the given segment name."""
+        """Copy the segment pointer and inserts the copy before the given segment name."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._insert_copy_metadata, segment, segmentToInsertBefore, out_arg())
 
     _insert_by_name_metadata = { "name" : "insert_by_name",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def insert_by_name(self, segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
-        """Inserts a segment by name to the segment collection."""
+        """Insert a segment by name to the segment collection."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._insert_by_name_metadata, segmentName, segmentToInsertBefore, out_arg())
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -6506,21 +6506,21 @@ class IMissionControlSequenceSegmentCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._get_provide_runtime_type_info_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IMissionControlSequenceSegment":
-        """Retrieves the specified segment(using segment index number)."""
+        """Retrieve the specified segment(using segment index number)."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IMissionControlSequenceSegment":
-        """Retrieves the specified segment(using segment name)."""
+        """Retrieve the specified segment(using segment name)."""
         return self._intf.invoke(IMissionControlSequenceSegmentCollection._metadata, IMissionControlSequenceSegmentCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -6607,7 +6607,7 @@ class IState(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT_TYPE),) }
     def set_element_type(self, elementType:"ELEMENT_TYPE") -> None:
-        """Sets the element type."""
+        """Set the element type."""
         return self._intf.invoke(IState._metadata, IState._set_element_type_metadata, elementType)
 
     _get_element_metadata = { "name" : "element",
@@ -6615,7 +6615,7 @@ class IState(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def element(self) -> "IElement":
-        """Returns the currently selected element type."""
+        """Return the currently selected element type."""
         return self._intf.get_property(IState._metadata, IState._get_element_metadata)
 
     _get_epoch_metadata = { "name" : "epoch",
@@ -6840,7 +6840,7 @@ class IState(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_in_frame_name(self, frameName:str) -> "State":
-        """Gets the orbit state in the specified frame."""
+        """Get the orbit state in the specified frame."""
         return self._intf.invoke(IState._metadata, IState._get_in_frame_name_metadata, frameName, out_arg())
 
 
@@ -6934,7 +6934,7 @@ class IAutomaticSequence(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def make_copy(self, uniqueName:str) -> "AutomaticSequence":
-        """Makes a copy of the sequence."""
+        """Make a copy of the sequence."""
         return self._intf.invoke(IAutomaticSequence._metadata, IAutomaticSequence._make_copy_metadata, uniqueName, out_arg())
 
     _get_name_metadata = { "name" : "name",
@@ -6972,7 +6972,7 @@ class IAutomaticSequence(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def sequence(self) -> "MissionControlSequenceSegmentCollection":
-        """Returns the segment collection of the sequence."""
+        """Return the segment collection of the sequence."""
         return self._intf.get_property(IAutomaticSequence._metadata, IAutomaticSequence._get_sequence_metadata)
 
 
@@ -7034,21 +7034,21 @@ class IAutomaticSequenceCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "AutomaticSequence":
-        """Returns the given automatic sequence."""
+        """Return the given automatic sequence."""
         return self._intf.invoke(IAutomaticSequenceCollection._metadata, IAutomaticSequenceCollection._item_metadata, indexOrName, out_arg())
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, name:str) -> "AutomaticSequence":
-        """Creates a new sequence."""
+        """Create a new sequence."""
         return self._intf.invoke(IAutomaticSequenceCollection._metadata, IAutomaticSequenceCollection._add_metadata, name, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a sequence."""
+        """Remove a sequence."""
         return self._intf.invoke(IAutomaticSequenceCollection._metadata, IAutomaticSequenceCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -7056,7 +7056,7 @@ class IAutomaticSequenceCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IAutomaticSequenceCollection._metadata, IAutomaticSequenceCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -7071,14 +7071,14 @@ class IAutomaticSequenceCollection(object):
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "AutomaticSequence":
-        """Retrieves the given automatic sequence found by the index."""
+        """Retrieve the given automatic sequence found by the index."""
         return self._intf.invoke(IAutomaticSequenceCollection._metadata, IAutomaticSequenceCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "AutomaticSequence":
-        """Retrieves the given automatic sequence found by the name."""
+        """Retrieve the given automatic sequence found by the name."""
         return self._intf.invoke(IAutomaticSequenceCollection._metadata, IAutomaticSequenceCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -7142,28 +7142,28 @@ class IBPlaneCollection(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def add(self, bPlaneName:str) -> None:
-        """Adds a BPlane."""
+        """Add a BPlane."""
         return self._intf.invoke(IBPlaneCollection._metadata, IBPlaneCollection._add_metadata, bPlaneName)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, bPlaneName:str) -> None:
-        """Removes a BPlane."""
+        """Remove a BPlane."""
         return self._intf.invoke(IBPlaneCollection._metadata, IBPlaneCollection._remove_metadata, bPlaneName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all BPlanes."""
+        """Remove all BPlanes."""
         return self._intf.invoke(IBPlaneCollection._metadata, IBPlaneCollection._remove_all_metadata, )
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, index:int) -> str:
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IBPlaneCollection._metadata, IBPlaneCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -7171,7 +7171,7 @@ class IBPlaneCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IBPlaneCollection._metadata, IBPlaneCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -7247,21 +7247,21 @@ class ICalcObjectCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, name:str) -> "IComponentInfo":
-        """Adds a calc object to the collection."""
+        """Add a calc object to the collection."""
         return self._intf.invoke(ICalcObjectCollection._metadata, ICalcObjectCollection._add_metadata, name, out_arg())
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IComponentInfo":
-        """Returns a calc object."""
+        """Return a calc object."""
         return self._intf.invoke(ICalcObjectCollection._metadata, ICalcObjectCollection._item_metadata, indexOrName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a calc object from the collection."""
+        """Remove a calc object from the collection."""
         return self._intf.invoke(ICalcObjectCollection._metadata, ICalcObjectCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -7269,7 +7269,7 @@ class ICalcObjectCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ICalcObjectCollection._metadata, ICalcObjectCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -7277,14 +7277,14 @@ class ICalcObjectCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ICalcObjectCollection._metadata, ICalcObjectCollection._get_count_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies a calc object to the clipboard and removes the calc object from the list."""
+        """Copy a calc object to the clipboard and removes the calc object from the list."""
         return self._intf.invoke(ICalcObjectCollection._metadata, ICalcObjectCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -7298,21 +7298,21 @@ class ICalcObjectCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IComponentInfo"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, calcObj:"IComponentInfo") -> "IComponentInfo":
-        """Copies a calc object and inserts the copy into the list."""
+        """Copy a calc object and inserts the copy into the list."""
         return self._intf.invoke(ICalcObjectCollection._metadata, ICalcObjectCollection._insert_copy_metadata, calcObj, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IComponentInfo":
-        """Retrieves a calc object found by the index."""
+        """Retrieve a calc object found by the index."""
         return self._intf.invoke(ICalcObjectCollection._metadata, ICalcObjectCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IComponentInfo":
-        """Retrieves a calc object found by the name."""
+        """Retrieve a calc object found by the name."""
         return self._intf.invoke(ICalcObjectCollection._metadata, ICalcObjectCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -7953,14 +7953,14 @@ class IManeuver(object):
             "marshallers" : (agmarshall.AgEnum_arg(ATTITUDE_CONTROL),) }
     @property
     def attitude_control_type(self) -> "ATTITUDE_CONTROL":
-        """Determines the attitude parameters available for you to specify."""
+        """Determine the attitude parameters available for you to specify."""
         return self._intf.get_property(IManeuver._metadata, IManeuver._get_attitude_control_type_metadata)
 
     _set_attitude_control_type_metadata = { "name" : "set_attitude_control_type",
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(ATTITUDE_CONTROL),) }
     def set_attitude_control_type(self, attitudeControlType:"ATTITUDE_CONTROL") -> None:
-        """Sets the attitude control type."""
+        """Set the attitude control type."""
         return self._intf.invoke(IManeuver._metadata, IManeuver._set_attitude_control_type_metadata, attitudeControlType)
 
     _get_attitude_control_metadata = { "name" : "attitude_control",
@@ -7983,7 +7983,7 @@ class IManeuver(object):
             "arg_types" : (agcom.LONG, agcom.BSTR,),
             "marshallers" : (agmarshall.AgEnum_arg(PROPULSION_METHOD), agmarshall.BSTR_arg,) }
     def set_propulsion_method(self, propulsionMethod:"PROPULSION_METHOD", value:str) -> None:
-        """Sets the propulsion type and associated engine/thruster set."""
+        """Set the propulsion type and associated engine/thruster set."""
         return self._intf.invoke(IManeuver._metadata, IManeuver._set_propulsion_method_metadata, propulsionMethod, value)
 
     _get_propulsion_method_value_metadata = { "name" : "propulsion_method_value",
@@ -8166,7 +8166,7 @@ class IScriptingSegment(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def available_attribute_values(self) -> list:
-        """Returns a list of available attribute values."""
+        """Return a list of available attribute values."""
         return self._intf.get_property(IScriptingSegment._metadata, IScriptingSegment._get_available_attribute_values_metadata)
 
     _get_read_only_property_metadata = { "name" : "read_only_property",
@@ -8204,7 +8204,7 @@ class IScriptingSegment(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def available_object_names(self) -> list:
-        """Returns a list of available profile/segment names."""
+        """Return a list of available profile/segment names."""
         return self._intf.get_property(IScriptingSegment._metadata, IScriptingSegment._get_available_object_names_metadata)
 
 
@@ -8271,28 +8271,28 @@ class IScriptingSegmentCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ScriptingSegment":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._item_metadata, indexOrName, out_arg())
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, componentName:str) -> "ScriptingSegment":
-        """Adds an object property to the collection."""
+        """Add an object property to the collection."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._add_metadata, componentName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a object property."""
+        """Remove a object property."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all object properties."""
+        """Remove all object properties."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._remove_all_metadata, )
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -8300,7 +8300,7 @@ class IScriptingSegmentCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -8308,7 +8308,7 @@ class IScriptingSegmentCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._get_count_metadata)
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -8316,14 +8316,14 @@ class IScriptingSegmentCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._get_provide_runtime_type_info_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies the object property into the clipboard and removes the object property from the list."""
+        """Copy the object property into the clipboard and removes the object property from the list."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -8337,21 +8337,21 @@ class IScriptingSegmentCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScriptingSegment"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, objProperty:"IScriptingSegment") -> "ScriptingSegment":
-        """Copies the object property and inserts the copy into the list."""
+        """Copy the object property and inserts the copy into the list."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._insert_copy_metadata, objProperty, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ScriptingSegment":
-        """Retrieves a scripting segment in the collection by index."""
+        """Retrieve a scripting segment in the collection by index."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ScriptingSegment":
-        """Retrieves a scripting segment in the collection by name."""
+        """Retrieve a scripting segment in the collection by name."""
         return self._intf.invoke(IScriptingSegmentCollection._metadata, IScriptingSegmentCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -8490,21 +8490,21 @@ class IScriptingParameterEnumerationChoiceCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ScriptingParameterEnumerationChoice":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._item_metadata, indexOrName, out_arg())
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, choiceName:str) -> "ScriptingParameterEnumerationChoice":
-        """Adds an enumeration choice to the collection."""
+        """Add an enumeration choice to the collection."""
         return self._intf.invoke(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._add_metadata, choiceName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes an enumeration choice."""
+        """Remove an enumeration choice."""
         return self._intf.invoke(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -8512,7 +8512,7 @@ class IScriptingParameterEnumerationChoiceCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -8520,14 +8520,14 @@ class IScriptingParameterEnumerationChoiceCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._get_count_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies the enumeration choice into the clipboard and removes the enumeration choice from the list."""
+        """Copy the enumeration choice into the clipboard and removes the enumeration choice from the list."""
         return self._intf.invoke(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -8541,7 +8541,7 @@ class IScriptingParameterEnumerationChoiceCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScriptingParameterEnumerationChoice"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, choice:"IScriptingParameterEnumerationChoice") -> "ScriptingParameterEnumerationChoice":
-        """Copies the enumeration choice and inserts the copy into the list."""
+        """Copy the enumeration choice and inserts the copy into the list."""
         return self._intf.invoke(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._insert_copy_metadata, choice, out_arg())
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -8549,21 +8549,21 @@ class IScriptingParameterEnumerationChoiceCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._get_provide_runtime_type_info_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ScriptingParameterEnumerationChoice":
-        """Retrieves a scripting parameter enumeration choice in the collection by index."""
+        """Retrieve a scripting parameter enumeration choice in the collection by index."""
         return self._intf.invoke(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ScriptingParameterEnumerationChoice":
-        """Retrieves a scripting parameter enumeration choice in the collection by name."""
+        """Retrieve a scripting parameter enumeration choice in the collection by name."""
         return self._intf.invoke(IScriptingParameterEnumerationChoiceCollection._metadata, IScriptingParameterEnumerationChoiceCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -8865,28 +8865,28 @@ class IScriptingParameterCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ScriptingParameter":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._item_metadata, indexOrName, out_arg())
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, parameterName:str) -> "ScriptingParameter":
-        """Adds a parameter to the collection."""
+        """Add a parameter to the collection."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._add_metadata, parameterName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a parameter."""
+        """Remove a parameter."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all parameters."""
+        """Remove all parameters."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._remove_all_metadata, )
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -8894,7 +8894,7 @@ class IScriptingParameterCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IScriptingParameterCollection._metadata, IScriptingParameterCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -8902,7 +8902,7 @@ class IScriptingParameterCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IScriptingParameterCollection._metadata, IScriptingParameterCollection._get_count_metadata)
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -8910,14 +8910,14 @@ class IScriptingParameterCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IScriptingParameterCollection._metadata, IScriptingParameterCollection._get_provide_runtime_type_info_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies the parameter into the clipboard and removes the parameter from the list."""
+        """Copy the parameter into the clipboard and removes the parameter from the list."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -8931,21 +8931,21 @@ class IScriptingParameterCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScriptingParameter"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, parameter:"IScriptingParameter") -> "ScriptingParameter":
-        """Copies the parameter and inserts the copy into the list."""
+        """Copy the parameter and inserts the copy into the list."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._insert_copy_metadata, parameter, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ScriptingParameter":
-        """Retrieves a scripting parameter in the collection by index."""
+        """Retrieve a scripting parameter in the collection by index."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ScriptingParameter":
-        """Retrieves a scripting parameter in the collection by name."""
+        """Retrieve a scripting parameter in the collection by name."""
         return self._intf.invoke(IScriptingParameterCollection._metadata, IScriptingParameterCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -9061,14 +9061,14 @@ class IScriptingCalcObject(object):
             "arg_types" : (),
             "marshallers" : () }
     def copy_calc_object_to_clipboard(self) -> None:
-        """Copies the wrapped calc object to the clipboard."""
+        """Copy the wrapped calc object to the clipboard."""
         return self._intf.invoke(IScriptingCalcObject._metadata, IScriptingCalcObject._copy_calc_object_to_clipboard_metadata, )
 
     _paste_calc_object_from_clipboard_metadata = { "name" : "paste_calc_object_from_clipboard",
             "arg_types" : (),
             "marshallers" : () }
     def paste_calc_object_from_clipboard(self) -> None:
-        """Replaces the wrapped calc object with the instance in the clipboard."""
+        """Replace the wrapped calc object with the instance in the clipboard."""
         return self._intf.invoke(IScriptingCalcObject._metadata, IScriptingCalcObject._paste_calc_object_from_clipboard_metadata, )
 
 
@@ -9134,28 +9134,28 @@ class IScriptingCalcObjectCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ScriptingCalcObject":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._item_metadata, indexOrName, out_arg())
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, componentName:str) -> "ScriptingCalcObject":
-        """Adds a calculation object to the collection."""
+        """Add a calculation object to the collection."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._add_metadata, componentName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a calculation object."""
+        """Remove a calculation object."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all calculation objects."""
+        """Remove all calculation objects."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._remove_all_metadata, )
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -9163,7 +9163,7 @@ class IScriptingCalcObjectCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -9171,14 +9171,14 @@ class IScriptingCalcObjectCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._get_count_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies the calc object into the clipboard and removes the calc object from the list."""
+        """Copy the calc object into the clipboard and removes the calc object from the list."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -9192,21 +9192,21 @@ class IScriptingCalcObjectCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScriptingCalcObject"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, calcObj:"IScriptingCalcObject") -> "ScriptingCalcObject":
-        """Copies the calc object and inserts the copy into the list."""
+        """Copy the calc object and inserts the copy into the list."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._insert_copy_metadata, calcObj, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ScriptingCalcObject":
-        """Retrieves a scripting calc object from the collection by index."""
+        """Retrieve a scripting calc object from the collection by index."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, componentName:str) -> "ScriptingCalcObject":
-        """Retrieves a scripting calc object from the collection by name."""
+        """Retrieve a scripting calc object from the collection by name."""
         return self._intf.invoke(IScriptingCalcObjectCollection._metadata, IScriptingCalcObjectCollection._get_item_by_name_metadata, componentName, out_arg())
 
     __getitem__ = item
@@ -9280,7 +9280,7 @@ class IScriptingTool(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def segment_properties(self) -> "ScriptingSegmentCollection":
-        """Returns the collection of the segment properties."""
+        """Return the collection of the segment properties."""
         return self._intf.get_property(IScriptingTool._metadata, IScriptingTool._get_segment_properties_metadata)
 
     _get_calc_objects_metadata = { "name" : "calc_objects",
@@ -9288,7 +9288,7 @@ class IScriptingTool(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def calc_objects(self) -> "ScriptingCalcObjectCollection":
-        """Returns the collection of the calculation objects."""
+        """Return the collection of the calculation objects."""
         return self._intf.get_property(IScriptingTool._metadata, IScriptingTool._get_calc_objects_metadata)
 
     _get_parameters_metadata = { "name" : "parameters",
@@ -9296,7 +9296,7 @@ class IScriptingTool(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def parameters(self) -> "ScriptingParameterCollection":
-        """Returns the collection of parameters."""
+        """Return the collection of parameters."""
         return self._intf.get_property(IScriptingTool._metadata, IScriptingTool._get_parameters_metadata)
 
     _get_language_type_metadata = { "name" : "language_type",
@@ -9325,14 +9325,14 @@ class IScriptingTool(object):
             "arg_types" : (),
             "marshallers" : () }
     def copy_to_clipboard(self) -> None:
-        """Copies entire scripting tool to clipboard."""
+        """Copy entire scripting tool to clipboard."""
         return self._intf.invoke(IScriptingTool._metadata, IScriptingTool._copy_to_clipboard_metadata, )
 
     _paste_from_clipboard_metadata = { "name" : "paste_from_clipboard",
             "arg_types" : (),
             "marshallers" : () }
     def paste_from_clipboard(self) -> None:
-        """Replaces entire scripting tool with scripting tool in clipboard."""
+        """Replace entire scripting tool with scripting tool in clipboard."""
         return self._intf.invoke(IScriptingTool._metadata, IScriptingTool._paste_from_clipboard_metadata, )
 
     _get_pre_iterate_metadata = { "name" : "pre_iterate",
@@ -9808,7 +9808,7 @@ class IMissionControlSequenceSegmentProperties(object):
             "arg_types" : (),
             "marshallers" : () }
     def apply_final_state_to_b_planes(self) -> None:
-        """Applies the last calculated final state of the segment to all selected B-Planes."""
+        """Apply the last calculated final state of the segment to all selected B-Planes."""
         return self._intf.invoke(IMissionControlSequenceSegmentProperties._metadata, IMissionControlSequenceSegmentProperties._apply_final_state_to_b_planes_metadata, )
 
     _get_b_planes_metadata = { "name" : "b_planes",
@@ -9972,7 +9972,7 @@ class IMissionControlSequenceInitialState(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT_TYPE),) }
     def set_element_type(self, elementType:"ELEMENT_TYPE") -> None:
-        """Selects an coordinate type."""
+        """Select an coordinate type."""
         return self._intf.invoke(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._set_element_type_metadata, elementType)
 
     _get_element_metadata = { "name" : "element",
@@ -9987,7 +9987,7 @@ class IMissionControlSequenceInitialState(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_INIT_STATE),) }
     def enable_control_parameter(self, param:"CONTROL_INIT_STATE") -> None:
-        """Enables a control parameter."""
+        """Enable a control parameter."""
         return self._intf.invoke(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -10009,7 +10009,7 @@ class IMissionControlSequenceInitialState(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._get_control_parameters_available_metadata)
 
     _get_user_variables_metadata = { "name" : "user_variables",
@@ -10069,7 +10069,7 @@ class IMissionControlSequenceSegment(object):
             "marshallers" : (agmarshall.AgEnum_arg(SEGMENT_TYPE),) }
     @property
     def type(self) -> "SEGMENT_TYPE":
-        """Returns the type of segment."""
+        """Return the type of segment."""
         return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_type_metadata)
 
     _get_properties_metadata = { "name" : "properties",
@@ -10077,7 +10077,7 @@ class IMissionControlSequenceSegment(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def properties(self) -> "MissionControlSequenceSegmentProperties":
-        """Returns the properties of the segment."""
+        """Return the properties of the segment."""
         return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_properties_metadata)
 
     _get_initial_state_metadata = { "name" : "initial_state",
@@ -10100,14 +10100,14 @@ class IMissionControlSequenceSegment(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_arg,) }
     def get_result_value(self, resultName:str) -> typing.Any:
-        """Returns a result value."""
+        """Return a result value."""
         return self._intf.invoke(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_result_value_metadata, resultName, out_arg())
 
     _run_metadata = { "name" : "run",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def run(self) -> "State":
-        """Runs the segment in individual segment mode.  See DriverMissionControlSequence."""
+        """Run the segment in individual segment mode.  See DriverMissionControlSequence."""
         return self._intf.invoke(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._run_metadata, out_arg())
 
     _get_results_metadata = { "name" : "results",
@@ -10467,7 +10467,7 @@ class IMissionControlSequenceOptions(object):
             "marshallers" : (agmarshall.AgEnum_arg(SMART_RUN_MODE),) }
     @property
     def smart_run_mode(self) -> "SMART_RUN_MODE":
-        """Controls whether the run will attempt to only run changed segments."""
+        """Control whether the run will attempt to only run changed segments."""
         return self._intf.get_property(IMissionControlSequenceOptions._metadata, IMissionControlSequenceOptions._get_smart_run_mode_metadata)
 
     _set_smart_run_mode_metadata = { "name" : "smart_run_mode",
@@ -10475,7 +10475,7 @@ class IMissionControlSequenceOptions(object):
             "marshallers" : (agmarshall.AgEnum_arg(SMART_RUN_MODE),) }
     @smart_run_mode.setter
     def smart_run_mode(self, inVal:"SMART_RUN_MODE") -> None:
-        """Controls whether the run will attempt to only run changed segments."""
+        """Control whether the run will attempt to only run changed segments."""
         return self._intf.set_property(IMissionControlSequenceOptions._metadata, IMissionControlSequenceOptions._set_smart_run_mode_metadata, inVal)
 
 
@@ -10556,7 +10556,7 @@ class IDriverMissionControlSequence(object):
             "arg_types" : (),
             "marshallers" : () }
     def run_mission_control_sequence(self) -> None:
-        """Runs the current MCS."""
+        """Run the current MCS."""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._run_mission_control_sequence_metadata, )
 
     _begin_run_metadata = { "name" : "begin_run",
@@ -10570,28 +10570,28 @@ class IDriverMissionControlSequence(object):
             "arg_types" : (),
             "marshallers" : () }
     def end_run(self) -> None:
-        """Ends an individual segment mode run."""
+        """End an individual segment mode run."""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._end_run_metadata, )
 
     _clear_dwc_graphics_metadata = { "name" : "clear_dwc_graphics",
             "arg_types" : (),
             "marshallers" : () }
     def clear_dwc_graphics(self) -> None:
-        """Clears the draw while calculating graphics"""
+        """Clear the draw while calculating graphics"""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._clear_dwc_graphics_metadata, )
 
     _reset_all_profiles_metadata = { "name" : "reset_all_profiles",
             "arg_types" : (),
             "marshallers" : () }
     def reset_all_profiles(self) -> None:
-        """Resets all active profiles in all target sequences."""
+        """Reset all active profiles in all target sequences."""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._reset_all_profiles_metadata, )
 
     _apply_all_profile_changes_metadata = { "name" : "apply_all_profile_changes",
             "arg_types" : (),
             "marshallers" : () }
     def apply_all_profile_changes(self) -> None:
-        """Applies all active profile changes in all target sequences."""
+        """Apply all active profile changes in all target sequences."""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._apply_all_profile_changes_metadata, )
 
     _append_run_metadata = { "name" : "append_run",
@@ -10619,7 +10619,7 @@ class IDriverMissionControlSequence(object):
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.AgEnum_arg(RUN_CODE),) }
     def run_mission_control_sequence2(self) -> "RUN_CODE":
-        """Runs the current MCS and returns an error code."""
+        """Run the current MCS and returns an error code."""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._run_mission_control_sequence2_metadata, out_arg())
 
     _get_calculation_graphs_metadata = { "name" : "calculation_graphs",
@@ -11537,7 +11537,7 @@ class IElementEquinoctial(IElement):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def mean_longitude(self) -> typing.Any:
-        """Specifies a satellite's position within its orbit at epoch and equals the sum of the classical Right Ascension of the Ascending Node, Argument of Perigee, and Mean Anomaly. Uses Angle Dimension."""
+        """Specify a satellite's position within its orbit at epoch and equals the sum of the classical Right Ascension of the Ascending Node, Argument of Perigee, and Mean Anomaly. Uses Angle Dimension."""
         return self._intf.get_property(IElementEquinoctial._metadata, IElementEquinoctial._get_mean_longitude_metadata)
 
     _set_mean_longitude_metadata = { "name" : "mean_longitude",
@@ -12813,7 +12813,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.AgEnum_arg(CRITERION),) }
     @property
     def criterion(self) -> "CRITERION":
-        """Specifies the direction from which the stopping condition value must be achieved."""
+        """Specify the direction from which the stopping condition value must be achieved."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_criterion_metadata)
 
     _set_criterion_metadata = { "name" : "criterion",
@@ -12859,14 +12859,14 @@ class IStoppingCondition(IStoppingConditionComponent):
             "arg_types" : (),
             "marshallers" : () }
     def copy_user_calc_object_to_clipboard(self) -> None:
-        """Copies the user-defined stopping condition calc object to the clipboard."""
+        """Copy the user-defined stopping condition calc object to the clipboard."""
         return self._intf.invoke(IStoppingCondition._metadata, IStoppingCondition._copy_user_calc_object_to_clipboard_metadata, )
 
     _paste_user_calc_object_from_clipboard_metadata = { "name" : "paste_user_calc_object_from_clipboard",
             "arg_types" : (),
             "marshallers" : () }
     def paste_user_calc_object_from_clipboard(self) -> None:
-        """Replaces the user-defined stopping condition calc object with the calc object in the clipboard."""
+        """Replace the user-defined stopping condition calc object with the calc object in the clipboard."""
         return self._intf.invoke(IStoppingCondition._metadata, IStoppingCondition._paste_user_calc_object_from_clipboard_metadata, )
 
     _get_user_calc_object_link_embed_control_metadata = { "name" : "user_calc_object_link_embed_control",
@@ -12874,7 +12874,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def user_calc_object_link_embed_control(self) -> "IComponentLinkEmbedControl":
-        """Gets the link / embed controller for managing the user calc. object."""
+        """Get the link / embed controller for managing the user calc. object."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_user_calc_object_link_embed_control_metadata)
 
 
@@ -13013,7 +13013,7 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.AgEnum_arg(LIGHTING_CONDITION),) }
     @property
     def condition(self) -> "LIGHTING_CONDITION":
-        """Specifies the direction from which the stopping condition value must be achieved."""
+        """Specify the direction from which the stopping condition value must be achieved."""
         return self._intf.get_property(ILightingStoppingCondition._metadata, ILightingStoppingCondition._get_condition_metadata)
 
     _set_condition_metadata = { "name" : "condition",
@@ -13042,14 +13042,14 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def add_eclipsing_body(self, eclipsingBody:str) -> None:
-        """Adds an eclipsing body."""
+        """Add an eclipsing body."""
         return self._intf.invoke(ILightingStoppingCondition._metadata, ILightingStoppingCondition._add_eclipsing_body_metadata, eclipsingBody)
 
     _remove_eclipsing_body_metadata = { "name" : "remove_eclipsing_body",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove_eclipsing_body(self, eclipsingBody:str) -> None:
-        """Removes an eclipsing body."""
+        """Remove an eclipsing body."""
         return self._intf.invoke(ILightingStoppingCondition._metadata, ILightingStoppingCondition._remove_eclipsing_body_metadata, eclipsingBody)
 
     _get_eclipsing_bodies_metadata = { "name" : "eclipsing_bodies",
@@ -13057,7 +13057,7 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def eclipsing_bodies(self) -> list:
-        """Returns a list of user selected eclipsing bodies."""
+        """Return a list of user selected eclipsing bodies."""
         return self._intf.get_property(ILightingStoppingCondition._metadata, ILightingStoppingCondition._get_eclipsing_bodies_metadata)
 
     _get_available_eclipsing_bodies_metadata = { "name" : "available_eclipsing_bodies",
@@ -13065,7 +13065,7 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def available_eclipsing_bodies(self) -> list:
-        """Returns a list of available eclipsing bodies."""
+        """Return a list of available eclipsing bodies."""
         return self._intf.get_property(ILightingStoppingCondition._metadata, ILightingStoppingCondition._get_available_eclipsing_bodies_metadata)
 
 
@@ -13138,7 +13138,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def time_convergence(self) -> float:
-        """Sets the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension."""
+        """Set the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_time_convergence_metadata)
 
     _set_time_convergence_metadata = { "name" : "time_convergence",
@@ -13221,7 +13221,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.AgEnum_arg(ACCESS_CRITERION),) }
     @property
     def criterion(self) -> "ACCESS_CRITERION":
-        """Specifies the direction from which the stopping condition value must be achieved."""
+        """Specify the direction from which the stopping condition value must be achieved."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_criterion_metadata)
 
     _set_criterion_metadata = { "name" : "criterion",
@@ -13244,7 +13244,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.AgEnum_arg(ABERRATION_TYPE),) }
     @property
     def aberration_type(self) -> "ABERRATION_TYPE":
-        """Sets the model of aberration to be used in access computations."""
+        """Set the model of aberration to be used in access computations."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_aberration_type_metadata)
 
     _set_aberration_type_metadata = { "name" : "aberration_type",
@@ -13274,7 +13274,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def base_selection(self) -> "ILinkToObject":
-        """Returns the base selection object."""
+        """Return the base selection object."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_base_selection_metadata)
 
     _get_clock_host_metadata = { "name" : "clock_host",
@@ -13297,7 +13297,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.AgEnum_arg(IV_TIME_SENSE),) }
     @property
     def signal_sense(self) -> "IV_TIME_SENSE":
-        """Sets the direction of the signal."""
+        """Set the direction of the signal."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "name" : "signal_sense",
@@ -13489,7 +13489,7 @@ class IMissionControlSequencePropagate(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ADVANCED),) }
     def enable_control_parameter(self, param:"CONTROL_ADVANCED") -> None:
-        """Enables or disables the specified control parameter."""
+        """Enable or disables the specified control parameter."""
         return self._intf.invoke(IMissionControlSequencePropagate._metadata, IMissionControlSequencePropagate._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -13511,7 +13511,7 @@ class IMissionControlSequencePropagate(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IMissionControlSequencePropagate._metadata, IMissionControlSequencePropagate._get_control_parameters_available_metadata)
 
     _get_override_max_propagation_time_metadata = { "name" : "override_max_propagation_time",
@@ -13662,7 +13662,7 @@ class IMissionControlSequenceSequence(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_scripting_tool_metadata)
 
     _apply_script_metadata = { "name" : "apply_script",
@@ -13842,7 +13842,7 @@ class IMissionControlSequenceLaunch(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_LAUNCH),) }
     def enable_control_parameter(self, param:"CONTROL_LAUNCH") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -13864,7 +13864,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_control_parameters_available_metadata)
 
     _get_initial_acceleration_metadata = { "name" : "initial_acceleration",
@@ -13910,7 +13910,7 @@ class IMissionControlSequenceLaunch(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(LAUNCH_DISPLAY_SYSTEM),) }
     def set_display_system_type(self, displaySystemType:"LAUNCH_DISPLAY_SYSTEM") -> None:
-        """Sets the display system type."""
+        """Set the display system type."""
         return self._intf.invoke(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._set_display_system_type_metadata, displaySystemType)
 
     _get_display_system_metadata = { "name" : "display_system",
@@ -13918,7 +13918,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def display_system(self) -> "IDisplaySystem":
-        """Gets the current Display System."""
+        """Get the current Display System."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_display_system_metadata)
 
     _get_ascent_type_metadata = { "name" : "ascent_type",
@@ -13963,7 +13963,7 @@ class IMissionControlSequenceLaunch(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(BURNOUT_TYPE),) }
     def set_burnout_type(self, burnoutType:"BURNOUT_TYPE") -> None:
-        """Sets the burnout type."""
+        """Set the burnout type."""
         return self._intf.invoke(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._set_burnout_type_metadata, burnoutType)
 
     _get_burnout_metadata = { "name" : "burnout",
@@ -14879,7 +14879,7 @@ class IMissionControlSequenceFollow(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_FOLLOW),) }
     def enable_control_parameter(self, param:"CONTROL_FOLLOW") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -14901,7 +14901,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_control_parameters_available_metadata)
 
     _get_user_variables_metadata = { "name" : "user_variables",
@@ -14967,7 +14967,7 @@ class IMissionControlSequenceManeuver(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(MANEUVER_TYPE),) }
     def set_maneuver_type(self, maneuverType:"MANEUVER_TYPE") -> None:
-        """Sets the maneuver type"""
+        """Set the maneuver type"""
         return self._intf.invoke(IMissionControlSequenceManeuver._metadata, IMissionControlSequenceManeuver._set_maneuver_type_metadata, maneuverType)
 
     _get_maneuver_metadata = { "name" : "maneuver",
@@ -14982,7 +14982,7 @@ class IMissionControlSequenceManeuver(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_MANEUVER),) }
     def enable_control_parameter(self, param:"CONTROL_MANEUVER") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IMissionControlSequenceManeuver._metadata, IMissionControlSequenceManeuver._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -15004,7 +15004,7 @@ class IMissionControlSequenceManeuver(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IMissionControlSequenceManeuver._metadata, IMissionControlSequenceManeuver._get_control_parameters_available_metadata)
 
 
@@ -15218,7 +15218,7 @@ class IAttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlImpulsiveVelocityVector._metadata, IAttitudeControlImpulsiveVelocityVector._get_body_constraint_vector_metadata)
 
 
@@ -15281,7 +15281,7 @@ class IAttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlImpulsiveAntiVelocityVector._metadata, IAttitudeControlImpulsiveAntiVelocityVector._get_body_constraint_vector_metadata)
 
 
@@ -15541,7 +15541,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_body_constraint_vector_metadata)
 
     _get_allow_negative_spherical_magnitude_metadata = { "name" : "allow_negative_spherical_magnitude",
@@ -15752,7 +15752,7 @@ class IAttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlFiniteAntiVelocityVector._metadata, IAttitudeControlFiniteAntiVelocityVector._get_body_constraint_vector_metadata)
 
 
@@ -15993,7 +15993,7 @@ class IAttitudeControlFiniteThrustVector(IAttitudeControlFinite):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlFiniteThrustVector._metadata, IAttitudeControlFiniteThrustVector._get_body_constraint_vector_metadata)
 
     _get_thrust_vector_metadata = { "name" : "thrust_vector",
@@ -16001,7 +16001,7 @@ class IAttitudeControlFiniteThrustVector(IAttitudeControlFinite):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def thrust_vector(self) -> "IDirection":
-        """Defines the thrust vector in the reference axes."""
+        """Define the thrust vector in the reference axes."""
         return self._intf.get_property(IAttitudeControlFiniteThrustVector._metadata, IAttitudeControlFiniteThrustVector._get_thrust_vector_metadata)
 
 
@@ -16096,7 +16096,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_body_constraint_vector_metadata)
 
     _get_az0_metadata = { "name" : "az0",
@@ -16399,7 +16399,7 @@ class IAttitudeControlFiniteVelocityVector(IAttitudeControlFinite):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlFiniteVelocityVector._metadata, IAttitudeControlFiniteVelocityVector._get_body_constraint_vector_metadata)
 
 
@@ -16446,7 +16446,7 @@ class IAttitudeControlFinitePlugin(IAttitudeControlFinite):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def select_plugin_by_name(self, name:str) -> None:
-        """Selects plugin using the plugin name."""
+        """Select plugin using the plugin name."""
         return self._intf.invoke(IAttitudeControlFinitePlugin._metadata, IAttitudeControlFinitePlugin._select_plugin_by_name_metadata, name)
 
     _get_plugin_name_metadata = { "name" : "plugin_name",
@@ -16508,7 +16508,7 @@ class IAttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFinite):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def body_constraint_vector(self) -> "IDirection":
-        """Defines a constraint vector in spacecraft body coordinates to complete the attitude definition."""
+        """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(IAttitudeControlOptimalFiniteLagrange._metadata, IAttitudeControlOptimalFiniteLagrange._get_body_constraint_vector_metadata)
 
 
@@ -16687,7 +16687,7 @@ class IMissionControlSequenceHold(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ADVANCED),) }
     def enable_control_parameter(self, param:"CONTROL_ADVANCED") -> None:
-        """Enables or disables the specified control parameter."""
+        """Enable or disables the specified control parameter."""
         return self._intf.invoke(IMissionControlSequenceHold._metadata, IMissionControlSequenceHold._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -16709,7 +16709,7 @@ class IMissionControlSequenceHold(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IMissionControlSequenceHold._metadata, IMissionControlSequenceHold._get_control_parameters_available_metadata)
 
     _get_override_max_propagation_time_metadata = { "name" : "override_max_propagation_time",
@@ -16792,35 +16792,35 @@ class IMissionControlSequenceUpdate(object):
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.AgEnum_arg(UPDATE_PARAM), agmarshall.AgEnum_arg(UPDATE_ACTION), agmarshall.DOUBLE_arg,) }
     def set_action_and_value(self, parameterType:"UPDATE_PARAM", actionType:"UPDATE_ACTION", value:float) -> None:
-        """Sets an action and the new value."""
+        """Set an action and the new value."""
         return self._intf.invoke(IMissionControlSequenceUpdate._metadata, IMissionControlSequenceUpdate._set_action_and_value_metadata, parameterType, actionType, value)
 
     _get_action_metadata = { "name" : "get_action",
             "arg_types" : (agcom.LONG, POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.AgEnum_arg(UPDATE_PARAM), agmarshall.AgEnum_arg(UPDATE_ACTION),) }
     def get_action(self, parameterType:"UPDATE_PARAM") -> "UPDATE_ACTION":
-        """Gets the action type for a parameter."""
+        """Get the action type for a parameter."""
         return self._intf.invoke(IMissionControlSequenceUpdate._metadata, IMissionControlSequenceUpdate._get_action_metadata, parameterType, out_arg())
 
     _get_value_metadata = { "name" : "get_value",
             "arg_types" : (agcom.LONG, POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.AgEnum_arg(UPDATE_PARAM), agmarshall.DOUBLE_arg,) }
     def get_value(self, parameterType:"UPDATE_PARAM") -> float:
-        """Gets the value type for a parameter."""
+        """Get the value type for a parameter."""
         return self._intf.invoke(IMissionControlSequenceUpdate._metadata, IMissionControlSequenceUpdate._get_value_metadata, parameterType, out_arg())
 
     _set_action_metadata = { "name" : "set_action",
             "arg_types" : (agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(UPDATE_PARAM), agmarshall.AgEnum_arg(UPDATE_ACTION),) }
     def set_action(self, parameterName:"UPDATE_PARAM", actionType:"UPDATE_ACTION") -> None:
-        """Sets the update action type."""
+        """Set the update action type."""
         return self._intf.invoke(IMissionControlSequenceUpdate._metadata, IMissionControlSequenceUpdate._set_action_metadata, parameterName, actionType)
 
     _set_value_metadata = { "name" : "set_value",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.AgEnum_arg(UPDATE_PARAM), agmarshall.DOUBLE_arg,) }
     def set_value(self, parameterName:"UPDATE_PARAM", value:float) -> None:
-        """Sets the update value."""
+        """Set the update value."""
         return self._intf.invoke(IMissionControlSequenceUpdate._metadata, IMissionControlSequenceUpdate._set_value_metadata, parameterName, value)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -16834,7 +16834,7 @@ class IMissionControlSequenceUpdate(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_UPDATE),) }
     def enable_control_parameter(self, param:"CONTROL_UPDATE") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IMissionControlSequenceUpdate._metadata, IMissionControlSequenceUpdate._enable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "name" : "is_control_parameter_enabled",
@@ -16849,7 +16849,7 @@ class IMissionControlSequenceUpdate(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IMissionControlSequenceUpdate._metadata, IMissionControlSequenceUpdate._get_control_parameters_available_metadata)
 
     _get_user_variables_metadata = { "name" : "user_variables",
@@ -17015,7 +17015,7 @@ class IProfile(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def copy(self) -> "IProfile":
-        """Makes a copy of the profile."""
+        """Make a copy of the profile."""
         return self._intf.invoke(IProfile._metadata, IProfile._copy_metadata, out_arg())
 
     _get_name_metadata = { "name" : "name",
@@ -17145,14 +17145,14 @@ class IProfileCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, profileName:str) -> "IProfile":
-        """Adds a profile."""
+        """Add a profile."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._add_metadata, profileName, out_arg())
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IProfile":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -17160,7 +17160,7 @@ class IProfileCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IProfileCollection._metadata, IProfileCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -17168,7 +17168,7 @@ class IProfileCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IProfileCollection._metadata, IProfileCollection._get_count_metadata)
 
     _get_available_profiles_metadata = { "name" : "available_profiles",
@@ -17176,21 +17176,21 @@ class IProfileCollection(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def available_profiles(self) -> list:
-        """Returns a list of available profiles."""
+        """Return a list of available profiles."""
         return self._intf.get_property(IProfileCollection._metadata, IProfileCollection._get_available_profiles_metadata)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrProfileName:typing.Any) -> None:
-        """Removes an item from the profile collection."""
+        """Remove an item from the profile collection."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._remove_metadata, indexOrProfileName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all profiles from the profile collection."""
+        """Remove all profiles from the profile collection."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._remove_all_metadata, )
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -17198,14 +17198,14 @@ class IProfileCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IProfileCollection._metadata, IProfileCollection._get_provide_runtime_type_info_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies the profile into the clipboard and removes profile from the list."""
+        """Copy the profile into the clipboard and removes profile from the list."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -17219,28 +17219,28 @@ class IProfileCollection(object):
             "arg_types" : (agcom.PVOID, agcom.VARIANT, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IProfile"), agmarshall.VARIANT_arg, agmarshall.AgEnum_arg(PROFILE_INSERT_DIRECTION), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, profile:"IProfile", indexOrName:typing.Any, direction:"PROFILE_INSERT_DIRECTION") -> "IProfile":
-        """Copies the profile and inserts the copy into the list."""
+        """Copy the profile and inserts the copy into the list."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._insert_copy_metadata, profile, indexOrName, direction, out_arg())
 
     _add2_metadata = { "name" : "add2",
             "arg_types" : (agcom.BSTR, agcom.VARIANT, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_arg, agmarshall.AgEnum_arg(PROFILE_INSERT_DIRECTION), agmarshall.AgInterface_out_arg,) }
     def add2(self, profileName:str, indexOrName:typing.Any, direction:"PROFILE_INSERT_DIRECTION") -> "IProfile":
-        """Adds a profile."""
+        """Add a profile."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._add2_metadata, profileName, indexOrName, direction, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IProfile":
-        """Retrieves a profile from the collection by index."""
+        """Retrieve a profile from the collection by index."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IProfile":
-        """Retrieves a profile from the collection by name."""
+        """Retrieve a profile from the collection by name."""
         return self._intf.invoke(IProfileCollection._metadata, IProfileCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -17348,7 +17348,7 @@ class IMissionControlSequenceTargetSequence(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def segments(self) -> "MissionControlSequenceSegmentCollection":
-        """Returns the segments contained within the target sequence."""
+        """Return the segments contained within the target sequence."""
         return self._intf.get_property(IMissionControlSequenceTargetSequence._metadata, IMissionControlSequenceTargetSequence._get_segments_metadata)
 
     _get_profiles_metadata = { "name" : "profiles",
@@ -17356,7 +17356,7 @@ class IMissionControlSequenceTargetSequence(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def profiles(self) -> "ProfileCollection":
-        """Returns the profiles used within the target sequence."""
+        """Return the profiles used within the target sequence."""
         return self._intf.get_property(IMissionControlSequenceTargetSequence._metadata, IMissionControlSequenceTargetSequence._get_profiles_metadata)
 
     _apply_profiles_metadata = { "name" : "apply_profiles",
@@ -17597,7 +17597,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.AgEnum_arg(DIFFERENTIAL_CORRECTOR_SCALING_METHOD),) }
     @property
     def scaling_method(self) -> "DIFFERENTIAL_CORRECTOR_SCALING_METHOD":
-        """Allows better numerical behavior if the parameters have very different magnitudes. The same scaling method is applied to all parameters."""
+        """Allow better numerical behavior if the parameters have very different magnitudes. The same scaling method is applied to all parameters."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_scaling_method_metadata)
 
     _set_scaling_method_metadata = { "name" : "scaling_method",
@@ -17612,7 +17612,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def scaling_value(self) -> typing.Any:
-        """Applies to the Specified Value scaling method. Dimension depends on context."""
+        """Apply to the Specified Value scaling method. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_scaling_value_metadata)
 
     _set_scaling_value_metadata = { "name" : "scaling_value",
@@ -17808,7 +17808,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(DIFFERENTIAL_CORRECTOR_SCALING_METHOD),) }
     @property
     def scaling_method(self) -> "DIFFERENTIAL_CORRECTOR_SCALING_METHOD":
-        """Allows better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints."""
+        """Allow better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_scaling_method_metadata)
 
     _set_scaling_method_metadata = { "name" : "scaling_method",
@@ -17823,7 +17823,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def scaling_value(self) -> typing.Any:
-        """Applies to the Specified Value scaling method. Dimension depends on context."""
+        """Apply to the Specified Value scaling method. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_scaling_value_metadata)
 
     _set_scaling_value_metadata = { "name" : "scaling_value",
@@ -18233,7 +18233,7 @@ class ISearchPluginResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "SearchPluginResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ISearchPluginResultCollection._metadata, ISearchPluginResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -18256,7 +18256,7 @@ class ISearchPluginResultCollection(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_result_by_paths(self, objectPath:str, resultPath:str) -> "SearchPluginResult":
-        """Returns the result specified by the object/result path."""
+        """Return the result specified by the object/result path."""
         return self._intf.invoke(ISearchPluginResultCollection._metadata, ISearchPluginResultCollection._get_result_by_paths_metadata, objectPath, resultPath, out_arg())
 
     __getitem__ = item
@@ -18318,7 +18318,7 @@ class ISearchPluginControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "SearchPluginControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ISearchPluginControlCollection._metadata, ISearchPluginControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -18334,14 +18334,14 @@ class ISearchPluginControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ISearchPluginControlCollection._metadata, ISearchPluginControlCollection._get_count_metadata)
 
     _get_control_by_paths_metadata = { "name" : "get_control_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_control_by_paths(self, objectPath:str, controlPath:str) -> "SearchPluginControl":
-        """Returns the control specified by the object/control path."""
+        """Return the control specified by the object/control path."""
         return self._intf.invoke(ISearchPluginControlCollection._metadata, ISearchPluginControlCollection._get_control_by_paths_metadata, objectPath, controlPath, out_arg())
 
     __getitem__ = item
@@ -18404,7 +18404,7 @@ class IDifferentialCorrectorControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "DifferentialCorrectorControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IDifferentialCorrectorControlCollection._metadata, IDifferentialCorrectorControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -18412,7 +18412,7 @@ class IDifferentialCorrectorControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IDifferentialCorrectorControlCollection._metadata, IDifferentialCorrectorControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -18420,14 +18420,14 @@ class IDifferentialCorrectorControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IDifferentialCorrectorControlCollection._metadata, IDifferentialCorrectorControlCollection._get_count_metadata)
 
     _get_control_by_paths_metadata = { "name" : "get_control_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_control_by_paths(self, objectPath:str, controlPath:str) -> "DifferentialCorrectorControl":
-        """Returns the control specified by the object/control path."""
+        """Return the control specified by the object/control path."""
         return self._intf.invoke(IDifferentialCorrectorControlCollection._metadata, IDifferentialCorrectorControlCollection._get_control_by_paths_metadata, objectPath, controlPath, out_arg())
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -18435,7 +18435,7 @@ class IDifferentialCorrectorControlCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IDifferentialCorrectorControlCollection._metadata, IDifferentialCorrectorControlCollection._get_provide_runtime_type_info_metadata)
 
     __getitem__ = item
@@ -18498,7 +18498,7 @@ class IDifferentialCorrectorResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "DifferentialCorrectorResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IDifferentialCorrectorResultCollection._metadata, IDifferentialCorrectorResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -18506,7 +18506,7 @@ class IDifferentialCorrectorResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IDifferentialCorrectorResultCollection._metadata, IDifferentialCorrectorResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -18514,14 +18514,14 @@ class IDifferentialCorrectorResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IDifferentialCorrectorResultCollection._metadata, IDifferentialCorrectorResultCollection._get_count_metadata)
 
     _get_result_by_paths_metadata = { "name" : "get_result_by_paths",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_result_by_paths(self, objectPath:str, resultPath:str) -> "DifferentialCorrectorResult":
-        """Returns the result specified by the object/result path."""
+        """Return the result specified by the object/result path."""
         return self._intf.invoke(IDifferentialCorrectorResultCollection._metadata, IDifferentialCorrectorResultCollection._get_result_by_paths_metadata, objectPath, resultPath, out_arg())
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -18529,7 +18529,7 @@ class IDifferentialCorrectorResultCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IDifferentialCorrectorResultCollection._metadata, IDifferentialCorrectorResultCollection._get_provide_runtime_type_info_metadata)
 
     __getitem__ = item
@@ -18879,7 +18879,7 @@ class ITargeterGraphActiveControlCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "TargeterGraphActiveControl":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ITargeterGraphActiveControlCollection._metadata, ITargeterGraphActiveControlCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -18887,7 +18887,7 @@ class ITargeterGraphActiveControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ITargeterGraphActiveControlCollection._metadata, ITargeterGraphActiveControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -18895,7 +18895,7 @@ class ITargeterGraphActiveControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ITargeterGraphActiveControlCollection._metadata, ITargeterGraphActiveControlCollection._get_count_metadata)
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -18903,7 +18903,7 @@ class ITargeterGraphActiveControlCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ITargeterGraphActiveControlCollection._metadata, ITargeterGraphActiveControlCollection._get_provide_runtime_type_info_metadata)
 
     __getitem__ = item
@@ -18965,7 +18965,7 @@ class ITargeterGraphResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "TargeterGraphResult":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ITargeterGraphResultCollection._metadata, ITargeterGraphResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -18973,7 +18973,7 @@ class ITargeterGraphResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ITargeterGraphResultCollection._metadata, ITargeterGraphResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -18981,7 +18981,7 @@ class ITargeterGraphResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ITargeterGraphResultCollection._metadata, ITargeterGraphResultCollection._get_count_metadata)
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -18989,7 +18989,7 @@ class ITargeterGraphResultCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ITargeterGraphResultCollection._metadata, ITargeterGraphResultCollection._get_provide_runtime_type_info_metadata)
 
     __getitem__ = item
@@ -19238,7 +19238,7 @@ class ITargeterGraphCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "TargeterGraph":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ITargeterGraphCollection._metadata, ITargeterGraphCollection._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -19246,7 +19246,7 @@ class ITargeterGraphCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ITargeterGraphCollection._metadata, ITargeterGraphCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -19254,21 +19254,21 @@ class ITargeterGraphCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ITargeterGraphCollection._metadata, ITargeterGraphCollection._get_count_metadata)
 
     _add_graph_metadata = { "name" : "add_graph",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def add_graph(self) -> "TargeterGraph":
-        """Adds a new targeter graph."""
+        """Add a new targeter graph."""
         return self._intf.invoke(ITargeterGraphCollection._metadata, ITargeterGraphCollection._add_graph_metadata, out_arg())
 
     _remove_graph_metadata = { "name" : "remove_graph",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove_graph(self, indexOrName:typing.Any) -> None:
-        """Removes a targeter graph."""
+        """Remove a targeter graph."""
         return self._intf.invoke(ITargeterGraphCollection._metadata, ITargeterGraphCollection._remove_graph_metadata, indexOrName)
 
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -19276,14 +19276,14 @@ class ITargeterGraphCollection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
-        """Returns the RuntimeTypeInfo interface to access properties at runtime."""
+        """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ITargeterGraphCollection._metadata, ITargeterGraphCollection._get_provide_runtime_type_info_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies a targeter graph to the clipboard and removes the targeter graph from the list."""
+        """Copy a targeter graph to the clipboard and removes the targeter graph from the list."""
         return self._intf.invoke(ITargeterGraphCollection._metadata, ITargeterGraphCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -19297,21 +19297,21 @@ class ITargeterGraphCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITargeterGraph"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, graph:"ITargeterGraph") -> "TargeterGraph":
-        """Copies a targeter graph and inserts the copy into the list."""
+        """Copy a targeter graph and inserts the copy into the list."""
         return self._intf.invoke(ITargeterGraphCollection._metadata, ITargeterGraphCollection._insert_copy_metadata, graph, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "TargeterGraph":
-        """Retrieves a targeter graph from the collection by index."""
+        """Retrieve a targeter graph from the collection by index."""
         return self._intf.invoke(ITargeterGraphCollection._metadata, ITargeterGraphCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "TargeterGraph":
-        """Retrieves a targeter graph from the collection by name."""
+        """Retrieve a targeter graph from the collection by name."""
         return self._intf.invoke(ITargeterGraphCollection._metadata, ITargeterGraphCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -19400,7 +19400,7 @@ class IProfileSearchPlugin(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IProfileSearchPlugin._metadata, IProfileSearchPlugin._get_scripting_tool_metadata)
 
     _get_reset_controls_before_run_metadata = { "name" : "reset_controls_before_run",
@@ -19741,7 +19741,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.AgEnum_arg(DRAW_PERTURBATION),) }
     @property
     def draw_perturbation(self) -> "DRAW_PERTURBATION":
-        """Defines the display of perturbations in the 2D and 3D Graphics windows, if you have set Astrogator to draw while calculating."""
+        """Define the display of perturbations in the 2D and 3D Graphics windows, if you have set Astrogator to draw while calculating."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_draw_perturbation_metadata)
 
     _set_draw_perturbation_metadata = { "name" : "draw_perturbation",
@@ -19756,7 +19756,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_scripting_tool_metadata)
 
     _get_root_finding_algorithm_metadata = { "name" : "root_finding_algorithm",
@@ -19943,7 +19943,7 @@ class IProfileScriptingTool(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def segment_properties(self) -> "ScriptingSegmentCollection":
-        """Returns the collection of the segment properties."""
+        """Return the collection of the segment properties."""
         return self._intf.get_property(IProfileScriptingTool._metadata, IProfileScriptingTool._get_segment_properties_metadata)
 
     _get_calc_objects_metadata = { "name" : "calc_objects",
@@ -19951,7 +19951,7 @@ class IProfileScriptingTool(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def calc_objects(self) -> "ScriptingCalcObjectCollection":
-        """Returns the collection of the calc objects."""
+        """Return the collection of the calc objects."""
         return self._intf.get_property(IProfileScriptingTool._metadata, IProfileScriptingTool._get_calc_objects_metadata)
 
     _get_parameters_metadata = { "name" : "parameters",
@@ -19959,7 +19959,7 @@ class IProfileScriptingTool(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def parameters(self) -> "ScriptingParameterCollection":
-        """Returns the collection of parameters."""
+        """Return the collection of parameters."""
         return self._intf.get_property(IProfileScriptingTool._metadata, IProfileScriptingTool._get_parameters_metadata)
 
     _get_language_type_metadata = { "name" : "language_type",
@@ -19988,14 +19988,14 @@ class IProfileScriptingTool(IProfile):
             "arg_types" : (),
             "marshallers" : () }
     def copy_to_clipboard(self) -> None:
-        """Copies entire scripting tool to clipboard."""
+        """Copy entire scripting tool to clipboard."""
         return self._intf.invoke(IProfileScriptingTool._metadata, IProfileScriptingTool._copy_to_clipboard_metadata, )
 
     _paste_from_clipboard_metadata = { "name" : "paste_from_clipboard",
             "arg_types" : (),
             "marshallers" : () }
     def paste_from_clipboard(self) -> None:
-        """Replaces entire scripting tool with scripting tool in clipboard."""
+        """Replace entire scripting tool with scripting tool in clipboard."""
         return self._intf.invoke(IProfileScriptingTool._metadata, IProfileScriptingTool._paste_from_clipboard_metadata, )
 
 
@@ -20059,7 +20059,7 @@ class IProfileChangeReturnSegment(IProfile):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IMissionControlSequenceReturn"),) }
     def set_segment(self, pVAMCSReturn:"IMissionControlSequenceReturn") -> None:
-        """Sets the return segment to target."""
+        """Set the return segment to target."""
         return self._intf.invoke(IProfileChangeReturnSegment._metadata, IProfileChangeReturnSegment._set_segment_metadata, pVAMCSReturn)
 
     _get_state_metadata = { "name" : "state",
@@ -20217,7 +20217,7 @@ class IProfileChangeStopSegment(IProfile):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IMissionControlSequenceStop"),) }
     def set_segment(self, pVAMCSStop:"IMissionControlSequenceStop") -> None:
-        """Sets the stop segment to target."""
+        """Set the stop segment to target."""
         return self._intf.invoke(IProfileChangeStopSegment._metadata, IProfileChangeStopSegment._set_segment_metadata, pVAMCSStop)
 
     _get_state_metadata = { "name" : "state",
@@ -20299,7 +20299,7 @@ class IProfileChangeStoppingConditionState(IProfile):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IMissionControlSequenceSegment"),) }
     def set_segment(self, mCSSegment:"IMissionControlSequenceSegment") -> None:
-        """Sets the targeted segment."""
+        """Set the targeted segment."""
         return self._intf.invoke(IProfileChangeStoppingConditionState._metadata, IProfileChangeStoppingConditionState._set_segment_metadata, mCSSegment)
 
     _get_state_metadata = { "name" : "state",
@@ -20400,7 +20400,7 @@ class IProfileSeedFiniteManeuver(IProfile):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IMissionControlSequenceManeuver"),) }
     def set_segment(self, pVAMCSManeuver:"IMissionControlSequenceManeuver") -> None:
-        """Sets the maneuver segment to target."""
+        """Set the maneuver segment to target."""
         return self._intf.invoke(IProfileSeedFiniteManeuver._metadata, IProfileSeedFiniteManeuver._set_segment_metadata, pVAMCSManeuver)
 
     _get_leave_all_active_stopping_conditions_active_metadata = { "name" : "leave_all_active_stopping_conditions_active",
@@ -20608,7 +20608,7 @@ class IUserVariable(object):
             "arg_types" : (),
             "marshallers" : () }
     def enable_control_parameter(self) -> None:
-        """Enables or disables the specified control parameter."""
+        """Enable or disables the specified control parameter."""
         return self._intf.invoke(IUserVariable._metadata, IUserVariable._enable_control_parameter_metadata, )
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -20630,7 +20630,7 @@ class IUserVariable(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IUserVariable._metadata, IUserVariable._get_control_parameters_available_metadata)
 
 
@@ -20729,7 +20729,7 @@ class IUserVariableUpdate(object):
             "arg_types" : (),
             "marshallers" : () }
     def enable_control_parameter(self) -> None:
-        """Enables or disables the specified control parameter."""
+        """Enable or disables the specified control parameter."""
         return self._intf.invoke(IUserVariableUpdate._metadata, IUserVariableUpdate._enable_control_parameter_metadata, )
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -20751,7 +20751,7 @@ class IUserVariableUpdate(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IUserVariableUpdate._metadata, IUserVariableUpdate._get_control_parameters_available_metadata)
 
 
@@ -20842,7 +20842,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_scripting_tool_metadata)
 
     _get_reset_controls_before_run_metadata = { "name" : "reset_controls_before_run",
@@ -20880,7 +20880,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def tolerance_on_major_feasibility(self) -> float:
-        """Specifies how accurately the nonlinear constraints should be satisfied."""
+        """Specify how accurately the nonlinear constraints should be satisfied."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_tolerance_on_major_feasibility_metadata)
 
     _set_tolerance_on_major_feasibility_metadata = { "name" : "tolerance_on_major_feasibility",
@@ -20895,7 +20895,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def tolerance_on_major_optimality(self) -> float:
-        """Specifies the final accuracy of the dual variables."""
+        """Specify the final accuracy of the dual variables."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_tolerance_on_major_optimality_metadata)
 
     _set_tolerance_on_major_optimality_metadata = { "name" : "tolerance_on_major_optimality",
@@ -21122,7 +21122,7 @@ class ISNOPTControl(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def scaling_value(self) -> typing.Any:
-        """Applies to the Specified Value scaling method. Dimension depends on context."""
+        """Apply to the Specified Value scaling method. Dimension depends on context."""
         return self._intf.get_property(ISNOPTControl._metadata, ISNOPTControl._get_scaling_value_metadata)
 
     _set_scaling_value_metadata = { "name" : "scaling_value",
@@ -21291,7 +21291,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def scaling_value(self) -> typing.Any:
-        """Applies to the Specified Value scaling method. Dimension depends on context."""
+        """Apply to the Specified Value scaling method. Dimension depends on context."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_scaling_value_metadata)
 
     _set_scaling_value_metadata = { "name" : "scaling_value",
@@ -21445,7 +21445,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_scripting_tool_metadata)
 
     _get_reset_controls_before_run_metadata = { "name" : "reset_controls_before_run",
@@ -21695,7 +21695,7 @@ class IIPOPTControl(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def scaling_value(self) -> typing.Any:
-        """Applies to the Specified Value scaling method. Dimension depends on context."""
+        """Apply to the Specified Value scaling method. Dimension depends on context."""
         return self._intf.get_property(IIPOPTControl._metadata, IIPOPTControl._get_scaling_value_metadata)
 
     _set_scaling_value_metadata = { "name" : "scaling_value",
@@ -21864,7 +21864,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def scaling_value(self) -> typing.Any:
-        """Applies to the Specified Value scaling method. Dimension depends on context."""
+        """Apply to the Specified Value scaling method. Dimension depends on context."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_scaling_value_metadata)
 
     _set_scaling_value_metadata = { "name" : "scaling_value",
@@ -22282,7 +22282,7 @@ class IManeuverOptimalFinite(IManeuver):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def export_nodes(self, fileName:str) -> None:
-        """Exports the current set of collocation nodes to a file."""
+        """Export the current set of collocation nodes to a file."""
         return self._intf.invoke(IManeuverOptimalFinite._metadata, IManeuverOptimalFinite._export_nodes_metadata, fileName)
 
     _get_initial_guess_interpolation_method_metadata = { "name" : "initial_guess_interpolation_method",
@@ -22597,7 +22597,7 @@ class IProfileLambertProfile(IProfile):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(LAMBERT_TARGET_COORD_TYPE),) }
     def set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORD_TYPE") -> None:
-        """Selects a target coordinate type."""
+        """Select a target coordinate type."""
         return self._intf.invoke(IProfileLambertProfile._metadata, IProfileLambertProfile._set_target_coord_type_metadata, elementType)
 
     _get_enable_second_maneuver_metadata = { "name" : "enable_second_maneuver",
@@ -23118,7 +23118,7 @@ class IProfileLambertSearchProfile(IProfile):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(LAMBERT_TARGET_COORD_TYPE),) }
     def set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORD_TYPE") -> None:
-        """Selects a target coordinate type."""
+        """Select a target coordinate type."""
         return self._intf.invoke(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._set_target_coord_type_metadata, elementType)
 
     _get_enable_second_maneuver_metadata = { "name" : "enable_second_maneuver",
@@ -23630,7 +23630,7 @@ class IProfileGoldenSection(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IProfileGoldenSection._metadata, IProfileGoldenSection._get_scripting_tool_metadata)
 
     _get_controls_metadata = { "name" : "controls",
@@ -23746,7 +23746,7 @@ class IProfileGridSearch(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IProfileGridSearch._metadata, IProfileGridSearch._get_scripting_tool_metadata)
 
     _get_controls_metadata = { "name" : "controls",
@@ -23865,21 +23865,21 @@ class ICalcObjectLinkEmbedControlCollection(object):
             "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgEnum_arg(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE), agmarshall.AgInterface_out_arg,) }
     def add(self, name:str, refType:"COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE") -> "IComponentLinkEmbedControl":
-        """Adds a link/embed calc object to the collection."""
+        """Add a link/embed calc object to the collection."""
         return self._intf.invoke(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._add_metadata, name, refType, out_arg())
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IComponentLinkEmbedControl":
-        """Returns a link/embed calc object."""
+        """Return a link/embed calc object."""
         return self._intf.invoke(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._item_metadata, indexOrName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a link/embed calc object from the collection."""
+        """Remove a link/embed calc object from the collection."""
         return self._intf.invoke(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -23887,7 +23887,7 @@ class ICalcObjectLinkEmbedControlCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -23895,14 +23895,14 @@ class ICalcObjectLinkEmbedControlCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._get_count_metadata)
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies a link/embed calc object to the clipboard and removes the calc object from the list."""
+        """Copy a link/embed calc object to the clipboard and removes the calc object from the list."""
         return self._intf.invoke(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -23916,21 +23916,21 @@ class ICalcObjectLinkEmbedControlCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IComponentLinkEmbedControl"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, calcObj:"IComponentLinkEmbedControl") -> "IComponentLinkEmbedControl":
-        """Copies a link/embed calc object and inserts the copy into the list."""
+        """Copy a link/embed calc object and inserts the copy into the list."""
         return self._intf.invoke(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._insert_copy_metadata, calcObj, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IComponentLinkEmbedControl":
-        """Retrieves a link/embed calc object found by the index."""
+        """Retrieve a link/embed calc object found by the index."""
         return self._intf.invoke(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IComponentLinkEmbedControl":
-        """Retrieves a link/embed calc object found by the name."""
+        """Retrieve a link/embed calc object found by the name."""
         return self._intf.invoke(ICalcObjectLinkEmbedControlCollection._metadata, ICalcObjectLinkEmbedControlCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -24010,7 +24010,7 @@ class IProfileBisection(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scripting_tool(self) -> "ScriptingTool":
-        """Returns the Scripting tool for the sequence."""
+        """Return the Scripting tool for the sequence."""
         return self._intf.get_property(IProfileBisection._metadata, IProfileBisection._get_scripting_tool_metadata)
 
     _get_reset_controls_before_run_metadata = { "name" : "reset_controls_before_run",
@@ -27278,7 +27278,7 @@ class IStateCalcRepeatingGroundTrackErr(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_REPEATING_GROUND_TRACK_ERR),) }
     def enable_control_parameter(self, param:"CONTROL_REPEATING_GROUND_TRACK_ERR") -> None:
-        """Enables the specified control parameter"""
+        """Enable the specified control parameter"""
         return self._intf.invoke(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -27300,7 +27300,7 @@ class IStateCalcRepeatingGroundTrackErr(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._get_control_parameters_available_metadata)
 
 
@@ -31324,7 +31324,7 @@ class IStateCalcOrbitStateValue(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ORBIT_STATE_VALUE),) }
     def enable_control_parameter(self, param:"CONTROL_ORBIT_STATE_VALUE") -> None:
-        """Enables the specified control parameter"""
+        """Enable the specified control parameter"""
         return self._intf.invoke(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -31346,7 +31346,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_control_parameters_available_metadata)
 
 
@@ -31775,7 +31775,7 @@ class IStateCalcSolarBetaAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Sets the sign of the angle when the relative position has a positive component along the orbit normal."""
+        """Set the sign of the angle when the relative position has a positive component along the orbit normal."""
         return self._intf.get_property(IStateCalcSolarBetaAngle._metadata, IStateCalcSolarBetaAngle._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "name" : "sign_convention",
@@ -31924,7 +31924,7 @@ class IStateCalcSolarInPlaneAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def counter_clockwise_rotation(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Sets sign of the angle for counterclockwise rotation about orbit normal."""
+        """Set sign of the angle for counterclockwise rotation about orbit normal."""
         return self._intf.get_property(IStateCalcSolarInPlaneAngle._metadata, IStateCalcSolarInPlaneAngle._get_counter_clockwise_rotation_metadata)
 
     _set_counter_clockwise_rotation_metadata = { "name" : "counter_clockwise_rotation",
@@ -32086,7 +32086,7 @@ class IStateCalcRelPositionDecAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Sets the sign of the angle when the relative position has a positive component along the orbit normal."""
+        """Set the sign of the angle when the relative position has a positive component along the orbit normal."""
         return self._intf.get_property(IStateCalcRelPositionDecAngle._metadata, IStateCalcRelPositionDecAngle._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "name" : "sign_convention",
@@ -32235,7 +32235,7 @@ class IStateCalcRelPositionInPlaneAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def counter_clockwise_rotation(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Sets sign of the angle for counterclockwise rotation about orbit normal."""
+        """Set sign of the angle for counterclockwise rotation about orbit normal."""
         return self._intf.get_property(IStateCalcRelPositionInPlaneAngle._metadata, IStateCalcRelPositionInPlaneAngle._get_counter_clockwise_rotation_metadata)
 
     _set_counter_clockwise_rotation_metadata = { "name" : "counter_clockwise_rotation",
@@ -32510,7 +32510,7 @@ class IStateCalcCurvilinearRelMotion(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Sets the sign of the angle when the relative position has a positive component along the orbit normal."""
+        """Set the sign of the angle when the relative position has a positive component along the orbit normal."""
         return self._intf.get_property(IStateCalcCurvilinearRelMotion._metadata, IStateCalcCurvilinearRelMotion._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "name" : "sign_convention",
@@ -35316,7 +35316,7 @@ class ICentralBodyCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrCbName:typing.Any) -> "AstrogatorCentralBody":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(ICentralBodyCollection._metadata, ICentralBodyCollection._item_metadata, indexOrCbName, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -35324,7 +35324,7 @@ class ICentralBodyCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(ICentralBodyCollection._metadata, ICentralBodyCollection._get_count_metadata)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -35339,14 +35339,14 @@ class ICentralBodyCollection(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def add(self, cbName:str) -> None:
-        """Adds a central body to the collection."""
+        """Add a central body to the collection."""
         return self._intf.invoke(ICentralBodyCollection._metadata, ICentralBodyCollection._add_metadata, cbName)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a central body from the collection."""
+        """Remove a central body from the collection."""
         return self._intf.invoke(ICentralBodyCollection._metadata, ICentralBodyCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "name" : "remove_all",
@@ -35360,14 +35360,14 @@ class ICentralBodyCollection(object):
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "AstrogatorCentralBody":
-        """Retrieves a central body from the collection by index."""
+        """Retrieve a central body from the collection by index."""
         return self._intf.invoke(ICentralBodyCollection._metadata, ICentralBodyCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, cbName:str) -> "AstrogatorCentralBody":
-        """Retrieves a central body from the collection by name."""
+        """Retrieve a central body from the collection by name."""
         return self._intf.invoke(ICentralBodyCollection._metadata, ICentralBodyCollection._get_item_by_name_metadata, cbName, out_arg())
 
     __getitem__ = item
@@ -36621,7 +36621,7 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_default_gravity_model_by_name(self, gravityModelName:str) -> None:
-        """Selects a gravity model"""
+        """Select a gravity model"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._set_default_gravity_model_by_name_metadata, gravityModelName)
 
     _get_default_gravity_model_data_metadata = { "name" : "default_gravity_model_data",
@@ -36636,14 +36636,14 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(CENTRAL_BODY_GRAVITY_MODEL), agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_gravity_model(self, eGravityModel:"CENTRAL_BODY_GRAVITY_MODEL", uniqueName:str) -> "CentralBodyGravityModel":
-        """Adds a central body gravity model type."""
+        """Add a central body gravity model type."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_gravity_model_metadata, eGravityModel, uniqueName, out_arg())
 
     _remove_gravity_model_by_name_metadata = { "name" : "remove_gravity_model_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove_gravity_model_by_name(self, gravityModelName:str) -> None:
-        """Removes a central body gravity model type."""
+        """Remove a central body gravity model type."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._remove_gravity_model_by_name_metadata, gravityModelName)
 
     _get_default_shape_name_metadata = { "name" : "default_shape_name",
@@ -36666,21 +36666,21 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_default_shape_by_name(self, shapeName:str) -> None:
-        """Selects a central body shape."""
+        """Select a central body shape."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._set_default_shape_by_name_metadata, shapeName)
 
     _add_shape_metadata = { "name" : "add_shape",
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(CENTRAL_BODY_SHAPE), agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_shape(self, eShape:"CENTRAL_BODY_SHAPE", uniqueName:str) -> "ICentralBodyShape":
-        """Adds a central body shape type from the available types."""
+        """Add a central body shape type from the available types."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_shape_metadata, eShape, uniqueName, out_arg())
 
     _remove_shape_by_name_metadata = { "name" : "remove_shape_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove_shape_by_name(self, shapeName:str) -> None:
-        """Removes a central body shape type."""
+        """Remove a central body shape type."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._remove_shape_by_name_metadata, shapeName)
 
     _get_default_attitude_name_metadata = { "name" : "default_attitude_name",
@@ -36703,21 +36703,21 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_default_attitude_by_name(self, attitudeName:str) -> None:
-        """Selects a central body attitude."""
+        """Select a central body attitude."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._set_default_attitude_by_name_metadata, attitudeName)
 
     _add_attitude_metadata = { "name" : "add_attitude",
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(CENTRAL_BODY_ATTITUDE), agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_attitude(self, eAttitude:"CENTRAL_BODY_ATTITUDE", uniqueName:str) -> "ICentralBodyAttitude":
-        """Adds a central body attitude type from the available types."""
+        """Add a central body attitude type from the available types."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_attitude_metadata, eAttitude, uniqueName, out_arg())
 
     _remove_attitude_by_name_metadata = { "name" : "remove_attitude_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove_attitude_by_name(self, attitudeName:str) -> None:
-        """Removes a central body attitude type."""
+        """Remove a central body attitude type."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._remove_attitude_by_name_metadata, attitudeName)
 
     _get_default_ephemeris_name_metadata = { "name" : "default_ephemeris_name",
@@ -36732,7 +36732,7 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_default_ephemeris_by_name(self, ephemerisName:str) -> None:
-        """Selects an ephemeris type."""
+        """Select an ephemeris type."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._set_default_ephemeris_by_name_metadata, ephemerisName)
 
     _get_default_ephemeris_data_metadata = { "name" : "default_ephemeris_data",
@@ -36747,126 +36747,126 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(CENTRAL_BODY_EPHEMERIS), agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_ephemeris(self, eEphemeris:"CENTRAL_BODY_EPHEMERIS", uniqueName:str) -> "ICentralBodyEphemeris":
-        """Adds an ephemeris type from the available types."""
+        """Add an ephemeris type from the available types."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_ephemeris_metadata, eEphemeris, uniqueName, out_arg())
 
     _remove_ephemeris_by_name_metadata = { "name" : "remove_ephemeris_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove_ephemeris_by_name(self, ephemerisName:str) -> None:
-        """Removes an ephemeris type."""
+        """Remove an ephemeris type."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._remove_ephemeris_by_name_metadata, ephemerisName)
 
     _cut_gravity_model_by_name_metadata = { "name" : "cut_gravity_model_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_gravity_model_by_name(self, gravityModelName:str) -> None:
-        """Copies a gravity model to the clipboard and removes it from the central body"""
+        """Copy a gravity model to the clipboard and removes it from the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_gravity_model_by_name_metadata, gravityModelName)
 
     _copy_gravity_model_by_name_metadata = { "name" : "copy_gravity_model_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def copy_gravity_model_by_name(self, gravityModelName:str) -> None:
-        """Copies a gravity model to the clipboard."""
+        """Copy a gravity model to the clipboard."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._copy_gravity_model_by_name_metadata, gravityModelName)
 
     _paste_gravity_model_metadata = { "name" : "paste_gravity_model",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def paste_gravity_model(self) -> "CentralBodyGravityModel":
-        """Adds the gravity model in the clipboard to the central body."""
+        """Add the gravity model in the clipboard to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._paste_gravity_model_metadata, out_arg())
 
     _add_copy_of_gravity_model_metadata = { "name" : "add_copy_of_gravity_model",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyGravityModel"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_gravity_model(self, gravityModel:"ICentralBodyGravityModel") -> "CentralBodyGravityModel":
-        """Adds the gravity model to the central body"""
+        """Add the gravity model to the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_gravity_model_metadata, gravityModel, out_arg())
 
     _cut_shape_by_name_metadata = { "name" : "cut_shape_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_shape_by_name(self, shapeName:str) -> None:
-        """Copies a central body shape to the clipboard and removes it from the central body"""
+        """Copy a central body shape to the clipboard and removes it from the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_shape_by_name_metadata, shapeName)
 
     _copy_shape_by_name_metadata = { "name" : "copy_shape_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def copy_shape_by_name(self, shapeName:str) -> None:
-        """Copies a central body shape to the clipboard."""
+        """Copy a central body shape to the clipboard."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._copy_shape_by_name_metadata, shapeName)
 
     _paste_shape_metadata = { "name" : "paste_shape",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def paste_shape(self) -> "ICentralBodyShape":
-        """Adds the central body shape in the clipboard to the central body."""
+        """Add the central body shape in the clipboard to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._paste_shape_metadata, out_arg())
 
     _add_copy_of_shape_metadata = { "name" : "add_copy_of_shape",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyShape"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_shape(self, shape:"ICentralBodyShape") -> "ICentralBodyShape":
-        """Adds the central body shape to the central body"""
+        """Add the central body shape to the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_shape_metadata, shape, out_arg())
 
     _cut_attitude_by_name_metadata = { "name" : "cut_attitude_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_attitude_by_name(self, attitudeName:str) -> None:
-        """Copies a central body attitude definition to the clipboard and removes it from the central body"""
+        """Copy a central body attitude definition to the clipboard and removes it from the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_attitude_by_name_metadata, attitudeName)
 
     _copy_attitude_by_name_metadata = { "name" : "copy_attitude_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def copy_attitude_by_name(self, attitudeName:str) -> None:
-        """Copies a central body attitude definition to the clipboard."""
+        """Copy a central body attitude definition to the clipboard."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._copy_attitude_by_name_metadata, attitudeName)
 
     _paste_attitude_metadata = { "name" : "paste_attitude",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def paste_attitude(self) -> "ICentralBodyAttitude":
-        """Adds the central body attitude definition in the clipboard to the central body."""
+        """Add the central body attitude definition in the clipboard to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._paste_attitude_metadata, out_arg())
 
     _add_copy_of_attitude_metadata = { "name" : "add_copy_of_attitude",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyAttitude"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_attitude(self, attitude:"ICentralBodyAttitude") -> "ICentralBodyAttitude":
-        """Adds the central body attitude definition to the central body"""
+        """Add the central body attitude definition to the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_attitude_metadata, attitude, out_arg())
 
     _cut_ephemeris_by_name_metadata = { "name" : "cut_ephemeris_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_ephemeris_by_name(self, ephemerisName:str) -> None:
-        """Copies a central body ephemeris definition to the clipboard and removes it from the central body"""
+        """Copy a central body ephemeris definition to the clipboard and removes it from the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_ephemeris_by_name_metadata, ephemerisName)
 
     _copy_ephemeris_by_name_metadata = { "name" : "copy_ephemeris_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def copy_ephemeris_by_name(self, ephemerisName:str) -> None:
-        """Copies a central body ephemeris definition to the clipboard."""
+        """Copy a central body ephemeris definition to the clipboard."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._copy_ephemeris_by_name_metadata, ephemerisName)
 
     _paste_ephemeris_metadata = { "name" : "paste_ephemeris",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def paste_ephemeris(self) -> "ICentralBodyEphemeris":
-        """Adds the central body ephemeris definition in the clipboard to the central body."""
+        """Add the central body ephemeris definition in the clipboard to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._paste_ephemeris_metadata, out_arg())
 
     _add_copy_of_ephemeris_metadata = { "name" : "add_copy_of_ephemeris",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyEphemeris"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_ephemeris(self, ephemeris:"ICentralBodyEphemeris") -> "ICentralBodyEphemeris":
-        """Adds the central body ephemeris definition to the central body"""
+        """Add the central body ephemeris definition to the central body"""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_ephemeris_metadata, ephemeris, out_arg())
 
 
@@ -36964,7 +36964,7 @@ class IPowerInternal(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_POWER_INTERNAL),) }
     def enable_control_parameter(self, param:"CONTROL_POWER_INTERNAL") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IPowerInternal._metadata, IPowerInternal._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -36986,7 +36986,7 @@ class IPowerInternal(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IPowerInternal._metadata, IPowerInternal._get_control_parameters_available_metadata)
 
 
@@ -37084,7 +37084,7 @@ class IPowerProcessed(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_POWER_PROCESSED),) }
     def enable_control_parameter(self, param:"CONTROL_POWER_PROCESSED") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IPowerProcessed._metadata, IPowerProcessed._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -37106,7 +37106,7 @@ class IPowerProcessed(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IPowerProcessed._metadata, IPowerProcessed._get_control_parameters_available_metadata)
 
 
@@ -37366,7 +37366,7 @@ class IPowerSolarArray(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_POWER_SOLAR_ARRAY),) }
     def enable_control_parameter(self, param:"CONTROL_POWER_SOLAR_ARRAY") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IPowerSolarArray._metadata, IPowerSolarArray._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -37388,7 +37388,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_control_parameters_available_metadata)
 
 
@@ -37917,7 +37917,7 @@ class IBlendedDensity(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def atm_density_model_name(self) -> str:
-        """Returns the name of the embedded nominal atmospheric model."""
+        """Return the name of the embedded nominal atmospheric model."""
         return self._intf.get_property(IBlendedDensity._metadata, IBlendedDensity._get_atm_density_model_name_metadata)
 
     _get_low_altitude_atm_density_model_name_metadata = { "name" : "low_altitude_atm_density_model_name",
@@ -37925,7 +37925,7 @@ class IBlendedDensity(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def low_altitude_atm_density_model_name(self) -> str:
-        """Returns the name of the embedded low altitude atmospheric model."""
+        """Return the name of the embedded low altitude atmospheric model."""
         return self._intf.get_property(IBlendedDensity._metadata, IBlendedDensity._get_low_altitude_atm_density_model_name_metadata)
 
     _get_use_approx_altitude_metadata = { "name" : "use_approx_altitude",
@@ -46097,7 +46097,7 @@ class IThirdBodyFunction(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def ephemeris_source_warning(self) -> str:
-        """Returns a warning message if the Ephemeris source and the gravity are not compatible"""
+        """Return a warning message if the Ephemeris source and the gravity are not compatible"""
         return self._intf.get_property(IThirdBodyFunction._metadata, IThirdBodyFunction._get_ephemeris_source_warning_metadata)
 
 
@@ -46984,7 +46984,7 @@ class IEngineConstAcc(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ENGINE_CONST_ACC),) }
     def enable_control_parameter(self, param:"CONTROL_ENGINE_CONST_ACC") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IEngineConstAcc._metadata, IEngineConstAcc._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -47006,7 +47006,7 @@ class IEngineConstAcc(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IEngineConstAcc._metadata, IEngineConstAcc._get_control_parameters_available_metadata)
 
 
@@ -47104,7 +47104,7 @@ class IEngineConstant(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ENGINE_CONSTANT),) }
     def enable_control_parameter(self, param:"CONTROL_ENGINE_CONSTANT") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IEngineConstant._metadata, IEngineConstant._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -47126,7 +47126,7 @@ class IEngineConstant(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IEngineConstant._metadata, IEngineConstant._get_control_parameters_available_metadata)
 
 
@@ -47687,7 +47687,7 @@ class IEngineThrottleTable(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ENGINE_THROTTLE_TABLE),) }
     def enable_control_parameter(self, param:"CONTROL_ENGINE_THROTTLE_TABLE") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IEngineThrottleTable._metadata, IEngineThrottleTable._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -47709,7 +47709,7 @@ class IEngineThrottleTable(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IEngineThrottleTable._metadata, IEngineThrottleTable._get_control_parameters_available_metadata)
 
 
@@ -47884,7 +47884,7 @@ class IEngineIon(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ENGINE_ION),) }
     def enable_control_parameter(self, param:"CONTROL_ENGINE_ION") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IEngineIon._metadata, IEngineIon._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -47906,7 +47906,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_control_parameters_available_metadata)
 
 
@@ -48055,7 +48055,7 @@ class IEngineCustom(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ENGINE_CUSTOM),) }
     def enable_control_parameter(self, param:"CONTROL_ENGINE_CUSTOM") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IEngineCustom._metadata, IEngineCustom._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -48077,7 +48077,7 @@ class IEngineCustom(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IEngineCustom._metadata, IEngineCustom._get_control_parameters_available_metadata)
 
 
@@ -48238,7 +48238,7 @@ class IEngineModelPoly(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ENGINE_MODEL_POLY),) }
     def enable_control_parameter(self, param:"CONTROL_ENGINE_MODEL_POLY") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IEngineModelPoly._metadata, IEngineModelPoly._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -48260,7 +48260,7 @@ class IEngineModelPoly(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IEngineModelPoly._metadata, IEngineModelPoly._get_control_parameters_available_metadata)
 
 
@@ -48343,14 +48343,14 @@ class IDesignCR3BPObjectCollection(object):
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "DesignCR3BPObject":
-        """Retrieves an associated object from the collection by index."""
+        """Retrieve an associated object from the collection by index."""
         return self._intf.invoke(IDesignCR3BPObjectCollection._metadata, IDesignCR3BPObjectCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "DesignCR3BPObject":
-        """Retrieves an associated object from the collection by name."""
+        """Retrieve an associated object from the collection by name."""
         return self._intf.invoke(IDesignCR3BPObjectCollection._metadata, IDesignCR3BPObjectCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -48551,7 +48551,7 @@ class IDesignCR3BPSetup(object):
             "arg_types" : (),
             "marshallers" : () }
     def create_ideal_secondary_cb(self) -> None:
-        """Constructs the idealized secondary for the three-body system"""
+        """Construct the idealized secondary for the three-body system"""
         return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._create_ideal_secondary_cb_metadata, )
 
     _reset_ideal_secondary_cb_metadata = { "name" : "reset_ideal_secondary_cb",
@@ -48572,28 +48572,28 @@ class IDesignCR3BPSetup(object):
             "arg_types" : (),
             "marshallers" : () }
     def create_rotating_coordinate_system(self) -> None:
-        """Creates the coordinate system for the RotatingSystemChoice selection."""
+        """Create the coordinate system for the RotatingSystemChoice selection."""
         return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._create_rotating_coordinate_system_metadata, )
 
     _delete_rotating_coordinate_system_metadata = { "name" : "delete_rotating_coordinate_system",
             "arg_types" : (),
             "marshallers" : () }
     def delete_rotating_coordinate_system(self) -> None:
-        """Deletes the coordinate system for the RotatingSystemChoice selection."""
+        """Delete the coordinate system for the RotatingSystemChoice selection."""
         return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._delete_rotating_coordinate_system_metadata, )
 
     _create_calculation_objects_metadata = { "name" : "create_calculation_objects",
             "arg_types" : (),
             "marshallers" : () }
     def create_calculation_objects(self) -> None:
-        """Creates the calculation objects for the selected coordinate system."""
+        """Create the calculation objects for the selected coordinate system."""
         return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._create_calculation_objects_metadata, )
 
     _delete_calculation_objects_metadata = { "name" : "delete_calculation_objects",
             "arg_types" : (),
             "marshallers" : () }
     def delete_calculation_objects(self) -> None:
-        """Deletes the calculation objects for the selected coordinate system."""
+        """Delete the calculation objects for the selected coordinate system."""
         return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._delete_calculation_objects_metadata, )
 
     _get_associated_objects_metadata = { "name" : "associated_objects",
@@ -48753,7 +48753,7 @@ class IThruster(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def copy(self) -> "Thruster":
-        """Makes a copy of the specified thruster."""
+        """Make a copy of the specified thruster."""
         return self._intf.invoke(IThruster._metadata, IThruster._copy_metadata, out_arg())
 
     _get_engine_model_name_metadata = { "name" : "engine_model_name",
@@ -48813,7 +48813,7 @@ class IThruster(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_THRUSTERS),) }
     def enable_control_parameter(self, param:"CONTROL_THRUSTERS") -> None:
-        """Enables the specified control parameter."""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IThruster._metadata, IThruster._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
@@ -48835,7 +48835,7 @@ class IThruster(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def control_parameters_available(self) -> bool:
-        """Returns whether or not the control parameters can be set."""
+        """Return whether or not the control parameters can be set."""
         return self._intf.get_property(IThruster._metadata, IThruster._get_control_parameters_available_metadata)
 
 
@@ -48924,28 +48924,28 @@ class IThrusterSetCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, thrusterName:str) -> "Thruster":
-        """Adds a new thruster."""
+        """Add a new thruster."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._add_metadata, thrusterName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes a specified thruster."""
+        """Remove a specified thruster."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all thrusters."""
+        """Remove all thrusters."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._remove_all_metadata, )
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies a thruster to the clipboard and removes the thruster from the list."""
+        """Copy a thruster to the clipboard and removes the thruster from the list."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -48959,21 +48959,21 @@ class IThrusterSetCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IThruster"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, thruster:"IThruster") -> "Thruster":
-        """Copies a thruster and inserts the copy into the list."""
+        """Copy a thruster and inserts the copy into the list."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._insert_copy_metadata, thruster, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "Thruster":
-        """Retrieves a thruster from the collection by index."""
+        """Retrieve a thruster from the collection by index."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "Thruster":
-        """Retrieves a thruster from the collection by name."""
+        """Retrieve a thruster from the collection by name."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -49365,21 +49365,21 @@ class IPropagatorFunctionCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, resultName:str) -> "IComponentInfo":
-        """Adds a function to the collection."""
+        """Add a function to the collection."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._add_metadata, resultName, out_arg())
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IComponentInfo":
-        """Allows you to iterate through the collection."""
+        """Allow you to iterate through the collection."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._item_metadata, indexOrName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def remove(self, indexOrName:typing.Any) -> None:
-        """Removes the specified function from the collection."""
+        """Remove the specified function from the collection."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -49387,7 +49387,7 @@ class IPropagatorFunctionCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Allows you to enumerate through the collection."""
+        """Allow you to enumerate through the collection."""
         return self._intf.get_property(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -49395,21 +49395,21 @@ class IPropagatorFunctionCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the size of the collection."""
+        """Return the size of the collection."""
         return self._intf.get_property(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._get_count_metadata)
 
     _remove_all_metadata = { "name" : "remove_all",
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
-        """Removes all functions from the collection."""
+        """Remove all functions from the collection."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._remove_all_metadata, )
 
     _cut_metadata = { "name" : "cut",
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def cut(self, indexOrName:typing.Any) -> None:
-        """Copies a propagator function to the clipboard and removes the propagator function from the list."""
+        """Copy a propagator function to the clipboard and removes the propagator function from the list."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "name" : "paste",
@@ -49423,21 +49423,21 @@ class IPropagatorFunctionCollection(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IComponentInfo"), agmarshall.AgInterface_out_arg,) }
     def insert_copy(self, propFunc:"IComponentInfo") -> "IComponentInfo":
-        """Copies a propagator function and inserts the copy into the list."""
+        """Copy a propagator function and inserts the copy into the list."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._insert_copy_metadata, propFunc, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IComponentInfo":
-        """Retrieves a propagator function from the collection by index."""
+        """Retrieve a propagator function from the collection by index."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IComponentInfo":
-        """Retrieves a propagator function from the collection by name."""
+        """Retrieve a propagator function from the collection by name."""
         return self._intf.invoke(IPropagatorFunctionCollection._metadata, IPropagatorFunctionCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -49596,7 +49596,7 @@ class INumericalPropagatorWrapper(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(NUMERICAL_INTEGRATOR),) }
     def set_numerical_integrator(self, integrator:"NUMERICAL_INTEGRATOR") -> None:
-        """Changes the single step integrator."""
+        """Change the single step integrator."""
         return self._intf.invoke(INumericalPropagatorWrapper._metadata, INumericalPropagatorWrapper._set_numerical_integrator_metadata, integrator)
 
 
@@ -49684,7 +49684,7 @@ class INumericalPropagatorWrapperCR3BP(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(NUMERICAL_INTEGRATOR),) }
     def set_numerical_integrator(self, integrator:"NUMERICAL_INTEGRATOR") -> None:
-        """Changes the numerical integrator."""
+        """Change the numerical integrator."""
         return self._intf.invoke(INumericalPropagatorWrapperCR3BP._metadata, INumericalPropagatorWrapperCR3BP._set_numerical_integrator_metadata, integrator)
 
 
@@ -50054,7 +50054,7 @@ class IGaussJacksonIntegrator(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(NUMERICAL_INTEGRATOR),) }
     def set_single_step_integrator(self, integrator:"NUMERICAL_INTEGRATOR") -> None:
-        """Changes the stopping integrator."""
+        """Change the stopping integrator."""
         return self._intf.invoke(IGaussJacksonIntegrator._metadata, IGaussJacksonIntegrator._set_single_step_integrator_metadata, integrator)
 
 

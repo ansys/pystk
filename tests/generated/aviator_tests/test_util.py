@@ -72,30 +72,30 @@ class EngineLifetimeManager:
 
         if EngineLifetimeManager.stk is None:
             if EngineLifetimeManager.target == TestTarget.eStk:
-                EngineLifetimeManager.stk = STKDesktop.StartApplication(userControl=False, visible=True)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.Root
+                EngineLifetimeManager.stk = STKDesktop.start_application(userControl=False, visible=True)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.root
             elif EngineLifetimeManager.target == TestTarget.eStkX:
-                EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=False)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+                EngineLifetimeManager.stk = STKEngine.start_application(noGraphics=False)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.new_object_root()
                 EngineLifetimeManager.ctrlWindow = frmStkX()
             elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
-                EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=True)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+                EngineLifetimeManager.stk = STKEngine.start_application(noGraphics=True)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.new_object_root()
             elif EngineLifetimeManager.target == TestTarget.eStkGrpc:
-                EngineLifetimeManager.stk = STKDesktop.StartApplication(
+                EngineLifetimeManager.stk = STKDesktop.start_application(
                     userControl=False, visible=True, grpc_server=True, grpc_desktop_options="/Automation"
                 )
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.Root
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.root
             elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
                 import ansys.stk.core.stkruntime
 
-                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=False)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.start_application(noGraphics=False)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.new_object_root()
             elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
                 import ansys.stk.core.stkruntime
 
-                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=True)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.start_application(noGraphics=True)
+                EngineLifetimeManager.root = EngineLifetimeManager.stk.new_object_root()
             EngineLifetimeManager.locked = lock
 
             print(EngineLifetimeManager.root.execute_command("GetStkVersion /")[0])
@@ -107,7 +107,7 @@ class EngineLifetimeManager:
         if force or not EngineLifetimeManager.locked:
             if EngineLifetimeManager.ctrlWindow is not None:
                 EngineLifetimeManager.ctrlWindow.destroy()
-            EngineLifetimeManager.stk.ShutDown()
+            EngineLifetimeManager.stk.shutdown()
             EngineLifetimeManager.stk = None
 
     @staticmethod
@@ -937,15 +937,36 @@ class PythonStkApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, stk, root):
+    def __init__(self, stk: STKDesktopApplication, root):
         self.stk = stk
         PythonStkApplicationProvider.Application = root
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
-        return self.stk.Root
+        return self.stk.root
 
     def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
-        return self.stk.NewObjectModelContext()
+        return self.stk.new_object_model_context()
+
+
+class PythonSTKRuntimeApplicationProvider(IAgAppProvider):
+    Target = TestTarget.eStkRuntime
+
+    Application = None
+
+    import ansys.stk.core.stkruntime
+
+    def __init__(self, stk: ansys.stk.core.stkruntime.STKRuntimeApplication, root):
+        self.stk = stk
+        PythonSTKRuntimeApplicationProvider.Application = root
+
+    def CreateApplication(self, ignored) -> "StkObjectRoot":
+        return self.stk.new_object_root()
+
+    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
+        return self.stk.new_object_model_context()
+
+    def InstantiateSTKXApplication(self) -> "STKXApplication":
+        return self.stk
 
 
 class PythonStkXApplicationProvider(IAgAppProvider):
@@ -953,15 +974,15 @@ class PythonStkXApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, stk, root):
+    def __init__(self, stk: STKEngineApplication, root):
         self.stk = stk
         PythonStkXApplicationProvider.Application = root
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
-        return self.stk.NewObjectRoot()
+        return self.stk.new_object_root()
 
     def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
-        return self.stk.NewObjectModelContext()
+        return self.stk.new_object_model_context()
 
     def InstantiateSTKXApplication(self) -> "STKXApplication":
         return self.stk
@@ -972,15 +993,15 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, stk, root):
+    def __init__(self, stk: STKEngineApplication, root):
         self.stk = stk
         PythonStkXNoGfxApplicationProvider.Application = root
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
-        return self.stk.NewObjectRoot()
+        return self.stk.new_object_root()
 
     def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
-        return self.stk.NewObjectModelContext()
+        return self.stk.new_object_model_context()
 
 
 class TestBase(unittest.TestCase):
@@ -1042,10 +1063,10 @@ class TestBase(unittest.TestCase):
         elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
             TestBase.ApplicationProvider = PythonStkXNoGfxApplicationProvider(TestBase.stk, TestBase.root)
         elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
-            TestBase.ApplicationProvider = PythonStkXApplicationProvider(TestBase.stk, TestBase.root)
+            TestBase.ApplicationProvider = PythonSTKRuntimeApplicationProvider(TestBase.stk, TestBase.root)
             TestBase.NoGraphicsMode = False
         elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
-            TestBase.ApplicationProvider = PythonStkXApplicationProvider(TestBase.stk, TestBase.root)
+            TestBase.ApplicationProvider = PythonSTKRuntimeApplicationProvider(TestBase.stk, TestBase.root)
             TestBase.NoGraphicsMode = True
         TestBase.Target = TestBase.ApplicationProvider.Target
 

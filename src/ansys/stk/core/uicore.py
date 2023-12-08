@@ -103,7 +103,7 @@ agcls.AgTypeNameMap["FLOAT_STATE"] = FLOAT_STATE
 
 
 class IUiToolbar(object):
-    """Provides methods and properties to control a toolbar."""
+    """Provide methods and properties to control a toolbar."""
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -191,7 +191,7 @@ agcls.AgClassCatalog.add_catalog_entry("{69C72C16-36F2-42d4-A183-6879BB5B8070}",
 agcls.AgTypeNameMap["IUiToolbar"] = IUiToolbar
 
 class IUiToolbarCollection(object):
-    """Provides methods and properties to obtain a window's toolbars."""
+    """Provide methods and properties to obtain a window's toolbars."""
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -244,7 +244,7 @@ class IUiToolbarCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrCaption:typing.Any) -> "UiToolbar":
-        """Retrieves a toolbar object."""
+        """Retrieve a toolbar object."""
         return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._item_metadata, indexOrCaption, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -252,7 +252,7 @@ class IUiToolbarCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a total number of toolbars in the collection."""
+        """Return a total number of toolbars in the collection."""
         return self._intf.get_property(IUiToolbarCollection._metadata, IUiToolbarCollection._get_count_metadata)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -267,21 +267,21 @@ class IUiToolbarCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def get_toolbar_by_id(self, id:int) -> "UiToolbar":
-        """Returns a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object."""
+        """Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object."""
         return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._get_toolbar_by_id_metadata, id, out_arg())
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "UiToolbar":
-        """Retrieves a toolbar object based on the index in the collection."""
+        """Retrieve a toolbar object based on the index in the collection."""
         return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "UiToolbar":
-        """Retrieves a toolbar object based on the name of the Toolbar in the collection."""
+        """Retrieve a toolbar object based on the name of the Toolbar in the collection."""
         return self._intf.invoke(IUiToolbarCollection._metadata, IUiToolbarCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -389,7 +389,7 @@ class IUiWindow(object):
             "arg_types" : (),
             "marshallers" : () }
     def close(self) -> None:
-        """Closes the window."""
+        """Close the window."""
         return self._intf.invoke(IUiWindow._metadata, IUiWindow._close_metadata, )
 
     _get_height_metadata = { "name" : "height",
@@ -502,7 +502,7 @@ class IUiWindow(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def supports_pinning(self) -> bool:
-        """Returns whether the window supports pinning."""
+        """Return whether the window supports pinning."""
         return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_supports_pinning_metadata)
 
     _get_toolbars_metadata = { "name" : "toolbars",
@@ -510,21 +510,21 @@ class IUiWindow(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def toolbars(self) -> "UiToolbarCollection":
-        """Returns the window's toolbar collection."""
+        """Return the window's toolbar collection."""
         return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_toolbars_metadata)
 
     _get_service_by_name_metadata = { "name" : "get_service_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_service_by_name(self, name:str) -> typing.Any:
-        """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name."""
+        """Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name."""
         return self._intf.invoke(IUiWindow._metadata, IUiWindow._get_service_by_name_metadata, name, out_arg())
 
     _get_service_by_type_metadata = { "name" : "get_service_by_type",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(WINDOW_SERVICE), agmarshall.AgInterface_out_arg,) }
     def get_service_by_type(self, serviceType:"WINDOW_SERVICE") -> typing.Any:
-        """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
+        """Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
         return self._intf.invoke(IUiWindow._metadata, IUiWindow._get_service_by_type_metadata, serviceType, out_arg())
 
 
@@ -532,7 +532,7 @@ agcls.AgClassCatalog.add_catalog_entry("{05F59555-F74C-48b2-AAB4-1E6C58D7AEB7}",
 agcls.AgTypeNameMap["IUiWindow"] = IUiWindow
 
 class IUiWindowsCollection(object):
-    """Provides methods and properties to manage the application's windows."""
+    """Provide methods and properties to manage the application's windows."""
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -586,7 +586,7 @@ class IUiWindowsCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrCaption:typing.Any) -> "UiWindow":
-        """Retrieves a window object."""
+        """Retrieve a window object."""
         return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._item_metadata, indexOrCaption, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -594,7 +594,7 @@ class IUiWindowsCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a total number of window objects in the collection."""
+        """Return a total number of window objects in the collection."""
         return self._intf.get_property(IUiWindowsCollection._metadata, IUiWindowsCollection._get_count_metadata)
 
     _arrange_metadata = { "name" : "arrange",
@@ -608,7 +608,7 @@ class IUiWindowsCollection(object):
             "arg_types" : (agcom.BSTR, agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def add(self, pluginID:str, initData:typing.Any) -> "UiWindow":
-        """Creates a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
+        """Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
         return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._add_metadata, pluginID, initData, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -623,14 +623,14 @@ class IUiWindowsCollection(object):
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "UiWindow":
-        """Retrieves a window object by index in collection."""
+        """Retrieve a window object by index in collection."""
         return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "UiWindow":
-        """Retrieves a window object by name of window object."""
+        """Retrieve a window object by name of window object."""
         return self._intf.invoke(IUiWindowsCollection._metadata, IUiWindowsCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -733,7 +733,7 @@ agcls.AgTypeNameMap["IUiWindowGlobeObject"] = IUiWindowGlobeObject
 
 
 class UiWindowsCollection(IUiWindowsCollection):
-    """Provides methods and properties to manage the windows."""
+    """Provide methods and properties to manage the windows."""
     def __init__(self, sourceObject=None):
         IUiWindowsCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -796,7 +796,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C20AB584-ABCC-4BF3-96D4-D2A4AA880FBB}",
 agcls.AgTypeNameMap["UiToolbar"] = UiToolbar
 
 class UiToolbarCollection(IUiToolbarCollection):
-    """Provides methods and properties to manage the toolbars."""
+    """Provide methods and properties to manage the toolbars."""
     def __init__(self, sourceObject=None):
         IUiToolbarCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -817,7 +817,7 @@ agcls.AgClassCatalog.add_catalog_entry("{28F000E7-D13E-485E-8484-0BCB359BBC55}",
 agcls.AgTypeNameMap["UiToolbarCollection"] = UiToolbarCollection
 
 class UiWindowMapObject(IUiWindowMapObject):
-    """Provides methods and properties to manipulate the 2D map."""
+    """Provide methods and properties to manipulate the 2D map."""
     def __init__(self, sourceObject=None):
         IUiWindowMapObject.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -838,7 +838,7 @@ agcls.AgClassCatalog.add_catalog_entry("{D20C704C-0763-4CC9-9485-A2EA23C84E6B}",
 agcls.AgTypeNameMap["UiWindowMapObject"] = UiWindowMapObject
 
 class UiWindowGlobeObject(IUiWindowGlobeObject):
-    """Provides methods and properties to manipulate the 3D globe."""
+    """Provide methods and properties to manipulate the 3D globe."""
     def __init__(self, sourceObject=None):
         IUiWindowGlobeObject.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

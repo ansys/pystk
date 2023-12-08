@@ -362,7 +362,7 @@ class CRDN_EVENT_ARRAY_TYPE(IntEnum):
     UNKNOWN = -1
     """Unknown or unsupported time array types"""
     EXTREMA = 0
-    """Determines time of local minimum and/or maximum of specified scalar calculation."""
+    """Determine time of local minimum and/or maximum of specified scalar calculation."""
     START_STOP_TIMES = 1
     """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."""
     MERGED = 2
@@ -374,18 +374,18 @@ class CRDN_EVENT_ARRAY_TYPE(IntEnum):
     CONDITION_CROSSINGS = 5
     """Time array containing times at which specified condition changes its satisfaction status."""
     SIGNALED = 6
-    """Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."""
+    """Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."""
     FIXED_TIMES = 7
     """Time array containing specific times."""
 
 CRDN_EVENT_ARRAY_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time array types"
-CRDN_EVENT_ARRAY_TYPE.EXTREMA.__doc__ = "Determines time of local minimum and/or maximum of specified scalar calculation."
+CRDN_EVENT_ARRAY_TYPE.EXTREMA.__doc__ = "Determine time of local minimum and/or maximum of specified scalar calculation."
 CRDN_EVENT_ARRAY_TYPE.START_STOP_TIMES.__doc__ = "Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."
 CRDN_EVENT_ARRAY_TYPE.MERGED.__doc__ = "Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."
 CRDN_EVENT_ARRAY_TYPE.FILTERED.__doc__ = "Defined by filtering times from original time array according to specified filtering method."
 CRDN_EVENT_ARRAY_TYPE.FIXED_STEP.__doc__ = "Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."
 CRDN_EVENT_ARRAY_TYPE.CONDITION_CROSSINGS.__doc__ = "Time array containing times at which specified condition changes its satisfaction status."
-CRDN_EVENT_ARRAY_TYPE.SIGNALED.__doc__ = "Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."
+CRDN_EVENT_ARRAY_TYPE.SIGNALED.__doc__ = "Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."
 CRDN_EVENT_ARRAY_TYPE.FIXED_TIMES.__doc__ = "Time array containing specific times."
 
 agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_TYPE"] = CRDN_EVENT_ARRAY_TYPE
@@ -397,13 +397,13 @@ class CRDN_EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
     LIGHTING = 0
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
     SIGNALED = 1
-    """Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."""
+    """Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."""
     CONDITION = 2
     """Interval collection containing intervals during which condition set is satisfied."""
 
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval collection types"
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.LIGHTING.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
-CRDN_EVENT_INTERVAL_COLLECTION_TYPE.SIGNALED.__doc__ = "Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
+CRDN_EVENT_INTERVAL_COLLECTION_TYPE.SIGNALED.__doc__ = "Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.CONDITION.__doc__ = "Interval collection containing intervals during which condition set is satisfied."
 
 agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_COLLECTION_TYPE"] = CRDN_EVENT_INTERVAL_COLLECTION_TYPE
@@ -421,7 +421,7 @@ class CRDN_EVENT_INTERVAL_LIST_TYPE(IntEnum):
     SCALED = 4
     """Interval List defined by scaling every interval in original interval list using either absolute or relative scale."""
     SIGNALED = 5
-    """Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."""
+    """Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."""
     TIME_OFFSET = 6
     """Interval List defined by shifting specified reference interval list by fixed time offset."""
     FILE = 0
@@ -434,7 +434,7 @@ CRDN_EVENT_INTERVAL_LIST_TYPE.MERGED.__doc__ = "Interval list created by merging
 CRDN_EVENT_INTERVAL_LIST_TYPE.FILTERED.__doc__ = "Defined by filtering intervals from original interval list using specified filtering method."
 CRDN_EVENT_INTERVAL_LIST_TYPE.CONDITION.__doc__ = "Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."
 CRDN_EVENT_INTERVAL_LIST_TYPE.SCALED.__doc__ = "Interval List defined by scaling every interval in original interval list using either absolute or relative scale."
-CRDN_EVENT_INTERVAL_LIST_TYPE.SIGNALED.__doc__ = "Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
+CRDN_EVENT_INTERVAL_LIST_TYPE.SIGNALED.__doc__ = "Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
 CRDN_EVENT_INTERVAL_LIST_TYPE.TIME_OFFSET.__doc__ = "Interval List defined by shifting specified reference interval list by fixed time offset."
 CRDN_EVENT_INTERVAL_LIST_TYPE.FILE.__doc__ = "Interval list loaded from specified interval file"
 CRDN_EVENT_INTERVAL_LIST_TYPE.FIXED.__doc__ = "Interval list with individual intervals defined between explicitly specified start and stop times."
@@ -456,7 +456,7 @@ class CRDN_EVENT_INTERVAL_TYPE(IntEnum):
     SCALED = 4
     """Interval defined by scaling original interval using either absolute or relative scale."""
     SIGNALED = 5
-    """Determines an interval recorded at a target clock location by performing signal transmission."""
+    """Determine an interval recorded at a target clock location by performing signal transmission."""
     TIME_OFFSET = 6
     """Interval defined by shifting specified reference interval by fixed time offset."""
     SMART_INTERVAL = 7
@@ -468,7 +468,7 @@ CRDN_EVENT_INTERVAL_TYPE.FIXED_DURATION.__doc__ = "Interval of fixed duration sp
 CRDN_EVENT_INTERVAL_TYPE.BETWEEN_TIME_INSTANTS.__doc__ = "Interval between specified start and stop time instants."
 CRDN_EVENT_INTERVAL_TYPE.FROM_INTERVAL_LIST.__doc__ = "Interval created from specified interval list by using one of several selection methods."
 CRDN_EVENT_INTERVAL_TYPE.SCALED.__doc__ = "Interval defined by scaling original interval using either absolute or relative scale."
-CRDN_EVENT_INTERVAL_TYPE.SIGNALED.__doc__ = "Determines an interval recorded at a target clock location by performing signal transmission."
+CRDN_EVENT_INTERVAL_TYPE.SIGNALED.__doc__ = "Determine an interval recorded at a target clock location by performing signal transmission."
 CRDN_EVENT_INTERVAL_TYPE.TIME_OFFSET.__doc__ = "Interval defined by shifting specified reference interval by fixed time offset."
 CRDN_EVENT_INTERVAL_TYPE.SMART_INTERVAL.__doc__ = "A smart interval."
 
@@ -499,11 +499,11 @@ class CRDN_EVENT_TYPE(IntEnum):
     EPOCH = 0
     """Time instant set at specified date/time"""
     EXTREMUM = 1
-    """Determines time of global minimum or maximum of specified scalar calculation."""
+    """Determine time of global minimum or maximum of specified scalar calculation."""
     FROM_INTERVAL = 2
     """Start or stop time of selected reference interval"""
     SIGNALED = 3
-    """Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."""
+    """Determine what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."""
     TIME_OFFSET = 4
     """Time instant at fixed offset from specified reference time instant"""
     SMART_EPOCH = 5
@@ -511,9 +511,9 @@ class CRDN_EVENT_TYPE(IntEnum):
 
 CRDN_EVENT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time instant types"
 CRDN_EVENT_TYPE.EPOCH.__doc__ = "Time instant set at specified date/time"
-CRDN_EVENT_TYPE.EXTREMUM.__doc__ = "Determines time of global minimum or maximum of specified scalar calculation."
+CRDN_EVENT_TYPE.EXTREMUM.__doc__ = "Determine time of global minimum or maximum of specified scalar calculation."
 CRDN_EVENT_TYPE.FROM_INTERVAL.__doc__ = "Start or stop time of selected reference interval"
-CRDN_EVENT_TYPE.SIGNALED.__doc__ = "Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
+CRDN_EVENT_TYPE.SIGNALED.__doc__ = "Determine what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
 CRDN_EVENT_TYPE.TIME_OFFSET.__doc__ = "Time instant at fixed offset from specified reference time instant"
 CRDN_EVENT_TYPE.SMART_EPOCH.__doc__ = "A smart epoch."
 
@@ -573,18 +573,18 @@ agcls.AgTypeNameMap["CRDN_INTEGRAL_TYPE"] = CRDN_INTEGRAL_TYPE
 class CRDN_INTEGRATION_WINDOW_TYPE(IntEnum):
     """Defines the interval of times during which an integral is evaluated."""
     TOTAL = 0
-    """Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant."""
+    """Define the integral's window as the entire available interval list which effectively makes the value of the integral constant."""
     CUMULATIVE_TO_CURRENT = 1
-    """Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."""
+    """Define the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."""
     CUMULATIVE_FROM_CURRENT = 2
-    """Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."""
+    """Define the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."""
     SLIDING_WINDOW = 3
-    """Defines the integral's window as the interval of times centered around the current time with the specified front and back durations."""
+    """Define the integral's window as the interval of times centered around the current time with the specified front and back durations."""
 
-CRDN_INTEGRATION_WINDOW_TYPE.TOTAL.__doc__ = "Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant."
-CRDN_INTEGRATION_WINDOW_TYPE.CUMULATIVE_TO_CURRENT.__doc__ = "Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
-CRDN_INTEGRATION_WINDOW_TYPE.CUMULATIVE_FROM_CURRENT.__doc__ = "Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."
-CRDN_INTEGRATION_WINDOW_TYPE.SLIDING_WINDOW.__doc__ = "Defines the integral's window as the interval of times centered around the current time with the specified front and back durations."
+CRDN_INTEGRATION_WINDOW_TYPE.TOTAL.__doc__ = "Define the integral's window as the entire available interval list which effectively makes the value of the integral constant."
+CRDN_INTEGRATION_WINDOW_TYPE.CUMULATIVE_TO_CURRENT.__doc__ = "Define the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
+CRDN_INTEGRATION_WINDOW_TYPE.CUMULATIVE_FROM_CURRENT.__doc__ = "Define the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."
+CRDN_INTEGRATION_WINDOW_TYPE.SLIDING_WINDOW.__doc__ = "Define the integral's window as the interval of times centered around the current time with the specified front and back durations."
 
 agcls.AgTypeNameMap["CRDN_INTEGRATION_WINDOW_TYPE"] = CRDN_INTEGRATION_WINDOW_TYPE
 
@@ -671,23 +671,23 @@ class CRDN_PRUNE_FILTER(IntEnum):
     UNKNOWN = 0
     """Unknown or unsupported prune filter"""
     FIRST_INTERVALS = 1
-    """Selects specified number of first intervals from original list"""
+    """Select specified number of first intervals from original list"""
     LAST_INTERVALS = 2
-    """Selects specified number of last intervals from original list"""
+    """Select specified number of last intervals from original list"""
     INTERVALS = 3
-    """Selects intervals which satisfy additional duration condition."""
+    """Select intervals which satisfy additional duration condition."""
     GAPS = 4
-    """Selects gaps between intervals which satisfy additional duration condition."""
+    """Select gaps between intervals which satisfy additional duration condition."""
     SATISFACTION_INTERVALS = 5
     """Satisfaction Intervals selects intervals which satisfy additional condition and duration."""
     RELATIVE_SATISFACTION_INTERVALS = 6
     """Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."""
 
 CRDN_PRUNE_FILTER.UNKNOWN.__doc__ = "Unknown or unsupported prune filter"
-CRDN_PRUNE_FILTER.FIRST_INTERVALS.__doc__ = "Selects specified number of first intervals from original list"
-CRDN_PRUNE_FILTER.LAST_INTERVALS.__doc__ = "Selects specified number of last intervals from original list"
-CRDN_PRUNE_FILTER.INTERVALS.__doc__ = "Selects intervals which satisfy additional duration condition."
-CRDN_PRUNE_FILTER.GAPS.__doc__ = "Selects gaps between intervals which satisfy additional duration condition."
+CRDN_PRUNE_FILTER.FIRST_INTERVALS.__doc__ = "Select specified number of first intervals from original list"
+CRDN_PRUNE_FILTER.LAST_INTERVALS.__doc__ = "Select specified number of last intervals from original list"
+CRDN_PRUNE_FILTER.INTERVALS.__doc__ = "Select intervals which satisfy additional duration condition."
+CRDN_PRUNE_FILTER.GAPS.__doc__ = "Select gaps between intervals which satisfy additional duration condition."
 CRDN_PRUNE_FILTER.SATISFACTION_INTERVALS.__doc__ = "Satisfaction Intervals selects intervals which satisfy additional condition and duration."
 CRDN_PRUNE_FILTER.RELATIVE_SATISFACTION_INTERVALS.__doc__ = "Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."
 
@@ -1914,7 +1914,7 @@ class ITimeToolIntervalCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "TimeToolInterval":
-        """Returns an interval at a specified index."""
+        """Return an interval at a specified index."""
         return self._intf.invoke(ITimeToolIntervalCollection._metadata, ITimeToolIntervalCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -1922,7 +1922,7 @@ class ITimeToolIntervalCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator"""
+        """Return a COM enumerator"""
         return self._intf.get_property(ITimeToolIntervalCollection._metadata, ITimeToolIntervalCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -2026,7 +2026,7 @@ class IVectorGeometryToolPoint(object):
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_TYPE),) }
     @property
     def type(self) -> "VECTOR_GEOMETRY_TOOL_POINT_TYPE":
-        """Returns a type of the point object."""
+        """Return a type of the point object."""
         return self._intf.get_property(IVectorGeometryToolPoint._metadata, IVectorGeometryToolPoint._get_type_metadata)
 
     _locate_in_system_with_rate_metadata = { "name" : "locate_in_system_with_rate",
@@ -2087,21 +2087,21 @@ class IVectorGeometryToolVector(object):
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_TYPE),) }
     @property
     def type(self) -> "VECTOR_GEOMETRY_TOOL_VECTOR_TYPE":
-        """Returns a type of the vector object."""
+        """Return a type of the vector object."""
         return self._intf.get_property(IVectorGeometryToolVector._metadata, IVectorGeometryToolVector._get_type_metadata)
 
     _find_in_axes_metadata = { "name" : "find_in_axes",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallVectorFindInAxesResult":
-        """Computes the vector in the specified axes."""
+        """Compute the vector in the specified axes."""
         return self._intf.invoke(IVectorGeometryToolVector._metadata, IVectorGeometryToolVector._find_in_axes_metadata, epoch, axes, out_arg())
 
     _find_in_axes_with_rate_metadata = { "name" : "find_in_axes_with_rate",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult":
-        """Computes the vector and its rate in the specified axes."""
+        """Compute the vector and its rate in the specified axes."""
         return self._intf.invoke(IVectorGeometryToolVector._metadata, IVectorGeometryToolVector._find_in_axes_with_rate_metadata, epoch, axes, out_arg())
 
 
@@ -2149,7 +2149,7 @@ class IVectorGeometryToolSystem(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_SYSTEM_TYPE),) }
     @property
     def type(self) -> "CRDN_SYSTEM_TYPE":
-        """Returns a type of the system object."""
+        """Return a type of the system object."""
         return self._intf.get_property(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._get_type_metadata)
 
     _find_in_system_metadata = { "name" : "find_in_system",
@@ -2163,14 +2163,14 @@ class IVectorGeometryToolSystem(object):
             "arg_types" : (agcom.VARIANT, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.AgInterface_in_arg("ICartesian3Vector"), agmarshall.AgInterface_out_arg,) }
     def transform(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallSystemTransformResult":
-        """Translates the position vector from this system into the output system."""
+        """Translate the position vector from this system into the output system."""
         return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_metadata, epoch, outputSystem, positionInMySystem, out_arg())
 
     _transform_with_rate_metadata = { "name" : "transform_with_rate",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.AgInterface_in_arg("ICartesian3Vector"), agmarshall.AgInterface_in_arg("ICartesian3Vector"), agmarshall.AgInterface_out_arg,) }
     def transform_with_rate(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector", velocityInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallSystemTransformWithRateResult":
-        """Translates the position and rate vectors from this system into the output system."""
+        """Translate the position and rate vectors from this system into the output system."""
         return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_with_rate_metadata, epoch, outputSystem, positionInMySystem, velocityInMySystem, out_arg())
 
 
@@ -2223,7 +2223,7 @@ class IVectorGeometryToolAxes(object):
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_AXES_TYPE),) }
     @property
     def type(self) -> "VECTOR_GEOMETRY_TOOL_AXES_TYPE":
-        """Returns a type of the axes object."""
+        """Return a type of the axes object."""
         return self._intf.get_property(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._get_type_metadata)
 
     _find_in_axes_with_rate_metadata = { "name" : "find_in_axes_with_rate",
@@ -2245,7 +2245,7 @@ class IVectorGeometryToolAxes(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def labels(self) -> "VectorGeometryToolAxesLabels":
-        """Returns an object that allows modifying the axes labels."""
+        """Return an object that allows modifying the axes labels."""
         return self._intf.get_property(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._get_labels_metadata)
 
     _get_x_metadata = { "name" : "x",
@@ -2253,7 +2253,7 @@ class IVectorGeometryToolAxes(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def x(self) -> "IVectorGeometryToolVector":
-        """Returns the X axis of the component."""
+        """Return the X axis of the component."""
         return self._intf.get_property(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._get_x_metadata)
 
     _get_y_metadata = { "name" : "y",
@@ -2261,7 +2261,7 @@ class IVectorGeometryToolAxes(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def y(self) -> "IVectorGeometryToolVector":
-        """Returns the Y axis of the component."""
+        """Return the Y axis of the component."""
         return self._intf.get_property(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._get_y_metadata)
 
     _get_z_metadata = { "name" : "z",
@@ -2269,21 +2269,21 @@ class IVectorGeometryToolAxes(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def z(self) -> "IVectorGeometryToolVector":
-        """Returns the Z axis of the component."""
+        """Return the Z axis of the component."""
         return self._intf.get_property(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._get_z_metadata)
 
     _transform_metadata = { "name" : "transform",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("ICartesian3Vector"), agmarshall.AgInterface_out_arg,) }
     def transform(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallAxesTransformResult":
-        """Transforms the input vector from this axes into the output axes."""
+        """Transform the input vector from this axes into the output axes."""
         return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_metadata, epoch, outputAxes, vectorInMyAxes, out_arg())
 
     _transform_with_rate_metadata = { "name" : "transform_with_rate",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("ICartesian3Vector"), agmarshall.AgInterface_in_arg("ICartesian3Vector"), agmarshall.AgInterface_out_arg,) }
     def transform_with_rate(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector", rateInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchMethodCallAxesTransformWithRateResult":
-        """Transforms the input vector and vector's rate from this axes into the output axes."""
+        """Transform the input vector and vector's rate from this axes into the output axes."""
         return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_with_rate_metadata, epoch, outputAxes, vectorInMyAxes, rateInMyAxes, out_arg())
 
 
@@ -2332,35 +2332,35 @@ class IVectorGeometryToolAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_ANGLE_TYPE),) }
     @property
     def type(self) -> "VECTOR_GEOMETRY_TOOL_ANGLE_TYPE":
-        """Returns a type of the angle object."""
+        """Return a type of the angle object."""
         return self._intf.get_property(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._get_type_metadata)
 
     _find_angle_metadata = { "name" : "find_angle",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def find_angle(self, epoch:typing.Any) -> "AnalysisWorkbenchMethodCallAngleFindAngleResult":
-        """Finds an angle at the specified epoch."""
+        """Find an angle at the specified epoch."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_angle_metadata, epoch, out_arg())
 
     _find_angle_with_rate_metadata = { "name" : "find_angle_with_rate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def find_angle_with_rate(self, epoch:typing.Any) -> "AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult":
-        """Finds an angle and angle rate."""
+        """Find an angle and angle rate."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_angle_with_rate_metadata, epoch, out_arg())
 
     _find_coordinates_metadata = { "name" : "find_coordinates",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def find_coordinates(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallAngleFindResult":
-        """Finds the angle value and three vectors that define the angle in a specified input axes."""
+        """Find the angle value and three vectors that define the angle in a specified input axes."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_coordinates_metadata, epoch, axes, out_arg())
 
     _find_coordinates_with_rate_metadata = { "name" : "find_coordinates_with_rate",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def find_coordinates_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallAngleFindWithRateResult":
-        """Finds the angle value, the angle rate and three vectors that define the angle in a specified input axes."""
+        """Find the angle value, the angle rate and three vectors that define the angle in a specified input axes."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_coordinates_with_rate_metadata, epoch, axes, out_arg())
 
 
@@ -2410,35 +2410,35 @@ class IVectorGeometryToolPlane(object):
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_PLANE_TYPE),) }
     @property
     def type(self) -> "VECTOR_GEOMETRY_TOOL_PLANE_TYPE":
-        """Returns a type of the plane object."""
+        """Return a type of the plane object."""
         return self._intf.get_property(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._get_type_metadata)
 
     _find_in_axes_metadata = { "name" : "find_in_axes",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallPlaneFindInAxesResult":
-        """Computes the plane's axes vectors in a specified reference axes."""
+        """Compute the plane's axes vectors in a specified reference axes."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_axes_metadata, epoch, axes, out_arg())
 
     _find_in_axes_with_rate_metadata = { "name" : "find_in_axes_with_rate",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult":
-        """Computes the plane's axes vectors and their rates in a specified reference axes."""
+        """Compute the plane's axes vectors and their rates in a specified reference axes."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_axes_with_rate_metadata, epoch, axes, out_arg())
 
     _find_in_system_metadata = { "name" : "find_in_system",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.AgInterface_out_arg,) }
     def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchMethodCallPlaneFindInSystemResult":
-        """Computes the position and X and Y axes in the specified coordinate system."""
+        """Compute the position and X and Y axes in the specified coordinate system."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_system_metadata, epoch, system, out_arg())
 
     _find_in_system_with_rate_metadata = { "name" : "find_in_system_with_rate",
             "arg_types" : (agcom.VARIANT, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.AgInterface_out_arg,) }
     def find_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult":
-        """Computes the position, X and Y axes and their rates of change in the specified coordinate system."""
+        """Compute the position, X and Y axes and their rates of change in the specified coordinate system."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_system_with_rate_metadata, epoch, system, out_arg())
 
     _get_labels_metadata = { "name" : "labels",
@@ -2446,7 +2446,7 @@ class IVectorGeometryToolPlane(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def labels(self) -> "VectorGeometryToolPlaneLabels":
-        """Allows configuring the plane's X and Y axes labels."""
+        """Allow configuring the plane's X and Y axes labels."""
         return self._intf.get_property(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._get_labels_metadata)
 
 
@@ -2491,7 +2491,7 @@ class IAnalysisWorkbenchContext(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_template(self) -> bool:
-        """Returns whether the current instance is a VGT template."""
+        """Return whether the current instance is a VGT template."""
         return self._intf.get_property(IAnalysisWorkbenchContext._metadata, IAnalysisWorkbenchContext._get_is_template_metadata)
 
 
@@ -2554,7 +2554,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_KIND),) }
     @property
     def kind(self) -> "CRDN_KIND":
-        """Returns the component kind."""
+        """Return the component kind."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_kind_metadata)
 
     _get_category_metadata = { "name" : "category",
@@ -2562,7 +2562,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def category(self) -> str:
-        """Allows the user to access or change the component category (Folder)."""
+        """Allow the user to access or change the component category (Folder)."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_category_metadata)
 
     _set_category_metadata = { "name" : "category",
@@ -2577,7 +2577,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def name(self) -> str:
-        """Returns the component name."""
+        """Return the component name."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_name_metadata)
 
     _get_description_metadata = { "name" : "description",
@@ -2585,7 +2585,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def description(self) -> str:
-        """Returns the component description."""
+        """Return the component description."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_description_metadata)
 
     _get_path_metadata = { "name" : "path",
@@ -2593,7 +2593,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def path(self) -> str:
-        """Returns the component's fully qualified path (ie. ``CentralBody/Earth Body``, etc.)."""
+        """Return the component's fully qualified path (ie. ``CentralBody/Earth Body``, etc.)."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_path_metadata)
 
     _get_is_duplicable_metadata = { "name" : "is_duplicable",
@@ -2601,7 +2601,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_duplicable(self) -> bool:
-        """Returns whether the VGT component can be duplicated."""
+        """Return whether the VGT component can be duplicated."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_duplicable_metadata)
 
     _get_context_metadata = { "name" : "context",
@@ -2609,7 +2609,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchInstance or IAnalysisWorkbenchComponentTemplate interface."""
+        """Return the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchInstance or IAnalysisWorkbenchComponentTemplate interface."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_context_metadata)
 
     _get_type_info_metadata = { "name" : "type_info",
@@ -2617,7 +2617,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def type_info(self) -> "AnalysisWorkbenchTypeInfo":
-        """Returns the component type information."""
+        """Return the component type information."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_type_info_metadata)
 
     _get_qualified_path_metadata = { "name" : "qualified_path",
@@ -2633,7 +2633,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Returns whether the component is valid."""
+        """Return whether the component is valid."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_valid_metadata)
 
     _get_is_ready_metadata = { "name" : "is_ready",
@@ -2641,7 +2641,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_ready(self) -> bool:
-        """Returns whether the component is ready. The component is ready if it's been fully initialized."""
+        """Return whether the component is ready. The component is ready if it's been fully initialized."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_ready_metadata)
 
     _get_is_read_only_metadata = { "name" : "is_read_only",
@@ -2649,28 +2649,28 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_read_only(self) -> bool:
-        """Returns whether the component is modifiable."""
+        """Return whether the component is modifiable."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_read_only_metadata)
 
     _duplicate_metadata = { "name" : "duplicate",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def duplicate(self, newName:str, description:str) -> "IAnalysisWorkbenchComponent":
-        """Creates a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded."""
+        """Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded."""
         return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._duplicate_metadata, newName, description, out_arg())
 
     _anonymous_duplicate_metadata = { "name" : "anonymous_duplicate",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def anonymous_duplicate(self) -> "IAnalysisWorkbenchComponent":
-        """Creates an anonymous copy of the instance of a VGT component. The new component is not registered and will not be persisted nor restored when a scenario is saved or loaded."""
+        """Create an anonymous copy of the instance of a VGT component. The new component is not registered and will not be persisted nor restored when a scenario is saved or loaded."""
         return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._anonymous_duplicate_metadata, out_arg())
 
     _depends_on_metadata = { "name" : "depends_on",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IAnalysisWorkbenchComponent"), agmarshall.VARIANT_BOOL_arg,) }
     def depends_on(self, component:"IAnalysisWorkbenchComponent") -> bool:
-        """Tests if the instance depends on another component."""
+        """Test if the instance depends on another component."""
         return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._depends_on_metadata, component, out_arg())
 
     _get_embedded_components_metadata = { "name" : "embedded_components",
@@ -2678,21 +2678,21 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def embedded_components(self) -> "AnalysisWorkbenchCollection":
-        """Returns a collection of embedded components."""
+        """Return a collection of embedded components."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_embedded_components_metadata)
 
     _export_metadata = { "name" : "export",
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg,) }
     def export(self, filename:str, comments:str) -> None:
-        """Exports the component to a file."""
+        """Export the component to a file."""
         return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._export_metadata, filename, comments)
 
     _rename_metadata = { "name" : "rename",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def rename(self, newName:str) -> None:
-        """Renames the component."""
+        """Rename the component."""
         return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._rename_metadata, newName)
 
 
@@ -2738,7 +2738,7 @@ class ICalculationToolEvaluateResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ICalculationToolEvaluateResult._metadata, ICalculationToolEvaluateResult._get_is_valid_metadata)
 
     _get_value_metadata = { "name" : "value",
@@ -2793,7 +2793,7 @@ class ICalculationToolEvaluateWithRateResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ICalculationToolEvaluateWithRateResult._metadata, ICalculationToolEvaluateWithRateResult._get_is_valid_metadata)
 
     _get_value_metadata = { "name" : "value",
@@ -2855,7 +2855,7 @@ class ITimeToolEventIntervalResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolEventIntervalResult._metadata, ITimeToolEventIntervalResult._get_is_valid_metadata)
 
     _get_interval_metadata = { "name" : "interval",
@@ -2909,7 +2909,7 @@ class ITimeToolEventFindOccurrenceResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolEventFindOccurrenceResult._metadata, ITimeToolEventFindOccurrenceResult._get_is_valid_metadata)
 
     _get_epoch_metadata = { "name" : "epoch",
@@ -2925,7 +2925,7 @@ agcls.AgClassCatalog.add_catalog_entry("{20F964F0-8466-415E-9344-D6FBA53AF8B0}",
 agcls.AgTypeNameMap["ITimeToolEventFindOccurrenceResult"] = ITimeToolEventFindOccurrenceResult
 
 class ITimeToolFindTimesResult(object):
-    """Returns a collection of intervals and an array of times."""
+    """Return a collection of intervals and an array of times."""
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2966,7 +2966,7 @@ class ITimeToolFindTimesResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolFindTimesResult._metadata, ITimeToolFindTimesResult._get_is_valid_metadata)
 
     _get_intervals_metadata = { "name" : "intervals",
@@ -3044,7 +3044,7 @@ class ITimeToolIntervalsVectorResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolIntervalsVectorResult._metadata, ITimeToolIntervalsVectorResult._get_is_valid_metadata)
 
     _get_interval_collections_metadata = { "name" : "interval_collections",
@@ -3098,7 +3098,7 @@ class ITimeToolEventIntervalCollectionOccurredResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolEventIntervalCollectionOccurredResult._metadata, ITimeToolEventIntervalCollectionOccurredResult._get_is_valid_metadata)
 
     _get_index_metadata = { "name" : "index",
@@ -3152,7 +3152,7 @@ class ITimeToolIntervalListResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolIntervalListResult._metadata, ITimeToolIntervalListResult._get_is_valid_metadata)
 
     _get_intervals_metadata = { "name" : "intervals",
@@ -3226,7 +3226,7 @@ class ITimeToolIntervalVectorCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "TimeToolIntervalCollection":
-        """Accesses an element at the specified position."""
+        """Access an element at the specified position."""
         return self._intf.invoke(ITimeToolIntervalVectorCollection._metadata, ITimeToolIntervalVectorCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3234,7 +3234,7 @@ class ITimeToolIntervalVectorCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolIntervalVectorCollection._metadata, ITimeToolIntervalVectorCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -3301,7 +3301,7 @@ class ITimeToolEventGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ITimeToolEventGroup._metadata, ITimeToolEventGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -3309,14 +3309,14 @@ class ITimeToolEventGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ITimeToolEventGroup._metadata, ITimeToolEventGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ITimeToolEventGroup._metadata, ITimeToolEventGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -3324,7 +3324,7 @@ class ITimeToolEventGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ITimeToolEventGroup._metadata, ITimeToolEventGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -3332,14 +3332,14 @@ class ITimeToolEventGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "TimeToolEventFactory":
-        """Returns a Factory object used to create custom events."""
+        """Return a Factory object used to create custom events."""
         return self._intf.get_property(ITimeToolEventGroup._metadata, ITimeToolEventGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ITimeToolEvent":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ITimeToolEventGroup._metadata, ITimeToolEventGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3347,21 +3347,21 @@ class ITimeToolEventGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolEventGroup._metadata, ITimeToolEventGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ITimeToolEvent":
-        """Retrieves an event from the collection by index."""
+        """Retrieve an event from the collection by index."""
         return self._intf.invoke(ITimeToolEventGroup._metadata, ITimeToolEventGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ITimeToolEvent":
-        """Retrieves an event from the collection by name."""
+        """Retrieve an event from the collection by name."""
         return self._intf.invoke(ITimeToolEventGroup._metadata, ITimeToolEventGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3428,7 +3428,7 @@ class ITimeToolEventIntervalGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventIntervalName:str) -> None:
-        """Removes an element by name."""
+        """Remove an element by name."""
         return self._intf.invoke(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._remove_metadata, eventIntervalName)
 
     _get_context_metadata = { "name" : "context",
@@ -3436,14 +3436,14 @@ class ITimeToolEventIntervalGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -3451,7 +3451,7 @@ class ITimeToolEventIntervalGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -3459,14 +3459,14 @@ class ITimeToolEventIntervalGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "TimeToolEventIntervalFactory":
-        """Returns a Factory object used to create custom event intervals."""
+        """Return a Factory object used to create custom event intervals."""
         return self._intf.get_property(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ITimeToolEventInterval":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3474,21 +3474,21 @@ class ITimeToolEventIntervalGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ITimeToolEventInterval":
-        """Retrieves an event interval from the collection by index."""
+        """Retrieve an event interval from the collection by index."""
         return self._intf.invoke(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ITimeToolEventInterval":
-        """Retrieves an event interval from the collection by name."""
+        """Retrieve an event interval from the collection by name."""
         return self._intf.invoke(ITimeToolEventIntervalGroup._metadata, ITimeToolEventIntervalGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3555,7 +3555,7 @@ class ITimeToolEventIntervalListGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -3563,14 +3563,14 @@ class ITimeToolEventIntervalListGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -3578,7 +3578,7 @@ class ITimeToolEventIntervalListGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -3586,14 +3586,14 @@ class ITimeToolEventIntervalListGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "TimeToolEventIntervalListFactory":
-        """Returns a factory object used to create custom event interval lists."""
+        """Return a factory object used to create custom event interval lists."""
         return self._intf.get_property(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ITimeToolEventIntervalList":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3601,21 +3601,21 @@ class ITimeToolEventIntervalListGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ITimeToolEventIntervalList":
-        """Retrieves an event interval list from the collection by index."""
+        """Retrieve an event interval list from the collection by index."""
         return self._intf.invoke(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ITimeToolEventIntervalList":
-        """Retrieves an event interval list from the collection by name."""
+        """Retrieve an event interval list from the collection by name."""
         return self._intf.invoke(ITimeToolEventIntervalListGroup._metadata, ITimeToolEventIntervalListGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3682,7 +3682,7 @@ class ITimeToolEventArrayGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -3690,14 +3690,14 @@ class ITimeToolEventArrayGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -3705,7 +3705,7 @@ class ITimeToolEventArrayGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -3713,14 +3713,14 @@ class ITimeToolEventArrayGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "TimeToolEventArrayFactory":
-        """Returns a Factory object used to create event arrays."""
+        """Return a Factory object used to create event arrays."""
         return self._intf.get_property(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ITimeToolEventArray":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3728,21 +3728,21 @@ class ITimeToolEventArrayGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ITimeToolEventArray":
-        """Retrieves an event array from the collection by index."""
+        """Retrieve an event array from the collection by index."""
         return self._intf.invoke(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ITimeToolEventArray":
-        """Retrieves an event array from the collection by name."""
+        """Retrieve an event array from the collection by name."""
         return self._intf.invoke(ITimeToolEventArrayGroup._metadata, ITimeToolEventArrayGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3809,7 +3809,7 @@ class ICalculationToolScalarGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -3817,14 +3817,14 @@ class ICalculationToolScalarGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -3832,7 +3832,7 @@ class ICalculationToolScalarGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -3840,14 +3840,14 @@ class ICalculationToolScalarGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "CalculationToolScalarFactory":
-        """Returns a factory object used to create calc scalar components."""
+        """Return a factory object used to create calc scalar components."""
         return self._intf.get_property(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ICalculationToolScalar":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3855,21 +3855,21 @@ class ICalculationToolScalarGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ICalculationToolScalar":
-        """Retrieves an element from the collection by index."""
+        """Retrieve an element from the collection by index."""
         return self._intf.invoke(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ICalculationToolScalar":
-        """Retrieves an element from the collection by name."""
+        """Retrieve an element from the collection by name."""
         return self._intf.invoke(ICalculationToolScalarGroup._metadata, ICalculationToolScalarGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -3936,7 +3936,7 @@ class ITimeToolEventIntervalCollectionGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -3944,14 +3944,14 @@ class ITimeToolEventIntervalCollectionGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -3959,7 +3959,7 @@ class ITimeToolEventIntervalCollectionGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -3967,14 +3967,14 @@ class ITimeToolEventIntervalCollectionGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "TimeToolEventIntervalCollectionFactory":
-        """Returns a factory object used to create calc scalar components."""
+        """Return a factory object used to create calc scalar components."""
         return self._intf.get_property(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ITimeToolEventIntervalCollection":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3982,21 +3982,21 @@ class ITimeToolEventIntervalCollectionGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ITimeToolEventIntervalCollection":
-        """Retrieves an event interval from the collection by index."""
+        """Retrieve an event interval from the collection by index."""
         return self._intf.invoke(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ITimeToolEventIntervalCollection":
-        """Retrieves an event interval from the collection by name."""
+        """Retrieve an event interval from the collection by name."""
         return self._intf.invoke(ITimeToolEventIntervalCollectionGroup._metadata, ITimeToolEventIntervalCollectionGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4063,7 +4063,7 @@ class ICalculationToolParameterSetGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -4071,14 +4071,14 @@ class ICalculationToolParameterSetGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -4086,7 +4086,7 @@ class ICalculationToolParameterSetGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -4094,14 +4094,14 @@ class ICalculationToolParameterSetGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "CalculationToolParameterSetFactory":
-        """Returns a factory object used to create calc scalar components."""
+        """Return a factory object used to create calc scalar components."""
         return self._intf.get_property(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ICalculationToolParameterSet":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4109,21 +4109,21 @@ class ICalculationToolParameterSetGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ICalculationToolParameterSet":
-        """Retrieves an element from the collection by index."""
+        """Retrieve an element from the collection by index."""
         return self._intf.invoke(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ICalculationToolParameterSet":
-        """Retrieves an element from the collection by name."""
+        """Retrieve an element from the collection by name."""
         return self._intf.invoke(ICalculationToolParameterSetGroup._metadata, ICalculationToolParameterSetGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4190,7 +4190,7 @@ class ICalculationToolConditionGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -4198,14 +4198,14 @@ class ICalculationToolConditionGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -4213,7 +4213,7 @@ class ICalculationToolConditionGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -4221,14 +4221,14 @@ class ICalculationToolConditionGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "CalculationToolConditionFactory":
-        """Returns a factory object used to create calc scalar components."""
+        """Return a factory object used to create calc scalar components."""
         return self._intf.get_property(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ICalculationToolCondition":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4236,21 +4236,21 @@ class ICalculationToolConditionGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ICalculationToolCondition":
-        """Retrieves a condition from the collection by index."""
+        """Retrieve a condition from the collection by index."""
         return self._intf.invoke(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ICalculationToolCondition":
-        """Retrieves a condition from the collection by name."""
+        """Retrieve a condition from the collection by name."""
         return self._intf.invoke(ICalculationToolConditionGroup._metadata, ICalculationToolConditionGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4261,7 +4261,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2FDD4ECB-A5E0-4F7B-A16F-2DBDE7C9B3C0}",
 agcls.AgTypeNameMap["ICalculationToolConditionGroup"] = ICalculationToolConditionGroup
 
 class ICalculationToolConditionSetGroup(object):
-    """Allows accessing and creating condition set components."""
+    """Allow accessing and creating condition set components."""
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4317,7 +4317,7 @@ class ICalculationToolConditionSetGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -4325,14 +4325,14 @@ class ICalculationToolConditionSetGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -4340,7 +4340,7 @@ class ICalculationToolConditionSetGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -4348,14 +4348,14 @@ class ICalculationToolConditionSetGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "CalculationToolConditionSetFactory":
-        """Returns a factory object used to create condition set components."""
+        """Return a factory object used to create condition set components."""
         return self._intf.get_property(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ICalculationToolConditionSet":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4363,21 +4363,21 @@ class ICalculationToolConditionSetGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ICalculationToolConditionSet":
-        """Retrieves a condition set from the collection by index."""
+        """Retrieve a condition set from the collection by index."""
         return self._intf.invoke(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ICalculationToolConditionSet":
-        """Retrieves a condition set from the collection by name."""
+        """Retrieve a condition set from the collection by name."""
         return self._intf.invoke(ICalculationToolConditionSetGroup._metadata, ICalculationToolConditionSetGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4426,7 +4426,7 @@ class ICalculationToolConditionSetEvaluateResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ICalculationToolConditionSetEvaluateResult._metadata, ICalculationToolConditionSetEvaluateResult._get_is_valid_metadata)
 
     _get_values_metadata = { "name" : "values",
@@ -4481,7 +4481,7 @@ class ICalculationToolConditionSetEvaluateWithRateResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ICalculationToolConditionSetEvaluateWithRateResult._metadata, ICalculationToolConditionSetEvaluateWithRateResult._get_is_valid_metadata)
 
     _get_values_metadata = { "name" : "values",
@@ -4561,7 +4561,7 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -4569,14 +4569,14 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -4584,7 +4584,7 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -4592,14 +4592,14 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "SpatialAnalysisToolVolumeGridFactory":
-        """Returns a factory object used to create volume grid components."""
+        """Return a factory object used to create volume grid components."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ISpatialAnalysisToolVolumeGrid":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4607,21 +4607,21 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ISpatialAnalysisToolVolumeGrid":
-        """Retrieves a volume grid from the collection by index."""
+        """Retrieve a volume grid from the collection by index."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ISpatialAnalysisToolVolumeGrid":
-        """Retrieves a volume grid from the collection by name."""
+        """Retrieve a volume grid from the collection by name."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridGroup._metadata, ISpatialAnalysisToolVolumeGridGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4688,7 +4688,7 @@ class ISpatialAnalysisToolVolumeGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -4696,14 +4696,14 @@ class ISpatialAnalysisToolVolumeGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -4711,7 +4711,7 @@ class ISpatialAnalysisToolVolumeGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -4719,14 +4719,14 @@ class ISpatialAnalysisToolVolumeGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "SpatialAnalysisToolVolumeFactory":
-        """Returns a factory object used to create spatial condition components."""
+        """Return a factory object used to create spatial condition components."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ISpatialAnalysisToolVolume":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4734,21 +4734,21 @@ class ISpatialAnalysisToolVolumeGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ISpatialAnalysisToolVolume":
-        """Retrieves an volume from the collection by index."""
+        """Retrieve an volume from the collection by index."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ISpatialAnalysisToolVolume":
-        """Retrieves volume from the collection by name."""
+        """Retrieve volume from the collection by name."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGroup._metadata, ISpatialAnalysisToolVolumeGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4815,7 +4815,7 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, eventName:str) -> None:
-        """Removes a specified element."""
+        """Remove a specified element."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._remove_metadata, eventName)
 
     _get_context_metadata = { "name" : "context",
@@ -4823,14 +4823,14 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -4838,7 +4838,7 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -4846,14 +4846,14 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "SpatialAnalysisToolVolumeCalcFactory":
-        """Returns a factory object used to create volume calc components."""
+        """Return a factory object used to create volume calc components."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "ISpatialAnalysisToolVolumeCalc":
-        """Returns an element by name or at a specified position."""
+        """Return an element by name or at a specified position."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -4861,21 +4861,21 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "ISpatialAnalysisToolVolumeCalc":
-        """Retrieves a volume calculation from the collection by index."""
+        """Retrieve a volume calculation from the collection by index."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Retrieves a volume calculation from the collection by name."""
+        """Retrieve a volume calculation from the collection by name."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcGroup._metadata, ISpatialAnalysisToolVolumeCalcGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4933,42 +4933,42 @@ class ICalculationToolScalar(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_CALC_SCALAR_TYPE),) }
     @property
     def type(self) -> "CRDN_CALC_SCALAR_TYPE":
-        """Returns the scalar calculation type."""
+        """Return the scalar calculation type."""
         return self._intf.get_property(ICalculationToolScalar._metadata, ICalculationToolScalar._get_type_metadata)
 
     _evaluate_metadata = { "name" : "evaluate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def evaluate(self, epoch:typing.Any) -> "CalculationToolEvaluateResult":
-        """Evaluates the scalar calculation at the specified time instant."""
+        """Evaluate the scalar calculation at the specified time instant."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._evaluate_metadata, epoch, out_arg())
 
     _quick_evaluate_metadata = { "name" : "quick_evaluate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.LPSAFEARRAY_arg,) }
     def quick_evaluate(self, epoch:typing.Any) -> list:
-        """Evaluates the scalar calculation at the specified time instant and returns the results as an array with two elements, the first element being of boolean type indicating whether the computation succeeded, followed by a double-precision value representing..."""
+        """Evaluate the scalar calculation at the specified time instant and returns the results as an array with two elements, the first element being of boolean type indicating whether the computation succeeded, followed by a double-precision value representing..."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_metadata, epoch, out_arg())
 
     _evaluate_with_rate_metadata = { "name" : "evaluate_with_rate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def evaluate_with_rate(self, epoch:typing.Any) -> "CalculationToolEvaluateWithRateResult":
-        """Evaluates the scalar calculation at the specified time instant. The result is a scalar value and its rate of change."""
+        """Evaluate the scalar calculation at the specified time instant. The result is a scalar value and its rate of change."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._evaluate_with_rate_metadata, epoch, out_arg())
 
     _quick_evaluate_with_rate_metadata = { "name" : "quick_evaluate_with_rate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.LPSAFEARRAY_arg,) }
     def quick_evaluate_with_rate(self, epoch:typing.Any) -> list:
-        """Evaluates the scalar calculation at the specified time instant and returns the results as an array with three elements, the first element being of boolean type indicating whether the computation succeeded, followed by two double-precision values one rep..."""
+        """Evaluate the scalar calculation at the specified time instant and returns the results as an array with three elements, the first element being of boolean type indicating whether the computation succeeded, followed by two double-precision values one rep..."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_with_rate_metadata, epoch, out_arg())
 
     _get_availability_metadata = { "name" : "get_availability",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_availability(self) -> "TimeToolIntervalCollection":
-        """Returns a list of availability intervals."""
+        """Return a list of availability intervals."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._get_availability_metadata, out_arg())
 
     _get_unit_of_measure_metadata = { "name" : "unit_of_measure",
@@ -4976,35 +4976,35 @@ class ICalculationToolScalar(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def unit_of_measure(self) -> str:
-        """Returns calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc."""
+        """Return calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc."""
         return self._intf.get_property(ICalculationToolScalar._metadata, ICalculationToolScalar._get_unit_of_measure_metadata)
 
     _quick_evaluate_array_metadata = { "name" : "quick_evaluate_array",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def quick_evaluate_array(self, times:list) -> list:
-        """Evaluates the scalar calculation, and rate, over an array of times, entered as strings in the Scenario date unit. It returns an array corresponding to the input times..."""
+        """Evaluate the scalar calculation, and rate, over an array of times, entered as strings in the Scenario date unit. It returns an array corresponding to the input times..."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_array_metadata, times, out_arg())
 
     _quick_evaluate_with_rate_array_metadata = { "name" : "quick_evaluate_with_rate_array",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def quick_evaluate_with_rate_array(self, times:list) -> list:
-        """Evaluates the scalar calculation over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
+        """Evaluate the scalar calculation over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_with_rate_array_metadata, times, out_arg())
 
     _quick_evaluate_event_array_metadata = { "name" : "quick_evaluate_event_array",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventArray"), agmarshall.LPSAFEARRAY_arg,) }
     def quick_evaluate_event_array(self, refArray:"ITimeToolEventArray") -> list:
-        """Evaluates the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
+        """Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_event_array_metadata, refArray, out_arg())
 
     _quick_evaluate_with_rate_event_array_metadata = { "name" : "quick_evaluate_with_rate_event_array",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventArray"), agmarshall.LPSAFEARRAY_arg,) }
     def quick_evaluate_with_rate_event_array(self, refArray:"ITimeToolEventArray") -> list:
-        """Evaluates the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
+        """Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
         return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_with_rate_event_array_metadata, refArray, out_arg())
 
 
@@ -5198,7 +5198,7 @@ class ICalculationToolScalarCustom(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def invalidate_on_exec_error(self) -> bool:
-        """Specifies InvalidOnExecError flag for a custom scalar."""
+        """Specify InvalidOnExecError flag for a custom scalar."""
         return self._intf.get_property(ICalculationToolScalarCustom._metadata, ICalculationToolScalarCustom._get_invalidate_on_exec_error_metadata)
 
     _set_invalidate_on_exec_error_metadata = { "name" : "invalidate_on_exec_error",
@@ -5333,7 +5333,7 @@ class ICalculationToolScalarDataElement(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION),) }
     @property
     def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
-        """Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load."""
+        """Determine if computed samples are saved/loaded, otherwise if using samples they are recomputed on load."""
         return self._intf.get_property(ICalculationToolScalarDataElement._metadata, ICalculationToolScalarDataElement._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "name" : "save_data_option",
@@ -5362,7 +5362,7 @@ class ICalculationToolScalarDataElement(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def invalid_data_indicator(self) -> float:
-        """Sets the value to display in a report or graph when the actual value is not a valid real number"""
+        """Set the value to display in a report or graph when the actual value is not a valid real number"""
         return self._intf.get_property(ICalculationToolScalarDataElement._metadata, ICalculationToolScalarDataElement._get_invalid_data_indicator_metadata)
 
     _set_invalid_data_indicator_metadata = { "name" : "invalid_data_indicator",
@@ -5570,7 +5570,7 @@ class ICalculationToolScalarDotProduct(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def dimension(self) -> str:
-        """Returns a unit of measure, i.e. 'Angle', 'Distance', etc."""
+        """Return a unit of measure, i.e. 'Angle', 'Distance', etc."""
         return self._intf.get_property(ICalculationToolScalarDotProduct._metadata, ICalculationToolScalarDotProduct._get_dimension_metadata)
 
     _set_dimension_metadata = { "name" : "dimension",
@@ -5701,7 +5701,7 @@ class ICalculationToolScalarFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_CALC_SCALAR_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_CALC_SCALAR_TYPE") -> "ICalculationToolScalar":
-        """Creates and registers a scalar calculation using specified name, description, and type."""
+        """Create and registers a scalar calculation using specified name, description, and type."""
         return self._intf.invoke(ICalculationToolScalarFactory._metadata, ICalculationToolScalarFactory._create_metadata, name, description, type, out_arg())
 
     _create_calc_scalar_angle_metadata = { "name" : "create_calc_scalar_angle",
@@ -5799,7 +5799,7 @@ class ICalculationToolScalarFactory(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_CALC_SCALAR_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_CALC_SCALAR_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ICalculationToolScalarFactory._metadata, ICalculationToolScalarFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_calc_scalar_from_custom_script_metadata = { "name" : "create_calc_scalar_from_custom_script",
@@ -5902,7 +5902,7 @@ class ICalculationToolScalarFile(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_file_span(self) -> "TimeToolEventIntervalResult":
-        """Computes the interval time span of the file."""
+        """Compute the interval time span of the file."""
         return self._intf.invoke(ICalculationToolScalarFile._metadata, ICalculationToolScalarFile._get_file_span_metadata, out_arg())
 
     _get_file_interpolation_type_metadata = { "name" : "file_interpolation_type",
@@ -6489,7 +6489,7 @@ class ICalculationToolScalarFunction2Var(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE),) }
     @property
     def output_dimension_inheritance(self) -> "CRDN_DIMENSION_INHERITANCE":
-        """Specifies whether the output dimension is inherited or explicitly specified using OutputDimension."""
+        """Specify whether the output dimension is inherited or explicitly specified using OutputDimension."""
         return self._intf.get_property(ICalculationToolScalarFunction2Var._metadata, ICalculationToolScalarFunction2Var._get_output_dimension_inheritance_metadata)
 
     _set_output_dimension_inheritance_metadata = { "name" : "output_dimension_inheritance",
@@ -7175,21 +7175,21 @@ class ICalculationToolCondition(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_CONDITION_TYPE),) }
     @property
     def type(self) -> "CRDN_CONDITION_TYPE":
-        """Returns the type of condition."""
+        """Return the type of condition."""
         return self._intf.get_property(ICalculationToolCondition._metadata, ICalculationToolCondition._get_type_metadata)
 
     _evaluate_metadata = { "name" : "evaluate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def evaluate(self, epoch:typing.Any) -> "CalculationToolEvaluateResult":
-        """Returns result of evaluating continuously varying condition metric at the specified time, used for detecting condition crossings."""
+        """Return result of evaluating continuously varying condition metric at the specified time, used for detecting condition crossings."""
         return self._intf.invoke(ICalculationToolCondition._metadata, ICalculationToolCondition._evaluate_metadata, epoch, out_arg())
 
     _evaluate_with_rate_metadata = { "name" : "evaluate_with_rate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def evaluate_with_rate(self, epoch:typing.Any) -> "CalculationToolEvaluateWithRateResult":
-        """Returns result of evaluating continuously varying condition metric and its rate of change at the specified time, used for detecting condition crossings."""
+        """Return result of evaluating continuously varying condition metric and its rate of change at the specified time, used for detecting condition crossings."""
         return self._intf.invoke(ICalculationToolCondition._metadata, ICalculationToolCondition._evaluate_with_rate_metadata, epoch, out_arg())
 
 
@@ -7197,7 +7197,7 @@ agcls.AgClassCatalog.add_catalog_entry("{8CA43B7E-6345-4F97-97B2-A4C4517739C8}",
 agcls.AgTypeNameMap["ICalculationToolCondition"] = ICalculationToolCondition
 
 class ICalculationToolConditionCombined(object):
-    """Defines a condition which combines multiple conditions."""
+    """Define a condition which combines multiple conditions."""
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7257,7 +7257,7 @@ class ICalculationToolConditionCombined(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def condition_count(self) -> int:
-        """Gets the number of conditions in the combined condition."""
+        """Get the number of conditions in the combined condition."""
         return self._intf.get_property(ICalculationToolConditionCombined._metadata, ICalculationToolConditionCombined._get_condition_count_metadata)
 
     _get_all_conditions_metadata = { "name" : "get_all_conditions",
@@ -7299,7 +7299,7 @@ class ICalculationToolConditionCombined(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICalculationToolCondition"),) }
     def add_condition(self, ref:"ICalculationToolCondition") -> None:
-        """Adds a condition at the end of the list."""
+        """Add a condition at the end of the list."""
         return self._intf.invoke(ICalculationToolConditionCombined._metadata, ICalculationToolConditionCombined._add_condition_metadata, ref)
 
 
@@ -7347,35 +7347,35 @@ class ICalculationToolConditionFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_CONDITION_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_CONDITION_TYPE") -> "ICalculationToolCondition":
-        """Creates and registers a condition using specified name, description and type."""
+        """Create and registers a condition using specified name, description and type."""
         return self._intf.invoke(ICalculationToolConditionFactory._metadata, ICalculationToolConditionFactory._create_metadata, name, description, type, out_arg())
 
     _create_condition_scalar_bounds_metadata = { "name" : "create_condition_scalar_bounds",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_condition_scalar_bounds(self, name:str, description:str) -> "ICalculationToolCondition":
-        """Creates a condition placing bounds on specified scalar."""
+        """Create a condition placing bounds on specified scalar."""
         return self._intf.invoke(ICalculationToolConditionFactory._metadata, ICalculationToolConditionFactory._create_condition_scalar_bounds_metadata, name, description, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_CONDITION_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_CONDITION_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ICalculationToolConditionFactory._metadata, ICalculationToolConditionFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_condition_combined_metadata = { "name" : "create_condition_combined",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_condition_combined(self, name:str, description:str) -> "ICalculationToolCondition":
-        """Creates a condition which combines multiple conditions."""
+        """Create a condition which combines multiple conditions."""
         return self._intf.invoke(ICalculationToolConditionFactory._metadata, ICalculationToolConditionFactory._create_condition_combined_metadata, name, description, out_arg())
 
     _create_condition_point_in_volume_metadata = { "name" : "create_condition_point_in_volume",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_condition_point_in_volume(self, name:str, description:str) -> "ICalculationToolCondition":
-        """Creates a condition for point in volume."""
+        """Create a condition for point in volume."""
         return self._intf.invoke(ICalculationToolConditionFactory._metadata, ICalculationToolConditionFactory._create_condition_point_in_volume_metadata, name, description, out_arg())
 
 
@@ -7642,21 +7642,21 @@ class ICalculationToolConditionSet(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_CONDITION_SET_TYPE),) }
     @property
     def type(self) -> "CRDN_CONDITION_SET_TYPE":
-        """Returns the type of condition set."""
+        """Return the type of condition set."""
         return self._intf.get_property(ICalculationToolConditionSet._metadata, ICalculationToolConditionSet._get_type_metadata)
 
     _evaluate_metadata = { "name" : "evaluate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def evaluate(self, epoch:typing.Any) -> "CalculationToolConditionSetEvaluateResult":
-        """Returns an array of results of evaluating continuously varying condition metrics, one for each condition in the set, at the specified time, used for detecting condition crossings."""
+        """Return an array of results of evaluating continuously varying condition metrics, one for each condition in the set, at the specified time, used for detecting condition crossings."""
         return self._intf.invoke(ICalculationToolConditionSet._metadata, ICalculationToolConditionSet._evaluate_metadata, epoch, out_arg())
 
     _evaluate_with_rate_metadata = { "name" : "evaluate_with_rate",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def evaluate_with_rate(self, epoch:typing.Any) -> "CalculationToolConditionSetEvaluateWithRateResult":
-        """Returns an array of results of evaluating continuously varying condition metrics and their rates of change, one for each condition in the set, at the specified time, used for detecting condition crossings."""
+        """Return an array of results of evaluating continuously varying condition metrics and their rates of change, one for each condition in the set, at the specified time, used for detecting condition crossings."""
         return self._intf.invoke(ICalculationToolConditionSet._metadata, ICalculationToolConditionSet._evaluate_with_rate_metadata, epoch, out_arg())
 
 
@@ -7702,7 +7702,7 @@ class ICalculationToolConditionSetFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_CONDITION_SET_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_CONDITION_SET_TYPE") -> "ICalculationToolConditionSet":
-        """Creates and registers a condition set using specified name, description, and type."""
+        """Create and registers a condition set using specified name, description, and type."""
         return self._intf.invoke(ICalculationToolConditionSetFactory._metadata, ICalculationToolConditionSetFactory._create_metadata, name, description, type, out_arg())
 
     _create_scalar_thresholds_metadata = { "name" : "create_scalar_thresholds",
@@ -7716,7 +7716,7 @@ class ICalculationToolConditionSetFactory(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_CONDITION_SET_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_CONDITION_SET_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ICalculationToolConditionSetFactory._metadata, ICalculationToolConditionSetFactory._is_type_supported_metadata, eType, out_arg())
 
 
@@ -8068,7 +8068,7 @@ agcls.AgClassCatalog.add_catalog_entry("{CD450BBA-9F54-4F15-B067-C5A80C970FA9}",
 agcls.AgTypeNameMap["ICalculationToolDerivativeBasic"] = ICalculationToolDerivativeBasic
 
 class ITimeToolEvent(object):
-    """Defines an event (time instant)."""
+    """Define an event (time instant)."""
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8373,7 +8373,7 @@ agcls.AgClassCatalog.add_catalog_entry("{EB34F16B-8AAF-4DE8-B5FB-7468FD2881D5}",
 agcls.AgTypeNameMap["ITimeToolEventArrayConditionCrossings"] = ITimeToolEventArrayConditionCrossings
 
 class ITimeToolEventArrayExtrema(object):
-    """Determines times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+    """Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8440,7 +8440,7 @@ class ITimeToolEventArrayExtrema(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_global(self) -> bool:
-        """Indicates whether to perform local or global search. The default is false."""
+        """Indicate whether to perform local or global search. The default is false."""
         return self._intf.get_property(ITimeToolEventArrayExtrema._metadata, ITimeToolEventArrayExtrema._get_is_global_metadata)
 
     _set_is_global_metadata = { "name" : "is_global",
@@ -8646,7 +8646,7 @@ class ITimeToolEventArrayFactory(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_EVENT_ARRAY_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_EVENT_ARRAY_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ITimeToolEventArrayFactory._metadata, ITimeToolEventArrayFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_event_array_fixed_times_metadata = { "name" : "create_event_array_fixed_times",
@@ -8965,7 +8965,7 @@ class ITimeToolEventArrayFixedTimes(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_array_times(self, times:list) -> None:
-        """Sets array of times."""
+        """Set array of times."""
         return self._intf.invoke(ITimeToolEventArrayFixedTimes._metadata, ITimeToolEventArrayFixedTimes._set_array_times_metadata, times)
 
 
@@ -9043,7 +9043,7 @@ agcls.AgClassCatalog.add_catalog_entry("{89FC5C8B-0A2A-4256-AA66-D6125A63D30A}",
 agcls.AgTypeNameMap["ITimeToolEventArrayMerged"] = ITimeToolEventArrayMerged
 
 class ITimeToolEventArraySignaled(object):
-    """Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
+    """Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9287,7 +9287,7 @@ agcls.AgClassCatalog.add_catalog_entry("{EB56DBC2-8BD6-4A66-A0EC-22BEB9853EA0}",
 agcls.AgTypeNameMap["ITimeToolEventEpoch"] = ITimeToolEventEpoch
 
 class ITimeToolEventExtremum(object):
-    """Determines time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+    """Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9397,7 +9397,7 @@ class ITimeToolEventExtremum(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION),) }
     @property
     def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
-        """Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
+        """Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
         return self._intf.get_property(ITimeToolEventExtremum._metadata, ITimeToolEventExtremum._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "name" : "save_data_option",
@@ -9489,7 +9489,7 @@ class ITimeToolEventFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def today(self) -> "ITimeToolEvent":
-        """Returns Today time instant."""
+        """Return Today time instant."""
         return self._intf.get_property(ITimeToolEventFactory._metadata, ITimeToolEventFactory._get_today_metadata)
 
     _get_tomorrow_metadata = { "name" : "tomorrow",
@@ -9497,70 +9497,70 @@ class ITimeToolEventFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def tomorrow(self) -> "ITimeToolEvent":
-        """Returns Tomorrow time instant."""
+        """Return Tomorrow time instant."""
         return self._intf.get_property(ITimeToolEventFactory._metadata, ITimeToolEventFactory._get_tomorrow_metadata)
 
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_EVENT_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_EVENT_TYPE") -> "ITimeToolEvent":
-        """Creates and registers an event using specified name, description, and type."""
+        """Create and registers an event using specified name, description, and type."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_metadata, name, description, type, out_arg())
 
     _create_event_epoch_metadata = { "name" : "create_event_epoch",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_event_epoch(self, name:str, description:str) -> "ITimeToolEvent":
-        """Creates an event set at a specified date/time."""
+        """Create an event set at a specified date/time."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_event_epoch_metadata, name, description, out_arg())
 
     _create_event_extremum_metadata = { "name" : "create_event_extremum",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_event_extremum(self, name:str, description:str) -> "ITimeToolEvent":
-        """Creates an event that determines the time of global minimum or maximum of specified scalar calculation."""
+        """Create an event that determines the time of global minimum or maximum of specified scalar calculation."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_event_extremum_metadata, name, description, out_arg())
 
     _create_event_start_stop_time_metadata = { "name" : "create_event_start_stop_time",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_event_start_stop_time(self, name:str, description:str) -> "ITimeToolEvent":
-        """Creates an event that is either the start or stop time selected from a reference interval."""
+        """Create an event that is either the start or stop time selected from a reference interval."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_event_start_stop_time_metadata, name, description, out_arg())
 
     _create_event_signaled_metadata = { "name" : "create_event_signaled",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_event_signaled(self, name:str, description:str) -> "ITimeToolEvent":
-        """Creates an event recorded on a specified clock via signal transmission from an original time instant recorded on different clock."""
+        """Create an event recorded on a specified clock via signal transmission from an original time instant recorded on different clock."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_event_signaled_metadata, name, description, out_arg())
 
     _create_event_time_offset_metadata = { "name" : "create_event_time_offset",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_event_time_offset(self, name:str, description:str) -> "ITimeToolEvent":
-        """Creates an event at fixed offset from specified reference event."""
+        """Create an event at fixed offset from specified reference event."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_event_time_offset_metadata, name, description, out_arg())
 
     _create_smart_epoch_from_time_metadata = { "name" : "create_smart_epoch_from_time",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def create_smart_epoch_from_time(self, epoch:typing.Any) -> "TimeToolEventSmartEpoch":
-        """Creates a smart epoch from STK epoch."""
+        """Create a smart epoch from STK epoch."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_smart_epoch_from_time_metadata, epoch, out_arg())
 
     _create_smart_epoch_from_event_metadata = { "name" : "create_smart_epoch_from_event",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEvent"), agmarshall.AgInterface_out_arg,) }
     def create_smart_epoch_from_event(self, refEvent:"ITimeToolEvent") -> "TimeToolEventSmartEpoch":
-        """Creates a smart epoch from an event."""
+        """Create a smart epoch from an event."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._create_smart_epoch_from_event_metadata, refEvent, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_EVENT_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_EVENT_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ITimeToolEventFactory._metadata, ITimeToolEventFactory._is_type_supported_metadata, eType, out_arg())
 
 
@@ -9898,7 +9898,7 @@ class ITimeToolEventIntervalCollectionCondition(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION),) }
     @property
     def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
-        """Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
+        """Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
         return self._intf.get_property(ITimeToolEventIntervalCollectionCondition._metadata, ITimeToolEventIntervalCollectionCondition._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "name" : "save_data_option",
@@ -10004,7 +10004,7 @@ class ITimeToolEventIntervalCollectionFactory(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_COLLECTION_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_EVENT_INTERVAL_COLLECTION_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ITimeToolEventIntervalCollectionFactory._metadata, ITimeToolEventIntervalCollectionFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_event_interval_collection_satisfaction_metadata = { "name" : "create_event_interval_collection_satisfaction",
@@ -10106,7 +10106,7 @@ agcls.AgClassCatalog.add_catalog_entry("{18530BC5-1ED6-4A66-BBBE-8A8FB4644791}",
 agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionLighting"] = ITimeToolEventIntervalCollectionLighting
 
 class ITimeToolEventIntervalCollectionSignaled(object):
-    """Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
+    """Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10327,7 +10327,7 @@ class ITimeToolEventIntervalFactory(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_EVENT_INTERVAL_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ITimeToolEventIntervalFactory._metadata, ITimeToolEventIntervalFactory._is_type_supported_metadata, eType, out_arg())
 
 
@@ -10882,7 +10882,7 @@ class ITimeToolEventIntervalListFactory(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_LIST_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_EVENT_INTERVAL_LIST_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ITimeToolEventIntervalListFactory._metadata, ITimeToolEventIntervalListFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_event_interval_list_file_metadata = { "name" : "create_event_interval_list_file",
@@ -10958,14 +10958,14 @@ class ITimeToolEventIntervalListFile(object):
             "arg_types" : (),
             "marshallers" : () }
     def reload(self) -> None:
-        """Reloads the interval list file."""
+        """Reload the interval list file."""
         return self._intf.invoke(ITimeToolEventIntervalListFile._metadata, ITimeToolEventIntervalListFile._reload_metadata, )
 
     _get_file_span_metadata = { "name" : "get_file_span",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_file_span(self) -> "TimeToolEventIntervalResult":
-        """Computes the interval list file span."""
+        """Compute the interval list file span."""
         return self._intf.invoke(ITimeToolEventIntervalListFile._metadata, ITimeToolEventIntervalListFile._get_file_span_metadata, out_arg())
 
 
@@ -11185,28 +11185,28 @@ class ITimeToolEventIntervalListMerged(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventIntervalList"),) }
     def set_interval_list_a(self, refIntervals:"ITimeToolEventIntervalList") -> None:
-        """Sets the interval list A."""
+        """Set the interval list A."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._set_interval_list_a_metadata, refIntervals)
 
     _set_interval_a_metadata = { "name" : "set_interval_a",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventInterval"),) }
     def set_interval_a(self, refIntervals:"ITimeToolEventInterval") -> None:
-        """Sets the interval A."""
+        """Set the interval A."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._set_interval_a_metadata, refIntervals)
 
     _set_interval_list_b_metadata = { "name" : "set_interval_list_b",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventIntervalList"),) }
     def set_interval_list_b(self, refIntervals:"ITimeToolEventIntervalList") -> None:
-        """Sets the interval list B."""
+        """Set the interval list B."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._set_interval_list_b_metadata, refIntervals)
 
     _set_interval_b_metadata = { "name" : "set_interval_b",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventInterval"),) }
     def set_interval_b(self, refIntervals:"ITimeToolEventInterval") -> None:
-        """Sets the interval B."""
+        """Set the interval B."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._set_interval_b_metadata, refIntervals)
 
     _add_interval_metadata = { "name" : "add_interval",
@@ -11227,28 +11227,28 @@ class ITimeToolEventIntervalListMerged(object):
             "arg_types" : (agcom.PVOID, agcom.INT,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventInterval"), agmarshall.INT_arg,) }
     def set_interval(self, refIntervals:"ITimeToolEventInterval", pos:int) -> None:
-        """Sets the interval at given index."""
+        """Set the interval at given index."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._set_interval_metadata, refIntervals, pos)
 
     _set_interval_list_metadata = { "name" : "set_interval_list",
             "arg_types" : (agcom.PVOID, agcom.INT,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventIntervalList"), agmarshall.INT_arg,) }
     def set_interval_list(self, refIntervals:"ITimeToolEventIntervalList", pos:int) -> None:
-        """Sets the interval list at given index."""
+        """Set the interval list at given index."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._set_interval_list_metadata, refIntervals, pos)
 
     _get_time_component_metadata = { "name" : "get_time_component",
             "arg_types" : (agcom.INT, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.BSTR_arg,) }
     def get_time_component(self, pos:int) -> str:
-        """Gets time component at given position."""
+        """Get time component at given position."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._get_time_component_metadata, pos, out_arg())
 
     _get_time_component_size_metadata = { "name" : "get_time_component_size",
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.INT_arg,) }
     def get_time_component_size(self) -> int:
-        """Gets time component list size."""
+        """Get time component list size."""
         return self._intf.invoke(ITimeToolEventIntervalListMerged._metadata, ITimeToolEventIntervalListMerged._get_time_component_size_metadata, out_arg())
 
     _remove_time_component_metadata = { "name" : "remove_time_component",
@@ -11367,7 +11367,7 @@ agcls.AgClassCatalog.add_catalog_entry("{7DDA88F8-A738-464E-9CDC-613E107F57D0}",
 agcls.AgTypeNameMap["ITimeToolEventIntervalListScaled"] = ITimeToolEventIntervalListScaled
 
 class ITimeToolEventIntervalListSignaled(object):
-    """Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
+    """Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11662,7 +11662,7 @@ agcls.AgClassCatalog.add_catalog_entry("{FA9613FB-7341-4785-AD95-51CFA2B605BC}",
 agcls.AgTypeNameMap["ITimeToolEventIntervalScaled"] = ITimeToolEventIntervalScaled
 
 class ITimeToolEventIntervalSignaled(object):
-    """Determines what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
+    """Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11880,42 +11880,42 @@ class ITimeToolEventIntervalSmartInterval(object):
             "arg_types" : (POINTER(agcom.VARIANT),),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def find_start_time(self) -> typing.Any:
-        """Finds a start time of the interval. An exception is thrown if the start time cannot be determined from the interval's current state."""
+        """Find a start time of the interval. An exception is thrown if the start time cannot be determined from the interval's current state."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._find_start_time_metadata, out_arg())
 
     _find_stop_time_metadata = { "name" : "find_stop_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def find_stop_time(self) -> typing.Any:
-        """Finds a stop time of the interval. An exception is thrown if the stop time cannot be determined from the interval's current state."""
+        """Find a stop time of the interval. An exception is thrown if the stop time cannot be determined from the interval's current state."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._find_stop_time_metadata, out_arg())
 
     _get_start_epoch_metadata = { "name" : "get_start_epoch",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_start_epoch(self) -> "TimeToolEventSmartEpoch":
-        """Returns a copy of the start epoch. Changes to the epoch will not affect the state of the interval."""
+        """Return a copy of the start epoch. Changes to the epoch will not affect the state of the interval."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._get_start_epoch_metadata, out_arg())
 
     _set_start_epoch_metadata = { "name" : "set_start_epoch",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventSmartEpoch"),) }
     def set_start_epoch(self, startEpoch:"ITimeToolEventSmartEpoch") -> None:
-        """Sets a start of the interval using specified epoch component."""
+        """Set a start of the interval using specified epoch component."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._set_start_epoch_metadata, startEpoch)
 
     _get_stop_epoch_metadata = { "name" : "get_stop_epoch",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_stop_epoch(self) -> "TimeToolEventSmartEpoch":
-        """Returns a copy of the stop epoch. Changes to the epoch will not affect the state of the interval."""
+        """Return a copy of the stop epoch. Changes to the epoch will not affect the state of the interval."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._get_stop_epoch_metadata, out_arg())
 
     _set_stop_epoch_metadata = { "name" : "set_stop_epoch",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventSmartEpoch"),) }
     def set_stop_epoch(self, stopEpoch:"ITimeToolEventSmartEpoch") -> None:
-        """Sets a stop of the interval using specified epoch component."""
+        """Set a stop of the interval using specified epoch component."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._set_stop_epoch_metadata, stopEpoch)
 
     _set_explicit_interval_metadata = { "name" : "set_explicit_interval",
@@ -11929,28 +11929,28 @@ class ITimeToolEventIntervalSmartInterval(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventSmartEpoch"), agmarshall.AgInterface_in_arg("ITimeToolEventSmartEpoch"),) }
     def set_start_and_stop_epochs(self, refStartEpoch:"ITimeToolEventSmartEpoch", refStopEpoch:"ITimeToolEventSmartEpoch") -> None:
-        """Sets the interval's start and stop epochs as two smart epoch components. Exception is thrown if specified start time is greater than stop time."""
+        """Set the interval's start and stop epochs as two smart epoch components. Exception is thrown if specified start time is greater than stop time."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._set_start_and_stop_epochs_metadata, refStartEpoch, refStopEpoch)
 
     _set_start_and_stop_times_metadata = { "name" : "set_start_and_stop_times",
             "arg_types" : (agcom.VARIANT, agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.VARIANT_arg,) }
     def set_start_and_stop_times(self, startTime:typing.Any, stopTime:typing.Any) -> None:
-        """Sets the interval's start and stop epochs as explicit times. Exception is thrown if specified start time is greater than stop time."""
+        """Set the interval's start and stop epochs as explicit times. Exception is thrown if specified start time is greater than stop time."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._set_start_and_stop_times_metadata, startTime, stopTime)
 
     _set_start_epoch_and_duration_metadata = { "name" : "set_start_epoch_and_duration",
             "arg_types" : (agcom.PVOID, agcom.BSTR,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEventSmartEpoch"), agmarshall.BSTR_arg,) }
     def set_start_epoch_and_duration(self, refStartEpoch:"ITimeToolEventSmartEpoch", durationStr:str) -> None:
-        """Sets the interval's start epoch and the interval's duration."""
+        """Set the interval's start epoch and the interval's duration."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._set_start_epoch_and_duration_metadata, refStartEpoch, durationStr)
 
     _set_start_time_and_duration_metadata = { "name" : "set_start_time_and_duration",
             "arg_types" : (agcom.VARIANT, agcom.BSTR,),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.BSTR_arg,) }
     def set_start_time_and_duration(self, epoch:typing.Any, durationStr:str) -> None:
-        """Sets the interval's start time and the interval's duration."""
+        """Set the interval's start time and the interval's duration."""
         return self._intf.invoke(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._set_start_time_and_duration_metadata, epoch, durationStr)
 
 
@@ -12221,14 +12221,14 @@ class ITimeToolEventSmartEpoch(object):
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def set_explicit_time(self, epoch:typing.Any) -> None:
-        """Sets explicit time instant and the smart epoch's state to Explicit."""
+        """Set explicit time instant and the smart epoch's state to Explicit."""
         return self._intf.invoke(ITimeToolEventSmartEpoch._metadata, ITimeToolEventSmartEpoch._set_explicit_time_metadata, epoch)
 
     _set_implicit_time_metadata = { "name" : "set_implicit_time",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITimeToolEvent"),) }
     def set_implicit_time(self, eventEpoch:"ITimeToolEvent") -> None:
-        """Sets the reference event and the smart epoch's state to Implicit."""
+        """Set the reference event and the smart epoch's state to Implicit."""
         return self._intf.invoke(ITimeToolEventSmartEpoch._metadata, ITimeToolEventSmartEpoch._set_implicit_time_metadata, eventEpoch)
 
 
@@ -12276,7 +12276,7 @@ class ITimeToolEventStartStopTime(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_start(self) -> bool:
-        """Indicates whether to use start (true) or stop (false)."""
+        """Indicate whether to use start (true) or stop (false)."""
         return self._intf.get_property(ITimeToolEventStartStopTime._metadata, ITimeToolEventStartStopTime._get_use_start_metadata)
 
     _set_use_start_metadata = { "name" : "use_start",
@@ -13053,49 +13053,49 @@ class ICalculationToolParameterSetFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_PARAMETER_SET_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_PARAMETER_SET_TYPE") -> "ICalculationToolParameterSet":
-        """Creates and registers a parameter set using specified name and description."""
+        """Create and registers a parameter set using specified name and description."""
         return self._intf.invoke(ICalculationToolParameterSetFactory._metadata, ICalculationToolParameterSetFactory._create_metadata, name, description, type, out_arg())
 
     _create_parameter_set_attitude_metadata = { "name" : "create_parameter_set_attitude",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_parameter_set_attitude(self, name:str, description:str) -> "ICalculationToolParameterSet":
-        """Creates a parameter set defined by identifying one set of axes in reference to another."""
+        """Create a parameter set defined by identifying one set of axes in reference to another."""
         return self._intf.invoke(ICalculationToolParameterSetFactory._metadata, ICalculationToolParameterSetFactory._create_parameter_set_attitude_metadata, name, description, out_arg())
 
     _create_parameter_set_ground_trajectory_metadata = { "name" : "create_parameter_set_ground_trajectory",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_parameter_set_ground_trajectory(self, name:str, description:str) -> "ICalculationToolParameterSet":
-        """Creates a parameter set defined by identifying location in reference central body."""
+        """Create a parameter set defined by identifying location in reference central body."""
         return self._intf.invoke(ICalculationToolParameterSetFactory._metadata, ICalculationToolParameterSetFactory._create_parameter_set_ground_trajectory_metadata, name, description, out_arg())
 
     _create_parameter_set_trajectory_metadata = { "name" : "create_parameter_set_trajectory",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_parameter_set_trajectory(self, name:str, description:str) -> "ICalculationToolParameterSet":
-        """Creates a parameter set defined by identifying location in reference coordinate system."""
+        """Create a parameter set defined by identifying location in reference coordinate system."""
         return self._intf.invoke(ICalculationToolParameterSetFactory._metadata, ICalculationToolParameterSetFactory._create_parameter_set_trajectory_metadata, name, description, out_arg())
 
     _create_parameter_set_orbit_metadata = { "name" : "create_parameter_set_orbit",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_parameter_set_orbit(self, name:str, description:str) -> "ICalculationToolParameterSet":
-        """Creates a parameter set defined by identifying orbiting point and its central body."""
+        """Create a parameter set defined by identifying orbiting point and its central body."""
         return self._intf.invoke(ICalculationToolParameterSetFactory._metadata, ICalculationToolParameterSetFactory._create_parameter_set_orbit_metadata, name, description, out_arg())
 
     _create_parameter_set_vector_metadata = { "name" : "create_parameter_set_vector",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_parameter_set_vector(self, name:str, description:str) -> "ICalculationToolParameterSet":
-        """Creates a parameter set defined by identifying vector in reference axes."""
+        """Create a parameter set defined by identifying vector in reference axes."""
         return self._intf.invoke(ICalculationToolParameterSetFactory._metadata, ICalculationToolParameterSetFactory._create_parameter_set_vector_metadata, name, description, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_PARAMETER_SET_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_PARAMETER_SET_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ICalculationToolParameterSetFactory._metadata, ICalculationToolParameterSetFactory._is_type_supported_metadata, eType, out_arg())
 
 
@@ -13488,7 +13488,7 @@ class ITimeToolPruneFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_PRUNE_FILTER),) }
     @property
     def filter_type(self) -> "CRDN_PRUNE_FILTER":
-        """Returns a type of the filter."""
+        """Return a type of the filter."""
         return self._intf.get_property(ITimeToolPruneFilter._metadata, ITimeToolPruneFilter._get_filter_type_metadata)
 
 
@@ -13718,7 +13718,7 @@ class ICalculationToolSamplingBasic(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def method_factory(self) -> "CalculationToolSamplingMethodFactory":
-        """Creates sampling definitions, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples..."""
+        """Create sampling definitions, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples..."""
         return self._intf.get_property(ICalculationToolSamplingBasic._metadata, ICalculationToolSamplingBasic._get_method_factory_metadata)
 
 
@@ -14433,70 +14433,70 @@ class ISpatialAnalysisToolVolumeCalcFactory(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_VOLUME_CALC_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_VOLUME_CALC_TYPE") -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a volume calc using specified name and description."""
+        """Create and registers a volume calc using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_metadata, name, description, type, out_arg())
 
     _create_volume_calc_altitude_metadata = { "name" : "create_volume_calc_altitude",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_altitude(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a altitude to location volume calc type using specified name and description."""
+        """Create and registers a altitude to location volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_altitude_metadata, name, description, out_arg())
 
     _create_volume_calc_angle_off_vector_metadata = { "name" : "create_volume_calc_angle_off_vector",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_angle_off_vector(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a angle to location volume calc type using specified name and description."""
+        """Create and registers a angle to location volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_angle_off_vector_metadata, name, description, out_arg())
 
     _create_volume_calc_file_metadata = { "name" : "create_volume_calc_file",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_file(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a file volume calc type using specified name and description."""
+        """Create and registers a file volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_file_metadata, name, description, out_arg())
 
     _create_volume_calc_from_scalar_metadata = { "name" : "create_volume_calc_from_scalar",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_from_scalar(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a scalar to location volume calc type using specified name and description."""
+        """Create and registers a scalar to location volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_from_scalar_metadata, name, description, out_arg())
 
     _create_volume_calc_solar_intensity_metadata = { "name" : "create_volume_calc_solar_intensity",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_solar_intensity(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a solar intensity volume calc type using specified name and description."""
+        """Create and registers a solar intensity volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_solar_intensity_metadata, name, description, out_arg())
 
     _create_volume_calc_volume_satisfaction_metric_metadata = { "name" : "create_volume_calc_volume_satisfaction_metric",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_volume_satisfaction_metric(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a spatial condition satisfaction metric volume calc type using specified name and description."""
+        """Create and registers a spatial condition satisfaction metric volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_volume_satisfaction_metric_metadata, name, description, out_arg())
 
     _create_volume_calc_range_metadata = { "name" : "create_volume_calc_range",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_range(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a distance to location volume calc type using specified name and description."""
+        """Create and registers a distance to location volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_range_metadata, name, description, out_arg())
 
     _create_volume_calc_delay_range_metadata = { "name" : "create_volume_calc_delay_range",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_calc_delay_range(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeCalc":
-        """Creates and registers a distance to location volume calc type using specified name and description."""
+        """Create and registers a distance to location volume calc type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFactory._metadata, ISpatialAnalysisToolVolumeCalcFactory._create_volume_calc_delay_range_metadata, name, description, out_arg())
 
 
@@ -14549,70 +14549,70 @@ class ISpatialAnalysisToolVolumeFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_VOLUME_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_VOLUME_TYPE") -> "ISpatialAnalysisToolVolume":
-        """Creates and registers a volume using specified name and description."""
+        """Create and registers a volume using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_metadata, name, description, type, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_VOLUME_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_volume_combined_metadata = { "name" : "create_volume_combined",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_combined(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type combined."""
+        """Create a volume type combined."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_combined_metadata, name, description, out_arg())
 
     _create_volume_lighting_metadata = { "name" : "create_volume_lighting",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_lighting(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type lighting."""
+        """Create a volume type lighting."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_lighting_metadata, name, description, out_arg())
 
     _create_volume_over_time_metadata = { "name" : "create_volume_over_time",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_over_time(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type over time."""
+        """Create a volume type over time."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_over_time_metadata, name, description, out_arg())
 
     _create_volume_from_grid_metadata = { "name" : "create_volume_from_grid",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_from_grid(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type from grid."""
+        """Create a volume type from grid."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_from_grid_metadata, name, description, out_arg())
 
     _create_volume_from_calc_metadata = { "name" : "create_volume_from_calc",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_from_calc(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type from calc."""
+        """Create a volume type from calc."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_from_calc_metadata, name, description, out_arg())
 
     _create_volume_from_time_satisfaction_metadata = { "name" : "create_volume_from_time_satisfaction",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_from_time_satisfaction(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type from time satisfaction."""
+        """Create a volume type from time satisfaction."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_from_time_satisfaction_metadata, name, description, out_arg())
 
     _create_volume_from_condition_metadata = { "name" : "create_volume_from_condition",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_from_condition(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type condition."""
+        """Create a volume type condition."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_from_condition_metadata, name, description, out_arg())
 
     _create_volume_inview_metadata = { "name" : "create_volume_inview",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_inview(self, name:str, description:str) -> "ISpatialAnalysisToolVolume":
-        """Creates a volume type Inview."""
+        """Create a volume type Inview."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeFactory._metadata, ISpatialAnalysisToolVolumeFactory._create_volume_inview_metadata, name, description, out_arg())
 
 
@@ -14663,56 +14663,56 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_VOLUME_GRID_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, name:str, description:str, type:"CRDN_VOLUME_GRID_TYPE") -> "ISpatialAnalysisToolVolumeGrid":
-        """Creates and registers a volume grid using specified name and description."""
+        """Create and registers a volume grid using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._create_metadata, name, description, type, out_arg())
 
     _create_volume_grid_cartesian_metadata = { "name" : "create_volume_grid_cartesian",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_grid_cartesian(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
-        """Creates and registers a cartesian volume grid type using specified name and description."""
+        """Create and registers a cartesian volume grid type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._create_volume_grid_cartesian_metadata, name, description, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_GRID_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, eType:"CRDN_VOLUME_GRID_TYPE") -> bool:
-        """Returns whether the specified type is supported."""
+        """Return whether the specified type is supported."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._is_type_supported_metadata, eType, out_arg())
 
     _create_volume_grid_cylindrical_metadata = { "name" : "create_volume_grid_cylindrical",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_grid_cylindrical(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
-        """Creates and registers a cylindrical volume grid type using specified name and description."""
+        """Create and registers a cylindrical volume grid type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._create_volume_grid_cylindrical_metadata, name, description, out_arg())
 
     _create_volume_grid_spherical_metadata = { "name" : "create_volume_grid_spherical",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_grid_spherical(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
-        """Creates and registers a spherical volume grid type using specified name and description."""
+        """Create and registers a spherical volume grid type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._create_volume_grid_spherical_metadata, name, description, out_arg())
 
     _create_volume_grid_constrained_metadata = { "name" : "create_volume_grid_constrained",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_grid_constrained(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
-        """Creates and registers a volume grid of type that can be constrained by conditions using specified name and description."""
+        """Create and registers a volume grid of type that can be constrained by conditions using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._create_volume_grid_constrained_metadata, name, description, out_arg())
 
     _create_volume_grid_lat_lon_altitude_metadata = { "name" : "create_volume_grid_lat_lon_altitude",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_grid_lat_lon_altitude(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
-        """Creates and registers cartographic volume grid type using specified name and description."""
+        """Create and registers cartographic volume grid type using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._create_volume_grid_lat_lon_altitude_metadata, name, description, out_arg())
 
     _create_volume_grid_bearing_altitude_metadata = { "name" : "create_volume_grid_bearing_altitude",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_volume_grid_bearing_altitude(self, name:str, description:str) -> "ISpatialAnalysisToolVolumeGrid":
-        """Creates and registers a volume grid of type surface bearing using specified name and description."""
+        """Create and registers a volume grid of type surface bearing using specified name and description."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeGridFactory._metadata, ISpatialAnalysisToolVolumeGridFactory._create_volume_grid_bearing_altitude_metadata, name, description, out_arg())
 
 
@@ -14720,7 +14720,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4533DEA1-D754-4579-A79D-B5A639C2CD39}",
 agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridFactory"] = ISpatialAnalysisToolVolumeGridFactory
 
 class ISpatialAnalysisToolGridCoordinateDefinition(object):
-    """Defines a set of coordinate values."""
+    """Define a set of coordinate values."""
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14770,14 +14770,14 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def grid_values_method(self) -> "ISpatialAnalysisToolGridValuesMethod":
-        """Sets/Returns the grid values interface."""
+        """Get or set the grid values interface."""
         return self._intf.get_property(ISpatialAnalysisToolGridCoordinateDefinition._metadata, ISpatialAnalysisToolGridCoordinateDefinition._get_grid_values_method_metadata)
 
     _set_grid_values_fixed_step_metadata = { "name" : "set_grid_values_fixed_step",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT_BOOL, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def set_grid_values_fixed_step(self, min:float, max:float, includeMinMax:bool, refValue:float, fixedStep:float) -> "SpatialAnalysisToolGridValuesFixedStep":
-        """Sets grid values type to fixed step."""
+        """Set grid values type to fixed step."""
         return self._intf.invoke(ISpatialAnalysisToolGridCoordinateDefinition._metadata, ISpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_step_metadata, min, max, includeMinMax, refValue, fixedStep, out_arg())
 
     _set_grid_values_fixed_number_of_steps_metadata = { "name" : "set_grid_values_fixed_number_of_steps",
@@ -14791,14 +14791,14 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def set_grid_values_custom(self, values:list) -> "SpatialAnalysisToolGridValuesCustom":
-        """Sets grid values type to custom values."""
+        """Set grid values type to custom values."""
         return self._intf.invoke(ISpatialAnalysisToolGridCoordinateDefinition._metadata, ISpatialAnalysisToolGridCoordinateDefinition._set_grid_values_custom_metadata, values, out_arg())
 
     _set_grid_values_fixed_number_of_steps_ex_metadata = { "name" : "set_grid_values_fixed_number_of_steps_ex",
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IQuantity"), agmarshall.AgInterface_in_arg("IQuantity"), agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def set_grid_values_fixed_number_of_steps_ex(self, min:"IQuantity", max:"IQuantity", numSteps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
-        """Sets grid values type to fixed number of steps with min and max as Quantity"""
+        """Set grid values type to fixed number of steps with min and max as Quantity"""
         return self._intf.invoke(ISpatialAnalysisToolGridCoordinateDefinition._metadata, ISpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_number_of_steps_ex_metadata, min, max, numSteps, out_arg())
 
 
@@ -15237,7 +15237,7 @@ class ITimeToolLightTimeDelay(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_CLOCK_HOST_TYPE),) }
     @property
     def clock_host(self) -> "CRDN_VOLUME_CLOCK_HOST_TYPE":
-        """Indicates whether object1 or object2 of an Access instance holds the clock for Access times."""
+        """Indicate whether object1 or object2 of an Access instance holds the clock for Access times."""
         return self._intf.get_property(ITimeToolLightTimeDelay._metadata, ITimeToolLightTimeDelay._get_clock_host_metadata)
 
     _set_clock_host_metadata = { "name" : "clock_host",
@@ -15252,7 +15252,7 @@ class ITimeToolLightTimeDelay(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_TIME_SENSE_TYPE),) }
     @property
     def time_sense(self) -> "CRDN_VOLUME_TIME_SENSE_TYPE":
-        """Indicates whether apparent position is computed in a transmit or receive sense"""
+        """Indicate whether apparent position is computed in a transmit or receive sense"""
         return self._intf.get_property(ITimeToolLightTimeDelay._metadata, ITimeToolLightTimeDelay._get_time_sense_metadata)
 
     _set_time_sense_metadata = { "name" : "time_sense",
@@ -15963,7 +15963,7 @@ class ISpatialAnalysisToolVolumeCalcFile(object):
             "arg_types" : (),
             "marshallers" : () }
     def reload(self) -> None:
-        """Reloads the volume calc file."""
+        """Reload the volume calc file."""
         return self._intf.invoke(ISpatialAnalysisToolVolumeCalcFile._metadata, ISpatialAnalysisToolVolumeCalcFile._reload_metadata, )
 
 
@@ -16242,7 +16242,7 @@ class ISpatialAnalysisToolVolumeCombined(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_COMBINED_OPERATION_TYPE),) }
     @property
     def combine_operation(self) -> "CRDN_VOLUME_COMBINED_OPERATION_TYPE":
-        """Sets/Returns volume combined operation."""
+        """Get or set volume combined operation."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeCombined._metadata, ISpatialAnalysisToolVolumeCombined._get_combine_operation_metadata)
 
     _set_combine_operation_metadata = { "name" : "combine_operation",
@@ -16257,7 +16257,7 @@ class ISpatialAnalysisToolVolumeCombined(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def condition_count(self) -> int:
-        """Returns the spatial condition vector size."""
+        """Return the spatial condition vector size."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeCombined._metadata, ISpatialAnalysisToolVolumeCombined._get_condition_count_metadata)
 
     _get_all_conditions_metadata = { "name" : "get_all_conditions",
@@ -16571,7 +16571,7 @@ class ISpatialAnalysisToolVolumeFromGrid(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_FROM_GRID_EDGE_TYPE),) }
     @property
     def edge_type(self) -> "CRDN_VOLUME_FROM_GRID_EDGE_TYPE":
-        """Sets/Returns the edge type."""
+        """Get or set the edge type."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeFromGrid._metadata, ISpatialAnalysisToolVolumeFromGrid._get_edge_type_metadata)
 
     _set_edge_type_metadata = { "name" : "edge_type",
@@ -16586,7 +16586,7 @@ class ISpatialAnalysisToolVolumeFromGrid(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def volume_grid(self) -> "ISpatialAnalysisToolVolumeGrid":
-        """Sets/Returns the volume grid for bounding."""
+        """Get or set the volume grid for bounding."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeFromGrid._metadata, ISpatialAnalysisToolVolumeFromGrid._get_volume_grid_metadata)
 
     _set_volume_grid_metadata = { "name" : "volume_grid",
@@ -16753,7 +16753,7 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def along_bearing_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns AlongBearing Coordinates parameters for the surface bearing."""
+        """Return AlongBearing Coordinates parameters for the surface bearing."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridBearingAlt._metadata, ISpatialAnalysisToolVolumeGridBearingAlt._get_along_bearing_coordinates_metadata)
 
     _get_cross_bearing_coordinates_metadata = { "name" : "cross_bearing_coordinates",
@@ -16761,7 +16761,7 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def cross_bearing_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns CrossBearing Coordinates parameters for the surface bearing."""
+        """Return CrossBearing Coordinates parameters for the surface bearing."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridBearingAlt._metadata, ISpatialAnalysisToolVolumeGridBearingAlt._get_cross_bearing_coordinates_metadata)
 
     _get_altitude_coordinates_metadata = { "name" : "altitude_coordinates",
@@ -16769,7 +16769,7 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def altitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns altitude Coordinates parameters for the surface bearing."""
+        """Return altitude Coordinates parameters for the surface bearing."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridBearingAlt._metadata, ISpatialAnalysisToolVolumeGridBearingAlt._get_altitude_coordinates_metadata)
 
     _get_auto_fit_bounds_metadata = { "name" : "auto_fit_bounds",
@@ -16878,7 +16878,7 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def x_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns X Coordinates parameters for the Cartesian system."""
+        """Return X Coordinates parameters for the Cartesian system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridCartesian._metadata, ISpatialAnalysisToolVolumeGridCartesian._get_x_coordinates_metadata)
 
     _get_y_coordinates_metadata = { "name" : "y_coordinates",
@@ -16886,7 +16886,7 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def y_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns Y Coordinates parameters for the Cartesian system."""
+        """Return Y Coordinates parameters for the Cartesian system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridCartesian._metadata, ISpatialAnalysisToolVolumeGridCartesian._get_y_coordinates_metadata)
 
     _get_z_coordinates_metadata = { "name" : "z_coordinates",
@@ -16894,7 +16894,7 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def z_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns Z Coordinates parameters for the Cartesian system."""
+        """Return Z Coordinates parameters for the Cartesian system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridCartesian._metadata, ISpatialAnalysisToolVolumeGridCartesian._get_z_coordinates_metadata)
 
 
@@ -17028,7 +17028,7 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def theta_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns theta Coordinates parameters for the Theta system."""
+        """Return theta Coordinates parameters for the Theta system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridCylindrical._metadata, ISpatialAnalysisToolVolumeGridCylindrical._get_theta_coordinates_metadata)
 
     _get_radius_coordinates_metadata = { "name" : "radius_coordinates",
@@ -17036,7 +17036,7 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def radius_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns radius Coordinates parameters for the Radius system."""
+        """Return radius Coordinates parameters for the Radius system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridCylindrical._metadata, ISpatialAnalysisToolVolumeGridCylindrical._get_radius_coordinates_metadata)
 
     _get_height_coordinates_metadata = { "name" : "height_coordinates",
@@ -17044,7 +17044,7 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def height_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns height Coordinates parameters for the Height system."""
+        """Return height Coordinates parameters for the Height system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridCylindrical._metadata, ISpatialAnalysisToolVolumeGridCylindrical._get_height_coordinates_metadata)
 
 
@@ -17110,7 +17110,7 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def latitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns latitude Coordinates parameters for the Theta system."""
+        """Return latitude Coordinates parameters for the Theta system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridLatLonAlt._metadata, ISpatialAnalysisToolVolumeGridLatLonAlt._get_latitude_coordinates_metadata)
 
     _get_longitude_coordinates_metadata = { "name" : "longitude_coordinates",
@@ -17118,7 +17118,7 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def longitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns longtitude Coordinates parameters for the Radius system."""
+        """Return longtitude Coordinates parameters for the Radius system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridLatLonAlt._metadata, ISpatialAnalysisToolVolumeGridLatLonAlt._get_longitude_coordinates_metadata)
 
     _get_altitude_coordinates_metadata = { "name" : "altitude_coordinates",
@@ -17126,7 +17126,7 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def altitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns altitude parameters for the Height system."""
+        """Return altitude parameters for the Height system."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridLatLonAlt._metadata, ISpatialAnalysisToolVolumeGridLatLonAlt._get_altitude_coordinates_metadata)
 
     _get_auto_fit_bounds_metadata = { "name" : "auto_fit_bounds",
@@ -17313,7 +17313,7 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def azimuth_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns azimuth coordinates parameters for the spherical volume grid."""
+        """Return azimuth coordinates parameters for the spherical volume grid."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridSpherical._metadata, ISpatialAnalysisToolVolumeGridSpherical._get_azimuth_coordinates_metadata)
 
     _get_elevation_coordinates_metadata = { "name" : "elevation_coordinates",
@@ -17321,7 +17321,7 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def elevation_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns elevation coordinates parameters for the spherical volume grid."""
+        """Return elevation coordinates parameters for the spherical volume grid."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridSpherical._metadata, ISpatialAnalysisToolVolumeGridSpherical._get_elevation_coordinates_metadata)
 
     _get_range_coordinates_metadata = { "name" : "range_coordinates",
@@ -17329,7 +17329,7 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def range_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Returns range coordinates parameters for the spherical volume grid."""
+        """Return range coordinates parameters for the spherical volume grid."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridSpherical._metadata, ISpatialAnalysisToolVolumeGridSpherical._get_range_coordinates_metadata)
 
 
@@ -17391,7 +17391,7 @@ class ISpatialAnalysisToolVolumeInview(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def light_time_delay(self) -> "TimeToolLightTimeDelay":
-        """Returns Light Time Delay options parameters."""
+        """Return Light Time Delay options parameters."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeInview._metadata, ISpatialAnalysisToolVolumeInview._get_light_time_delay_metadata)
 
 
@@ -17471,7 +17471,7 @@ class ISpatialAnalysisToolVolumeLighting(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE),) }
     @property
     def lighting_conditions(self) -> "CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE":
-        """Sets/Returns the lighting conditions."""
+        """Get or set the lighting conditions."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeLighting._metadata, ISpatialAnalysisToolVolumeLighting._get_lighting_conditions_metadata)
 
     _set_lighting_conditions_metadata = { "name" : "lighting_conditions",
@@ -17532,7 +17532,7 @@ class ISpatialAnalysisToolVolumeOverTime(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_OVER_TIME_DURATION_TYPE),) }
     @property
     def duration_type(self) -> "CRDN_VOLUME_OVER_TIME_DURATION_TYPE":
-        """Sets/Returns the lighting conditions."""
+        """Get or set the lighting conditions."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeOverTime._metadata, ISpatialAnalysisToolVolumeOverTime._get_duration_type_metadata)
 
     _set_duration_type_metadata = { "name" : "duration_type",
@@ -17547,7 +17547,7 @@ class ISpatialAnalysisToolVolumeOverTime(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def reference_volume(self) -> "ISpatialAnalysisToolVolume":
-        """Sets/Returns the reference volume."""
+        """Get or set the reference volume."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeOverTime._metadata, ISpatialAnalysisToolVolumeOverTime._get_reference_volume_metadata)
 
     _set_reference_volume_metadata = { "name" : "reference_volume",
@@ -17607,7 +17607,7 @@ agcls.AgClassCatalog.add_catalog_entry("{8CE9DE37-1A5E-43AD-B191-9D21722B64D8}",
 agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeOverTime"] = ISpatialAnalysisToolVolumeOverTime
 
 class ITimeToolTimeProperties(object):
-    """Defines methods to compute time properties such as availability and special times."""
+    """Define methods to compute time properties such as availability and special times."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17643,7 +17643,7 @@ class ITimeToolTimeProperties(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_availability(self) -> "TimeToolIntervalCollection":
-        """Returns a collection of availability intervals."""
+        """Return a collection of availability intervals."""
         return self._intf.invoke(ITimeToolTimeProperties._metadata, ITimeToolTimeProperties._get_availability_metadata, out_arg())
 
 
@@ -17651,7 +17651,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E95B72AA-F8DE-4122-AC60-54E46A208E19}",
 agcls.AgTypeNameMap["ITimeToolTimeProperties"] = ITimeToolTimeProperties
 
 class IAnalysisWorkbenchTypeInfo(object):
-    """Provides information about the type of VGT components."""
+    """Provide information about the type of VGT components."""
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17751,7 +17751,7 @@ class IAnalysisWorkbenchRefTo(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def path(self) -> str:
-        """Returns a path to the referenced VGT component."""
+        """Return a path to the referenced VGT component."""
         return self._intf.get_property(IAnalysisWorkbenchRefTo._metadata, IAnalysisWorkbenchRefTo._get_path_metadata)
 
 
@@ -17796,7 +17796,7 @@ class IAnalysisWorkbenchTemplate(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def class_name(self) -> str:
-        """Returns a class name (i.e. 'Satellite', 'Facility', etc.)."""
+        """Return a class name (i.e. 'Satellite', 'Facility', etc.)."""
         return self._intf.get_property(IAnalysisWorkbenchTemplate._metadata, IAnalysisWorkbenchTemplate._get_class_name_metadata)
 
 
@@ -17842,7 +17842,7 @@ class IAnalysisWorkbenchInstance(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def instance_path(self) -> str:
-        """Returns a path to the parent object that owns the VGT component."""
+        """Return a path to the parent object that owns the VGT component."""
         return self._intf.get_property(IAnalysisWorkbenchInstance._metadata, IAnalysisWorkbenchInstance._get_instance_path_metadata)
 
     _get_template_metadata = { "name" : "template",
@@ -17850,7 +17850,7 @@ class IAnalysisWorkbenchInstance(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def template(self) -> "IAnalysisWorkbenchComponent":
-        """Returns a template object the VGT component was created from or null if the VGT component was not created from a template."""
+        """Return a template object the VGT component was created from or null if the VGT component was not created from a template."""
         return self._intf.get_property(IAnalysisWorkbenchInstance._metadata, IAnalysisWorkbenchInstance._get_template_metadata)
 
 
@@ -17897,28 +17897,28 @@ class IVectorGeometryToolPointRefTo(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_path(self, path:str) -> None:
-        """Sets a new point."""
+        """Set a new point."""
         return self._intf.invoke(IVectorGeometryToolPointRefTo._metadata, IVectorGeometryToolPointRefTo._set_path_metadata, path)
 
     _set_point_metadata = { "name" : "set_point",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"),) }
     def set_point(self, point:"IVectorGeometryToolPoint") -> None:
-        """Sets a new point."""
+        """Set a new point."""
         return self._intf.invoke(IVectorGeometryToolPointRefTo._metadata, IVectorGeometryToolPointRefTo._set_point_metadata, point)
 
     _get_point_metadata = { "name" : "get_point",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_point(self) -> "IVectorGeometryToolPoint":
-        """Returns the actual point object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        """Return the actual point object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(IVectorGeometryToolPointRefTo._metadata, IVectorGeometryToolPointRefTo._get_point_metadata, out_arg())
 
     _has_cyclic_dependency_metadata = { "name" : "has_cyclic_dependency",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.VARIANT_BOOL_arg,) }
     def has_cyclic_dependency(self, point:"IVectorGeometryToolPoint") -> bool:
-        """Tests whether the input component and the target component form a cyclic dependency."""
+        """Test whether the input component and the target component form a cyclic dependency."""
         return self._intf.invoke(IVectorGeometryToolPointRefTo._metadata, IVectorGeometryToolPointRefTo._has_cyclic_dependency_metadata, point, out_arg())
 
 
@@ -17965,28 +17965,28 @@ class IVectorGeometryToolVectorRefTo(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_path(self, path:str) -> None:
-        """Sets a new vector."""
+        """Set a new vector."""
         return self._intf.invoke(IVectorGeometryToolVectorRefTo._metadata, IVectorGeometryToolVectorRefTo._set_path_metadata, path)
 
     _set_vector_metadata = { "name" : "set_vector",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"),) }
     def set_vector(self, vector:"IVectorGeometryToolVector") -> None:
-        """Sets a new vector."""
+        """Set a new vector."""
         return self._intf.invoke(IVectorGeometryToolVectorRefTo._metadata, IVectorGeometryToolVectorRefTo._set_vector_metadata, vector)
 
     _get_vector_metadata = { "name" : "get_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_vector(self) -> "IVectorGeometryToolVector":
-        """Returns the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        """Return the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(IVectorGeometryToolVectorRefTo._metadata, IVectorGeometryToolVectorRefTo._get_vector_metadata, out_arg())
 
     _has_cyclic_dependency_metadata = { "name" : "has_cyclic_dependency",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"), agmarshall.VARIANT_BOOL_arg,) }
     def has_cyclic_dependency(self, vector:"IVectorGeometryToolVector") -> bool:
-        """Tests whether the input component and the target component form a cyclic dependency."""
+        """Test whether the input component and the target component form a cyclic dependency."""
         return self._intf.invoke(IVectorGeometryToolVectorRefTo._metadata, IVectorGeometryToolVectorRefTo._has_cyclic_dependency_metadata, vector, out_arg())
 
 
@@ -18033,28 +18033,28 @@ class IVectorGeometryToolAxesRefTo(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_path(self, path:str) -> None:
-        """Sets a new axes."""
+        """Set a new axes."""
         return self._intf.invoke(IVectorGeometryToolAxesRefTo._metadata, IVectorGeometryToolAxesRefTo._set_path_metadata, path)
 
     _set_axes_metadata = { "name" : "set_axes",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"),) }
     def set_axes(self, axes:"IVectorGeometryToolAxes") -> None:
-        """Sets a new axes."""
+        """Set a new axes."""
         return self._intf.invoke(IVectorGeometryToolAxesRefTo._metadata, IVectorGeometryToolAxesRefTo._set_axes_metadata, axes)
 
     _get_axes_metadata = { "name" : "get_axes",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_axes(self) -> "IVectorGeometryToolAxes":
-        """Returns the actual axes object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        """Return the actual axes object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(IVectorGeometryToolAxesRefTo._metadata, IVectorGeometryToolAxesRefTo._get_axes_metadata, out_arg())
 
     _has_cyclic_dependency_metadata = { "name" : "has_cyclic_dependency",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.VARIANT_BOOL_arg,) }
     def has_cyclic_dependency(self, axes:"IVectorGeometryToolAxes") -> bool:
-        """Tests whether the input component and the target component form a cyclic dependency."""
+        """Test whether the input component and the target component form a cyclic dependency."""
         return self._intf.invoke(IVectorGeometryToolAxesRefTo._metadata, IVectorGeometryToolAxesRefTo._has_cyclic_dependency_metadata, axes, out_arg())
 
 
@@ -18101,28 +18101,28 @@ class IVectorGeometryToolAngleRefTo(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_path(self, path:str) -> None:
-        """Sets a new angle."""
+        """Set a new angle."""
         return self._intf.invoke(IVectorGeometryToolAngleRefTo._metadata, IVectorGeometryToolAngleRefTo._set_path_metadata, path)
 
     _set_angle_metadata = { "name" : "set_angle",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAngle"),) }
     def set_angle(self, angle:"IVectorGeometryToolAngle") -> None:
-        """Sets a new angle."""
+        """Set a new angle."""
         return self._intf.invoke(IVectorGeometryToolAngleRefTo._metadata, IVectorGeometryToolAngleRefTo._set_angle_metadata, angle)
 
     _get_angle_metadata = { "name" : "get_angle",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_angle(self) -> "IVectorGeometryToolAngle":
-        """Returns the actual angle object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        """Return the actual angle object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(IVectorGeometryToolAngleRefTo._metadata, IVectorGeometryToolAngleRefTo._get_angle_metadata, out_arg())
 
     _has_cyclic_dependency_metadata = { "name" : "has_cyclic_dependency",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAngle"), agmarshall.VARIANT_BOOL_arg,) }
     def has_cyclic_dependency(self, angle:"IVectorGeometryToolAngle") -> bool:
-        """Tests whether the input component and the target component form a cyclic dependency."""
+        """Test whether the input component and the target component form a cyclic dependency."""
         return self._intf.invoke(IVectorGeometryToolAngleRefTo._metadata, IVectorGeometryToolAngleRefTo._has_cyclic_dependency_metadata, angle, out_arg())
 
 
@@ -18169,28 +18169,28 @@ class IVectorGeometryToolSystemRefTo(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_path(self, path:str) -> None:
-        """Sets a new system."""
+        """Set a new system."""
         return self._intf.invoke(IVectorGeometryToolSystemRefTo._metadata, IVectorGeometryToolSystemRefTo._set_path_metadata, path)
 
     _set_system_metadata = { "name" : "set_system",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"),) }
     def set_system(self, system:"IVectorGeometryToolSystem") -> None:
-        """Sets a new system."""
+        """Set a new system."""
         return self._intf.invoke(IVectorGeometryToolSystemRefTo._metadata, IVectorGeometryToolSystemRefTo._set_system_metadata, system)
 
     _get_system_metadata = { "name" : "get_system",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_system(self) -> "IVectorGeometryToolSystem":
-        """Returns the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        """Return the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(IVectorGeometryToolSystemRefTo._metadata, IVectorGeometryToolSystemRefTo._get_system_metadata, out_arg())
 
     _has_cyclic_dependency_metadata = { "name" : "has_cyclic_dependency",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.VARIANT_BOOL_arg,) }
     def has_cyclic_dependency(self, system:"IVectorGeometryToolSystem") -> bool:
-        """Tests whether the input component and the target component form a cyclic dependency."""
+        """Test whether the input component and the target component form a cyclic dependency."""
         return self._intf.invoke(IVectorGeometryToolSystemRefTo._metadata, IVectorGeometryToolSystemRefTo._has_cyclic_dependency_metadata, system, out_arg())
 
 
@@ -18237,28 +18237,28 @@ class IVectorGeometryToolPlaneRefTo(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_path(self, path:str) -> None:
-        """Sets a new plane using a specified path."""
+        """Set a new plane using a specified path."""
         return self._intf.invoke(IVectorGeometryToolPlaneRefTo._metadata, IVectorGeometryToolPlaneRefTo._set_path_metadata, path)
 
     _set_plane_metadata = { "name" : "set_plane",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPlane"),) }
     def set_plane(self, plane:"IVectorGeometryToolPlane") -> None:
-        """Sets a new plane."""
+        """Set a new plane."""
         return self._intf.invoke(IVectorGeometryToolPlaneRefTo._metadata, IVectorGeometryToolPlaneRefTo._set_plane_metadata, plane)
 
     _get_plane_metadata = { "name" : "get_plane",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_plane(self) -> "IVectorGeometryToolPlane":
-        """Returns the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        """Return the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(IVectorGeometryToolPlaneRefTo._metadata, IVectorGeometryToolPlaneRefTo._get_plane_metadata, out_arg())
 
     _has_cyclic_dependency_metadata = { "name" : "has_cyclic_dependency",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPlane"), agmarshall.VARIANT_BOOL_arg,) }
     def has_cyclic_dependency(self, plane:"IVectorGeometryToolPlane") -> bool:
-        """Tests whether the input component and the target component form a cyclic dependency."""
+        """Test whether the input component and the target component form a cyclic dependency."""
         return self._intf.invoke(IVectorGeometryToolPlaneRefTo._metadata, IVectorGeometryToolPlaneRefTo._has_cyclic_dependency_metadata, plane, out_arg())
 
 
@@ -18266,7 +18266,7 @@ agcls.AgClassCatalog.add_catalog_entry("{CE3D70F2-61E0-4A23-803F-A734005DC36D}",
 agcls.AgTypeNameMap["IVectorGeometryToolPlaneRefTo"] = IVectorGeometryToolPlaneRefTo
 
 class IVectorGeometryToolAxesLabels(object):
-    """Allows configuring the VGT axes labels."""
+    """Allow configuring the VGT axes labels."""
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18353,7 +18353,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0CD79528-D932-4473-9CC4-0BF5C936A6CD}",
 agcls.AgTypeNameMap["IVectorGeometryToolAxesLabels"] = IVectorGeometryToolAxesLabels
 
 class IVectorGeometryToolPlaneLabels(object):
-    """Allows configuring the X and Y axes labels."""
+    """Allow configuring the X and Y axes labels."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19266,7 +19266,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B08F0A95-4B11-4586-81C4-4EFCA4DE27DB}",
 agcls.AgTypeNameMap["IVectorGeometryToolAxesLagrangeLibration"] = IVectorGeometryToolAxesLagrangeLibration
 
 class IVectorGeometryToolAxesCommonTasks(object):
-    """Provides methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+    """Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19305,28 +19305,28 @@ class IVectorGeometryToolAxesCommonTasks(object):
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def create_topocentric_axes_quaternion(self, originPoint:"IVectorGeometryToolPoint", qx:float, qy:float, qz:float, qs:float) -> "VectorGeometryToolAxesFixed":
-        """Creates non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation."""
+        """Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation."""
         return self._intf.invoke(IVectorGeometryToolAxesCommonTasks._metadata, IVectorGeometryToolAxesCommonTasks._create_topocentric_axes_quaternion_metadata, originPoint, qx, qy, qz, qs, out_arg())
 
     _create_topocentric_axes_euler_angles_metadata = { "name" : "create_topocentric_axes_euler_angles",
             "arg_types" : (agcom.PVOID, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgEnum_arg(EULER_ORIENTATION_SEQUENCE), agmarshall.VARIANT_arg, agmarshall.VARIANT_arg, agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def create_topocentric_axes_euler_angles(self, originPoint:"IVectorGeometryToolPoint", sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> "VectorGeometryToolAxesFixed":
-        """Creates non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation."""
+        """Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation."""
         return self._intf.invoke(IVectorGeometryToolAxesCommonTasks._metadata, IVectorGeometryToolAxesCommonTasks._create_topocentric_axes_euler_angles_metadata, originPoint, sequence, a, b, c, out_arg())
 
     _create_fixed_metadata = { "name" : "create_fixed",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def create_fixed(self, referenceAxes:"IVectorGeometryToolAxes") -> "VectorGeometryToolAxesFixed":
-        """Creates non-persistent fixed axes based on specified axes."""
+        """Create non-persistent fixed axes based on specified axes."""
         return self._intf.invoke(IVectorGeometryToolAxesCommonTasks._metadata, IVectorGeometryToolAxesCommonTasks._create_fixed_metadata, referenceAxes, out_arg())
 
     _sample_metadata = { "name" : "sample",
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def sample(self, axes:"IVectorGeometryToolAxes", referenceAxes:"IVectorGeometryToolAxes", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolAxesSamplingResult":
-        """Computes and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters."""
+        """Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters."""
         return self._intf.invoke(IVectorGeometryToolAxesCommonTasks._metadata, IVectorGeometryToolAxesCommonTasks._sample_metadata, axes, referenceAxes, intervals, minStep, maxStep, targetRate, out_arg())
 
 
@@ -19840,7 +19840,7 @@ class IVectorGeometryToolAngleToPlane(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_SIGNED_ANGLE_TYPE),) }
     @property
     def signed(self) -> "CRDN_SIGNED_ANGLE_TYPE":
-        """Controls whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive."""
+        """Control whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive."""
         return self._intf.get_property(IVectorGeometryToolAngleToPlane._metadata, IVectorGeometryToolAngleToPlane._get_signed_metadata)
 
     _set_signed_metadata = { "name" : "signed",
@@ -21070,7 +21070,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A90D9C70-1E09-4F42-8E36-4EECD2CAD722}",
 agcls.AgTypeNameMap["IVectorGeometryToolPointLagrangeLibration"] = IVectorGeometryToolPointLagrangeLibration
 
 class IVectorGeometryToolPointCommonTasks(object):
-    """Provides methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+    """Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21108,21 +21108,21 @@ class IVectorGeometryToolPointCommonTasks(object):
             "arg_types" : (agcom.PVOID, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.VARIANT_arg, agmarshall.VARIANT_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def create_fixed_in_system_cartographic(self, referenceSystem:"IVectorGeometryToolSystem", latitude:typing.Any, longitude:typing.Any, altitude:float) -> "VectorGeometryToolPointFixedInSystem":
-        """Creates a non-persistent point fixed in a specified reference system."""
+        """Create a non-persistent point fixed in a specified reference system."""
         return self._intf.invoke(IVectorGeometryToolPointCommonTasks._metadata, IVectorGeometryToolPointCommonTasks._create_fixed_in_system_cartographic_metadata, referenceSystem, latitude, longitude, altitude, out_arg())
 
     _create_fixed_in_system_cartesian_metadata = { "name" : "create_fixed_in_system_cartesian",
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def create_fixed_in_system_cartesian(self, referenceSystem:"IVectorGeometryToolSystem", x:float, y:float, z:float) -> "VectorGeometryToolPointFixedInSystem":
-        """Creates a non-persistent point fixed in a specified reference system."""
+        """Create a non-persistent point fixed in a specified reference system."""
         return self._intf.invoke(IVectorGeometryToolPointCommonTasks._metadata, IVectorGeometryToolPointCommonTasks._create_fixed_in_system_cartesian_metadata, referenceSystem, x, y, z, out_arg())
 
     _sample_metadata = { "name" : "sample",
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def sample(self, point:"IVectorGeometryToolPoint", referenceSystem:"IVectorGeometryToolSystem", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolPointSamplingResult":
-        """Computes and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters."""
+        """Compute and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters."""
         return self._intf.invoke(IVectorGeometryToolPointCommonTasks._metadata, IVectorGeometryToolPointCommonTasks._sample_metadata, point, referenceSystem, intervals, minStep, maxStep, targetRate, out_arg())
 
 
@@ -21843,7 +21843,7 @@ agcls.AgClassCatalog.add_catalog_entry("{7D36B32A-FA96-4F7E-BA7C-99C2E90671C2}",
 agcls.AgTypeNameMap["IAnalysisWorkbenchLLAPosition"] = IAnalysisWorkbenchLLAPosition
 
 class IVectorGeometryToolSystemCommonTasks(object):
-    """Provides methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+    """Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21880,14 +21880,14 @@ class IVectorGeometryToolSystemCommonTasks(object):
             "arg_types" : (agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.VARIANT_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def create_east_north_up_cartographic(self, latitude:typing.Any, longitude:typing.Any, altitude:float) -> "VectorGeometryToolSystemAssembled":
-        """Creates a non-persistent East-North-Up (ENU) reference frame with the origin at the specified geodetic location."""
+        """Create a non-persistent East-North-Up (ENU) reference frame with the origin at the specified geodetic location."""
         return self._intf.invoke(IVectorGeometryToolSystemCommonTasks._metadata, IVectorGeometryToolSystemCommonTasks._create_east_north_up_cartographic_metadata, latitude, longitude, altitude, out_arg())
 
     _create_assembled_metadata = { "name" : "create_assembled",
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_out_arg,) }
     def create_assembled(self, originPoint:"IVectorGeometryToolPoint", referenceAxes:"IVectorGeometryToolAxes") -> "VectorGeometryToolSystemAssembled":
-        """Creates a non-persistent system component assembled from an origin point and a set of reference axes."""
+        """Create a non-persistent system component assembled from an origin point and a set of reference axes."""
         return self._intf.invoke(IVectorGeometryToolSystemCommonTasks._metadata, IVectorGeometryToolSystemCommonTasks._create_assembled_metadata, originPoint, referenceAxes, out_arg())
 
 
@@ -22382,7 +22382,7 @@ class IVectorGeometryToolVectorCross(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def dimension(self) -> str:
-        """Returns a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc."""
+        """Return a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc."""
         return self._intf.get_property(IVectorGeometryToolVectorCross._metadata, IVectorGeometryToolVectorCross._get_dimension_metadata)
 
     _set_dimension_metadata = { "name" : "dimension",
@@ -22625,7 +22625,7 @@ class IVectorGeometryToolVectorDisplacement(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def apparent(self) -> bool:
-        """Controls whether to take a light speed delay into account."""
+        """Control whether to take a light speed delay into account."""
         return self._intf.get_property(IVectorGeometryToolVectorDisplacement._metadata, IVectorGeometryToolVectorDisplacement._get_apparent_metadata)
 
     _set_apparent_metadata = { "name" : "apparent",
@@ -22903,7 +22903,7 @@ class IVectorGeometryToolVectorScaled(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_normalized(self) -> bool:
-        """Controls whether to convert the reference vector to a unit vector before scalling."""
+        """Control whether to convert the reference vector to a unit vector before scalling."""
         return self._intf.get_property(IVectorGeometryToolVectorScaled._metadata, IVectorGeometryToolVectorScaled._get_is_normalized_metadata)
 
     _set_is_normalized_metadata = { "name" : "is_normalized",
@@ -23385,7 +23385,7 @@ class IVectorGeometryToolVectorReflection(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def allow_reflections_on_backside(self) -> bool:
-        """Controls whether to reflect the indicent vector on both sides of the plane."""
+        """Control whether to reflect the indicent vector on both sides of the plane."""
         return self._intf.get_property(IVectorGeometryToolVectorReflection._metadata, IVectorGeometryToolVectorReflection._get_allow_reflections_on_backside_metadata)
 
     _set_allow_reflections_on_backside_metadata = { "name" : "allow_reflections_on_backside",
@@ -23768,7 +23768,7 @@ class IVectorGeometryToolVectorLinearCombination(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE),) }
     @property
     def output_dimension_inheritance(self) -> "CRDN_DIMENSION_INHERITANCE":
-        """Determines whether the output dimension is inherited or explicitly specified using OutputDimension."""
+        """Determine whether the output dimension is inherited or explicitly specified using OutputDimension."""
         return self._intf.get_property(IVectorGeometryToolVectorLinearCombination._metadata, IVectorGeometryToolVectorLinearCombination._get_output_dimension_inheritance_metadata)
 
     _set_output_dimension_inheritance_metadata = { "name" : "output_dimension_inheritance",
@@ -24078,7 +24078,7 @@ class IVectorGeometryToolVectorScalarLinearCombination(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE),) }
     @property
     def output_dimension_inheritance(self) -> "CRDN_DIMENSION_INHERITANCE":
-        """Determines whether the output dimension is inherited or explicitly specified using OutputDimension."""
+        """Determine whether the output dimension is inherited or explicitly specified using OutputDimension."""
         return self._intf.get_property(IVectorGeometryToolVectorScalarLinearCombination._metadata, IVectorGeometryToolVectorScalarLinearCombination._get_output_dimension_inheritance_metadata)
 
     _set_output_dimension_inheritance_metadata = { "name" : "output_dimension_inheritance",
@@ -24565,21 +24565,21 @@ class IVectorGeometryToolVectorFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, vectorName:str, description:str, vectorType:"VECTOR_GEOMETRY_TOOL_VECTOR_TYPE") -> "IVectorGeometryToolVector":
-        """Creates a VGT vector using specified name, description and type."""
+        """Create a VGT vector using specified name, description and type."""
         return self._intf.invoke(IVectorGeometryToolVectorFactory._metadata, IVectorGeometryToolVectorFactory._create_metadata, vectorName, description, vectorType, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_VECTOR_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_VECTOR_TYPE") -> bool:
-        """Returns true if the type is supported."""
+        """Return true if the type is supported."""
         return self._intf.invoke(IVectorGeometryToolVectorFactory._metadata, IVectorGeometryToolVectorFactory._is_type_supported_metadata, type, out_arg())
 
     _create_displacement_vector_metadata = { "name" : "create_displacement_vector",
             "arg_types" : (agcom.BSTR, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_out_arg,) }
     def create_displacement_vector(self, vectorName:str, originPoint:"IVectorGeometryToolPoint", destPoint:"IVectorGeometryToolPoint") -> "VectorGeometryToolVectorDisplacement":
-        """Creates a displacement vector."""
+        """Create a displacement vector."""
         return self._intf.invoke(IVectorGeometryToolVectorFactory._metadata, IVectorGeometryToolVectorFactory._create_displacement_vector_metadata, vectorName, originPoint, destPoint, out_arg())
 
     _get_available_vector_plugin_display_names_metadata = { "name" : "available_vector_plugin_display_names",
@@ -24601,7 +24601,7 @@ class IVectorGeometryToolVectorFactory(object):
             "arg_types" : (agcom.BSTR, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"), agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"), agmarshall.AgInterface_out_arg,) }
     def create_cross_product_vector(self, vectorName:str, vectorA:"IVectorGeometryToolVector", vectorB:"IVectorGeometryToolVector") -> "VectorGeometryToolVectorCross":
-        """Creates a cross product C = A x B."""
+        """Create a cross product C = A x B."""
         return self._intf.invoke(IVectorGeometryToolVectorFactory._metadata, IVectorGeometryToolVectorFactory._create_cross_product_vector_metadata, vectorName, vectorA, vectorB, out_arg())
 
 
@@ -24648,14 +24648,14 @@ class IVectorGeometryToolAxesFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_AXES_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, axesName:str, description:str, axesType:"VECTOR_GEOMETRY_TOOL_AXES_TYPE") -> "IVectorGeometryToolAxes":
-        """Creates a VGT axes using specified name, description and type."""
+        """Create a VGT axes using specified name, description and type."""
         return self._intf.invoke(IVectorGeometryToolAxesFactory._metadata, IVectorGeometryToolAxesFactory._create_metadata, axesName, description, axesType, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_AXES_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_AXES_TYPE") -> bool:
-        """Returns true if the type is supported."""
+        """Return true if the type is supported."""
         return self._intf.invoke(IVectorGeometryToolAxesFactory._metadata, IVectorGeometryToolAxesFactory._is_type_supported_metadata, type, out_arg())
 
     _get_available_axes_plugin_display_names_metadata = { "name" : "available_axes_plugin_display_names",
@@ -24715,14 +24715,14 @@ class IVectorGeometryToolSystemFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CRDN_SYSTEM_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, systemName:str, description:str, systemType:"CRDN_SYSTEM_TYPE") -> "IVectorGeometryToolSystem":
-        """Creates a VGT system using the specified name, description and type."""
+        """Create a VGT system using the specified name, description and type."""
         return self._intf.invoke(IVectorGeometryToolSystemFactory._metadata, IVectorGeometryToolSystemFactory._create_metadata, systemName, description, systemType, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_SYSTEM_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, type:"CRDN_SYSTEM_TYPE") -> bool:
-        """Returns true if the specified system type is supported."""
+        """Return true if the specified system type is supported."""
         return self._intf.invoke(IVectorGeometryToolSystemFactory._metadata, IVectorGeometryToolSystemFactory._is_type_supported_metadata, type, out_arg())
 
 
@@ -24770,14 +24770,14 @@ class IVectorGeometryToolPointFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, pointName:str, description:str, pointType:"VECTOR_GEOMETRY_TOOL_POINT_TYPE") -> "IVectorGeometryToolPoint":
-        """Creates a VGT point using the specified name, description and type."""
+        """Create a VGT point using the specified name, description and type."""
         return self._intf.invoke(IVectorGeometryToolPointFactory._metadata, IVectorGeometryToolPointFactory._create_metadata, pointName, description, pointType, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_POINT_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_POINT_TYPE") -> bool:
-        """Returns true if the type is supported."""
+        """Return true if the type is supported."""
         return self._intf.invoke(IVectorGeometryToolPointFactory._metadata, IVectorGeometryToolPointFactory._is_type_supported_metadata, type, out_arg())
 
     _get_available_point_plugin_display_names_metadata = { "name" : "available_point_plugin_display_names",
@@ -24799,7 +24799,7 @@ class IVectorGeometryToolPointFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_arg, agmarshall.VARIANT_arg, agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(CRDN_REFERENCE_SHAPE_TYPE), agmarshall.AgInterface_out_arg,) }
     def create_point_fixed_on_central_body(self, pointName:str, description:str, longitude:typing.Any, latitude:typing.Any, altitude:float, referenceShape:"CRDN_REFERENCE_SHAPE_TYPE") -> "IVectorGeometryToolPoint":
-        """Creates a point fixed on a central body."""
+        """Create a point fixed on a central body."""
         return self._intf.invoke(IVectorGeometryToolPointFactory._metadata, IVectorGeometryToolPointFactory._create_point_fixed_on_central_body_metadata, pointName, description, longitude, latitude, altitude, referenceShape, out_arg())
 
 
@@ -24844,14 +24844,14 @@ class IVectorGeometryToolPlaneFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_PLANE_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, planeName:str, description:str, planeType:"VECTOR_GEOMETRY_TOOL_PLANE_TYPE") -> "IVectorGeometryToolPlane":
-        """Creates a VGT plane using the specified name, description and type."""
+        """Create a VGT plane using the specified name, description and type."""
         return self._intf.invoke(IVectorGeometryToolPlaneFactory._metadata, IVectorGeometryToolPlaneFactory._create_metadata, planeName, description, planeType, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_PLANE_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_PLANE_TYPE") -> bool:
-        """Returns true if the type is supported."""
+        """Return true if the type is supported."""
         return self._intf.invoke(IVectorGeometryToolPlaneFactory._metadata, IVectorGeometryToolPlaneFactory._is_type_supported_metadata, type, out_arg())
 
 
@@ -24896,14 +24896,14 @@ class IVectorGeometryToolAngleFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_ANGLE_TYPE), agmarshall.AgInterface_out_arg,) }
     def create(self, angleName:str, description:str, angleType:"VECTOR_GEOMETRY_TOOL_ANGLE_TYPE") -> "IVectorGeometryToolAngle":
-        """Creates a VGT angle using specified name, description and type."""
+        """Create a VGT angle using specified name, description and type."""
         return self._intf.invoke(IVectorGeometryToolAngleFactory._metadata, IVectorGeometryToolAngleFactory._create_metadata, angleName, description, angleType, out_arg())
 
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(VECTOR_GEOMETRY_TOOL_ANGLE_TYPE), agmarshall.VARIANT_BOOL_arg,) }
     def is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_ANGLE_TYPE") -> bool:
-        """Returns true if the type is supported."""
+        """Return true if the type is supported."""
         return self._intf.invoke(IVectorGeometryToolAngleFactory._metadata, IVectorGeometryToolAngleFactory._is_type_supported_metadata, type, out_arg())
 
 
@@ -24967,7 +24967,7 @@ class IVectorGeometryToolVectorGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, vectorName:str) -> None:
-        """Removes a specified vector."""
+        """Remove a specified vector."""
         return self._intf.invoke(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._remove_metadata, vectorName)
 
     _get_context_metadata = { "name" : "context",
@@ -24975,14 +24975,14 @@ class IVectorGeometryToolVectorGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -24990,7 +24990,7 @@ class IVectorGeometryToolVectorGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -24998,14 +24998,14 @@ class IVectorGeometryToolVectorGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "VectorGeometryToolVectorFactory":
-        """Returns a Factory object used to create custom vectors."""
+        """Return a Factory object used to create custom vectors."""
         return self._intf.get_property(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolVector":
-        """Returns a vector by name or at a specified position."""
+        """Return a vector by name or at a specified position."""
         return self._intf.invoke(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -25013,21 +25013,21 @@ class IVectorGeometryToolVectorGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IVectorGeometryToolVector":
-        """Retrieves a vector from the collection by index."""
+        """Retrieve a vector from the collection by index."""
         return self._intf.invoke(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IVectorGeometryToolVector":
-        """Retrieves a vector from the collection by name."""
+        """Retrieve a vector from the collection by name."""
         return self._intf.invoke(IVectorGeometryToolVectorGroup._metadata, IVectorGeometryToolVectorGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -25095,7 +25095,7 @@ class IVectorGeometryToolPointGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, pointName:str) -> None:
-        """Removes a specified point by name."""
+        """Remove a specified point by name."""
         return self._intf.invoke(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._remove_metadata, pointName)
 
     _get_context_metadata = { "name" : "context",
@@ -25103,14 +25103,14 @@ class IVectorGeometryToolPointGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -25118,7 +25118,7 @@ class IVectorGeometryToolPointGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -25126,14 +25126,14 @@ class IVectorGeometryToolPointGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "VectorGeometryToolPointFactory":
-        """Returns a Factory object used to create custom points."""
+        """Return a Factory object used to create custom points."""
         return self._intf.get_property(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolPoint":
-        """Returns a point by name or at a specified position."""
+        """Return a point by name or at a specified position."""
         return self._intf.invoke(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -25141,7 +25141,7 @@ class IVectorGeometryToolPointGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._get__NewEnum_metadata)
 
     _get_common_tasks_metadata = { "name" : "common_tasks",
@@ -25149,21 +25149,21 @@ class IVectorGeometryToolPointGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def common_tasks(self) -> "VectorGeometryToolPointCommonTasks":
-        """Provides access to common tasks that allow users quickly carry out tasks such as creating known point types, etc."""
+        """Provide access to common tasks that allow users quickly carry out tasks such as creating known point types, etc."""
         return self._intf.get_property(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._get_common_tasks_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IVectorGeometryToolPoint":
-        """Retrieves a point from the collection by index."""
+        """Retrieve a point from the collection by index."""
         return self._intf.invoke(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IVectorGeometryToolPoint":
-        """Retrieves a point from the collection by name."""
+        """Retrieve a point from the collection by name."""
         return self._intf.invoke(IVectorGeometryToolPointGroup._metadata, IVectorGeometryToolPointGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -25230,7 +25230,7 @@ class IVectorGeometryToolAngleGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, angleName:str) -> None:
-        """Removes a specified Angle."""
+        """Remove a specified Angle."""
         return self._intf.invoke(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._remove_metadata, angleName)
 
     _get_context_metadata = { "name" : "context",
@@ -25238,14 +25238,14 @@ class IVectorGeometryToolAngleGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -25253,7 +25253,7 @@ class IVectorGeometryToolAngleGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -25261,14 +25261,14 @@ class IVectorGeometryToolAngleGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "VectorGeometryToolAngleFactory":
-        """Returns a Factory object used to create custom angles."""
+        """Return a Factory object used to create custom angles."""
         return self._intf.get_property(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolAngle":
-        """Returns an angle by name or at a specified position."""
+        """Return an angle by name or at a specified position."""
         return self._intf.invoke(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -25276,21 +25276,21 @@ class IVectorGeometryToolAngleGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IVectorGeometryToolAngle":
-        """Retrieves an angle from the collection by index."""
+        """Retrieve an angle from the collection by index."""
         return self._intf.invoke(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IVectorGeometryToolAngle":
-        """Retrieves an angle from the collection by name."""
+        """Retrieve an angle from the collection by name."""
         return self._intf.invoke(IVectorGeometryToolAngleGroup._metadata, IVectorGeometryToolAngleGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -25358,7 +25358,7 @@ class IVectorGeometryToolAxesGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, axesName:str) -> None:
-        """Removes a specified Axes."""
+        """Remove a specified Axes."""
         return self._intf.invoke(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._remove_metadata, axesName)
 
     _get_context_metadata = { "name" : "context",
@@ -25366,14 +25366,14 @@ class IVectorGeometryToolAxesGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -25381,7 +25381,7 @@ class IVectorGeometryToolAxesGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the collection."""
+        """Return a number of elements in the collection."""
         return self._intf.get_property(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -25389,14 +25389,14 @@ class IVectorGeometryToolAxesGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "VectorGeometryToolAxesFactory":
-        """Returns a Factory object used to create custom axes."""
+        """Return a Factory object used to create custom axes."""
         return self._intf.get_property(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolAxes":
-        """Returns an axes by name or at a specified position."""
+        """Return an axes by name or at a specified position."""
         return self._intf.invoke(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -25404,7 +25404,7 @@ class IVectorGeometryToolAxesGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._get__NewEnum_metadata)
 
     _get_common_tasks_metadata = { "name" : "common_tasks",
@@ -25412,21 +25412,21 @@ class IVectorGeometryToolAxesGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def common_tasks(self) -> "VectorGeometryToolAxesCommonTasks":
-        """Provides access to common tasks that allow users quickly carry out tasks such as creating known axes, etc."""
+        """Provide access to common tasks that allow users quickly carry out tasks such as creating known axes, etc."""
         return self._intf.get_property(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._get_common_tasks_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IVectorGeometryToolAxes":
-        """Retrieves an axes from the collection by index."""
+        """Retrieve an axes from the collection by index."""
         return self._intf.invoke(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IVectorGeometryToolAxes":
-        """Retrieves an axes from the collection by name."""
+        """Retrieve an axes from the collection by name."""
         return self._intf.invoke(IVectorGeometryToolAxesGroup._metadata, IVectorGeometryToolAxesGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -25493,7 +25493,7 @@ class IVectorGeometryToolPlaneGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, planeName:str) -> None:
-        """Removes a specified Plane."""
+        """Remove a specified Plane."""
         return self._intf.invoke(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._remove_metadata, planeName)
 
     _get_context_metadata = { "name" : "context",
@@ -25501,14 +25501,14 @@ class IVectorGeometryToolPlaneGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -25516,7 +25516,7 @@ class IVectorGeometryToolPlaneGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the group."""
+        """Return a number of elements in the group."""
         return self._intf.get_property(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -25524,14 +25524,14 @@ class IVectorGeometryToolPlaneGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "VectorGeometryToolPlaneFactory":
-        """Returns a Factory object used to create custom planes."""
+        """Return a Factory object used to create custom planes."""
         return self._intf.get_property(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolPlane":
-        """Returns an Plane by name or at a specified position."""
+        """Return an Plane by name or at a specified position."""
         return self._intf.invoke(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -25539,21 +25539,21 @@ class IVectorGeometryToolPlaneGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IVectorGeometryToolPlane":
-        """Retrieves a plane from the collection by index."""
+        """Retrieve a plane from the collection by index."""
         return self._intf.invoke(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IVectorGeometryToolPlane":
-        """Retrieves a plane from the collection by name."""
+        """Retrieve a plane from the collection by name."""
         return self._intf.invoke(IVectorGeometryToolPlaneGroup._metadata, IVectorGeometryToolPlaneGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -25621,7 +25621,7 @@ class IVectorGeometryToolSystemGroup(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, systemName:str) -> None:
-        """Removes a specified System."""
+        """Remove a specified System."""
         return self._intf.invoke(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._remove_metadata, systemName)
 
     _get_context_metadata = { "name" : "context",
@@ -25629,14 +25629,14 @@ class IVectorGeometryToolSystemGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns a context object. The context can be used to find out which central body or STK object this instance is associated with."""
+        """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._get_context_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -25644,7 +25644,7 @@ class IVectorGeometryToolSystemGroup(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the collection."""
+        """Return a number of elements in the collection."""
         return self._intf.get_property(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._get_count_metadata)
 
     _get_factory_metadata = { "name" : "factory",
@@ -25652,14 +25652,14 @@ class IVectorGeometryToolSystemGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def factory(self) -> "VectorGeometryToolSystemFactory":
-        """Returns a Factory object used to create custom VGT systems."""
+        """Return a Factory object used to create custom VGT systems."""
         return self._intf.get_property(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._get_factory_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolSystem":
-        """Returns a System by name or at a specified position."""
+        """Return a System by name or at a specified position."""
         return self._intf.invoke(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -25667,7 +25667,7 @@ class IVectorGeometryToolSystemGroup(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._get__NewEnum_metadata)
 
     _get_common_tasks_metadata = { "name" : "common_tasks",
@@ -25675,21 +25675,21 @@ class IVectorGeometryToolSystemGroup(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def common_tasks(self) -> "VectorGeometryToolSystemCommonTasks":
-        """Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc."""
+        """Provide access to common tasks that allow users quickly carry out tasks such as creating known systems, etc."""
         return self._intf.get_property(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._get_common_tasks_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IVectorGeometryToolSystem":
-        """Retrieves a system from the collection by index."""
+        """Retrieve a system from the collection by index."""
         return self._intf.invoke(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IVectorGeometryToolSystem":
-        """Retrieves a system from the collection by name."""
+        """Retrieve a system from the collection by name."""
         return self._intf.invoke(IVectorGeometryToolSystemGroup._metadata, IVectorGeometryToolSystemGroup._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -25700,7 +25700,7 @@ agcls.AgClassCatalog.add_catalog_entry("{05FF6322-1363-4B66-933E-03EA158B7523}",
 agcls.AgTypeNameMap["IVectorGeometryToolSystemGroup"] = IVectorGeometryToolSystemGroup
 
 class IAnalysisWorkbenchProvider(object):
-    """Allows accessing existing Vector Geometry Tool components."""
+    """Allow accessing existing Vector Geometry Tool components."""
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25758,7 +25758,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def vectors(self) -> "VectorGeometryToolVectorGroup":
-        """Returns a group of vectors."""
+        """Return a group of vectors."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_vectors_metadata)
 
     _get_points_metadata = { "name" : "points",
@@ -25766,7 +25766,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def points(self) -> "VectorGeometryToolPointGroup":
-        """Returns a group of points."""
+        """Return a group of points."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_points_metadata)
 
     _get_angles_metadata = { "name" : "angles",
@@ -25774,7 +25774,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def angles(self) -> "VectorGeometryToolAngleGroup":
-        """Returns a group of angles."""
+        """Return a group of angles."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_angles_metadata)
 
     _get_axes_metadata = { "name" : "axes",
@@ -25782,7 +25782,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def axes(self) -> "VectorGeometryToolAxesGroup":
-        """Returns a group of axes."""
+        """Return a group of axes."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_axes_metadata)
 
     _get_planes_metadata = { "name" : "planes",
@@ -25790,7 +25790,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def planes(self) -> "VectorGeometryToolPlaneGroup":
-        """Returns a group of planes."""
+        """Return a group of planes."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_planes_metadata)
 
     _get_systems_metadata = { "name" : "systems",
@@ -25798,7 +25798,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def systems(self) -> "VectorGeometryToolSystemGroup":
-        """Returns a group of systems."""
+        """Return a group of systems."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_systems_metadata)
 
     _get_well_known_systems_metadata = { "name" : "well_known_systems",
@@ -25806,7 +25806,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def well_known_systems(self) -> "VectorGeometryToolWellKnownSystems":
-        """Returns well-known systems."""
+        """Return well-known systems."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_well_known_systems_metadata)
 
     _get_well_known_axes_metadata = { "name" : "well_known_axes",
@@ -25814,7 +25814,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def well_known_axes(self) -> "VectorGeometryToolWellKnownAxes":
-        """Returns well-known axes."""
+        """Return well-known axes."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_well_known_axes_metadata)
 
     _get_events_metadata = { "name" : "events",
@@ -25822,7 +25822,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def events(self) -> "TimeToolEventGroup":
-        """Returns a group of events."""
+        """Return a group of events."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_events_metadata)
 
     _get_event_intervals_metadata = { "name" : "event_intervals",
@@ -25830,7 +25830,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def event_intervals(self) -> "TimeToolEventIntervalGroup":
-        """Returns a group of event intervals."""
+        """Return a group of event intervals."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_event_intervals_metadata)
 
     _get_calc_scalars_metadata = { "name" : "calc_scalars",
@@ -25838,7 +25838,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def calc_scalars(self) -> "CalculationToolScalarGroup":
-        """Returns a group of calc scalars."""
+        """Return a group of calc scalars."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_calc_scalars_metadata)
 
     _get_event_arrays_metadata = { "name" : "event_arrays",
@@ -25846,7 +25846,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def event_arrays(self) -> "TimeToolEventArrayGroup":
-        """Returns a group of event arrays."""
+        """Return a group of event arrays."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_event_arrays_metadata)
 
     _get_event_interval_lists_metadata = { "name" : "event_interval_lists",
@@ -25854,7 +25854,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def event_interval_lists(self) -> "TimeToolEventIntervalListGroup":
-        """Returns a group of event interval lists."""
+        """Return a group of event interval lists."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_event_interval_lists_metadata)
 
     _get_event_interval_collections_metadata = { "name" : "event_interval_collections",
@@ -25862,7 +25862,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def event_interval_collections(self) -> "TimeToolEventIntervalCollectionGroup":
-        """Returns a group of event interval collections."""
+        """Return a group of event interval collections."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_event_interval_collections_metadata)
 
     _get_parameter_sets_metadata = { "name" : "parameter_sets",
@@ -25878,14 +25878,14 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def conditions(self) -> "CalculationToolConditionGroup":
-        """Returns a group of condition objects."""
+        """Return a group of condition objects."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_conditions_metadata)
 
     _supports_metadata = { "name" : "supports",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_KIND), agmarshall.VARIANT_BOOL_arg,) }
     def supports(self, feature:"CRDN_KIND") -> bool:
-        """Tests whether the specified VGT feature is supported."""
+        """Test whether the specified VGT feature is supported."""
         return self._intf.invoke(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._supports_metadata, feature, out_arg())
 
     _get_condition_sets_metadata = { "name" : "condition_sets",
@@ -25893,14 +25893,14 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def condition_sets(self) -> "CalculationToolConditionSetGroup":
-        """Returns a group of condition set objects."""
+        """Return a group of condition set objects."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_condition_sets_metadata)
 
     _import_method_metadata = { "name" : "import_method",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def import_method(self, filename:str) -> "AnalysisWorkbenchCollection":
-        """Imports Analysis Workbench components from a file."""
+        """Import Analysis Workbench components from a file."""
         return self._intf.invoke(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._import_method_metadata, filename, out_arg())
 
     _get_volume_grids_metadata = { "name" : "volume_grids",
@@ -25908,7 +25908,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def volume_grids(self) -> "SpatialAnalysisToolVolumeGridGroup":
-        """Returns a group of volume grid objects."""
+        """Return a group of volume grid objects."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_volume_grids_metadata)
 
     _get_volumes_metadata = { "name" : "volumes",
@@ -25916,7 +25916,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def volumes(self) -> "SpatialAnalysisToolVolumeGroup":
-        """Returns a group of volume objects."""
+        """Return a group of volume objects."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_volumes_metadata)
 
     _get_volume_calcs_metadata = { "name" : "volume_calcs",
@@ -25924,7 +25924,7 @@ class IAnalysisWorkbenchProvider(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def volume_calcs(self) -> "SpatialAnalysisToolVolumeCalcGroup":
-        """Returns a group of volume calc objects."""
+        """Return a group of volume calc objects."""
         return self._intf.get_property(IAnalysisWorkbenchProvider._metadata, IAnalysisWorkbenchProvider._get_volume_calcs_metadata)
 
 
@@ -25971,14 +25971,14 @@ class IAnalysisWorkbenchRoot(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_template_provider(self, className:str) -> "AnalysisWorkbenchProvider":
-        """Returns a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)"""
+        """Return a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)"""
         return self._intf.invoke(IAnalysisWorkbenchRoot._metadata, IAnalysisWorkbenchRoot._get_template_provider_metadata, className, out_arg())
 
     _get_provider_metadata = { "name" : "get_provider",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_provider(self, instPath:str) -> "AnalysisWorkbenchProvider":
-        """Returns an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)"""
+        """Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)"""
         return self._intf.invoke(IAnalysisWorkbenchRoot._metadata, IAnalysisWorkbenchRoot._get_provider_metadata, instPath, out_arg())
 
     _get_well_known_systems_metadata = { "name" : "well_known_systems",
@@ -25986,7 +25986,7 @@ class IAnalysisWorkbenchRoot(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def well_known_systems(self) -> "VectorGeometryToolWellKnownSystems":
-        """Returns the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.)."""
+        """Return the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.)."""
         return self._intf.get_property(IAnalysisWorkbenchRoot._metadata, IAnalysisWorkbenchRoot._get_well_known_systems_metadata)
 
     _get_well_known_axes_metadata = { "name" : "well_known_axes",
@@ -25994,7 +25994,7 @@ class IAnalysisWorkbenchRoot(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def well_known_axes(self) -> "VectorGeometryToolWellKnownAxes":
-        """Returns the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.)."""
+        """Return the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.)."""
         return self._intf.get_property(IAnalysisWorkbenchRoot._metadata, IAnalysisWorkbenchRoot._get_well_known_axes_metadata)
 
 
@@ -26436,7 +26436,7 @@ class IVectorGeometryToolAngleFindAngleResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(IVectorGeometryToolAngleFindAngleResult._metadata, IVectorGeometryToolAngleFindAngleResult._get_is_valid_metadata)
 
     _get_angle_metadata = { "name" : "angle",
@@ -26491,7 +26491,7 @@ class IVectorGeometryToolAngleFindAngleWithRateResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(IVectorGeometryToolAngleFindAngleWithRateResult._metadata, IVectorGeometryToolAngleFindAngleWithRateResult._get_is_valid_metadata)
 
     _get_angle_metadata = { "name" : "angle",
@@ -26557,7 +26557,7 @@ class IVectorGeometryToolAngleFindWithRateResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(IVectorGeometryToolAngleFindWithRateResult._metadata, IVectorGeometryToolAngleFindWithRateResult._get_is_valid_metadata)
 
     _get_angle_metadata = { "name" : "angle",
@@ -26646,7 +26646,7 @@ class IVectorGeometryToolAngleFindResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(IVectorGeometryToolAngleFindResult._metadata, IVectorGeometryToolAngleFindResult._get_is_valid_metadata)
 
     _get_angle_metadata = { "name" : "angle",
@@ -26724,7 +26724,7 @@ class IVectorGeometryToolAxesTransformResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(IVectorGeometryToolAxesTransformResult._metadata, IVectorGeometryToolAxesTransformResult._get_is_valid_metadata)
 
     _get_vector_metadata = { "name" : "vector",
@@ -26779,7 +26779,7 @@ class IVectorGeometryToolAxesTransformWithRateResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(IVectorGeometryToolAxesTransformWithRateResult._metadata, IVectorGeometryToolAxesTransformWithRateResult._get_is_valid_metadata)
 
     _get_vector_metadata = { "name" : "vector",
@@ -27795,21 +27795,21 @@ class IAnalysisWorkbenchCentralBodyRefTo(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_path(self, path:str) -> None:
-        """Sets a new central body using specified path."""
+        """Set a new central body using specified path."""
         return self._intf.invoke(IAnalysisWorkbenchCentralBodyRefTo._metadata, IAnalysisWorkbenchCentralBodyRefTo._set_path_metadata, path)
 
     _set_central_body_metadata = { "name" : "set_central_body",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IAnalysisWorkbenchCentralBody"),) }
     def set_central_body(self, centralBody:"IAnalysisWorkbenchCentralBody") -> None:
-        """Sets a new central body."""
+        """Set a new central body."""
         return self._intf.invoke(IAnalysisWorkbenchCentralBodyRefTo._metadata, IAnalysisWorkbenchCentralBodyRefTo._set_central_body_metadata, centralBody)
 
     _get_central_body_metadata = { "name" : "get_central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def get_central_body(self) -> "AnalysisWorkbenchCentralBody":
-        """Returns a central body or null if the central body is invalid."""
+        """Return a central body or null if the central body is invalid."""
         return self._intf.invoke(IAnalysisWorkbenchCentralBodyRefTo._metadata, IAnalysisWorkbenchCentralBodyRefTo._get_central_body_metadata, out_arg())
 
 
@@ -27870,14 +27870,14 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the collection."""
+        """Return a number of elements in the collection."""
         return self._intf.get_property(IAnalysisWorkbenchCentralBodyCollection._metadata, IAnalysisWorkbenchCentralBodyCollection._get_count_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, index:int) -> str:
-        """Returns a central body name at a specified index."""
+        """Return a central body name at a specified index."""
         return self._intf.invoke(IAnalysisWorkbenchCentralBodyCollection._metadata, IAnalysisWorkbenchCentralBodyCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -27885,21 +27885,21 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator"""
+        """Return a COM enumerator"""
         return self._intf.get_property(IAnalysisWorkbenchCentralBodyCollection._metadata, IAnalysisWorkbenchCentralBodyCollection._get__NewEnum_metadata)
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def add(self, centralBodyName:str) -> bool:
-        """Adds a central body to the collection of central bodies. True indicates success."""
+        """Add a central body to the collection of central bodies. True indicates success."""
         return self._intf.invoke(IAnalysisWorkbenchCentralBodyCollection._metadata, IAnalysisWorkbenchCentralBodyCollection._add_metadata, centralBodyName, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove(self, centralBodyName:str) -> None:
-        """Removes a central body with the specified name from the collection of the central bodies."""
+        """Remove a central body with the specified name from the collection of the central bodies."""
         return self._intf.invoke(IAnalysisWorkbenchCentralBodyCollection._metadata, IAnalysisWorkbenchCentralBodyCollection._remove_metadata, centralBodyName)
 
     __getitem__ = item
@@ -27963,7 +27963,7 @@ class IAnalysisWorkbenchCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Searches for a an element with a given name. Returns false if the specified element does not exist."""
+        """Search for a an element with a given name. Returns false if the specified element does not exist."""
         return self._intf.invoke(IAnalysisWorkbenchCollection._metadata, IAnalysisWorkbenchCollection._contains_metadata, name, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -27971,14 +27971,14 @@ class IAnalysisWorkbenchCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns a number of elements in the collection."""
+        """Return a number of elements in the collection."""
         return self._intf.get_property(IAnalysisWorkbenchCollection._metadata, IAnalysisWorkbenchCollection._get_count_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.VARIANT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, indexOrName:typing.Any) -> "IAnalysisWorkbenchComponent":
-        """Retrieves an element of the collection using the name of the element or a position in the collection."""
+        """Retrieve an element of the collection using the name of the element or a position in the collection."""
         return self._intf.invoke(IAnalysisWorkbenchCollection._metadata, IAnalysisWorkbenchCollection._item_metadata, indexOrName, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -27986,21 +27986,21 @@ class IAnalysisWorkbenchCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(IAnalysisWorkbenchCollection._metadata, IAnalysisWorkbenchCollection._get__NewEnum_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_index(self, index:int) -> "IAnalysisWorkbenchComponent":
-        """Retrieves an item from the crdn collection by index."""
+        """Retrieve an item from the crdn collection by index."""
         return self._intf.invoke(IAnalysisWorkbenchCollection._metadata, IAnalysisWorkbenchCollection._get_item_by_index_metadata, index, out_arg())
 
     _get_item_by_name_metadata = { "name" : "get_item_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_name(self, name:str) -> "IAnalysisWorkbenchComponent":
-        """Retrieves an item from the crdn collection by name."""
+        """Retrieve an item from the crdn collection by name."""
         return self._intf.invoke(IAnalysisWorkbenchCollection._metadata, IAnalysisWorkbenchCollection._get_item_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -28049,7 +28049,7 @@ class ITimeToolPointSamplingResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolPointSamplingResult._metadata, ITimeToolPointSamplingResult._get_is_valid_metadata)
 
     _get_intervals_metadata = { "name" : "intervals",
@@ -28204,7 +28204,7 @@ class ITimeToolPointSamplingIntervalCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "TimeToolPointSamplingInterval":
-        """Accesses an element at the specified position."""
+        """Access an element at the specified position."""
         return self._intf.invoke(ITimeToolPointSamplingIntervalCollection._metadata, ITimeToolPointSamplingIntervalCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -28212,7 +28212,7 @@ class ITimeToolPointSamplingIntervalCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolPointSamplingIntervalCollection._metadata, ITimeToolPointSamplingIntervalCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -28261,7 +28261,7 @@ class ITimeToolAxesSamplingResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Indicates whether the result object is valid."""
+        """Indicate whether the result object is valid."""
         return self._intf.get_property(ITimeToolAxesSamplingResult._metadata, ITimeToolAxesSamplingResult._get_is_valid_metadata)
 
     _get_intervals_metadata = { "name" : "intervals",
@@ -28416,7 +28416,7 @@ class ITimeToolAxesSamplingIntervalCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "TimeToolAxesSamplingInterval":
-        """Accesses an element at the specified position."""
+        """Access an element at the specified position."""
         return self._intf.invoke(ITimeToolAxesSamplingIntervalCollection._metadata, ITimeToolAxesSamplingIntervalCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -28424,7 +28424,7 @@ class ITimeToolAxesSamplingIntervalCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns a COM enumerator."""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolAxesSamplingIntervalCollection._metadata, ITimeToolAxesSamplingIntervalCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -28521,7 +28521,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6A432F58-4CAB-4448-8540-CBBAA9C2B9F0}",
 agcls.AgTypeNameMap["TimeToolEventFindOccurrenceResult"] = TimeToolEventFindOccurrenceResult
 
 class TimeToolFindTimesResult(ITimeToolFindTimesResult):
-    """Returns a collection of intervals and an array of times."""
+    """Return a collection of intervals and an array of times."""
     def __init__(self, sourceObject=None):
         ITimeToolFindTimesResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -28794,7 +28794,7 @@ agcls.AgClassCatalog.add_catalog_entry("{28BCB469-D32F-4FCE-9CC2-76216E3A37CA}",
 agcls.AgTypeNameMap["CalculationToolConditionGroup"] = CalculationToolConditionGroup
 
 class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
-    """Allows accessing and creating condition set components."""
+    """Allow accessing and creating condition set components."""
     def __init__(self, sourceObject=None):
         ICalculationToolConditionSetGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29421,7 +29421,7 @@ agcls.AgClassCatalog.add_catalog_entry("{D1BED244-FFB2-4038-AE76-A9B3194B2E49}",
 agcls.AgTypeNameMap["CalculationToolCondition"] = CalculationToolCondition
 
 class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent):
-    """Defines a condition which combines multiple conditions."""
+    """Define a condition which combines multiple conditions."""
     def __init__(self, sourceObject=None):
         ICalculationToolConditionCombined.__init__(self, sourceObject)
         ICalculationToolCondition.__init__(self, sourceObject)
@@ -29697,7 +29697,7 @@ agcls.AgClassCatalog.add_catalog_entry("{3CD084C3-0045-4452-9793-AE8DF4073433}",
 agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativeBasic
 
 class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
-    """Defines an event (time instant)."""
+    """Define an event (time instant)."""
     def __init__(self, sourceObject=None):
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29772,7 +29772,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B6FBC501-3521-4AE3-AFD8-4971F089D14F}",
 agcls.AgTypeNameMap["TimeToolEventArrayConditionCrossings"] = TimeToolEventArrayConditionCrossings
 
 class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray, IAnalysisWorkbenchComponent):
-    """Determines times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+    """Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayExtrema.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -29928,7 +29928,7 @@ agcls.AgClassCatalog.add_catalog_entry("{44FBC83E-D466-425F-ADF5-2003D754F935}",
 agcls.AgTypeNameMap["TimeToolEventArrayMerged"] = TimeToolEventArrayMerged
 
 class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArray, IAnalysisWorkbenchComponent):
-    """Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
+    """Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
     def __init__(self, sourceObject=None):
         ITimeToolEventArraySignaled.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -30009,7 +30009,7 @@ agcls.AgClassCatalog.add_catalog_entry("{230426D4-438A-4B6E-A9D2-5393F7F87238}",
 agcls.AgTypeNameMap["TimeToolEventEpoch"] = TimeToolEventEpoch
 
 class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWorkbenchComponent):
-    """Determines time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+    """Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
     def __init__(self, sourceObject=None):
         ITimeToolEventExtremum.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
@@ -30207,7 +30207,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5457BFBA-3076-4250-B0E0-81FA79D58F19}",
 agcls.AgTypeNameMap["TimeToolEventIntervalCollectionLighting"] = TimeToolEventIntervalCollectionLighting
 
 class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSignaled, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
-    """Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
+    """Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionSignaled.__init__(self, sourceObject)
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
@@ -30543,7 +30543,7 @@ agcls.AgClassCatalog.add_catalog_entry("{3A5FDAFA-95C5-4743-A675-B9598AAAA1B9}",
 agcls.AgTypeNameMap["TimeToolEventIntervalListScaled"] = TimeToolEventIntervalListScaled
 
 class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
-    """Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
+    """Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListSignaled.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -30624,7 +30624,7 @@ agcls.AgClassCatalog.add_catalog_entry("{8BCF947C-8E52-4B0C-9416-520C7CCEAB3E}",
 agcls.AgTypeNameMap["TimeToolEventIntervalScaled"] = TimeToolEventIntervalScaled
 
 class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
-    """Determines what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
+    """Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalSignaled.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -31560,7 +31560,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F6359611-FB48-4B00-9017-01A4BE2B76E5}",
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridFactory"] = SpatialAnalysisToolVolumeGridFactory
 
 class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordinateDefinition):
-    """Defines a set of coordinate values."""
+    """Define a set of coordinate values."""
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolGridCoordinateDefinition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -32424,7 +32424,7 @@ agcls.AgClassCatalog.add_catalog_entry("{BA26887C-6DFE-4F18-96D8-5694296568D2}",
 agcls.AgTypeNameMap["AnalysisWorkbenchTypeInfo"] = AnalysisWorkbenchTypeInfo
 
 class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchInstance):
-    """Enables to obtain information about the parent object that owns the VGT component."""
+    """Enable to obtain information about the parent object that owns the VGT component."""
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchContext.__init__(self, sourceObject)
         IAnalysisWorkbenchInstance.__init__(self, sourceObject)
@@ -32448,7 +32448,7 @@ agcls.AgClassCatalog.add_catalog_entry("{28241775-2044-4AD1-BC1D-D5B345437415}",
 agcls.AgTypeNameMap["AnalysisWorkbenchInstance"] = AnalysisWorkbenchInstance
 
 class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTemplate):
-    """Enables to obtain information about the STK class that owns the VGT component."""
+    """Enable to obtain information about the STK class that owns the VGT component."""
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchContext.__init__(self, sourceObject)
         IAnalysisWorkbenchTemplate.__init__(self, sourceObject)
@@ -32643,7 +32643,7 @@ agcls.AgClassCatalog.add_catalog_entry("{64392436-52D5-4274-9483-E10C56BBD037}",
 agcls.AgTypeNameMap["VectorGeometryToolVector"] = VectorGeometryToolVector
 
 class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
-    """Allows configuring the VGT axes labels."""
+    """Allow configuring the VGT axes labels."""
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesLabels.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -32772,7 +32772,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C3F96DA3-00EC-4E20-A66C-B3506100496B}",
 agcls.AgTypeNameMap["VectorGeometryToolAngle"] = VectorGeometryToolAngle
 
 class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
-    """Allows configuring the X and Y axes labels."""
+    """Allow configuring the X and Y axes labels."""
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneLabels.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -33180,7 +33180,7 @@ agcls.AgClassCatalog.add_catalog_entry("{16315085-7C87-4A20-865C-0F419A5CDA2F}",
 agcls.AgTypeNameMap["VectorGeometryToolAxesLagrangeLibration"] = VectorGeometryToolAxesLagrangeLibration
 
 class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
-    """Provides methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+    """Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -33921,7 +33921,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6BF6D976-775A-445D-AD2B-899892F3127E}",
 agcls.AgTypeNameMap["VectorGeometryToolPointLagrangeLibration"] = VectorGeometryToolPointLagrangeLibration
 
 class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
-    """Provides methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+    """Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -34143,7 +34143,7 @@ agcls.AgClassCatalog.add_catalog_entry("{CB962F51-978A-43F9-A88B-AAB62117F93C}",
 agcls.AgTypeNameMap["AnalysisWorkbenchLLAPosition"] = AnalysisWorkbenchLLAPosition
 
 class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
-    """Provides methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+    """Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystemCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35316,7 +35316,7 @@ agcls.AgClassCatalog.add_catalog_entry("{65E8F1CC-E68C-4EF6-9A68-443DD01C55E2}",
 agcls.AgTypeNameMap["VectorGeometryToolSystemGroup"] = VectorGeometryToolSystemGroup
 
 class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
-    """Allows accessing existing Vector Geometry Tool components."""
+    """Allow accessing existing Vector Geometry Tool components."""
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchProvider.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

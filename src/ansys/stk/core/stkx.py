@@ -76,60 +76,60 @@ agcls.AgTypeNameMap["LOG_MSG_DISP_ID"] = LOG_MSG_DISP_ID
 class LINE_STYLE(IntEnum):
     """Line Style"""
     SOLID = 0
-    """Specifies a solid line."""
+    """Specify a solid line."""
     DASHED = 1
-    """Specifies a dashed line."""
+    """Specify a dashed line."""
     DOTTED = 2
-    """Specifies a dotted line."""
+    """Specify a dotted line."""
     DOT_DASHED = 3
     """Dot-dashed line."""
     LONG_DASHED = 4
-    """Specifies a long dashed line."""
+    """Specify a long dashed line."""
     DASH_DOT_DOTTED = 5
-    """Specifies an alternating dash-dot-dot line."""
+    """Specify an alternating dash-dot-dot line."""
     M_DASH = 6
-    """Specifies a user configurable medium dashed line."""
+    """Specify a user configurable medium dashed line."""
     L_DASH = 7
-    """Specifies a user configurable long dashed line."""
+    """Specify a user configurable long dashed line."""
     S_DASH_DOT = 8
-    """Specifies a user configurable small dash-dotted line."""
+    """Specify a user configurable small dash-dotted line."""
     M_DASH_DOT = 9
-    """Specifies a user configurable medium dash-dotted line."""
+    """Specify a user configurable medium dash-dotted line."""
     DASH_DOT = 10
-    """Specifies a user configurable long dash-dotted line."""
+    """Specify a user configurable long dash-dotted line."""
     MS_DASH = 11
-    """Specifies a user configurable medium followed by small dashed line."""
+    """Specify a user configurable medium followed by small dashed line."""
     LS_DASH = 12
-    """Specifies a user configurable long followed by small dashed line."""
+    """Specify a user configurable long followed by small dashed line."""
     LM_DASH = 13
-    """Specifies a user configurable long followed by medium dashed line."""
+    """Specify a user configurable long followed by medium dashed line."""
     LMS_DASH = 14
-    """Specifies a user configurable medium followed by small dashed line."""
+    """Specify a user configurable medium followed by small dashed line."""
     DOT = 15
-    """Specifies a dotted line."""
+    """Specify a dotted line."""
     LONG_DASH = 16
-    """Specifies a long dashed line."""
+    """Specify a long dashed line."""
     S_DASH = 17
-    """Specifies an alternating dash-dot line."""
+    """Specify an alternating dash-dot line."""
 
-LINE_STYLE.SOLID.__doc__ = "Specifies a solid line."
-LINE_STYLE.DASHED.__doc__ = "Specifies a dashed line."
-LINE_STYLE.DOTTED.__doc__ = "Specifies a dotted line."
+LINE_STYLE.SOLID.__doc__ = "Specify a solid line."
+LINE_STYLE.DASHED.__doc__ = "Specify a dashed line."
+LINE_STYLE.DOTTED.__doc__ = "Specify a dotted line."
 LINE_STYLE.DOT_DASHED.__doc__ = "Dot-dashed line."
-LINE_STYLE.LONG_DASHED.__doc__ = "Specifies a long dashed line."
-LINE_STYLE.DASH_DOT_DOTTED.__doc__ = "Specifies an alternating dash-dot-dot line."
-LINE_STYLE.M_DASH.__doc__ = "Specifies a user configurable medium dashed line."
-LINE_STYLE.L_DASH.__doc__ = "Specifies a user configurable long dashed line."
-LINE_STYLE.S_DASH_DOT.__doc__ = "Specifies a user configurable small dash-dotted line."
-LINE_STYLE.M_DASH_DOT.__doc__ = "Specifies a user configurable medium dash-dotted line."
-LINE_STYLE.DASH_DOT.__doc__ = "Specifies a user configurable long dash-dotted line."
-LINE_STYLE.MS_DASH.__doc__ = "Specifies a user configurable medium followed by small dashed line."
-LINE_STYLE.LS_DASH.__doc__ = "Specifies a user configurable long followed by small dashed line."
-LINE_STYLE.LM_DASH.__doc__ = "Specifies a user configurable long followed by medium dashed line."
-LINE_STYLE.LMS_DASH.__doc__ = "Specifies a user configurable medium followed by small dashed line."
-LINE_STYLE.DOT.__doc__ = "Specifies a dotted line."
-LINE_STYLE.LONG_DASH.__doc__ = "Specifies a long dashed line."
-LINE_STYLE.S_DASH.__doc__ = "Specifies an alternating dash-dot line."
+LINE_STYLE.LONG_DASHED.__doc__ = "Specify a long dashed line."
+LINE_STYLE.DASH_DOT_DOTTED.__doc__ = "Specify an alternating dash-dot-dot line."
+LINE_STYLE.M_DASH.__doc__ = "Specify a user configurable medium dashed line."
+LINE_STYLE.L_DASH.__doc__ = "Specify a user configurable long dashed line."
+LINE_STYLE.S_DASH_DOT.__doc__ = "Specify a user configurable small dash-dotted line."
+LINE_STYLE.M_DASH_DOT.__doc__ = "Specify a user configurable medium dash-dotted line."
+LINE_STYLE.DASH_DOT.__doc__ = "Specify a user configurable long dash-dotted line."
+LINE_STYLE.MS_DASH.__doc__ = "Specify a user configurable medium followed by small dashed line."
+LINE_STYLE.LS_DASH.__doc__ = "Specify a user configurable long followed by small dashed line."
+LINE_STYLE.LM_DASH.__doc__ = "Specify a user configurable long followed by medium dashed line."
+LINE_STYLE.LMS_DASH.__doc__ = "Specify a user configurable medium followed by small dashed line."
+LINE_STYLE.DOT.__doc__ = "Specify a dotted line."
+LINE_STYLE.LONG_DASH.__doc__ = "Specify a long dashed line."
+LINE_STYLE.S_DASH.__doc__ = "Specify an alternating dash-dot line."
 
 agcls.AgTypeNameMap["LINE_STYLE"] = LINE_STYLE
 
@@ -312,7 +312,7 @@ agcls.AgTypeNameMap["PROGRESS_IMAGE_Y_ORIGIN"] = PROGRESS_IMAGE_Y_ORIGIN
 
 
 class ISTKXSSLCertificateErrorEventArgs(object):
-    """Provides information about an SSL certificate that is expired or invalid."""
+    """Provide information about an SSL certificate that is expired or invalid."""
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -367,7 +367,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_error_ignored(self) -> bool:
-        """Returns whether the invalid certificate error is ignored."""
+        """Return whether the invalid certificate error is ignored."""
         return self._intf.get_property(ISTKXSSLCertificateErrorEventArgs._metadata, ISTKXSSLCertificateErrorEventArgs._get_is_error_ignored_metadata)
 
     _set_ignore_error_permanently_metadata = { "name" : "set_ignore_error_permanently",
@@ -438,7 +438,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def handled(self) -> bool:
-        """Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
+        """Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
         return self._intf.get_property(ISTKXSSLCertificateErrorEventArgs._metadata, ISTKXSSLCertificateErrorEventArgs._get_handled_metadata)
 
     _set_handled_metadata = { "name" : "handled",
@@ -446,7 +446,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @handled.setter
     def handled(self, bHandled:bool) -> None:
-        """Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
+        """Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
         return self._intf.set_property(ISTKXSSLCertificateErrorEventArgs._metadata, ISTKXSSLCertificateErrorEventArgs._set_handled_metadata, bHandled)
 
 
@@ -492,7 +492,7 @@ class ISTKXConControlQuitReceivedEventArgs(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def acknowledge(self) -> bool:
-        """Indicates whether or not to acknowledge the connect command."""
+        """Indicate whether or not to acknowledge the connect command."""
         return self._intf.get_property(ISTKXConControlQuitReceivedEventArgs._metadata, ISTKXConControlQuitReceivedEventArgs._get_acknowledge_metadata)
 
     _set_acknowledge_metadata = { "name" : "acknowledge",
@@ -500,7 +500,7 @@ class ISTKXConControlQuitReceivedEventArgs(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @acknowledge.setter
     def acknowledge(self, acknowledge:bool) -> None:
-        """Indicates whether or not to acknowledge the connect command."""
+        """Indicate whether or not to acknowledge the connect command."""
         return self._intf.set_property(ISTKXConControlQuitReceivedEventArgs._metadata, ISTKXConControlQuitReceivedEventArgs._set_acknowledge_metadata, acknowledge)
 
 
@@ -747,7 +747,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def host_id(self) -> str:
-        """Returns the Host ID."""
+        """Return the Host ID."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_host_id_metadata)
 
     _get_registration_id_metadata = { "name" : "registration_id",
@@ -755,7 +755,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def registration_id(self) -> str:
-        """Returns the Registration ID."""
+        """Return the Registration ID."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_registration_id_metadata)
 
     _get_version_metadata = { "name" : "version",
@@ -763,7 +763,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def version(self) -> str:
-        """Returns the version number"""
+        """Return the version number"""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_version_metadata)
 
     _get_licensing_report_metadata = { "name" : "get_licensing_report",
@@ -814,7 +814,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def log_file_full_name(self) -> str:
-        """Returns full path and log file name."""
+        """Return full path and log file name."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_log_file_full_name_metadata)
 
     _get_logging_mode_metadata = { "name" : "logging_mode",
@@ -822,7 +822,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.AgEnum_arg(LOGGING_MODE),) }
     @property
     def logging_mode(self) -> "LOGGING_MODE":
-        """Controls the log file generation, and if the log file is deleted or not on application exit."""
+        """Control the log file generation, and if the log file is deleted or not on application exit."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_logging_mode_metadata)
 
     _set_logging_mode_metadata = { "name" : "logging_mode",
@@ -851,14 +851,14 @@ class ISTKXApplication(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(EXEC_MULTI_CMD_RESULT_ACTION), agmarshall.AgInterface_out_arg,) }
     def execute_multiple_commands(self, connectCommands:list, eAction:"EXEC_MULTI_CMD_RESULT_ACTION") -> "ExecMultiCmdResult":
-        """Executes multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
+        """Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._execute_multiple_commands_metadata, connectCommands, eAction, out_arg())
 
     _is_feature_available_metadata = { "name" : "is_feature_available",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(FEATURE_CODES), agmarshall.VARIANT_BOOL_arg,) }
     def is_feature_available(self, featureCode:"FEATURE_CODES") -> bool:
-        """Returns true if the specified feature is available."""
+        """Return true if the specified feature is available."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._is_feature_available_metadata, featureCode, out_arg())
 
     _get_no_graphics_metadata = { "name" : "no_graphics",
@@ -888,7 +888,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_sla_if_not_accepted(self) -> bool:
-        """Shows the Software License Agreement dialog if not already accepted."""
+        """Show the Software License Agreement dialog if not already accepted."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_show_sla_if_not_accepted_metadata)
 
     _set_show_sla_if_not_accepted_metadata = { "name" : "show_sla_if_not_accepted",
@@ -964,7 +964,7 @@ class IDataObject(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def files(self) -> "DataObjectFiles":
-        """Returns a collection of filenames."""
+        """Return a collection of filenames."""
         return self._intf.get_property(IDataObject._metadata, IDataObject._get_files_metadata)
 
 
@@ -1031,7 +1031,7 @@ class IObjPathCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, index:int) -> str:
-        """Gets the element at the specified index (0-based)."""
+        """Get the element at the specified index (0-based)."""
         return self._intf.invoke(IObjPathCollection._metadata, IObjPathCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -1039,7 +1039,7 @@ class IObjPathCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an object that can be used to iterate through all the object paths in the collection."""
+        """Return an object that can be used to iterate through all the object paths in the collection."""
         return self._intf.get_property(IObjPathCollection._metadata, IObjPathCollection._get__NewEnum_metadata)
 
     _range_metadata = { "name" : "range",
@@ -1110,7 +1110,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C661025D-FFB3-429A-A0B1-D8421DE76AC6}",
 agcls.AgTypeNameMap["IDrawElem"] = IDrawElem
 
 class IDrawElemRect(IDrawElem):
-    """Defines a rectangle in control coordinates."""
+    """Define a rectangle in control coordinates."""
     _num_methods = 11
     _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
     _metadata = {
@@ -1212,7 +1212,7 @@ class IDrawElemRect(IDrawElem):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def line_width(self) -> float:
-        """Specifies the width of the line."""
+        """Specify the width of the line."""
         return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_line_width_metadata)
 
     _set_line_width_metadata = { "name" : "line_width",
@@ -1227,7 +1227,7 @@ class IDrawElemRect(IDrawElem):
             "marshallers" : (agmarshall.AgEnum_arg(LINE_STYLE),) }
     @property
     def line_style(self) -> "LINE_STYLE":
-        """Specifies the style of the line."""
+        """Specify the style of the line."""
         return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_line_style_metadata)
 
     _set_line_style_metadata = { "name" : "line_style",
@@ -1305,7 +1305,7 @@ class IDrawElemCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "IDrawElem":
-        """Gets the element at the specified index (0-based)."""
+        """Get the element at the specified index (0-based)."""
         return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -1313,14 +1313,14 @@ class IDrawElemCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an object that can be used to iterate through all the strings in the collection."""
+        """Return an object that can be used to iterate through all the strings in the collection."""
         return self._intf.get_property(IDrawElemCollection._metadata, IDrawElemCollection._get__NewEnum_metadata)
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Clears the contents of the collection and updates the display."""
+        """Clear the contents of the collection and updates the display."""
         return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._clear_metadata, )
 
     _add_metadata = { "name" : "add",
@@ -1415,7 +1415,7 @@ class IWinProjectionPosition(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_win_projection_position_valid(self) -> bool:
-        """Indicates if the returned projected position is valid or not."""
+        """Indicate if the returned projected position is valid or not."""
         return self._intf.get_property(IWinProjectionPosition._metadata, IWinProjectionPosition._get_is_win_projection_position_valid_metadata)
 
 
@@ -1423,7 +1423,7 @@ agcls.AgClassCatalog.add_catalog_entry("{56FF29E4-6311-4E94-B91D-53C02288C55A}",
 agcls.AgTypeNameMap["IWinProjectionPosition"] = IWinProjectionPosition
 
 class IDrawElemLine(IDrawElem):
-    """Defines a line in control coordinates."""
+    """Define a line in control coordinates."""
     _num_methods = 11
     _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
     _metadata = {
@@ -1525,7 +1525,7 @@ class IDrawElemLine(IDrawElem):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def line_width(self) -> float:
-        """Specifies the width of the line."""
+        """Specify the width of the line."""
         return self._intf.get_property(IDrawElemLine._metadata, IDrawElemLine._get_line_width_metadata)
 
     _set_line_width_metadata = { "name" : "line_width",
@@ -1540,7 +1540,7 @@ class IDrawElemLine(IDrawElem):
             "marshallers" : (agmarshall.AgEnum_arg(LINE_STYLE),) }
     @property
     def line_style(self) -> "LINE_STYLE":
-        """Specifies the style of the line."""
+        """Specify the style of the line."""
         return self._intf.get_property(IDrawElemLine._metadata, IDrawElemLine._get_line_style_metadata)
 
     _set_line_style_metadata = { "name" : "line_style",
@@ -1615,7 +1615,7 @@ class IExecCmdResult(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, index:int) -> str:
-        """Gets the element at the specified index (0-based)."""
+        """Get the element at the specified index (0-based)."""
         return self._intf.invoke(IExecCmdResult._metadata, IExecCmdResult._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -1623,7 +1623,7 @@ class IExecCmdResult(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an object that can be used to iterate through all the strings in the collection."""
+        """Return an object that can be used to iterate through all the strings in the collection."""
         return self._intf.get_property(IExecCmdResult._metadata, IExecCmdResult._get__NewEnum_metadata)
 
     _range_metadata = { "name" : "range",
@@ -1638,7 +1638,7 @@ class IExecCmdResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_succeeded(self) -> bool:
-        """Indicates whether the object contains valid results."""
+        """Indicate whether the object contains valid results."""
         return self._intf.get_property(IExecCmdResult._metadata, IExecCmdResult._get_is_succeeded_metadata)
 
     __getitem__ = item
@@ -1707,7 +1707,7 @@ class IExecMultiCmdResult(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "ExecCmdResult":
-        """Gets the element at the specified index (0-based)."""
+        """Get the element at the specified index (0-based)."""
         return self._intf.invoke(IExecMultiCmdResult._metadata, IExecMultiCmdResult._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -1715,7 +1715,7 @@ class IExecMultiCmdResult(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an object that can be used to iterate through all the objects in the collection."""
+        """Return an object that can be used to iterate through all the objects in the collection."""
         return self._intf.get_property(IExecMultiCmdResult._metadata, IExecMultiCmdResult._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -1961,7 +1961,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def ready_state(self) -> int:
-        """Returns/sets the background color of the control."""
+        """Return/sets the background color of the control."""
         return self._intf.get_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._get_ready_state_metadata)
 
     _get_ppt_preload_mode_metadata = { "name" : "ppt_preload_mode",
@@ -1998,7 +1998,7 @@ class IUiAxGraphics3DCntrl(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LONG_arg,) }
     def copy_from_win_id(self, winID:int) -> None:
-        """Copies an existing Window's scene into this control"""
+        """Copy an existing Window's scene into this control"""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._copy_from_win_id_metadata, winID)
 
     _start_object_editing_metadata = { "name" : "start_object_editing",
@@ -2012,14 +2012,14 @@ class IUiAxGraphics3DCntrl(object):
             "arg_types" : (),
             "marshallers" : () }
     def apply_object_editing(self) -> None:
-        """Commits changes when in 3D object editing mode."""
+        """Commit changes when in 3D object editing mode."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._apply_object_editing_metadata, )
 
     _stop_object_editing_metadata = { "name" : "stop_object_editing",
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     def stop_object_editing(self, canceled:bool) -> None:
-        """Ends 3D object editing mode."""
+        """End 3D object editing mode."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._stop_object_editing_metadata, canceled)
 
     _get_is_object_editing_metadata = { "name" : "is_object_editing",
@@ -2027,7 +2027,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_object_editing(self) -> bool:
-        """Returns true if in 3D object editing mode."""
+        """Return true if in 3D object editing mode."""
         return self._intf.get_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._get_is_object_editing_metadata)
 
     _get_in_zoom_mode_metadata = { "name" : "in_zoom_mode",
@@ -2035,14 +2035,14 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def in_zoom_mode(self) -> bool:
-        """Returns true if in zoom in mode."""
+        """Return true if in zoom in mode."""
         return self._intf.get_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._get_in_zoom_mode_metadata)
 
     _set_mouse_cursor_from_file_metadata = { "name" : "set_mouse_cursor_from_file",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
-        """Sets mouse cursor to the selected cursor file."""
+        """Set mouse cursor to the selected cursor file."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_mouse_cursor_from_file_metadata, cursorFileName)
 
     _restore_mouse_cursor_metadata = { "name" : "restore_mouse_cursor",
@@ -2056,7 +2056,7 @@ class IUiAxGraphics3DCntrl(object):
             "arg_types" : (agcom.OLE_HANDLE,),
             "marshallers" : (agmarshall.OLE_HANDLE_arg,) }
     def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
-        """Sets mouse cursor to the passed cursor handle."""
+        """Set mouse cursor to the passed cursor handle."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_mouse_cursor_from_handle_metadata, cursorHandle)
 
     _get_show_progress_image_metadata = { "name" : "show_progress_image",
@@ -2394,14 +2394,14 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def ready_state(self) -> int:
-        """Returns/sets the background color of the control."""
+        """Return/sets the background color of the control."""
         return self._intf.get_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_ready_state_metadata)
 
     _copy_from_win_id_metadata = { "name" : "copy_from_win_id",
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LONG_arg,) }
     def copy_from_win_id(self, winID:int) -> None:
-        """Copies an existing Window's scene into this control"""
+        """Copy an existing Window's scene into this control"""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._copy_from_win_id_metadata, winID)
 
     _rubber_band_pick_info_metadata = { "name" : "rubber_band_pick_info",
@@ -2438,14 +2438,14 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def in_zoom_mode(self) -> bool:
-        """Returns true if in zoom in mode."""
+        """Return true if in zoom in mode."""
         return self._intf.get_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_in_zoom_mode_metadata)
 
     _set_mouse_cursor_from_file_metadata = { "name" : "set_mouse_cursor_from_file",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
-        """Sets mouse cursor to the selected cursor file."""
+        """Set mouse cursor to the selected cursor file."""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_mouse_cursor_from_file_metadata, cursorFileName)
 
     _restore_mouse_cursor_metadata = { "name" : "restore_mouse_cursor",
@@ -2459,7 +2459,7 @@ class IUiAx2DCntrl(object):
             "arg_types" : (agcom.OLE_HANDLE,),
             "marshallers" : (agmarshall.OLE_HANDLE_arg,) }
     def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
-        """Sets mouse cursor to the passed cursor handle."""
+        """Set mouse cursor to the passed cursor handle."""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_mouse_cursor_from_handle_metadata, cursorHandle)
 
     _get_show_progress_image_metadata = { "name" : "show_progress_image",
@@ -2573,7 +2573,7 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def pan_mode_enabled(self) -> bool:
-        """Enables/disables pan mode for map control."""
+        """Enable/disable pan mode for map control."""
         return self._intf.get_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_pan_mode_enabled_metadata)
 
     _set_pan_mode_enabled_metadata = { "name" : "pan_mode_enabled",
@@ -2683,14 +2683,14 @@ class IDataObjectFiles(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an object that can be used to iterate through all the file names in the collection."""
+        """Return an object that can be used to iterate through all the file names in the collection."""
         return self._intf.get_property(IDataObjectFiles._metadata, IDataObjectFiles._get__NewEnum_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, index:int) -> str:
-        """Gets the file name at the specified index (0-based)."""
+        """Get the file name at the specified index (0-based)."""
         return self._intf.invoke(IDataObjectFiles._metadata, IDataObjectFiles._item_metadata, index, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -2828,7 +2828,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def ready_state(self) -> int:
-        """Returns the ready state of the control."""
+        """Return the ready state of the control."""
         return self._intf.get_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._get_ready_state_metadata)
 
     _get_application_metadata = { "name" : "application",
@@ -3123,7 +3123,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0B3FFC58-8105-4BE4-9D60-254A142448D5}",
 agcls.AgTypeNameMap["ObjPathCollection"] = ObjPathCollection
 
 class DrawElemRect(IDrawElemRect):
-    """Defines a rectangle in window coordinates."""
+    """Define a rectangle in window coordinates."""
     def __init__(self, sourceObject=None):
         IDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -3165,7 +3165,7 @@ agcls.AgClassCatalog.add_catalog_entry("{97A759F9-49E4-42DE-A8E3-7B670EB3BDAC}",
 agcls.AgTypeNameMap["DrawElemCollection"] = DrawElemCollection
 
 class Draw2DElemRect(IDrawElemRect):
-    """Defines a rectangle in window coordinates for map control."""
+    """Define a rectangle in window coordinates for map control."""
     def __init__(self, sourceObject=None):
         IDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -3249,7 +3249,7 @@ agcls.AgClassCatalog.add_catalog_entry("{21D08121-9F86-485E-B143-337DACCD5022}",
 agcls.AgTypeNameMap["WinProjectionPosition"] = WinProjectionPosition
 
 class DrawElemLine(IDrawElemLine):
-    """Defines a line in window coordinates."""
+    """Define a line in window coordinates."""
     def __init__(self, sourceObject=None):
         IDrawElemLine.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -3270,7 +3270,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A4C86FD0-95FA-4F15-BE04-1FDF0DD6B0B5}",
 agcls.AgTypeNameMap["DrawElemLine"] = DrawElemLine
 
 class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
-    """Provides information about an SSL certificate that is expired or invalid."""
+    """Provide information about an SSL certificate that is expired or invalid."""
     def __init__(self, sourceObject=None):
         ISTKXSSLCertificateErrorEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

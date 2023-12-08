@@ -86,7 +86,7 @@ if os.name != "nt":
     except:
         class Tcl(object):
             def __init__(self):
-                raise STKInvalidTimerError("Cannot use STKEngineTimerType.TkinterMainloop nor STKEngineTimerType.InteractivePython because tkinter installation is not found.")
+                raise STKInvalidTimerError("Cannot use STK_ENGINE_TIMER_TYPE.TKINTER_MAIN_LOOP nor STK_ENGINE_TIMER_TYPE.INTERACTIVE_PYTHON because tkinter installation is not found.")
             
     class TclTimer(object):
         def __init__(self):
