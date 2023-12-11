@@ -937,7 +937,7 @@ class PythonStkApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, stk: STKDesktopApplication, root):
+    def __init__(self, stk: "STKDesktopApplication", root):
         self.stk = stk
         PythonStkApplicationProvider.Application = root
 
