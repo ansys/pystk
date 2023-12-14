@@ -129,7 +129,7 @@ jobs:
 
       - name: "Upload coverage results"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: .cov/total-html
           name: html-coverage
