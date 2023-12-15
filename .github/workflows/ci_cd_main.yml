@@ -41,7 +41,7 @@ jobs:
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Upload combined artifacts"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: doc/_build/html
           name: documentation-html
