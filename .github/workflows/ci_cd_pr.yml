@@ -205,12 +205,19 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=aviator && tox -e tests-aviator-graphics-cov-linux"
 
-      - name: "Run the stk tests"
+      - name: "Run the non graphics stk tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=stk && tox -e tests-stk-graphics-cov-linux"
+            "export COVERAGE_FILE=stknogfx && tox -e tests-stk-nographics-cov-linux"
+
+      - name: "Run the graphics only graphical stk tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=stkgfx && tox -e tests-stk-graphicsonly-cov-linux"
 
       - name: "Run the vgt tests"
         run: |
@@ -233,7 +240,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stk vgt"
+            "coverage combine aviator stknogfx stkgfx vgt"
 
       - name: "Generate total coverage report"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
