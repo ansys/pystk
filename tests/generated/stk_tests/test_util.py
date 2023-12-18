@@ -1734,9 +1734,10 @@ class category:
             for item in class_or_function.__dict__:
                 if item.startswith("test_"):
                     member = class_or_function.__dict__[item]
-                    if not hasattr(member, "categories"):
-                        member.categories = []
-                    member.categories.append(self.category_name)
+                    if member is not None:
+                        if not hasattr(member, "categories"):
+                            member.categories = []
+                        member.categories.append(self.category_name)
         else:
             # Accumulate the categories
             if not hasattr(class_or_function, "categories"):
