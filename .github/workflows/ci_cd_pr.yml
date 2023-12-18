@@ -212,7 +212,7 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=stknogfx && tox -e tests-stk-nographics-cov-linux"
 
-      - name: "Run the graphics only graphical stk tests"
+      - name: "Run the graphics only stk tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
