@@ -312,7 +312,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_ACAT.primary_default_class = ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC
         Assert.assertEqual(ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC, EarlyBoundTests.AG_ACAT.primary_default_class)
 
-        numAvailObjs: int = 35
+        numAvailObjs: int = 29
 
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
 
@@ -440,7 +440,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_ACAT.secondary_default_class = ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC
         Assert.assertEqual(ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC, EarlyBoundTests.AG_ACAT.secondary_default_class)
 
-        numAvailObjs: int = 35
+        numAvailObjs: int = 29
 
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
 
