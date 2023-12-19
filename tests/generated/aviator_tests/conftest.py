@@ -1,3 +1,4 @@
+import pytest
 from test_util import EngineLifetimeManager, CategoryManager
 
 
