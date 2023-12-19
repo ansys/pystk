@@ -1,5 +1,3 @@
-import pytest
-
 from test_util import EngineLifetimeManager, CategoryManager
 
 
@@ -35,6 +33,8 @@ def pytest_sessionstart(session):
     print(f"\nInitializing STK in {target} mode")
     EngineLifetimeManager.Initialize(lock=True, target=target)
 
+    CategoryManager.SetUsingPyTest(True)
+
     included_categories = session.config.getoption("--include")
     if included_categories is not None:
         print(f"Included categories: {','.join(included_categories)}")
@@ -54,6 +54,7 @@ def pytest_sessionfinish(session):
     print("\n\nUninitializing STK")
     EngineLifetimeManager.Uninitialize(force=True)
 
+
 def pytest_runtest_setup(item):
     """
     Check the categories on each item to appropriately include
@@ -67,6 +68,6 @@ def pytest_runtest_setup(item):
     if len(CategoryManager.included_categories) > 0:
         # there are some inclusion specified
         if len(categories) == 0:
-            pytest.skip(f'No category, not included.')
+            pytest.skip(f"No category, not included.")
         elif not any(CategoryManager.IsIncluded(name) for name in categories):
             pytest.skip(f"Category not included.")
