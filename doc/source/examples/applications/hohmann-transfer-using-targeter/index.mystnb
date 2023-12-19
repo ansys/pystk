@@ -31,8 +31,9 @@ from ansys.stk.core.stkengine import STKEngine
 
 stk = STKEngine.StartApplication(noGraphics=False)
 print(f"Using {stk.version}")
-Creating a new scenario
 ```
+
+## Create a new scenario
 
 Start by creating a new scenario in STK by running:
 
@@ -43,7 +44,7 @@ root.new_scenario("HohmannTransfer")
 
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 globe_plotter = GlobeWidget(stk, 640, 480)
-root.execute_command('Animate * Start Loop')
+root.execute_command('Animate * Start Loop');
 ```
 
 ## Adding a satellite to the scenario
@@ -82,14 +83,11 @@ element_types = [element_type for element_type, _ in ELEMENT_TYPE.__members__.it
 print(element_types)
 ```
 
-The segment type is also requied for specifying the initial state of the satellite. List the supported segment types by running:
+The segment type is also required for specifying the initial state of the satellite. List the supported segment types by running:
 
 ```{code-cell} ipython3
 from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
 
-segment_types = [segment_type for segment_type, _ in SEGMENT_TYPE.__members__.items()]
-print(segment_types)
-Selecting the element and segment types
 initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Inner orbit", "-")
 initial_state.set_element_type(ELEMENT_TYPE.KEPLERIAN)
 ```
@@ -104,7 +102,6 @@ initial_state.element.raan = 0.00
 initial_state.element.arg_of_periapsis = 0.00
 initial_state.element.true_anomaly = 0.00
 ```
-
 
 ## Set up the parking orbit of the satellite
 
@@ -189,8 +186,11 @@ Finally, run all active profiles in the target sequence:
 
 ```{code-cell} ipython3
 start_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-Propagate the satellite to the end of the transfer orbit
 ```
+
+### Propagate the satellite to the end of the transfer orbit
+
++++
 
 Once the impulse is solved, the maneuver is complete. The next step is to propagate the satellite to the end of the transfer orbit. This is done by adding a new propagation segment to the main sequence:
 
@@ -265,12 +265,13 @@ propagate_final_orbit = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.P
 propagate_final_orbit.properties.color = Colors.Green
 propagate_final_orbit.propagator_name = "Earth Point Mass"
 propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
-Running the main control sequence
 ```
+
+## Running the main control sequence
 
 Once that all the segments for the main sequence are defined, run the analysis:
 
 ```{code-cell} ipython3
 satellite.propagator.run_mission_control_sequence()
-Visualizing the results
+globe_plotter
 ```
