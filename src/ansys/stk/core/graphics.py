@@ -349,75 +349,75 @@ agcls.AgTypeNameMap["MARKER_BATCH_UNIT"] = MARKER_BATCH_UNIT
 class MODEL_TRANSFORMATION_TYPE(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
     TRANSLATE_X = 0
-    """Translates the geometry along the X axis."""
+    """Translate the geometry along the X axis."""
     TRANSLATE_Y = 1
-    """Translates the geometry along the Y axis."""
+    """Translate the geometry along the Y axis."""
     TRANSLATE_Z = 2
-    """Translates the geometry along the Z axis."""
+    """Translate the geometry along the Z axis."""
     ROTATE_X = 3
-    """Rotates the geometry about the X axis."""
+    """Rotate the geometry about the X axis."""
     ROTATE_Y = 4
-    """Rotates the geometry about the Y axis."""
+    """Rotate the geometry about the Y axis."""
     ROTATE_Z = 5
-    """Rotates the geometry about the Z axis."""
+    """Rotate the geometry about the Z axis."""
     SCALE_X = 6
-    """Scales the geometry along the X axis."""
+    """Scale the geometry along the X axis."""
     SCALE_Y = 7
-    """Scales the geometry along the Y axis."""
+    """Scale the geometry along the Y axis."""
     SCALE_Z = 8
-    """Scales the geometry along the Z axis."""
+    """Scale the geometry along the Z axis."""
     SCALE_UNIFORM = 9
-    """Scales the geometry uniformly along the X, Y, and Z axes."""
+    """Scale the geometry uniformly along the X, Y, and Z axes."""
     TEXTURE_TRANSLATE_X = 10
-    """Translates the texture associated with the geometry along the X axis."""
+    """Translate the texture associated with the geometry along the X axis."""
     TEXTURE_TRANSLATE_Y = 11
-    """Translates the texture associated with the geometry along the Y axis."""
+    """Translate the texture associated with the geometry along the Y axis."""
     TEXTURE_TRANSLATE_Z = 12
-    """Translates the texture associated with the geometry along the Z axis."""
+    """Translate the texture associated with the geometry along the Z axis."""
     TEXTURE_ROTATE_X = 13
-    """Rotates the texture associated with the geometry about the X axis."""
+    """Rotate the texture associated with the geometry about the X axis."""
     TEXTURE_ROTATE_Y = 14
-    """Rotates the texture associated with the geometry about the Y axis."""
+    """Rotate the texture associated with the geometry about the Y axis."""
     TEXTURE_ROTATE_Z = 15
-    """Rotates the texture associated with the geometry about the Z axis."""
+    """Rotate the texture associated with the geometry about the Z axis."""
     TEXTURE_SCALE_X = 16
-    """Scales the texture associated with the geometry along the X axis."""
+    """Scale the texture associated with the geometry along the X axis."""
     TEXTURE_SCALE_Y = 17
-    """Scales the texture associated with the geometry along the Y axis."""
+    """Scale the texture associated with the geometry along the Y axis."""
     TEXTURE_SCALE_Z = 18
-    """Scales the texture associated with the geometry along the Z axis."""
+    """Scale the texture associated with the geometry along the Z axis."""
     TEXTURE_SCALE_UNIFORM = 19
-    """Scales the texture associated with the geometry uniformly along the X, Y, and Z axes."""
+    """Scale the texture associated with the geometry uniformly along the X, Y, and Z axes."""
     TRANSLATE_RED = 20
-    """Translates the red band of color associated with the geometry."""
+    """Translate the red band of color associated with the geometry."""
     TRANSLATE_GREEN = 21
-    """Translates the green band of color associated with the geometry."""
+    """Translate the green band of color associated with the geometry."""
     TRANSLATE_BLUE = 22
-    """Translates the blue band of color associated with the geometry."""
+    """Translate the blue band of color associated with the geometry."""
 
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_X.__doc__ = "Translates the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_Y.__doc__ = "Translates the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_Z.__doc__ = "Translates the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.ROTATE_X.__doc__ = "Rotates the geometry about the X axis."
-MODEL_TRANSFORMATION_TYPE.ROTATE_Y.__doc__ = "Rotates the geometry about the Y axis."
-MODEL_TRANSFORMATION_TYPE.ROTATE_Z.__doc__ = "Rotates the geometry about the Z axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_X.__doc__ = "Scales the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_Y.__doc__ = "Scales the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_Z.__doc__ = "Scales the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_UNIFORM.__doc__ = "Scales the geometry uniformly along the X, Y, and Z axes."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_X.__doc__ = "Translates the texture associated with the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Y.__doc__ = "Translates the texture associated with the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Z.__doc__ = "Translates the texture associated with the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_X.__doc__ = "Rotates the texture associated with the geometry about the X axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Y.__doc__ = "Rotates the texture associated with the geometry about the Y axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Z.__doc__ = "Rotates the texture associated with the geometry about the Z axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_X.__doc__ = "Scales the texture associated with the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Y.__doc__ = "Scales the texture associated with the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Z.__doc__ = "Scales the texture associated with the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_UNIFORM.__doc__ = "Scales the texture associated with the geometry uniformly along the X, Y, and Z axes."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_RED.__doc__ = "Translates the red band of color associated with the geometry."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_GREEN.__doc__ = "Translates the green band of color associated with the geometry."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_BLUE.__doc__ = "Translates the blue band of color associated with the geometry."
+MODEL_TRANSFORMATION_TYPE.TRANSLATE_X.__doc__ = "Translate the geometry along the X axis."
+MODEL_TRANSFORMATION_TYPE.TRANSLATE_Y.__doc__ = "Translate the geometry along the Y axis."
+MODEL_TRANSFORMATION_TYPE.TRANSLATE_Z.__doc__ = "Translate the geometry along the Z axis."
+MODEL_TRANSFORMATION_TYPE.ROTATE_X.__doc__ = "Rotate the geometry about the X axis."
+MODEL_TRANSFORMATION_TYPE.ROTATE_Y.__doc__ = "Rotate the geometry about the Y axis."
+MODEL_TRANSFORMATION_TYPE.ROTATE_Z.__doc__ = "Rotate the geometry about the Z axis."
+MODEL_TRANSFORMATION_TYPE.SCALE_X.__doc__ = "Scale the geometry along the X axis."
+MODEL_TRANSFORMATION_TYPE.SCALE_Y.__doc__ = "Scale the geometry along the Y axis."
+MODEL_TRANSFORMATION_TYPE.SCALE_Z.__doc__ = "Scale the geometry along the Z axis."
+MODEL_TRANSFORMATION_TYPE.SCALE_UNIFORM.__doc__ = "Scale the geometry uniformly along the X, Y, and Z axes."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_X.__doc__ = "Translate the texture associated with the geometry along the X axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Y.__doc__ = "Translate the texture associated with the geometry along the Y axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Z.__doc__ = "Translate the texture associated with the geometry along the Z axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_X.__doc__ = "Rotate the texture associated with the geometry about the X axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Y.__doc__ = "Rotate the texture associated with the geometry about the Y axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Z.__doc__ = "Rotate the texture associated with the geometry about the Z axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_X.__doc__ = "Scale the texture associated with the geometry along the X axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Y.__doc__ = "Scale the texture associated with the geometry along the Y axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Z.__doc__ = "Scale the texture associated with the geometry along the Z axis."
+MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_UNIFORM.__doc__ = "Scale the texture associated with the geometry uniformly along the X, Y, and Z axes."
+MODEL_TRANSFORMATION_TYPE.TRANSLATE_RED.__doc__ = "Translate the red band of color associated with the geometry."
+MODEL_TRANSFORMATION_TYPE.TRANSLATE_GREEN.__doc__ = "Translate the green band of color associated with the geometry."
+MODEL_TRANSFORMATION_TYPE.TRANSLATE_BLUE.__doc__ = "Translate the blue band of color associated with the geometry."
 
 agcls.AgTypeNameMap["MODEL_TRANSFORMATION_TYPE"] = MODEL_TRANSFORMATION_TYPE
 
@@ -685,12 +685,12 @@ agcls.AgTypeNameMap["BINARY_LOGIC_OPERATION"] = BINARY_LOGIC_OPERATION
 class BLUR_METHOD(IntEnum):
     """The method used to blur or smooth a raster."""
     MEAN = 0
-    """Provides smoothing and noise reduction through mean filtering."""
+    """Provide smoothing and noise reduction through mean filtering."""
     BASIC = 1
-    """Provides basic blurring."""
+    """Provide basic blurring."""
 
-BLUR_METHOD.MEAN.__doc__ = "Provides smoothing and noise reduction through mean filtering."
-BLUR_METHOD.BASIC.__doc__ = "Provides basic blurring."
+BLUR_METHOD.MEAN.__doc__ = "Provide smoothing and noise reduction through mean filtering."
+BLUR_METHOD.BASIC.__doc__ = "Provide basic blurring."
 
 agcls.AgTypeNameMap["BLUR_METHOD"] = BLUR_METHOD
 
@@ -883,12 +883,12 @@ agcls.AgTypeNameMap["RASTER_TYPE"] = RASTER_TYPE
 class SHARPEN_METHOD(IntEnum):
     """The method used to sharpen a raster."""
     MEAN_REMOVAL = 0
-    """Provides sharpening through mean removal."""
+    """Provide sharpening through mean removal."""
     BASIC = 1
-    """Provides basic sharpening."""
+    """Provide basic sharpening."""
 
-SHARPEN_METHOD.MEAN_REMOVAL.__doc__ = "Provides sharpening through mean removal."
-SHARPEN_METHOD.BASIC.__doc__ = "Provides basic sharpening."
+SHARPEN_METHOD.MEAN_REMOVAL.__doc__ = "Provide sharpening through mean removal."
+SHARPEN_METHOD.BASIC.__doc__ = "Provide basic sharpening."
 
 agcls.AgTypeNameMap["SHARPEN_METHOD"] = SHARPEN_METHOD
 
@@ -928,12 +928,12 @@ class KML_NETWORK_LINK_VIEW_REFRESH_MODE(IntEnum):
     ON_STOP = 2
     """Refresh the network link after camera view movement stops for the duration specified by view refresh time."""
     ON_REGION = 3
-    """Refreshes the network link when the region associated with this link becomes active."""
+    """Refresh the network link when the region associated with this link becomes active."""
 
 KML_NETWORK_LINK_VIEW_REFRESH_MODE.NEVER.__doc__ = "Do not refresh the network link when the camera's view changes."
 KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REQUEST.__doc__ = "Only refresh the network link when it is explicitly refreshed by calling the refresh method."
 KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_STOP.__doc__ = "Refresh the network link after camera view movement stops for the duration specified by view refresh time."
-KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REGION.__doc__ = "Refreshes the network link when the region associated with this link becomes active."
+KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REGION.__doc__ = "Refresh the network link when the region associated with this link becomes active."
 
 agcls.AgTypeNameMap["KML_NETWORK_LINK_VIEW_REFRESH_MODE"] = KML_NETWORK_LINK_VIEW_REFRESH_MODE
 
@@ -1408,7 +1408,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9107fca2-51b8-4347-9391-9ee6c6b792e3}",
 agcls.AgTypeNameMap["IPathPoint"] = IPathPoint
 
 class IPathPointFactory(object):
-    """Creates Path Primitive's path points."""
+    """Create Path Primitive's path points."""
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1448,35 +1448,35 @@ class IPathPointFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "PathPoint":
-        """Initializes a new path point."""
+        """Initialize a new path point."""
         return self._intf.invoke(IPathPointFactory._metadata, IPathPointFactory._initialize_metadata, out_arg())
 
     _initialize_with_date_metadata = { "name" : "initialize_with_date",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDate"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_date(self, pathPointDate:"IDate") -> "PathPoint":
-        """Initializes a new path point with the given date."""
+        """Initialize a new path point with the given date."""
         return self._intf.invoke(IPathPointFactory._metadata, IPathPointFactory._initialize_with_date_metadata, pathPointDate, out_arg())
 
     _initialize_with_date_and_position_metadata = { "name" : "initialize_with_date_and_position",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDate"), agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_date_and_position(self, pathPointDate:"IDate", position:list) -> "PathPoint":
-        """Initializes a new path point with the given date and position."""
+        """Initialize a new path point with the given date and position."""
         return self._intf.invoke(IPathPointFactory._metadata, IPathPointFactory._initialize_with_date_and_position_metadata, pathPointDate, position, out_arg())
 
     _initialize_with_date_position_and_color_metadata = { "name" : "initialize_with_date_position_and_color",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.OLE_COLOR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDate"), agmarshall.LPSAFEARRAY_arg, agmarshall.OLE_COLOR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_date_position_and_color(self, pathPointDate:"IDate", position:list, color:agcolor.Color) -> "PathPoint":
-        """Initializes a new path point with the given date, position and color."""
+        """Initialize a new path point with the given date, position and color."""
         return self._intf.invoke(IPathPointFactory._metadata, IPathPointFactory._initialize_with_date_position_and_color_metadata, pathPointDate, position, color, out_arg())
 
     _initialize_with_date_position_color_and_translucency_metadata = { "name" : "initialize_with_date_position_color_and_translucency",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.OLE_COLOR, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDate"), agmarshall.LPSAFEARRAY_arg, agmarshall.OLE_COLOR_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_date_position_color_and_translucency(self, pathPointDate:"IDate", position:list, color:agcolor.Color, translucency:float) -> "PathPoint":
-        """Initializes a new path point with the given date, position, color and translucency."""
+        """Initialize a new path point with the given date, position, color and translucency."""
         return self._intf.invoke(IPathPointFactory._metadata, IPathPointFactory._initialize_with_date_position_color_and_translucency_metadata, pathPointDate, position, color, translucency, out_arg())
 
 
@@ -1538,7 +1538,7 @@ agcls.AgClassCatalog.add_catalog_entry("{68e2776e-6e9a-449a-8146-99e67cf8d16c}",
 agcls.AgTypeNameMap["IBoundingSphere"] = IBoundingSphere
 
 class IBoundingSphereFactory(object):
-    """Creates instances of the bounding sphere type."""
+    """Create instances of the bounding sphere type."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1583,7 +1583,7 @@ class IBoundingSphereFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def maximum_radius_bounding_sphere(self) -> "BoundingSphere":
-        """Gets the bounding sphere of maximum possible radius."""
+        """Get the bounding sphere of maximum possible radius."""
         return self._intf.get_property(IBoundingSphereFactory._metadata, IBoundingSphereFactory._get_maximum_radius_bounding_sphere_metadata)
 
 
@@ -1635,7 +1635,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgEnum_arg(MINIFICATION_FILTER),) }
     @property
     def minification_filter(self) -> "MINIFICATION_FILTER":
-        """Gets the minification filter used when the pixel being textured maps to an area less than or equal to one texel."""
+        """Get the minification filter used when the pixel being textured maps to an area less than or equal to one texel."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_minification_filter_metadata)
 
     _get_magnification_filter_metadata = { "name" : "magnification_filter",
@@ -1643,7 +1643,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgEnum_arg(MAGNIFICATION_FILTER),) }
     @property
     def magnification_filter(self) -> "MAGNIFICATION_FILTER":
-        """Gets the magnification filter used when the pixel being textured maps to an area greater than one texel."""
+        """Get the magnification filter used when the pixel being textured maps to an area greater than one texel."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_magnification_filter_metadata)
 
     _get_wrap_s_metadata = { "name" : "wrap_s",
@@ -1651,7 +1651,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgEnum_arg(TEXTURE_WRAP),) }
     @property
     def wrap_s(self) -> "TEXTURE_WRAP":
-        """Gets the texture wrap for the s direction."""
+        """Get the texture wrap for the s direction."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_wrap_s_metadata)
 
     _get_wrap_t_metadata = { "name" : "wrap_t",
@@ -1659,7 +1659,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgEnum_arg(TEXTURE_WRAP),) }
     @property
     def wrap_t(self) -> "TEXTURE_WRAP":
-        """Gets the texture wrap for the t direction."""
+        """Get the texture wrap for the t direction."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_wrap_t_metadata)
 
     _get_nearest_clamp_to_edge_metadata = { "name" : "nearest_clamp_to_edge",
@@ -1667,7 +1667,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_clamp_to_edge(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_nearest_clamp_to_edge_metadata)
 
     _get_nearest_repeat_metadata = { "name" : "nearest_repeat",
@@ -1675,7 +1675,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_repeat(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_nearest_repeat_metadata)
 
     _get_linear_clamp_to_edge_metadata = { "name" : "linear_clamp_to_edge",
@@ -1683,7 +1683,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_clamp_to_edge(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_linear_clamp_to_edge_metadata)
 
     _get_linear_repeat_metadata = { "name" : "linear_repeat",
@@ -1691,7 +1691,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_repeat(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_linear_repeat_metadata)
 
 
@@ -1699,7 +1699,7 @@ agcls.AgClassCatalog.add_catalog_entry("{c71ed80c-abbc-4ce5-bf56-a21ea03c4593}",
 agcls.AgTypeNameMap["ITextureFilter2D"] = ITextureFilter2D
 
 class ITextureFilter2DFactory(object):
-    """Creates texture filters."""
+    """Create texture filters."""
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1742,7 +1742,7 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_clamp_to_edge(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_nearest_clamp_to_edge_metadata)
 
     _get_nearest_repeat_metadata = { "name" : "nearest_repeat",
@@ -1750,7 +1750,7 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_repeat(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_nearest_repeat_metadata)
 
     _get_linear_clamp_to_edge_metadata = { "name" : "linear_clamp_to_edge",
@@ -1758,7 +1758,7 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_clamp_to_edge(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_linear_clamp_to_edge_metadata)
 
     _get_linear_repeat_metadata = { "name" : "linear_repeat",
@@ -1766,28 +1766,28 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_repeat(self) -> "TextureFilter2D":
-        """Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_linear_repeat_metadata)
 
     _initialize_metadata = { "name" : "initialize",
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(MINIFICATION_FILTER), agmarshall.AgEnum_arg(MAGNIFICATION_FILTER), agmarshall.AgEnum_arg(TEXTURE_WRAP), agmarshall.AgEnum_arg(TEXTURE_WRAP), agmarshall.AgInterface_out_arg,) }
     def initialize(self, minificationFilter:"MINIFICATION_FILTER", magnificationFilter:"MAGNIFICATION_FILTER", wrapS:"TEXTURE_WRAP", wrapT:"TEXTURE_WRAP") -> "TextureFilter2D":
-        """Creates a texture filter using the specified minification/magnification options and texture wrap."""
+        """Create a texture filter using the specified minification/magnification options and texture wrap."""
         return self._intf.invoke(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._initialize_metadata, minificationFilter, magnificationFilter, wrapS, wrapT, out_arg())
 
     _initialize_with_texture_wrap_metadata = { "name" : "initialize_with_texture_wrap",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(TEXTURE_WRAP), agmarshall.AgEnum_arg(TEXTURE_WRAP), agmarshall.AgInterface_out_arg,) }
     def initialize_with_texture_wrap(self, wrapS:"TEXTURE_WRAP", wrapT:"TEXTURE_WRAP") -> "TextureFilter2D":
-        """Creates a texture filter using the specified texture wrap."""
+        """Create a texture filter using the specified texture wrap."""
         return self._intf.invoke(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._initialize_with_texture_wrap_metadata, wrapS, wrapT, out_arg())
 
     _initialize_with_minification_and_magnification_metadata = { "name" : "initialize_with_minification_and_magnification",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(MINIFICATION_FILTER), agmarshall.AgEnum_arg(MAGNIFICATION_FILTER), agmarshall.AgInterface_out_arg,) }
     def initialize_with_minification_and_magnification(self, minificationFilter:"MINIFICATION_FILTER", magnificationFilter:"MAGNIFICATION_FILTER") -> "TextureFilter2D":
-        """Creates a texture filter using the specified minification/magnification options."""
+        """Create a texture filter using the specified minification/magnification options."""
         return self._intf.invoke(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._initialize_with_minification_and_magnification_metadata, minificationFilter, magnificationFilter, out_arg())
 
 
@@ -1832,7 +1832,7 @@ class IRendererTexture2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def template(self) -> "RendererTextureTemplate2D":
-        """Gets a template from which the texture was created."""
+        """Get a template from which the texture was created."""
         return self._intf.get_property(IRendererTexture2D._metadata, IRendererTexture2D._get_template_metadata)
 
 
@@ -1879,7 +1879,7 @@ class IRendererTextureTemplate2D(object):
             "marshallers" : (agmarshall.AgEnum_arg(INTERNAL_TEXTURE_FORMAT),) }
     @property
     def internal_format(self) -> "INTERNAL_TEXTURE_FORMAT":
-        """Gets an internal format of the texture."""
+        """Get an internal format of the texture."""
         return self._intf.get_property(IRendererTextureTemplate2D._metadata, IRendererTextureTemplate2D._get_internal_format_metadata)
 
     _get_width_metadata = { "name" : "width",
@@ -1887,7 +1887,7 @@ class IRendererTextureTemplate2D(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def width(self) -> int:
-        """Gets a width of the texture in texels."""
+        """Get a width of the texture in texels."""
         return self._intf.get_property(IRendererTextureTemplate2D._metadata, IRendererTextureTemplate2D._get_width_metadata)
 
     _get_height_metadata = { "name" : "height",
@@ -1895,7 +1895,7 @@ class IRendererTextureTemplate2D(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def height(self) -> int:
-        """Gets a height of the texture in texels."""
+        """Get a height of the texture in texels."""
         return self._intf.get_property(IRendererTextureTemplate2D._metadata, IRendererTextureTemplate2D._get_height_metadata)
 
 
@@ -1961,7 +1961,7 @@ class IPathPointCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "PathPoint":
-        """Returns a path point at the specified position in the collection."""
+        """Return a path point at the specified position in the collection."""
         return self._intf.invoke(IPathPointCollection._metadata, IPathPointCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -2172,7 +2172,7 @@ class IScreenOverlayContainer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def overlays(self) -> "ScreenOverlayCollection":
-        """Gets the collection of overlays that are contained within this overlay."""
+        """Get the collection of overlays that are contained within this overlay."""
         return self._intf.get_property(IScreenOverlayContainer._metadata, IScreenOverlayContainer._get_overlays_metadata)
 
     _get_padding_metadata = { "name" : "padding",
@@ -2180,7 +2180,7 @@ class IScreenOverlayContainer(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def padding(self) -> list:
-        """Gets or sets the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom."""
+        """Get or set the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom."""
         return self._intf.get_property(IScreenOverlayContainer._metadata, IScreenOverlayContainer._get_padding_metadata)
 
     _set_padding_metadata = { "name" : "padding",
@@ -2195,7 +2195,7 @@ class IScreenOverlayContainer(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display(self) -> bool:
-        """Gets or sets if this overlay and the collection of overlays that are contained within this overlay should be rendered."""
+        """Get or set if this overlay and the collection of overlays that are contained within this overlay should be rendered."""
         return self._intf.get_property(IScreenOverlayContainer._metadata, IScreenOverlayContainer._get_display_metadata)
 
     _set_display_metadata = { "name" : "display",
@@ -2434,7 +2434,7 @@ class IPickResultCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "PickResult":
-        """Returns a picked object at the specified position in the collection."""
+        """Return a picked object at the specified position in the collection."""
         return self._intf.invoke(IPickResultCollection._metadata, IPickResultCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -2750,7 +2750,7 @@ class IKmlDocumentLoadedEventArgs(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def document(self) -> "KmlDocument":
-        """Gets the KML document associated with the load event."""
+        """Get the KML document associated with the load event."""
         return self._intf.get_property(IKmlDocumentLoadedEventArgs._metadata, IKmlDocumentLoadedEventArgs._get_document_metadata)
 
     _get_exception_metadata = { "name" : "exception",
@@ -2758,7 +2758,7 @@ class IKmlDocumentLoadedEventArgs(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def exception(self) -> str:
-        """Returns an error message, if an error occurred while loading the KML; otherwise an empty string."""
+        """Return an error message, if an error occurred while loading the KML; otherwise an empty string."""
         return self._intf.get_property(IKmlDocumentLoadedEventArgs._metadata, IKmlDocumentLoadedEventArgs._get_exception_metadata)
 
 
@@ -3588,7 +3588,7 @@ class IExtrudedPolylineTriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def top_boundary_positions(self) -> list:
-        """Gets the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position."""
+        """Get the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position."""
         return self._intf.get_property(IExtrudedPolylineTriangulatorResult._metadata, IExtrudedPolylineTriangulatorResult._get_top_boundary_positions_metadata)
 
     _get_bottom_boundary_positions_metadata = { "name" : "bottom_boundary_positions",
@@ -3596,7 +3596,7 @@ class IExtrudedPolylineTriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def bottom_boundary_positions(self) -> list:
-        """Gets the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position."""
+        """Get the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position."""
         return self._intf.get_property(IExtrudedPolylineTriangulatorResult._metadata, IExtrudedPolylineTriangulatorResult._get_bottom_boundary_positions_metadata)
 
     _get_boundary_positions_winding_order_metadata = { "name" : "boundary_positions_winding_order",
@@ -3604,7 +3604,7 @@ class IExtrudedPolylineTriangulatorResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDING_ORDER),) }
     @property
     def boundary_positions_winding_order(self) -> "WINDING_ORDER":
-        """Gets the winding order of top boundary positions and bottom boundary positions."""
+        """Get the winding order of top boundary positions and bottom boundary positions."""
         return self._intf.get_property(IExtrudedPolylineTriangulatorResult._metadata, IExtrudedPolylineTriangulatorResult._get_boundary_positions_winding_order_metadata)
 
 
@@ -3652,7 +3652,7 @@ class ISolidTriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def outline_indices(self) -> list:
-        """Gets indices into positions that define the positions outlining the solid. The indices returned consider the three components of a position (x, y, and z) as a single array element..."""
+        """Get indices into positions that define the positions outlining the solid. The indices returned consider the three components of a position (x, y, and z) as a single array element..."""
         return self._intf.get_property(ISolidTriangulatorResult._metadata, ISolidTriangulatorResult._get_outline_indices_metadata)
 
     _get_outline_positions_metadata = { "name" : "outline_positions",
@@ -3660,7 +3660,7 @@ class ISolidTriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def outline_positions(self) -> list:
-        """Gets the positions outlining the solid. Three array elements (in the order x, y, z) constitute one position."""
+        """Get the positions outlining the solid. Three array elements (in the order x, y, z) constitute one position."""
         return self._intf.get_property(ISolidTriangulatorResult._metadata, ISolidTriangulatorResult._get_outline_positions_metadata)
 
     _get_outline_polyline_type_metadata = { "name" : "outline_polyline_type",
@@ -3668,7 +3668,7 @@ class ISolidTriangulatorResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE),) }
     @property
     def outline_polyline_type(self) -> "POLYLINE_TYPE":
-        """Gets the polyline type of outline indices and outline positions."""
+        """Get the polyline type of outline indices and outline positions."""
         return self._intf.get_property(ISolidTriangulatorResult._metadata, ISolidTriangulatorResult._get_outline_polyline_type_metadata)
 
     _get_closed_metadata = { "name" : "closed",
@@ -3676,7 +3676,7 @@ class ISolidTriangulatorResult(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def closed(self) -> bool:
-        """Gets whether the solid is closed. For example, a box with six faces is closed. If one face is removed, the box is open."""
+        """Get whether the solid is closed. For example, a box with six faces is closed. If one face is removed, the box is open."""
         return self._intf.get_property(ISolidTriangulatorResult._metadata, ISolidTriangulatorResult._get_closed_metadata)
 
 
@@ -3723,7 +3723,7 @@ class ISurfaceShapesResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def positions(self) -> list:
-        """Gets the positions of the computed shape. Three array elements (in the order x, y, z) constitute one position."""
+        """Get the positions of the computed shape. Three array elements (in the order x, y, z) constitute one position."""
         return self._intf.get_property(ISurfaceShapesResult._metadata, ISurfaceShapesResult._get_positions_metadata)
 
     _get_positions_winding_order_metadata = { "name" : "positions_winding_order",
@@ -3731,7 +3731,7 @@ class ISurfaceShapesResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDING_ORDER),) }
     @property
     def positions_winding_order(self) -> "WINDING_ORDER":
-        """Gets the winding order of positions."""
+        """Get the winding order of positions."""
         return self._intf.get_property(ISurfaceShapesResult._metadata, ISurfaceShapesResult._get_positions_winding_order_metadata)
 
     _get_polyline_type_metadata = { "name" : "polyline_type",
@@ -3739,7 +3739,7 @@ class ISurfaceShapesResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE),) }
     @property
     def polyline_type(self) -> "POLYLINE_TYPE":
-        """Gets the polyline type of positions."""
+        """Get the polyline type of positions."""
         return self._intf.get_property(ISurfaceShapesResult._metadata, ISurfaceShapesResult._get_polyline_type_metadata)
 
 
@@ -3788,7 +3788,7 @@ class ISurfaceTriangulatorResult(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def granularity(self) -> float:
-        """Gets the granularity used when the triangulation was computed. Lower granularities are more precise but create more triangles."""
+        """Get the granularity used when the triangulation was computed. Lower granularities are more precise but create more triangles."""
         return self._intf.get_property(ISurfaceTriangulatorResult._metadata, ISurfaceTriangulatorResult._get_granularity_metadata)
 
     _get_boundary_indices_metadata = { "name" : "boundary_indices",
@@ -3796,7 +3796,7 @@ class ISurfaceTriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def boundary_indices(self) -> list:
-        """Gets indices into positions that define the boundary positions that surround the mesh. The indices returned consider the three components of a position (x, y, and z) as a single array element..."""
+        """Get indices into positions that define the boundary positions that surround the mesh. The indices returned consider the three components of a position (x, y, and z) as a single array element..."""
         return self._intf.get_property(ISurfaceTriangulatorResult._metadata, ISurfaceTriangulatorResult._get_boundary_indices_metadata)
 
     _get_boundary_positions_metadata = { "name" : "boundary_positions",
@@ -3804,7 +3804,7 @@ class ISurfaceTriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def boundary_positions(self) -> list:
-        """Gets the boundary positions that surround the mesh. Three array elements (in the order x, y, z) constitute one position."""
+        """Get the boundary positions that surround the mesh. Three array elements (in the order x, y, z) constitute one position."""
         return self._intf.get_property(ISurfaceTriangulatorResult._metadata, ISurfaceTriangulatorResult._get_boundary_positions_metadata)
 
     _get_boundary_positions_winding_order_metadata = { "name" : "boundary_positions_winding_order",
@@ -3812,7 +3812,7 @@ class ISurfaceTriangulatorResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDING_ORDER),) }
     @property
     def boundary_positions_winding_order(self) -> "WINDING_ORDER":
-        """Gets the winding order of boundary positions."""
+        """Get the winding order of boundary positions."""
         return self._intf.get_property(ISurfaceTriangulatorResult._metadata, ISurfaceTriangulatorResult._get_boundary_positions_winding_order_metadata)
 
     _get_boundary_polyline_type_metadata = { "name" : "boundary_polyline_type",
@@ -3820,7 +3820,7 @@ class ISurfaceTriangulatorResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE),) }
     @property
     def boundary_polyline_type(self) -> "POLYLINE_TYPE":
-        """Gets the polyline type of boundary positions."""
+        """Get the polyline type of boundary positions."""
         return self._intf.get_property(ISurfaceTriangulatorResult._metadata, ISurfaceTriangulatorResult._get_boundary_polyline_type_metadata)
 
 
@@ -3869,7 +3869,7 @@ class ITriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def positions(self) -> list:
-        """Gets the positions of the mesh. Three array elements (in the order x, y, z) constitute one position."""
+        """Get the positions of the mesh. Three array elements (in the order x, y, z) constitute one position."""
         return self._intf.get_property(ITriangulatorResult._metadata, ITriangulatorResult._get_positions_metadata)
 
     _get_normals_metadata = { "name" : "normals",
@@ -3877,7 +3877,7 @@ class ITriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def normals(self) -> list:
-        """Gets the normals of the mesh. Every position in positions has corresponding normal. Normals are commonly used for lighting. Three array elements (in the order x, y, z) constitute one normal."""
+        """Get the normals of the mesh. Every position in positions has corresponding normal. Normals are commonly used for lighting. Three array elements (in the order x, y, z) constitute one normal."""
         return self._intf.get_property(ITriangulatorResult._metadata, ITriangulatorResult._get_normals_metadata)
 
     _get_indices_metadata = { "name" : "indices",
@@ -3885,7 +3885,7 @@ class ITriangulatorResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def indices(self) -> list:
-        """Gets indices into positions and normals. Every 3 indices represent 1 triangle. The indices returned consider the three components of a position or normal (x, y, and z) as a single array element..."""
+        """Get indices into positions and normals. Every 3 indices represent 1 triangle. The indices returned consider the three components of a position or normal (x, y, and z) as a single array element..."""
         return self._intf.get_property(ITriangulatorResult._metadata, ITriangulatorResult._get_indices_metadata)
 
     _get_triangle_winding_order_metadata = { "name" : "triangle_winding_order",
@@ -3893,7 +3893,7 @@ class ITriangulatorResult(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDING_ORDER),) }
     @property
     def triangle_winding_order(self) -> "WINDING_ORDER":
-        """Gets the orientation of front-facing triangles in the mesh."""
+        """Get the orientation of front-facing triangles in the mesh."""
         return self._intf.get_property(ITriangulatorResult._metadata, ITriangulatorResult._get_triangle_winding_order_metadata)
 
     _get_bounding_sphere_metadata = { "name" : "bounding_sphere",
@@ -3901,7 +3901,7 @@ class ITriangulatorResult(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def bounding_sphere(self) -> "BoundingSphere":
-        """Gets the bounding sphere that encompasses the mesh."""
+        """Get the bounding sphere that encompasses the mesh."""
         return self._intf.get_property(ITriangulatorResult._metadata, ITriangulatorResult._get_bounding_sphere_metadata)
 
 
@@ -4097,35 +4097,35 @@ class ICameraSnapshot(object):
             "arg_types" : (agcom.BSTR, agcom.LONG,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CAMERA_SNAPSHOT_FILE_FORMAT),) }
     def save_to_file(self, filename:str, cameraSnapshotFormat:"CAMERA_SNAPSHOT_FILE_FORMAT") -> None:
-        """Saves a snapshot of the 3D window to the filename with the specified format."""
+        """Save a snapshot of the 3D window to the filename with the specified format."""
         return self._intf.invoke(ICameraSnapshot._metadata, ICameraSnapshot._save_to_file_metadata, filename, cameraSnapshotFormat)
 
     _save_to_file_with_width_and_dpi_metadata = { "name" : "save_to_file_with_width_and_dpi",
             "arg_types" : (agcom.BSTR, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CAMERA_SNAPSHOT_FILE_FORMAT), agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg,) }
     def save_to_file_with_width_and_dpi(self, filename:str, cameraSnapshotFormat:"CAMERA_SNAPSHOT_FILE_FORMAT", widthInInches:float, dotsPerInch:float) -> None:
-        """Saves a snapshot of the 3D window to the filename with the specified format at high resolution..."""
+        """Save a snapshot of the 3D window to the filename with the specified format at high resolution..."""
         return self._intf.invoke(ICameraSnapshot._metadata, ICameraSnapshot._save_to_file_with_width_and_dpi_metadata, filename, cameraSnapshotFormat, widthInInches, dotsPerInch)
 
     _save_to_clipboard_metadata = { "name" : "save_to_clipboard",
             "arg_types" : (),
             "marshallers" : () }
     def save_to_clipboard(self) -> None:
-        """Saves a single frame of the 3D window to the clipboard."""
+        """Save a single frame of the 3D window to the clipboard."""
         return self._intf.invoke(ICameraSnapshot._metadata, ICameraSnapshot._save_to_clipboard_metadata, )
 
     _save_to_raster_metadata = { "name" : "save_to_raster",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def save_to_raster(self) -> "IRaster":
-        """Saves a snapshot of the 3D window to a raster."""
+        """Save a snapshot of the 3D window to a raster."""
         return self._intf.invoke(ICameraSnapshot._metadata, ICameraSnapshot._save_to_raster_metadata, out_arg())
 
     _save_to_texture_metadata = { "name" : "save_to_texture",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def save_to_texture(self) -> "RendererTexture2D":
-        """Saves a snapshot of the 3D window to a texture 2d."""
+        """Save a snapshot of the 3D window to a texture 2d."""
         return self._intf.invoke(ICameraSnapshot._metadata, ICameraSnapshot._save_to_texture_metadata, out_arg())
 
 
@@ -4174,7 +4174,7 @@ class ICameraVideoRecording(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_recording(self) -> bool:
-        """Gets if recording is occurring or not."""
+        """Get if recording is occurring or not."""
         return self._intf.get_property(ICameraVideoRecording._metadata, ICameraVideoRecording._get_is_recording_metadata)
 
     _start_recording_metadata = { "name" : "start_recording",
@@ -4188,21 +4188,21 @@ class ICameraVideoRecording(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CAMERA_SNAPSHOT_FILE_FORMAT), agmarshall.INT_arg, agmarshall.INT_arg,) }
     def start_recording_frame_stack(self, fileDirectory:str, filePrefix:str, cameraSnapshotFileFormat:"CAMERA_SNAPSHOT_FILE_FORMAT", startingFrameNumber:int, numberOfFrameDigits:int) -> None:
-        """Starts recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number."""
+        """Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number."""
         return self._intf.invoke(ICameraVideoRecording._metadata, ICameraVideoRecording._start_recording_frame_stack_metadata, fileDirectory, filePrefix, cameraSnapshotFileFormat, startingFrameNumber, numberOfFrameDigits)
 
     _stop_recording_metadata = { "name" : "stop_recording",
             "arg_types" : (),
             "marshallers" : () }
     def stop_recording(self) -> None:
-        """Stops recording."""
+        """Stop recording."""
         return self._intf.invoke(ICameraVideoRecording._metadata, ICameraVideoRecording._stop_recording_metadata, )
 
     _start_recording_video_metadata = { "name" : "start_recording_video",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgEnum_arg(CAMERA_VIDEO_FORMAT), agmarshall.INT_arg, agmarshall.INT_arg,) }
     def start_recording_video(self, fileDirectory:str, filePrefix:str, videoFormat:"CAMERA_VIDEO_FORMAT", videoBitRate:int, videoFrameRate:int) -> None:
-        """Starts recording a video file at the specified bit and frame rate."""
+        """Start recording a video file at the specified bit and frame rate."""
         return self._intf.invoke(ICameraVideoRecording._metadata, ICameraVideoRecording._start_recording_video_metadata, fileDirectory, filePrefix, videoFormat, videoBitRate, videoFrameRate)
 
 
@@ -4251,7 +4251,7 @@ class ICentralBodyGraphicsIndexer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def earth(self) -> "CentralBodyGraphics":
-        """Gets the central body graphics for the planet Earth. This is equivalent to passing a central body equal to an instance of earth central body to the indexer."""
+        """Get the central body graphics for the planet Earth. This is equivalent to passing a central body equal to an instance of earth central body to the indexer."""
         return self._intf.get_property(ICentralBodyGraphicsIndexer._metadata, ICentralBodyGraphicsIndexer._get_earth_metadata)
 
     _get_moon_metadata = { "name" : "moon",
@@ -4259,7 +4259,7 @@ class ICentralBodyGraphicsIndexer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def moon(self) -> "CentralBodyGraphics":
-        """Gets the central body graphics for the Moon."""
+        """Get the central body graphics for the Moon."""
         return self._intf.get_property(ICentralBodyGraphicsIndexer._metadata, ICentralBodyGraphicsIndexer._get_moon_metadata)
 
     _get_sun_metadata = { "name" : "sun",
@@ -4267,21 +4267,21 @@ class ICentralBodyGraphicsIndexer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def sun(self) -> "CentralBodyGraphics":
-        """Gets the central body graphics for the Sun."""
+        """Get the central body graphics for the Sun."""
         return self._intf.get_property(ICentralBodyGraphicsIndexer._metadata, ICentralBodyGraphicsIndexer._get_sun_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, centralBody:str) -> "CentralBodyGraphics":
-        """Gets the central body graphics for the specified central body."""
+        """Get the central body graphics for the specified central body."""
         return self._intf.invoke(ICentralBodyGraphicsIndexer._metadata, ICentralBodyGraphicsIndexer._item_metadata, centralBody, out_arg())
 
     _get_by_name_metadata = { "name" : "get_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_by_name(self, name:str) -> "CentralBodyGraphics":
-        """Returns the central body graphics for the central body with the given name."""
+        """Return the central body graphics for the central body with the given name."""
         return self._intf.invoke(ICentralBodyGraphicsIndexer._metadata, ICentralBodyGraphicsIndexer._get_by_name_metadata, name, out_arg())
 
     __getitem__ = item
@@ -4336,7 +4336,7 @@ class ICustomImageGlobeOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_translucent(self) -> bool:
-        """Gets whether the overlay contains translucent imagery."""
+        """Get whether the overlay contains translucent imagery."""
         return self._intf.get_property(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._get_is_translucent_metadata)
 
     _get_maximum_meters_per_pixel_metadata = { "name" : "maximum_meters_per_pixel",
@@ -4344,7 +4344,7 @@ class ICustomImageGlobeOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_meters_per_pixel(self) -> float:
-        """Gets the maximum resolution of the inlay in meters per pixel."""
+        """Get the maximum resolution of the inlay in meters per pixel."""
         return self._intf.get_property(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._get_maximum_meters_per_pixel_metadata)
 
     _get_projection_metadata = { "name" : "projection",
@@ -4352,7 +4352,7 @@ class ICustomImageGlobeOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(MAP_PROJECTION),) }
     @property
     def projection(self) -> "MAP_PROJECTION":
-        """Gets the map projection. Valid values are mercator and equidistant cylindrical."""
+        """Get the map projection. Valid values are mercator and equidistant cylindrical."""
         return self._intf.get_property(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._get_projection_metadata)
 
     _start_up_metadata = { "name" : "start_up",
@@ -4373,21 +4373,21 @@ class ICustomImageGlobeOverlay(object):
             "arg_types" : (),
             "marshallers" : () }
     def clear_cache(self) -> None:
-        """Clears the image data cache associated with this instance. This is equivalent to deleting and re-adding the overlay."""
+        """Clear the image data cache associated with this instance. This is equivalent to deleting and re-adding the overlay."""
         return self._intf.invoke(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._clear_cache_metadata, )
 
     _reload_metadata = { "name" : "reload",
             "arg_types" : (),
             "marshallers" : () }
     def reload(self) -> None:
-        """Reloads the image data associated with this instance. Preserves the current image data until new image data replaces it."""
+        """Reload the image data associated with this instance. Preserves the current image data until new image data replaces it."""
         return self._intf.invoke(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._reload_metadata, )
 
     _read_metadata = { "name" : "read",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.VARIANT, POINTER(agcom.PVOID), POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.VARIANT_arg, agmarshall.IPictureDisp_arg, agmarshall.VARIANT_BOOL_arg,) }
     def read(self, extent:list, userTileData:typing.Any, image:IPictureDisp) -> bool:
-        """Reads a tile from the specified extent, scales it to and stores the result in image."""
+        """Read a tile from the specified extent, scales it to and stores the result in image."""
         return self._intf.invoke(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._read_metadata, extent, userTileData, image, out_arg())
 
 
@@ -4432,14 +4432,14 @@ class ICustomImageGlobeOverlayPluginActivator(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_from_display_name(self, displayName:str) -> "CustomImageGlobeOverlayPluginProxy":
-        """Loads a custom image globe overlay COM plugin associated with the specified display name and returns a proxy object that allows accessing the custom image globe overlays implemented by the plugin."""
+        """Load a custom image globe overlay COM plugin associated with the specified display name and returns a proxy object that allows accessing the custom image globe overlays implemented by the plugin."""
         return self._intf.invoke(ICustomImageGlobeOverlayPluginActivator._metadata, ICustomImageGlobeOverlayPluginActivator._create_from_display_name_metadata, displayName, out_arg())
 
     _get_available_display_names_metadata = { "name" : "get_available_display_names",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def get_available_display_names(self) -> list:
-        """Gets a list of available custom image globe overlay Display Names (Programmatic Identifiers)."""
+        """Get a list of available custom image globe overlay Display Names (Programmatic Identifiers)."""
         return self._intf.invoke(ICustomImageGlobeOverlayPluginActivator._metadata, ICustomImageGlobeOverlayPluginActivator._get_available_display_names_metadata, out_arg())
 
 
@@ -4486,7 +4486,7 @@ class ICustomImageGlobeOverlayPluginProxy(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def custom_image_globe_overlay(self) -> "CustomImageGlobeOverlay":
-        """Returns a custom image globe overlay."""
+        """Return a custom image globe overlay."""
         return self._intf.get_property(ICustomImageGlobeOverlayPluginProxy._metadata, ICustomImageGlobeOverlayPluginProxy._get_custom_image_globe_overlay_metadata)
 
     _get_is_custom_image_globe_overlay_supported_metadata = { "name" : "is_custom_image_globe_overlay_supported",
@@ -4494,7 +4494,7 @@ class ICustomImageGlobeOverlayPluginProxy(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_custom_image_globe_overlay_supported(self) -> bool:
-        """Returns true if custom image globe overlays are supported."""
+        """Return true if custom image globe overlays are supported."""
         return self._intf.get_property(ICustomImageGlobeOverlayPluginProxy._metadata, ICustomImageGlobeOverlayPluginProxy._get_is_custom_image_globe_overlay_supported_metadata)
 
     _get_real_plugin_object_metadata = { "name" : "real_plugin_object",
@@ -4502,7 +4502,7 @@ class ICustomImageGlobeOverlayPluginProxy(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def real_plugin_object(self) -> typing.Any:
-        """Returns a pointer to plugin object's IUnknown interface."""
+        """Return a pointer to plugin object's IUnknown interface."""
         return self._intf.get_property(ICustomImageGlobeOverlayPluginProxy._metadata, ICustomImageGlobeOverlayPluginProxy._get_real_plugin_object_metadata)
 
 
@@ -4550,7 +4550,7 @@ class IGeospatialImageGlobeOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_transparent_color(self) -> bool:
-        """Gets or sets whether transparent color should be used."""
+        """Get or set whether transparent color should be used."""
         return self._intf.get_property(IGeospatialImageGlobeOverlay._metadata, IGeospatialImageGlobeOverlay._get_use_transparent_color_metadata)
 
     _set_use_transparent_color_metadata = { "name" : "use_transparent_color",
@@ -4565,7 +4565,7 @@ class IGeospatialImageGlobeOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def transparent_color(self) -> agcolor.Color:
-        """Gets or sets the color that will become transparent."""
+        """Get or set the color that will become transparent."""
         return self._intf.get_property(IGeospatialImageGlobeOverlay._metadata, IGeospatialImageGlobeOverlay._get_transparent_color_metadata)
 
     _set_transparent_color_metadata = { "name" : "transparent_color",
@@ -4623,7 +4623,7 @@ class IGlobeOverlay(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body(self) -> str:
-        """Gets the central body that the globe overlay is displayed on. It will return <see langword='null' /> if the globe overlay hasn't been added to a central body."""
+        """Get the central body that the globe overlay is displayed on. It will return <see langword='null' /> if the globe overlay hasn't been added to a central body."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_central_body_metadata)
 
     _get_extent_metadata = { "name" : "extent",
@@ -4631,7 +4631,7 @@ class IGlobeOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def extent(self) -> list:
-        """Gets the cartographic extent that represents the area covered by the globe overlay. The array elements are arranged in the order west longitude, south latitude, east longitude, north latitude."""
+        """Get the cartographic extent that represents the area covered by the globe overlay. The array elements are arranged in the order west longitude, south latitude, east longitude, north latitude."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_extent_metadata)
 
     _get_role_metadata = { "name" : "role",
@@ -4639,7 +4639,7 @@ class IGlobeOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(GLOBE_OVERLAY_ROLE),) }
     @property
     def role(self) -> "GLOBE_OVERLAY_ROLE":
-        """Gets the globe overlay role of the globe overlay."""
+        """Get the globe overlay role of the globe overlay."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_role_metadata)
 
     _get_uri_as_string_metadata = { "name" : "uri_as_string",
@@ -4647,7 +4647,7 @@ class IGlobeOverlay(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def uri_as_string(self) -> str:
-        """Gets the absolute URI specifying the location of the globe overlay."""
+        """Get the absolute URI specifying the location of the globe overlay."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_uri_as_string_metadata)
 
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -4655,7 +4655,7 @@ class IGlobeOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Gets whether or not the overlay is valid. It can be invalid because of a missing file, corrupt file, unlicensed file, or a file on the incorrect central body."""
+        """Get whether or not the overlay is valid. It can be invalid because of a missing file, corrupt file, unlicensed file, or a file on the incorrect central body."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_is_valid_metadata)
 
     _get_display_condition_metadata = { "name" : "display_condition",
@@ -4663,7 +4663,7 @@ class IGlobeOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def display_condition(self) -> "IDisplayCondition":
-        """Gets or sets the display condition that controls whether or not the globe overlay is displayed."""
+        """Get or set the display condition that controls whether or not the globe overlay is displayed."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_display_condition_metadata)
 
     _set_display_condition_metadata = { "name" : "display_condition",
@@ -4720,7 +4720,7 @@ class IGlobeOverlaySettings(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def terrain_cache_size(self) -> int:
-        """Gets or sets the size of the terrain cache in megabytes. It is not recommended to go above 128 megabytes. Large cache sizes can slow down rendering since so much imagery will be rendered."""
+        """Get or set the size of the terrain cache in megabytes. It is not recommended to go above 128 megabytes. Large cache sizes can slow down rendering since so much imagery will be rendered."""
         return self._intf.get_property(IGlobeOverlaySettings._metadata, IGlobeOverlaySettings._get_terrain_cache_size_metadata)
 
     _set_terrain_cache_size_metadata = { "name" : "terrain_cache_size",
@@ -4735,7 +4735,7 @@ class IGlobeOverlaySettings(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def imagery_cache_size(self) -> int:
-        """Gets or sets the size of the imagery cache in megabytes. It is not recommended to go above 128 megabytes. Large cache sizes can slow down rendering since so much imagery will be rendered."""
+        """Get or set the size of the imagery cache in megabytes. It is not recommended to go above 128 megabytes. Large cache sizes can slow down rendering since so much imagery will be rendered."""
         return self._intf.get_property(IGlobeOverlaySettings._metadata, IGlobeOverlaySettings._get_imagery_cache_size_metadata)
 
     _set_imagery_cache_size_metadata = { "name" : "imagery_cache_size",
@@ -4750,7 +4750,7 @@ class IGlobeOverlaySettings(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def preload_terrain_and_imagery(self) -> bool:
-        """Gets or sets whether terrain and imagery are preloaded. When set to true, terrain and imagery are preloaded to get the best visual quality; when set to false, they are not preloaded..."""
+        """Get or set whether terrain and imagery are preloaded. When set to true, terrain and imagery are preloaded to get the best visual quality; when set to false, they are not preloaded..."""
         return self._intf.get_property(IGlobeOverlaySettings._metadata, IGlobeOverlaySettings._get_preload_terrain_and_imagery_metadata)
 
     _set_preload_terrain_and_imagery_metadata = { "name" : "preload_terrain_and_imagery",
@@ -4809,7 +4809,7 @@ class ILighting(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def enabled(self) -> bool:
-        """Gets or sets whether or not lighting is enabled."""
+        """Get or set whether or not lighting is enabled."""
         return self._intf.get_property(ILighting._metadata, ILighting._get_enabled_metadata)
 
     _set_enabled_metadata = { "name" : "enabled",
@@ -4824,7 +4824,7 @@ class ILighting(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def ambient_intensity(self) -> float:
-        """Gets or sets the ambient intensity throughout the scene."""
+        """Get or set the ambient intensity throughout the scene."""
         return self._intf.get_property(ILighting._metadata, ILighting._get_ambient_intensity_metadata)
 
     _set_ambient_intensity_metadata = { "name" : "ambient_intensity",
@@ -4839,7 +4839,7 @@ class ILighting(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def diffuse_intensity(self) -> float:
-        """Gets or sets the diffuse intensity from the sun."""
+        """Get or set the diffuse intensity from the sun."""
         return self._intf.get_property(ILighting._metadata, ILighting._get_diffuse_intensity_metadata)
 
     _set_diffuse_intensity_metadata = { "name" : "diffuse_intensity",
@@ -4854,7 +4854,7 @@ class ILighting(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def night_lights_intensity(self) -> float:
-        """Gets or sets the overall brightness for the night light's image overlay, night overlay."""
+        """Get or set the overall brightness for the night light's image overlay, night overlay."""
         return self._intf.get_property(ILighting._metadata, ILighting._get_night_lights_intensity_metadata)
 
     _set_night_lights_intensity_metadata = { "name" : "night_lights_intensity",
@@ -4905,7 +4905,7 @@ class IPathPrimitiveUpdatePolicy(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPathPrimitive"), agmarshall.AgInterface_in_arg("IDate"),) }
     def update(self, pathPrimitive:"IPathPrimitive", date:"IDate") -> None:
-        """Updates the pathPrimitive at the specified date."""
+        """Update the pathPrimitive at the specified date."""
         return self._intf.invoke(IPathPrimitiveUpdatePolicy._metadata, IPathPrimitiveUpdatePolicy._update_metadata, pathPrimitive, date)
 
 
@@ -4985,7 +4985,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def raster(self) -> "IRaster":
-        """Gets or sets the raster that is projected."""
+        """Get or set the raster that is projected."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_raster_metadata)
 
     _set_raster_metadata = { "name" : "raster",
@@ -5000,7 +5000,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def projection(self) -> "IProjection":
-        """Gets or sets the projection that projects the raster."""
+        """Get or set the projection that projects the raster."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_projection_metadata)
 
     _set_projection_metadata = { "name" : "projection",
@@ -5015,7 +5015,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_shadows(self) -> bool:
-        """Gets or sets whether to show shadows or not. When set to true, the raster will only be projected onto parts of the terrain visible from the projection's position. When false, the raster will project onto any terrain inside the projection's view frustum..."""
+        """Get or set whether to show shadows or not. When set to true, the raster will only be projected onto parts of the terrain visible from the projection's position. When false, the raster will project onto any terrain inside the projection's view frustum..."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_show_shadows_metadata)
 
     _set_show_shadows_metadata = { "name" : "show_shadows",
@@ -5030,7 +5030,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_frustum(self) -> bool:
-        """Gets or sets whether to show the frustum of the projection."""
+        """Get or set whether to show the frustum of the projection."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_show_frustum_metadata)
 
     _set_show_frustum_metadata = { "name" : "show_frustum",
@@ -5045,7 +5045,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_far_plane(self) -> bool:
-        """Gets or sets whether to show the far plane of the projection. If this is set to true, you will see the projected raster even when it does not intersect terrain."""
+        """Get or set whether to show the far plane of the projection. If this is set to true, you will see the projected raster even when it does not intersect terrain."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_show_far_plane_metadata)
 
     _set_show_far_plane_metadata = { "name" : "show_far_plane",
@@ -5060,7 +5060,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def color(self) -> agcolor.Color:
-        """Gets or sets the color of the projected raster."""
+        """Get or set the color of the projected raster."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_color_metadata)
 
     _set_color_metadata = { "name" : "color",
@@ -5075,7 +5075,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def frustum_color(self) -> agcolor.Color:
-        """Gets or sets the color of the projection's frustum."""
+        """Get or set the color of the projection's frustum."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_frustum_color_metadata)
 
     _set_frustum_color_metadata = { "name" : "frustum_color",
@@ -5090,7 +5090,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def far_plane_color(self) -> agcolor.Color:
-        """Gets or sets the color of the projection's far plane."""
+        """Get or set the color of the projection's far plane."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_far_plane_color_metadata)
 
     _set_far_plane_color_metadata = { "name" : "far_plane_color",
@@ -5105,7 +5105,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def shadow_color(self) -> agcolor.Color:
-        """Gets or sets the color of the projection's shadow."""
+        """Get or set the color of the projection's shadow."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_shadow_color_metadata)
 
     _set_shadow_color_metadata = { "name" : "shadow_color",
@@ -5120,7 +5120,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def border_color(self) -> agcolor.Color:
-        """Gets or sets the color of the projection's border."""
+        """Get or set the color of the projection's border."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_border_color_metadata)
 
     _set_border_color_metadata = { "name" : "border_color",
@@ -5135,7 +5135,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def border_width(self) -> float:
-        """Gets or sets the width of the projection's border."""
+        """Get or set the width of the projection's border."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_border_width_metadata)
 
     _set_border_width_metadata = { "name" : "border_width",
@@ -5150,7 +5150,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def frustum_translucency(self) -> float:
-        """Gets or sets the translucency of the projection's frustum."""
+        """Get or set the translucency of the projection's frustum."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_frustum_translucency_metadata)
 
     _set_frustum_translucency_metadata = { "name" : "frustum_translucency",
@@ -5165,7 +5165,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def far_plane_translucency(self) -> float:
-        """Gets or sets the translucency of the projection's far plane."""
+        """Get or set the translucency of the projection's far plane."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_far_plane_translucency_metadata)
 
     _set_far_plane_translucency_metadata = { "name" : "far_plane_translucency",
@@ -5180,7 +5180,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def shadow_translucency(self) -> float:
-        """Gets or sets the translucency of the projection's shadow."""
+        """Get or set the translucency of the projection's shadow."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_shadow_translucency_metadata)
 
     _set_shadow_translucency_metadata = { "name" : "shadow_translucency",
@@ -5195,7 +5195,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def border_translucency(self) -> float:
-        """Gets or sets the translucency of the projection's border."""
+        """Get or set the translucency of the projection's border."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_border_translucency_metadata)
 
     _set_border_translucency_metadata = { "name" : "border_translucency",
@@ -5210,7 +5210,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_transparent_color(self) -> bool:
-        """Gets or sets whether transparent color should be used."""
+        """Get or set whether transparent color should be used."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_use_transparent_color_metadata)
 
     _set_use_transparent_color_metadata = { "name" : "use_transparent_color",
@@ -5225,7 +5225,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def transparent_color(self) -> agcolor.Color:
-        """Gets or sets the color that will become transparent."""
+        """Get or set the color that will become transparent."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_transparent_color_metadata)
 
     _set_transparent_color_metadata = { "name" : "transparent_color",
@@ -5240,7 +5240,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def directions(self) -> list:
-        """Gets the direction vectors in the central body's fixed reference frame that define the projection's frustum..."""
+        """Get the direction vectors in the central body's fixed reference frame that define the projection's frustum..."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_directions_metadata)
 
     _get_supported_metadata = { "name" : "supported",
@@ -5248,7 +5248,7 @@ class IProjectedRasterOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def supported(self) -> bool:
-        """Gets whether or not the video card supports the projected raster overlay."""
+        """Get whether or not the video card supports the projected raster overlay."""
         return self._intf.get_property(IProjectedRasterOverlay._metadata, IProjectedRasterOverlay._get_supported_metadata)
 
 
@@ -5304,7 +5304,7 @@ class IProjection(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets or sets the cartesian defining the position of the projection in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z."""
+        """Get or set the cartesian defining the position of the projection in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z."""
         return self._intf.get_property(IProjection._metadata, IProjection._get_position_metadata)
 
     _set_position_metadata = { "name" : "position",
@@ -5319,7 +5319,7 @@ class IProjection(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def orientation(self) -> "IOrientation":
-        """Gets or sets the unit quaternion defining the orientation of the projection in the central body's fixed reference frame."""
+        """Get or set the unit quaternion defining the orientation of the projection in the central body's fixed reference frame."""
         return self._intf.get_property(IProjection._metadata, IProjection._get_orientation_metadata)
 
     _set_orientation_metadata = { "name" : "orientation",
@@ -5334,7 +5334,7 @@ class IProjection(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def field_of_view_horizontal(self) -> float:
-        """Gets or sets the horizontal field of view associated with the projection."""
+        """Get or set the horizontal field of view associated with the projection."""
         return self._intf.get_property(IProjection._metadata, IProjection._get_field_of_view_horizontal_metadata)
 
     _set_field_of_view_horizontal_metadata = { "name" : "field_of_view_horizontal",
@@ -5349,7 +5349,7 @@ class IProjection(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def field_of_view_vertical(self) -> float:
-        """Gets or sets the vertical field of view associated with the projection."""
+        """Get or set the vertical field of view associated with the projection."""
         return self._intf.get_property(IProjection._metadata, IProjection._get_field_of_view_vertical_metadata)
 
     _set_field_of_view_vertical_metadata = { "name" : "field_of_view_vertical",
@@ -5364,7 +5364,7 @@ class IProjection(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def near_plane(self) -> float:
-        """Gets or sets the near plane associated with the projection."""
+        """Get or set the near plane associated with the projection."""
         return self._intf.get_property(IProjection._metadata, IProjection._get_near_plane_metadata)
 
     _set_near_plane_metadata = { "name" : "near_plane",
@@ -5379,7 +5379,7 @@ class IProjection(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def far_plane(self) -> float:
-        """Gets or sets the far plane associated with the projection."""
+        """Get or set the far plane associated with the projection."""
         return self._intf.get_property(IProjection._metadata, IProjection._get_far_plane_metadata)
 
     _set_far_plane_metadata = { "name" : "far_plane",
@@ -5433,7 +5433,7 @@ class IProjectionStream(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def update_delta(self) -> float:
-        """Gets or sets the update delta of the projection stream in seconds. The update delta defines the interval at which the Update method will be called..."""
+        """Get or set the update delta of the projection stream in seconds. The update delta defines the interval at which the Update method will be called..."""
         return self._intf.get_property(IProjectionStream._metadata, IProjectionStream._get_update_delta_metadata)
 
     _set_update_delta_metadata = { "name" : "update_delta",
@@ -5499,7 +5499,7 @@ class ISceneGlobeOverlaySettings(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def anti_alias_imagery(self) -> bool:
-        """Gets or sets a value indicating whether or not imagery is anti-aliased."""
+        """Get or set a value indicating whether or not imagery is anti-aliased."""
         return self._intf.get_property(ISceneGlobeOverlaySettings._metadata, ISceneGlobeOverlaySettings._get_anti_alias_imagery_metadata)
 
     _set_anti_alias_imagery_metadata = { "name" : "anti_alias_imagery",
@@ -5514,7 +5514,7 @@ class ISceneGlobeOverlaySettings(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def terrain_mesh_pixel_error(self) -> float:
-        """Gets or sets the pixel error for terrain meshes. This is the number of pixels that the rendered terrain is different from the actual terrain data. The default is 2.0 pixels."""
+        """Get or set the pixel error for terrain meshes. This is the number of pixels that the rendered terrain is different from the actual terrain data. The default is 2.0 pixels."""
         return self._intf.get_property(ISceneGlobeOverlaySettings._metadata, ISceneGlobeOverlaySettings._get_terrain_mesh_pixel_error_metadata)
 
     _set_terrain_mesh_pixel_error_metadata = { "name" : "terrain_mesh_pixel_error",
@@ -5529,7 +5529,7 @@ class ISceneGlobeOverlaySettings(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def imagery_pixel_error(self) -> float:
-        """Gets or sets the pixel error for imagery. This is the number of pixels that the rendered imagery is different from the actual imagery data. The default is 1.0 pixel."""
+        """Get or set the pixel error for imagery. This is the number of pixels that the rendered imagery is different from the actual imagery data. The default is 1.0 pixel."""
         return self._intf.get_property(ISceneGlobeOverlaySettings._metadata, ISceneGlobeOverlaySettings._get_imagery_pixel_error_metadata)
 
     _set_imagery_pixel_error_metadata = { "name" : "imagery_pixel_error",
@@ -5544,7 +5544,7 @@ class ISceneGlobeOverlaySettings(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def projected_raster_model_projection(self) -> bool:
-        """Gets or sets whether projected raster globe overlays will also project onto models."""
+        """Get or set whether projected raster globe overlays will also project onto models."""
         return self._intf.get_property(ISceneGlobeOverlaySettings._metadata, ISceneGlobeOverlaySettings._get_projected_raster_model_projection_metadata)
 
     _set_projected_raster_model_projection_metadata = { "name" : "projected_raster_model_projection",
@@ -5615,7 +5615,7 @@ class IScreenOverlayCollectionBase(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of screen overlays in the collection."""
+        """Get the number of screen overlays in the collection."""
         return self._intf.get_property(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._get_count_metadata)
 
     _get_is_read_only_metadata = { "name" : "is_read_only",
@@ -5623,14 +5623,14 @@ class IScreenOverlayCollectionBase(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_read_only(self) -> bool:
-        """Gets a value indicating whether the collection is read-only."""
+        """Get a value indicating whether the collection is read-only."""
         return self._intf.get_property(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._get_is_read_only_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "IScreenOverlay":
-        """Gets the overlay at the specified index."""
+        """Get the overlay at the specified index."""
         return self._intf.invoke(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -5638,35 +5638,35 @@ class IScreenOverlayCollectionBase(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that iterates through the collection."""
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._get__NewEnum_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScreenOverlay"), agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, item:"IScreenOverlay") -> bool:
-        """Determines whether the collection contains a specific overlay."""
+        """Determine whether the collection contains a specific overlay."""
         return self._intf.invoke(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._contains_metadata, item, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScreenOverlay"), agmarshall.VARIANT_BOOL_arg,) }
     def remove(self, item:"IScreenOverlay") -> bool:
-        """Removes the first occurrence of a specific overlay from the collection."""
+        """Remove the first occurrence of a specific overlay from the collection."""
         return self._intf.invoke(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._remove_metadata, item, out_arg())
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Removes all overlays from the collection."""
+        """Remove all overlays from the collection."""
         return self._intf.invoke(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._clear_metadata, )
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScreenOverlay"),) }
     def add(self, item:"IScreenOverlay") -> None:
-        """Adds an overlay to the collection."""
+        """Add an overlay to the collection."""
         return self._intf.invoke(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._add_metadata, item)
 
     __getitem__ = item
@@ -5714,14 +5714,14 @@ class ITexture2DFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def load_from_string_uri(self, uri:str) -> "RendererTexture2D":
-        """Creates a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats."""
+        """Create a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats."""
         return self._intf.invoke(ITexture2DFactory._metadata, ITexture2DFactory._load_from_string_uri_metadata, uri, out_arg())
 
     _from_raster_metadata = { "name" : "from_raster",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"), agmarshall.AgInterface_out_arg,) }
     def from_raster(self, raster:"IRaster") -> "RendererTexture2D":
-        """Creates a new texture from a raster."""
+        """Create a new texture from a raster."""
         return self._intf.invoke(ITexture2DFactory._metadata, ITexture2DFactory._from_raster_metadata, raster, out_arg())
 
 
@@ -5729,7 +5729,7 @@ agcls.AgClassCatalog.add_catalog_entry("{455fd9a8-e787-4459-a613-e3367dce25b8}",
 agcls.AgTypeNameMap["ITexture2DFactory"] = ITexture2DFactory
 
 class IVisualEffects(object):
-    """Controls various post processing effects that can be applied to the scene."""
+    """Control various post processing effects that can be applied to the scene."""
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5771,7 +5771,7 @@ class IVisualEffects(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def lens_flare_enabled(self) -> bool:
-        """Gets or sets whether or not the lens flare effect is enabled"""
+        """Get or set whether or not the lens flare effect is enabled"""
         return self._intf.get_property(IVisualEffects._metadata, IVisualEffects._get_lens_flare_enabled_metadata)
 
     _set_lens_flare_enabled_metadata = { "name" : "lens_flare_enabled",
@@ -5786,7 +5786,7 @@ class IVisualEffects(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def vignette_enabled(self) -> bool:
-        """Gets or sets whether or not the vignette effect is enabled. This simulates light being blocked by the lens hood, resulting in a slight darkening at the perimeter of the 3D Window."""
+        """Get or set whether or not the vignette effect is enabled. This simulates light being blocked by the lens hood, resulting in a slight darkening at the perimeter of the 3D Window."""
         return self._intf.get_property(IVisualEffects._metadata, IVisualEffects._get_vignette_enabled_metadata)
 
     _set_vignette_enabled_metadata = { "name" : "vignette_enabled",
@@ -5801,7 +5801,7 @@ class IVisualEffects(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def vignette_strength(self) -> float:
-        """Sets the strength of the vignette effect, values between [0.001 and 5.0], with larger values resulting in more pronounced darkening around the perimeter of the 3D window."""
+        """Set the strength of the vignette effect, values between [0.001 and 5.0], with larger values resulting in more pronounced darkening around the perimeter of the 3D window."""
         return self._intf.get_property(IVisualEffects._metadata, IVisualEffects._get_vignette_strength_metadata)
 
     _set_vignette_strength_metadata = { "name" : "vignette_strength",
@@ -5816,7 +5816,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a1b830ed-9742-4903-9773-1edbc40f0deb}",
 agcls.AgTypeNameMap["IVisualEffects"] = IVisualEffects
 
 class IAltitudeDisplayCondition(object):
-    """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+    """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5858,7 +5858,7 @@ class IAltitudeDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_altitude(self) -> float:
-        """Gets or sets the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude."""
+        """Get or set the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude."""
         return self._intf.get_property(IAltitudeDisplayCondition._metadata, IAltitudeDisplayCondition._get_minimum_altitude_metadata)
 
     _set_minimum_altitude_metadata = { "name" : "minimum_altitude",
@@ -5873,7 +5873,7 @@ class IAltitudeDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_altitude(self) -> float:
-        """Gets or sets the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude."""
+        """Get or set the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude."""
         return self._intf.get_property(IAltitudeDisplayCondition._metadata, IAltitudeDisplayCondition._get_maximum_altitude_metadata)
 
     _set_maximum_altitude_metadata = { "name" : "maximum_altitude",
@@ -5888,7 +5888,7 @@ class IAltitudeDisplayCondition(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body(self) -> str:
-        """Gets or sets the central body to which the altitude is relative."""
+        """Get or set the central body to which the altitude is relative."""
         return self._intf.get_property(IAltitudeDisplayCondition._metadata, IAltitudeDisplayCondition._get_central_body_metadata)
 
     _set_central_body_metadata = { "name" : "central_body",
@@ -5903,7 +5903,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a6225aa6-608d-4ad8-b5f6-2afdd29b96f9}",
 agcls.AgTypeNameMap["IAltitudeDisplayCondition"] = IAltitudeDisplayCondition
 
 class IAxesPrimitive(object):
-    """Renders an axes in the 3D scene."""
+    """Render an axes in the 3D scene."""
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5961,7 +5961,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def lighting(self) -> bool:
-        """Gets or Sets whether the primitive is lit."""
+        """Get or set whether the primitive is lit."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_lighting_metadata)
 
     _set_lighting_metadata = { "name" : "lighting",
@@ -5976,7 +5976,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def label(self) -> str:
-        """Gets or Sets the axes label."""
+        """Get or set the axes label."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_label_metadata)
 
     _set_label_metadata = { "name" : "label",
@@ -5991,7 +5991,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_label(self) -> bool:
-        """Gets or Sets whether the axes' label is displayed."""
+        """Get or set whether the axes' label is displayed."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_display_label_metadata)
 
     _set_display_label_metadata = { "name" : "display_label",
@@ -6006,7 +6006,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_trace(self) -> bool:
-        """Gets or Sets whether the persistence trace (points) is displayed."""
+        """Get or set whether the persistence trace (points) is displayed."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_display_trace_metadata)
 
     _set_display_trace_metadata = { "name" : "display_trace",
@@ -6021,7 +6021,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_sweep(self) -> bool:
-        """Gets or Sets whether the persistence sweep (triangles) is displayed."""
+        """Get or set whether the persistence sweep (triangles) is displayed."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_display_sweep_metadata)
 
     _set_display_sweep_metadata = { "name" : "display_sweep",
@@ -6036,7 +6036,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_lines(self) -> bool:
-        """Gets or Sets whether persistence lines are displayed."""
+        """Get or set whether persistence lines are displayed."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_display_lines_metadata)
 
     _set_display_lines_metadata = { "name" : "display_lines",
@@ -6051,7 +6051,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def persistence_width(self) -> float:
-        """Gets or Sets persistence point/line width."""
+        """Get or set persistence point/line width."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_persistence_width_metadata)
 
     _set_persistence_width_metadata = { "name" : "persistence_width",
@@ -6066,7 +6066,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def fade_persistence(self) -> bool:
-        """Gets or Sets whether the persistence path should fade over time."""
+        """Get or set whether the persistence path should fade over time."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_fade_persistence_metadata)
 
     _set_fade_persistence_metadata = { "name" : "fade_persistence",
@@ -6081,7 +6081,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def persistence_duration(self) -> float:
-        """Gets or Sets the maximum duration of the persistence path."""
+        """Get or set the maximum duration of the persistence path."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_persistence_duration_metadata)
 
     _set_persistence_duration_metadata = { "name" : "persistence_duration",
@@ -6096,7 +6096,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def length(self) -> float:
-        """Gets or Sets the axes' source-to-arrow-tip length."""
+        """Get or set the axes' source-to-arrow-tip length."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_length_metadata)
 
     _set_length_metadata = { "name" : "length",
@@ -6111,7 +6111,7 @@ class IAxesPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def width(self) -> float:
-        """Gets or Sets the width in pixels. As the camera distances changes from this primitive, the geometry will autoscale to maintain this thickness."""
+        """Get or set the width in pixels. As the camera distances changes from this primitive, the geometry will autoscale to maintain this thickness."""
         return self._intf.get_property(IAxesPrimitive._metadata, IAxesPrimitive._get_width_metadata)
 
     _set_width_metadata = { "name" : "width",
@@ -6212,7 +6212,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets or sets the position of the camera. The array contains the components of the position arranged in the order x, y, z."""
+        """Get or set the position of the camera. The array contains the components of the position arranged in the order x, y, z."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_position_metadata)
 
     _set_position_metadata = { "name" : "position",
@@ -6227,7 +6227,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def reference_point(self) -> list:
-        """Gets or sets the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z."""
+        """Get or set the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_reference_point_metadata)
 
     _set_reference_point_metadata = { "name" : "reference_point",
@@ -6242,7 +6242,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def direction(self) -> list:
-        """Gets or sets the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z."""
+        """Get or set the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_direction_metadata)
 
     _set_direction_metadata = { "name" : "direction",
@@ -6257,7 +6257,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def up_vector(self) -> list:
-        """Gets or sets the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z."""
+        """Get or set the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_up_vector_metadata)
 
     _set_up_vector_metadata = { "name" : "up_vector",
@@ -6272,7 +6272,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def distance(self) -> float:
-        """Gets or sets the distance the camera position is from the reference point."""
+        """Get or set the distance the camera position is from the reference point."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_distance_metadata)
 
     _set_distance_metadata = { "name" : "distance",
@@ -6287,7 +6287,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def axes(self) -> "IVectorGeometryToolAxes":
-        """Gets or sets camera's axes of rotation."""
+        """Get or set camera's axes of rotation."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_axes_metadata)
 
     _set_axes_metadata = { "name" : "axes",
@@ -6302,7 +6302,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.AgEnum_arg(CONSTRAINED_UP_AXIS),) }
     @property
     def constrained_up_axis(self) -> "CONSTRAINED_UP_AXIS":
-        """Gets or sets the axis to constrain the up vector to."""
+        """Get or set the axis to constrain the up vector to."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_constrained_up_axis_metadata)
 
     _set_constrained_up_axis_metadata = { "name" : "constrained_up_axis",
@@ -6317,7 +6317,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def allow_rotation_over_constrained_up_axis(self) -> bool:
-        """Gets or sets whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down."""
+        """Get or set whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_allow_rotation_over_constrained_up_axis_metadata)
 
     _set_allow_rotation_over_constrained_up_axis_metadata = { "name" : "allow_rotation_over_constrained_up_axis",
@@ -6332,7 +6332,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def lock_view_direction(self) -> bool:
-        """Gets or sets whether the camera's direction is locked."""
+        """Get or set whether the camera's direction is locked."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_lock_view_direction_metadata)
 
     _set_lock_view_direction_metadata = { "name" : "lock_view_direction",
@@ -6347,7 +6347,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def field_of_view(self) -> float:
-        """Gets or sets field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal..."""
+        """Get or set field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal..."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_field_of_view_metadata)
 
     _set_field_of_view_metadata = { "name" : "field_of_view",
@@ -6362,7 +6362,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def horizontal_field_of_view(self) -> float:
-        """Gets the horizontal field of view."""
+        """Get the horizontal field of view."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_horizontal_field_of_view_metadata)
 
     _get_vertical_field_of_view_metadata = { "name" : "vertical_field_of_view",
@@ -6370,7 +6370,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def vertical_field_of_view(self) -> float:
-        """Gets the vertical field of view."""
+        """Get the vertical field of view."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_vertical_field_of_view_metadata)
 
     _get_near_plane_metadata = { "name" : "near_plane",
@@ -6378,7 +6378,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def near_plane(self) -> float:
-        """Gets or sets the distance from the camera to the near plane."""
+        """Get or set the distance from the camera to the near plane."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_near_plane_metadata)
 
     _set_near_plane_metadata = { "name" : "near_plane",
@@ -6393,7 +6393,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def far_plane(self) -> float:
-        """Gets or sets the distance from the camera to the far plane."""
+        """Get or set the distance from the camera to the far plane."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_far_plane_metadata)
 
     _set_far_plane_metadata = { "name" : "far_plane",
@@ -6408,7 +6408,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def far_near_plane_ratio(self) -> float:
-        """Gets or sets the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower..."""
+        """Get or set the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower..."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_far_near_plane_ratio_metadata)
 
     _set_far_near_plane_ratio_metadata = { "name" : "far_near_plane_ratio",
@@ -6423,7 +6423,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def distance_per_radius(self) -> float:
-        """Returns the distance that the Camera's Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum."""
+        """Return the distance that the Camera's Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_distance_per_radius_metadata)
 
     _get_snapshot_metadata = { "name" : "snapshot",
@@ -6431,7 +6431,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def snapshot(self) -> "CameraSnapshot":
-        """Gets the camera snapshot settings."""
+        """Get the camera snapshot settings."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_snapshot_metadata)
 
     _get_video_recording_metadata = { "name" : "video_recording",
@@ -6439,7 +6439,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def video_recording(self) -> "CameraVideoRecording":
-        """Gets the camera video recorder."""
+        """Get the camera video recorder."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_video_recording_metadata)
 
     _get_pixel_size_per_distance_metadata = { "name" : "pixel_size_per_distance",
@@ -6447,7 +6447,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def pixel_size_per_distance(self) -> float:
-        """Gets the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object."""
+        """Get the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_pixel_size_per_distance_metadata)
 
     _get_position_reference_frame_metadata = { "name" : "position_reference_frame",
@@ -6455,7 +6455,7 @@ class ICamera(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def position_reference_frame(self) -> "IVectorGeometryToolSystem":
-        """Gets the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes."""
+        """Get the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_position_reference_frame_metadata)
 
     _get_reference_point_reference_frame_metadata = { "name" : "reference_point_reference_frame",
@@ -6463,42 +6463,42 @@ class ICamera(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def reference_point_reference_frame(self) -> "IVectorGeometryToolSystem":
-        """Gets the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes."""
+        """Get the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes."""
         return self._intf.get_property(ICamera._metadata, ICamera._get_reference_point_reference_frame_metadata)
 
     _visibility_test_metadata = { "name" : "visibility_test",
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.AgInterface_in_arg("IBoundingSphere"), agmarshall.AgEnum_arg(VISIBILITY),) }
     def visibility_test(self, referenceFrame:"IVectorGeometryToolSystem", sphere:"IBoundingSphere") -> "VISIBILITY":
-        """Gets the visibility of a sphere against the view frustum and any occluding central bodies."""
+        """Get the visibility of a sphere against the view frustum and any occluding central bodies."""
         return self._intf.invoke(ICamera._metadata, ICamera._visibility_test_metadata, referenceFrame, sphere, out_arg())
 
     _cartographic_to_window_metadata = { "name" : "cartographic_to_window",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def cartographic_to_window(self, centralBody:str, position:list) -> list:
-        """Converts a cartographic position to a pixel coordinate relative to the globe control. This method can throw an exception. Returns an array containing the pixel coordinate (in the order x, y) of the cartographic position relative to the globe control..."""
+        """Convert a cartographic position to a pixel coordinate relative to the globe control. This method can throw an exception. Returns an array containing the pixel coordinate (in the order x, y) of the cartographic position relative to the globe control..."""
         return self._intf.invoke(ICamera._metadata, ICamera._cartographic_to_window_metadata, centralBody, position, out_arg())
 
     _try_cartographic_to_window_metadata = { "name" : "try_cartographic_to_window",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def try_cartographic_to_window(self, centralBody:str, position:list) -> list:
-        """Converts a cartographic position to a pixel coordinate relative to the globe control. This method does not throw an exception."""
+        """Convert a cartographic position to a pixel coordinate relative to the globe control. This method does not throw an exception."""
         return self._intf.invoke(ICamera._metadata, ICamera._try_cartographic_to_window_metadata, centralBody, position, out_arg())
 
     _window_to_cartographic_metadata = { "name" : "window_to_cartographic",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def window_to_cartographic(self, centralBody:str, position:list) -> list:
-        """Converts a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered; if the pixel coordinate does not intersect the ellipsoid, an exception is thrown. Returns the cartographic position..."""
+        """Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered; if the pixel coordinate does not intersect the ellipsoid, an exception is thrown. Returns the cartographic position..."""
         return self._intf.invoke(ICamera._metadata, ICamera._window_to_cartographic_metadata, centralBody, position, out_arg())
 
     _try_window_to_cartographic_metadata = { "name" : "try_window_to_cartographic",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def try_window_to_cartographic(self, centralBody:str, position:list) -> list:
-        """Converts a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered. This method does not throw an exception."""
+        """Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered. This method does not throw an exception."""
         return self._intf.invoke(ICamera._metadata, ICamera._try_window_to_cartographic_metadata, centralBody, position, out_arg())
 
     _view_central_body_metadata = { "name" : "view_central_body",
@@ -6526,56 +6526,56 @@ class ICamera(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.LPSAFEARRAY_arg,) }
     def view_with_up_axis(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", referencePoint:"IVectorGeometryToolPoint", upAxis:list) -> None:
-        """Views from a point to a point. Sets the camera's position and the reference point the camera is looking at."""
+        """View from a point to a point. Sets the camera's position and the reference point the camera is looking at."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_with_up_axis_metadata, axes, cameraPosition, referencePoint, upAxis)
 
     _view_metadata = { "name" : "view",
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"),) }
     def view(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", referencePoint:"IVectorGeometryToolPoint") -> None:
-        """Views from a point to a point. Sets the camera's position and the reference point the camera is looking at."""
+        """View from a point to a point. Sets the camera's position and the reference point the camera is looking at."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_metadata, axes, cameraPosition, referencePoint)
 
     _view_direction_with_up_axis_metadata = { "name" : "view_direction_with_up_axis",
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"), agmarshall.LPSAFEARRAY_arg,) }
     def view_direction_with_up_axis(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector", upAxis:list) -> None:
-        """Views from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking."""
+        """View from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_direction_with_up_axis_metadata, axes, cameraPosition, direction, upAxis)
 
     _view_direction_metadata = { "name" : "view_direction",
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"),) }
     def view_direction(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector") -> None:
-        """Views from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking."""
+        """View from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_direction_metadata, axes, cameraPosition, direction)
 
     _view_offset_with_up_axis_metadata = { "name" : "view_offset_with_up_axis",
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def view_offset_with_up_axis(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", offset:list, upAxis:list) -> None:
-        """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset."""
+        """Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_offset_with_up_axis_metadata, axes, referencePoint, offset, upAxis)
 
     _view_offset_metadata = { "name" : "view_offset",
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.LPSAFEARRAY_arg,) }
     def view_offset(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", offset:list) -> None:
-        """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset."""
+        """Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_offset_metadata, axes, referencePoint, offset)
 
     _view_offset_direction_with_up_axis_metadata = { "name" : "view_offset_direction_with_up_axis",
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"), agmarshall.LPSAFEARRAY_arg,) }
     def view_offset_direction_with_up_axis(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector", upAxis:list) -> None:
-        """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
+        """Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_offset_direction_with_up_axis_metadata, axes, referencePoint, direction, upAxis)
 
     _view_offset_direction_metadata = { "name" : "view_offset_direction",
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IVectorGeometryToolPoint"), agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"),) }
     def view_offset_direction(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector") -> None:
-        """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
+        """Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
         return self._intf.invoke(ICamera._metadata, ICamera._view_offset_direction_metadata, axes, referencePoint, direction)
 
 
@@ -6642,7 +6642,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def color(self) -> agcolor.Color:
-        """Gets or sets the color of the central body in the scene."""
+        """Get or set the color of the central body in the scene."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_color_metadata)
 
     _set_color_metadata = { "name" : "color",
@@ -6657,7 +6657,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def specular_color(self) -> agcolor.Color:
-        """Gets or sets the specular color of the central body in the scene. The specular color is associated with the specular overlay."""
+        """Get or set the specular color of the central body in the scene. The specular color is associated with the specular overlay."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_specular_color_metadata)
 
     _set_specular_color_metadata = { "name" : "specular_color",
@@ -6672,7 +6672,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def shininess(self) -> float:
-        """Gets or sets the shininess of the central body in the scene. The shininess affects the size and brightness of specular reflection associated with the specular overlay."""
+        """Get or set the shininess of the central body in the scene. The shininess affects the size and brightness of specular reflection associated with the specular overlay."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_shininess_metadata)
 
     _set_shininess_metadata = { "name" : "shininess",
@@ -6687,7 +6687,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_imagery(self) -> bool:
-        """Gets or sets whether the imagery for central body in the scene is shown or hidden."""
+        """Get or set whether the imagery for central body in the scene is shown or hidden."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_show_imagery_metadata)
 
     _set_show_imagery_metadata = { "name" : "show_imagery",
@@ -6702,7 +6702,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show(self) -> bool:
-        """Gets or sets whether the central body is shown or hidden in the scene. This only affects the central body itself, not the primitives that are associated with it."""
+        """Get or set whether the central body is shown or hidden in the scene. This only affects the central body itself, not the primitives that are associated with it."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_show_metadata)
 
     _set_show_metadata = { "name" : "show",
@@ -6717,7 +6717,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_label(self) -> bool:
-        """Gets or sets whether a label with the name of the central body should be rendered in the scene when the camera is at certain distance away from the central body."""
+        """Get or set whether a label with the name of the central body should be rendered in the scene when the camera is at certain distance away from the central body."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_show_label_metadata)
 
     _set_show_label_metadata = { "name" : "show_label",
@@ -6732,7 +6732,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def altitude_offset(self) -> float:
-        """Gets or sets the altitude that all terrain and imagery will be offset from the surface of the central body in the scene."""
+        """Get or set the altitude that all terrain and imagery will be offset from the surface of the central body in the scene."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_altitude_offset_metadata)
 
     _set_altitude_offset_metadata = { "name" : "altitude_offset",
@@ -6747,7 +6747,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def base_overlay(self) -> "IGlobeImageOverlay":
-        """Gets or sets the base globe image overlay associated with the central body in the scene. The base overlay is always rendered before any other imagery..."""
+        """Get or set the base globe image overlay associated with the central body in the scene. The base overlay is always rendered before any other imagery..."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_base_overlay_metadata)
 
     _set_base_overlay_metadata = { "name" : "base_overlay",
@@ -6762,7 +6762,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def night_overlay(self) -> "IGlobeImageOverlay":
-        """Gets or sets the night globe image overlay associated with the central body in the scene. The night overlay is displayed only on parts of the central body that are not in sun light..."""
+        """Get or set the night globe image overlay associated with the central body in the scene. The night overlay is displayed only on parts of the central body that are not in sun light..."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_night_overlay_metadata)
 
     _set_night_overlay_metadata = { "name" : "night_overlay",
@@ -6777,7 +6777,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def specular_overlay(self) -> "IGlobeImageOverlay":
-        """Gets or sets the specular globe image overlay associated with the central body in the scene. The specular overlay is displayed only in the specular highlight of the central body."""
+        """Get or set the specular globe image overlay associated with the central body in the scene. The specular overlay is displayed only in the specular highlight of the central body."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_specular_overlay_metadata)
 
     _set_specular_overlay_metadata = { "name" : "specular_overlay",
@@ -6792,7 +6792,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def terrain(self) -> "TerrainOverlayCollection":
-        """Gets the collection of terrain overlay associated with the central body in the scene."""
+        """Get the collection of terrain overlay associated with the central body in the scene."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_terrain_metadata)
 
     _get_imagery_metadata = { "name" : "imagery",
@@ -6800,7 +6800,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def imagery(self) -> "ImageCollection":
-        """Gets the collection of imagery associated with the central body in the scene."""
+        """Get the collection of imagery associated with the central body in the scene."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_imagery_metadata)
 
     _get_kml_metadata = { "name" : "kml",
@@ -6808,7 +6808,7 @@ class ICentralBodyGraphics(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def kml(self) -> "KmlGraphics":
-        """Gets the kml graphics associated with the central body in the scene."""
+        """Get the kml graphics associated with the central body in the scene."""
         return self._intf.get_property(ICentralBodyGraphics._metadata, ICentralBodyGraphics._get_kml_metadata)
 
 
@@ -6861,7 +6861,7 @@ class IClouds(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show(self) -> bool:
-        """Gets or sets whether clouds are rendered."""
+        """Get or set whether clouds are rendered."""
         return self._intf.get_property(IClouds._metadata, IClouds._get_show_metadata)
 
     _set_show_metadata = { "name" : "show",
@@ -6921,7 +6921,7 @@ class IClouds(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_valid(self) -> bool:
-        """Returns whether or not the clouds file is valid."""
+        """Return whether or not the clouds file is valid."""
         return self._intf.get_property(IClouds._metadata, IClouds._get_is_valid_metadata)
 
 
@@ -6995,7 +6995,7 @@ class ICompositeDisplayCondition(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of display conditions in the composite."""
+        """Get the number of display conditions in the composite."""
         return self._intf.get_property(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._get_count_metadata)
 
     _get_capacity_metadata = { "name" : "capacity",
@@ -7003,7 +7003,7 @@ class ICompositeDisplayCondition(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def capacity(self) -> int:
-        """Gets the number of display conditions for which memory has been allocated. This will always be greater or equal to count."""
+        """Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count."""
         return self._intf.get_property(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._get_capacity_metadata)
 
     _get_logic_operation_metadata = { "name" : "logic_operation",
@@ -7011,7 +7011,7 @@ class ICompositeDisplayCondition(object):
             "marshallers" : (agmarshall.AgEnum_arg(BINARY_LOGIC_OPERATION),) }
     @property
     def logic_operation(self) -> "BINARY_LOGIC_OPERATION":
-        """Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites."""
+        """Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites."""
         return self._intf.get_property(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._get_logic_operation_metadata)
 
     _set_logic_operation_metadata = { "name" : "logic_operation",
@@ -7025,7 +7025,7 @@ class ICompositeDisplayCondition(object):
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "IDisplayCondition":
-        """Returns the condition at the given zero-based index."""
+        """Return the condition at the given zero-based index."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -7033,91 +7033,91 @@ class ICompositeDisplayCondition(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that iterates through the collection."""
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._get__NewEnum_metadata)
 
     _reserve_metadata = { "name" : "reserve",
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.INT_arg,) }
     def reserve(self, count:int) -> None:
-        """Requests enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be."""
+        """Request enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._reserve_metadata, count)
 
     _add_with_negate_metadata = { "name" : "add_with_negate",
             "arg_types" : (agcom.PVOID, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDisplayCondition"), agmarshall.VARIANT_BOOL_arg,) }
     def add_with_negate(self, displayCondition:"IDisplayCondition", negate:bool) -> None:
-        """Adds a display condition to the end of the composite."""
+        """Add a display condition to the end of the composite."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._add_with_negate_metadata, displayCondition, negate)
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDisplayCondition"),) }
     def add(self, displayCondition:"IDisplayCondition") -> None:
-        """Adds a display condition to the end of the composite."""
+        """Add a display condition to the end of the composite."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._add_metadata, displayCondition)
 
     _insert_with_negate_metadata = { "name" : "insert_with_negate",
             "arg_types" : (agcom.INT, agcom.PVOID, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_in_arg("IDisplayCondition"), agmarshall.VARIANT_BOOL_arg,) }
     def insert_with_negate(self, index:int, displayCondition:"IDisplayCondition", negate:bool) -> None:
-        """Inserts a display condition at the given zero-based index, shifting existing display conditions."""
+        """Insert a display condition at the given zero-based index, shifting existing display conditions."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._insert_with_negate_metadata, index, displayCondition, negate)
 
     _insert_metadata = { "name" : "insert",
             "arg_types" : (agcom.INT, agcom.PVOID,),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_in_arg("IDisplayCondition"),) }
     def insert(self, index:int, displayCondition:"IDisplayCondition") -> None:
-        """Inserts a display condition at the given zero-based index, shifting existing display conditions."""
+        """Insert a display condition at the given zero-based index, shifting existing display conditions."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._insert_metadata, index, displayCondition)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDisplayCondition"),) }
     def remove(self, displayCondition:"IDisplayCondition") -> None:
-        """Removes a display condition from the composite."""
+        """Remove a display condition from the composite."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._remove_metadata, displayCondition)
 
     _remove_at_metadata = { "name" : "remove_at",
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.INT_arg,) }
     def remove_at(self, index:int) -> None:
-        """Removes the display condition at the given zero-based index, shifting existing display conditions."""
+        """Remove the display condition at the given zero-based index, shifting existing display conditions."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._remove_at_metadata, index)
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Removes all display conditions from the composite."""
+        """Remove all display conditions from the composite."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._clear_metadata, )
 
     _get_negate_metadata = { "name" : "get_negate",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDisplayCondition"), agmarshall.VARIANT_BOOL_arg,) }
     def get_negate(self, displayCondition:"IDisplayCondition") -> bool:
-        """Determines if a logical not operation is applied to a display condition in the composite."""
+        """Determine if a logical not operation is applied to a display condition in the composite."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._get_negate_metadata, displayCondition, out_arg())
 
     _set_negate_metadata = { "name" : "set_negate",
             "arg_types" : (agcom.PVOID, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDisplayCondition"), agmarshall.VARIANT_BOOL_arg,) }
     def set_negate(self, displayCondition:"IDisplayCondition", negate:bool) -> None:
-        """Sets if a logical not operation is applied to a display condition in the composite when the composite is evaluated."""
+        """Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._set_negate_metadata, displayCondition, negate)
 
     _get_negate_at_metadata = { "name" : "get_negate_at",
             "arg_types" : (agcom.INT, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.VARIANT_BOOL_arg,) }
     def get_negate_at(self, index:int) -> bool:
-        """Determines if a logical not operation is applied to a display condition in the composite."""
+        """Determine if a logical not operation is applied to a display condition in the composite."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._get_negate_at_metadata, index, out_arg())
 
     _set_negate_at_metadata = { "name" : "set_negate_at",
             "arg_types" : (agcom.INT, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.INT_arg, agmarshall.VARIANT_BOOL_arg,) }
     def set_negate_at(self, index:int, negate:bool) -> None:
-        """Sets if a logical not operation is applied to a display condition in the composite when the composite is evaluated."""
+        """Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated."""
         return self._intf.invoke(ICompositeDisplayCondition._metadata, ICompositeDisplayCondition._set_negate_at_metadata, index, negate)
 
     __getitem__ = item
@@ -7184,7 +7184,7 @@ class ICompositePrimitive(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of primitives in the composite."""
+        """Get the number of primitives in the composite."""
         return self._intf.get_property(ICompositePrimitive._metadata, ICompositePrimitive._get_count_metadata)
 
     _get_translucent_primitives_sort_order_metadata = { "name" : "translucent_primitives_sort_order",
@@ -7192,7 +7192,7 @@ class ICompositePrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(PRIMITIVES_SORT_ORDER),) }
     @property
     def translucent_primitives_sort_order(self) -> "PRIMITIVES_SORT_ORDER":
-        """Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality..."""
+        """Get or set the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality..."""
         return self._intf.get_property(ICompositePrimitive._metadata, ICompositePrimitive._get_translucent_primitives_sort_order_metadata)
 
     _set_translucent_primitives_sort_order_metadata = { "name" : "translucent_primitives_sort_order",
@@ -7206,28 +7206,28 @@ class ICompositePrimitive(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPrimitive"),) }
     def add(self, primitive:"IPrimitive") -> None:
-        """Adds a primitive to the composite."""
+        """Add a primitive to the composite."""
         return self._intf.invoke(ICompositePrimitive._metadata, ICompositePrimitive._add_metadata, primitive)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPrimitive"),) }
     def remove(self, primitive:"IPrimitive") -> None:
-        """Removes a primitive from the composite."""
+        """Remove a primitive from the composite."""
         return self._intf.invoke(ICompositePrimitive._metadata, ICompositePrimitive._remove_metadata, primitive)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPrimitive"), agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, primitive:"IPrimitive") -> bool:
-        """Determines whether the composite contains a primitive."""
+        """Determine whether the composite contains a primitive."""
         return self._intf.invoke(ICompositePrimitive._metadata, ICompositePrimitive._contains_metadata, primitive, out_arg())
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Removes all primitives from the composite."""
+        """Remove all primitives from the composite."""
         return self._intf.invoke(ICompositePrimitive._metadata, ICompositePrimitive._clear_metadata, )
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -7235,7 +7235,7 @@ class ICompositePrimitive(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added."""
+        """Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added."""
         return self._intf.get_property(ICompositePrimitive._metadata, ICompositePrimitive._get__NewEnum_metadata)
 
 
@@ -7281,7 +7281,7 @@ class IConstantDisplayCondition(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display(self) -> bool:
-        """Gets or sets the value the display condition evaluates to."""
+        """Get or set the value the display condition evaluates to."""
         return self._intf.get_property(IConstantDisplayCondition._metadata, IConstantDisplayCondition._get_display_metadata)
 
     _set_display_metadata = { "name" : "display",
@@ -7333,7 +7333,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5214ce90-6448-4cc7-bc5c-f06485ec5bb8}",
 agcls.AgTypeNameMap["IDisplayCondition"] = IDisplayCondition
 
 class IDistanceDisplayCondition(object):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7375,7 +7375,7 @@ class IDistanceDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance(self) -> float:
-        """Gets or sets the minimum distance of the inclusive distance interval."""
+        """Get or set the minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceDisplayCondition._metadata, IDistanceDisplayCondition._get_minimum_distance_metadata)
 
     _set_minimum_distance_metadata = { "name" : "minimum_distance",
@@ -7390,7 +7390,7 @@ class IDistanceDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance(self) -> float:
-        """Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
+        """Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
         return self._intf.get_property(IDistanceDisplayCondition._metadata, IDistanceDisplayCondition._get_maximum_distance_metadata)
 
     _set_maximum_distance_metadata = { "name" : "maximum_distance",
@@ -7405,7 +7405,7 @@ class IDistanceDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance_squared(self) -> float:
-        """Gets the squared minimum distance of the inclusive distance interval."""
+        """Get the squared minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceDisplayCondition._metadata, IDistanceDisplayCondition._get_minimum_distance_squared_metadata)
 
     _get_maximum_distance_squared_metadata = { "name" : "maximum_distance_squared",
@@ -7413,7 +7413,7 @@ class IDistanceDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance_squared(self) -> float:
-        """Gets the squared maximum distance of the inclusive distance interval."""
+        """Get the squared maximum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceDisplayCondition._metadata, IDistanceDisplayCondition._get_maximum_distance_squared_metadata)
 
 
@@ -7421,7 +7421,7 @@ agcls.AgClassCatalog.add_catalog_entry("{b1b3130c-bebb-4a64-a5b7-2357384e2b8c}",
 agcls.AgTypeNameMap["IDistanceDisplayCondition"] = IDistanceDisplayCondition
 
 class IDistanceToGlobeOverlayDisplayCondition(object):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7465,7 +7465,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def globe_overlay(self) -> "IGlobeOverlay":
-        """Gets or sets the globe overlay associated with this instance."""
+        """Get or set the globe overlay associated with this instance."""
         return self._intf.get_property(IDistanceToGlobeOverlayDisplayCondition._metadata, IDistanceToGlobeOverlayDisplayCondition._get_globe_overlay_metadata)
 
     _set_globe_overlay_metadata = { "name" : "globe_overlay",
@@ -7480,7 +7480,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance(self) -> float:
-        """Gets or sets the minimum distance of the inclusive distance interval."""
+        """Get or set the minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToGlobeOverlayDisplayCondition._metadata, IDistanceToGlobeOverlayDisplayCondition._get_minimum_distance_metadata)
 
     _set_minimum_distance_metadata = { "name" : "minimum_distance",
@@ -7495,7 +7495,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance_squared(self) -> float:
-        """Gets the squared minimum distance of the inclusive distance interval."""
+        """Get the squared minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToGlobeOverlayDisplayCondition._metadata, IDistanceToGlobeOverlayDisplayCondition._get_minimum_distance_squared_metadata)
 
     _get_maximum_distance_metadata = { "name" : "maximum_distance",
@@ -7503,7 +7503,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance(self) -> float:
-        """Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
+        """Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
         return self._intf.get_property(IDistanceToGlobeOverlayDisplayCondition._metadata, IDistanceToGlobeOverlayDisplayCondition._get_maximum_distance_metadata)
 
     _set_maximum_distance_metadata = { "name" : "maximum_distance",
@@ -7518,7 +7518,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance_squared(self) -> float:
-        """Gets the squared maximum distance of the inclusive distance interval."""
+        """Get the squared maximum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToGlobeOverlayDisplayCondition._metadata, IDistanceToGlobeOverlayDisplayCondition._get_maximum_distance_squared_metadata)
 
 
@@ -7526,7 +7526,7 @@ agcls.AgClassCatalog.add_catalog_entry("{212b00ec-ff3a-4f1b-9fc3-5a900c6536dc}",
 agcls.AgTypeNameMap["IDistanceToGlobeOverlayDisplayCondition"] = IDistanceToGlobeOverlayDisplayCondition
 
 class IDistanceToPositionDisplayCondition(object):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7572,7 +7572,7 @@ class IDistanceToPositionDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance(self) -> float:
-        """Gets or sets the minimum distance of the inclusive distance interval."""
+        """Get or set the minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToPositionDisplayCondition._metadata, IDistanceToPositionDisplayCondition._get_minimum_distance_metadata)
 
     _set_minimum_distance_metadata = { "name" : "minimum_distance",
@@ -7587,7 +7587,7 @@ class IDistanceToPositionDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance_squared(self) -> float:
-        """Gets the squared minimum distance of the inclusive distance interval."""
+        """Get the squared minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToPositionDisplayCondition._metadata, IDistanceToPositionDisplayCondition._get_minimum_distance_squared_metadata)
 
     _get_maximum_distance_metadata = { "name" : "maximum_distance",
@@ -7595,7 +7595,7 @@ class IDistanceToPositionDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance(self) -> float:
-        """Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
+        """Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
         return self._intf.get_property(IDistanceToPositionDisplayCondition._metadata, IDistanceToPositionDisplayCondition._get_maximum_distance_metadata)
 
     _set_maximum_distance_metadata = { "name" : "maximum_distance",
@@ -7610,7 +7610,7 @@ class IDistanceToPositionDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance_squared(self) -> float:
-        """Gets the squared maximum distance of the inclusive distance interval."""
+        """Get the squared maximum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToPositionDisplayCondition._metadata, IDistanceToPositionDisplayCondition._get_maximum_distance_squared_metadata)
 
     _get_position_metadata = { "name" : "position",
@@ -7618,7 +7618,7 @@ class IDistanceToPositionDisplayCondition(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets or sets the position used to compute the distance from the camera. The array contains the components of the position arranged in the order x, y, z."""
+        """Get or set the position used to compute the distance from the camera. The array contains the components of the position arranged in the order x, y, z."""
         return self._intf.get_property(IDistanceToPositionDisplayCondition._metadata, IDistanceToPositionDisplayCondition._get_position_metadata)
 
     _set_position_metadata = { "name" : "position",
@@ -7633,7 +7633,7 @@ class IDistanceToPositionDisplayCondition(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def reference_frame(self) -> "IVectorGeometryToolSystem":
-        """Gets or sets the reference frame that position is defined in."""
+        """Get or set the reference frame that position is defined in."""
         return self._intf.get_property(IDistanceToPositionDisplayCondition._metadata, IDistanceToPositionDisplayCondition._get_reference_frame_metadata)
 
     _set_reference_frame_metadata = { "name" : "reference_frame",
@@ -7648,7 +7648,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0110db74-d567-4804-9bec-d7cce8ed59d0}",
 agcls.AgTypeNameMap["IDistanceToPositionDisplayCondition"] = IDistanceToPositionDisplayCondition
 
 class IDistanceToPrimitiveDisplayCondition(object):
-    """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+    """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7692,7 +7692,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def primitive(self) -> "IPrimitive":
-        """Gets or sets the primitive associated with this instance."""
+        """Get or set the primitive associated with this instance."""
         return self._intf.get_property(IDistanceToPrimitiveDisplayCondition._metadata, IDistanceToPrimitiveDisplayCondition._get_primitive_metadata)
 
     _set_primitive_metadata = { "name" : "primitive",
@@ -7707,7 +7707,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance(self) -> float:
-        """Gets or sets the minimum distance of the inclusive distance interval."""
+        """Get or set the minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToPrimitiveDisplayCondition._metadata, IDistanceToPrimitiveDisplayCondition._get_minimum_distance_metadata)
 
     _set_minimum_distance_metadata = { "name" : "minimum_distance",
@@ -7722,7 +7722,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_distance_squared(self) -> float:
-        """Gets the squared minimum distance of the inclusive distance interval."""
+        """Get the squared minimum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToPrimitiveDisplayCondition._metadata, IDistanceToPrimitiveDisplayCondition._get_minimum_distance_squared_metadata)
 
     _get_maximum_distance_metadata = { "name" : "maximum_distance",
@@ -7730,7 +7730,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance(self) -> float:
-        """Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
+        """Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance."""
         return self._intf.get_property(IDistanceToPrimitiveDisplayCondition._metadata, IDistanceToPrimitiveDisplayCondition._get_maximum_distance_metadata)
 
     _set_maximum_distance_metadata = { "name" : "maximum_distance",
@@ -7745,7 +7745,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_distance_squared(self) -> float:
-        """Gets the squared maximum distance of the inclusive distance interval."""
+        """Get the squared maximum distance of the inclusive distance interval."""
         return self._intf.get_property(IDistanceToPrimitiveDisplayCondition._metadata, IDistanceToPrimitiveDisplayCondition._get_maximum_distance_squared_metadata)
 
 
@@ -7793,7 +7793,7 @@ class IDurationPathPrimitiveUpdatePolicy(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def duration(self) -> float:
-        """Gets or sets the maximum duration that a point will lie on the line."""
+        """Get or set the maximum duration that a point will lie on the line."""
         return self._intf.get_property(IDurationPathPrimitiveUpdatePolicy._metadata, IDurationPathPrimitiveUpdatePolicy._get_duration_metadata)
 
     _set_duration_metadata = { "name" : "duration",
@@ -7808,7 +7808,7 @@ class IDurationPathPrimitiveUpdatePolicy(object):
             "marshallers" : (agmarshall.AgEnum_arg(PATH_PRIMITIVE_REMOVE_LOCATION),) }
     @property
     def remove_location(self) -> "PATH_PRIMITIVE_REMOVE_LOCATION":
-        """Gets or sets where the positions on the path are removed from."""
+        """Get or set where the positions on the path are removed from."""
         return self._intf.get_property(IDurationPathPrimitiveUpdatePolicy._metadata, IDurationPathPrimitiveUpdatePolicy._get_remove_location_metadata)
 
     _set_remove_location_metadata = { "name" : "remove_location",
@@ -7863,7 +7863,7 @@ class IFrameRate(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def frames_per_second(self) -> float:
-        """Gets the current frame rate in frames per second."""
+        """Get the current frame rate in frames per second."""
         return self._intf.get_property(IFrameRate._metadata, IFrameRate._get_frames_per_second_metadata)
 
     _get_maximum_number_of_frames_metadata = { "name" : "maximum_number_of_frames",
@@ -7871,7 +7871,7 @@ class IFrameRate(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def maximum_number_of_frames(self) -> int:
-        """Gets or sets the maximum number of frames used to determine frame rate. More frames means that the frame rate is averaged over a longer period of time and will fluctuate less than fewer frames would. The minimum value is 2."""
+        """Get or set the maximum number of frames used to determine frame rate. More frames means that the frame rate is averaged over a longer period of time and will fluctuate less than fewer frames would. The minimum value is 2."""
         return self._intf.get_property(IFrameRate._metadata, IFrameRate._get_maximum_number_of_frames_metadata)
 
     _set_maximum_number_of_frames_metadata = { "name" : "maximum_number_of_frames",
@@ -7942,7 +7942,7 @@ class IGlobeImageOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def translucency(self) -> float:
-        """Gets or sets the translucency value for the image. The translucency is between 0 and 1, where 0 is fully opaque and 1 is invisible."""
+        """Get or set the translucency value for the image. The translucency is between 0 and 1, where 0 is fully opaque and 1 is invisible."""
         return self._intf.get_property(IGlobeImageOverlay._metadata, IGlobeImageOverlay._get_translucency_metadata)
 
     _set_translucency_metadata = { "name" : "translucency",
@@ -7957,7 +7957,7 @@ class IGlobeImageOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_altitude_based_translucency(self) -> bool:
-        """Gets or sets whether to use altitude to determine the translucency value for the image or not. If <see langword='false' />, the translucency value is used..."""
+        """Get or set whether to use altitude to determine the translucency value for the image or not. If <see langword='false' />, the translucency value is used..."""
         return self._intf.get_property(IGlobeImageOverlay._metadata, IGlobeImageOverlay._get_use_altitude_based_translucency_metadata)
 
     _set_use_altitude_based_translucency_metadata = { "name" : "use_altitude_based_translucency",
@@ -7972,7 +7972,7 @@ class IGlobeImageOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def altitude_based_translucency_lower_translucency(self) -> float:
-        """Gets or sets the lower translucency value for the image when use altitude based translucency is set to <see langword='true' />..."""
+        """Get or set the lower translucency value for the image when use altitude based translucency is set to <see langword='true' />..."""
         return self._intf.get_property(IGlobeImageOverlay._metadata, IGlobeImageOverlay._get_altitude_based_translucency_lower_translucency_metadata)
 
     _set_altitude_based_translucency_lower_translucency_metadata = { "name" : "altitude_based_translucency_lower_translucency",
@@ -7987,7 +7987,7 @@ class IGlobeImageOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def altitude_based_translucency_upper_translucency(self) -> float:
-        """Gets or sets the upper translucency value for the image when use altitude based translucency is set to <see langword='true' />..."""
+        """Get or set the upper translucency value for the image when use altitude based translucency is set to <see langword='true' />..."""
         return self._intf.get_property(IGlobeImageOverlay._metadata, IGlobeImageOverlay._get_altitude_based_translucency_upper_translucency_metadata)
 
     _set_altitude_based_translucency_upper_translucency_metadata = { "name" : "altitude_based_translucency_upper_translucency",
@@ -8002,7 +8002,7 @@ class IGlobeImageOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def altitude_based_translucency_lower_altitude(self) -> float:
-        """Gets or sets the lower altitude bound used to calculate translucency for the image when use altitude based translucency is set to <see langword='true' />..."""
+        """Get or set the lower altitude bound used to calculate translucency for the image when use altitude based translucency is set to <see langword='true' />..."""
         return self._intf.get_property(IGlobeImageOverlay._metadata, IGlobeImageOverlay._get_altitude_based_translucency_lower_altitude_metadata)
 
     _set_altitude_based_translucency_lower_altitude_metadata = { "name" : "altitude_based_translucency_lower_altitude",
@@ -8017,7 +8017,7 @@ class IGlobeImageOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def altitude_based_translucency_upper_altitude(self) -> float:
-        """Gets or sets the upper altitude bound used to calculate translucency for the image when use altitude based translucency is set to <see langword='true' />..."""
+        """Get or set the upper altitude bound used to calculate translucency for the image when use altitude based translucency is set to <see langword='true' />..."""
         return self._intf.get_property(IGlobeImageOverlay._metadata, IGlobeImageOverlay._get_altitude_based_translucency_upper_altitude_metadata)
 
     _set_altitude_based_translucency_upper_altitude_metadata = { "name" : "altitude_based_translucency_upper_altitude",
@@ -8032,7 +8032,7 @@ class IGlobeImageOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def more_than_one_image_globe_overlay_supported(self) -> bool:
-        """Gets whether or not the video card allows for more than one image globe overlay globe image overlay to be added."""
+        """Get whether or not the video card allows for more than one image globe overlay globe image overlay to be added."""
         return self._intf.get_property(IGlobeImageOverlay._metadata, IGlobeImageOverlay._get_more_than_one_image_globe_overlay_supported_metadata)
 
 
@@ -8085,7 +8085,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def name(self) -> str:
-        """Gets the typeface name of the font."""
+        """Get the typeface name of the font."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_name_metadata)
 
     _get_size_metadata = { "name" : "size",
@@ -8093,7 +8093,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def size(self) -> int:
-        """Gets the size of the font."""
+        """Get the size of the font."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_size_metadata)
 
     _get_bold_metadata = { "name" : "bold",
@@ -8101,7 +8101,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def bold(self) -> bool:
-        """Gets a value that indicates whether this font is bold."""
+        """Get a value that indicates whether this font is bold."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_bold_metadata)
 
     _get_italic_metadata = { "name" : "italic",
@@ -8109,7 +8109,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def italic(self) -> bool:
-        """Gets a value that indicates whether this font is italic."""
+        """Get a value that indicates whether this font is italic."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_italic_metadata)
 
     _get_underline_metadata = { "name" : "underline",
@@ -8117,7 +8117,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def underline(self) -> bool:
-        """Gets a value that indicates whether this font is underlined."""
+        """Get a value that indicates whether this font is underlined."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_underline_metadata)
 
     _get_strikeout_metadata = { "name" : "strikeout",
@@ -8125,7 +8125,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def strikeout(self) -> bool:
-        """Gets a value that indicates whether this font has a horizontal line through its characters."""
+        """Get a value that indicates whether this font has a horizontal line through its characters."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_strikeout_metadata)
 
     _get_outline_metadata = { "name" : "outline",
@@ -8133,7 +8133,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def outline(self) -> bool:
-        """Gets a value that indicates whether this font has an outline around its characters."""
+        """Get a value that indicates whether this font has an outline around its characters."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_outline_metadata)
 
     _get_style_metadata = { "name" : "style",
@@ -8141,7 +8141,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.AgEnum_arg(FONT_STYLE),) }
     @property
     def style(self) -> "FONT_STYLE":
-        """Gets the font style enumeration that contains the style for this font. This does not include the outline property."""
+        """Get the font style enumeration that contains the style for this font. This does not include the outline property."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_style_metadata)
 
     _get_antialias_metadata = { "name" : "antialias",
@@ -8149,7 +8149,7 @@ class IGraphicsFont(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def antialias(self) -> bool:
-        """Gets a value that indicates whether this font is antialiased."""
+        """Get a value that indicates whether this font is antialiased."""
         return self._intf.get_property(IGraphicsFont._metadata, IGraphicsFont._get_antialias_metadata)
 
 
@@ -8197,7 +8197,7 @@ class IGreatArcInterpolator(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body(self) -> str:
-        """Gets or sets the central body used when interpolating with interpolate."""
+        """Get or set the central body used when interpolating with interpolate."""
         return self._intf.get_property(IGreatArcInterpolator._metadata, IGreatArcInterpolator._get_central_body_metadata)
 
     _set_central_body_metadata = { "name" : "central_body",
@@ -8212,7 +8212,7 @@ class IGreatArcInterpolator(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def granularity(self) -> float:
-        """Gets or sets the granularity used when interpolating with interpolate. Lower granularities are more precise but create more positions."""
+        """Get or set the granularity used when interpolating with interpolate. Lower granularities are more precise but create more positions."""
         return self._intf.get_property(IGreatArcInterpolator._metadata, IGreatArcInterpolator._get_granularity_metadata)
 
     _set_granularity_metadata = { "name" : "granularity",
@@ -8298,7 +8298,7 @@ class IImageCollection(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of globe overlay objects in the collection."""
+        """Get the number of globe overlay objects in the collection."""
         return self._intf.get_property(IImageCollection._metadata, IImageCollection._get_count_metadata)
 
     _get_is_read_only_metadata = { "name" : "is_read_only",
@@ -8306,14 +8306,14 @@ class IImageCollection(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_read_only(self) -> bool:
-        """Gets whether or not the collection is read only."""
+        """Get whether or not the collection is read only."""
         return self._intf.get_property(IImageCollection._metadata, IImageCollection._get_is_read_only_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "IGlobeImageOverlay":
-        """Gets the globe image overlay at the specified index."""
+        """Get the globe image overlay at the specified index."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -8321,105 +8321,105 @@ class IImageCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Constructs an iterator that can be used to iterate the collection."""
+        """Construct an iterator that can be used to iterate the collection."""
         return self._intf.get_property(IImageCollection._metadata, IImageCollection._get__NewEnum_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"), agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, imageryOverlay:"IGlobeImageOverlay") -> bool:
-        """Checks the presence of a globe image overlay in the collection."""
+        """Check the presence of a globe image overlay in the collection."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._contains_metadata, imageryOverlay, out_arg())
 
     _contains_uri_string_metadata = { "name" : "contains_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains_uri_string(self, stringUri:str) -> bool:
-        """Checks the presence of a globe image overlay with the specified Uri in the collection."""
+        """Check the presence of a globe image overlay with the specified Uri in the collection."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._contains_uri_string_metadata, stringUri, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"), agmarshall.VARIANT_BOOL_arg,) }
     def remove(self, globeOverlay:"IGlobeImageOverlay") -> bool:
-        """Removes a globe image overlay from the collection."""
+        """Remove a globe image overlay from the collection."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._remove_metadata, globeOverlay, out_arg())
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Removes all globe image overlay objects from the collection."""
+        """Remove all globe image overlay objects from the collection."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._clear_metadata, )
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"),) }
     def add(self, imageryOverlay:"IGlobeImageOverlay") -> None:
-        """Adds imageryOverlay to the collection."""
+        """Add imageryOverlay to the collection."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._add_metadata, imageryOverlay)
 
     _add_async_metadata = { "name" : "add_async",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"),) }
     def add_async(self, imageryOverlay:"IGlobeImageOverlay") -> None:
-        """Adds imageryOverlay to the collection asynchronously."""
+        """Add imageryOverlay to the collection asynchronously."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._add_async_metadata, imageryOverlay)
 
     _index_of_metadata = { "name" : "index_of",
             "arg_types" : (agcom.PVOID, POINTER(agcom.INT),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"), agmarshall.INT_arg,) }
     def index_of(self, imageryOverlay:"IGlobeImageOverlay") -> int:
-        """Gets the index of the specified globe image overlay."""
+        """Get the index of the specified globe image overlay."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._index_of_metadata, imageryOverlay, out_arg())
 
     _index_of_uri_string_metadata = { "name" : "index_of_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.INT),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.INT_arg,) }
     def index_of_uri_string(self, stringUri:str) -> int:
-        """Gets the index of the globe image overlay with the specified Uri."""
+        """Get the index of the globe image overlay with the specified Uri."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._index_of_uri_string_metadata, stringUri, out_arg())
 
     _add_uri_string_metadata = { "name" : "add_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_uri_string(self, uri:str) -> "IGlobeImageOverlay":
-        """Creates a globe overlay from the uri, which represents a uri, and adds it to the collection."""
+        """Create a globe overlay from the uri, which represents a uri, and adds it to the collection."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._add_uri_string_metadata, uri, out_arg())
 
     _add_async_uri_string_metadata = { "name" : "add_async_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_async_uri_string(self, uri:str) -> "IGlobeImageOverlay":
-        """Creates a globe image overlay from the uri, which represents a uri, and adds it to the collection asynchronously."""
+        """Create a globe image overlay from the uri, which represents a uri, and adds it to the collection asynchronously."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._add_async_uri_string_metadata, uri, out_arg())
 
     _swap_metadata = { "name" : "swap",
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"), agmarshall.AgInterface_in_arg("IGlobeImageOverlay"),) }
     def swap(self, imageryOverlay1:"IGlobeImageOverlay", imageryOverlay2:"IGlobeImageOverlay") -> None:
-        """Swaps the position of two globe image overlay objects."""
+        """Swap the position of two globe image overlay objects."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._swap_metadata, imageryOverlay1, imageryOverlay2)
 
     _swap_by_index_metadata = { "name" : "swap_by_index",
             "arg_types" : (agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg,) }
     def swap_by_index(self, index1:int, index2:int) -> None:
-        """Swaps the position of two globe image overlay objects at the specified indices."""
+        """Swap the position of two globe image overlay objects at the specified indices."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._swap_by_index_metadata, index1, index2)
 
     _move_metadata = { "name" : "move",
             "arg_types" : (agcom.PVOID, agcom.INT,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"), agmarshall.INT_arg,) }
     def move(self, imageryOverlay:"IGlobeImageOverlay", newPosition:int) -> None:
-        """Moves the globe image overlay to the specified position."""
+        """Move the globe image overlay to the specified position."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._move_metadata, imageryOverlay, newPosition)
 
     _move_by_index_metadata = { "name" : "move_by_index",
             "arg_types" : (agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg,) }
     def move_by_index(self, index:int, newPosition:int) -> None:
-        """Moves the globe image overlay at the specified index to the specified position."""
+        """Move the globe image overlay at the specified index to the specified position."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._move_by_index_metadata, index, newPosition)
 
     _bring_to_front_metadata = { "name" : "bring_to_front",
@@ -8433,7 +8433,7 @@ class IImageCollection(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeImageOverlay"),) }
     def send_to_back(self, imageryOverlay:"IGlobeImageOverlay") -> None:
-        """Sends the globe image overlay to the back of the collection so it is rendered last or on the top."""
+        """Send the globe image overlay to the back of the collection so it is rendered last or on the top."""
         return self._intf.invoke(IImageCollection._metadata, IImageCollection._send_to_back_metadata, imageryOverlay)
 
     __getitem__ = item
@@ -8444,7 +8444,7 @@ agcls.AgClassCatalog.add_catalog_entry("{797b7253-9205-47a1-b49b-edf6e06326c0}",
 agcls.AgTypeNameMap["IImageCollection"] = IImageCollection
 
 class IAlphaFromLuminanceFilter(object):
-    """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
+    """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8481,7 +8481,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9ee1933e-8f0d-4fca-8386-e03194e483da}",
 agcls.AgTypeNameMap["IAlphaFromLuminanceFilter"] = IAlphaFromLuminanceFilter
 
 class IAlphaFromPixelFilter(object):
-    """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+    """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8518,7 +8518,7 @@ agcls.AgClassCatalog.add_catalog_entry("{071460a3-f86a-4c28-b2bf-22946db06ac8}",
 agcls.AgTypeNameMap["IAlphaFromPixelFilter"] = IAlphaFromPixelFilter
 
 class IAlphaFromRasterFilter(object):
-    """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+    """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8556,7 +8556,7 @@ class IAlphaFromRasterFilter(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def raster(self) -> "IRaster":
-        """Gets or sets the raster that the source raster will use to derive an alpha band."""
+        """Get or set the raster that the source raster will use to derive an alpha band."""
         return self._intf.get_property(IAlphaFromRasterFilter._metadata, IAlphaFromRasterFilter._get_raster_metadata)
 
     _set_raster_metadata = { "name" : "raster",
@@ -8571,7 +8571,7 @@ agcls.AgClassCatalog.add_catalog_entry("{77326f5e-c3f3-4660-8df4-6225cfdc0870}",
 agcls.AgTypeNameMap["IAlphaFromRasterFilter"] = IAlphaFromRasterFilter
 
 class IBandExtractFilter(object):
-    """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+    """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8609,7 +8609,7 @@ class IBandExtractFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_FORMAT),) }
     @property
     def extract_format(self) -> "RASTER_FORMAT":
-        """Gets or sets the raster format containing the bands and the order of the bands that will be extracted."""
+        """Get or set the raster format containing the bands and the order of the bands that will be extracted."""
         return self._intf.get_property(IBandExtractFilter._metadata, IBandExtractFilter._get_extract_format_metadata)
 
     _set_extract_format_metadata = { "name" : "extract_format",
@@ -8664,7 +8664,7 @@ class IBandOrderFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_FORMAT),) }
     @property
     def band_order(self) -> "RASTER_FORMAT":
-        """Gets or sets the raster format indicating the desired order of the bands in the source raster."""
+        """Get or set the raster format indicating the desired order of the bands in the source raster."""
         return self._intf.get_property(IBandOrderFilter._metadata, IBandOrderFilter._get_band_order_metadata)
 
     _set_band_order_metadata = { "name" : "band_order",
@@ -8679,7 +8679,7 @@ class IBandOrderFilter(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def maintain_raster_format(self) -> bool:
-        """Gets or sets a value indicating whether to maintain the source raster's format after the filter is applied. When true, the source raster's format is maintained after swizzling."""
+        """Get or set a value indicating whether to maintain the source raster's format after the filter is applied. When true, the source raster's format is maintained after swizzling."""
         return self._intf.get_property(IBandOrderFilter._metadata, IBandOrderFilter._get_maintain_raster_format_metadata)
 
     _set_maintain_raster_format_metadata = { "name" : "maintain_raster_format",
@@ -8694,7 +8694,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a4a76805-e8e4-4bb6-878c-dcb0da6d84d3}",
 agcls.AgTypeNameMap["IBandOrderFilter"] = IBandOrderFilter
 
 class IBlurFilter(object):
-    """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+    """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8732,7 +8732,7 @@ class IBlurFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(BLUR_METHOD),) }
     @property
     def method(self) -> "BLUR_METHOD":
-        """Gets or sets the method used to blur the source raster."""
+        """Get or set the method used to blur the source raster."""
         return self._intf.get_property(IBlurFilter._metadata, IBlurFilter._get_method_metadata)
 
     _set_method_metadata = { "name" : "method",
@@ -8785,7 +8785,7 @@ class IBrightnessFilter(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def adjustment(self) -> float:
-        """Gets or sets the brightness adjustment value for the filter. The value must be between -1 and 1, corresponding to least bright to most bright."""
+        """Get or set the brightness adjustment value for the filter. The value must be between -1 and 1, corresponding to least bright to most bright."""
         return self._intf.get_property(IBrightnessFilter._metadata, IBrightnessFilter._get_adjustment_metadata)
 
     _set_adjustment_metadata = { "name" : "adjustment",
@@ -8800,7 +8800,7 @@ agcls.AgClassCatalog.add_catalog_entry("{fd8324ea-dbc2-42a5-88ba-c2769fd4a28e}",
 agcls.AgTypeNameMap["IBrightnessFilter"] = IBrightnessFilter
 
 class IColorToLuminanceFilter(object):
-    """Extracts a luminance band derived from the color bands of the source raster."""
+    """Extract a luminance band derived from the color bands of the source raster."""
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8875,7 +8875,7 @@ class IContrastFilter(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def adjustment(self) -> float:
-        """Gets or sets the contrast adjustment value for the filter. The value must be between -1 and 1, corresponding to least contrast to most contrast."""
+        """Get or set the contrast adjustment value for the filter. The value must be between -1 and 1, corresponding to least contrast to most contrast."""
         return self._intf.get_property(IContrastFilter._metadata, IContrastFilter._get_adjustment_metadata)
 
     _set_adjustment_metadata = { "name" : "adjustment",
@@ -8890,7 +8890,7 @@ agcls.AgClassCatalog.add_catalog_entry("{47ea43c3-5ffd-4935-8569-bb19ee6b0799}",
 agcls.AgTypeNameMap["IContrastFilter"] = IContrastFilter
 
 class IConvolutionFilter(object):
-    """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+    """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8932,7 +8932,7 @@ class IConvolutionFilter(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def divisor(self) -> float:
-        """Gets or sets the divisor for the result of the convolution kernel operation."""
+        """Get or set the divisor for the result of the convolution kernel operation."""
         return self._intf.get_property(IConvolutionFilter._metadata, IConvolutionFilter._get_divisor_metadata)
 
     _set_divisor_metadata = { "name" : "divisor",
@@ -8947,7 +8947,7 @@ class IConvolutionFilter(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def offset(self) -> float:
-        """Gets or sets the offset for the result of the convolution kernel operation. The value is added to the result of the operation."""
+        """Get or set the offset for the result of the convolution kernel operation. The value is added to the result of the operation."""
         return self._intf.get_property(IConvolutionFilter._metadata, IConvolutionFilter._get_offset_metadata)
 
     _set_offset_metadata = { "name" : "offset",
@@ -8962,7 +8962,7 @@ class IConvolutionFilter(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def kernel(self) -> list:
-        """Gets or sets the convolution kernel of the filter. The array contains the 9 elements of the kernel of the convolution matrix..."""
+        """Get or set the convolution kernel of the filter. The array contains the 9 elements of the kernel of the convolution matrix..."""
         return self._intf.get_property(IConvolutionFilter._metadata, IConvolutionFilter._get_kernel_metadata)
 
     _set_kernel_metadata = { "name" : "kernel",
@@ -8977,7 +8977,7 @@ agcls.AgClassCatalog.add_catalog_entry("{65e3646d-dfac-40af-b37f-15596ef13292}",
 agcls.AgTypeNameMap["IConvolutionFilter"] = IConvolutionFilter
 
 class IEdgeDetectFilter(object):
-    """Applies a convolution filter to detect edges in the source raster."""
+    """Apply a convolution filter to detect edges in the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9015,7 +9015,7 @@ class IEdgeDetectFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(EDGE_DETECT_METHOD),) }
     @property
     def method(self) -> "EDGE_DETECT_METHOD":
-        """Gets or sets the method used to detect edges in the source raster."""
+        """Get or set the method used to detect edges in the source raster."""
         return self._intf.get_property(IEdgeDetectFilter._metadata, IEdgeDetectFilter._get_method_metadata)
 
     _set_method_metadata = { "name" : "method",
@@ -9068,7 +9068,7 @@ class IFilteringRasterStream(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def filter(self) -> "IRasterFilter":
-        """Gets the raster filter that will be applied to the raster stream on each update."""
+        """Get the raster filter that will be applied to the raster stream on each update."""
         return self._intf.get_property(IFilteringRasterStream._metadata, IFilteringRasterStream._get_filter_metadata)
 
     _get_stream_metadata = { "name" : "stream",
@@ -9076,7 +9076,7 @@ class IFilteringRasterStream(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def stream(self) -> "IRasterStream":
-        """Gets the raster stream that will have the raster filter applied on each update."""
+        """Get the raster stream that will have the raster filter applied on each update."""
         return self._intf.get_property(IFilteringRasterStream._metadata, IFilteringRasterStream._get_stream_metadata)
 
 
@@ -9122,7 +9122,7 @@ class IFlipFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(FLIP_AXIS),) }
     @property
     def flip_axis(self) -> "FLIP_AXIS":
-        """Gets or sets the flip axis along which the source raster will be flipped."""
+        """Get or set the flip axis along which the source raster will be flipped."""
         return self._intf.get_property(IFlipFilter._metadata, IFlipFilter._get_flip_axis_metadata)
 
     _set_flip_axis_metadata = { "name" : "flip_axis",
@@ -9137,7 +9137,7 @@ agcls.AgClassCatalog.add_catalog_entry("{478edb08-272a-42b6-b486-a81a5bcaf92b}",
 agcls.AgTypeNameMap["IFlipFilter"] = IFlipFilter
 
 class IGammaCorrectionFilter(object):
-    """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+    """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9175,7 +9175,7 @@ class IGammaCorrectionFilter(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def gamma(self) -> float:
-        """Gets or sets the gamma value for the filter. The value must be between .2 and 5. The default gamma value is 2.2."""
+        """Get or set the gamma value for the filter. The value must be between .2 and 5. The default gamma value is 2.2."""
         return self._intf.get_property(IGammaCorrectionFilter._metadata, IGammaCorrectionFilter._get_gamma_metadata)
 
     _set_gamma_metadata = { "name" : "gamma",
@@ -9190,7 +9190,7 @@ agcls.AgClassCatalog.add_catalog_entry("{c4b3703d-c059-47c7-8b49-11bbedd7975a}",
 agcls.AgTypeNameMap["IGammaCorrectionFilter"] = IGammaCorrectionFilter
 
 class IGaussianBlurFilter(object):
-    """Applies a convolution filter to blur the source raster using the Gaussian function."""
+    """Apply a convolution filter to blur the source raster using the Gaussian function."""
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9227,7 +9227,7 @@ agcls.AgClassCatalog.add_catalog_entry("{b5b0a55e-980a-453f-b7b4-7c7024f92ef4}",
 agcls.AgTypeNameMap["IGaussianBlurFilter"] = IGaussianBlurFilter
 
 class IGradientDetectFilter(object):
-    """Applies a convolution filter to detect gradients in the source raster."""
+    """Apply a convolution filter to detect gradients in the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9265,7 +9265,7 @@ class IGradientDetectFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(GRADIENT_DETECT_METHOD),) }
     @property
     def method(self) -> "GRADIENT_DETECT_METHOD":
-        """Gets or sets the method used to detect gradients in the source raster."""
+        """Get or set the method used to detect gradients in the source raster."""
         return self._intf.get_property(IGradientDetectFilter._metadata, IGradientDetectFilter._get_method_metadata)
 
     _set_method_metadata = { "name" : "method",
@@ -9317,14 +9317,14 @@ class ILevelsFilter(object):
             "arg_types" : (agcom.LONG, agcom.INT,),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_BAND), agmarshall.INT_arg,) }
     def set_level_adjustment(self, band:"RASTER_BAND", adjustment:int) -> None:
-        """Sets the linear level adjustment value for the given raster band. Both negative and positive values are accepted."""
+        """Set the linear level adjustment value for the given raster band. Both negative and positive values are accepted."""
         return self._intf.invoke(ILevelsFilter._metadata, ILevelsFilter._set_level_adjustment_metadata, band, adjustment)
 
     _clear_adjustments_metadata = { "name" : "clear_adjustments",
             "arg_types" : (),
             "marshallers" : () }
     def clear_adjustments(self) -> None:
-        """Clears the level adjustment values for all bands."""
+        """Clear the level adjustment values for all bands."""
         return self._intf.invoke(ILevelsFilter._metadata, ILevelsFilter._clear_adjustments_metadata, )
 
 
@@ -9369,14 +9369,14 @@ class IProjectionRasterStreamPluginActivator(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_from_display_name(self, displayName:str) -> "ProjectionRasterStreamPluginProxy":
-        """Loads a projection/raster COM plugin associated with the specified display name and returns a proxy object that allows accessing the raster and projection streams implemented by the plugin."""
+        """Load a projection/raster COM plugin associated with the specified display name and returns a proxy object that allows accessing the raster and projection streams implemented by the plugin."""
         return self._intf.invoke(IProjectionRasterStreamPluginActivator._metadata, IProjectionRasterStreamPluginActivator._create_from_display_name_metadata, displayName, out_arg())
 
     _get_available_display_names_metadata = { "name" : "get_available_display_names",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def get_available_display_names(self) -> list:
-        """Gets a list of available projection/raster plugins' Display Names (Programmatic Identifiers)."""
+        """Get a list of available projection/raster plugins' Display Names (Programmatic Identifiers)."""
         return self._intf.invoke(IProjectionRasterStreamPluginActivator._metadata, IProjectionRasterStreamPluginActivator._get_available_display_names_metadata, out_arg())
 
 
@@ -9425,7 +9425,7 @@ class IProjectionRasterStreamPluginProxy(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def raster_stream(self) -> "IRasterStream":
-        """Returns a raster stream."""
+        """Return a raster stream."""
         return self._intf.get_property(IProjectionRasterStreamPluginProxy._metadata, IProjectionRasterStreamPluginProxy._get_raster_stream_metadata)
 
     _get_projection_stream_metadata = { "name" : "projection_stream",
@@ -9433,7 +9433,7 @@ class IProjectionRasterStreamPluginProxy(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def projection_stream(self) -> "ProjectionStream":
-        """Returns a projection stream."""
+        """Return a projection stream."""
         return self._intf.get_property(IProjectionRasterStreamPluginProxy._metadata, IProjectionRasterStreamPluginProxy._get_projection_stream_metadata)
 
     _get_is_raster_stream_supported_metadata = { "name" : "is_raster_stream_supported",
@@ -9441,7 +9441,7 @@ class IProjectionRasterStreamPluginProxy(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_raster_stream_supported(self) -> bool:
-        """Returns true if the raster streaming is supported."""
+        """Return true if the raster streaming is supported."""
         return self._intf.get_property(IProjectionRasterStreamPluginProxy._metadata, IProjectionRasterStreamPluginProxy._get_is_raster_stream_supported_metadata)
 
     _get_is_projection_stream_supported_metadata = { "name" : "is_projection_stream_supported",
@@ -9449,7 +9449,7 @@ class IProjectionRasterStreamPluginProxy(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_projection_stream_supported(self) -> bool:
-        """Returns true if the projection streaming is supported."""
+        """Return true if the projection streaming is supported."""
         return self._intf.get_property(IProjectionRasterStreamPluginProxy._metadata, IProjectionRasterStreamPluginProxy._get_is_projection_stream_supported_metadata)
 
     _get_real_plugin_object_metadata = { "name" : "real_plugin_object",
@@ -9457,7 +9457,7 @@ class IProjectionRasterStreamPluginProxy(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def real_plugin_object(self) -> typing.Any:
-        """Returns a pointer to plugin object's IUnknown interface."""
+        """Return a pointer to plugin object's IUnknown interface."""
         return self._intf.get_property(IProjectionRasterStreamPluginProxy._metadata, IProjectionRasterStreamPluginProxy._get_real_plugin_object_metadata)
 
 
@@ -9511,7 +9511,7 @@ class IRaster(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def attributes(self) -> "RasterAttributes":
-        """Gets the raster attributes that define the raster data."""
+        """Get the raster attributes that define the raster data."""
         return self._intf.get_property(IRaster._metadata, IRaster._get_attributes_metadata)
 
     _get_width_metadata = { "name" : "width",
@@ -9519,7 +9519,7 @@ class IRaster(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def width(self) -> int:
-        """Gets the width of the raster in pixels."""
+        """Get the width of the raster in pixels."""
         return self._intf.get_property(IRaster._metadata, IRaster._get_width_metadata)
 
     _get_height_metadata = { "name" : "height",
@@ -9527,7 +9527,7 @@ class IRaster(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def height(self) -> int:
-        """Gets the height of the raster in pixels."""
+        """Get the height of the raster in pixels."""
         return self._intf.get_property(IRaster._metadata, IRaster._get_height_metadata)
 
     _flip_metadata = { "name" : "flip",
@@ -9541,42 +9541,42 @@ class IRaster(object):
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     def rotate(self, angle:float) -> None:
-        """Rotates the raster by the given angle."""
+        """Rotate the raster by the given angle."""
         return self._intf.invoke(IRaster._metadata, IRaster._rotate_metadata, angle)
 
     _apply_metadata = { "name" : "apply",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRasterFilter"), agmarshall.AgInterface_out_arg,) }
     def apply(self, filter:"IRasterFilter") -> "IRaster":
-        """Applies a raster filter to the raster and returns a new raster with the results of the filtering. The current raster is not modified."""
+        """Apply a raster filter to the raster and returns a new raster with the results of the filtering. The current raster is not modified."""
         return self._intf.invoke(IRaster._metadata, IRaster._apply_metadata, filter, out_arg())
 
     _apply_in_place_metadata = { "name" : "apply_in_place",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRasterFilter"),) }
     def apply_in_place(self, filter:"IRasterFilter") -> None:
-        """Applies a raster filter to the raster. The current raster will contain the results of the filtering."""
+        """Apply a raster filter to the raster. The current raster will contain the results of the filtering."""
         return self._intf.invoke(IRaster._metadata, IRaster._apply_in_place_metadata, filter)
 
     _extract_band_metadata = { "name" : "extract_band",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_BAND), agmarshall.AgInterface_out_arg,) }
     def extract_band(self, band:"RASTER_BAND") -> "IRaster":
-        """Extracts the band of raster data associated with the given raster band."""
+        """Extract the band of raster data associated with the given raster band."""
         return self._intf.invoke(IRaster._metadata, IRaster._extract_band_metadata, band, out_arg())
 
     _extract_band_from_raster_format_metadata = { "name" : "extract_band_from_raster_format",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgInterface_out_arg,) }
     def extract_band_from_raster_format(self, format:"RASTER_FORMAT") -> "IRaster":
-        """Extracts the bands of raster data associated with the given raster format."""
+        """Extract the bands of raster data associated with the given raster format."""
         return self._intf.invoke(IRaster._metadata, IRaster._extract_band_from_raster_format_metadata, format, out_arg())
 
     _copy_from_raster_metadata = { "name" : "copy_from_raster",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"),) }
     def copy_from_raster(self, raster:"IRaster") -> None:
-        """Copies the data associated with the given raster into this raster."""
+        """Copy the data associated with the given raster into this raster."""
         return self._intf.invoke(IRaster._metadata, IRaster._copy_from_raster_metadata, raster)
 
 
@@ -9631,7 +9631,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_FORMAT),) }
     @property
     def format(self) -> "RASTER_FORMAT":
-        """Gets the raster format associated with the attributes."""
+        """Get the raster format associated with the attributes."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_format_metadata)
 
     _get_type_metadata = { "name" : "type",
@@ -9639,7 +9639,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_TYPE),) }
     @property
     def type(self) -> "RASTER_TYPE":
-        """Gets the raster type associated with the attributes."""
+        """Get the raster type associated with the attributes."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_type_metadata)
 
     _get_orientation_metadata = { "name" : "orientation",
@@ -9647,7 +9647,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_ORIENTATION),) }
     @property
     def orientation(self) -> "RASTER_ORIENTATION":
-        """Gets the raster orientation associated with the attributes."""
+        """Get the raster orientation associated with the attributes."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_orientation_metadata)
 
     _get_byte_length_metadata = { "name" : "byte_length",
@@ -9655,7 +9655,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def byte_length(self) -> int:
-        """Gets the size of the raster data in bytes."""
+        """Get the size of the raster data in bytes."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_byte_length_metadata)
 
     _get_width_metadata = { "name" : "width",
@@ -9663,7 +9663,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def width(self) -> int:
-        """Gets the width of the raster in pixels."""
+        """Get the width of the raster in pixels."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_width_metadata)
 
     _get_height_metadata = { "name" : "height",
@@ -9671,7 +9671,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def height(self) -> int:
-        """Gets the height of the raster in pixels."""
+        """Get the height of the raster in pixels."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_height_metadata)
 
     _get_pixel_aspect_ratio_metadata = { "name" : "pixel_aspect_ratio",
@@ -9679,7 +9679,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def pixel_aspect_ratio(self) -> float:
-        """Gets the pixel aspect ratio of the raster."""
+        """Get the pixel aspect ratio of the raster."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_pixel_aspect_ratio_metadata)
 
     _get_row_alignment_metadata = { "name" : "row_alignment",
@@ -9687,7 +9687,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def row_alignment(self) -> int:
-        """Gets the row alignment of the raster data in bytes."""
+        """Get the row alignment of the raster data in bytes."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_row_alignment_metadata)
 
     _get_number_of_bands_metadata = { "name" : "number_of_bands",
@@ -9695,7 +9695,7 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def number_of_bands(self) -> int:
-        """Gets the number of bands comprising the raster."""
+        """Get the number of bands comprising the raster."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_number_of_bands_metadata)
 
     _get_row_stride_metadata = { "name" : "row_stride",
@@ -9703,14 +9703,14 @@ class IRasterAttributes(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def row_stride(self) -> int:
-        """Gets the stride or scan/row width in bytes of the raster data."""
+        """Get the stride or scan/row width in bytes of the raster data."""
         return self._intf.get_property(IRasterAttributes._metadata, IRasterAttributes._get_row_stride_metadata)
 
     _has_band_metadata = { "name" : "has_band",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_BAND), agmarshall.VARIANT_BOOL_arg,) }
     def has_band(self, band:"RASTER_BAND") -> bool:
-        """Gets whether the raster contains the given band."""
+        """Get whether the raster contains the given band."""
         return self._intf.invoke(IRasterAttributes._metadata, IRasterAttributes._has_band_metadata, band, out_arg())
 
 
@@ -9794,7 +9794,7 @@ class IRasterStream(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def update_delta(self) -> float:
-        """Gets or sets the update delta of the raster stream in seconds. The update delta defines the interval at which the Update method will be called. The default update delta is 0, which will call the Update method every time the scene manager time changes..."""
+        """Get or set the update delta of the raster stream in seconds. The update delta defines the interval at which the Update method will be called. The default update delta is 0, which will call the Update method every time the scene manager time changes..."""
         return self._intf.get_property(IRasterStream._metadata, IRasterStream._get_update_delta_metadata)
 
     _set_update_delta_metadata = { "name" : "update_delta",
@@ -9816,7 +9816,7 @@ agcls.AgClassCatalog.add_catalog_entry("{63f024ca-7113-4841-8d26-7a286458bd7c}",
 agcls.AgTypeNameMap["IRasterStream"] = IRasterStream
 
 class IRotateFilter(object):
-    """Rotates the source raster clockwise by the specified angle."""
+    """Rotate the source raster clockwise by the specified angle."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9854,7 +9854,7 @@ class IRotateFilter(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def angle(self) -> float:
-        """Gets or sets the counterclockwise rotation angle."""
+        """Get or set the counterclockwise rotation angle."""
         return self._intf.get_property(IRotateFilter._metadata, IRotateFilter._get_angle_metadata)
 
     _set_angle_metadata = { "name" : "angle",
@@ -9869,7 +9869,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4b6dc620-04e1-4956-be55-890fdb25bd40}",
 agcls.AgTypeNameMap["IRotateFilter"] = IRotateFilter
 
 class ISequenceFilter(object):
-    """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+    """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9912,7 +9912,7 @@ class ISequenceFilter(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def continue_on_failure(self) -> bool:
-        """Gets or sets whether to continue applying filters in the sequence regardless of individual filter failures. When set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+        """Get or set whether to continue applying filters in the sequence regardless of individual filter failures. When set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
         return self._intf.get_property(ISequenceFilter._metadata, ISequenceFilter._get_continue_on_failure_metadata)
 
     _set_continue_on_failure_metadata = { "name" : "continue_on_failure",
@@ -9927,35 +9927,35 @@ class ISequenceFilter(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of filters in the collection."""
+        """Get the number of filters in the collection."""
         return self._intf.get_property(ISequenceFilter._metadata, ISequenceFilter._get_count_metadata)
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRasterFilter"),) }
     def add(self, filter:"IRasterFilter") -> None:
-        """Adds a filter to the sequence."""
+        """Add a filter to the sequence."""
         return self._intf.invoke(ISequenceFilter._metadata, ISequenceFilter._add_metadata, filter)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRasterFilter"),) }
     def remove(self, filter:"IRasterFilter") -> None:
-        """Removes a filter from the sequence."""
+        """Remove a filter from the sequence."""
         return self._intf.invoke(ISequenceFilter._metadata, ISequenceFilter._remove_metadata, filter)
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Clears all filters from the sequence."""
+        """Clear all filters from the sequence."""
         return self._intf.invoke(ISequenceFilter._metadata, ISequenceFilter._clear_metadata, )
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRasterFilter"), agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, filter:"IRasterFilter") -> bool:
-        """Returns true if the sequence contains the filter."""
+        """Return true if the sequence contains the filter."""
         return self._intf.invoke(ISequenceFilter._metadata, ISequenceFilter._contains_metadata, filter, out_arg())
 
 
@@ -9963,7 +9963,7 @@ agcls.AgClassCatalog.add_catalog_entry("{72e2b4cb-2be3-418e-b0c8-69f33164e475}",
 agcls.AgTypeNameMap["ISequenceFilter"] = ISequenceFilter
 
 class ISharpenFilter(object):
-    """Applies a convolution filter to increase the sharpness of the source raster."""
+    """Apply a convolution filter to increase the sharpness of the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10001,7 +10001,7 @@ class ISharpenFilter(object):
             "marshallers" : (agmarshall.AgEnum_arg(SHARPEN_METHOD),) }
     @property
     def method(self) -> "SHARPEN_METHOD":
-        """Gets or sets the method used to sharpen the source raster."""
+        """Get or set the method used to sharpen the source raster."""
         return self._intf.get_property(ISharpenFilter._metadata, ISharpenFilter._get_method_metadata)
 
     _set_method_metadata = { "name" : "method",
@@ -10087,7 +10087,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def uri(self) -> str:
-        """Gets the uri of the video."""
+        """Get the uri of the video."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_uri_metadata)
 
     _get_playback_metadata = { "name" : "playback",
@@ -10095,7 +10095,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.AgEnum_arg(VIDEO_PLAYBACK),) }
     @property
     def playback(self) -> "VIDEO_PLAYBACK":
-        """Gets or sets the video playback mode of the video."""
+        """Get or set the video playback mode of the video."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_playback_metadata)
 
     _set_playback_metadata = { "name" : "playback",
@@ -10110,7 +10110,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def frame_rate(self) -> float:
-        """Gets or sets the frame rate of the video when the playback property is set to real time. If this property is not set, the internal framerate of the video is used."""
+        """Get or set the frame rate of the video when the playback property is set to real time. If this property is not set, the internal framerate of the video is used."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_frame_rate_metadata)
 
     _set_frame_rate_metadata = { "name" : "frame_rate",
@@ -10125,7 +10125,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def interval_start_time(self) -> "IDate":
-        """Gets or sets the scene manager time at which the video will begin playing when the playback property is set to time interval."""
+        """Get or set the scene manager time at which the video will begin playing when the playback property is set to time interval."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_interval_start_time_metadata)
 
     _set_interval_start_time_metadata = { "name" : "interval_start_time",
@@ -10140,7 +10140,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def interval_end_time(self) -> "IDate":
-        """Gets or sets the scene manager time at which the video will stop playing when the playback property is set to time interval."""
+        """Get or set the scene manager time at which the video will stop playing when the playback property is set to time interval."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_interval_end_time_metadata)
 
     _set_interval_end_time_metadata = { "name" : "interval_end_time",
@@ -10155,7 +10155,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def start_time(self) -> float:
-        """Gets or sets the start time of the video in seconds. Changing the start time property also changes the start frame property to the frame in the video that corresponds to the specified time."""
+        """Get or set the start time of the video in seconds. Changing the start time property also changes the start frame property to the frame in the video that corresponds to the specified time."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_start_time_metadata)
 
     _set_start_time_metadata = { "name" : "start_time",
@@ -10170,7 +10170,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def end_time(self) -> float:
-        """Gets or sets the end time of the video in seconds. Changing the end time property also changes the end frame property to the frame in the video that corresponds to the specified time."""
+        """Get or set the end time of the video in seconds. Changing the end time property also changes the end frame property to the frame in the video that corresponds to the specified time."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_end_time_metadata)
 
     _set_end_time_metadata = { "name" : "end_time",
@@ -10185,7 +10185,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def start_frame(self) -> int:
-        """Gets or sets the start frame of the video. Changing the start frame property also changes the start time property to the time in the video that corresponds to the specified frame."""
+        """Get or set the start frame of the video. Changing the start frame property also changes the start time property to the time in the video that corresponds to the specified frame."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_start_frame_metadata)
 
     _set_start_frame_metadata = { "name" : "start_frame",
@@ -10200,7 +10200,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def end_frame(self) -> int:
-        """Gets or sets the end frame of the video. Changing the end frame property also changes the end time property to the time in the video that corresponds to the specified frame."""
+        """Get or set the end frame of the video. Changing the end frame property also changes the end time property to the time in the video that corresponds to the specified frame."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_end_frame_metadata)
 
     _set_end_frame_metadata = { "name" : "end_frame",
@@ -10215,7 +10215,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def loop(self) -> bool:
-        """Gets or sets whether the video will loop when it reaches its last frame when the playback property is set to real time."""
+        """Get or set whether the video will loop when it reaches its last frame when the playback property is set to real time."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_loop_metadata)
 
     _set_loop_metadata = { "name" : "loop",
@@ -10230,7 +10230,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_playing(self) -> bool:
-        """Gets whether or not the video is playing. Use the play, pause, stop, and Reset methods to control the playback of the video when the playback property is set to real time."""
+        """Get whether or not the video is playing. Use the play, pause, stop, and Reset methods to control the playback of the video when the playback property is set to real time."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_is_playing_metadata)
 
     _get_packet_acquirement_yield_time_metadata = { "name" : "packet_acquirement_yield_time",
@@ -10238,7 +10238,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def packet_acquirement_yield_time(self) -> int:
-        """Gets or sets the thread processing yield time for asynchronous streaming of video over common protocols like udp. Setting a high value may increase performance, but may cause frames or packets to drop, effecting visual quality..."""
+        """Get or set the thread processing yield time for asynchronous streaming of video over common protocols like udp. Setting a high value may increase performance, but may cause frames or packets to drop, effecting visual quality..."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_packet_acquirement_yield_time_metadata)
 
     _set_packet_acquirement_yield_time_metadata = { "name" : "packet_acquirement_yield_time",
@@ -10253,7 +10253,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def packet_buffer_limit(self) -> int:
-        """Gets or sets a value indicating the buffering limit for packets when processing a video stream..."""
+        """Get or set a value indicating the buffering limit for packets when processing a video stream..."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_packet_buffer_limit_metadata)
 
     _set_packet_buffer_limit_metadata = { "name" : "packet_buffer_limit",
@@ -10268,7 +10268,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def allow_frame_drop(self) -> bool:
-        """Gets or sets a value indicating if frames should be dropped if video processing can not keep up with a video stream. If this is set to false, the video quality may degrade when the processing load is too high..."""
+        """Get or set a value indicating if frames should be dropped if video processing can not keep up with a video stream. If this is set to false, the video quality may degrade when the processing load is too high..."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_allow_frame_drop_metadata)
 
     _set_allow_frame_drop_metadata = { "name" : "allow_frame_drop",
@@ -10283,7 +10283,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def enable_audio(self) -> bool:
-        """Gets or sets a value indicating if the encoded audio stream should be synchronized to video playback If this is set to false, the audio stream will be disabled..."""
+        """Get or set a value indicating if the encoded audio stream should be synchronized to video playback If this is set to false, the audio stream will be disabled..."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_enable_audio_metadata)
 
     _set_enable_audio_metadata = { "name" : "enable_audio",
@@ -10318,7 +10318,7 @@ class IVideoStream(object):
             "arg_types" : (),
             "marshallers" : () }
     def stop(self) -> None:
-        """Stops the video when the playback property is set to real time. Stopping the video will seek to the first frame and pause playback. Use the Play method to begin playing the video again."""
+        """Stop the video when the playback property is set to real time. Stopping the video will seek to the first frame and pause playback. Use the Play method to begin playing the video again."""
         return self._intf.invoke(IVideoStream._metadata, IVideoStream._stop_metadata, )
 
     _reset_metadata = { "name" : "reset",
@@ -10332,7 +10332,7 @@ class IVideoStream(object):
             "arg_types" : (),
             "marshallers" : () }
     def close(self) -> None:
-        """Closes the video stream and any associated resources."""
+        """Close the video stream and any associated resources."""
         return self._intf.invoke(IVideoStream._metadata, IVideoStream._close_metadata, )
 
     _get_audio_uri_metadata = { "name" : "audio_uri",
@@ -10340,7 +10340,7 @@ class IVideoStream(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def audio_uri(self) -> str:
-        """Gets the uri of the audio."""
+        """Get the uri of the audio."""
         return self._intf.get_property(IVideoStream._metadata, IVideoStream._get_audio_uri_metadata)
 
 
@@ -10430,7 +10430,7 @@ class IKmlDocument(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def uri(self) -> str:
-        """Gets the uri of the document."""
+        """Get the uri of the document."""
         return self._intf.get_property(IKmlDocument._metadata, IKmlDocument._get_uri_metadata)
 
 
@@ -10483,7 +10483,7 @@ class IKmlFeature(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_loaded(self) -> bool:
-        """Gets whether the document associated with this feature is loaded."""
+        """Get whether the document associated with this feature is loaded."""
         return self._intf.get_property(IKmlFeature._metadata, IKmlFeature._get_is_loaded_metadata)
 
     _get_display_metadata = { "name" : "display",
@@ -10491,7 +10491,7 @@ class IKmlFeature(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display(self) -> bool:
-        """Gets or sets whether this feature will be displayed in the Scene."""
+        """Get or set whether this feature will be displayed in the Scene."""
         return self._intf.get_property(IKmlFeature._metadata, IKmlFeature._get_display_metadata)
 
     _set_display_metadata = { "name" : "display",
@@ -10506,7 +10506,7 @@ class IKmlFeature(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def content(self) -> str:
-        """Gets the content associated with this feature."""
+        """Get the content associated with this feature."""
         return self._intf.get_property(IKmlFeature._metadata, IKmlFeature._get_content_metadata)
 
     _get_name_metadata = { "name" : "name",
@@ -10514,7 +10514,7 @@ class IKmlFeature(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def name(self) -> str:
-        """Gets the name of this feature."""
+        """Get the name of this feature."""
         return self._intf.get_property(IKmlFeature._metadata, IKmlFeature._get_name_metadata)
 
     _get_description_metadata = { "name" : "description",
@@ -10522,7 +10522,7 @@ class IKmlFeature(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def description(self) -> str:
-        """Gets the description associated with this feature."""
+        """Get the description associated with this feature."""
         return self._intf.get_property(IKmlFeature._metadata, IKmlFeature._get_description_metadata)
 
     _get_snippet_metadata = { "name" : "snippet",
@@ -10530,7 +10530,7 @@ class IKmlFeature(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def snippet(self) -> str:
-        """Gets the snippet associated with this feature."""
+        """Get the snippet associated with this feature."""
         return self._intf.get_property(IKmlFeature._metadata, IKmlFeature._get_snippet_metadata)
 
     _get_bounding_sphere_metadata = { "name" : "bounding_sphere",
@@ -10545,7 +10545,7 @@ class IKmlFeature(object):
             "arg_types" : (),
             "marshallers" : () }
     def fly_to(self) -> None:
-        """Moves the camera to the area encompassing this feature."""
+        """Move the camera to the area encompassing this feature."""
         return self._intf.invoke(IKmlFeature._metadata, IKmlFeature._fly_to_metadata, )
 
 
@@ -10590,7 +10590,7 @@ agcls.AgClassCatalog.add_catalog_entry("{28b2dfb1-4f4c-4697-a0f9-076ebd92eb1f}",
 agcls.AgTypeNameMap["IKmlFolder"] = IKmlFolder
 
 class IKmlGraphics(object):
-    """Provides loading and unloading of kml documents for a particular central body."""
+    """Provide loading and unloading of kml documents for a particular central body."""
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10645,42 +10645,42 @@ class IKmlGraphics(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def load_document(self, kmlUri:str) -> "KmlDocument":
-        """Loads a kml document from a uri."""
+        """Load a kml document from a uri."""
         return self._intf.invoke(IKmlGraphics._metadata, IKmlGraphics._load_document_metadata, kmlUri, out_arg())
 
     _load_document_string_metadata = { "name" : "load_document_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def load_document_string(self, kmlUri:str) -> "KmlDocument":
-        """Loads a kml document from a Uri."""
+        """Load a kml document from a Uri."""
         return self._intf.invoke(IKmlGraphics._metadata, IKmlGraphics._load_document_string_metadata, kmlUri, out_arg())
 
     _load_metadata = { "name" : "load",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def load(self, kmlDocument:str) -> "KmlDocument":
-        """Loads a kml document from a string containing the document."""
+        """Load a kml document from a string containing the document."""
         return self._intf.invoke(IKmlGraphics._metadata, IKmlGraphics._load_metadata, kmlDocument, out_arg())
 
     _load_document_async_metadata = { "name" : "load_document_async",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def load_document_async(self, kmlUri:str) -> None:
-        """Loads a kml document asynchronously from a uri. The document loaded event is raised when the document is loaded."""
+        """Load a kml document asynchronously from a uri. The document loaded event is raised when the document is loaded."""
         return self._intf.invoke(IKmlGraphics._metadata, IKmlGraphics._load_document_async_metadata, kmlUri)
 
     _load_document_async_string_metadata = { "name" : "load_document_async_string",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def load_document_async_string(self, kmlUri:str) -> None:
-        """Loads a kml document asynchronously from a Uri. The document loaded event is raised when the document is loaded."""
+        """Load a kml document asynchronously from a Uri. The document loaded event is raised when the document is loaded."""
         return self._intf.invoke(IKmlGraphics._metadata, IKmlGraphics._load_document_async_string_metadata, kmlUri)
 
     _load_async_metadata = { "name" : "load_async",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def load_async(self, kmlDocument:str) -> None:
-        """Loads a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded."""
+        """Load a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded."""
         return self._intf.invoke(IKmlGraphics._metadata, IKmlGraphics._load_async_metadata, kmlDocument)
 
     _unload_metadata = { "name" : "unload",
@@ -10755,7 +10755,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def uri(self) -> str:
-        """Gets the uri of the network link."""
+        """Get the uri of the network link."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_uri_metadata)
 
     _get_refresh_mode_metadata = { "name" : "refresh_mode",
@@ -10763,7 +10763,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.AgEnum_arg(KML_NETWORK_LINK_REFRESH_MODE),) }
     @property
     def refresh_mode(self) -> "KML_NETWORK_LINK_REFRESH_MODE":
-        """Gets or sets the refresh mode of the network link. The refresh mode specifies a time-based refresh policy for this link."""
+        """Get or set the refresh mode of the network link. The refresh mode specifies a time-based refresh policy for this link."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_refresh_mode_metadata)
 
     _set_refresh_mode_metadata = { "name" : "refresh_mode",
@@ -10778,7 +10778,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def refresh_interval(self) -> float:
-        """Gets or sets the interval duration at which this network link will refresh, when refresh mode is set to on interval."""
+        """Get or set the interval duration at which this network link will refresh, when refresh mode is set to on interval."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_refresh_interval_metadata)
 
     _set_refresh_interval_metadata = { "name" : "refresh_interval",
@@ -10793,7 +10793,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.AgEnum_arg(KML_NETWORK_LINK_VIEW_REFRESH_MODE),) }
     @property
     def view_refresh_mode(self) -> "KML_NETWORK_LINK_VIEW_REFRESH_MODE":
-        """Gets or sets the view refresh mode of the network link. The view refresh mode specifies the refresh policy for the when the camera's view changes."""
+        """Get or set the view refresh mode of the network link. The view refresh mode specifies the refresh policy for the when the camera's view changes."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_view_refresh_mode_metadata)
 
     _set_view_refresh_mode_metadata = { "name" : "view_refresh_mode",
@@ -10808,7 +10808,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def view_refresh_time(self) -> float:
-        """Gets or sets the duration after camera view movement stops that this network link will refresh, when view refresh mode is set to on stop."""
+        """Get or set the duration after camera view movement stops that this network link will refresh, when view refresh mode is set to on stop."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_view_refresh_time_metadata)
 
     _set_view_refresh_time_metadata = { "name" : "view_refresh_time",
@@ -10823,7 +10823,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def view_bound_scale(self) -> float:
-        """Gets or sets the value that scales the bounding box defining the view associated with this network link. A value less than 1.0 specifies to use less than the full view (screen). A value greater than 1..."""
+        """Get or set the value that scales the bounding box defining the view associated with this network link. A value less than 1.0 specifies to use less than the full view (screen). A value greater than 1..."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_view_bound_scale_metadata)
 
     _set_view_bound_scale_metadata = { "name" : "view_bound_scale",
@@ -10838,7 +10838,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_refresh_period(self) -> float:
-        """Gets the duration that is the minimum allowed time between refreshes of this network link."""
+        """Get the duration that is the minimum allowed time between refreshes of this network link."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_minimum_refresh_period_metadata)
 
     _get_cookie_metadata = { "name" : "cookie",
@@ -10846,7 +10846,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def cookie(self) -> str:
-        """Gets the cookie string associated with this network link."""
+        """Get the cookie string associated with this network link."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_cookie_metadata)
 
     _get_message_metadata = { "name" : "message",
@@ -10854,7 +10854,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def message(self) -> str:
-        """Gets the message string associated with this network link."""
+        """Get the message string associated with this network link."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_message_metadata)
 
     _get_link_snippet_metadata = { "name" : "link_snippet",
@@ -10862,7 +10862,7 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def link_snippet(self) -> str:
-        """Gets the link snippet associated with this network link."""
+        """Get the link snippet associated with this network link."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_link_snippet_metadata)
 
     _get_expires_metadata = { "name" : "expires",
@@ -10870,14 +10870,14 @@ class IKmlNetworkLink(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def expires(self) -> str:
-        """Gets the string specifying the date/time this network should expire and be refreshed."""
+        """Get the string specifying the date/time this network should expire and be refreshed."""
         return self._intf.get_property(IKmlNetworkLink._metadata, IKmlNetworkLink._get_expires_metadata)
 
     _refresh_metadata = { "name" : "refresh",
             "arg_types" : (),
             "marshallers" : () }
     def refresh(self) -> None:
-        """Refreshes the network link."""
+        """Refresh the network link."""
         return self._intf.invoke(IKmlNetworkLink._metadata, IKmlNetworkLink._refresh_metadata, )
 
 
@@ -10975,7 +10975,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE),) }
     @property
     def size_source(self) -> "MARKER_BATCH_SIZE_SOURCE":
-        """Gets the source used for the size of markers in the batch."""
+        """Get the source used for the size of markers in the batch."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_size_source_metadata)
 
     _get_sort_order_metadata = { "name" : "sort_order",
@@ -10983,7 +10983,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_SORT_ORDER),) }
     @property
     def sort_order(self) -> "MARKER_BATCH_SORT_ORDER":
-        """Gets the order in which markers in the marker batch are sorted before rendering."""
+        """Get the order in which markers in the marker batch are sorted before rendering."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_sort_order_metadata)
 
     _get_set_hint_metadata = { "name" : "set_hint",
@@ -10991,7 +10991,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT),) }
     @property
     def set_hint(self) -> "SET_HINT":
-        """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
+        """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_set_hint_metadata)
 
     _get_rendering_method_metadata = { "name" : "rendering_method",
@@ -10999,7 +10999,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_RENDERING_METHOD),) }
     @property
     def rendering_method(self) -> "MARKER_BATCH_RENDERING_METHOD":
-        """Gets the rendering method used to render the marker batch."""
+        """Get the rendering method used to render the marker batch."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_rendering_method_metadata)
 
     _get_render_pass_metadata = { "name" : "render_pass",
@@ -11007,7 +11007,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_RENDER_PASS),) }
     @property
     def render_pass(self) -> "MARKER_BATCH_RENDER_PASS":
-        """Gets or sets the pass during which the marker batch is rendered."""
+        """Get or set the pass during which the marker batch is rendered."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_render_pass_metadata)
 
     _set_render_pass_metadata = { "name" : "render_pass",
@@ -11022,7 +11022,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def bounding_sphere_scale(self) -> float:
-        """Gets or sets the scale applied to the radius of this primitive's bounding sphere."""
+        """Get or set the scale applied to the radius of this primitive's bounding sphere."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_bounding_sphere_scale_metadata)
 
     _set_bounding_sphere_scale_metadata = { "name" : "bounding_sphere_scale",
@@ -11037,7 +11037,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def distance_display_condition_per_marker(self) -> "DistanceDisplayCondition":
-        """Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch..."""
+        """Get or set a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch..."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_distance_display_condition_per_marker_metadata)
 
     _set_distance_display_condition_per_marker_metadata = { "name" : "distance_display_condition_per_marker",
@@ -11052,7 +11052,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture(self) -> "RendererTexture2D":
-        """Gets or sets the per-batch texture, which is applied to each marker in the batch."""
+        """Get or set the per-batch texture, which is applied to each marker in the batch."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_texture_metadata)
 
     _set_texture_metadata = { "name" : "texture",
@@ -11067,7 +11067,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_UNIT),) }
     @property
     def size_unit(self) -> "MARKER_BATCH_UNIT":
-        """Gets or sets the unit that each marker's size is defined in."""
+        """Get or set the unit that each marker's size is defined in."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_size_unit_metadata)
 
     _set_size_unit_metadata = { "name" : "size_unit",
@@ -11082,7 +11082,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def size(self) -> list:
-        """Gets or sets the per-batch size, which is applied to each marker in the batch. The array contains one width followed by one height."""
+        """Get or set the per-batch size, which is applied to each marker in the batch. The array contains one width followed by one height."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_size_metadata)
 
     _set_size_metadata = { "name" : "size",
@@ -11097,7 +11097,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(ORIGIN),) }
     @property
     def origin(self) -> "ORIGIN":
-        """Gets or sets the per-batch origin, which is applied to each marker in the batch."""
+        """Get or set the per-batch origin, which is applied to each marker in the batch."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_origin_metadata)
 
     _set_origin_metadata = { "name" : "origin",
@@ -11112,7 +11112,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def pixel_offset(self) -> list:
-        """Gets or sets the per-batch pixel offset, which is applied to each marker in the batch. The array contains one x pixel offset followed by one y pixel offset."""
+        """Get or set the per-batch pixel offset, which is applied to each marker in the batch. The array contains one x pixel offset followed by one y pixel offset."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_pixel_offset_metadata)
 
     _set_pixel_offset_metadata = { "name" : "pixel_offset",
@@ -11127,7 +11127,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def eye_offset(self) -> list:
-        """Gets or sets the per-batch eye offset, which is applied to each marker in the batch. The array contains the components of the eye offset in the order x, y, z."""
+        """Get or set the per-batch eye offset, which is applied to each marker in the batch. The array contains the components of the eye offset in the order x, y, z."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_eye_offset_metadata)
 
     _set_eye_offset_metadata = { "name" : "eye_offset",
@@ -11142,7 +11142,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def rotation(self) -> float:
-        """Gets or sets the per-batch rotation angle which is applied to each marker in the batch."""
+        """Get or set the per-batch rotation angle which is applied to each marker in the batch."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_rotation_metadata)
 
     _set_rotation_metadata = { "name" : "rotation",
@@ -11157,7 +11157,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def texture_coordinate(self) -> list:
-        """Gets or sets the per-batch texture coordinate, which is applied to each marker in the batch. The array contains the texture coordinates arranged in the order s, t, p, q."""
+        """Get or set the per-batch texture coordinate, which is applied to each marker in the batch. The array contains the texture coordinates arranged in the order s, t, p, q."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_texture_coordinate_metadata)
 
     _set_texture_coordinate_metadata = { "name" : "texture_coordinate",
@@ -11172,7 +11172,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def wireframe(self) -> bool:
-        """Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging."""
+        """Get or set whether the primitive is rendered in wireframe. This is useful for debugging."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_wireframe_metadata)
 
     _set_wireframe_metadata = { "name" : "wireframe",
@@ -11187,7 +11187,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def per_item_picking_enabled(self) -> bool:
-        """Gets or sets whether individual marker indices will be included in the pick results returned from the scene's Pick method. Each marker index that is picked will be returned as a batch primitive index."""
+        """Get or set whether individual marker indices will be included in the pick results returned from the scene's Pick method. Each marker index that is picked will be returned as a batch primitive index."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_per_item_picking_enabled_metadata)
 
     _set_per_item_picking_enabled_metadata = { "name" : "per_item_picking_enabled",
@@ -11202,7 +11202,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_filter(self) -> "TextureFilter2D":
-        """Gets or sets the filter used for per-marker or per-batch textures."""
+        """Get or set the filter used for per-marker or per-batch textures."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_texture_filter_metadata)
 
     _set_texture_filter_metadata = { "name" : "texture_filter",
@@ -11216,21 +11216,21 @@ class IMarkerBatchPrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set(self, positions:list) -> None:
-        """Defines the positions of markers in a marker batch. The markers are rendered in the primitive's reference frame."""
+        """Define the positions of markers in a marker batch. The markers are rendered in the primitive's reference frame."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._set_metadata, positions)
 
     _set_with_optional_parameters_metadata = { "name" : "set_with_optional_parameters",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IMarkerBatchPrimitiveOptionalParameters"),) }
     def set_with_optional_parameters(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters") -> None:
-        """Defines the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame."""
+        """Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._set_with_optional_parameters_metadata, positions, optionalParameters)
 
     _set_with_optional_parameters_and_render_pass_hint_metadata = { "name" : "set_with_optional_parameters_and_render_pass_hint",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IMarkerBatchPrimitiveOptionalParameters"), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_with_optional_parameters_and_render_pass_hint(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Defines the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
+        """Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._set_with_optional_parameters_and_render_pass_hint_metadata, positions, optionalParameters, renderPassHint)
 
     _set_cartographic_metadata = { "name" : "set_cartographic",
@@ -11258,28 +11258,28 @@ class IMarkerBatchPrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial(self, positions:list, indices:list) -> None:
-        """Updates a subset of marker positions in a marker batch."""
+        """Update a subset of marker positions in a marker batch."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._set_partial_metadata, positions, indices)
 
     _set_partial_with_indices_order_metadata = { "name" : "set_partial_with_indices_order",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT),) }
     def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
-        """Updates a subset of marker positions in a marker batch."""
+        """Update a subset of marker positions in a marker batch."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._set_partial_with_indices_order_metadata, positions, indices, indicesOrderHint)
 
     _set_partial_with_optional_parameters_metadata = { "name" : "set_partial_with_optional_parameters",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IMarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_with_optional_parameters(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list) -> None:
-        """Updates a subset of marker positions and/or per-marker parameters in a marker batch."""
+        """Update a subset of marker positions and/or per-marker parameters in a marker batch."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._set_partial_with_optional_parameters_metadata, positions, optionalParameters, indices)
 
     _set_partial_with_optional_parameters_indices_order_and_render_pass_metadata = { "name" : "set_partial_with_optional_parameters_indices_order_and_render_pass",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IMarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Updates a subset of marker positions and/or per-marker parameters in a marker batch."""
+        """Update a subset of marker positions and/or per-marker parameters in a marker batch."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._set_partial_with_optional_parameters_indices_order_and_render_pass_metadata, positions, optionalParameters, indices, indicesOrderHint, renderPassHint)
 
     _set_partial_cartographic_metadata = { "name" : "set_partial_cartographic",
@@ -11314,7 +11314,7 @@ class IMarkerBatchPrimitive(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_RENDERING_METHOD), agmarshall.VARIANT_BOOL_arg,) }
     def supported(self, renderingMethod:"MARKER_BATCH_RENDERING_METHOD") -> bool:
-        """Determines whether or not the video card supports the marker batch primitive with the given renderingMethod."""
+        """Determine whether or not the video card supports the marker batch primitive with the given renderingMethod."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._supported_metadata, renderingMethod, out_arg())
 
     _get_clamp_to_pixel_metadata = { "name" : "clamp_to_pixel",
@@ -11322,7 +11322,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def clamp_to_pixel(self) -> bool:
-        """Gets or sets whether the screen space position of each marker is clamped to a pixel."""
+        """Get or set whether the screen space position of each marker is clamped to a pixel."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_clamp_to_pixel_metadata)
 
     _set_clamp_to_pixel_metadata = { "name" : "clamp_to_pixel",
@@ -11337,7 +11337,7 @@ class IMarkerBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def central_body_clipped(self) -> bool:
-        """Gets or sets whether the markers are clipped by the central body."""
+        """Get or set whether the markers are clipped by the central body."""
         return self._intf.get_property(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._get_central_body_clipped_metadata)
 
     _set_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -11351,21 +11351,21 @@ class IMarkerBatchPrimitive(object):
             "arg_types" : (),
             "marshallers" : () }
     def align_to_screen(self) -> None:
-        """Sets the up vector of the markers to always be aligned to the up vector of the camera. This is the default alignment."""
+        """Set the up vector of the markers to always be aligned to the up vector of the camera. This is the default alignment."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._align_to_screen_metadata, )
 
     _align_to_north_metadata = { "name" : "align_to_north",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def align_to_north(self, centralBody:str) -> None:
-        """Sets the up vector of the markers to point towards the north axis of centralBody. It will be aligned with the tangent vector of the surface that points north."""
+        """Set the up vector of the markers to point towards the north axis of centralBody. It will be aligned with the tangent vector of the surface that points north."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._align_to_north_metadata, centralBody)
 
     _align_to_axis_metadata = { "name" : "align_to_axis",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg,) }
     def align_to_axis(self, centralBody:str, axis:list) -> None:
-        """Sets the up vector of the markers to point towards the axis of centralBody. It will be aligned with the tangent vector of the surface that points towards the axis..."""
+        """Set the up vector of the markers to point towards the axis of centralBody. It will be aligned with the tangent vector of the surface that points towards the axis..."""
         return self._intf.invoke(IMarkerBatchPrimitive._metadata, IMarkerBatchPrimitive._align_to_axis_metadata, centralBody, axis)
 
 
@@ -11418,70 +11418,70 @@ class IMarkerBatchPrimitiveOptionalParameters(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_textures(self, textures:list) -> None:
-        """Defines a collection of textures, one for each marker in the batch."""
+        """Define a collection of textures, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_textures_metadata, textures)
 
     _set_sizes_metadata = { "name" : "set_sizes",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_sizes(self, sizes:list) -> None:
-        """Defines a collection of sizes, one for each marker in the batch."""
+        """Define a collection of sizes, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_sizes_metadata, sizes)
 
     _set_colors_metadata = { "name" : "set_colors",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_colors(self, colors:list) -> None:
-        """Defines a collection of colors, one for each marker in the batch."""
+        """Define a collection of colors, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_colors_metadata, colors)
 
     _set_origins_metadata = { "name" : "set_origins",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_origins(self, origins:list) -> None:
-        """Defines a collection of origins, one for each marker in the batch."""
+        """Define a collection of origins, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_origins_metadata, origins)
 
     _set_pixel_offsets_metadata = { "name" : "set_pixel_offsets",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_pixel_offsets(self, pixelOffsets:list) -> None:
-        """Defines a collection of pixel offsets, one for each marker in the batch."""
+        """Define a collection of pixel offsets, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_pixel_offsets_metadata, pixelOffsets)
 
     _set_eye_offsets_metadata = { "name" : "set_eye_offsets",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_eye_offsets(self, eyeOffsets:list) -> None:
-        """Defines a collection of eye offsets, one for each marker in the batch."""
+        """Define a collection of eye offsets, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_eye_offsets_metadata, eyeOffsets)
 
     _set_rotations_metadata = { "name" : "set_rotations",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_rotations(self, rotationAngles:list) -> None:
-        """Defines a collection of rotation angles, one for each marker in the batch."""
+        """Define a collection of rotation angles, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_rotations_metadata, rotationAngles)
 
     _set_texture_coordinates_metadata = { "name" : "set_texture_coordinates",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_texture_coordinates(self, textureCoordinates:list) -> None:
-        """Defines a collection of texture coordinates, one for each marker in the batch."""
+        """Define a collection of texture coordinates, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_texture_coordinates_metadata, textureCoordinates)
 
     _set_time_interval_display_conditions_metadata = { "name" : "set_time_interval_display_conditions",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_time_interval_display_conditions(self, timeIntervals:list) -> None:
-        """Defines a collection of time interval display conditions, one for each marker in the batch."""
+        """Define a collection of time interval display conditions, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_time_interval_display_conditions_metadata, timeIntervals)
 
     _set_displays_metadata = { "name" : "set_displays",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_displays(self, displays:list) -> None:
-        """Defines a collection of boolean display flags, one for each marker in the batch."""
+        """Define a collection of boolean display flags, one for each marker in the batch."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParameters._metadata, IMarkerBatchPrimitiveOptionalParameters._set_displays_metadata, displays)
 
 
@@ -11529,7 +11529,7 @@ class IMaximumCountPathPrimitiveUpdatePolicy(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def maximum_count(self) -> int:
-        """Gets or sets the maximum number of points in the path."""
+        """Get or set the maximum number of points in the path."""
         return self._intf.get_property(IMaximumCountPathPrimitiveUpdatePolicy._metadata, IMaximumCountPathPrimitiveUpdatePolicy._get_maximum_count_metadata)
 
     _set_maximum_count_metadata = { "name" : "maximum_count",
@@ -11544,7 +11544,7 @@ class IMaximumCountPathPrimitiveUpdatePolicy(object):
             "marshallers" : (agmarshall.AgEnum_arg(PATH_PRIMITIVE_REMOVE_LOCATION),) }
     @property
     def remove_location(self) -> "PATH_PRIMITIVE_REMOVE_LOCATION":
-        """Gets or sets where the positions on the path are removed from."""
+        """Get or set where the positions on the path are removed from."""
         return self._intf.get_property(IMaximumCountPathPrimitiveUpdatePolicy._metadata, IMaximumCountPathPrimitiveUpdatePolicy._get_remove_location_metadata)
 
     _set_remove_location_metadata = { "name" : "remove_location",
@@ -11614,7 +11614,7 @@ class IModelArticulation(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def name(self) -> str:
-        """Gets the name of the articulation."""
+        """Get the name of the articulation."""
         return self._intf.get_property(IModelArticulation._metadata, IModelArticulation._get_name_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -11622,35 +11622,35 @@ class IModelArticulation(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of transformations in the collection."""
+        """Get the number of transformations in the collection."""
         return self._intf.get_property(IModelArticulation._metadata, IModelArticulation._get_count_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "ModelTransformation":
-        """Gets the transformation at the given index. The index is zero-based."""
+        """Get the transformation at the given index. The index is zero-based."""
         return self._intf.invoke(IModelArticulation._metadata, IModelArticulation._item_metadata, index, out_arg())
 
     _get_item_by_string_metadata = { "name" : "get_item_by_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_string(self, name:str) -> "ModelTransformation":
-        """Gets a transformation by name."""
+        """Get a transformation by name."""
         return self._intf.invoke(IModelArticulation._metadata, IModelArticulation._get_item_by_string_metadata, name, out_arg())
 
     _get_by_name_metadata = { "name" : "get_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_by_name(self, name:str) -> "ModelTransformation":
-        """Gets a transformation by name."""
+        """Get a transformation by name."""
         return self._intf.invoke(IModelArticulation._metadata, IModelArticulation._get_by_name_metadata, name, out_arg())
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Returns true if the collection contains the transformation."""
+        """Return true if the collection contains the transformation."""
         return self._intf.invoke(IModelArticulation._metadata, IModelArticulation._contains_metadata, name, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -11658,7 +11658,7 @@ class IModelArticulation(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns the enumerator for this collection."""
+        """Return the enumerator for this collection."""
         return self._intf.get_property(IModelArticulation._metadata, IModelArticulation._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -11723,35 +11723,35 @@ class IModelArticulationCollection(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of articulations in the collection."""
+        """Get the number of articulations in the collection."""
         return self._intf.get_property(IModelArticulationCollection._metadata, IModelArticulationCollection._get_count_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "ModelArticulation":
-        """Gets the articulation at the given index. The index is zero-based."""
+        """Get the articulation at the given index. The index is zero-based."""
         return self._intf.invoke(IModelArticulationCollection._metadata, IModelArticulationCollection._item_metadata, index, out_arg())
 
     _get_item_by_string_metadata = { "name" : "get_item_by_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_item_by_string(self, name:str) -> "ModelArticulation":
-        """Gets an articulation by name."""
+        """Get an articulation by name."""
         return self._intf.invoke(IModelArticulationCollection._metadata, IModelArticulationCollection._get_item_by_string_metadata, name, out_arg())
 
     _get_by_name_metadata = { "name" : "get_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_by_name(self, name:str) -> "ModelArticulation":
-        """Gets an articulation by name."""
+        """Get an articulation by name."""
         return self._intf.invoke(IModelArticulationCollection._metadata, IModelArticulationCollection._get_by_name_metadata, name, out_arg())
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, name:str) -> bool:
-        """Returns true if the collection contains the articulation."""
+        """Return true if the collection contains the articulation."""
         return self._intf.invoke(IModelArticulationCollection._metadata, IModelArticulationCollection._contains_metadata, name, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -11759,7 +11759,7 @@ class IModelArticulationCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns the enumerator for this collection."""
+        """Return the enumerator for this collection."""
         return self._intf.get_property(IModelArticulationCollection._metadata, IModelArticulationCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -11817,7 +11817,7 @@ class IModelPrimitive(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def uri_as_string(self) -> str:
-        """Gets the URI of the file used to load the file."""
+        """Get the URI of the file used to load the file."""
         return self._intf.get_property(IModelPrimitive._metadata, IModelPrimitive._get_uri_as_string_metadata)
 
     _get_scale_metadata = { "name" : "scale",
@@ -11825,7 +11825,7 @@ class IModelPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def scale(self) -> float:
-        """Gets or sets the linear scale used to increase or decrease the size of the rendered model."""
+        """Get or set the linear scale used to increase or decrease the size of the rendered model."""
         return self._intf.get_property(IModelPrimitive._metadata, IModelPrimitive._get_scale_metadata)
 
     _set_scale_metadata = { "name" : "scale",
@@ -11840,7 +11840,7 @@ class IModelPrimitive(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets or sets the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z."""
+        """Get or set the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z."""
         return self._intf.get_property(IModelPrimitive._metadata, IModelPrimitive._get_position_metadata)
 
     _set_position_metadata = { "name" : "position",
@@ -11855,7 +11855,7 @@ class IModelPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def orientation(self) -> "IOrientation":
-        """Gets or sets the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame."""
+        """Get or set the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame."""
         return self._intf.get_property(IModelPrimitive._metadata, IModelPrimitive._get_orientation_metadata)
 
     _set_orientation_metadata = { "name" : "orientation",
@@ -11870,7 +11870,7 @@ class IModelPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def articulations(self) -> "ModelArticulationCollection":
-        """Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry."""
+        """Get the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry."""
         return self._intf.get_property(IModelPrimitive._metadata, IModelPrimitive._get_articulations_metadata)
 
     _load_with_string_uri_metadata = { "name" : "load_with_string_uri",
@@ -11943,7 +11943,7 @@ class IModelTransformation(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def current_value(self) -> float:
-        """Gets or sets the current value of the transformation. The current value of the transformation will be reflected in the geometry of the model primitive that it is associated with."""
+        """Get or set the current value of the transformation. The current value of the transformation will be reflected in the geometry of the model primitive that it is associated with."""
         return self._intf.get_property(IModelTransformation._metadata, IModelTransformation._get_current_value_metadata)
 
     _set_current_value_metadata = { "name" : "current_value",
@@ -11958,7 +11958,7 @@ class IModelTransformation(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def minimum_value(self) -> float:
-        """Gets the minimum value of the transformation."""
+        """Get the minimum value of the transformation."""
         return self._intf.get_property(IModelTransformation._metadata, IModelTransformation._get_minimum_value_metadata)
 
     _get_maximum_value_metadata = { "name" : "maximum_value",
@@ -11966,7 +11966,7 @@ class IModelTransformation(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def maximum_value(self) -> float:
-        """Gets the maximum value of the transformation."""
+        """Get the maximum value of the transformation."""
         return self._intf.get_property(IModelTransformation._metadata, IModelTransformation._get_maximum_value_metadata)
 
     _get_default_value_metadata = { "name" : "default_value",
@@ -11974,7 +11974,7 @@ class IModelTransformation(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def default_value(self) -> float:
-        """Gets the default value of the transformation. The current value property of the transformation will have this value when the model primitive is initialized."""
+        """Get the default value of the transformation. The current value property of the transformation will have this value when the model primitive is initialized."""
         return self._intf.get_property(IModelTransformation._metadata, IModelTransformation._get_default_value_metadata)
 
     _get_range_metadata = { "name" : "range",
@@ -11982,7 +11982,7 @@ class IModelTransformation(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def range(self) -> float:
-        """Gets the value range of the transformation. Equivalent to the difference of the maximum value and minimum value properties."""
+        """Get the value range of the transformation. Equivalent to the difference of the maximum value and minimum value properties."""
         return self._intf.get_property(IModelTransformation._metadata, IModelTransformation._get_range_metadata)
 
     _get_name_metadata = { "name" : "name",
@@ -11990,7 +11990,7 @@ class IModelTransformation(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def name(self) -> str:
-        """Gets the name of the transformation."""
+        """Get the name of the transformation."""
         return self._intf.get_property(IModelTransformation._metadata, IModelTransformation._get_name_metadata)
 
     _get_type_metadata = { "name" : "type",
@@ -11998,7 +11998,7 @@ class IModelTransformation(object):
             "marshallers" : (agmarshall.AgEnum_arg(MODEL_TRANSFORMATION_TYPE),) }
     @property
     def type(self) -> "MODEL_TRANSFORMATION_TYPE":
-        """Gets the model transformation type associated with the transformation."""
+        """Get the model transformation type associated with the transformation."""
         return self._intf.get_property(IModelTransformation._metadata, IModelTransformation._get_type_metadata)
 
 
@@ -12118,7 +12118,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets or sets the position of the overlay relative to its parent. The array represents the position of the overlay and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit."""
+        """Get or set the position of the overlay relative to its parent. The array represents the position of the overlay and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_position_metadata)
 
     _set_position_metadata = { "name" : "position",
@@ -12133,7 +12133,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def pinning_position(self) -> list:
-        """Gets or sets the pinning position of the overlay, relative to the overlay, which determines the point on the overlay that corresponds to the position property. The array represents the pinning position of the overlay and has a size of 4..."""
+        """Get or set the pinning position of the overlay, relative to the overlay, which determines the point on the overlay that corresponds to the position property. The array represents the pinning position of the overlay and has a size of 4..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_pinning_position_metadata)
 
     _set_pinning_position_metadata = { "name" : "pinning_position",
@@ -12148,7 +12148,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def x(self) -> float:
-        """Gets or sets the X position of the overlay relative to its parent. The unit in which the position is defined is specified by the x unit property. The position is measured horizontally from the origin, which is, by default, the lower-left corner."""
+        """Get or set the X position of the overlay relative to its parent. The unit in which the position is defined is specified by the x unit property. The position is measured horizontally from the origin, which is, by default, the lower-left corner."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_x_metadata)
 
     _set_x_metadata = { "name" : "x",
@@ -12163,7 +12163,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(SCREEN_OVERLAY_UNIT),) }
     @property
     def x_unit(self) -> "SCREEN_OVERLAY_UNIT":
-        """Gets or sets the unit of the x property."""
+        """Get or set the unit of the x property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_x_unit_metadata)
 
     _set_x_unit_metadata = { "name" : "x_unit",
@@ -12178,7 +12178,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def y(self) -> float:
-        """Gets or sets the Y position of the overlay relative to its parent. The unit in which the position is defined is specified by the y unit property. The position is measured vertically from the origin, which is, by default, the lower-left corner."""
+        """Get or set the Y position of the overlay relative to its parent. The unit in which the position is defined is specified by the y unit property. The position is measured vertically from the origin, which is, by default, the lower-left corner."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_y_metadata)
 
     _set_y_metadata = { "name" : "y",
@@ -12193,7 +12193,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(SCREEN_OVERLAY_UNIT),) }
     @property
     def y_unit(self) -> "SCREEN_OVERLAY_UNIT":
-        """Gets or sets the unit of the y property."""
+        """Get or set the unit of the y property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_y_unit_metadata)
 
     _set_y_unit_metadata = { "name" : "y_unit",
@@ -12208,7 +12208,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def size(self) -> list:
-        """Gets or sets the size of the overlay. The array elements represent the size of the overlay in the order width, height, width screen overlay unit, height screen overlay unit."""
+        """Get or set the size of the overlay. The array elements represent the size of the overlay in the order width, height, width screen overlay unit, height screen overlay unit."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_size_metadata)
 
     _set_size_metadata = { "name" : "size",
@@ -12223,7 +12223,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def width(self) -> float:
-        """Gets or sets the width of the overlay. The unit in which the width is defined is specified by the width unit property."""
+        """Get or set the width of the overlay. The unit in which the width is defined is specified by the width unit property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_width_metadata)
 
     _set_width_metadata = { "name" : "width",
@@ -12238,7 +12238,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(SCREEN_OVERLAY_UNIT),) }
     @property
     def width_unit(self) -> "SCREEN_OVERLAY_UNIT":
-        """Gets or sets the unit of the width property."""
+        """Get or set the unit of the width property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_width_unit_metadata)
 
     _set_width_unit_metadata = { "name" : "width_unit",
@@ -12253,7 +12253,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def height(self) -> float:
-        """Gets or sets the height of the overlay. The unit in which the height is defined is specified by the height unit property."""
+        """Get or set the height of the overlay. The unit in which the height is defined is specified by the height unit property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_height_metadata)
 
     _set_height_metadata = { "name" : "height",
@@ -12268,7 +12268,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(SCREEN_OVERLAY_UNIT),) }
     @property
     def height_unit(self) -> "SCREEN_OVERLAY_UNIT":
-        """Gets or sets the unit of the height property."""
+        """Get or set the unit of the height property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_height_unit_metadata)
 
     _set_height_unit_metadata = { "name" : "height_unit",
@@ -12283,7 +12283,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def minimum_size(self) -> list:
-        """Gets or sets the minimum size of the overlay. The overlay will never be smaller than this size, even if the overlay's size is specified as a percentage of its parent and its parent is very small..."""
+        """Get or set the minimum size of the overlay. The overlay will never be smaller than this size, even if the overlay's size is specified as a percentage of its parent and its parent is very small..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_minimum_size_metadata)
 
     _set_minimum_size_metadata = { "name" : "minimum_size",
@@ -12298,7 +12298,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def maximum_size(self) -> list:
-        """Gets or sets the maximum size of the overlay. The overlay will never be larger than this size, even if the overlay's size is specified as a percentage of its parent and its parent is very large..."""
+        """Get or set the maximum size of the overlay. The overlay will never be larger than this size, even if the overlay's size is specified as a percentage of its parent and its parent is very large..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_maximum_size_metadata)
 
     _set_maximum_size_metadata = { "name" : "maximum_size",
@@ -12313,7 +12313,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def bounds(self) -> list:
-        """Gets the bounds of the overlay relative to its parent. The array contains the properties defining the bounds in the order left x location, top y location, width, height."""
+        """Get the bounds of the overlay relative to its parent. The array contains the properties defining the bounds in the order left x location, top y location, width, height."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_bounds_metadata)
 
     _get_border_color_metadata = { "name" : "border_color",
@@ -12321,7 +12321,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def border_color(self) -> agcolor.Color:
-        """Gets or sets the overlay's border color. By default, the border color is white. However, also by default, the overlay has a border size of 0.0 so the border is not displayed."""
+        """Get or set the overlay's border color. By default, the border color is white. However, also by default, the overlay has a border size of 0.0 so the border is not displayed."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_border_color_metadata)
 
     _set_border_color_metadata = { "name" : "border_color",
@@ -12336,7 +12336,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def border_size(self) -> int:
-        """Gets or sets the size of the overlay's border. By default, this is 0.0 so the border is not displayed."""
+        """Get or set the size of the overlay's border. By default, this is 0.0 so the border is not displayed."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_border_size_metadata)
 
     _set_border_size_metadata = { "name" : "border_size",
@@ -12351,7 +12351,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def border_translucency(self) -> float:
-        """Gets or sets the translucency of the overlay border. Translucency is a value between 0.0 and 1.0, where 0.0 is completely opaque and 1.0 is completely transparent."""
+        """Get or set the translucency of the overlay border. Translucency is a value between 0.0 and 1.0, where 0.0 is completely opaque and 1.0 is completely transparent."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_border_translucency_metadata)
 
     _set_border_translucency_metadata = { "name" : "border_translucency",
@@ -12366,7 +12366,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def translation_x(self) -> float:
-        """Gets or sets the value with which the overlay will be translated from the X value of the position property."""
+        """Get or set the value with which the overlay will be translated from the X value of the position property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_translation_x_metadata)
 
     _set_translation_x_metadata = { "name" : "translation_x",
@@ -12381,7 +12381,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def translation_y(self) -> float:
-        """Gets or sets the value with which the overlay will be translated from the Y value of the position property."""
+        """Get or set the value with which the overlay will be translated from the Y value of the position property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_translation_y_metadata)
 
     _set_translation_y_metadata = { "name" : "translation_y",
@@ -12396,7 +12396,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def rotation_angle(self) -> float:
-        """Gets or sets the counter-clockwise rotation of the overlay. The overlay is rotated around the point specified by the rotation point property."""
+        """Get or set the counter-clockwise rotation of the overlay. The overlay is rotated around the point specified by the rotation point property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_rotation_angle_metadata)
 
     _set_rotation_angle_metadata = { "name" : "rotation_angle",
@@ -12411,7 +12411,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def rotation_point(self) -> list:
-        """Gets or sets the point that the overlay is rotated around when the rotation angle property has a value other than 0.0. The array contains seven elements defining the properties of the rotation point..."""
+        """Get or set the point that the overlay is rotated around when the rotation angle property has a value other than 0.0. The array contains seven elements defining the properties of the rotation point..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_rotation_point_metadata)
 
     _set_rotation_point_metadata = { "name" : "rotation_point",
@@ -12426,7 +12426,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def scale(self) -> float:
-        """Gets or sets the fractional value used to scale the overlay's size property. A value greater than 1.0 will make the overlay larger while a value less than 1.0 will make it smaller."""
+        """Get or set the fractional value used to scale the overlay's size property. A value greater than 1.0 will make the overlay larger while a value less than 1.0 will make it smaller."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_scale_metadata)
 
     _set_scale_metadata = { "name" : "scale",
@@ -12441,7 +12441,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def flip_x(self) -> bool:
-        """Gets or sets whether the overlay will be flipped along its X axis."""
+        """Get or set whether the overlay will be flipped along its X axis."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_flip_x_metadata)
 
     _set_flip_x_metadata = { "name" : "flip_x",
@@ -12456,7 +12456,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def flip_y(self) -> bool:
-        """Gets or sets whether the overlay will be flipped along its Y axis."""
+        """Get or set whether the overlay will be flipped along its Y axis."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_flip_y_metadata)
 
     _set_flip_y_metadata = { "name" : "flip_y",
@@ -12471,7 +12471,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(SCREEN_OVERLAY_ORIGIN),) }
     @property
     def origin(self) -> "SCREEN_OVERLAY_ORIGIN":
-        """Gets or sets the origin from which the overlay's position is defined. By default, the value of this property is bottom left..."""
+        """Get or set the origin from which the overlay's position is defined. By default, the value of this property is bottom left..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_origin_metadata)
 
     _set_origin_metadata = { "name" : "origin",
@@ -12486,7 +12486,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(SCREEN_OVERLAY_PINNING_ORIGIN),) }
     @property
     def pinning_origin(self) -> "SCREEN_OVERLAY_PINNING_ORIGIN":
-        """Gets or sets the origin of the pinning position property, relative to the overlay..."""
+        """Get or set the origin of the pinning position property, relative to the overlay..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_pinning_origin_metadata)
 
     _set_pinning_origin_metadata = { "name" : "pinning_origin",
@@ -12501,7 +12501,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def parent(self) -> "IScreenOverlayContainer":
-        """Gets the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection."""
+        """Get the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_parent_metadata)
 
     _get_translucency_metadata = { "name" : "translucency",
@@ -12509,7 +12509,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def translucency(self) -> float:
-        """Gets or sets the overlay's translucency. Translucency is a value between 0.0 and 1.0, where 0.0 is completely opaque and 1.0 is completely transparent."""
+        """Get or set the overlay's translucency. Translucency is a value between 0.0 and 1.0, where 0.0 is completely opaque and 1.0 is completely transparent."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_translucency_metadata)
 
     _set_translucency_metadata = { "name" : "translucency",
@@ -12524,7 +12524,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def color(self) -> agcolor.Color:
-        """Gets or sets the overlay's color. By default, the overlay is white."""
+        """Get or set the overlay's color. By default, the overlay is white."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_color_metadata)
 
     _set_color_metadata = { "name" : "color",
@@ -12539,7 +12539,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def picking_enabled(self) -> bool:
-        """Gets or sets a value indicating whether or not picking on the overlay is enabled. If picking is disabled, this overlay will never show up in the result of PickScreenOverlay, even if it occupies the specified pick position."""
+        """Get or set a value indicating whether or not picking on the overlay is enabled. If picking is disabled, this overlay will never show up in the result of PickScreenOverlay, even if it occupies the specified pick position."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_picking_enabled_metadata)
 
     _set_picking_enabled_metadata = { "name" : "picking_enabled",
@@ -12554,7 +12554,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def clip_to_parent(self) -> bool:
-        """Gets or sets a value indicating whether or not the overlay will be clipped by the bounds of its parent. If this property is <see langword='false' />, part of this overlay may be visible outside of its parent's bounds."""
+        """Get or set a value indicating whether or not the overlay will be clipped by the bounds of its parent. If this property is <see langword='false' />, part of this overlay may be visible outside of its parent's bounds."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_clip_to_parent_metadata)
 
     _set_clip_to_parent_metadata = { "name" : "clip_to_parent",
@@ -12569,7 +12569,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display(self) -> bool:
-        """Gets or sets if this overlay and the collection of overlays that are contained within this overlay should be rendered."""
+        """Get or set if this overlay and the collection of overlays that are contained within this overlay should be rendered."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_display_metadata)
 
     _set_display_metadata = { "name" : "display",
@@ -12584,7 +12584,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def control_position(self) -> list:
-        """Gets the position of the overlay in coordinates relative to the overall globe control. The array represents the position of the overlay and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit."""
+        """Get the position of the overlay in coordinates relative to the overall globe control. The array represents the position of the overlay and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_control_position_metadata)
 
     _get_control_size_metadata = { "name" : "control_size",
@@ -12592,7 +12592,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def control_size(self) -> list:
-        """Gets the size of the overlay in coordinates relative to the overall globe control. The elements are in the order width, height, width screen overlay unit, height screen overlay unit."""
+        """Get the size of the overlay in coordinates relative to the overall globe control. The elements are in the order width, height, width screen overlay unit, height screen overlay unit."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_control_size_metadata)
 
     _get_control_bounds_metadata = { "name" : "control_bounds",
@@ -12600,7 +12600,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def control_bounds(self) -> list:
-        """Gets the bounds of the overlay in coordinates relative to the overall globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height."""
+        """Get the bounds of the overlay in coordinates relative to the overall globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_control_bounds_metadata)
 
     _get_display_condition_metadata = { "name" : "display_condition",
@@ -12608,7 +12608,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def display_condition(self) -> "IDisplayCondition":
-        """Gets or sets the display condition that determines if the overlay should be rendered. Both this and display must evaluate to true for the overlay to be rendered."""
+        """Get or set the display condition that determines if the overlay should be rendered. Both this and display must evaluate to true for the overlay to be rendered."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_display_condition_metadata)
 
     _set_display_condition_metadata = { "name" : "display_condition",
@@ -12623,7 +12623,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def overlays(self) -> "ScreenOverlayCollection":
-        """Gets the collection of overlays that are contained within this overlay."""
+        """Get the collection of overlays that are contained within this overlay."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_overlays_metadata)
 
     _get_padding_metadata = { "name" : "padding",
@@ -12631,7 +12631,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def padding(self) -> list:
-        """Gets or sets the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom."""
+        """Get or set the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_padding_metadata)
 
     _set_padding_metadata = { "name" : "padding",
@@ -12652,21 +12652,21 @@ class IOverlay(object):
             "arg_types" : (),
             "marshallers" : () }
     def send_to_back(self) -> None:
-        """Sends the overlay to the back of the z-order, so it is underneath all other overlays with the same parent"""
+        """Send the overlay to the back of the z-order, so it is underneath all other overlays with the same parent"""
         return self._intf.invoke(IOverlay._metadata, IOverlay._send_to_back_metadata, )
 
     _overlay_to_control_metadata = { "name" : "overlay_to_control",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.LPSAFEARRAY_arg,) }
     def overlay_to_control(self, x:float, y:float) -> list:
-        """Transforms a given position, specified relative to the overlay, into coordinates relative to the overall globe control..."""
+        """Transform a given position, specified relative to the overlay, into coordinates relative to the overall globe control..."""
         return self._intf.invoke(IOverlay._metadata, IOverlay._overlay_to_control_metadata, x, y, out_arg())
 
     _control_to_overlay_metadata = { "name" : "control_to_overlay",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.LPSAFEARRAY_arg,) }
     def control_to_overlay(self, x:float, y:float) -> list:
-        """Transforms a given position, specified relative to the overall globe control, into coordinates relative to this overlay..."""
+        """Transform a given position, specified relative to the overall globe control, into coordinates relative to this overlay..."""
         return self._intf.invoke(IOverlay._metadata, IOverlay._control_to_overlay_metadata, x, y, out_arg())
 
     _get_tag_metadata = { "name" : "tag",
@@ -12674,7 +12674,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def tag(self) -> typing.Any:
-        """Gets or sets custom value associated with this primitive."""
+        """Get or set custom value associated with this primitive."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_tag_metadata)
 
     _set_tag_metadata = { "name" : "tag",
@@ -12689,7 +12689,7 @@ agcls.AgClassCatalog.add_catalog_entry("{b7007235-5a52-450b-83af-1e8080d3b0be}",
 agcls.AgTypeNameMap["IOverlay"] = IOverlay
 
 class IPathPrimitive(object):
-    """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+    """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
     _num_methods = 31
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12768,7 +12768,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Returns the number of points."""
+        """Return the number of points."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_count_metadata)
 
     _get_capacity_metadata = { "name" : "capacity",
@@ -12776,7 +12776,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def capacity(self) -> int:
-        """Returns the capacity that was set during object construction. The capacity is the amount of memory reserved for storing the points on the path. This will be automatically updated when adding/removing points."""
+        """Return the capacity that was set during object construction. The capacity is the amount of memory reserved for storing the points on the path. This will be automatically updated when adding/removing points."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_capacity_metadata)
 
     _get_update_policy_metadata = { "name" : "update_policy",
@@ -12784,7 +12784,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def update_policy(self) -> "IPathPrimitiveUpdatePolicy":
-        """Gets or sets how the primitive will be updated based on the current animation time."""
+        """Get or set how the primitive will be updated based on the current animation time."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_update_policy_metadata)
 
     _set_update_policy_metadata = { "name" : "update_policy",
@@ -12799,7 +12799,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE),) }
     @property
     def polyline_type(self) -> "POLYLINE_TYPE":
-        """Gets or sets how the primitive interprets the positions."""
+        """Get or set how the primitive interprets the positions."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_polyline_type_metadata)
 
     _set_polyline_type_metadata = { "name" : "polyline_type",
@@ -12814,7 +12814,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def width(self) -> float:
-        """Gets or sets the line width, in pixels."""
+        """Get or set the line width, in pixels."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_width_metadata)
 
     _set_width_metadata = { "name" : "width",
@@ -12829,7 +12829,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_width_supported(self) -> float:
-        """Gets the minimum width, in pixels, supported by the video card."""
+        """Get the minimum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_minimum_width_supported_metadata)
 
     _get_maximum_width_supported_metadata = { "name" : "maximum_width_supported",
@@ -12837,7 +12837,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_width_supported(self) -> float:
-        """Gets the maximum width, in pixels, supported by the video card."""
+        """Get the maximum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_maximum_width_supported_metadata)
 
     _get_display_outline_metadata = { "name" : "display_outline",
@@ -12845,7 +12845,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_outline(self) -> bool:
-        """Gets or sets whether an outline is rendered around the line."""
+        """Get or set whether an outline is rendered around the line."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_display_outline_metadata)
 
     _set_display_outline_metadata = { "name" : "display_outline",
@@ -12860,7 +12860,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_width(self) -> float:
-        """Gets or sets the width, in pixels, of the outline around the line."""
+        """Get or set the width, in pixels, of the outline around the line."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_outline_width_metadata)
 
     _set_outline_width_metadata = { "name" : "outline_width",
@@ -12875,7 +12875,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def per_item_picking_enabled(self) -> bool:
-        """Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index."""
+        """Get or set whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_per_item_picking_enabled_metadata)
 
     _set_per_item_picking_enabled_metadata = { "name" : "per_item_picking_enabled",
@@ -12889,7 +12889,7 @@ class IPathPrimitive(object):
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "PathPoint":
-        """Returns the point at the given zero-based index."""
+        """Return the point at the given zero-based index."""
         return self._intf.invoke(IPathPrimitive._metadata, IPathPrimitive._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -12897,7 +12897,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that iterates through the collection."""
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get__NewEnum_metadata)
 
     _add_front_metadata = { "name" : "add_front",
@@ -12974,7 +12974,7 @@ class IPathPrimitive(object):
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Removes all of the points."""
+        """Remove all of the points."""
         return self._intf.invoke(IPathPrimitive._metadata, IPathPrimitive._clear_metadata, )
 
     _get_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -12982,7 +12982,7 @@ class IPathPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def central_body_clipped(self) -> bool:
-        """Gets or sets whether the polyline will be clipped by the central body."""
+        """Get or set whether the polyline will be clipped by the central body."""
         return self._intf.get_property(IPathPrimitive._metadata, IPathPrimitive._get_central_body_clipped_metadata)
 
     _set_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -13039,7 +13039,7 @@ class IPickResult(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def objects(self) -> "ObjectCollection":
-        """Gets a collection of objects that were on the pick stack for the picked object."""
+        """Get a collection of objects that were on the pick stack for the picked object."""
         return self._intf.get_property(IPickResult._metadata, IPickResult._get_objects_metadata)
 
     _get_depth_metadata = { "name" : "depth",
@@ -13047,7 +13047,7 @@ class IPickResult(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def depth(self) -> float:
-        """Gets the depth of the picked location in the 3D scene."""
+        """Get the depth of the picked location in the 3D scene."""
         return self._intf.get_property(IPickResult._metadata, IPickResult._get_depth_metadata)
 
     _get_position_metadata = { "name" : "position",
@@ -13055,7 +13055,7 @@ class IPickResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z."""
+        """Get the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z."""
         return self._intf.get_property(IPickResult._metadata, IPickResult._get_position_metadata)
 
 
@@ -13063,7 +13063,7 @@ agcls.AgClassCatalog.add_catalog_entry("{55238a64-4c7f-4be7-abcb-1d2321f8f64a}",
 agcls.AgTypeNameMap["IPickResult"] = IPickResult
 
 class IPixelSizeDisplayCondition(object):
-    """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+    """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13103,7 +13103,7 @@ class IPixelSizeDisplayCondition(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def minimum_pixel_size(self) -> int:
-        """Gets or sets the minimum pixel size of the inclusive distance interval."""
+        """Get or set the minimum pixel size of the inclusive distance interval."""
         return self._intf.get_property(IPixelSizeDisplayCondition._metadata, IPixelSizeDisplayCondition._get_minimum_pixel_size_metadata)
 
     _set_minimum_pixel_size_metadata = { "name" : "minimum_pixel_size",
@@ -13118,7 +13118,7 @@ class IPixelSizeDisplayCondition(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def maximum_pixel_size(self) -> int:
-        """Gets or sets the maximum pixel size of the inclusive distance interval. Use Int32.MaxValue to ignore checking the maximum distance."""
+        """Get or set the maximum pixel size of the inclusive distance interval. Use Int32.MaxValue to ignore checking the maximum distance."""
         return self._intf.get_property(IPixelSizeDisplayCondition._metadata, IPixelSizeDisplayCondition._get_maximum_pixel_size_metadata)
 
     _set_maximum_pixel_size_metadata = { "name" : "maximum_pixel_size",
@@ -13203,7 +13203,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_outline(self) -> bool:
-        """Gets or sets whether an outline is rendered around each point in the batch."""
+        """Get or set whether an outline is rendered around each point in the batch."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_display_outline_metadata)
 
     _set_display_outline_metadata = { "name" : "display_outline",
@@ -13218,7 +13218,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def outline_color(self) -> agcolor.Color:
-        """Gets or sets the outline's color."""
+        """Get or set the outline's color."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_outline_color_metadata)
 
     _set_outline_color_metadata = { "name" : "outline_color",
@@ -13233,7 +13233,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_translucency(self) -> float:
-        """Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
+        """Get or set the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_outline_translucency_metadata)
 
     _set_outline_translucency_metadata = { "name" : "outline_translucency",
@@ -13248,7 +13248,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_width(self) -> float:
-        """Gets or sets the size, in pixels, of the outline around each point in the batch."""
+        """Get or set the size, in pixels, of the outline around each point in the batch."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_outline_width_metadata)
 
     _set_outline_width_metadata = { "name" : "outline_width",
@@ -13263,7 +13263,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def pixel_size(self) -> float:
-        """Gets or sets the size, in pixels, of each point in the point batch."""
+        """Get or set the size, in pixels, of each point in the point batch."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_pixel_size_metadata)
 
     _set_pixel_size_metadata = { "name" : "pixel_size",
@@ -13278,7 +13278,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_pixel_size_supported(self) -> float:
-        """Gets the minimum pixel size supported by the video card."""
+        """Get the minimum pixel size supported by the video card."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_minimum_pixel_size_supported_metadata)
 
     _get_maximum_pixel_size_supported_metadata = { "name" : "maximum_pixel_size_supported",
@@ -13286,7 +13286,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_pixel_size_supported(self) -> float:
-        """Gets the maximum pixel size supported by the video card."""
+        """Get the maximum pixel size supported by the video card."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_maximum_pixel_size_supported_metadata)
 
     _get_distance_display_condition_per_point_metadata = { "name" : "distance_display_condition_per_point",
@@ -13294,7 +13294,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def distance_display_condition_per_point(self) -> "DistanceDisplayCondition":
-        """Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch..."""
+        """Get or set a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch..."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_distance_display_condition_per_point_metadata)
 
     _set_distance_display_condition_per_point_metadata = { "name" : "distance_display_condition_per_point",
@@ -13309,7 +13309,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT),) }
     @property
     def set_hint(self) -> "SET_HINT":
-        """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
+        """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_set_hint_metadata)
 
     _get_per_item_picking_enabled_metadata = { "name" : "per_item_picking_enabled",
@@ -13317,7 +13317,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def per_item_picking_enabled(self) -> bool:
-        """Gets or sets whether individual point indices will be included in the pick results returned from the scene's Pick method. Each point index that is picked will be returned as a batch primitive index."""
+        """Get or set whether individual point indices will be included in the pick results returned from the scene's Pick method. Each point index that is picked will be returned as a batch primitive index."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_per_item_picking_enabled_metadata)
 
     _set_per_item_picking_enabled_metadata = { "name" : "per_item_picking_enabled",
@@ -13331,21 +13331,21 @@ class IPointBatchPrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set(self, positions:list) -> None:
-        """Defines the positions of points in a point batch. The points are rendered in the primitive's reference frame."""
+        """Define the positions of points in a point batch. The points are rendered in the primitive's reference frame."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_metadata, positions)
 
     _set_with_colors_metadata = { "name" : "set_with_colors",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_with_colors(self, positions:list, colors:list) -> None:
-        """Defines the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame."""
+        """Define the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_with_colors_metadata, positions, colors)
 
     _set_with_colors_and_render_pass_metadata = { "name" : "set_with_colors_and_render_pass",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_with_colors_and_render_pass(self, positions:list, colors:list, renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Defines the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
+        """Define the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_with_colors_and_render_pass_metadata, positions, colors, renderPassHint)
 
     _set_cartographic_metadata = { "name" : "set_cartographic",
@@ -13373,28 +13373,28 @@ class IPointBatchPrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial(self, positions:list, indices:list) -> None:
-        """Updates a subset of positions in a point batch."""
+        """Update a subset of positions in a point batch."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_metadata, positions, indices)
 
     _set_partial_with_indices_order_metadata = { "name" : "set_partial_with_indices_order",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT),) }
     def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
-        """Updates a subset of positions in a point batch."""
+        """Update a subset of positions in a point batch."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_with_indices_order_metadata, positions, indices, indicesOrderHint)
 
     _set_partial_with_colors_metadata = { "name" : "set_partial_with_colors",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_with_colors(self, positions:list, colors:list, indices:list) -> None:
-        """Updates a subset of positions and/or colors in a point batch."""
+        """Update a subset of positions and/or colors in a point batch."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_with_colors_metadata, positions, colors, indices)
 
     _set_partial_with_colors_indices_order_and_render_pass_metadata = { "name" : "set_partial_with_colors_indices_order_and_render_pass",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Updates a subset of positions and/or colors in a point batch."""
+        """Update a subset of positions and/or colors in a point batch."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_with_colors_indices_order_and_render_pass_metadata, positions, colors, indices, indicesOrderHint, renderPassHint)
 
     _set_partial_cartographic_metadata = { "name" : "set_partial_cartographic",
@@ -13430,7 +13430,7 @@ class IPointBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def central_body_clipped(self) -> bool:
-        """Gets or sets whether individual points will be clipped by the central body."""
+        """Get or set whether individual points will be clipped by the central body."""
         return self._intf.get_property(IPointBatchPrimitive._metadata, IPointBatchPrimitive._get_central_body_clipped_metadata)
 
     _set_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -13444,7 +13444,7 @@ class IPointBatchPrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IPointBatchPrimitiveOptionalParameters"), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_with_optional_parameters(self, positions:list, colors:list, optionalParameters:"IPointBatchPrimitiveOptionalParameters", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Defines the positions, colors, and optional parameters of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
+        """Define the positions, colors, and optional parameters of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_with_optional_parameters_metadata, positions, colors, optionalParameters, renderPassHint)
 
 
@@ -13488,7 +13488,7 @@ class IPointBatchPrimitiveOptionalParameters(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_pixel_sizes(self, pixelSizes:list) -> None:
-        """Defines a collection of pixel sizes, one for each point in the point batch."""
+        """Define a collection of pixel sizes, one for each point in the point batch."""
         return self._intf.invoke(IPointBatchPrimitiveOptionalParameters._metadata, IPointBatchPrimitiveOptionalParameters._set_pixel_sizes_metadata, pixelSizes)
 
 
@@ -13496,7 +13496,7 @@ agcls.AgClassCatalog.add_catalog_entry("{e8b88732-1377-483c-bf19-ffafeb1d8d52}",
 agcls.AgTypeNameMap["IPointBatchPrimitiveOptionalParameters"] = IPointBatchPrimitiveOptionalParameters
 
 class IPolylinePrimitive(object):
-    """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+    """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
     _num_methods = 42
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13574,7 +13574,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def width(self) -> float:
-        """Gets or sets the line width, in pixels."""
+        """Get or set the line width, in pixels."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_width_metadata)
 
     _set_width_metadata = { "name" : "width",
@@ -13589,7 +13589,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_width_supported(self) -> float:
-        """Gets the minimum width, in pixels, supported by the video card."""
+        """Get the minimum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_minimum_width_supported_metadata)
 
     _get_maximum_width_supported_metadata = { "name" : "maximum_width_supported",
@@ -13597,7 +13597,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_width_supported(self) -> float:
-        """Gets the maximum width, in pixels, supported by the video card."""
+        """Get the maximum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_maximum_width_supported_metadata)
 
     _get_position_interpolator_metadata = { "name" : "position_interpolator",
@@ -13605,7 +13605,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def position_interpolator(self) -> "IPositionInterpolator":
-        """Gets the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used."""
+        """Get the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_position_interpolator_metadata)
 
     _get_polyline_type_metadata = { "name" : "polyline_type",
@@ -13613,7 +13613,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE),) }
     @property
     def polyline_type(self) -> "POLYLINE_TYPE":
-        """Gets how the polyline interprets the positions passed to Set methods."""
+        """Get how the polyline interprets the positions passed to Set methods."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_polyline_type_metadata)
 
     _get_set_hint_metadata = { "name" : "set_hint",
@@ -13621,7 +13621,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT),) }
     @property
     def set_hint(self) -> "SET_HINT":
-        """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
+        """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_set_hint_metadata)
 
     _get_display_outline_metadata = { "name" : "display_outline",
@@ -13629,7 +13629,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_outline(self) -> bool:
-        """Gets or sets whether an outline is rendered around the polyline."""
+        """Get or set whether an outline is rendered around the polyline."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_display_outline_metadata)
 
     _set_display_outline_metadata = { "name" : "display_outline",
@@ -13644,7 +13644,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def outline_color(self) -> agcolor.Color:
-        """Gets or sets the outline's color."""
+        """Get or set the outline's color."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_outline_color_metadata)
 
     _set_outline_color_metadata = { "name" : "outline_color",
@@ -13659,7 +13659,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_translucency(self) -> float:
-        """Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
+        """Get or set the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_outline_translucency_metadata)
 
     _set_outline_translucency_metadata = { "name" : "outline_translucency",
@@ -13674,7 +13674,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_width(self) -> float:
-        """Gets or sets the width, in pixels, of the outline around the polyline."""
+        """Get or set the width, in pixels, of the outline around the polyline."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_outline_width_metadata)
 
     _set_outline_width_metadata = { "name" : "outline_width",
@@ -13689,7 +13689,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def per_item_picking_enabled(self) -> bool:
-        """Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index."""
+        """Get or set whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_per_item_picking_enabled_metadata)
 
     _set_per_item_picking_enabled_metadata = { "name" : "per_item_picking_enabled",
@@ -13703,42 +13703,42 @@ class IPolylinePrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set(self, positions:list) -> None:
-        """Defines the positions for a polyline primitive. The polyline is rendered in its reference frame."""
+        """Define the positions for a polyline primitive. The polyline is rendered in its reference frame."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_metadata, positions)
 
     _set_with_colors_metadata = { "name" : "set_with_colors",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_with_colors(self, positions:list, colors:list) -> None:
-        """Defines the positions and colors of a polyline. The polyline is rendered in its reference frame."""
+        """Define the positions and colors of a polyline. The polyline is rendered in its reference frame."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_with_colors_metadata, positions, colors)
 
     _set_with_colors_and_hint_metadata = { "name" : "set_with_colors_and_hint",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_with_colors_and_hint(self, positions:list, colors:list, renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Defines the positions and colors of a polyline. The polyline is rendered in its reference frame. renderPassHint is provided for efficiency."""
+        """Define the positions and colors of a polyline. The polyline is rendered in its reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_with_colors_and_hint_metadata, positions, colors, renderPassHint)
 
     _set_with_surface_shapes_result_metadata = { "name" : "set_with_surface_shapes_result",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ISurfaceShapesResult"),) }
     def set_with_surface_shapes_result(self, surfaceShapesResult:"ISurfaceShapesResult") -> None:
-        """Defines the positions of a polyline using the positions of the specified surfaceShapesResult."""
+        """Define the positions of a polyline using the positions of the specified surfaceShapesResult."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_with_surface_shapes_result_metadata, surfaceShapesResult)
 
     _set_with_surface_triangulator_result_metadata = { "name" : "set_with_surface_triangulator_result",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ISurfaceTriangulatorResult"),) }
     def set_with_surface_triangulator_result(self, surfaceTriangulatorResult:"ISurfaceTriangulatorResult") -> None:
-        """Defines the positions of a polyline using the boundary positions of the specified surfaceTriangulatorResult."""
+        """Define the positions of a polyline using the boundary positions of the specified surfaceTriangulatorResult."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_with_surface_triangulator_result_metadata, surfaceTriangulatorResult)
 
     _set_with_solid_triangulator_result_metadata = { "name" : "set_with_solid_triangulator_result",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ISolidTriangulatorResult"),) }
     def set_with_solid_triangulator_result(self, solidTriangulatorResult:"ISolidTriangulatorResult") -> None:
-        """Defines the positions of a polyline using the outline positions of the specified solidTriangulatorResult."""
+        """Define the positions of a polyline using the outline positions of the specified solidTriangulatorResult."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_with_solid_triangulator_result_metadata, solidTriangulatorResult)
 
     _set_cartographic_metadata = { "name" : "set_cartographic",
@@ -13766,7 +13766,7 @@ class IPolylinePrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
     def set_subset(self, positions:list, index:int, count:int) -> None:
-        """Defines the positions of a polyline using a subset of input positions."""
+        """Define the positions of a polyline using a subset of input positions."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_subset_metadata, positions, index, count)
 
     _set_subset_cartographic_metadata = { "name" : "set_subset_cartographic",
@@ -13780,28 +13780,28 @@ class IPolylinePrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial(self, positions:list, indices:list) -> None:
-        """Updates a subset of positions in a polyline."""
+        """Update a subset of positions in a polyline."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_metadata, positions, indices)
 
     _set_partial_with_indices_order_metadata = { "name" : "set_partial_with_indices_order",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT),) }
     def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
-        """Updates a subset of positions in a polyline."""
+        """Update a subset of positions in a polyline."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_with_indices_order_metadata, positions, indices, indicesOrderHint)
 
     _set_partial_with_colors_metadata = { "name" : "set_partial_with_colors",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_with_colors(self, positions:list, colors:list, indices:list) -> None:
-        """Updates a subset of positions and/or colors in a polyline."""
+        """Update a subset of positions and/or colors in a polyline."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_with_colors_metadata, positions, colors, indices)
 
     _set_partial_with_colors_indices_order_and_render_pass_hint_metadata = { "name" : "set_partial_with_colors_indices_order_and_render_pass_hint",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_partial_with_colors_indices_order_and_render_pass_hint(self, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Updates a subset of positions and/or colors in a polyline."""
+        """Update a subset of positions and/or colors in a polyline."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_with_colors_indices_order_and_render_pass_hint_metadata, positions, colors, indices, indicesOrderHint, renderPassHint)
 
     _set_partial_cartographic_metadata = { "name" : "set_partial_cartographic",
@@ -13837,7 +13837,7 @@ class IPolylinePrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def central_body_clipped(self) -> bool:
-        """Gets or sets whether the polyline will be clipped by the central body."""
+        """Get or set whether the polyline will be clipped by the central body."""
         return self._intf.get_property(IPolylinePrimitive._metadata, IPolylinePrimitive._get_central_body_clipped_metadata)
 
     _set_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -13851,7 +13851,7 @@ class IPolylinePrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IPolylinePrimitiveOptionalParameters"),) }
     def set_with_colors_and_optional_parameters(self, positions:list, colors:list, optionalParameters:"IPolylinePrimitiveOptionalParameters") -> None:
-        """Defines the positions, colors, and/or optional point properties of a polyline. The polyline is rendered in its reference frame."""
+        """Define the positions, colors, and/or optional point properties of a polyline. The polyline is rendered in its reference frame."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_with_colors_and_optional_parameters_metadata, positions, colors, optionalParameters)
 
     _set_cartographic_with_colors_and_optional_parameters_metadata = { "name" : "set_cartographic_with_colors_and_optional_parameters",
@@ -13865,7 +13865,7 @@ class IPolylinePrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IPolylinePrimitiveOptionalParameters"), agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_with_colors_and_optional_parameters(self, positions:list, colors:list, optionalParameters:"IPolylinePrimitiveOptionalParameters", indices:list) -> None:
-        """Updates a subset of positions, colors, and/or optional point properties in a polyline."""
+        """Update a subset of positions, colors, and/or optional point properties in a polyline."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_with_colors_and_optional_parameters_metadata, positions, colors, optionalParameters, indices)
 
     _set_partial_cartographic_with_optional_parameters_metadata = { "name" : "set_partial_cartographic_with_optional_parameters",
@@ -13916,7 +13916,7 @@ class IPolylinePrimitiveOptionalParameters(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_time_intervals(self, timeIntervals:list) -> None:
-        """Defines a collection of TimeIntervals defined by MinimumTime and MaximumTime in Epoch Seconds, one for each point in the Polyline"""
+        """Define a collection of TimeIntervals defined by MinimumTime and MaximumTime in Epoch Seconds, one for each point in the Polyline"""
         return self._intf.invoke(IPolylinePrimitiveOptionalParameters._metadata, IPolylinePrimitiveOptionalParameters._set_time_intervals_metadata, timeIntervals)
 
 
@@ -13962,14 +13962,14 @@ class IPositionInterpolator(object):
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE),) }
     @property
     def polyline_type(self) -> "POLYLINE_TYPE":
-        """Gets the polyline type of positions returned from interpolate"""
+        """Get the polyline type of positions returned from interpolate"""
         return self._intf.get_property(IPositionInterpolator._metadata, IPositionInterpolator._get_polyline_type_metadata)
 
     _interpolate_metadata = { "name" : "interpolate",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def interpolate(self, positions:list) -> list:
-        """Computes interpolated positions based on the input positions. Returns an array of positions in the order x, y, z."""
+        """Compute interpolated positions based on the input positions. Returns an array of positions in the order x, y, z."""
         return self._intf.invoke(IPositionInterpolator._metadata, IPositionInterpolator._interpolate_metadata, positions, out_arg())
 
 
@@ -14029,7 +14029,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def reference_frame(self) -> "IVectorGeometryToolSystem":
-        """Gets or sets the reference frame this primitive is defined and rendered in."""
+        """Get or set the reference frame this primitive is defined and rendered in."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_reference_frame_metadata)
 
     _set_reference_frame_metadata = { "name" : "reference_frame",
@@ -14044,7 +14044,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def bounding_sphere(self) -> "BoundingSphere":
-        """Gets or sets the bounding sphere that encompasses the primitive. The center is defined in the primitive's reference frame."""
+        """Get or set the bounding sphere that encompasses the primitive. The center is defined in the primitive's reference frame."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_bounding_sphere_metadata)
 
     _set_bounding_sphere_metadata = { "name" : "bounding_sphere",
@@ -14059,7 +14059,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def automatically_compute_bounding_sphere(self) -> bool:
-        """Gets or sets if the primitive's bounding sphere is automatically computed."""
+        """Get or set if the primitive's bounding sphere is automatically computed."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_automatically_compute_bounding_sphere_metadata)
 
     _set_automatically_compute_bounding_sphere_metadata = { "name" : "automatically_compute_bounding_sphere",
@@ -14074,7 +14074,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def display_condition(self) -> "IDisplayCondition":
-        """Gets or sets the display condition that determines if the primitive should be rendered. Both this and display must evaluate to true for the primitive to be rendered."""
+        """Get or set the display condition that determines if the primitive should be rendered. Both this and display must evaluate to true for the primitive to be rendered."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_display_condition_metadata)
 
     _set_display_condition_metadata = { "name" : "display_condition",
@@ -14089,7 +14089,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display(self) -> bool:
-        """Gets or sets if the primitive should be rendered. Both this and display condition must evaluate to true for the primitive to be rendered."""
+        """Get or set if the primitive should be rendered. Both this and display condition must evaluate to true for the primitive to be rendered."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_display_metadata)
 
     _set_display_metadata = { "name" : "display",
@@ -14104,7 +14104,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def color(self) -> agcolor.Color:
-        """Gets or sets the primitive's color."""
+        """Get or set the primitive's color."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_color_metadata)
 
     _set_color_metadata = { "name" : "color",
@@ -14119,7 +14119,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def translucency(self) -> float:
-        """Gets or sets the primitive's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
+        """Get or set the primitive's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_translucency_metadata)
 
     _set_translucency_metadata = { "name" : "translucency",
@@ -14134,7 +14134,7 @@ class IPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def tag(self) -> typing.Any:
-        """Gets or sets custom value associated with this primitive."""
+        """Get or set custom value associated with this primitive."""
         return self._intf.get_property(IPrimitive._metadata, IPrimitive._get_tag_metadata)
 
     _set_tag_metadata = { "name" : "tag",
@@ -14207,7 +14207,7 @@ class IPrimitiveManager(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of primitives in the manager."""
+        """Get the number of primitives in the manager."""
         return self._intf.get_property(IPrimitiveManager._metadata, IPrimitiveManager._get_count_metadata)
 
     _get_precision_exponent_metadata = { "name" : "precision_exponent",
@@ -14230,7 +14230,7 @@ class IPrimitiveManager(object):
             "marshallers" : (agmarshall.AgEnum_arg(PRIMITIVES_SORT_ORDER),) }
     @property
     def translucent_primitives_sort_order(self) -> "PRIMITIVES_SORT_ORDER":
-        """Gets or sets the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality..."""
+        """Get or set the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality..."""
         return self._intf.get_property(IPrimitiveManager._metadata, IPrimitiveManager._get_translucent_primitives_sort_order_metadata)
 
     _set_translucent_primitives_sort_order_metadata = { "name" : "translucent_primitives_sort_order",
@@ -14244,28 +14244,28 @@ class IPrimitiveManager(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPrimitive"),) }
     def add(self, primitive:"IPrimitive") -> None:
-        """Adds a primitive to the manager. Primitives must be added to the manager to be rendered."""
+        """Add a primitive to the manager. Primitives must be added to the manager to be rendered."""
         return self._intf.invoke(IPrimitiveManager._metadata, IPrimitiveManager._add_metadata, primitive)
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPrimitive"),) }
     def remove(self, primitive:"IPrimitive") -> None:
-        """Removes a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager."""
+        """Remove a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager."""
         return self._intf.invoke(IPrimitiveManager._metadata, IPrimitiveManager._remove_metadata, primitive)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPrimitive"), agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, primitive:"IPrimitive") -> bool:
-        """Determines whether the manager contains a primitive."""
+        """Determine whether the manager contains a primitive."""
         return self._intf.invoke(IPrimitiveManager._metadata, IPrimitiveManager._contains_metadata, primitive, out_arg())
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Removes all primitives from the manager."""
+        """Remove all primitives from the manager."""
         return self._intf.invoke(IPrimitiveManager._metadata, IPrimitiveManager._clear_metadata, )
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -14273,7 +14273,7 @@ class IPrimitiveManager(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added."""
+        """Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added."""
         return self._intf.get_property(IPrimitiveManager._metadata, IPrimitiveManager._get__NewEnum_metadata)
 
 
@@ -14321,7 +14321,7 @@ class IRasterImageGlobeOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_transparent_color(self) -> bool:
-        """Gets or sets whether transparent color should be used."""
+        """Get or set whether transparent color should be used."""
         return self._intf.get_property(IRasterImageGlobeOverlay._metadata, IRasterImageGlobeOverlay._get_use_transparent_color_metadata)
 
     _set_use_transparent_color_metadata = { "name" : "use_transparent_color",
@@ -14336,7 +14336,7 @@ class IRasterImageGlobeOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def transparent_color(self) -> agcolor.Color:
-        """Gets or sets the color that will become transparent."""
+        """Get or set the color that will become transparent."""
         return self._intf.get_property(IRasterImageGlobeOverlay._metadata, IRasterImageGlobeOverlay._get_transparent_color_metadata)
 
     _set_transparent_color_metadata = { "name" : "transparent_color",
@@ -14391,7 +14391,7 @@ class IRhumbLineInterpolator(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body(self) -> str:
-        """Gets or sets the central body used when interpolating with interpolate."""
+        """Get or set the central body used when interpolating with interpolate."""
         return self._intf.get_property(IRhumbLineInterpolator._metadata, IRhumbLineInterpolator._get_central_body_metadata)
 
     _set_central_body_metadata = { "name" : "central_body",
@@ -14406,7 +14406,7 @@ class IRhumbLineInterpolator(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def granularity(self) -> float:
-        """Gets or sets the granularity used when interpolating with interpolate. Lower granularities are more precise but create more positions."""
+        """Get or set the granularity used when interpolating with interpolate. Lower granularities are more precise but create more positions."""
         return self._intf.get_property(IRhumbLineInterpolator._metadata, IRhumbLineInterpolator._get_granularity_metadata)
 
     _set_granularity_metadata = { "name" : "granularity",
@@ -14483,7 +14483,7 @@ class IScene(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def camera(self) -> "Camera":
-        """Gets the camera associated with the scene, which affects the view that is rendered by the scene."""
+        """Get the camera associated with the scene, which affects the view that is rendered by the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_camera_metadata)
 
     _get_lighting_metadata = { "name" : "lighting",
@@ -14491,7 +14491,7 @@ class IScene(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def lighting(self) -> "Lighting":
-        """Gets the lighting associated with the scene."""
+        """Get the lighting associated with the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_lighting_metadata)
 
     _get_show_sunshine_metadata = { "name" : "show_sunshine",
@@ -14499,7 +14499,7 @@ class IScene(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_sunshine(self) -> bool:
-        """Gets or sets whether sunshine is rendered by the Sun central body. Sunshine renders a halo effect around the sun when it is viewed in the scene."""
+        """Get or set whether sunshine is rendered by the Sun central body. Sunshine renders a halo effect around the sun when it is viewed in the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_show_sunshine_metadata)
 
     _set_show_sunshine_metadata = { "name" : "show_sunshine",
@@ -14514,7 +14514,7 @@ class IScene(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def central_bodies(self) -> "CentralBodyGraphicsIndexer":
-        """Gets the central body graphics for a specified central body."""
+        """Get the central body graphics for a specified central body."""
         return self._intf.get_property(IScene._metadata, IScene._get_central_bodies_metadata)
 
     _get_background_color_metadata = { "name" : "background_color",
@@ -14522,7 +14522,7 @@ class IScene(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def background_color(self) -> agcolor.Color:
-        """Gets or sets the background color of the scene."""
+        """Get or set the background color of the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_background_color_metadata)
 
     _set_background_color_metadata = { "name" : "background_color",
@@ -14537,7 +14537,7 @@ class IScene(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def shade_sky_based_on_altitude(self) -> bool:
-        """Gets or sets whether the sky will be shaded based on camera altitude. When shade sky based on altitude is set to true, the sky will become more blue as the Camera gets closer to the surface of the central body."""
+        """Get or set whether the sky will be shaded based on camera altitude. When shade sky based on altitude is set to true, the sky will become more blue as the Camera gets closer to the surface of the central body."""
         return self._intf.get_property(IScene._metadata, IScene._get_shade_sky_based_on_altitude_metadata)
 
     _set_shade_sky_based_on_altitude_metadata = { "name" : "shade_sky_based_on_altitude",
@@ -14552,7 +14552,7 @@ class IScene(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_stars(self) -> bool:
-        """Gets or sets whether stars are shown or hidden in the scene."""
+        """Get or set whether stars are shown or hidden in the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_show_stars_metadata)
 
     _set_show_stars_metadata = { "name" : "show_stars",
@@ -14567,35 +14567,35 @@ class IScene(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def globe_overlay_settings(self) -> "SceneGlobeOverlaySettings":
-        """Gets the scene globe overlay settings for the scene."""
+        """Get the scene globe overlay settings for the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_globe_overlay_settings_metadata)
 
     _render_metadata = { "name" : "render",
             "arg_types" : (),
             "marshallers" : () }
     def render(self) -> None:
-        """Renders the scene. To render all the scenes within an application, use the Render method."""
+        """Render the scene. To render all the scenes within an application, use the Render method."""
         return self._intf.invoke(IScene._metadata, IScene._render_metadata, )
 
     _pick_metadata = { "name" : "pick",
             "arg_types" : (agcom.INT, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def pick(self, x:int, y:int) -> "PickResultCollection":
-        """Executes a pick at the given x, y and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method."""
+        """Execute a pick at the given x, y and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method."""
         return self._intf.invoke(IScene._metadata, IScene._pick_metadata, x, y, out_arg())
 
     _pick_rectangular_metadata = { "name" : "pick_rectangular",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def pick_rectangular(self, left:int, bottom:int, right:int, top:int) -> "PickResultCollection":
-        """Executes a pick in the given rectangular region and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method."""
+        """Execute a pick in the given rectangular region and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method."""
         return self._intf.invoke(IScene._metadata, IScene._pick_rectangular_metadata, left, bottom, right, top, out_arg())
 
     _pick_screen_overlays_metadata = { "name" : "pick_screen_overlays",
             "arg_types" : (agcom.INT, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def pick_screen_overlays(self, x:int, y:int) -> "ScreenOverlayPickResultCollection":
-        """Executes a pick on screen overlays at the given x, y and returns a front to back sorted collection of picked overlays. The coordinate origin is top, left. To pick other objects in the scene, use the Pick method."""
+        """Execute a pick on screen overlays at the given x, y and returns a front to back sorted collection of picked overlays. The coordinate origin is top, left. To pick other objects in the scene, use the Pick method."""
         return self._intf.invoke(IScene._metadata, IScene._pick_screen_overlays_metadata, x, y, out_arg())
 
     _get_scene_id_metadata = { "name" : "scene_id",
@@ -14603,7 +14603,7 @@ class IScene(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def scene_id(self) -> int:
-        """Returns the scene identifier."""
+        """Return the scene identifier."""
         return self._intf.get_property(IScene._metadata, IScene._get_scene_id_metadata)
 
     _get_show_water_surface_metadata = { "name" : "show_water_surface",
@@ -14611,7 +14611,7 @@ class IScene(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def show_water_surface(self) -> bool:
-        """Gets or sets whether water surface on earth is shown or hidden in the scene."""
+        """Get or set whether water surface on earth is shown or hidden in the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_show_water_surface_metadata)
 
     _set_show_water_surface_metadata = { "name" : "show_water_surface",
@@ -14626,7 +14626,7 @@ class IScene(object):
             "marshallers" : (agmarshall.AgEnum_arg(ANTI_ALIASING),) }
     @property
     def anti_aliasing(self) -> "ANTI_ALIASING":
-        """Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
+        """Get or set the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
         return self._intf.get_property(IScene._metadata, IScene._get_anti_aliasing_metadata)
 
     _set_anti_aliasing_metadata = { "name" : "anti_aliasing",
@@ -14641,7 +14641,7 @@ class IScene(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def visual_effects(self) -> "VisualEffects":
-        """Gets the visual  effects associated with the scene."""
+        """Get the visual  effects associated with the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_visual_effects_metadata)
 
     _get_clouds_metadata = { "name" : "clouds",
@@ -14649,7 +14649,7 @@ class IScene(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def clouds(self) -> "Clouds":
-        """Gets the clouds for the scene."""
+        """Get the clouds for the scene."""
         return self._intf.get_property(IScene._metadata, IScene._get_clouds_metadata)
 
 
@@ -14695,21 +14695,21 @@ class ISceneDisplayCondition(object):
             "arg_types" : (agcom.PVOID, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScene"), agmarshall.VARIANT_BOOL_arg,) }
     def set_display_in_scene(self, scene:"IScene", on:bool) -> None:
-        """Allows or disallows rendering for in a particular scene for."""
+        """Allow or disallows rendering for in a particular scene for."""
         return self._intf.invoke(ISceneDisplayCondition._metadata, ISceneDisplayCondition._set_display_in_scene_metadata, scene, on)
 
     _get_display_in_scene_metadata = { "name" : "get_display_in_scene",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScene"), agmarshall.VARIANT_BOOL_arg,) }
     def get_display_in_scene(self, scene:"IScene") -> bool:
-        """Determines whether the display condition allows rendering rendering in the given scene."""
+        """Determine whether the display condition allows rendering rendering in the given scene."""
         return self._intf.invoke(ISceneDisplayCondition._metadata, ISceneDisplayCondition._get_display_in_scene_metadata, scene, out_arg())
 
     _display_only_in_scene_metadata = { "name" : "display_only_in_scene",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IScene"),) }
     def display_only_in_scene(self, scene:"IScene") -> None:
-        """Allows rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones."""
+        """Allow rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones."""
         return self._intf.invoke(ISceneDisplayCondition._metadata, ISceneDisplayCondition._display_only_in_scene_metadata, scene)
 
 
@@ -14761,7 +14761,7 @@ class ISceneManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def primitives(self) -> "PrimitiveManager":
-        """Gets the primitive manager, which is used to add primitives to your scenes."""
+        """Get the primitive manager, which is used to add primitives to your scenes."""
         return self._intf.get_property(ISceneManager._metadata, ISceneManager._get_primitives_metadata)
 
     _get_screen_overlays_metadata = { "name" : "screen_overlays",
@@ -14769,7 +14769,7 @@ class ISceneManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def screen_overlays(self) -> "ScreenOverlayManager":
-        """Gets the screen overlay manager, which is used to add screen overlays to your scenes."""
+        """Get the screen overlay manager, which is used to add screen overlays to your scenes."""
         return self._intf.get_property(ISceneManager._metadata, ISceneManager._get_screen_overlays_metadata)
 
     _get_textures_metadata = { "name" : "textures",
@@ -14777,7 +14777,7 @@ class ISceneManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def textures(self) -> "Texture2DFactory":
-        """Gets the texture 2d factory, which can be used to create textures from various sources."""
+        """Get the texture 2d factory, which can be used to create textures from various sources."""
         return self._intf.get_property(ISceneManager._metadata, ISceneManager._get_textures_metadata)
 
     _get_globe_overlay_settings_metadata = { "name" : "globe_overlay_settings",
@@ -14785,7 +14785,7 @@ class ISceneManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def globe_overlay_settings(self) -> "GlobeOverlaySettings":
-        """Gets the globe overlay settings, which are used to set global settings for all globe overlays."""
+        """Get the globe overlay settings, which are used to set global settings for all globe overlays."""
         return self._intf.get_property(ISceneManager._metadata, ISceneManager._get_globe_overlay_settings_metadata)
 
     _get_scenes_metadata = { "name" : "scenes",
@@ -14793,14 +14793,14 @@ class ISceneManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scenes(self) -> "SceneCollection":
-        """Gets a read-only collection of scenes that are associated with the scene manager."""
+        """Get a read-only collection of scenes that are associated with the scene manager."""
         return self._intf.get_property(ISceneManager._metadata, ISceneManager._get_scenes_metadata)
 
     _render_metadata = { "name" : "render",
             "arg_types" : (),
             "marshallers" : () }
     def render(self) -> None:
-        """Renders all scenes within an application. To render a specific scene, use the Render method."""
+        """Render all scenes within an application. To render a specific scene, use the Render method."""
         return self._intf.invoke(ISceneManager._metadata, ISceneManager._render_metadata, )
 
     _get_initializers_metadata = { "name" : "initializers",
@@ -14808,7 +14808,7 @@ class ISceneManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def initializers(self) -> "FactoryAndInitializers":
-        """Allows the user to create or initialize primitives, display conditions, tringulators and other types of objects."""
+        """Allow the user to create or initialize primitives, display conditions, tringulators and other types of objects."""
         return self._intf.get_property(ISceneManager._metadata, ISceneManager._get_initializers_metadata)
 
     _get_frame_rate_metadata = { "name" : "frame_rate",
@@ -14816,7 +14816,7 @@ class ISceneManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def frame_rate(self) -> "FrameRate":
-        """Gets the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>."""
+        """Get the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>."""
         return self._intf.get_property(ISceneManager._metadata, ISceneManager._get_frame_rate_metadata)
 
 
@@ -14940,7 +14940,7 @@ class IScreenOverlayManager(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def bounds(self) -> list:
-        """Gets the overall bounds of the globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height."""
+        """Get the overall bounds of the globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height."""
         return self._intf.get_property(IScreenOverlayManager._metadata, IScreenOverlayManager._get_bounds_metadata)
 
     _get_overlays_metadata = { "name" : "overlays",
@@ -14948,7 +14948,7 @@ class IScreenOverlayManager(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def overlays(self) -> "ScreenOverlayCollection":
-        """Gets the collection of overlays that are contained within this manager."""
+        """Get the collection of overlays that are contained within this manager."""
         return self._intf.get_property(IScreenOverlayManager._metadata, IScreenOverlayManager._get_overlays_metadata)
 
     _get_padding_metadata = { "name" : "padding",
@@ -14956,7 +14956,7 @@ class IScreenOverlayManager(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def padding(self) -> list:
-        """Gets or sets the padding surrounding the overlays that are contained within this manager. The array contains the components of the padding arranged in the order left, top, right, bottom."""
+        """Get or set the padding surrounding the overlays that are contained within this manager. The array contains the components of the padding arranged in the order left, top, right, bottom."""
         return self._intf.get_property(IScreenOverlayManager._metadata, IScreenOverlayManager._get_padding_metadata)
 
     _set_padding_metadata = { "name" : "padding",
@@ -14971,7 +14971,7 @@ class IScreenOverlayManager(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display(self) -> bool:
-        """Gets or sets if the collection of overlays that are contained within this manager should be rendered."""
+        """Get or set if the collection of overlays that are contained within this manager should be rendered."""
         return self._intf.get_property(IScreenOverlayManager._metadata, IScreenOverlayManager._get_display_metadata)
 
     _set_display_metadata = { "name" : "display",
@@ -15025,7 +15025,7 @@ class IScreenOverlayPickResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit."""
+        """Get the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit."""
         return self._intf.get_property(IScreenOverlayPickResult._metadata, IScreenOverlayPickResult._get_position_metadata)
 
     _get_control_position_metadata = { "name" : "control_position",
@@ -15033,7 +15033,7 @@ class IScreenOverlayPickResult(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def control_position(self) -> list:
-        """Gets the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4..."""
+        """Get the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4..."""
         return self._intf.get_property(IScreenOverlayPickResult._metadata, IScreenOverlayPickResult._get_control_position_metadata)
 
     _get_overlay_metadata = { "name" : "overlay",
@@ -15041,7 +15041,7 @@ class IScreenOverlayPickResult(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def overlay(self) -> "IScreenOverlay":
-        """Gets the screen overlay that was picked."""
+        """Get the screen overlay that was picked."""
         return self._intf.get_property(IScreenOverlayPickResult._metadata, IScreenOverlayPickResult._get_overlay_metadata)
 
 
@@ -15049,7 +15049,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4872a8d1-b96f-4713-96f8-5ed5e5d6b8b4}",
 agcls.AgTypeNameMap["IScreenOverlayPickResult"] = IScreenOverlayPickResult
 
 class ISolidPrimitive(object):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+    """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     _num_methods = 39
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15124,7 +15124,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def affected_by_lighting(self) -> bool:
-        """Gets or sets whether the primitive is affected by lighting."""
+        """Get or set whether the primitive is affected by lighting."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_affected_by_lighting_metadata)
 
     _set_affected_by_lighting_metadata = { "name" : "affected_by_lighting",
@@ -15139,7 +15139,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_fill(self) -> bool:
-        """Gets or sets whether the solid's fill is displayed."""
+        """Get or set whether the solid's fill is displayed."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_display_fill_metadata)
 
     _set_display_fill_metadata = { "name" : "display_fill",
@@ -15154,7 +15154,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_silhouette(self) -> bool:
-        """Gets or sets whether the solid's silhouette is displayed."""
+        """Get or set whether the solid's silhouette is displayed."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_display_silhouette_metadata)
 
     _set_display_silhouette_metadata = { "name" : "display_silhouette",
@@ -15169,7 +15169,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def silhouette_color(self) -> agcolor.Color:
-        """Gets or sets the silhouette's color."""
+        """Get or set the silhouette's color."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_silhouette_color_metadata)
 
     _set_silhouette_color_metadata = { "name" : "silhouette_color",
@@ -15184,7 +15184,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def silhouette_translucency(self) -> float:
-        """Gets or sets the silhouette's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
+        """Get or set the silhouette's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_silhouette_translucency_metadata)
 
     _set_silhouette_translucency_metadata = { "name" : "silhouette_translucency",
@@ -15199,7 +15199,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def silhouette_width(self) -> float:
-        """Gets or sets the silhouette' width, in pixels."""
+        """Get or set the silhouette' width, in pixels."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_silhouette_width_metadata)
 
     _set_silhouette_width_metadata = { "name" : "silhouette_width",
@@ -15214,7 +15214,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_silhouette_width_supported(self) -> float:
-        """Gets the minimum silhouette width, in pixels, supported by the video card."""
+        """Get the minimum silhouette width, in pixels, supported by the video card."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_minimum_silhouette_width_supported_metadata)
 
     _get_maximum_silhouette_width_supported_metadata = { "name" : "maximum_silhouette_width_supported",
@@ -15222,7 +15222,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_silhouette_width_supported(self) -> float:
-        """Gets the maximum silhouette width, in pixels, supported by the video card."""
+        """Get the maximum silhouette width, in pixels, supported by the video card."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_maximum_silhouette_width_supported_metadata)
 
     _get_display_outline_metadata = { "name" : "display_outline",
@@ -15230,7 +15230,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_outline(self) -> bool:
-        """Gets or sets whether the solid's outline is displayed."""
+        """Get or set whether the solid's outline is displayed."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_display_outline_metadata)
 
     _set_display_outline_metadata = { "name" : "display_outline",
@@ -15245,7 +15245,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def outline_color(self) -> agcolor.Color:
-        """Gets or sets the outline's color."""
+        """Get or set the outline's color."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_outline_color_metadata)
 
     _set_outline_color_metadata = { "name" : "outline_color",
@@ -15260,7 +15260,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_translucency(self) -> float:
-        """Gets or sets the outline's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
+        """Get or set the outline's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_outline_translucency_metadata)
 
     _set_outline_translucency_metadata = { "name" : "outline_translucency",
@@ -15275,7 +15275,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_width(self) -> float:
-        """Gets or sets the outline's width, in pixels."""
+        """Get or set the outline's width, in pixels."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_outline_width_metadata)
 
     _set_outline_width_metadata = { "name" : "outline_width",
@@ -15290,7 +15290,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(OUTLINE_APPEARANCE),) }
     @property
     def outline_appearance(self) -> "OUTLINE_APPEARANCE":
-        """Gets or sets the outline's appearance."""
+        """Get or set the outline's appearance."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_outline_appearance_metadata)
 
     _set_outline_appearance_metadata = { "name" : "outline_appearance",
@@ -15305,7 +15305,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def back_line_color(self) -> agcolor.Color:
-        """Gets or sets the back line's color."""
+        """Get or set the back line's color."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_back_line_color_metadata)
 
     _set_back_line_color_metadata = { "name" : "back_line_color",
@@ -15320,7 +15320,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def back_line_translucency(self) -> float:
-        """Gets or sets the back line's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
+        """Get or set the back line's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_back_line_translucency_metadata)
 
     _set_back_line_translucency_metadata = { "name" : "back_line_translucency",
@@ -15335,7 +15335,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def position(self) -> list:
-        """Gets or sets the solid's position. The position is defined in the solid's reference frame. The array contains the components of the position in the order x, y, z."""
+        """Get or set the solid's position. The position is defined in the solid's reference frame. The array contains the components of the position in the order x, y, z."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_position_metadata)
 
     _set_position_metadata = { "name" : "position",
@@ -15350,7 +15350,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def rotation(self) -> "IOrientation":
-        """Gets or sets the rotation applied to the solid before rendering."""
+        """Get or set the rotation applied to the solid before rendering."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_rotation_metadata)
 
     _set_rotation_metadata = { "name" : "rotation",
@@ -15365,7 +15365,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def scale(self) -> list:
-        """Gets or sets a non-uniform scale that is applied to the solid to increase or decrease its rendered size. The array contains the scale for each component of the size in the order x scale, y scale, z scale."""
+        """Get or set a non-uniform scale that is applied to the solid to increase or decrease its rendered size. The array contains the scale for each component of the size in the order x scale, y scale, z scale."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_scale_metadata)
 
     _set_scale_metadata = { "name" : "scale",
@@ -15380,7 +15380,7 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def back_line_width(self) -> float:
-        """Gets or sets the back line's width, in pixels."""
+        """Get or set the back line's width, in pixels."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_back_line_width_metadata)
 
     _set_back_line_width_metadata = { "name" : "back_line_width",
@@ -15395,21 +15395,21 @@ class ISolidPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT),) }
     @property
     def set_hint(self) -> "SET_HINT":
-        """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
+        """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(ISolidPrimitive._metadata, ISolidPrimitive._get_set_hint_metadata)
 
     _set_with_result_metadata = { "name" : "set_with_result",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ISolidTriangulatorResult"),) }
     def set_with_result(self, solidTriangulatorResult:"ISolidTriangulatorResult") -> None:
-        """Defines the solid using the specified solidTriangulatorResult. The solid is rendered in the primitive's reference frame."""
+        """Define the solid using the specified solidTriangulatorResult. The solid is rendered in the primitive's reference frame."""
         return self._intf.invoke(ISolidPrimitive._metadata, ISolidPrimitive._set_with_result_metadata, solidTriangulatorResult)
 
     _set_metadata = { "name" : "set",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.PVOID, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_in_arg("IBoundingSphere"), agmarshall.VARIANT_BOOL_arg,) }
     def set(self, positions:list, normals:list, indices:list, outlineIndices:list, windingOrder:"WINDING_ORDER", boundingSphere:"IBoundingSphere", closed:bool) -> None:
-        """Defines the solid using the specified parameters. The solid is rendered in the primitive's reference frame."""
+        """Define the solid using the specified parameters. The solid is rendered in the primitive's reference frame."""
         return self._intf.invoke(ISolidPrimitive._metadata, ISolidPrimitive._set_metadata, positions, normals, indices, outlineIndices, windingOrder, boundingSphere, closed)
 
 
@@ -15417,7 +15417,7 @@ agcls.AgClassCatalog.add_catalog_entry("{10ae68b3-ec89-4ced-9b4c-8aae9123eb24}",
 agcls.AgTypeNameMap["ISolidPrimitive"] = ISolidPrimitive
 
 class IStereoscopic(object):
-    """Gets the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
+    """Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15461,7 +15461,7 @@ class IStereoscopic(object):
             "marshallers" : (agmarshall.AgEnum_arg(STEREOSCOPIC_DISPLAY_MODE),) }
     @property
     def display_mode(self) -> "STEREOSCOPIC_DISPLAY_MODE":
-        """Gets or sets the stereoscopic display mode for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
+        """Get or set the stereoscopic display mode for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
         return self._intf.get_property(IStereoscopic._metadata, IStereoscopic._get_display_mode_metadata)
 
     _set_display_mode_metadata = { "name" : "display_mode",
@@ -15476,7 +15476,7 @@ class IStereoscopic(object):
             "marshallers" : (agmarshall.AgEnum_arg(STEREO_PROJECTION_MODE),) }
     @property
     def projection_mode(self) -> "STEREO_PROJECTION_MODE":
-        """Gets or sets whether the type of stereo projection that will be used."""
+        """Get or set whether the type of stereo projection that will be used."""
         return self._intf.get_property(IStereoscopic._metadata, IStereoscopic._get_projection_mode_metadata)
 
     _set_projection_mode_metadata = { "name" : "projection_mode",
@@ -15491,7 +15491,7 @@ class IStereoscopic(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def projection_distance(self) -> float:
-        """Gets or sets the projection distance. If projection mode is set to eStkGraphicsStereoProjectionAutomatic, the value of this property will be ignored."""
+        """Get or set the projection distance. If projection mode is set to eStkGraphicsStereoProjectionAutomatic, the value of this property will be ignored."""
         return self._intf.get_property(IStereoscopic._metadata, IStereoscopic._get_projection_distance_metadata)
 
     _set_projection_distance_metadata = { "name" : "projection_distance",
@@ -15506,7 +15506,7 @@ class IStereoscopic(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def eye_separation_factor(self) -> float:
-        """Gets or sets the eye separation factor."""
+        """Get or set the eye separation factor."""
         return self._intf.get_property(IStereoscopic._metadata, IStereoscopic._get_eye_separation_factor_metadata)
 
     _set_eye_separation_factor_metadata = { "name" : "eye_separation_factor",
@@ -15574,7 +15574,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture(self) -> "RendererTexture2D":
-        """Gets or sets the texture applied to this primitive when rendering."""
+        """Get or set the texture applied to this primitive when rendering."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_texture_metadata)
 
     _set_texture_metadata = { "name" : "texture",
@@ -15589,7 +15589,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def wireframe(self) -> bool:
-        """Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging."""
+        """Get or set whether the primitive is rendered in wireframe. This is useful for debugging."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_wireframe_metadata)
 
     _set_wireframe_metadata = { "name" : "wireframe",
@@ -15604,7 +15604,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDING_ORDER),) }
     @property
     def triangle_winding_order(self) -> "WINDING_ORDER":
-        """Gets the orientation of front-facing triangles in the mesh."""
+        """Get the orientation of front-facing triangles in the mesh."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_triangle_winding_order_metadata)
 
     _get_set_hint_metadata = { "name" : "set_hint",
@@ -15612,7 +15612,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT),) }
     @property
     def set_hint(self) -> "SET_HINT":
-        """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
+        """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_set_hint_metadata)
 
     _get_rendering_method_metadata = { "name" : "rendering_method",
@@ -15620,7 +15620,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SURFACE_MESH_RENDERING_METHOD),) }
     @property
     def rendering_method(self) -> "SURFACE_MESH_RENDERING_METHOD":
-        """Gets the rendering method used to render the mesh."""
+        """Get the rendering method used to render the mesh."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_rendering_method_metadata)
 
     _get_texture_filter_metadata = { "name" : "texture_filter",
@@ -15628,7 +15628,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_filter(self) -> "TextureFilter2D":
-        """Gets or sets the filter used when a texture is applied to this primitive."""
+        """Get or set the filter used when a texture is applied to this primitive."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_texture_filter_metadata)
 
     _set_texture_filter_metadata = { "name" : "texture_filter",
@@ -15643,7 +15643,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_matrix(self) -> "TextureMatrix":
-        """Gets or sets the matrix used to transform texture coordinates when a texture is applied to this primitive."""
+        """Get or set the matrix used to transform texture coordinates when a texture is applied to this primitive."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_texture_matrix_metadata)
 
     _set_texture_matrix_metadata = { "name" : "texture_matrix",
@@ -15658,7 +15658,7 @@ class ISurfaceMeshPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def transparent_texture_border(self) -> bool:
-        """Gets or set the boolean that defines if the color obtained from texture coordinates beyond the texture border should be considered transparent or not. This is typically used in conjunction with the a texture matrix."""
+        """Get or set the boolean that defines if the color obtained from texture coordinates beyond the texture border should be considered transparent or not. This is typically used in conjunction with the a texture matrix."""
         return self._intf.get_property(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._get_transparent_texture_border_metadata)
 
     _set_transparent_texture_border_metadata = { "name" : "transparent_texture_border",
@@ -15672,28 +15672,28 @@ class ISurfaceMeshPrimitive(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ISurfaceTriangulatorResult"),) }
     def set(self, surfaceTriangulator:"ISurfaceTriangulatorResult") -> None:
-        """Defines the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame."""
+        """Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame."""
         return self._intf.invoke(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._set_metadata, surfaceTriangulator)
 
     _set_without_texturing_metadata = { "name" : "set_without_texturing",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ISurfaceTriangulatorResult"),) }
     def set_without_texturing(self, surfaceTriangulator:"ISurfaceTriangulatorResult") -> None:
-        """Defines the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame."""
+        """Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame."""
         return self._intf.invoke(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._set_without_texturing_metadata, surfaceTriangulator)
 
     _supported_metadata = { "name" : "supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(SURFACE_MESH_RENDERING_METHOD), agmarshall.VARIANT_BOOL_arg,) }
     def supported(self, renderingMethod:"SURFACE_MESH_RENDERING_METHOD") -> bool:
-        """Determines whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
+        """Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
         return self._intf.invoke(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._supported_metadata, renderingMethod, out_arg())
 
     _supported_with_default_rendering_method_metadata = { "name" : "supported_with_default_rendering_method",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     def supported_with_default_rendering_method(self) -> bool:
-        """Determines whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic."""
+        """Determine whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic."""
         return self._intf.invoke(ISurfaceMeshPrimitive._metadata, ISurfaceMeshPrimitive._supported_with_default_rendering_method_metadata, out_arg())
 
 
@@ -15772,7 +15772,7 @@ class ITerrainOverlayCollection(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def count(self) -> int:
-        """Gets the number of terrain overlay objects in the collection."""
+        """Get the number of terrain overlay objects in the collection."""
         return self._intf.get_property(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._get_count_metadata)
 
     _get_is_read_only_metadata = { "name" : "is_read_only",
@@ -15780,14 +15780,14 @@ class ITerrainOverlayCollection(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def is_read_only(self) -> bool:
-        """Gets whether or not the collection is read only."""
+        """Get whether or not the collection is read only."""
         return self._intf.get_property(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._get_is_read_only_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def item(self, index:int) -> "ITerrainOverlay":
-        """Gets the terrain overlay at the specified index."""
+        """Get the terrain overlay at the specified index."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._item_metadata, index, out_arg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -15795,105 +15795,105 @@ class ITerrainOverlayCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Constructs an iterator that can be used to iterate the collection."""
+        """Construct an iterator that can be used to iterate the collection."""
         return self._intf.get_property(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._get__NewEnum_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"), agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, terrainOverlay:"ITerrainOverlay") -> bool:
-        """Checks the presence of a terrain overlay in the collection."""
+        """Check the presence of a terrain overlay in the collection."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._contains_metadata, terrainOverlay, out_arg())
 
     _contains_uri_string_metadata = { "name" : "contains_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains_uri_string(self, stringUri:str) -> bool:
-        """Checks the presence of a terrain overlay with the specified Uri in the collection."""
+        """Check the presence of a terrain overlay with the specified Uri in the collection."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._contains_uri_string_metadata, stringUri, out_arg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"), agmarshall.VARIANT_BOOL_arg,) }
     def remove(self, terrainOverlay:"ITerrainOverlay") -> bool:
-        """Removes a terrain overlay from the collection."""
+        """Remove a terrain overlay from the collection."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._remove_metadata, terrainOverlay, out_arg())
 
     _clear_metadata = { "name" : "clear",
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
-        """Removes all terrain overlay objects from the collection."""
+        """Remove all terrain overlay objects from the collection."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._clear_metadata, )
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"),) }
     def add(self, terrainOverlay:"ITerrainOverlay") -> None:
-        """Adds terrainOverlay to the collection."""
+        """Add terrainOverlay to the collection."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._add_metadata, terrainOverlay)
 
     _add_async_metadata = { "name" : "add_async",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"),) }
     def add_async(self, terrainOverlay:"ITerrainOverlay") -> None:
-        """Adds terrainOverlay to the collection asynchronously."""
+        """Add terrainOverlay to the collection asynchronously."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._add_async_metadata, terrainOverlay)
 
     _index_of_metadata = { "name" : "index_of",
             "arg_types" : (agcom.PVOID, POINTER(agcom.INT),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"), agmarshall.INT_arg,) }
     def index_of(self, terrainOverlay:"ITerrainOverlay") -> int:
-        """Gets the index of the specified terrain overlay."""
+        """Get the index of the specified terrain overlay."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._index_of_metadata, terrainOverlay, out_arg())
 
     _index_of_uri_string_metadata = { "name" : "index_of_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.INT),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.INT_arg,) }
     def index_of_uri_string(self, stringUri:str) -> int:
-        """Gets the index of the terrain overlay with the specified Uri."""
+        """Get the index of the terrain overlay with the specified Uri."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._index_of_uri_string_metadata, stringUri, out_arg())
 
     _add_uri_string_metadata = { "name" : "add_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_uri_string(self, uri:str) -> "ITerrainOverlay":
-        """Creates a terrain overlay from the uri, which represents a uri, and adds it to the collection."""
+        """Create a terrain overlay from the uri, which represents a uri, and adds it to the collection."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._add_uri_string_metadata, uri, out_arg())
 
     _add_async_uri_string_metadata = { "name" : "add_async_uri_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_async_uri_string(self, uri:str) -> "ITerrainOverlay":
-        """Creates a terrain overlay from the uri, which represents a uri, and adds it to the collection asynchronously."""
+        """Create a terrain overlay from the uri, which represents a uri, and adds it to the collection asynchronously."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._add_async_uri_string_metadata, uri, out_arg())
 
     _swap_metadata = { "name" : "swap",
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"), agmarshall.AgInterface_in_arg("ITerrainOverlay"),) }
     def swap(self, terrainOverlay1:"ITerrainOverlay", terrainOverlay2:"ITerrainOverlay") -> None:
-        """Swaps the position of two terrain overlay objects."""
+        """Swap the position of two terrain overlay objects."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._swap_metadata, terrainOverlay1, terrainOverlay2)
 
     _swap_by_index_metadata = { "name" : "swap_by_index",
             "arg_types" : (agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg,) }
     def swap_by_index(self, index1:int, index2:int) -> None:
-        """Swaps the position of two terrain overlay objects at the specified indices."""
+        """Swap the position of two terrain overlay objects at the specified indices."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._swap_by_index_metadata, index1, index2)
 
     _move_metadata = { "name" : "move",
             "arg_types" : (agcom.PVOID, agcom.INT,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"), agmarshall.INT_arg,) }
     def move(self, terrainOverlay:"ITerrainOverlay", newPosition:int) -> None:
-        """Moves the terrain overlay to the specified position."""
+        """Move the terrain overlay to the specified position."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._move_metadata, terrainOverlay, newPosition)
 
     _move_by_index_metadata = { "name" : "move_by_index",
             "arg_types" : (agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg,) }
     def move_by_index(self, index:int, newPosition:int) -> None:
-        """Moves the terrain overlay at the specified index to the specified position."""
+        """Move the terrain overlay at the specified index to the specified position."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._move_by_index_metadata, index, newPosition)
 
     _bring_to_front_metadata = { "name" : "bring_to_front",
@@ -15907,7 +15907,7 @@ class ITerrainOverlayCollection(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITerrainOverlay"),) }
     def send_to_back(self, terrainOverlay:"ITerrainOverlay") -> None:
-        """Sends the terrain overlay to the back of the collection so it is rendered last or on the top."""
+        """Send the terrain overlay to the back of the collection so it is rendered last or on the top."""
         return self._intf.invoke(ITerrainOverlayCollection._metadata, ITerrainOverlayCollection._send_to_back_metadata, terrainOverlay)
 
     __getitem__ = item
@@ -15959,7 +15959,7 @@ class ITerrainOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def altitude_offset(self) -> float:
-        """Gets or sets the value from which to offset the terrain height."""
+        """Get or set the value from which to offset the terrain height."""
         return self._intf.get_property(ITerrainOverlay._metadata, ITerrainOverlay._get_altitude_offset_metadata)
 
     _set_altitude_offset_metadata = { "name" : "altitude_offset",
@@ -15974,7 +15974,7 @@ class ITerrainOverlay(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def altitude_scale(self) -> float:
-        """Gets or sets the value from which to scale the terrain height."""
+        """Get or set the value from which to scale the terrain height."""
         return self._intf.get_property(ITerrainOverlay._metadata, ITerrainOverlay._get_altitude_scale_metadata)
 
     _set_altitude_scale_metadata = { "name" : "altitude_scale",
@@ -15989,7 +15989,7 @@ class ITerrainOverlay(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def supported(self) -> bool:
-        """Gets whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects."""
+        """Get whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects."""
         return self._intf.get_property(ITerrainOverlay._metadata, ITerrainOverlay._get_supported_metadata)
 
 
@@ -16065,7 +16065,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT),) }
     @property
     def set_hint(self) -> "SET_HINT":
-        """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
+        """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_set_hint_metadata)
 
     _get_bounding_sphere_scale_metadata = { "name" : "bounding_sphere_scale",
@@ -16073,7 +16073,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def bounding_sphere_scale(self) -> float:
-        """Gets or sets the scale applied to the radius of this primitive's bounding sphere."""
+        """Get or set the scale applied to the radius of this primitive's bounding sphere."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_bounding_sphere_scale_metadata)
 
     _set_bounding_sphere_scale_metadata = { "name" : "bounding_sphere_scale",
@@ -16088,7 +16088,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def font(self) -> "GraphicsFont":
-        """Gets the font used to render the text batch."""
+        """Get the font used to render the text batch."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_font_metadata)
 
     _get_outline_color_metadata = { "name" : "outline_color",
@@ -16096,7 +16096,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def outline_color(self) -> agcolor.Color:
-        """Gets or sets the text's outline color."""
+        """Get or set the text's outline color."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_outline_color_metadata)
 
     _set_outline_color_metadata = { "name" : "outline_color",
@@ -16111,7 +16111,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def outline_translucency(self) -> float:
-        """Gets or sets the text's outline translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
+        """Get or set the text's outline translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_outline_translucency_metadata)
 
     _set_outline_translucency_metadata = { "name" : "outline_translucency",
@@ -16126,7 +16126,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def align_to_pixel(self) -> bool:
-        """Gets or sets whether the screen space position of each string is aligned to a pixel."""
+        """Get or set whether the screen space position of each string is aligned to a pixel."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_align_to_pixel_metadata)
 
     _set_align_to_pixel_metadata = { "name" : "align_to_pixel",
@@ -16141,7 +16141,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def distance_display_condition_per_string(self) -> "DistanceDisplayCondition":
-        """Gets or sets a distance display condition that is evaluated per string in the text batch during rendering. This is different than display condition, which is evaluated once for the entire text batch..."""
+        """Get or set a distance display condition that is evaluated per string in the text batch during rendering. This is different than display condition, which is evaluated once for the entire text batch..."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_distance_display_condition_per_string_metadata)
 
     _set_distance_display_condition_per_string_metadata = { "name" : "distance_display_condition_per_string",
@@ -16156,7 +16156,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def per_item_picking_enabled(self) -> bool:
-        """Gets or sets whether individual text indices will be included in the pick results returned from the scene's Pick method. Each text index that is picked will be returned as a batch primitive index."""
+        """Get or set whether individual text indices will be included in the pick results returned from the scene's Pick method. Each text index that is picked will be returned as a batch primitive index."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_per_item_picking_enabled_metadata)
 
     _set_per_item_picking_enabled_metadata = { "name" : "per_item_picking_enabled",
@@ -16171,7 +16171,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_filter(self) -> "TextureFilter2D":
-        """Gets or sets the filter used to filter the texture-based font."""
+        """Get or set the filter used to filter the texture-based font."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_texture_filter_metadata)
 
     _set_texture_filter_metadata = { "name" : "texture_filter",
@@ -16185,21 +16185,21 @@ class ITextBatchPrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set(self, positions:list, text:list) -> None:
-        """Defines the positions and text of strings in a text batch. The strings are rendered in the primitive's reference frame."""
+        """Define the positions and text of strings in a text batch. The strings are rendered in the primitive's reference frame."""
         return self._intf.invoke(ITextBatchPrimitive._metadata, ITextBatchPrimitive._set_metadata, positions, text)
 
     _set_with_optional_parameters_metadata = { "name" : "set_with_optional_parameters",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("ITextBatchPrimitiveOptionalParameters"),) }
     def set_with_optional_parameters(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters") -> None:
-        """Defines the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame."""
+        """Define the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame."""
         return self._intf.invoke(ITextBatchPrimitive._metadata, ITextBatchPrimitive._set_with_optional_parameters_metadata, positions, text, optionalParameters)
 
     _set_with_optional_parameters_and_render_pass_metadata = { "name" : "set_with_optional_parameters_and_render_pass",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("ITextBatchPrimitiveOptionalParameters"), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_with_optional_parameters_and_render_pass(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Defines the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
+        """Define the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(ITextBatchPrimitive._metadata, ITextBatchPrimitive._set_with_optional_parameters_and_render_pass_metadata, positions, text, optionalParameters, renderPassHint)
 
     _set_cartographic_metadata = { "name" : "set_cartographic",
@@ -16227,28 +16227,28 @@ class ITextBatchPrimitive(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial(self, positions:list, text:list, indices:list) -> None:
-        """Updates a subset of positions and/or text in a text batch."""
+        """Update a subset of positions and/or text in a text batch."""
         return self._intf.invoke(ITextBatchPrimitive._metadata, ITextBatchPrimitive._set_partial_metadata, positions, text, indices)
 
     _set_partial_with_indices_order_metadata = { "name" : "set_partial_with_indices_order",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT),) }
     def set_partial_with_indices_order(self, positions:list, text:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
-        """Updates a subset of positions and/or text in a text batch."""
+        """Update a subset of positions and/or text in a text batch."""
         return self._intf.invoke(ITextBatchPrimitive._metadata, ITextBatchPrimitive._set_partial_with_indices_order_metadata, positions, text, indices, indicesOrderHint)
 
     _set_partial_with_optional_parameters_metadata = { "name" : "set_partial_with_optional_parameters",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("ITextBatchPrimitiveOptionalParameters"), agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_with_optional_parameters(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list) -> None:
-        """Updates a subset of positions, text, and/or optional per-string parameters in a text batch."""
+        """Update a subset of positions, text, and/or optional per-string parameters in a text batch."""
         return self._intf.invoke(ITextBatchPrimitive._metadata, ITextBatchPrimitive._set_partial_with_optional_parameters_metadata, positions, text, optionalParameters, indices)
 
     _set_partial_with_optional_parameters_indices_order_and_render_pass_metadata = { "name" : "set_partial_with_optional_parameters_indices_order_and_render_pass",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("ITextBatchPrimitiveOptionalParameters"), agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """Updates a subset of positions, text, and/or optional per-string parameters in a text batch."""
+        """Update a subset of positions, text, and/or optional per-string parameters in a text batch."""
         return self._intf.invoke(ITextBatchPrimitive._metadata, ITextBatchPrimitive._set_partial_with_optional_parameters_indices_order_and_render_pass_metadata, positions, text, optionalParameters, indices, indicesOrderHint, renderPassHint)
 
     _set_partial_cartographic_metadata = { "name" : "set_partial_cartographic",
@@ -16284,7 +16284,7 @@ class ITextBatchPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def render_in_screen_space(self) -> bool:
-        """Gets or sets whether the primitive is positioned and rendered in screen space coordinates."""
+        """Get or set whether the primitive is positioned and rendered in screen space coordinates."""
         return self._intf.get_property(ITextBatchPrimitive._metadata, ITextBatchPrimitive._get_render_in_screen_space_metadata)
 
     _set_render_in_screen_space_metadata = { "name" : "render_in_screen_space",
@@ -16349,7 +16349,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
             "marshallers" : (agmarshall.AgEnum_arg(ORIGIN),) }
     @property
     def origin(self) -> "ORIGIN":
-        """Gets or sets the per-batch origin, which is applied to each string in the text batch."""
+        """Get or set the per-batch origin, which is applied to each string in the text batch."""
         return self._intf.get_property(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._get_origin_metadata)
 
     _set_origin_metadata = { "name" : "origin",
@@ -16364,7 +16364,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def eye_offset(self) -> list:
-        """Gets or sets the per-batch eye offset, which is applied to each string in the text batch. The array contains the components of the offset arranged in the order x, y, z."""
+        """Get or set the per-batch eye offset, which is applied to each string in the text batch. The array contains the components of the offset arranged in the order x, y, z."""
         return self._intf.get_property(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._get_eye_offset_metadata)
 
     _set_eye_offset_metadata = { "name" : "eye_offset",
@@ -16379,7 +16379,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def pixel_offset(self) -> list:
-        """Gets or sets the per-batch pixel offset, which is applied to each string in the text batch. The array contains one x pixel offset followed by one y pixel offset."""
+        """Get or set the per-batch pixel offset, which is applied to each string in the text batch. The array contains one x pixel offset followed by one y pixel offset."""
         return self._intf.get_property(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._get_pixel_offset_metadata)
 
     _set_pixel_offset_metadata = { "name" : "pixel_offset",
@@ -16394,7 +16394,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def maximum_string_length(self) -> int:
-        """Gets or sets the maximum length of each string in the text batch."""
+        """Get or set the maximum length of each string in the text batch."""
         return self._intf.get_property(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._get_maximum_string_length_metadata)
 
     _set_maximum_string_length_metadata = { "name" : "maximum_string_length",
@@ -16408,28 +16408,28 @@ class ITextBatchPrimitiveOptionalParameters(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_origins(self, origins:list) -> None:
-        """Defines a collection of origins, one for each string in the batch."""
+        """Define a collection of origins, one for each string in the batch."""
         return self._intf.invoke(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._set_origins_metadata, origins)
 
     _set_eye_offsets_metadata = { "name" : "set_eye_offsets",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_eye_offsets(self, eyeOffsets:list) -> None:
-        """Defines a collection of eye offsets, one for each string in the batch."""
+        """Define a collection of eye offsets, one for each string in the batch."""
         return self._intf.invoke(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._set_eye_offsets_metadata, eyeOffsets)
 
     _set_pixel_offsets_metadata = { "name" : "set_pixel_offsets",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_pixel_offsets(self, pixelOffsets:list) -> None:
-        """Defines a collection of pixel offsets, one for each string in the batch."""
+        """Define a collection of pixel offsets, one for each string in the batch."""
         return self._intf.invoke(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._set_pixel_offsets_metadata, pixelOffsets)
 
     _set_colors_metadata = { "name" : "set_colors",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_colors(self, colors:list) -> None:
-        """Defines a collection of colors, one for each string in the batch."""
+        """Define a collection of colors, one for each string in the batch."""
         return self._intf.invoke(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._set_colors_metadata, colors)
 
     _get_screen_space_rendering_metadata = { "name" : "screen_space_rendering",
@@ -16437,7 +16437,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def screen_space_rendering(self) -> bool:
-        """Gets or sets a flag that informs the CTextBatchPrimitive to use rendering optimized for screen space text."""
+        """Get or set a flag that informs the CTextBatchPrimitive to use rendering optimized for screen space text."""
         return self._intf.get_property(ITextBatchPrimitiveOptionalParameters._metadata, ITextBatchPrimitiveOptionalParameters._get_screen_space_rendering_metadata)
 
     _set_screen_space_rendering_metadata = { "name" : "screen_space_rendering",
@@ -16494,7 +16494,7 @@ class ITextOverlay(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def text(self) -> str:
-        r"""Sets the Text to be rendered to an overlay using newline characters ('\n') to mark the start of the next line in the text."""
+        r"""Set the Text to be rendered to an overlay using newline characters ('\n') to mark the start of the next line in the text."""
         return self._intf.get_property(ITextOverlay._metadata, ITextOverlay._get_text_metadata)
 
     _set_text_metadata = { "name" : "text",
@@ -16509,7 +16509,7 @@ class ITextOverlay(object):
             "marshallers" : (agmarshall.OLE_COLOR_arg,) }
     @property
     def outline_color(self) -> agcolor.Color:
-        """Gets or sets the text's outline color."""
+        """Get or set the text's outline color."""
         return self._intf.get_property(ITextOverlay._metadata, ITextOverlay._get_outline_color_metadata)
 
     _set_outline_color_metadata = { "name" : "outline_color",
@@ -16591,7 +16591,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m11(self) -> float:
-        """Gets the element in the first row, first column."""
+        """Get the element in the first row, first column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m11_metadata)
 
     _get_m12_metadata = { "name" : "m12",
@@ -16599,7 +16599,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m12(self) -> float:
-        """Gets the element in the first row, second column."""
+        """Get the element in the first row, second column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m12_metadata)
 
     _get_m13_metadata = { "name" : "m13",
@@ -16607,7 +16607,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m13(self) -> float:
-        """Gets the element in the first row, third column."""
+        """Get the element in the first row, third column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m13_metadata)
 
     _get_m14_metadata = { "name" : "m14",
@@ -16615,7 +16615,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m14(self) -> float:
-        """Gets the element in the first row, fourth column."""
+        """Get the element in the first row, fourth column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m14_metadata)
 
     _get_m21_metadata = { "name" : "m21",
@@ -16623,7 +16623,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m21(self) -> float:
-        """Gets the element in the second row, first column."""
+        """Get the element in the second row, first column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m21_metadata)
 
     _get_m22_metadata = { "name" : "m22",
@@ -16631,7 +16631,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m22(self) -> float:
-        """Gets the element in the second row, second column."""
+        """Get the element in the second row, second column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m22_metadata)
 
     _get_m23_metadata = { "name" : "m23",
@@ -16639,7 +16639,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m23(self) -> float:
-        """Gets the element in the second row, third column."""
+        """Get the element in the second row, third column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m23_metadata)
 
     _get_m24_metadata = { "name" : "m24",
@@ -16647,7 +16647,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m24(self) -> float:
-        """Gets the element in the second row, fourth column."""
+        """Get the element in the second row, fourth column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m24_metadata)
 
     _get_m31_metadata = { "name" : "m31",
@@ -16655,7 +16655,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m31(self) -> float:
-        """Gets the element in the third row, first column."""
+        """Get the element in the third row, first column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m31_metadata)
 
     _get_m32_metadata = { "name" : "m32",
@@ -16663,7 +16663,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m32(self) -> float:
-        """Gets the element in the third row, second column."""
+        """Get the element in the third row, second column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m32_metadata)
 
     _get_m33_metadata = { "name" : "m33",
@@ -16671,7 +16671,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m33(self) -> float:
-        """Gets the element in the third row, third column."""
+        """Get the element in the third row, third column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m33_metadata)
 
     _get_m34_metadata = { "name" : "m34",
@@ -16679,7 +16679,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m34(self) -> float:
-        """Gets the element in the third row, fourth column."""
+        """Get the element in the third row, fourth column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m34_metadata)
 
     _get_m41_metadata = { "name" : "m41",
@@ -16687,7 +16687,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m41(self) -> float:
-        """Gets the element in the fourth row, first column."""
+        """Get the element in the fourth row, first column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m41_metadata)
 
     _get_m42_metadata = { "name" : "m42",
@@ -16695,7 +16695,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m42(self) -> float:
-        """Gets the element in the fourth row, second column."""
+        """Get the element in the fourth row, second column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m42_metadata)
 
     _get_m43_metadata = { "name" : "m43",
@@ -16703,7 +16703,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m43(self) -> float:
-        """Gets the element in the fourth row, third column."""
+        """Get the element in the fourth row, third column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m43_metadata)
 
     _get_m44_metadata = { "name" : "m44",
@@ -16711,7 +16711,7 @@ class ITextureMatrix(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def m44(self) -> float:
-        """Gets the element in the fourth row, fourth column."""
+        """Get the element in the fourth row, fourth column."""
         return self._intf.get_property(ITextureMatrix._metadata, ITextureMatrix._get_m44_metadata)
 
 
@@ -16761,7 +16761,7 @@ class ITextureScreenOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture(self) -> "RendererTexture2D":
-        """Gets or sets the texture (image) to be drawn on the overlay. Textures can be obtained from textures."""
+        """Get or set the texture (image) to be drawn on the overlay. Textures can be obtained from textures."""
         return self._intf.get_property(ITextureScreenOverlay._metadata, ITextureScreenOverlay._get_texture_metadata)
 
     _set_texture_metadata = { "name" : "texture",
@@ -16776,7 +16776,7 @@ class ITextureScreenOverlay(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_filter(self) -> "TextureFilter2D":
-        """Gets or sets the filter used for the texture associated with this overlay."""
+        """Get or set the filter used for the texture associated with this overlay."""
         return self._intf.get_property(ITextureScreenOverlay._metadata, ITextureScreenOverlay._get_texture_filter_metadata)
 
     _set_texture_filter_metadata = { "name" : "texture_filter",
@@ -16791,7 +16791,7 @@ class ITextureScreenOverlay(object):
             "marshallers" : (agmarshall.AgEnum_arg(MAINTAIN_ASPECT_RATIO),) }
     @property
     def maintain_aspect_ratio(self) -> "MAINTAIN_ASPECT_RATIO":
-        """Gets or sets a value indicating whether the aspect ratio of the texture screen overlay is maintained or not."""
+        """Get or set a value indicating whether the aspect ratio of the texture screen overlay is maintained or not."""
         return self._intf.get_property(ITextureScreenOverlay._metadata, ITextureScreenOverlay._get_maintain_aspect_ratio_metadata)
 
     _set_maintain_aspect_ratio_metadata = { "name" : "maintain_aspect_ratio",
@@ -16806,7 +16806,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4d09eb77-14cf-40a7-b7bb-130f4ddd60c6}",
 agcls.AgTypeNameMap["ITextureScreenOverlay"] = ITextureScreenOverlay
 
 class ITimeIntervalDisplayCondition(object):
-    """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+    """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16846,7 +16846,7 @@ class ITimeIntervalDisplayCondition(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def minimum_time(self) -> "IDate":
-        """Gets or sets the minimum time of the inclusive time interval."""
+        """Get or set the minimum time of the inclusive time interval."""
         return self._intf.get_property(ITimeIntervalDisplayCondition._metadata, ITimeIntervalDisplayCondition._get_minimum_time_metadata)
 
     _set_minimum_time_metadata = { "name" : "minimum_time",
@@ -16861,7 +16861,7 @@ class ITimeIntervalDisplayCondition(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def maximum_time(self) -> "IDate":
-        """Gets or sets the maximum time of the inclusive time interval."""
+        """Get or set the maximum time of the inclusive time interval."""
         return self._intf.get_property(ITimeIntervalDisplayCondition._metadata, ITimeIntervalDisplayCondition._get_maximum_time_metadata)
 
     _set_maximum_time_metadata = { "name" : "maximum_time",
@@ -16876,7 +16876,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2f0f3c32-c1d9-42a1-9422-8ecd2b9c1ad0}",
 agcls.AgTypeNameMap["ITimeIntervalDisplayCondition"] = ITimeIntervalDisplayCondition
 
 class ITriangleMeshPrimitive(object):
-    """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+    """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16934,7 +16934,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def wireframe(self) -> bool:
-        """Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging."""
+        """Get or set whether the primitive is rendered in wireframe. This is useful for debugging."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_wireframe_metadata)
 
     _set_wireframe_metadata = { "name" : "wireframe",
@@ -16949,7 +16949,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def render_back_then_front_faces(self) -> bool:
-        """Gets or sets whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes."""
+        """Get or set whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_render_back_then_front_faces_metadata)
 
     _set_render_back_then_front_faces_metadata = { "name" : "render_back_then_front_faces",
@@ -16964,7 +16964,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def lighting(self) -> bool:
-        """Gets or sets whether the primitive is lit."""
+        """Get or set whether the primitive is lit."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_lighting_metadata)
 
     _set_lighting_metadata = { "name" : "lighting",
@@ -16979,7 +16979,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDING_ORDER),) }
     @property
     def triangle_winding_order(self) -> "WINDING_ORDER":
-        """Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling."""
+        """Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_triangle_winding_order_metadata)
 
     _set_triangle_winding_order_metadata = { "name" : "triangle_winding_order",
@@ -16994,7 +16994,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(CULL_FACE),) }
     @property
     def cull_face(self) -> "CULL_FACE":
-        """Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling."""
+        """Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_cull_face_metadata)
 
     _set_cull_face_metadata = { "name" : "cull_face",
@@ -17009,7 +17009,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(RENDERER_SHADE_MODEL),) }
     @property
     def shade_model(self) -> "RENDERER_SHADE_MODEL":
-        """Gets or sets the shading model for the mesh."""
+        """Get or set the shading model for the mesh."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_shade_model_metadata)
 
     _set_shade_model_metadata = { "name" : "shade_model",
@@ -17024,7 +17024,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture(self) -> "RendererTexture2D":
-        """Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures."""
+        """Get or set the texture to be drawn on the triangle mesh. Textures can be obtained from textures."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_texture_metadata)
 
     _set_texture_metadata = { "name" : "texture",
@@ -17039,7 +17039,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_filter(self) -> "TextureFilter2D":
-        """Gets or sets the filter used for the texture associated with this triangle mesh."""
+        """Get or set the filter used for the texture associated with this triangle mesh."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_texture_filter_metadata)
 
     _set_texture_filter_metadata = { "name" : "texture_filter",
@@ -17054,28 +17054,28 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT),) }
     @property
     def set_hint(self) -> "SET_HINT":
-        """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
+        """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_set_hint_metadata)
 
     _set_metadata = { "name" : "set",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set(self, positions:list, normals:list, indices:list) -> None:
-        """Defines the triangle mesh using an indexed triangle list specified by positions, normals, and indices. The mesh is rendered in the primitive's reference frame."""
+        """Define the triangle mesh using an indexed triangle list specified by positions, normals, and indices. The mesh is rendered in the primitive's reference frame."""
         return self._intf.invoke(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._set_metadata, positions, normals, indices)
 
     _set_with_optional_parameters_metadata = { "name" : "set_with_optional_parameters",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID,),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("ITriangleMeshPrimitiveOptionalParameters"),) }
     def set_with_optional_parameters(self, positions:list, normals:list, indices:list, optionalParameters:"ITriangleMeshPrimitiveOptionalParameters") -> None:
-        """Defines the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame."""
+        """Define the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame."""
         return self._intf.invoke(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._set_with_optional_parameters_metadata, positions, normals, indices, optionalParameters)
 
     _set_triangulator_metadata = { "name" : "set_triangulator",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("ITriangulatorResult"),) }
     def set_triangulator(self, triangulator:"ITriangulatorResult") -> None:
-        """Defines the triangle mesh using the specified triangulator. The mesh is rendered in the primitive's reference frame."""
+        """Define the triangle mesh using the specified triangulator. The mesh is rendered in the primitive's reference frame."""
         return self._intf.invoke(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._set_triangulator_metadata, triangulator)
 
     _get_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -17083,7 +17083,7 @@ class ITriangleMeshPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def central_body_clipped(self) -> bool:
-        """Gets or sets whether individual points will be clipped by the central body."""
+        """Get or set whether individual points will be clipped by the central body."""
         return self._intf.get_property(ITriangleMeshPrimitive._metadata, ITriangleMeshPrimitive._get_central_body_clipped_metadata)
 
     _set_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -17135,14 +17135,14 @@ class ITriangleMeshPrimitiveOptionalParameters(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_texture_coordinates(self, textureCoordinates:list) -> None:
-        """Defines a collection of texture coordinates."""
+        """Define a collection of texture coordinates."""
         return self._intf.invoke(ITriangleMeshPrimitiveOptionalParameters._metadata, ITriangleMeshPrimitiveOptionalParameters._set_texture_coordinates_metadata, textureCoordinates)
 
     _set_per_vertex_colors_metadata = { "name" : "set_per_vertex_colors",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_per_vertex_colors(self, colors:list) -> None:
-        """Defines a collection of colors."""
+        """Define a collection of colors."""
         return self._intf.invoke(ITriangleMeshPrimitiveOptionalParameters._metadata, ITriangleMeshPrimitiveOptionalParameters._set_per_vertex_colors_metadata, colors)
 
 
@@ -17150,7 +17150,7 @@ agcls.AgClassCatalog.add_catalog_entry("{881b260c-4a26-4fb7-9fec-779b3c540a94}",
 agcls.AgTypeNameMap["ITriangleMeshPrimitiveOptionalParameters"] = ITriangleMeshPrimitiveOptionalParameters
 
 class IVectorPrimitive(object):
-    """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+    """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
     _num_methods = 28
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17214,7 +17214,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def lighting(self) -> bool:
-        """Gets or Sets whether the primitive is lit."""
+        """Get or set whether the primitive is lit."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_lighting_metadata)
 
     _set_lighting_metadata = { "name" : "lighting",
@@ -17229,7 +17229,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def label(self) -> str:
-        """Gets or Sets the a user-defined label."""
+        """Get or set the a user-defined label."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_label_metadata)
 
     _set_label_metadata = { "name" : "label",
@@ -17244,7 +17244,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_label(self) -> bool:
-        """Gets or Sets whether the vector's label is displayed."""
+        """Get or set whether the vector's label is displayed."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_display_label_metadata)
 
     _set_display_label_metadata = { "name" : "display_label",
@@ -17259,7 +17259,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_magnitude(self) -> bool:
-        """Gets or Sets whether the vector's magnitude is displayed. Formatter controls unit conversions."""
+        """Get or set whether the vector's magnitude is displayed. Formatter controls unit conversions."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_display_magnitude_metadata)
 
     _set_display_magnitude_metadata = { "name" : "display_magnitude",
@@ -17274,7 +17274,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_ra_dec(self) -> bool:
-        """Gets or Sets whether the vector's RA-Dec is displayed. Formatter controls unit conversions."""
+        """Get or set whether the vector's RA-Dec is displayed. Formatter controls unit conversions."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_display_ra_dec_metadata)
 
     _set_display_ra_dec_metadata = { "name" : "display_ra_dec",
@@ -17289,7 +17289,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_trace(self) -> bool:
-        """Gets or Sets whether the persistence trace (points) is displayed."""
+        """Get or set whether the persistence trace (points) is displayed."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_display_trace_metadata)
 
     _set_display_trace_metadata = { "name" : "display_trace",
@@ -17304,7 +17304,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_sweep(self) -> bool:
-        """Gets or Sets whether the persistence sweep (triangles) is displayed."""
+        """Get or set whether the persistence sweep (triangles) is displayed."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_display_sweep_metadata)
 
     _set_display_sweep_metadata = { "name" : "display_sweep",
@@ -17319,7 +17319,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def display_lines(self) -> bool:
-        """Gets or Sets whether persistence lines are displayed."""
+        """Get or set whether persistence lines are displayed."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_display_lines_metadata)
 
     _set_display_lines_metadata = { "name" : "display_lines",
@@ -17334,7 +17334,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def persistence_width(self) -> float:
-        """Gets or Sets persistence point/line width."""
+        """Get or set persistence point/line width."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_persistence_width_metadata)
 
     _set_persistence_width_metadata = { "name" : "persistence_width",
@@ -17349,7 +17349,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def fade_persistence(self) -> bool:
-        """Gets or Sets whether the persistence path should fade over time."""
+        """Get or set whether the persistence path should fade over time."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_fade_persistence_metadata)
 
     _set_fade_persistence_metadata = { "name" : "fade_persistence",
@@ -17364,7 +17364,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def persistence_duration(self) -> float:
-        """Gets or Sets the maximum duration of the persistence path."""
+        """Get or set the maximum duration of the persistence path."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_persistence_duration_metadata)
 
     _set_persistence_duration_metadata = { "name" : "persistence_duration",
@@ -17379,7 +17379,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def length(self) -> float:
-        """Gets or Sets the vector's source-to-arrow-tip length."""
+        """Get or set the vector's source-to-arrow-tip length."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_length_metadata)
 
     _set_length_metadata = { "name" : "length",
@@ -17394,7 +17394,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def width(self) -> float:
-        """Gets or Sets the vector's width in pixels. As the camera distances changes from this primitive, the geometry will autoscale to maintain this thickness."""
+        """Get or set the vector's width in pixels. As the camera distances changes from this primitive, the geometry will autoscale to maintain this thickness."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_width_metadata)
 
     _set_width_metadata = { "name" : "width",
@@ -17409,7 +17409,7 @@ class IVectorPrimitive(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def true_scale(self) -> bool:
-        """Gets or Sets whether vector's 'true scale' length (based on how the primitive was created) should be used."""
+        """Get or set whether vector's 'true scale' length (based on how the primitive was created) should be used."""
         return self._intf.get_property(IVectorPrimitive._metadata, IVectorPrimitive._get_true_scale_metadata)
 
     _set_true_scale_metadata = { "name" : "true_scale",
@@ -17460,7 +17460,7 @@ class IBoxTriangulatorInitializer(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute(self, size:list) -> "SolidTriangulatorResult":
-        """Computes the triangulation for a box of the specified size, centered at the origin."""
+        """Compute the triangulation for a box of the specified size, centered at the origin."""
         return self._intf.invoke(IBoxTriangulatorInitializer._metadata, IBoxTriangulatorInitializer._compute_metadata, size, out_arg())
 
 
@@ -17505,14 +17505,14 @@ class ICylinderTriangulatorInitializer(object):
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def create_simple(self, length:float, radius:float) -> "SolidTriangulatorResult":
-        """Computes the triangulation for a cylinder centered at the origin."""
+        """Compute the triangulation for a cylinder centered at the origin."""
         return self._intf.invoke(ICylinderTriangulatorInitializer._metadata, ICylinderTriangulatorInitializer._create_simple_metadata, length, radius, out_arg())
 
     _compute_metadata = { "name" : "compute",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.INT_arg, agmarshall.AgEnum_arg(CYLINDER_FILL), agmarshall.AgInterface_out_arg,) }
     def compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"CYLINDER_FILL") -> "SolidTriangulatorResult":
-        """Computes the triangulation for a cylinder centered at the origin."""
+        """Compute the triangulation for a cylinder centered at the origin."""
         return self._intf.invoke(ICylinderTriangulatorInitializer._metadata, ICylinderTriangulatorInitializer._compute_metadata, length, bottomRadius, topRadius, slices, cylinderFill, out_arg())
 
 
@@ -17557,14 +17557,14 @@ class IEllipsoidTriangulatorInitializer(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute_simple(self, radii:list) -> "SolidTriangulatorResult":
-        """Computes the triangulation for an ellipsoid with the specified radii, centered at the origin, using 32 slices and 16 stacks."""
+        """Compute the triangulation for an ellipsoid with the specified radii, centered at the origin, using 32 slices and 16 stacks."""
         return self._intf.invoke(IEllipsoidTriangulatorInitializer._metadata, IEllipsoidTriangulatorInitializer._compute_simple_metadata, radii, out_arg())
 
     _compute_metadata = { "name" : "compute",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.INT, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def compute(self, radii:list, slices:int, stacks:int) -> "SolidTriangulatorResult":
-        """Computes the triangulation for an ellipsoid with the specified radii, centered at the origin."""
+        """Compute the triangulation for an ellipsoid with the specified radii, centered at the origin."""
         return self._intf.invoke(IEllipsoidTriangulatorInitializer._metadata, IEllipsoidTriangulatorInitializer._compute_metadata, radii, slices, stacks, out_arg())
 
 
@@ -17619,14 +17619,14 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute(self, centralBody:str, bottomPositions:list, topPositions:list) -> "ExtrudedPolylineTriangulatorResult":
-        """Computes an extrusion between bottomPositions and topPositions on the specified centralBody. This is equivalent to calling Compute with a positionsWindingOrder of compute."""
+        """Compute an extrusion between bottomPositions and topPositions on the specified centralBody. This is equivalent to calling Compute with a positionsWindingOrder of compute."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_metadata, centralBody, bottomPositions, topPositions, out_arg())
 
     _compute_with_winding_order_metadata = { "name" : "compute_with_winding_order",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_out_arg,) }
     def compute_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
-        """Computes an extrusion between bottomPositions and topPositions on the specified centralBody."""
+        """Compute an extrusion between bottomPositions and topPositions on the specified centralBody."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_with_winding_order_metadata, centralBody, bottomPositions, topPositions, positionsWindingOrder, out_arg())
 
     _compute_cartographic_metadata = { "name" : "compute_cartographic",
@@ -17647,14 +17647,14 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_with_altitudes(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float) -> "ExtrudedPolylineTriangulatorResult":
-        """Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude. This is equivalent to calling Compute with a positionsWindingOrder of compute."""
+        """Compute an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude. This is equivalent to calling Compute with a positionsWindingOrder of compute."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_with_altitudes_metadata, centralBody, positions, bottomAltitude, topAltitude, out_arg())
 
     _compute_with_altitudes_and_winding_order_metadata = { "name" : "compute_with_altitudes_and_winding_order",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_out_arg,) }
     def compute_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
-        """Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude."""
+        """Compute an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_with_altitudes_and_winding_order_metadata, centralBody, positions, bottomAltitude, topAltitude, positionsWindingOrder, out_arg())
 
     _compute_cartographic_with_altitudes_metadata = { "name" : "compute_cartographic_with_altitudes",
@@ -17675,14 +17675,14 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_single_constant_altitude(self, centralBody:str, positions:list, altitude:float) -> "ExtrudedPolylineTriangulatorResult":
-        """Computes an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions..."""
+        """Compute an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions..."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_single_constant_altitude_metadata, centralBody, positions, altitude, out_arg())
 
     _compute_single_constant_altitude_with_winding_order_metadata = { "name" : "compute_single_constant_altitude_with_winding_order",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_out_arg,) }
     def compute_single_constant_altitude_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
-        """Computes an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions."""
+        """Compute an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_single_constant_altitude_with_winding_order_metadata, centralBody, positions, altitude, positionsWindingOrder, out_arg())
 
     _compute_single_constant_altitude_cartographic_metadata = { "name" : "compute_single_constant_altitude_cartographic",
@@ -17741,14 +17741,14 @@ class ISurfaceExtentTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute_simple(self, centralBody:str, extent:list) -> "SurfaceTriangulatorResult":
-        """Computes a triangulation on the specified centralBody for the specified extent. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree."""
+        """Compute a triangulation on the specified centralBody for the specified extent. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree."""
         return self._intf.invoke(ISurfaceExtentTriangulatorInitializer._metadata, ISurfaceExtentTriangulatorInitializer._compute_simple_metadata, centralBody, extent, out_arg())
 
     _compute_metadata = { "name" : "compute",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute(self, centralBody:str, extent:list, altitude:float, granularity:float) -> "SurfaceTriangulatorResult":
-        """Computes a triangulation on the specified centralBody for the specified extent."""
+        """Compute a triangulation on the specified centralBody for the specified extent."""
         return self._intf.invoke(ISurfaceExtentTriangulatorInitializer._metadata, ISurfaceExtentTriangulatorInitializer._compute_metadata, centralBody, extent, altitude, granularity, out_arg())
 
 
@@ -17797,7 +17797,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute(self, centralBody:str, positions:list) -> "SurfaceTriangulatorResult":
-        """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions. This is equivalent to calling Compute with an altitude of 0, a granularity of 1 degree, and a positionsWindingOrder of compute."""
+        """Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions. This is equivalent to calling Compute with an altitude of 0, a granularity of 1 degree, and a positionsWindingOrder of compute."""
         return self._intf.invoke(ISurfacePolygonTriangulatorInitializer._metadata, ISurfacePolygonTriangulatorInitializer._compute_metadata, centralBody, positions, out_arg())
 
     _compute_cartographic_metadata = { "name" : "compute_cartographic",
@@ -17811,21 +17811,21 @@ class ISurfacePolygonTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute_with_hole(self, centralBody:str, positions:list, holePositions:list) -> "SurfaceTriangulatorResult":
-        """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree."""
+        """Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree."""
         return self._intf.invoke(ISurfacePolygonTriangulatorInitializer._metadata, ISurfacePolygonTriangulatorInitializer._compute_with_hole_metadata, centralBody, positions, holePositions, out_arg())
 
     _compute_with_hole_altitude_and_granularity_metadata = { "name" : "compute_with_hole_altitude_and_granularity",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_with_hole_altitude_and_granularity(self, centralBody:str, positions:list, holePositions:list, altitude:float, granularity:float) -> "SurfaceTriangulatorResult":
-        """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions."""
+        """Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions."""
         return self._intf.invoke(ISurfacePolygonTriangulatorInitializer._metadata, ISurfacePolygonTriangulatorInitializer._compute_with_hole_altitude_and_granularity_metadata, centralBody, positions, holePositions, altitude, granularity, out_arg())
 
     _compute_with_altitude_and_granularity_metadata = { "name" : "compute_with_altitude_and_granularity",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_out_arg,) }
     def compute_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"WINDING_ORDER") -> "SurfaceTriangulatorResult":
-        """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions."""
+        """Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions."""
         return self._intf.invoke(ISurfacePolygonTriangulatorInitializer._metadata, ISurfacePolygonTriangulatorInitializer._compute_with_altitude_and_granularity_metadata, centralBody, positions, altitude, granularity, positionsWindingOrder, out_arg())
 
     _compute_cartographic_with_altitude_and_granularity_metadata = { "name" : "compute_cartographic_with_altitude_and_granularity",
@@ -17840,7 +17840,7 @@ agcls.AgClassCatalog.add_catalog_entry("{52654c8a-3c27-415f-b346-c0e433241b49}",
 agcls.AgTypeNameMap["ISurfacePolygonTriangulatorInitializer"] = ISurfacePolygonTriangulatorInitializer
 
 class ISurfaceShapesInitializer(object):
-    """Computes boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
+    """Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17887,14 +17887,14 @@ class ISurfaceShapesInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_circle_with_granularity(self, centralBody:str, center:list, radius:float, granularity:float) -> "SurfaceShapesResult":
-        """Computes boundary positions for a circle on the specified centralBody with the specified center, radius and granularity."""
+        """Compute boundary positions for a circle on the specified centralBody with the specified center, radius and granularity."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_circle_with_granularity_metadata, centralBody, center, radius, granularity, out_arg())
 
     _compute_circle_metadata = { "name" : "compute_circle",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_circle(self, centralBody:str, center:list, radius:float) -> "SurfaceShapesResult":
-        """Computes boundary positions for a circle on the specified centralBody with the specified center and radius. This is equivalent to calling ComputeCircle with a granularity of 1 degree."""
+        """Compute boundary positions for a circle on the specified centralBody with the specified center and radius. This is equivalent to calling ComputeCircle with a granularity of 1 degree."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_circle_metadata, centralBody, center, radius, out_arg())
 
     _compute_circle_cartographic_with_granularity_metadata = { "name" : "compute_circle_cartographic_with_granularity",
@@ -17915,14 +17915,14 @@ class ISurfaceShapesInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_ellipse_with_granularity(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float, granularity:float) -> "SurfaceShapesResult":
-        """Computes boundary positions for an ellipse on the specified centralBody."""
+        """Compute boundary positions for an ellipse on the specified centralBody."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_ellipse_with_granularity_metadata, centralBody, center, majorAxisRadius, minorAxisRadius, bearing, granularity, out_arg())
 
     _compute_ellipse_metadata = { "name" : "compute_ellipse",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_ellipse(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float) -> "SurfaceShapesResult":
-        """Computes boundary positions for an ellipse on the specified centralBody This is equivalent to calling ComputeEllipse with a granularity of 1 degree."""
+        """Compute boundary positions for an ellipse on the specified centralBody This is equivalent to calling ComputeEllipse with a granularity of 1 degree."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_ellipse_metadata, centralBody, center, majorAxisRadius, minorAxisRadius, bearing, out_arg())
 
     _compute_ellipse_cartographic_with_granularity_metadata = { "name" : "compute_ellipse_cartographic_with_granularity",
@@ -17943,14 +17943,14 @@ class ISurfaceShapesInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_sector_with_granularity(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float, granularity:float) -> "SurfaceShapesResult":
-        """Computes boundary positions for a sector on the specified centralBody."""
+        """Compute boundary positions for a sector on the specified centralBody."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_sector_with_granularity_metadata, centralBody, center, innerRadius, outerRadius, startBearing, endBearing, granularity, out_arg())
 
     _compute_sector_metadata = { "name" : "compute_sector",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_sector(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float) -> "SurfaceShapesResult":
-        """Computes boundary positions for a sector on the specified centralBody This is equivalent to calling ComputeSector with a granularity of 1 degree."""
+        """Compute boundary positions for a sector on the specified centralBody This is equivalent to calling ComputeSector with a granularity of 1 degree."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_sector_metadata, centralBody, center, innerRadius, outerRadius, startBearing, endBearing, out_arg())
 
     _compute_sector_cartographic_with_granularity_metadata = { "name" : "compute_sector_cartographic_with_granularity",
@@ -18008,7 +18008,7 @@ class IAGICustomTerrainOverlayFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string(self, uri:str) -> "AGICustomTerrainOverlay":
-        """Initializes an agi custom terrain overlay with the provided values."""
+        """Initialize an agi custom terrain overlay with the provided values."""
         return self._intf.invoke(IAGICustomTerrainOverlayFactory._metadata, IAGICustomTerrainOverlayFactory._initialize_with_string_metadata, uri, out_arg())
 
 
@@ -18052,7 +18052,7 @@ class IAGIProcessedImageGlobeOverlayFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string(self, uri:str) -> "AGIProcessedImageGlobeOverlay":
-        """Initializes an agi processed image globe overlay with the provided values."""
+        """Initialize an agi processed image globe overlay with the provided values."""
         return self._intf.invoke(IAGIProcessedImageGlobeOverlayFactory._metadata, IAGIProcessedImageGlobeOverlayFactory._initialize_with_string_metadata, uri, out_arg())
 
 
@@ -18096,7 +18096,7 @@ class IAGIProcessedTerrainOverlayFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string(self, uri:str) -> "AGIProcessedTerrainOverlay":
-        """Initializes an agi processed terrain overlay with the provided values."""
+        """Initialize an agi processed terrain overlay with the provided values."""
         return self._intf.invoke(IAGIProcessedTerrainOverlayFactory._metadata, IAGIProcessedTerrainOverlayFactory._initialize_with_string_metadata, uri, out_arg())
 
 
@@ -18140,7 +18140,7 @@ class IAGIRoamImageGlobeOverlayFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string(self, uri:str) -> "AGIRoamImageGlobeOverlay":
-        """Initializes an agi roam image globe overlay with the provided values."""
+        """Initialize an agi roam image globe overlay with the provided values."""
         return self._intf.invoke(IAGIRoamImageGlobeOverlayFactory._metadata, IAGIRoamImageGlobeOverlayFactory._initialize_with_string_metadata, uri, out_arg())
 
 
@@ -18184,7 +18184,7 @@ class ICustomImageGlobeOverlayPluginActivatorFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "CustomImageGlobeOverlayPluginActivator":
-        """Initializes a new instance of the Activator type."""
+        """Initialize a new instance of the Activator type."""
         return self._intf.invoke(ICustomImageGlobeOverlayPluginActivatorFactory._metadata, ICustomImageGlobeOverlayPluginActivatorFactory._initialize_metadata, out_arg())
 
 
@@ -18228,7 +18228,7 @@ class IGeospatialImageGlobeOverlayFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string(self, uri:str) -> "GeospatialImageGlobeOverlay":
-        """Initializes a geospatial image globe overlay with the provided values."""
+        """Initialize a geospatial image globe overlay with the provided values."""
         return self._intf.invoke(IGeospatialImageGlobeOverlayFactory._metadata, IGeospatialImageGlobeOverlayFactory._initialize_with_string_metadata, uri, out_arg())
 
 
@@ -18273,7 +18273,7 @@ class IProjectedRasterOverlayFactory(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"), agmarshall.AgInterface_in_arg("IProjection"), agmarshall.AgInterface_out_arg,) }
     def initialize(self, raster:"IRaster", projection:"IProjection") -> "ProjectedRasterOverlay":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IProjectedRasterOverlayFactory._metadata, IProjectedRasterOverlayFactory._initialize_metadata, raster, projection, out_arg())
 
     _get_supported_metadata = { "name" : "supported",
@@ -18281,7 +18281,7 @@ class IProjectedRasterOverlayFactory(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def supported(self) -> bool:
-        """Gets whether or not the video card supports the projected raster overlay."""
+        """Get whether or not the video card supports the projected raster overlay."""
         return self._intf.get_property(IProjectedRasterOverlayFactory._metadata, IProjectedRasterOverlayFactory._get_supported_metadata)
 
 
@@ -18327,21 +18327,21 @@ class IProjectionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "IProjection":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IProjectionFactory._metadata, IProjectionFactory._initialize_metadata, out_arg())
 
     _initialize_with_data_metadata = { "name" : "initialize_with_data",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IOrientation"), agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_data(self, position:list, orientation:"IOrientation", fieldOfViewHorizontal:float, fieldOfViewVertical:float, nearPlane:float, farPlane:float) -> "IProjection":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IProjectionFactory._metadata, IProjectionFactory._initialize_with_data_metadata, position, orientation, fieldOfViewHorizontal, fieldOfViewVertical, nearPlane, farPlane, out_arg())
 
     _initialize_from_projection_metadata = { "name" : "initialize_from_projection",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IProjection"), agmarshall.AgInterface_out_arg,) }
     def initialize_from_projection(self, projection:"IProjection") -> "IProjection":
-        """Initializes a new instance from another projection."""
+        """Initialize a new instance from another projection."""
         return self._intf.invoke(IProjectionFactory._metadata, IProjectionFactory._initialize_from_projection_metadata, projection, out_arg())
 
 
@@ -18349,7 +18349,7 @@ agcls.AgClassCatalog.add_catalog_entry("{db047d3d-5afd-4b64-b396-034fd95ec57a}",
 agcls.AgTypeNameMap["IProjectionFactory"] = IProjectionFactory
 
 class IAltitudeDisplayConditionFactory(object):
-    """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+    """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18387,21 +18387,21 @@ class IAltitudeDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "AltitudeDisplayCondition":
-        """Initializes a default altitude display condition. With this constructor, an object is always rendered regardless of the camera's altitude."""
+        """Initialize a default altitude display condition. With this constructor, an object is always rendered regardless of the camera's altitude."""
         return self._intf.invoke(IAltitudeDisplayConditionFactory._metadata, IAltitudeDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_with_altitudes_metadata = { "name" : "initialize_with_altitudes",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_altitudes(self, minimumAltitude:float, maximumAltitude:float) -> "AltitudeDisplayCondition":
-        """Initializes an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]..."""
+        """Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]..."""
         return self._intf.invoke(IAltitudeDisplayConditionFactory._metadata, IAltitudeDisplayConditionFactory._initialize_with_altitudes_metadata, minimumAltitude, maximumAltitude, out_arg())
 
     _initialize_with_central_body_and_altitudes_metadata = { "name" : "initialize_with_central_body_and_altitudes",
             "arg_types" : (agcom.BSTR, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_central_body_and_altitudes(self, centralBody:str, minimumAltitude:float, maximumAltitude:float) -> "AltitudeDisplayCondition":
-        """Initializes an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]..."""
+        """Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]..."""
         return self._intf.invoke(IAltitudeDisplayConditionFactory._metadata, IAltitudeDisplayConditionFactory._initialize_with_central_body_and_altitudes_metadata, centralBody, minimumAltitude, maximumAltitude, out_arg())
 
 
@@ -18409,7 +18409,7 @@ agcls.AgClassCatalog.add_catalog_entry("{ee1efbf0-ddbf-41ff-9257-ff73e164d27a}",
 agcls.AgTypeNameMap["IAltitudeDisplayConditionFactory"] = IAltitudeDisplayConditionFactory
 
 class IAxesPrimitiveFactory(object):
-    """Renders an axes in the 3D scene."""
+    """Render an axes in the 3D scene."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18445,7 +18445,7 @@ class IAxesPrimitiveFactory(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.AgInterface_in_arg("IVectorGeometryToolAxes"), agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_direction(self, sys:"IVectorGeometryToolSystem", axes:"IVectorGeometryToolAxes", font:"IGraphicsFont") -> "AxesPrimitive":
-        """Initializes an axes primitive with the specified ISystem sys as its source."""
+        """Initialize an axes primitive with the specified ISystem sys as its source."""
         return self._intf.invoke(IAxesPrimitiveFactory._metadata, IAxesPrimitiveFactory._initialize_with_direction_metadata, sys, axes, font, out_arg())
 
 
@@ -18489,7 +18489,7 @@ class ICompositeDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "CompositeDisplayCondition":
-        """Initializes an empty composite display condition."""
+        """Initialize an empty composite display condition."""
         return self._intf.invoke(ICompositeDisplayConditionFactory._metadata, ICompositeDisplayConditionFactory._initialize_metadata, out_arg())
 
 
@@ -18533,7 +18533,7 @@ class ICompositePrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "CompositePrimitive":
-        """Initializes a default composite primitive."""
+        """Initialize a default composite primitive."""
         return self._intf.invoke(ICompositePrimitiveFactory._metadata, ICompositePrimitiveFactory._initialize_metadata, out_arg())
 
 
@@ -18578,14 +18578,14 @@ class IConstantDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "ConstantDisplayCondition":
-        """Initializes a default constant display condition. display is set to false so when this display condition is assigned to an object, such as a primitive, the object is not rendered."""
+        """Initialize a default constant display condition. display is set to false so when this display condition is assigned to an object, such as a primitive, the object is not rendered."""
         return self._intf.invoke(IConstantDisplayConditionFactory._metadata, IConstantDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_display_metadata = { "name" : "initialize_display",
             "arg_types" : (agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VARIANT_BOOL_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_display(self, display:bool) -> "ConstantDisplayCondition":
-        """Initializes a constant display condition with the value the display condition evaluates to."""
+        """Initialize a constant display condition with the value the display condition evaluates to."""
         return self._intf.invoke(IConstantDisplayConditionFactory._metadata, IConstantDisplayConditionFactory._initialize_display_metadata, display, out_arg())
 
 
@@ -18593,7 +18593,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4c5226f9-a98e-4af0-a9a4-1e5926908d4c}",
 agcls.AgTypeNameMap["IConstantDisplayConditionFactory"] = IConstantDisplayConditionFactory
 
 class IDistanceDisplayConditionFactory(object):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18630,14 +18630,14 @@ class IDistanceDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "DistanceDisplayCondition":
-        """Initializes a default distance display condition. minimum distance is set to 0 and maximum distance is set to Double.MaxValue. With this interval, an object is always rendered regardless of its distance to the camera."""
+        """Initialize a default distance display condition. minimum distance is set to 0 and maximum distance is set to Double.MaxValue. With this interval, an object is always rendered regardless of its distance to the camera."""
         return self._intf.invoke(IDistanceDisplayConditionFactory._metadata, IDistanceDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_with_distances_metadata = { "name" : "initialize_with_distances",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_distances(self, minimumDistance:float, maximumDistance:float) -> "DistanceDisplayCondition":
-        """Initializes a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
+        """Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         return self._intf.invoke(IDistanceDisplayConditionFactory._metadata, IDistanceDisplayConditionFactory._initialize_with_distances_metadata, minimumDistance, maximumDistance, out_arg())
 
 
@@ -18645,7 +18645,7 @@ agcls.AgClassCatalog.add_catalog_entry("{d7dda546-31d2-4bbd-a44d-b9dc413a2412}",
 agcls.AgTypeNameMap["IDistanceDisplayConditionFactory"] = IDistanceDisplayConditionFactory
 
 class IDistanceToGlobeOverlayDisplayConditionFactory(object):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18682,14 +18682,14 @@ class IDistanceToGlobeOverlayDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "DistanceToGlobeOverlayDisplayCondition":
-        """Initializes a default distance to globe overlay display condition. With this constructor, an object is always rendered regardless of the camera's distance to the globe overlay."""
+        """Initialize a default distance to globe overlay display condition. With this constructor, an object is always rendered regardless of the camera's distance to the globe overlay."""
         return self._intf.invoke(IDistanceToGlobeOverlayDisplayConditionFactory._metadata, IDistanceToGlobeOverlayDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_with_distances_metadata = { "name" : "initialize_with_distances",
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGlobeOverlay"), agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_distances(self, globeOverlay:"IGlobeOverlay", minimumDistance:float, maximumDistance:float) -> "DistanceToGlobeOverlayDisplayCondition":
-        """Initializes a distance display condition with the globe overlay and the inclusive distance interval [minimumDistance, maximumDistance]..."""
+        """Initialize a distance display condition with the globe overlay and the inclusive distance interval [minimumDistance, maximumDistance]..."""
         return self._intf.invoke(IDistanceToGlobeOverlayDisplayConditionFactory._metadata, IDistanceToGlobeOverlayDisplayConditionFactory._initialize_with_distances_metadata, globeOverlay, minimumDistance, maximumDistance, out_arg())
 
 
@@ -18697,7 +18697,7 @@ agcls.AgClassCatalog.add_catalog_entry("{05bc2dbc-8533-467a-85d2-720c583f1c7e}",
 agcls.AgTypeNameMap["IDistanceToGlobeOverlayDisplayConditionFactory"] = IDistanceToGlobeOverlayDisplayConditionFactory
 
 class IDistanceToPositionDisplayConditionFactory(object):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18735,21 +18735,21 @@ class IDistanceToPositionDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "DistanceToPositionDisplayCondition":
-        """Initializes a default distance to position display condition. With this constructor, an object is always rendered regardless of the camera's distance to the position."""
+        """Initialize a default distance to position display condition. With this constructor, an object is always rendered regardless of the camera's distance to the position."""
         return self._intf.invoke(IDistanceToPositionDisplayConditionFactory._metadata, IDistanceToPositionDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_with_distances_metadata = { "name" : "initialize_with_distances",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_distances(self, position:list, minimumDistance:float, maximumDistance:float) -> "DistanceToPositionDisplayCondition":
-        """Initializes a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
+        """Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         return self._intf.invoke(IDistanceToPositionDisplayConditionFactory._metadata, IDistanceToPositionDisplayConditionFactory._initialize_with_distances_metadata, position, minimumDistance, maximumDistance, out_arg())
 
     _initialize_with_reference_frame_and_distances_metadata = { "name" : "initialize_with_reference_frame_and_distances",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_reference_frame_and_distances(self, referenceFrame:"IVectorGeometryToolSystem", position:list, minimumDistance:float, maximumDistance:float) -> "DistanceToPositionDisplayCondition":
-        """Initializes a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
+        """Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         return self._intf.invoke(IDistanceToPositionDisplayConditionFactory._metadata, IDistanceToPositionDisplayConditionFactory._initialize_with_reference_frame_and_distances_metadata, referenceFrame, position, minimumDistance, maximumDistance, out_arg())
 
 
@@ -18757,7 +18757,7 @@ agcls.AgClassCatalog.add_catalog_entry("{913dd9f7-a91b-4346-b233-180126a8d1bd}",
 agcls.AgTypeNameMap["IDistanceToPositionDisplayConditionFactory"] = IDistanceToPositionDisplayConditionFactory
 
 class IDistanceToPrimitiveDisplayConditionFactory(object):
-    """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+    """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18794,14 +18794,14 @@ class IDistanceToPrimitiveDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "DistanceToPrimitiveDisplayCondition":
-        """Initializes a default distance to primitive display condition. With this constructor, an object is always rendered regardless of the camera's distance to the primitive."""
+        """Initialize a default distance to primitive display condition. With this constructor, an object is always rendered regardless of the camera's distance to the primitive."""
         return self._intf.invoke(IDistanceToPrimitiveDisplayConditionFactory._metadata, IDistanceToPrimitiveDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_with_distances_metadata = { "name" : "initialize_with_distances",
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPrimitive"), agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_distances(self, primitive:"IPrimitive", minimumDistance:float, maximumDistance:float) -> "DistanceToPrimitiveDisplayCondition":
-        """Initializes a distance to primitive display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
+        """Initialize a distance to primitive display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
         return self._intf.invoke(IDistanceToPrimitiveDisplayConditionFactory._metadata, IDistanceToPrimitiveDisplayConditionFactory._initialize_with_distances_metadata, primitive, minimumDistance, maximumDistance, out_arg())
 
 
@@ -18846,14 +18846,14 @@ class IDurationPathPrimitiveUpdatePolicyFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "DurationPathPrimitiveUpdatePolicy":
-        """Constructs a default update policy. This is equivalent to constructing a policy with duration set to 0 and a remove location of Front."""
+        """Construct a default update policy. This is equivalent to constructing a policy with duration set to 0 and a remove location of Front."""
         return self._intf.invoke(IDurationPathPrimitiveUpdatePolicyFactory._metadata, IDurationPathPrimitiveUpdatePolicyFactory._initialize_metadata, out_arg())
 
     _initialize_with_parameters_metadata = { "name" : "initialize_with_parameters",
             "arg_types" : (agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(PATH_PRIMITIVE_REMOVE_LOCATION), agmarshall.AgInterface_out_arg,) }
     def initialize_with_parameters(self, duration:float, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "DurationPathPrimitiveUpdatePolicy":
-        """Initializes a policy with the specified duration and removeLocation."""
+        """Initialize a policy with the specified duration and removeLocation."""
         return self._intf.invoke(IDurationPathPrimitiveUpdatePolicyFactory._metadata, IDurationPathPrimitiveUpdatePolicyFactory._initialize_with_parameters_metadata, duration, removeLocation, out_arg())
 
 
@@ -18898,7 +18898,7 @@ class IGlobeImageOverlayInitializer(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def more_than_one_image_globe_overlay_supported(self) -> bool:
-        """Gets whether or not the video card allows for more than one image globe overlay globe image overlay to be added."""
+        """Get whether or not the video card allows for more than one image globe overlay globe image overlay to be added."""
         return self._intf.get_property(IGlobeImageOverlayInitializer._metadata, IGlobeImageOverlayInitializer._get_more_than_one_image_globe_overlay_supported_metadata)
 
 
@@ -18943,14 +18943,14 @@ class IGraphicsFontFactory(object):
             "arg_types" : (agcom.BSTR, agcom.INT, agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.INT_arg, agmarshall.AgEnum_arg(FONT_STYLE), agmarshall.VARIANT_BOOL_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_name_size_font_style_outline(self, name:str, size:int, fontStyle:"FONT_STYLE", outline:bool) -> "GraphicsFont":
-        """Initializes a graphics font with the given arguments."""
+        """Initialize a graphics font with the given arguments."""
         return self._intf.invoke(IGraphicsFontFactory._metadata, IGraphicsFontFactory._initialize_with_name_size_font_style_outline_metadata, name, size, fontStyle, outline, out_arg())
 
     _initialize_with_name_size_metadata = { "name" : "initialize_with_name_size",
             "arg_types" : (agcom.BSTR, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_name_size(self, name:str, size:int) -> "GraphicsFont":
-        """Initializes a graphics font with the typeface name and size."""
+        """Initialize a graphics font with the typeface name and size."""
         return self._intf.invoke(IGraphicsFontFactory._metadata, IGraphicsFontFactory._initialize_with_name_size_metadata, name, size, out_arg())
 
 
@@ -18996,21 +18996,21 @@ class IGreatArcInterpolatorFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "GreatArcInterpolator":
-        """Initializes a default great arc interpolator. This is equivalent to constructing a great arc interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree."""
+        """Initialize a default great arc interpolator. This is equivalent to constructing a great arc interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree."""
         return self._intf.invoke(IGreatArcInterpolatorFactory._metadata, IGreatArcInterpolatorFactory._initialize_metadata, out_arg())
 
     _initialize_with_central_body_metadata = { "name" : "initialize_with_central_body",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_central_body(self, centralBody:str) -> "GreatArcInterpolator":
-        """Initializes a great arc interpolator with the specified centralBody and a granularity of 1 degree."""
+        """Initialize a great arc interpolator with the specified centralBody and a granularity of 1 degree."""
         return self._intf.invoke(IGreatArcInterpolatorFactory._metadata, IGreatArcInterpolatorFactory._initialize_with_central_body_metadata, centralBody, out_arg())
 
     _initialize_with_central_body_and_granularity_metadata = { "name" : "initialize_with_central_body_and_granularity",
             "arg_types" : (agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_central_body_and_granularity(self, centralBody:str, granularity:float) -> "GreatArcInterpolator":
-        """Initializes a great arc interpolator with the specified centralBody and granularity."""
+        """Initialize a great arc interpolator with the specified centralBody and granularity."""
         return self._intf.invoke(IGreatArcInterpolatorFactory._metadata, IGreatArcInterpolatorFactory._initialize_with_central_body_and_granularity_metadata, centralBody, granularity, out_arg())
 
 
@@ -19018,7 +19018,7 @@ agcls.AgClassCatalog.add_catalog_entry("{35afb348-117f-4db0-87ec-643b4b0364dd}",
 agcls.AgTypeNameMap["IGreatArcInterpolatorFactory"] = IGreatArcInterpolatorFactory
 
 class IAlphaFromLuminanceFilterFactory(object):
-    """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
+    """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19054,7 +19054,7 @@ class IAlphaFromLuminanceFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "AlphaFromLuminanceFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IAlphaFromLuminanceFilterFactory._metadata, IAlphaFromLuminanceFilterFactory._initialize_metadata, out_arg())
 
 
@@ -19062,7 +19062,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2317f609-231f-4266-b38c-f4fa812a0306}",
 agcls.AgTypeNameMap["IAlphaFromLuminanceFilterFactory"] = IAlphaFromLuminanceFilterFactory
 
 class IAlphaFromPixelFilterFactory(object):
-    """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+    """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19098,7 +19098,7 @@ class IAlphaFromPixelFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "AlphaFromPixelFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IAlphaFromPixelFilterFactory._metadata, IAlphaFromPixelFilterFactory._initialize_metadata, out_arg())
 
 
@@ -19106,7 +19106,7 @@ agcls.AgClassCatalog.add_catalog_entry("{f9802000-aea6-453d-b797-d68fae4a491b}",
 agcls.AgTypeNameMap["IAlphaFromPixelFilterFactory"] = IAlphaFromPixelFilterFactory
 
 class IAlphaFromRasterFilterFactory(object):
-    """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+    """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19143,14 +19143,14 @@ class IAlphaFromRasterFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "AlphaFromRasterFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IAlphaFromRasterFilterFactory._metadata, IAlphaFromRasterFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_raster_metadata = { "name" : "initialize_with_raster",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_raster(self, raster:"IRaster") -> "AlphaFromRasterFilter":
-        """Initializes a new instance with the raster that the source raster will use to derive an alpha band."""
+        """Initialize a new instance with the raster that the source raster will use to derive an alpha band."""
         return self._intf.invoke(IAlphaFromRasterFilterFactory._metadata, IAlphaFromRasterFilterFactory._initialize_with_raster_metadata, raster, out_arg())
 
 
@@ -19158,7 +19158,7 @@ agcls.AgClassCatalog.add_catalog_entry("{f7139fc1-f8f8-4bd2-a33f-9e06fdb4f63c}",
 agcls.AgTypeNameMap["IAlphaFromRasterFilterFactory"] = IAlphaFromRasterFilterFactory
 
 class IBandExtractFilterFactory(object):
-    """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+    """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19196,21 +19196,21 @@ class IBandExtractFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "BandExtractFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IBandExtractFilterFactory._metadata, IBandExtractFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_band_metadata = { "name" : "initialize_with_band",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_BAND), agmarshall.AgInterface_out_arg,) }
     def initialize_with_band(self, rasterBand:"RASTER_BAND") -> "BandExtractFilter":
-        """Initializes a new instance with the raster band to be extracted from the source raster."""
+        """Initialize a new instance with the raster band to be extracted from the source raster."""
         return self._intf.invoke(IBandExtractFilterFactory._metadata, IBandExtractFilterFactory._initialize_with_band_metadata, rasterBand, out_arg())
 
     _initialize_with_format_metadata = { "name" : "initialize_with_format",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_format(self, rasterFormat:"RASTER_FORMAT") -> "BandExtractFilter":
-        """Initializes a new instance with the raster format containing the bands to be extracted from the source raster."""
+        """Initialize a new instance with the raster format containing the bands to be extracted from the source raster."""
         return self._intf.invoke(IBandExtractFilterFactory._metadata, IBandExtractFilterFactory._initialize_with_format_metadata, rasterFormat, out_arg())
 
 
@@ -19256,21 +19256,21 @@ class IBandOrderFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "BandOrderFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IBandOrderFilterFactory._metadata, IBandOrderFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_order_metadata = { "name" : "initialize_with_order",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_order(self, bandOrder:"RASTER_FORMAT") -> "BandOrderFilter":
-        """Initializes a new instance with a raster format indicating the desired order of the bands in the source raster."""
+        """Initialize a new instance with a raster format indicating the desired order of the bands in the source raster."""
         return self._intf.invoke(IBandOrderFilterFactory._metadata, IBandOrderFilterFactory._initialize_with_order_metadata, bandOrder, out_arg())
 
     _initialize_with_order_and_bool_metadata = { "name" : "initialize_with_order_and_bool",
             "arg_types" : (agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.VARIANT_BOOL_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_order_and_bool(self, bandOrder:"RASTER_FORMAT", maintainImageFormat:bool) -> "BandOrderFilter":
-        """Initializes a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling."""
+        """Initialize a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling."""
         return self._intf.invoke(IBandOrderFilterFactory._metadata, IBandOrderFilterFactory._initialize_with_order_and_bool_metadata, bandOrder, maintainImageFormat, out_arg())
 
 
@@ -19278,7 +19278,7 @@ agcls.AgClassCatalog.add_catalog_entry("{1bfcf1dd-1ada-47b7-829b-ea60fc04b61d}",
 agcls.AgTypeNameMap["IBandOrderFilterFactory"] = IBandOrderFilterFactory
 
 class IBlurFilterFactory(object):
-    """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+    """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19315,7 +19315,7 @@ class IBlurFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "BlurFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IBlurFilterFactory._metadata, IBlurFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_method_metadata = { "name" : "initialize_with_method",
@@ -19367,14 +19367,14 @@ class IBrightnessFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "BrightnessFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IBrightnessFilterFactory._metadata, IBrightnessFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_adjustment_metadata = { "name" : "initialize_with_adjustment",
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_adjustment(self, adjustment:float) -> "BrightnessFilter":
-        """Initializes a new instance with the adjustment to brightness."""
+        """Initialize a new instance with the adjustment to brightness."""
         return self._intf.invoke(IBrightnessFilterFactory._metadata, IBrightnessFilterFactory._initialize_with_adjustment_metadata, adjustment, out_arg())
 
 
@@ -19382,7 +19382,7 @@ agcls.AgClassCatalog.add_catalog_entry("{85e2696a-638c-4151-8ba4-e1fdef462598}",
 agcls.AgTypeNameMap["IBrightnessFilterFactory"] = IBrightnessFilterFactory
 
 class IColorToLuminanceFilterFactory(object):
-    """Extracts a luminance band derived from the color bands of the source raster."""
+    """Extract a luminance band derived from the color bands of the source raster."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19418,7 +19418,7 @@ class IColorToLuminanceFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "ColorToLuminanceFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IColorToLuminanceFilterFactory._metadata, IColorToLuminanceFilterFactory._initialize_metadata, out_arg())
 
 
@@ -19463,14 +19463,14 @@ class IContrastFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "ContrastFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IContrastFilterFactory._metadata, IContrastFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_adjustment_metadata = { "name" : "initialize_with_adjustment",
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_adjustment(self, adjustment:float) -> "ContrastFilter":
-        """Initializes a new instance with the adjustment to contrast."""
+        """Initialize a new instance with the adjustment to contrast."""
         return self._intf.invoke(IContrastFilterFactory._metadata, IContrastFilterFactory._initialize_with_adjustment_metadata, adjustment, out_arg())
 
 
@@ -19478,7 +19478,7 @@ agcls.AgClassCatalog.add_catalog_entry("{d78a7285-c3ff-47b5-b5af-ea67faffae92}",
 agcls.AgTypeNameMap["IContrastFilterFactory"] = IContrastFilterFactory
 
 class IConvolutionFilterFactory(object):
-    """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+    """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19517,28 +19517,28 @@ class IConvolutionFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "IConvolutionFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IConvolutionFilterFactory._metadata, IConvolutionFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_kernel_metadata = { "name" : "initialize_with_kernel",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_kernel(self, kernel:list) -> "IConvolutionFilter":
-        """Initializes a new instance with the specified kernel."""
+        """Initialize a new instance with the specified kernel."""
         return self._intf.invoke(IConvolutionFilterFactory._metadata, IConvolutionFilterFactory._initialize_with_kernel_metadata, kernel, out_arg())
 
     _initialize_with_kernel_and_divisor_metadata = { "name" : "initialize_with_kernel_and_divisor",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_kernel_and_divisor(self, kernel:list, divisor:float) -> "IConvolutionFilter":
-        """Initializes a new instance with the specified kernel and divisor."""
+        """Initialize a new instance with the specified kernel and divisor."""
         return self._intf.invoke(IConvolutionFilterFactory._metadata, IConvolutionFilterFactory._initialize_with_kernel_and_divisor_metadata, kernel, divisor, out_arg())
 
     _initialize_with_kernel_divisor_and_offset_metadata = { "name" : "initialize_with_kernel_divisor_and_offset",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_kernel_divisor_and_offset(self, kernel:list, divisor:float, offset:float) -> "IConvolutionFilter":
-        """Initializes a new instance with the specified kernel, divisor, and offset."""
+        """Initialize a new instance with the specified kernel, divisor, and offset."""
         return self._intf.invoke(IConvolutionFilterFactory._metadata, IConvolutionFilterFactory._initialize_with_kernel_divisor_and_offset_metadata, kernel, divisor, offset, out_arg())
 
 
@@ -19546,7 +19546,7 @@ agcls.AgClassCatalog.add_catalog_entry("{f262f8e7-74a5-440e-9754-d3c8a4196abf}",
 agcls.AgTypeNameMap["IConvolutionFilterFactory"] = IConvolutionFilterFactory
 
 class IEdgeDetectFilterFactory(object):
-    """Applies a convolution filter to detect edges in the source raster."""
+    """Apply a convolution filter to detect edges in the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19583,14 +19583,14 @@ class IEdgeDetectFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "EdgeDetectFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IEdgeDetectFilterFactory._metadata, IEdgeDetectFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_method_metadata = { "name" : "initialize_with_method",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(EDGE_DETECT_METHOD), agmarshall.AgInterface_out_arg,) }
     def initialize_with_method(self, method:"EDGE_DETECT_METHOD") -> "EdgeDetectFilter":
-        """Initializes a new instance with the specified edge detect method."""
+        """Initialize a new instance with the specified edge detect method."""
         return self._intf.invoke(IEdgeDetectFilterFactory._metadata, IEdgeDetectFilterFactory._initialize_with_method_metadata, method, out_arg())
 
 
@@ -19634,7 +19634,7 @@ class IFilteringRasterStreamFactory(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRasterStream"), agmarshall.AgInterface_in_arg("IRasterFilter"), agmarshall.AgInterface_out_arg,) }
     def initialize(self, rasterStream:"IRasterStream", filter:"IRasterFilter") -> "FilteringRasterStream":
-        """Initializes a new instance with a raster stream and the raster filter that will be applied to each update of that stream."""
+        """Initialize a new instance with a raster stream and the raster filter that will be applied to each update of that stream."""
         return self._intf.invoke(IFilteringRasterStreamFactory._metadata, IFilteringRasterStreamFactory._initialize_metadata, rasterStream, filter, out_arg())
 
 
@@ -19679,14 +19679,14 @@ class IFlipFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "FlipFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IFlipFilterFactory._metadata, IFlipFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_flip_axis_metadata = { "name" : "initialize_with_flip_axis",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(FLIP_AXIS), agmarshall.AgInterface_out_arg,) }
     def initialize_with_flip_axis(self, flipAxis:"FLIP_AXIS") -> "FlipFilter":
-        """Initializes a new instance with the specified flip axis."""
+        """Initialize a new instance with the specified flip axis."""
         return self._intf.invoke(IFlipFilterFactory._metadata, IFlipFilterFactory._initialize_with_flip_axis_metadata, flipAxis, out_arg())
 
 
@@ -19694,7 +19694,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0f7bc6a1-42ac-41f0-8f42-d915fba6b859}",
 agcls.AgTypeNameMap["IFlipFilterFactory"] = IFlipFilterFactory
 
 class IGammaCorrectionFilterFactory(object):
-    """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+    """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19731,14 +19731,14 @@ class IGammaCorrectionFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "GammaCorrectionFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IGammaCorrectionFilterFactory._metadata, IGammaCorrectionFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_gamma_metadata = { "name" : "initialize_with_gamma",
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_gamma(self, gamma:float) -> "GammaCorrectionFilter":
-        """Initializes a new instance with the specified gamma."""
+        """Initialize a new instance with the specified gamma."""
         return self._intf.invoke(IGammaCorrectionFilterFactory._metadata, IGammaCorrectionFilterFactory._initialize_with_gamma_metadata, gamma, out_arg())
 
 
@@ -19746,7 +19746,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4e0be3d1-f9ca-47b6-bc7b-31fd98c824a6}",
 agcls.AgTypeNameMap["IGammaCorrectionFilterFactory"] = IGammaCorrectionFilterFactory
 
 class IGaussianBlurFilterFactory(object):
-    """Applies a convolution filter to blur the source raster using the Gaussian function."""
+    """Apply a convolution filter to blur the source raster using the Gaussian function."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19782,7 +19782,7 @@ class IGaussianBlurFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "GaussianBlurFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IGaussianBlurFilterFactory._metadata, IGaussianBlurFilterFactory._initialize_metadata, out_arg())
 
 
@@ -19790,7 +19790,7 @@ agcls.AgClassCatalog.add_catalog_entry("{c4f3b576-0d25-4b06-9a79-773821d5c97b}",
 agcls.AgTypeNameMap["IGaussianBlurFilterFactory"] = IGaussianBlurFilterFactory
 
 class IGradientDetectFilterFactory(object):
-    """Applies a convolution filter to detect gradients in the source raster."""
+    """Apply a convolution filter to detect gradients in the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19827,14 +19827,14 @@ class IGradientDetectFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "GradientDetectFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IGradientDetectFilterFactory._metadata, IGradientDetectFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_method_metadata = { "name" : "initialize_with_method",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(GRADIENT_DETECT_METHOD), agmarshall.AgInterface_out_arg,) }
     def initialize_with_method(self, method:"GRADIENT_DETECT_METHOD") -> "GradientDetectFilter":
-        """Initializes a new instance with specified gradient detect method."""
+        """Initialize a new instance with specified gradient detect method."""
         return self._intf.invoke(IGradientDetectFilterFactory._metadata, IGradientDetectFilterFactory._initialize_with_method_metadata, method, out_arg())
 
 
@@ -19842,7 +19842,7 @@ agcls.AgClassCatalog.add_catalog_entry("{ab421e7c-80f3-4503-a29c-5becb2178d44}",
 agcls.AgTypeNameMap["IGradientDetectFilterFactory"] = IGradientDetectFilterFactory
 
 class IJpeg2000WriterInitializer(object):
-    """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
+    """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19881,28 +19881,28 @@ class IJpeg2000WriterInitializer(object):
             "arg_types" : (agcom.BSTR, agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgEnum_arg(JPEG2000_COMPRESSION_PROFILE), agmarshall.INT_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def write_string(self, imageUri:str, compressionProfile:"JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
-        """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image must be in the image, as in a GeoTIFF."""
+        """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image must be in the image, as in a GeoTIFF."""
         return self._intf.invoke(IJpeg2000WriterInitializer._metadata, IJpeg2000WriterInitializer._write_string_metadata, imageUri, compressionProfile, compressionRate, jpeg2000Uri, overwriteExistingFile)
 
     _write_extent_string_metadata = { "name" : "write_extent_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(JPEG2000_COMPRESSION_PROFILE), agmarshall.INT_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def write_extent_string(self, imageUri:str, extent:list, compressionProfile:"JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
-        """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
+        """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         return self._intf.invoke(IJpeg2000WriterInitializer._metadata, IJpeg2000WriterInitializer._write_extent_string_metadata, imageUri, extent, compressionProfile, compressionRate, jpeg2000Uri, overwriteExistingFile)
 
     _write_extent_and_sub_extent_string_metadata = { "name" : "write_extent_and_sub_extent_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(JPEG2000_COMPRESSION_PROFILE), agmarshall.INT_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def write_extent_and_sub_extent_string(self, imageUri:str, extent:list, subExtent:list, compressionProfile:"JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
-        """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
+        """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         return self._intf.invoke(IJpeg2000WriterInitializer._metadata, IJpeg2000WriterInitializer._write_extent_and_sub_extent_string_metadata, imageUri, extent, subExtent, compressionProfile, compressionRate, jpeg2000Uri, overwriteExistingFile)
 
     _write_extent_and_sub_extent_transparent_color_string_metadata = { "name" : "write_extent_and_sub_extent_transparent_color_string",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL, agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(JPEG2000_COMPRESSION_PROFILE), agmarshall.INT_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.OLE_COLOR_arg,) }
     def write_extent_and_sub_extent_transparent_color_string(self, imageUri:str, extent:list, subExtent:list, compressionProfile:"JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool, transparentColor:agcolor.Color) -> None:
-        """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
+        """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         return self._intf.invoke(IJpeg2000WriterInitializer._metadata, IJpeg2000WriterInitializer._write_extent_and_sub_extent_transparent_color_string_metadata, imageUri, extent, subExtent, compressionProfile, compressionRate, jpeg2000Uri, overwriteExistingFile, transparentColor)
 
 
@@ -19946,7 +19946,7 @@ class ILevelsFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "LevelsFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(ILevelsFilterFactory._metadata, ILevelsFilterFactory._initialize_metadata, out_arg())
 
 
@@ -19990,7 +19990,7 @@ class IProjectionRasterStreamPluginActivatorFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "ProjectionRasterStreamPluginActivator":
-        """Initializes a new instance of the Activator type."""
+        """Initialize a new instance of the Activator type."""
         return self._intf.invoke(IProjectionRasterStreamPluginActivatorFactory._metadata, IProjectionRasterStreamPluginActivatorFactory._initialize_metadata, out_arg())
 
 
@@ -20036,21 +20036,21 @@ class IRasterFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string_uri(self, uri:str) -> "IRaster":
-        """Initializes a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats."""
+        """Initialize a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats."""
         return self._intf.invoke(IRasterFactory._metadata, IRasterFactory._initialize_with_string_uri_metadata, uri, out_arg())
 
     _initialize_with_string_uri_xy_width_and_height_metadata = { "name" : "initialize_with_string_uri_xy_width_and_height",
             "arg_types" : (agcom.BSTR, agcom.INT, agcom.INT, agcom.INT, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string_uri_xy_width_and_height(self, uri:str, x:int, y:int, width:int, height:int) -> "IRaster":
-        """Initializes a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats."""
+        """Initialize a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats."""
         return self._intf.invoke(IRasterFactory._metadata, IRasterFactory._initialize_with_string_uri_xy_width_and_height_metadata, uri, x, y, width, height, out_arg())
 
     _initialize_with_raster_metadata = { "name" : "initialize_with_raster",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_raster(self, raster:"IRaster") -> "IRaster":
-        """Initializes a raster from another raster."""
+        """Initialize a raster from another raster."""
         return self._intf.invoke(IRasterFactory._metadata, IRasterFactory._initialize_with_raster_metadata, raster, out_arg())
 
 
@@ -20099,42 +20099,42 @@ class IRasterAttributesFactory(object):
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_format(self, width:int, height:int, rasterFormat:"RASTER_FORMAT") -> "RasterAttributes":
-        """Initializes a new instance with the width and height of the raster in pixels, and the given raster format."""
+        """Initialize a new instance with the width and height of the raster in pixels, and the given raster format."""
         return self._intf.invoke(IRasterAttributesFactory._metadata, IRasterAttributesFactory._initialize_with_format_metadata, width, height, rasterFormat, out_arg())
 
     _initialize_with_format_and_type_metadata = { "name" : "initialize_with_format_and_type",
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgEnum_arg(RASTER_TYPE), agmarshall.AgInterface_out_arg,) }
     def initialize_with_format_and_type(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE") -> "RasterAttributes":
-        """Initializes a new instance with the width and height of the raster in pixels, and the given raster format and raster type."""
+        """Initialize a new instance with the width and height of the raster in pixels, and the given raster format and raster type."""
         return self._intf.invoke(IRasterAttributesFactory._metadata, IRasterAttributesFactory._initialize_with_format_and_type_metadata, width, height, rasterFormat, rasterType, out_arg())
 
     _initialize_with_format_type_and_orientation_metadata = { "name" : "initialize_with_format_type_and_orientation",
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgEnum_arg(RASTER_TYPE), agmarshall.AgEnum_arg(RASTER_ORIENTATION), agmarshall.AgInterface_out_arg,) }
     def initialize_with_format_type_and_orientation(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION") -> "RasterAttributes":
-        """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, and raster orientation."""
+        """Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, and raster orientation."""
         return self._intf.invoke(IRasterAttributesFactory._metadata, IRasterAttributesFactory._initialize_with_format_type_and_orientation_metadata, width, height, rasterFormat, rasterType, rasterOrientation, out_arg())
 
     _initialize_with_format_type_orientation_and_alignment_metadata = { "name" : "initialize_with_format_type_orientation_and_alignment",
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, agcom.LONG, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgEnum_arg(RASTER_TYPE), agmarshall.AgEnum_arg(RASTER_ORIENTATION), agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_format_type_orientation_and_alignment(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION", rowAlignment:int) -> "RasterAttributes":
-        """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, and row alignment."""
+        """Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, and row alignment."""
         return self._intf.invoke(IRasterAttributesFactory._metadata, IRasterAttributesFactory._initialize_with_format_type_orientation_and_alignment_metadata, width, height, rasterFormat, rasterType, rasterOrientation, rowAlignment, out_arg())
 
     _initialize_with_format_type_orientation_alignment_and_ratio_metadata = { "name" : "initialize_with_format_type_orientation_alignment_and_ratio",
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, agcom.LONG, agcom.INT, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgEnum_arg(RASTER_FORMAT), agmarshall.AgEnum_arg(RASTER_TYPE), agmarshall.AgEnum_arg(RASTER_ORIENTATION), agmarshall.INT_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_format_type_orientation_alignment_and_ratio(self, width:int, height:int, rasterFormat:"RASTER_FORMAT", rasterType:"RASTER_TYPE", rasterOrientation:"RASTER_ORIENTATION", rowAlignment:int, pixelAspectRatio:float) -> "RasterAttributes":
-        """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, row alignment, and pixel aspect ratio."""
+        """Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, row alignment, and pixel aspect ratio."""
         return self._intf.invoke(IRasterAttributesFactory._metadata, IRasterAttributesFactory._initialize_with_format_type_orientation_alignment_and_ratio_metadata, width, height, rasterFormat, rasterType, rasterOrientation, rowAlignment, pixelAspectRatio, out_arg())
 
     _initialize_with_raster_metadata = { "name" : "initialize_with_raster",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_raster(self, raster:"IRaster") -> "RasterAttributes":
-        """Initializes a new instance with the attributes of the specified raster"""
+        """Initialize a new instance with the attributes of the specified raster"""
         return self._intf.invoke(IRasterAttributesFactory._metadata, IRasterAttributesFactory._initialize_with_raster_metadata, raster, out_arg())
 
 
@@ -20142,7 +20142,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5e2aeff9-22ff-4a0f-984d-dc0d92d738c9}",
 agcls.AgTypeNameMap["IRasterAttributesFactory"] = IRasterAttributesFactory
 
 class IRotateFilterFactory(object):
-    """Rotates the source raster clockwise by the specified angle."""
+    """Rotate the source raster clockwise by the specified angle."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20179,14 +20179,14 @@ class IRotateFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "RotateFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(IRotateFilterFactory._metadata, IRotateFilterFactory._initialize_metadata, out_arg())
 
     _initialize_with_angle_metadata = { "name" : "initialize_with_angle",
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_angle(self, rotateAngle:float) -> "RotateFilter":
-        """Initializes a new instance with a counterclockwise rotation angle."""
+        """Initialize a new instance with a counterclockwise rotation angle."""
         return self._intf.invoke(IRotateFilterFactory._metadata, IRotateFilterFactory._initialize_with_angle_metadata, rotateAngle, out_arg())
 
 
@@ -20194,7 +20194,7 @@ agcls.AgClassCatalog.add_catalog_entry("{413b5f7f-9fa5-48ba-bb49-d57948acc6ed}",
 agcls.AgTypeNameMap["IRotateFilterFactory"] = IRotateFilterFactory
 
 class ISequenceFilterFactory(object):
-    """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+    """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20230,7 +20230,7 @@ class ISequenceFilterFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "SequenceFilter":
-        """Initializes a new instance."""
+        """Initialize a new instance."""
         return self._intf.invoke(ISequenceFilterFactory._metadata, ISequenceFilterFactory._initialize_metadata, out_arg())
 
 
@@ -20238,7 +20238,7 @@ agcls.AgClassCatalog.add_catalog_entry("{b3f075e4-7de5-4d8c-adbe-89862537e530}",
 agcls.AgTypeNameMap["ISequenceFilterFactory"] = ISequenceFilterFactory
 
 class ISharpenFilterFactory(object):
-    """Applies a convolution filter to increase the sharpness of the source raster."""
+    """Apply a convolution filter to increase the sharpness of the source raster."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20328,21 +20328,21 @@ class IVideoStreamFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string_uri(self, uri:str) -> "VideoStream":
-        """Initializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
+        """Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
         return self._intf.invoke(IVideoStreamFactory._metadata, IVideoStreamFactory._initialize_with_string_uri_metadata, uri, out_arg())
 
     _initialize_with_string_uri_and_audio_metadata = { "name" : "initialize_with_string_uri_and_audio",
             "arg_types" : (agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string_uri_and_audio(self, uri:str, loadAudio:bool) -> "VideoStream":
-        """Initializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
+        """Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
         return self._intf.invoke(IVideoStreamFactory._metadata, IVideoStreamFactory._initialize_with_string_uri_and_audio_metadata, uri, loadAudio, out_arg())
 
     _initialize_audio_video_with_string_uri_metadata = { "name" : "initialize_audio_video_with_string_uri",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_audio_video_with_string_uri(self, uri:str, audioUri:str) -> "VideoStream":
-        """Initializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
+        """Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
         return self._intf.invoke(IVideoStreamFactory._metadata, IVideoStreamFactory._initialize_audio_video_with_string_uri_metadata, uri, audioUri, out_arg())
 
 
@@ -20392,49 +20392,49 @@ class IMarkerBatchPrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "MarkerBatchPrimitive":
-        """Initializes a default marker batch primitive..."""
+        """Initialize a default marker batch primitive..."""
         return self._intf.invoke(IMarkerBatchPrimitiveFactory._metadata, IMarkerBatchPrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_set_hint_metadata = { "name" : "initialize_with_set_hint",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_set_hint(self, setHint:"SET_HINT") -> "MarkerBatchPrimitive":
-        """Initializes a marker batch primitive with the specified setHint..."""
+        """Initialize a marker batch primitive with the specified setHint..."""
         return self._intf.invoke(IMarkerBatchPrimitiveFactory._metadata, IMarkerBatchPrimitiveFactory._initialize_with_set_hint_metadata, setHint, out_arg())
 
     _initialize_with_size_source_metadata = { "name" : "initialize_with_size_source",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE), agmarshall.AgInterface_out_arg,) }
     def initialize_with_size_source(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE") -> "MarkerBatchPrimitive":
-        """Initializes a marker batch primitive with the specified sizeSource..."""
+        """Initialize a marker batch primitive with the specified sizeSource..."""
         return self._intf.invoke(IMarkerBatchPrimitiveFactory._metadata, IMarkerBatchPrimitiveFactory._initialize_with_size_source_metadata, sizeSource, out_arg())
 
     _initialize_with_size_source_and_sort_order_metadata = { "name" : "initialize_with_size_source_and_sort_order",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE), agmarshall.AgEnum_arg(MARKER_BATCH_SORT_ORDER), agmarshall.AgInterface_out_arg,) }
     def initialize_with_size_source_and_sort_order(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER") -> "MarkerBatchPrimitive":
-        """Initializes a marker batch primitive with the specified sizeSource and sortOrder..."""
+        """Initialize a marker batch primitive with the specified sizeSource and sortOrder..."""
         return self._intf.invoke(IMarkerBatchPrimitiveFactory._metadata, IMarkerBatchPrimitiveFactory._initialize_with_size_source_and_sort_order_metadata, sizeSource, sortOrder, out_arg())
 
     _initialize_size_source_sort_order_and_set_hint_metadata = { "name" : "initialize_size_source_sort_order_and_set_hint",
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE), agmarshall.AgEnum_arg(MARKER_BATCH_SORT_ORDER), agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_size_source_sort_order_and_set_hint(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER", setHint:"SET_HINT") -> "MarkerBatchPrimitive":
-        """Initializes a marker batch primitive with the specified sizeSource, sortOrder, and setHint. This is equivalent to constructing a marker batch with the specified arguments and a marker batch rendering method of Automatic."""
+        """Initialize a marker batch primitive with the specified sizeSource, sortOrder, and setHint. This is equivalent to constructing a marker batch with the specified arguments and a marker batch rendering method of Automatic."""
         return self._intf.invoke(IMarkerBatchPrimitiveFactory._metadata, IMarkerBatchPrimitiveFactory._initialize_size_source_sort_order_and_set_hint_metadata, sizeSource, sortOrder, setHint, out_arg())
 
     _initialize_size_source_sort_order_set_hint_and_rendering_method_metadata = { "name" : "initialize_size_source_sort_order_set_hint_and_rendering_method",
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_SIZE_SOURCE), agmarshall.AgEnum_arg(MARKER_BATCH_SORT_ORDER), agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgEnum_arg(MARKER_BATCH_RENDERING_METHOD), agmarshall.AgInterface_out_arg,) }
     def initialize_size_source_sort_order_set_hint_and_rendering_method(self, sizeSource:"MARKER_BATCH_SIZE_SOURCE", sortOrder:"MARKER_BATCH_SORT_ORDER", setHint:"SET_HINT", renderingMethod:"MARKER_BATCH_RENDERING_METHOD") -> "MarkerBatchPrimitive":
-        """Initializes a marker batch primitive with the specified arguments."""
+        """Initialize a marker batch primitive with the specified arguments."""
         return self._intf.invoke(IMarkerBatchPrimitiveFactory._metadata, IMarkerBatchPrimitiveFactory._initialize_size_source_sort_order_set_hint_and_rendering_method_metadata, sizeSource, sortOrder, setHint, renderingMethod, out_arg())
 
     _supported_metadata = { "name" : "supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(MARKER_BATCH_RENDERING_METHOD), agmarshall.VARIANT_BOOL_arg,) }
     def supported(self, renderingMethod:"MARKER_BATCH_RENDERING_METHOD") -> bool:
-        """Determines whether or not the video card supports the marker batch primitive with the given renderingMethod."""
+        """Determine whether or not the video card supports the marker batch primitive with the given renderingMethod."""
         return self._intf.invoke(IMarkerBatchPrimitiveFactory._metadata, IMarkerBatchPrimitiveFactory._supported_metadata, renderingMethod, out_arg())
 
 
@@ -20478,7 +20478,7 @@ class IMarkerBatchPrimitiveOptionalParametersFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "MarkerBatchPrimitiveOptionalParameters":
-        """Initializes default marker batch primitive optional parameters. All per-marker parameters are initially empty."""
+        """Initialize default marker batch primitive optional parameters. All per-marker parameters are initially empty."""
         return self._intf.invoke(IMarkerBatchPrimitiveOptionalParametersFactory._metadata, IMarkerBatchPrimitiveOptionalParametersFactory._initialize_metadata, out_arg())
 
 
@@ -20523,14 +20523,14 @@ class IMaximumCountPathPrimitiveUpdatePolicyFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "MaximumCountPathPrimitiveUpdatePolicy":
-        """Constructs a default update policy. This is equivalent to constructing a policy with maximum count set to 0 and a remove location of Front."""
+        """Construct a default update policy. This is equivalent to constructing a policy with maximum count set to 0 and a remove location of Front."""
         return self._intf.invoke(IMaximumCountPathPrimitiveUpdatePolicyFactory._metadata, IMaximumCountPathPrimitiveUpdatePolicyFactory._initialize_metadata, out_arg())
 
     _initialize_with_parameters_metadata = { "name" : "initialize_with_parameters",
             "arg_types" : (agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgEnum_arg(PATH_PRIMITIVE_REMOVE_LOCATION), agmarshall.AgInterface_out_arg,) }
     def initialize_with_parameters(self, maximumCount:int, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "MaximumCountPathPrimitiveUpdatePolicy":
-        """Initializes a policy with the specified maximumCount and removeLocation."""
+        """Initialize a policy with the specified maximumCount and removeLocation."""
         return self._intf.invoke(IMaximumCountPathPrimitiveUpdatePolicyFactory._metadata, IMaximumCountPathPrimitiveUpdatePolicyFactory._initialize_with_parameters_metadata, maximumCount, removeLocation, out_arg())
 
 
@@ -20576,7 +20576,7 @@ class IModelPrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "ModelPrimitive":
-        """Initializes a default model primitive."""
+        """Initialize a default model primitive."""
         return self._intf.invoke(IModelPrimitiveFactory._metadata, IModelPrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_string_uri_metadata = { "name" : "initialize_with_string_uri",
@@ -20598,7 +20598,7 @@ agcls.AgClassCatalog.add_catalog_entry("{93ea79ef-8da7-4992-b8fa-81d372d4258a}",
 agcls.AgTypeNameMap["IModelPrimitiveFactory"] = IModelPrimitiveFactory
 
 class IPathPrimitiveFactory(object):
-    """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+    """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20637,14 +20637,14 @@ class IPathPrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "PathPrimitive":
-        """Initializes a default path primitive. This is equivalent to constructing a path primitive with an initial capacity of 16."""
+        """Initialize a default path primitive. This is equivalent to constructing a path primitive with an initial capacity of 16."""
         return self._intf.invoke(IPathPrimitiveFactory._metadata, IPathPrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_capacity_metadata = { "name" : "initialize_with_capacity",
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_capacity(self, capacity:int) -> "PathPrimitive":
-        """Initializes a path primitive with the specified capacity."""
+        """Initialize a path primitive with the specified capacity."""
         return self._intf.invoke(IPathPrimitiveFactory._metadata, IPathPrimitiveFactory._initialize_with_capacity_metadata, capacity, out_arg())
 
     _get_minimum_width_supported_metadata = { "name" : "minimum_width_supported",
@@ -20652,7 +20652,7 @@ class IPathPrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_width_supported(self) -> float:
-        """Gets the minimum width, in pixels, supported by the video card."""
+        """Get the minimum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPathPrimitiveFactory._metadata, IPathPrimitiveFactory._get_minimum_width_supported_metadata)
 
     _get_maximum_width_supported_metadata = { "name" : "maximum_width_supported",
@@ -20660,7 +20660,7 @@ class IPathPrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_width_supported(self) -> float:
-        """Gets the maximum width, in pixels, supported by the video card."""
+        """Get the maximum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPathPrimitiveFactory._metadata, IPathPrimitiveFactory._get_maximum_width_supported_metadata)
 
 
@@ -20668,7 +20668,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2b9b98c4-17d2-4b72-a6cf-c9bc87eb11e8}",
 agcls.AgTypeNameMap["IPathPrimitiveFactory"] = IPathPrimitiveFactory
 
 class IPixelSizeDisplayConditionFactory(object):
-    """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+    """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20705,14 +20705,14 @@ class IPixelSizeDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "PixelSizeDisplayCondition":
-        """Initializes a default pixel size display condition. minimum pixel size is set to 0 and maximum pixel size is set to Int32.MaxValue. With this interval, an object is always rendered regardless of how many pixels its bounding sphere or rectangle covers."""
+        """Initialize a default pixel size display condition. minimum pixel size is set to 0 and maximum pixel size is set to Int32.MaxValue. With this interval, an object is always rendered regardless of how many pixels its bounding sphere or rectangle covers."""
         return self._intf.invoke(IPixelSizeDisplayConditionFactory._metadata, IPixelSizeDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_with_pixel_sizes_metadata = { "name" : "initialize_with_pixel_sizes",
             "arg_types" : (agcom.INT, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_pixel_sizes(self, minimumPixelSize:int, maximumPixelSize:int) -> "PixelSizeDisplayCondition":
-        """Initializes a pixel size display condition with the inclusive interval [minimumPixelSize, maximumPixelSize]..."""
+        """Initialize a pixel size display condition with the inclusive interval [minimumPixelSize, maximumPixelSize]..."""
         return self._intf.invoke(IPixelSizeDisplayConditionFactory._metadata, IPixelSizeDisplayConditionFactory._initialize_with_pixel_sizes_metadata, minimumPixelSize, maximumPixelSize, out_arg())
 
 
@@ -20759,14 +20759,14 @@ class IPointBatchPrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "PointBatchPrimitive":
-        """Initializes a default point batch primitive. This is equivalent to constructing a point batch with a set hint of Frequent."""
+        """Initialize a default point batch primitive. This is equivalent to constructing a point batch with a set hint of Frequent."""
         return self._intf.invoke(IPointBatchPrimitiveFactory._metadata, IPointBatchPrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_set_hint_metadata = { "name" : "initialize_with_set_hint",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_set_hint(self, setHint:"SET_HINT") -> "PointBatchPrimitive":
-        """Initializes a new instance of a point batch primitive with the specified set hint."""
+        """Initialize a new instance of a point batch primitive with the specified set hint."""
         return self._intf.invoke(IPointBatchPrimitiveFactory._metadata, IPointBatchPrimitiveFactory._initialize_with_set_hint_metadata, setHint, out_arg())
 
     _get_minimum_pixel_size_supported_metadata = { "name" : "minimum_pixel_size_supported",
@@ -20774,7 +20774,7 @@ class IPointBatchPrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_pixel_size_supported(self) -> float:
-        """Gets the minimum pixel size supported by the video card."""
+        """Get the minimum pixel size supported by the video card."""
         return self._intf.get_property(IPointBatchPrimitiveFactory._metadata, IPointBatchPrimitiveFactory._get_minimum_pixel_size_supported_metadata)
 
     _get_maximum_pixel_size_supported_metadata = { "name" : "maximum_pixel_size_supported",
@@ -20782,7 +20782,7 @@ class IPointBatchPrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_pixel_size_supported(self) -> float:
-        """Gets the maximum pixel size supported by the video card."""
+        """Get the maximum pixel size supported by the video card."""
         return self._intf.get_property(IPointBatchPrimitiveFactory._metadata, IPointBatchPrimitiveFactory._get_maximum_pixel_size_supported_metadata)
 
 
@@ -20826,7 +20826,7 @@ class IPointBatchPrimitiveOptionalParametersFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "PointBatchPrimitiveOptionalParameters":
-        """Initializes a default point batch primitive optional parameters object."""
+        """Initialize a default point batch primitive optional parameters object."""
         return self._intf.invoke(IPointBatchPrimitiveOptionalParametersFactory._metadata, IPointBatchPrimitiveOptionalParametersFactory._initialize_metadata, out_arg())
 
 
@@ -20834,7 +20834,7 @@ agcls.AgClassCatalog.add_catalog_entry("{b108564a-969c-43cb-97ce-e96dc0c7001c}",
 agcls.AgTypeNameMap["IPointBatchPrimitiveOptionalParametersFactory"] = IPointBatchPrimitiveOptionalParametersFactory
 
 class IPolylinePrimitiveFactory(object):
-    """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+    """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20877,42 +20877,42 @@ class IPolylinePrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "PolylinePrimitive":
-        """Initializes a default polyline primitive. This is equivalent to constructing a polyline with a set hint of Frequent and a polyline type of LineStrip."""
+        """Initialize a default polyline primitive. This is equivalent to constructing a polyline with a set hint of Frequent and a polyline type of LineStrip."""
         return self._intf.invoke(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_interpolator_and_set_hint_metadata = { "name" : "initialize_with_interpolator_and_set_hint",
             "arg_types" : (agcom.PVOID, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPositionInterpolator"), agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", setHint:"SET_HINT") -> "PolylinePrimitive":
-        """Initializes a polyline primitive with the specified interpolator and setHint."""
+        """Initialize a polyline primitive with the specified interpolator and setHint."""
         return self._intf.invoke(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._initialize_with_interpolator_and_set_hint_metadata, interpolator, setHint, out_arg())
 
     _initialize_with_type_and_hint_metadata = { "name" : "initialize_with_type_and_hint",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE), agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_type_and_hint(self, polylineType:"POLYLINE_TYPE", setHint:"SET_HINT") -> "PolylinePrimitive":
-        """Initializes a new instance of a polyline primitive with the specified polylineType and setHint."""
+        """Initialize a new instance of a polyline primitive with the specified polylineType and setHint."""
         return self._intf.invoke(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._initialize_with_type_and_hint_metadata, polylineType, setHint, out_arg())
 
     _initialize_with_interpolator_metadata = { "name" : "initialize_with_interpolator",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IPositionInterpolator"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_interpolator(self, interpolator:"IPositionInterpolator") -> "PolylinePrimitive":
-        """Initializes a polyline primitive with the specified interpolator. This is equivalent to constructing a polyline with the specified interpolator and a set hint of Frequent."""
+        """Initialize a polyline primitive with the specified interpolator. This is equivalent to constructing a polyline with the specified interpolator and a set hint of Frequent."""
         return self._intf.invoke(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._initialize_with_interpolator_metadata, interpolator, out_arg())
 
     _initialize_with_hint_metadata = { "name" : "initialize_with_hint",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_hint(self, setHint:"SET_HINT") -> "PolylinePrimitive":
-        """Initializes a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint."""
+        """Initialize a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint."""
         return self._intf.invoke(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._initialize_with_hint_metadata, setHint, out_arg())
 
     _initialize_with_type_metadata = { "name" : "initialize_with_type",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE), agmarshall.AgInterface_out_arg,) }
     def initialize_with_type(self, polylineType:"POLYLINE_TYPE") -> "PolylinePrimitive":
-        """Initializes a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent."""
+        """Initialize a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent."""
         return self._intf.invoke(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._initialize_with_type_metadata, polylineType, out_arg())
 
     _get_minimum_width_supported_metadata = { "name" : "minimum_width_supported",
@@ -20920,7 +20920,7 @@ class IPolylinePrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_width_supported(self) -> float:
-        """Gets the minimum width, in pixels, supported by the video card."""
+        """Get the minimum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._get_minimum_width_supported_metadata)
 
     _get_maximum_width_supported_metadata = { "name" : "maximum_width_supported",
@@ -20928,7 +20928,7 @@ class IPolylinePrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_width_supported(self) -> float:
-        """Gets the maximum width, in pixels, supported by the video card."""
+        """Get the maximum width, in pixels, supported by the video card."""
         return self._intf.get_property(IPolylinePrimitiveFactory._metadata, IPolylinePrimitiveFactory._get_maximum_width_supported_metadata)
 
 
@@ -20972,7 +20972,7 @@ class IPolylinePrimitiveOptionalParametersFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "PolylinePrimitiveOptionalParameters":
-        """Initializes default polyline primitive optional parameters. All per-segment parameters are initially empty."""
+        """Initialize default polyline primitive optional parameters. All per-segment parameters are initially empty."""
         return self._intf.invoke(IPolylinePrimitiveOptionalParametersFactory._metadata, IPolylinePrimitiveOptionalParametersFactory._initialize_metadata, out_arg())
 
 
@@ -21018,21 +21018,21 @@ class IRasterImageGlobeOverlayFactory(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_string(self, uri:str, extent:list) -> "RasterImageGlobeOverlay":
-        """Initializes a raster image globe overlay with the provided values."""
+        """Initialize a raster image globe overlay with the provided values."""
         return self._intf.invoke(IRasterImageGlobeOverlayFactory._metadata, IRasterImageGlobeOverlayFactory._initialize_with_string_metadata, uri, extent, out_arg())
 
     _initialize_with_color_metadata = { "name" : "initialize_with_color",
             "arg_types" : (agcom.OLE_COLOR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.OLE_COLOR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_color(self, color:agcolor.Color, extent:list) -> "RasterImageGlobeOverlay":
-        """Initializes a raster image globe overlay with the provided values."""
+        """Initialize a raster image globe overlay with the provided values."""
         return self._intf.invoke(IRasterImageGlobeOverlayFactory._metadata, IRasterImageGlobeOverlayFactory._initialize_with_color_metadata, color, extent, out_arg())
 
     _initialize_with_raster_metadata = { "name" : "initialize_with_raster",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"), agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_raster(self, raster:"IRaster", extent:list) -> "RasterImageGlobeOverlay":
-        """Initializes a raster image globe overlay with the provided values."""
+        """Initialize a raster image globe overlay with the provided values."""
         return self._intf.invoke(IRasterImageGlobeOverlayFactory._metadata, IRasterImageGlobeOverlayFactory._initialize_with_raster_metadata, raster, extent, out_arg())
 
 
@@ -21078,21 +21078,21 @@ class IRhumbLineInterpolatorFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "RhumbLineInterpolator":
-        """Initializes a default rhumb line interpolator. This is equivalent to constructing a rhumb line interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree."""
+        """Initialize a default rhumb line interpolator. This is equivalent to constructing a rhumb line interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree."""
         return self._intf.invoke(IRhumbLineInterpolatorFactory._metadata, IRhumbLineInterpolatorFactory._initialize_metadata, out_arg())
 
     _initialize_with_central_body_metadata = { "name" : "initialize_with_central_body",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_central_body(self, centralBody:str) -> "RhumbLineInterpolator":
-        """Initializes a rhumb line interpolator with the specified centralBody and a granularity of 1 degree."""
+        """Initialize a rhumb line interpolator with the specified centralBody and a granularity of 1 degree."""
         return self._intf.invoke(IRhumbLineInterpolatorFactory._metadata, IRhumbLineInterpolatorFactory._initialize_with_central_body_metadata, centralBody, out_arg())
 
     _initialize_with_central_body_and_granularity_metadata = { "name" : "initialize_with_central_body_and_granularity",
             "arg_types" : (agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_central_body_and_granularity(self, centralBody:str, granularity:float) -> "RhumbLineInterpolator":
-        """Initializes a rhumb line interpolator with the specified centralBody and granularity."""
+        """Initialize a rhumb line interpolator with the specified centralBody and granularity."""
         return self._intf.invoke(IRhumbLineInterpolatorFactory._metadata, IRhumbLineInterpolatorFactory._initialize_with_central_body_and_granularity_metadata, centralBody, granularity, out_arg())
 
 
@@ -21136,7 +21136,7 @@ class ISceneDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "SceneDisplayCondition":
-        """Initializes a default scene display condition. When this display condition is assigned to an object, such as a primitive, the object can be restricted to only render in certain scenes. Call set display in scene or display only in scene to limit the scenes."""
+        """Initialize a default scene display condition. When this display condition is assigned to an object, such as a primitive, the object can be restricted to only render in certain scenes. Call set display in scene or display only in scene to limit the scenes."""
         return self._intf.invoke(ISceneDisplayConditionFactory._metadata, ISceneDisplayConditionFactory._initialize_metadata, out_arg())
 
 
@@ -21187,7 +21187,7 @@ class ISceneManagerInitializer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def primitives(self) -> "PrimitiveManager":
-        """Gets the primitive manager, which is used to add primitives to your scenes."""
+        """Get the primitive manager, which is used to add primitives to your scenes."""
         return self._intf.get_property(ISceneManagerInitializer._metadata, ISceneManagerInitializer._get_primitives_metadata)
 
     _get_screen_overlays_metadata = { "name" : "screen_overlays",
@@ -21195,7 +21195,7 @@ class ISceneManagerInitializer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def screen_overlays(self) -> "ScreenOverlayManager":
-        """Gets the screen overlay manager, which is used to add screen overlays to your scenes."""
+        """Get the screen overlay manager, which is used to add screen overlays to your scenes."""
         return self._intf.get_property(ISceneManagerInitializer._metadata, ISceneManagerInitializer._get_screen_overlays_metadata)
 
     _get_textures_metadata = { "name" : "textures",
@@ -21203,7 +21203,7 @@ class ISceneManagerInitializer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def textures(self) -> "Texture2DFactory":
-        """Gets the texture 2d factory, which can be used to create textures from various sources."""
+        """Get the texture 2d factory, which can be used to create textures from various sources."""
         return self._intf.get_property(ISceneManagerInitializer._metadata, ISceneManagerInitializer._get_textures_metadata)
 
     _get_globe_overlay_settings_metadata = { "name" : "globe_overlay_settings",
@@ -21211,7 +21211,7 @@ class ISceneManagerInitializer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def globe_overlay_settings(self) -> "GlobeOverlaySettings":
-        """Gets the globe overlay settings, which are used to set global settings for all globe overlays."""
+        """Get the globe overlay settings, which are used to set global settings for all globe overlays."""
         return self._intf.get_property(ISceneManagerInitializer._metadata, ISceneManagerInitializer._get_globe_overlay_settings_metadata)
 
     _get_scenes_metadata = { "name" : "scenes",
@@ -21219,14 +21219,14 @@ class ISceneManagerInitializer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scenes(self) -> "SceneCollection":
-        """Gets a read-only collection of scenes that are associated with the scene manager."""
+        """Get a read-only collection of scenes that are associated with the scene manager."""
         return self._intf.get_property(ISceneManagerInitializer._metadata, ISceneManagerInitializer._get_scenes_metadata)
 
     _render_metadata = { "name" : "render",
             "arg_types" : (),
             "marshallers" : () }
     def render(self) -> None:
-        """Renders all scenes within an application. To render a specific scene, use the Render method."""
+        """Render all scenes within an application. To render a specific scene, use the Render method."""
         return self._intf.invoke(ISceneManagerInitializer._metadata, ISceneManagerInitializer._render_metadata, )
 
     _get_frame_rate_metadata = { "name" : "frame_rate",
@@ -21234,7 +21234,7 @@ class ISceneManagerInitializer(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def frame_rate(self) -> "FrameRate":
-        """Gets the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>."""
+        """Get the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>."""
         return self._intf.get_property(ISceneManagerInitializer._metadata, ISceneManagerInitializer._get_frame_rate_metadata)
 
 
@@ -21279,14 +21279,14 @@ class IScreenOverlayFactory(object):
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize(self, xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "IScreenOverlay":
-        """Initializes the overlay with the specified x position, y position, width, and height, all specified in pixels."""
+        """Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels."""
         return self._intf.invoke(IScreenOverlayFactory._metadata, IScreenOverlayFactory._initialize_metadata, xPixels, yPixels, widthPixels, heightPixels, out_arg())
 
     _initialize_with_position_and_size_metadata = { "name" : "initialize_with_position_and_size",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_position_and_size(self, position:list, size:list) -> "IScreenOverlay":
-        """Initializes the overlay with the specified position and size."""
+        """Initialize the overlay with the specified position and size."""
         return self._intf.invoke(IScreenOverlayFactory._metadata, IScreenOverlayFactory._initialize_with_position_and_size_metadata, position, size, out_arg())
 
 
@@ -21294,7 +21294,7 @@ agcls.AgClassCatalog.add_catalog_entry("{45754d2a-e83f-4c32-9792-c90d9620a83a}",
 agcls.AgTypeNameMap["IScreenOverlayFactory"] = IScreenOverlayFactory
 
 class ISolidPrimitiveFactory(object):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+    """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21333,14 +21333,14 @@ class ISolidPrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "SolidPrimitive":
-        """Initializes a default solid primitive. This is equivalent to constructing a solid primitive with a set hint of Frequent."""
+        """Initialize a default solid primitive. This is equivalent to constructing a solid primitive with a set hint of Frequent."""
         return self._intf.invoke(ISolidPrimitiveFactory._metadata, ISolidPrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_hint_metadata = { "name" : "initialize_with_hint",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_hint(self, setHint:"SET_HINT") -> "SolidPrimitive":
-        """Initializes a solid primitive with the specified setHint."""
+        """Initialize a solid primitive with the specified setHint."""
         return self._intf.invoke(ISolidPrimitiveFactory._metadata, ISolidPrimitiveFactory._initialize_with_hint_metadata, setHint, out_arg())
 
     _get_minimum_silhouette_width_supported_metadata = { "name" : "minimum_silhouette_width_supported",
@@ -21348,7 +21348,7 @@ class ISolidPrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def minimum_silhouette_width_supported(self) -> float:
-        """Gets the minimum silhouette width, in pixels, supported by the video card."""
+        """Get the minimum silhouette width, in pixels, supported by the video card."""
         return self._intf.get_property(ISolidPrimitiveFactory._metadata, ISolidPrimitiveFactory._get_minimum_silhouette_width_supported_metadata)
 
     _get_maximum_silhouette_width_supported_metadata = { "name" : "maximum_silhouette_width_supported",
@@ -21356,7 +21356,7 @@ class ISolidPrimitiveFactory(object):
             "marshallers" : (agmarshall.FLOAT_arg,) }
     @property
     def maximum_silhouette_width_supported(self) -> float:
-        """Gets the maximum silhouette width, in pixels, supported by the video card."""
+        """Get the maximum silhouette width, in pixels, supported by the video card."""
         return self._intf.get_property(ISolidPrimitiveFactory._metadata, ISolidPrimitiveFactory._get_maximum_silhouette_width_supported_metadata)
 
 
@@ -21404,35 +21404,35 @@ class ISurfaceMeshPrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "SurfaceMeshPrimitive":
-        """Initializes a default surface mesh primitive. This is equivalent to constructing a surface mesh with a set hint of Frequent and a surface mesh rendering method of Automatic."""
+        """Initialize a default surface mesh primitive. This is equivalent to constructing a surface mesh with a set hint of Frequent and a surface mesh rendering method of Automatic."""
         return self._intf.invoke(ISurfaceMeshPrimitiveFactory._metadata, ISurfaceMeshPrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_set_hint_metadata = { "name" : "initialize_with_set_hint",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_set_hint(self, setHint:"SET_HINT") -> "SurfaceMeshPrimitive":
-        """Initializes a surface mesh primitive with the specified setHint. This is equivalent to constructing a surface mesh with the specified setHint and a surface mesh rendering method of Automatic."""
+        """Initialize a surface mesh primitive with the specified setHint. This is equivalent to constructing a surface mesh with the specified setHint and a surface mesh rendering method of Automatic."""
         return self._intf.invoke(ISurfaceMeshPrimitiveFactory._metadata, ISurfaceMeshPrimitiveFactory._initialize_with_set_hint_metadata, setHint, out_arg())
 
     _initialize_with_set_hint_and_rendering_method_metadata = { "name" : "initialize_with_set_hint_and_rendering_method",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgEnum_arg(SURFACE_MESH_RENDERING_METHOD), agmarshall.AgInterface_out_arg,) }
     def initialize_with_set_hint_and_rendering_method(self, setHint:"SET_HINT", renderingMethod:"SURFACE_MESH_RENDERING_METHOD") -> "SurfaceMeshPrimitive":
-        """Initializes a surface mesh primitive with the specified setHint and renderingMethod."""
+        """Initialize a surface mesh primitive with the specified setHint and renderingMethod."""
         return self._intf.invoke(ISurfaceMeshPrimitiveFactory._metadata, ISurfaceMeshPrimitiveFactory._initialize_with_set_hint_and_rendering_method_metadata, setHint, renderingMethod, out_arg())
 
     _supported_metadata = { "name" : "supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(SURFACE_MESH_RENDERING_METHOD), agmarshall.VARIANT_BOOL_arg,) }
     def supported(self, renderingMethod:"SURFACE_MESH_RENDERING_METHOD") -> bool:
-        """Determines whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
+        """Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
         return self._intf.invoke(ISurfaceMeshPrimitiveFactory._metadata, ISurfaceMeshPrimitiveFactory._supported_metadata, renderingMethod, out_arg())
 
     _supported_with_default_rendering_method_metadata = { "name" : "supported_with_default_rendering_method",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     def supported_with_default_rendering_method(self) -> bool:
-        """Determines whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic."""
+        """Determine whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic."""
         return self._intf.invoke(ISurfaceMeshPrimitiveFactory._metadata, ISurfaceMeshPrimitiveFactory._supported_with_default_rendering_method_metadata, out_arg())
 
 
@@ -21477,7 +21477,7 @@ class ITerrainOverlayInitializer(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def supported(self) -> bool:
-        """Gets whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects."""
+        """Get whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects."""
         return self._intf.get_property(ITerrainOverlayInitializer._metadata, ITerrainOverlayInitializer._get_supported_metadata)
 
 
@@ -21523,21 +21523,21 @@ class ITextBatchPrimitiveFactory(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_graphics_font(self, font:"IGraphicsFont") -> "TextBatchPrimitive":
-        """Initializes a marker batch primitive with the specified font. This is equivalent to constructing a text batch with the specified font and a set hint of Frequent."""
+        """Initialize a marker batch primitive with the specified font. This is equivalent to constructing a text batch with the specified font and a set hint of Frequent."""
         return self._intf.invoke(ITextBatchPrimitiveFactory._metadata, ITextBatchPrimitiveFactory._initialize_with_graphics_font_metadata, font, out_arg())
 
     _initialize_with_graphics_font_and_set_hint_metadata = { "name" : "initialize_with_graphics_font_and_set_hint",
             "arg_types" : (agcom.PVOID, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_graphics_font_and_set_hint(self, font:"IGraphicsFont", setHint:"SET_HINT") -> "TextBatchPrimitive":
-        """Initializes a marker batch primitive with the specified font and setHint."""
+        """Initialize a marker batch primitive with the specified font and setHint."""
         return self._intf.invoke(ITextBatchPrimitiveFactory._metadata, ITextBatchPrimitiveFactory._initialize_with_graphics_font_and_set_hint_metadata, font, setHint, out_arg())
 
     _initialize_with_graphics_font_and_set_hint_2d_metadata = { "name" : "initialize_with_graphics_font_and_set_hint_2d",
             "arg_types" : (agcom.PVOID, agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.AgEnum_arg(SET_HINT), agmarshall.VARIANT_BOOL_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_graphics_font_and_set_hint_2d(self, font:"IGraphicsFont", setHint:"SET_HINT", renderInScreenSpace:bool) -> "TextBatchPrimitive":
-        """Initializes a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering."""
+        """Initialize a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering."""
         return self._intf.invoke(ITextBatchPrimitiveFactory._metadata, ITextBatchPrimitiveFactory._initialize_with_graphics_font_and_set_hint_2d_metadata, font, setHint, renderInScreenSpace, out_arg())
 
 
@@ -21581,7 +21581,7 @@ class ITextBatchPrimitiveOptionalParametersFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "TextBatchPrimitiveOptionalParameters":
-        """Initializes default text batch primitive optional parameters."""
+        """Initialize default text batch primitive optional parameters."""
         return self._intf.invoke(ITextBatchPrimitiveOptionalParametersFactory._metadata, ITextBatchPrimitiveOptionalParametersFactory._initialize_metadata, out_arg())
 
 
@@ -21628,28 +21628,28 @@ class ITextOverlayFactory(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.AgInterface_out_arg,) }
     def initialize(self, font:"IGraphicsFont") -> "TextOverlay":
-        """Initializes the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels. <param name='font'>The graphics font that defines how text is drawn.</param>"""
+        """Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels. <param name='font'>The graphics font that defines how text is drawn.</param>"""
         return self._intf.invoke(ITextOverlayFactory._metadata, ITextOverlayFactory._initialize_metadata, font, out_arg())
 
     _initialize_with_xy_width_height_metadata = { "name" : "initialize_with_xy_width_height",
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_xy_width_height(self, font:"IGraphicsFont", xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "TextOverlay":
-        """Initializes the overlay with the specified x position, y position, width, and height, all specified in pixels."""
+        """Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels."""
         return self._intf.invoke(ITextOverlayFactory._metadata, ITextOverlayFactory._initialize_with_xy_width_height_metadata, font, xPixels, yPixels, widthPixels, heightPixels, out_arg())
 
     _initialize_with_position_size_metadata = { "name" : "initialize_with_position_size",
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_position_size(self, font:"IGraphicsFont", position:list, size:list) -> "TextOverlay":
-        """Initializes the overlay with the specified position and size."""
+        """Initialize the overlay with the specified position and size."""
         return self._intf.invoke(ITextOverlayFactory._metadata, ITextOverlayFactory._initialize_with_position_size_metadata, font, position, size, out_arg())
 
     _initialize_with_width_height_units_metadata = { "name" : "initialize_with_width_height_units",
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.LONG, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(SCREEN_OVERLAY_UNIT), agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(SCREEN_OVERLAY_UNIT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_width_height_units(self, font:"IGraphicsFont", width:float, widthUnit:"SCREEN_OVERLAY_UNIT", height:float, heightUnit:"SCREEN_OVERLAY_UNIT") -> "TextOverlay":
-        """Initializes the overlay with the specified position and size."""
+        """Initialize the overlay with the specified position and size."""
         return self._intf.invoke(ITextOverlayFactory._metadata, ITextOverlayFactory._initialize_with_width_height_units_metadata, font, width, widthUnit, height, heightUnit, out_arg())
 
 
@@ -21696,28 +21696,28 @@ class ITextureMatrixFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "TextureMatrix":
-        """Initializes a texture matrix to the identity matrix."""
+        """Initialize a texture matrix to the identity matrix."""
         return self._intf.invoke(ITextureMatrixFactory._metadata, ITextureMatrixFactory._initialize_metadata, out_arg())
 
     _initialize_by_values_metadata = { "name" : "initialize_by_values",
             "arg_types" : (agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, agcom.FLOAT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.FLOAT_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_by_values(self, m11:float, m12:float, m13:float, m14:float, m21:float, m22:float, m23:float, m24:float, m31:float, m32:float, m33:float, m34:float, m41:float, m42:float, m43:float, m44:float) -> "TextureMatrix":
-        """Initializes a texture matrix. The subscripts define [row][column]."""
+        """Initialize a texture matrix. The subscripts define [row][column]."""
         return self._intf.invoke(ITextureMatrixFactory._metadata, ITextureMatrixFactory._initialize_by_values_metadata, m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44, out_arg())
 
     _initialize_with_affine_transform_metadata = { "name" : "initialize_with_affine_transform",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_affine_transform(self, matrix:list) -> "TextureMatrix":
-        """Initializes a texture matrix from a matrix. The upper left 2x2 matrix defines rotation and scaling. The top two elements of the last column define translation."""
+        """Initialize a texture matrix from a matrix. The upper left 2x2 matrix defines rotation and scaling. The top two elements of the last column define translation."""
         return self._intf.invoke(ITextureMatrixFactory._metadata, ITextureMatrixFactory._initialize_with_affine_transform_metadata, matrix, out_arg())
 
     _initialize_with_rectangles_metadata = { "name" : "initialize_with_rectangles",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_rectangles(self, corner0:list, corner1:list, corner2:list, corner3:list) -> "TextureMatrix":
-        """Initializes a texture matrix from texture corner points. Normally, a texture is mapped such that the lower left corner is texture coordinate (0, 0), the lower right is (1, 0), the upper right is (1, 1), and the upper left is (0, 1)..."""
+        """Initialize a texture matrix from texture corner points. Normally, a texture is mapped such that the lower left corner is texture coordinate (0, 0), the lower right is (1, 0), the upper right is (1, 1), and the upper left is (0, 1)..."""
         return self._intf.invoke(ITextureMatrixFactory._metadata, ITextureMatrixFactory._initialize_with_rectangles_metadata, corner0, corner1, corner2, corner3, out_arg())
 
 
@@ -21765,35 +21765,35 @@ class ITextureScreenOverlayFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "TextureScreenOverlay":
-        """Initializes the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels."""
+        """Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels."""
         return self._intf.invoke(ITextureScreenOverlayFactory._metadata, ITextureScreenOverlayFactory._initialize_metadata, out_arg())
 
     _initialize_with_xy_width_height_metadata = { "name" : "initialize_with_xy_width_height",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_xy_width_height(self, xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "TextureScreenOverlay":
-        """Initializes the overlay with the specified x position, y position, width, and height, all specified in pixels."""
+        """Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels."""
         return self._intf.invoke(ITextureScreenOverlayFactory._metadata, ITextureScreenOverlayFactory._initialize_with_xy_width_height_metadata, xPixels, yPixels, widthPixels, heightPixels, out_arg())
 
     _initialize_with_position_size_metadata = { "name" : "initialize_with_position_size",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_position_size(self, position:list, size:list) -> "TextureScreenOverlay":
-        """Initializes the overlay with the specified position and size."""
+        """Initialize the overlay with the specified position and size."""
         return self._intf.invoke(ITextureScreenOverlayFactory._metadata, ITextureScreenOverlayFactory._initialize_with_position_size_metadata, position, size, out_arg())
 
     _initialize_with_xy_texture_metadata = { "name" : "initialize_with_xy_texture",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_in_arg("IRendererTexture2D"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_xy_texture(self, xPixels:float, yPixels:float, texture:"IRendererTexture2D") -> "TextureScreenOverlay":
-        """Initializes the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture."""
+        """Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture."""
         return self._intf.invoke(ITextureScreenOverlayFactory._metadata, ITextureScreenOverlayFactory._initialize_with_xy_texture_metadata, xPixels, yPixels, texture, out_arg())
 
     _initialize_with_position_texture_metadata = { "name" : "initialize_with_position_texture",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IRendererTexture2D"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_position_texture(self, position:list, texture:"IRendererTexture2D") -> "TextureScreenOverlay":
-        """Initializes the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture."""
+        """Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture."""
         return self._intf.invoke(ITextureScreenOverlayFactory._metadata, ITextureScreenOverlayFactory._initialize_with_position_texture_metadata, position, texture, out_arg())
 
 
@@ -21801,7 +21801,7 @@ agcls.AgClassCatalog.add_catalog_entry("{d68b862b-50c5-4803-9a98-d404c0aa967a}",
 agcls.AgTypeNameMap["ITextureScreenOverlayFactory"] = ITextureScreenOverlayFactory
 
 class ITimeIntervalDisplayConditionFactory(object):
-    """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+    """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21839,21 +21839,21 @@ class ITimeIntervalDisplayConditionFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "TimeIntervalDisplayCondition":
-        """Initializes a default time display condition. minimum time is set to JulianDate.MinValue and maximum time is set to JulianDate.MaxValue. With this interval, an object is always rendered regardless of the current animation time."""
+        """Initialize a default time display condition. minimum time is set to JulianDate.MinValue and maximum time is set to JulianDate.MaxValue. With this interval, an object is always rendered regardless of the current animation time."""
         return self._intf.invoke(ITimeIntervalDisplayConditionFactory._metadata, ITimeIntervalDisplayConditionFactory._initialize_metadata, out_arg())
 
     _initialize_with_times_metadata = { "name" : "initialize_with_times",
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IDate"), agmarshall.AgInterface_in_arg("IDate"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_times(self, minimumTime:"IDate", maximumTime:"IDate") -> "TimeIntervalDisplayCondition":
-        """Initializes a time display condition with the inclusive time interval [minimumTime, maximumTime]..."""
+        """Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]..."""
         return self._intf.invoke(ITimeIntervalDisplayConditionFactory._metadata, ITimeIntervalDisplayConditionFactory._initialize_with_times_metadata, minimumTime, maximumTime, out_arg())
 
     _initialize_with_time_interval_metadata = { "name" : "initialize_with_time_interval",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def initialize_with_time_interval(self, timeInterval:list) -> "TimeIntervalDisplayCondition":
-        """Initializes a time display condition with a time interval."""
+        """Initialize a time display condition with a time interval."""
         return self._intf.invoke(ITimeIntervalDisplayConditionFactory._metadata, ITimeIntervalDisplayConditionFactory._initialize_with_time_interval_metadata, timeInterval, out_arg())
 
 
@@ -21861,7 +21861,7 @@ agcls.AgClassCatalog.add_catalog_entry("{99ca1422-3ae0-4620-9046-d0bc4ca2bee5}",
 agcls.AgTypeNameMap["ITimeIntervalDisplayConditionFactory"] = ITimeIntervalDisplayConditionFactory
 
 class ITriangleMeshPrimitiveFactory(object):
-    """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+    """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21898,14 +21898,14 @@ class ITriangleMeshPrimitiveFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "TriangleMeshPrimitive":
-        """Initializes a default triangle mesh primitive. This is equivalent to constructing a triangle mesh with a set hint of Frequent."""
+        """Initialize a default triangle mesh primitive. This is equivalent to constructing a triangle mesh with a set hint of Frequent."""
         return self._intf.invoke(ITriangleMeshPrimitiveFactory._metadata, ITriangleMeshPrimitiveFactory._initialize_metadata, out_arg())
 
     _initialize_with_set_hint_metadata = { "name" : "initialize_with_set_hint",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SET_HINT), agmarshall.AgInterface_out_arg,) }
     def initialize_with_set_hint(self, setHint:"SET_HINT") -> "TriangleMeshPrimitive":
-        """Initializes a triangle mesh primitive with the specified setHint ."""
+        """Initialize a triangle mesh primitive with the specified setHint ."""
         return self._intf.invoke(ITriangleMeshPrimitiveFactory._metadata, ITriangleMeshPrimitiveFactory._initialize_with_set_hint_metadata, setHint, out_arg())
 
 
@@ -21949,7 +21949,7 @@ class ITriangleMeshPrimitiveOptionalParametersFactory(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def initialize(self) -> "TriangleMeshPrimitiveOptionalParameters":
-        """Initializes default triangle mesh primitive optional parameters."""
+        """Initialize default triangle mesh primitive optional parameters."""
         return self._intf.invoke(ITriangleMeshPrimitiveOptionalParametersFactory._metadata, ITriangleMeshPrimitiveOptionalParametersFactory._initialize_metadata, out_arg())
 
 
@@ -21957,7 +21957,7 @@ agcls.AgClassCatalog.add_catalog_entry("{dab0d95c-d51e-4152-9f63-01441ca43ad9}",
 agcls.AgTypeNameMap["ITriangleMeshPrimitiveOptionalParametersFactory"] = ITriangleMeshPrimitiveOptionalParametersFactory
 
 class IVectorPrimitiveFactory(object):
-    """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+    """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21993,7 +21993,7 @@ class IVectorPrimitiveFactory(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IVectorGeometryToolSystem"), agmarshall.AgInterface_in_arg("IVectorGeometryToolVector"), agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_direction(self, sys:"IVectorGeometryToolSystem", dir:"IVectorGeometryToolVector", font:"IGraphicsFont") -> "VectorPrimitive":
-        """Initializes a vector primitive with the specified ISystem sys as its source and pointing in direction dir."""
+        """Initialize a vector primitive with the specified ISystem sys as its source and pointing in direction dir."""
         return self._intf.invoke(IVectorPrimitiveFactory._metadata, IVectorPrimitiveFactory._initialize_with_direction_metadata, sys, dir, font, out_arg())
 
 
@@ -22066,7 +22066,7 @@ agcls.AgClassCatalog.add_catalog_entry("{40BA7967-5508-4D2C-9048-76EA16351F61}",
 agcls.AgTypeNameMap["BoundingSphere"] = BoundingSphere
 
 class BoundingSphereFactory(IBoundingSphereFactory):
-    """Creates bounding spheres."""
+    """Create bounding spheres."""
     def __init__(self, sourceObject=None):
         IBoundingSphereFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -23044,7 +23044,7 @@ agcls.AgClassCatalog.add_catalog_entry("{1BA44C8C-0CFB-4A7C-B687-788BD4D49AB2}",
 agcls.AgTypeNameMap["Texture2DFactory"] = Texture2DFactory
 
 class VisualEffects(IVisualEffects):
-    """Controls various post processing effects that can be applied to the scene."""
+    """Control various post processing effects that can be applied to the scene."""
     def __init__(self, sourceObject=None):
         IVisualEffects.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -23065,7 +23065,7 @@ agcls.AgClassCatalog.add_catalog_entry("{901f26d9-644b-4513-a3e9-d4d1f4c3df48}",
 agcls.AgTypeNameMap["VisualEffects"] = VisualEffects
 
 class AltitudeDisplayCondition(IAltitudeDisplayCondition, IDisplayCondition):
-    """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+    """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
     def __init__(self, sourceObject=None):
         IAltitudeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -23089,7 +23089,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E5AFCA9A-2850-44C4-BE11-930BB559872B}",
 agcls.AgTypeNameMap["AltitudeDisplayCondition"] = AltitudeDisplayCondition
 
 class AxesPrimitive(IAxesPrimitive, IPrimitive):
-    """Renders an axes in the 3D scene."""
+    """Render an axes in the 3D scene."""
     def __init__(self, sourceObject=None):
         IAxesPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -23269,7 +23269,7 @@ agcls.AgClassCatalog.add_catalog_entry("{CEC5D5EB-5AF8-4CCD-BD3D-EFF95DC04F26}",
 agcls.AgTypeNameMap["DisplayCondition"] = DisplayCondition
 
 class DistanceDisplayCondition(IDistanceDisplayCondition, IDisplayCondition):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
     def __init__(self, sourceObject=None):
         IDistanceDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -23293,7 +23293,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0B5589C8-51E7-4191-BD54-8326BFF56CE2}",
 agcls.AgTypeNameMap["DistanceDisplayCondition"] = DistanceDisplayCondition
 
 class DistanceToGlobeOverlayDisplayCondition(IDistanceToGlobeOverlayDisplayCondition, IDisplayCondition):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
     def __init__(self, sourceObject=None):
         IDistanceToGlobeOverlayDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -23317,7 +23317,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E9C27719-711F-4E36-9FF9-DEF15D35581E}",
 agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayCondition"] = DistanceToGlobeOverlayDisplayCondition
 
 class DistanceToPositionDisplayCondition(IDistanceToPositionDisplayCondition, IDisplayCondition):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
     def __init__(self, sourceObject=None):
         IDistanceToPositionDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -23341,7 +23341,7 @@ agcls.AgClassCatalog.add_catalog_entry("{ACD2A88B-E930-4994-AA0A-D37AEDB51182}",
 agcls.AgTypeNameMap["DistanceToPositionDisplayCondition"] = DistanceToPositionDisplayCondition
 
 class DistanceToPrimitiveDisplayCondition(IDistanceToPrimitiveDisplayCondition, IDisplayCondition):
-    """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+    """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
     def __init__(self, sourceObject=None):
         IDistanceToPrimitiveDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -23500,7 +23500,7 @@ agcls.AgClassCatalog.add_catalog_entry("{26812ED6-0AB2-4554-A01F-A1E52687763D}",
 agcls.AgTypeNameMap["ImageCollection"] = ImageCollection
 
 class AlphaFromLuminanceFilter(IAlphaFromLuminanceFilter, IRasterFilter):
-    """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
+    """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
     def __init__(self, sourceObject=None):
         IAlphaFromLuminanceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -23524,7 +23524,7 @@ agcls.AgClassCatalog.add_catalog_entry("{7D660FC7-F1D2-4189-A5C7-B2BFD97E1B4E}",
 agcls.AgTypeNameMap["AlphaFromLuminanceFilter"] = AlphaFromLuminanceFilter
 
 class AlphaFromPixelFilter(IAlphaFromPixelFilter, IRasterFilter):
-    """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+    """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
     def __init__(self, sourceObject=None):
         IAlphaFromPixelFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -23548,7 +23548,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B2D2B3A3-9FA8-4B58-9CA5-89705663DEDB}",
 agcls.AgTypeNameMap["AlphaFromPixelFilter"] = AlphaFromPixelFilter
 
 class AlphaFromRasterFilter(IAlphaFromRasterFilter, IRasterFilter):
-    """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+    """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
     def __init__(self, sourceObject=None):
         IAlphaFromRasterFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -23572,7 +23572,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5E83A2AD-0A40-4CFC-823A-311AC8B034B3}",
 agcls.AgTypeNameMap["AlphaFromRasterFilter"] = AlphaFromRasterFilter
 
 class BandExtractFilter(IBandExtractFilter, IRasterFilter):
-    """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+    """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
     def __init__(self, sourceObject=None):
         IBandExtractFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -23620,7 +23620,7 @@ agcls.AgClassCatalog.add_catalog_entry("{91749CD4-8503-4C71-AD42-DB5AAF1BC240}",
 agcls.AgTypeNameMap["BandOrderFilter"] = BandOrderFilter
 
 class BlurFilter(IBlurFilter, IConvolutionFilter, IRasterFilter):
-    """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+    """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
     def __init__(self, sourceObject=None):
         IBlurFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -23671,7 +23671,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E6FF496E-64E8-41CA-BED7-8FEBDDB6B9C9}",
 agcls.AgTypeNameMap["BrightnessFilter"] = BrightnessFilter
 
 class ColorToLuminanceFilter(IColorToLuminanceFilter, IRasterFilter):
-    """Extracts a luminance band derived from the color bands of the source raster."""
+    """Extract a luminance band derived from the color bands of the source raster."""
     def __init__(self, sourceObject=None):
         IColorToLuminanceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -23719,7 +23719,7 @@ agcls.AgClassCatalog.add_catalog_entry("{20FA2A78-30D4-4DDE-84D7-EBF001730166}",
 agcls.AgTypeNameMap["ContrastFilter"] = ContrastFilter
 
 class ConvolutionFilter(IConvolutionFilter, IRasterFilter):
-    """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+    """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
     def __init__(self, sourceObject=None):
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -23743,7 +23743,7 @@ agcls.AgClassCatalog.add_catalog_entry("{113D939E-C5B0-49BD-A38B-53DD961CAC5B}",
 agcls.AgTypeNameMap["ConvolutionFilter"] = ConvolutionFilter
 
 class EdgeDetectFilter(IEdgeDetectFilter, IConvolutionFilter, IRasterFilter):
-    """Applies a convolution filter to detect edges in the source raster."""
+    """Apply a convolution filter to detect edges in the source raster."""
     def __init__(self, sourceObject=None):
         IEdgeDetectFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -23821,7 +23821,7 @@ agcls.AgClassCatalog.add_catalog_entry("{08E0C45D-A187-4B74-93AE-BF29B39D50C3}",
 agcls.AgTypeNameMap["FlipFilter"] = FlipFilter
 
 class GammaCorrectionFilter(IGammaCorrectionFilter, IRasterFilter):
-    """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+    """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
     def __init__(self, sourceObject=None):
         IGammaCorrectionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -23845,7 +23845,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A560ACC2-4642-44FD-A5FC-BD3AB7A0FC2F}",
 agcls.AgTypeNameMap["GammaCorrectionFilter"] = GammaCorrectionFilter
 
 class GaussianBlurFilter(IGaussianBlurFilter, IConvolutionFilter, IRasterFilter):
-    """Applies a convolution filter to blur the source raster using the Gaussian function."""
+    """Apply a convolution filter to blur the source raster using the Gaussian function."""
     def __init__(self, sourceObject=None):
         IGaussianBlurFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -23872,7 +23872,7 @@ agcls.AgClassCatalog.add_catalog_entry("{BCEE5F1C-66D8-48C6-8485-8435260855DE}",
 agcls.AgTypeNameMap["GaussianBlurFilter"] = GaussianBlurFilter
 
 class GradientDetectFilter(IGradientDetectFilter, IConvolutionFilter, IRasterFilter):
-    """Applies a convolution filter to detect gradients in the source raster."""
+    """Apply a convolution filter to detect gradients in the source raster."""
     def __init__(self, sourceObject=None):
         IGradientDetectFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -24052,7 +24052,7 @@ agcls.AgClassCatalog.add_catalog_entry("{CAFADC5E-933C-46AC-BD09-18B089E86346}",
 agcls.AgTypeNameMap["RasterStream"] = RasterStream
 
 class RotateFilter(IRotateFilter, IRasterFilter):
-    """Rotates the source raster clockwise by the specified angle."""
+    """Rotate the source raster clockwise by the specified angle."""
     def __init__(self, sourceObject=None):
         IRotateFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -24076,7 +24076,7 @@ agcls.AgClassCatalog.add_catalog_entry("{AEDFA944-E740-4D19-9819-CB179C43E060}",
 agcls.AgTypeNameMap["RotateFilter"] = RotateFilter
 
 class SequenceFilter(ISequenceFilter, IRasterFilter):
-    """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+    """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
     def __init__(self, sourceObject=None):
         ISequenceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -24100,7 +24100,7 @@ agcls.AgClassCatalog.add_catalog_entry("{37330024-90FE-47DD-9548-C13089A085FC}",
 agcls.AgTypeNameMap["SequenceFilter"] = SequenceFilter
 
 class SharpenFilter(ISharpenFilter, IConvolutionFilter, IRasterFilter):
-    """Applies a convolution filter to increase the sharpness of the source raster."""
+    """Apply a convolution filter to increase the sharpness of the source raster."""
     def __init__(self, sourceObject=None):
         ISharpenFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -24253,7 +24253,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C7BE1A8D-28BF-4298-AE7D-656B40FFB3D0}",
 agcls.AgTypeNameMap["KmlFolder"] = KmlFolder
 
 class KmlGraphics(IKmlGraphics):
-    """Provides loading and unloading of kml documents for a particular central body."""
+    """Provide loading and unloading of kml documents for a particular central body."""
     def __init__(self, sourceObject=None):
         IKmlGraphics.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24478,7 +24478,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6D9C8A3B-0EC8-428F-BC05-1F30315E92DC}",
 agcls.AgTypeNameMap["Overlay"] = Overlay
 
 class PathPrimitive(IPathPrimitive, IPrimitive):
-    """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+    """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
     def __init__(self, sourceObject=None):
         IPathPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -24523,7 +24523,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E007C42E-13D7-4006-992A-B996CEA3BE49}",
 agcls.AgTypeNameMap["PickResult"] = PickResult
 
 class PixelSizeDisplayCondition(IPixelSizeDisplayCondition, IDisplayCondition):
-    """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+    """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
     def __init__(self, sourceObject=None):
         IPixelSizeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -24592,7 +24592,7 @@ agcls.AgClassCatalog.add_catalog_entry("{944f2ade-d0e5-4896-a1e2-28b1c9e74f08}",
 agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParameters"] = PointBatchPrimitiveOptionalParameters
 
 class PolylinePrimitive(IPolylinePrimitive, IPrimitive):
-    """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+    """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
     def __init__(self, sourceObject=None):
         IPolylinePrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -24916,7 +24916,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6E7F318E-F7E5-4B19-A532-50EC60EF09FA}",
 agcls.AgTypeNameMap["ScreenOverlayPickResult"] = ScreenOverlayPickResult
 
 class SolidPrimitive(ISolidPrimitive, IPrimitive):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+    """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     def __init__(self, sourceObject=None):
         ISolidPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -24940,7 +24940,7 @@ agcls.AgClassCatalog.add_catalog_entry("{12343DC0-99FF-48B6-9D93-9B7A2CE34DB9}",
 agcls.AgTypeNameMap["SolidPrimitive"] = SolidPrimitive
 
 class Stereoscopic(IStereoscopic):
-    """Gets the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
+    """Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
     def __init__(self, sourceObject=None):
         IStereoscopic.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25156,7 +25156,7 @@ agcls.AgClassCatalog.add_catalog_entry("{51136098-508C-4DD3-B39C-D342235E58BD}",
 agcls.AgTypeNameMap["TextureScreenOverlay"] = TextureScreenOverlay
 
 class TimeIntervalDisplayCondition(ITimeIntervalDisplayCondition, IDisplayCondition):
-    """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+    """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
     def __init__(self, sourceObject=None):
         ITimeIntervalDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -25180,7 +25180,7 @@ agcls.AgClassCatalog.add_catalog_entry("{256AACC3-3E56-4BA6-80F9-15BD968C3863}",
 agcls.AgTypeNameMap["TimeIntervalDisplayCondition"] = TimeIntervalDisplayCondition
 
 class TriangleMeshPrimitive(ITriangleMeshPrimitive, IPrimitive):
-    """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+    """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
     def __init__(self, sourceObject=None):
         ITriangleMeshPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -25225,7 +25225,7 @@ agcls.AgClassCatalog.add_catalog_entry("{07985409-9BA1-406C-8A91-D4E99DDB406F}",
 agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParameters"] = TriangleMeshPrimitiveOptionalParameters
 
 class VectorPrimitive(IVectorPrimitive, IPrimitive):
-    """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+    """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
     def __init__(self, sourceObject=None):
         IVectorPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -25375,7 +25375,7 @@ agcls.AgClassCatalog.add_catalog_entry("{FB4D2919-C9DB-4C93-A64B-35A9EB884E6B}",
 agcls.AgTypeNameMap["SurfacePolygonTriangulatorInitializer"] = SurfacePolygonTriangulatorInitializer
 
 class SurfaceShapesInitializer(ISurfaceShapesInitializer):
-    """Computes boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
+    """Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
     def __init__(self, sourceObject=None):
         ISurfaceShapesInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25564,7 +25564,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C22AAF01-98CE-41E1-8A98-E164A61D40CC}",
 agcls.AgTypeNameMap["ProjectionFactory"] = ProjectionFactory
 
 class AltitudeDisplayConditionFactory(IAltitudeDisplayConditionFactory):
-    """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+    """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
     def __init__(self, sourceObject=None):
         IAltitudeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25585,7 +25585,7 @@ agcls.AgClassCatalog.add_catalog_entry("{75D5CF9A-FBCE-482C-9520-7811D9E71EC1}",
 agcls.AgTypeNameMap["AltitudeDisplayConditionFactory"] = AltitudeDisplayConditionFactory
 
 class AxesPrimitiveFactory(IAxesPrimitiveFactory):
-    """Renders an axes in the 3D scene."""
+    """Render an axes in the 3D scene."""
     def __init__(self, sourceObject=None):
         IAxesPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25669,7 +25669,7 @@ agcls.AgClassCatalog.add_catalog_entry("{84B6B505-833D-4A3B-BD6B-99266C8C5284}",
 agcls.AgTypeNameMap["ConstantDisplayConditionFactory"] = ConstantDisplayConditionFactory
 
 class DistanceDisplayConditionFactory(IDistanceDisplayConditionFactory):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
     def __init__(self, sourceObject=None):
         IDistanceDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25690,7 +25690,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F8A027DC-AE3B-464A-A5C4-39AA37368ED7}",
 agcls.AgTypeNameMap["DistanceDisplayConditionFactory"] = DistanceDisplayConditionFactory
 
 class DistanceToGlobeOverlayDisplayConditionFactory(IDistanceToGlobeOverlayDisplayConditionFactory):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
     def __init__(self, sourceObject=None):
         IDistanceToGlobeOverlayDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25711,7 +25711,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0BF7DA00-8B06-41FA-A580-15D898A0837F}",
 agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayConditionFactory"] = DistanceToGlobeOverlayDisplayConditionFactory
 
 class DistanceToPositionDisplayConditionFactory(IDistanceToPositionDisplayConditionFactory):
-    """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+    """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
     def __init__(self, sourceObject=None):
         IDistanceToPositionDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25732,7 +25732,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F19A2CB9-BF83-4F3F-9B76-82794467A872}",
 agcls.AgTypeNameMap["DistanceToPositionDisplayConditionFactory"] = DistanceToPositionDisplayConditionFactory
 
 class DistanceToPrimitiveDisplayConditionFactory(IDistanceToPrimitiveDisplayConditionFactory):
-    """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+    """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
     def __init__(self, sourceObject=None):
         IDistanceToPrimitiveDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25837,7 +25837,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6882FDC8-B958-498D-A274-46AE40AE78D5}",
 agcls.AgTypeNameMap["GreatArcInterpolatorFactory"] = GreatArcInterpolatorFactory
 
 class AlphaFromLuminanceFilterFactory(IAlphaFromLuminanceFilterFactory):
-    """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
+    """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
     def __init__(self, sourceObject=None):
         IAlphaFromLuminanceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25858,7 +25858,7 @@ agcls.AgClassCatalog.add_catalog_entry("{1190FF7A-66F4-4B54-B35B-57BBBEDD35AA}",
 agcls.AgTypeNameMap["AlphaFromLuminanceFilterFactory"] = AlphaFromLuminanceFilterFactory
 
 class AlphaFromPixelFilterFactory(IAlphaFromPixelFilterFactory):
-    """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+    """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
     def __init__(self, sourceObject=None):
         IAlphaFromPixelFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25879,7 +25879,7 @@ agcls.AgClassCatalog.add_catalog_entry("{72AEEA38-C86F-48DE-A8D7-F993011E6466}",
 agcls.AgTypeNameMap["AlphaFromPixelFilterFactory"] = AlphaFromPixelFilterFactory
 
 class AlphaFromRasterFilterFactory(IAlphaFromRasterFilterFactory):
-    """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+    """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
     def __init__(self, sourceObject=None):
         IAlphaFromRasterFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25900,7 +25900,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F578725F-3B1F-4B45-AA36-FADF0AA5516F}",
 agcls.AgTypeNameMap["AlphaFromRasterFilterFactory"] = AlphaFromRasterFilterFactory
 
 class BandExtractFilterFactory(IBandExtractFilterFactory):
-    """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+    """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
     def __init__(self, sourceObject=None):
         IBandExtractFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25942,7 +25942,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F238EFB7-84AC-4648-AB58-42C01DADA9A9}",
 agcls.AgTypeNameMap["BandOrderFilterFactory"] = BandOrderFilterFactory
 
 class BlurFilterFactory(IBlurFilterFactory):
-    """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+    """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
     def __init__(self, sourceObject=None):
         IBlurFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25984,7 +25984,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C03BF579-ED2C-480E-835C-A2F17B7B1E02}",
 agcls.AgTypeNameMap["BrightnessFilterFactory"] = BrightnessFilterFactory
 
 class ColorToLuminanceFilterFactory(IColorToLuminanceFilterFactory):
-    """Extracts a luminance band derived from the color bands of the source raster."""
+    """Extract a luminance band derived from the color bands of the source raster."""
     def __init__(self, sourceObject=None):
         IColorToLuminanceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26026,7 +26026,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9B1023F6-67C4-4DC9-8EA1-9171564EFA42}",
 agcls.AgTypeNameMap["ContrastFilterFactory"] = ContrastFilterFactory
 
 class ConvolutionFilterFactory(IConvolutionFilterFactory):
-    """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+    """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
     def __init__(self, sourceObject=None):
         IConvolutionFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26047,7 +26047,7 @@ agcls.AgClassCatalog.add_catalog_entry("{64B119DD-A78C-4815-A9DD-4D77B310D28D}",
 agcls.AgTypeNameMap["ConvolutionFilterFactory"] = ConvolutionFilterFactory
 
 class EdgeDetectFilterFactory(IEdgeDetectFilterFactory):
-    """Applies a convolution filter to detect edges in the source raster."""
+    """Apply a convolution filter to detect edges in the source raster."""
     def __init__(self, sourceObject=None):
         IEdgeDetectFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26110,7 +26110,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0C012B18-9467-42CE-8EC5-E7B70012BA73}",
 agcls.AgTypeNameMap["FlipFilterFactory"] = FlipFilterFactory
 
 class GammaCorrectionFilterFactory(IGammaCorrectionFilterFactory):
-    """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+    """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
     def __init__(self, sourceObject=None):
         IGammaCorrectionFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26131,7 +26131,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E09D6B71-6E82-45A1-A208-B761D82266E9}",
 agcls.AgTypeNameMap["GammaCorrectionFilterFactory"] = GammaCorrectionFilterFactory
 
 class GaussianBlurFilterFactory(IGaussianBlurFilterFactory):
-    """Applies a convolution filter to blur the source raster using the Gaussian function."""
+    """Apply a convolution filter to blur the source raster using the Gaussian function."""
     def __init__(self, sourceObject=None):
         IGaussianBlurFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26152,7 +26152,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B98AC54E-10BB-4E81-9766-806A2F0EA8C4}",
 agcls.AgTypeNameMap["GaussianBlurFilterFactory"] = GaussianBlurFilterFactory
 
 class GradientDetectFilterFactory(IGradientDetectFilterFactory):
-    """Applies a convolution filter to detect gradients in the source raster."""
+    """Apply a convolution filter to detect gradients in the source raster."""
     def __init__(self, sourceObject=None):
         IGradientDetectFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26173,7 +26173,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B88D6D7C-4807-4905-B52F-DF054A4AD186}",
 agcls.AgTypeNameMap["GradientDetectFilterFactory"] = GradientDetectFilterFactory
 
 class Jpeg2000WriterInitializer(IJpeg2000WriterInitializer):
-    """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
+    """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
     def __init__(self, sourceObject=None):
         IJpeg2000WriterInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26278,7 +26278,7 @@ agcls.AgClassCatalog.add_catalog_entry("{94CA0CCD-4D74-47BD-8E5F-E2D96403DACF}",
 agcls.AgTypeNameMap["RasterAttributesFactory"] = RasterAttributesFactory
 
 class RotateFilterFactory(IRotateFilterFactory):
-    """Rotates the source raster clockwise by the specified angle."""
+    """Rotate the source raster clockwise by the specified angle."""
     def __init__(self, sourceObject=None):
         IRotateFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26299,7 +26299,7 @@ agcls.AgClassCatalog.add_catalog_entry("{12C8E395-4E61-4484-A97D-33742C841A6D}",
 agcls.AgTypeNameMap["RotateFilterFactory"] = RotateFilterFactory
 
 class SequenceFilterFactory(ISequenceFilterFactory):
-    """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+    """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
     def __init__(self, sourceObject=None):
         ISequenceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26320,7 +26320,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4CC16FDF-B6CE-4C06-B47F-AD7812566215}",
 agcls.AgTypeNameMap["SequenceFilterFactory"] = SequenceFilterFactory
 
 class SharpenFilterFactory(ISharpenFilterFactory):
-    """Applies a convolution filter to increase the sharpness of the source raster."""
+    """Apply a convolution filter to increase the sharpness of the source raster."""
     def __init__(self, sourceObject=None):
         ISharpenFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26446,7 +26446,7 @@ agcls.AgClassCatalog.add_catalog_entry("{90BABAB0-7D1E-420F-B91F-46E2E5B31763}",
 agcls.AgTypeNameMap["ModelPrimitiveFactory"] = ModelPrimitiveFactory
 
 class PathPrimitiveFactory(IPathPrimitiveFactory):
-    """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+    """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
     def __init__(self, sourceObject=None):
         IPathPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26467,7 +26467,7 @@ agcls.AgClassCatalog.add_catalog_entry("{1847AEAB-C6B6-4561-BBDB-D979A443CCF0}",
 agcls.AgTypeNameMap["PathPrimitiveFactory"] = PathPrimitiveFactory
 
 class PixelSizeDisplayConditionFactory(IPixelSizeDisplayConditionFactory):
-    """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+    """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
     def __init__(self, sourceObject=None):
         IPixelSizeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26530,7 +26530,7 @@ agcls.AgClassCatalog.add_catalog_entry("{aa54a6e1-f927-48b6-8a29-7b718bb0cb7b}",
 agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParametersFactory"] = PointBatchPrimitiveOptionalParametersFactory
 
 class PolylinePrimitiveFactory(IPolylinePrimitiveFactory):
-    """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+    """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
     def __init__(self, sourceObject=None):
         IPolylinePrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26677,7 +26677,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C2F5A068-E483-4CCF-819D-FBB25DC85A71}",
 agcls.AgTypeNameMap["ScreenOverlayFactory"] = ScreenOverlayFactory
 
 class SolidPrimitiveFactory(ISolidPrimitiveFactory):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+    """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     def __init__(self, sourceObject=None):
         ISolidPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26845,7 +26845,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C4060E65-DD40-40CE-B462-55E08E6D63AF}",
 agcls.AgTypeNameMap["TextureScreenOverlayFactory"] = TextureScreenOverlayFactory
 
 class TimeIntervalDisplayConditionFactory(ITimeIntervalDisplayConditionFactory):
-    """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+    """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
     def __init__(self, sourceObject=None):
         ITimeIntervalDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26866,7 +26866,7 @@ agcls.AgClassCatalog.add_catalog_entry("{526637D4-DD61-4B7D-BAE9-6FEF3673BF5D}",
 agcls.AgTypeNameMap["TimeIntervalDisplayConditionFactory"] = TimeIntervalDisplayConditionFactory
 
 class TriangleMeshPrimitiveFactory(ITriangleMeshPrimitiveFactory):
-    """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+    """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
     def __init__(self, sourceObject=None):
         ITriangleMeshPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26908,7 +26908,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9D9FB947-B9EB-4964-8FD8-6FF54D734BD8}",
 agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParametersFactory"] = TriangleMeshPrimitiveOptionalParametersFactory
 
 class VectorPrimitiveFactory(IVectorPrimitiveFactory):
-    """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+    """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
     def __init__(self, sourceObject=None):
         IVectorPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

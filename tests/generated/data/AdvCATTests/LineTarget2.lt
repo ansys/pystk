@@ -1,0 +1,69 @@
+stk.v.7.0
+
+BEGIN LineTarget
+
+Name        LineTarget2
+
+    BEGIN IndexPtData
+
+        CentralBody            Earth
+        AnchorPtIndex          -3
+
+    END IndexPtData
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                LineColor               #f0e68c
+                LabelColor              #f0e68c
+                LineStyle               0
+                LineWidth               1.0
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowLabel               On
+                ShowBoundingRect        Off
+
+            END Graphics
+            BEGIN PointData
+                ShowPoints           Off
+                NewPointShow         On
+                NewPointMarkerStyle  1
+                NewPointFontStyle    0
+                PointMarkerShow      On
+                PointMarkerStyle     1
+            END PointData
+    END Graphics
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END LineTarget
+

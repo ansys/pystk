@@ -27,7 +27,7 @@ class _COMEventHandlerImpl(object):
         self._connection_id = None
         self._base_pUnkSink = pUnkSink
         self._cpc = agcls.IConnectionPointContainer(IUnknown(pUnk))
-        self._cp = self._cpc.FindConnectionPoint(iid)
+        self._cp = self._cpc.find_connection_point(iid)
 
     def __del__(self):
         del(self._cp)
@@ -50,11 +50,11 @@ class _COMEventHandlerImpl(object):
 
     def Subscribe(self):
         if self._connection_id is None:
-            self._connection_id = self._cp.Advise(addressof(self._base_pUnkSink))
+            self._connection_id = self._cp.advise(addressof(self._base_pUnkSink))
     
     def Unsubscribe(self):
         if self._connection_id is not None:
-            self._cp.Unadvise(self._connection_id)
+            self._cp.unadvise(self._connection_id)
             self._connection_id = None
         
 ################################################################################

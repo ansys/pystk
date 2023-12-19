@@ -90,7 +90,7 @@ agcls.AgTypeNameMap["APP_ERROR_CODES"] = APP_ERROR_CODES
 
 
 class IMRUCollection(object):
-    """Provides information about most recently used (MRU) list."""
+    """Provide information about most recently used (MRU) list."""
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -140,7 +140,7 @@ class IMRUCollection(object):
             "arg_types" : (agcom.VARIANT, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.BSTR_arg,) }
     def item(self, index:typing.Any) -> str:
-        """Gets the MRU at the specified index."""
+        """Get the MRU at the specified index."""
         return self._intf.invoke(IMRUCollection._metadata, IMRUCollection._item_metadata, index, out_arg())
 
     _get_count_metadata = { "name" : "count",
@@ -148,7 +148,7 @@ class IMRUCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Gets the total count of MRUs in the collection."""
+        """Get the total count of MRUs in the collection."""
         return self._intf.get_property(IMRUCollection._metadata, IMRUCollection._get_count_metadata)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -209,7 +209,7 @@ class IUiFileOpenExt(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def file_name(self) -> "UiFileOpenExtCollection":
-        """Gets/sets the multiple file open collection."""
+        """Get or set the multiple file open collection."""
         return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_file_name_metadata)
 
     _set_file_name_metadata = { "name" : "file_name",
@@ -217,7 +217,7 @@ class IUiFileOpenExt(object):
             "marshallers" : (agmarshall.AgInterface_in_arg("IUiFileOpenExtCollection"),) }
     @file_name.setter
     def file_name(self, newVal:"IUiFileOpenExtCollection") -> None:
-        """Gets/sets the multiple file open collection."""
+        """Get or set the multiple file open collection."""
         return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_file_name_metadata, newVal)
 
     _get_filter_description_metadata = { "name" : "filter_description",
@@ -225,7 +225,7 @@ class IUiFileOpenExt(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def filter_description(self) -> str:
-        """Gets/sets the file open dialog filter description."""
+        """Get or set the file open dialog filter description."""
         return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_filter_description_metadata)
 
     _set_filter_description_metadata = { "name" : "filter_description",
@@ -233,7 +233,7 @@ class IUiFileOpenExt(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @filter_description.setter
     def filter_description(self, newVal:str) -> None:
-        """Gets/sets the file open dialog filter description."""
+        """Get or set the file open dialog filter description."""
         return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_filter_description_metadata, newVal)
 
     _get_filter_pattern_metadata = { "name" : "filter_pattern",
@@ -241,7 +241,7 @@ class IUiFileOpenExt(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def filter_pattern(self) -> str:
-        """Gets/sets the file open dialog filter pattern."""
+        """Get or set the file open dialog filter pattern."""
         return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_filter_pattern_metadata)
 
     _set_filter_pattern_metadata = { "name" : "filter_pattern",
@@ -249,7 +249,7 @@ class IUiFileOpenExt(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @filter_pattern.setter
     def filter_pattern(self, newVal:str) -> None:
-        """Gets/sets the file open dialog filter pattern."""
+        """Get or set the file open dialog filter pattern."""
         return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_filter_pattern_metadata, newVal)
 
 
@@ -329,7 +329,7 @@ class IUiApplication(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def load_personality(self, persName:str) -> None:
-        """Loads a personality by its name."""
+        """Load a personality by its name."""
         return self._intf.invoke(IUiApplication._metadata, IUiApplication._load_personality_metadata, persName)
 
     _get_personality_metadata = { "name" : "personality",
@@ -337,7 +337,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def personality(self) -> typing.Any:
-        """Returns a reference to the currently loaded personality."""
+        """Return a reference to the currently loaded personality."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_personality_metadata)
 
     _get_visible_metadata = { "name" : "visible",
@@ -345,7 +345,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def visible(self) -> bool:
-        """Gets/sets whether the main window is visible."""
+        """Get or set whether the main window is visible."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_visible_metadata)
 
     _set_visible_metadata = { "name" : "visible",
@@ -353,7 +353,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @visible.setter
     def visible(self, newVal:bool) -> None:
-        """Gets/sets whether the main window is visible."""
+        """Get or set whether the main window is visible."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_visible_metadata, newVal)
 
     _get_user_control_metadata = { "name" : "user_control",
@@ -361,7 +361,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def user_control(self) -> bool:
-        """Gets/sets whether the application is user controlled."""
+        """Get or set whether the application is user controlled."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_user_control_metadata)
 
     _set_user_control_metadata = { "name" : "user_control",
@@ -369,7 +369,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @user_control.setter
     def user_control(self, newVal:bool) -> None:
-        """Gets/sets whether the application is user controlled."""
+        """Get or set whether the application is user controlled."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_user_control_metadata, newVal)
 
     _get_windows_metadata = { "name" : "windows",
@@ -377,7 +377,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def windows(self) -> "IUiWindowsCollection":
-        """Returns a collection of windows."""
+        """Return a collection of windows."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_windows_metadata)
 
     _get_height_metadata = { "name" : "height",
@@ -385,7 +385,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def height(self) -> int:
-        """Gets/sets a height of the main window."""
+        """Get or set a height of the main window."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_height_metadata)
 
     _set_height_metadata = { "name" : "height",
@@ -393,7 +393,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @height.setter
     def height(self, newVal:int) -> None:
-        """Gets/sets a height of the main window."""
+        """Get or set a height of the main window."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_height_metadata, newVal)
 
     _get_width_metadata = { "name" : "width",
@@ -401,7 +401,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def width(self) -> int:
-        """Gets/sets a width of the main window."""
+        """Get or set a width of the main window."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_width_metadata)
 
     _set_width_metadata = { "name" : "width",
@@ -409,7 +409,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @width.setter
     def width(self, newVal:int) -> None:
-        """Gets/sets a width of the main window."""
+        """Get or set a width of the main window."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_width_metadata, newVal)
 
     _get_left_metadata = { "name" : "left",
@@ -417,7 +417,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def left(self) -> int:
-        """Gets/sets a vertical coordinate of the main window."""
+        """Get or set a vertical coordinate of the main window."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_left_metadata)
 
     _set_left_metadata = { "name" : "left",
@@ -425,7 +425,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @left.setter
     def left(self, newVal:int) -> None:
-        """Gets/sets a vertical coordinate of the main window."""
+        """Get or set a vertical coordinate of the main window."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_left_metadata, newVal)
 
     _get_top_metadata = { "name" : "top",
@@ -433,7 +433,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def top(self) -> int:
-        """Gets/sets a horizontal coordinate of the main window."""
+        """Get or set a horizontal coordinate of the main window."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_top_metadata)
 
     _set_top_metadata = { "name" : "top",
@@ -441,7 +441,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @top.setter
     def top(self, newVal:int) -> None:
-        """Gets/sets a horizontal coordinate of the main window."""
+        """Get or set a horizontal coordinate of the main window."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_top_metadata, newVal)
 
     _get_window_state_metadata = { "name" : "window_state",
@@ -449,7 +449,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDOW_STATE),) }
     @property
     def window_state(self) -> "WINDOW_STATE":
-        """Gets/sets the state of the main window."""
+        """Get or set the state of the main window."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_window_state_metadata)
 
     _set_window_state_metadata = { "name" : "window_state",
@@ -457,7 +457,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.AgEnum_arg(WINDOW_STATE),) }
     @window_state.setter
     def window_state(self, newVal:"WINDOW_STATE") -> None:
-        """Gets/sets the state of the main window."""
+        """Get or set the state of the main window."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_window_state_metadata, newVal)
 
     _activate_metadata = { "name" : "activate",
@@ -472,7 +472,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def mru_list(self) -> "MRUCollection":
-        """Returns a collection most recently used files."""
+        """Return a collection most recently used files."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_mru_list_metadata)
 
     _file_open_dialog_metadata = { "name" : "file_open_dialog",
@@ -487,7 +487,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def path(self) -> str:
-        """Returns the complete path to the application, excluding the final separator and name of the application. Read-only String."""
+        """Return the complete path to the application, excluding the final separator and name of the application. Read-only String."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_path_metadata)
 
     _create_object_metadata = { "name" : "create_object",
@@ -523,7 +523,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def hwnd(self) -> int:
-        """Returns an HWND handle associated with the application main window."""
+        """Return an HWND handle associated with the application main window."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_hwnd_metadata)
 
     _directory_picker_dialog_metadata = { "name" : "directory_picker_dialog",
@@ -538,7 +538,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def message_pending_delay(self) -> int:
-        """Gets/Sets message-pending delay for server busy dialog (in milliseconds )"""
+        """Get or set message-pending delay for server busy dialog (in milliseconds )"""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_message_pending_delay_metadata)
 
     _set_message_pending_delay_metadata = { "name" : "message_pending_delay",
@@ -546,7 +546,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @message_pending_delay.setter
     def message_pending_delay(self, newVal:int) -> None:
-        """Gets/Sets message-pending delay for server busy dialog (in milliseconds)"""
+        """Get or set message-pending delay for server busy dialog (in milliseconds)"""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_message_pending_delay_metadata, newVal)
 
     _get_personality2_metadata = { "name" : "personality2",
@@ -554,21 +554,21 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def personality2(self) -> typing.Any:
-        """Returns an new instance of the root object of the STK Object Model"""
+        """Return an new instance of the root object of the STK Object Model"""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_personality2_metadata)
 
     _open_log_file_metadata = { "name" : "open_log_file",
             "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgEnum_arg(OPEN_LOG_FILE_MODE), agmarshall.VARIANT_BOOL_arg,) }
     def open_log_file(self, logFileName:str, logFileMode:"OPEN_LOG_FILE_MODE") -> bool:
-        """Specifies the current log file to be written to."""
+        """Specify the current log file to be written to."""
         return self._intf.invoke(IUiApplication._metadata, IUiApplication._open_log_file_metadata, logFileName, logFileMode, out_arg())
 
     _log_msg_metadata = { "name" : "log_msg",
             "arg_types" : (agcom.LONG, agcom.BSTR,),
             "marshallers" : (agmarshall.AgEnum_arg(UI_LOG_MSG_TYPE), agmarshall.BSTR_arg,) }
     def log_msg(self, msgType:"UI_LOG_MSG_TYPE", msg:str) -> None:
-        """Logs the Message specified."""
+        """Log the Message specified."""
         return self._intf.invoke(IUiApplication._metadata, IUiApplication._log_msg_metadata, msgType, msg)
 
     _get_log_file_metadata = { "name" : "log_file",
@@ -576,7 +576,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def log_file(self) -> str:
-        """Gets the current log files full path."""
+        """Get the current log files full path."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_log_file_metadata)
 
     _get_display_alerts_metadata = { "name" : "display_alerts",
@@ -607,7 +607,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def process_id(self) -> int:
-        """Gets process id for the current instance."""
+        """Get process id for the current instance."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_process_id_metadata)
 
 
@@ -710,7 +710,7 @@ class IUiFileOpenExtCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Gets the total count of files in the collection."""
+        """Get the total count of files in the collection."""
         return self._intf.get_property(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._get_count_metadata)
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -725,7 +725,7 @@ class IUiFileOpenExtCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
     def item(self, nIndex:int) -> str:
-        """Gets the file at the specified index."""
+        """Get the file at the specified index."""
         return self._intf.invoke(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._item_metadata, nIndex, out_arg())
 
     __getitem__ = item
@@ -762,7 +762,7 @@ agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}",
 agcls.AgTypeNameMap["UiApplication"] = UiApplication
 
 class MRUCollection(IMRUCollection):
-    """Provides information about most recently used (MRU) list."""
+    """Provide information about most recently used (MRU) list."""
     def __init__(self, sourceObject=None):
         IMRUCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

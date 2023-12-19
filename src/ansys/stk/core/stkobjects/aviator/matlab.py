@@ -399,7 +399,7 @@ class IStrategyMATLAB3DGuidance(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_target_names(self) -> list:
-        """Returns the valid target names."""
+        """Return the valid target names."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "name" : "target_resolution",

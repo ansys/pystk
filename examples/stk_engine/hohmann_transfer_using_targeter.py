@@ -31,8 +31,8 @@ class HohmannTransferUsingTargeter:
 
     def __init__(self):
         """Create a new instance and initialize the user interface."""
-        self.stk = STKEngine.StartApplication(noGraphics=False)
-        self.root = self.stk.NewObjectRoot()
+        self.stk = STKEngine.start_application(noGraphics=False)
+        self.root = self.stk.new_object_root()
         self.window = tk.Tk()
         self.window.title("Hohmann Transfer Using Targeter")
         self.window.protocol("WM_DELETE_WINDOW", self._exit)
@@ -102,7 +102,7 @@ class HohmannTransferUsingTargeter:
     def _exit(self):
         self.root.close_scenario()
         self.window.destroy()
-        self.stk.ShutDown()
+        self.stk.shutdown()
 
     def _new_scenario(self):
         self.root.new_scenario("HohmannTransfer")

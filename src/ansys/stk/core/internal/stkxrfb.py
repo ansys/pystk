@@ -211,7 +211,7 @@ class IRemoteFrameBuffer(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRemoteFrameBufferHost"),) }
     def set_host(self, pHost:"IRemoteFrameBufferHost") -> None:
-        """Sets the host using this remote frame buffer."""
+        """Set the host using this remote frame buffer."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._set_host_metadata, pHost)
 
 

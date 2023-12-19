@@ -23,8 +23,8 @@ class VGTTutorial:
 
     def __init__(self):
         """Create a new instance and initialize the user interface."""
-        self.stk = STKEngine.StartApplication(noGraphics=False)
-        self.stkRoot = self.stk.NewObjectRoot()
+        self.stk = STKEngine.start_application(noGraphics=False)
+        self.stkRoot = self.stk.new_object_root()
         self._satellite = None
         self.OnAnimUpdateSubscription = self.stkRoot.Subscribe()
         self.OnAnimUpdateSubscription.OnAnimUpdate += self._on_anim_update
@@ -264,7 +264,7 @@ class VGTTutorial:
     def _exit(self):
         self.stkRoot.close_scenario()
         self.window.destroy()
-        self.stk.ShutDown()
+        self.stk.shutdown()
 
     def _new_scenario(self):
         self.descriptionLabel[

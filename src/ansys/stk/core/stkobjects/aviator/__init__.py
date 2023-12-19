@@ -3847,14 +3847,14 @@ class ICatalogItem(object):
             "arg_types" : (),
             "marshallers" : () }
     def remove(self) -> None:
-        """Removes the catalog item."""
+        """Remove the catalog item."""
         return self._intf.invoke(ICatalogItem._metadata, ICatalogItem._remove_metadata, )
 
     _save_metadata = { "name" : "save",
             "arg_types" : (),
             "marshallers" : () }
     def save(self) -> None:
-        """Saves the catalog item."""
+        """Save the catalog item."""
         return self._intf.invoke(ICatalogItem._metadata, ICatalogItem._save_metadata, )
 
     _get_is_read_only_metadata = { "name" : "is_read_only",
@@ -3892,14 +3892,14 @@ class ICatalogItem(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_default_child(self, childName:str) -> "ICatalogItem":
-        """Creates a new child with the given name and default type."""
+        """Create a new child with the given name and default type."""
         return self._intf.invoke(ICatalogItem._metadata, ICatalogItem._add_default_child_metadata, childName, out_arg())
 
     _add_child_of_type_metadata = { "name" : "add_child_of_type",
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_child_of_type(self, childType:str, childName:str) -> "ICatalogItem":
-        """Creates a new child with the given name and specified type."""
+        """Create a new child with the given name and specified type."""
         return self._intf.invoke(ICatalogItem._metadata, ICatalogItem._add_child_of_type_metadata, childType, childName, out_arg())
 
     _contains_child_item_metadata = { "name" : "contains_child_item",
@@ -4399,7 +4399,7 @@ class IAircraftVTOL(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_vtol_by_name(self, name:str) -> "AircraftVTOLModel":
-        """Gets the VTOL model with the given name."""
+        """Get the VTOL model with the given name."""
         return self._intf.invoke(IAircraftVTOL._metadata, IAircraftVTOL._get_vtol_by_name_metadata, name, out_arg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -7099,7 +7099,7 @@ class IAircraftTerrainFollow(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_terrain_follow_by_name(self, name:str) -> "AircraftTerrainFollowModel":
-        """Gets the TerrainFollow model with the given name."""
+        """Get the TerrainFollow model with the given name."""
         return self._intf.invoke(IAircraftTerrainFollow._metadata, IAircraftTerrainFollow._get_terrain_follow_by_name_metadata, name, out_arg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -12781,14 +12781,14 @@ class IUserRunwaySource(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_user_runway(self, name:str) -> "UserRunway":
-        """Gets the user runway with the given name."""
+        """Get the user runway with the given name."""
         return self._intf.invoke(IUserRunwaySource._metadata, IUserRunwaySource._get_user_runway_metadata, name, out_arg())
 
     _add_user_runway_metadata = { "name" : "add_user_runway",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_user_runway(self, name:str) -> "UserRunway":
-        """Creates a new user runway with the given name."""
+        """Create a new user runway with the given name."""
         return self._intf.invoke(IUserRunwaySource._metadata, IUserRunwaySource._add_user_runway_metadata, name, out_arg())
 
     _get_as_catalog_source_metadata = { "name" : "get_as_catalog_source",
@@ -13116,7 +13116,7 @@ class IARINC424Source(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_arinc424_item(self, name:str) -> "IARINC424Item":
-        """Gets the ARINC-424 item with the given name."""
+        """Get the ARINC-424 item with the given name."""
         return self._intf.invoke(IARINC424Source._metadata, IARINC424Source._get_arinc424_item_metadata, name, out_arg())
 
     _get_use_master_data_file_metadata = { "name" : "use_master_data_file",
@@ -13436,14 +13436,14 @@ class IUserVTOLPointSource(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_user_vtol_point(self, name:str) -> "UserVTOLPoint":
-        """Gets the user VTOL Point with the given name."""
+        """Get the user VTOL Point with the given name."""
         return self._intf.invoke(IUserVTOLPointSource._metadata, IUserVTOLPointSource._get_user_vtol_point_metadata, name, out_arg())
 
     _add_user_vtol_point_metadata = { "name" : "add_user_vtol_point",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_user_vtol_point(self, name:str) -> "UserVTOLPoint":
-        """Creates a new user VTOL Point with the given name."""
+        """Create a new user VTOL Point with the given name."""
         return self._intf.invoke(IUserVTOLPointSource._metadata, IUserVTOLPointSource._add_user_vtol_point_metadata, name, out_arg())
 
     _get_as_catalog_source_metadata = { "name" : "get_as_catalog_source",
@@ -13592,14 +13592,14 @@ class IUserWaypointSource(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_user_waypoint(self, name:str) -> "UserWaypoint":
-        """Gets the user waypoint with the given name."""
+        """Get the user waypoint with the given name."""
         return self._intf.invoke(IUserWaypointSource._metadata, IUserWaypointSource._get_user_waypoint_metadata, name, out_arg())
 
     _add_user_waypoint_metadata = { "name" : "add_user_waypoint",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_user_waypoint(self, name:str) -> "UserWaypoint":
-        """Creates a new user waypoint with the given name."""
+        """Create a new user waypoint with the given name."""
         return self._intf.invoke(IUserWaypointSource._metadata, IUserWaypointSource._add_user_waypoint_metadata, name, out_arg())
 
     _get_as_catalog_source_metadata = { "name" : "get_as_catalog_source",
@@ -14696,7 +14696,7 @@ class IADDSMessageCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the number of elements in a collection."""
+        """Return the number of elements in a collection."""
         return self._intf.get_property(IADDSMessageCollection._metadata, IADDSMessageCollection._get_count_metadata)
 
     _item_metadata = { "name" : "item",
@@ -14711,7 +14711,7 @@ class IADDSMessageCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that can iterate through the collection."""
+        """Return an enumerator that can iterate through the collection."""
         return self._intf.get_property(IADDSMessageCollection._metadata, IADDSMessageCollection._get__NewEnum_metadata)
 
     _remove_message_metadata = { "name" : "remove_message",
@@ -14725,7 +14725,7 @@ class IADDSMessageCollection(object):
             "arg_types" : (),
             "marshallers" : () }
     def clear_messages(self) -> None:
-        """Clears all of the messages in the collection."""
+        """Clear all of the messages in the collection."""
         return self._intf.invoke(IADDSMessageCollection._metadata, IADDSMessageCollection._clear_messages_metadata, )
 
     __getitem__ = item
@@ -15101,7 +15101,7 @@ class IStationCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the number of elements in a collection."""
+        """Return the number of elements in a collection."""
         return self._intf.get_property(IStationCollection._metadata, IStationCollection._get_count_metadata)
 
     _item_metadata = { "name" : "item",
@@ -15116,7 +15116,7 @@ class IStationCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that can iterate through the collection."""
+        """Return an enumerator that can iterate through the collection."""
         return self._intf.get_property(IStationCollection._metadata, IStationCollection._get__NewEnum_metadata)
 
     _get_internal_fuel_tank_by_name_metadata = { "name" : "get_internal_fuel_tank_by_name",
@@ -15173,7 +15173,7 @@ class IStationCollection(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def station_names(self) -> list:
-        """Returns the station names."""
+        """Return the station names."""
         return self._intf.get_property(IStationCollection._metadata, IStationCollection._get_station_names_metadata)
 
     __getitem__ = item
@@ -15445,28 +15445,28 @@ class ICatalogSource(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def child_names(self) -> list:
-        """Returns the child names."""
+        """Return the child names."""
         return self._intf.get_property(ICatalogSource._metadata, ICatalogSource._get_child_names_metadata)
 
     _contains_metadata = { "name" : "contains",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def contains(self, aircraftName:str) -> bool:
-        """Checks whether the catalog source contains the catalog item with the given name."""
+        """Check whether the catalog source contains the catalog item with the given name."""
         return self._intf.invoke(ICatalogSource._metadata, ICatalogSource._contains_metadata, aircraftName, out_arg())
 
     _remove_child_metadata = { "name" : "remove_child",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def remove_child(self, childName:str) -> None:
-        """Removes the child with the given name."""
+        """Remove the child with the given name."""
         return self._intf.invoke(ICatalogSource._metadata, ICatalogSource._remove_child_metadata, childName)
 
     _save_metadata = { "name" : "save",
             "arg_types" : (),
             "marshallers" : () }
     def save(self) -> None:
-        """Saves the catalog item."""
+        """Save the catalog item."""
         return self._intf.invoke(ICatalogSource._metadata, ICatalogSource._save_metadata, )
 
 
@@ -15512,14 +15512,14 @@ class IAircraftModels(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_aircraft(self, aircraftName:str) -> "AircraftModel":
-        """Gets the aircraft with the given name."""
+        """Get the aircraft with the given name."""
         return self._intf.invoke(IAircraftModels._metadata, IAircraftModels._get_aircraft_metadata, aircraftName, out_arg())
 
     _add_aircraft_metadata = { "name" : "add_aircraft",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_aircraft(self, aircraftName:str) -> "AircraftModel":
-        """Creates a new aircraft with the given name."""
+        """Create a new aircraft with the given name."""
         return self._intf.invoke(IAircraftModels._metadata, IAircraftModels._add_aircraft_metadata, aircraftName, out_arg())
 
     _get_as_catalog_source_metadata = { "name" : "get_as_catalog_source",
@@ -15572,14 +15572,14 @@ class IMissileModels(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_missile(self, name:str) -> "MissileModel":
-        """Gets the missile with the given name."""
+        """Get the missile with the given name."""
         return self._intf.invoke(IMissileModels._metadata, IMissileModels._get_missile_metadata, name, out_arg())
 
     _add_missile_metadata = { "name" : "add_missile",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_missile(self, name:str) -> "MissileModel":
-        """Creates a new missile with the given name."""
+        """Create a new missile with the given name."""
         return self._intf.invoke(IMissileModels._metadata, IMissileModels._add_missile_metadata, name, out_arg())
 
     _get_as_catalog_source_metadata = { "name" : "get_as_catalog_source",
@@ -15632,14 +15632,14 @@ class IRotorcraftModels(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_rotorcraft(self, name:str) -> "RotorcraftModel":
-        """Gets the rotorcraft with the given name."""
+        """Get the rotorcraft with the given name."""
         return self._intf.invoke(IRotorcraftModels._metadata, IRotorcraftModels._get_rotorcraft_metadata, name, out_arg())
 
     _add_rotorcraft_metadata = { "name" : "add_rotorcraft",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def add_rotorcraft(self, name:str) -> "RotorcraftModel":
-        """Creates a new rotorcraft with the given name."""
+        """Create a new rotorcraft with the given name."""
         return self._intf.invoke(IRotorcraftModels._metadata, IRotorcraftModels._add_rotorcraft_metadata, name, out_arg())
 
     _get_as_catalog_source_metadata = { "name" : "get_as_catalog_source",
@@ -17326,14 +17326,14 @@ class IAircraftClimb(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_basic_climb_by_name(self, name:str) -> "AircraftBasicClimbModel":
-        """Gets the basic climb model with the given name."""
+        """Get the basic climb model with the given name."""
         return self._intf.invoke(IAircraftClimb._metadata, IAircraftClimb._get_basic_climb_by_name_metadata, name, out_arg())
 
     _get_adv_climb_by_name_metadata = { "name" : "get_adv_climb_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_adv_climb_by_name(self, name:str) -> "AircraftAdvClimbModel":
-        """Gets the advanced climb model with the given name."""
+        """Get the advanced climb model with the given name."""
         return self._intf.invoke(IAircraftClimb._metadata, IAircraftClimb._get_adv_climb_by_name_metadata, name, out_arg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -17394,14 +17394,14 @@ class IAircraftCruise(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_basic_cruise_by_name(self, name:str) -> "AircraftBasicCruiseModel":
-        """Gets the basic cruise model with the given name."""
+        """Get the basic cruise model with the given name."""
         return self._intf.invoke(IAircraftCruise._metadata, IAircraftCruise._get_basic_cruise_by_name_metadata, name, out_arg())
 
     _get_adv_cruise_by_name_metadata = { "name" : "get_adv_cruise_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_adv_cruise_by_name(self, name:str) -> "AircraftAdvCruiseModel":
-        """Gets the advanced cruise model with the given name."""
+        """Get the advanced cruise model with the given name."""
         return self._intf.invoke(IAircraftCruise._metadata, IAircraftCruise._get_adv_cruise_by_name_metadata, name, out_arg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -17462,14 +17462,14 @@ class IAircraftDescent(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_basic_descent_by_name(self, name:str) -> "AircraftBasicDescentModel":
-        """Gets the basic descent model with the given name."""
+        """Get the basic descent model with the given name."""
         return self._intf.invoke(IAircraftDescent._metadata, IAircraftDescent._get_basic_descent_by_name_metadata, name, out_arg())
 
     _get_adv_descent_by_name_metadata = { "name" : "get_adv_descent_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_adv_descent_by_name(self, name:str) -> "AircraftAdvDescentModel":
-        """Gets the advanced descent model with the given name."""
+        """Get the advanced descent model with the given name."""
         return self._intf.invoke(IAircraftDescent._metadata, IAircraftDescent._get_adv_descent_by_name_metadata, name, out_arg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -17530,14 +17530,14 @@ class IAircraftLanding(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_basic_landing_by_name(self, name:str) -> "AircraftBasicLandingModel":
-        """Gets the basic Landing model with the given name."""
+        """Get the basic Landing model with the given name."""
         return self._intf.invoke(IAircraftLanding._metadata, IAircraftLanding._get_basic_landing_by_name_metadata, name, out_arg())
 
     _get_adv_landing_by_name_metadata = { "name" : "get_adv_landing_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_adv_landing_by_name(self, name:str) -> "AircraftAdvLandingModel":
-        """Gets the advanced Landing model with the given name."""
+        """Get the advanced Landing model with the given name."""
         return self._intf.invoke(IAircraftLanding._metadata, IAircraftLanding._get_adv_landing_by_name_metadata, name, out_arg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -17598,14 +17598,14 @@ class IAircraftTakeoff(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_basic_takeoff_by_name(self, name:str) -> "AircraftBasicTakeoffModel":
-        """Gets the basic Takeoff model with the given name."""
+        """Get the basic Takeoff model with the given name."""
         return self._intf.invoke(IAircraftTakeoff._metadata, IAircraftTakeoff._get_basic_takeoff_by_name_metadata, name, out_arg())
 
     _get_adv_takeoff_by_name_metadata = { "name" : "get_adv_takeoff_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_adv_takeoff_by_name(self, name:str) -> "AircraftAdvTakeoffModel":
-        """Gets the advanced Takeoff model with the given name."""
+        """Get the advanced Takeoff model with the given name."""
         return self._intf.invoke(IAircraftTakeoff._metadata, IAircraftTakeoff._get_adv_takeoff_by_name_metadata, name, out_arg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -20069,7 +20069,7 @@ class IProcedureCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the number of elements in a collection."""
+        """Return the number of elements in a collection."""
         return self._intf.get_property(IProcedureCollection._metadata, IProcedureCollection._get_count_metadata)
 
     _item_metadata = { "name" : "item",
@@ -20084,21 +20084,21 @@ class IProcedureCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that can iterate through the collection."""
+        """Return an enumerator that can iterate through the collection."""
         return self._intf.get_property(IProcedureCollection._metadata, IProcedureCollection._get__NewEnum_metadata)
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgEnum_arg(SITE_TYPE), agmarshall.AgEnum_arg(PROCEDURE_TYPE), agmarshall.AgInterface_out_arg,) }
     def add(self, siteType:"SITE_TYPE", procedureType:"PROCEDURE_TYPE") -> "IProcedure":
-        """Adds a procedure with the specified site at the end of the current phase."""
+        """Add a procedure with the specified site at the end of the current phase."""
         return self._intf.invoke(IProcedureCollection._metadata, IProcedureCollection._add_metadata, siteType, procedureType, out_arg())
 
     _add_at_index_metadata = { "name" : "add_at_index",
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgEnum_arg(SITE_TYPE), agmarshall.AgEnum_arg(PROCEDURE_TYPE), agmarshall.AgInterface_out_arg,) }
     def add_at_index(self, index:int, siteType:"SITE_TYPE", procedureType:"PROCEDURE_TYPE") -> "IProcedure":
-        """Adds a procedure with the specified site at the given index."""
+        """Add a procedure with the specified site at the given index."""
         return self._intf.invoke(IProcedureCollection._metadata, IProcedureCollection._add_at_index_metadata, index, siteType, procedureType, out_arg())
 
     _remove_metadata = { "name" : "remove",
@@ -20180,7 +20180,7 @@ class IPhase(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def procedures(self) -> "ProcedureCollection":
-        """Returns the procedure collection."""
+        """Return the procedure collection."""
         return self._intf.get_property(IPhase._metadata, IPhase._get_procedures_metadata)
 
     _get_name_metadata = { "name" : "name",
@@ -20287,7 +20287,7 @@ class IPhaseCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Returns the number of elements in a collection."""
+        """Return the number of elements in a collection."""
         return self._intf.get_property(IPhaseCollection._metadata, IPhaseCollection._get_count_metadata)
 
     _item_metadata = { "name" : "item",
@@ -20302,21 +20302,21 @@ class IPhaseCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Returns an enumerator that can iterate through the collection."""
+        """Return an enumerator that can iterate through the collection."""
         return self._intf.get_property(IPhaseCollection._metadata, IPhaseCollection._get__NewEnum_metadata)
 
     _add_metadata = { "name" : "add",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def add(self) -> "Phase":
-        """Adds a phase at the end of the mission."""
+        """Add a phase at the end of the mission."""
         return self._intf.invoke(IPhaseCollection._metadata, IPhaseCollection._add_metadata, out_arg())
 
     _add_at_index_metadata = { "name" : "add_at_index",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
     def add_at_index(self, index:int) -> "Phase":
-        """Adds a phase at the given index."""
+        """Add a phase at the given index."""
         return self._intf.invoke(IPhaseCollection._metadata, IPhaseCollection._add_at_index_metadata, index, out_arg())
 
     _remove_metadata = { "name" : "remove",
@@ -20496,7 +20496,7 @@ class IAviatorPropagator(object):
             "arg_types" : (),
             "marshallers" : () }
     def propagate(self) -> None:
-        """Applies All Change."""
+        """Apply All Change."""
         return self._intf.invoke(IAviatorPropagator._metadata, IAviatorPropagator._propagate_metadata, )
 
     _get_auto_recalculate_metadata = { "name" : "auto_recalculate",
@@ -24138,7 +24138,7 @@ class IBasicManeuverStrategyIntercept(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_target_names(self) -> list:
-        """Returns the valid target names."""
+        """Return the valid target names."""
         return self._intf.get_property(IBasicManeuverStrategyIntercept._metadata, IBasicManeuverStrategyIntercept._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "name" : "target_resolution",
@@ -24459,7 +24459,7 @@ class IBasicManeuverStrategyRelativeBearing(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_target_names(self) -> list:
-        """Returns the valid target names."""
+        """Return the valid target names."""
         return self._intf.get_property(IBasicManeuverStrategyRelativeBearing._metadata, IBasicManeuverStrategyRelativeBearing._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "name" : "target_resolution",
@@ -24670,7 +24670,7 @@ class IBasicManeuverStrategyRelativeCourse(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_target_names(self) -> list:
-        """Returns the valid target names."""
+        """Return the valid target names."""
         return self._intf.get_property(IBasicManeuverStrategyRelativeCourse._metadata, IBasicManeuverStrategyRelativeCourse._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "name" : "target_resolution",
@@ -25014,7 +25014,7 @@ class IBasicManeuverStrategyRendezvous(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_target_names(self) -> list:
-        """Returns the valid target names."""
+        """Return the valid target names."""
         return self._intf.get_property(IBasicManeuverStrategyRendezvous._metadata, IBasicManeuverStrategyRendezvous._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "name" : "target_resolution",
@@ -25397,7 +25397,7 @@ class IBasicManeuverStrategyStationkeeping(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_target_names(self) -> list:
-        """Returns the valid target names."""
+        """Return the valid target names."""
         return self._intf.get_property(IBasicManeuverStrategyStationkeeping._metadata, IBasicManeuverStrategyStationkeeping._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "name" : "target_resolution",
@@ -26018,7 +26018,7 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_target_names(self) -> list:
-        """Returns the valid target names."""
+        """Return the valid target names."""
         return self._intf.get_property(IBasicManeuverStrategyRelSpeedAltitude._metadata, IBasicManeuverStrategyRelSpeedAltitude._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "name" : "target_resolution",
@@ -30514,7 +30514,7 @@ class ISiteSTKVehicle(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_object_names(self) -> list:
-        """Returns the valid object names."""
+        """Return the valid object names."""
         return self._intf.get_property(ISiteSTKVehicle._metadata, ISiteSTKVehicle._get_valid_object_names_metadata)
 
     _get_as_site_metadata = { "name" : "get_as_site",
@@ -30787,7 +30787,7 @@ class ISiteSTKObjectWaypoint(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_object_names(self) -> list:
-        """Returns the valid object names."""
+        """Return the valid object names."""
         return self._intf.get_property(ISiteSTKObjectWaypoint._metadata, ISiteSTKObjectWaypoint._get_valid_object_names_metadata)
 
     _get_min_time_metadata = { "name" : "min_time",
@@ -30986,7 +30986,7 @@ class ISiteSTKStaticObject(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_object_names(self) -> list:
-        """Returns the valid object names."""
+        """Return the valid object names."""
         return self._intf.get_property(ISiteSTKStaticObject._metadata, ISiteSTKStaticObject._get_valid_object_names_metadata)
 
     _get_as_site_metadata = { "name" : "get_as_site",
@@ -31063,7 +31063,7 @@ class ISiteRelToSTKObject(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_object_names(self) -> list:
-        """Returns the valid object names."""
+        """Return the valid object names."""
         return self._intf.get_property(ISiteRelToSTKObject._metadata, ISiteRelToSTKObject._get_valid_object_names_metadata)
 
     _get_bearing_metadata = { "name" : "bearing",
@@ -31182,7 +31182,7 @@ class ISiteSTKAreaTarget(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_object_names(self) -> list:
-        """Returns the valid object names."""
+        """Return the valid object names."""
         return self._intf.get_property(ISiteSTKAreaTarget._metadata, ISiteSTKAreaTarget._get_valid_object_names_metadata)
 
     _get_as_site_metadata = { "name" : "get_as_site",
@@ -33425,7 +33425,7 @@ class IProcedureHoldingRacetrack(object):
             "marshallers" : (agmarshall.AgEnum_arg(HOLDING_ENTRY_MANEUVER),) }
     @property
     def entry_maneuver(self) -> "HOLDING_ENTRY_MANEUVER":
-        """Defines how the aircraft will enter the holding pattern."""
+        """Define how the aircraft will enter the holding pattern."""
         return self._intf.get_property(IProcedureHoldingRacetrack._metadata, IProcedureHoldingRacetrack._get_entry_maneuver_metadata)
 
     _set_entry_maneuver_metadata = { "name" : "entry_maneuver",
@@ -33433,7 +33433,7 @@ class IProcedureHoldingRacetrack(object):
             "marshallers" : (agmarshall.AgEnum_arg(HOLDING_ENTRY_MANEUVER),) }
     @entry_maneuver.setter
     def entry_maneuver(self, newVal:"HOLDING_ENTRY_MANEUVER") -> None:
-        """Defines how the aircraft will enter the holding pattern."""
+        """Define how the aircraft will enter the holding pattern."""
         return self._intf.set_property(IProcedureHoldingRacetrack._metadata, IProcedureHoldingRacetrack._set_entry_maneuver_metadata, newVal)
 
     _get_turns_metadata = { "name" : "turns",
@@ -37760,7 +37760,7 @@ class ISiteDynState(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def valid_object_names(self) -> list:
-        """Returns the valid object names."""
+        """Return the valid object names."""
         return self._intf.get_property(ISiteDynState._metadata, ISiteDynState._get_valid_object_names_metadata)
 
     _get_as_site_metadata = { "name" : "get_as_site",
