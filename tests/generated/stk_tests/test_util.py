@@ -1691,6 +1691,15 @@ class DataProviderResultWriter(object):
 class CategoryManager:
     included_categories = []
     excluded_categories = []
+    isUsingPyTest = False
+
+    @staticmethod
+    def SetUsingPyTest(value: bool):
+        CategoryManager.isUsingPyTest = value
+
+    @staticmethod
+    def IsUsingPyTest() -> bool:
+        return CategoryManager.isUsingPyTest
 
     @staticmethod
     def AddIncludedCategory(name):
@@ -1715,17 +1724,46 @@ class CategoryManager:
             return False
 
 
-def category(name):
-    if not CategoryManager.IsIncluded(name):
-        return unittest.skip(f'Category "{name}" is not included')
-    elif CategoryManager.IsExcluded(name):
-        return unittest.skip(f'Category "{name}" is excluded')
-    else:
+class category:
+    """
+    Category decorator for classes or methods.
 
-        def _identity(obj):
-            return obj
+    Used to include/exclude tests based on the --include
+    and --exclude command line options.
 
-        return _identity
+    For pytest, adds a `categories` member to classes or test
+    methods. This member is checked in conftest.py
+    pytest_runtest_setup method.
+    """
+
+    def __init__(self, category_name):
+        self.category_name = category_name
+
+    def __call__(self, class_or_function):
+        if not CategoryManager.IsUsingPyTest():
+            if not CategoryManager.IsIncluded(self.category_name):
+                return unittest.skip(f'Category "{self.category_name}" is not included')(class_or_function)
+            elif CategoryManager.IsExcluded(self.category_name):
+                return unittest.skip(f'Category "{self.category_name}" is excluded')(class_or_function)
+            else:
+                return class_or_function
+        else:
+            if inspect.isclass(class_or_function):
+                # Propagate the category from the class to all
+                # the test methods in the class
+                for item in class_or_function.__dict__:
+                    if item.startswith("test_"):
+                        member = class_or_function.__dict__[item]
+                        if member is not None:
+                            if not hasattr(member, "categories"):
+                                member.categories = []
+                            member.categories.append(self.category_name)
+            else:
+                # Accumulate the categories
+                if not hasattr(class_or_function, "categories"):
+                    class_or_function.categories = []
+                class_or_function.categories.append(self.category_name)
+            return class_or_function
 
 
 def GetTestCase():
