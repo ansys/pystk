@@ -38,7 +38,7 @@ class EarlyBoundTests(TestBase):
         paths: "PathCollection" = (
             TestBase.Application.stk_preferences.stk_preferences_python_plugins.ephemeris_file_reader_paths
         )
-        paths.remove(TestBase.GetScenarioFile("Plugins", "Python_Ephemeris_File_Reader_Plugin_Example.py"))
+        paths.remove_all()
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.ADV_CAT, "TestAdvCAT")
         EarlyBoundTests.AG_ACAT = None
