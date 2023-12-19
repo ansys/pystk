@@ -15,8 +15,13 @@ on:
         default: true
         type: boolean
     
-  schedule: # UTC at 0000
-    - cron: "0 0 * * *"
+  schedule:
+    # From Monday to Friday (both included) at 00:00 UTC. Used for running only
+    # the 'MAIN_PYTHON_VERSION'.
+    - cron: '0 0 * * 1-5'
+    # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
+    # complete list of Python versions.
+    - cron: '0 0 * * 6-7'
 
 env:
   MAIN_PYTHON_VERSION: '3.10'
@@ -52,6 +57,11 @@ jobs:
     strategy:
       matrix:
         python: ["3.8", "3.9", "3.10"]
+        is-weekly-run:
+          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * *' }}
+        exclude:
+          - is-weekly-run: true
+            python: ["3.8", "3.9"]
       fail-fast: false
     steps:
 
