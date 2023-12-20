@@ -194,7 +194,9 @@ from .internal  import comutil          as agcom
 from .internal  import coclassutil      as agcls
 from .internal  import marshall         as agmarshall
 from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.apiutil     import (interface_proxy, enumerator_proxy, out_arg, 
+    initialize_from_source_object, get_interface_property, set_interface_attribute, 
+    set_class_attribute)
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
@@ -1867,14 +1869,7 @@ class ITimeToolIntervalCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolIntervalCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolIntervalCollection from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolIntervalCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -1882,14 +1877,9 @@ class ITimeToolIntervalCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolIntervalCollection.__dict__ and type(ITimeToolIntervalCollection.__dict__[attrname]) == property:
-            return ITimeToolIntervalCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolIntervalCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolIntervalCollection.")
+        set_interface_attribute(self, attrname, value, ITimeToolIntervalCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -1943,28 +1933,16 @@ class ITimeToolInterval(object):
                              "get_stop" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolInterval._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolInterval from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolInterval)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolInterval.__dict__ and type(ITimeToolInterval.__dict__[attrname]) == property:
-            return ITimeToolInterval.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolInterval)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolInterval.")
+        set_interface_attribute(self, attrname, value, ITimeToolInterval, None)
     
     _get_start_metadata = { "name" : "start",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -1998,28 +1976,16 @@ class IVectorGeometryToolPoint(object):
                              "locate_in_system" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPoint from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPoint.__dict__ and type(IVectorGeometryToolPoint.__dict__[attrname]) == property:
-            return IVectorGeometryToolPoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPoint.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPoint, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2059,28 +2025,16 @@ class IVectorGeometryToolVector(object):
                              "find_in_axes_with_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVector._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVector from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVector)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVector.__dict__ and type(IVectorGeometryToolVector.__dict__[attrname]) == property:
-            return IVectorGeometryToolVector.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVector)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVector.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVector, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2121,28 +2075,16 @@ class IVectorGeometryToolSystem(object):
                              "transform_with_rate" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystem._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystem from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystem)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystem.__dict__ and type(IVectorGeometryToolSystem.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystem.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystem)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystem.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystem, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2195,28 +2137,16 @@ class IVectorGeometryToolAxes(object):
                              "transform_with_rate" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxes from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxes.__dict__ and type(IVectorGeometryToolAxes.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxes.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxes, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2304,28 +2234,16 @@ class IVectorGeometryToolAngle(object):
                              "find_coordinates_with_rate" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngle._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngle from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngle)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngle.__dict__ and type(IVectorGeometryToolAngle.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngle.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngle)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngle.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngle, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2382,28 +2300,16 @@ class IVectorGeometryToolPlane(object):
                              "get_labels" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlane._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlane from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlane)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlane.__dict__ and type(IVectorGeometryToolPlane.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlane.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlane)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlane.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlane, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2463,28 +2369,16 @@ class IAnalysisWorkbenchContext(object):
         "method_offsets" : { "get_is_template" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchContext._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchContext from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchContext)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchContext.__dict__ and type(IAnalysisWorkbenchContext.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchContext.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchContext)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchContext.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchContext, None)
     
     _get_is_template_metadata = { "name" : "is_template",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2526,28 +2420,16 @@ class IAnalysisWorkbenchComponent(object):
                              "rename" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchComponent._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchComponent from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponent)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchComponent.__dict__ and type(IAnalysisWorkbenchComponent.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchComponent.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchComponent)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchComponent.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponent, None)
     
     _get_kind_metadata = { "name" : "kind",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2710,28 +2592,16 @@ class ICalculationToolEvaluateResult(object):
                              "get_value" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolEvaluateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolEvaluateResult from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolEvaluateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolEvaluateResult.__dict__ and type(ICalculationToolEvaluateResult.__dict__[attrname]) == property:
-            return ICalculationToolEvaluateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolEvaluateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolEvaluateResult.")
+        set_interface_attribute(self, attrname, value, ICalculationToolEvaluateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2765,28 +2635,16 @@ class ICalculationToolEvaluateWithRateResult(object):
                              "get_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolEvaluateWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolEvaluateWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolEvaluateWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolEvaluateWithRateResult.__dict__ and type(ICalculationToolEvaluateWithRateResult.__dict__[attrname]) == property:
-            return ICalculationToolEvaluateWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolEvaluateWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolEvaluateWithRateResult.")
+        set_interface_attribute(self, attrname, value, ICalculationToolEvaluateWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2827,28 +2685,16 @@ class ITimeToolEventIntervalResult(object):
                              "get_interval" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalResult.__dict__ and type(ITimeToolEventIntervalResult.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2881,28 +2727,16 @@ class ITimeToolEventFindOccurrenceResult(object):
                              "get_epoch" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventFindOccurrenceResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventFindOccurrenceResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventFindOccurrenceResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventFindOccurrenceResult.__dict__ and type(ITimeToolEventFindOccurrenceResult.__dict__[attrname]) == property:
-            return ITimeToolEventFindOccurrenceResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventFindOccurrenceResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventFindOccurrenceResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventFindOccurrenceResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2938,28 +2772,16 @@ class ITimeToolFindTimesResult(object):
                              "get_times" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolFindTimesResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolFindTimesResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolFindTimesResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolFindTimesResult.__dict__ and type(ITimeToolFindTimesResult.__dict__[attrname]) == property:
-            return ITimeToolFindTimesResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolFindTimesResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolFindTimesResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolFindTimesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -3016,28 +2838,16 @@ class ITimeToolIntervalsVectorResult(object):
                              "get_interval_collections" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolIntervalsVectorResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolIntervalsVectorResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolIntervalsVectorResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolIntervalsVectorResult.__dict__ and type(ITimeToolIntervalsVectorResult.__dict__[attrname]) == property:
-            return ITimeToolIntervalsVectorResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolIntervalsVectorResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolIntervalsVectorResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolIntervalsVectorResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -3070,28 +2880,16 @@ class ITimeToolEventIntervalCollectionOccurredResult(object):
                              "get_index" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalCollectionOccurredResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalCollectionOccurredResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionOccurredResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalCollectionOccurredResult.__dict__ and type(ITimeToolEventIntervalCollectionOccurredResult.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalCollectionOccurredResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalCollectionOccurredResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollectionOccurredResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionOccurredResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -3124,28 +2922,16 @@ class ITimeToolIntervalListResult(object):
                              "get_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolIntervalListResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolIntervalListResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolIntervalListResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolIntervalListResult.__dict__ and type(ITimeToolIntervalListResult.__dict__[attrname]) == property:
-            return ITimeToolIntervalListResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolIntervalListResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolIntervalListResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolIntervalListResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -3179,14 +2965,7 @@ class ITimeToolIntervalVectorCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolIntervalVectorCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolIntervalVectorCollection from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolIntervalVectorCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -3194,14 +2973,9 @@ class ITimeToolIntervalVectorCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolIntervalVectorCollection.__dict__ and type(ITimeToolIntervalVectorCollection.__dict__[attrname]) == property:
-            return ITimeToolIntervalVectorCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolIntervalVectorCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolIntervalVectorCollection.")
+        set_interface_attribute(self, attrname, value, ITimeToolIntervalVectorCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -3262,14 +3036,7 @@ class ITimeToolEventGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -3277,14 +3044,9 @@ class ITimeToolEventGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventGroup.__dict__ and type(ITimeToolEventGroup.__dict__[attrname]) == property:
-            return ITimeToolEventGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventGroup.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -3389,14 +3151,7 @@ class ITimeToolEventIntervalGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -3404,14 +3159,9 @@ class ITimeToolEventIntervalGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalGroup.__dict__ and type(ITimeToolEventIntervalGroup.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalGroup.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -3516,14 +3266,7 @@ class ITimeToolEventIntervalListGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -3531,14 +3274,9 @@ class ITimeToolEventIntervalListGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListGroup.__dict__ and type(ITimeToolEventIntervalListGroup.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListGroup.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -3643,14 +3381,7 @@ class ITimeToolEventArrayGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -3658,14 +3389,9 @@ class ITimeToolEventArrayGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayGroup.__dict__ and type(ITimeToolEventArrayGroup.__dict__[attrname]) == property:
-            return ITimeToolEventArrayGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayGroup.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -3770,14 +3496,7 @@ class ICalculationToolScalarGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -3785,14 +3504,9 @@ class ICalculationToolScalarGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarGroup.__dict__ and type(ICalculationToolScalarGroup.__dict__[attrname]) == property:
-            return ICalculationToolScalarGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarGroup.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -3897,14 +3611,7 @@ class ITimeToolEventIntervalCollectionGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalCollectionGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalCollectionGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -3912,14 +3619,9 @@ class ITimeToolEventIntervalCollectionGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalCollectionGroup.__dict__ and type(ITimeToolEventIntervalCollectionGroup.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalCollectionGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalCollectionGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollectionGroup.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -4024,14 +3726,7 @@ class ICalculationToolParameterSetGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSetGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSetGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -4039,14 +3734,9 @@ class ICalculationToolParameterSetGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSetGroup.__dict__ and type(ICalculationToolParameterSetGroup.__dict__[attrname]) == property:
-            return ICalculationToolParameterSetGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSetGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetGroup.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSetGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -4151,14 +3841,7 @@ class ICalculationToolConditionGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -4166,14 +3849,9 @@ class ICalculationToolConditionGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionGroup.__dict__ and type(ICalculationToolConditionGroup.__dict__[attrname]) == property:
-            return ICalculationToolConditionGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionGroup.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -4278,14 +3956,7 @@ class ICalculationToolConditionSetGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionSetGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionSetGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -4293,14 +3964,9 @@ class ICalculationToolConditionSetGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionSetGroup.__dict__ and type(ICalculationToolConditionSetGroup.__dict__[attrname]) == property:
-            return ICalculationToolConditionSetGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionSetGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSetGroup.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionSetGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -4398,28 +4064,16 @@ class ICalculationToolConditionSetEvaluateResult(object):
                              "get_values" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionSetEvaluateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionSetEvaluateResult from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetEvaluateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionSetEvaluateResult.__dict__ and type(ICalculationToolConditionSetEvaluateResult.__dict__[attrname]) == property:
-            return ICalculationToolConditionSetEvaluateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionSetEvaluateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSetEvaluateResult.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionSetEvaluateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -4453,28 +4107,16 @@ class ICalculationToolConditionSetEvaluateWithRateResult(object):
                              "get_rates" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionSetEvaluateWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionSetEvaluateWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetEvaluateWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionSetEvaluateWithRateResult.__dict__ and type(ICalculationToolConditionSetEvaluateWithRateResult.__dict__[attrname]) == property:
-            return ICalculationToolConditionSetEvaluateWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionSetEvaluateWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSetEvaluateWithRateResult.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionSetEvaluateWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -4522,14 +4164,7 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -4537,14 +4172,9 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridGroup.__dict__ and type(ISpatialAnalysisToolVolumeGridGroup.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridGroup.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -4649,14 +4279,7 @@ class ISpatialAnalysisToolVolumeGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -4664,14 +4287,9 @@ class ISpatialAnalysisToolVolumeGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGroup.__dict__ and type(ISpatialAnalysisToolVolumeGroup.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGroup.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -4776,14 +4394,7 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcGroup from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -4791,14 +4402,9 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcGroup.__dict__ and type(ISpatialAnalysisToolVolumeCalcGroup.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcGroup.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -4905,28 +4511,16 @@ class ICalculationToolScalar(object):
                              "quick_evaluate_with_rate_event_array" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalar._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalar from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalar)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalar.__dict__ and type(ICalculationToolScalar.__dict__[attrname]) == property:
-            return ICalculationToolScalar.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalar)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalar.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalar, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5022,28 +4616,16 @@ class ICalculationToolScalarAngle(object):
                              "set_input_angle" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarAngle._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarAngle from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarAngle)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarAngle.__dict__ and type(ICalculationToolScalarAngle.__dict__[attrname]) == property:
-            return ICalculationToolScalarAngle.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarAngle)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarAngle.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarAngle, None)
     
     _get_input_angle_metadata = { "name" : "input_angle",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5077,28 +4659,16 @@ class ICalculationToolScalarConstant(object):
                              "set_dimension" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarConstant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarConstant from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarConstant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarConstant.__dict__ and type(ICalculationToolScalarConstant.__dict__[attrname]) == property:
-            return ICalculationToolScalarConstant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarConstant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarConstant.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarConstant, None)
     
     _get_value_metadata = { "name" : "value",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5148,28 +4718,16 @@ class ICalculationToolScalarCustom(object):
                              "set_invalidate_on_exec_error" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarCustom._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarCustom from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarCustom)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarCustom.__dict__ and type(ICalculationToolScalarCustom.__dict__[attrname]) == property:
-            return ICalculationToolScalarCustom.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarCustom)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarCustom.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarCustom, None)
     
     _get_filename_metadata = { "name" : "filename",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -5236,28 +4794,16 @@ class ICalculationToolScalarDataElement(object):
                              "set_invalid_data_indicator" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarDataElement._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarDataElement from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarDataElement)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarDataElement.__dict__ and type(ICalculationToolScalarDataElement.__dict__[attrname]) == property:
-            return ICalculationToolScalarDataElement.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarDataElement)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarDataElement.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarDataElement, None)
     
     _get_data_provider_metadata = { "name" : "data_provider",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -5391,28 +4937,16 @@ class ICalculationToolScalarDerivative(object):
                              "set_force_use_of_numerical_differences" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarDerivative._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarDerivative from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarDerivative)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarDerivative.__dict__ and type(ICalculationToolScalarDerivative.__dict__[attrname]) == property:
-            return ICalculationToolScalarDerivative.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarDerivative)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarDerivative.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarDerivative, None)
     
     _get_scalar_metadata = { "name" : "scalar",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5482,28 +5016,16 @@ class ICalculationToolScalarDotProduct(object):
                              "set_dimension" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarDotProduct._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarDotProduct from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarDotProduct)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarDotProduct.__dict__ and type(ICalculationToolScalarDotProduct.__dict__[attrname]) == property:
-            return ICalculationToolScalarDotProduct.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarDotProduct)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarDotProduct.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarDotProduct, None)
     
     _get_vector_a_metadata = { "name" : "vector_a",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5595,28 +5117,16 @@ class ICalculationToolScalarElapsedTime(object):
                              "set_reference_time_instant" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarElapsedTime._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarElapsedTime from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarElapsedTime)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarElapsedTime.__dict__ and type(ICalculationToolScalarElapsedTime.__dict__[attrname]) == property:
-            return ICalculationToolScalarElapsedTime.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarElapsedTime)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarElapsedTime.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarElapsedTime, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5666,28 +5176,16 @@ class ICalculationToolScalarFactory(object):
                              "create_calc_scalar_vector_component" : 20, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarFactory.__dict__ and type(ICalculationToolScalarFactory.__dict__[attrname]) == property:
-            return ICalculationToolScalarFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarFactory.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarFactory, None)
     
     _get_available_calc_scalar_plugin_display_names_metadata = { "name" : "available_calc_scalar_plugin_display_names",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -5853,28 +5351,16 @@ class ICalculationToolScalarFile(object):
                              "set_use_native_file_interpolation_settings" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarFile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarFile from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarFile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarFile.__dict__ and type(ICalculationToolScalarFile.__dict__[attrname]) == property:
-            return ICalculationToolScalarFile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarFile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarFile.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarFile, None)
     
     _get_filename_metadata = { "name" : "filename",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -5967,28 +5453,16 @@ class ICalculationToolScalarFixedAtTimeInstant(object):
                              "set_reference_time_instant" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarFixedAtTimeInstant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarFixedAtTimeInstant from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarFixedAtTimeInstant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarFixedAtTimeInstant.__dict__ and type(ICalculationToolScalarFixedAtTimeInstant.__dict__[attrname]) == property:
-            return ICalculationToolScalarFixedAtTimeInstant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarFixedAtTimeInstant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarFixedAtTimeInstant.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarFixedAtTimeInstant, None)
     
     _get_input_scalar_metadata = { "name" : "input_scalar",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -6064,28 +5538,16 @@ class ICalculationToolScalarFunction(object):
                              "set_convergence" : 31, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarFunction._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarFunction from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarFunction)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarFunction.__dict__ and type(ICalculationToolScalarFunction.__dict__[attrname]) == property:
-            return ICalculationToolScalarFunction.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarFunction)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarFunction.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarFunction, None)
     
     _get_use_scalar_metadata = { "name" : "use_scalar",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -6356,28 +5818,16 @@ class ICalculationToolScalarFunction2Var(object):
                              "set_output_unit" : 23, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarFunction2Var._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarFunction2Var from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarFunction2Var)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarFunction2Var.__dict__ and type(ICalculationToolScalarFunction2Var.__dict__[attrname]) == property:
-            return ICalculationToolScalarFunction2Var.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarFunction2Var)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarFunction2Var.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarFunction2Var, None)
     
     _get_x_metadata = { "name" : "x",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -6590,28 +6040,16 @@ class ICalculationToolScalarIntegral(object):
                              "set_offsets" : 25, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarIntegral._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarIntegral from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarIntegral)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarIntegral.__dict__ and type(ICalculationToolScalarIntegral.__dict__[attrname]) == property:
-            return ICalculationToolScalarIntegral.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarIntegral)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarIntegral.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarIntegral, None)
     
     _get_input_scalar_metadata = { "name" : "input_scalar",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -6819,28 +6257,16 @@ class ICalculationToolScalarPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarPlugin._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarPlugin from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarPlugin)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarPlugin.__dict__ and type(ICalculationToolScalarPlugin.__dict__[attrname]) == property:
-            return ICalculationToolScalarPlugin.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarPlugin)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarPlugin.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -6908,28 +6334,16 @@ class ICalculationToolScalarSurfaceDistanceBetweenPoints(object):
                              "set_differencing_time_step" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarSurfaceDistanceBetweenPoints._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarSurfaceDistanceBetweenPoints from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarSurfaceDistanceBetweenPoints)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarSurfaceDistanceBetweenPoints.__dict__ and type(ICalculationToolScalarSurfaceDistanceBetweenPoints.__dict__[attrname]) == property:
-            return ICalculationToolScalarSurfaceDistanceBetweenPoints.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarSurfaceDistanceBetweenPoints)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarSurfaceDistanceBetweenPoints.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarSurfaceDistanceBetweenPoints, None)
     
     _get_point1_metadata = { "name" : "point1",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7010,28 +6424,16 @@ class ICalculationToolScalarVectorComponent(object):
                              "set_component" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarVectorComponent._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarVectorComponent from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarVectorComponent)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarVectorComponent.__dict__ and type(ICalculationToolScalarVectorComponent.__dict__[attrname]) == property:
-            return ICalculationToolScalarVectorComponent.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarVectorComponent)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarVectorComponent.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarVectorComponent, None)
     
     _get_input_vector_metadata = { "name" : "input_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7093,28 +6495,16 @@ class ICalculationToolScalarVectorMagnitude(object):
                              "set_input_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolScalarVectorMagnitude._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolScalarVectorMagnitude from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolScalarVectorMagnitude)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolScalarVectorMagnitude.__dict__ and type(ICalculationToolScalarVectorMagnitude.__dict__[attrname]) == property:
-            return ICalculationToolScalarVectorMagnitude.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolScalarVectorMagnitude)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalarVectorMagnitude.")
+        set_interface_attribute(self, attrname, value, ICalculationToolScalarVectorMagnitude, None)
     
     _get_input_vector_metadata = { "name" : "input_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7147,28 +6537,16 @@ class ICalculationToolCondition(object):
                              "evaluate_with_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolCondition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolCondition from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolCondition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolCondition.__dict__ and type(ICalculationToolCondition.__dict__[attrname]) == property:
-            return ICalculationToolCondition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolCondition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolCondition.")
+        set_interface_attribute(self, attrname, value, ICalculationToolCondition, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7214,28 +6592,16 @@ class ICalculationToolConditionCombined(object):
                              "add_condition" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionCombined._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionCombined from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionCombined)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionCombined.__dict__ and type(ICalculationToolConditionCombined.__dict__[attrname]) == property:
-            return ICalculationToolConditionCombined.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionCombined)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionCombined.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionCombined, None)
     
     _get_combine_operation_metadata = { "name" : "combine_operation",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7320,28 +6686,16 @@ class ICalculationToolConditionFactory(object):
                              "create_condition_point_in_volume" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionFactory.__dict__ and type(ICalculationToolConditionFactory.__dict__[attrname]) == property:
-            return ICalculationToolConditionFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionFactory.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -7395,28 +6749,16 @@ class ICalculationToolConditionPointInVolume(object):
                              "set_constraint" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionPointInVolume._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionPointInVolume from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionPointInVolume)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionPointInVolume.__dict__ and type(ICalculationToolConditionPointInVolume.__dict__[attrname]) == property:
-            return ICalculationToolConditionPointInVolume.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionPointInVolume)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionPointInVolume.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionPointInVolume, None)
     
     _get_point_metadata = { "name" : "point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7475,28 +6817,16 @@ class ICalculationToolConditionScalarBounds(object):
                              "set_unitless" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionScalarBounds._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionScalarBounds from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionScalarBounds)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionScalarBounds.__dict__ and type(ICalculationToolConditionScalarBounds.__dict__[attrname]) == property:
-            return ICalculationToolConditionScalarBounds.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionScalarBounds)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionScalarBounds.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionScalarBounds, None)
     
     _get_scalar_metadata = { "name" : "scalar",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7614,28 +6944,16 @@ class ICalculationToolConditionSet(object):
                              "evaluate_with_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionSet._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionSet from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSet)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionSet.__dict__ and type(ICalculationToolConditionSet.__dict__[attrname]) == property:
-            return ICalculationToolConditionSet.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionSet)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSet.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionSet, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7675,28 +6993,16 @@ class ICalculationToolConditionSetFactory(object):
                              "is_type_supported" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionSetFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionSetFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionSetFactory.__dict__ and type(ICalculationToolConditionSetFactory.__dict__[attrname]) == property:
-            return ICalculationToolConditionSetFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionSetFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSetFactory.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionSetFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -7741,28 +7047,16 @@ class ICalculationToolConditionSetScalarThresholds(object):
                              "set_thresholds_and_labels" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConditionSetScalarThresholds._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConditionSetScalarThresholds from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetScalarThresholds)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConditionSetScalarThresholds.__dict__ and type(ICalculationToolConditionSetScalarThresholds.__dict__[attrname]) == property:
-            return ICalculationToolConditionSetScalarThresholds.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConditionSetScalarThresholds)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSetScalarThresholds.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConditionSetScalarThresholds, None)
     
     _get_scalar_metadata = { "name" : "scalar",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7846,28 +7140,16 @@ class IAnalysisWorkbenchConverge(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchConverge._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchConverge from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchConverge)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchConverge.__dict__ and type(IAnalysisWorkbenchConverge.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchConverge.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchConverge)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchConverge.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchConverge, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{28B17124-9BE6-4437-A7ED-0DDC24353430}", IAnalysisWorkbenchConverge)
@@ -7890,28 +7172,16 @@ class ICalculationToolConvergeBasic(object):
                              "set_relative_tolerance" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolConvergeBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolConvergeBasic from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolConvergeBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolConvergeBasic.__dict__ and type(ICalculationToolConvergeBasic.__dict__[attrname]) == property:
-            return ICalculationToolConvergeBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolConvergeBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConvergeBasic.")
+        set_interface_attribute(self, attrname, value, ICalculationToolConvergeBasic, None)
     
     _get_sense_metadata = { "name" : "sense",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7987,28 +7257,16 @@ class IAnalysisWorkbenchDerivative(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchDerivative._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchDerivative from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchDerivative)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchDerivative.__dict__ and type(IAnalysisWorkbenchDerivative.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchDerivative.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchDerivative)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchDerivative.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchDerivative, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{737042BD-D873-4CF6-B5D5-6769849156FD}", IAnalysisWorkbenchDerivative)
@@ -8025,28 +7283,16 @@ class ICalculationToolDerivativeBasic(object):
                              "set_time_step" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolDerivativeBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolDerivativeBasic from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolDerivativeBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolDerivativeBasic.__dict__ and type(ICalculationToolDerivativeBasic.__dict__[attrname]) == property:
-            return ICalculationToolDerivativeBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolDerivativeBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolDerivativeBasic.")
+        set_interface_attribute(self, attrname, value, ICalculationToolDerivativeBasic, None)
     
     _get_time_step_metadata = { "name" : "time_step",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8083,28 +7329,16 @@ class ITimeToolEvent(object):
                              "occurs_before" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEvent._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEvent from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEvent)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEvent.__dict__ and type(ITimeToolEvent.__dict__[attrname]) == property:
-            return ITimeToolEvent.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEvent)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEvent.")
+        set_interface_attribute(self, attrname, value, ITimeToolEvent, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8175,28 +7409,16 @@ class ITimeToolEventArray(object):
                              "find_times" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArray._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArray from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArray)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArray.__dict__ and type(ITimeToolEventArray.__dict__[attrname]) == property:
-            return ITimeToolEventArray.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArray)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArray.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArray, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8240,28 +7462,16 @@ class ITimeToolEventArrayConditionCrossings(object):
                              "set_convergence" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayConditionCrossings._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayConditionCrossings from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayConditionCrossings)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayConditionCrossings.__dict__ and type(ITimeToolEventArrayConditionCrossings.__dict__[attrname]) == property:
-            return ITimeToolEventArrayConditionCrossings.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayConditionCrossings)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayConditionCrossings.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayConditionCrossings, None)
     
     _get_satisfaction_crossing_metadata = { "name" : "satisfaction_crossing",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8397,28 +7607,16 @@ class ITimeToolEventArrayExtrema(object):
                              "set_convergence" : 16, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayExtrema._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayExtrema from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayExtrema)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayExtrema.__dict__ and type(ITimeToolEventArrayExtrema.__dict__[attrname]) == property:
-            return ITimeToolEventArrayExtrema.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayExtrema)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayExtrema.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayExtrema, None)
     
     _get_extremum_type_metadata = { "name" : "extremum_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8563,28 +7761,16 @@ class ITimeToolEventArrayFactory(object):
                              "create_event_array_fixed_times" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayFactory.__dict__ and type(ITimeToolEventArrayFactory.__dict__[attrname]) == property:
-            return ITimeToolEventArrayFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayFactory.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -8681,28 +7867,16 @@ class ITimeToolEventArrayFiltered(object):
                              "set_filter_interval_list" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayFiltered._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayFiltered from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFiltered)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayFiltered.__dict__ and type(ITimeToolEventArrayFiltered.__dict__[attrname]) == property:
-            return ITimeToolEventArrayFiltered.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayFiltered)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayFiltered.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayFiltered, None)
     
     _get_original_time_array_metadata = { "name" : "original_time_array",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8817,28 +7991,16 @@ class ITimeToolEventArrayFixedStep(object):
                              "set_reference_time_instant" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayFixedStep._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayFixedStep from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFixedStep)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayFixedStep.__dict__ and type(ITimeToolEventArrayFixedStep.__dict__[attrname]) == property:
-            return ITimeToolEventArrayFixedStep.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayFixedStep)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayFixedStep.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayFixedStep, None)
     
     _get_bounding_interval_list_metadata = { "name" : "bounding_interval_list",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8930,28 +8092,16 @@ class ITimeToolEventArrayFixedTimes(object):
                              "set_array_times" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayFixedTimes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayFixedTimes from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFixedTimes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayFixedTimes.__dict__ and type(ITimeToolEventArrayFixedTimes.__dict__[attrname]) == property:
-            return ITimeToolEventArrayFixedTimes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayFixedTimes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayFixedTimes.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayFixedTimes, None)
     
     _get_array_times_metadata = { "name" : "array_times",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -8985,28 +8135,16 @@ class ITimeToolEventArrayMerged(object):
                              "set_time_array_b" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayMerged._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayMerged from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayMerged)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayMerged.__dict__ and type(ITimeToolEventArrayMerged.__dict__[attrname]) == property:
-            return ITimeToolEventArrayMerged.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayMerged)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayMerged.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayMerged, None)
     
     _get_time_array_a_metadata = { "name" : "time_array_a",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9061,28 +8199,16 @@ class ITimeToolEventArraySignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArraySignaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArraySignaled from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArraySignaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArraySignaled.__dict__ and type(ITimeToolEventArraySignaled.__dict__[attrname]) == property:
-            return ITimeToolEventArraySignaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArraySignaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArraySignaled.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArraySignaled, None)
     
     _get_original_time_array_metadata = { "name" : "original_time_array",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9176,28 +8302,16 @@ class ITimeToolEventArrayStartStopTimes(object):
                              "set_reference_intervals" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventArrayStartStopTimes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventArrayStartStopTimes from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventArrayStartStopTimes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventArrayStartStopTimes.__dict__ and type(ITimeToolEventArrayStartStopTimes.__dict__[attrname]) == property:
-            return ITimeToolEventArrayStartStopTimes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventArrayStartStopTimes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayStartStopTimes.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventArrayStartStopTimes, None)
     
     _get_start_stop_option_metadata = { "name" : "start_stop_option",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9244,28 +8358,16 @@ class ITimeToolEventEpoch(object):
                              "set_epoch" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventEpoch._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventEpoch from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventEpoch)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventEpoch.__dict__ and type(ITimeToolEventEpoch.__dict__[attrname]) == property:
-            return ITimeToolEventEpoch.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventEpoch)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventEpoch.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventEpoch, None)
     
     _get_epoch_metadata = { "name" : "epoch",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -9309,28 +8411,16 @@ class ITimeToolEventExtremum(object):
                              "set_convergence" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventExtremum._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventExtremum from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventExtremum)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventExtremum.__dict__ and type(ITimeToolEventExtremum.__dict__[attrname]) == property:
-            return ITimeToolEventExtremum.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventExtremum)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventExtremum.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventExtremum, None)
     
     _get_extremum_type_metadata = { "name" : "extremum_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9461,28 +8551,16 @@ class ITimeToolEventFactory(object):
                              "is_type_supported" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventFactory.__dict__ and type(ITimeToolEventFactory.__dict__[attrname]) == property:
-            return ITimeToolEventFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventFactory.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventFactory, None)
     
     _get_today_metadata = { "name" : "today",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9583,28 +8661,16 @@ class ITimeToolEventInterval(object):
                              "occurred" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventInterval._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventInterval from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventInterval)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventInterval.__dict__ and type(ITimeToolEventInterval.__dict__[attrname]) == property:
-            return ITimeToolEventInterval.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventInterval)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventInterval.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventInterval, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9677,28 +8743,16 @@ class ITimeToolEventIntervalBetweenTimeInstants(object):
                              "set_stop_time_instant" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalBetweenTimeInstants._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalBetweenTimeInstants from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalBetweenTimeInstants)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalBetweenTimeInstants.__dict__ and type(ITimeToolEventIntervalBetweenTimeInstants.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalBetweenTimeInstants.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalBetweenTimeInstants)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalBetweenTimeInstants.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalBetweenTimeInstants, None)
     
     _get_start_time_instant_metadata = { "name" : "start_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9747,28 +8801,16 @@ class ITimeToolEventIntervalCollection(object):
                              "occurred" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalCollection from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollection)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalCollection.__dict__ and type(ITimeToolEventIntervalCollection.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollection.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollection, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9825,28 +8867,16 @@ class ITimeToolEventIntervalCollectionCondition(object):
                              "set_convergence" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalCollectionCondition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalCollectionCondition from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionCondition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalCollectionCondition.__dict__ and type(ITimeToolEventIntervalCollectionCondition.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalCollectionCondition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalCollectionCondition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollectionCondition.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionCondition, None)
     
     _get_condition_set_metadata = { "name" : "condition_set",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9956,28 +8986,16 @@ class ITimeToolEventIntervalCollectionFactory(object):
                              "create_event_interval_collection_satisfaction" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalCollectionFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalCollectionFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalCollectionFactory.__dict__ and type(ITimeToolEventIntervalCollectionFactory.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalCollectionFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalCollectionFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollectionFactory.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -10033,28 +9051,16 @@ class ITimeToolEventIntervalCollectionLighting(object):
                              "set_use_object_eclipsing_bodies" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalCollectionLighting._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalCollectionLighting from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionLighting)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalCollectionLighting.__dict__ and type(ITimeToolEventIntervalCollectionLighting.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalCollectionLighting.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalCollectionLighting)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollectionLighting.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionLighting, None)
     
     _get_location_metadata = { "name" : "location",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10124,28 +9130,16 @@ class ITimeToolEventIntervalCollectionSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalCollectionSignaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalCollectionSignaled from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionSignaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalCollectionSignaled.__dict__ and type(ITimeToolEventIntervalCollectionSignaled.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalCollectionSignaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalCollectionSignaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollectionSignaled.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionSignaled, None)
     
     _get_original_collection_metadata = { "name" : "original_collection",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10244,28 +9238,16 @@ class ITimeToolEventIntervalFactory(object):
                              "is_type_supported" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalFactory.__dict__ and type(ITimeToolEventIntervalFactory.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalFactory.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -10346,28 +9328,16 @@ class ITimeToolEventIntervalFixed(object):
                              "set_interval" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalFixed._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalFixed from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFixed)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalFixed.__dict__ and type(ITimeToolEventIntervalFixed.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalFixed.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalFixed)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalFixed.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFixed, None)
     
     _get_start_time_metadata = { "name" : "start_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -10411,28 +9381,16 @@ class ITimeToolEventIntervalFixedDuration(object):
                              "set_stop_offset" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalFixedDuration._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalFixedDuration from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFixedDuration)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalFixedDuration.__dict__ and type(ITimeToolEventIntervalFixedDuration.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalFixedDuration.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalFixedDuration)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalFixedDuration.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFixedDuration, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10498,28 +9456,16 @@ class ITimeToolEventIntervalFromIntervalList(object):
                              "set_interval_number" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalFromIntervalList._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalFromIntervalList from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFromIntervalList)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalFromIntervalList.__dict__ and type(ITimeToolEventIntervalFromIntervalList.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalFromIntervalList.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalFromIntervalList)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalFromIntervalList.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFromIntervalList, None)
     
     _get_reference_intervals_metadata = { "name" : "reference_intervals",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10584,28 +9530,16 @@ class ITimeToolEventIntervalList(object):
                              "occurred" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalList._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalList from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalList)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalList.__dict__ and type(ITimeToolEventIntervalList.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalList.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalList)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalList.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalList, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10670,28 +9604,16 @@ class ITimeToolEventIntervalListCondition(object):
                              "set_convergence" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListCondition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListCondition from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListCondition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListCondition.__dict__ and type(ITimeToolEventIntervalListCondition.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListCondition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListCondition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListCondition.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListCondition, None)
     
     _get_condition_metadata = { "name" : "condition",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10806,28 +9728,16 @@ class ITimeToolEventIntervalListFactory(object):
                              "create_event_interval_list_fixed" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListFactory.__dict__ and type(ITimeToolEventIntervalListFactory.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListFactory.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -10916,28 +9826,16 @@ class ITimeToolEventIntervalListFile(object):
                              "get_file_span" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListFile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListFile from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListFile.__dict__ and type(ITimeToolEventIntervalListFile.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListFile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListFile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListFile.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFile, None)
     
     _get_filename_metadata = { "name" : "filename",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -10986,28 +9884,16 @@ class ITimeToolEventIntervalListFiltered(object):
                              "set_filter" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListFiltered._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListFiltered from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFiltered)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListFiltered.__dict__ and type(ITimeToolEventIntervalListFiltered.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListFiltered.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListFiltered)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListFiltered.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFiltered, None)
     
     _get_original_intervals_metadata = { "name" : "original_intervals",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11062,28 +9948,16 @@ class ITimeToolEventIntervalListFixed(object):
                              "set_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListFixed._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListFixed from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFixed)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListFixed.__dict__ and type(ITimeToolEventIntervalListFixed.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListFixed.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListFixed)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListFixed.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFixed, None)
     
     _get_intervals_metadata = { "name" : "get_intervals",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -11127,28 +10001,16 @@ class ITimeToolEventIntervalListMerged(object):
                              "remove_time_component" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListMerged._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListMerged from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListMerged)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListMerged.__dict__ and type(ITimeToolEventIntervalListMerged.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListMerged.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListMerged)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListMerged.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListMerged, None)
     
     _get_interval_list_or_interval_a_metadata = { "name" : "interval_list_or_interval_a",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11279,28 +10141,16 @@ class ITimeToolEventIntervalListScaled(object):
                              "set_use_absolute_increment" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListScaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListScaled from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListScaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListScaled.__dict__ and type(ITimeToolEventIntervalListScaled.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListScaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListScaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListScaled.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListScaled, None)
     
     _get_original_intervals_metadata = { "name" : "original_intervals",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11385,28 +10235,16 @@ class ITimeToolEventIntervalListSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListSignaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListSignaled from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListSignaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListSignaled.__dict__ and type(ITimeToolEventIntervalListSignaled.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListSignaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListSignaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListSignaled.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListSignaled, None)
     
     _get_original_intervals_metadata = { "name" : "original_intervals",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11500,28 +10338,16 @@ class ITimeToolEventIntervalListTimeOffset(object):
                              "set_time_offset" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalListTimeOffset._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalListTimeOffset from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListTimeOffset)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalListTimeOffset.__dict__ and type(ITimeToolEventIntervalListTimeOffset.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalListTimeOffset.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalListTimeOffset)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListTimeOffset.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListTimeOffset, None)
     
     _get_reference_intervals_metadata = { "name" : "reference_intervals",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11574,28 +10400,16 @@ class ITimeToolEventIntervalScaled(object):
                              "set_use_absolute_increment" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalScaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalScaled from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalScaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalScaled.__dict__ and type(ITimeToolEventIntervalScaled.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalScaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalScaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalScaled.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalScaled, None)
     
     _get_original_interval_metadata = { "name" : "original_interval",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11680,28 +10494,16 @@ class ITimeToolEventIntervalSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalSignaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalSignaled from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalSignaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalSignaled.__dict__ and type(ITimeToolEventIntervalSignaled.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalSignaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalSignaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalSignaled.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalSignaled, None)
     
     _get_original_interval_metadata = { "name" : "original_interval",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11808,28 +10610,16 @@ class ITimeToolEventIntervalSmartInterval(object):
                              "set_start_time_and_duration" : 17, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalSmartInterval._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalSmartInterval from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalSmartInterval)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalSmartInterval.__dict__ and type(ITimeToolEventIntervalSmartInterval.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalSmartInterval.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalSmartInterval)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalSmartInterval.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalSmartInterval, None)
     
     _get_reference_interval_metadata = { "name" : "reference_interval",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11970,28 +10760,16 @@ class ITimeToolEventIntervalTimeOffset(object):
                              "set_time_offset" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventIntervalTimeOffset._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventIntervalTimeOffset from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalTimeOffset)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventIntervalTimeOffset.__dict__ and type(ITimeToolEventIntervalTimeOffset.__dict__[attrname]) == property:
-            return ITimeToolEventIntervalTimeOffset.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventIntervalTimeOffset)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalTimeOffset.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventIntervalTimeOffset, None)
     
     _get_reference_interval_metadata = { "name" : "reference_interval",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12046,28 +10824,16 @@ class ITimeToolEventSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventSignaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventSignaled from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventSignaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventSignaled.__dict__ and type(ITimeToolEventSignaled.__dict__[attrname]) == property:
-            return ITimeToolEventSignaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventSignaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventSignaled.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventSignaled, None)
     
     _get_original_time_instant_metadata = { "name" : "original_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12163,28 +10929,16 @@ class ITimeToolEventSmartEpoch(object):
                              "set_implicit_time" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventSmartEpoch._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventSmartEpoch from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventSmartEpoch)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventSmartEpoch.__dict__ and type(ITimeToolEventSmartEpoch.__dict__[attrname]) == property:
-            return ITimeToolEventSmartEpoch.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventSmartEpoch)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventSmartEpoch.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventSmartEpoch, None)
     
     _get_time_instant_metadata = { "name" : "time_instant",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -12248,28 +11002,16 @@ class ITimeToolEventStartStopTime(object):
                              "set_reference_event_interval" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventStartStopTime._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventStartStopTime from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventStartStopTime)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventStartStopTime.__dict__ and type(ITimeToolEventStartStopTime.__dict__[attrname]) == property:
-            return ITimeToolEventStartStopTime.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventStartStopTime)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventStartStopTime.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventStartStopTime, None)
     
     _get_use_start_metadata = { "name" : "use_start",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12318,28 +11060,16 @@ class ITimeToolEventTimeOffset(object):
                              "set_time_offset2" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolEventTimeOffset._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolEventTimeOffset from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolEventTimeOffset)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolEventTimeOffset.__dict__ and type(ITimeToolEventTimeOffset.__dict__[attrname]) == property:
-            return ITimeToolEventTimeOffset.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolEventTimeOffset)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventTimeOffset.")
+        set_interface_attribute(self, attrname, value, ITimeToolEventTimeOffset, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12386,28 +11116,16 @@ class ITimeToolFirstIntervalsFilter(object):
                              "set_maximum_number_of_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolFirstIntervalsFilter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolFirstIntervalsFilter from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolFirstIntervalsFilter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolFirstIntervalsFilter.__dict__ and type(ITimeToolFirstIntervalsFilter.__dict__[attrname]) == property:
-            return ITimeToolFirstIntervalsFilter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolFirstIntervalsFilter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolFirstIntervalsFilter.")
+        set_interface_attribute(self, attrname, value, ITimeToolFirstIntervalsFilter, None)
     
     _get_maximum_number_of_intervals_metadata = { "name" : "maximum_number_of_intervals",
             "arg_types" : (POINTER(agcom.INT),),
@@ -12441,28 +11159,16 @@ class ITimeToolGapsFilter(object):
                              "set_gap_duration" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolGapsFilter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolGapsFilter from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolGapsFilter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolGapsFilter.__dict__ and type(ITimeToolGapsFilter.__dict__[attrname]) == property:
-            return ITimeToolGapsFilter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolGapsFilter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolGapsFilter.")
+        set_interface_attribute(self, attrname, value, ITimeToolGapsFilter, None)
     
     _get_duration_kind_metadata = { "name" : "duration_kind",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12508,28 +11214,16 @@ class IAnalysisWorkbenchIntegral(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchIntegral._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchIntegral from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchIntegral)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchIntegral.__dict__ and type(IAnalysisWorkbenchIntegral.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchIntegral.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchIntegral)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchIntegral.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchIntegral, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{61D34977-CC2E-43C1-9103-692FF9B3DEF0}", IAnalysisWorkbenchIntegral)
@@ -12550,28 +11244,16 @@ class ICalculationToolIntegralBasic(object):
                              "set_maximum_iterations" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolIntegralBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolIntegralBasic from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolIntegralBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolIntegralBasic.__dict__ and type(ICalculationToolIntegralBasic.__dict__[attrname]) == property:
-            return ICalculationToolIntegralBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolIntegralBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolIntegralBasic.")
+        set_interface_attribute(self, attrname, value, ICalculationToolIntegralBasic, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12632,28 +11314,16 @@ class IAnalysisWorkbenchInterp(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchInterp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchInterp from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchInterp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchInterp.__dict__ and type(IAnalysisWorkbenchInterp.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchInterp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchInterp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchInterp.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchInterp, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{C92AA400-6E5F-47D7-8DF4-41E65F4CABEE}", IAnalysisWorkbenchInterp)
@@ -12672,28 +11342,16 @@ class ICalculationToolInterpBasic(object):
                              "set_order" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolInterpBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolInterpBasic from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolInterpBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolInterpBasic.__dict__ and type(ICalculationToolInterpBasic.__dict__[attrname]) == property:
-            return ICalculationToolInterpBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolInterpBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolInterpBasic.")
+        set_interface_attribute(self, attrname, value, ICalculationToolInterpBasic, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12742,28 +11400,16 @@ class ITimeToolIntervalsFilter(object):
                              "set_interval_duration" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolIntervalsFilter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolIntervalsFilter from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolIntervalsFilter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolIntervalsFilter.__dict__ and type(ITimeToolIntervalsFilter.__dict__[attrname]) == property:
-            return ITimeToolIntervalsFilter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolIntervalsFilter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolIntervalsFilter.")
+        set_interface_attribute(self, attrname, value, ITimeToolIntervalsFilter, None)
     
     _get_duration_kind_metadata = { "name" : "duration_kind",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12810,28 +11456,16 @@ class ITimeToolLastIntervalsFilter(object):
                              "set_maximum_number_of_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolLastIntervalsFilter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolLastIntervalsFilter from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolLastIntervalsFilter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolLastIntervalsFilter.__dict__ and type(ITimeToolLastIntervalsFilter.__dict__[attrname]) == property:
-            return ITimeToolLastIntervalsFilter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolLastIntervalsFilter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolLastIntervalsFilter.")
+        set_interface_attribute(self, attrname, value, ITimeToolLastIntervalsFilter, None)
     
     _get_maximum_number_of_intervals_metadata = { "name" : "maximum_number_of_intervals",
             "arg_types" : (POINTER(agcom.INT),),
@@ -12867,28 +11501,16 @@ class ICalculationToolParameterSet(object):
                              "calculate_with_derivative" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSet._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSet from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSet)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSet.__dict__ and type(ICalculationToolParameterSet.__dict__[attrname]) == property:
-            return ICalculationToolParameterSet.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSet)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSet.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSet, None)
     
     _get_type_metadata = { "name" : "type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12953,28 +11575,16 @@ class ICalculationToolParameterSetAttitude(object):
                              "set_reference_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSetAttitude._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSetAttitude from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetAttitude)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSetAttitude.__dict__ and type(ICalculationToolParameterSetAttitude.__dict__[attrname]) == property:
-            return ICalculationToolParameterSetAttitude.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSetAttitude)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetAttitude.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSetAttitude, None)
     
     _get_axes_metadata = { "name" : "axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13026,28 +11636,16 @@ class ICalculationToolParameterSetFactory(object):
                              "is_type_supported" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSetFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSetFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSetFactory.__dict__ and type(ICalculationToolParameterSetFactory.__dict__[attrname]) == property:
-            return ICalculationToolParameterSetFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSetFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetFactory.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSetFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -13115,28 +11713,16 @@ class ICalculationToolParameterSetGroundTrajectory(object):
                              "set_central_body" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSetGroundTrajectory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSetGroundTrajectory from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetGroundTrajectory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSetGroundTrajectory.__dict__ and type(ICalculationToolParameterSetGroundTrajectory.__dict__[attrname]) == property:
-            return ICalculationToolParameterSetGroundTrajectory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSetGroundTrajectory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetGroundTrajectory.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSetGroundTrajectory, None)
     
     _get_location_metadata = { "name" : "location",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13193,28 +11779,16 @@ class ICalculationToolParameterSetOrbit(object):
                              "set_use_central_body_inertial" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSetOrbit._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSetOrbit from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetOrbit)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSetOrbit.__dict__ and type(ICalculationToolParameterSetOrbit.__dict__[attrname]) == property:
-            return ICalculationToolParameterSetOrbit.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSetOrbit)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetOrbit.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSetOrbit, None)
     
     _get_orbiting_point_metadata = { "name" : "orbiting_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13323,28 +11897,16 @@ class ICalculationToolParameterSetTrajectory(object):
                              "set_reference_system" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSetTrajectory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSetTrajectory from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetTrajectory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSetTrajectory.__dict__ and type(ICalculationToolParameterSetTrajectory.__dict__[attrname]) == property:
-            return ICalculationToolParameterSetTrajectory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSetTrajectory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetTrajectory.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSetTrajectory, None)
     
     _get_point_metadata = { "name" : "point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13393,28 +11955,16 @@ class ICalculationToolParameterSetVector(object):
                              "set_reference_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolParameterSetVector._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolParameterSetVector from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetVector)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolParameterSetVector.__dict__ and type(ICalculationToolParameterSetVector.__dict__[attrname]) == property:
-            return ICalculationToolParameterSetVector.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolParameterSetVector)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetVector.")
+        set_interface_attribute(self, attrname, value, ICalculationToolParameterSetVector, None)
     
     _get_vector_metadata = { "name" : "vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13460,28 +12010,16 @@ class ITimeToolPruneFilter(object):
         "method_offsets" : { "get_filter_type" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolPruneFilter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolPruneFilter from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolPruneFilter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolPruneFilter.__dict__ and type(ITimeToolPruneFilter.__dict__[attrname]) == property:
-            return ITimeToolPruneFilter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolPruneFilter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolPruneFilter.")
+        set_interface_attribute(self, attrname, value, ITimeToolPruneFilter, None)
     
     _get_filter_type_metadata = { "name" : "filter_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13505,28 +12043,16 @@ class ITimeToolPruneFilterFactory(object):
         "method_offsets" : { "create" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolPruneFilterFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolPruneFilterFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolPruneFilterFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolPruneFilterFactory.__dict__ and type(ITimeToolPruneFilterFactory.__dict__[attrname]) == property:
-            return ITimeToolPruneFilterFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolPruneFilterFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolPruneFilterFactory.")
+        set_interface_attribute(self, attrname, value, ITimeToolPruneFilterFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
@@ -13554,28 +12080,16 @@ class ITimeToolRelativeSatisfactionConditionFilter(object):
                              "set_relative_interval_duration" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolRelativeSatisfactionConditionFilter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolRelativeSatisfactionConditionFilter from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolRelativeSatisfactionConditionFilter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolRelativeSatisfactionConditionFilter.__dict__ and type(ITimeToolRelativeSatisfactionConditionFilter.__dict__[attrname]) == property:
-            return ITimeToolRelativeSatisfactionConditionFilter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolRelativeSatisfactionConditionFilter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolRelativeSatisfactionConditionFilter.")
+        set_interface_attribute(self, attrname, value, ITimeToolRelativeSatisfactionConditionFilter, None)
     
     _get_condition_metadata = { "name" : "condition",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13636,28 +12150,16 @@ class IAnalysisWorkbenchSampling(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchSampling._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchSampling from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSampling)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchSampling.__dict__ and type(IAnalysisWorkbenchSampling.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchSampling.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchSampling)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchSampling.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchSampling, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{69CE7273-6FFF-4BB1-BE3C-36D7E4ECC758}", IAnalysisWorkbenchSampling)
@@ -13675,28 +12177,16 @@ class ICalculationToolSamplingBasic(object):
                              "get_method_factory" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolSamplingBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolSamplingBasic from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolSamplingBasic.__dict__ and type(ICalculationToolSamplingBasic.__dict__[attrname]) == property:
-            return ICalculationToolSamplingBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolSamplingBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolSamplingBasic.")
+        set_interface_attribute(self, attrname, value, ICalculationToolSamplingBasic, None)
     
     _get_sampling_method_metadata = { "name" : "sampling_method",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13746,28 +12236,16 @@ class ICalculationToolSamplingCurvatureTolerance(object):
                              "set_curvature_tolerance" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolSamplingCurvatureTolerance._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolSamplingCurvatureTolerance from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingCurvatureTolerance)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolSamplingCurvatureTolerance.__dict__ and type(ICalculationToolSamplingCurvatureTolerance.__dict__[attrname]) == property:
-            return ICalculationToolSamplingCurvatureTolerance.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolSamplingCurvatureTolerance)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolSamplingCurvatureTolerance.")
+        set_interface_attribute(self, attrname, value, ICalculationToolSamplingCurvatureTolerance, None)
     
     _get_minimum_time_step_metadata = { "name" : "minimum_time_step",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13874,28 +12352,16 @@ class ICalculationToolSamplingFixedStep(object):
                              "set_time_step" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolSamplingFixedStep._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolSamplingFixedStep from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingFixedStep)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolSamplingFixedStep.__dict__ and type(ICalculationToolSamplingFixedStep.__dict__[attrname]) == property:
-            return ICalculationToolSamplingFixedStep.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolSamplingFixedStep)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolSamplingFixedStep.")
+        set_interface_attribute(self, attrname, value, ICalculationToolSamplingFixedStep, None)
     
     _get_time_step_metadata = { "name" : "time_step",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13926,28 +12392,16 @@ class ICalculationToolSamplingMethod(object):
         "method_offsets" : { "get_method_type" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolSamplingMethod._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolSamplingMethod from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingMethod)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolSamplingMethod.__dict__ and type(ICalculationToolSamplingMethod.__dict__[attrname]) == property:
-            return ICalculationToolSamplingMethod.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolSamplingMethod)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolSamplingMethod.")
+        set_interface_attribute(self, attrname, value, ICalculationToolSamplingMethod, None)
     
     _get_method_type_metadata = { "name" : "method_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13973,28 +12427,16 @@ class ICalculationToolSamplingMethodFactory(object):
                              "create_relative_tolerance" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolSamplingMethodFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolSamplingMethodFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingMethodFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolSamplingMethodFactory.__dict__ and type(ICalculationToolSamplingMethodFactory.__dict__[attrname]) == property:
-            return ICalculationToolSamplingMethodFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolSamplingMethodFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolSamplingMethodFactory.")
+        set_interface_attribute(self, attrname, value, ICalculationToolSamplingMethodFactory, None)
     
     _create_fixed_step_metadata = { "name" : "create_fixed_step",
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
@@ -14040,28 +12482,16 @@ class ICalculationToolSamplingRelativeTolerance(object):
                              "set_absolute_tolerance" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationToolSamplingRelativeTolerance._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationToolSamplingRelativeTolerance from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingRelativeTolerance)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationToolSamplingRelativeTolerance.__dict__ and type(ICalculationToolSamplingRelativeTolerance.__dict__[attrname]) == property:
-            return ICalculationToolSamplingRelativeTolerance.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationToolSamplingRelativeTolerance)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolSamplingRelativeTolerance.")
+        set_interface_attribute(self, attrname, value, ICalculationToolSamplingRelativeTolerance, None)
     
     _get_minimum_time_step_metadata = { "name" : "minimum_time_step",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14157,28 +12587,16 @@ class ITimeToolSatisfactionConditionFilter(object):
                              "set_interval_duration" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolSatisfactionConditionFilter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolSatisfactionConditionFilter from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolSatisfactionConditionFilter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolSatisfactionConditionFilter.__dict__ and type(ITimeToolSatisfactionConditionFilter.__dict__[attrname]) == property:
-            return ITimeToolSatisfactionConditionFilter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolSatisfactionConditionFilter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolSatisfactionConditionFilter.")
+        set_interface_attribute(self, attrname, value, ITimeToolSatisfactionConditionFilter, None)
     
     _get_condition_metadata = { "name" : "condition",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -14239,28 +12657,16 @@ class IAnalysisWorkbenchSignalDelay(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchSignalDelay._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchSignalDelay from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSignalDelay)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchSignalDelay.__dict__ and type(IAnalysisWorkbenchSignalDelay.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchSignalDelay.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchSignalDelay)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchSignalDelay.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchSignalDelay, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{5ED53953-1C55-431D-88AF-1AF23B2FE424}", IAnalysisWorkbenchSignalDelay)
@@ -14285,28 +12691,16 @@ class ITimeToolSignalDelayBasic(object):
                              "set_time_delay_convergence" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolSignalDelayBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolSignalDelayBasic from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolSignalDelayBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolSignalDelayBasic.__dict__ and type(ITimeToolSignalDelayBasic.__dict__[attrname]) == property:
-            return ITimeToolSignalDelayBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolSignalDelayBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolSignalDelayBasic.")
+        set_interface_attribute(self, attrname, value, ITimeToolSignalDelayBasic, None)
     
     _get_signal_path_reference_system_metadata = { "name" : "signal_path_reference_system",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -14406,28 +12800,16 @@ class ISpatialAnalysisToolVolumeCalcFactory(object):
                              "create_volume_calc_delay_range" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcFactory.__dict__ and type(ISpatialAnalysisToolVolumeCalcFactory.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcFactory.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcFactory, None)
     
     _is_type_supported_metadata = { "name" : "is_type_supported",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
@@ -14522,28 +12904,16 @@ class ISpatialAnalysisToolVolumeFactory(object):
                              "create_volume_inview" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeFactory.__dict__ and type(ISpatialAnalysisToolVolumeFactory.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFactory.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -14636,28 +13006,16 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
                              "create_volume_grid_bearing_altitude" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridFactory from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridFactory.__dict__ and type(ISpatialAnalysisToolVolumeGridFactory.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridFactory.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -14734,28 +13092,16 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
                              "set_grid_values_fixed_number_of_steps_ex" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolGridCoordinateDefinition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolGridCoordinateDefinition from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridCoordinateDefinition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolGridCoordinateDefinition.__dict__ and type(ISpatialAnalysisToolGridCoordinateDefinition.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolGridCoordinateDefinition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolGridCoordinateDefinition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolGridCoordinateDefinition.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridCoordinateDefinition, None)
     
     _get_method_type_metadata = { "name" : "method_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -14816,28 +13162,16 @@ class ISpatialAnalysisToolGridValuesCustom(object):
                              "set_values" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolGridValuesCustom._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolGridValuesCustom from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesCustom)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolGridValuesCustom.__dict__ and type(ISpatialAnalysisToolGridValuesCustom.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolGridValuesCustom.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolGridValuesCustom)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolGridValuesCustom.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesCustom, None)
     
     _get_values_metadata = { "name" : "values",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -14877,28 +13211,16 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
                              "set_max_ex" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolGridValuesFixedNumberOfSteps from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesFixedNumberOfSteps)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolGridValuesFixedNumberOfSteps.__dict__ and type(ISpatialAnalysisToolGridValuesFixedNumberOfSteps.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolGridValuesFixedNumberOfSteps.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolGridValuesFixedNumberOfSteps)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolGridValuesFixedNumberOfSteps.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesFixedNumberOfSteps, None)
     
     _get_min_metadata = { "name" : "min",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14998,28 +13320,16 @@ class ISpatialAnalysisToolGridValuesFixedStep(object):
                              "set_step" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolGridValuesFixedStep._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolGridValuesFixedStep from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesFixedStep)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolGridValuesFixedStep.__dict__ and type(ISpatialAnalysisToolGridValuesFixedStep.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolGridValuesFixedStep.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolGridValuesFixedStep)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolGridValuesFixedStep.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesFixedStep, None)
     
     _get_min_metadata = { "name" : "min",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15110,28 +13420,16 @@ class ISpatialAnalysisToolGridValuesMethod(object):
         "method_offsets" : { "get_method_type" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolGridValuesMethod._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolGridValuesMethod from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesMethod)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolGridValuesMethod.__dict__ and type(ISpatialAnalysisToolGridValuesMethod.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolGridValuesMethod.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolGridValuesMethod)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolGridValuesMethod.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesMethod, None)
     
     _get_method_type_metadata = { "name" : "method_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15164,28 +13462,16 @@ class ITimeToolLightTimeDelay(object):
                              "set_time_sense" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolLightTimeDelay._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolLightTimeDelay from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolLightTimeDelay)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolLightTimeDelay.__dict__ and type(ITimeToolLightTimeDelay.__dict__[attrname]) == property:
-            return ITimeToolLightTimeDelay.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolLightTimeDelay)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolLightTimeDelay.")
+        set_interface_attribute(self, attrname, value, ITimeToolLightTimeDelay, None)
     
     _get_use_light_time_delay_metadata = { "name" : "use_light_time_delay",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -15276,28 +13562,16 @@ class ISpatialAnalysisToolVolume(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolume._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolume from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolume)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolume.__dict__ and type(ISpatialAnalysisToolVolume.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolume.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolume)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolume.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolume, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{F85958EC-F470-432F-81B1-8517D3952F1E}", ISpatialAnalysisToolVolume)
@@ -15313,28 +13587,16 @@ class ISpatialAnalysisToolVolumeCalc(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalc._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalc from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalc)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalc.__dict__ and type(ISpatialAnalysisToolVolumeCalc.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalc.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalc)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalc.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalc, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{1de42e63-b555-4272-8b9b-d6cf0ee5d1cf}", ISpatialAnalysisToolVolumeCalc)
@@ -15357,28 +13619,16 @@ class ISpatialAnalysisToolVolumeCalcAltitude(object):
                              "set_reference_point" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcAltitude._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcAltitude from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcAltitude)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcAltitude.__dict__ and type(ISpatialAnalysisToolVolumeCalcAltitude.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcAltitude.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcAltitude)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcAltitude.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcAltitude, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -15463,28 +13713,16 @@ class ISpatialAnalysisToolVolumeCalcAngleOffVector(object):
                              "set_about_vector" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcAngleOffVector._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcAngleOffVector from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcAngleOffVector)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcAngleOffVector.__dict__ and type(ISpatialAnalysisToolVolumeCalcAngleOffVector.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcAngleOffVector.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcAngleOffVector)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcAngleOffVector.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcAngleOffVector, None)
     
     _get_angle_metadata = { "name" : "angle",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15594,28 +13832,16 @@ class ISpatialAnalysisToolVolumeCalcConditionSatMetric(object):
                              "set_maximum_duration_time" : 20, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcConditionSatMetric._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcConditionSatMetric from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcConditionSatMetric)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcConditionSatMetric.__dict__ and type(ISpatialAnalysisToolVolumeCalcConditionSatMetric.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcConditionSatMetric.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcConditionSatMetric)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcConditionSatMetric.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcConditionSatMetric, None)
     
     _get_spatial_condition_metadata = { "name" : "spatial_condition",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15792,28 +14018,16 @@ class ISpatialAnalysisToolVolumeCalcDelayRange(object):
                              "set_speed" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcDelayRange._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcDelayRange from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcDelayRange)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcDelayRange.__dict__ and type(ISpatialAnalysisToolVolumeCalcDelayRange.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcDelayRange.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcDelayRange)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcDelayRange.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcDelayRange, None)
     
     _get_distance_metadata = { "name" : "distance",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15921,28 +14135,16 @@ class ISpatialAnalysisToolVolumeCalcFile(object):
                              "reload" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcFile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcFile from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcFile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcFile.__dict__ and type(ISpatialAnalysisToolVolumeCalcFile.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcFile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcFile.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcFile, None)
     
     _get_filename_metadata = { "name" : "filename",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -15981,28 +14183,16 @@ class ISpatialAnalysisToolVolumeCalcFromScalar(object):
                              "set_scalar" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcFromScalar._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcFromScalar from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcFromScalar)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcFromScalar.__dict__ and type(ISpatialAnalysisToolVolumeCalcFromScalar.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcFromScalar.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFromScalar)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcFromScalar.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcFromScalar, None)
     
     _get_scalar_metadata = { "name" : "scalar",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16040,28 +14230,16 @@ class ISpatialAnalysisToolVolumeCalcRange(object):
                              "set_along_vector" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcRange._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcRange from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcRange)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcRange.__dict__ and type(ISpatialAnalysisToolVolumeCalcRange.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcRange.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcRange)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcRange.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcRange, None)
     
     _get_distance_metadata = { "name" : "distance",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16140,28 +14318,16 @@ class ISpatialAnalysisToolVolumeCalcSolarIntensity(object):
                              "set_use_object_eclipsing_bodies" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCalcSolarIntensity._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCalcSolarIntensity from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcSolarIntensity)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCalcSolarIntensity.__dict__ and type(ISpatialAnalysisToolVolumeCalcSolarIntensity.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCalcSolarIntensity.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcSolarIntensity)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcSolarIntensity.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcSolarIntensity, None)
     
     _get_eclipsing_bodies_metadata = { "name" : "eclipsing_bodies",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -16214,28 +14380,16 @@ class ISpatialAnalysisToolVolumeCombined(object):
                              "remove_condition" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeCombined._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeCombined from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCombined)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeCombined.__dict__ and type(ISpatialAnalysisToolVolumeCombined.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeCombined.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeCombined)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCombined.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCombined, None)
     
     _get_combine_operation_metadata = { "name" : "combine_operation",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16317,28 +14471,16 @@ class ISpatialAnalysisToolVolumeFromCalc(object):
                              "set" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeFromCalc._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeFromCalc from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromCalc)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeFromCalc.__dict__ and type(ISpatialAnalysisToolVolumeFromCalc.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeFromCalc.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromCalc)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFromCalc.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromCalc, None)
     
     _get_operation_metadata = { "name" : "operation",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16428,28 +14570,16 @@ class ISpatialAnalysisToolVolumeFromCondition(object):
                              "set_convergence" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeFromCondition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeFromCondition from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromCondition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeFromCondition.__dict__ and type(ISpatialAnalysisToolVolumeFromCondition.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeFromCondition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromCondition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFromCondition.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromCondition, None)
     
     _get_condition_metadata = { "name" : "condition",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16543,28 +14673,16 @@ class ISpatialAnalysisToolVolumeFromGrid(object):
                              "set_volume_grid" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeFromGrid._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeFromGrid from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromGrid)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeFromGrid.__dict__ and type(ISpatialAnalysisToolVolumeFromGrid.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeFromGrid.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromGrid)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFromGrid.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromGrid, None)
     
     _get_edge_type_metadata = { "name" : "edge_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16611,28 +14729,16 @@ class ISpatialAnalysisToolVolumeFromTimeSatisfaction(object):
                              "set_time_satisfaction" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeFromTimeSatisfaction._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeFromTimeSatisfaction from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromTimeSatisfaction)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeFromTimeSatisfaction.__dict__ and type(ISpatialAnalysisToolVolumeFromTimeSatisfaction.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeFromTimeSatisfaction.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromTimeSatisfaction)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFromTimeSatisfaction.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromTimeSatisfaction, None)
     
     _get_time_satisfaction_metadata = { "name" : "time_satisfaction",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16663,28 +14769,16 @@ class ISpatialAnalysisToolVolumeGrid(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGrid._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGrid from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGrid)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGrid.__dict__ and type(ISpatialAnalysisToolVolumeGrid.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGrid.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGrid)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGrid.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGrid, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{88BBE781-85C1-439D-A4F4-58006B9A35EC}", ISpatialAnalysisToolVolumeGrid)
@@ -16710,28 +14804,16 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
                              "set_reference_location" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridBearingAlt._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridBearingAlt from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridBearingAlt)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridBearingAlt.__dict__ and type(ISpatialAnalysisToolVolumeGridBearingAlt.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridBearingAlt.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridBearingAlt)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridBearingAlt.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridBearingAlt, None)
     
     _get_reference_central_body_metadata = { "name" : "reference_central_body",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -16835,28 +14917,16 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
                              "get_z_coordinates" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridCartesian._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridCartesian from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridCartesian)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridCartesian.__dict__ and type(ISpatialAnalysisToolVolumeGridCartesian.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridCartesian.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridCartesian)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridCartesian.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridCartesian, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16914,28 +14984,16 @@ class ISpatialAnalysisToolVolumeGridConstrained(object):
                              "set_constraint" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridConstrained._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridConstrained from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridConstrained)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridConstrained.__dict__ and type(ISpatialAnalysisToolVolumeGridConstrained.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridConstrained.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridConstrained)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridConstrained.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridConstrained, None)
     
     _get_reference_grid_metadata = { "name" : "reference_grid",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16985,28 +15043,16 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
                              "get_height_coordinates" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridCylindrical._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridCylindrical from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridCylindrical)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridCylindrical.__dict__ and type(ISpatialAnalysisToolVolumeGridCylindrical.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridCylindrical.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridCylindrical)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridCylindrical.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridCylindrical, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17067,28 +15113,16 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
                              "set_auto_fit_bounds" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridLatLonAlt._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridLatLonAlt from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridLatLonAlt)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridLatLonAlt.__dict__ and type(ISpatialAnalysisToolVolumeGridLatLonAlt.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridLatLonAlt.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridLatLonAlt)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridLatLonAlt.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridLatLonAlt, None)
     
     _get_reference_central_body_metadata = { "name" : "reference_central_body",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -17165,28 +15199,16 @@ class ISpatialAnalysisToolVolumeGridResult(object):
                              "get_volume_metric_gradient_vector" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridResult from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridResult.__dict__ and type(ISpatialAnalysisToolVolumeGridResult.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridResult.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridResult, None)
     
     _get_epoch_metadata = { "name" : "epoch",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -17270,28 +15292,16 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
                              "get_range_coordinates" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeGridSpherical._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeGridSpherical from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridSpherical)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeGridSpherical.__dict__ and type(ISpatialAnalysisToolVolumeGridSpherical.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeGridSpherical.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridSpherical)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridSpherical.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridSpherical, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17348,28 +15358,16 @@ class ISpatialAnalysisToolVolumeInview(object):
                              "get_light_time_delay" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeInview._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeInview from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeInview)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeInview.__dict__ and type(ISpatialAnalysisToolVolumeInview.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeInview.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeInview)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeInview.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeInview, None)
     
     _get_constraint_object_metadata = { "name" : "constraint_object",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -17413,28 +15411,16 @@ class ISpatialAnalysisToolVolumeLighting(object):
                              "set_lighting_conditions" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeLighting._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeLighting from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeLighting)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeLighting.__dict__ and type(ISpatialAnalysisToolVolumeLighting.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeLighting.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeLighting)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeLighting.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeLighting, None)
     
     _get_eclipsing_bodies_metadata = { "name" : "eclipsing_bodies",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -17504,28 +15490,16 @@ class ISpatialAnalysisToolVolumeOverTime(object):
                              "set_stop_offset" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISpatialAnalysisToolVolumeOverTime._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISpatialAnalysisToolVolumeOverTime from source object.")
+        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeOverTime)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISpatialAnalysisToolVolumeOverTime.__dict__ and type(ISpatialAnalysisToolVolumeOverTime.__dict__[attrname]) == property:
-            return ISpatialAnalysisToolVolumeOverTime.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISpatialAnalysisToolVolumeOverTime)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeOverTime.")
+        set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeOverTime, None)
     
     _get_duration_type_metadata = { "name" : "duration_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -17616,28 +15590,16 @@ class ITimeToolTimeProperties(object):
         "method_offsets" : { "get_availability" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolTimeProperties._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolTimeProperties from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolTimeProperties)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolTimeProperties.__dict__ and type(ITimeToolTimeProperties.__dict__[attrname]) == property:
-            return ITimeToolTimeProperties.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolTimeProperties)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolTimeProperties.")
+        set_interface_attribute(self, attrname, value, ITimeToolTimeProperties, None)
     
     _get_availability_metadata = { "name" : "get_availability",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17662,28 +15624,16 @@ class IAnalysisWorkbenchTypeInfo(object):
                              "get_short_type_description" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchTypeInfo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchTypeInfo from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchTypeInfo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchTypeInfo.__dict__ and type(IAnalysisWorkbenchTypeInfo.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchTypeInfo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchTypeInfo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchTypeInfo.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchTypeInfo, None)
     
     _get_type_description_metadata = { "name" : "type_description",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -17723,28 +15673,16 @@ class IAnalysisWorkbenchRefTo(object):
         "method_offsets" : { "get_path" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchRefTo.__dict__ and type(IAnalysisWorkbenchRefTo.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchRefTo.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchRefTo, None)
     
     _get_path_metadata = { "name" : "path",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -17768,28 +15706,16 @@ class IAnalysisWorkbenchTemplate(object):
         "method_offsets" : { "get_class_name" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchTemplate._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchTemplate from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchTemplate)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchTemplate.__dict__ and type(IAnalysisWorkbenchTemplate.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchTemplate.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchTemplate)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchTemplate.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchTemplate, None)
     
     _get_class_name_metadata = { "name" : "class_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -17814,28 +15740,16 @@ class IAnalysisWorkbenchInstance(object):
                              "get_template" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchInstance._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchInstance from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchInstance)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchInstance.__dict__ and type(IAnalysisWorkbenchInstance.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchInstance.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchInstance)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchInstance.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchInstance, None)
     
     _get_instance_path_metadata = { "name" : "instance_path",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -17870,28 +15784,16 @@ class IVectorGeometryToolPointRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointRefTo.__dict__ and type(IVectorGeometryToolPointRefTo.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointRefTo.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
             "arg_types" : (agcom.BSTR,),
@@ -17938,28 +15840,16 @@ class IVectorGeometryToolVectorRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorRefTo.__dict__ and type(IVectorGeometryToolVectorRefTo.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorRefTo.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
             "arg_types" : (agcom.BSTR,),
@@ -18006,28 +15896,16 @@ class IVectorGeometryToolAxesRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesRefTo.__dict__ and type(IVectorGeometryToolAxesRefTo.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesRefTo.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
             "arg_types" : (agcom.BSTR,),
@@ -18074,28 +15952,16 @@ class IVectorGeometryToolAngleRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleRefTo.__dict__ and type(IVectorGeometryToolAngleRefTo.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleRefTo.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
             "arg_types" : (agcom.BSTR,),
@@ -18142,28 +16008,16 @@ class IVectorGeometryToolSystemRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemRefTo.__dict__ and type(IVectorGeometryToolSystemRefTo.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemRefTo.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
             "arg_types" : (agcom.BSTR,),
@@ -18210,28 +16064,16 @@ class IVectorGeometryToolPlaneRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneRefTo.__dict__ and type(IVectorGeometryToolPlaneRefTo.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneRefTo.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
             "arg_types" : (agcom.BSTR,),
@@ -18280,28 +16122,16 @@ class IVectorGeometryToolAxesLabels(object):
                              "set_label_z" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesLabels._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesLabels from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesLabels)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesLabels.__dict__ and type(IVectorGeometryToolAxesLabels.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesLabels.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesLabels)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesLabels.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesLabels, None)
     
     _get_label_x_metadata = { "name" : "label_x",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -18365,28 +16195,16 @@ class IVectorGeometryToolPlaneLabels(object):
                              "set_y_axis_label" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneLabels._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneLabels from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneLabels)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneLabels.__dict__ and type(IVectorGeometryToolPlaneLabels.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneLabels.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneLabels)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneLabels.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneLabels, None)
     
     _get_x_axis_label_metadata = { "name" : "x_axis_label",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -18435,28 +16253,16 @@ class IVectorGeometryToolAxesAlignedAndConstrained(object):
                              "get_constraint_direction" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesAlignedAndConstrained._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesAlignedAndConstrained from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAlignedAndConstrained)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesAlignedAndConstrained.__dict__ and type(IVectorGeometryToolAxesAlignedAndConstrained.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesAlignedAndConstrained.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesAlignedAndConstrained)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesAlignedAndConstrained.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAlignedAndConstrained, None)
     
     _get_alignment_reference_vector_metadata = { "name" : "alignment_reference_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18508,28 +16314,16 @@ class IVectorGeometryToolAxesAngularOffset(object):
                              "set_fixed_offset_angle" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesAngularOffset._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesAngularOffset from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAngularOffset)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesAngularOffset.__dict__ and type(IVectorGeometryToolAxesAngularOffset.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesAngularOffset.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesAngularOffset)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesAngularOffset.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAngularOffset, None)
     
     _get_spin_vector_metadata = { "name" : "spin_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18587,28 +16381,16 @@ class IVectorGeometryToolAxesFixedAtEpoch(object):
                              "set_epoch" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesFixedAtEpoch._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesFixedAtEpoch from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFixedAtEpoch)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesFixedAtEpoch.__dict__ and type(IVectorGeometryToolAxesFixedAtEpoch.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesFixedAtEpoch.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesFixedAtEpoch)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFixedAtEpoch.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFixedAtEpoch, None)
     
     _get_source_axes_metadata = { "name" : "source_axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18659,28 +16441,16 @@ class IVectorGeometryToolAxesBPlane(object):
                              "set_direction" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesBPlane._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesBPlane from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesBPlane)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesBPlane.__dict__ and type(IVectorGeometryToolAxesBPlane.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesBPlane.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesBPlane)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesBPlane.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesBPlane, None)
     
     _get_trajectory_metadata = { "name" : "trajectory",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18737,28 +16507,16 @@ class IVectorGeometryToolAxesCustomScript(object):
                              "set_filename" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesCustomScript._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesCustomScript from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesCustomScript)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesCustomScript.__dict__ and type(IVectorGeometryToolAxesCustomScript.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesCustomScript.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesCustomScript)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesCustomScript.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesCustomScript, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18798,28 +16556,16 @@ class IVectorGeometryToolAxesAttitudeFile(object):
                              "set_filename" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesAttitudeFile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesAttitudeFile from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAttitudeFile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesAttitudeFile.__dict__ and type(IVectorGeometryToolAxesAttitudeFile.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesAttitudeFile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesAttitudeFile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesAttitudeFile.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAttitudeFile, None)
     
     _get_filename_metadata = { "name" : "filename",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -18851,28 +16597,16 @@ class IVectorGeometryToolAxesFixed(object):
                              "get_fixed_orientation" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesFixed._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesFixed from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFixed)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesFixed.__dict__ and type(IVectorGeometryToolAxesFixed.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesFixed.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesFixed)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFixed.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFixed, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18905,28 +16639,16 @@ class IVectorGeometryToolAxesModelAttach(object):
                              "set_pointable_element_name" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesModelAttach._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesModelAttach from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesModelAttach)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesModelAttach.__dict__ and type(IVectorGeometryToolAxesModelAttach.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesModelAttach.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesModelAttach)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesModelAttach.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesModelAttach, None)
     
     _get_pointable_element_name_metadata = { "name" : "pointable_element_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -18964,28 +16686,16 @@ class IVectorGeometryToolAxesSpinning(object):
                              "set_spin_rate" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesSpinning._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesSpinning from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesSpinning)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesSpinning.__dict__ and type(IVectorGeometryToolAxesSpinning.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesSpinning.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesSpinning)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesSpinning.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesSpinning, None)
     
     _get_spin_vector_metadata = { "name" : "spin_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19065,28 +16775,16 @@ class IVectorGeometryToolAxesOnSurface(object):
                              "set_use_msl" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesOnSurface._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesOnSurface from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesOnSurface)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesOnSurface.__dict__ and type(IVectorGeometryToolAxesOnSurface.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesOnSurface.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesOnSurface)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesOnSurface.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesOnSurface, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19136,28 +16834,16 @@ class IVectorGeometryToolAxesTrajectory(object):
                              "set_trajectory_axes_type" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesTrajectory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesTrajectory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesTrajectory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesTrajectory.__dict__ and type(IVectorGeometryToolAxesTrajectory.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesTrajectory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesTrajectory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesTrajectory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesTrajectory, None)
     
     _get_trajectory_point_metadata = { "name" : "trajectory_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19207,28 +16893,16 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
                              "get_secondary_central_bodies" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesLagrangeLibration._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesLagrangeLibration from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesLagrangeLibration)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesLagrangeLibration.__dict__ and type(IVectorGeometryToolAxesLagrangeLibration.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesLagrangeLibration.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesLagrangeLibration)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesLagrangeLibration.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesLagrangeLibration, None)
     
     _get_primary_central_body_metadata = { "name" : "primary_central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19278,28 +16952,16 @@ class IVectorGeometryToolAxesCommonTasks(object):
                              "sample" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesCommonTasks._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesCommonTasks from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesCommonTasks)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesCommonTasks.__dict__ and type(IVectorGeometryToolAxesCommonTasks.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesCommonTasks.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesCommonTasks)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesCommonTasks.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesCommonTasks, None)
     
     _create_topocentric_axes_quaternion_metadata = { "name" : "create_topocentric_axes_quaternion",
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
@@ -19348,28 +17010,16 @@ class IVectorGeometryToolAxesAtTimeInstant(object):
                              "set_reference_axes" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesAtTimeInstant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesAtTimeInstant from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAtTimeInstant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesAtTimeInstant.__dict__ and type(IVectorGeometryToolAxesAtTimeInstant.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesAtTimeInstant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesAtTimeInstant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesAtTimeInstant.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAtTimeInstant, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19435,28 +17085,16 @@ class IVectorGeometryToolAxesPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesPlugin._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesPlugin from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesPlugin)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesPlugin.__dict__ and type(IVectorGeometryToolAxesPlugin.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesPlugin.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesPlugin)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesPlugin.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -19518,28 +17156,16 @@ class IVectorGeometryToolAngleBetweenVectors(object):
                              "get_to_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleBetweenVectors._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleBetweenVectors from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleBetweenVectors)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleBetweenVectors.__dict__ and type(IVectorGeometryToolAngleBetweenVectors.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleBetweenVectors.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleBetweenVectors)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleBetweenVectors.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleBetweenVectors, None)
     
     _get_from_vector_metadata = { "name" : "from_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19572,28 +17198,16 @@ class IVectorGeometryToolAngleBetweenPlanes(object):
                              "get_to_plane" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleBetweenPlanes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleBetweenPlanes from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleBetweenPlanes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleBetweenPlanes.__dict__ and type(IVectorGeometryToolAngleBetweenPlanes.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleBetweenPlanes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleBetweenPlanes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleBetweenPlanes.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleBetweenPlanes, None)
     
     _get_from_plane_metadata = { "name" : "from_plane",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19631,28 +17245,16 @@ class IVectorGeometryToolAngleDihedral(object):
                              "set_signed_angle" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleDihedral._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleDihedral from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleDihedral)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleDihedral.__dict__ and type(IVectorGeometryToolAngleDihedral.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleDihedral.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleDihedral)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleDihedral.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleDihedral, None)
     
     _get_from_vector_metadata = { "name" : "from_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19725,28 +17327,16 @@ class IVectorGeometryToolAngleRotation(object):
                              "set_reference_direction" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleRotation._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleRotation from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleRotation)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleRotation.__dict__ and type(IVectorGeometryToolAngleRotation.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleRotation.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleRotation)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleRotation.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleRotation, None)
     
     _get_from_axes_metadata = { "name" : "from_axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19796,28 +17386,16 @@ class IVectorGeometryToolAngleToPlane(object):
                              "set_signed" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleToPlane._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleToPlane from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleToPlane)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleToPlane.__dict__ and type(IVectorGeometryToolAngleToPlane.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleToPlane.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleToPlane)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleToPlane.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleToPlane, None)
     
     _get_reference_vector_metadata = { "name" : "reference_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19866,28 +17444,16 @@ class IVectorGeometryToolPlaneNormal(object):
                              "get_reference_point" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneNormal._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneNormal from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneNormal)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneNormal.__dict__ and type(IVectorGeometryToolPlaneNormal.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneNormal.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneNormal)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneNormal.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneNormal, None)
     
     _get_normal_vector_metadata = { "name" : "normal_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19929,28 +17495,16 @@ class IVectorGeometryToolPlaneQuadrant(object):
                              "set_quadrant" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneQuadrant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneQuadrant from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneQuadrant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneQuadrant.__dict__ and type(IVectorGeometryToolPlaneQuadrant.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneQuadrant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneQuadrant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneQuadrant.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneQuadrant, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19992,28 +17546,16 @@ class IVectorGeometryToolPlaneTrajectory(object):
                              "set_rotation_offset" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneTrajectory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneTrajectory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneTrajectory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneTrajectory.__dict__ and type(IVectorGeometryToolPlaneTrajectory.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneTrajectory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneTrajectory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneTrajectory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneTrajectory, None)
     
     _get_point_metadata = { "name" : "point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20064,28 +17606,16 @@ class IVectorGeometryToolPlaneTriad(object):
                              "set_rotation_offset" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneTriad._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneTriad from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneTriad)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneTriad.__dict__ and type(IVectorGeometryToolPlaneTriad.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneTriad.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneTriad)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneTriad.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneTriad, None)
     
     _get_point_a_metadata = { "name" : "point_a",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20142,28 +17672,16 @@ class IVectorGeometryToolPlaneTwoVector(object):
                              "get_reference_point" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneTwoVector._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneTwoVector from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneTwoVector)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneTwoVector.__dict__ and type(IVectorGeometryToolPlaneTwoVector.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneTwoVector.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneTwoVector)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneTwoVector.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneTwoVector, None)
     
     _get_reference_vector_metadata = { "name" : "reference_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20208,28 +17726,16 @@ class IVectorGeometryToolPointBPlane(object):
                              "set_direction" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointBPlane._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointBPlane from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointBPlane)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointBPlane.__dict__ and type(IVectorGeometryToolPointBPlane.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointBPlane.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointBPlane)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointBPlane.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointBPlane, None)
     
     _get_target_body_metadata = { "name" : "target_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20292,28 +17798,16 @@ class IVectorGeometryToolPointFile(object):
                              "set_filename" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointFile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointFile from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointFile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointFile.__dict__ and type(IVectorGeometryToolPointFile.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointFile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointFile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointFile.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointFile, None)
     
     _get_filename_metadata = { "name" : "filename",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20345,28 +17839,16 @@ class IVectorGeometryToolPointFixedInSystem(object):
                              "get_fixed_point" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointFixedInSystem._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointFixedInSystem from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointFixedInSystem)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointFixedInSystem.__dict__ and type(IVectorGeometryToolPointFixedInSystem.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointFixedInSystem.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointFixedInSystem)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointFixedInSystem.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointFixedInSystem, None)
     
     _get_reference_metadata = { "name" : "reference",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20402,28 +17884,16 @@ class IVectorGeometryToolPointGrazing(object):
                              "set_altitude" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointGrazing._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointGrazing from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointGrazing)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointGrazing.__dict__ and type(IVectorGeometryToolPointGrazing.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointGrazing.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointGrazing)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointGrazing.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointGrazing, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20480,28 +17950,16 @@ class IVectorGeometryToolPointGlint(object):
                              "get_observer_point" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointGlint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointGlint from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointGlint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointGlint.__dict__ and type(IVectorGeometryToolPointGlint.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointGlint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointGlint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointGlint.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointGlint, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20552,28 +18010,16 @@ class IVectorGeometryToolPointCovarianceGrazing(object):
                              "set_use_probability" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointCovarianceGrazing._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointCovarianceGrazing from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCovarianceGrazing)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointCovarianceGrazing.__dict__ and type(IVectorGeometryToolPointCovarianceGrazing.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointCovarianceGrazing.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointCovarianceGrazing)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointCovarianceGrazing.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCovarianceGrazing, None)
     
     _get_reference_point_metadata = { "name" : "reference_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20682,28 +18128,16 @@ class IVectorGeometryToolPointPlaneIntersection(object):
                              "get_origin_point" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointPlaneIntersection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointPlaneIntersection from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointPlaneIntersection)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointPlaneIntersection.__dict__ and type(IVectorGeometryToolPointPlaneIntersection.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointPlaneIntersection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointPlaneIntersection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointPlaneIntersection.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointPlaneIntersection, None)
     
     _get_direction_vector_metadata = { "name" : "direction_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20748,28 +18182,16 @@ class IVectorGeometryToolPointOnSurface(object):
                              "set_surface_type" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointOnSurface._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointOnSurface from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointOnSurface)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointOnSurface.__dict__ and type(IVectorGeometryToolPointOnSurface.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointOnSurface.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointOnSurface)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointOnSurface.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointOnSurface, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20834,28 +18256,16 @@ class IVectorGeometryToolPointModelAttach(object):
                              "set_use_scale" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointModelAttach._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointModelAttach from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointModelAttach)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointModelAttach.__dict__ and type(IVectorGeometryToolPointModelAttach.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointModelAttach.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointModelAttach)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointModelAttach.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointModelAttach, None)
     
     _get_pointable_element_name_metadata = { "name" : "pointable_element_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20902,28 +18312,16 @@ class IVectorGeometryToolPointSatelliteCollectionEntry(object):
                              "set_entry_name" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointSatelliteCollectionEntry._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointSatelliteCollectionEntry from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointSatelliteCollectionEntry)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointSatelliteCollectionEntry.__dict__ and type(IVectorGeometryToolPointSatelliteCollectionEntry.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointSatelliteCollectionEntry.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointSatelliteCollectionEntry)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointSatelliteCollectionEntry.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointSatelliteCollectionEntry, None)
     
     _get_entry_name_metadata = { "name" : "entry_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20955,28 +18353,16 @@ class IVectorGeometryToolPointPlaneProjection(object):
                              "get_reference_plane" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointPlaneProjection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointPlaneProjection from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointPlaneProjection)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointPlaneProjection.__dict__ and type(IVectorGeometryToolPointPlaneProjection.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointPlaneProjection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointPlaneProjection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointPlaneProjection.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointPlaneProjection, None)
     
     _get_source_point_metadata = { "name" : "source_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -21011,28 +18397,16 @@ class IVectorGeometryToolPointLagrangeLibration(object):
                              "get_secondary_central_bodies" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointLagrangeLibration._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointLagrangeLibration from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointLagrangeLibration)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointLagrangeLibration.__dict__ and type(IVectorGeometryToolPointLagrangeLibration.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointLagrangeLibration.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointLagrangeLibration)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointLagrangeLibration.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointLagrangeLibration, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -21081,28 +18455,16 @@ class IVectorGeometryToolPointCommonTasks(object):
                              "sample" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointCommonTasks._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointCommonTasks from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCommonTasks)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointCommonTasks.__dict__ and type(IVectorGeometryToolPointCommonTasks.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointCommonTasks.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointCommonTasks)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointCommonTasks.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCommonTasks, None)
     
     _create_fixed_in_system_cartographic_metadata = { "name" : "create_fixed_in_system_cartographic",
             "arg_types" : (agcom.PVOID, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE, POINTER(agcom.PVOID),),
@@ -21161,28 +18523,16 @@ class IVectorGeometryToolPointCentBodyIntersect(object):
                              "set_allow_intersection_from_below" : 23, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointCentBodyIntersect._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointCentBodyIntersect from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCentBodyIntersect)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointCentBodyIntersect.__dict__ and type(IVectorGeometryToolPointCentBodyIntersect.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointCentBodyIntersect.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointCentBodyIntersect)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointCentBodyIntersect.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCentBodyIntersect, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -21375,28 +18725,16 @@ class IVectorGeometryToolPointAtTimeInstant(object):
                              "set_reference_system" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointAtTimeInstant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointAtTimeInstant from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointAtTimeInstant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointAtTimeInstant.__dict__ and type(IVectorGeometryToolPointAtTimeInstant.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointAtTimeInstant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointAtTimeInstant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointAtTimeInstant.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointAtTimeInstant, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -21462,28 +18800,16 @@ class IVectorGeometryToolPointPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointPlugin._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointPlugin from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointPlugin)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointPlugin.__dict__ and type(IVectorGeometryToolPointPlugin.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointPlugin.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointPlugin)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointPlugin.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -21548,28 +18874,16 @@ class IVectorGeometryToolPointCBFixedOffset(object):
                              "get_position" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointCBFixedOffset._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointCBFixedOffset from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCBFixedOffset)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointCBFixedOffset.__dict__ and type(IVectorGeometryToolPointCBFixedOffset.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointCBFixedOffset.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointCBFixedOffset)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointCBFixedOffset.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCBFixedOffset, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -21624,28 +18938,16 @@ class IVectorGeometryToolSystemAssembled(object):
                              "get_reference_axes" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemAssembled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemAssembled from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemAssembled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemAssembled.__dict__ and type(IVectorGeometryToolSystemAssembled.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemAssembled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemAssembled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemAssembled.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemAssembled, None)
     
     _get_origin_point_metadata = { "name" : "origin_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -21682,28 +18984,16 @@ class IVectorGeometryToolSystemOnSurface(object):
                              "get_position" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemOnSurface._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemOnSurface from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemOnSurface)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemOnSurface.__dict__ and type(IVectorGeometryToolSystemOnSurface.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemOnSurface.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemOnSurface)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemOnSurface.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemOnSurface, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -21770,28 +19060,16 @@ class IAnalysisWorkbenchLLAPosition(object):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchLLAPosition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchLLAPosition from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchLLAPosition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchLLAPosition.__dict__ and type(IAnalysisWorkbenchLLAPosition.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchLLAPosition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchLLAPosition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchLLAPosition.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchLLAPosition, None)
     
     _get_latitude_metadata = { "name" : "latitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -21853,28 +19131,16 @@ class IVectorGeometryToolSystemCommonTasks(object):
                              "create_assembled" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemCommonTasks._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemCommonTasks from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemCommonTasks)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemCommonTasks.__dict__ and type(IVectorGeometryToolSystemCommonTasks.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemCommonTasks.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemCommonTasks)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemCommonTasks.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemCommonTasks, None)
     
     _create_east_north_up_cartographic_metadata = { "name" : "create_east_north_up_cartographic",
             "arg_types" : (agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE, POINTER(agcom.PVOID),),
@@ -21906,28 +19172,16 @@ class IVectorGeometryToolVectorAngleRate(object):
                              "set_differencing_time_step" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorAngleRate._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorAngleRate from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorAngleRate)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorAngleRate.__dict__ and type(IVectorGeometryToolVectorAngleRate.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorAngleRate.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorAngleRate)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorAngleRate.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorAngleRate, None)
     
     _get_angle_metadata = { "name" : "angle",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -21969,28 +19223,16 @@ class IVectorGeometryToolVectorApoapsis(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorApoapsis._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorApoapsis from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorApoapsis)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorApoapsis.__dict__ and type(IVectorGeometryToolVectorApoapsis.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorApoapsis.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorApoapsis)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorApoapsis.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorApoapsis, None)
     
     _get_reference_point_metadata = { "name" : "reference_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22040,28 +19282,16 @@ class IVectorGeometryToolVectorFixedAtEpoch(object):
                              "get_reference_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorFixedAtEpoch._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorFixedAtEpoch from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFixedAtEpoch)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorFixedAtEpoch.__dict__ and type(IVectorGeometryToolVectorFixedAtEpoch.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorFixedAtEpoch.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorFixedAtEpoch)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFixedAtEpoch.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFixedAtEpoch, None)
     
     _get_epoch_metadata = { "name" : "epoch",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -22111,28 +19341,16 @@ class IVectorGeometryToolVectorAngularVelocity(object):
                              "set_differencing_time_step" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorAngularVelocity._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorAngularVelocity from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorAngularVelocity)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorAngularVelocity.__dict__ and type(IVectorGeometryToolVectorAngularVelocity.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorAngularVelocity.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorAngularVelocity)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorAngularVelocity.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorAngularVelocity, None)
     
     _get_axes_metadata = { "name" : "axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22190,28 +19408,16 @@ class IVectorGeometryToolVectorConing(object):
                              "set_mode" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorConing._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorConing from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorConing)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorConing.__dict__ and type(IVectorGeometryToolVectorConing.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorConing.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorConing)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorConing.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorConing, None)
     
     _get_about_vector_metadata = { "name" : "about_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22323,28 +19529,16 @@ class IVectorGeometryToolVectorCross(object):
                              "set_dimension" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorCross._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorCross from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorCross)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorCross.__dict__ and type(IVectorGeometryToolVectorCross.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorCross.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorCross)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorCross.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorCross, None)
     
     _get_from_method_metadata = { "name" : "from_method",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22410,28 +19604,16 @@ class IVectorGeometryToolVectorCustomScript(object):
                              "set_initialization_script_file" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorCustomScript._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorCustomScript from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorCustomScript)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorCustomScript.__dict__ and type(IVectorGeometryToolVectorCustomScript.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorCustomScript.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorCustomScript)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorCustomScript.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorCustomScript, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22490,28 +19672,16 @@ class IVectorGeometryToolVectorDerivative(object):
                              "set_force_use_of_numerical_differences" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorDerivative._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorDerivative from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDerivative)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorDerivative.__dict__ and type(IVectorGeometryToolVectorDerivative.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorDerivative.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorDerivative)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorDerivative.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDerivative, None)
     
     _get_vector_metadata = { "name" : "vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22581,28 +19751,16 @@ class IVectorGeometryToolVectorDisplacement(object):
                              "get_reference_system" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorDisplacement._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorDisplacement from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDisplacement)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorDisplacement.__dict__ and type(IVectorGeometryToolVectorDisplacement.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorDisplacement.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorDisplacement)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorDisplacement.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDisplacement, None)
     
     _get_origin_metadata = { "name" : "origin",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22688,28 +19846,16 @@ class IVectorGeometryToolVectorTwoPlanesIntersection(object):
                              "get_plane_b" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorTwoPlanesIntersection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorTwoPlanesIntersection from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorTwoPlanesIntersection)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorTwoPlanesIntersection.__dict__ and type(IVectorGeometryToolVectorTwoPlanesIntersection.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorTwoPlanesIntersection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorTwoPlanesIntersection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorTwoPlanesIntersection.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorTwoPlanesIntersection, None)
     
     _get_plane_a_metadata = { "name" : "plane_a",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22742,28 +19888,16 @@ class IVectorGeometryToolVectorModelAttach(object):
                              "set_pointable_element_name" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorModelAttach._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorModelAttach from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorModelAttach)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorModelAttach.__dict__ and type(IVectorGeometryToolVectorModelAttach.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorModelAttach.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorModelAttach)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorModelAttach.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorModelAttach, None)
     
     _get_pointable_element_name_metadata = { "name" : "pointable_element_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -22795,28 +19929,16 @@ class IVectorGeometryToolVectorProjection(object):
                              "get_reference_plane" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorProjection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorProjection from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorProjection)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorProjection.__dict__ and type(IVectorGeometryToolVectorProjection.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorProjection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorProjection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorProjection.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorProjection, None)
     
     _get_source_metadata = { "name" : "source",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22852,28 +19974,16 @@ class IVectorGeometryToolVectorScaled(object):
                              "set_is_normalized" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorScaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorScaled from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorScaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorScaled.__dict__ and type(IVectorGeometryToolVectorScaled.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorScaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorScaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorScaled.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorScaled, None)
     
     _get_reference_vector_metadata = { "name" : "reference_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22930,28 +20040,16 @@ class IVectorGeometryToolVectorEccentricity(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorEccentricity._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorEccentricity from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorEccentricity)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorEccentricity.__dict__ and type(IVectorGeometryToolVectorEccentricity.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorEccentricity.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorEccentricity)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorEccentricity.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorEccentricity, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22999,28 +20097,16 @@ class IVectorGeometryToolVectorFixedInAxes(object):
                              "get_direction" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorFixedInAxes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorFixedInAxes from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFixedInAxes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorFixedInAxes.__dict__ and type(IVectorGeometryToolVectorFixedInAxes.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorFixedInAxes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorFixedInAxes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFixedInAxes.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFixedInAxes, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23053,28 +20139,16 @@ class IVectorGeometryToolVectorLineOfNodes(object):
                              "get_reference_point" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorLineOfNodes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorLineOfNodes from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorLineOfNodes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorLineOfNodes.__dict__ and type(IVectorGeometryToolVectorLineOfNodes.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorLineOfNodes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorLineOfNodes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorLineOfNodes.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorLineOfNodes, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23109,28 +20183,16 @@ class IVectorGeometryToolVectorOrbitAngularMomentum(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorOrbitAngularMomentum._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorOrbitAngularMomentum from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorOrbitAngularMomentum)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorOrbitAngularMomentum.__dict__ and type(IVectorGeometryToolVectorOrbitAngularMomentum.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorOrbitAngularMomentum.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorOrbitAngularMomentum)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorOrbitAngularMomentum.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorOrbitAngularMomentum, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23180,28 +20242,16 @@ class IVectorGeometryToolVectorOrbitNormal(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorOrbitNormal._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorOrbitNormal from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorOrbitNormal)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorOrbitNormal.__dict__ and type(IVectorGeometryToolVectorOrbitNormal.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorOrbitNormal.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorOrbitNormal)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorOrbitNormal.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorOrbitNormal, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23251,28 +20301,16 @@ class IVectorGeometryToolVectorPeriapsis(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorPeriapsis._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorPeriapsis from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorPeriapsis)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorPeriapsis.__dict__ and type(IVectorGeometryToolVectorPeriapsis.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorPeriapsis.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorPeriapsis)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorPeriapsis.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorPeriapsis, None)
     
     _get_central_body_metadata = { "name" : "central_body",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23326,28 +20364,16 @@ class IVectorGeometryToolVectorReflection(object):
                              "set_scale_factor" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorReflection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorReflection from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorReflection)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorReflection.__dict__ and type(IVectorGeometryToolVectorReflection.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorReflection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorReflection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorReflection.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorReflection, None)
     
     _get_incoming_vector_metadata = { "name" : "incoming_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23427,28 +20453,16 @@ class IVectorGeometryToolVectorRotationVector(object):
                              "set_force_minimum_rotation" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorRotationVector._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorRotationVector from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorRotationVector)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorRotationVector.__dict__ and type(IVectorGeometryToolVectorRotationVector.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorRotationVector.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorRotationVector)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorRotationVector.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorRotationVector, None)
     
     _get_axes_metadata = { "name" : "axes",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23496,28 +20510,16 @@ class IVectorGeometryToolVectorDirectionToStar(object):
                              "set_selected_star" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorDirectionToStar._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorDirectionToStar from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDirectionToStar)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorDirectionToStar.__dict__ and type(IVectorGeometryToolVectorDirectionToStar.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorDirectionToStar.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorDirectionToStar)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorDirectionToStar.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDirectionToStar, None)
     
     _get_selected_star_metadata = { "name" : "selected_star",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -23553,28 +20555,16 @@ class IVectorGeometryToolVectorFixedAtTimeInstant(object):
                              "set_reference_axes" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorFixedAtTimeInstant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorFixedAtTimeInstant from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFixedAtTimeInstant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorFixedAtTimeInstant.__dict__ and type(IVectorGeometryToolVectorFixedAtTimeInstant.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorFixedAtTimeInstant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorFixedAtTimeInstant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFixedAtTimeInstant.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFixedAtTimeInstant, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23650,28 +20640,16 @@ class IVectorGeometryToolVectorLinearCombination(object):
                              "set_output_dimension" : 16, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorLinearCombination._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorLinearCombination from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorLinearCombination)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorLinearCombination.__dict__ and type(IVectorGeometryToolVectorLinearCombination.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorLinearCombination.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorLinearCombination)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorLinearCombination.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorLinearCombination, None)
     
     _get_vector_a_metadata = { "name" : "vector_a",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23810,28 +20788,16 @@ class IVectorGeometryToolVectorProjectAlongVector(object):
                              "set_along_vector" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorProjectAlongVector._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorProjectAlongVector from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorProjectAlongVector)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorProjectAlongVector.__dict__ and type(IVectorGeometryToolVectorProjectAlongVector.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorProjectAlongVector.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorProjectAlongVector)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorProjectAlongVector.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorProjectAlongVector, None)
     
     _get_source_vector_metadata = { "name" : "source_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23900,28 +20866,16 @@ class IVectorGeometryToolVectorScalarLinearCombination(object):
                              "set_output_dimension" : 24, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorScalarLinearCombination._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorScalarLinearCombination from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorScalarLinearCombination)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorScalarLinearCombination.__dict__ and type(IVectorGeometryToolVectorScalarLinearCombination.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorScalarLinearCombination.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorScalarLinearCombination)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorScalarLinearCombination.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorScalarLinearCombination, None)
     
     _get_vector_a_metadata = { "name" : "vector_a",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24128,28 +21082,16 @@ class IVectorGeometryToolVectorScalarScaled(object):
                              "set_dimension" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorScalarScaled._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorScalarScaled from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorScalarScaled)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorScalarScaled.__dict__ and type(IVectorGeometryToolVectorScalarScaled.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorScalarScaled.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorScalarScaled)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorScalarScaled.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorScalarScaled, None)
     
     _get_input_vector_metadata = { "name" : "input_vector",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24260,28 +21202,16 @@ class IVectorGeometryToolVectorVelocityAcceleration(object):
                              "set_differencing_time_step" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorVelocityAcceleration._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorVelocityAcceleration from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorVelocityAcceleration)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorVelocityAcceleration.__dict__ and type(IVectorGeometryToolVectorVelocityAcceleration.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorVelocityAcceleration.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorVelocityAcceleration)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorVelocityAcceleration.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorVelocityAcceleration, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24347,28 +21277,16 @@ class IVectorGeometryToolVectorPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorPlugin._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorPlugin from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorPlugin)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorPlugin.__dict__ and type(IVectorGeometryToolVectorPlugin.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorPlugin.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorPlugin)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorPlugin.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24436,28 +21354,16 @@ class IVectorGeometryToolVectorDispSurface(object):
                              "set_differencing_time_step" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorDispSurface._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorDispSurface from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDispSurface)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorDispSurface.__dict__ and type(IVectorGeometryToolVectorDispSurface.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorDispSurface.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorDispSurface)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorDispSurface.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDispSurface, None)
     
     _get_origin_point_metadata = { "name" : "origin_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24538,28 +21444,16 @@ class IVectorGeometryToolVectorFactory(object):
                              "create_cross_product_vector" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorFactory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorFactory.__dict__ and type(IVectorGeometryToolVectorFactory.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFactory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -24621,28 +21515,16 @@ class IVectorGeometryToolAxesFactory(object):
                              "create_axes_plugin_from_display_name" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesFactory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesFactory.__dict__ and type(IVectorGeometryToolAxesFactory.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFactory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -24688,28 +21570,16 @@ class IVectorGeometryToolSystemFactory(object):
                              "is_type_supported" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemFactory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemFactory.__dict__ and type(IVectorGeometryToolSystemFactory.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemFactory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -24743,28 +21613,16 @@ class IVectorGeometryToolPointFactory(object):
                              "create_point_fixed_on_central_body" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointFactory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointFactory.__dict__ and type(IVectorGeometryToolPointFactory.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointFactory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -24817,28 +21675,16 @@ class IVectorGeometryToolPlaneFactory(object):
                              "is_type_supported" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneFactory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneFactory.__dict__ and type(IVectorGeometryToolPlaneFactory.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneFactory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -24869,28 +21715,16 @@ class IVectorGeometryToolAngleFactory(object):
                              "is_type_supported" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleFactory from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleFactory.__dict__ and type(IVectorGeometryToolAngleFactory.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleFactory.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFactory, None)
     
     _create_metadata = { "name" : "create",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -24928,14 +21762,7 @@ class IVectorGeometryToolVectorGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorGroup from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -24943,14 +21770,9 @@ class IVectorGeometryToolVectorGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorGroup.__dict__ and type(IVectorGeometryToolVectorGroup.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorGroup.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -25056,14 +21878,7 @@ class IVectorGeometryToolPointGroup(object):
                              "get_item_by_name" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointGroup from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -25071,14 +21886,9 @@ class IVectorGeometryToolPointGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointGroup.__dict__ and type(IVectorGeometryToolPointGroup.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointGroup.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -25191,14 +22001,7 @@ class IVectorGeometryToolAngleGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleGroup from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -25206,14 +22009,9 @@ class IVectorGeometryToolAngleGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleGroup.__dict__ and type(IVectorGeometryToolAngleGroup.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleGroup.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -25319,14 +22117,7 @@ class IVectorGeometryToolAxesGroup(object):
                              "get_item_by_name" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesGroup from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -25334,14 +22125,9 @@ class IVectorGeometryToolAxesGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesGroup.__dict__ and type(IVectorGeometryToolAxesGroup.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesGroup.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -25454,14 +22240,7 @@ class IVectorGeometryToolPlaneGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneGroup from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -25469,14 +22248,9 @@ class IVectorGeometryToolPlaneGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneGroup.__dict__ and type(IVectorGeometryToolPlaneGroup.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneGroup.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -25582,14 +22356,7 @@ class IVectorGeometryToolSystemGroup(object):
                              "get_item_by_name" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemGroup._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemGroup from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -25597,14 +22364,9 @@ class IVectorGeometryToolSystemGroup(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemGroup.__dict__ and type(IVectorGeometryToolSystemGroup.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemGroup.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemGroup)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemGroup.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemGroup, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -25730,28 +22492,16 @@ class IAnalysisWorkbenchProvider(object):
                              "get_volume_calcs" : 22, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchProvider._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchProvider from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchProvider)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchProvider.__dict__ and type(IAnalysisWorkbenchProvider.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchProvider.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchProvider)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchProvider.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchProvider, None)
     
     _get_vectors_metadata = { "name" : "vectors",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25944,28 +22694,16 @@ class IAnalysisWorkbenchRoot(object):
                              "get_well_known_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchRoot._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchRoot from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchRoot)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchRoot.__dict__ and type(IAnalysisWorkbenchRoot.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchRoot.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchRoot)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchRoot.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchRoot, None)
     
     _get_template_provider_metadata = { "name" : "get_template_provider",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -26013,28 +22751,16 @@ class IVectorGeometryToolWellKnownEarthSystems(object):
                              "get_inertial" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolWellKnownEarthSystems._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolWellKnownEarthSystems from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownEarthSystems)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolWellKnownEarthSystems.__dict__ and type(IVectorGeometryToolWellKnownEarthSystems.__dict__[attrname]) == property:
-            return IVectorGeometryToolWellKnownEarthSystems.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolWellKnownEarthSystems)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownEarthSystems.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownEarthSystems, None)
     
     _get_fixed_metadata = { "name" : "fixed",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26077,28 +22803,16 @@ class IVectorGeometryToolWellKnownEarthAxes(object):
                              "get_j2000" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolWellKnownEarthAxes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolWellKnownEarthAxes from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownEarthAxes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolWellKnownEarthAxes.__dict__ and type(IVectorGeometryToolWellKnownEarthAxes.__dict__[attrname]) == property:
-            return IVectorGeometryToolWellKnownEarthAxes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolWellKnownEarthAxes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownEarthAxes.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownEarthAxes, None)
     
     _get_fixed_metadata = { "name" : "fixed",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26150,28 +22864,16 @@ class IVectorGeometryToolWellKnownSunSystems(object):
                              "get_barycenter" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolWellKnownSunSystems._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolWellKnownSunSystems from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownSunSystems)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolWellKnownSunSystems.__dict__ and type(IVectorGeometryToolWellKnownSunSystems.__dict__[attrname]) == property:
-            return IVectorGeometryToolWellKnownSunSystems.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolWellKnownSunSystems)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownSunSystems.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownSunSystems, None)
     
     _get_fixed_metadata = { "name" : "fixed",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26230,28 +22932,16 @@ class IVectorGeometryToolWellKnownSunAxes(object):
                              "get_j2000" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolWellKnownSunAxes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolWellKnownSunAxes from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownSunAxes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolWellKnownSunAxes.__dict__ and type(IVectorGeometryToolWellKnownSunAxes.__dict__[attrname]) == property:
-            return IVectorGeometryToolWellKnownSunAxes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolWellKnownSunAxes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownSunAxes.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownSunAxes, None)
     
     _get_fixed_metadata = { "name" : "fixed",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26300,28 +22990,16 @@ class IVectorGeometryToolWellKnownSystems(object):
                              "get_sun" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolWellKnownSystems._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolWellKnownSystems from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownSystems)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolWellKnownSystems.__dict__ and type(IVectorGeometryToolWellKnownSystems.__dict__[attrname]) == property:
-            return IVectorGeometryToolWellKnownSystems.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolWellKnownSystems)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownSystems.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownSystems, None)
     
     _get_earth_metadata = { "name" : "earth",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26354,28 +23032,16 @@ class IVectorGeometryToolWellKnownAxes(object):
                              "get_sun" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolWellKnownAxes._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolWellKnownAxes from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownAxes)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolWellKnownAxes.__dict__ and type(IVectorGeometryToolWellKnownAxes.__dict__[attrname]) == property:
-            return IVectorGeometryToolWellKnownAxes.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolWellKnownAxes)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolWellKnownAxes.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownAxes, None)
     
     _get_earth_metadata = { "name" : "earth",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26408,28 +23074,16 @@ class IVectorGeometryToolAngleFindAngleResult(object):
                              "get_angle" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleFindAngleResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleFindAngleResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindAngleResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleFindAngleResult.__dict__ and type(IVectorGeometryToolAngleFindAngleResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleFindAngleResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleFindAngleResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleFindAngleResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindAngleResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26463,28 +23117,16 @@ class IVectorGeometryToolAngleFindAngleWithRateResult(object):
                              "get_angle_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleFindAngleWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleFindAngleWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindAngleWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleFindAngleWithRateResult.__dict__ and type(IVectorGeometryToolAngleFindAngleWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleFindAngleWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleFindAngleWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleFindAngleWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindAngleWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26529,28 +23171,16 @@ class IVectorGeometryToolAngleFindWithRateResult(object):
                              "get_vector_about" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleFindWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleFindWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleFindWithRateResult.__dict__ and type(IVectorGeometryToolAngleFindWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleFindWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleFindWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleFindWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26618,28 +23248,16 @@ class IVectorGeometryToolAngleFindResult(object):
                              "get_vector_about" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAngleFindResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAngleFindResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAngleFindResult.__dict__ and type(IVectorGeometryToolAngleFindResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAngleFindResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAngleFindResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleFindResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26696,28 +23314,16 @@ class IVectorGeometryToolAxesTransformResult(object):
                              "get_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesTransformResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesTransformResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesTransformResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesTransformResult.__dict__ and type(IVectorGeometryToolAxesTransformResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesTransformResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesTransformResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesTransformResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesTransformResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26751,28 +23357,16 @@ class IVectorGeometryToolAxesTransformWithRateResult(object):
                              "get_velocity" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesTransformWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesTransformWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesTransformWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesTransformWithRateResult.__dict__ and type(IVectorGeometryToolAxesTransformWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesTransformWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesTransformWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesTransformWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesTransformWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26814,28 +23408,16 @@ class IVectorGeometryToolPlaneFindInAxesResult(object):
                              "get_y_axis" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneFindInAxesResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneFindInAxesResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInAxesResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneFindInAxesResult.__dict__ and type(IVectorGeometryToolPlaneFindInAxesResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneFindInAxesResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneFindInAxesResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneFindInAxesResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInAxesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26879,28 +23461,16 @@ class IVectorGeometryToolPlaneFindInAxesWithRateResult(object):
                              "get_y_axis_rate" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneFindInAxesWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneFindInAxesWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInAxesWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneFindInAxesWithRateResult.__dict__ and type(IVectorGeometryToolPlaneFindInAxesWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneFindInAxesWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneFindInAxesWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneFindInAxesWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInAxesWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -26959,28 +23529,16 @@ class IVectorGeometryToolPlaneFindInSystemResult(object):
                              "get_y_axis" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneFindInSystemResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneFindInSystemResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInSystemResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneFindInSystemResult.__dict__ and type(IVectorGeometryToolPlaneFindInSystemResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneFindInSystemResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneFindInSystemResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneFindInSystemResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInSystemResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27034,28 +23592,16 @@ class IVectorGeometryToolPlaneFindInSystemWithRateResult(object):
                              "get_y_axis_rate" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPlaneFindInSystemWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPlaneFindInSystemWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInSystemWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPlaneFindInSystemWithRateResult.__dict__ and type(IVectorGeometryToolPlaneFindInSystemWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolPlaneFindInSystemWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPlaneFindInSystemWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneFindInSystemWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInSystemWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27128,28 +23674,16 @@ class IVectorGeometryToolAxesFindInAxesResult(object):
                              "get_orientation" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesFindInAxesResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesFindInAxesResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFindInAxesResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesFindInAxesResult.__dict__ and type(IVectorGeometryToolAxesFindInAxesResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesFindInAxesResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesFindInAxesResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFindInAxesResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFindInAxesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27183,28 +23717,16 @@ class IVectorGeometryToolAxesFindInAxesWithRateResult(object):
                              "get_orientation" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolAxesFindInAxesWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolAxesFindInAxesWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFindInAxesWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolAxesFindInAxesWithRateResult.__dict__ and type(IVectorGeometryToolAxesFindInAxesWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolAxesFindInAxesWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolAxesFindInAxesWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFindInAxesWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFindInAxesWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27245,28 +23767,16 @@ class IVectorGeometryToolPointLocateInSystemResult(object):
                              "get_position" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointLocateInSystemResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointLocateInSystemResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointLocateInSystemResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointLocateInSystemResult.__dict__ and type(IVectorGeometryToolPointLocateInSystemResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointLocateInSystemResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointLocateInSystemResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointLocateInSystemResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointLocateInSystemResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27300,28 +23810,16 @@ class IVectorGeometryToolPointLocateInSystemWithRateResult(object):
                              "get_velocity" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolPointLocateInSystemWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolPointLocateInSystemWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointLocateInSystemWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolPointLocateInSystemWithRateResult.__dict__ and type(IVectorGeometryToolPointLocateInSystemWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolPointLocateInSystemWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolPointLocateInSystemWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointLocateInSystemWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolPointLocateInSystemWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27362,28 +23860,16 @@ class IVectorGeometryToolSystemTransformResult(object):
                              "get_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemTransformResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemTransformResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemTransformResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemTransformResult.__dict__ and type(IVectorGeometryToolSystemTransformResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemTransformResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemTransformResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemTransformResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemTransformResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27417,28 +23903,16 @@ class IVectorGeometryToolSystemTransformWithRateResult(object):
                              "get_velocity" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemTransformWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemTransformWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemTransformWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemTransformWithRateResult.__dict__ and type(IVectorGeometryToolSystemTransformWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemTransformWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemTransformWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemTransformWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemTransformWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27482,28 +23956,16 @@ class IVectorGeometryToolSystemFindInSystemResult(object):
                              "get_orientation" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolSystemFindInSystemResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolSystemFindInSystemResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemFindInSystemResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolSystemFindInSystemResult.__dict__ and type(IVectorGeometryToolSystemFindInSystemResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolSystemFindInSystemResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolSystemFindInSystemResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemFindInSystemResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemFindInSystemResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27560,28 +24022,16 @@ class IVectorGeometryToolVectorFindInAxesResult(object):
                              "get_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorFindInAxesResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorFindInAxesResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFindInAxesResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorFindInAxesResult.__dict__ and type(IVectorGeometryToolVectorFindInAxesResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorFindInAxesResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorFindInAxesResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFindInAxesResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFindInAxesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27615,28 +24065,16 @@ class IVectorGeometryToolVectorFindInAxesWithRateResult(object):
                              "get_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVectorGeometryToolVectorFindInAxesWithRateResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVectorGeometryToolVectorFindInAxesWithRateResult from source object.")
+        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFindInAxesWithRateResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVectorGeometryToolVectorFindInAxesWithRateResult.__dict__ and type(IVectorGeometryToolVectorFindInAxesWithRateResult.__dict__[attrname]) == property:
-            return IVectorGeometryToolVectorFindInAxesWithRateResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVectorGeometryToolVectorFindInAxesWithRateResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFindInAxesWithRateResult.")
+        set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFindInAxesWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27676,28 +24114,16 @@ class IAnalysisWorkbenchMethodCallResult(object):
         "method_offsets" : { "get_is_valid" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchMethodCallResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchMethodCallResult from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchMethodCallResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchMethodCallResult.__dict__ and type(IAnalysisWorkbenchMethodCallResult.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchMethodCallResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchMethodCallResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchMethodCallResult.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchMethodCallResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27721,28 +24147,16 @@ class IAnalysisWorkbenchCentralBody(object):
         "method_offsets" : { "get_name" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchCentralBody._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchCentralBody from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCentralBody)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchCentralBody.__dict__ and type(IAnalysisWorkbenchCentralBody.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchCentralBody.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchCentralBody)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchCentralBody.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCentralBody, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -27768,28 +24182,16 @@ class IAnalysisWorkbenchCentralBodyRefTo(object):
                              "get_central_body" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchCentralBodyRefTo._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchCentralBodyRefTo from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCentralBodyRefTo)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchCentralBodyRefTo.__dict__ and type(IAnalysisWorkbenchCentralBodyRefTo.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchCentralBodyRefTo.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchCentralBodyRefTo)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchCentralBodyRefTo.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCentralBodyRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
             "arg_types" : (agcom.BSTR,),
@@ -27830,14 +24232,7 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
                              "remove" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchCentralBodyCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchCentralBodyCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCentralBodyCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -27845,14 +24240,9 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchCentralBodyCollection.__dict__ and type(IAnalysisWorkbenchCentralBodyCollection.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchCentralBodyCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchCentralBodyCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchCentralBodyCollection.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCentralBodyCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -27924,14 +24314,7 @@ class IAnalysisWorkbenchCollection(object):
                              "get_item_by_name" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAnalysisWorkbenchCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAnalysisWorkbenchCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -27939,14 +24322,9 @@ class IAnalysisWorkbenchCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAnalysisWorkbenchCollection.__dict__ and type(IAnalysisWorkbenchCollection.__dict__[attrname]) == property:
-            return IAnalysisWorkbenchCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAnalysisWorkbenchCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchCollection.")
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -28021,28 +24399,16 @@ class ITimeToolPointSamplingResult(object):
                              "get_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolPointSamplingResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolPointSamplingResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolPointSamplingResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolPointSamplingResult.__dict__ and type(ITimeToolPointSamplingResult.__dict__[attrname]) == property:
-            return ITimeToolPointSamplingResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolPointSamplingResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolPointSamplingResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolPointSamplingResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -28078,28 +24444,16 @@ class ITimeToolPointSamplingInterval(object):
                              "get_stop" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolPointSamplingInterval._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolPointSamplingInterval from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolPointSamplingInterval)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolPointSamplingInterval.__dict__ and type(ITimeToolPointSamplingInterval.__dict__[attrname]) == property:
-            return ITimeToolPointSamplingInterval.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolPointSamplingInterval)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolPointSamplingInterval.")
+        set_interface_attribute(self, attrname, value, ITimeToolPointSamplingInterval, None)
     
     _get_times_metadata = { "name" : "times",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -28157,14 +24511,7 @@ class ITimeToolPointSamplingIntervalCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolPointSamplingIntervalCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolPointSamplingIntervalCollection from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolPointSamplingIntervalCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -28172,14 +24519,9 @@ class ITimeToolPointSamplingIntervalCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolPointSamplingIntervalCollection.__dict__ and type(ITimeToolPointSamplingIntervalCollection.__dict__[attrname]) == property:
-            return ITimeToolPointSamplingIntervalCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolPointSamplingIntervalCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolPointSamplingIntervalCollection.")
+        set_interface_attribute(self, attrname, value, ITimeToolPointSamplingIntervalCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -28233,28 +24575,16 @@ class ITimeToolAxesSamplingResult(object):
                              "get_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolAxesSamplingResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolAxesSamplingResult from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolAxesSamplingResult)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolAxesSamplingResult.__dict__ and type(ITimeToolAxesSamplingResult.__dict__[attrname]) == property:
-            return ITimeToolAxesSamplingResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolAxesSamplingResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolAxesSamplingResult.")
+        set_interface_attribute(self, attrname, value, ITimeToolAxesSamplingResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -28290,28 +24620,16 @@ class ITimeToolAxesSamplingInterval(object):
                              "get_stop" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolAxesSamplingInterval._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolAxesSamplingInterval from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolAxesSamplingInterval)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolAxesSamplingInterval.__dict__ and type(ITimeToolAxesSamplingInterval.__dict__[attrname]) == property:
-            return ITimeToolAxesSamplingInterval.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolAxesSamplingInterval)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolAxesSamplingInterval.")
+        set_interface_attribute(self, attrname, value, ITimeToolAxesSamplingInterval, None)
     
     _get_times_metadata = { "name" : "times",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -28369,14 +24687,7 @@ class ITimeToolAxesSamplingIntervalCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITimeToolAxesSamplingIntervalCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITimeToolAxesSamplingIntervalCollection from source object.")
+        initialize_from_source_object(self, sourceObject, ITimeToolAxesSamplingIntervalCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -28384,14 +24695,9 @@ class ITimeToolAxesSamplingIntervalCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITimeToolAxesSamplingIntervalCollection.__dict__ and type(ITimeToolAxesSamplingIntervalCollection.__dict__[attrname]) == property:
-            return ITimeToolAxesSamplingIntervalCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITimeToolAxesSamplingIntervalCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolAxesSamplingIntervalCollection.")
+        set_interface_attribute(self, attrname, value, ITimeToolAxesSamplingIntervalCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -28447,12 +24753,7 @@ class CalculationToolEvaluateResult(ICalculationToolEvaluateResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolEvaluateResult._get_property(self, attrname) is not None: found_prop = ICalculationToolEvaluateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolEvaluateResult.")
+        set_class_attribute(self, attrname, value, CalculationToolEvaluateResult, [ICalculationToolEvaluateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{94FD0DFF-1DD0-4CA5-A7DB-1CB9CA3E3C93}", CalculationToolEvaluateResult)
 agcls.AgTypeNameMap["CalculationToolEvaluateResult"] = CalculationToolEvaluateResult
@@ -28468,12 +24769,7 @@ class CalculationToolEvaluateWithRateResult(ICalculationToolEvaluateWithRateResu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolEvaluateWithRateResult._get_property(self, attrname) is not None: found_prop = ICalculationToolEvaluateWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolEvaluateWithRateResult.")
+        set_class_attribute(self, attrname, value, CalculationToolEvaluateWithRateResult, [ICalculationToolEvaluateWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{832CA139-8ECF-4E95-AB67-1BB7713CF9FC}", CalculationToolEvaluateWithRateResult)
 agcls.AgTypeNameMap["CalculationToolEvaluateWithRateResult"] = CalculationToolEvaluateWithRateResult
@@ -28489,12 +24785,7 @@ class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalResult._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalResult.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalResult, [ITimeToolEventIntervalResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{ACE6C28C-4664-4B7F-8736-91F55C7962A6}", TimeToolEventIntervalResult)
 agcls.AgTypeNameMap["TimeToolEventIntervalResult"] = TimeToolEventIntervalResult
@@ -28510,12 +24801,7 @@ class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventFindOccurrenceResult._get_property(self, attrname) is not None: found_prop = ITimeToolEventFindOccurrenceResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventFindOccurrenceResult.")
+        set_class_attribute(self, attrname, value, TimeToolEventFindOccurrenceResult, [ITimeToolEventFindOccurrenceResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{6A432F58-4CAB-4448-8540-CBBAA9C2B9F0}", TimeToolEventFindOccurrenceResult)
 agcls.AgTypeNameMap["TimeToolEventFindOccurrenceResult"] = TimeToolEventFindOccurrenceResult
@@ -28531,12 +24817,7 @@ class TimeToolFindTimesResult(ITimeToolFindTimesResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolFindTimesResult._get_property(self, attrname) is not None: found_prop = ITimeToolFindTimesResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolFindTimesResult.")
+        set_class_attribute(self, attrname, value, TimeToolFindTimesResult, [ITimeToolFindTimesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{AF246FCF-7FA3-4CD6-878B-E9AC267F017A}", TimeToolFindTimesResult)
 agcls.AgTypeNameMap["TimeToolFindTimesResult"] = TimeToolFindTimesResult
@@ -28552,12 +24833,7 @@ class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolIntervalsVectorResult._get_property(self, attrname) is not None: found_prop = ITimeToolIntervalsVectorResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalsVectorResult.")
+        set_class_attribute(self, attrname, value, TimeToolIntervalsVectorResult, [ITimeToolIntervalsVectorResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{233B8EB4-0B6A-485F-BACB-C678798FDA21}", TimeToolIntervalsVectorResult)
 agcls.AgTypeNameMap["TimeToolIntervalsVectorResult"] = TimeToolIntervalsVectorResult
@@ -28573,12 +24849,7 @@ class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalCollectionOccurredResult._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollectionOccurredResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionOccurredResult.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionOccurredResult, [ITimeToolEventIntervalCollectionOccurredResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{9D2BD8F6-406D-4BA0-B5CF-C81711C7C344}", TimeToolEventIntervalCollectionOccurredResult)
 agcls.AgTypeNameMap["TimeToolEventIntervalCollectionOccurredResult"] = TimeToolEventIntervalCollectionOccurredResult
@@ -28594,12 +24865,7 @@ class TimeToolIntervalListResult(ITimeToolIntervalListResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolIntervalListResult._get_property(self, attrname) is not None: found_prop = ITimeToolIntervalListResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalListResult.")
+        set_class_attribute(self, attrname, value, TimeToolIntervalListResult, [ITimeToolIntervalListResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{C24C2EE4-3F75-41E8-BDC3-FE71E863921F}", TimeToolIntervalListResult)
 agcls.AgTypeNameMap["TimeToolIntervalListResult"] = TimeToolIntervalListResult
@@ -28615,12 +24881,7 @@ class TimeToolIntervalVectorCollection(ITimeToolIntervalVectorCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolIntervalVectorCollection._get_property(self, attrname) is not None: found_prop = ITimeToolIntervalVectorCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalVectorCollection.")
+        set_class_attribute(self, attrname, value, TimeToolIntervalVectorCollection, [ITimeToolIntervalVectorCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{99AAE1D2-3C5D-4836-A1BD-6EAD38FC9BC5}", TimeToolIntervalVectorCollection)
 agcls.AgTypeNameMap["TimeToolIntervalVectorCollection"] = TimeToolIntervalVectorCollection
@@ -28636,12 +24897,7 @@ class TimeToolEventGroup(ITimeToolEventGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventGroup._get_property(self, attrname) is not None: found_prop = ITimeToolEventGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventGroup.")
+        set_class_attribute(self, attrname, value, TimeToolEventGroup, [ITimeToolEventGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{D5D83181-A954-4FA9-886E-A917F135C974}", TimeToolEventGroup)
 agcls.AgTypeNameMap["TimeToolEventGroup"] = TimeToolEventGroup
@@ -28657,12 +24913,7 @@ class TimeToolEventIntervalGroup(ITimeToolEventIntervalGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalGroup._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalGroup.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalGroup, [ITimeToolEventIntervalGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{48C9D4D2-2713-4063-8BB1-D6F2E72E1025}", TimeToolEventIntervalGroup)
 agcls.AgTypeNameMap["TimeToolEventIntervalGroup"] = TimeToolEventIntervalGroup
@@ -28678,12 +24929,7 @@ class TimeToolEventIntervalListGroup(ITimeToolEventIntervalListGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListGroup._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListGroup.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListGroup, [ITimeToolEventIntervalListGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{3B2FDEBA-A2B9-4568-8F48-469F604DB966}", TimeToolEventIntervalListGroup)
 agcls.AgTypeNameMap["TimeToolEventIntervalListGroup"] = TimeToolEventIntervalListGroup
@@ -28699,12 +24945,7 @@ class TimeToolEventArrayGroup(ITimeToolEventArrayGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayGroup._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayGroup.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayGroup, [ITimeToolEventArrayGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{365C4A6E-9C2B-4883-96C6-CF689BCC2943}", TimeToolEventArrayGroup)
 agcls.AgTypeNameMap["TimeToolEventArrayGroup"] = TimeToolEventArrayGroup
@@ -28720,12 +24961,7 @@ class CalculationToolScalarGroup(ICalculationToolScalarGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarGroup._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarGroup.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarGroup, [ICalculationToolScalarGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{DFAD8468-4480-460F-993D-74FFADB567B3}", CalculationToolScalarGroup)
 agcls.AgTypeNameMap["CalculationToolScalarGroup"] = CalculationToolScalarGroup
@@ -28741,12 +24977,7 @@ class TimeToolEventIntervalCollectionGroup(ITimeToolEventIntervalCollectionGroup
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalCollectionGroup._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollectionGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionGroup.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionGroup, [ITimeToolEventIntervalCollectionGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{16E277E2-E306-40E7-B698-B725BDED5739}", TimeToolEventIntervalCollectionGroup)
 agcls.AgTypeNameMap["TimeToolEventIntervalCollectionGroup"] = TimeToolEventIntervalCollectionGroup
@@ -28762,12 +24993,7 @@ class CalculationToolParameterSetGroup(ICalculationToolParameterSetGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSetGroup._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSetGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetGroup.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetGroup, [ICalculationToolParameterSetGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{4AF3C889-3805-40E2-94E2-3EA11AAFB0D7}", CalculationToolParameterSetGroup)
 agcls.AgTypeNameMap["CalculationToolParameterSetGroup"] = CalculationToolParameterSetGroup
@@ -28783,12 +25009,7 @@ class CalculationToolConditionGroup(ICalculationToolConditionGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionGroup._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionGroup.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionGroup, [ICalculationToolConditionGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{28BCB469-D32F-4FCE-9CC2-76216E3A37CA}", CalculationToolConditionGroup)
 agcls.AgTypeNameMap["CalculationToolConditionGroup"] = CalculationToolConditionGroup
@@ -28804,12 +25025,7 @@ class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionSetGroup._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionSetGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetGroup.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionSetGroup, [ICalculationToolConditionSetGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{D82D5C71-102E-4154-9FF6-153C4EDB5A94}", CalculationToolConditionSetGroup)
 agcls.AgTypeNameMap["CalculationToolConditionSetGroup"] = CalculationToolConditionSetGroup
@@ -28825,12 +25041,7 @@ class CalculationToolConditionSetEvaluateResult(ICalculationToolConditionSetEval
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionSetEvaluateResult._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionSetEvaluateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetEvaluateResult.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateResult, [ICalculationToolConditionSetEvaluateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{13F4EB53-F5AB-487A-BC09-AA186C884744}", CalculationToolConditionSetEvaluateResult)
 agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateResult"] = CalculationToolConditionSetEvaluateResult
@@ -28846,12 +25057,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(ICalculationToolConditio
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionSetEvaluateWithRateResult._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionSetEvaluateWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetEvaluateWithRateResult.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateWithRateResult, [ICalculationToolConditionSetEvaluateWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{53051D77-87D0-432C-9044-A2AB1E2104BA}", CalculationToolConditionSetEvaluateWithRateResult)
 agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateWithRateResult"] = CalculationToolConditionSetEvaluateWithRateResult
@@ -28867,12 +25073,7 @@ class SpatialAnalysisToolVolumeGridGroup(ISpatialAnalysisToolVolumeGridGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridGroup._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridGroup.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridGroup, [ISpatialAnalysisToolVolumeGridGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{5E471C90-D0F2-4B6B-88AE-D529E9D16D03}", SpatialAnalysisToolVolumeGridGroup)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridGroup"] = SpatialAnalysisToolVolumeGridGroup
@@ -28888,12 +25089,7 @@ class SpatialAnalysisToolVolumeGroup(ISpatialAnalysisToolVolumeGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGroup._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGroup.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGroup, [ISpatialAnalysisToolVolumeGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{0055B726-654F-446B-82D7-BCDD744F1D8F}", SpatialAnalysisToolVolumeGroup)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGroup"] = SpatialAnalysisToolVolumeGroup
@@ -28909,12 +25105,7 @@ class SpatialAnalysisToolVolumeCalcGroup(ISpatialAnalysisToolVolumeCalcGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcGroup._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcGroup.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcGroup, [ISpatialAnalysisToolVolumeCalcGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{b10331b7-f8c3-4a59-9e9b-b05dd6599167}", SpatialAnalysisToolVolumeCalcGroup)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcGroup"] = SpatialAnalysisToolVolumeCalcGroup
@@ -28932,13 +25123,7 @@ class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent)
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalar.")
+        set_class_attribute(self, attrname, value, CalculationToolScalar, [ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{440E178B-1B34-4896-A25F-2A4F3AD4848E}", CalculationToolScalar)
 agcls.AgTypeNameMap["CalculationToolScalar"] = CalculationToolScalar
@@ -28958,14 +25143,7 @@ class CalculationToolScalarAngle(ICalculationToolScalarAngle, ICalculationToolSc
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarAngle._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarAngle._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarAngle.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarAngle, [ICalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2E2A940D-2656-4410-86B4-D7314B788E47}", CalculationToolScalarAngle)
 agcls.AgTypeNameMap["CalculationToolScalarAngle"] = CalculationToolScalarAngle
@@ -28985,14 +25163,7 @@ class CalculationToolScalarConstant(ICalculationToolScalarConstant, ICalculation
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarConstant._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarConstant._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarConstant.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarConstant, [ICalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0725A767-6788-4FF4-B848-EF3D526BD7B0}", CalculationToolScalarConstant)
 agcls.AgTypeNameMap["CalculationToolScalarConstant"] = CalculationToolScalarConstant
@@ -29012,14 +25183,7 @@ class CalculationToolScalarCustom(ICalculationToolScalarCustom, ICalculationTool
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarCustom._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarCustom._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarCustom.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarCustom, [ICalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{80114DE9-EF5E-47DB-AC1B-91FD78FCA094}", CalculationToolScalarCustom)
 agcls.AgTypeNameMap["CalculationToolScalarCustom"] = CalculationToolScalarCustom
@@ -29039,14 +25203,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalarDataElement, ICalcu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarDataElement._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarDataElement._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarDataElement.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarDataElement, [ICalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{260D686F-07E2-49DB-8E88-467EF79EFA54}", CalculationToolScalarDataElement)
 agcls.AgTypeNameMap["CalculationToolScalarDataElement"] = CalculationToolScalarDataElement
@@ -29066,14 +25223,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalarDerivative, ICalcula
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarDerivative._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarDerivative._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarDerivative.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarDerivative, [ICalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{865CE7A8-F7C3-4B25-AA1D-10CA305C7CF0}", CalculationToolScalarDerivative)
 agcls.AgTypeNameMap["CalculationToolScalarDerivative"] = CalculationToolScalarDerivative
@@ -29093,14 +25243,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalarDotProduct, ICalcula
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarDotProduct._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarDotProduct._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarDotProduct.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarDotProduct, [ICalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{703f009e-faab-4281-8d07-733b1344d42b}", CalculationToolScalarDotProduct)
 agcls.AgTypeNameMap["CalculationToolScalarDotProduct"] = CalculationToolScalarDotProduct
@@ -29120,14 +25263,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalarElapsedTime, ICalcu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarElapsedTime._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarElapsedTime._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarElapsedTime.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarElapsedTime, [ICalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{9D9FAF22-291A-4348-9EAD-1C8DF06D9C1C}", CalculationToolScalarElapsedTime)
 agcls.AgTypeNameMap["CalculationToolScalarElapsedTime"] = CalculationToolScalarElapsedTime
@@ -29143,12 +25279,7 @@ class CalculationToolScalarFactory(ICalculationToolScalarFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarFactory._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFactory.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarFactory, [ICalculationToolScalarFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{47235112-821F-4DC2-9A70-57AB9F1F17E8}", CalculationToolScalarFactory)
 agcls.AgTypeNameMap["CalculationToolScalarFactory"] = CalculationToolScalarFactory
@@ -29168,14 +25299,7 @@ class CalculationToolScalarFile(ICalculationToolScalarFile, ICalculationToolScal
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarFile._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarFile._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFile.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarFile, [ICalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{75F0039F-B789-4771-BD50-9AEF30F6038E}", CalculationToolScalarFile)
 agcls.AgTypeNameMap["CalculationToolScalarFile"] = CalculationToolScalarFile
@@ -29195,14 +25319,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalarFixedAtTimeI
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarFixedAtTimeInstant._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarFixedAtTimeInstant._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFixedAtTimeInstant.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarFixedAtTimeInstant, [ICalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{83E8DC6B-7821-4474-AA5B-29646ECD1EC1}", CalculationToolScalarFixedAtTimeInstant)
 agcls.AgTypeNameMap["CalculationToolScalarFixedAtTimeInstant"] = CalculationToolScalarFixedAtTimeInstant
@@ -29222,14 +25339,7 @@ class CalculationToolScalarFunction(ICalculationToolScalarFunction, ICalculation
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarFunction._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarFunction._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFunction.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarFunction, [ICalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{40158F99-3146-4167-8BB0-A0046BB08EEB}", CalculationToolScalarFunction)
 agcls.AgTypeNameMap["CalculationToolScalarFunction"] = CalculationToolScalarFunction
@@ -29249,14 +25359,7 @@ class CalculationToolScalarFunction2Var(ICalculationToolScalarFunction2Var, ICal
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarFunction2Var._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarFunction2Var._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarFunction2Var.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarFunction2Var, [ICalculationToolScalarFunction2Var, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{05CA07A4-A36F-44EF-99C4-5E0999E79200}", CalculationToolScalarFunction2Var)
 agcls.AgTypeNameMap["CalculationToolScalarFunction2Var"] = CalculationToolScalarFunction2Var
@@ -29276,14 +25379,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalarIntegral, ICalculation
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarIntegral._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarIntegral._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarIntegral.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarIntegral, [ICalculationToolScalarIntegral, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C87C787A-BEDA-4AEC-9F88-3D6EE0936A03}", CalculationToolScalarIntegral)
 agcls.AgTypeNameMap["CalculationToolScalarIntegral"] = CalculationToolScalarIntegral
@@ -29303,14 +25399,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalarPlugin, ICalculationTool
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarPlugin._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarPlugin._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarPlugin.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarPlugin, [ICalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E435E30B-EA9B-4EFB-852A-C20427B71484}", CalculationToolScalarPlugin)
 agcls.AgTypeNameMap["CalculationToolScalarPlugin"] = CalculationToolScalarPlugin
@@ -29330,14 +25419,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalarSu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarSurfaceDistanceBetweenPoints._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarSurfaceDistanceBetweenPoints._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarSurfaceDistanceBetweenPoints.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarSurfaceDistanceBetweenPoints, [ICalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DEDCB488-6C70-4BC0-A719-68832FB6D30E}", CalculationToolScalarSurfaceDistanceBetweenPoints)
 agcls.AgTypeNameMap["CalculationToolScalarSurfaceDistanceBetweenPoints"] = CalculationToolScalarSurfaceDistanceBetweenPoints
@@ -29357,14 +25439,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalarVectorComponent
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarVectorComponent._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarVectorComponent._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarVectorComponent.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarVectorComponent, [ICalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0b8e5c9f-de1b-4b6b-9e38-87b16db7bb71}", CalculationToolScalarVectorComponent)
 agcls.AgTypeNameMap["CalculationToolScalarVectorComponent"] = CalculationToolScalarVectorComponent
@@ -29384,14 +25459,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalarVectorMagnitude
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolScalarVectorMagnitude._get_property(self, attrname) is not None: found_prop = ICalculationToolScalarVectorMagnitude._get_property(self, attrname)
-        if ICalculationToolScalar._get_property(self, attrname) is not None: found_prop = ICalculationToolScalar._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolScalarVectorMagnitude.")
+        set_class_attribute(self, attrname, value, CalculationToolScalarVectorMagnitude, [ICalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7430CE8-D611-4F5C-B4B4-05531F1E0CC0}", CalculationToolScalarVectorMagnitude)
 agcls.AgTypeNameMap["CalculationToolScalarVectorMagnitude"] = CalculationToolScalarVectorMagnitude
@@ -29409,13 +25477,7 @@ class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComp
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolCondition._get_property(self, attrname) is not None: found_prop = ICalculationToolCondition._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolCondition.")
+        set_class_attribute(self, attrname, value, CalculationToolCondition, [ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D1BED244-FFB2-4038-AE76-A9B3194B2E49}", CalculationToolCondition)
 agcls.AgTypeNameMap["CalculationToolCondition"] = CalculationToolCondition
@@ -29435,14 +25497,7 @@ class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalcu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionCombined._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionCombined._get_property(self, attrname)
-        if ICalculationToolCondition._get_property(self, attrname) is not None: found_prop = ICalculationToolCondition._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionCombined.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionCombined, [ICalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{92F4488B-3543-4229-B1FB-447D282199B9}", CalculationToolConditionCombined)
 agcls.AgTypeNameMap["CalculationToolConditionCombined"] = CalculationToolConditionCombined
@@ -29458,12 +25513,7 @@ class CalculationToolConditionFactory(ICalculationToolConditionFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionFactory._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionFactory.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionFactory, [ICalculationToolConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{06C627F8-87EA-4552-86E8-7E5049914CDE}", CalculationToolConditionFactory)
 agcls.AgTypeNameMap["CalculationToolConditionFactory"] = CalculationToolConditionFactory
@@ -29483,14 +25533,7 @@ class CalculationToolConditionPointInVolume(ICalculationToolConditionPointInVolu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionPointInVolume._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionPointInVolume._get_property(self, attrname)
-        if ICalculationToolCondition._get_property(self, attrname) is not None: found_prop = ICalculationToolCondition._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionPointInVolume.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionPointInVolume, [ICalculationToolConditionPointInVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{41532AD9-B30C-44AE-8581-CE74C24846A8}", CalculationToolConditionPointInVolume)
 agcls.AgTypeNameMap["CalculationToolConditionPointInVolume"] = CalculationToolConditionPointInVolume
@@ -29510,14 +25553,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolConditionScalarBounds
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionScalarBounds._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionScalarBounds._get_property(self, attrname)
-        if ICalculationToolCondition._get_property(self, attrname) is not None: found_prop = ICalculationToolCondition._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionScalarBounds.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionScalarBounds, [ICalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{452E2178-AFB0-4E61-8187-9C6CB4A704A0}", CalculationToolConditionScalarBounds)
 agcls.AgTypeNameMap["CalculationToolConditionScalarBounds"] = CalculationToolConditionScalarBounds
@@ -29535,13 +25571,7 @@ class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkben
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionSet._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSet.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionSet, [ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B6407B1B-6858-49FC-845A-F8A6239162C2}", CalculationToolConditionSet)
 agcls.AgTypeNameMap["CalculationToolConditionSet"] = CalculationToolConditionSet
@@ -29557,12 +25587,7 @@ class CalculationToolConditionSetFactory(ICalculationToolConditionSetFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionSetFactory._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionSetFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetFactory.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionSetFactory, [ICalculationToolConditionSetFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{D2445C98-9EA1-458F-9B6A-607249BF399A}", CalculationToolConditionSetFactory)
 agcls.AgTypeNameMap["CalculationToolConditionSetFactory"] = CalculationToolConditionSetFactory
@@ -29582,14 +25607,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSetSc
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConditionSetScalarThresholds._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionSetScalarThresholds._get_property(self, attrname)
-        if ICalculationToolConditionSet._get_property(self, attrname) is not None: found_prop = ICalculationToolConditionSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConditionSetScalarThresholds.")
+        set_class_attribute(self, attrname, value, CalculationToolConditionSetScalarThresholds, [ICalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{EED0BF6B-4D96-4D55-B988-0B962DCDBB4E}", CalculationToolConditionSetScalarThresholds)
 agcls.AgTypeNameMap["CalculationToolConditionSetScalarThresholds"] = CalculationToolConditionSetScalarThresholds
@@ -29607,13 +25625,7 @@ class AnalysisWorkbenchConverge(IAnalysisWorkbenchConverge, IAnalysisWorkbenchCo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchConverge._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchConverge._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchConverge.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchConverge, [IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{6A13D679-1970-43C2-8D4F-174B08AB04DC}", AnalysisWorkbenchConverge)
 agcls.AgTypeNameMap["AnalysisWorkbenchConverge"] = AnalysisWorkbenchConverge
@@ -29633,14 +25645,7 @@ class CalculationToolConvergeBasic(ICalculationToolConvergeBasic, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolConvergeBasic._get_property(self, attrname) is not None: found_prop = ICalculationToolConvergeBasic._get_property(self, attrname)
-        if IAnalysisWorkbenchConverge._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchConverge._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolConvergeBasic.")
+        set_class_attribute(self, attrname, value, CalculationToolConvergeBasic, [ICalculationToolConvergeBasic, IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{808F19C3-0E31-4C89-94C8-BBE01E067DFF}", CalculationToolConvergeBasic)
 agcls.AgTypeNameMap["CalculationToolConvergeBasic"] = CalculationToolConvergeBasic
@@ -29658,13 +25663,7 @@ class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkben
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchDerivative._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchDerivative._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchDerivative.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchDerivative, [IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2C7C1DA3-BD86-4D8B-9505-AC796FF1FD45}", AnalysisWorkbenchDerivative)
 agcls.AgTypeNameMap["AnalysisWorkbenchDerivative"] = AnalysisWorkbenchDerivative
@@ -29684,14 +25683,7 @@ class CalculationToolDerivativeBasic(ICalculationToolDerivativeBasic, IAnalysisW
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolDerivativeBasic._get_property(self, attrname) is not None: found_prop = ICalculationToolDerivativeBasic._get_property(self, attrname)
-        if IAnalysisWorkbenchDerivative._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchDerivative._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolDerivativeBasic.")
+        set_class_attribute(self, attrname, value, CalculationToolDerivativeBasic, [ICalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3CD084C3-0045-4452-9793-AE8DF4073433}", CalculationToolDerivativeBasic)
 agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativeBasic
@@ -29709,13 +25701,7 @@ class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEvent._get_property(self, attrname) is not None: found_prop = ITimeToolEvent._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEvent.")
+        set_class_attribute(self, attrname, value, TimeToolEvent, [ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{A4B75B25-5DAE-4AEC-86EF-512F5E031766}", TimeToolEvent)
 agcls.AgTypeNameMap["TimeToolEvent"] = TimeToolEvent
@@ -29733,13 +25719,7 @@ class TimeToolEventArray(ITimeToolEventArray, IAnalysisWorkbenchComponent):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArray.")
+        set_class_attribute(self, attrname, value, TimeToolEventArray, [ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F5C87B1A-D519-4A01-8649-AA7560CD503A}", TimeToolEventArray)
 agcls.AgTypeNameMap["TimeToolEventArray"] = TimeToolEventArray
@@ -29759,14 +25739,7 @@ class TimeToolEventArrayConditionCrossings(ITimeToolEventArrayConditionCrossings
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayConditionCrossings._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayConditionCrossings._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayConditionCrossings.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayConditionCrossings, [ITimeToolEventArrayConditionCrossings, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B6FBC501-3521-4AE3-AFD8-4971F089D14F}", TimeToolEventArrayConditionCrossings)
 agcls.AgTypeNameMap["TimeToolEventArrayConditionCrossings"] = TimeToolEventArrayConditionCrossings
@@ -29786,14 +25759,7 @@ class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray,
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayExtrema._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayExtrema._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayExtrema.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayExtrema, [ITimeToolEventArrayExtrema, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8FB3F78C-D9F6-43F0-BCAA-5A7DCD035592}", TimeToolEventArrayExtrema)
 agcls.AgTypeNameMap["TimeToolEventArrayExtrema"] = TimeToolEventArrayExtrema
@@ -29809,12 +25775,7 @@ class TimeToolEventArrayFactory(ITimeToolEventArrayFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayFactory._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFactory.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayFactory, [ITimeToolEventArrayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{A001EDFD-FAC8-4BBE-9FDC-0C7A5C4BB11C}", TimeToolEventArrayFactory)
 agcls.AgTypeNameMap["TimeToolEventArrayFactory"] = TimeToolEventArrayFactory
@@ -29834,14 +25795,7 @@ class TimeToolEventArrayFiltered(ITimeToolEventArrayFiltered, ITimeToolEventArra
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayFiltered._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayFiltered._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFiltered.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayFiltered, [ITimeToolEventArrayFiltered, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CA0D9FE7-E921-406E-8A1A-EE448A46C03C}", TimeToolEventArrayFiltered)
 agcls.AgTypeNameMap["TimeToolEventArrayFiltered"] = TimeToolEventArrayFiltered
@@ -29861,14 +25815,7 @@ class TimeToolEventArrayFixedStep(ITimeToolEventArrayFixedStep, ITimeToolEventAr
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayFixedStep._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayFixedStep._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFixedStep.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayFixedStep, [ITimeToolEventArrayFixedStep, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CDA379CC-7511-496E-874E-14E10F3E2B1A}", TimeToolEventArrayFixedStep)
 agcls.AgTypeNameMap["TimeToolEventArrayFixedStep"] = TimeToolEventArrayFixedStep
@@ -29888,14 +25835,7 @@ class TimeToolEventArrayFixedTimes(ITimeToolEventArrayFixedTimes, ITimeToolEvent
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayFixedTimes._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayFixedTimes._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayFixedTimes.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayFixedTimes, [ITimeToolEventArrayFixedTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{EA73AECA-23AB-4DA1-B297-E80E19C55C15}", TimeToolEventArrayFixedTimes)
 agcls.AgTypeNameMap["TimeToolEventArrayFixedTimes"] = TimeToolEventArrayFixedTimes
@@ -29915,14 +25855,7 @@ class TimeToolEventArrayMerged(ITimeToolEventArrayMerged, ITimeToolEventArray, I
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayMerged._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayMerged._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayMerged.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayMerged, [ITimeToolEventArrayMerged, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{44FBC83E-D466-425F-ADF5-2003D754F935}", TimeToolEventArrayMerged)
 agcls.AgTypeNameMap["TimeToolEventArrayMerged"] = TimeToolEventArrayMerged
@@ -29942,14 +25875,7 @@ class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArra
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArraySignaled._get_property(self, attrname) is not None: found_prop = ITimeToolEventArraySignaled._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArraySignaled.")
+        set_class_attribute(self, attrname, value, TimeToolEventArraySignaled, [ITimeToolEventArraySignaled, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{50E37652-E4D1-4B6F-BA12-2D9B17E5F1AA}", TimeToolEventArraySignaled)
 agcls.AgTypeNameMap["TimeToolEventArraySignaled"] = TimeToolEventArraySignaled
@@ -29969,14 +25895,7 @@ class TimeToolEventArrayStartStopTimes(ITimeToolEventArrayStartStopTimes, ITimeT
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventArrayStartStopTimes._get_property(self, attrname) is not None: found_prop = ITimeToolEventArrayStartStopTimes._get_property(self, attrname)
-        if ITimeToolEventArray._get_property(self, attrname) is not None: found_prop = ITimeToolEventArray._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventArrayStartStopTimes.")
+        set_class_attribute(self, attrname, value, TimeToolEventArrayStartStopTimes, [ITimeToolEventArrayStartStopTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{1AF5E1AC-97CB-4375-B0AE-AE8B6684432B}", TimeToolEventArrayStartStopTimes)
 agcls.AgTypeNameMap["TimeToolEventArrayStartStopTimes"] = TimeToolEventArrayStartStopTimes
@@ -29996,14 +25915,7 @@ class TimeToolEventEpoch(ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbench
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventEpoch._get_property(self, attrname) is not None: found_prop = ITimeToolEventEpoch._get_property(self, attrname)
-        if ITimeToolEvent._get_property(self, attrname) is not None: found_prop = ITimeToolEvent._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventEpoch.")
+        set_class_attribute(self, attrname, value, TimeToolEventEpoch, [ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{230426D4-438A-4B6E-A9D2-5393F7F87238}", TimeToolEventEpoch)
 agcls.AgTypeNameMap["TimeToolEventEpoch"] = TimeToolEventEpoch
@@ -30023,14 +25935,7 @@ class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWor
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventExtremum._get_property(self, attrname) is not None: found_prop = ITimeToolEventExtremum._get_property(self, attrname)
-        if ITimeToolEvent._get_property(self, attrname) is not None: found_prop = ITimeToolEvent._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventExtremum.")
+        set_class_attribute(self, attrname, value, TimeToolEventExtremum, [ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7D4AD095-F1A4-4ACA-8788-50DEF2F4B604}", TimeToolEventExtremum)
 agcls.AgTypeNameMap["TimeToolEventExtremum"] = TimeToolEventExtremum
@@ -30046,12 +25951,7 @@ class TimeToolEventFactory(ITimeToolEventFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventFactory._get_property(self, attrname) is not None: found_prop = ITimeToolEventFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventFactory.")
+        set_class_attribute(self, attrname, value, TimeToolEventFactory, [ITimeToolEventFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{9DEB7422-F9AA-492A-9269-3BDB7B0AF7E4}", TimeToolEventFactory)
 agcls.AgTypeNameMap["TimeToolEventFactory"] = TimeToolEventFactory
@@ -30069,13 +25969,7 @@ class TimeToolEventInterval(ITimeToolEventInterval, IAnalysisWorkbenchComponent)
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventInterval.")
+        set_class_attribute(self, attrname, value, TimeToolEventInterval, [ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2CDA6DDC-7412-441A-8F94-0671FD57D16A}", TimeToolEventInterval)
 agcls.AgTypeNameMap["TimeToolEventInterval"] = TimeToolEventInterval
@@ -30095,14 +25989,7 @@ class TimeToolEventIntervalBetweenTimeInstants(ITimeToolEventIntervalBetweenTime
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalBetweenTimeInstants._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalBetweenTimeInstants._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalBetweenTimeInstants.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalBetweenTimeInstants, [ITimeToolEventIntervalBetweenTimeInstants, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E84D9CAE-E919-4B84-99D7-553CCB97739C}", TimeToolEventIntervalBetweenTimeInstants)
 agcls.AgTypeNameMap["TimeToolEventIntervalBetweenTimeInstants"] = TimeToolEventIntervalBetweenTimeInstants
@@ -30120,13 +26007,7 @@ class TimeToolEventIntervalCollection(ITimeToolEventIntervalCollection, IAnalysi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalCollection._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollection._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollection.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalCollection, [ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{892BFFEB-D366-49D5-8220-50AC5E4529A1}", TimeToolEventIntervalCollection)
 agcls.AgTypeNameMap["TimeToolEventIntervalCollection"] = TimeToolEventIntervalCollection
@@ -30146,14 +26027,7 @@ class TimeToolEventIntervalCollectionCondition(ITimeToolEventIntervalCollectionC
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalCollectionCondition._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollectionCondition._get_property(self, attrname)
-        if ITimeToolEventIntervalCollection._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollection._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionCondition.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionCondition, [ITimeToolEventIntervalCollectionCondition, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{05E4AFDD-2917-46BA-84C9-1EE7973F11D7}", TimeToolEventIntervalCollectionCondition)
 agcls.AgTypeNameMap["TimeToolEventIntervalCollectionCondition"] = TimeToolEventIntervalCollectionCondition
@@ -30169,12 +26043,7 @@ class TimeToolEventIntervalCollectionFactory(ITimeToolEventIntervalCollectionFac
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalCollectionFactory._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollectionFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionFactory.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionFactory, [ITimeToolEventIntervalCollectionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C76F8390-6619-47D5-9D33-DD1FBBF19B63}", TimeToolEventIntervalCollectionFactory)
 agcls.AgTypeNameMap["TimeToolEventIntervalCollectionFactory"] = TimeToolEventIntervalCollectionFactory
@@ -30194,14 +26063,7 @@ class TimeToolEventIntervalCollectionLighting(ITimeToolEventIntervalCollectionLi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalCollectionLighting._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollectionLighting._get_property(self, attrname)
-        if ITimeToolEventIntervalCollection._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollection._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionLighting.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionLighting, [ITimeToolEventIntervalCollectionLighting, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{5457BFBA-3076-4250-B0E0-81FA79D58F19}", TimeToolEventIntervalCollectionLighting)
 agcls.AgTypeNameMap["TimeToolEventIntervalCollectionLighting"] = TimeToolEventIntervalCollectionLighting
@@ -30221,14 +26083,7 @@ class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalCollectionSignaled._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollectionSignaled._get_property(self, attrname)
-        if ITimeToolEventIntervalCollection._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalCollection._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalCollectionSignaled.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionSignaled, [ITimeToolEventIntervalCollectionSignaled, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D1ED3869-B0E3-40F6-967A-C539C5D5D630}", TimeToolEventIntervalCollectionSignaled)
 agcls.AgTypeNameMap["TimeToolEventIntervalCollectionSignaled"] = TimeToolEventIntervalCollectionSignaled
@@ -30244,12 +26099,7 @@ class TimeToolEventIntervalFactory(ITimeToolEventIntervalFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalFactory._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFactory.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalFactory, [ITimeToolEventIntervalFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{D5D195D8-DE6D-4926-B743-556B08A827C8}", TimeToolEventIntervalFactory)
 agcls.AgTypeNameMap["TimeToolEventIntervalFactory"] = TimeToolEventIntervalFactory
@@ -30269,14 +26119,7 @@ class TimeToolEventIntervalFixed(ITimeToolEventIntervalFixed, ITimeToolEventInte
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalFixed._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalFixed._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFixed.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalFixed, [ITimeToolEventIntervalFixed, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4408570B-CE46-4B6A-9A50-F8F6D56D76F1}", TimeToolEventIntervalFixed)
 agcls.AgTypeNameMap["TimeToolEventIntervalFixed"] = TimeToolEventIntervalFixed
@@ -30296,14 +26139,7 @@ class TimeToolEventIntervalFixedDuration(ITimeToolEventIntervalFixedDuration, IT
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalFixedDuration._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalFixedDuration._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFixedDuration.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalFixedDuration, [ITimeToolEventIntervalFixedDuration, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{84316F31-A3DB-4DF3-B8E3-352673D4E251}", TimeToolEventIntervalFixedDuration)
 agcls.AgTypeNameMap["TimeToolEventIntervalFixedDuration"] = TimeToolEventIntervalFixedDuration
@@ -30323,14 +26159,7 @@ class TimeToolEventIntervalFromIntervalList(ITimeToolEventIntervalFromIntervalLi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalFromIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalFromIntervalList._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalFromIntervalList.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalFromIntervalList, [ITimeToolEventIntervalFromIntervalList, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E3B57D7-B236-4DCA-82DA-6C4835A6D0F1}", TimeToolEventIntervalFromIntervalList)
 agcls.AgTypeNameMap["TimeToolEventIntervalFromIntervalList"] = TimeToolEventIntervalFromIntervalList
@@ -30348,13 +26177,7 @@ class TimeToolEventIntervalList(ITimeToolEventIntervalList, IAnalysisWorkbenchCo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalList.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalList, [ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{050E0A6D-9960-4470-9803-AF58B43FD747}", TimeToolEventIntervalList)
 agcls.AgTypeNameMap["TimeToolEventIntervalList"] = TimeToolEventIntervalList
@@ -30374,14 +26197,7 @@ class TimeToolEventIntervalListCondition(ITimeToolEventIntervalListCondition, IT
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListCondition._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListCondition._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListCondition.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListCondition, [ITimeToolEventIntervalListCondition, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4D1E24FE-BD49-4F09-9C30-523AFD58E02B}", TimeToolEventIntervalListCondition)
 agcls.AgTypeNameMap["TimeToolEventIntervalListCondition"] = TimeToolEventIntervalListCondition
@@ -30397,12 +26213,7 @@ class TimeToolEventIntervalListFactory(ITimeToolEventIntervalListFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListFactory._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFactory.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListFactory, [ITimeToolEventIntervalListFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{DC3FA659-172B-4C9D-9DCA-EF6AD6CC4A8A}", TimeToolEventIntervalListFactory)
 agcls.AgTypeNameMap["TimeToolEventIntervalListFactory"] = TimeToolEventIntervalListFactory
@@ -30422,14 +26233,7 @@ class TimeToolEventIntervalListFile(ITimeToolEventIntervalListFile, ITimeToolEve
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListFile._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListFile._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFile.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListFile, [ITimeToolEventIntervalListFile, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{5A3BC6C1-559F-448D-946E-3D608C0C59B4}", TimeToolEventIntervalListFile)
 agcls.AgTypeNameMap["TimeToolEventIntervalListFile"] = TimeToolEventIntervalListFile
@@ -30449,14 +26253,7 @@ class TimeToolEventIntervalListFiltered(ITimeToolEventIntervalListFiltered, ITim
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListFiltered._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListFiltered._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFiltered.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListFiltered, [ITimeToolEventIntervalListFiltered, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7123DA29-BECE-4032-9A81-77CDA69C5B13}", TimeToolEventIntervalListFiltered)
 agcls.AgTypeNameMap["TimeToolEventIntervalListFiltered"] = TimeToolEventIntervalListFiltered
@@ -30476,14 +26273,7 @@ class TimeToolEventIntervalListFixed(ITimeToolEventIntervalListFixed, ITimeToolE
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListFixed._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListFixed._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListFixed.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListFixed, [ITimeToolEventIntervalListFixed, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{60EF79E3-069B-45E3-A5A6-B49F9F9D618E}", TimeToolEventIntervalListFixed)
 agcls.AgTypeNameMap["TimeToolEventIntervalListFixed"] = TimeToolEventIntervalListFixed
@@ -30503,14 +26293,7 @@ class TimeToolEventIntervalListMerged(ITimeToolEventIntervalListMerged, ITimeToo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListMerged._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListMerged._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListMerged.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListMerged, [ITimeToolEventIntervalListMerged, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{115C7064-1624-4928-B401-2C2B8DA2A2DC}", TimeToolEventIntervalListMerged)
 agcls.AgTypeNameMap["TimeToolEventIntervalListMerged"] = TimeToolEventIntervalListMerged
@@ -30530,14 +26313,7 @@ class TimeToolEventIntervalListScaled(ITimeToolEventIntervalListScaled, ITimeToo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListScaled._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListScaled._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListScaled.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListScaled, [ITimeToolEventIntervalListScaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3A5FDAFA-95C5-4743-A675-B9598AAAA1B9}", TimeToolEventIntervalListScaled)
 agcls.AgTypeNameMap["TimeToolEventIntervalListScaled"] = TimeToolEventIntervalListScaled
@@ -30557,14 +26333,7 @@ class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITim
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListSignaled._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListSignaled._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListSignaled.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListSignaled, [ITimeToolEventIntervalListSignaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0C2159AF-FCE5-46AA-A06B-30E49A5B6704}", TimeToolEventIntervalListSignaled)
 agcls.AgTypeNameMap["TimeToolEventIntervalListSignaled"] = TimeToolEventIntervalListSignaled
@@ -30584,14 +26353,7 @@ class TimeToolEventIntervalListTimeOffset(ITimeToolEventIntervalListTimeOffset, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalListTimeOffset._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalListTimeOffset._get_property(self, attrname)
-        if ITimeToolEventIntervalList._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalList._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalListTimeOffset.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalListTimeOffset, [ITimeToolEventIntervalListTimeOffset, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BA2C1495-B20E-477A-A995-8B5B879DE84C}", TimeToolEventIntervalListTimeOffset)
 agcls.AgTypeNameMap["TimeToolEventIntervalListTimeOffset"] = TimeToolEventIntervalListTimeOffset
@@ -30611,14 +26373,7 @@ class TimeToolEventIntervalScaled(ITimeToolEventIntervalScaled, ITimeToolEventIn
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalScaled._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalScaled._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalScaled.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalScaled, [ITimeToolEventIntervalScaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8BCF947C-8E52-4B0C-9416-520C7CCEAB3E}", TimeToolEventIntervalScaled)
 agcls.AgTypeNameMap["TimeToolEventIntervalScaled"] = TimeToolEventIntervalScaled
@@ -30638,14 +26393,7 @@ class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEve
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalSignaled._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalSignaled._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalSignaled.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalSignaled, [ITimeToolEventIntervalSignaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E2D6BF4-81D9-476D-A4F2-F1882E24B56E}", TimeToolEventIntervalSignaled)
 agcls.AgTypeNameMap["TimeToolEventIntervalSignaled"] = TimeToolEventIntervalSignaled
@@ -30665,14 +26413,7 @@ class TimeToolEventIntervalSmartInterval(ITimeToolEventIntervalSmartInterval, IT
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalSmartInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalSmartInterval._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalSmartInterval.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalSmartInterval, [ITimeToolEventIntervalSmartInterval, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F3D4E2AC-3845-4719-AD57-EE0C715A584D}", TimeToolEventIntervalSmartInterval)
 agcls.AgTypeNameMap["TimeToolEventIntervalSmartInterval"] = TimeToolEventIntervalSmartInterval
@@ -30692,14 +26433,7 @@ class TimeToolEventIntervalTimeOffset(ITimeToolEventIntervalTimeOffset, ITimeToo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventIntervalTimeOffset._get_property(self, attrname) is not None: found_prop = ITimeToolEventIntervalTimeOffset._get_property(self, attrname)
-        if ITimeToolEventInterval._get_property(self, attrname) is not None: found_prop = ITimeToolEventInterval._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventIntervalTimeOffset.")
+        set_class_attribute(self, attrname, value, TimeToolEventIntervalTimeOffset, [ITimeToolEventIntervalTimeOffset, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DE89BB00-5A89-4DA4-8730-CA2C3495A867}", TimeToolEventIntervalTimeOffset)
 agcls.AgTypeNameMap["TimeToolEventIntervalTimeOffset"] = TimeToolEventIntervalTimeOffset
@@ -30719,14 +26453,7 @@ class TimeToolEventSignaled(ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWor
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventSignaled._get_property(self, attrname) is not None: found_prop = ITimeToolEventSignaled._get_property(self, attrname)
-        if ITimeToolEvent._get_property(self, attrname) is not None: found_prop = ITimeToolEvent._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventSignaled.")
+        set_class_attribute(self, attrname, value, TimeToolEventSignaled, [ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3951EF3D-DAEA-4F04-B78C-22537BD84A2D}", TimeToolEventSignaled)
 agcls.AgTypeNameMap["TimeToolEventSignaled"] = TimeToolEventSignaled
@@ -30746,14 +26473,7 @@ class TimeToolEventSmartEpoch(ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventSmartEpoch._get_property(self, attrname) is not None: found_prop = ITimeToolEventSmartEpoch._get_property(self, attrname)
-        if ITimeToolEvent._get_property(self, attrname) is not None: found_prop = ITimeToolEvent._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventSmartEpoch.")
+        set_class_attribute(self, attrname, value, TimeToolEventSmartEpoch, [ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F722C253-92DA-4956-983B-B80AB469F192}", TimeToolEventSmartEpoch)
 agcls.AgTypeNameMap["TimeToolEventSmartEpoch"] = TimeToolEventSmartEpoch
@@ -30773,14 +26493,7 @@ class TimeToolEventStartStopTime(ITimeToolEventStartStopTime, ITimeToolEvent, IA
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventStartStopTime._get_property(self, attrname) is not None: found_prop = ITimeToolEventStartStopTime._get_property(self, attrname)
-        if ITimeToolEvent._get_property(self, attrname) is not None: found_prop = ITimeToolEvent._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventStartStopTime.")
+        set_class_attribute(self, attrname, value, TimeToolEventStartStopTime, [ITimeToolEventStartStopTime, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F0429607-A51C-495C-9902-585429D40D10}", TimeToolEventStartStopTime)
 agcls.AgTypeNameMap["TimeToolEventStartStopTime"] = TimeToolEventStartStopTime
@@ -30800,14 +26513,7 @@ class TimeToolEventTimeOffset(ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolEventTimeOffset._get_property(self, attrname) is not None: found_prop = ITimeToolEventTimeOffset._get_property(self, attrname)
-        if ITimeToolEvent._get_property(self, attrname) is not None: found_prop = ITimeToolEvent._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolEventTimeOffset.")
+        set_class_attribute(self, attrname, value, TimeToolEventTimeOffset, [ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{EE2C89C8-C148-4044-B0BE-BF137D4B876B}", TimeToolEventTimeOffset)
 agcls.AgTypeNameMap["TimeToolEventTimeOffset"] = TimeToolEventTimeOffset
@@ -30825,13 +26531,7 @@ class TimeToolFirstIntervalsFilter(ITimeToolFirstIntervalsFilter, ITimeToolPrune
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolFirstIntervalsFilter._get_property(self, attrname) is not None: found_prop = ITimeToolFirstIntervalsFilter._get_property(self, attrname)
-        if ITimeToolPruneFilter._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilter._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolFirstIntervalsFilter.")
+        set_class_attribute(self, attrname, value, TimeToolFirstIntervalsFilter, [ITimeToolFirstIntervalsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{9A044590-5063-4331-9FC2-621221CF7EA9}", TimeToolFirstIntervalsFilter)
 agcls.AgTypeNameMap["TimeToolFirstIntervalsFilter"] = TimeToolFirstIntervalsFilter
@@ -30849,13 +26549,7 @@ class TimeToolGapsFilter(ITimeToolGapsFilter, ITimeToolPruneFilter):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolGapsFilter._get_property(self, attrname) is not None: found_prop = ITimeToolGapsFilter._get_property(self, attrname)
-        if ITimeToolPruneFilter._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilter._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolGapsFilter.")
+        set_class_attribute(self, attrname, value, TimeToolGapsFilter, [ITimeToolGapsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{C54D3817-6B48-4436-8E1D-323A38DC2BC0}", TimeToolGapsFilter)
 agcls.AgTypeNameMap["TimeToolGapsFilter"] = TimeToolGapsFilter
@@ -30873,13 +26567,7 @@ class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchCo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchIntegral._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchIntegral._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchIntegral.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchIntegral, [IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{9C6B1D39-FC48-475A-A888-DA9D459C1906}", AnalysisWorkbenchIntegral)
 agcls.AgTypeNameMap["AnalysisWorkbenchIntegral"] = AnalysisWorkbenchIntegral
@@ -30899,14 +26587,7 @@ class CalculationToolIntegralBasic(ICalculationToolIntegralBasic, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolIntegralBasic._get_property(self, attrname) is not None: found_prop = ICalculationToolIntegralBasic._get_property(self, attrname)
-        if IAnalysisWorkbenchIntegral._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchIntegral._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolIntegralBasic.")
+        set_class_attribute(self, attrname, value, CalculationToolIntegralBasic, [ICalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7FCEE0EE-218C-419E-B5DB-8381B18FAE8A}", CalculationToolIntegralBasic)
 agcls.AgTypeNameMap["CalculationToolIntegralBasic"] = CalculationToolIntegralBasic
@@ -30924,13 +26605,7 @@ class AnalysisWorkbenchInterp(IAnalysisWorkbenchInterp, IAnalysisWorkbenchCompon
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchInterp._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchInterp._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchInterp.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchInterp, [IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F73B3675-6FD4-4050-9566-797DCD695107}", AnalysisWorkbenchInterp)
 agcls.AgTypeNameMap["AnalysisWorkbenchInterp"] = AnalysisWorkbenchInterp
@@ -30950,14 +26625,7 @@ class CalculationToolInterpBasic(ICalculationToolInterpBasic, IAnalysisWorkbench
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolInterpBasic._get_property(self, attrname) is not None: found_prop = ICalculationToolInterpBasic._get_property(self, attrname)
-        if IAnalysisWorkbenchInterp._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchInterp._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolInterpBasic.")
+        set_class_attribute(self, attrname, value, CalculationToolInterpBasic, [ICalculationToolInterpBasic, IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AB05143F-6997-4F40-BE86-DCF4D723F31E}", CalculationToolInterpBasic)
 agcls.AgTypeNameMap["CalculationToolInterpBasic"] = CalculationToolInterpBasic
@@ -30975,13 +26643,7 @@ class TimeToolIntervalsFilter(ITimeToolIntervalsFilter, ITimeToolPruneFilter):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolIntervalsFilter._get_property(self, attrname) is not None: found_prop = ITimeToolIntervalsFilter._get_property(self, attrname)
-        if ITimeToolPruneFilter._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilter._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalsFilter.")
+        set_class_attribute(self, attrname, value, TimeToolIntervalsFilter, [ITimeToolIntervalsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{DA31C4A7-B07C-4DEC-B479-BBEB07234B44}", TimeToolIntervalsFilter)
 agcls.AgTypeNameMap["TimeToolIntervalsFilter"] = TimeToolIntervalsFilter
@@ -30999,13 +26661,7 @@ class TimeToolLastIntervalsFilter(ITimeToolLastIntervalsFilter, ITimeToolPruneFi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolLastIntervalsFilter._get_property(self, attrname) is not None: found_prop = ITimeToolLastIntervalsFilter._get_property(self, attrname)
-        if ITimeToolPruneFilter._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilter._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolLastIntervalsFilter.")
+        set_class_attribute(self, attrname, value, TimeToolLastIntervalsFilter, [ITimeToolLastIntervalsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{1FAF4A1D-B0BA-4A86-A0AC-049670C66302}", TimeToolLastIntervalsFilter)
 agcls.AgTypeNameMap["TimeToolLastIntervalsFilter"] = TimeToolLastIntervalsFilter
@@ -31023,13 +26679,7 @@ class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkben
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSet._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSet.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSet, [ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CD1D82FC-08BF-4854-9295-F90AC87FAE68}", CalculationToolParameterSet)
 agcls.AgTypeNameMap["CalculationToolParameterSet"] = CalculationToolParameterSet
@@ -31049,14 +26699,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSetAttitude, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSetAttitude._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSetAttitude._get_property(self, attrname)
-        if ICalculationToolParameterSet._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetAttitude.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetAttitude, [ICalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7082CB04-052B-46A2-A051-4FF52D0260B0}", CalculationToolParameterSetAttitude)
 agcls.AgTypeNameMap["CalculationToolParameterSetAttitude"] = CalculationToolParameterSetAttitude
@@ -31072,12 +26715,7 @@ class CalculationToolParameterSetFactory(ICalculationToolParameterSetFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSetFactory._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSetFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetFactory.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetFactory, [ICalculationToolParameterSetFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{FF399336-197C-480B-98AC-3F07E76FF3BC}", CalculationToolParameterSetFactory)
 agcls.AgTypeNameMap["CalculationToolParameterSetFactory"] = CalculationToolParameterSetFactory
@@ -31097,14 +26735,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSetGr
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSetGroundTrajectory._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSetGroundTrajectory._get_property(self, attrname)
-        if ICalculationToolParameterSet._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetGroundTrajectory.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetGroundTrajectory, [ICalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B1972E17-F000-4BFF-80A3-216A91D0E2B1}", CalculationToolParameterSetGroundTrajectory)
 agcls.AgTypeNameMap["CalculationToolParameterSetGroundTrajectory"] = CalculationToolParameterSetGroundTrajectory
@@ -31124,14 +26755,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSetOrbit, ICalcu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSetOrbit._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSetOrbit._get_property(self, attrname)
-        if ICalculationToolParameterSet._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetOrbit.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetOrbit, [ICalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BF4A60A0-68E5-4000-8843-DD7FD76813A9}", CalculationToolParameterSetOrbit)
 agcls.AgTypeNameMap["CalculationToolParameterSetOrbit"] = CalculationToolParameterSetOrbit
@@ -31151,14 +26775,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSetTrajecto
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSetTrajectory._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSetTrajectory._get_property(self, attrname)
-        if ICalculationToolParameterSet._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetTrajectory.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetTrajectory, [ICalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{542072ED-4073-4F91-8EC8-45F7CC401ED7}", CalculationToolParameterSetTrajectory)
 agcls.AgTypeNameMap["CalculationToolParameterSetTrajectory"] = CalculationToolParameterSetTrajectory
@@ -31178,14 +26795,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSetVector, ICal
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolParameterSetVector._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSetVector._get_property(self, attrname)
-        if ICalculationToolParameterSet._get_property(self, attrname) is not None: found_prop = ICalculationToolParameterSet._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolParameterSetVector.")
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetVector, [ICalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DC7B40D5-7091-4A24-A698-436D2A274DC8}", CalculationToolParameterSetVector)
 agcls.AgTypeNameMap["CalculationToolParameterSetVector"] = CalculationToolParameterSetVector
@@ -31201,12 +26811,7 @@ class TimeToolPruneFilter(ITimeToolPruneFilter):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolPruneFilter._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilter._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPruneFilter.")
+        set_class_attribute(self, attrname, value, TimeToolPruneFilter, [ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{E08D63E9-CC8E-41F8-B3C5-0D062425C025}", TimeToolPruneFilter)
 agcls.AgTypeNameMap["TimeToolPruneFilter"] = TimeToolPruneFilter
@@ -31222,12 +26827,7 @@ class TimeToolPruneFilterFactory(ITimeToolPruneFilterFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolPruneFilterFactory._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilterFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPruneFilterFactory.")
+        set_class_attribute(self, attrname, value, TimeToolPruneFilterFactory, [ITimeToolPruneFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{954284C2-3544-4888-9A56-759AA8C7E1F7}", TimeToolPruneFilterFactory)
 agcls.AgTypeNameMap["TimeToolPruneFilterFactory"] = TimeToolPruneFilterFactory
@@ -31245,13 +26845,7 @@ class TimeToolRelativeSatisfactionConditionFilter(ITimeToolRelativeSatisfactionC
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolRelativeSatisfactionConditionFilter._get_property(self, attrname) is not None: found_prop = ITimeToolRelativeSatisfactionConditionFilter._get_property(self, attrname)
-        if ITimeToolPruneFilter._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilter._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolRelativeSatisfactionConditionFilter.")
+        set_class_attribute(self, attrname, value, TimeToolRelativeSatisfactionConditionFilter, [ITimeToolRelativeSatisfactionConditionFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{93A5C2C0-AABA-4DB3-9359-100604D0BA02}", TimeToolRelativeSatisfactionConditionFilter)
 agcls.AgTypeNameMap["TimeToolRelativeSatisfactionConditionFilter"] = TimeToolRelativeSatisfactionConditionFilter
@@ -31269,13 +26863,7 @@ class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchCo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchSampling._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchSampling._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchSampling.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchSampling, [IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{17FC40E9-EF68-4FFD-8A16-071054486F6A}", AnalysisWorkbenchSampling)
 agcls.AgTypeNameMap["AnalysisWorkbenchSampling"] = AnalysisWorkbenchSampling
@@ -31295,14 +26883,7 @@ class CalculationToolSamplingBasic(ICalculationToolSamplingBasic, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolSamplingBasic._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingBasic._get_property(self, attrname)
-        if IAnalysisWorkbenchSampling._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchSampling._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingBasic.")
+        set_class_attribute(self, attrname, value, CalculationToolSamplingBasic, [ICalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CB786C50-8D9C-4333-A985-FFD2ADD20206}", CalculationToolSamplingBasic)
 agcls.AgTypeNameMap["CalculationToolSamplingBasic"] = CalculationToolSamplingBasic
@@ -31320,13 +26901,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingCurvatur
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolSamplingCurvatureTolerance._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingCurvatureTolerance._get_property(self, attrname)
-        if ICalculationToolSamplingMethod._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingCurvatureTolerance.")
+        set_class_attribute(self, attrname, value, CalculationToolSamplingCurvatureTolerance, [ICalculationToolSamplingCurvatureTolerance, ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{EF49B404-27D2-4AC5-BB5E-EA223A237922}", CalculationToolSamplingCurvatureTolerance)
 agcls.AgTypeNameMap["CalculationToolSamplingCurvatureTolerance"] = CalculationToolSamplingCurvatureTolerance
@@ -31344,13 +26919,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingFixedStep, ICalcu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolSamplingFixedStep._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingFixedStep._get_property(self, attrname)
-        if ICalculationToolSamplingMethod._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingFixedStep.")
+        set_class_attribute(self, attrname, value, CalculationToolSamplingFixedStep, [ICalculationToolSamplingFixedStep, ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{9B7D520F-7835-4E84-BCA4-D748C73CB609}", CalculationToolSamplingFixedStep)
 agcls.AgTypeNameMap["CalculationToolSamplingFixedStep"] = CalculationToolSamplingFixedStep
@@ -31366,12 +26935,7 @@ class CalculationToolSamplingMethod(ICalculationToolSamplingMethod):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolSamplingMethod._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingMethod.")
+        set_class_attribute(self, attrname, value, CalculationToolSamplingMethod, [ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{D77F1444-C9BC-4C9C-91A2-A5F9DE172AB8}", CalculationToolSamplingMethod)
 agcls.AgTypeNameMap["CalculationToolSamplingMethod"] = CalculationToolSamplingMethod
@@ -31387,12 +26951,7 @@ class CalculationToolSamplingMethodFactory(ICalculationToolSamplingMethodFactory
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolSamplingMethodFactory._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingMethodFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingMethodFactory.")
+        set_class_attribute(self, attrname, value, CalculationToolSamplingMethodFactory, [ICalculationToolSamplingMethodFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{E55B6BC9-25B5-46E6-A29A-4E32F9EF3080}", CalculationToolSamplingMethodFactory)
 agcls.AgTypeNameMap["CalculationToolSamplingMethodFactory"] = CalculationToolSamplingMethodFactory
@@ -31410,13 +26969,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingRelativeT
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationToolSamplingRelativeTolerance._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingRelativeTolerance._get_property(self, attrname)
-        if ICalculationToolSamplingMethod._get_property(self, attrname) is not None: found_prop = ICalculationToolSamplingMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationToolSamplingRelativeTolerance.")
+        set_class_attribute(self, attrname, value, CalculationToolSamplingRelativeTolerance, [ICalculationToolSamplingRelativeTolerance, ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{5FBC3E6B-8097-4482-A1BA-DAA0083FE904}", CalculationToolSamplingRelativeTolerance)
 agcls.AgTypeNameMap["CalculationToolSamplingRelativeTolerance"] = CalculationToolSamplingRelativeTolerance
@@ -31434,13 +26987,7 @@ class TimeToolSatisfactionConditionFilter(ITimeToolSatisfactionConditionFilter, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolSatisfactionConditionFilter._get_property(self, attrname) is not None: found_prop = ITimeToolSatisfactionConditionFilter._get_property(self, attrname)
-        if ITimeToolPruneFilter._get_property(self, attrname) is not None: found_prop = ITimeToolPruneFilter._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolSatisfactionConditionFilter.")
+        set_class_attribute(self, attrname, value, TimeToolSatisfactionConditionFilter, [ITimeToolSatisfactionConditionFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{3DD67B2F-2C0A-4355-A154-08E47A93AFCF}", TimeToolSatisfactionConditionFilter)
 agcls.AgTypeNameMap["TimeToolSatisfactionConditionFilter"] = TimeToolSatisfactionConditionFilter
@@ -31458,13 +27005,7 @@ class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchSignalDelay._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchSignalDelay._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchSignalDelay.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchSignalDelay, [IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{71744841-D938-44BE-8336-2B54F06CF443}", AnalysisWorkbenchSignalDelay)
 agcls.AgTypeNameMap["AnalysisWorkbenchSignalDelay"] = AnalysisWorkbenchSignalDelay
@@ -31484,14 +27025,7 @@ class TimeToolSignalDelayBasic(ITimeToolSignalDelayBasic, IAnalysisWorkbenchSign
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolSignalDelayBasic._get_property(self, attrname) is not None: found_prop = ITimeToolSignalDelayBasic._get_property(self, attrname)
-        if IAnalysisWorkbenchSignalDelay._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchSignalDelay._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolSignalDelayBasic.")
+        set_class_attribute(self, attrname, value, TimeToolSignalDelayBasic, [ITimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0763A330-475A-4E4E-AB26-8943A8CC1C92}", TimeToolSignalDelayBasic)
 agcls.AgTypeNameMap["TimeToolSignalDelayBasic"] = TimeToolSignalDelayBasic
@@ -31507,12 +27041,7 @@ class SpatialAnalysisToolVolumeCalcFactory(ISpatialAnalysisToolVolumeCalcFactory
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcFactory._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcFactory.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFactory, [ISpatialAnalysisToolVolumeCalcFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{80956ae5-fb8c-4ce4-930f-56b362d07cec}", SpatialAnalysisToolVolumeCalcFactory)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFactory"] = SpatialAnalysisToolVolumeCalcFactory
@@ -31528,12 +27057,7 @@ class SpatialAnalysisToolVolumeFactory(ISpatialAnalysisToolVolumeFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeFactory._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFactory.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFactory, [ISpatialAnalysisToolVolumeFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F9497BD8-A985-4054-8ADE-9042DE66125F}", SpatialAnalysisToolVolumeFactory)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFactory"] = SpatialAnalysisToolVolumeFactory
@@ -31549,12 +27073,7 @@ class SpatialAnalysisToolVolumeGridFactory(ISpatialAnalysisToolVolumeGridFactory
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridFactory._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridFactory.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridFactory, [ISpatialAnalysisToolVolumeGridFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F6359611-FB48-4B00-9017-01A4BE2B76E5}", SpatialAnalysisToolVolumeGridFactory)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridFactory"] = SpatialAnalysisToolVolumeGridFactory
@@ -31570,12 +27089,7 @@ class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolGridCoordinateDefinition._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridCoordinateDefinition._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridCoordinateDefinition.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolGridCoordinateDefinition, [ISpatialAnalysisToolGridCoordinateDefinition])
 
 agcls.AgClassCatalog.add_catalog_entry("{CCE5BC10-615F-441F-95AE-CB4CC0A7C62A}", SpatialAnalysisToolGridCoordinateDefinition)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridCoordinateDefinition"] = SpatialAnalysisToolGridCoordinateDefinition
@@ -31593,13 +27107,7 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesCustom, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolGridValuesCustom._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridValuesCustom._get_property(self, attrname)
-        if ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesCustom.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesCustom, [ISpatialAnalysisToolGridValuesCustom, ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{B50CCBA5-A969-40E1-86B3-96DAE5D2A3E3}", SpatialAnalysisToolGridValuesCustom)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesCustom"] = SpatialAnalysisToolGridValuesCustom
@@ -31617,13 +27125,7 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolGridValuesFixedNumberOfSteps._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridValuesFixedNumberOfSteps._get_property(self, attrname)
-        if ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesFixedNumberOfSteps.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedNumberOfSteps, [ISpatialAnalysisToolGridValuesFixedNumberOfSteps, ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{DDD7F78E-13DC-4417-8AE5-B43BB1511AFC}", SpatialAnalysisToolGridValuesFixedNumberOfSteps)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedNumberOfSteps"] = SpatialAnalysisToolGridValuesFixedNumberOfSteps
@@ -31641,13 +27143,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesFixed
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolGridValuesFixedStep._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridValuesFixedStep._get_property(self, attrname)
-        if ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesFixedStep.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedStep, [ISpatialAnalysisToolGridValuesFixedStep, ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{0942EA2D-33DE-41B5-98BE-E53E659EC81D}", SpatialAnalysisToolGridValuesFixedStep)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedStep"] = SpatialAnalysisToolGridValuesFixedStep
@@ -31663,12 +27159,7 @@ class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolGridValuesMethod._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolGridValuesMethod.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesMethod, [ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{D1D242BF-73F3-443A-AB46-64EAA02C5F37}", SpatialAnalysisToolGridValuesMethod)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesMethod"] = SpatialAnalysisToolGridValuesMethod
@@ -31684,12 +27175,7 @@ class TimeToolLightTimeDelay(ITimeToolLightTimeDelay):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolLightTimeDelay._get_property(self, attrname) is not None: found_prop = ITimeToolLightTimeDelay._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolLightTimeDelay.")
+        set_class_attribute(self, attrname, value, TimeToolLightTimeDelay, [ITimeToolLightTimeDelay])
 
 agcls.AgClassCatalog.add_catalog_entry("{085E2242-4392-4F35-857E-A46A72EADE70}", TimeToolLightTimeDelay)
 agcls.AgTypeNameMap["TimeToolLightTimeDelay"] = TimeToolLightTimeDelay
@@ -31707,13 +27193,7 @@ class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchCo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolume.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolume, [ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{299D5D3F-7E12-4747-BFD3-2B5CADBAD8EE}", SpatialAnalysisToolVolume)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolume"] = SpatialAnalysisToolVolume
@@ -31731,13 +27211,7 @@ class SpatialAnalysisToolVolumeCalc(ISpatialAnalysisToolVolumeCalc, IAnalysisWor
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalc.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalc, [ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{d014bfd1-130d-4dc4-a841-76c75bc08f9c}", SpatialAnalysisToolVolumeCalc)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalc"] = SpatialAnalysisToolVolumeCalc
@@ -31757,14 +27231,7 @@ class SpatialAnalysisToolVolumeCalcAltitude(ISpatialAnalysisToolVolumeCalcAltitu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcAltitude._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcAltitude._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcAltitude.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcAltitude, [ISpatialAnalysisToolVolumeCalcAltitude, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4e3c369c-c189-48ce-8e93-f0c6478f0abe}", SpatialAnalysisToolVolumeCalcAltitude)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcAltitude"] = SpatialAnalysisToolVolumeCalcAltitude
@@ -31784,14 +27251,7 @@ class SpatialAnalysisToolVolumeCalcAngleOffVector(ISpatialAnalysisToolVolumeCalc
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcAngleOffVector._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcAngleOffVector._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcAngleOffVector.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcAngleOffVector, [ISpatialAnalysisToolVolumeCalcAngleOffVector, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{e37c954b-d3d5-4d2e-91b6-0ae4f8380620}", SpatialAnalysisToolVolumeCalcAngleOffVector)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcAngleOffVector"] = SpatialAnalysisToolVolumeCalcAngleOffVector
@@ -31811,14 +27271,7 @@ class SpatialAnalysisToolVolumeCalcConditionSatMetric(ISpatialAnalysisToolVolume
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcConditionSatMetric._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcConditionSatMetric._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcConditionSatMetric.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcConditionSatMetric, [ISpatialAnalysisToolVolumeCalcConditionSatMetric, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{589b39d3-7b75-4fe8-8fb2-1c7e5e247fea}", SpatialAnalysisToolVolumeCalcConditionSatMetric)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcConditionSatMetric"] = SpatialAnalysisToolVolumeCalcConditionSatMetric
@@ -31838,14 +27291,7 @@ class SpatialAnalysisToolVolumeCalcDelayRange(ISpatialAnalysisToolVolumeCalcDela
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcDelayRange._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcDelayRange._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcDelayRange.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcDelayRange, [ISpatialAnalysisToolVolumeCalcDelayRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{bd9388e8-e5f8-4ba9-9371-4ff8fc1ed33c}", SpatialAnalysisToolVolumeCalcDelayRange)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcDelayRange"] = SpatialAnalysisToolVolumeCalcDelayRange
@@ -31865,14 +27311,7 @@ class SpatialAnalysisToolVolumeCalcFile(ISpatialAnalysisToolVolumeCalcFile, ISpa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcFile._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcFile._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcFile.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFile, [ISpatialAnalysisToolVolumeCalcFile, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{188f96c6-9568-4609-9944-dfc5fb7247c5}", SpatialAnalysisToolVolumeCalcFile)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFile"] = SpatialAnalysisToolVolumeCalcFile
@@ -31892,14 +27331,7 @@ class SpatialAnalysisToolVolumeCalcFromScalar(ISpatialAnalysisToolVolumeCalcFrom
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcFromScalar._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcFromScalar._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcFromScalar.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFromScalar, [ISpatialAnalysisToolVolumeCalcFromScalar, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{73219623-93c0-4c6e-961a-7fae5dfe9234}", SpatialAnalysisToolVolumeCalcFromScalar)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFromScalar"] = SpatialAnalysisToolVolumeCalcFromScalar
@@ -31919,14 +27351,7 @@ class SpatialAnalysisToolVolumeCalcRange(ISpatialAnalysisToolVolumeCalcRange, IS
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcRange._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcRange._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcRange.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcRange, [ISpatialAnalysisToolVolumeCalcRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7f1aa95f-e8d6-4faf-925b-98785243ba67}", SpatialAnalysisToolVolumeCalcRange)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcRange"] = SpatialAnalysisToolVolumeCalcRange
@@ -31946,14 +27371,7 @@ class SpatialAnalysisToolVolumeCalcSolarIntensity(ISpatialAnalysisToolVolumeCalc
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCalcSolarIntensity._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalcSolarIntensity._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCalc._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCalcSolarIntensity.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcSolarIntensity, [ISpatialAnalysisToolVolumeCalcSolarIntensity, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7796e871-d645-4f65-a3dc-de687b6fbcd5}", SpatialAnalysisToolVolumeCalcSolarIntensity)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcSolarIntensity"] = SpatialAnalysisToolVolumeCalcSolarIntensity
@@ -31973,14 +27391,7 @@ class SpatialAnalysisToolVolumeCombined(ISpatialAnalysisToolVolumeCombined, ISpa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeCombined._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeCombined._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeCombined.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCombined, [ISpatialAnalysisToolVolumeCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7ECD2E89-B432-47C3-A80F-AF6429E66746}", SpatialAnalysisToolVolumeCombined)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCombined"] = SpatialAnalysisToolVolumeCombined
@@ -32000,14 +27411,7 @@ class SpatialAnalysisToolVolumeFromCalc(ISpatialAnalysisToolVolumeFromCalc, ISpa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeFromCalc._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeFromCalc._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromCalc.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromCalc, [ISpatialAnalysisToolVolumeFromCalc, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0F2AC0BF-4645-4C7F-9660-A894E267FD59}", SpatialAnalysisToolVolumeFromCalc)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromCalc"] = SpatialAnalysisToolVolumeFromCalc
@@ -32027,14 +27431,7 @@ class SpatialAnalysisToolVolumeFromCondition(ISpatialAnalysisToolVolumeFromCondi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeFromCondition._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeFromCondition._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromCondition.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromCondition, [ISpatialAnalysisToolVolumeFromCondition, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{A2546B12-78BF-4F8F-87C2-31BC73DA265B}", SpatialAnalysisToolVolumeFromCondition)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromCondition"] = SpatialAnalysisToolVolumeFromCondition
@@ -32054,14 +27451,7 @@ class SpatialAnalysisToolVolumeFromGrid(ISpatialAnalysisToolVolumeFromGrid, ISpa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeFromGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeFromGrid._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromGrid.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromGrid, [ISpatialAnalysisToolVolumeFromGrid, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D49FE282-4C05-4097-970C-1282997378E9}", SpatialAnalysisToolVolumeFromGrid)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromGrid"] = SpatialAnalysisToolVolumeFromGrid
@@ -32081,14 +27471,7 @@ class SpatialAnalysisToolVolumeFromTimeSatisfaction(ISpatialAnalysisToolVolumeFr
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeFromTimeSatisfaction._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeFromTimeSatisfaction._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeFromTimeSatisfaction.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromTimeSatisfaction, [ISpatialAnalysisToolVolumeFromTimeSatisfaction, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{29ECFCF5-9E5E-4E17-99AA-0B312227CFBF}", SpatialAnalysisToolVolumeFromTimeSatisfaction)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromTimeSatisfaction"] = SpatialAnalysisToolVolumeFromTimeSatisfaction
@@ -32106,13 +27489,7 @@ class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWor
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGrid._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGrid.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGrid, [ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B7068C38-74D7-4F22-B0C4-A0DBA06DF373}", SpatialAnalysisToolVolumeGrid)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGrid"] = SpatialAnalysisToolVolumeGrid
@@ -32132,14 +27509,7 @@ class SpatialAnalysisToolVolumeGridBearingAlt(ISpatialAnalysisToolVolumeGridBear
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridBearingAlt._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridBearingAlt._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGrid._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridBearingAlt.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridBearingAlt, [ISpatialAnalysisToolVolumeGridBearingAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{ED60A16E-82F8-4E0A-9F07-CF8DF05C985A}", SpatialAnalysisToolVolumeGridBearingAlt)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridBearingAlt"] = SpatialAnalysisToolVolumeGridBearingAlt
@@ -32159,14 +27529,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGridCarte
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridCartesian._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridCartesian._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGrid._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridCartesian.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCartesian, [ISpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AF15D0A4-BB42-4762-A761-9BD11DC948D0}", SpatialAnalysisToolVolumeGridCartesian)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCartesian"] = SpatialAnalysisToolVolumeGridCartesian
@@ -32186,14 +27549,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGridCon
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridConstrained._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridConstrained._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGrid._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridConstrained.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridConstrained, [ISpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{253FC52C-5554-4A53-AE3D-624316ECFFFD}", SpatialAnalysisToolVolumeGridConstrained)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridConstrained"] = SpatialAnalysisToolVolumeGridConstrained
@@ -32213,14 +27569,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGridCyl
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridCylindrical._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridCylindrical._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGrid._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridCylindrical.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCylindrical, [ISpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{55C6A7AA-5354-4DF1-9A0E-F62CB01115C8}", SpatialAnalysisToolVolumeGridCylindrical)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCylindrical"] = SpatialAnalysisToolVolumeGridCylindrical
@@ -32240,14 +27589,7 @@ class SpatialAnalysisToolVolumeGridLatLonAlt(ISpatialAnalysisToolVolumeGridLatLo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridLatLonAlt._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridLatLonAlt._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGrid._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridLatLonAlt.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridLatLonAlt, [ISpatialAnalysisToolVolumeGridLatLonAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{89C10FC4-4031-4B63-9C55-E092DDF3839D}", SpatialAnalysisToolVolumeGridLatLonAlt)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridLatLonAlt"] = SpatialAnalysisToolVolumeGridLatLonAlt
@@ -32263,12 +27605,7 @@ class SpatialAnalysisToolVolumeGridResult(ISpatialAnalysisToolVolumeGridResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridResult._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridResult.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridResult, [ISpatialAnalysisToolVolumeGridResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{43B95CA7-5CCA-4477-9F37-63A86CD9DEBB}", SpatialAnalysisToolVolumeGridResult)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridResult"] = SpatialAnalysisToolVolumeGridResult
@@ -32288,14 +27625,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGridSpher
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeGridSpherical._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGridSpherical._get_property(self, attrname)
-        if ISpatialAnalysisToolVolumeGrid._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeGrid._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeGridSpherical.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridSpherical, [ISpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0DFD2937-3181-4895-AB05-A45FFD744964}", SpatialAnalysisToolVolumeGridSpherical)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridSpherical"] = SpatialAnalysisToolVolumeGridSpherical
@@ -32315,14 +27645,7 @@ class SpatialAnalysisToolVolumeInview(ISpatialAnalysisToolVolumeInview, ISpatial
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeInview._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeInview._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeInview.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeInview, [ISpatialAnalysisToolVolumeInview, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DC8CB747-2714-4F73-8BD6-ED974F0B03AB}", SpatialAnalysisToolVolumeInview)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeInview"] = SpatialAnalysisToolVolumeInview
@@ -32342,14 +27665,7 @@ class SpatialAnalysisToolVolumeLighting(ISpatialAnalysisToolVolumeLighting, ISpa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeLighting._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeLighting._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeLighting.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeLighting, [ISpatialAnalysisToolVolumeLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B9ACC019-A8DD-4342-ADE9-1335215F0FAF}", SpatialAnalysisToolVolumeLighting)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeLighting"] = SpatialAnalysisToolVolumeLighting
@@ -32369,14 +27685,7 @@ class SpatialAnalysisToolVolumeOverTime(ISpatialAnalysisToolVolumeOverTime, ISpa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISpatialAnalysisToolVolumeOverTime._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolumeOverTime._get_property(self, attrname)
-        if ISpatialAnalysisToolVolume._get_property(self, attrname) is not None: found_prop = ISpatialAnalysisToolVolume._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SpatialAnalysisToolVolumeOverTime.")
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeOverTime, [ISpatialAnalysisToolVolumeOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F5AB68EE-DCC1-435F-A0C3-133095B01D2D}", SpatialAnalysisToolVolumeOverTime)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeOverTime"] = SpatialAnalysisToolVolumeOverTime
@@ -32392,12 +27701,7 @@ class AnalysisWorkbenchGeneric(IAnalysisWorkbenchComponent):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchGeneric.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchGeneric, [IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2909EDFB-9BE2-4BD2-A678-186C9D136937}", AnalysisWorkbenchGeneric)
 agcls.AgTypeNameMap["AnalysisWorkbenchGeneric"] = AnalysisWorkbenchGeneric
@@ -32413,12 +27717,7 @@ class AnalysisWorkbenchTypeInfo(IAnalysisWorkbenchTypeInfo):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchTypeInfo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchTypeInfo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchTypeInfo.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchTypeInfo, [IAnalysisWorkbenchTypeInfo])
 
 agcls.AgClassCatalog.add_catalog_entry("{BA26887C-6DFE-4F18-96D8-5694296568D2}", AnalysisWorkbenchTypeInfo)
 agcls.AgTypeNameMap["AnalysisWorkbenchTypeInfo"] = AnalysisWorkbenchTypeInfo
@@ -32436,13 +27735,7 @@ class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchIns
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchContext._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchContext._get_property(self, attrname)
-        if IAnalysisWorkbenchInstance._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchInstance._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchInstance.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchInstance, [IAnalysisWorkbenchContext, IAnalysisWorkbenchInstance])
 
 agcls.AgClassCatalog.add_catalog_entry("{28241775-2044-4AD1-BC1D-D5B345437415}", AnalysisWorkbenchInstance)
 agcls.AgTypeNameMap["AnalysisWorkbenchInstance"] = AnalysisWorkbenchInstance
@@ -32460,13 +27753,7 @@ class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTem
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchContext._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchContext._get_property(self, attrname)
-        if IAnalysisWorkbenchTemplate._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchTemplate._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchTemplate.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchTemplate, [IAnalysisWorkbenchContext, IAnalysisWorkbenchTemplate])
 
 agcls.AgClassCatalog.add_catalog_entry("{DB2ABC0D-53EC-43C9-AB85-3ADBDC10CFE3}", AnalysisWorkbenchTemplate)
 agcls.AgTypeNameMap["AnalysisWorkbenchTemplate"] = AnalysisWorkbenchTemplate
@@ -32484,13 +27771,7 @@ class VectorGeometryToolPointRefTo(IVectorGeometryToolPointRefTo, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointRefTo._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointRefTo._get_property(self, attrname)
-        if IAnalysisWorkbenchRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRefTo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointRefTo.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointRefTo, [IVectorGeometryToolPointRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{33A043CD-6D36-414A-B73C-9DA3ABDE4C6F}", VectorGeometryToolPointRefTo)
 agcls.AgTypeNameMap["VectorGeometryToolPointRefTo"] = VectorGeometryToolPointRefTo
@@ -32508,13 +27789,7 @@ class VectorGeometryToolVectorRefTo(IVectorGeometryToolVectorRefTo, IAnalysisWor
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorRefTo._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorRefTo._get_property(self, attrname)
-        if IAnalysisWorkbenchRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRefTo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorRefTo.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorRefTo, [IVectorGeometryToolVectorRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{76ABF2B5-C60E-4B80-84BA-3F2345E357A6}", VectorGeometryToolVectorRefTo)
 agcls.AgTypeNameMap["VectorGeometryToolVectorRefTo"] = VectorGeometryToolVectorRefTo
@@ -32532,13 +27807,7 @@ class VectorGeometryToolAxesRefTo(IVectorGeometryToolAxesRefTo, IAnalysisWorkben
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesRefTo._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesRefTo._get_property(self, attrname)
-        if IAnalysisWorkbenchRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRefTo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesRefTo.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesRefTo, [IVectorGeometryToolAxesRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{ABAD0C95-5570-461A-9DA0-FD800B10DB20}", VectorGeometryToolAxesRefTo)
 agcls.AgTypeNameMap["VectorGeometryToolAxesRefTo"] = VectorGeometryToolAxesRefTo
@@ -32556,13 +27825,7 @@ class VectorGeometryToolAngleRefTo(IVectorGeometryToolAngleRefTo, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleRefTo._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleRefTo._get_property(self, attrname)
-        if IAnalysisWorkbenchRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRefTo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleRefTo.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleRefTo, [IVectorGeometryToolAngleRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{E1C8DFF6-65AA-4A6B-B160-7315BD795133}", VectorGeometryToolAngleRefTo)
 agcls.AgTypeNameMap["VectorGeometryToolAngleRefTo"] = VectorGeometryToolAngleRefTo
@@ -32580,13 +27843,7 @@ class VectorGeometryToolSystemRefTo(IVectorGeometryToolSystemRefTo, IAnalysisWor
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolSystemRefTo._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemRefTo._get_property(self, attrname)
-        if IAnalysisWorkbenchRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRefTo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemRefTo.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemRefTo, [IVectorGeometryToolSystemRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{4C6DEAA3-3DD0-439F-A58F-A2BC329384A8}", VectorGeometryToolSystemRefTo)
 agcls.AgTypeNameMap["VectorGeometryToolSystemRefTo"] = VectorGeometryToolSystemRefTo
@@ -32604,13 +27861,7 @@ class VectorGeometryToolPlaneRefTo(IVectorGeometryToolPlaneRefTo, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneRefTo._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneRefTo._get_property(self, attrname)
-        if IAnalysisWorkbenchRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRefTo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneRefTo.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneRefTo, [IVectorGeometryToolPlaneRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{C24A1C1D-EEF3-43DB-83BF-04F12E85B155}", VectorGeometryToolPlaneRefTo)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneRefTo"] = VectorGeometryToolPlaneRefTo
@@ -32630,14 +27881,7 @@ class VectorGeometryToolVector(IVectorGeometryToolVector, ITimeToolTimePropertie
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVector.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVector, [IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{64392436-52D5-4274-9483-E10C56BBD037}", VectorGeometryToolVector)
 agcls.AgTypeNameMap["VectorGeometryToolVector"] = VectorGeometryToolVector
@@ -32653,12 +27897,7 @@ class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesLabels._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesLabels._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesLabels.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesLabels, [IVectorGeometryToolAxesLabels])
 
 agcls.AgClassCatalog.add_catalog_entry("{AC9F13AD-1E42-4695-AC74-6259D2013E4F}", VectorGeometryToolAxesLabels)
 agcls.AgTypeNameMap["VectorGeometryToolAxesLabels"] = VectorGeometryToolAxesLabels
@@ -32678,14 +27917,7 @@ class VectorGeometryToolAxes(IVectorGeometryToolAxes, ITimeToolTimeProperties, I
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxes.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxes, [IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{50F5DD10-4D83-4603-94ED-BF7514C26282}", VectorGeometryToolAxes)
 agcls.AgTypeNameMap["VectorGeometryToolAxes"] = VectorGeometryToolAxes
@@ -32705,14 +27937,7 @@ class VectorGeometryToolPoint(IVectorGeometryToolPoint, ITimeToolTimeProperties,
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPoint.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPoint, [IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0092C129-467E-4B36-B971-C53F65481DA9}", VectorGeometryToolPoint)
 agcls.AgTypeNameMap["VectorGeometryToolPoint"] = VectorGeometryToolPoint
@@ -32732,14 +27957,7 @@ class VectorGeometryToolSystem(IVectorGeometryToolSystem, ITimeToolTimePropertie
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolSystem._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystem._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystem.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystem, [IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{20F29E1B-F72A-4B9C-B13B-04E8F1CCAEA6}", VectorGeometryToolSystem)
 agcls.AgTypeNameMap["VectorGeometryToolSystem"] = VectorGeometryToolSystem
@@ -32759,14 +27977,7 @@ class VectorGeometryToolAngle(IVectorGeometryToolAngle, ITimeToolTimeProperties,
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngle._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngle._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngle.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngle, [IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C3F96DA3-00EC-4E20-A66C-B3506100496B}", VectorGeometryToolAngle)
 agcls.AgTypeNameMap["VectorGeometryToolAngle"] = VectorGeometryToolAngle
@@ -32782,12 +27993,7 @@ class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneLabels._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneLabels._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneLabels.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneLabels, [IVectorGeometryToolPlaneLabels])
 
 agcls.AgClassCatalog.add_catalog_entry("{E40312E9-2D04-4F38-8E35-0C1F5CC66B79}", VectorGeometryToolPlaneLabels)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneLabels"] = VectorGeometryToolPlaneLabels
@@ -32807,14 +28013,7 @@ class VectorGeometryToolPlane(IVectorGeometryToolPlane, ITimeToolTimeProperties,
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlane._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlane.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlane, [IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2E6EAA85-8440-4C4E-97FE-76491E05098A}", VectorGeometryToolPlane)
 agcls.AgTypeNameMap["VectorGeometryToolPlane"] = VectorGeometryToolPlane
@@ -32836,15 +28035,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxesAligned
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesAlignedAndConstrained._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesAlignedAndConstrained._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAlignedAndConstrained.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAlignedAndConstrained, [IVectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{46BB7D5B-6593-434F-B288-BF1445920A2C}", VectorGeometryToolAxesAlignedAndConstrained)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAlignedAndConstrained"] = VectorGeometryToolAxesAlignedAndConstrained
@@ -32866,15 +28057,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxesAngularOffset, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesAngularOffset._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesAngularOffset._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAngularOffset.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAngularOffset, [IVectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{64503F8B-96E7-455B-B589-2578ADE1214B}", VectorGeometryToolAxesAngularOffset)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAngularOffset"] = VectorGeometryToolAxesAngularOffset
@@ -32896,15 +28079,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxesFixedAtEpoch, IV
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesFixedAtEpoch._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesFixedAtEpoch._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesFixedAtEpoch.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixedAtEpoch, [IVectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BEEE1271-F9F7-4C9E-A6C9-4337AA4F86AC}", VectorGeometryToolAxesFixedAtEpoch)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFixedAtEpoch"] = VectorGeometryToolAxesFixedAtEpoch
@@ -32926,15 +28101,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxesBPlane, IVectorGeometr
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesBPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesBPlane._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesBPlane.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesBPlane, [IVectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E0F714EA-31E4-4F92-876F-BDD3183C29B5}", VectorGeometryToolAxesBPlane)
 agcls.AgTypeNameMap["VectorGeometryToolAxesBPlane"] = VectorGeometryToolAxesBPlane
@@ -32956,15 +28123,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxesCustomScript, IV
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesCustomScript._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesCustomScript._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesCustomScript.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesCustomScript, [IVectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BC7A87DC-118E-46ED-8657-90DF42B7B101}", VectorGeometryToolAxesCustomScript)
 agcls.AgTypeNameMap["VectorGeometryToolAxesCustomScript"] = VectorGeometryToolAxesCustomScript
@@ -32986,15 +28145,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxesAttitudeFile, IV
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesAttitudeFile._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesAttitudeFile._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAttitudeFile.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAttitudeFile, [IVectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3505D063-9E1B-4964-9865-FFE41F64C8CF}", VectorGeometryToolAxesAttitudeFile)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAttitudeFile"] = VectorGeometryToolAxesAttitudeFile
@@ -33016,15 +28167,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxesFixed, IVectorGeometryT
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesFixed._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesFixed._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesFixed.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixed, [IVectorGeometryToolAxesFixed, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4AE41C73-3C82-405B-B7D2-A6D1BE7EE2EE}", VectorGeometryToolAxesFixed)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFixed"] = VectorGeometryToolAxesFixed
@@ -33046,15 +28189,7 @@ class VectorGeometryToolAxesModelAttach(IVectorGeometryToolAxesModelAttach, IVec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesModelAttach._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesModelAttach._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesModelAttach.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesModelAttach, [IVectorGeometryToolAxesModelAttach, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{816C612A-13DD-4812-BFDE-E3861F8C39FD}", VectorGeometryToolAxesModelAttach)
 agcls.AgTypeNameMap["VectorGeometryToolAxesModelAttach"] = VectorGeometryToolAxesModelAttach
@@ -33076,15 +28211,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxesSpinning, IVectorGeo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesSpinning._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesSpinning._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesSpinning.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesSpinning, [IVectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C0FB8B6D-84CC-4553-ADA9-2F7D91A83AB6}", VectorGeometryToolAxesSpinning)
 agcls.AgTypeNameMap["VectorGeometryToolAxesSpinning"] = VectorGeometryToolAxesSpinning
@@ -33106,15 +28233,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxesOnSurface, IVectorG
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesOnSurface._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesOnSurface._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesOnSurface.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesOnSurface, [IVectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CE8C301A-A846-44FD-8871-5AB4CAACEF11}", VectorGeometryToolAxesOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolAxesOnSurface"] = VectorGeometryToolAxesOnSurface
@@ -33136,15 +28255,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxesTrajectory, IVecto
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesTrajectory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesTrajectory._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesTrajectory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesTrajectory, [IVectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4038771E-73C1-4989-A9AB-4DC37025FACC}", VectorGeometryToolAxesTrajectory)
 agcls.AgTypeNameMap["VectorGeometryToolAxesTrajectory"] = VectorGeometryToolAxesTrajectory
@@ -33166,15 +28277,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxesLagrangeLib
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesLagrangeLibration._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesLagrangeLibration._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesLagrangeLibration.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesLagrangeLibration, [IVectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{16315085-7C87-4A20-865C-0F419A5CDA2F}", VectorGeometryToolAxesLagrangeLibration)
 agcls.AgTypeNameMap["VectorGeometryToolAxesLagrangeLibration"] = VectorGeometryToolAxesLagrangeLibration
@@ -33190,12 +28293,7 @@ class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesCommonTasks._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesCommonTasks._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesCommonTasks.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesCommonTasks, [IVectorGeometryToolAxesCommonTasks])
 
 agcls.AgClassCatalog.add_catalog_entry("{07D4865C-78F1-4B3A-9756-D70050613D4A}", VectorGeometryToolAxesCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolAxesCommonTasks"] = VectorGeometryToolAxesCommonTasks
@@ -33217,15 +28315,7 @@ class VectorGeometryToolAxesAtTimeInstant(IVectorGeometryToolAxesAtTimeInstant, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesAtTimeInstant._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesAtTimeInstant._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesAtTimeInstant.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAtTimeInstant, [IVectorGeometryToolAxesAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{3845C20A-A6E2-45A0-A748-10E9B565C48D}", VectorGeometryToolAxesAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAtTimeInstant"] = VectorGeometryToolAxesAtTimeInstant
@@ -33247,15 +28337,7 @@ class VectorGeometryToolAxesPlugin(IVectorGeometryToolAxesPlugin, IAnalysisWorkb
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesPlugin._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesPlugin._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxes._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesPlugin.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesPlugin, [IVectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{C494C46D-EBC6-45B9-B2E7-C9FF7E75467D}", VectorGeometryToolAxesPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolAxesPlugin"] = VectorGeometryToolAxesPlugin
@@ -33277,15 +28359,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngleBetweenVecto
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleBetweenVectors._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleBetweenVectors._get_property(self, attrname)
-        if IVectorGeometryToolAngle._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngle._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleBetweenVectors.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenVectors, [IVectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2F0AA430-85D0-4479-9540-B1B64EB3B530}", VectorGeometryToolAngleBetweenVectors)
 agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenVectors"] = VectorGeometryToolAngleBetweenVectors
@@ -33307,15 +28381,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngleBetweenPlanes
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleBetweenPlanes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleBetweenPlanes._get_property(self, attrname)
-        if IVectorGeometryToolAngle._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngle._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleBetweenPlanes.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenPlanes, [IVectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{30C2886F-8792-475D-9E42-975308B1B94E}", VectorGeometryToolAngleBetweenPlanes)
 agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenPlanes"] = VectorGeometryToolAngleBetweenPlanes
@@ -33337,15 +28403,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngleDihedral, IVectorG
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleDihedral._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleDihedral._get_property(self, attrname)
-        if IVectorGeometryToolAngle._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngle._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleDihedral.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleDihedral, [IVectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{550855BB-E8F1-440B-BA5C-024ACE2E2A17}", VectorGeometryToolAngleDihedral)
 agcls.AgTypeNameMap["VectorGeometryToolAngleDihedral"] = VectorGeometryToolAngleDihedral
@@ -33367,15 +28425,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngleRotation, IVectorG
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleRotation._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleRotation._get_property(self, attrname)
-        if IVectorGeometryToolAngle._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngle._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleRotation.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleRotation, [IVectorGeometryToolAngleRotation, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AD8B87A3-8407-42AB-B6CA-8E83450C32C1}", VectorGeometryToolAngleRotation)
 agcls.AgTypeNameMap["VectorGeometryToolAngleRotation"] = VectorGeometryToolAngleRotation
@@ -33397,15 +28447,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngleToPlane, IVectorGeo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleToPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleToPlane._get_property(self, attrname)
-        if IVectorGeometryToolAngle._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngle._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleToPlane.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleToPlane, [IVectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8CE8877B-1078-41CD-AEE6-B9DDD92F8201}", VectorGeometryToolAngleToPlane)
 agcls.AgTypeNameMap["VectorGeometryToolAngleToPlane"] = VectorGeometryToolAngleToPlane
@@ -33427,15 +28469,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlaneNormal, IVectorGeome
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneNormal._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneNormal._get_property(self, attrname)
-        if IVectorGeometryToolPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlane._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneNormal.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneNormal, [IVectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0AED319D-7B6C-462B-882B-D363F7A2A86C}", VectorGeometryToolPlaneNormal)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneNormal"] = VectorGeometryToolPlaneNormal
@@ -33457,15 +28491,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlaneQuadrant, IVectorG
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneQuadrant._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneQuadrant._get_property(self, attrname)
-        if IVectorGeometryToolPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlane._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneQuadrant.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneQuadrant, [IVectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8330CE61-25F6-4F92-AE2E-BDB566BA42F3}", VectorGeometryToolPlaneQuadrant)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneQuadrant"] = VectorGeometryToolPlaneQuadrant
@@ -33487,15 +28513,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlaneTrajectory, IVec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneTrajectory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneTrajectory._get_property(self, attrname)
-        if IVectorGeometryToolPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlane._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneTrajectory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTrajectory, [IVectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7BD18F79-6788-48B1-AFB5-243D62C01177}", VectorGeometryToolPlaneTrajectory)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTrajectory"] = VectorGeometryToolPlaneTrajectory
@@ -33517,15 +28535,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlaneTriad, IVectorGeometr
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneTriad._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneTriad._get_property(self, attrname)
-        if IVectorGeometryToolPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlane._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneTriad.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTriad, [IVectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8A4D3940-BD08-4D5C-A171-E0AC90DEB5F4}", VectorGeometryToolPlaneTriad)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTriad"] = VectorGeometryToolPlaneTriad
@@ -33547,15 +28557,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlaneTwoVector, IVecto
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneTwoVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneTwoVector._get_property(self, attrname)
-        if IVectorGeometryToolPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlane._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneTwoVector.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTwoVector, [IVectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{49a61e7a-baba-48fd-9d9d-61f91c520291}", VectorGeometryToolPlaneTwoVector)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTwoVector"] = VectorGeometryToolPlaneTwoVector
@@ -33577,15 +28579,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPointBPlane, IVectorGeome
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointBPlane._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointBPlane._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointBPlane.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointBPlane, [IVectorGeometryToolPointBPlane, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E62329EB-83D1-47CE-8B5B-B795995A2270}", VectorGeometryToolPointBPlane)
 agcls.AgTypeNameMap["VectorGeometryToolPointBPlane"] = VectorGeometryToolPointBPlane
@@ -33607,15 +28601,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPointFile, IVectorGeometryT
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointFile._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointFile._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointFile.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointFile, [IVectorGeometryToolPointFile, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E71C927-09CA-4A90-95F0-CB87E244CE72}", VectorGeometryToolPointFile)
 agcls.AgTypeNameMap["VectorGeometryToolPointFile"] = VectorGeometryToolPointFile
@@ -33637,15 +28623,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPointFixedInSystem
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointFixedInSystem._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointFixedInSystem._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointFixedInSystem.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointFixedInSystem, [IVectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{9FA10E06-094A-446C-BE9A-5BA397776778}", VectorGeometryToolPointFixedInSystem)
 agcls.AgTypeNameMap["VectorGeometryToolPointFixedInSystem"] = VectorGeometryToolPointFixedInSystem
@@ -33667,15 +28645,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPointGrazing, IVectorGeo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointGrazing._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointGrazing._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointGrazing.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointGrazing, [IVectorGeometryToolPointGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7D8A954-B6ED-43A0-8B2C-C58B06DCDFF7}", VectorGeometryToolPointGrazing)
 agcls.AgTypeNameMap["VectorGeometryToolPointGrazing"] = VectorGeometryToolPointGrazing
@@ -33697,15 +28667,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPointGlint, IVectorGeometr
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointGlint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointGlint._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointGlint.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointGlint, [IVectorGeometryToolPointGlint, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{68F85553-0FA2-459D-93AC-BD4D68A01F6F}", VectorGeometryToolPointGlint)
 agcls.AgTypeNameMap["VectorGeometryToolPointGlint"] = VectorGeometryToolPointGlint
@@ -33727,15 +28689,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPointCovarianc
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointCovarianceGrazing._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointCovarianceGrazing._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCovarianceGrazing.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointCovarianceGrazing, [IVectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{84D91807-716E-46F4-AB70-53C73FA21C20}", VectorGeometryToolPointCovarianceGrazing)
 agcls.AgTypeNameMap["VectorGeometryToolPointCovarianceGrazing"] = VectorGeometryToolPointCovarianceGrazing
@@ -33757,15 +28711,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPointPlaneInte
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointPlaneIntersection._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointPlaneIntersection._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointPlaneIntersection.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneIntersection, [IVectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{63F785C4-EC8E-4BCA-AF05-D57BD357D06C}", VectorGeometryToolPointPlaneIntersection)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlaneIntersection"] = VectorGeometryToolPointPlaneIntersection
@@ -33787,15 +28733,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPointOnSurface, IVecto
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointOnSurface._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointOnSurface._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointOnSurface.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointOnSurface, [IVectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{03ECCFD1-B058-4817-826F-EDE2A6880757}", VectorGeometryToolPointOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolPointOnSurface"] = VectorGeometryToolPointOnSurface
@@ -33817,15 +28755,7 @@ class VectorGeometryToolPointModelAttach(IVectorGeometryToolPointModelAttach, IV
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointModelAttach._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointModelAttach._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointModelAttach.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointModelAttach, [IVectorGeometryToolPointModelAttach, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{15958616-F779-4772-9E54-9B134B69BE89}", VectorGeometryToolPointModelAttach)
 agcls.AgTypeNameMap["VectorGeometryToolPointModelAttach"] = VectorGeometryToolPointModelAttach
@@ -33847,15 +28777,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPointSa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointSatelliteCollectionEntry._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointSatelliteCollectionEntry._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointSatelliteCollectionEntry.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointSatelliteCollectionEntry, [IVectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{d0dacbed-0c16-4de5-b32a-9c7624297014}", VectorGeometryToolPointSatelliteCollectionEntry)
 agcls.AgTypeNameMap["VectorGeometryToolPointSatelliteCollectionEntry"] = VectorGeometryToolPointSatelliteCollectionEntry
@@ -33877,15 +28799,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPointPlaneProjec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointPlaneProjection._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointPlaneProjection._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointPlaneProjection.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneProjection, [IVectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C750AD99-2498-42F6-BBBD-CEB1835E8F3A}", VectorGeometryToolPointPlaneProjection)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlaneProjection"] = VectorGeometryToolPointPlaneProjection
@@ -33907,15 +28821,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPointLagrangeL
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointLagrangeLibration._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointLagrangeLibration._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointLagrangeLibration.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointLagrangeLibration, [IVectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{6BF6D976-775A-445D-AD2B-899892F3127E}", VectorGeometryToolPointLagrangeLibration)
 agcls.AgTypeNameMap["VectorGeometryToolPointLagrangeLibration"] = VectorGeometryToolPointLagrangeLibration
@@ -33931,12 +28837,7 @@ class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointCommonTasks._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointCommonTasks._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCommonTasks.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointCommonTasks, [IVectorGeometryToolPointCommonTasks])
 
 agcls.AgClassCatalog.add_catalog_entry("{9866644C-E731-465E-A7AA-3F4667C1729E}", VectorGeometryToolPointCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolPointCommonTasks"] = VectorGeometryToolPointCommonTasks
@@ -33958,15 +28859,7 @@ class VectorGeometryToolPointCentBodyIntersect(IVectorGeometryToolPointCentBodyI
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointCentBodyIntersect._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointCentBodyIntersect._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCentBodyIntersect.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointCentBodyIntersect, [IVectorGeometryToolPointCentBodyIntersect, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{882047E8-7CB3-489B-B029-33163CBBA583}", VectorGeometryToolPointCentBodyIntersect)
 agcls.AgTypeNameMap["VectorGeometryToolPointCentBodyIntersect"] = VectorGeometryToolPointCentBodyIntersect
@@ -33988,15 +28881,7 @@ class VectorGeometryToolPointAtTimeInstant(IVectorGeometryToolPointAtTimeInstant
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointAtTimeInstant._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointAtTimeInstant._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointAtTimeInstant.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointAtTimeInstant, [IVectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{8BFB46DF-C6BC-45DA-BAA7-9C996710CFDA}", VectorGeometryToolPointAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolPointAtTimeInstant"] = VectorGeometryToolPointAtTimeInstant
@@ -34018,15 +28903,7 @@ class VectorGeometryToolPointPlugin(IVectorGeometryToolPointPlugin, IAnalysisWor
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointPlugin._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointPlugin._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointPlugin.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlugin, [IVectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{8297DC34-1755-4FE7-BA23-2D9CDE487EF1}", VectorGeometryToolPointPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlugin"] = VectorGeometryToolPointPlugin
@@ -34048,15 +28925,7 @@ class VectorGeometryToolPointCBFixedOffset(IVectorGeometryToolPointCBFixedOffset
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointCBFixedOffset._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointCBFixedOffset._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolPoint._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPoint._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointCBFixedOffset.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointCBFixedOffset, [IVectorGeometryToolPointCBFixedOffset, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{0C76BDAE-992E-4D61-8D09-E6B2B6923A5B}", VectorGeometryToolPointCBFixedOffset)
 agcls.AgTypeNameMap["VectorGeometryToolPointCBFixedOffset"] = VectorGeometryToolPointCBFixedOffset
@@ -34078,15 +28947,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystemAssembled, IVec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolSystemAssembled._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemAssembled._get_property(self, attrname)
-        if IVectorGeometryToolSystem._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystem._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemAssembled.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemAssembled, [IVectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CE4E84B1-8CCF-467A-A3ED-274D0943407F}", VectorGeometryToolSystemAssembled)
 agcls.AgTypeNameMap["VectorGeometryToolSystemAssembled"] = VectorGeometryToolSystemAssembled
@@ -34108,15 +28969,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystemOnSurface, IVec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolSystemOnSurface._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemOnSurface._get_property(self, attrname)
-        if IVectorGeometryToolSystem._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystem._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemOnSurface.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemOnSurface, [IVectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{073423F9-A59D-4313-B499-C86A45C63513}", VectorGeometryToolSystemOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolSystemOnSurface"] = VectorGeometryToolSystemOnSurface
@@ -34132,12 +28985,7 @@ class AnalysisWorkbenchLLAPosition(IAnalysisWorkbenchLLAPosition):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchLLAPosition._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchLLAPosition._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchLLAPosition.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchLLAPosition, [IAnalysisWorkbenchLLAPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{CB962F51-978A-43F9-A88B-AAB62117F93C}", AnalysisWorkbenchLLAPosition)
 agcls.AgTypeNameMap["AnalysisWorkbenchLLAPosition"] = AnalysisWorkbenchLLAPosition
@@ -34153,12 +29001,7 @@ class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolSystemCommonTasks._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemCommonTasks._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemCommonTasks.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemCommonTasks, [IVectorGeometryToolSystemCommonTasks])
 
 agcls.AgClassCatalog.add_catalog_entry("{EBE7AF41-FC7E-4D82-B522-72B4AA551B41}", VectorGeometryToolSystemCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolSystemCommonTasks"] = VectorGeometryToolSystemCommonTasks
@@ -34180,15 +29023,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVectorAngleRate, IVec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorAngleRate._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorAngleRate._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorAngleRate.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngleRate, [IVectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{5769E079-8E9B-40B2-B2EF-14F202AF5666}", VectorGeometryToolVectorAngleRate)
 agcls.AgTypeNameMap["VectorGeometryToolVectorAngleRate"] = VectorGeometryToolVectorAngleRate
@@ -34210,15 +29045,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVectorApoapsis, IVecto
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorApoapsis._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorApoapsis._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorApoapsis.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorApoapsis, [IVectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{22E4138C-29C6-4401-91E0-DF0C00422302}", VectorGeometryToolVectorApoapsis)
 agcls.AgTypeNameMap["VectorGeometryToolVectorApoapsis"] = VectorGeometryToolVectorApoapsis
@@ -34240,15 +29067,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVectorFixedAtEpoch
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorFixedAtEpoch._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorFixedAtEpoch._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFixedAtEpoch.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtEpoch, [IVectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{FA8DB5F5-1F28-40E6-9B86-489E06D61523}", VectorGeometryToolVectorFixedAtEpoch)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtEpoch"] = VectorGeometryToolVectorFixedAtEpoch
@@ -34270,15 +29089,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVectorAngularVe
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorAngularVelocity._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorAngularVelocity._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorAngularVelocity.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngularVelocity, [IVectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2ABC83DB-6F6C-4A91-8597-21BD2715D411}", VectorGeometryToolVectorAngularVelocity)
 agcls.AgTypeNameMap["VectorGeometryToolVectorAngularVelocity"] = VectorGeometryToolVectorAngularVelocity
@@ -34300,15 +29111,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVectorConing, IVectorGeo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorConing._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorConing._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorConing.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorConing, [IVectorGeometryToolVectorConing, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{74E6F986-E292-4115-84E4-9E9953C163B8}", VectorGeometryToolVectorConing)
 agcls.AgTypeNameMap["VectorGeometryToolVectorConing"] = VectorGeometryToolVectorConing
@@ -34330,15 +29133,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVectorCross, IVectorGeome
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorCross._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorCross._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorCross.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorCross, [IVectorGeometryToolVectorCross, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{88B6E3B7-51CD-45DE-97C0-DCFE834C0111}", VectorGeometryToolVectorCross)
 agcls.AgTypeNameMap["VectorGeometryToolVectorCross"] = VectorGeometryToolVectorCross
@@ -34360,15 +29155,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVectorCustomScript
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorCustomScript._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorCustomScript._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorCustomScript.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorCustomScript, [IVectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D65CDDC6-21DA-419F-BF72-79C2376648E8}", VectorGeometryToolVectorCustomScript)
 agcls.AgTypeNameMap["VectorGeometryToolVectorCustomScript"] = VectorGeometryToolVectorCustomScript
@@ -34390,15 +29177,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVectorDerivative, IV
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorDerivative._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorDerivative._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDerivative.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDerivative, [IVectorGeometryToolVectorDerivative, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B81ECB39-CF3E-49AE-8622-F454CD0EA7B2}", VectorGeometryToolVectorDerivative)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDerivative"] = VectorGeometryToolVectorDerivative
@@ -34420,15 +29199,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVectorDisplacement
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorDisplacement._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorDisplacement._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDisplacement.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDisplacement, [IVectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{6CAADA67-7238-4705-9F74-95596344DED0}", VectorGeometryToolVectorDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDisplacement"] = VectorGeometryToolVectorDisplacement
@@ -34450,15 +29221,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVectorTwo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorTwoPlanesIntersection._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorTwoPlanesIntersection._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorTwoPlanesIntersection.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorTwoPlanesIntersection, [IVectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B1145553-76CD-4C1E-AE08-E63E29CF4E46}", VectorGeometryToolVectorTwoPlanesIntersection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorTwoPlanesIntersection"] = VectorGeometryToolVectorTwoPlanesIntersection
@@ -34480,15 +29243,7 @@ class VectorGeometryToolVectorModelAttach(IVectorGeometryToolVectorModelAttach, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorModelAttach._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorModelAttach._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorModelAttach.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorModelAttach, [IVectorGeometryToolVectorModelAttach, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E95BEEB8-C544-4852-9C82-20080343E585}", VectorGeometryToolVectorModelAttach)
 agcls.AgTypeNameMap["VectorGeometryToolVectorModelAttach"] = VectorGeometryToolVectorModelAttach
@@ -34510,15 +29265,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVectorProjection, IV
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorProjection._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorProjection._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorProjection.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjection, [IVectorGeometryToolVectorProjection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7306544A-A8B0-477B-B89D-BA711C9ED600}", VectorGeometryToolVectorProjection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorProjection"] = VectorGeometryToolVectorProjection
@@ -34540,15 +29287,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVectorScaled, IVectorGeo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorScaled._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorScaled._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorScaled.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScaled, [IVectorGeometryToolVectorScaled, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{92D80C29-251B-436B-9DA0-D5BA4B262185}", VectorGeometryToolVectorScaled)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScaled"] = VectorGeometryToolVectorScaled
@@ -34570,15 +29309,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVectorEccentricity
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorEccentricity._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorEccentricity._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorEccentricity.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorEccentricity, [IVectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7F157D7-11EB-4779-955F-98530B9C2608}", VectorGeometryToolVectorEccentricity)
 agcls.AgTypeNameMap["VectorGeometryToolVectorEccentricity"] = VectorGeometryToolVectorEccentricity
@@ -34600,15 +29331,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVectorFixedInAxes, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorFixedInAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorFixedInAxes._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFixedInAxes.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedInAxes, [IVectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{61E9F963-8CFC-4B24-B583-716A64BAE54C}", VectorGeometryToolVectorFixedInAxes)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedInAxes"] = VectorGeometryToolVectorFixedInAxes
@@ -34630,15 +29353,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVectorLineOfNodes, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorLineOfNodes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorLineOfNodes._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorLineOfNodes.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorLineOfNodes, [IVectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3D6B3FD1-93C2-4F11-AB10-B749DF633C29}", VectorGeometryToolVectorLineOfNodes)
 agcls.AgTypeNameMap["VectorGeometryToolVectorLineOfNodes"] = VectorGeometryToolVectorLineOfNodes
@@ -34660,15 +29375,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVectorOrbi
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorOrbitAngularMomentum._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorOrbitAngularMomentum._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorOrbitAngularMomentum.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitAngularMomentum, [IVectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2B38A283-7EDA-43E2-9C04-E9964FCA7D91}", VectorGeometryToolVectorOrbitAngularMomentum)
 agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitAngularMomentum"] = VectorGeometryToolVectorOrbitAngularMomentum
@@ -34690,15 +29397,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVectorOrbitNormal, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorOrbitNormal._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorOrbitNormal._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorOrbitNormal.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitNormal, [IVectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AFBAED88-891B-4EF7-98BD-DEBAF630C0E1}", VectorGeometryToolVectorOrbitNormal)
 agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitNormal"] = VectorGeometryToolVectorOrbitNormal
@@ -34720,15 +29419,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVectorPeriapsis, IVec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorPeriapsis._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorPeriapsis._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorPeriapsis.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorPeriapsis, [IVectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DA81B380-6D7C-48F4-8E7F-472035958B44}", VectorGeometryToolVectorPeriapsis)
 agcls.AgTypeNameMap["VectorGeometryToolVectorPeriapsis"] = VectorGeometryToolVectorPeriapsis
@@ -34750,15 +29441,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVectorReflection, IV
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorReflection._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorReflection._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorReflection.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorReflection, [IVectorGeometryToolVectorReflection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C35F8BF0-ED12-48BF-8770-EE63DAF4A9B1}", VectorGeometryToolVectorReflection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorReflection"] = VectorGeometryToolVectorReflection
@@ -34780,15 +29463,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVectorRotationVe
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorRotationVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorRotationVector._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorRotationVector.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorRotationVector, [IVectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{c599beae-b6c1-495e-8957-a4b9ffc5cb8e}", VectorGeometryToolVectorRotationVector)
 agcls.AgTypeNameMap["VectorGeometryToolVectorRotationVector"] = VectorGeometryToolVectorRotationVector
@@ -34810,15 +29485,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVectorDirection
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorDirectionToStar._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorDirectionToStar._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDirectionToStar.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDirectionToStar, [IVectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{147FDFCC-767A-460C-9833-02A582AFCA9C}", VectorGeometryToolVectorDirectionToStar)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDirectionToStar"] = VectorGeometryToolVectorDirectionToStar
@@ -34840,15 +29507,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IVectorGeometryToolVectorFixedA
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorFixedAtTimeInstant._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorFixedAtTimeInstant._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFixedAtTimeInstant.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtTimeInstant, [IVectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{BC8737B3-A94E-4B68-857F-81E780C874FD}", VectorGeometryToolVectorFixedAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtTimeInstant"] = VectorGeometryToolVectorFixedAtTimeInstant
@@ -34870,15 +29529,7 @@ class VectorGeometryToolVectorLinearCombination(IVectorGeometryToolVectorLinearC
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorLinearCombination._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorLinearCombination._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorLinearCombination.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorLinearCombination, [IVectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{59E2764C-7920-4CDC-B5FF-2590154E1ABE}", VectorGeometryToolVectorLinearCombination)
 agcls.AgTypeNameMap["VectorGeometryToolVectorLinearCombination"] = VectorGeometryToolVectorLinearCombination
@@ -34900,15 +29551,7 @@ class VectorGeometryToolVectorProjectAlongVector(IVectorGeometryToolVectorProjec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorProjectAlongVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorProjectAlongVector._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorProjectAlongVector.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjectAlongVector, [IVectorGeometryToolVectorProjectAlongVector, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{7B76B999-135B-4AAF-ADEA-444FD759417D}", VectorGeometryToolVectorProjectAlongVector)
 agcls.AgTypeNameMap["VectorGeometryToolVectorProjectAlongVector"] = VectorGeometryToolVectorProjectAlongVector
@@ -34930,15 +29573,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IVectorGeometryToolVectorS
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorScalarLinearCombination._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorScalarLinearCombination._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorScalarLinearCombination.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarLinearCombination, [IVectorGeometryToolVectorScalarLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{0FB78FA5-9E5F-4A0F-AD73-FB89A0E523F8}", VectorGeometryToolVectorScalarLinearCombination)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScalarLinearCombination"] = VectorGeometryToolVectorScalarLinearCombination
@@ -34960,15 +29595,7 @@ class VectorGeometryToolVectorScalarScaled(IVectorGeometryToolVectorScalarScaled
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorScalarScaled._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorScalarScaled._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorScalarScaled.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarScaled, [IVectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{9C93B992-687F-4311-B339-DE0DA38409AE}", VectorGeometryToolVectorScalarScaled)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScalarScaled"] = VectorGeometryToolVectorScalarScaled
@@ -34990,15 +29617,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IVectorGeometryToolVectorVelo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorVelocityAcceleration._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorVelocityAcceleration._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorVelocityAcceleration.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorVelocityAcceleration, [IVectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{75A62225-C09F-4F08-B7FE-9216B02DECF2}", VectorGeometryToolVectorVelocityAcceleration)
 agcls.AgTypeNameMap["VectorGeometryToolVectorVelocityAcceleration"] = VectorGeometryToolVectorVelocityAcceleration
@@ -35020,15 +29639,7 @@ class VectorGeometryToolVectorPlugin(IVectorGeometryToolVectorPlugin, IAnalysisW
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorPlugin._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorPlugin._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorPlugin.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorPlugin, [IVectorGeometryToolVectorPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{E105429A-489E-47F6-B827-8E5819FCE917}", VectorGeometryToolVectorPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolVectorPlugin"] = VectorGeometryToolVectorPlugin
@@ -35050,15 +29661,7 @@ class VectorGeometryToolVectorDispSurface(IVectorGeometryToolVectorDispSurface, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorDispSurface._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorDispSurface._get_property(self, attrname)
-        if IAnalysisWorkbenchComponent._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchComponent._get_property(self, attrname)
-        if ITimeToolTimeProperties._get_property(self, attrname) is not None: found_prop = ITimeToolTimeProperties._get_property(self, attrname)
-        if IVectorGeometryToolVector._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVector._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorDispSurface.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDispSurface, [IVectorGeometryToolVectorDispSurface, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{ccd4af03-78af-47ae-902a-90860a17daa4}", VectorGeometryToolVectorDispSurface)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDispSurface"] = VectorGeometryToolVectorDispSurface
@@ -35074,12 +29677,7 @@ class VectorGeometryToolVectorFactory(IVectorGeometryToolVectorFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorFactory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorFactory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFactory, [IVectorGeometryToolVectorFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{084C11E1-D35D-4F42-83D6-3EF43FEC1E23}", VectorGeometryToolVectorFactory)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFactory"] = VectorGeometryToolVectorFactory
@@ -35095,12 +29693,7 @@ class VectorGeometryToolAxesFactory(IVectorGeometryToolAxesFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesFactory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesFactory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesFactory, [IVectorGeometryToolAxesFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{7B3E2402-1E15-43DC-BB48-6E98D377B107}", VectorGeometryToolAxesFactory)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFactory"] = VectorGeometryToolAxesFactory
@@ -35116,12 +29709,7 @@ class VectorGeometryToolSystemFactory(IVectorGeometryToolSystemFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolSystemFactory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemFactory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemFactory, [IVectorGeometryToolSystemFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{01A37414-BA74-4DF3-A007-6A3395C8A859}", VectorGeometryToolSystemFactory)
 agcls.AgTypeNameMap["VectorGeometryToolSystemFactory"] = VectorGeometryToolSystemFactory
@@ -35137,12 +29725,7 @@ class VectorGeometryToolPointFactory(IVectorGeometryToolPointFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointFactory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointFactory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointFactory, [IVectorGeometryToolPointFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{6C79F3B2-8AE5-468A-940F-F0988752B309}", VectorGeometryToolPointFactory)
 agcls.AgTypeNameMap["VectorGeometryToolPointFactory"] = VectorGeometryToolPointFactory
@@ -35158,12 +29741,7 @@ class VectorGeometryToolPlaneFactory(IVectorGeometryToolPlaneFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneFactory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneFactory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneFactory, [IVectorGeometryToolPlaneFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{6F83DB0C-0AFB-4831-BED0-63AE2F8FEFFB}", VectorGeometryToolPlaneFactory)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneFactory"] = VectorGeometryToolPlaneFactory
@@ -35179,12 +29757,7 @@ class VectorGeometryToolAngleFactory(IVectorGeometryToolAngleFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleFactory._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleFactory.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleFactory, [IVectorGeometryToolAngleFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{0888F89F-9D77-4FCE-9A08-67FCBE870187}", VectorGeometryToolAngleFactory)
 agcls.AgTypeNameMap["VectorGeometryToolAngleFactory"] = VectorGeometryToolAngleFactory
@@ -35200,12 +29773,7 @@ class VectorGeometryToolVectorGroup(IVectorGeometryToolVectorGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolVectorGroup._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolVectorGroup.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorGroup, [IVectorGeometryToolVectorGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{69ABE9EE-BAA4-40A7-8097-06DBE70D71D5}", VectorGeometryToolVectorGroup)
 agcls.AgTypeNameMap["VectorGeometryToolVectorGroup"] = VectorGeometryToolVectorGroup
@@ -35221,12 +29789,7 @@ class VectorGeometryToolPointGroup(IVectorGeometryToolPointGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPointGroup._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPointGroup.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointGroup, [IVectorGeometryToolPointGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{0793BE73-C894-4AF7-BFDB-5D61F5C3B6FD}", VectorGeometryToolPointGroup)
 agcls.AgTypeNameMap["VectorGeometryToolPointGroup"] = VectorGeometryToolPointGroup
@@ -35242,12 +29805,7 @@ class VectorGeometryToolAngleGroup(IVectorGeometryToolAngleGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAngleGroup._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAngleGroup.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleGroup, [IVectorGeometryToolAngleGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{CF6C41CC-A02E-424C-8E7E-B5BA05F1FAF3}", VectorGeometryToolAngleGroup)
 agcls.AgTypeNameMap["VectorGeometryToolAngleGroup"] = VectorGeometryToolAngleGroup
@@ -35263,12 +29821,7 @@ class VectorGeometryToolAxesGroup(IVectorGeometryToolAxesGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolAxesGroup._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolAxesGroup.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesGroup, [IVectorGeometryToolAxesGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{2D792657-9D6E-4B1E-AEAB-B964839C6F94}", VectorGeometryToolAxesGroup)
 agcls.AgTypeNameMap["VectorGeometryToolAxesGroup"] = VectorGeometryToolAxesGroup
@@ -35284,12 +29837,7 @@ class VectorGeometryToolPlaneGroup(IVectorGeometryToolPlaneGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolPlaneGroup._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolPlaneGroup.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneGroup, [IVectorGeometryToolPlaneGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{15117A82-3EE6-483E-A65E-2A44F60DB355}", VectorGeometryToolPlaneGroup)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneGroup"] = VectorGeometryToolPlaneGroup
@@ -35305,12 +29853,7 @@ class VectorGeometryToolSystemGroup(IVectorGeometryToolSystemGroup):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolSystemGroup._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemGroup._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolSystemGroup.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemGroup, [IVectorGeometryToolSystemGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{65E8F1CC-E68C-4EF6-9A68-443DD01C55E2}", VectorGeometryToolSystemGroup)
 agcls.AgTypeNameMap["VectorGeometryToolSystemGroup"] = VectorGeometryToolSystemGroup
@@ -35326,12 +29869,7 @@ class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchProvider._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchProvider._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchProvider.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchProvider, [IAnalysisWorkbenchProvider])
 
 agcls.AgClassCatalog.add_catalog_entry("{D9031FE1-81E1-4818-944D-5F00FC3EC97D}", AnalysisWorkbenchProvider)
 agcls.AgTypeNameMap["AnalysisWorkbenchProvider"] = AnalysisWorkbenchProvider
@@ -35347,12 +29885,7 @@ class AnalysisWorkbenchRoot(IAnalysisWorkbenchRoot):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchRoot._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRoot._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchRoot.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchRoot, [IAnalysisWorkbenchRoot])
 
 agcls.AgClassCatalog.add_catalog_entry("{26E18B6F-19CA-4537-B6B3-D307DAADCDBB}", AnalysisWorkbenchRoot)
 agcls.AgTypeNameMap["AnalysisWorkbenchRoot"] = AnalysisWorkbenchRoot
@@ -35368,12 +29901,7 @@ class VectorGeometryToolWellKnownEarthSystems(IVectorGeometryToolWellKnownEarthS
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolWellKnownEarthSystems._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolWellKnownEarthSystems._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownEarthSystems.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthSystems, [IVectorGeometryToolWellKnownEarthSystems])
 
 agcls.AgClassCatalog.add_catalog_entry("{9CE3EA8C-78D7-4C9E-9D35-4E34DBA9FD19}", VectorGeometryToolWellKnownEarthSystems)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthSystems"] = VectorGeometryToolWellKnownEarthSystems
@@ -35389,12 +29917,7 @@ class VectorGeometryToolWellKnownEarthAxes(IVectorGeometryToolWellKnownEarthAxes
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolWellKnownEarthAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolWellKnownEarthAxes._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownEarthAxes.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthAxes, [IVectorGeometryToolWellKnownEarthAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{B79CA8BC-D4BA-4F76-9278-AB7C9C537859}", VectorGeometryToolWellKnownEarthAxes)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthAxes"] = VectorGeometryToolWellKnownEarthAxes
@@ -35410,12 +29933,7 @@ class VectorGeometryToolWellKnownSunSystems(IVectorGeometryToolWellKnownSunSyste
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolWellKnownSunSystems._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolWellKnownSunSystems._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownSunSystems.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunSystems, [IVectorGeometryToolWellKnownSunSystems])
 
 agcls.AgClassCatalog.add_catalog_entry("{855EB036-E71F-47F9-B27B-57247345282A}", VectorGeometryToolWellKnownSunSystems)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunSystems"] = VectorGeometryToolWellKnownSunSystems
@@ -35431,12 +29949,7 @@ class VectorGeometryToolWellKnownSunAxes(IVectorGeometryToolWellKnownSunAxes):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolWellKnownSunAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolWellKnownSunAxes._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownSunAxes.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunAxes, [IVectorGeometryToolWellKnownSunAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{7F786A33-8851-4FA4-A0CA-DC353170143E}", VectorGeometryToolWellKnownSunAxes)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunAxes"] = VectorGeometryToolWellKnownSunAxes
@@ -35452,12 +29965,7 @@ class VectorGeometryToolWellKnownSystems(IVectorGeometryToolWellKnownSystems):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolWellKnownSystems._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolWellKnownSystems._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownSystems.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSystems, [IVectorGeometryToolWellKnownSystems])
 
 agcls.AgClassCatalog.add_catalog_entry("{8C5101B3-3FDD-443D-A59F-B1E801873E0A}", VectorGeometryToolWellKnownSystems)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownSystems"] = VectorGeometryToolWellKnownSystems
@@ -35473,12 +29981,7 @@ class VectorGeometryToolWellKnownAxes(IVectorGeometryToolWellKnownAxes):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVectorGeometryToolWellKnownAxes._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolWellKnownAxes._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VectorGeometryToolWellKnownAxes.")
+        set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownAxes, [IVectorGeometryToolWellKnownAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{5E24B44A-B46D-4B9B-A22C-615EFAA73A6C}", VectorGeometryToolWellKnownAxes)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownAxes"] = VectorGeometryToolWellKnownAxes
@@ -35496,13 +29999,7 @@ class AnalysisWorkbenchMethodCallAngleFindResult(IAnalysisWorkbenchMethodCallRes
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAngleFindResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleFindResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAngleFindResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{10a2d878-07e8-4a17-86d9-f91267332b29}", AnalysisWorkbenchMethodCallAngleFindResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindResult"] = AnalysisWorkbenchMethodCallAngleFindResult
@@ -35520,13 +30017,7 @@ class AnalysisWorkbenchMethodCallAngleFindWithRateResult(IAnalysisWorkbenchMetho
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAngleFindWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleFindWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAngleFindWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{b6e274e3-92c4-4ee1-80ee-f5d80cd2bdc6}", AnalysisWorkbenchMethodCallAngleFindWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindWithRateResult"] = AnalysisWorkbenchMethodCallAngleFindWithRateResult
@@ -35544,13 +30035,7 @@ class AnalysisWorkbenchMethodCallAxesTransformResult(IAnalysisWorkbenchMethodCal
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAxesTransformResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesTransformResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAxesTransformResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesTransformResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{d5e580c7-4a27-4249-8424-c74b7552d60c}", AnalysisWorkbenchMethodCallAxesTransformResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesTransformResult"] = AnalysisWorkbenchMethodCallAxesTransformResult
@@ -35568,13 +30053,7 @@ class AnalysisWorkbenchMethodCallAxesTransformWithRateResult(IAnalysisWorkbenchM
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAxesTransformWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesTransformWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAxesTransformWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{30590e9a-ff5f-4d09-9282-32617361277f}", AnalysisWorkbenchMethodCallAxesTransformWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesTransformWithRateResult"] = AnalysisWorkbenchMethodCallAxesTransformWithRateResult
@@ -35592,13 +30071,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesResult(IAnalysisWorkbenchMethodCa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAxesFindInAxesResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesFindInAxesResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAxesFindInAxesResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{a03bd5b7-7178-47cf-bad3-a490b325b12e}", AnalysisWorkbenchMethodCallAxesFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesFindInAxesResult"] = AnalysisWorkbenchMethodCallAxesFindInAxesResult
@@ -35616,13 +30089,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult(IAnalysisWorkbench
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAxesFindInAxesWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAxesFindInAxesWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{aa8fab1e-798b-4fa0-97de-c772db073b01}", AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult"] = AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult
@@ -35640,13 +30107,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesResult(IAnalysisWorkbenchMethodC
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolPlaneFindInAxesResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneFindInAxesResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallPlaneFindInAxesResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ad1d6cb-62bb-4d58-bbfb-42370c82041e}", AnalysisWorkbenchMethodCallPlaneFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInAxesResult"] = AnalysisWorkbenchMethodCallPlaneFindInAxesResult
@@ -35664,13 +30125,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult(IAnalysisWorkbenc
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolPlaneFindInAxesWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneFindInAxesWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{385659fa-76a0-4fd8-ac65-45b9fc375d21}", AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult"] = AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult
@@ -35688,13 +30143,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemResult(IAnalysisWorkbenchMetho
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolPlaneFindInSystemResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneFindInSystemResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallPlaneFindInSystemResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{95a12be5-069b-450e-bec2-acb2dee9e956}", AnalysisWorkbenchMethodCallPlaneFindInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInSystemResult"] = AnalysisWorkbenchMethodCallPlaneFindInSystemResult
@@ -35712,13 +30161,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult(IAnalysisWorkbe
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolPlaneFindInSystemWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPlaneFindInSystemWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{57eea690-8b67-4a20-a56a-386b59693b6f}", AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult"] = AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult
@@ -35736,13 +30179,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemResult(IAnalysisWorkbenchMet
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolPointLocateInSystemResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointLocateInSystemResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallPointLocateInSystemResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPointLocateInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{d1c86686-9f3c-40e1-bad0-f4d7fc4e4b38}", AnalysisWorkbenchMethodCallPointLocateInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPointLocateInSystemResult"] = AnalysisWorkbenchMethodCallPointLocateInSystemResult
@@ -35760,13 +30197,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult(IAnalysisWork
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolPointLocateInSystemWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolPointLocateInSystemWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{7fb55c98-4c9b-4236-a8dc-8b645c43efe7}", AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult"] = AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult
@@ -35784,13 +30215,7 @@ class AnalysisWorkbenchMethodCallSystemTransformResult(IAnalysisWorkbenchMethodC
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolSystemTransformResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemTransformResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallSystemTransformResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemTransformResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{69867a9e-52f7-41ac-9305-1dd6d718dd9f}", AnalysisWorkbenchMethodCallSystemTransformResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallSystemTransformResult"] = AnalysisWorkbenchMethodCallSystemTransformResult
@@ -35808,13 +30233,7 @@ class AnalysisWorkbenchMethodCallSystemTransformWithRateResult(IAnalysisWorkbenc
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolSystemTransformWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemTransformWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallSystemTransformWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{29682212-7424-423f-8abb-09e337d5a3c5}", AnalysisWorkbenchMethodCallSystemTransformWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallSystemTransformWithRateResult"] = AnalysisWorkbenchMethodCallSystemTransformWithRateResult
@@ -35832,13 +30251,7 @@ class AnalysisWorkbenchMethodCallSystemFindInSystemResult(IAnalysisWorkbenchMeth
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolSystemFindInSystemResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolSystemFindInSystemResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallSystemFindInSystemResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemFindInSystemResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{a58affee-d2b4-4406-bdb4-1644ac88ff2d}", AnalysisWorkbenchMethodCallSystemFindInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallSystemFindInSystemResult"] = AnalysisWorkbenchMethodCallSystemFindInSystemResult
@@ -35856,13 +30269,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesResult(IAnalysisWorkbenchMethod
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolVectorFindInAxesResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorFindInAxesResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallVectorFindInAxesResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallVectorFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{d1e45a85-ed27-499f-a507-9bda219f9c2e}", AnalysisWorkbenchMethodCallVectorFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallVectorFindInAxesResult"] = AnalysisWorkbenchMethodCallVectorFindInAxesResult
@@ -35880,13 +30287,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult(IAnalysisWorkben
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolVectorFindInAxesWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolVectorFindInAxesWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{a2999b36-fde8-4cb2-aef1-fa1928a1b5d4}", AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult"] = AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult
@@ -35904,13 +30305,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult(IAnalysisWorkbench
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAngleFindAngleWithRateResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleFindAngleWithRateResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{93ce2539-4115-4086-9076-e006c49881da}", AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult"] = AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult
@@ -35928,13 +30323,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleResult(IAnalysisWorkbenchMethodCa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchMethodCallResult._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchMethodCallResult._get_property(self, attrname)
-        if IVectorGeometryToolAngleFindAngleResult._get_property(self, attrname) is not None: found_prop = IVectorGeometryToolAngleFindAngleResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchMethodCallAngleFindAngleResult.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindAngleResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{15dab968-8385-4f28-b60f-9567af54380e}", AnalysisWorkbenchMethodCallAngleFindAngleResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindAngleResult"] = AnalysisWorkbenchMethodCallAngleFindAngleResult
@@ -35950,12 +30339,7 @@ class TimeToolInterval(ITimeToolInterval):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolInterval._get_property(self, attrname) is not None: found_prop = ITimeToolInterval._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolInterval.")
+        set_class_attribute(self, attrname, value, TimeToolInterval, [ITimeToolInterval])
 
 agcls.AgClassCatalog.add_catalog_entry("{7825007C-4D30-46EC-A047-EAF6683C4187}", TimeToolInterval)
 agcls.AgTypeNameMap["TimeToolInterval"] = TimeToolInterval
@@ -35971,12 +30355,7 @@ class TimeToolIntervalCollection(ITimeToolIntervalCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolIntervalCollection._get_property(self, attrname) is not None: found_prop = ITimeToolIntervalCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolIntervalCollection.")
+        set_class_attribute(self, attrname, value, TimeToolIntervalCollection, [ITimeToolIntervalCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{908714CE-1D69-4F68-875A-9B584CF8F2A7}", TimeToolIntervalCollection)
 agcls.AgTypeNameMap["TimeToolIntervalCollection"] = TimeToolIntervalCollection
@@ -35992,12 +30371,7 @@ class AnalysisWorkbenchCentralBody(IAnalysisWorkbenchCentralBody):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchCentralBody._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchCentralBody._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCentralBody.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBody, [IAnalysisWorkbenchCentralBody])
 
 agcls.AgClassCatalog.add_catalog_entry("{9A0248DF-B126-4448-A653-CD5C28DC9229}", AnalysisWorkbenchCentralBody)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBody"] = AnalysisWorkbenchCentralBody
@@ -36015,13 +30389,7 @@ class AnalysisWorkbenchCentralBodyRefTo(IAnalysisWorkbenchCentralBodyRefTo, IAna
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchCentralBodyRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchCentralBodyRefTo._get_property(self, attrname)
-        if IAnalysisWorkbenchRefTo._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchRefTo._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCentralBodyRefTo.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyRefTo, [IAnalysisWorkbenchCentralBodyRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{AFB22A58-DB60-4A1B-B0D4-44916CACC759}", AnalysisWorkbenchCentralBodyRefTo)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyRefTo"] = AnalysisWorkbenchCentralBodyRefTo
@@ -36037,12 +30405,7 @@ class AnalysisWorkbenchCentralBodyCollection(IAnalysisWorkbenchCentralBodyCollec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchCentralBodyCollection._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchCentralBodyCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCentralBodyCollection.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyCollection, [IAnalysisWorkbenchCentralBodyCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{E8951B8F-E457-4289-9125-5381515552C4}", AnalysisWorkbenchCentralBodyCollection)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyCollection"] = AnalysisWorkbenchCentralBodyCollection
@@ -36058,12 +30421,7 @@ class AnalysisWorkbenchCollection(IAnalysisWorkbenchCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAnalysisWorkbenchCollection._get_property(self, attrname) is not None: found_prop = IAnalysisWorkbenchCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AnalysisWorkbenchCollection.")
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchCollection, [IAnalysisWorkbenchCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{24B18D3A-675E-467D-A97C-5CD42EB6DC8D}", AnalysisWorkbenchCollection)
 agcls.AgTypeNameMap["AnalysisWorkbenchCollection"] = AnalysisWorkbenchCollection
@@ -36079,12 +30437,7 @@ class TimeToolPointSamplingResult(ITimeToolPointSamplingResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolPointSamplingResult._get_property(self, attrname) is not None: found_prop = ITimeToolPointSamplingResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPointSamplingResult.")
+        set_class_attribute(self, attrname, value, TimeToolPointSamplingResult, [ITimeToolPointSamplingResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{A3132149-15ED-4D7E-85A6-FD1B2BB80B1E}", TimeToolPointSamplingResult)
 agcls.AgTypeNameMap["TimeToolPointSamplingResult"] = TimeToolPointSamplingResult
@@ -36100,12 +30453,7 @@ class TimeToolPointSamplingInterval(ITimeToolPointSamplingInterval):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolPointSamplingInterval._get_property(self, attrname) is not None: found_prop = ITimeToolPointSamplingInterval._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPointSamplingInterval.")
+        set_class_attribute(self, attrname, value, TimeToolPointSamplingInterval, [ITimeToolPointSamplingInterval])
 
 agcls.AgClassCatalog.add_catalog_entry("{8B7546E8-0228-4269-92D1-B3C186AF18EF}", TimeToolPointSamplingInterval)
 agcls.AgTypeNameMap["TimeToolPointSamplingInterval"] = TimeToolPointSamplingInterval
@@ -36121,12 +30469,7 @@ class TimeToolPointSamplingIntervalCollection(ITimeToolPointSamplingIntervalColl
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolPointSamplingIntervalCollection._get_property(self, attrname) is not None: found_prop = ITimeToolPointSamplingIntervalCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolPointSamplingIntervalCollection.")
+        set_class_attribute(self, attrname, value, TimeToolPointSamplingIntervalCollection, [ITimeToolPointSamplingIntervalCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{3F6CF6B1-7192-4960-927D-1FC328122E59}", TimeToolPointSamplingIntervalCollection)
 agcls.AgTypeNameMap["TimeToolPointSamplingIntervalCollection"] = TimeToolPointSamplingIntervalCollection
@@ -36142,12 +30485,7 @@ class TimeToolAxesSamplingResult(ITimeToolAxesSamplingResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolAxesSamplingResult._get_property(self, attrname) is not None: found_prop = ITimeToolAxesSamplingResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolAxesSamplingResult.")
+        set_class_attribute(self, attrname, value, TimeToolAxesSamplingResult, [ITimeToolAxesSamplingResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{54622168-5440-4C86-9539-A0CA336E554B}", TimeToolAxesSamplingResult)
 agcls.AgTypeNameMap["TimeToolAxesSamplingResult"] = TimeToolAxesSamplingResult
@@ -36163,12 +30501,7 @@ class TimeToolAxesSamplingInterval(ITimeToolAxesSamplingInterval):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolAxesSamplingInterval._get_property(self, attrname) is not None: found_prop = ITimeToolAxesSamplingInterval._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolAxesSamplingInterval.")
+        set_class_attribute(self, attrname, value, TimeToolAxesSamplingInterval, [ITimeToolAxesSamplingInterval])
 
 agcls.AgClassCatalog.add_catalog_entry("{069BCA07-B5AB-4A46-A508-AFE218E21B2F}", TimeToolAxesSamplingInterval)
 agcls.AgTypeNameMap["TimeToolAxesSamplingInterval"] = TimeToolAxesSamplingInterval
@@ -36184,12 +30517,7 @@ class TimeToolAxesSamplingIntervalCollection(ITimeToolAxesSamplingIntervalCollec
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITimeToolAxesSamplingIntervalCollection._get_property(self, attrname) is not None: found_prop = ITimeToolAxesSamplingIntervalCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TimeToolAxesSamplingIntervalCollection.")
+        set_class_attribute(self, attrname, value, TimeToolAxesSamplingIntervalCollection, [ITimeToolAxesSamplingIntervalCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{4AD4C296-E643-4CB6-A34A-D33748117EEF}", TimeToolAxesSamplingIntervalCollection)
 agcls.AgTypeNameMap["TimeToolAxesSamplingIntervalCollection"] = TimeToolAxesSamplingIntervalCollection

@@ -1,5 +1,7 @@
 # Copyright 2020-2023, Ansys Government Initiatives 
 
+from __future__ import annotations
+
 import typing
 import grpc
 from enum import IntEnum, IntFlag
@@ -10,6 +12,7 @@ from . import AgGrpcServices_pb2_grpc
 
 from .marshall import AgEnum_arg, OLE_COLOR_arg
 from .apiutil import out_arg
+from .comutil import GUID
 from ..utilities.exceptions import *
 from ..utilities.colors import Color
 
@@ -92,8 +95,9 @@ class grpc_interface(object):
     def __bool__(self):
         return self.client.active() and self.obj.value > 0
 
-    def query_interface(self, guid) -> "grpc_interface":
-        if self.client.SupportsInterface(self.obj, str(guid)):
+    def query_interface(self, guid:GUID|str) -> "grpc_interface":
+        if isinstance(guid, GUID): guid=str(guid)
+        if self.client.SupportsInterface(self.obj, guid):
             return self
         else:
             return None

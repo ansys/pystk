@@ -15,7 +15,9 @@ from .internal  import comutil          as agcom
 from .internal  import coclassutil      as agcls
 from .internal  import marshall         as agmarshall
 from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.apiutil     import (interface_proxy, enumerator_proxy, out_arg, 
+    initialize_from_source_object, get_interface_property, set_interface_attribute, 
+    set_class_attribute)
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
@@ -101,14 +103,7 @@ class IMRUCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMRUCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMRUCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IMRUCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -116,14 +111,9 @@ class IMRUCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMRUCollection.__dict__ and type(IMRUCollection.__dict__[attrname]) == property:
-            return IMRUCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMRUCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMRUCollection.")
+        set_interface_attribute(self, attrname, value, IMRUCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -181,28 +171,16 @@ class IUiFileOpenExt(object):
                              "set_filter_pattern" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiFileOpenExt._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiFileOpenExt from source object.")
+        initialize_from_source_object(self, sourceObject, IUiFileOpenExt)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiFileOpenExt.__dict__ and type(IUiFileOpenExt.__dict__[attrname]) == property:
-            return IUiFileOpenExt.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiFileOpenExt)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiFileOpenExt.")
+        set_interface_attribute(self, attrname, value, IUiFileOpenExt, None)
     
     _get_file_name_metadata = { "name" : "file_name",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -302,28 +280,16 @@ class IUiApplication(object):
                              "get_process_id" : 37, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiApplication._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiApplication from source object.")
+        initialize_from_source_object(self, sourceObject, IUiApplication)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiApplication.__dict__ and type(IUiApplication.__dict__[attrname]) == property:
-            return IUiApplication.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiApplication)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiApplication.")
+        set_interface_attribute(self, attrname, value, IUiApplication, None)
     
     _load_personality_metadata = { "name" : "load_personality",
             "arg_types" : (agcom.BSTR,),
@@ -624,28 +590,16 @@ class IUiApplicationPartnerAccess(object):
         "method_offsets" : { "grant_partner_access" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiApplicationPartnerAccess._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiApplicationPartnerAccess from source object.")
+        initialize_from_source_object(self, sourceObject, IUiApplicationPartnerAccess)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiApplicationPartnerAccess.__dict__ and type(IUiApplicationPartnerAccess.__dict__[attrname]) == property:
-            return IUiApplicationPartnerAccess.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiApplicationPartnerAccess)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiApplicationPartnerAccess.")
+        set_interface_attribute(self, attrname, value, IUiApplicationPartnerAccess, None)
     
     _grant_partner_access_metadata = { "name" : "grant_partner_access",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -670,14 +624,7 @@ class IUiFileOpenExtCollection(object):
                              "item" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiFileOpenExtCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiFileOpenExtCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IUiFileOpenExtCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -685,14 +632,9 @@ class IUiFileOpenExtCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiFileOpenExtCollection.__dict__ and type(IUiFileOpenExtCollection.__dict__[attrname]) == property:
-            return IUiFileOpenExtCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiFileOpenExtCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiFileOpenExtCollection.")
+        set_interface_attribute(self, attrname, value, IUiFileOpenExtCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -750,13 +692,7 @@ class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiApplication._get_property(self, attrname) is not None: found_prop = IUiApplication._get_property(self, attrname)
-        if IUiApplicationPartnerAccess._get_property(self, attrname) is not None: found_prop = IUiApplicationPartnerAccess._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiApplication.")
+        set_class_attribute(self, attrname, value, UiApplication, [IUiApplication, IUiApplicationPartnerAccess])
 
 agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}", UiApplication)
 agcls.AgTypeNameMap["UiApplication"] = UiApplication
@@ -772,12 +708,7 @@ class MRUCollection(IMRUCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMRUCollection._get_property(self, attrname) is not None: found_prop = IMRUCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MRUCollection.")
+        set_class_attribute(self, attrname, value, MRUCollection, [IMRUCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{8033C4FF-4A7D-4416-9B07-6807EA9C794E}", MRUCollection)
 agcls.AgTypeNameMap["MRUCollection"] = MRUCollection
@@ -793,12 +724,7 @@ class UiFileOpenExtCollection(IUiFileOpenExtCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiFileOpenExtCollection._get_property(self, attrname) is not None: found_prop = IUiFileOpenExtCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExtCollection.")
+        set_class_attribute(self, attrname, value, UiFileOpenExtCollection, [IUiFileOpenExtCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{A733AF99-E82E-42D8-AD9A-29BB005B3703}", UiFileOpenExtCollection)
 agcls.AgTypeNameMap["UiFileOpenExtCollection"] = UiFileOpenExtCollection
@@ -814,12 +740,7 @@ class UiFileOpenExt(IUiFileOpenExt):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiFileOpenExt._get_property(self, attrname) is not None: found_prop = IUiFileOpenExt._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExt.")
+        set_class_attribute(self, attrname, value, UiFileOpenExt, [IUiFileOpenExt])
 
 agcls.AgClassCatalog.add_catalog_entry("{26A2C933-DB59-434E-85FD-2D92A97AA8AD}", UiFileOpenExt)
 agcls.AgTypeNameMap["UiFileOpenExt"] = UiFileOpenExt

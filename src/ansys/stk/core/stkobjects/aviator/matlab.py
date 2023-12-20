@@ -13,7 +13,8 @@ from ...internal  import comutil          as agcom
 from ...internal  import coclassutil      as agcls
 from ...internal  import marshall         as agmarshall
 from ...internal.comutil     import IUnknown
-from ...internal.apiutil     import interface_proxy, out_arg
+from ...internal.apiutil     import (interface_proxy, out_arg, initialize_from_source_object, 
+    get_interface_property, set_interface_attribute, set_class_attribute)
 from ...internal.eventutil   import *
 from ...utilities.exceptions import *
 
@@ -39,28 +40,16 @@ class IStrategyMATLABNav(object):
                              "set_display_output" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IStrategyMATLABNav._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IStrategyMATLABNav from source object.")
+        initialize_from_source_object(self, sourceObject, IStrategyMATLABNav)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IStrategyMATLABNav.__dict__ and type(IStrategyMATLABNav.__dict__[attrname]) == property:
-            return IStrategyMATLABNav.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IStrategyMATLABNav)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLABNav.")
+        set_interface_attribute(self, attrname, value, IStrategyMATLABNav, None)
     
     _get_function_name_metadata = { "name" : "function_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -137,28 +126,16 @@ class IStrategyMATLABProfile(object):
                              "set_display_output" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IStrategyMATLABProfile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IStrategyMATLABProfile from source object.")
+        initialize_from_source_object(self, sourceObject, IStrategyMATLABProfile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IStrategyMATLABProfile.__dict__ and type(IStrategyMATLABProfile.__dict__[attrname]) == property:
-            return IStrategyMATLABProfile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IStrategyMATLABProfile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLABProfile.")
+        set_interface_attribute(self, attrname, value, IStrategyMATLABProfile, None)
     
     _get_function_name_metadata = { "name" : "function_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -235,28 +212,16 @@ class IStrategyMATLABFull3D(object):
                              "set_display_output" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IStrategyMATLABFull3D._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IStrategyMATLABFull3D from source object.")
+        initialize_from_source_object(self, sourceObject, IStrategyMATLABFull3D)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IStrategyMATLABFull3D.__dict__ and type(IStrategyMATLABFull3D.__dict__[attrname]) == property:
-            return IStrategyMATLABFull3D.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IStrategyMATLABFull3D)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLABFull3D.")
+        set_interface_attribute(self, attrname, value, IStrategyMATLABFull3D, None)
     
     _get_function_name_metadata = { "name" : "function_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -355,28 +320,16 @@ class IStrategyMATLAB3DGuidance(object):
                              "cancel_tgt_position_vel" : 29, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IStrategyMATLAB3DGuidance._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IStrategyMATLAB3DGuidance from source object.")
+        initialize_from_source_object(self, sourceObject, IStrategyMATLAB3DGuidance)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IStrategyMATLAB3DGuidance.__dict__ and type(IStrategyMATLAB3DGuidance.__dict__[attrname]) == property:
-            return IStrategyMATLAB3DGuidance.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IStrategyMATLAB3DGuidance)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLAB3DGuidance.")
+        set_interface_attribute(self, attrname, value, IStrategyMATLAB3DGuidance, None)
     
     _get_target_name_metadata = { "name" : "target_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -625,13 +578,7 @@ class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IStrategyMATLABNav._get_property(self, attrname) is not None: found_prop = IStrategyMATLABNav._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLABNav.")
+        set_class_attribute(self, attrname, value, StrategyMATLABNav, [IStrategyMATLABNav, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{4447B282-8834-4451-8CD8-0A3168015B45}", StrategyMATLABNav)
 agcls.AgTypeNameMap["StrategyMATLABNav"] = StrategyMATLABNav
@@ -649,13 +596,7 @@ class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IStrategyMATLABProfile._get_property(self, attrname) is not None: found_prop = IStrategyMATLABProfile._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLABProfile.")
+        set_class_attribute(self, attrname, value, StrategyMATLABProfile, [IStrategyMATLABProfile, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{1bf89982-311b-4b61-ba17-00881de09863}", StrategyMATLABProfile)
 agcls.AgTypeNameMap["StrategyMATLABProfile"] = StrategyMATLABProfile
@@ -673,13 +614,7 @@ class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IStrategyMATLABFull3D._get_property(self, attrname) is not None: found_prop = IStrategyMATLABFull3D._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLABFull3D.")
+        set_class_attribute(self, attrname, value, StrategyMATLABFull3D, [IStrategyMATLABFull3D, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{7fdf8025-0f64-4f1a-9c12-8275051354d4}", StrategyMATLABFull3D)
 agcls.AgTypeNameMap["StrategyMATLABFull3D"] = StrategyMATLABFull3D
@@ -697,13 +632,7 @@ class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IStrategyMATLAB3DGuidance._get_property(self, attrname) is not None: found_prop = IStrategyMATLAB3DGuidance._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in StrategyMATLAB3DGuidance.")
+        set_class_attribute(self, attrname, value, StrategyMATLAB3DGuidance, [IStrategyMATLAB3DGuidance, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{c90db66d-a2fa-4474-9c21-2e8f61b93fad}", StrategyMATLAB3DGuidance)
 agcls.AgTypeNameMap["StrategyMATLAB3DGuidance"] = StrategyMATLAB3DGuidance
@@ -719,12 +648,7 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAutomationStrategyFactory._get_property(self, attrname) is not None: found_prop = IAutomationStrategyFactory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverMATLABFactory.")
+        set_class_attribute(self, attrname, value, BasicManeuverMATLABFactory, [IAutomationStrategyFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{29352A63-3095-4D7E-A056-189D672BF458}", BasicManeuverMATLABFactory)
 agcls.AgTypeNameMap["BasicManeuverMATLABFactory"] = BasicManeuverMATLABFactory

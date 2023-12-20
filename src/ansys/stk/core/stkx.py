@@ -24,7 +24,9 @@ from .internal  import coclassutil      as agcls
 from .internal  import marshall         as agmarshall
 from .utilities import colors           as agcolor
 from .internal.comutil     import IDispatch, IPictureDisp
-from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.apiutil     import (interface_proxy, enumerator_proxy, out_arg, 
+    initialize_from_source_object, get_interface_property, set_interface_attribute, 
+    set_class_attribute)
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
@@ -332,28 +334,16 @@ class ISTKXSSLCertificateErrorEventArgs(object):
                              "set_handled" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISTKXSSLCertificateErrorEventArgs._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISTKXSSLCertificateErrorEventArgs from source object.")
+        initialize_from_source_object(self, sourceObject, ISTKXSSLCertificateErrorEventArgs)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISTKXSSLCertificateErrorEventArgs.__dict__ and type(ISTKXSSLCertificateErrorEventArgs.__dict__[attrname]) == property:
-            return ISTKXSSLCertificateErrorEventArgs.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISTKXSSLCertificateErrorEventArgs)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXSSLCertificateErrorEventArgs.")
+        set_interface_attribute(self, attrname, value, ISTKXSSLCertificateErrorEventArgs, None)
     
     _set_ignore_error_metadata = { "name" : "set_ignore_error",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -464,28 +454,16 @@ class ISTKXConControlQuitReceivedEventArgs(object):
                              "set_acknowledge" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISTKXConControlQuitReceivedEventArgs._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISTKXConControlQuitReceivedEventArgs from source object.")
+        initialize_from_source_object(self, sourceObject, ISTKXConControlQuitReceivedEventArgs)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISTKXConControlQuitReceivedEventArgs.__dict__ and type(ISTKXConControlQuitReceivedEventArgs.__dict__[attrname]) == property:
-            return ISTKXConControlQuitReceivedEventArgs.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISTKXConControlQuitReceivedEventArgs)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXConControlQuitReceivedEventArgs.")
+        set_interface_attribute(self, attrname, value, ISTKXConControlQuitReceivedEventArgs, None)
     
     _get_acknowledge_metadata = { "name" : "acknowledge",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -522,28 +500,16 @@ class IPickInfoData(object):
                              "get_is_lat_lon_altitude_valid" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPickInfoData._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPickInfoData from source object.")
+        initialize_from_source_object(self, sourceObject, IPickInfoData)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPickInfoData.__dict__ and type(IPickInfoData.__dict__[attrname]) == property:
-            return IPickInfoData.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPickInfoData)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPickInfoData.")
+        set_interface_attribute(self, attrname, value, IPickInfoData, None)
     
     _get_obj_path_metadata = { "name" : "obj_path",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -607,28 +573,16 @@ class IRubberBandPickInfoData(object):
         "method_offsets" : { "get_obj_paths" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRubberBandPickInfoData._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRubberBandPickInfoData from source object.")
+        initialize_from_source_object(self, sourceObject, IRubberBandPickInfoData)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRubberBandPickInfoData.__dict__ and type(IRubberBandPickInfoData.__dict__[attrname]) == property:
-            return IRubberBandPickInfoData.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRubberBandPickInfoData)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRubberBandPickInfoData.")
+        set_interface_attribute(self, attrname, value, IRubberBandPickInfoData, None)
     
     _get_obj_paths_metadata = { "name" : "obj_paths",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -679,28 +633,16 @@ class ISTKXApplication(object):
                              "use_software_renderer" : 28, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISTKXApplication._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISTKXApplication from source object.")
+        initialize_from_source_object(self, sourceObject, ISTKXApplication)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISTKXApplication.__dict__ and type(ISTKXApplication.__dict__[attrname]) == property:
-            return ISTKXApplication.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISTKXApplication)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXApplication.")
+        set_interface_attribute(self, attrname, value, ISTKXApplication, None)
     def Subscribe(self) -> ISTKXApplicationEventHandler:
         """Returns an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
         return ISTKXApplicationEventHandler(self._intf)
@@ -936,28 +878,16 @@ class IDataObject(object):
         "method_offsets" : { "get_files" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDataObject._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDataObject from source object.")
+        initialize_from_source_object(self, sourceObject, IDataObject)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDataObject.__dict__ and type(IDataObject.__dict__[attrname]) == property:
-            return IDataObject.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDataObject)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IDataObject.")
+        set_interface_attribute(self, attrname, value, IDataObject, None)
     
     _get_files_metadata = { "name" : "files",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -984,14 +914,7 @@ class IObjPathCollection(object):
                              "range" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IObjPathCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IObjPathCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IObjPathCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -999,14 +922,9 @@ class IObjPathCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IObjPathCollection.__dict__ and type(IObjPathCollection.__dict__[attrname]) == property:
-            return IObjPathCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IObjPathCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IObjPathCollection.")
+        set_interface_attribute(self, attrname, value, IObjPathCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -1067,28 +985,16 @@ class IDrawElem(object):
                              "set_visible" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDrawElem._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDrawElem from source object.")
+        initialize_from_source_object(self, sourceObject, IDrawElem)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDrawElem.__dict__ and type(IDrawElem.__dict__[attrname]) == property:
-            return IDrawElem.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDrawElem)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IDrawElem.")
+        set_interface_attribute(self, attrname, value, IDrawElem, None)
     
     _get_visible_metadata = { "name" : "visible",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1129,14 +1035,7 @@ class IDrawElemRect(IDrawElem):
                              "set_line_style" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDrawElemRect._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDrawElemRect from source object.")
+        initialize_from_source_object(self, sourceObject, IDrawElemRect)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
         IDrawElem._private_init(self, intf)
@@ -1144,14 +1043,9 @@ class IDrawElemRect(IDrawElem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDrawElemRect.__dict__ and type(IDrawElemRect.__dict__[attrname]) == property:
-            return IDrawElemRect.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDrawElemRect)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            IDrawElem.__setattr__(self, attrname, value)
+        set_interface_attribute(self, attrname, value, IDrawElemRect, IDrawElem)
     
     _get_left_metadata = { "name" : "left",
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
@@ -1258,14 +1152,7 @@ class IDrawElemCollection(object):
                              "set_visible" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDrawElemCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDrawElemCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IDrawElemCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -1273,14 +1160,9 @@ class IDrawElemCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDrawElemCollection.__dict__ and type(IDrawElemCollection.__dict__[attrname]) == property:
-            return IDrawElemCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDrawElemCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IDrawElemCollection.")
+        set_interface_attribute(self, attrname, value, IDrawElemCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -1371,28 +1253,16 @@ class IWinProjectionPosition(object):
                              "get_is_win_projection_position_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IWinProjectionPosition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IWinProjectionPosition from source object.")
+        initialize_from_source_object(self, sourceObject, IWinProjectionPosition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IWinProjectionPosition.__dict__ and type(IWinProjectionPosition.__dict__[attrname]) == property:
-            return IWinProjectionPosition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IWinProjectionPosition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IWinProjectionPosition.")
+        set_interface_attribute(self, attrname, value, IWinProjectionPosition, None)
     
     _get_x_position_metadata = { "name" : "x_position",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -1442,14 +1312,7 @@ class IDrawElemLine(IDrawElem):
                              "set_line_style" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDrawElemLine._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDrawElemLine from source object.")
+        initialize_from_source_object(self, sourceObject, IDrawElemLine)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
         IDrawElem._private_init(self, intf)
@@ -1457,14 +1320,9 @@ class IDrawElemLine(IDrawElem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDrawElemLine.__dict__ and type(IDrawElemLine.__dict__[attrname]) == property:
-            return IDrawElemLine.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDrawElemLine)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            IDrawElem.__setattr__(self, attrname, value)
+        set_interface_attribute(self, attrname, value, IDrawElemLine, IDrawElem)
     
     _get_left_metadata = { "name" : "left",
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
@@ -1568,14 +1426,7 @@ class IExecCmdResult(object):
                              "get_is_succeeded" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IExecCmdResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IExecCmdResult from source object.")
+        initialize_from_source_object(self, sourceObject, IExecCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -1583,14 +1434,9 @@ class IExecCmdResult(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IExecCmdResult.__dict__ and type(IExecCmdResult.__dict__[attrname]) == property:
-            return IExecCmdResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IExecCmdResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IExecCmdResult.")
+        set_interface_attribute(self, attrname, value, IExecCmdResult, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -1660,14 +1506,7 @@ class IExecMultiCmdResult(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IExecMultiCmdResult._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IExecMultiCmdResult from source object.")
+        initialize_from_source_object(self, sourceObject, IExecMultiCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -1675,14 +1514,9 @@ class IExecMultiCmdResult(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IExecMultiCmdResult.__dict__ and type(IExecMultiCmdResult.__dict__[attrname]) == property:
-            return IExecMultiCmdResult.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IExecMultiCmdResult)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IExecMultiCmdResult.")
+        set_interface_attribute(self, attrname, value, IExecMultiCmdResult, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -1782,28 +1616,16 @@ class IUiAxGraphics3DCntrl(object):
                              "set_picture_from_file" : 48, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiAxGraphics3DCntrl._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiAxGraphics3DCntrl from source object.")
+        initialize_from_source_object(self, sourceObject, IUiAxGraphics3DCntrl)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiAxGraphics3DCntrl.__dict__ and type(IUiAxGraphics3DCntrl.__dict__[attrname]) == property:
-            return IUiAxGraphics3DCntrl.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiAxGraphics3DCntrl)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiAxGraphics3DCntrl.")
+        set_interface_attribute(self, attrname, value, IUiAxGraphics3DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
         """Returns an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
         return IUiAxGraphics3DCntrlEventHandler(self._intf)
@@ -2223,28 +2045,16 @@ class IUiAx2DCntrl(object):
                              "set_pan_mode_enabled" : 45, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiAx2DCntrl._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiAx2DCntrl from source object.")
+        initialize_from_source_object(self, sourceObject, IUiAx2DCntrl)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiAx2DCntrl.__dict__ and type(IUiAx2DCntrl.__dict__[attrname]) == property:
-            return IUiAx2DCntrl.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiAx2DCntrl)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiAx2DCntrl.")
+        set_interface_attribute(self, attrname, value, IUiAx2DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
         """Returns an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
         return IUiAxGraphics2DCntrlEventHandler(self._intf)
@@ -2597,28 +2407,16 @@ class ISTKXApplicationPartnerAccess(object):
         "method_offsets" : { "grant_partner_access" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISTKXApplicationPartnerAccess._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISTKXApplicationPartnerAccess from source object.")
+        initialize_from_source_object(self, sourceObject, ISTKXApplicationPartnerAccess)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISTKXApplicationPartnerAccess.__dict__ and type(ISTKXApplicationPartnerAccess.__dict__[attrname]) == property:
-            return ISTKXApplicationPartnerAccess.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISTKXApplicationPartnerAccess)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXApplicationPartnerAccess.")
+        set_interface_attribute(self, attrname, value, ISTKXApplicationPartnerAccess, None)
     
     _grant_partner_access_metadata = { "name" : "grant_partner_access",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -2643,14 +2441,7 @@ class IDataObjectFiles(object):
                              "get_count" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDataObjectFiles._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDataObjectFiles from source object.")
+        initialize_from_source_object(self, sourceObject, IDataObjectFiles)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -2658,14 +2449,9 @@ class IDataObjectFiles(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDataObjectFiles.__dict__ and type(IDataObjectFiles.__dict__[attrname]) == property:
-            return IDataObjectFiles.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDataObjectFiles)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IDataObjectFiles.")
+        set_interface_attribute(self, attrname, value, IDataObjectFiles, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -2734,28 +2520,16 @@ class IUiAxGraphics2DAnalysisCntrl(object):
                              "set_win_id" : 17, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiAxGraphics2DAnalysisCntrl._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiAxGraphics2DAnalysisCntrl from source object.")
+        initialize_from_source_object(self, sourceObject, IUiAxGraphics2DAnalysisCntrl)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiAxGraphics2DAnalysisCntrl.__dict__ and type(IUiAxGraphics2DAnalysisCntrl.__dict__[attrname]) == property:
-            return IUiAxGraphics2DAnalysisCntrl.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiAxGraphics2DAnalysisCntrl)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiAxGraphics2DAnalysisCntrl.")
+        set_interface_attribute(self, attrname, value, IUiAxGraphics2DAnalysisCntrl, None)
     
     _get_back_color_metadata = { "name" : "back_color",
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
@@ -2902,12 +2676,7 @@ class ExecCmdResult(IExecCmdResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IExecCmdResult._get_property(self, attrname) is not None: found_prop = IExecCmdResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ExecCmdResult.")
+        set_class_attribute(self, attrname, value, ExecCmdResult, [IExecCmdResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}", ExecCmdResult)
 agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
@@ -2923,12 +2692,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IExecMultiCmdResult._get_property(self, attrname) is not None: found_prop = IExecMultiCmdResult._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ExecMultiCmdResult.")
+        set_class_attribute(self, attrname, value, ExecMultiCmdResult, [IExecMultiCmdResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{3849A604-DEB9-428C-8A72-D879719277E5}", ExecMultiCmdResult)
 agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
@@ -2944,12 +2708,7 @@ class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiAxGraphics3DCntrl._get_property(self, attrname) is not None: found_prop = IUiAxGraphics3DCntrl._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiAxGraphics3DCntrl.")
+        set_class_attribute(self, attrname, value, UiAxGraphics3DCntrl, [IUiAxGraphics3DCntrl])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E939AC2-43D9-456E-9FE7-4C3C687BCDF2}", UiAxGraphics3DCntrl)
 agcls.AgTypeNameMap["UiAxGraphics3DCntrl"] = UiAxGraphics3DCntrl
@@ -2965,12 +2724,7 @@ class UiAx2DCntrl(IUiAx2DCntrl):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiAx2DCntrl._get_property(self, attrname) is not None: found_prop = IUiAx2DCntrl._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiAx2DCntrl.")
+        set_class_attribute(self, attrname, value, UiAx2DCntrl, [IUiAx2DCntrl])
 
 agcls.AgClassCatalog.add_catalog_entry("{33FBA419-2BD0-422D-81A7-C5B68A49FB01}", UiAx2DCntrl)
 agcls.AgTypeNameMap["UiAx2DCntrl"] = UiAx2DCntrl
@@ -2986,12 +2740,7 @@ class PickInfoData(IPickInfoData):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPickInfoData._get_property(self, attrname) is not None: found_prop = IPickInfoData._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in PickInfoData.")
+        set_class_attribute(self, attrname, value, PickInfoData, [IPickInfoData])
 
 agcls.AgClassCatalog.add_catalog_entry("{9B6FCD4D-91A0-4855-A113-F7CC8D774608}", PickInfoData)
 agcls.AgTypeNameMap["PickInfoData"] = PickInfoData
@@ -3007,12 +2756,7 @@ class STKXApplication(ISTKXApplication):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISTKXApplication._get_property(self, attrname) is not None: found_prop = ISTKXApplication._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in STKXApplication.")
+        set_class_attribute(self, attrname, value, STKXApplication, [ISTKXApplication])
 
 agcls.AgClassCatalog.add_catalog_entry("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", STKXApplication)
 agcls.AgTypeNameMap["STKXApplication"] = STKXApplication
@@ -3028,12 +2772,7 @@ class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISTKXApplicationPartnerAccess._get_property(self, attrname) is not None: found_prop = ISTKXApplicationPartnerAccess._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in STKXApplicationPartnerAccess.")
+        set_class_attribute(self, attrname, value, STKXApplicationPartnerAccess, [ISTKXApplicationPartnerAccess])
 
 agcls.AgClassCatalog.add_catalog_entry("{3E8358E8-6042-4E4C-B89D-1F42164CDE3D}", STKXApplicationPartnerAccess)
 agcls.AgTypeNameMap["STKXApplicationPartnerAccess"] = STKXApplicationPartnerAccess
@@ -3049,12 +2788,7 @@ class DataObject(IDataObject):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDataObject._get_property(self, attrname) is not None: found_prop = IDataObject._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DataObject.")
+        set_class_attribute(self, attrname, value, DataObject, [IDataObject])
 
 agcls.AgClassCatalog.add_catalog_entry("{C58BE31A-8063-46F9-9751-AF13C1101D75}", DataObject)
 agcls.AgTypeNameMap["DataObject"] = DataObject
@@ -3070,12 +2804,7 @@ class DataObjectFiles(IDataObjectFiles):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDataObjectFiles._get_property(self, attrname) is not None: found_prop = IDataObjectFiles._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DataObjectFiles.")
+        set_class_attribute(self, attrname, value, DataObjectFiles, [IDataObjectFiles])
 
 agcls.AgClassCatalog.add_catalog_entry("{83A2F2F3-3122-4317-8D59-2F43906E4168}", DataObjectFiles)
 agcls.AgTypeNameMap["DataObjectFiles"] = DataObjectFiles
@@ -3091,12 +2820,7 @@ class RubberBandPickInfoData(IRubberBandPickInfoData):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRubberBandPickInfoData._get_property(self, attrname) is not None: found_prop = IRubberBandPickInfoData._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RubberBandPickInfoData.")
+        set_class_attribute(self, attrname, value, RubberBandPickInfoData, [IRubberBandPickInfoData])
 
 agcls.AgClassCatalog.add_catalog_entry("{A7EB5C99-B818-4531-B598-368AA2DD3CF6}", RubberBandPickInfoData)
 agcls.AgTypeNameMap["RubberBandPickInfoData"] = RubberBandPickInfoData
@@ -3112,12 +2836,7 @@ class ObjPathCollection(IObjPathCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IObjPathCollection._get_property(self, attrname) is not None: found_prop = IObjPathCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ObjPathCollection.")
+        set_class_attribute(self, attrname, value, ObjPathCollection, [IObjPathCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{0B3FFC58-8105-4BE4-9D60-254A142448D5}", ObjPathCollection)
 agcls.AgTypeNameMap["ObjPathCollection"] = ObjPathCollection
@@ -3133,12 +2852,7 @@ class DrawElemRect(IDrawElemRect):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDrawElemRect._get_property(self, attrname) is not None: found_prop = IDrawElemRect._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DrawElemRect.")
+        set_class_attribute(self, attrname, value, DrawElemRect, [IDrawElemRect])
 
 agcls.AgClassCatalog.add_catalog_entry("{55B0A7B5-2508-48BB-90D0-4B8B51DC9178}", DrawElemRect)
 agcls.AgTypeNameMap["DrawElemRect"] = DrawElemRect
@@ -3154,12 +2868,7 @@ class DrawElemCollection(IDrawElemCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDrawElemCollection._get_property(self, attrname) is not None: found_prop = IDrawElemCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DrawElemCollection.")
+        set_class_attribute(self, attrname, value, DrawElemCollection, [IDrawElemCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{97A759F9-49E4-42DE-A8E3-7B670EB3BDAC}", DrawElemCollection)
 agcls.AgTypeNameMap["DrawElemCollection"] = DrawElemCollection
@@ -3175,12 +2884,7 @@ class Draw2DElemRect(IDrawElemRect):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDrawElemRect._get_property(self, attrname) is not None: found_prop = IDrawElemRect._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Draw2DElemRect.")
+        set_class_attribute(self, attrname, value, Draw2DElemRect, [IDrawElemRect])
 
 agcls.AgClassCatalog.add_catalog_entry("{C26CEE82-EB4B-4D63-86B0-C5E2BB261E3F}", Draw2DElemRect)
 agcls.AgTypeNameMap["Draw2DElemRect"] = Draw2DElemRect
@@ -3196,12 +2900,7 @@ class Draw2DElemCollection(IDrawElemCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDrawElemCollection._get_property(self, attrname) is not None: found_prop = IDrawElemCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Draw2DElemCollection.")
+        set_class_attribute(self, attrname, value, Draw2DElemCollection, [IDrawElemCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{D6B1A826-3ABB-49FD-8C9F-F49ADBE6D2B8}", Draw2DElemCollection)
 agcls.AgTypeNameMap["Draw2DElemCollection"] = Draw2DElemCollection
@@ -3217,12 +2916,7 @@ class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiAxGraphics2DAnalysisCntrl._get_property(self, attrname) is not None: found_prop = IUiAxGraphics2DAnalysisCntrl._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiAxGraphics2DAnalysisCntrl.")
+        set_class_attribute(self, attrname, value, UiAxGraphics2DAnalysisCntrl, [IUiAxGraphics2DAnalysisCntrl])
 
 agcls.AgClassCatalog.add_catalog_entry("{600541C4-8B16-47AD-ABA4-EE8BC5E9FD5F}", UiAxGraphics2DAnalysisCntrl)
 agcls.AgTypeNameMap["UiAxGraphics2DAnalysisCntrl"] = UiAxGraphics2DAnalysisCntrl
@@ -3238,12 +2932,7 @@ class WinProjectionPosition(IWinProjectionPosition):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IWinProjectionPosition._get_property(self, attrname) is not None: found_prop = IWinProjectionPosition._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in WinProjectionPosition.")
+        set_class_attribute(self, attrname, value, WinProjectionPosition, [IWinProjectionPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{21D08121-9F86-485E-B143-337DACCD5022}", WinProjectionPosition)
 agcls.AgTypeNameMap["WinProjectionPosition"] = WinProjectionPosition
@@ -3259,12 +2948,7 @@ class DrawElemLine(IDrawElemLine):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDrawElemLine._get_property(self, attrname) is not None: found_prop = IDrawElemLine._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DrawElemLine.")
+        set_class_attribute(self, attrname, value, DrawElemLine, [IDrawElemLine])
 
 agcls.AgClassCatalog.add_catalog_entry("{A4C86FD0-95FA-4F15-BE04-1FDF0DD6B0B5}", DrawElemLine)
 agcls.AgTypeNameMap["DrawElemLine"] = DrawElemLine
@@ -3280,12 +2964,7 @@ class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISTKXSSLCertificateErrorEventArgs._get_property(self, attrname) is not None: found_prop = ISTKXSSLCertificateErrorEventArgs._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in STKXSSLCertificateErrorEventArgs.")
+        set_class_attribute(self, attrname, value, STKXSSLCertificateErrorEventArgs, [ISTKXSSLCertificateErrorEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{2BCBD8EC-2EA5-4D14-855D-BB85A201BCB4}", STKXSSLCertificateErrorEventArgs)
 agcls.AgTypeNameMap["STKXSSLCertificateErrorEventArgs"] = STKXSSLCertificateErrorEventArgs
@@ -3301,12 +2980,7 @@ class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISTKXConControlQuitReceivedEventArgs._get_property(self, attrname) is not None: found_prop = ISTKXConControlQuitReceivedEventArgs._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in STKXConControlQuitReceivedEventArgs.")
+        set_class_attribute(self, attrname, value, STKXConControlQuitReceivedEventArgs, [ISTKXConControlQuitReceivedEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{CA9E9226-74BE-4733-B50A-D64703165F4E}", STKXConControlQuitReceivedEventArgs)
 agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"] = STKXConControlQuitReceivedEventArgs

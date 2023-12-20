@@ -1,5 +1,7 @@
 # Copyright 2020-2023, Ansys Government Initiatives 
 
+from __future__ import annotations
+
 import os
 import gc
 
@@ -542,8 +544,9 @@ class IUnknown(object):
         vptr = cast(self.p, POINTER(c_void_p))
         vtbl = cast(vptr.contents, POINTER(c_void_p))
         return vtbl[index]
-    def query_interface(self, iid:GUID) -> "IUnknown":
+    def query_interface(self, iid:GUID|str) -> "IUnknown":
         pIntf = IUnknown()
+        if isinstance(iid, str): iid=GUID(iid)
         hr = IUnknown._QueryInterface(self._getVtblEntry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
         if not Succeeded(hr):
             return None

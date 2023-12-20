@@ -10,7 +10,8 @@ from ..internal  import comutil          as agcom
 from ..internal  import coclassutil      as agcls
 from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IDispatch
-from ..internal.apiutil     import interface_proxy
+from ..internal.apiutil     import (interface_proxy, initialize_from_source_object, get_interface_property, 
+    set_interface_attribute, set_class_attribute)
 from ..internal.eventutil   import *
 from ..utilities.exceptions import *
 
@@ -30,28 +31,16 @@ class ISTKXInitialize(object):
                              "initialize_data_ex" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISTKXInitialize._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISTKXInitialize from source object.")
+        initialize_from_source_object(self, sourceObject, ISTKXInitialize)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISTKXInitialize.__dict__ and type(ISTKXInitialize.__dict__[attrname]) == property:
-            return ISTKXInitialize.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISTKXInitialize)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXInitialize.")
+        set_interface_attribute(self, attrname, value, ISTKXInitialize, None)
     
     _initialize_activation_context_metadata = { "name" : "initialize_activation_context",
             "arg_types" : (),
@@ -91,12 +80,7 @@ class STKXInitialize(ISTKXInitialize):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISTKXInitialize._get_property(self, attrname) is not None: found_prop = ISTKXInitialize._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in STKXInitialize.")
+        set_class_attribute(self, attrname, value, STKXInitialize, [ISTKXInitialize])
 
 agcls.AgClassCatalog.add_catalog_entry("{3B85901D-FC82-4733-97E6-5BB25CE69379}", STKXInitialize)
 agcls.AgTypeNameMap["STKXInitialize"] = STKXInitialize
