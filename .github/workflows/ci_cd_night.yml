@@ -21,7 +21,7 @@ on:
     - cron: '0 0 * * 1-5'
     # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
     # complete list of Python versions.
-    - cron: '0 0 * * 6-7'
+    - cron: '0 0 * * 6,0'
 
 env:
   MAIN_PYTHON_VERSION: '3.10'
