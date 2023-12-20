@@ -26,7 +26,7 @@ Classes
 
    STKEngine
    STKEngineApplication
-   STKEngineTimerType
+   STK_ENGINE_TIMER_TYPE
 
 Reference
 #########
@@ -42,6 +42,6 @@ Classes
     :members:
     :exclude-members: __init__
 
-.. autoclass:: STKEngineTimerType
+.. autoclass:: STK_ENGINE_TIMER_TYPE
     :members:
     :exclude-members: __init__
