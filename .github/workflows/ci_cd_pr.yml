@@ -165,7 +165,7 @@ jobs:
 
       - name: "Include 'API' section from nightly build docs"
         if: |
-          steps.build-doc-with-api.outcome == 'success' ||
+          steps.build-doc-with-examples.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
         run: |
           cp -r gh-pages/version/dev/api doc/_build/html/api
@@ -173,7 +173,7 @@ jobs:
 
       - name: "Include 'Examples' section from nightly build docs"
         if: |
-          steps.build-doc-with-examples.outcome == 'success' ||
+          steps.build-doc-with-api.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
         run: |
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
