@@ -39,7 +39,7 @@ doc = [
     "enum-tools[sphinx]==0.11.0",
     "jupyterlab==4.0.9",
     "jupytext==1.15.2",
-    "jupyter_server==2.12.1",
+    "jupyter_server<2.11", # See issue https://github.com/mwouts/jupytext/issues/1165
     "myst-parser==2.0.0",
     "nbsphinx==0.9.3",
     "numpydoc==1.5.0",
