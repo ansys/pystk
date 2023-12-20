@@ -29,7 +29,7 @@ Start by launching a new STK instance. In this example, STKEngine is used in noG
 from ansys.stk.core.stkengine import STKEngine
 
 
-stk = STKEngine.StartApplication(noGraphics=False)
+stk = STKEngine.start_application(noGraphics=False)
 print(f"Using {stk.version}")
 ```
 
@@ -38,7 +38,7 @@ print(f"Using {stk.version}")
 Start by creating a new scenario in STK by running:
 
 ```{code-cell} ipython3
-root = stk.NewObjectRoot()
+root = stk.new_object_root()
 root.new_scenario("HohmannTransfer")
 
 
