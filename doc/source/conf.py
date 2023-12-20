@@ -96,7 +96,7 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ["api/generated", "links.rst"]
+exclude_patterns = ["_static/README.md", "api/generated", "links.rst"]
 
 # The suffix(es) of source filenames
 source_suffix = {
