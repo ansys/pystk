@@ -32,3 +32,57 @@ from ansys.stk.core.stkengine import STKEngine
 stk = STKEngine.start_application(noGraphics=False)
 print(f"Using {stk.version}")
 ```
+
+## Create a new scenario
+
+Start by creating a new scenario in STK by running:
+
+```{code-cell} ipython3
+root = stk.new_object_root()
+root.new_scenario("HohmannTransfer")
+```
+
+## Adding a satellite to the scenario
+
+Now that a new scenario is available, add a new satellite:
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+
+satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite")
+```
+
+Then, declare the type of propagator used for the satellite:
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+
+satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+```
+
+Initialize the propagator by making sure that no previous sequence is present. Add any additional configurations for the propagator. For this example, its is requested to draw the maneuver in 3D.
+
+```{code-cell} ipython3
+satellite.propagator.main_sequence.remove_all()
+satellite.propagator.options.draw_trajectory_in_3d = True
+```
+
+## Set up the initial state of the satellite
+
+To declare the initial state of a satellite, a total of six elements are required. STK supports multiple sets of elements. List them by running:
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE
+
+element_types = [element_type for element_type, _ in ELEMENT_TYPE.__members__.items()]
+print(element_types)
+```
+
+The segment type is also required for specifying the initial state of the satellite. List the supported segment types by running:
+
+```{code-cell} ipython3
+from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
+
+segment_types = [segment_type for segment_type, _ in SEGMENT_TYPE.__members__.items()]
+print(segment_types)
+```
