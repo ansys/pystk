@@ -131,7 +131,9 @@ from ...internal  import comutil          as agcom
 from ...internal  import coclassutil      as agcls
 from ...internal  import marshall         as agmarshall
 from ...internal.comutil     import IUnknown, IDispatch
-from ...internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from ...internal.apiutil     import (interface_proxy, enumerator_proxy, out_arg, 
+    initialize_from_source_object, get_interface_property, set_interface_attribute, 
+    set_class_attribute)
 from ...internal.eventutil   import *
 from ...utilities.exceptions import *
 
@@ -2536,28 +2538,16 @@ class ISite(object):
                              "set_name" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISite._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISite from source object.")
+        initialize_from_source_object(self, sourceObject, ISite)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISite.__dict__ and type(ISite.__dict__[attrname]) == property:
-            return ISite.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISite)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISite.")
+        set_interface_attribute(self, attrname, value, ISite, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2598,28 +2588,16 @@ class IWindModel(object):
                              "paste" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IWindModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IWindModel from source object.")
+        initialize_from_source_object(self, sourceObject, IWindModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IWindModel.__dict__ and type(IWindModel.__dict__[attrname]) == property:
-            return IWindModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IWindModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IWindModel.")
+        set_interface_attribute(self, attrname, value, IWindModel, None)
     
     _get_wind_model_type_metadata = { "name" : "wind_model_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2717,28 +2695,16 @@ class IADDSMessage(object):
                              "get_source" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IADDSMessage._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IADDSMessage from source object.")
+        initialize_from_source_object(self, sourceObject, IADDSMessage)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IADDSMessage.__dict__ and type(IADDSMessage.__dict__[attrname]) == property:
-            return IADDSMessage.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IADDSMessage)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IADDSMessage.")
+        set_interface_attribute(self, attrname, value, IADDSMessage, None)
     
     _get_start_time_metadata = { "name" : "start_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -2805,28 +2771,16 @@ class IFuelTankInternal(object):
                              "set_position" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IFuelTankInternal._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IFuelTankInternal from source object.")
+        initialize_from_source_object(self, sourceObject, IFuelTankInternal)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IFuelTankInternal.__dict__ and type(IFuelTankInternal.__dict__[attrname]) == property:
-            return IFuelTankInternal.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IFuelTankInternal)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IFuelTankInternal.")
+        set_interface_attribute(self, attrname, value, IFuelTankInternal, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2948,28 +2902,16 @@ class IFuelTankExternal(object):
                              "set_drag_index" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IFuelTankExternal._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IFuelTankExternal from source object.")
+        initialize_from_source_object(self, sourceObject, IFuelTankExternal)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IFuelTankExternal.__dict__ and type(IFuelTankExternal.__dict__[attrname]) == property:
-            return IFuelTankExternal.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IFuelTankExternal)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IFuelTankExternal.")
+        set_interface_attribute(self, attrname, value, IFuelTankExternal, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -3089,28 +3031,16 @@ class IPayloadStation(object):
                              "get_external_fuel_tank" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPayloadStation._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPayloadStation from source object.")
+        initialize_from_source_object(self, sourceObject, IPayloadStation)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPayloadStation.__dict__ and type(IPayloadStation.__dict__[attrname]) == property:
-            return IPayloadStation.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPayloadStation)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPayloadStation.")
+        set_interface_attribute(self, attrname, value, IPayloadStation, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -3205,28 +3135,16 @@ class IAircraftModel(object):
                              "get_terrain_follow" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftModel.__dict__ and type(IAircraftModel.__dict__[attrname]) == property:
-            return IAircraftModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftModel.")
+        set_interface_attribute(self, attrname, value, IAircraftModel, None)
     
     _get_perf_model_types_metadata = { "name" : "perf_model_types",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -3344,28 +3262,16 @@ class IAircraftSimpleAero(object):
                              "set_cd" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftSimpleAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftSimpleAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftSimpleAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftSimpleAero.__dict__ and type(IAircraftSimpleAero.__dict__[attrname]) == property:
-            return IAircraftSimpleAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftSimpleAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftSimpleAero.")
+        set_interface_attribute(self, attrname, value, IAircraftSimpleAero, None)
     
     _get_operating_mode_metadata = { "name" : "operating_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -3454,28 +3360,16 @@ class ILevelTurns(object):
                              "get_maneuver_mode_helper" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ILevelTurns._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ILevelTurns from source object.")
+        initialize_from_source_object(self, sourceObject, ILevelTurns)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ILevelTurns.__dict__ and type(ILevelTurns.__dict__[attrname]) == property:
-            return ILevelTurns.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ILevelTurns)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ILevelTurns.")
+        set_interface_attribute(self, attrname, value, ILevelTurns, None)
     
     _get_turn_mode_metadata = { "name" : "turn_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -3575,28 +3469,16 @@ class IAttitudeTransitions(object):
                              "set_yaw_rate" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAttitudeTransitions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAttitudeTransitions from source object.")
+        initialize_from_source_object(self, sourceObject, IAttitudeTransitions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAttitudeTransitions.__dict__ and type(IAttitudeTransitions.__dict__[attrname]) == property:
-            return IAttitudeTransitions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAttitudeTransitions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAttitudeTransitions.")
+        set_interface_attribute(self, attrname, value, IAttitudeTransitions, None)
     
     _get_roll_rate_metadata = { "name" : "roll_rate",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -3668,28 +3550,16 @@ class IClimbAndDescentTransitions(object):
                              "get_maneuver_mode_helper" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IClimbAndDescentTransitions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IClimbAndDescentTransitions from source object.")
+        initialize_from_source_object(self, sourceObject, IClimbAndDescentTransitions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IClimbAndDescentTransitions.__dict__ and type(IClimbAndDescentTransitions.__dict__[attrname]) == property:
-            return IClimbAndDescentTransitions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IClimbAndDescentTransitions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IClimbAndDescentTransitions.")
+        set_interface_attribute(self, attrname, value, IClimbAndDescentTransitions, None)
     
     _get_max_pull_up_g_metadata = { "name" : "max_pull_up_g",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -3789,28 +3659,16 @@ class ICatalogItem(object):
                              "contains_child_item" : 13, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalogItem._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalogItem from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalogItem)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalogItem.__dict__ and type(ICatalogItem.__dict__[attrname]) == property:
-            return ICatalogItem.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalogItem)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalogItem.")
+        set_interface_attribute(self, attrname, value, ICatalogItem, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -3940,28 +3798,16 @@ class IAircraftBasicClimbModel(object):
                              "get_as_catalog_item" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicClimbModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicClimbModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicClimbModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicClimbModel.__dict__ and type(IAircraftBasicClimbModel.__dict__[attrname]) == property:
-            return IAircraftBasicClimbModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicClimbModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicClimbModel.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicClimbModel, None)
     
     _get_ceiling_altitude_metadata = { "name" : "ceiling_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -4124,28 +3970,16 @@ class IAircraftBasicAccelerationModel(object):
                              "get_as_catalog_item" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicAccelerationModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicAccelerationModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicAccelerationModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicAccelerationModel.__dict__ and type(IAircraftBasicAccelerationModel.__dict__[attrname]) == property:
-            return IAircraftBasicAccelerationModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicAccelerationModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicAccelerationModel.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicAccelerationModel, None)
     
     _get_level_turns_metadata = { "name" : "level_turns",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4210,28 +4044,16 @@ class IAircraftCategory(object):
                              "get_rotorcraft_models" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftCategory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftCategory from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftCategory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftCategory.__dict__ and type(IAircraftCategory.__dict__[attrname]) == property:
-            return IAircraftCategory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftCategory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftCategory.")
+        set_interface_attribute(self, attrname, value, IAircraftCategory, None)
     
     _get_aircraft_models_metadata = { "name" : "aircraft_models",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4273,28 +4095,16 @@ class IRunwayCategory(object):
                              "get_dafif_runways" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRunwayCategory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRunwayCategory from source object.")
+        initialize_from_source_object(self, sourceObject, IRunwayCategory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRunwayCategory.__dict__ and type(IRunwayCategory.__dict__[attrname]) == property:
-            return IRunwayCategory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRunwayCategory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRunwayCategory.")
+        set_interface_attribute(self, attrname, value, IRunwayCategory, None)
     
     _get_user_runways_metadata = { "name" : "user_runways",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4334,28 +4144,16 @@ class IBasicManeuverStrategy(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategy._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategy from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategy)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategy.__dict__ and type(IBasicManeuverStrategy.__dict__[attrname]) == property:
-            return IBasicManeuverStrategy.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategy)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategy.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategy, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{55e05a46-43d4-41d7-9866-2b1255b5d08f}", IBasicManeuverStrategy)
@@ -4372,28 +4170,16 @@ class IAircraftVTOL(object):
                              "get_as_catalog_item" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftVTOL._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftVTOL from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftVTOL)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftVTOL.__dict__ and type(IAircraftVTOL.__dict__[attrname]) == property:
-            return IAircraftVTOL.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftVTOL)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftVTOL.")
+        set_interface_attribute(self, attrname, value, IAircraftVTOL, None)
     
     _get_vtol_by_name_metadata = { "name" : "get_vtol_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -4436,28 +4222,16 @@ class IAircraftExternalAero(object):
                              "get_is_takeoff_landing_valid" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftExternalAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftExternalAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftExternalAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftExternalAero.__dict__ and type(IAircraftExternalAero.__dict__[attrname]) == property:
-            return IAircraftExternalAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftExternalAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftExternalAero.")
+        set_interface_attribute(self, attrname, value, IAircraftExternalAero, None)
     
     _get_forward_flight_filepath_metadata = { "name" : "forward_flight_filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -4587,28 +4361,16 @@ class IAircraftSimpleProp(object):
                              "set_density_scaling" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftSimpleProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftSimpleProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftSimpleProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftSimpleProp.__dict__ and type(IAircraftSimpleProp.__dict__[attrname]) == property:
-            return IAircraftSimpleProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftSimpleProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftSimpleProp.")
+        set_interface_attribute(self, attrname, value, IAircraftSimpleProp, None)
     
     _get_max_thrust_accel_metadata = { "name" : "max_thrust_accel",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -4690,28 +4452,16 @@ class IAircraftExternalProp(object):
                              "set_density_scaling" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftExternalProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftExternalProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftExternalProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftExternalProp.__dict__ and type(IAircraftExternalProp.__dict__[attrname]) == property:
-            return IAircraftExternalProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftExternalProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftExternalProp.")
+        set_interface_attribute(self, attrname, value, IAircraftExternalProp, None)
     
     _get_prop_filepath_metadata = { "name" : "prop_filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -4842,28 +4592,16 @@ class IAircraftBasicFixedWingProp(object):
                              "set_density_scaling" : 23, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicFixedWingProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicFixedWingProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicFixedWingProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicFixedWingProp.__dict__ and type(IAircraftBasicFixedWingProp.__dict__[attrname]) == property:
-            return IAircraftBasicFixedWingProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicFixedWingProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicFixedWingProp.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicFixedWingProp, None)
     
     _get_propulsion_mode_metadata = { "name" : "propulsion_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5082,28 +4820,16 @@ class IAircraftAdvClimbModel(object):
                              "get_as_catalog_item" : 21, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAdvClimbModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAdvClimbModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAdvClimbModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAdvClimbModel.__dict__ and type(IAircraftAdvClimbModel.__dict__[attrname]) == property:
-            return IAircraftAdvClimbModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAdvClimbModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvClimbModel.")
+        set_interface_attribute(self, attrname, value, IAircraftAdvClimbModel, None)
     
     _get_climb_speed_type_metadata = { "name" : "climb_speed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5313,28 +5039,16 @@ class IAircraftBasicCruiseModel(object):
                              "get_as_catalog_item" : 31, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicCruiseModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicCruiseModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicCruiseModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicCruiseModel.__dict__ and type(IAircraftBasicCruiseModel.__dict__[attrname]) == property:
-            return IAircraftBasicCruiseModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicCruiseModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicCruiseModel.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicCruiseModel, None)
     
     _get_ceiling_altitude_metadata = { "name" : "ceiling_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5610,28 +5324,16 @@ class IAircraftAdvCruiseModel(object):
                              "get_as_catalog_item" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAdvCruiseModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAdvCruiseModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAdvCruiseModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAdvCruiseModel.__dict__ and type(IAircraftAdvCruiseModel.__dict__[attrname]) == property:
-            return IAircraftAdvCruiseModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAdvCruiseModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvCruiseModel.")
+        set_interface_attribute(self, attrname, value, IAircraftAdvCruiseModel, None)
     
     _get_default_cruise_altitude_metadata = { "name" : "default_cruise_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5774,28 +5476,16 @@ class IAircraftBasicDescentModel(object):
                              "get_as_catalog_item" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicDescentModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicDescentModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicDescentModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicDescentModel.__dict__ and type(IAircraftBasicDescentModel.__dict__[attrname]) == property:
-            return IAircraftBasicDescentModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicDescentModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicDescentModel.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicDescentModel, None)
     
     _get_ceiling_altitude_metadata = { "name" : "ceiling_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5971,28 +5661,16 @@ class IAircraftAdvDescentModel(object):
                              "get_as_catalog_item" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAdvDescentModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAdvDescentModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAdvDescentModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAdvDescentModel.__dict__ and type(IAircraftAdvDescentModel.__dict__[attrname]) == property:
-            return IAircraftAdvDescentModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAdvDescentModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvDescentModel.")
+        set_interface_attribute(self, attrname, value, IAircraftAdvDescentModel, None)
     
     _get_descent_speed_type_metadata = { "name" : "descent_speed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6168,28 +5846,16 @@ class IAircraftBasicLandingModel(object):
                              "get_as_catalog_item" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicLandingModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicLandingModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicLandingModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicLandingModel.__dict__ and type(IAircraftBasicLandingModel.__dict__[attrname]) == property:
-            return IAircraftBasicLandingModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicLandingModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicLandingModel.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicLandingModel, None)
     
     _get_landing_speed_metadata = { "name" : "landing_speed",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6311,28 +5977,16 @@ class IAircraftAdvLandingModel(object):
                              "get_as_catalog_item" : 13, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAdvLandingModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAdvLandingModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAdvLandingModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAdvLandingModel.__dict__ and type(IAircraftAdvLandingModel.__dict__[attrname]) == property:
-            return IAircraftAdvLandingModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAdvLandingModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvLandingModel.")
+        set_interface_attribute(self, attrname, value, IAircraftAdvLandingModel, None)
     
     _get_landing_speed_mode_metadata = { "name" : "landing_speed_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6465,28 +6119,16 @@ class IAircraftBasicTakeoffModel(object):
                              "get_as_catalog_item" : 17, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicTakeoffModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicTakeoffModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicTakeoffModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicTakeoffModel.__dict__ and type(IAircraftBasicTakeoffModel.__dict__[attrname]) == property:
-            return IAircraftBasicTakeoffModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicTakeoffModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicTakeoffModel.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicTakeoffModel, None)
     
     _get_takeoff_speed_metadata = { "name" : "takeoff_speed",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6650,28 +6292,16 @@ class IAircraftAdvTakeoffModel(object):
                              "get_as_catalog_item" : 16, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAdvTakeoffModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAdvTakeoffModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAdvTakeoffModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAdvTakeoffModel.__dict__ and type(IAircraftAdvTakeoffModel.__dict__[attrname]) == property:
-            return IAircraftAdvTakeoffModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAdvTakeoffModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvTakeoffModel.")
+        set_interface_attribute(self, attrname, value, IAircraftAdvTakeoffModel, None)
     
     _get_takeoff_speed_mode_metadata = { "name" : "takeoff_speed_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6835,28 +6465,16 @@ class IAircraftVTOLModel(object):
                              "set_forward_flight_transition_time" : 25, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftVTOLModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftVTOLModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftVTOLModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftVTOLModel.__dict__ and type(IAircraftVTOLModel.__dict__[attrname]) == property:
-            return IAircraftVTOLModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftVTOLModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftVTOLModel.")
+        set_interface_attribute(self, attrname, value, IAircraftVTOLModel, None)
     
     _get_max_hover_altitude_metadata = { "name" : "max_hover_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7072,28 +6690,16 @@ class IAircraftTerrainFollow(object):
                              "get_as_catalog_item" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftTerrainFollow._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftTerrainFollow from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftTerrainFollow)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftTerrainFollow.__dict__ and type(IAircraftTerrainFollow.__dict__[attrname]) == property:
-            return IAircraftTerrainFollow.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftTerrainFollow)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftTerrainFollow.")
+        set_interface_attribute(self, attrname, value, IAircraftTerrainFollow, None)
     
     _get_terrain_follow_by_name_metadata = { "name" : "get_terrain_follow_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -7130,28 +6736,16 @@ class IPerformanceModelOptions(object):
                              "get_properties" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPerformanceModelOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPerformanceModelOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IPerformanceModelOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPerformanceModelOptions.__dict__ and type(IPerformanceModelOptions.__dict__[attrname]) == property:
-            return IPerformanceModelOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPerformanceModelOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPerformanceModelOptions.")
+        set_interface_attribute(self, attrname, value, IPerformanceModelOptions, None)
     
     _link_to_catalog_metadata = { "name" : "link_to_catalog",
             "arg_types" : (agcom.BSTR,),
@@ -7266,28 +6860,16 @@ class IAdvFixedWingTool(object):
                              "get_powerplant_mode_as_sub_super_hypersonic" : 41, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingTool._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingTool from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingTool)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingTool.__dict__ and type(IAdvFixedWingTool.__dict__[attrname]) == property:
-            return IAdvFixedWingTool.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingTool)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingTool.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingTool, None)
     
     _get_wing_area_metadata = { "name" : "wing_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7632,28 +7214,16 @@ class IAdvFixedWingExternalAero(object):
                              "get_is_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingExternalAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingExternalAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingExternalAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingExternalAero.__dict__ and type(IAdvFixedWingExternalAero.__dict__[attrname]) == property:
-            return IAdvFixedWingExternalAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingExternalAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingExternalAero.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingExternalAero, None)
     
     _get_filepath_metadata = { "name" : "filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7703,28 +7273,16 @@ class IAdvFixedWingSubsonicAero(object):
                              "set_transonic_mach_drag_factor" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingSubsonicAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingSubsonicAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingSubsonicAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingSubsonicAero.__dict__ and type(IAdvFixedWingSubsonicAero.__dict__[attrname]) == property:
-            return IAdvFixedWingSubsonicAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingSubsonicAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingSubsonicAero.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingSubsonicAero, None)
     
     _get_geometry_type_metadata = { "name" : "geometry_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7851,28 +7409,16 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
                              "set_wave_drag_factor" : 16, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingSubSuperHypersonicAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingSubSuperHypersonicAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingSubSuperHypersonicAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingSubSuperHypersonicAero.__dict__ and type(IAdvFixedWingSubSuperHypersonicAero.__dict__[attrname]) == property:
-            return IAdvFixedWingSubSuperHypersonicAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingSubSuperHypersonicAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingSubSuperHypersonicAero.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingSubSuperHypersonicAero, None)
     
     _get_max_aoa_metadata = { "name" : "max_aoa",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -8040,28 +7586,16 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
                              "set_max_ram_scram_burner_total_temperature" : 25, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingSubSuperHypersonicProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingSubSuperHypersonicProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingSubSuperHypersonicProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingSubSuperHypersonicProp.__dict__ and type(IAdvFixedWingSubSuperHypersonicProp.__dict__[attrname]) == property:
-            return IAdvFixedWingSubSuperHypersonicProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingSubSuperHypersonicProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingSubSuperHypersonicProp.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingSubSuperHypersonicProp, None)
     
     _get_turbine_mode_metadata = { "name" : "turbine_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8296,28 +7830,16 @@ class IAdvFixedWingSupersonicAero(object):
                              "set_leading_edge_suction_efficiency" : 20, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingSupersonicAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingSupersonicAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingSupersonicAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingSupersonicAero.__dict__ and type(IAdvFixedWingSupersonicAero.__dict__[attrname]) == property:
-            return IAdvFixedWingSupersonicAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingSupersonicAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingSupersonicAero.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingSupersonicAero, None)
     
     _get_geometry_type_metadata = { "name" : "geometry_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8496,28 +8018,16 @@ class IAdvFixedWingGeometryBasic(object):
                              "set_wing_sweep" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingGeometryBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingGeometryBasic from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingGeometryBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingGeometryBasic.__dict__ and type(IAdvFixedWingGeometryBasic.__dict__[attrname]) == property:
-            return IAdvFixedWingGeometryBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingGeometryBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingGeometryBasic.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingGeometryBasic, None)
     
     _get_aspect_ratio_metadata = { "name" : "aspect_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8573,28 +8083,16 @@ class IAdvFixedWingGeometryVariable(object):
                              "set_max_sweep_angle" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingGeometryVariable._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingGeometryVariable from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingGeometryVariable)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingGeometryVariable.__dict__ and type(IAdvFixedWingGeometryVariable.__dict__[attrname]) == property:
-            return IAdvFixedWingGeometryVariable.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingGeometryVariable)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingGeometryVariable.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingGeometryVariable, None)
     
     _get_aspect_ratio_metadata = { "name" : "aspect_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8694,28 +8192,16 @@ class IAdvFixedWingElectricPowerplant(object):
                              "set_propeller_diameter" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingElectricPowerplant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingElectricPowerplant from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingElectricPowerplant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingElectricPowerplant.__dict__ and type(IAdvFixedWingElectricPowerplant.__dict__[attrname]) == property:
-            return IAdvFixedWingElectricPowerplant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingElectricPowerplant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingElectricPowerplant.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingElectricPowerplant, None)
     
     _get_max_power_metadata = { "name" : "max_power",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8781,28 +8267,16 @@ class IAdvFixedWingExternalProp(object):
                              "get_is_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingExternalProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingExternalProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingExternalProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingExternalProp.__dict__ and type(IAdvFixedWingExternalProp.__dict__[attrname]) == property:
-            return IAdvFixedWingExternalProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingExternalProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingExternalProp.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingExternalProp, None)
     
     _get_filepath_metadata = { "name" : "filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -8850,28 +8324,16 @@ class IAdvFixedWingPistonPowerplant(object):
                              "set_fuel_flow" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingPistonPowerplant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingPistonPowerplant from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingPistonPowerplant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingPistonPowerplant.__dict__ and type(IAdvFixedWingPistonPowerplant.__dict__[attrname]) == property:
-            return IAdvFixedWingPistonPowerplant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingPistonPowerplant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingPistonPowerplant.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingPistonPowerplant, None)
     
     _get_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8974,28 +8436,16 @@ class IAdvFixedWingTurbopropPowerplant(object):
                              "set_fuel_flow" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingTurbopropPowerplant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingTurbopropPowerplant from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbopropPowerplant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingTurbopropPowerplant.__dict__ and type(IAdvFixedWingTurbopropPowerplant.__dict__[attrname]) == property:
-            return IAdvFixedWingTurbopropPowerplant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingTurbopropPowerplant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingTurbopropPowerplant.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbopropPowerplant, None)
     
     _get_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9082,28 +8532,16 @@ class IAdvFixedWingEmpiricalJetEngine(object):
                              "set_fuel_flow" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingEmpiricalJetEngine._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingEmpiricalJetEngine from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingEmpiricalJetEngine)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingEmpiricalJetEngine.__dict__ and type(IAdvFixedWingEmpiricalJetEngine.__dict__[attrname]) == property:
-            return IAdvFixedWingEmpiricalJetEngine.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingEmpiricalJetEngine)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingEmpiricalJetEngine.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingEmpiricalJetEngine, None)
     
     _get_max_sea_level_static_thrust_metadata = { "name" : "max_sea_level_static_thrust",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9207,28 +8645,16 @@ class IAdvFixedWingTurbojetBasicABProp(object):
                              "get_fuel_mode_as_cea" : 25, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingTurbojetBasicABProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingTurbojetBasicABProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbojetBasicABProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingTurbojetBasicABProp.__dict__ and type(IAdvFixedWingTurbojetBasicABProp.__dict__[attrname]) == property:
-            return IAdvFixedWingTurbojetBasicABProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingTurbojetBasicABProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingTurbojetBasicABProp.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbojetBasicABProp, None)
     
     _get_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9470,28 +8896,16 @@ class IAdvFixedWingTurbofanBasicABProp(object):
                              "get_fuel_mode_as_cea" : 27, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingTurbofanBasicABProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingTurbofanBasicABProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbofanBasicABProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingTurbofanBasicABProp.__dict__ and type(IAdvFixedWingTurbofanBasicABProp.__dict__[attrname]) == property:
-            return IAdvFixedWingTurbofanBasicABProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingTurbofanBasicABProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingTurbofanBasicABProp.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbofanBasicABProp, None)
     
     _get_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9723,28 +9137,16 @@ class IAviatorVehicle(object):
         "method_offsets" : { "get_as_catalog_item" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAviatorVehicle._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAviatorVehicle from source object.")
+        initialize_from_source_object(self, sourceObject, IAviatorVehicle)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAviatorVehicle.__dict__ and type(IAviatorVehicle.__dict__[attrname]) == property:
-            return IAviatorVehicle.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAviatorVehicle)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAviatorVehicle.")
+        set_interface_attribute(self, attrname, value, IAviatorVehicle, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9813,28 +9215,16 @@ class IMissileModel(object):
                              "get_as_catalog_item" : 47, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileModel from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileModel.__dict__ and type(IMissileModel.__dict__[attrname]) == property:
-            return IMissileModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileModel.")
+        set_interface_attribute(self, attrname, value, IMissileModel, None)
     
     _get_max_load_factor_metadata = { "name" : "max_load_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -10226,28 +9616,16 @@ class IMissileAero(object):
                              "get_mode_as_advanced" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileAero from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileAero.__dict__ and type(IMissileAero.__dict__[attrname]) == property:
-            return IMissileAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileAero.")
+        set_interface_attribute(self, attrname, value, IMissileAero, None)
     
     _get_aero_strategy_metadata = { "name" : "aero_strategy",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10309,28 +9687,16 @@ class IMissileProp(object):
                              "get_mode_as_rocket" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileProp from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileProp.__dict__ and type(IMissileProp.__dict__[attrname]) == property:
-            return IMissileProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileProp.")
+        set_interface_attribute(self, attrname, value, IMissileProp, None)
     
     _get_prop_strategy_metadata = { "name" : "prop_strategy",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10410,28 +9776,16 @@ class IMissileSimpleAero(object):
                              "set_max_aoa" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileSimpleAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileSimpleAero from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileSimpleAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileSimpleAero.__dict__ and type(IMissileSimpleAero.__dict__[attrname]) == property:
-            return IMissileSimpleAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileSimpleAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileSimpleAero.")
+        set_interface_attribute(self, attrname, value, IMissileSimpleAero, None)
     
     _get_s_reference_metadata = { "name" : "s_reference",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -10523,28 +9877,16 @@ class IMissileSimpleProp(object):
                              "set_no_thrust_when_no_fuel" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileSimpleProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileSimpleProp from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileSimpleProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileSimpleProp.__dict__ and type(IMissileSimpleProp.__dict__[attrname]) == property:
-            return IMissileSimpleProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileSimpleProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileSimpleProp.")
+        set_interface_attribute(self, attrname, value, IMissileSimpleProp, None)
     
     _get_max_thrust_metadata = { "name" : "max_thrust",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -10614,28 +9956,16 @@ class IMissileExternalAero(object):
                              "get_is_valid" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileExternalAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileExternalAero from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileExternalAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileExternalAero.__dict__ and type(IMissileExternalAero.__dict__[attrname]) == property:
-            return IMissileExternalAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileExternalAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileExternalAero.")
+        set_interface_attribute(self, attrname, value, IMissileExternalAero, None)
     
     _get_filepath_metadata = { "name" : "filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -10710,28 +10040,16 @@ class IMissileExternalProp(object):
                              "get_is_valid" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileExternalProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileExternalProp from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileExternalProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileExternalProp.__dict__ and type(IMissileExternalProp.__dict__[attrname]) == property:
-            return IMissileExternalProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileExternalProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileExternalProp.")
+        set_interface_attribute(self, attrname, value, IMissileExternalProp, None)
     
     _get_filepath_metadata = { "name" : "filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -10840,28 +10158,16 @@ class IMissileAdvancedAero(object):
                              "set_tail_lift_fraction" : 48, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileAdvancedAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileAdvancedAero from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileAdvancedAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileAdvancedAero.__dict__ and type(IMissileAdvancedAero.__dict__[attrname]) == property:
-            return IMissileAdvancedAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileAdvancedAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileAdvancedAero.")
+        set_interface_attribute(self, attrname, value, IMissileAdvancedAero, None)
     
     _get_body_width_metadata = { "name" : "body_width",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -11282,28 +10588,16 @@ class IMissileRamjetProp(object):
                              "set_no_thrust_when_no_fuel" : 22, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileRamjetProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileRamjetProp from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileRamjetProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileRamjetProp.__dict__ and type(IMissileRamjetProp.__dict__[attrname]) == property:
-            return IMissileRamjetProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileRamjetProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileRamjetProp.")
+        set_interface_attribute(self, attrname, value, IMissileRamjetProp, None)
     
     _get_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -11512,28 +10806,16 @@ class IMissileRocketProp(object):
                              "set_no_thrust_when_no_fuel" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileRocketProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileRocketProp from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileRocketProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileRocketProp.__dict__ and type(IMissileRocketProp.__dict__[attrname]) == property:
-            return IMissileRocketProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileRocketProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileRocketProp.")
+        set_interface_attribute(self, attrname, value, IMissileRocketProp, None)
     
     _get_nozzle_expansion_ratio_metadata = { "name" : "nozzle_expansion_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -11722,28 +11004,16 @@ class IMissileTurbojetProp(object):
                              "set_no_thrust_when_no_fuel" : 30, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileTurbojetProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileTurbojetProp from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileTurbojetProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileTurbojetProp.__dict__ and type(IMissileTurbojetProp.__dict__[attrname]) == property:
-            return IMissileTurbojetProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileTurbojetProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileTurbojetProp.")
+        set_interface_attribute(self, attrname, value, IMissileTurbojetProp, None)
     
     _get_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12042,28 +11312,16 @@ class IRotorcraftModel(object):
                              "get_as_catalog_item" : 44, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRotorcraftModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRotorcraftModel from source object.")
+        initialize_from_source_object(self, sourceObject, IRotorcraftModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRotorcraftModel.__dict__ and type(IRotorcraftModel.__dict__[attrname]) == property:
-            return IRotorcraftModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRotorcraftModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRotorcraftModel.")
+        set_interface_attribute(self, attrname, value, IRotorcraftModel, None)
     
     _get_max_altitude_metadata = { "name" : "max_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12449,28 +11707,16 @@ class IRotorcraftAero(object):
                              "set_induced_power_correction_factor" : 22, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRotorcraftAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRotorcraftAero from source object.")
+        initialize_from_source_object(self, sourceObject, IRotorcraftAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRotorcraftAero.__dict__ and type(IRotorcraftAero.__dict__[attrname]) == property:
-            return IRotorcraftAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRotorcraftAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRotorcraftAero.")
+        set_interface_attribute(self, attrname, value, IRotorcraftAero, None)
     
     _get_rotor_count_metadata = { "name" : "rotor_count",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12667,28 +11913,16 @@ class IRotorcraftProp(object):
                              "set_max_sl_fuel_flow" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRotorcraftProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRotorcraftProp from source object.")
+        initialize_from_source_object(self, sourceObject, IRotorcraftProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRotorcraftProp.__dict__ and type(IRotorcraftProp.__dict__[attrname]) == property:
-            return IRotorcraftProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRotorcraftProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRotorcraftProp.")
+        set_interface_attribute(self, attrname, value, IRotorcraftProp, None)
     
     _get_powerplant_type_metadata = { "name" : "powerplant_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12754,28 +11988,16 @@ class IUserRunwaySource(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUserRunwaySource._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUserRunwaySource from source object.")
+        initialize_from_source_object(self, sourceObject, IUserRunwaySource)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUserRunwaySource.__dict__ and type(IUserRunwaySource.__dict__[attrname]) == property:
-            return IUserRunwaySource.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUserRunwaySource)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUserRunwaySource.")
+        set_interface_attribute(self, attrname, value, IUserRunwaySource, None)
     
     _get_user_runway_metadata = { "name" : "get_user_runway",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -12829,28 +12051,16 @@ class IUserRunway(object):
                              "paste_site" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUserRunway._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUserRunway from source object.")
+        initialize_from_source_object(self, sourceObject, IUserRunway)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUserRunway.__dict__ and type(IUserRunway.__dict__[attrname]) == property:
-            return IUserRunway.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUserRunway)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUserRunway.")
+        set_interface_attribute(self, attrname, value, IUserRunway, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13010,28 +12220,16 @@ class IARINC424Item(object):
                              "copy_site" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IARINC424Item._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IARINC424Item from source object.")
+        initialize_from_source_object(self, sourceObject, IARINC424Item)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IARINC424Item.__dict__ and type(IARINC424Item.__dict__[attrname]) == property:
-            return IARINC424Item.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IARINC424Item)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IARINC424Item.")
+        set_interface_attribute(self, attrname, value, IARINC424Item, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13089,28 +12287,16 @@ class IARINC424Source(object):
                              "get_as_catalog_source" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IARINC424Source._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IARINC424Source from source object.")
+        initialize_from_source_object(self, sourceObject, IARINC424Source)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IARINC424Source.__dict__ and type(IARINC424Source.__dict__[attrname]) == property:
-            return IARINC424Source.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IARINC424Source)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IARINC424Source.")
+        set_interface_attribute(self, attrname, value, IARINC424Source, None)
     
     _get_arinc424_item_metadata = { "name" : "get_arinc424_item",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -13194,28 +12380,16 @@ class IDAFIFSource(object):
                              "get_as_catalog_source" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDAFIFSource._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDAFIFSource from source object.")
+        initialize_from_source_object(self, sourceObject, IDAFIFSource)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDAFIFSource.__dict__ and type(IDAFIFSource.__dict__[attrname]) == property:
-            return IDAFIFSource.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDAFIFSource)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IDAFIFSource.")
+        set_interface_attribute(self, attrname, value, IDAFIFSource, None)
     
     _get_dafif_item_metadata = { "name" : "get_dafif_item",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -13294,28 +12468,16 @@ class IUserVTOLPoint(object):
                              "get_as_catalog_item" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUserVTOLPoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUserVTOLPoint from source object.")
+        initialize_from_source_object(self, sourceObject, IUserVTOLPoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUserVTOLPoint.__dict__ and type(IUserVTOLPoint.__dict__[attrname]) == property:
-            return IUserVTOLPoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUserVTOLPoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUserVTOLPoint.")
+        set_interface_attribute(self, attrname, value, IUserVTOLPoint, None)
     
     _get_altitude_metadata = { "name" : "altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13409,28 +12571,16 @@ class IUserVTOLPointSource(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUserVTOLPointSource._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUserVTOLPointSource from source object.")
+        initialize_from_source_object(self, sourceObject, IUserVTOLPointSource)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUserVTOLPointSource.__dict__ and type(IUserVTOLPointSource.__dict__[attrname]) == property:
-            return IUserVTOLPointSource.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUserVTOLPointSource)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUserVTOLPointSource.")
+        set_interface_attribute(self, attrname, value, IUserVTOLPointSource, None)
     
     _get_user_vtol_point_metadata = { "name" : "get_user_vtol_point",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -13473,28 +12623,16 @@ class IUserWaypoint(object):
                              "get_as_catalog_item" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUserWaypoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUserWaypoint from source object.")
+        initialize_from_source_object(self, sourceObject, IUserWaypoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUserWaypoint.__dict__ and type(IUserWaypoint.__dict__[attrname]) == property:
-            return IUserWaypoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUserWaypoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUserWaypoint.")
+        set_interface_attribute(self, attrname, value, IUserWaypoint, None)
     
     _get_latitude_metadata = { "name" : "latitude",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -13565,28 +12703,16 @@ class IUserWaypointSource(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUserWaypointSource._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUserWaypointSource from source object.")
+        initialize_from_source_object(self, sourceObject, IUserWaypointSource)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUserWaypointSource.__dict__ and type(IUserWaypointSource.__dict__[attrname]) == property:
-            return IUserWaypointSource.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUserWaypointSource)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUserWaypointSource.")
+        set_interface_attribute(self, attrname, value, IUserWaypointSource, None)
     
     _get_user_waypoint_metadata = { "name" : "get_user_waypoint",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -13630,28 +12756,16 @@ class IPropulsionEfficiencies(object):
                              "set_exhaust_nozzle_type" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPropulsionEfficiencies._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPropulsionEfficiencies from source object.")
+        initialize_from_source_object(self, sourceObject, IPropulsionEfficiencies)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPropulsionEfficiencies.__dict__ and type(IPropulsionEfficiencies.__dict__[attrname]) == property:
-            return IPropulsionEfficiencies.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPropulsionEfficiencies)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPropulsionEfficiencies.")
+        set_interface_attribute(self, attrname, value, IPropulsionEfficiencies, None)
     
     _get_technology_level_metadata = { "name" : "technology_level",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13734,28 +12848,16 @@ class IFuelModelKeroseneAFPROP(object):
                              "set_specific_energy" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IFuelModelKeroseneAFPROP._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IFuelModelKeroseneAFPROP from source object.")
+        initialize_from_source_object(self, sourceObject, IFuelModelKeroseneAFPROP)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IFuelModelKeroseneAFPROP.__dict__ and type(IFuelModelKeroseneAFPROP.__dict__[attrname]) == property:
-            return IFuelModelKeroseneAFPROP.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IFuelModelKeroseneAFPROP)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IFuelModelKeroseneAFPROP.")
+        set_interface_attribute(self, attrname, value, IFuelModelKeroseneAFPROP, None)
     
     _get_subtype_metadata = { "name" : "subtype",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13806,28 +12908,16 @@ class IFuelModelKeroseneCEA(object):
                              "set_specific_energy" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IFuelModelKeroseneCEA._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IFuelModelKeroseneCEA from source object.")
+        initialize_from_source_object(self, sourceObject, IFuelModelKeroseneCEA)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IFuelModelKeroseneCEA.__dict__ and type(IFuelModelKeroseneCEA.__dict__[attrname]) == property:
-            return IFuelModelKeroseneCEA.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IFuelModelKeroseneCEA)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IFuelModelKeroseneCEA.")
+        set_interface_attribute(self, attrname, value, IFuelModelKeroseneCEA, None)
     
     _get_subtype_metadata = { "name" : "subtype",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13889,28 +12979,16 @@ class IAdvFixedWingRamjetBasic(object):
                              "get_efficiencies_and_losses" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingRamjetBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingRamjetBasic from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingRamjetBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingRamjetBasic.__dict__ and type(IAdvFixedWingRamjetBasic.__dict__[attrname]) == property:
-            return IAdvFixedWingRamjetBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingRamjetBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingRamjetBasic.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingRamjetBasic, None)
     
     _get_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14060,28 +13138,16 @@ class IAdvFixedWingScramjetBasic(object):
                              "get_efficiencies_and_losses" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingScramjetBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingScramjetBasic from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingScramjetBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingScramjetBasic.__dict__ and type(IAdvFixedWingScramjetBasic.__dict__[attrname]) == property:
-            return IAdvFixedWingScramjetBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingScramjetBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingScramjetBasic.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingScramjetBasic, None)
     
     _get_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14226,28 +13292,16 @@ class IRefuelDumpProperties(object):
                              "set_use_end_of_enroute_segment_as_epoch" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRefuelDumpProperties._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRefuelDumpProperties from source object.")
+        initialize_from_source_object(self, sourceObject, IRefuelDumpProperties)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRefuelDumpProperties.__dict__ and type(IRefuelDumpProperties.__dict__[attrname]) == property:
-            return IRefuelDumpProperties.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRefuelDumpProperties)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRefuelDumpProperties.")
+        set_interface_attribute(self, attrname, value, IRefuelDumpProperties, None)
     
     _get_refuel_dump_mode_metadata = { "name" : "refuel_dump_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -14346,28 +13400,16 @@ class IProcedureFastTimeOptions(object):
                              "set_stop_time" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureFastTimeOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureFastTimeOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureFastTimeOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureFastTimeOptions.__dict__ and type(IProcedureFastTimeOptions.__dict__[attrname]) == property:
-            return IProcedureFastTimeOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureFastTimeOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureFastTimeOptions.")
+        set_interface_attribute(self, attrname, value, IProcedureFastTimeOptions, None)
     
     _get_start_time_metadata = { "name" : "start_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -14430,28 +13472,16 @@ class IAtmosphereModelBasic(object):
                              "get_density_altitude" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAtmosphereModelBasic._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAtmosphereModelBasic from source object.")
+        initialize_from_source_object(self, sourceObject, IAtmosphereModelBasic)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAtmosphereModelBasic.__dict__ and type(IAtmosphereModelBasic.__dict__[attrname]) == property:
-            return IAtmosphereModelBasic.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAtmosphereModelBasic)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAtmosphereModelBasic.")
+        set_interface_attribute(self, attrname, value, IAtmosphereModelBasic, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -14561,28 +13591,16 @@ class IAtmosphereModel(object):
                              "paste" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAtmosphereModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAtmosphereModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAtmosphereModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAtmosphereModel.__dict__ and type(IAtmosphereModel.__dict__[attrname]) == property:
-            return IAtmosphereModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAtmosphereModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAtmosphereModel.")
+        set_interface_attribute(self, attrname, value, IAtmosphereModel, None)
     
     _get_atmosphere_model_type_string_metadata = { "name" : "atmosphere_model_type_string",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -14656,14 +13674,7 @@ class IADDSMessageCollection(object):
                              "clear_messages" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IADDSMessageCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IADDSMessageCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IADDSMessageCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -14671,14 +13682,9 @@ class IADDSMessageCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IADDSMessageCollection.__dict__ and type(IADDSMessageCollection.__dict__[attrname]) == property:
-            return IADDSMessageCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IADDSMessageCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IADDSMessageCollection.")
+        set_interface_attribute(self, attrname, value, IADDSMessageCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -14758,28 +13764,16 @@ class IWindModelADDS(object):
                              "get_messages" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IWindModelADDS._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IWindModelADDS from source object.")
+        initialize_from_source_object(self, sourceObject, IWindModelADDS)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IWindModelADDS.__dict__ and type(IWindModelADDS.__dict__[attrname]) == property:
-            return IWindModelADDS.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IWindModelADDS)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IWindModelADDS.")
+        set_interface_attribute(self, attrname, value, IWindModelADDS, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -14913,28 +13907,16 @@ class IWindModelConstant(object):
                              "set_wind_bearing" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IWindModelConstant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IWindModelConstant from source object.")
+        initialize_from_source_object(self, sourceObject, IWindModelConstant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IWindModelConstant.__dict__ and type(IWindModelConstant.__dict__[attrname]) == property:
-            return IWindModelConstant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IWindModelConstant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IWindModelConstant.")
+        set_interface_attribute(self, attrname, value, IWindModelConstant, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -15014,28 +13996,16 @@ class IStation(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IStation._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IStation from source object.")
+        initialize_from_source_object(self, sourceObject, IStation)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IStation.__dict__ and type(IStation.__dict__[attrname]) == property:
-            return IStation.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IStation)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IStation.")
+        set_interface_attribute(self, attrname, value, IStation, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{ac0b6aed-ff8d-4f69-ba75-d31e2285b436}", IStation)
@@ -15061,14 +14031,7 @@ class IStationCollection(object):
                              "get_station_names" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IStationCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IStationCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IStationCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -15076,14 +14039,9 @@ class IStationCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IStationCollection.__dict__ and type(IStationCollection.__dict__[attrname]) == property:
-            return IStationCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IStationCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IStationCollection.")
+        set_interface_attribute(self, attrname, value, IStationCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -15213,28 +14171,16 @@ class IConfiguration(object):
                              "save" : 21, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IConfiguration._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IConfiguration from source object.")
+        initialize_from_source_object(self, sourceObject, IConfiguration)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IConfiguration.__dict__ and type(IConfiguration.__dict__[attrname]) == property:
-            return IConfiguration.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IConfiguration)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IConfiguration.")
+        set_interface_attribute(self, attrname, value, IConfiguration, None)
     
     _get_empty_weight_metadata = { "name" : "empty_weight",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15417,28 +14363,16 @@ class ICatalogSource(object):
                              "save" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalogSource._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalogSource from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalogSource)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalogSource.__dict__ and type(ICatalogSource.__dict__[attrname]) == property:
-            return ICatalogSource.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalogSource)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalogSource.")
+        set_interface_attribute(self, attrname, value, ICatalogSource, None)
     
     _get_child_names_metadata = { "name" : "child_names",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -15485,28 +14419,16 @@ class IAircraftModels(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftModels._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftModels from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftModels)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftModels.__dict__ and type(IAircraftModels.__dict__[attrname]) == property:
-            return IAircraftModels.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftModels)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftModels.")
+        set_interface_attribute(self, attrname, value, IAircraftModels, None)
     
     _get_aircraft_metadata = { "name" : "get_aircraft",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -15545,28 +14467,16 @@ class IMissileModels(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMissileModels._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMissileModels from source object.")
+        initialize_from_source_object(self, sourceObject, IMissileModels)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMissileModels.__dict__ and type(IMissileModels.__dict__[attrname]) == property:
-            return IMissileModels.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMissileModels)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMissileModels.")
+        set_interface_attribute(self, attrname, value, IMissileModels, None)
     
     _get_missile_metadata = { "name" : "get_missile",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -15605,28 +14515,16 @@ class IRotorcraftModels(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRotorcraftModels._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRotorcraftModels from source object.")
+        initialize_from_source_object(self, sourceObject, IRotorcraftModels)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRotorcraftModels.__dict__ and type(IRotorcraftModels.__dict__[attrname]) == property:
-            return IRotorcraftModels.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRotorcraftModels)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRotorcraftModels.")
+        set_interface_attribute(self, attrname, value, IRotorcraftModels, None)
     
     _get_rotorcraft_metadata = { "name" : "get_rotorcraft",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -15663,28 +14561,16 @@ class IBasicFixedWingLiftHelper(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicFixedWingLiftHelper._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicFixedWingLiftHelper from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicFixedWingLiftHelper)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicFixedWingLiftHelper.__dict__ and type(IBasicFixedWingLiftHelper.__dict__[attrname]) == property:
-            return IBasicFixedWingLiftHelper.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicFixedWingLiftHelper)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicFixedWingLiftHelper.")
+        set_interface_attribute(self, attrname, value, IBasicFixedWingLiftHelper, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{6c9d7ac9-cf16-4110-87e4-080c83a44322}", IBasicFixedWingLiftHelper)
@@ -15731,28 +14617,16 @@ class IAircraftBasicFixedWingAero(object):
                              "set_takeoff_landing_k" : 32, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftBasicFixedWingAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftBasicFixedWingAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftBasicFixedWingAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftBasicFixedWingAero.__dict__ and type(IAircraftBasicFixedWingAero.__dict__[attrname]) == property:
-            return IAircraftBasicFixedWingAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftBasicFixedWingAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicFixedWingAero.")
+        set_interface_attribute(self, attrname, value, IAircraftBasicFixedWingAero, None)
     
     _get_forward_flight_reference_area_metadata = { "name" : "forward_flight_reference_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16033,28 +14907,16 @@ class IAircraftAero(object):
                              "set_drag_factor" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAero._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAero from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAero)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAero.__dict__ and type(IAircraftAero.__dict__[attrname]) == property:
-            return IAircraftAero.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAero)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAero.")
+        set_interface_attribute(self, attrname, value, IAircraftAero, None)
     
     _get_aero_strategy_metadata = { "name" : "aero_strategy",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16161,28 +15023,16 @@ class IAircraftProp(object):
                              "get_mode_as_rocket" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftProp._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftProp from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftProp)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftProp.__dict__ and type(IAircraftProp.__dict__[attrname]) == property:
-            return IAircraftProp.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftProp)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftProp.")
+        set_interface_attribute(self, attrname, value, IAircraftProp, None)
     
     _get_prop_strategy_metadata = { "name" : "prop_strategy",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16297,28 +15147,16 @@ class IAircraftAccelerationMode(object):
                              "set_accel_g" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAccelerationMode._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAccelerationMode from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAccelerationMode)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAccelerationMode.__dict__ and type(IAircraftAccelerationMode.__dict__[attrname]) == property:
-            return IAircraftAccelerationMode.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAccelerationMode)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAccelerationMode.")
+        set_interface_attribute(self, attrname, value, IAircraftAccelerationMode, None)
     
     _get_accel_mode_metadata = { "name" : "accel_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16370,28 +15208,16 @@ class IAircraftAdvAccelerationModel(object):
                              "get_as_catalog_item" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAdvAccelerationModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAdvAccelerationModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAdvAccelerationModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAdvAccelerationModel.__dict__ and type(IAircraftAdvAccelerationModel.__dict__[attrname]) == property:
-            return IAircraftAdvAccelerationModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAdvAccelerationModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvAccelerationModel.")
+        set_interface_attribute(self, attrname, value, IAircraftAdvAccelerationModel, None)
     
     _get_level_turns_metadata = { "name" : "level_turns",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16464,28 +15290,16 @@ class IAeroPropManeuverModeHelper(object):
                              "get_status_msg" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAeroPropManeuverModeHelper._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAeroPropManeuverModeHelper from source object.")
+        initialize_from_source_object(self, sourceObject, IAeroPropManeuverModeHelper)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAeroPropManeuverModeHelper.__dict__ and type(IAeroPropManeuverModeHelper.__dict__[attrname]) == property:
-            return IAeroPropManeuverModeHelper.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAeroPropManeuverModeHelper)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAeroPropManeuverModeHelper.")
+        set_interface_attribute(self, attrname, value, IAeroPropManeuverModeHelper, None)
     
     _get_mode_metadata = { "name" : "mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16652,28 +15466,16 @@ class ICatalogRunway(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalogRunway._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalogRunway from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalogRunway)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalogRunway.__dict__ and type(ICatalogRunway.__dict__[attrname]) == property:
-            return ICatalogRunway.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalogRunway)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalogRunway.")
+        set_interface_attribute(self, attrname, value, ICatalogRunway, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{120d6778-93cd-4d78-a63f-c3fb3ca55eb6}", ICatalogRunway)
@@ -16689,28 +15491,16 @@ class ICatalogAirport(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalogAirport._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalogAirport from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalogAirport)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalogAirport.__dict__ and type(ICatalogAirport.__dict__[attrname]) == property:
-            return ICatalogAirport.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalogAirport)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalogAirport.")
+        set_interface_attribute(self, attrname, value, ICatalogAirport, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{aed7cf8c-257e-4c91-b829-0d3489bd7bef}", ICatalogAirport)
@@ -16726,28 +15516,16 @@ class ICatalogNavaid(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalogNavaid._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalogNavaid from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalogNavaid)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalogNavaid.__dict__ and type(ICatalogNavaid.__dict__[attrname]) == property:
-            return ICatalogNavaid.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalogNavaid)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalogNavaid.")
+        set_interface_attribute(self, attrname, value, ICatalogNavaid, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{a019db80-a2e3-49bd-9bb0-09d1af40ca00}", ICatalogNavaid)
@@ -16763,28 +15541,16 @@ class ICatalogVTOLPoint(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalogVTOLPoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalogVTOLPoint from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalogVTOLPoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalogVTOLPoint.__dict__ and type(ICatalogVTOLPoint.__dict__[attrname]) == property:
-            return ICatalogVTOLPoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalogVTOLPoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalogVTOLPoint.")
+        set_interface_attribute(self, attrname, value, ICatalogVTOLPoint, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{f4818560-bc87-4fa4-84bc-33d25a14eac5}", ICatalogVTOLPoint)
@@ -16800,28 +15566,16 @@ class ICatalogWaypoint(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalogWaypoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalogWaypoint from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalogWaypoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalogWaypoint.__dict__ and type(ICatalogWaypoint.__dict__[attrname]) == property:
-            return ICatalogWaypoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalogWaypoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalogWaypoint.")
+        set_interface_attribute(self, attrname, value, ICatalogWaypoint, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{a3a67fca-89f4-4cc8-9ef0-194707369ef9}", ICatalogWaypoint)
@@ -16837,28 +15591,16 @@ class IARINC424Airport(object):
         "method_offsets" : { "get_as_catalog_item" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IARINC424Airport._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IARINC424Airport from source object.")
+        initialize_from_source_object(self, sourceObject, IARINC424Airport)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IARINC424Airport.__dict__ and type(IARINC424Airport.__dict__[attrname]) == property:
-            return IARINC424Airport.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IARINC424Airport)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IARINC424Airport.")
+        set_interface_attribute(self, attrname, value, IARINC424Airport, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16885,28 +15627,16 @@ class IDAFIFItem(object):
                              "get_as_catalog_item" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IDAFIFItem._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IDAFIFItem from source object.")
+        initialize_from_source_object(self, sourceObject, IDAFIFItem)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IDAFIFItem.__dict__ and type(IDAFIFItem.__dict__[attrname]) == property:
-            return IDAFIFItem.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IDAFIFItem)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IDAFIFItem.")
+        set_interface_attribute(self, attrname, value, IDAFIFItem, None)
     
     _get_value_metadata = { "name" : "get_value",
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT),),
@@ -16957,28 +15687,16 @@ class IARINC424Runway(object):
         "method_offsets" : { "get_as_catalog_item" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IARINC424Runway._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IARINC424Runway from source object.")
+        initialize_from_source_object(self, sourceObject, IARINC424Runway)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IARINC424Runway.__dict__ and type(IARINC424Runway.__dict__[attrname]) == property:
-            return IARINC424Runway.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IARINC424Runway)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IARINC424Runway.")
+        set_interface_attribute(self, attrname, value, IARINC424Runway, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17001,28 +15719,16 @@ class IAirportCategory(object):
         "method_offsets" : { "get_arinc424_airports" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAirportCategory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAirportCategory from source object.")
+        initialize_from_source_object(self, sourceObject, IAirportCategory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAirportCategory.__dict__ and type(IAirportCategory.__dict__[attrname]) == property:
-            return IAirportCategory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAirportCategory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAirportCategory.")
+        set_interface_attribute(self, attrname, value, IAirportCategory, None)
     
     _get_arinc424_airports_metadata = { "name" : "arinc424_airports",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17046,28 +15752,16 @@ class INavaidCategory(object):
         "method_offsets" : { "get_arinc424_navaids" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(INavaidCategory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create INavaidCategory from source object.")
+        initialize_from_source_object(self, sourceObject, INavaidCategory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in INavaidCategory.__dict__ and type(INavaidCategory.__dict__[attrname]) == property:
-            return INavaidCategory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, INavaidCategory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in INavaidCategory.")
+        set_interface_attribute(self, attrname, value, INavaidCategory, None)
     
     _get_arinc424_navaids_metadata = { "name" : "arinc424_navaids",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17093,28 +15787,16 @@ class IVTOLPointCategory(object):
                              "get_dafif_helipads" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVTOLPointCategory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVTOLPointCategory from source object.")
+        initialize_from_source_object(self, sourceObject, IVTOLPointCategory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVTOLPointCategory.__dict__ and type(IVTOLPointCategory.__dict__[attrname]) == property:
-            return IVTOLPointCategory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVTOLPointCategory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVTOLPointCategory.")
+        set_interface_attribute(self, attrname, value, IVTOLPointCategory, None)
     
     _get_user_vtol_points_metadata = { "name" : "user_vtol_points",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17164,28 +15846,16 @@ class IWaypointCategory(object):
                              "get_dafif_waypoints" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IWaypointCategory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IWaypointCategory from source object.")
+        initialize_from_source_object(self, sourceObject, IWaypointCategory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IWaypointCategory.__dict__ and type(IWaypointCategory.__dict__[attrname]) == property:
-            return IWaypointCategory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IWaypointCategory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IWaypointCategory.")
+        set_interface_attribute(self, attrname, value, IWaypointCategory, None)
     
     _get_user_waypoints_metadata = { "name" : "user_waypoints",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17292,28 +15962,16 @@ class IAircraftClimb(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftClimb._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftClimb from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftClimb)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftClimb.__dict__ and type(IAircraftClimb.__dict__[attrname]) == property:
-            return IAircraftClimb.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftClimb)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftClimb.")
+        set_interface_attribute(self, attrname, value, IAircraftClimb, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17360,28 +16018,16 @@ class IAircraftCruise(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftCruise._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftCruise from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftCruise)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftCruise.__dict__ and type(IAircraftCruise.__dict__[attrname]) == property:
-            return IAircraftCruise.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftCruise)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftCruise.")
+        set_interface_attribute(self, attrname, value, IAircraftCruise, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17428,28 +16074,16 @@ class IAircraftDescent(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftDescent._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftDescent from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftDescent)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftDescent.__dict__ and type(IAircraftDescent.__dict__[attrname]) == property:
-            return IAircraftDescent.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftDescent)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftDescent.")
+        set_interface_attribute(self, attrname, value, IAircraftDescent, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17496,28 +16130,16 @@ class IAircraftLanding(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftLanding._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftLanding from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftLanding)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftLanding.__dict__ and type(IAircraftLanding.__dict__[attrname]) == property:
-            return IAircraftLanding.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftLanding)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftLanding.")
+        set_interface_attribute(self, attrname, value, IAircraftLanding, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17564,28 +16186,16 @@ class IAircraftTakeoff(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftTakeoff._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftTakeoff from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftTakeoff)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftTakeoff.__dict__ and type(IAircraftTakeoff.__dict__[attrname]) == property:
-            return IAircraftTakeoff.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftTakeoff)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftTakeoff.")
+        set_interface_attribute(self, attrname, value, IAircraftTakeoff, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17632,28 +16242,16 @@ class IAircraftAcceleration(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftAcceleration._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftAcceleration from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftAcceleration)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftAcceleration.__dict__ and type(IAircraftAcceleration.__dict__[attrname]) == property:
-            return IAircraftAcceleration.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftAcceleration)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAcceleration.")
+        set_interface_attribute(self, attrname, value, IAircraftAcceleration, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17702,28 +16300,16 @@ class ICatalog(object):
                              "get_waypoint_category" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICatalog._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICatalog from source object.")
+        initialize_from_source_object(self, sourceObject, ICatalog)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICatalog.__dict__ and type(ICatalog.__dict__[attrname]) == property:
-            return ICatalog.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICatalog)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICatalog.")
+        set_interface_attribute(self, attrname, value, ICatalog, None)
     
     _get_aircraft_category_metadata = { "name" : "aircraft_category",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17801,28 +16387,16 @@ class IProcedureTimeOptions(object):
                              "set_stop_time" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureTimeOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureTimeOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureTimeOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureTimeOptions.__dict__ and type(IProcedureTimeOptions.__dict__[attrname]) == property:
-            return IProcedureTimeOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureTimeOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTimeOptions.")
+        set_interface_attribute(self, attrname, value, IProcedureTimeOptions, None)
     
     _get_start_time_enabled_metadata = { "name" : "start_time_enabled",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -17968,28 +16542,16 @@ class ICalculationOptions(object):
                              "set_integrator_type_string" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICalculationOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICalculationOptions from source object.")
+        initialize_from_source_object(self, sourceObject, ICalculationOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICalculationOptions.__dict__ and type(ICalculationOptions.__dict__[attrname]) == property:
-            return ICalculationOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICalculationOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationOptions.")
+        set_interface_attribute(self, attrname, value, ICalculationOptions, None)
     
     _get_max_rel_motion_factor_metadata = { "name" : "max_rel_motion_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -18126,28 +16688,16 @@ class INavigationOptions(object):
                              "set_enroute_second_turn" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(INavigationOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create INavigationOptions from source object.")
+        initialize_from_source_object(self, sourceObject, INavigationOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in INavigationOptions.__dict__ and type(INavigationOptions.__dict__[attrname]) == property:
-            return INavigationOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, INavigationOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in INavigationOptions.")
+        set_interface_attribute(self, attrname, value, INavigationOptions, None)
     
     _get_nav_mode_metadata = { "name" : "nav_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -18250,28 +16800,16 @@ class IAltitudeMSLAndLevelOffOptions(object):
                              "set_level_off_mode" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAltitudeMSLAndLevelOffOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAltitudeMSLAndLevelOffOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IAltitudeMSLAndLevelOffOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAltitudeMSLAndLevelOffOptions.__dict__ and type(IAltitudeMSLAndLevelOffOptions.__dict__[attrname]) == property:
-            return IAltitudeMSLAndLevelOffOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAltitudeMSLAndLevelOffOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAltitudeMSLAndLevelOffOptions.")
+        set_interface_attribute(self, attrname, value, IAltitudeMSLAndLevelOffOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -18354,28 +16892,16 @@ class IAltitudeMSLOptions(object):
                              "set_msl_altitude" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAltitudeMSLOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAltitudeMSLOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IAltitudeMSLOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAltitudeMSLOptions.__dict__ and type(IAltitudeMSLOptions.__dict__[attrname]) == property:
-            return IAltitudeMSLOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAltitudeMSLOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAltitudeMSLOptions.")
+        set_interface_attribute(self, attrname, value, IAltitudeMSLOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -18428,28 +16954,16 @@ class IAltitudeOptions(object):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAltitudeOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAltitudeOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IAltitudeOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAltitudeOptions.__dict__ and type(IAltitudeOptions.__dict__[attrname]) == property:
-            return IAltitudeOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAltitudeOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAltitudeOptions.")
+        set_interface_attribute(self, attrname, value, IAltitudeOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -18518,28 +17032,16 @@ class IHoverAltitudeOptions(object):
                              "set_final_altitude_rate" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IHoverAltitudeOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IHoverAltitudeOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IHoverAltitudeOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IHoverAltitudeOptions.__dict__ and type(IHoverAltitudeOptions.__dict__[attrname]) == property:
-            return IHoverAltitudeOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IHoverAltitudeOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IHoverAltitudeOptions.")
+        set_interface_attribute(self, attrname, value, IHoverAltitudeOptions, None)
     
     _get_altitude_reference_metadata = { "name" : "altitude_reference",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -18608,28 +17110,16 @@ class IArcAltitudeOptions(object):
                              "set_stop_arc_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IArcAltitudeOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IArcAltitudeOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IArcAltitudeOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IArcAltitudeOptions.__dict__ and type(IArcAltitudeOptions.__dict__[attrname]) == property:
-            return IArcAltitudeOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IArcAltitudeOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IArcAltitudeOptions.")
+        set_interface_attribute(self, attrname, value, IArcAltitudeOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -18700,28 +17190,16 @@ class IArcAltitudeAndDelayOptions(object):
                              "set_stop_arc_altitude" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IArcAltitudeAndDelayOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IArcAltitudeAndDelayOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IArcAltitudeAndDelayOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IArcAltitudeAndDelayOptions.__dict__ and type(IArcAltitudeAndDelayOptions.__dict__[attrname]) == property:
-            return IArcAltitudeAndDelayOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IArcAltitudeAndDelayOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IArcAltitudeAndDelayOptions.")
+        set_interface_attribute(self, attrname, value, IArcAltitudeAndDelayOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -18814,28 +17292,16 @@ class IArcOptions(object):
                              "set_exit_arc" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IArcOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IArcOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IArcOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IArcOptions.__dict__ and type(IArcOptions.__dict__[attrname]) == property:
-            return IArcOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IArcOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IArcOptions.")
+        set_interface_attribute(self, attrname, value, IArcOptions, None)
     
     _get_turn_direction_metadata = { "name" : "turn_direction",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -18968,28 +17434,16 @@ class IVerticalPlaneOptions(object):
                              "set_max_vert_plane_radius_factor" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVerticalPlaneOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVerticalPlaneOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IVerticalPlaneOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVerticalPlaneOptions.__dict__ and type(IVerticalPlaneOptions.__dict__[attrname]) == property:
-            return IVerticalPlaneOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVerticalPlaneOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVerticalPlaneOptions.")
+        set_interface_attribute(self, attrname, value, IVerticalPlaneOptions, None)
     
     _get_min_enroute_flight_path_angle_metadata = { "name" : "min_enroute_flight_path_angle",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -19060,28 +17514,16 @@ class IVerticalPlaneAndFlightPathOptions(object):
                              "set_max_vert_plane_radius_factor" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IVerticalPlaneAndFlightPathOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IVerticalPlaneAndFlightPathOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IVerticalPlaneAndFlightPathOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IVerticalPlaneAndFlightPathOptions.__dict__ and type(IVerticalPlaneAndFlightPathOptions.__dict__[attrname]) == property:
-            return IVerticalPlaneAndFlightPathOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IVerticalPlaneAndFlightPathOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IVerticalPlaneAndFlightPathOptions.")
+        set_interface_attribute(self, attrname, value, IVerticalPlaneAndFlightPathOptions, None)
     
     _get_final_flight_path_angle_metadata = { "name" : "final_flight_path_angle",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -19170,28 +17612,16 @@ class IArcVerticalPlaneOptions(object):
                              "set_max_vert_plane_radius_factor" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IArcVerticalPlaneOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IArcVerticalPlaneOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IArcVerticalPlaneOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IArcVerticalPlaneOptions.__dict__ and type(IArcVerticalPlaneOptions.__dict__[attrname]) == property:
-            return IArcVerticalPlaneOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IArcVerticalPlaneOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IArcVerticalPlaneOptions.")
+        set_interface_attribute(self, attrname, value, IArcVerticalPlaneOptions, None)
     
     _get_start_arc_flight_path_angle_metadata = { "name" : "start_arc_flight_path_angle",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -19290,28 +17720,16 @@ class IEnrouteOptions(object):
                              "set_max_turn_radius_factor" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IEnrouteOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IEnrouteOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IEnrouteOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IEnrouteOptions.__dict__ and type(IEnrouteOptions.__dict__[attrname]) == property:
-            return IEnrouteOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IEnrouteOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IEnrouteOptions.")
+        set_interface_attribute(self, attrname, value, IEnrouteOptions, None)
     
     _get_use_max_speed_turns_metadata = { "name" : "use_max_speed_turns",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -19364,28 +17782,16 @@ class IEnrouteAndDelayOptions(object):
                              "set_max_turn_radius_factor" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IEnrouteAndDelayOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IEnrouteAndDelayOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IEnrouteAndDelayOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IEnrouteAndDelayOptions.__dict__ and type(IEnrouteAndDelayOptions.__dict__[attrname]) == property:
-            return IEnrouteAndDelayOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IEnrouteAndDelayOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IEnrouteAndDelayOptions.")
+        set_interface_attribute(self, attrname, value, IEnrouteAndDelayOptions, None)
     
     _get_delay_enroute_climb_descents_metadata = { "name" : "delay_enroute_climb_descents",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -19452,28 +17858,16 @@ class IEnrouteTurnDirectionOptions(object):
                              "set_enroute_second_turn" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IEnrouteTurnDirectionOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IEnrouteTurnDirectionOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IEnrouteTurnDirectionOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IEnrouteTurnDirectionOptions.__dict__ and type(IEnrouteTurnDirectionOptions.__dict__[attrname]) == property:
-            return IEnrouteTurnDirectionOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IEnrouteTurnDirectionOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IEnrouteTurnDirectionOptions.")
+        set_interface_attribute(self, attrname, value, IEnrouteTurnDirectionOptions, None)
     
     _get_enroute_first_turn_metadata = { "name" : "enroute_first_turn",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -19525,28 +17919,16 @@ class ICruiseAirspeedOptions(object):
                              "set_other_airspeed" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICruiseAirspeedOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICruiseAirspeedOptions from source object.")
+        initialize_from_source_object(self, sourceObject, ICruiseAirspeedOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICruiseAirspeedOptions.__dict__ and type(ICruiseAirspeedOptions.__dict__[attrname]) == property:
-            return ICruiseAirspeedOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICruiseAirspeedOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICruiseAirspeedOptions.")
+        set_interface_attribute(self, attrname, value, ICruiseAirspeedOptions, None)
     
     _get_cruise_speed_type_metadata = { "name" : "cruise_speed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -19602,28 +17984,16 @@ class ICruiseAirspeedProfile(object):
                              "set_fly_cruise_airspeed_profile" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICruiseAirspeedProfile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICruiseAirspeedProfile from source object.")
+        initialize_from_source_object(self, sourceObject, ICruiseAirspeedProfile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICruiseAirspeedProfile.__dict__ and type(ICruiseAirspeedProfile.__dict__[attrname]) == property:
-            return ICruiseAirspeedProfile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICruiseAirspeedProfile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICruiseAirspeedProfile.")
+        set_interface_attribute(self, attrname, value, ICruiseAirspeedProfile, None)
     
     _get_fly_cruise_airspeed_profile_metadata = { "name" : "fly_cruise_airspeed_profile",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -19661,28 +18031,16 @@ class ICruiseAirspeedAndProfileOptions(object):
                              "set_fly_cruise_airspeed_profile" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ICruiseAirspeedAndProfileOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ICruiseAirspeedAndProfileOptions from source object.")
+        initialize_from_source_object(self, sourceObject, ICruiseAirspeedAndProfileOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ICruiseAirspeedAndProfileOptions.__dict__ and type(ICruiseAirspeedAndProfileOptions.__dict__[attrname]) == property:
-            return ICruiseAirspeedAndProfileOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ICruiseAirspeedAndProfileOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ICruiseAirspeedAndProfileOptions.")
+        set_interface_attribute(self, attrname, value, ICruiseAirspeedAndProfileOptions, None)
     
     _get_cruise_speed_type_metadata = { "name" : "cruise_speed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -19753,28 +18111,16 @@ class IAutomationStrategyFactory(object):
         "method_offsets" : { "construct_strategy" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAutomationStrategyFactory._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAutomationStrategyFactory from source object.")
+        initialize_from_source_object(self, sourceObject, IAutomationStrategyFactory)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAutomationStrategyFactory.__dict__ and type(IAutomationStrategyFactory.__dict__[attrname]) == property:
-            return IAutomationStrategyFactory.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAutomationStrategyFactory)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAutomationStrategyFactory.")
+        set_interface_attribute(self, attrname, value, IAutomationStrategyFactory, None)
     
     _construct_strategy_metadata = { "name" : "construct_strategy",
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
@@ -19797,28 +18143,16 @@ class IConnect(object):
         "method_offsets" : { "execute_command" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IConnect._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IConnect from source object.")
+        initialize_from_source_object(self, sourceObject, IConnect)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IConnect.__dict__ and type(IConnect.__dict__[attrname]) == property:
-            return IConnect.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IConnect)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IConnect.")
+        set_interface_attribute(self, attrname, value, IConnect, None)
     
     _execute_command_metadata = { "name" : "execute_command",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -19842,28 +18176,16 @@ class IRunwayHeadingOptions(object):
                              "set_runway_mode" : 2, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IRunwayHeadingOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IRunwayHeadingOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IRunwayHeadingOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRunwayHeadingOptions.__dict__ and type(IRunwayHeadingOptions.__dict__[attrname]) == property:
-            return IRunwayHeadingOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IRunwayHeadingOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRunwayHeadingOptions.")
+        set_interface_attribute(self, attrname, value, IRunwayHeadingOptions, None)
     
     _get_runway_mode_metadata = { "name" : "runway_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -19904,28 +18226,16 @@ class IProcedure(object):
                              "get_fast_time_options" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedure._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedure from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedure)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedure.__dict__ and type(IProcedure.__dict__[attrname]) == property:
-            return IProcedure.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedure)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedure.")
+        set_interface_attribute(self, attrname, value, IProcedure, None)
     
     _get_name_metadata = { "name" : "name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20029,14 +18339,7 @@ class IProcedureCollection(object):
                              "disable_auto_propagate" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -20044,14 +18347,9 @@ class IProcedureCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureCollection.__dict__ and type(IProcedureCollection.__dict__[attrname]) == property:
-            return IProcedureCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureCollection.")
+        set_interface_attribute(self, attrname, value, IProcedureCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -20152,28 +18450,16 @@ class IPhase(object):
                              "paste_performance_models" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPhase._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPhase from source object.")
+        initialize_from_source_object(self, sourceObject, IPhase)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPhase.__dict__ and type(IPhase.__dict__[attrname]) == property:
-            return IPhase.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPhase)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPhase.")
+        set_interface_attribute(self, attrname, value, IPhase, None)
     
     _get_procedures_metadata = { "name" : "procedures",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20247,14 +18533,7 @@ class IPhaseCollection(object):
                              "remove_at_index" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPhaseCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPhaseCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IPhaseCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -20262,14 +18541,9 @@ class IPhaseCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPhaseCollection.__dict__ and type(IPhaseCollection.__dict__[attrname]) == property:
-            return IPhaseCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPhaseCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPhaseCollection.")
+        set_interface_attribute(self, attrname, value, IPhaseCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -20357,28 +18631,16 @@ class IMission(object):
                              "get_first_invalid_procedure" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IMission._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IMission from source object.")
+        initialize_from_source_object(self, sourceObject, IMission)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IMission.__dict__ and type(IMission.__dict__[attrname]) == property:
-            return IMission.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IMission)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IMission.")
+        set_interface_attribute(self, attrname, value, IMission, None)
     
     _get_phases_metadata = { "name" : "phases",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20461,28 +18723,16 @@ class IAviatorPropagator(object):
                              "get_avtr_catalog" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAviatorPropagator._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAviatorPropagator from source object.")
+        initialize_from_source_object(self, sourceObject, IAviatorPropagator)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAviatorPropagator.__dict__ and type(IAviatorPropagator.__dict__[attrname]) == property:
-            return IAviatorPropagator.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAviatorPropagator)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAviatorPropagator.")
+        set_interface_attribute(self, attrname, value, IAviatorPropagator, None)
     
     _get_avtr_mission_metadata = { "name" : "avtr_mission",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20537,28 +18787,16 @@ class IPerformanceModel(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPerformanceModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPerformanceModel from source object.")
+        initialize_from_source_object(self, sourceObject, IPerformanceModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPerformanceModel.__dict__ and type(IPerformanceModel.__dict__[attrname]) == property:
-            return IPerformanceModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPerformanceModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPerformanceModel.")
+        set_interface_attribute(self, attrname, value, IPerformanceModel, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{8fb55502-c401-4188-adc9-7a889fdbe996}", IPerformanceModel)
@@ -20574,28 +18812,16 @@ class IAdvFixedWingGeometry(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingGeometry._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingGeometry from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingGeometry)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingGeometry.__dict__ and type(IAdvFixedWingGeometry.__dict__[attrname]) == property:
-            return IAdvFixedWingGeometry.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingGeometry)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingGeometry.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingGeometry, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{d3b3af6e-7b5a-4491-aaca-c05eb901afa0}", IAdvFixedWingGeometry)
@@ -20611,28 +18837,16 @@ class IAdvFixedWingTurbofanBasicABPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingTurbofanBasicABPowerplant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingTurbofanBasicABPowerplant from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbofanBasicABPowerplant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingTurbofanBasicABPowerplant.__dict__ and type(IAdvFixedWingTurbofanBasicABPowerplant.__dict__[attrname]) == property:
-            return IAdvFixedWingTurbofanBasicABPowerplant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingTurbofanBasicABPowerplant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingTurbofanBasicABPowerplant.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbofanBasicABPowerplant, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{9bc7e978-48ec-487d-8460-014c8fe376bd}", IAdvFixedWingTurbofanBasicABPowerplant)
@@ -20648,28 +18862,16 @@ class IAdvFixedWingTurbojetBasicABPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingTurbojetBasicABPowerplant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingTurbojetBasicABPowerplant from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbojetBasicABPowerplant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingTurbojetBasicABPowerplant.__dict__ and type(IAdvFixedWingTurbojetBasicABPowerplant.__dict__[attrname]) == property:
-            return IAdvFixedWingTurbojetBasicABPowerplant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingTurbojetBasicABPowerplant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingTurbojetBasicABPowerplant.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbojetBasicABPowerplant, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{552db5f4-fe5d-4709-80b4-7ba074c673ff}", IAdvFixedWingTurbojetBasicABPowerplant)
@@ -20685,28 +18887,16 @@ class IAdvFixedWingPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAdvFixedWingPowerplant._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAdvFixedWingPowerplant from source object.")
+        initialize_from_source_object(self, sourceObject, IAdvFixedWingPowerplant)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAdvFixedWingPowerplant.__dict__ and type(IAdvFixedWingPowerplant.__dict__[attrname]) == property:
-            return IAdvFixedWingPowerplant.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAdvFixedWingPowerplant)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingPowerplant.")
+        set_interface_attribute(self, attrname, value, IAdvFixedWingPowerplant, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{79824361-d702-4f4b-81ac-001876fb51ef}", IAdvFixedWingPowerplant)
@@ -20722,28 +18912,16 @@ class ISiteUnknown(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteUnknown._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteUnknown from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteUnknown)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteUnknown.__dict__ and type(ISiteUnknown.__dict__[attrname]) == property:
-            return ISiteUnknown.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteUnknown)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteUnknown.")
+        set_interface_attribute(self, attrname, value, ISiteUnknown, None)
     
 
 agcls.AgClassCatalog.add_catalog_entry("{0921dbaf-ee11-4460-8355-01fc207a6803}", ISiteUnknown)
@@ -20789,28 +18967,16 @@ class IAircraftTerrainFollowModel(object):
                              "get_max_load_factor" : 31, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IAircraftTerrainFollowModel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IAircraftTerrainFollowModel from source object.")
+        initialize_from_source_object(self, sourceObject, IAircraftTerrainFollowModel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAircraftTerrainFollowModel.__dict__ and type(IAircraftTerrainFollowModel.__dict__[attrname]) == property:
-            return IAircraftTerrainFollowModel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IAircraftTerrainFollowModel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftTerrainFollowModel.")
+        set_interface_attribute(self, attrname, value, IAircraftTerrainFollowModel, None)
     
     _get_airspeed_type_metadata = { "name" : "airspeed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21081,28 +19247,16 @@ class IBasicManeuverTargetPositionVel(object):
                              "cancel_position_vel" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverTargetPositionVel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverTargetPositionVel from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverTargetPositionVel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverTargetPositionVel.__dict__ and type(IBasicManeuverTargetPositionVel.__dict__[attrname]) == property:
-            return IBasicManeuverTargetPositionVel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverTargetPositionVel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverTargetPositionVel.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverTargetPositionVel, None)
     
     _get_target_position_vel_type_metadata = { "name" : "target_position_vel_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21197,28 +19351,16 @@ class IPropulsionThrust(object):
                              "set_max_airspeed" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IPropulsionThrust._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IPropulsionThrust from source object.")
+        initialize_from_source_object(self, sourceObject, IPropulsionThrust)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IPropulsionThrust.__dict__ and type(IPropulsionThrust.__dict__[attrname]) == property:
-            return IPropulsionThrust.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IPropulsionThrust)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IPropulsionThrust.")
+        set_interface_attribute(self, attrname, value, IPropulsionThrust, None)
     
     _get_use_constant_thrust_metadata = { "name" : "use_constant_thrust",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -21410,28 +19552,16 @@ class IBasicManeuverAirspeedOptions(object):
                              "get_thrust" : 35, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverAirspeedOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverAirspeedOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverAirspeedOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverAirspeedOptions.__dict__ and type(IBasicManeuverAirspeedOptions.__dict__[attrname]) == property:
-            return IBasicManeuverAirspeedOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverAirspeedOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverAirspeedOptions.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverAirspeedOptions, None)
     
     _get_airspeed_mode_metadata = { "name" : "airspeed_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21741,28 +19871,16 @@ class IBasicManeuverStrategyAileronRoll(object):
                              "get_airspeed_options" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyAileronRoll._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyAileronRoll from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyAileronRoll)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyAileronRoll.__dict__ and type(IBasicManeuverStrategyAileronRoll.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyAileronRoll.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyAileronRoll)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyAileronRoll.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyAileronRoll, None)
     
     _get_flight_path_option_metadata = { "name" : "flight_path_option",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21912,28 +20030,16 @@ class IBasicManeuverStrategyAutopilotNav(object):
                              "set_stop_when_conditions_met" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyAutopilotNav._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyAutopilotNav from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyAutopilotNav)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyAutopilotNav.__dict__ and type(IBasicManeuverStrategyAutopilotNav.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyAutopilotNav.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyAutopilotNav)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyAutopilotNav.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyAutopilotNav, None)
     
     _get_active_mode_metadata = { "name" : "active_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -22095,28 +20201,16 @@ class IBasicManeuverStrategyAutopilotProf(object):
                              "set_stop_when_conditions_met" : 29, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyAutopilotProf._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyAutopilotProf from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyAutopilotProf)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyAutopilotProf.__dict__ and type(IBasicManeuverStrategyAutopilotProf.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyAutopilotProf.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyAutopilotProf)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyAutopilotProf.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyAutopilotProf, None)
     
     _get_altitude_mode_metadata = { "name" : "altitude_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -22378,28 +20472,16 @@ class IBasicManeuverStrategyBarrelRoll(object):
                              "set_airspeeds" : 16, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyBarrelRoll._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyBarrelRoll from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyBarrelRoll)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyBarrelRoll.__dict__ and type(IBasicManeuverStrategyBarrelRoll.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyBarrelRoll.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyBarrelRoll)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyBarrelRoll.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyBarrelRoll, None)
     
     _get_helix_angle_metadata = { "name" : "helix_angle",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -22555,28 +20637,16 @@ class IBasicManeuverStrategyLoop(object):
                              "set_airspeeds" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyLoop._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyLoop from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyLoop)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyLoop.__dict__ and type(IBasicManeuverStrategyLoop.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyLoop.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyLoop)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyLoop.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyLoop, None)
     
     _get_loop_angle_metadata = { "name" : "loop_angle",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -22726,28 +20796,16 @@ class IBasicManeuverStrategyLTAHover(object):
                              "set_parachute_cd" : 24, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyLTAHover._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyLTAHover from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyLTAHover)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyLTAHover.__dict__ and type(IBasicManeuverStrategyLTAHover.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyLTAHover.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyLTAHover)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyLTAHover.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyLTAHover, None)
     
     _get_heading_mode_metadata = { "name" : "heading_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -22971,28 +21029,16 @@ class IBasicManeuverStrategyFlyAOA(object):
                              "get_airspeed_options" : 17, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyFlyAOA._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyFlyAOA from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyFlyAOA)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyFlyAOA.__dict__ and type(IBasicManeuverStrategyFlyAOA.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyFlyAOA.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyFlyAOA)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyFlyAOA.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyFlyAOA, None)
     
     _get_turn_direction_metadata = { "name" : "turn_direction",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -23152,28 +21198,16 @@ class IBasicManeuverStrategyPull(object):
                              "get_airspeed_options" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyPull._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyPull from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyPull)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyPull.__dict__ and type(IBasicManeuverStrategyPull.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyPull.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyPull)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyPull.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyPull, None)
     
     _get_active_mode_metadata = { "name" : "active_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -23277,28 +21311,16 @@ class IBasicManeuverStrategyRollingPull(object):
                              "get_airspeed_options" : 17, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyRollingPull._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRollingPull from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRollingPull)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyRollingPull.__dict__ and type(IBasicManeuverStrategyRollingPull.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyRollingPull.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyRollingPull)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRollingPull.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRollingPull, None)
     
     _get_active_mode_metadata = { "name" : "active_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -23478,28 +21500,16 @@ class IBasicManeuverStrategySmoothAccel(object):
                              "get_airspeed_options" : 29, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategySmoothAccel._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategySmoothAccel from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategySmoothAccel)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategySmoothAccel.__dict__ and type(IBasicManeuverStrategySmoothAccel.__dict__[attrname]) == property:
-            return IBasicManeuverStrategySmoothAccel.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategySmoothAccel)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategySmoothAccel.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategySmoothAccel, None)
     
     _get_turn_direction_metadata = { "name" : "turn_direction",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -23765,28 +21775,16 @@ class IBasicManeuverStrategySmoothTurn(object):
                              "set_fpa_mode" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategySmoothTurn._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategySmoothTurn from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategySmoothTurn)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategySmoothTurn.__dict__ and type(IBasicManeuverStrategySmoothTurn.__dict__[attrname]) == property:
-            return IBasicManeuverStrategySmoothTurn.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategySmoothTurn)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategySmoothTurn.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategySmoothTurn, None)
     
     _get_heading_change_metadata = { "name" : "heading_change",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -23961,28 +21959,16 @@ class IBasicManeuverStrategySimpleTurn(object):
                              "set_compensate_for_coriolis_accel" : 8, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategySimpleTurn._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategySimpleTurn from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategySimpleTurn)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategySimpleTurn.__dict__ and type(IBasicManeuverStrategySimpleTurn.__dict__[attrname]) == property:
-            return IBasicManeuverStrategySimpleTurn.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategySimpleTurn)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategySimpleTurn.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategySimpleTurn, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24094,28 +22080,16 @@ class IBasicManeuverStrategyIntercept(object):
                              "cancel_tgt_position_vel" : 34, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyIntercept._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyIntercept from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyIntercept)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyIntercept.__dict__ and type(IBasicManeuverStrategyIntercept.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyIntercept.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyIntercept)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyIntercept.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyIntercept, None)
     
     _get_target_name_metadata = { "name" : "target_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24415,28 +22389,16 @@ class IBasicManeuverStrategyRelativeBearing(object):
                              "cancel_tgt_position_vel" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyRelativeBearing._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRelativeBearing from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelativeBearing)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyRelativeBearing.__dict__ and type(IBasicManeuverStrategyRelativeBearing.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyRelativeBearing.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyRelativeBearing)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRelativeBearing.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelativeBearing, None)
     
     _get_target_name_metadata = { "name" : "target_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24626,28 +22588,16 @@ class IBasicManeuverStrategyRelativeCourse(object):
                              "cancel_tgt_position_vel" : 34, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyRelativeCourse._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRelativeCourse from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelativeCourse)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyRelativeCourse.__dict__ and type(IBasicManeuverStrategyRelativeCourse.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyRelativeCourse.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyRelativeCourse)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRelativeCourse.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelativeCourse, None)
     
     _get_target_name_metadata = { "name" : "target_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24970,28 +22920,16 @@ class IBasicManeuverStrategyRendezvous(object):
                              "cancel_tgt_position_vel" : 39, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyRendezvous._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRendezvous from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRendezvous)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyRendezvous.__dict__ and type(IBasicManeuverStrategyRendezvous.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyRendezvous.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyRendezvous)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRendezvous.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRendezvous, None)
     
     _get_target_name_metadata = { "name" : "target_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25353,28 +23291,16 @@ class IBasicManeuverStrategyStationkeeping(object):
                              "cancel_tgt_position_vel" : 38, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyStationkeeping._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyStationkeeping from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyStationkeeping)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyStationkeeping.__dict__ and type(IBasicManeuverStrategyStationkeeping.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyStationkeeping.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyStationkeeping)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyStationkeeping.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyStationkeeping, None)
     
     _get_target_name_metadata = { "name" : "target_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25714,28 +23640,16 @@ class IBasicManeuverStrategyRelativeFPA(object):
                              "set_compensate_for_coriolis_accel" : 24, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyRelativeFPA._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRelativeFPA from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelativeFPA)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyRelativeFPA.__dict__ and type(IBasicManeuverStrategyRelativeFPA.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyRelativeFPA.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyRelativeFPA)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRelativeFPA.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelativeFPA, None)
     
     _get_fpa_metadata = { "name" : "fpa",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -25974,28 +23888,16 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
                              "cancel_tgt_position_vel" : 38, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyRelSpeedAltitude._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRelSpeedAltitude from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelSpeedAltitude)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyRelSpeedAltitude.__dict__ and type(IBasicManeuverStrategyRelSpeedAltitude.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyRelSpeedAltitude.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyRelSpeedAltitude)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRelSpeedAltitude.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelSpeedAltitude, None)
     
     _get_target_name_metadata = { "name" : "target_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -26331,28 +24233,16 @@ class IBasicManeuverStrategyBezier(object):
                              "set_compensate_for_coriolis_accel" : 22, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyBezier._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyBezier from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyBezier)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyBezier.__dict__ and type(IBasicManeuverStrategyBezier.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyBezier.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyBezier)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyBezier.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyBezier, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -26565,28 +24455,16 @@ class IBasicManeuverStrategyPushPull(object):
                              "set_compensate_for_coriolis_accel" : 27, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyPushPull._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyPushPull from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyPushPull)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyPushPull.__dict__ and type(IBasicManeuverStrategyPushPull.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyPushPull.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyPushPull)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyPushPull.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyPushPull, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -26834,28 +24712,16 @@ class IBasicManeuverStrategyGlideProfile(object):
                              "set_glide_speed_control_mode" : 21, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyGlideProfile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyGlideProfile from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyGlideProfile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyGlideProfile.__dict__ and type(IBasicManeuverStrategyGlideProfile.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyGlideProfile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyGlideProfile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyGlideProfile.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyGlideProfile, None)
     
     _get_hold_initial_airspeed_metadata = { "name" : "hold_initial_airspeed",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -27042,28 +24908,16 @@ class IBasicManeuverStrategyCruiseProfile(object):
                              "set_compensate_for_coriolis_accel" : 13, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyCruiseProfile._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyCruiseProfile from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyCruiseProfile)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyCruiseProfile.__dict__ and type(IBasicManeuverStrategyCruiseProfile.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyCruiseProfile.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyCruiseProfile)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyCruiseProfile.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyCruiseProfile, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27180,28 +25034,16 @@ class IBasicManeuverStrategyStraightAhead(object):
                              "set_compensate_for_coriolis_accel" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyStraightAhead._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyStraightAhead from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyStraightAhead)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyStraightAhead.__dict__ and type(IBasicManeuverStrategyStraightAhead.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyStraightAhead.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyStraightAhead)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyStraightAhead.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyStraightAhead, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27259,28 +25101,16 @@ class IBasicManeuverStrategyWeave(object):
                              "set_compensate_for_coriolis_accel" : 13, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyWeave._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyWeave from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyWeave)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyWeave.__dict__ and type(IBasicManeuverStrategyWeave.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyWeave.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyWeave)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyWeave.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyWeave, None)
     
     _get_heading_change_metadata = { "name" : "heading_change",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -27403,28 +25233,16 @@ class IBasicManeuverStrategyBallistic3D(object):
                              "set_wind_force_effective_area" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyBallistic3D._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyBallistic3D from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyBallistic3D)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyBallistic3D.__dict__ and type(IBasicManeuverStrategyBallistic3D.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyBallistic3D.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyBallistic3D)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyBallistic3D.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyBallistic3D, None)
     
     _get_control_mode_metadata = { "name" : "control_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27522,28 +25340,16 @@ class IBasicManeuverStrategyPitch3D(object):
                              "set_wind_force_effective_area" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverStrategyPitch3D._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyPitch3D from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyPitch3D)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyPitch3D.__dict__ and type(IBasicManeuverStrategyPitch3D.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyPitch3D.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverStrategyPitch3D)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyPitch3D.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverStrategyPitch3D, None)
     
     _get_control_mode_metadata = { "name" : "control_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27655,28 +25461,16 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
                              "set_range_error_std_dev" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverTargetPositionVelNoisyBrnRng from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverTargetPositionVelNoisyBrnRng)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverTargetPositionVelNoisyBrnRng.__dict__ and type(IBasicManeuverTargetPositionVelNoisyBrnRng.__dict__[attrname]) == property:
-            return IBasicManeuverTargetPositionVelNoisyBrnRng.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverTargetPositionVelNoisyBrnRng)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverTargetPositionVelNoisyBrnRng.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverTargetPositionVelNoisyBrnRng, None)
     
     _new_random_engine_seed_metadata = { "name" : "new_random_engine_seed",
             "arg_types" : (),
@@ -27771,28 +25565,16 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
                              "set_speed_error" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverTargetPositionVelNoisySurfTgt from source object.")
+        initialize_from_source_object(self, sourceObject, IBasicManeuverTargetPositionVelNoisySurfTgt)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverTargetPositionVelNoisySurfTgt.__dict__ and type(IBasicManeuverTargetPositionVelNoisySurfTgt.__dict__[attrname]) == property:
-            return IBasicManeuverTargetPositionVelNoisySurfTgt.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IBasicManeuverTargetPositionVelNoisySurfTgt)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverTargetPositionVelNoisySurfTgt.")
+        set_interface_attribute(self, attrname, value, IBasicManeuverTargetPositionVelNoisySurfTgt, None)
     
     _new_random_engine_seed_metadata = { "name" : "new_random_engine_seed",
             "arg_types" : (),
@@ -27888,28 +25670,16 @@ class ITakeoffNormal(object):
                              "set_hold_on_deck" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITakeoffNormal._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITakeoffNormal from source object.")
+        initialize_from_source_object(self, sourceObject, ITakeoffNormal)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITakeoffNormal.__dict__ and type(ITakeoffNormal.__dict__[attrname]) == property:
-            return ITakeoffNormal.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITakeoffNormal)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITakeoffNormal.")
+        set_interface_attribute(self, attrname, value, ITakeoffNormal, None)
     
     _get_takeoff_climb_angle_metadata = { "name" : "takeoff_climb_angle",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -28016,28 +25786,16 @@ class ITakeoffDeparturePoint(object):
                              "set_hold_on_deck" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITakeoffDeparturePoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITakeoffDeparturePoint from source object.")
+        initialize_from_source_object(self, sourceObject, ITakeoffDeparturePoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITakeoffDeparturePoint.__dict__ and type(ITakeoffDeparturePoint.__dict__[attrname]) == property:
-            return ITakeoffDeparturePoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITakeoffDeparturePoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITakeoffDeparturePoint.")
+        set_interface_attribute(self, attrname, value, ITakeoffDeparturePoint, None)
     
     _get_takeoff_climb_angle_metadata = { "name" : "takeoff_climb_angle",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -28154,28 +25912,16 @@ class ITakeoffLowTransition(object):
                              "set_hold_on_deck" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ITakeoffLowTransition._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ITakeoffLowTransition from source object.")
+        initialize_from_source_object(self, sourceObject, ITakeoffLowTransition)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ITakeoffLowTransition.__dict__ and type(ITakeoffLowTransition.__dict__[attrname]) == property:
-            return ITakeoffLowTransition.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ITakeoffLowTransition)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ITakeoffLowTransition.")
+        set_interface_attribute(self, attrname, value, ITakeoffLowTransition, None)
     
     _get_use_runway_terrain_metadata = { "name" : "use_runway_terrain",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -28271,28 +26017,16 @@ class IReferenceStateForwardFlightOptions(object):
                              "set_attitude_rate" : 33, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IReferenceStateForwardFlightOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IReferenceStateForwardFlightOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IReferenceStateForwardFlightOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IReferenceStateForwardFlightOptions.__dict__ and type(IReferenceStateForwardFlightOptions.__dict__[attrname]) == property:
-            return IReferenceStateForwardFlightOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IReferenceStateForwardFlightOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateForwardFlightOptions.")
+        set_interface_attribute(self, attrname, value, IReferenceStateForwardFlightOptions, None)
     
     _get_airspeed_type_metadata = { "name" : "airspeed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -28595,28 +26329,16 @@ class IReferenceStateHoverOptions(object):
                              "set_attitude_rate" : 28, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IReferenceStateHoverOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IReferenceStateHoverOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IReferenceStateHoverOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IReferenceStateHoverOptions.__dict__ and type(IReferenceStateHoverOptions.__dict__[attrname]) == property:
-            return IReferenceStateHoverOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IReferenceStateHoverOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateHoverOptions.")
+        set_interface_attribute(self, attrname, value, IReferenceStateHoverOptions, None)
     
     _get_groundspeed_metadata = { "name" : "groundspeed",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28867,28 +26589,16 @@ class IReferenceStateWeightOnWheelsOptions(object):
                              "set_lateral_accel" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IReferenceStateWeightOnWheelsOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IReferenceStateWeightOnWheelsOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IReferenceStateWeightOnWheelsOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IReferenceStateWeightOnWheelsOptions.__dict__ and type(IReferenceStateWeightOnWheelsOptions.__dict__[attrname]) == property:
-            return IReferenceStateWeightOnWheelsOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IReferenceStateWeightOnWheelsOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateWeightOnWheelsOptions.")
+        set_interface_attribute(self, attrname, value, IReferenceStateWeightOnWheelsOptions, None)
     
     _get_groundspeed_metadata = { "name" : "groundspeed",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29046,28 +26756,16 @@ class IReferenceStateTakeoffLandingOptions(object):
                              "set_attitude_rate" : 33, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IReferenceStateTakeoffLandingOptions._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IReferenceStateTakeoffLandingOptions from source object.")
+        initialize_from_source_object(self, sourceObject, IReferenceStateTakeoffLandingOptions)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IReferenceStateTakeoffLandingOptions.__dict__ and type(IReferenceStateTakeoffLandingOptions.__dict__[attrname]) == property:
-            return IReferenceStateTakeoffLandingOptions.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IReferenceStateTakeoffLandingOptions)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateTakeoffLandingOptions.")
+        set_interface_attribute(self, attrname, value, IReferenceStateTakeoffLandingOptions, None)
     
     _get_airspeed_type_metadata = { "name" : "airspeed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -29360,28 +27058,16 @@ class ILandingEnterDownwindPattern(object):
                              "set_touch_and_go" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ILandingEnterDownwindPattern._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ILandingEnterDownwindPattern from source object.")
+        initialize_from_source_object(self, sourceObject, ILandingEnterDownwindPattern)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ILandingEnterDownwindPattern.__dict__ and type(ILandingEnterDownwindPattern.__dict__[attrname]) == property:
-            return ILandingEnterDownwindPattern.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ILandingEnterDownwindPattern)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ILandingEnterDownwindPattern.")
+        set_interface_attribute(self, attrname, value, ILandingEnterDownwindPattern, None)
     
     _get_approach_fix_range_metadata = { "name" : "approach_fix_range",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29552,28 +27238,16 @@ class ILandingInterceptGlideslope(object):
                              "set_touch_and_go" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ILandingInterceptGlideslope._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ILandingInterceptGlideslope from source object.")
+        initialize_from_source_object(self, sourceObject, ILandingInterceptGlideslope)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ILandingInterceptGlideslope.__dict__ and type(ILandingInterceptGlideslope.__dict__[attrname]) == property:
-            return ILandingInterceptGlideslope.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ILandingInterceptGlideslope)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ILandingInterceptGlideslope.")
+        set_interface_attribute(self, attrname, value, ILandingInterceptGlideslope, None)
     
     _get_approach_fix_range_metadata = { "name" : "approach_fix_range",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29700,28 +27374,16 @@ class ILandingStandardInstrumentApproach(object):
                              "set_touch_and_go" : 16, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ILandingStandardInstrumentApproach._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ILandingStandardInstrumentApproach from source object.")
+        initialize_from_source_object(self, sourceObject, ILandingStandardInstrumentApproach)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ILandingStandardInstrumentApproach.__dict__ and type(ILandingStandardInstrumentApproach.__dict__[attrname]) == property:
-            return ILandingStandardInstrumentApproach.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ILandingStandardInstrumentApproach)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ILandingStandardInstrumentApproach.")
+        set_interface_attribute(self, attrname, value, ILandingStandardInstrumentApproach, None)
     
     _get_approach_altitude_metadata = { "name" : "approach_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29901,28 +27563,16 @@ class IProcedureBasicManeuver(object):
                              "get_as_procedure" : 37, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureBasicManeuver._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureBasicManeuver from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureBasicManeuver)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureBasicManeuver.__dict__ and type(IProcedureBasicManeuver.__dict__[attrname]) == property:
-            return IProcedureBasicManeuver.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureBasicManeuver)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureBasicManeuver.")
+        set_interface_attribute(self, attrname, value, IProcedureBasicManeuver, None)
     
     _get_max_time_of_flight_metadata = { "name" : "max_time_of_flight",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -30231,28 +27881,16 @@ class ISiteWaypoint(object):
                              "get_as_site" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteWaypoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteWaypoint from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteWaypoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteWaypoint.__dict__ and type(ISiteWaypoint.__dict__[attrname]) == property:
-            return ISiteWaypoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteWaypoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteWaypoint.")
+        set_interface_attribute(self, attrname, value, ISiteWaypoint, None)
     
     _get_latitude_metadata = { "name" : "latitude",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -30307,28 +27945,16 @@ class ISiteEndOfPrevProcedure(object):
         "method_offsets" : { "get_as_site" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteEndOfPrevProcedure._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteEndOfPrevProcedure from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteEndOfPrevProcedure)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteEndOfPrevProcedure.__dict__ and type(ISiteEndOfPrevProcedure.__dict__[attrname]) == property:
-            return ISiteEndOfPrevProcedure.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteEndOfPrevProcedure)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteEndOfPrevProcedure.")
+        set_interface_attribute(self, attrname, value, ISiteEndOfPrevProcedure, None)
     
     _get_as_site_metadata = { "name" : "get_as_site",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -30359,28 +27985,16 @@ class ISiteVTOLPoint(object):
                              "get_as_site" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteVTOLPoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteVTOLPoint from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteVTOLPoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteVTOLPoint.__dict__ and type(ISiteVTOLPoint.__dict__[attrname]) == property:
-            return ISiteVTOLPoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteVTOLPoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteVTOLPoint.")
+        set_interface_attribute(self, attrname, value, ISiteVTOLPoint, None)
     
     _get_latitude_metadata = { "name" : "latitude",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -30470,28 +28084,16 @@ class ISiteSTKVehicle(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteSTKVehicle._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteSTKVehicle from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteSTKVehicle)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteSTKVehicle.__dict__ and type(ISiteSTKVehicle.__dict__[attrname]) == property:
-            return ISiteSTKVehicle.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteSTKVehicle)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteSTKVehicle.")
+        set_interface_attribute(self, attrname, value, ISiteSTKVehicle, None)
     
     _get_object_name_metadata = { "name" : "object_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -30538,28 +28140,16 @@ class ISiteReferenceState(object):
         "method_offsets" : { "get_as_site" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteReferenceState._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteReferenceState from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteReferenceState)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteReferenceState.__dict__ and type(ISiteReferenceState.__dict__[attrname]) == property:
-            return ISiteReferenceState.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteReferenceState)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteReferenceState.")
+        set_interface_attribute(self, attrname, value, ISiteReferenceState, None)
     
     _get_as_site_metadata = { "name" : "get_as_site",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -30582,28 +28172,16 @@ class ISiteSuperProcedure(object):
         "method_offsets" : { "get_as_site" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteSuperProcedure._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteSuperProcedure from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteSuperProcedure)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteSuperProcedure.__dict__ and type(ISiteSuperProcedure.__dict__[attrname]) == property:
-            return ISiteSuperProcedure.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteSuperProcedure)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteSuperProcedure.")
+        set_interface_attribute(self, attrname, value, ISiteSuperProcedure, None)
     
     _get_as_site_metadata = { "name" : "get_as_site",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -30632,28 +28210,16 @@ class ISiteRelToPrevProcedure(object):
                              "get_as_site" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteRelToPrevProcedure._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteRelToPrevProcedure from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteRelToPrevProcedure)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteRelToPrevProcedure.__dict__ and type(ISiteRelToPrevProcedure.__dict__[attrname]) == property:
-            return ISiteRelToPrevProcedure.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteRelToPrevProcedure)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteRelToPrevProcedure.")
+        set_interface_attribute(self, attrname, value, ISiteRelToPrevProcedure, None)
     
     _get_bearing_mode_metadata = { "name" : "bearing_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -30743,28 +28309,16 @@ class ISiteSTKObjectWaypoint(object):
                              "get_as_site" : 20, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteSTKObjectWaypoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteSTKObjectWaypoint from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteSTKObjectWaypoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteSTKObjectWaypoint.__dict__ and type(ISiteSTKObjectWaypoint.__dict__[attrname]) == property:
-            return ISiteSTKObjectWaypoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteSTKObjectWaypoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteSTKObjectWaypoint.")
+        set_interface_attribute(self, attrname, value, ISiteSTKObjectWaypoint, None)
     
     _get_object_name_metadata = { "name" : "object_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -30942,28 +28496,16 @@ class ISiteSTKStaticObject(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteSTKStaticObject._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteSTKStaticObject from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteSTKStaticObject)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteSTKStaticObject.__dict__ and type(ISiteSTKStaticObject.__dict__[attrname]) == property:
-            return ISiteSTKStaticObject.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteSTKStaticObject)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteSTKStaticObject.")
+        set_interface_attribute(self, attrname, value, ISiteSTKStaticObject, None)
     
     _get_object_name_metadata = { "name" : "object_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -31019,28 +28561,16 @@ class ISiteRelToSTKObject(object):
                              "get_as_site" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteRelToSTKObject._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteRelToSTKObject from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteRelToSTKObject)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteRelToSTKObject.__dict__ and type(ISiteRelToSTKObject.__dict__[attrname]) == property:
-            return ISiteRelToSTKObject.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteRelToSTKObject)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteRelToSTKObject.")
+        set_interface_attribute(self, attrname, value, ISiteRelToSTKObject, None)
     
     _get_object_name_metadata = { "name" : "object_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -31138,28 +28668,16 @@ class ISiteSTKAreaTarget(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteSTKAreaTarget._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteSTKAreaTarget from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteSTKAreaTarget)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteSTKAreaTarget.__dict__ and type(ISiteSTKAreaTarget.__dict__[attrname]) == property:
-            return ISiteSTKAreaTarget.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteSTKAreaTarget)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteSTKAreaTarget.")
+        set_interface_attribute(self, attrname, value, ISiteSTKAreaTarget, None)
     
     _get_object_name_metadata = { "name" : "object_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -31224,28 +28742,16 @@ class ISiteRunway(object):
                              "get_as_site" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteRunway._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteRunway from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteRunway)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteRunway.__dict__ and type(ISiteRunway.__dict__[attrname]) == property:
-            return ISiteRunway.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteRunway)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteRunway.")
+        set_interface_attribute(self, attrname, value, ISiteRunway, None)
     
     _get_altitude_metadata = { "name" : "altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31420,28 +28926,16 @@ class IProcedureLanding(object):
                              "get_as_procedure" : 11, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureLanding._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureLanding from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureLanding)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureLanding.__dict__ and type(IProcedureLanding.__dict__[attrname]) == property:
-            return IProcedureLanding.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureLanding)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureLanding.")
+        set_interface_attribute(self, attrname, value, IProcedureLanding, None)
     
     _get_mode_as_standard_instrument_approach_metadata = { "name" : "mode_as_standard_instrument_approach",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -31548,28 +29042,16 @@ class IProcedureEnroute(object):
                              "get_as_procedure" : 5, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureEnroute._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureEnroute from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureEnroute)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureEnroute.__dict__ and type(IProcedureEnroute.__dict__[attrname]) == property:
-            return IProcedureEnroute.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureEnroute)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureEnroute.")
+        set_interface_attribute(self, attrname, value, IProcedureEnroute, None)
     
     _get_altitude_msl_options_metadata = { "name" : "altitude_msl_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -31635,28 +29117,16 @@ class IProcedureExtEphem(object):
                              "get_as_procedure" : 12, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureExtEphem._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureExtEphem from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureExtEphem)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureExtEphem.__dict__ and type(IProcedureExtEphem.__dict__[attrname]) == property:
-            return IProcedureExtEphem.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureExtEphem)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureExtEphem.")
+        set_interface_attribute(self, attrname, value, IProcedureExtEphem, None)
     
     _get_ephemeris_file_metadata = { "name" : "ephemeris_file",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -31783,28 +29253,16 @@ class IProcedureFormationFlyer(object):
                              "get_as_procedure" : 17, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureFormationFlyer._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureFormationFlyer from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureFormationFlyer)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureFormationFlyer.__dict__ and type(IProcedureFormationFlyer.__dict__[attrname]) == property:
-            return IProcedureFormationFlyer.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureFormationFlyer)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureFormationFlyer.")
+        set_interface_attribute(self, attrname, value, IProcedureFormationFlyer, None)
     
     _get_min_time_step_metadata = { "name" : "min_time_step",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31960,28 +29418,16 @@ class IProcedureBasicPointToPoint(object):
                              "get_as_procedure" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureBasicPointToPoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureBasicPointToPoint from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureBasicPointToPoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureBasicPointToPoint.__dict__ and type(IProcedureBasicPointToPoint.__dict__[attrname]) == property:
-            return IProcedureBasicPointToPoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureBasicPointToPoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureBasicPointToPoint.")
+        set_interface_attribute(self, attrname, value, IProcedureBasicPointToPoint, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32052,28 +29498,16 @@ class IProcedureDelay(object):
                              "set_turn_radius_factor" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureDelay._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureDelay from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureDelay)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureDelay.__dict__ and type(IProcedureDelay.__dict__[attrname]) == property:
-            return IProcedureDelay.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureDelay)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureDelay.")
+        set_interface_attribute(self, attrname, value, IProcedureDelay, None)
     
     _get_altitude_mode_metadata = { "name" : "altitude_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32167,28 +29601,16 @@ class IProcedureTakeoff(object):
                              "get_as_procedure" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureTakeoff._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureTakeoff from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureTakeoff)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureTakeoff.__dict__ and type(IProcedureTakeoff.__dict__[attrname]) == property:
-            return IProcedureTakeoff.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureTakeoff)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTakeoff.")
+        set_interface_attribute(self, attrname, value, IProcedureTakeoff, None)
     
     _get_runway_heading_options_metadata = { "name" : "runway_heading_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32265,28 +29687,16 @@ class IProcedureArcEnroute(object):
                              "get_as_procedure" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureArcEnroute._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureArcEnroute from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureArcEnroute)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureArcEnroute.__dict__ and type(IProcedureArcEnroute.__dict__[attrname]) == property:
-            return IProcedureArcEnroute.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureArcEnroute)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureArcEnroute.")
+        set_interface_attribute(self, attrname, value, IProcedureArcEnroute, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32366,28 +29776,16 @@ class IProcedureArcPointToPoint(object):
                              "get_as_procedure" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureArcPointToPoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureArcPointToPoint from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureArcPointToPoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureArcPointToPoint.__dict__ and type(IProcedureArcPointToPoint.__dict__[attrname]) == property:
-            return IProcedureArcPointToPoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureArcPointToPoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureArcPointToPoint.")
+        set_interface_attribute(self, attrname, value, IProcedureArcPointToPoint, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32501,28 +29899,16 @@ class IProcedureFlightLine(object):
                              "get_as_procedure" : 20, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureFlightLine._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureFlightLine from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureFlightLine)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureFlightLine.__dict__ and type(IProcedureFlightLine.__dict__[attrname]) == property:
-            return IProcedureFlightLine.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureFlightLine)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureFlightLine.")
+        set_interface_attribute(self, attrname, value, IProcedureFlightLine, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32723,28 +30109,16 @@ class IProcedureHoldingCircular(object):
                              "get_as_procedure" : 27, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureHoldingCircular._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureHoldingCircular from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureHoldingCircular)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureHoldingCircular.__dict__ and type(IProcedureHoldingCircular.__dict__[attrname]) == property:
-            return IProcedureHoldingCircular.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureHoldingCircular)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoldingCircular.")
+        set_interface_attribute(self, attrname, value, IProcedureHoldingCircular, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -33000,28 +30374,16 @@ class IProcedureHoldingFigure8(object):
                              "get_as_procedure" : 27, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureHoldingFigure8._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureHoldingFigure8 from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureHoldingFigure8)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureHoldingFigure8.__dict__ and type(IProcedureHoldingFigure8.__dict__[attrname]) == property:
-            return IProcedureHoldingFigure8.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureHoldingFigure8)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoldingFigure8.")
+        set_interface_attribute(self, attrname, value, IProcedureHoldingFigure8, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -33277,28 +30639,16 @@ class IProcedureHoldingRacetrack(object):
                              "get_as_procedure" : 27, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureHoldingRacetrack._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureHoldingRacetrack from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureHoldingRacetrack)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureHoldingRacetrack.__dict__ and type(IProcedureHoldingRacetrack.__dict__[attrname]) == property:
-            return IProcedureHoldingRacetrack.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureHoldingRacetrack)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoldingRacetrack.")
+        set_interface_attribute(self, attrname, value, IProcedureHoldingRacetrack, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -33542,28 +30892,16 @@ class IProcedureTransitionToHover(object):
                              "get_as_procedure" : 15, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureTransitionToHover._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureTransitionToHover from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureTransitionToHover)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureTransitionToHover.__dict__ and type(IProcedureTransitionToHover.__dict__[attrname]) == property:
-            return IProcedureTransitionToHover.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureTransitionToHover)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTransitionToHover.")
+        set_interface_attribute(self, attrname, value, IProcedureTransitionToHover, None)
     
     _get_altitude_reference_metadata = { "name" : "altitude_reference",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33704,28 +31042,16 @@ class IProcedureTerrainFollow(object):
                              "get_as_procedure" : 9, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureTerrainFollow._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureTerrainFollow from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureTerrainFollow)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureTerrainFollow.__dict__ and type(IProcedureTerrainFollow.__dict__[attrname]) == property:
-            return IProcedureTerrainFollow.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureTerrainFollow)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTerrainFollow.")
+        set_interface_attribute(self, attrname, value, IProcedureTerrainFollow, None)
     
     _get_altitude_agl_metadata = { "name" : "altitude_agl",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33842,28 +31168,16 @@ class IProcedureHover(object):
                              "get_as_procedure" : 31, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureHover._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureHover from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureHover)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureHover.__dict__ and type(IProcedureHover.__dict__[attrname]) == property:
-            return IProcedureHover.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureHover)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHover.")
+        set_interface_attribute(self, attrname, value, IProcedureHover, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -34141,28 +31455,16 @@ class IProcedureHoverTranslate(object):
                              "get_as_procedure" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureHoverTranslate._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureHoverTranslate from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureHoverTranslate)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureHoverTranslate.__dict__ and type(IProcedureHoverTranslate.__dict__[attrname]) == property:
-            return IProcedureHoverTranslate.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureHoverTranslate)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureHoverTranslate.")
+        set_interface_attribute(self, attrname, value, IProcedureHoverTranslate, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -34335,28 +31637,16 @@ class IProcedureTransitionToForwardFlight(object):
                              "get_as_procedure" : 10, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureTransitionToForwardFlight._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureTransitionToForwardFlight from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureTransitionToForwardFlight)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureTransitionToForwardFlight.__dict__ and type(IProcedureTransitionToForwardFlight.__dict__[attrname]) == property:
-            return IProcedureTransitionToForwardFlight.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureTransitionToForwardFlight)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTransitionToForwardFlight.")
+        set_interface_attribute(self, attrname, value, IProcedureTransitionToForwardFlight, None)
     
     _get_transition_course_mode_metadata = { "name" : "transition_course_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34461,28 +31751,16 @@ class IProcedureVerticalTakeoff(object):
                              "get_as_procedure" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureVerticalTakeoff._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureVerticalTakeoff from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureVerticalTakeoff)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureVerticalTakeoff.__dict__ and type(IProcedureVerticalTakeoff.__dict__[attrname]) == property:
-            return IProcedureVerticalTakeoff.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureVerticalTakeoff)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureVerticalTakeoff.")
+        set_interface_attribute(self, attrname, value, IProcedureVerticalTakeoff, None)
     
     _get_altitude_above_point_metadata = { "name" : "altitude_above_point",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34621,28 +31899,16 @@ class IProcedureVerticalLanding(object):
                              "get_as_procedure" : 14, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureVerticalLanding._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureVerticalLanding from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureVerticalLanding)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureVerticalLanding.__dict__ and type(IProcedureVerticalLanding.__dict__[attrname]) == property:
-            return IProcedureVerticalLanding.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureVerticalLanding)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureVerticalLanding.")
+        set_interface_attribute(self, attrname, value, IProcedureVerticalLanding, None)
     
     _get_altitude_above_point_metadata = { "name" : "altitude_above_point",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34788,28 +32054,16 @@ class IProcedureReferenceState(object):
                              "get_mode_as_weight_on_wheels" : 21, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureReferenceState._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureReferenceState from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureReferenceState)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureReferenceState.__dict__ and type(IProcedureReferenceState.__dict__[attrname]) == property:
-            return IProcedureReferenceState.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureReferenceState)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureReferenceState.")
+        set_interface_attribute(self, attrname, value, IProcedureReferenceState, None)
     
     _get_start_time_metadata = { "name" : "start_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -34994,28 +32248,16 @@ class IProcedureSuperProcedure(object):
                              "load_procedures_from_file" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureSuperProcedure._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureSuperProcedure from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureSuperProcedure)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureSuperProcedure.__dict__ and type(IProcedureSuperProcedure.__dict__[attrname]) == property:
-            return IProcedureSuperProcedure.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureSuperProcedure)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureSuperProcedure.")
+        set_interface_attribute(self, attrname, value, IProcedureSuperProcedure, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -35073,28 +32315,16 @@ class IProcedureLaunch(object):
                              "set_true_course_hint" : 22, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureLaunch._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureLaunch from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureLaunch)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureLaunch.__dict__ and type(IProcedureLaunch.__dict__[attrname]) == property:
-            return IProcedureLaunch.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureLaunch)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureLaunch.")
+        set_interface_attribute(self, attrname, value, IProcedureLaunch, None)
     
     _get_launch_time_metadata = { "name" : "launch_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -35301,28 +32531,16 @@ class IProcedureAirway(object):
                              "copy_procedures" : 18, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureAirway._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureAirway from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureAirway)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureAirway.__dict__ and type(IProcedureAirway.__dict__[attrname]) == property:
-            return IProcedureAirway.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureAirway)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureAirway.")
+        set_interface_attribute(self, attrname, value, IProcedureAirway, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -35495,28 +32713,16 @@ class IProcedureAirwayRouter(object):
                              "copy_procedures" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureAirwayRouter._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureAirwayRouter from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureAirwayRouter)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureAirwayRouter.__dict__ and type(IProcedureAirwayRouter.__dict__[attrname]) == property:
-            return IProcedureAirwayRouter.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureAirwayRouter)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureAirwayRouter.")
+        set_interface_attribute(self, attrname, value, IProcedureAirwayRouter, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -35699,28 +32905,16 @@ class IProcedureAreaTargetSearch(object):
                              "copy_procedures" : 21, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureAreaTargetSearch._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureAreaTargetSearch from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureAreaTargetSearch)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureAreaTargetSearch.__dict__ and type(IProcedureAreaTargetSearch.__dict__[attrname]) == property:
-            return IProcedureAreaTargetSearch.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureAreaTargetSearch)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureAreaTargetSearch.")
+        set_interface_attribute(self, attrname, value, IProcedureAreaTargetSearch, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -35939,28 +33133,16 @@ class IProcedureFormationRecover(object):
                              "set_delay_turn_direction" : 38, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureFormationRecover._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureFormationRecover from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureFormationRecover)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureFormationRecover.__dict__ and type(IProcedureFormationRecover.__dict__[attrname]) == property:
-            return IProcedureFormationRecover.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureFormationRecover)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureFormationRecover.")
+        set_interface_attribute(self, attrname, value, IProcedureFormationRecover, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -36295,28 +33477,16 @@ class IProcedureInFormation(object):
                              "set_consider_accel_for_fuel_flow" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureInFormation._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureInFormation from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureInFormation)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureInFormation.__dict__ and type(IProcedureInFormation.__dict__[attrname]) == property:
-            return IProcedureInFormation.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureInFormation)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureInFormation.")
+        set_interface_attribute(self, attrname, value, IProcedureInFormation, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -36501,28 +33671,16 @@ class IProcedureParallelFlightLine(object):
                              "get_as_procedure" : 19, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureParallelFlightLine._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureParallelFlightLine from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureParallelFlightLine)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureParallelFlightLine.__dict__ and type(IProcedureParallelFlightLine.__dict__[attrname]) == property:
-            return IProcedureParallelFlightLine.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureParallelFlightLine)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureParallelFlightLine.")
+        set_interface_attribute(self, attrname, value, IProcedureParallelFlightLine, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -36711,28 +33869,16 @@ class IProcedureVGTPoint(object):
                              "set_display_step_time" : 23, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureVGTPoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureVGTPoint from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureVGTPoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureVGTPoint.__dict__ and type(IProcedureVGTPoint.__dict__[attrname]) == property:
-            return IProcedureVGTPoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureVGTPoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureVGTPoint.")
+        set_interface_attribute(self, attrname, value, IProcedureVGTPoint, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -36933,28 +34079,16 @@ class ISiteRunwayFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteRunwayFromCatalog._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteRunwayFromCatalog from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteRunwayFromCatalog)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteRunwayFromCatalog.__dict__ and type(ISiteRunwayFromCatalog.__dict__[attrname]) == property:
-            return ISiteRunwayFromCatalog.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteRunwayFromCatalog)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteRunwayFromCatalog.")
+        set_interface_attribute(self, attrname, value, ISiteRunwayFromCatalog, None)
     
     _get_catalog_runway_metadata = { "name" : "get_catalog_runway",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -36993,28 +34127,16 @@ class ISiteAirportFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteAirportFromCatalog._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteAirportFromCatalog from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteAirportFromCatalog)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteAirportFromCatalog.__dict__ and type(ISiteAirportFromCatalog.__dict__[attrname]) == property:
-            return ISiteAirportFromCatalog.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteAirportFromCatalog)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteAirportFromCatalog.")
+        set_interface_attribute(self, attrname, value, ISiteAirportFromCatalog, None)
     
     _get_catalog_airport_metadata = { "name" : "get_catalog_airport",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -37053,28 +34175,16 @@ class ISiteNavaidFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteNavaidFromCatalog._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteNavaidFromCatalog from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteNavaidFromCatalog)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteNavaidFromCatalog.__dict__ and type(ISiteNavaidFromCatalog.__dict__[attrname]) == property:
-            return ISiteNavaidFromCatalog.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteNavaidFromCatalog)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteNavaidFromCatalog.")
+        set_interface_attribute(self, attrname, value, ISiteNavaidFromCatalog, None)
     
     _get_catalog_navaid_metadata = { "name" : "get_catalog_navaid",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -37113,28 +34223,16 @@ class ISiteVTOLPointFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteVTOLPointFromCatalog._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteVTOLPointFromCatalog from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteVTOLPointFromCatalog)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteVTOLPointFromCatalog.__dict__ and type(ISiteVTOLPointFromCatalog.__dict__[attrname]) == property:
-            return ISiteVTOLPointFromCatalog.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteVTOLPointFromCatalog)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteVTOLPointFromCatalog.")
+        set_interface_attribute(self, attrname, value, ISiteVTOLPointFromCatalog, None)
     
     _get_catalog_vtol_point_metadata = { "name" : "get_catalog_vtol_point",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -37173,28 +34271,16 @@ class ISiteWaypointFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteWaypointFromCatalog._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteWaypointFromCatalog from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteWaypointFromCatalog)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteWaypointFromCatalog.__dict__ and type(ISiteWaypointFromCatalog.__dict__[attrname]) == property:
-            return ISiteWaypointFromCatalog.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteWaypointFromCatalog)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteWaypointFromCatalog.")
+        set_interface_attribute(self, attrname, value, ISiteWaypointFromCatalog, None)
     
     _get_catalog_waypoint_metadata = { "name" : "get_catalog_waypoint",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -37256,28 +34342,16 @@ class IProcedureLaunchDynState(object):
                              "get_as_procedure" : 26, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureLaunchDynState._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureLaunchDynState from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureLaunchDynState)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureLaunchDynState.__dict__ and type(IProcedureLaunchDynState.__dict__[attrname]) == property:
-            return IProcedureLaunchDynState.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureLaunchDynState)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureLaunchDynState.")
+        set_interface_attribute(self, attrname, value, IProcedureLaunchDynState, None)
     
     _get_launch_time_metadata = { "name" : "launch_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -37518,28 +34592,16 @@ class IProcedureLaunchWaypoint(object):
                              "get_as_procedure" : 20, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IProcedureLaunchWaypoint._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IProcedureLaunchWaypoint from source object.")
+        initialize_from_source_object(self, sourceObject, IProcedureLaunchWaypoint)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IProcedureLaunchWaypoint.__dict__ and type(IProcedureLaunchWaypoint.__dict__[attrname]) == property:
-            return IProcedureLaunchWaypoint.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IProcedureLaunchWaypoint)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureLaunchWaypoint.")
+        set_interface_attribute(self, attrname, value, IProcedureLaunchWaypoint, None)
     
     _get_launch_time_metadata = { "name" : "launch_time",
             "arg_types" : (POINTER(agcom.VARIANT),),
@@ -37716,28 +34778,16 @@ class ISiteDynState(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(ISiteDynState._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create ISiteDynState from source object.")
+        initialize_from_source_object(self, sourceObject, ISiteDynState)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in ISiteDynState.__dict__ and type(ISiteDynState.__dict__[attrname]) == property:
-            return ISiteDynState.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, ISiteDynState)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ISiteDynState.")
+        set_interface_attribute(self, attrname, value, ISiteDynState, None)
     
     _get_object_name_metadata = { "name" : "object_name",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -37789,13 +34839,7 @@ class SiteWaypoint(ISiteWaypoint, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteWaypoint._get_property(self, attrname) is not None: found_prop = ISiteWaypoint._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteWaypoint.")
+        set_class_attribute(self, attrname, value, SiteWaypoint, [ISiteWaypoint, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{6d98e9b3-6766-46e5-98e2-b1f859b2ce92}", SiteWaypoint)
 agcls.AgTypeNameMap["SiteWaypoint"] = SiteWaypoint
@@ -37813,13 +34857,7 @@ class SiteEndOfPrevProcedure(ISiteEndOfPrevProcedure, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteEndOfPrevProcedure._get_property(self, attrname) is not None: found_prop = ISiteEndOfPrevProcedure._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteEndOfPrevProcedure.")
+        set_class_attribute(self, attrname, value, SiteEndOfPrevProcedure, [ISiteEndOfPrevProcedure, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{24d8e613-5ce5-4e04-9251-fe44414caa14}", SiteEndOfPrevProcedure)
 agcls.AgTypeNameMap["SiteEndOfPrevProcedure"] = SiteEndOfPrevProcedure
@@ -37837,13 +34875,7 @@ class SiteVTOLPoint(ISiteVTOLPoint, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteVTOLPoint._get_property(self, attrname) is not None: found_prop = ISiteVTOLPoint._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteVTOLPoint.")
+        set_class_attribute(self, attrname, value, SiteVTOLPoint, [ISiteVTOLPoint, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{4f9d9e04-fa7e-4335-b1f4-15788a01c7ea}", SiteVTOLPoint)
 agcls.AgTypeNameMap["SiteVTOLPoint"] = SiteVTOLPoint
@@ -37861,13 +34893,7 @@ class SiteReferenceState(ISiteReferenceState, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteReferenceState._get_property(self, attrname) is not None: found_prop = ISiteReferenceState._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteReferenceState.")
+        set_class_attribute(self, attrname, value, SiteReferenceState, [ISiteReferenceState, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{978180ff-3f87-4ead-9405-e12e915c27e1}", SiteReferenceState)
 agcls.AgTypeNameMap["SiteReferenceState"] = SiteReferenceState
@@ -37885,13 +34911,7 @@ class SiteSTKVehicle(ISiteSTKVehicle, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteSTKVehicle._get_property(self, attrname) is not None: found_prop = ISiteSTKVehicle._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKVehicle.")
+        set_class_attribute(self, attrname, value, SiteSTKVehicle, [ISiteSTKVehicle, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{01b272ac-3b19-4daf-825f-88c0ff0e10bb}", SiteSTKVehicle)
 agcls.AgTypeNameMap["SiteSTKVehicle"] = SiteSTKVehicle
@@ -37909,13 +34929,7 @@ class SiteSuperProcedure(ISiteSuperProcedure, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteSuperProcedure._get_property(self, attrname) is not None: found_prop = ISiteSuperProcedure._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteSuperProcedure.")
+        set_class_attribute(self, attrname, value, SiteSuperProcedure, [ISiteSuperProcedure, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{0faf9c77-17bc-4a8d-b490-d4dcd2326ca9}", SiteSuperProcedure)
 agcls.AgTypeNameMap["SiteSuperProcedure"] = SiteSuperProcedure
@@ -37933,13 +34947,7 @@ class SiteRelToPrevProcedure(ISiteRelToPrevProcedure, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteRelToPrevProcedure._get_property(self, attrname) is not None: found_prop = ISiteRelToPrevProcedure._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteRelToPrevProcedure.")
+        set_class_attribute(self, attrname, value, SiteRelToPrevProcedure, [ISiteRelToPrevProcedure, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{aa8dc548-3b50-44d0-b340-f1fca98283ee}", SiteRelToPrevProcedure)
 agcls.AgTypeNameMap["SiteRelToPrevProcedure"] = SiteRelToPrevProcedure
@@ -37957,13 +34965,7 @@ class SiteSTKObjectWaypoint(ISiteSTKObjectWaypoint, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteSTKObjectWaypoint._get_property(self, attrname) is not None: found_prop = ISiteSTKObjectWaypoint._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKObjectWaypoint.")
+        set_class_attribute(self, attrname, value, SiteSTKObjectWaypoint, [ISiteSTKObjectWaypoint, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{0b1f12ad-e7be-4158-abb4-39efb21a87d3}", SiteSTKObjectWaypoint)
 agcls.AgTypeNameMap["SiteSTKObjectWaypoint"] = SiteSTKObjectWaypoint
@@ -37981,13 +34983,7 @@ class SiteSTKStaticObject(ISiteSTKStaticObject, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteSTKStaticObject._get_property(self, attrname) is not None: found_prop = ISiteSTKStaticObject._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKStaticObject.")
+        set_class_attribute(self, attrname, value, SiteSTKStaticObject, [ISiteSTKStaticObject, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{16bc1a6a-6cf6-4e2a-b73f-82e6e0928c61}", SiteSTKStaticObject)
 agcls.AgTypeNameMap["SiteSTKStaticObject"] = SiteSTKStaticObject
@@ -38005,13 +35001,7 @@ class SiteRelToSTKObject(ISiteRelToSTKObject, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteRelToSTKObject._get_property(self, attrname) is not None: found_prop = ISiteRelToSTKObject._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteRelToSTKObject.")
+        set_class_attribute(self, attrname, value, SiteRelToSTKObject, [ISiteRelToSTKObject, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{0c4677b4-f09b-4f8c-a170-3d4f0e1bf7f9}", SiteRelToSTKObject)
 agcls.AgTypeNameMap["SiteRelToSTKObject"] = SiteRelToSTKObject
@@ -38029,13 +35019,7 @@ class SiteSTKAreaTarget(ISiteSTKAreaTarget, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteSTKAreaTarget._get_property(self, attrname) is not None: found_prop = ISiteSTKAreaTarget._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteSTKAreaTarget.")
+        set_class_attribute(self, attrname, value, SiteSTKAreaTarget, [ISiteSTKAreaTarget, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{8ae70236-0185-4072-b230-da6e68e122f1}", SiteSTKAreaTarget)
 agcls.AgTypeNameMap["SiteSTKAreaTarget"] = SiteSTKAreaTarget
@@ -38053,13 +35037,7 @@ class SiteRunway(ISiteRunway, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteRunway._get_property(self, attrname) is not None: found_prop = ISiteRunway._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteRunway.")
+        set_class_attribute(self, attrname, value, SiteRunway, [ISiteRunway, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{6bbd87f1-83bc-4750-8128-8ba51a48b4ed}", SiteRunway)
 agcls.AgTypeNameMap["SiteRunway"] = SiteRunway
@@ -38077,13 +35055,7 @@ class Site(ISite, ISiteUnknown):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if ISiteUnknown._get_property(self, attrname) is not None: found_prop = ISiteUnknown._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Site.")
+        set_class_attribute(self, attrname, value, Site, [ISite, ISiteUnknown])
 
 agcls.AgClassCatalog.add_catalog_entry("{445bad6d-6125-446d-bce6-ac9233f11706}", Site)
 agcls.AgTypeNameMap["Site"] = Site
@@ -38101,13 +35073,7 @@ class ProcedureLanding(IProcedureLanding, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureLanding._get_property(self, attrname) is not None: found_prop = IProcedureLanding._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLanding.")
+        set_class_attribute(self, attrname, value, ProcedureLanding, [IProcedureLanding, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{bde94020-cc95-4868-b5f1-da680baf4aeb}", ProcedureLanding)
 agcls.AgTypeNameMap["ProcedureLanding"] = ProcedureLanding
@@ -38125,13 +35091,7 @@ class ProcedureEnroute(IProcedureEnroute, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureEnroute._get_property(self, attrname) is not None: found_prop = IProcedureEnroute._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureEnroute.")
+        set_class_attribute(self, attrname, value, ProcedureEnroute, [IProcedureEnroute, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{f073011a-bfc1-4c9a-bd43-1a99bed41390}", ProcedureEnroute)
 agcls.AgTypeNameMap["ProcedureEnroute"] = ProcedureEnroute
@@ -38149,13 +35109,7 @@ class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureExtEphem._get_property(self, attrname) is not None: found_prop = IProcedureExtEphem._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureExtEphem.")
+        set_class_attribute(self, attrname, value, ProcedureExtEphem, [IProcedureExtEphem, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{0F39A3ED-4A9E-4893-A061-F73A75ACF910}", ProcedureExtEphem)
 agcls.AgTypeNameMap["ProcedureExtEphem"] = ProcedureExtEphem
@@ -38173,13 +35127,7 @@ class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureFormationFlyer._get_property(self, attrname) is not None: found_prop = IProcedureFormationFlyer._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFormationFlyer.")
+        set_class_attribute(self, attrname, value, ProcedureFormationFlyer, [IProcedureFormationFlyer, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{678807EC-D03C-4E14-A068-3C0D14923D72}", ProcedureFormationFlyer)
 agcls.AgTypeNameMap["ProcedureFormationFlyer"] = ProcedureFormationFlyer
@@ -38197,13 +35145,7 @@ class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureBasicPointToPoint._get_property(self, attrname) is not None: found_prop = IProcedureBasicPointToPoint._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureBasicPointToPoint.")
+        set_class_attribute(self, attrname, value, ProcedureBasicPointToPoint, [IProcedureBasicPointToPoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{36ce90e9-da71-40a6-aff9-db4aecab63bd}", ProcedureBasicPointToPoint)
 agcls.AgTypeNameMap["ProcedureBasicPointToPoint"] = ProcedureBasicPointToPoint
@@ -38221,13 +35163,7 @@ class ProcedureArcEnroute(IProcedureArcEnroute, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureArcEnroute._get_property(self, attrname) is not None: found_prop = IProcedureArcEnroute._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureArcEnroute.")
+        set_class_attribute(self, attrname, value, ProcedureArcEnroute, [IProcedureArcEnroute, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{7466bbc5-38eb-48ee-aec6-d45c69c562c1}", ProcedureArcEnroute)
 agcls.AgTypeNameMap["ProcedureArcEnroute"] = ProcedureArcEnroute
@@ -38245,13 +35181,7 @@ class ProcedureArcPointToPoint(IProcedureArcPointToPoint, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureArcPointToPoint._get_property(self, attrname) is not None: found_prop = IProcedureArcPointToPoint._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureArcPointToPoint.")
+        set_class_attribute(self, attrname, value, ProcedureArcPointToPoint, [IProcedureArcPointToPoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c8026c77-0b69-413a-9903-bff5e40f44b8}", ProcedureArcPointToPoint)
 agcls.AgTypeNameMap["ProcedureArcPointToPoint"] = ProcedureArcPointToPoint
@@ -38269,13 +35199,7 @@ class ProcedureFlightLine(IProcedureFlightLine, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureFlightLine._get_property(self, attrname) is not None: found_prop = IProcedureFlightLine._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFlightLine.")
+        set_class_attribute(self, attrname, value, ProcedureFlightLine, [IProcedureFlightLine, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{5079d60a-789b-489e-b1ba-749d7a888eba}", ProcedureFlightLine)
 agcls.AgTypeNameMap["ProcedureFlightLine"] = ProcedureFlightLine
@@ -38293,13 +35217,7 @@ class ProcedureDelay(IProcedureDelay, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureDelay._get_property(self, attrname) is not None: found_prop = IProcedureDelay._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureDelay.")
+        set_class_attribute(self, attrname, value, ProcedureDelay, [IProcedureDelay, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{bf773446-cf9e-4f29-8c9e-57d62abbdb09}", ProcedureDelay)
 agcls.AgTypeNameMap["ProcedureDelay"] = ProcedureDelay
@@ -38317,13 +35235,7 @@ class ProcedureTakeoff(IProcedureTakeoff, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureTakeoff._get_property(self, attrname) is not None: found_prop = IProcedureTakeoff._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTakeoff.")
+        set_class_attribute(self, attrname, value, ProcedureTakeoff, [IProcedureTakeoff, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{52f322eb-31ca-4026-910d-ce46cc0830ee}", ProcedureTakeoff)
 agcls.AgTypeNameMap["ProcedureTakeoff"] = ProcedureTakeoff
@@ -38339,12 +35251,7 @@ class ProcedureCollection(IProcedureCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureCollection._get_property(self, attrname) is not None: found_prop = IProcedureCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureCollection.")
+        set_class_attribute(self, attrname, value, ProcedureCollection, [IProcedureCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{02be4f36-f12f-4df0-86f4-3740e53fafe9}", ProcedureCollection)
 agcls.AgTypeNameMap["ProcedureCollection"] = ProcedureCollection
@@ -38360,12 +35267,7 @@ class Phase(IPhase):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPhase._get_property(self, attrname) is not None: found_prop = IPhase._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Phase.")
+        set_class_attribute(self, attrname, value, Phase, [IPhase])
 
 agcls.AgClassCatalog.add_catalog_entry("{ff7ca84a-39d9-49ee-9629-0e3d46183fbf}", Phase)
 agcls.AgTypeNameMap["Phase"] = Phase
@@ -38381,12 +35283,7 @@ class PhaseCollection(IPhaseCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPhaseCollection._get_property(self, attrname) is not None: found_prop = IPhaseCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in PhaseCollection.")
+        set_class_attribute(self, attrname, value, PhaseCollection, [IPhaseCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{6518b03b-1889-4b4e-86d0-403939b71a21}", PhaseCollection)
 agcls.AgTypeNameMap["PhaseCollection"] = PhaseCollection
@@ -38402,12 +35299,7 @@ class Mission(IMission):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMission._get_property(self, attrname) is not None: found_prop = IMission._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Mission.")
+        set_class_attribute(self, attrname, value, Mission, [IMission])
 
 agcls.AgClassCatalog.add_catalog_entry("{26840b17-5789-4690-96be-c8637b15f434}", Mission)
 agcls.AgTypeNameMap["Mission"] = Mission
@@ -38423,12 +35315,7 @@ class AviatorPropagator(IAviatorPropagator):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAviatorPropagator._get_property(self, attrname) is not None: found_prop = IAviatorPropagator._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AviatorPropagator.")
+        set_class_attribute(self, attrname, value, AviatorPropagator, [IAviatorPropagator])
 
 agcls.AgClassCatalog.add_catalog_entry("{e20f6939-fe05-44eb-a175-d63fa503526f}", AviatorPropagator)
 agcls.AgTypeNameMap["AviatorPropagator"] = AviatorPropagator
@@ -38446,13 +35333,7 @@ class ProcedureBasicManeuver(IProcedureBasicManeuver, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureBasicManeuver._get_property(self, attrname) is not None: found_prop = IProcedureBasicManeuver._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureBasicManeuver.")
+        set_class_attribute(self, attrname, value, ProcedureBasicManeuver, [IProcedureBasicManeuver, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{7eb66528-bec8-4b78-a9c7-45333edbda52}", ProcedureBasicManeuver)
 agcls.AgTypeNameMap["ProcedureBasicManeuver"] = ProcedureBasicManeuver
@@ -38470,13 +35351,7 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategyWeave, IBasicManeuverStra
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyWeave._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyWeave._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyWeave.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyWeave, [IBasicManeuverStrategyWeave, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{46876894-f405-41cc-b071-9368b2d615f8}", BasicManeuverStrategyWeave)
 agcls.AgTypeNameMap["BasicManeuverStrategyWeave"] = BasicManeuverStrategyWeave
@@ -38492,12 +35367,7 @@ class ProcedureTimeOptions(IProcedureTimeOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureTimeOptions._get_property(self, attrname) is not None: found_prop = IProcedureTimeOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTimeOptions.")
+        set_class_attribute(self, attrname, value, ProcedureTimeOptions, [IProcedureTimeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{8f9d3e7e-4531-42b5-b066-44a87d6afc8c}", ProcedureTimeOptions)
 agcls.AgTypeNameMap["ProcedureTimeOptions"] = ProcedureTimeOptions
@@ -38513,12 +35383,7 @@ class CalculationOptions(ICalculationOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICalculationOptions._get_property(self, attrname) is not None: found_prop = ICalculationOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CalculationOptions.")
+        set_class_attribute(self, attrname, value, CalculationOptions, [ICalculationOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0538ece7-c599-4fc2-9d5b-3750f6712233}", CalculationOptions)
 agcls.AgTypeNameMap["CalculationOptions"] = CalculationOptions
@@ -38534,12 +35399,7 @@ class AircraftCategory(IAircraftCategory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftCategory._get_property(self, attrname) is not None: found_prop = IAircraftCategory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftCategory.")
+        set_class_attribute(self, attrname, value, AircraftCategory, [IAircraftCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{7c68c433-7123-45ec-9e3d-3bc4d999c6f3}", AircraftCategory)
 agcls.AgTypeNameMap["AircraftCategory"] = AircraftCategory
@@ -38555,12 +35415,7 @@ class Catalog(ICatalog):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICatalog._get_property(self, attrname) is not None: found_prop = ICatalog._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Catalog.")
+        set_class_attribute(self, attrname, value, Catalog, [ICatalog])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ac28f35-5412-4419-ac35-24dfd086a210}", Catalog)
 agcls.AgTypeNameMap["Catalog"] = Catalog
@@ -38580,14 +35435,7 @@ class AircraftModel(IAircraftModel, IAviatorVehicle, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftModel._get_property(self, attrname) is not None: found_prop = IAircraftModel._get_property(self, attrname)
-        if IAviatorVehicle._get_property(self, attrname) is not None: found_prop = IAviatorVehicle._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftModel.")
+        set_class_attribute(self, attrname, value, AircraftModel, [IAircraftModel, IAviatorVehicle, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{063a922a-36a4-492c-8b6b-7b9cd7c29e8d}", AircraftModel)
 agcls.AgTypeNameMap["AircraftModel"] = AircraftModel
@@ -38607,14 +35455,7 @@ class MissileModel(IMissileModel, IAviatorVehicle, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileModel._get_property(self, attrname) is not None: found_prop = IMissileModel._get_property(self, attrname)
-        if IAviatorVehicle._get_property(self, attrname) is not None: found_prop = IAviatorVehicle._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileModel.")
+        set_class_attribute(self, attrname, value, MissileModel, [IMissileModel, IAviatorVehicle, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{4b46d7a8-3e2b-4cd9-a927-2e49e1b9ab5c}", MissileModel)
 agcls.AgTypeNameMap["MissileModel"] = MissileModel
@@ -38634,14 +35475,7 @@ class RotorcraftModel(IRotorcraftModel, IAviatorVehicle, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRotorcraftModel._get_property(self, attrname) is not None: found_prop = IRotorcraftModel._get_property(self, attrname)
-        if IAviatorVehicle._get_property(self, attrname) is not None: found_prop = IAviatorVehicle._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftModel.")
+        set_class_attribute(self, attrname, value, RotorcraftModel, [IRotorcraftModel, IAviatorVehicle, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{a10ff662-0083-473b-90c7-5ff75d3144c9}", RotorcraftModel)
 agcls.AgTypeNameMap["RotorcraftModel"] = RotorcraftModel
@@ -38657,12 +35491,7 @@ class RotorcraftAero(IRotorcraftAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRotorcraftAero._get_property(self, attrname) is not None: found_prop = IRotorcraftAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftAero.")
+        set_class_attribute(self, attrname, value, RotorcraftAero, [IRotorcraftAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{df267da7-689f-48eb-bd92-1bdfebc51435}", RotorcraftAero)
 agcls.AgTypeNameMap["RotorcraftAero"] = RotorcraftAero
@@ -38678,12 +35507,7 @@ class RotorcraftProp(IRotorcraftProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRotorcraftProp._get_property(self, attrname) is not None: found_prop = IRotorcraftProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftProp.")
+        set_class_attribute(self, attrname, value, RotorcraftProp, [IRotorcraftProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{c0734618-529f-4ff2-9a14-3e4bd14cd601}", RotorcraftProp)
 agcls.AgTypeNameMap["RotorcraftProp"] = RotorcraftProp
@@ -38701,13 +35525,7 @@ class AircraftAcceleration(IAircraftAcceleration, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAcceleration._get_property(self, attrname) is not None: found_prop = IAircraftAcceleration._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAcceleration.")
+        set_class_attribute(self, attrname, value, AircraftAcceleration, [IAircraftAcceleration, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{574f37f4-4889-4c85-baf5-8359e847acfa}", AircraftAcceleration)
 agcls.AgTypeNameMap["AircraftAcceleration"] = AircraftAcceleration
@@ -38727,14 +35545,7 @@ class AircraftBasicAccelerationModel(IAircraftBasicAccelerationModel, IPerforman
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicAccelerationModel._get_property(self, attrname) is not None: found_prop = IAircraftBasicAccelerationModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicAccelerationModel.")
+        set_class_attribute(self, attrname, value, AircraftBasicAccelerationModel, [IAircraftBasicAccelerationModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{e33469ad-d69d-48a2-9fc0-3fce97a2b98e}", AircraftBasicAccelerationModel)
 agcls.AgTypeNameMap["AircraftBasicAccelerationModel"] = AircraftBasicAccelerationModel
@@ -38752,13 +35563,7 @@ class AircraftClimb(IAircraftClimb, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftClimb._get_property(self, attrname) is not None: found_prop = IAircraftClimb._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftClimb.")
+        set_class_attribute(self, attrname, value, AircraftClimb, [IAircraftClimb, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{2f0086b2-66d4-4df6-9711-ee2524ba1ed0}", AircraftClimb)
 agcls.AgTypeNameMap["AircraftClimb"] = AircraftClimb
@@ -38776,13 +35581,7 @@ class AircraftCruise(IAircraftCruise, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftCruise._get_property(self, attrname) is not None: found_prop = IAircraftCruise._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftCruise.")
+        set_class_attribute(self, attrname, value, AircraftCruise, [IAircraftCruise, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{efe9b334-9261-44bb-9834-8e7207ca6e05}", AircraftCruise)
 agcls.AgTypeNameMap["AircraftCruise"] = AircraftCruise
@@ -38800,13 +35599,7 @@ class AircraftDescent(IAircraftDescent, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftDescent._get_property(self, attrname) is not None: found_prop = IAircraftDescent._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftDescent.")
+        set_class_attribute(self, attrname, value, AircraftDescent, [IAircraftDescent, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{d76fa881-77b3-486a-976c-8184e9cb91fd}", AircraftDescent)
 agcls.AgTypeNameMap["AircraftDescent"] = AircraftDescent
@@ -38824,13 +35617,7 @@ class AircraftLanding(IAircraftLanding, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftLanding._get_property(self, attrname) is not None: found_prop = IAircraftLanding._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftLanding.")
+        set_class_attribute(self, attrname, value, AircraftLanding, [IAircraftLanding, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{8371480b-53cf-41ca-b749-41623f6d380a}", AircraftLanding)
 agcls.AgTypeNameMap["AircraftLanding"] = AircraftLanding
@@ -38848,13 +35635,7 @@ class AircraftTakeoff(IAircraftTakeoff, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftTakeoff._get_property(self, attrname) is not None: found_prop = IAircraftTakeoff._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftTakeoff.")
+        set_class_attribute(self, attrname, value, AircraftTakeoff, [IAircraftTakeoff, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{aeef7451-7456-4d8c-aabf-147a466149cd}", AircraftTakeoff)
 agcls.AgTypeNameMap["AircraftTakeoff"] = AircraftTakeoff
@@ -38874,14 +35655,7 @@ class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICata
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicClimbModel._get_property(self, attrname) is not None: found_prop = IAircraftBasicClimbModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicClimbModel.")
+        set_class_attribute(self, attrname, value, AircraftBasicClimbModel, [IAircraftBasicClimbModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{2950de29-1009-4c2a-8db5-378b41c6d48d}", AircraftBasicClimbModel)
 agcls.AgTypeNameMap["AircraftBasicClimbModel"] = AircraftBasicClimbModel
@@ -38901,14 +35675,7 @@ class AircraftAdvClimbModel(IAircraftAdvClimbModel, IPerformanceModel, ICatalogI
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAdvClimbModel._get_property(self, attrname) is not None: found_prop = IAircraftAdvClimbModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvClimbModel.")
+        set_class_attribute(self, attrname, value, AircraftAdvClimbModel, [IAircraftAdvClimbModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{C1C87503-2B8E-41BC-8BA9-02B7CC1E02C2}", AircraftAdvClimbModel)
 agcls.AgTypeNameMap["AircraftAdvClimbModel"] = AircraftAdvClimbModel
@@ -38928,14 +35695,7 @@ class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicCruiseModel._get_property(self, attrname) is not None: found_prop = IAircraftBasicCruiseModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicCruiseModel.")
+        set_class_attribute(self, attrname, value, AircraftBasicCruiseModel, [IAircraftBasicCruiseModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{c6090ace-e557-4bef-adf3-2e56387015a8}", AircraftBasicCruiseModel)
 agcls.AgTypeNameMap["AircraftBasicCruiseModel"] = AircraftBasicCruiseModel
@@ -38955,14 +35715,7 @@ class AircraftAdvCruiseModel(IAircraftAdvCruiseModel, IPerformanceModel, ICatalo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAdvCruiseModel._get_property(self, attrname) is not None: found_prop = IAircraftAdvCruiseModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvCruiseModel.")
+        set_class_attribute(self, attrname, value, AircraftAdvCruiseModel, [IAircraftAdvCruiseModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{ead08117-2561-4bb7-a82b-86057f506090}", AircraftAdvCruiseModel)
 agcls.AgTypeNameMap["AircraftAdvCruiseModel"] = AircraftAdvCruiseModel
@@ -38982,14 +35735,7 @@ class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, I
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicDescentModel._get_property(self, attrname) is not None: found_prop = IAircraftBasicDescentModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicDescentModel.")
+        set_class_attribute(self, attrname, value, AircraftBasicDescentModel, [IAircraftBasicDescentModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{30cb8d6f-afe5-4275-8479-4ce73b93a758}", AircraftBasicDescentModel)
 agcls.AgTypeNameMap["AircraftBasicDescentModel"] = AircraftBasicDescentModel
@@ -39009,14 +35755,7 @@ class AircraftAdvDescentModel(IAircraftAdvDescentModel, IPerformanceModel, ICata
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAdvDescentModel._get_property(self, attrname) is not None: found_prop = IAircraftAdvDescentModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvDescentModel.")
+        set_class_attribute(self, attrname, value, AircraftAdvDescentModel, [IAircraftAdvDescentModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{40ee1832-9491-49e5-bd27-40d40fefb326}", AircraftAdvDescentModel)
 agcls.AgTypeNameMap["AircraftAdvDescentModel"] = AircraftAdvDescentModel
@@ -39036,14 +35775,7 @@ class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, I
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicTakeoffModel._get_property(self, attrname) is not None: found_prop = IAircraftBasicTakeoffModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicTakeoffModel.")
+        set_class_attribute(self, attrname, value, AircraftBasicTakeoffModel, [IAircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{3d9380c9-1aa0-4dcf-86bb-ded3b6b656e8}", AircraftBasicTakeoffModel)
 agcls.AgTypeNameMap["AircraftBasicTakeoffModel"] = AircraftBasicTakeoffModel
@@ -39063,14 +35795,7 @@ class AircraftAdvTakeoffModel(IAircraftAdvTakeoffModel, IPerformanceModel, ICata
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAdvTakeoffModel._get_property(self, attrname) is not None: found_prop = IAircraftAdvTakeoffModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvTakeoffModel.")
+        set_class_attribute(self, attrname, value, AircraftAdvTakeoffModel, [IAircraftAdvTakeoffModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{fc3190a3-fbeb-46bb-8395-22405fbf5b80}", AircraftAdvTakeoffModel)
 agcls.AgTypeNameMap["AircraftAdvTakeoffModel"] = AircraftAdvTakeoffModel
@@ -39090,14 +35815,7 @@ class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, I
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicLandingModel._get_property(self, attrname) is not None: found_prop = IAircraftBasicLandingModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicLandingModel.")
+        set_class_attribute(self, attrname, value, AircraftBasicLandingModel, [IAircraftBasicLandingModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{bd4e5100-7e2c-40ca-815a-02a618a4321d}", AircraftBasicLandingModel)
 agcls.AgTypeNameMap["AircraftBasicLandingModel"] = AircraftBasicLandingModel
@@ -39117,14 +35835,7 @@ class AircraftAdvLandingModel(IAircraftAdvLandingModel, IPerformanceModel, ICata
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAdvLandingModel._get_property(self, attrname) is not None: found_prop = IAircraftAdvLandingModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvLandingModel.")
+        set_class_attribute(self, attrname, value, AircraftAdvLandingModel, [IAircraftAdvLandingModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{fb7534d7-1f9b-4133-9712-66728255532b}", AircraftAdvLandingModel)
 agcls.AgTypeNameMap["AircraftAdvLandingModel"] = AircraftAdvLandingModel
@@ -39140,12 +35851,7 @@ class AirportCategory(IAirportCategory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAirportCategory._get_property(self, attrname) is not None: found_prop = IAirportCategory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AirportCategory.")
+        set_class_attribute(self, attrname, value, AirportCategory, [IAirportCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{d497aeeb-3c6a-44ad-9f1a-6af1504c9a99}", AirportCategory)
 agcls.AgTypeNameMap["AirportCategory"] = AirportCategory
@@ -39167,15 +35873,7 @@ class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalog
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IARINC424Item._get_property(self, attrname) is not None: found_prop = IARINC424Item._get_property(self, attrname)
-        if ICatalogAirport._get_property(self, attrname) is not None: found_prop = ICatalogAirport._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Airport.")
+        set_class_attribute(self, attrname, value, ARINC424Airport, [IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{1d942d58-5b4d-4784-8ec9-435008352423}", ARINC424Airport)
 agcls.AgTypeNameMap["ARINC424Airport"] = ARINC424Airport
@@ -39199,16 +35897,7 @@ class ARINC424Runway(IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWay
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IARINC424Runway._get_property(self, attrname) is not None: found_prop = IARINC424Runway._get_property(self, attrname)
-        if IARINC424Item._get_property(self, attrname) is not None: found_prop = IARINC424Item._get_property(self, attrname)
-        if ICatalogRunway._get_property(self, attrname) is not None: found_prop = ICatalogRunway._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Runway.")
+        set_class_attribute(self, attrname, value, ARINC424Runway, [IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{20c6f0ee-a2d5-4447-8d9a-3b67fe759266}", ARINC424Runway)
 agcls.AgTypeNameMap["ARINC424Runway"] = ARINC424Runway
@@ -39230,15 +35919,7 @@ class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDAFIFItem._get_property(self, attrname) is not None: found_prop = IDAFIFItem._get_property(self, attrname)
-        if ICatalogRunway._get_property(self, attrname) is not None: found_prop = ICatalogRunway._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFRunway.")
+        set_class_attribute(self, attrname, value, DAFIFRunway, [IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{95867fe1-39fa-41cf-aa24-c6068c2cd86a}", DAFIFRunway)
 agcls.AgTypeNameMap["DAFIFRunway"] = DAFIFRunway
@@ -39260,15 +35941,7 @@ class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDAFIFItem._get_property(self, attrname) is not None: found_prop = IDAFIFItem._get_property(self, attrname)
-        if ICatalogVTOLPoint._get_property(self, attrname) is not None: found_prop = ICatalogVTOLPoint._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFHelipad.")
+        set_class_attribute(self, attrname, value, DAFIFHelipad, [IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{6973673c-7c51-48c2-8931-614aa2ab1da5}", DAFIFHelipad)
 agcls.AgTypeNameMap["DAFIFHelipad"] = DAFIFHelipad
@@ -39288,14 +35961,7 @@ class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDAFIFItem._get_property(self, attrname) is not None: found_prop = IDAFIFItem._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFWaypoint.")
+        set_class_attribute(self, attrname, value, DAFIFWaypoint, [IDAFIFItem, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{62195e59-a4fc-40f9-ab7d-4229c79c0e8f}", DAFIFWaypoint)
 agcls.AgTypeNameMap["DAFIFWaypoint"] = DAFIFWaypoint
@@ -39311,12 +35977,7 @@ class RunwayCategory(IRunwayCategory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRunwayCategory._get_property(self, attrname) is not None: found_prop = IRunwayCategory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RunwayCategory.")
+        set_class_attribute(self, attrname, value, RunwayCategory, [IRunwayCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{69b1b664-f8d4-4be5-bfe9-8760573b2c72}", RunwayCategory)
 agcls.AgTypeNameMap["RunwayCategory"] = RunwayCategory
@@ -39334,13 +35995,7 @@ class UserRunwaySource(IUserRunwaySource, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUserRunwaySource._get_property(self, attrname) is not None: found_prop = IUserRunwaySource._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UserRunwaySource.")
+        set_class_attribute(self, attrname, value, UserRunwaySource, [IUserRunwaySource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{7b8c1764-ce59-4e35-940a-24d99c2953ef}", UserRunwaySource)
 agcls.AgTypeNameMap["UserRunwaySource"] = UserRunwaySource
@@ -39362,15 +36017,7 @@ class UserRunway(IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUserRunway._get_property(self, attrname) is not None: found_prop = IUserRunway._get_property(self, attrname)
-        if ICatalogRunway._get_property(self, attrname) is not None: found_prop = ICatalogRunway._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UserRunway.")
+        set_class_attribute(self, attrname, value, UserRunway, [IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{693bdacd-4c8d-4efd-bb23-3f14c83d3b04}", UserRunway)
 agcls.AgTypeNameMap["UserRunway"] = UserRunway
@@ -39386,12 +36033,7 @@ class AltitudeMSLOptions(IAltitudeMSLOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAltitudeMSLOptions._get_property(self, attrname) is not None: found_prop = IAltitudeMSLOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeMSLOptions.")
+        set_class_attribute(self, attrname, value, AltitudeMSLOptions, [IAltitudeMSLOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{c866a6dd-1070-4162-bff2-4339ab28f6b2}", AltitudeMSLOptions)
 agcls.AgTypeNameMap["AltitudeMSLOptions"] = AltitudeMSLOptions
@@ -39407,12 +36049,7 @@ class AltitudeOptions(IAltitudeOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAltitudeOptions._get_property(self, attrname) is not None: found_prop = IAltitudeOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeOptions.")
+        set_class_attribute(self, attrname, value, AltitudeOptions, [IAltitudeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{4d5d82b7-e342-4dcb-9af1-7cbfa909fc23}", AltitudeOptions)
 agcls.AgTypeNameMap["AltitudeOptions"] = AltitudeOptions
@@ -39428,12 +36065,7 @@ class ArcAltitudeOptions(IArcAltitudeOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IArcAltitudeOptions._get_property(self, attrname) is not None: found_prop = IArcAltitudeOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ArcAltitudeOptions.")
+        set_class_attribute(self, attrname, value, ArcAltitudeOptions, [IArcAltitudeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{1c4f7491-db5d-4e52-ba8e-e64ddfc687fe}", ArcAltitudeOptions)
 agcls.AgTypeNameMap["ArcAltitudeOptions"] = ArcAltitudeOptions
@@ -39449,12 +36081,7 @@ class ArcAltitudeAndDelayOptions(IArcAltitudeAndDelayOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IArcAltitudeAndDelayOptions._get_property(self, attrname) is not None: found_prop = IArcAltitudeAndDelayOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ArcAltitudeAndDelayOptions.")
+        set_class_attribute(self, attrname, value, ArcAltitudeAndDelayOptions, [IArcAltitudeAndDelayOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{fdf04fa7-1588-4e15-a0ab-37b9586c878f}", ArcAltitudeAndDelayOptions)
 agcls.AgTypeNameMap["ArcAltitudeAndDelayOptions"] = ArcAltitudeAndDelayOptions
@@ -39470,12 +36097,7 @@ class ArcOptions(IArcOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IArcOptions._get_property(self, attrname) is not None: found_prop = IArcOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ArcOptions.")
+        set_class_attribute(self, attrname, value, ArcOptions, [IArcOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{41af67f7-489f-452e-858a-bd8cc0bf782d}", ArcOptions)
 agcls.AgTypeNameMap["ArcOptions"] = ArcOptions
@@ -39491,12 +36113,7 @@ class AltitudeMSLAndLevelOffOptions(IAltitudeMSLAndLevelOffOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAltitudeMSLAndLevelOffOptions._get_property(self, attrname) is not None: found_prop = IAltitudeMSLAndLevelOffOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AltitudeMSLAndLevelOffOptions.")
+        set_class_attribute(self, attrname, value, AltitudeMSLAndLevelOffOptions, [IAltitudeMSLAndLevelOffOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0a38e533-78b2-402b-aed6-0ff04a62fcce}", AltitudeMSLAndLevelOffOptions)
 agcls.AgTypeNameMap["AltitudeMSLAndLevelOffOptions"] = AltitudeMSLAndLevelOffOptions
@@ -39512,12 +36129,7 @@ class CruiseAirspeedOptions(ICruiseAirspeedOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICruiseAirspeedOptions._get_property(self, attrname) is not None: found_prop = ICruiseAirspeedOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CruiseAirspeedOptions.")
+        set_class_attribute(self, attrname, value, CruiseAirspeedOptions, [ICruiseAirspeedOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{05251788-e43e-4d91-84ad-3d2bcfc2087a}", CruiseAirspeedOptions)
 agcls.AgTypeNameMap["CruiseAirspeedOptions"] = CruiseAirspeedOptions
@@ -39533,12 +36145,7 @@ class CruiseAirspeedProfile(ICruiseAirspeedProfile):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICruiseAirspeedProfile._get_property(self, attrname) is not None: found_prop = ICruiseAirspeedProfile._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CruiseAirspeedProfile.")
+        set_class_attribute(self, attrname, value, CruiseAirspeedProfile, [ICruiseAirspeedProfile])
 
 agcls.AgClassCatalog.add_catalog_entry("{5afc99d6-3a02-45f9-b6f5-87690d8f9702}", CruiseAirspeedProfile)
 agcls.AgTypeNameMap["CruiseAirspeedProfile"] = CruiseAirspeedProfile
@@ -39554,12 +36161,7 @@ class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICruiseAirspeedAndProfileOptions._get_property(self, attrname) is not None: found_prop = ICruiseAirspeedAndProfileOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in CruiseAirspeedAndProfileOptions.")
+        set_class_attribute(self, attrname, value, CruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{ee439155-cd45-45b5-b7f8-eae4f5e51b8e}", CruiseAirspeedAndProfileOptions)
 agcls.AgTypeNameMap["CruiseAirspeedAndProfileOptions"] = CruiseAirspeedAndProfileOptions
@@ -39575,12 +36177,7 @@ class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ICruiseAirspeedAndProfileOptions._get_property(self, attrname) is not None: found_prop = ICruiseAirspeedAndProfileOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in LandingCruiseAirspeedAndProfileOptions.")
+        set_class_attribute(self, attrname, value, LandingCruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{cb47399c-3316-494f-959c-4f84b4c4936c}", LandingCruiseAirspeedAndProfileOptions)
 agcls.AgTypeNameMap["LandingCruiseAirspeedAndProfileOptions"] = LandingCruiseAirspeedAndProfileOptions
@@ -39596,12 +36193,7 @@ class EnrouteOptions(IEnrouteOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IEnrouteOptions._get_property(self, attrname) is not None: found_prop = IEnrouteOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in EnrouteOptions.")
+        set_class_attribute(self, attrname, value, EnrouteOptions, [IEnrouteOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{cb708621-5036-4dbc-a900-a3b3a3fa7124}", EnrouteOptions)
 agcls.AgTypeNameMap["EnrouteOptions"] = EnrouteOptions
@@ -39617,12 +36209,7 @@ class EnrouteAndDelayOptions(IEnrouteAndDelayOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IEnrouteAndDelayOptions._get_property(self, attrname) is not None: found_prop = IEnrouteAndDelayOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in EnrouteAndDelayOptions.")
+        set_class_attribute(self, attrname, value, EnrouteAndDelayOptions, [IEnrouteAndDelayOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{fc46b909-c927-4e2d-9d82-79c6980807d8}", EnrouteAndDelayOptions)
 agcls.AgTypeNameMap["EnrouteAndDelayOptions"] = EnrouteAndDelayOptions
@@ -39638,12 +36225,7 @@ class LandingEnrouteOptions(IEnrouteAndDelayOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IEnrouteAndDelayOptions._get_property(self, attrname) is not None: found_prop = IEnrouteAndDelayOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in LandingEnrouteOptions.")
+        set_class_attribute(self, attrname, value, LandingEnrouteOptions, [IEnrouteAndDelayOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{42ec119b-2661-4c68-b807-a5ed2a3af018}", LandingEnrouteOptions)
 agcls.AgTypeNameMap["LandingEnrouteOptions"] = LandingEnrouteOptions
@@ -39659,12 +36241,7 @@ class EnrouteTurnDirectionOptions(IEnrouteTurnDirectionOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IEnrouteTurnDirectionOptions._get_property(self, attrname) is not None: found_prop = IEnrouteTurnDirectionOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in EnrouteTurnDirectionOptions.")
+        set_class_attribute(self, attrname, value, EnrouteTurnDirectionOptions, [IEnrouteTurnDirectionOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{16e895f3-5a65-4caf-960e-691f904ca66c}", EnrouteTurnDirectionOptions)
 agcls.AgTypeNameMap["EnrouteTurnDirectionOptions"] = EnrouteTurnDirectionOptions
@@ -39680,12 +36257,7 @@ class NavigationOptions(INavigationOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if INavigationOptions._get_property(self, attrname) is not None: found_prop = INavigationOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in NavigationOptions.")
+        set_class_attribute(self, attrname, value, NavigationOptions, [INavigationOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{ce90add8-b152-4984-b864-0f6e61e680d4}", NavigationOptions)
 agcls.AgTypeNameMap["NavigationOptions"] = NavigationOptions
@@ -39701,12 +36273,7 @@ class VerticalPlaneOptions(IVerticalPlaneOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVerticalPlaneOptions._get_property(self, attrname) is not None: found_prop = IVerticalPlaneOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VerticalPlaneOptions.")
+        set_class_attribute(self, attrname, value, VerticalPlaneOptions, [IVerticalPlaneOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{a902b408-0141-4280-b6cf-e1cb18dae4f6}", VerticalPlaneOptions)
 agcls.AgTypeNameMap["VerticalPlaneOptions"] = VerticalPlaneOptions
@@ -39722,12 +36289,7 @@ class ArcVerticalPlaneOptions(IArcVerticalPlaneOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IArcVerticalPlaneOptions._get_property(self, attrname) is not None: found_prop = IArcVerticalPlaneOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ArcVerticalPlaneOptions.")
+        set_class_attribute(self, attrname, value, ArcVerticalPlaneOptions, [IArcVerticalPlaneOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{eae3a835-4897-408f-91dc-59b9a2fbcb5c}", ArcVerticalPlaneOptions)
 agcls.AgTypeNameMap["ArcVerticalPlaneOptions"] = ArcVerticalPlaneOptions
@@ -39743,12 +36305,7 @@ class VerticalPlaneAndFlightPathOptions(IVerticalPlaneAndFlightPathOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVerticalPlaneAndFlightPathOptions._get_property(self, attrname) is not None: found_prop = IVerticalPlaneAndFlightPathOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VerticalPlaneAndFlightPathOptions.")
+        set_class_attribute(self, attrname, value, VerticalPlaneAndFlightPathOptions, [IVerticalPlaneAndFlightPathOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{7db61c31-a562-43b9-b3fa-76dc120bdd74}", VerticalPlaneAndFlightPathOptions)
 agcls.AgTypeNameMap["VerticalPlaneAndFlightPathOptions"] = VerticalPlaneAndFlightPathOptions
@@ -39764,12 +36321,7 @@ class LandingVerticalPlaneOptions(IVerticalPlaneOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVerticalPlaneOptions._get_property(self, attrname) is not None: found_prop = IVerticalPlaneOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in LandingVerticalPlaneOptions.")
+        set_class_attribute(self, attrname, value, LandingVerticalPlaneOptions, [IVerticalPlaneOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{846a07a8-230c-4036-a43b-c61ccd1bde69}", LandingVerticalPlaneOptions)
 agcls.AgTypeNameMap["LandingVerticalPlaneOptions"] = LandingVerticalPlaneOptions
@@ -39785,12 +36337,7 @@ class RunwayHeadingOptions(IRunwayHeadingOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRunwayHeadingOptions._get_property(self, attrname) is not None: found_prop = IRunwayHeadingOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RunwayHeadingOptions.")
+        set_class_attribute(self, attrname, value, RunwayHeadingOptions, [IRunwayHeadingOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{167457be-4afe-477d-af6d-4e49413f4863}", RunwayHeadingOptions)
 agcls.AgTypeNameMap["RunwayHeadingOptions"] = RunwayHeadingOptions
@@ -39806,12 +36353,7 @@ class LandingEnterDownwindPattern(ILandingEnterDownwindPattern):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ILandingEnterDownwindPattern._get_property(self, attrname) is not None: found_prop = ILandingEnterDownwindPattern._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in LandingEnterDownwindPattern.")
+        set_class_attribute(self, attrname, value, LandingEnterDownwindPattern, [ILandingEnterDownwindPattern])
 
 agcls.AgClassCatalog.add_catalog_entry("{7fd1f000-c683-490f-9eea-a30062392898}", LandingEnterDownwindPattern)
 agcls.AgTypeNameMap["LandingEnterDownwindPattern"] = LandingEnterDownwindPattern
@@ -39827,12 +36369,7 @@ class LandingInterceptGlideslope(ILandingInterceptGlideslope):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ILandingInterceptGlideslope._get_property(self, attrname) is not None: found_prop = ILandingInterceptGlideslope._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in LandingInterceptGlideslope.")
+        set_class_attribute(self, attrname, value, LandingInterceptGlideslope, [ILandingInterceptGlideslope])
 
 agcls.AgClassCatalog.add_catalog_entry("{f9735637-159f-4a79-9b1c-05d88d8437ac}", LandingInterceptGlideslope)
 agcls.AgTypeNameMap["LandingInterceptGlideslope"] = LandingInterceptGlideslope
@@ -39848,12 +36385,7 @@ class LandingStandardInstrumentApproach(ILandingStandardInstrumentApproach):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ILandingStandardInstrumentApproach._get_property(self, attrname) is not None: found_prop = ILandingStandardInstrumentApproach._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in LandingStandardInstrumentApproach.")
+        set_class_attribute(self, attrname, value, LandingStandardInstrumentApproach, [ILandingStandardInstrumentApproach])
 
 agcls.AgClassCatalog.add_catalog_entry("{6463a94a-8a78-432d-b155-d9d6d436c748}", LandingStandardInstrumentApproach)
 agcls.AgTypeNameMap["LandingStandardInstrumentApproach"] = LandingStandardInstrumentApproach
@@ -39869,12 +36401,7 @@ class TakeoffDeparturePoint(ITakeoffDeparturePoint):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITakeoffDeparturePoint._get_property(self, attrname) is not None: found_prop = ITakeoffDeparturePoint._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TakeoffDeparturePoint.")
+        set_class_attribute(self, attrname, value, TakeoffDeparturePoint, [ITakeoffDeparturePoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{59ebf9c6-d1de-47c0-bd56-b3d455c5c335}", TakeoffDeparturePoint)
 agcls.AgTypeNameMap["TakeoffDeparturePoint"] = TakeoffDeparturePoint
@@ -39890,12 +36417,7 @@ class TakeoffLowTransition(ITakeoffLowTransition):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITakeoffLowTransition._get_property(self, attrname) is not None: found_prop = ITakeoffLowTransition._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TakeoffLowTransition.")
+        set_class_attribute(self, attrname, value, TakeoffLowTransition, [ITakeoffLowTransition])
 
 agcls.AgClassCatalog.add_catalog_entry("{c8f9161b-97e3-4eab-b5e9-6a5aebaddaea}", TakeoffLowTransition)
 agcls.AgTypeNameMap["TakeoffLowTransition"] = TakeoffLowTransition
@@ -39911,12 +36433,7 @@ class TakeoffNormal(ITakeoffNormal):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ITakeoffNormal._get_property(self, attrname) is not None: found_prop = ITakeoffNormal._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in TakeoffNormal.")
+        set_class_attribute(self, attrname, value, TakeoffNormal, [ITakeoffNormal])
 
 agcls.AgClassCatalog.add_catalog_entry("{4951950f-59cb-4524-a2c6-5d8b6f35922d}", TakeoffNormal)
 agcls.AgTypeNameMap["TakeoffNormal"] = TakeoffNormal
@@ -39932,12 +36449,7 @@ class LevelTurns(ILevelTurns):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ILevelTurns._get_property(self, attrname) is not None: found_prop = ILevelTurns._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in LevelTurns.")
+        set_class_attribute(self, attrname, value, LevelTurns, [ILevelTurns])
 
 agcls.AgClassCatalog.add_catalog_entry("{8c955be7-5999-4332-bb80-4151d864d1d4}", LevelTurns)
 agcls.AgTypeNameMap["LevelTurns"] = LevelTurns
@@ -39953,12 +36465,7 @@ class AttitudeTransitions(IAttitudeTransitions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAttitudeTransitions._get_property(self, attrname) is not None: found_prop = IAttitudeTransitions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AttitudeTransitions.")
+        set_class_attribute(self, attrname, value, AttitudeTransitions, [IAttitudeTransitions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0fc49614-6fbf-4d80-94ae-f8a338d8e7ab}", AttitudeTransitions)
 agcls.AgTypeNameMap["AttitudeTransitions"] = AttitudeTransitions
@@ -39974,12 +36481,7 @@ class ClimbAndDescentTransitions(IClimbAndDescentTransitions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IClimbAndDescentTransitions._get_property(self, attrname) is not None: found_prop = IClimbAndDescentTransitions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ClimbAndDescentTransitions.")
+        set_class_attribute(self, attrname, value, ClimbAndDescentTransitions, [IClimbAndDescentTransitions])
 
 agcls.AgClassCatalog.add_catalog_entry("{c8d87c4a-ee0c-4a96-b7f4-9dbe84a7b2aa}", ClimbAndDescentTransitions)
 agcls.AgTypeNameMap["ClimbAndDescentTransitions"] = ClimbAndDescentTransitions
@@ -39995,12 +36497,7 @@ class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAeroPropManeuverModeHelper._get_property(self, attrname) is not None: found_prop = IAeroPropManeuverModeHelper._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AeroPropManeuverModeHelper.")
+        set_class_attribute(self, attrname, value, AeroPropManeuverModeHelper, [IAeroPropManeuverModeHelper])
 
 agcls.AgClassCatalog.add_catalog_entry("{854b3e50-7d20-4d15-a58d-b1f36dac5c77}", AeroPropManeuverModeHelper)
 agcls.AgTypeNameMap["AeroPropManeuverModeHelper"] = AeroPropManeuverModeHelper
@@ -40020,14 +36517,7 @@ class AircraftAdvAccelerationModel(IAircraftAdvAccelerationModel, IPerformanceMo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAdvAccelerationModel._get_property(self, attrname) is not None: found_prop = IAircraftAdvAccelerationModel._get_property(self, attrname)
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAdvAccelerationModel.")
+        set_class_attribute(self, attrname, value, AircraftAdvAccelerationModel, [IAircraftAdvAccelerationModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{e55e8521-3091-4a5d-afe0-57f7e7ee698e}", AircraftAdvAccelerationModel)
 agcls.AgTypeNameMap["AircraftAdvAccelerationModel"] = AircraftAdvAccelerationModel
@@ -40043,12 +36533,7 @@ class AircraftAccelerationMode(IAircraftAccelerationMode):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAccelerationMode._get_property(self, attrname) is not None: found_prop = IAircraftAccelerationMode._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAccelerationMode.")
+        set_class_attribute(self, attrname, value, AircraftAccelerationMode, [IAircraftAccelerationMode])
 
 agcls.AgClassCatalog.add_catalog_entry("{551999ee-51a5-4863-a244-0030899884ee}", AircraftAccelerationMode)
 agcls.AgTypeNameMap["AircraftAccelerationMode"] = AircraftAccelerationMode
@@ -40064,12 +36549,7 @@ class AircraftSimpleAero(IAircraftSimpleAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftSimpleAero._get_property(self, attrname) is not None: found_prop = IAircraftSimpleAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftSimpleAero.")
+        set_class_attribute(self, attrname, value, AircraftSimpleAero, [IAircraftSimpleAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{54bb15cb-5b0e-44af-9605-0b646efebaeb}", AircraftSimpleAero)
 agcls.AgTypeNameMap["AircraftSimpleAero"] = AircraftSimpleAero
@@ -40085,12 +36565,7 @@ class AircraftExternalAero(IAircraftExternalAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftExternalAero._get_property(self, attrname) is not None: found_prop = IAircraftExternalAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftExternalAero.")
+        set_class_attribute(self, attrname, value, AircraftExternalAero, [IAircraftExternalAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{f79db172-f8c6-4dc9-84c7-dfff374156bc}", AircraftExternalAero)
 agcls.AgTypeNameMap["AircraftExternalAero"] = AircraftExternalAero
@@ -40106,12 +36581,7 @@ class AircraftAero(IAircraftAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftAero._get_property(self, attrname) is not None: found_prop = IAircraftAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftAero.")
+        set_class_attribute(self, attrname, value, AircraftAero, [IAircraftAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{6005f6fd-9923-4688-a60f-6179d5cec1f3}", AircraftAero)
 agcls.AgTypeNameMap["AircraftAero"] = AircraftAero
@@ -40127,12 +36597,7 @@ class AircraftBasicFixedWingAero(IAircraftBasicFixedWingAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicFixedWingAero._get_property(self, attrname) is not None: found_prop = IAircraftBasicFixedWingAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicFixedWingAero.")
+        set_class_attribute(self, attrname, value, AircraftBasicFixedWingAero, [IAircraftBasicFixedWingAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{3e05b32c-25ac-400d-ae1c-e1628b2e6ebb}", AircraftBasicFixedWingAero)
 agcls.AgTypeNameMap["AircraftBasicFixedWingAero"] = AircraftBasicFixedWingAero
@@ -40148,12 +36613,7 @@ class AircraftProp(IAircraftProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftProp._get_property(self, attrname) is not None: found_prop = IAircraftProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftProp.")
+        set_class_attribute(self, attrname, value, AircraftProp, [IAircraftProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{8773e358-a871-4d66-b7b2-25a473f22bdb}", AircraftProp)
 agcls.AgTypeNameMap["AircraftProp"] = AircraftProp
@@ -40169,12 +36629,7 @@ class AircraftSimpleProp(IAircraftSimpleProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftSimpleProp._get_property(self, attrname) is not None: found_prop = IAircraftSimpleProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftSimpleProp.")
+        set_class_attribute(self, attrname, value, AircraftSimpleProp, [IAircraftSimpleProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{359cf55e-59da-4f34-93fe-010180c2a415}", AircraftSimpleProp)
 agcls.AgTypeNameMap["AircraftSimpleProp"] = AircraftSimpleProp
@@ -40190,12 +36645,7 @@ class AircraftExternalProp(IAircraftExternalProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftExternalProp._get_property(self, attrname) is not None: found_prop = IAircraftExternalProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftExternalProp.")
+        set_class_attribute(self, attrname, value, AircraftExternalProp, [IAircraftExternalProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{9a59b51f-6133-446f-9f7c-04bfa1e8c69a}", AircraftExternalProp)
 agcls.AgTypeNameMap["AircraftExternalProp"] = AircraftExternalProp
@@ -40211,12 +36661,7 @@ class AircraftBasicFixedWingProp(IAircraftBasicFixedWingProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftBasicFixedWingProp._get_property(self, attrname) is not None: found_prop = IAircraftBasicFixedWingProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftBasicFixedWingProp.")
+        set_class_attribute(self, attrname, value, AircraftBasicFixedWingProp, [IAircraftBasicFixedWingProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{b4158163-51d7-4eb6-956a-14740ae523b3}", AircraftBasicFixedWingProp)
 agcls.AgTypeNameMap["AircraftBasicFixedWingProp"] = AircraftBasicFixedWingProp
@@ -40234,13 +36679,7 @@ class ARINC424Source(IARINC424Source, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IARINC424Source._get_property(self, attrname) is not None: found_prop = IARINC424Source._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Source.")
+        set_class_attribute(self, attrname, value, ARINC424Source, [IARINC424Source, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{e4f5b464-d93a-4541-8a1e-737ece8b120c}", ARINC424Source)
 agcls.AgTypeNameMap["ARINC424Source"] = ARINC424Source
@@ -40258,13 +36697,7 @@ class DAFIFSource(IDAFIFSource, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IDAFIFSource._get_property(self, attrname) is not None: found_prop = IDAFIFSource._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in DAFIFSource.")
+        set_class_attribute(self, attrname, value, DAFIFSource, [IDAFIFSource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{4325ae72-1155-40cd-a708-0cf4da0b653c}", DAFIFSource)
 agcls.AgTypeNameMap["DAFIFSource"] = DAFIFSource
@@ -40280,12 +36713,7 @@ class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicFixedWingLiftHelper._get_property(self, attrname) is not None: found_prop = IBasicFixedWingLiftHelper._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicFixedWingFwdFlightLiftHelper.")
+        set_class_attribute(self, attrname, value, BasicFixedWingFwdFlightLiftHelper, [IBasicFixedWingLiftHelper])
 
 agcls.AgClassCatalog.add_catalog_entry("{507fa67b-cebe-431c-a109-fb6d77b6b026}", BasicFixedWingFwdFlightLiftHelper)
 agcls.AgTypeNameMap["BasicFixedWingFwdFlightLiftHelper"] = BasicFixedWingFwdFlightLiftHelper
@@ -40303,13 +36731,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategyStraightAhead, IB
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyStraightAhead._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyStraightAhead._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyStraightAhead.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyStraightAhead, [IBasicManeuverStrategyStraightAhead, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{beae703c-6b09-4ff9-a7d0-3e6513848c84}", BasicManeuverStrategyStraightAhead)
 agcls.AgTypeNameMap["BasicManeuverStrategyStraightAhead"] = BasicManeuverStrategyStraightAhead
@@ -40327,13 +36749,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategyCruiseProfile, IB
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyCruiseProfile._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyCruiseProfile._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyCruiseProfile.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyCruiseProfile, [IBasicManeuverStrategyCruiseProfile, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{00a0e796-7322-478b-9ad6-b8f1d6ef81e1}", BasicManeuverStrategyCruiseProfile)
 agcls.AgTypeNameMap["BasicManeuverStrategyCruiseProfile"] = BasicManeuverStrategyCruiseProfile
@@ -40351,13 +36767,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategyGlideProfile, IBas
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyGlideProfile._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyGlideProfile._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyGlideProfile.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyGlideProfile, [IBasicManeuverStrategyGlideProfile, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{0e60df52-4bb8-40a1-90a8-ecf7a57bca0a}", BasicManeuverStrategyGlideProfile)
 agcls.AgTypeNameMap["BasicManeuverStrategyGlideProfile"] = BasicManeuverStrategyGlideProfile
@@ -40375,13 +36785,7 @@ class AircraftModels(IAircraftModels, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftModels._get_property(self, attrname) is not None: found_prop = IAircraftModels._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftModels.")
+        set_class_attribute(self, attrname, value, AircraftModels, [IAircraftModels, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{47dd19b1-0ce7-458b-bdb2-2ec0d337231b}", AircraftModels)
 agcls.AgTypeNameMap["AircraftModels"] = AircraftModels
@@ -40399,13 +36803,7 @@ class MissileModels(IMissileModels, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileModels._get_property(self, attrname) is not None: found_prop = IMissileModels._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileModels.")
+        set_class_attribute(self, attrname, value, MissileModels, [IMissileModels, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{038a565a-efe0-4bc0-8a22-eb1c2d88d87a}", MissileModels)
 agcls.AgTypeNameMap["MissileModels"] = MissileModels
@@ -40423,13 +36821,7 @@ class RotorcraftModels(IRotorcraftModels, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRotorcraftModels._get_property(self, attrname) is not None: found_prop = IRotorcraftModels._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RotorcraftModels.")
+        set_class_attribute(self, attrname, value, RotorcraftModels, [IRotorcraftModels, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{f85cc088-0dc1-4436-bc2e-a985bfd4dfb4}", RotorcraftModels)
 agcls.AgTypeNameMap["RotorcraftModels"] = RotorcraftModels
@@ -40445,12 +36837,7 @@ class Configuration(IConfiguration):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IConfiguration._get_property(self, attrname) is not None: found_prop = IConfiguration._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Configuration.")
+        set_class_attribute(self, attrname, value, Configuration, [IConfiguration])
 
 agcls.AgClassCatalog.add_catalog_entry("{823e96a0-a485-4c5b-9abc-7d6658432f99}", Configuration)
 agcls.AgTypeNameMap["Configuration"] = Configuration
@@ -40468,13 +36855,7 @@ class FuelTankInternal(IFuelTankInternal, IStation):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IFuelTankInternal._get_property(self, attrname) is not None: found_prop = IFuelTankInternal._get_property(self, attrname)
-        if IStation._get_property(self, attrname) is not None: found_prop = IStation._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in FuelTankInternal.")
+        set_class_attribute(self, attrname, value, FuelTankInternal, [IFuelTankInternal, IStation])
 
 agcls.AgClassCatalog.add_catalog_entry("{64fd434a-e313-4f15-a236-f25f10461444}", FuelTankInternal)
 agcls.AgTypeNameMap["FuelTankInternal"] = FuelTankInternal
@@ -40490,12 +36871,7 @@ class FuelTankExternal(IFuelTankExternal):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IFuelTankExternal._get_property(self, attrname) is not None: found_prop = IFuelTankExternal._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in FuelTankExternal.")
+        set_class_attribute(self, attrname, value, FuelTankExternal, [IFuelTankExternal])
 
 agcls.AgClassCatalog.add_catalog_entry("{8037f407-784e-469e-b92d-2a0fff148e86}", FuelTankExternal)
 agcls.AgTypeNameMap["FuelTankExternal"] = FuelTankExternal
@@ -40513,13 +36889,7 @@ class PayloadStation(IPayloadStation, IStation):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPayloadStation._get_property(self, attrname) is not None: found_prop = IPayloadStation._get_property(self, attrname)
-        if IStation._get_property(self, attrname) is not None: found_prop = IStation._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in PayloadStation.")
+        set_class_attribute(self, attrname, value, PayloadStation, [IPayloadStation, IStation])
 
 agcls.AgClassCatalog.add_catalog_entry("{13423a45-1732-438b-a96a-502bc40f0827}", PayloadStation)
 agcls.AgTypeNameMap["PayloadStation"] = PayloadStation
@@ -40535,12 +36905,7 @@ class StationCollection(IStationCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IStationCollection._get_property(self, attrname) is not None: found_prop = IStationCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in StationCollection.")
+        set_class_attribute(self, attrname, value, StationCollection, [IStationCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{e81ed53f-b172-46c4-85b1-e80fe06e211a}", StationCollection)
 agcls.AgTypeNameMap["StationCollection"] = StationCollection
@@ -40556,12 +36921,7 @@ class WindModel(IWindModel):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IWindModel._get_property(self, attrname) is not None: found_prop = IWindModel._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in WindModel.")
+        set_class_attribute(self, attrname, value, WindModel, [IWindModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{8c0e170c-1818-4bd9-8bbf-e578065ea2a8}", WindModel)
 agcls.AgTypeNameMap["WindModel"] = WindModel
@@ -40577,12 +36937,7 @@ class WindModelConstant(IWindModelConstant):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IWindModelConstant._get_property(self, attrname) is not None: found_prop = IWindModelConstant._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in WindModelConstant.")
+        set_class_attribute(self, attrname, value, WindModelConstant, [IWindModelConstant])
 
 agcls.AgClassCatalog.add_catalog_entry("{079a1206-8ed3-423d-8f1d-855551f0435c}", WindModelConstant)
 agcls.AgTypeNameMap["WindModelConstant"] = WindModelConstant
@@ -40598,12 +36953,7 @@ class WindModelADDS(IWindModelADDS):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IWindModelADDS._get_property(self, attrname) is not None: found_prop = IWindModelADDS._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in WindModelADDS.")
+        set_class_attribute(self, attrname, value, WindModelADDS, [IWindModelADDS])
 
 agcls.AgClassCatalog.add_catalog_entry("{1e2024ff-d594-49bf-8ea7-a110213078ba}", WindModelADDS)
 agcls.AgTypeNameMap["WindModelADDS"] = WindModelADDS
@@ -40619,12 +36969,7 @@ class ADDSMessage(IADDSMessage):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IADDSMessage._get_property(self, attrname) is not None: found_prop = IADDSMessage._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ADDSMessage.")
+        set_class_attribute(self, attrname, value, ADDSMessage, [IADDSMessage])
 
 agcls.AgClassCatalog.add_catalog_entry("{22e44fa2-cfe7-456a-900c-0916f1d88cec}", ADDSMessage)
 agcls.AgTypeNameMap["ADDSMessage"] = ADDSMessage
@@ -40640,12 +36985,7 @@ class ADDSMessageCollection(IADDSMessageCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IADDSMessageCollection._get_property(self, attrname) is not None: found_prop = IADDSMessageCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ADDSMessageCollection.")
+        set_class_attribute(self, attrname, value, ADDSMessageCollection, [IADDSMessageCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{f5e634eb-3433-4336-9c0d-73b3d0e9674a}", ADDSMessageCollection)
 agcls.AgTypeNameMap["ADDSMessageCollection"] = ADDSMessageCollection
@@ -40663,13 +37003,7 @@ class Procedure(IProcedure, IConnect):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if IConnect._get_property(self, attrname) is not None: found_prop = IConnect._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in Procedure.")
+        set_class_attribute(self, attrname, value, Procedure, [IProcedure, IConnect])
 
 agcls.AgClassCatalog.add_catalog_entry("{c744fb3a-e51d-4b87-8006-ed9dd4d48495}", Procedure)
 agcls.AgTypeNameMap["Procedure"] = Procedure
@@ -40685,12 +37019,7 @@ class AtmosphereModel(IAtmosphereModel):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAtmosphereModel._get_property(self, attrname) is not None: found_prop = IAtmosphereModel._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AtmosphereModel.")
+        set_class_attribute(self, attrname, value, AtmosphereModel, [IAtmosphereModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{43ce46bb-52dc-42d7-818a-5bd4d13dd15d}", AtmosphereModel)
 agcls.AgTypeNameMap["AtmosphereModel"] = AtmosphereModel
@@ -40706,12 +37035,7 @@ class AtmosphereModelBasic(IAtmosphereModelBasic):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAtmosphereModelBasic._get_property(self, attrname) is not None: found_prop = IAtmosphereModelBasic._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AtmosphereModelBasic.")
+        set_class_attribute(self, attrname, value, AtmosphereModelBasic, [IAtmosphereModelBasic])
 
 agcls.AgClassCatalog.add_catalog_entry("{9c9a3976-e898-4e98-b2ce-26d045ab4d46}", AtmosphereModelBasic)
 agcls.AgTypeNameMap["AtmosphereModelBasic"] = AtmosphereModelBasic
@@ -40729,13 +37053,7 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategySimpleTurn, IBasicMa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategySimpleTurn._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategySimpleTurn._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategySimpleTurn.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategySimpleTurn, [IBasicManeuverStrategySimpleTurn, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{5a0fd768-cf78-47cb-8a85-ccb1fbe68cee}", BasicManeuverStrategySimpleTurn)
 agcls.AgTypeNameMap["BasicManeuverStrategySimpleTurn"] = BasicManeuverStrategySimpleTurn
@@ -40753,13 +37071,7 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategyAileronRoll, IBasic
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyAileronRoll._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyAileronRoll._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyAileronRoll.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyAileronRoll, [IBasicManeuverStrategyAileronRoll, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{b8979539-00bf-46af-a412-9a16ebb57ac7}", BasicManeuverStrategyAileronRoll)
 agcls.AgTypeNameMap["BasicManeuverStrategyAileronRoll"] = BasicManeuverStrategyAileronRoll
@@ -40777,13 +37089,7 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategyFlyAOA, IBasicManeuverSt
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyFlyAOA._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyFlyAOA._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyFlyAOA.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyFlyAOA, [IBasicManeuverStrategyFlyAOA, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{f3c56de2-f58f-4292-a05b-d6e8f2756a55}", BasicManeuverStrategyFlyAOA)
 agcls.AgTypeNameMap["BasicManeuverStrategyFlyAOA"] = BasicManeuverStrategyFlyAOA
@@ -40801,13 +37107,7 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategyPull, IBasicManeuverStrate
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyPull._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyPull._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyPull.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyPull, [IBasicManeuverStrategyPull, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{7f14c043-4c1d-46f2-a3fd-112b17a27e82}", BasicManeuverStrategyPull)
 agcls.AgTypeNameMap["BasicManeuverStrategyPull"] = BasicManeuverStrategyPull
@@ -40825,13 +37125,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategyRollingPull, IBasic
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyRollingPull._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRollingPull._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRollingPull.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRollingPull, [IBasicManeuverStrategyRollingPull, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{abb3d02b-ae1f-482e-a903-cdc6bcb7bde1}", BasicManeuverStrategyRollingPull)
 agcls.AgTypeNameMap["BasicManeuverStrategyRollingPull"] = BasicManeuverStrategyRollingPull
@@ -40849,13 +37143,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategySmoothAccel, IBasic
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategySmoothAccel._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategySmoothAccel._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategySmoothAccel.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothAccel, [IBasicManeuverStrategySmoothAccel, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{e5277844-1d1b-49ae-9a08-553e55823581}", BasicManeuverStrategySmoothAccel)
 agcls.AgTypeNameMap["BasicManeuverStrategySmoothAccel"] = BasicManeuverStrategySmoothAccel
@@ -40873,13 +37161,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategySmoothTurn, IBasicMa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategySmoothTurn._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategySmoothTurn._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategySmoothTurn.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothTurn, [IBasicManeuverStrategySmoothTurn, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{d55e7e13-72e2-4046-b7c7-a0702d951b03}", BasicManeuverStrategySmoothTurn)
 agcls.AgTypeNameMap["BasicManeuverStrategySmoothTurn"] = BasicManeuverStrategySmoothTurn
@@ -40895,12 +37177,7 @@ class BasicManeuverAirspeedOptions(IBasicManeuverAirspeedOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverAirspeedOptions._get_property(self, attrname) is not None: found_prop = IBasicManeuverAirspeedOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverAirspeedOptions.")
+        set_class_attribute(self, attrname, value, BasicManeuverAirspeedOptions, [IBasicManeuverAirspeedOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0eb776dc-78a8-42db-b8c0-8c62611d7e44}", BasicManeuverAirspeedOptions)
 agcls.AgTypeNameMap["BasicManeuverAirspeedOptions"] = BasicManeuverAirspeedOptions
@@ -40916,12 +37193,7 @@ class PropulsionThrust(IPropulsionThrust):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPropulsionThrust._get_property(self, attrname) is not None: found_prop = IPropulsionThrust._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in PropulsionThrust.")
+        set_class_attribute(self, attrname, value, PropulsionThrust, [IPropulsionThrust])
 
 agcls.AgClassCatalog.add_catalog_entry("{50e5309a-e9f9-4dc0-8296-b3bf43a9b1a5}", PropulsionThrust)
 agcls.AgTypeNameMap["PropulsionThrust"] = PropulsionThrust
@@ -40939,13 +37211,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategyAutopilotNav, IBas
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyAutopilotNav._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyAutopilotNav._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyAutopilotNav.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotNav, [IBasicManeuverStrategyAutopilotNav, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{129c0672-05c6-41ae-ae30-3aa82d83783a}", BasicManeuverStrategyAutopilotNav)
 agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotNav"] = BasicManeuverStrategyAutopilotNav
@@ -40963,13 +37229,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategyAutopilotProf, IB
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyAutopilotProf._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyAutopilotProf._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyAutopilotProf.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotProf, [IBasicManeuverStrategyAutopilotProf, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{a86d3f81-6bd4-4f3d-8747-c1b31d7b06e9}", BasicManeuverStrategyAutopilotProf)
 agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotProf"] = BasicManeuverStrategyAutopilotProf
@@ -40987,13 +37247,7 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategyBarrelRoll, IBasicMa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyBarrelRoll._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyBarrelRoll._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyBarrelRoll.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyBarrelRoll, [IBasicManeuverStrategyBarrelRoll, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ee92041-1fb9-4a53-ad71-9045d738fe7d}", BasicManeuverStrategyBarrelRoll)
 agcls.AgTypeNameMap["BasicManeuverStrategyBarrelRoll"] = BasicManeuverStrategyBarrelRoll
@@ -41011,13 +37265,7 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategyLoop, IBasicManeuverStrate
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyLoop._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyLoop._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyLoop.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyLoop, [IBasicManeuverStrategyLoop, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{77780df4-1f0f-411c-a4eb-edfeb5d44d82}", BasicManeuverStrategyLoop)
 agcls.AgTypeNameMap["BasicManeuverStrategyLoop"] = BasicManeuverStrategyLoop
@@ -41035,13 +37283,7 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategyLTAHover, IBasicManeuv
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyLTAHover._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyLTAHover._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyLTAHover.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyLTAHover, [IBasicManeuverStrategyLTAHover, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{5dfffe06-20ce-4e0e-903e-90ca3e60c273}", BasicManeuverStrategyLTAHover)
 agcls.AgTypeNameMap["BasicManeuverStrategyLTAHover"] = BasicManeuverStrategyLTAHover
@@ -41059,13 +37301,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategyIntercept, IBasicMane
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyIntercept._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyIntercept._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyIntercept.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyIntercept, [IBasicManeuverStrategyIntercept, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{015abd40-d52a-479b-b9ef-92aadb650a42}", BasicManeuverStrategyIntercept)
 agcls.AgTypeNameMap["BasicManeuverStrategyIntercept"] = BasicManeuverStrategyIntercept
@@ -41083,13 +37319,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategyRelativeBearing
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyRelativeBearing._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRelativeBearing._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelativeBearing.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeBearing, [IBasicManeuverStrategyRelativeBearing, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{e2ffd4c9-cab5-4e7d-972f-d7b0f6983a04}", BasicManeuverStrategyRelativeBearing)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelativeBearing"] = BasicManeuverStrategyRelativeBearing
@@ -41107,13 +37337,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategyRelativeCourse, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyRelativeCourse._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRelativeCourse._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelativeCourse.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeCourse, [IBasicManeuverStrategyRelativeCourse, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{b38ed3c1-d896-476f-8b6d-c5b6d72b4590}", BasicManeuverStrategyRelativeCourse)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelativeCourse"] = BasicManeuverStrategyRelativeCourse
@@ -41131,13 +37355,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategyRendezvous, IBasicMa
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyRendezvous._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRendezvous._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRendezvous.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRendezvous, [IBasicManeuverStrategyRendezvous, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{bb5fdd2b-8e95-40e1-8048-86547b0daff0}", BasicManeuverStrategyRendezvous)
 agcls.AgTypeNameMap["BasicManeuverStrategyRendezvous"] = BasicManeuverStrategyRendezvous
@@ -41155,13 +37373,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategyStationkeeping, 
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyStationkeeping._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyStationkeeping._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyStationkeeping.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyStationkeeping, [IBasicManeuverStrategyStationkeeping, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{949ee147-7b1f-4f22-b721-aea0725b9116}", BasicManeuverStrategyStationkeeping)
 agcls.AgTypeNameMap["BasicManeuverStrategyStationkeeping"] = BasicManeuverStrategyStationkeeping
@@ -41179,13 +37391,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasic
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyRelativeFPA._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRelativeFPA._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelativeFPA.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFPA, [IBasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{dd290505-55b9-48a9-a800-451bcc816dd6}", BasicManeuverStrategyRelativeFPA)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFPA"] = BasicManeuverStrategyRelativeFPA
@@ -41203,13 +37409,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitu
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyRelSpeedAltitude._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRelSpeedAltitude._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelSpeedAltitude.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelSpeedAltitude, [IBasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{72d18bdd-ad36-43ed-a8d6-6c25a7d88078}", BasicManeuverStrategyRelSpeedAltitude)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelSpeedAltitude"] = BasicManeuverStrategyRelSpeedAltitude
@@ -41227,13 +37427,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverSt
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyBezier._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyBezier._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyBezier.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyBezier, [IBasicManeuverStrategyBezier, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{84f1131f-4e28-4879-902c-bf5c2cbfff5b}", BasicManeuverStrategyBezier)
 agcls.AgTypeNameMap["BasicManeuverStrategyBezier"] = BasicManeuverStrategyBezier
@@ -41251,13 +37445,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategyPushPull, IBasicManeuv
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyPushPull._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyPushPull._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyPushPull.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyPushPull, [IBasicManeuverStrategyPushPull, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{6184d781-4842-4e83-8211-fc4baab53395}", BasicManeuverStrategyPushPull)
 agcls.AgTypeNameMap["BasicManeuverStrategyPushPull"] = BasicManeuverStrategyPushPull
@@ -41275,13 +37463,7 @@ class ProcedureHoldingCircular(IProcedureHoldingCircular, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureHoldingCircular._get_property(self, attrname) is not None: found_prop = IProcedureHoldingCircular._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoldingCircular.")
+        set_class_attribute(self, attrname, value, ProcedureHoldingCircular, [IProcedureHoldingCircular, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{dec98be5-d1d2-4a97-bbcd-5a1f7ca5f158}", ProcedureHoldingCircular)
 agcls.AgTypeNameMap["ProcedureHoldingCircular"] = ProcedureHoldingCircular
@@ -41299,13 +37481,7 @@ class ProcedureHoldingFigure8(IProcedureHoldingFigure8, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureHoldingFigure8._get_property(self, attrname) is not None: found_prop = IProcedureHoldingFigure8._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoldingFigure8.")
+        set_class_attribute(self, attrname, value, ProcedureHoldingFigure8, [IProcedureHoldingFigure8, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{cdd17fce-e24c-45f4-8b7c-b313f490e124}", ProcedureHoldingFigure8)
 agcls.AgTypeNameMap["ProcedureHoldingFigure8"] = ProcedureHoldingFigure8
@@ -41323,13 +37499,7 @@ class ProcedureHoldingRacetrack(IProcedureHoldingRacetrack, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureHoldingRacetrack._get_property(self, attrname) is not None: found_prop = IProcedureHoldingRacetrack._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoldingRacetrack.")
+        set_class_attribute(self, attrname, value, ProcedureHoldingRacetrack, [IProcedureHoldingRacetrack, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{d2aa71dd-b167-4eea-be1d-665e4fd586da}", ProcedureHoldingRacetrack)
 agcls.AgTypeNameMap["ProcedureHoldingRacetrack"] = ProcedureHoldingRacetrack
@@ -41347,13 +37517,7 @@ class ProcedureTransitionToHover(IProcedureTransitionToHover, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureTransitionToHover._get_property(self, attrname) is not None: found_prop = IProcedureTransitionToHover._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTransitionToHover.")
+        set_class_attribute(self, attrname, value, ProcedureTransitionToHover, [IProcedureTransitionToHover, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{4cc8f381-2118-4c51-a1f4-68db53833efc}", ProcedureTransitionToHover)
 agcls.AgTypeNameMap["ProcedureTransitionToHover"] = ProcedureTransitionToHover
@@ -41371,13 +37535,7 @@ class ProcedureTerrainFollow(IProcedureTerrainFollow, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureTerrainFollow._get_property(self, attrname) is not None: found_prop = IProcedureTerrainFollow._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTerrainFollow.")
+        set_class_attribute(self, attrname, value, ProcedureTerrainFollow, [IProcedureTerrainFollow, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ab3ca3e-70dd-405c-a470-9bfbdfa23734}", ProcedureTerrainFollow)
 agcls.AgTypeNameMap["ProcedureTerrainFollow"] = ProcedureTerrainFollow
@@ -41395,13 +37553,7 @@ class ProcedureHover(IProcedureHover, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureHover._get_property(self, attrname) is not None: found_prop = IProcedureHover._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHover.")
+        set_class_attribute(self, attrname, value, ProcedureHover, [IProcedureHover, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{2af73325-a00b-405c-987c-af5f4e7f60cf}", ProcedureHover)
 agcls.AgTypeNameMap["ProcedureHover"] = ProcedureHover
@@ -41419,13 +37571,7 @@ class ProcedureHoverTranslate(IProcedureHoverTranslate, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureHoverTranslate._get_property(self, attrname) is not None: found_prop = IProcedureHoverTranslate._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureHoverTranslate.")
+        set_class_attribute(self, attrname, value, ProcedureHoverTranslate, [IProcedureHoverTranslate, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{fde61d2d-7896-4b38-a0cb-f3a2776c8cfb}", ProcedureHoverTranslate)
 agcls.AgTypeNameMap["ProcedureHoverTranslate"] = ProcedureHoverTranslate
@@ -41443,13 +37589,7 @@ class ProcedureTransitionToForwardFlight(IProcedureTransitionToForwardFlight, IP
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureTransitionToForwardFlight._get_property(self, attrname) is not None: found_prop = IProcedureTransitionToForwardFlight._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureTransitionToForwardFlight.")
+        set_class_attribute(self, attrname, value, ProcedureTransitionToForwardFlight, [IProcedureTransitionToForwardFlight, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{f4e5896e-1457-4909-8b6f-0740d9852278}", ProcedureTransitionToForwardFlight)
 agcls.AgTypeNameMap["ProcedureTransitionToForwardFlight"] = ProcedureTransitionToForwardFlight
@@ -41465,12 +37605,7 @@ class HoverAltitudeOptions(IHoverAltitudeOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IHoverAltitudeOptions._get_property(self, attrname) is not None: found_prop = IHoverAltitudeOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in HoverAltitudeOptions.")
+        set_class_attribute(self, attrname, value, HoverAltitudeOptions, [IHoverAltitudeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{feb66c2d-f9c7-472d-a389-4764db1d37bf}", HoverAltitudeOptions)
 agcls.AgTypeNameMap["HoverAltitudeOptions"] = HoverAltitudeOptions
@@ -41488,13 +37623,7 @@ class ProcedureVerticalTakeoff(IProcedureVerticalTakeoff, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureVerticalTakeoff._get_property(self, attrname) is not None: found_prop = IProcedureVerticalTakeoff._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureVerticalTakeoff.")
+        set_class_attribute(self, attrname, value, ProcedureVerticalTakeoff, [IProcedureVerticalTakeoff, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{518b6d80-31d5-427e-b55f-8b299ba082b9}", ProcedureVerticalTakeoff)
 agcls.AgTypeNameMap["ProcedureVerticalTakeoff"] = ProcedureVerticalTakeoff
@@ -41512,13 +37641,7 @@ class ProcedureVerticalLanding(IProcedureVerticalLanding, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureVerticalLanding._get_property(self, attrname) is not None: found_prop = IProcedureVerticalLanding._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureVerticalLanding.")
+        set_class_attribute(self, attrname, value, ProcedureVerticalLanding, [IProcedureVerticalLanding, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{68401463-90f1-4a74-9346-6e1e99906906}", ProcedureVerticalLanding)
 agcls.AgTypeNameMap["ProcedureVerticalLanding"] = ProcedureVerticalLanding
@@ -41536,13 +37659,7 @@ class ProcedureReferenceState(IProcedureReferenceState, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureReferenceState._get_property(self, attrname) is not None: found_prop = IProcedureReferenceState._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureReferenceState.")
+        set_class_attribute(self, attrname, value, ProcedureReferenceState, [IProcedureReferenceState, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{44f22ac8-6eec-42ca-a433-dbf8b9fdaabf}", ProcedureReferenceState)
 agcls.AgTypeNameMap["ProcedureReferenceState"] = ProcedureReferenceState
@@ -41560,13 +37677,7 @@ class ProcedureSuperProcedure(IProcedureSuperProcedure, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureSuperProcedure._get_property(self, attrname) is not None: found_prop = IProcedureSuperProcedure._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureSuperProcedure.")
+        set_class_attribute(self, attrname, value, ProcedureSuperProcedure, [IProcedureSuperProcedure, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{b49011b5-9b02-48df-9ddd-9936e7903017}", ProcedureSuperProcedure)
 agcls.AgTypeNameMap["ProcedureSuperProcedure"] = ProcedureSuperProcedure
@@ -41584,13 +37695,7 @@ class ProcedureLaunch(IProcedureLaunch, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureLaunch._get_property(self, attrname) is not None: found_prop = IProcedureLaunch._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLaunch.")
+        set_class_attribute(self, attrname, value, ProcedureLaunch, [IProcedureLaunch, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{4121a688-337a-4436-999f-9e1de57aab96}", ProcedureLaunch)
 agcls.AgTypeNameMap["ProcedureLaunch"] = ProcedureLaunch
@@ -41608,13 +37713,7 @@ class ProcedureAirway(IProcedureAirway, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureAirway._get_property(self, attrname) is not None: found_prop = IProcedureAirway._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureAirway.")
+        set_class_attribute(self, attrname, value, ProcedureAirway, [IProcedureAirway, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{66c4d604-dac9-4eff-a18d-be1efb81f1f0}", ProcedureAirway)
 agcls.AgTypeNameMap["ProcedureAirway"] = ProcedureAirway
@@ -41632,13 +37731,7 @@ class ProcedureAirwayRouter(IProcedureAirwayRouter, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureAirwayRouter._get_property(self, attrname) is not None: found_prop = IProcedureAirwayRouter._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureAirwayRouter.")
+        set_class_attribute(self, attrname, value, ProcedureAirwayRouter, [IProcedureAirwayRouter, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c240ee52-dee2-42e0-a8c1-17f52b665f39}", ProcedureAirwayRouter)
 agcls.AgTypeNameMap["ProcedureAirwayRouter"] = ProcedureAirwayRouter
@@ -41656,13 +37749,7 @@ class ProcedureAreaTargetSearch(IProcedureAreaTargetSearch, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureAreaTargetSearch._get_property(self, attrname) is not None: found_prop = IProcedureAreaTargetSearch._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureAreaTargetSearch.")
+        set_class_attribute(self, attrname, value, ProcedureAreaTargetSearch, [IProcedureAreaTargetSearch, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{d065a50b-ba9e-4f25-831e-bb691df5cc71}", ProcedureAreaTargetSearch)
 agcls.AgTypeNameMap["ProcedureAreaTargetSearch"] = ProcedureAreaTargetSearch
@@ -41680,13 +37767,7 @@ class ProcedureFormationRecover(IProcedureFormationRecover, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureFormationRecover._get_property(self, attrname) is not None: found_prop = IProcedureFormationRecover._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFormationRecover.")
+        set_class_attribute(self, attrname, value, ProcedureFormationRecover, [IProcedureFormationRecover, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c3ca901a-fcb0-407b-a8d7-0f6972ebcd85}", ProcedureFormationRecover)
 agcls.AgTypeNameMap["ProcedureFormationRecover"] = ProcedureFormationRecover
@@ -41704,13 +37785,7 @@ class ProcedureInFormation(IProcedureInFormation, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureInFormation._get_property(self, attrname) is not None: found_prop = IProcedureInFormation._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureInFormation.")
+        set_class_attribute(self, attrname, value, ProcedureInFormation, [IProcedureInFormation, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{5f09f987-b896-4cc7-b356-732d0c1500b8}", ProcedureInFormation)
 agcls.AgTypeNameMap["ProcedureInFormation"] = ProcedureInFormation
@@ -41728,13 +37803,7 @@ class ProcedureParallelFlightLine(IProcedureParallelFlightLine, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureParallelFlightLine._get_property(self, attrname) is not None: found_prop = IProcedureParallelFlightLine._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureParallelFlightLine.")
+        set_class_attribute(self, attrname, value, ProcedureParallelFlightLine, [IProcedureParallelFlightLine, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{3d83878f-7cda-46e8-b93f-9cbdc117244b}", ProcedureParallelFlightLine)
 agcls.AgTypeNameMap["ProcedureParallelFlightLine"] = ProcedureParallelFlightLine
@@ -41752,13 +37821,7 @@ class ProcedureVGTPoint(IProcedureVGTPoint, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureVGTPoint._get_property(self, attrname) is not None: found_prop = IProcedureVGTPoint._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureVGTPoint.")
+        set_class_attribute(self, attrname, value, ProcedureVGTPoint, [IProcedureVGTPoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c1c57b66-ecf6-47f5-be6a-36075f83917a}", ProcedureVGTPoint)
 agcls.AgTypeNameMap["ProcedureVGTPoint"] = ProcedureVGTPoint
@@ -41774,12 +37837,7 @@ class PerformanceModelOptions(IPerformanceModelOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPerformanceModelOptions._get_property(self, attrname) is not None: found_prop = IPerformanceModelOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in PerformanceModelOptions.")
+        set_class_attribute(self, attrname, value, PerformanceModelOptions, [IPerformanceModelOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{d37c0417-9eab-4d38-8a3f-a70e144b5368}", PerformanceModelOptions)
 agcls.AgTypeNameMap["PerformanceModelOptions"] = PerformanceModelOptions
@@ -41795,12 +37853,7 @@ class AdvFixedWingTool(IAdvFixedWingTool):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingTool._get_property(self, attrname) is not None: found_prop = IAdvFixedWingTool._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTool.")
+        set_class_attribute(self, attrname, value, AdvFixedWingTool, [IAdvFixedWingTool])
 
 agcls.AgClassCatalog.add_catalog_entry("{e250469c-80a2-44d2-b53d-2712363d7b47}", AdvFixedWingTool)
 agcls.AgTypeNameMap["AdvFixedWingTool"] = AdvFixedWingTool
@@ -41816,12 +37869,7 @@ class AdvFixedWingExternalAero(IAdvFixedWingExternalAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingExternalAero._get_property(self, attrname) is not None: found_prop = IAdvFixedWingExternalAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingExternalAero.")
+        set_class_attribute(self, attrname, value, AdvFixedWingExternalAero, [IAdvFixedWingExternalAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{0938800e-fa5d-446d-bf7b-3d79283da798}", AdvFixedWingExternalAero)
 agcls.AgTypeNameMap["AdvFixedWingExternalAero"] = AdvFixedWingExternalAero
@@ -41837,12 +37885,7 @@ class AdvFixedWingSubsonicAero(IAdvFixedWingSubsonicAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingSubsonicAero._get_property(self, attrname) is not None: found_prop = IAdvFixedWingSubsonicAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSubsonicAero.")
+        set_class_attribute(self, attrname, value, AdvFixedWingSubsonicAero, [IAdvFixedWingSubsonicAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{ced4d6ca-5a7e-4640-936f-e0db35949454}", AdvFixedWingSubsonicAero)
 agcls.AgTypeNameMap["AdvFixedWingSubsonicAero"] = AdvFixedWingSubsonicAero
@@ -41858,12 +37901,7 @@ class AdvFixedWingSubSuperHypersonicAero(IAdvFixedWingSubSuperHypersonicAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingSubSuperHypersonicAero._get_property(self, attrname) is not None: found_prop = IAdvFixedWingSubSuperHypersonicAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSubSuperHypersonicAero.")
+        set_class_attribute(self, attrname, value, AdvFixedWingSubSuperHypersonicAero, [IAdvFixedWingSubSuperHypersonicAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{aa686d0d-7a40-44bb-b340-a5a5470ed81f}", AdvFixedWingSubSuperHypersonicAero)
 agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicAero"] = AdvFixedWingSubSuperHypersonicAero
@@ -41879,12 +37917,7 @@ class AdvFixedWingSupersonicAero(IAdvFixedWingSupersonicAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingSupersonicAero._get_property(self, attrname) is not None: found_prop = IAdvFixedWingSupersonicAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSupersonicAero.")
+        set_class_attribute(self, attrname, value, AdvFixedWingSupersonicAero, [IAdvFixedWingSupersonicAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{00683dc3-fc6d-4ba2-9d0b-306363523e17}", AdvFixedWingSupersonicAero)
 agcls.AgTypeNameMap["AdvFixedWingSupersonicAero"] = AdvFixedWingSupersonicAero
@@ -41902,13 +37935,7 @@ class PerformanceModel(IPerformanceModel, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPerformanceModel._get_property(self, attrname) is not None: found_prop = IPerformanceModel._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in PerformanceModel.")
+        set_class_attribute(self, attrname, value, PerformanceModel, [IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{07c21222-ddfa-4417-8739-aa7e41a6091a}", PerformanceModel)
 agcls.AgTypeNameMap["PerformanceModel"] = PerformanceModel
@@ -41926,13 +37953,7 @@ class AdvFixedWingGeometryBasic(IAdvFixedWingGeometryBasic, IAdvFixedWingGeometr
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingGeometryBasic._get_property(self, attrname) is not None: found_prop = IAdvFixedWingGeometryBasic._get_property(self, attrname)
-        if IAdvFixedWingGeometry._get_property(self, attrname) is not None: found_prop = IAdvFixedWingGeometry._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingGeometryBasic.")
+        set_class_attribute(self, attrname, value, AdvFixedWingGeometryBasic, [IAdvFixedWingGeometryBasic, IAdvFixedWingGeometry])
 
 agcls.AgClassCatalog.add_catalog_entry("{3fccd7b1-9fd7-424e-a251-cadcc2d44a0a}", AdvFixedWingGeometryBasic)
 agcls.AgTypeNameMap["AdvFixedWingGeometryBasic"] = AdvFixedWingGeometryBasic
@@ -41950,13 +37971,7 @@ class AdvFixedWingGeometryVariable(IAdvFixedWingGeometryVariable, IAdvFixedWingG
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingGeometryVariable._get_property(self, attrname) is not None: found_prop = IAdvFixedWingGeometryVariable._get_property(self, attrname)
-        if IAdvFixedWingGeometry._get_property(self, attrname) is not None: found_prop = IAdvFixedWingGeometry._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingGeometryVariable.")
+        set_class_attribute(self, attrname, value, AdvFixedWingGeometryVariable, [IAdvFixedWingGeometryVariable, IAdvFixedWingGeometry])
 
 agcls.AgClassCatalog.add_catalog_entry("{a7cb26ac-fa5b-416d-b81b-8a5975937740}", AdvFixedWingGeometryVariable)
 agcls.AgTypeNameMap["AdvFixedWingGeometryVariable"] = AdvFixedWingGeometryVariable
@@ -41972,12 +37987,7 @@ class AdvFixedWingElectricPowerplant(IAdvFixedWingElectricPowerplant):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingElectricPowerplant._get_property(self, attrname) is not None: found_prop = IAdvFixedWingElectricPowerplant._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingElectricPowerplant.")
+        set_class_attribute(self, attrname, value, AdvFixedWingElectricPowerplant, [IAdvFixedWingElectricPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{64f956f4-4b87-4b13-b459-efef51191309}", AdvFixedWingElectricPowerplant)
 agcls.AgTypeNameMap["AdvFixedWingElectricPowerplant"] = AdvFixedWingElectricPowerplant
@@ -41993,12 +38003,7 @@ class AdvFixedWingExternalProp(IAdvFixedWingExternalProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingExternalProp._get_property(self, attrname) is not None: found_prop = IAdvFixedWingExternalProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingExternalProp.")
+        set_class_attribute(self, attrname, value, AdvFixedWingExternalProp, [IAdvFixedWingExternalProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{86d612c4-8537-48d7-912b-931a2c939c8e}", AdvFixedWingExternalProp)
 agcls.AgTypeNameMap["AdvFixedWingExternalProp"] = AdvFixedWingExternalProp
@@ -42014,12 +38019,7 @@ class AdvFixedWingSubSuperHypersonicProp(IAdvFixedWingSubSuperHypersonicProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingSubSuperHypersonicProp._get_property(self, attrname) is not None: found_prop = IAdvFixedWingSubSuperHypersonicProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingSubSuperHypersonicProp.")
+        set_class_attribute(self, attrname, value, AdvFixedWingSubSuperHypersonicProp, [IAdvFixedWingSubSuperHypersonicProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{15279d03-0f3b-458d-957c-2cdee97bc0a8}", AdvFixedWingSubSuperHypersonicProp)
 agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicProp"] = AdvFixedWingSubSuperHypersonicProp
@@ -42035,12 +38035,7 @@ class AdvFixedWingPistonPowerplant(IAdvFixedWingPistonPowerplant):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingPistonPowerplant._get_property(self, attrname) is not None: found_prop = IAdvFixedWingPistonPowerplant._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingPistonPowerplant.")
+        set_class_attribute(self, attrname, value, AdvFixedWingPistonPowerplant, [IAdvFixedWingPistonPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{dd383e2b-f1e9-4afe-9241-4d89e95db034}", AdvFixedWingPistonPowerplant)
 agcls.AgTypeNameMap["AdvFixedWingPistonPowerplant"] = AdvFixedWingPistonPowerplant
@@ -42056,12 +38051,7 @@ class AdvFixedWingEmpiricalJetEngine(IAdvFixedWingEmpiricalJetEngine):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingEmpiricalJetEngine._get_property(self, attrname) is not None: found_prop = IAdvFixedWingEmpiricalJetEngine._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingEmpiricalJetEngine.")
+        set_class_attribute(self, attrname, value, AdvFixedWingEmpiricalJetEngine, [IAdvFixedWingEmpiricalJetEngine])
 
 agcls.AgClassCatalog.add_catalog_entry("{cf86965f-eacf-47ca-a6b8-5c69a1f9612f}", AdvFixedWingEmpiricalJetEngine)
 agcls.AgTypeNameMap["AdvFixedWingEmpiricalJetEngine"] = AdvFixedWingEmpiricalJetEngine
@@ -42077,12 +38067,7 @@ class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerpla
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingTurbofanBasicABPowerplant._get_property(self, attrname) is not None: found_prop = IAdvFixedWingTurbofanBasicABPowerplant._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbofanBasicABPowerplant.")
+        set_class_attribute(self, attrname, value, AdvFixedWingTurbofanBasicABPowerplant, [IAdvFixedWingTurbofanBasicABPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{27a6cd0b-bd9b-4af7-9367-9d2ce3fa39cd}", AdvFixedWingTurbofanBasicABPowerplant)
 agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABPowerplant"] = AdvFixedWingTurbofanBasicABPowerplant
@@ -42098,12 +38083,7 @@ class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerpla
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingTurbojetBasicABPowerplant._get_property(self, attrname) is not None: found_prop = IAdvFixedWingTurbojetBasicABPowerplant._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbojetBasicABPowerplant.")
+        set_class_attribute(self, attrname, value, AdvFixedWingTurbojetBasicABPowerplant, [IAdvFixedWingTurbojetBasicABPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{65230337-ecdc-4b80-92aa-107af1bcfdbe}", AdvFixedWingTurbojetBasicABPowerplant)
 agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABPowerplant"] = AdvFixedWingTurbojetBasicABPowerplant
@@ -42119,12 +38099,7 @@ class AdvFixedWingTurbofanBasicABProp(IAdvFixedWingTurbofanBasicABProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingTurbofanBasicABProp._get_property(self, attrname) is not None: found_prop = IAdvFixedWingTurbofanBasicABProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbofanBasicABProp.")
+        set_class_attribute(self, attrname, value, AdvFixedWingTurbofanBasicABProp, [IAdvFixedWingTurbofanBasicABProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{327e3a7a-ecce-445e-b105-2dbec0239e6d}", AdvFixedWingTurbofanBasicABProp)
 agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABProp"] = AdvFixedWingTurbofanBasicABProp
@@ -42140,12 +38115,7 @@ class AdvFixedWingTurbojetBasicABProp(IAdvFixedWingTurbojetBasicABProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingTurbojetBasicABProp._get_property(self, attrname) is not None: found_prop = IAdvFixedWingTurbojetBasicABProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbojetBasicABProp.")
+        set_class_attribute(self, attrname, value, AdvFixedWingTurbojetBasicABProp, [IAdvFixedWingTurbojetBasicABProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{c60f96fa-5802-4d89-b522-2a1dd5e03ca0}", AdvFixedWingTurbojetBasicABProp)
 agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABProp"] = AdvFixedWingTurbojetBasicABProp
@@ -42161,12 +38131,7 @@ class AdvFixedWingTurbopropPowerplant(IAdvFixedWingTurbopropPowerplant):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingTurbopropPowerplant._get_property(self, attrname) is not None: found_prop = IAdvFixedWingTurbopropPowerplant._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingTurbopropPowerplant.")
+        set_class_attribute(self, attrname, value, AdvFixedWingTurbopropPowerplant, [IAdvFixedWingTurbopropPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{7ac5402a-9b5d-4fc9-94b5-365e9bc1e25e}", AdvFixedWingTurbopropPowerplant)
 agcls.AgTypeNameMap["AdvFixedWingTurbopropPowerplant"] = AdvFixedWingTurbopropPowerplant
@@ -42182,12 +38147,7 @@ class MissileSimpleAero(IMissileSimpleAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileSimpleAero._get_property(self, attrname) is not None: found_prop = IMissileSimpleAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileSimpleAero.")
+        set_class_attribute(self, attrname, value, MissileSimpleAero, [IMissileSimpleAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{99dff5f7-c73c-414d-9c38-2e7b35c93f5e}", MissileSimpleAero)
 agcls.AgTypeNameMap["MissileSimpleAero"] = MissileSimpleAero
@@ -42203,12 +38163,7 @@ class MissileExternalAero(IMissileExternalAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileExternalAero._get_property(self, attrname) is not None: found_prop = IMissileExternalAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileExternalAero.")
+        set_class_attribute(self, attrname, value, MissileExternalAero, [IMissileExternalAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{92940e34-6d78-4e39-b774-4a865e9d0bc0}", MissileExternalAero)
 agcls.AgTypeNameMap["MissileExternalAero"] = MissileExternalAero
@@ -42224,12 +38179,7 @@ class MissileAdvancedAero(IMissileAdvancedAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileAdvancedAero._get_property(self, attrname) is not None: found_prop = IMissileAdvancedAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileAdvancedAero.")
+        set_class_attribute(self, attrname, value, MissileAdvancedAero, [IMissileAdvancedAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{becfe264-7b70-461f-9f64-b0d23aa59f1e}", MissileAdvancedAero)
 agcls.AgTypeNameMap["MissileAdvancedAero"] = MissileAdvancedAero
@@ -42245,12 +38195,7 @@ class MissileAero(IMissileAero):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileAero._get_property(self, attrname) is not None: found_prop = IMissileAero._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileAero.")
+        set_class_attribute(self, attrname, value, MissileAero, [IMissileAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{bc518434-5a42-49e0-8a54-8212a797c728}", MissileAero)
 agcls.AgTypeNameMap["MissileAero"] = MissileAero
@@ -42266,12 +38211,7 @@ class MissileProp(IMissileProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileProp._get_property(self, attrname) is not None: found_prop = IMissileProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileProp.")
+        set_class_attribute(self, attrname, value, MissileProp, [IMissileProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{544b60ce-22da-4e8b-a222-ffd4bc070a01}", MissileProp)
 agcls.AgTypeNameMap["MissileProp"] = MissileProp
@@ -42287,12 +38227,7 @@ class MissileSimpleProp(IMissileSimpleProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileSimpleProp._get_property(self, attrname) is not None: found_prop = IMissileSimpleProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileSimpleProp.")
+        set_class_attribute(self, attrname, value, MissileSimpleProp, [IMissileSimpleProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{e92e2a28-9614-4afe-97ee-8e0d90e4ee3b}", MissileSimpleProp)
 agcls.AgTypeNameMap["MissileSimpleProp"] = MissileSimpleProp
@@ -42308,12 +38243,7 @@ class MissileExternalProp(IMissileExternalProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileExternalProp._get_property(self, attrname) is not None: found_prop = IMissileExternalProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileExternalProp.")
+        set_class_attribute(self, attrname, value, MissileExternalProp, [IMissileExternalProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{4b7a80c7-e7a6-453b-a423-1c53ac68c0bc}", MissileExternalProp)
 agcls.AgTypeNameMap["MissileExternalProp"] = MissileExternalProp
@@ -42329,12 +38259,7 @@ class MissileRamjetProp(IMissileRamjetProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileRamjetProp._get_property(self, attrname) is not None: found_prop = IMissileRamjetProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileRamjetProp.")
+        set_class_attribute(self, attrname, value, MissileRamjetProp, [IMissileRamjetProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{0bef31b2-9f2c-4dea-b475-e2feeb55052e}", MissileRamjetProp)
 agcls.AgTypeNameMap["MissileRamjetProp"] = MissileRamjetProp
@@ -42350,12 +38275,7 @@ class MissileRocketProp(IMissileRocketProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileRocketProp._get_property(self, attrname) is not None: found_prop = IMissileRocketProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileRocketProp.")
+        set_class_attribute(self, attrname, value, MissileRocketProp, [IMissileRocketProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{68296bb7-edd5-4305-8b51-3f3d0c7d4428}", MissileRocketProp)
 agcls.AgTypeNameMap["MissileRocketProp"] = MissileRocketProp
@@ -42371,12 +38291,7 @@ class MissileTurbojetProp(IMissileTurbojetProp):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IMissileTurbojetProp._get_property(self, attrname) is not None: found_prop = IMissileTurbojetProp._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in MissileTurbojetProp.")
+        set_class_attribute(self, attrname, value, MissileTurbojetProp, [IMissileTurbojetProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{6024d1a7-768e-4015-abb3-e0539d431ff9}", MissileTurbojetProp)
 agcls.AgTypeNameMap["MissileTurbojetProp"] = MissileTurbojetProp
@@ -42392,12 +38307,7 @@ class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IReferenceStateForwardFlightOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateForwardFlightOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateForwardFlightOptions.")
+        set_class_attribute(self, attrname, value, ReferenceStateForwardFlightOptions, [IReferenceStateForwardFlightOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{6f60fd0b-6c79-48a5-908b-b5d697552b94}", ReferenceStateForwardFlightOptions)
 agcls.AgTypeNameMap["ReferenceStateForwardFlightOptions"] = ReferenceStateForwardFlightOptions
@@ -42413,12 +38323,7 @@ class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IReferenceStateTakeoffLandingOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateTakeoffLandingOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateTakeoffLandingOptions.")
+        set_class_attribute(self, attrname, value, ReferenceStateTakeoffLandingOptions, [IReferenceStateTakeoffLandingOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{5a54840f-128e-411c-af24-2e2c49fbd922}", ReferenceStateTakeoffLandingOptions)
 agcls.AgTypeNameMap["ReferenceStateTakeoffLandingOptions"] = ReferenceStateTakeoffLandingOptions
@@ -42434,12 +38339,7 @@ class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IReferenceStateHoverOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateHoverOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateHoverOptions.")
+        set_class_attribute(self, attrname, value, ReferenceStateHoverOptions, [IReferenceStateHoverOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0767b34e-3bc9-447d-956e-5e0939cc9bfc}", ReferenceStateHoverOptions)
 agcls.AgTypeNameMap["ReferenceStateHoverOptions"] = ReferenceStateHoverOptions
@@ -42455,12 +38355,7 @@ class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IReferenceStateWeightOnWheelsOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateWeightOnWheelsOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateWeightOnWheelsOptions.")
+        set_class_attribute(self, attrname, value, ReferenceStateWeightOnWheelsOptions, [IReferenceStateWeightOnWheelsOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{de32d95c-707b-41dd-a7de-072506f171b9}", ReferenceStateWeightOnWheelsOptions)
 agcls.AgTypeNameMap["ReferenceStateWeightOnWheelsOptions"] = ReferenceStateWeightOnWheelsOptions
@@ -42478,13 +38373,7 @@ class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteRunwayFromCatalog._get_property(self, attrname) is not None: found_prop = ISiteRunwayFromCatalog._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteRunwayFromCatalog.")
+        set_class_attribute(self, attrname, value, SiteRunwayFromCatalog, [ISiteRunwayFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{9220ceaa-69a7-4b64-8dfe-ec4ca0083d3e}", SiteRunwayFromCatalog)
 agcls.AgTypeNameMap["SiteRunwayFromCatalog"] = SiteRunwayFromCatalog
@@ -42502,13 +38391,7 @@ class SiteAirportFromCatalog(ISiteAirportFromCatalog, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteAirportFromCatalog._get_property(self, attrname) is not None: found_prop = ISiteAirportFromCatalog._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteAirportFromCatalog.")
+        set_class_attribute(self, attrname, value, SiteAirportFromCatalog, [ISiteAirportFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{b5a44f89-2af4-41bd-8ebc-8e503f43f912}", SiteAirportFromCatalog)
 agcls.AgTypeNameMap["SiteAirportFromCatalog"] = SiteAirportFromCatalog
@@ -42526,13 +38409,7 @@ class SiteNavaidFromCatalog(ISiteNavaidFromCatalog, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteNavaidFromCatalog._get_property(self, attrname) is not None: found_prop = ISiteNavaidFromCatalog._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteNavaidFromCatalog.")
+        set_class_attribute(self, attrname, value, SiteNavaidFromCatalog, [ISiteNavaidFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{59135b93-5164-4c35-8128-de6a6376a66f}", SiteNavaidFromCatalog)
 agcls.AgTypeNameMap["SiteNavaidFromCatalog"] = SiteNavaidFromCatalog
@@ -42550,13 +38427,7 @@ class SiteVTOLPointFromCatalog(ISiteVTOLPointFromCatalog, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteVTOLPointFromCatalog._get_property(self, attrname) is not None: found_prop = ISiteVTOLPointFromCatalog._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteVTOLPointFromCatalog.")
+        set_class_attribute(self, attrname, value, SiteVTOLPointFromCatalog, [ISiteVTOLPointFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{189c8c0a-c6a4-424f-b2ff-b1e466c38cd4}", SiteVTOLPointFromCatalog)
 agcls.AgTypeNameMap["SiteVTOLPointFromCatalog"] = SiteVTOLPointFromCatalog
@@ -42574,13 +38445,7 @@ class SiteWaypointFromCatalog(ISiteWaypointFromCatalog, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteWaypointFromCatalog._get_property(self, attrname) is not None: found_prop = ISiteWaypointFromCatalog._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteWaypointFromCatalog.")
+        set_class_attribute(self, attrname, value, SiteWaypointFromCatalog, [ISiteWaypointFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{d620651a-2526-43c8-8715-122ad6d6eb40}", SiteWaypointFromCatalog)
 agcls.AgTypeNameMap["SiteWaypointFromCatalog"] = SiteWaypointFromCatalog
@@ -42596,12 +38461,7 @@ class NavaidCategory(INavaidCategory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if INavaidCategory._get_property(self, attrname) is not None: found_prop = INavaidCategory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in NavaidCategory.")
+        set_class_attribute(self, attrname, value, NavaidCategory, [INavaidCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{9cab926c-f92d-4b63-9588-d5e849f047bf}", NavaidCategory)
 agcls.AgTypeNameMap["NavaidCategory"] = NavaidCategory
@@ -42617,12 +38477,7 @@ class VTOLPointCategory(IVTOLPointCategory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IVTOLPointCategory._get_property(self, attrname) is not None: found_prop = IVTOLPointCategory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in VTOLPointCategory.")
+        set_class_attribute(self, attrname, value, VTOLPointCategory, [IVTOLPointCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{35a0a9ce-18bd-47b5-927a-1cb825edab22}", VTOLPointCategory)
 agcls.AgTypeNameMap["VTOLPointCategory"] = VTOLPointCategory
@@ -42638,12 +38493,7 @@ class WaypointCategory(IWaypointCategory):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IWaypointCategory._get_property(self, attrname) is not None: found_prop = IWaypointCategory._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in WaypointCategory.")
+        set_class_attribute(self, attrname, value, WaypointCategory, [IWaypointCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{502442da-96cc-4a07-9124-9d4e4c287801}", WaypointCategory)
 agcls.AgTypeNameMap["WaypointCategory"] = WaypointCategory
@@ -42665,15 +38515,7 @@ class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogIt
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IARINC424Item._get_property(self, attrname) is not None: found_prop = IARINC424Item._get_property(self, attrname)
-        if ICatalogNavaid._get_property(self, attrname) is not None: found_prop = ICatalogNavaid._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Navaid.")
+        set_class_attribute(self, attrname, value, ARINC424Navaid, [IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{18308bdb-0318-4820-87c7-59e4ad432c0f}", ARINC424Navaid)
 agcls.AgTypeNameMap["ARINC424Navaid"] = ARINC424Navaid
@@ -42695,15 +38537,7 @@ class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatal
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IARINC424Item._get_property(self, attrname) is not None: found_prop = IARINC424Item._get_property(self, attrname)
-        if ICatalogVTOLPoint._get_property(self, attrname) is not None: found_prop = ICatalogVTOLPoint._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Helipad.")
+        set_class_attribute(self, attrname, value, ARINC424Helipad, [IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{6cf2bbc6-dcf3-493e-ad3d-bf58879edd2d}", ARINC424Helipad)
 agcls.AgTypeNameMap["ARINC424Helipad"] = ARINC424Helipad
@@ -42723,14 +38557,7 @@ class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IARINC424Item._get_property(self, attrname) is not None: found_prop = IARINC424Item._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ARINC424Waypoint.")
+        set_class_attribute(self, attrname, value, ARINC424Waypoint, [IARINC424Item, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{55d1b405-651f-4687-a34a-f0bb64ec8814}", ARINC424Waypoint)
 agcls.AgTypeNameMap["ARINC424Waypoint"] = ARINC424Waypoint
@@ -42748,13 +38575,7 @@ class UserVTOLPointSource(IUserVTOLPointSource, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUserVTOLPointSource._get_property(self, attrname) is not None: found_prop = IUserVTOLPointSource._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UserVTOLPointSource.")
+        set_class_attribute(self, attrname, value, UserVTOLPointSource, [IUserVTOLPointSource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{dfc0b12b-f8c4-4d99-bb5c-6aecebe0ea7d}", UserVTOLPointSource)
 agcls.AgTypeNameMap["UserVTOLPointSource"] = UserVTOLPointSource
@@ -42776,15 +38597,7 @@ class UserVTOLPoint(IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalo
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUserVTOLPoint._get_property(self, attrname) is not None: found_prop = IUserVTOLPoint._get_property(self, attrname)
-        if ICatalogVTOLPoint._get_property(self, attrname) is not None: found_prop = ICatalogVTOLPoint._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UserVTOLPoint.")
+        set_class_attribute(self, attrname, value, UserVTOLPoint, [IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{748a44bd-4d22-4800-a311-fc8c95901638}", UserVTOLPoint)
 agcls.AgTypeNameMap["UserVTOLPoint"] = UserVTOLPoint
@@ -42802,13 +38615,7 @@ class UserWaypointSource(IUserWaypointSource, ICatalogSource):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUserWaypointSource._get_property(self, attrname) is not None: found_prop = IUserWaypointSource._get_property(self, attrname)
-        if ICatalogSource._get_property(self, attrname) is not None: found_prop = ICatalogSource._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UserWaypointSource.")
+        set_class_attribute(self, attrname, value, UserWaypointSource, [IUserWaypointSource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{7f85e32f-b5a1-4d12-b7ac-a817dd7162d0}", UserWaypointSource)
 agcls.AgTypeNameMap["UserWaypointSource"] = UserWaypointSource
@@ -42828,14 +38635,7 @@ class UserWaypoint(IUserWaypoint, ICatalogWaypoint, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUserWaypoint._get_property(self, attrname) is not None: found_prop = IUserWaypoint._get_property(self, attrname)
-        if ICatalogWaypoint._get_property(self, attrname) is not None: found_prop = ICatalogWaypoint._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UserWaypoint.")
+        set_class_attribute(self, attrname, value, UserWaypoint, [IUserWaypoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{ca33c45d-2eba-409b-aa44-b57b5a57e3b3}", UserWaypoint)
 agcls.AgTypeNameMap["UserWaypoint"] = UserWaypoint
@@ -42851,12 +38651,7 @@ class PropulsionEfficiencies(IPropulsionEfficiencies):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IPropulsionEfficiencies._get_property(self, attrname) is not None: found_prop = IPropulsionEfficiencies._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in PropulsionEfficiencies.")
+        set_class_attribute(self, attrname, value, PropulsionEfficiencies, [IPropulsionEfficiencies])
 
 agcls.AgClassCatalog.add_catalog_entry("{0af7363a-b62a-4eaf-a4b5-4103197bc6b1}", PropulsionEfficiencies)
 agcls.AgTypeNameMap["PropulsionEfficiencies"] = PropulsionEfficiencies
@@ -42872,12 +38667,7 @@ class FuelModelKeroseneAFPROP(IFuelModelKeroseneAFPROP):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IFuelModelKeroseneAFPROP._get_property(self, attrname) is not None: found_prop = IFuelModelKeroseneAFPROP._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in FuelModelKeroseneAFPROP.")
+        set_class_attribute(self, attrname, value, FuelModelKeroseneAFPROP, [IFuelModelKeroseneAFPROP])
 
 agcls.AgClassCatalog.add_catalog_entry("{fb23d809-5785-4a45-b914-415015e6d9eb}", FuelModelKeroseneAFPROP)
 agcls.AgTypeNameMap["FuelModelKeroseneAFPROP"] = FuelModelKeroseneAFPROP
@@ -42893,12 +38683,7 @@ class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IFuelModelKeroseneCEA._get_property(self, attrname) is not None: found_prop = IFuelModelKeroseneCEA._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in FuelModelKeroseneCEA.")
+        set_class_attribute(self, attrname, value, FuelModelKeroseneCEA, [IFuelModelKeroseneCEA])
 
 agcls.AgClassCatalog.add_catalog_entry("{6df7fa84-6983-4ed2-9447-a11d0fbd0fac}", FuelModelKeroseneCEA)
 agcls.AgTypeNameMap["FuelModelKeroseneCEA"] = FuelModelKeroseneCEA
@@ -42914,12 +38699,7 @@ class AdvFixedWingRamjetBasic(IAdvFixedWingRamjetBasic):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingRamjetBasic._get_property(self, attrname) is not None: found_prop = IAdvFixedWingRamjetBasic._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingRamjetBasic.")
+        set_class_attribute(self, attrname, value, AdvFixedWingRamjetBasic, [IAdvFixedWingRamjetBasic])
 
 agcls.AgClassCatalog.add_catalog_entry("{9f333e9b-3d22-429d-9880-940122216dde}", AdvFixedWingRamjetBasic)
 agcls.AgTypeNameMap["AdvFixedWingRamjetBasic"] = AdvFixedWingRamjetBasic
@@ -42935,12 +38715,7 @@ class AdvFixedWingScramjetBasic(IAdvFixedWingScramjetBasic):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAdvFixedWingScramjetBasic._get_property(self, attrname) is not None: found_prop = IAdvFixedWingScramjetBasic._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AdvFixedWingScramjetBasic.")
+        set_class_attribute(self, attrname, value, AdvFixedWingScramjetBasic, [IAdvFixedWingScramjetBasic])
 
 agcls.AgClassCatalog.add_catalog_entry("{6caec1e6-8cf4-4752-89c6-42b55473f144}", AdvFixedWingScramjetBasic)
 agcls.AgTypeNameMap["AdvFixedWingScramjetBasic"] = AdvFixedWingScramjetBasic
@@ -42956,12 +38731,7 @@ class AircraftVTOLModel(IAircraftVTOLModel):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftVTOLModel._get_property(self, attrname) is not None: found_prop = IAircraftVTOLModel._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftVTOLModel.")
+        set_class_attribute(self, attrname, value, AircraftVTOLModel, [IAircraftVTOLModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{5fb18d9d-20cb-408e-a0d0-60f5cdd9dc2c}", AircraftVTOLModel)
 agcls.AgTypeNameMap["AircraftVTOLModel"] = AircraftVTOLModel
@@ -42979,13 +38749,7 @@ class AircraftVTOL(IAircraftVTOL, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftVTOL._get_property(self, attrname) is not None: found_prop = IAircraftVTOL._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftVTOL.")
+        set_class_attribute(self, attrname, value, AircraftVTOL, [IAircraftVTOL, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{c1bd235a-6ffc-435c-900d-0ff6a7ca5422}", AircraftVTOL)
 agcls.AgTypeNameMap["AircraftVTOL"] = AircraftVTOL
@@ -43001,12 +38765,7 @@ class AircraftTerrainFollowModel(IAircraftTerrainFollowModel):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftTerrainFollowModel._get_property(self, attrname) is not None: found_prop = IAircraftTerrainFollowModel._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftTerrainFollowModel.")
+        set_class_attribute(self, attrname, value, AircraftTerrainFollowModel, [IAircraftTerrainFollowModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{27d2c971-cdce-4465-a3df-eaf526de6c01}", AircraftTerrainFollowModel)
 agcls.AgTypeNameMap["AircraftTerrainFollowModel"] = AircraftTerrainFollowModel
@@ -43024,13 +38783,7 @@ class AircraftTerrainFollow(IAircraftTerrainFollow, ICatalogItem):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IAircraftTerrainFollow._get_property(self, attrname) is not None: found_prop = IAircraftTerrainFollow._get_property(self, attrname)
-        if ICatalogItem._get_property(self, attrname) is not None: found_prop = ICatalogItem._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AircraftTerrainFollow.")
+        set_class_attribute(self, attrname, value, AircraftTerrainFollow, [IAircraftTerrainFollow, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{683bec0d-293d-4afa-a1ab-b23b123d62e4}", AircraftTerrainFollow)
 agcls.AgTypeNameMap["AircraftTerrainFollow"] = AircraftTerrainFollow
@@ -43048,13 +38801,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategyBallistic3D, IBasic
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyBallistic3D._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyBallistic3D._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyBallistic3D.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyBallistic3D, [IBasicManeuverStrategyBallistic3D, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{ec8f88ae-2944-459b-90aa-f8df3e74bf89}", BasicManeuverStrategyBallistic3D)
 agcls.AgTypeNameMap["BasicManeuverStrategyBallistic3D"] = BasicManeuverStrategyBallistic3D
@@ -43072,13 +38819,7 @@ class ProcedureLaunchDynState(IProcedureLaunchDynState, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureLaunchDynState._get_property(self, attrname) is not None: found_prop = IProcedureLaunchDynState._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLaunchDynState.")
+        set_class_attribute(self, attrname, value, ProcedureLaunchDynState, [IProcedureLaunchDynState, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{AA90861B-C8E1-46D1-BA87-47F27D731B84}", ProcedureLaunchDynState)
 agcls.AgTypeNameMap["ProcedureLaunchDynState"] = ProcedureLaunchDynState
@@ -43096,13 +38837,7 @@ class ProcedureLaunchWaypoint(IProcedureLaunchWaypoint, IProcedure):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureLaunchWaypoint._get_property(self, attrname) is not None: found_prop = IProcedureLaunchWaypoint._get_property(self, attrname)
-        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureLaunchWaypoint.")
+        set_class_attribute(self, attrname, value, ProcedureLaunchWaypoint, [IProcedureLaunchWaypoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{05730C66-FF4D-4A05-A821-C541134119CE}", ProcedureLaunchWaypoint)
 agcls.AgTypeNameMap["ProcedureLaunchWaypoint"] = ProcedureLaunchWaypoint
@@ -43120,13 +38855,7 @@ class SiteDynState(ISiteDynState, ISite):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if ISiteDynState._get_property(self, attrname) is not None: found_prop = ISiteDynState._get_property(self, attrname)
-        if ISite._get_property(self, attrname) is not None: found_prop = ISite._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in SiteDynState.")
+        set_class_attribute(self, attrname, value, SiteDynState, [ISiteDynState, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{DF907297-E5CC-4346-9E97-95A3AFEE02FD}", SiteDynState)
 agcls.AgTypeNameMap["SiteDynState"] = SiteDynState
@@ -43144,13 +38873,7 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategyPitch3D, IBasicManeuver
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverStrategyPitch3D._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyPitch3D._get_property(self, attrname)
-        if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyPitch3D.")
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyPitch3D, [IBasicManeuverStrategyPitch3D, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{A10EDD83-CED6-4747-AFBA-948653338437}", BasicManeuverStrategyPitch3D)
 agcls.AgTypeNameMap["BasicManeuverStrategyPitch3D"] = BasicManeuverStrategyPitch3D
@@ -43166,12 +38889,7 @@ class RefuelDumpProperties(IRefuelDumpProperties):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IRefuelDumpProperties._get_property(self, attrname) is not None: found_prop = IRefuelDumpProperties._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RefuelDumpProperties.")
+        set_class_attribute(self, attrname, value, RefuelDumpProperties, [IRefuelDumpProperties])
 
 agcls.AgClassCatalog.add_catalog_entry("{9CB1E862-FDED-463D-B449-C39030B149D6}", RefuelDumpProperties)
 agcls.AgTypeNameMap["RefuelDumpProperties"] = RefuelDumpProperties
@@ -43187,12 +38905,7 @@ class ProcedureFastTimeOptions(IProcedureFastTimeOptions):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IProcedureFastTimeOptions._get_property(self, attrname) is not None: found_prop = IProcedureFastTimeOptions._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFastTimeOptions.")
+        set_class_attribute(self, attrname, value, ProcedureFastTimeOptions, [IProcedureFastTimeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{D69CF956-3A04-48F1-B553-7A10412253A0}", ProcedureFastTimeOptions)
 agcls.AgTypeNameMap["ProcedureFastTimeOptions"] = ProcedureFastTimeOptions
@@ -43208,12 +38921,7 @@ class BasicManeuverTargetPositionVel(IBasicManeuverTargetPositionVel):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverTargetPositionVel._get_property(self, attrname) is not None: found_prop = IBasicManeuverTargetPositionVel._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverTargetPositionVel.")
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVel, [IBasicManeuverTargetPositionVel])
 
 agcls.AgClassCatalog.add_catalog_entry("{4084EB67-0992-4F64-B710-7B5B4E275AC5}", BasicManeuverTargetPositionVel)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVel"] = BasicManeuverTargetPositionVel
@@ -43229,12 +38937,7 @@ class BasicManeuverTargetPositionVelNoisyBrnRng(IBasicManeuverTargetPositionVelN
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverTargetPositionVelNoisyBrnRng._get_property(self, attrname) is not None: found_prop = IBasicManeuverTargetPositionVelNoisyBrnRng._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverTargetPositionVelNoisyBrnRng.")
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisyBrnRng, [IBasicManeuverTargetPositionVelNoisyBrnRng])
 
 agcls.AgClassCatalog.add_catalog_entry("{B64A8B6B-FA25-47EF-8945-2DA2817D6853}", BasicManeuverTargetPositionVelNoisyBrnRng)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisyBrnRng"] = BasicManeuverTargetPositionVelNoisyBrnRng
@@ -43250,12 +38953,7 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(IBasicManeuverTargetPositionVel
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IBasicManeuverTargetPositionVelNoisySurfTgt._get_property(self, attrname) is not None: found_prop = IBasicManeuverTargetPositionVelNoisySurfTgt._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverTargetPositionVelNoisySurfTgt.")
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisySurfTgt, [IBasicManeuverTargetPositionVelNoisySurfTgt])
 
 agcls.AgClassCatalog.add_catalog_entry("{A04BE0CD-AF3B-4887-A160-F4FCF29B9610}", BasicManeuverTargetPositionVelNoisySurfTgt)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisySurfTgt"] = BasicManeuverTargetPositionVelNoisySurfTgt

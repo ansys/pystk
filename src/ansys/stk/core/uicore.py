@@ -15,7 +15,9 @@ from .internal  import comutil          as agcom
 from .internal  import coclassutil      as agcls
 from .internal  import marshall         as agmarshall
 from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import interface_proxy, enumerator_proxy, out_arg
+from .internal.apiutil     import (interface_proxy, enumerator_proxy, out_arg, 
+    initialize_from_source_object, get_interface_property, set_interface_attribute, 
+    set_class_attribute)
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
@@ -117,28 +119,16 @@ class IUiToolbar(object):
                              "set_float_state" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiToolbar._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiToolbar from source object.")
+        initialize_from_source_object(self, sourceObject, IUiToolbar)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiToolbar.__dict__ and type(IUiToolbar.__dict__[attrname]) == property:
-            return IUiToolbar.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiToolbar)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiToolbar.")
+        set_interface_attribute(self, attrname, value, IUiToolbar, None)
     
     _get_id_metadata = { "name" : "id",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -205,14 +195,7 @@ class IUiToolbarCollection(object):
                              "get_item_by_name" : 6, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiToolbarCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiToolbarCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IUiToolbarCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -220,14 +203,9 @@ class IUiToolbarCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiToolbarCollection.__dict__ and type(IUiToolbarCollection.__dict__[attrname]) == property:
-            return IUiToolbarCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiToolbarCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiToolbarCollection.")
+        set_interface_attribute(self, attrname, value, IUiToolbarCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -324,28 +302,16 @@ class IUiWindow(object):
                              "get_service_by_type" : 24, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindow._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiWindow from source object.")
+        initialize_from_source_object(self, sourceObject, IUiWindow)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiWindow.__dict__ and type(IUiWindow.__dict__[attrname]) == property:
-            return IUiWindow.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiWindow)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindow.")
+        set_interface_attribute(self, attrname, value, IUiWindow, None)
     
     _get_caption_metadata = { "name" : "caption",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -547,14 +513,7 @@ class IUiWindowsCollection(object):
                              "get_item_by_name" : 7, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindowsCollection._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiWindowsCollection from source object.")
+        initialize_from_source_object(self, sourceObject, IUiWindowsCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
@@ -562,14 +521,9 @@ class IUiWindowsCollection(object):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiWindowsCollection.__dict__ and type(IUiWindowsCollection.__dict__[attrname]) == property:
-            return IUiWindowsCollection.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiWindowsCollection)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowsCollection.")
+        set_interface_attribute(self, attrname, value, IUiWindowsCollection, None)
     def __iter__(self):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
@@ -650,28 +604,16 @@ class IUiWindowMapObject(object):
         "method_offsets" : { "get_map_id" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindowMapObject._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiWindowMapObject from source object.")
+        initialize_from_source_object(self, sourceObject, IUiWindowMapObject)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiWindowMapObject.__dict__ and type(IUiWindowMapObject.__dict__[attrname]) == property:
-            return IUiWindowMapObject.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiWindowMapObject)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowMapObject.")
+        set_interface_attribute(self, attrname, value, IUiWindowMapObject, None)
     
     _get_map_id_metadata = { "name" : "map_id",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -695,28 +637,16 @@ class IUiWindowGlobeObject(object):
         "method_offsets" : { "get_scene_id" : 1, }
     }
     def __init__(self, sourceObject=None):
-        self.__dict__["_intf"] = interface_proxy()
-        if sourceObject is not None and sourceObject._intf is not None:
-            intf = sourceObject._intf.query_interface(agcom.GUID(IUiWindowGlobeObject._metadata["uuid"]))
-            if intf is not None:
-                self._private_init(intf)
-                del(intf)
-            else:
-                raise STKInvalidCastError("Failed to create IUiWindowGlobeObject from source object.")
+        initialize_from_source_object(self, sourceObject, IUiWindowGlobeObject)
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUiWindowGlobeObject.__dict__ and type(IUiWindowGlobeObject.__dict__[attrname]) == property:
-            return IUiWindowGlobeObject.__dict__[attrname]
-        return None
+        return get_interface_property(attrname, IUiWindowGlobeObject)
     def __setattr__(self, attrname, value):
-        if self._get_property(attrname) is not None:
-            self._get_property(attrname).__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowGlobeObject.")
+        set_interface_attribute(self, attrname, value, IUiWindowGlobeObject, None)
     
     _get_scene_id_metadata = { "name" : "scene_id",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -743,12 +673,7 @@ class UiWindowsCollection(IUiWindowsCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiWindowsCollection._get_property(self, attrname) is not None: found_prop = IUiWindowsCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowsCollection.")
+        set_class_attribute(self, attrname, value, UiWindowsCollection, [IUiWindowsCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{82F7DB8A-A761-4C3E-95DF-37300A3738CB}", UiWindowsCollection)
 agcls.AgTypeNameMap["UiWindowsCollection"] = UiWindowsCollection
@@ -764,12 +689,7 @@ class UiWindow(IUiWindow):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiWindow._get_property(self, attrname) is not None: found_prop = IUiWindow._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiWindow.")
+        set_class_attribute(self, attrname, value, UiWindow, [IUiWindow])
 
 agcls.AgClassCatalog.add_catalog_entry("{BD72ECC3-A4A2-42FB-95AC-AE25633BB9F6}", UiWindow)
 agcls.AgTypeNameMap["UiWindow"] = UiWindow
@@ -785,12 +705,7 @@ class UiToolbar(IUiToolbar):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiToolbar._get_property(self, attrname) is not None: found_prop = IUiToolbar._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiToolbar.")
+        set_class_attribute(self, attrname, value, UiToolbar, [IUiToolbar])
 
 agcls.AgClassCatalog.add_catalog_entry("{C20AB584-ABCC-4BF3-96D4-D2A4AA880FBB}", UiToolbar)
 agcls.AgTypeNameMap["UiToolbar"] = UiToolbar
@@ -806,12 +721,7 @@ class UiToolbarCollection(IUiToolbarCollection):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiToolbarCollection._get_property(self, attrname) is not None: found_prop = IUiToolbarCollection._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiToolbarCollection.")
+        set_class_attribute(self, attrname, value, UiToolbarCollection, [IUiToolbarCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{28F000E7-D13E-485E-8484-0BCB359BBC55}", UiToolbarCollection)
 agcls.AgTypeNameMap["UiToolbarCollection"] = UiToolbarCollection
@@ -827,12 +737,7 @@ class UiWindowMapObject(IUiWindowMapObject):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiWindowMapObject._get_property(self, attrname) is not None: found_prop = IUiWindowMapObject._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowMapObject.")
+        set_class_attribute(self, attrname, value, UiWindowMapObject, [IUiWindowMapObject])
 
 agcls.AgClassCatalog.add_catalog_entry("{D20C704C-0763-4CC9-9485-A2EA23C84E6B}", UiWindowMapObject)
 agcls.AgTypeNameMap["UiWindowMapObject"] = UiWindowMapObject
@@ -848,12 +753,7 @@ class UiWindowGlobeObject(IUiWindowGlobeObject):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        found_prop = None
-        if IUiWindowGlobeObject._get_property(self, attrname) is not None: found_prop = IUiWindowGlobeObject._get_property(self, attrname)
-        if found_prop is not None:
-            found_prop.__set__(self, value)
-        else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UiWindowGlobeObject.")
+        set_class_attribute(self, attrname, value, UiWindowGlobeObject, [IUiWindowGlobeObject])
 
 agcls.AgClassCatalog.add_catalog_entry("{4F69FA5F-30E8-4A07-9D8C-1AD163A3DE0D}", UiWindowGlobeObject)
 agcls.AgTypeNameMap["UiWindowGlobeObject"] = UiWindowGlobeObject
