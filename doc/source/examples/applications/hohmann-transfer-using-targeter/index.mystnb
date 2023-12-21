@@ -275,6 +275,8 @@ Once that all the segments for the main sequence are defined, run the analysis:
 satellite.propagator.run_mission_control_sequence()
 ```
 
+## Plot the trajectory
+
 ```{code-cell} ipython3
 globe_plotter
 ```
