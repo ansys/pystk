@@ -58,7 +58,7 @@ jobs:
       matrix:
         python: ["3.8", "3.9", "3.10"]
         is-weekly-run:
-          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * *' }}
+          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 6,0' }}
         exclude:
           - is-weekly-run: true
             python: ["3.8", "3.9"]
