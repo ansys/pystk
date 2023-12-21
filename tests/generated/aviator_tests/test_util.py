@@ -84,7 +84,7 @@ class EngineLifetimeManager:
                 EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=False)
             elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
                 EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=True)
-            
+
             if EngineLifetimeManager.app_provider != None:
                 EngineLifetimeManager.stk = EngineLifetimeManager.app_provider.stk
                 EngineLifetimeManager.root = EngineLifetimeManager.app_provider.Application
@@ -930,11 +930,11 @@ class PythonStkApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self, use_grpc=False):
-        if use_grpc:
-            self.stk = STKDesktop.start_application(userControl=False, visible=True, grpc_server=True, grpc_desktop_options="/Automation")
-        else:
-            STKDesktop.start_application(userControl=False, visible=True)
-        PythonStkApplicationProvider.Application = self.stk.new_object_root()
+        options = "/Automation" if use_grpc else ""
+        self.stk: "STKDesktopApplication" = STKDesktop.start_application(
+            userControl=False, visible=True, grpc_server=use_grpc, grpc_desktop_options=options
+        )
+        PythonStkApplicationProvider.Application = self.stk.root
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
         return self.stk.root
@@ -951,7 +951,9 @@ class PythonStkRuntimeApplicationProvider(IAgAppProvider):
     def __init__(self, noGraphics: bool):
         import ansys.stk.core.stkruntime
 
-        self.stk = ansys.stk.core.stkruntime.STKRuntime.start_application(noGraphics)
+        self.stk: agi.stk12.stkruntime.STKRuntimeApplication = ansys.stk.core.stkruntime.STKRuntime.start_application(
+            noGraphics=noGraphics
+        )
         PythonStkRuntimeApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -970,7 +972,7 @@ class PythonStkXApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self):
-        self.stk = STKEngine.start_application(noGraphics=False)
+        self.stk: STKEngineApplication = STKEngine.start_application(noGraphics=False)
         PythonStkXApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -989,7 +991,7 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self):
-        self.stk = STKEngine.start_application(noGraphics=True)
+        self.stk: STKEngineApplication = STKEngine.start_application(noGraphics=True)
         PythonStkXNoGfxApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -1027,10 +1029,10 @@ class TestBase(unittest.TestCase):
 
     @staticmethod
     def Initialize():
-        TestBase.ApplicationProvider = EngineLifetimeManager.Initialize()
+        TestBase.ApplicationProvider: IAgAppProvider = EngineLifetimeManager.Initialize()
         TestBase.Target = TestBase.ApplicationProvider.Target
         TestBase.stk = TestBase.ApplicationProvider.stk
-        TestBase.root = TestBase.ApplicationProvider.Application
+        TestBase.root: "StkObjectRoot" = TestBase.ApplicationProvider.Application
 
         # Try to recover if previous test aborted with a scenario loaded
         if TestBase.root.current_scenario != None:
@@ -1052,7 +1054,12 @@ class TestBase(unittest.TestCase):
 
         TestBase.CheckICRFDataFilesVersion()
 
-        if EngineLifetimeManager.target in [TestTarget.eStk, TestTarget.eStkGrpc, TestTarget.eStkX, TestTarget.eStkRuntime]:
+        if EngineLifetimeManager.target in [
+            TestTarget.eStk,
+            TestTarget.eStkGrpc,
+            TestTarget.eStkX,
+            TestTarget.eStkRuntime,
+        ]:
             TestBase.NoGraphicsMode = False
         elif EngineLifetimeManager.target in [TestTarget.eStkNoGfx, TestTarget.eStkRuntimeNoGfx]:
             TestBase.NoGraphicsMode = True
