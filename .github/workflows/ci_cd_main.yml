@@ -28,7 +28,7 @@ jobs:
           BUILD_API: false
           BUILD_EXAMPLES: false
 
-      - name: "Download latest API docs"
+      - name: "Download the nightly documentation"
         uses: actions/checkout@v4
         with:
           ref: "gh-pages"
@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: doc/_build/html
-          name: documentation-html
+          name: complete-documentation-html
 
   doc-deploy-dev:
     name: "Deploy dev docs"
@@ -53,5 +53,6 @@ jobs:
     steps:
       - uses: ansys/actions/doc-deploy-dev@v5
         with:
+          doc-artifact-name: "complete-documentation-html"
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
