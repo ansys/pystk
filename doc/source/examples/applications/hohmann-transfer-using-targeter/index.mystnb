@@ -273,5 +273,8 @@ Once that all the segments for the main sequence are defined, run the analysis:
 
 ```{code-cell} ipython3
 satellite.propagator.run_mission_control_sequence()
+```
+
+```{code-cell} ipython3
 globe_plotter
 ```
