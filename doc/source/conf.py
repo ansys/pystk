@@ -223,16 +223,23 @@ linkcheck_ignore = [
 
 # -- Sphinx configuration ----------------------------------------------------
 
-def generate_downloadable_artifacts_for_examples(app, exception):
+def generate_example_artifacts(app, exception):
     import jupytext
+    from sphinx.util import logging
+    from sphinx.util.logging import prefixed_warnings
+
+    logger = logging.getLogger(__name__)
+    logger.info("\nGenerating example artifacts...")
+
     for notebook in app.outdir.glob("**/*.ipynb"):
         outdir = pathlib.Path(app.outdir) / notebook.parent.relative_to(app.outdir)
-        content = jupytext.read(notebook)
         script = notebook.name[:-len("mystnb")] + ".py"
         outfile = outdir / script
+        content = jupytext.read(notebook)
         jupytext.write(content, outfile, fmt="py")
 
+    logger.info("Done!\n", color="darkgreen")
 
 def setup(app):
     if BUILD_EXAMPLES:
-        app.connect('build-finished', generate_downloadable_artifacts_for_examples)
+        app.connect('build-finished', generate_example_artifacts)
