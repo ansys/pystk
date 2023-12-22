@@ -39,7 +39,6 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.stk_preferences.stk_preferences_python_plugins.ephemeris_file_reader_paths
         )
         paths.remove_all()
-
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.ADV_CAT, "TestAdvCAT")
         EarlyBoundTests.AG_ACAT = None
         TestBase.Uninitialize()
@@ -312,15 +311,17 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_ACAT.primary_default_class = ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC
         Assert.assertEqual(ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC, EarlyBoundTests.AG_ACAT.primary_default_class)
 
-        numAvailObjs: int = 29
+        numAvailObjs: int = (
+            29 if OSHelper.IsLinux() else 35
+        )  # Some file extensions are added to the search by CSharp plugins. These are currently not supported on Linux.
 
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
+        Assert.assertEqual(numAvailObjs, availObjColl.count)
 
         name: typing.Any = None
         date: typing.Any = None
         typeX: typing.Any = None
 
-        Assert.assertEqual(numAvailObjs, availObjColl.count)
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             (name, date, typeX) = availObjColl.get_available_object(-1)
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
@@ -440,15 +441,17 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_ACAT.secondary_default_class = ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC
         Assert.assertEqual(ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC, EarlyBoundTests.AG_ACAT.secondary_default_class)
 
-        numAvailObjs: int = 29
+        numAvailObjs: int = (
+            29 if OSHelper.IsLinux() else 35
+        )  # Some file extensions are added to the search by CSharp plugins. These are currently not supported on Linux.
 
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
+        Assert.assertEqual(numAvailObjs, availObjColl.count)
 
         name: typing.Any = None
         date: typing.Any = None
         typeX: typing.Any = None
 
-        Assert.assertEqual(numAvailObjs, availObjColl.count)
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             (name, date, typeX) = availObjColl.get_available_object(-1)
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):

@@ -1303,7 +1303,7 @@ class EarlyBoundTests(TestBase):
     def test_Maneuver_OptimalFinite(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Maneuver_OptimalFinite START")
         if (((self.Target != TestTarget.eStkX)) and ((self.Target != TestTarget.eStkNoGfx))) and (
-            (self.Target != TestTarget.eStkRuntime)
+            (self.Target != TestTarget.eStkRuntimeNoGfx)
         ):
             maneuver: "MissionControlSequenceManeuver" = clr.Convert(
                 EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man2", "-"),
