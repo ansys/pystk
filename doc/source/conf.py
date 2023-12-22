@@ -46,7 +46,7 @@ html_theme_options = {
 }
 html_static_path = ["_static"]
 html_css_files = [
-    "_static/css",
+    "css/highlight.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 ]
 
@@ -153,6 +153,38 @@ else:
     nbsphinx_thumbnails = {
         "examples/applications/hohmann-transfer-using-targeter/index": "./_static/thumbnails/hohmann-transfer-using-targeter.png",
     }
+    nbsphinx_prompt_width = 0
+    nbsphinx_prolog = """
+
+.. grid:: 2 
+    :gutter: 1
+
+    .. grid-item::
+        :child-align: center
+    
+        .. button-link:: {cname_pref}/{python_file_loc}
+           :color: primary
+           :shadow:
+        
+            Download as Python script :fab:`python`
+
+    .. grid-item::
+        :child-align: center
+
+        .. button-link:: {cname_pref}/{ipynb_file_loc}
+           :color: primary
+           :shadow:
+        
+            Download as Jupyter notebook :fas:`book`
+
+----
+    
+    """.format(
+        cname_pref=f"https://{cname}/version/{get_version_match(version)}",
+        python_file_loc="{{ env.docname }}.py",
+        ipynb_file_loc="{{ env.docname }}.ipynb",
+    )
+
 
 # -- Jinja context configuration ---------------------------------------------
 jinja_contexts = {
