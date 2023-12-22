@@ -13,7 +13,7 @@
 }
 
 .highlight .hll { background-color: #ffffcc !important; }
-.highlight { background: #f0f0f0 !important; }
+.highlight { font-size: 1rem; background: #f0f0f0 !important; }
 .highlight .c { color: #60a0b0 !important; font-style: italic !important; } /* Comment */
 .highlight .err { border: 1px solid #FF0000 !important; } /* Error */
 .highlight .k { color: #007020 !important; font-weight: bold !important; } /* Keyword */
