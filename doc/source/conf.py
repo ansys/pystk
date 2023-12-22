@@ -153,7 +153,7 @@ else:
     nbsphinx_thumbnails = {
         "examples/applications/hohmann-transfer-using-targeter/index": "./_static/thumbnails/hohmann-transfer-using-targeter.png",
     }
-    nbsphinx_prompt_width = 0
+    nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
 
 .. grid:: 2 
@@ -220,3 +220,19 @@ linkcheck_ignore = [
     "https://www.ansys.com/*"
 ]
 
+
+# -- Sphinx configuration ----------------------------------------------------
+
+def generate_downloadable_artifacts_for_examples(app, exception):
+    import jupytext
+    for notebook in app.outdir.glob("**/*.ipynb"):
+        outdir = pathlib.Path(app.outdir) / notebook.parent.relative_to(app.outdir)
+        content = jupytext.read(notebook)
+        script = notebook.name[:-len("mystnb")] + ".py"
+        outfile = outdir / script
+        jupytext.write(content, outfile, fmt="py")
+
+
+def setup(app):
+    if BUILD_EXAMPLES:
+        app.connect('build-finished', generate_downloadable_artifacts_for_examples)
