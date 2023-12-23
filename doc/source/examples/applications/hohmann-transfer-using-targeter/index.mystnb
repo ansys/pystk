@@ -40,11 +40,6 @@ Start by creating a new scenario in STK by running:
 ```{code-cell} ipython3
 root = stk.new_object_root()
 root.new_scenario("HohmannTransfer")
-
-
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
-globe_plotter = GlobeWidget(stk, 640, 480)
-root.execute_command('Animate * Start Loop');
 ```
 
 ## Adding a satellite to the scenario
@@ -278,5 +273,9 @@ satellite.propagator.run_mission_control_sequence()
 ## Plot the trajectory
 
 ```{code-cell} ipython3
+from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+
+
+globe_plotter = GlobeWidget(stk, 640, 480)
 globe_plotter
 ```
