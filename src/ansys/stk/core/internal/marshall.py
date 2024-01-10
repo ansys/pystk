@@ -759,7 +759,7 @@ class AgInterface_in_arg(object):
         new_inst.pIntf = None
         if type(val) == agcomobj.COMObject:
             new_inst.val = val
-            new_inst.rawptr = val.GetPointer()
+            new_inst.rawptr = val.get_pointer()
         elif val is not None and hasattr(val, "_intf"):
             new_inst.val = val
             if new_inst.as_interface=="IDispatch":
@@ -849,14 +849,10 @@ class AgInterface_event_callback_arg(object):
         self.intf = as_interface()
         self.intf._private_init(ptr)
         del(ptr)
-    def _cleanup(self):
-        del(self.intf)
-    def __del__(self):
-        self._cleanup()
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        self._cleanup()
+        del(self.intf)
         return False
     @property
     def COM_val(self) -> agcom.PVOID:

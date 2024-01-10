@@ -17,7 +17,7 @@ if os.name != "nt":
 
 class NativeContainerMethods:
     def __init__(self):
-        self.jniCore = CDLL(self._getJNICorePath())
+        self.jniCore = CDLL(self._get_jni_core_path())
         self.AgPythonCreateContainer                                         = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPCWSTR)(("AgPythonCreateContainer", self.jniCore), ((1, "env"), (1, "_this"), (1, "progId")))
         self.Java_agi_core_awt_AgAwtNativeContainer_AttachContainer          = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LPVOID, LPVOID)(("Java_agi_core_awt_AgAwtNativeContainer_AttachContainer", self.jniCore), ((1, "env"), (1, "_this"), (1, "pNativeCanvas"), (1, "pNativeDisplay"), (1, "pContainer")))
         self.Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer          = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, LONG, LONG, LONG)(("Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "x"), (1, "y"), (1, "width"), (1, "height")))
@@ -32,7 +32,7 @@ class NativeContainerMethods:
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved   = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, LONG, LONG, BOOL, BOOL, BOOL, BOOL, BOOL, BOOL)(("Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "x"), (1, "y"), (1, "ticks"), (1, "leftButtonDown"), (1, "middleButtonDown"), (1, "rightButtonDown"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
             self.AgPythonKeyPressed                                                                         = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, BOOL, BOOL, BOOL)(("AgPythonKeyPressed", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "keyCode"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
             self.AgPythonKeyReleased                                                                        = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, BOOL, BOOL, BOOL)(("AgPythonKeyReleased", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "keyCode"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
-    def _getJNICorePath(self):
+    def _get_jni_core_path(self):
         if not STKEngine._is_engine_running:
             raise STKRuntimeError(f"STKEngine.StartApplication() must be called before using the STK Engine controls")
             
@@ -63,19 +63,19 @@ class NativeContainerMethods:
 
             jniCoreDllPath = os.path.join(os.path.dirname(stkxdllpath), "AgJNICore.dll")
             return jniCoreDllPath
-    def CreateContainer(self, progid):
+    def create_container(self, progid):
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
-    def AttachContainer(self, pContainer, winid, display):
+    def attach_container(self, pContainer, winid, display):
         self.Java_agi_core_awt_AgAwtNativeContainer_AttachContainer(LPVOID(None), LPVOID(None), winid, display, LPVOID(pContainer))
-    def ResizeContainer(self, pContainer, x, y, width, height):
+    def resize_container(self, pContainer, x, y, width, height):
         self.Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), INT(width), INT(height))
-    def GetIAgUnknown(self, pContainer):
+    def get_unknown(self, pContainer):
         return self.AgPythonGetIAgUnknown(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    def DetachContainer(self, pContainer):
+    def detach_container(self, pContainer):
         self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    def ReleaseContainer(self, pContainer):
+    def release_container(self, pContainer):
         self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    if os.name!="nt":
+    def define_linux_events(self):
         def Paint(self, pContainer):
             self.Java_agi_core_awt_AgAwtNativeContainer_Paint(LPVOID(None), LPVOID(None), LPVOID(pContainer))
         def MousePressed(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
@@ -90,6 +90,8 @@ class NativeContainerMethods:
             self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
         def KeyReleased(self, pContainer, keyCode, ctrlKeyDown, altKeyDown, shiftKeyDown):
             self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
+    if os.name!="nt":
+        self.define_linux_events()
         
 class ControlBase(Frame):
     """Base class for Tkinter controls."""
@@ -111,22 +113,17 @@ class ControlBase(Frame):
             self._x11lib = cdll.LoadLibrary(find_library("X11"))
             self._XOpenDisplay = WINFUNCTYPE(POINTER(CHAR))(("XOpenDisplay", self._x11lib))
         
-        self._container = self._nativeContainerMethods.CreateContainer(self._progid)
-        self._unk = self._nativeContainerMethods.GetIAgUnknown(self._container)
+        self._container = self._nativeContainerMethods.create_container(self._progid)
+        self._unk = self._nativeContainerMethods.get_unknown(self._container)
         
         _cntrlinit_unk = IUnknown()
         _cntrlinit_unk.p = LPVOID(self._unk)
         
         self._interface._private_init(self, _cntrlinit_unk)
         
-        self.bind("<Configure>", self._Configure)
+        self.bind("<Configure>", self._configure)
         if os.name!="nt":
-            self.bind("<Expose>", self._Expose)
-            self.bind("<ButtonPress>", self._ButtonPress)
-            self.bind("<ButtonRelease>", self._ButtonRelease)
-            self.bind("<Motion>", self._Motion)
-            self.bind_all("<Any-KeyPress>", self._KeyPress)
-            self.bind_all("<Any-KeyRelease>", self._KeyRelease)
+            self.bind_linux_events()
         
     def __setattr__(self, attrname, value):
         try:
@@ -134,21 +131,21 @@ class ControlBase(Frame):
         except:
             Frame.__setattr__(self, attrname, value)
         
-    def _Configure(self, event):
+    def _configure(self, event):
         """Occurs when the frame is resized."""
         if not self._is_container_attached:
             self._xDisplay = None if os.name=="nt" else self._XOpenDisplay(self.winfo_screen().encode("utf-8"))
-            self._nativeContainerMethods.AttachContainer(self._container, self.winfo_id(), self._xDisplay)
+            self._nativeContainerMethods.attach_container(self._container, self.winfo_id(), self._xDisplay)
             self._is_container_attached = True
-        self._nativeContainerMethods.ResizeContainer(self._container, 0, 0, event.width, event.height)
+        self._nativeContainerMethods.resize_container(self._container, 0, 0, event.width, event.height)
             
     def destroy(self):
         """Occurs before the frame is destroyed."""
-        self._nativeContainerMethods.DetachContainer(self._container)
-        self._nativeContainerMethods.ReleaseContainer(self._container)
+        self._nativeContainerMethods.detach_container(self._container)
+        self._nativeContainerMethods.release_container(self._container)
         super().destroy()
-
-    if os.name!="nt":
+    
+    def define_linux_events(self):
         def _Expose(self, event):
             """Occurs when at least some part of the frame becomes visible after having been covered up by another window."""
             if self._is_container_attached:
@@ -181,6 +178,18 @@ class ControlBase(Frame):
         def _KeyRelease(self, event):
             """Occurs when key is released."""
             self._nativeContainerMethods.KeyReleased(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+
+    def bind_linux_events(self):
+        self.bind("<Expose>", self._Expose)
+        self.bind("<ButtonPress>", self._ButtonPress)
+        self.bind("<ButtonRelease>", self._ButtonRelease)
+        self.bind("<Motion>", self._Motion)
+        self.bind_all("<Any-KeyPress>", self._KeyPress)
+        self.bind_all("<Any-KeyRelease>", self._KeyRelease)
+
+    if os.name!="nt":
+        self.define_linux_events()
+        
 
 class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
     """The 3D Globe control for Tkinter."""

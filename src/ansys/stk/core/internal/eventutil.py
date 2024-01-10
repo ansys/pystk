@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################
 
+from __future__ import annotations
+
 __all__ = [ "IStkObjectRootEventHandler", 
             "ISTKXApplicationEventHandler", 
             "IUiAxGraphics2DCntrlEventHandler", 
@@ -11,6 +13,7 @@ __all__ = [ "IStkObjectRootEventHandler",
             "IImageCollectionEventHandler",
             "ITerrainOverlayCollectionEventHandler"]
 
+import typing
 
 from .comutil                import IUnknown
 from .comevents              import *
@@ -29,53 +32,57 @@ invalid_use_exception = STKEventsAPIError("Use operator += to register an event 
 class _EventSubscriptionManagerImpl(object):
     def __init__(self):
         self._next_id = 0
-        self._handlers = dict()
+        self._handlers: typing.Dict[int, STKEventSubscriber] = {}
         
-    def Subscribe(self, handler) -> int:
+    def subscribe(self, handler: STKEventSubscriber) -> int:
         self._next_id = self._next_id + 1
         self._handlers[self._next_id] = handler
-        handler._SubscribeImpl()
+        assert(isinstance(handler, STKEventSubscriber))
+        handler._subscribe_impl()
         return self._next_id
         
-    def Unsubscribe(self, id:int):
+    def unsubscribe(self, id:int):
         if id in self._handlers:
-            self._handlers[id]._UnsubscribeImpl()
+            assert(isinstance(self._handlers[id], STKEventSubscriber))
+            self._handlers[id]._unsubscribe_impl()
             del(self._handlers[id])
         
-    def UnsubscribeAll(self):
+    def unsubscribe_all(self):
         ids = [id for id in self._handlers]
         for id in ids:
-            self.Unsubscribe(id)
+            self.unsubscribe(id)
             
 EventSubscriptionManager = _EventSubscriptionManagerImpl()
 
 class STKEventSubscriber(object):
-    def __init__(self, impl):
+    def __init__(self, impl: COMEventHandlerImpl | GrpcEventHandlerImpl):
         self.__dict__["_event_manager_id"] = None
-        self.__dict__["_impl"] = impl
-        self.Subscribe()
+        self.__dict__["_impl"]: COMEventHandlerImpl | GrpcEventHandlerImpl = impl
+        self.subscribe()
         
     def __del__(self):
-        self.Unsubscribe()
+        self.unsubscribe()
         del(self._impl)
     
-    def Subscribe(self):
+    def subscribe(self):
         """Use to re-subscribe to events after calling Unsubscribe.  This class is initialized as subscribed when returned from StkObjectRoot.Subscribe()."""
         if self._event_manager_id is None:
-            self.__dict__["_event_manager_id"] = EventSubscriptionManager.Subscribe(self)
+            self.__dict__["_event_manager_id"] = EventSubscriptionManager.subscribe(self)
             
-    def _SubscribeImpl(self):
+    def _subscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
+        assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
         self._impl.Subscribe()
         
-    def Unsubscribe(self):
+    def unsubscribe(self):
         """Unsubscribe from events."""
         if self._event_manager_id is not None:
-            EventSubscriptionManager.Unsubscribe(self._event_manager_id)
+            EventSubscriptionManager.unsubscribe(self._event_manager_id)
             self.__dict__["_event_manager_id"] = None
             
-    def _UnsubscribeImpl(self):
+    def _unsubscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
+        assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
         self._impl.Unsubscribe()
         
 class _STKEvent(object):
@@ -171,273 +178,273 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
             raise STKAttributeError(attrname + " is not a recognized event in StkObjectRootEvents.")
  
     @property
-    def OnScenarioNew(self):
+    def on_scenario_new(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioNew(Path:str) -> None]"""
         return self._events["OnScenarioNew"]
         
-    @OnScenarioNew.setter
-    def OnScenarioNew(self, callback):
+    @on_scenario_new.setter
+    def on_scenario_new(self, callback):
         self._events["OnScenarioNew"]._safe_assign(callback)
         
     @property
-    def OnScenarioLoad(self):
+    def on_scenario_load(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioLoad(Path:str) -> None]"""
         return self._events["OnScenarioLoad"]
         
-    @OnScenarioLoad.setter
-    def OnScenarioLoad(self, callback):
+    @on_scenario_load.setter
+    def on_scenario_load(self, callback):
         self._events["OnScenarioLoad"]._safe_assign(callback)
         
     @property
-    def OnScenarioClose(self):
+    def on_scenario_close(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioClose() -> None]"""
         return self._events["OnScenarioClose"]
         
-    @OnScenarioClose.setter
-    def OnScenarioClose(self, callback):
+    @on_scenario_close.setter
+    def on_scenario_close(self, callback):
         self._events["OnScenarioClose"]._safe_assign(callback)
         
     @property
-    def OnScenarioSave(self):
+    def on_scenario_save(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioSave(Path:str) -> None]"""
         return self._events["OnScenarioSave"]
         
-    @OnScenarioSave.setter
-    def OnScenarioSave(self, callback):
+    @on_scenario_save.setter
+    def on_scenario_save(self, callback):
         self._events["OnScenarioSave"]._safe_assign(callback)
         
     @property
-    def OnLogMessage(self):
+    def on_log_message(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MSG_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MSG_DISP_ID") -> None]"""
         return self._events["OnLogMessage"]
         
-    @OnLogMessage.setter
-    def OnLogMessage(self, callback):
+    @on_log_message.setter
+    def on_log_message(self, callback):
         self._events["OnLogMessage"]._safe_assign(callback)
 
     @property
-    def OnAnimUpdate(self):
+    def on_anim_update(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimUpdate(timeEpSec:float) -> None]"""
         return self._events["OnAnimUpdate"]
         
-    @OnAnimUpdate.setter
-    def OnAnimUpdate(self, callback):
+    @on_anim_update.setter
+    def on_anim_update(self, callback):
         self._events["OnAnimUpdate"]._safe_assign(callback)
     
     @property
-    def OnStkObjectAdded(self):
+    def on_stk_object_added(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectAdded(Sender:typing.Any) -> None]"""
         return self._events["OnStkObjectAdded"]
         
-    @OnStkObjectAdded.setter
-    def OnStkObjectAdded(self, callback):
+    @on_stk_object_added.setter
+    def on_stk_object_added(self, callback):
         self._events["OnStkObjectAdded"]._safe_assign(callback)
         
     @property
-    def OnStkObjectDeleted(self):
+    def on_stk_object_deleted(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectDeleted(Sender:typing.Any) -> None]"""
         return self._events["OnStkObjectDeleted"]
         
-    @OnStkObjectDeleted.setter
-    def OnStkObjectDeleted(self, callback):
+    @on_stk_object_deleted.setter
+    def on_stk_object_deleted(self, callback):
         self._events["OnStkObjectDeleted"]._safe_assign(callback)
         
     @property
-    def OnStkObjectRenamed(self):
+    def on_stk_object_renamed(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectRenamed(Sender:typing.Any, OldPath:str, NewPath:str) -> None]"""
         return self._events["OnStkObjectRenamed"]
         
-    @OnStkObjectRenamed.setter
-    def OnStkObjectRenamed(self, callback):
+    @on_stk_object_renamed.setter
+    def on_stk_object_renamed(self, callback):
         self._events["OnStkObjectRenamed"]._safe_assign(callback)
         
     @property
-    def OnAnimationPlayback(self):
+    def on_animation_playback(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"ANIMATION_ACTIONS", eDirection:"ANIMATION_DIRECTIONS") -> None]"""
         return self._events["OnAnimationPlayback"]
         
-    @OnAnimationPlayback.setter
-    def OnAnimationPlayback(self, callback):
+    @on_animation_playback.setter
+    def on_animation_playback(self, callback):
         self._events["OnAnimationPlayback"]._safe_assign(callback)
         
     @property
-    def OnAnimationRewind(self):
+    def on_animation_rewind(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationRewind() -> None]"""
         return self._events["OnAnimationRewind"]
         
-    @OnAnimationRewind.setter
-    def OnAnimationRewind(self, callback):
+    @on_animation_rewind.setter
+    def on_animation_rewind(self, callback):
         self._events["OnAnimationRewind"]._safe_assign(callback)
         
     @property
-    def OnAnimationPause(self):
+    def on_animation_pause(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPause(CurrentTime:float) -> None]"""
         return self._events["OnAnimationPause"]
         
-    @OnAnimationPause.setter
-    def OnAnimationPause(self, callback):
+    @on_animation_pause.setter
+    def on_animation_pause(self, callback):
         self._events["OnAnimationPause"]._safe_assign(callback)
         
     @property
-    def OnScenarioBeforeSave(self):
+    def on_scenario_before_save(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"ScenarioBeforeSaveEventArgs") -> None]"""
         return self._events["OnScenarioBeforeSave"]
         
-    @OnScenarioBeforeSave.setter
-    def OnScenarioBeforeSave(self, callback):
+    @on_scenario_before_save.setter
+    def on_scenario_before_save(self, callback):
         self._events["OnScenarioBeforeSave"]._safe_assign(callback)
         
     @property
-    def OnAnimationStep(self):
+    def on_animation_step(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationStep(CurrentTime:float) -> None]"""
         return self._events["OnAnimationStep"]
         
-    @OnAnimationStep.setter
-    def OnAnimationStep(self, callback):
+    @on_animation_step.setter
+    def on_animation_step(self, callback):
         self._events["OnAnimationStep"]._safe_assign(callback)
         
     @property
-    def OnAnimationStepBack(self):
+    def on_animation_step_back(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationStepBack(CurrentTime:float) -> None]"""
         return self._events["OnAnimationStepBack"]
         
-    @OnAnimationStepBack.setter
-    def OnAnimationStepBack(self, callback):
+    @on_animation_step_back.setter
+    def on_animation_step_back(self, callback):
         self._events["OnAnimationStepBack"]._safe_assign(callback)
         
     @property
-    def OnAnimationSlower(self):
+    def on_animation_slower(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationSlower() -> None]"""
         return self._events["OnAnimationSlower"]
         
-    @OnAnimationSlower.setter
-    def OnAnimationSlower(self, callback):
+    @on_animation_slower.setter
+    def on_animation_slower(self, callback):
         self._events["OnAnimationSlower"]._safe_assign(callback)
         
     @property
-    def OnAnimationFaster(self):
+    def on_animation_faster(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationFaster() -> None]"""
         return self._events["OnAnimationFaster"]
         
-    @OnAnimationFaster.setter
-    def OnAnimationFaster(self, callback):
+    @on_animation_faster.setter
+    def on_animation_faster(self, callback):
         self._events["OnAnimationFaster"]._safe_assign(callback)
         
     @property
-    def OnPercentCompleteUpdate(self):
+    def on_percent_complete_update(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"PctCmpltEventArgs") -> None]"""
         return self._events["OnPercentCompleteUpdate"]
         
-    @OnPercentCompleteUpdate.setter
-    def OnPercentCompleteUpdate(self, callback):
+    @on_percent_complete_update.setter
+    def on_percent_complete_update(self, callback):
         self._events["OnPercentCompleteUpdate"]._safe_assign(callback)
         
     @property
-    def OnPercentCompleteEnd(self):
+    def on_percent_complete_end(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteEnd() -> None]"""
         return self._events["OnPercentCompleteEnd"]
         
-    @OnPercentCompleteEnd.setter
-    def OnPercentCompleteEnd(self, callback):
+    @on_percent_complete_end.setter
+    def on_percent_complete_end(self, callback):
         self._events["OnPercentCompleteEnd"]._safe_assign(callback)
         
     @property
-    def OnPercentCompleteBegin(self):
+    def on_percent_complete_begin(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteBegin() -> None]"""
         return self._events["OnPercentCompleteBegin"]
         
-    @OnPercentCompleteBegin.setter
-    def OnPercentCompleteBegin(self, callback):
+    @on_percent_complete_begin.setter
+    def on_percent_complete_begin(self, callback):
         self._events["OnPercentCompleteBegin"]._safe_assign(callback)
         
     @property
-    def OnStkObjectChanged(self):
+    def on_stk_object_changed(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"StkObjectChangedEventArgs") -> None]"""
         return self._events["OnStkObjectChanged"]
         
-    @OnStkObjectChanged.setter
-    def OnStkObjectChanged(self, callback):
+    @on_stk_object_changed.setter
+    def on_stk_object_changed(self, callback):
         self._events["OnStkObjectChanged"]._safe_assign(callback)
         
     @property
-    def OnScenarioBeforeClose(self):
+    def on_scenario_before_close(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeClose() -> None]"""
         return self._events["OnScenarioBeforeClose"]
         
-    @OnScenarioBeforeClose.setter
-    def OnScenarioBeforeClose(self, callback):
+    @on_scenario_before_close.setter
+    def on_scenario_before_close(self, callback):
         self._events["OnScenarioBeforeClose"]._safe_assign(callback)
         
     @property
-    def OnStkObjectPreDelete(self):
+    def on_stk_object_pre_delete(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"StkObjectPreDeleteEventArgs") -> None]"""
         return self._events["OnStkObjectPreDelete"]
         
-    @OnStkObjectPreDelete.setter
-    def OnStkObjectPreDelete(self, callback):
+    @on_stk_object_pre_delete.setter
+    def on_stk_object_pre_delete(self, callback):
         self._events["OnStkObjectPreDelete"]._safe_assign(callback)
     
     @property
-    def OnStkObjectStart3dEditing(self):
+    def on_stk_object_start_3d_editing(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectStart3dEditing(Path:str) -> None]"""
         return self._events["OnStkObjectStart3dEditing"]
         
-    @OnStkObjectStart3dEditing.setter
-    def OnStkObjectStart3dEditing(self, callback):
+    @on_stk_object_start_3d_editing.setter
+    def on_stk_object_start_3d_editing(self, callback):
         self._events["OnStkObjectStart3dEditing"]._safe_assign(callback)
         
     @property
-    def OnStkObjectStop3dEditing(self):
+    def on_stk_object_stop_3d_editing(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectStop3dEditing(Path:str) -> None]"""
         return self._events["OnStkObjectStop3dEditing"]
         
-    @OnStkObjectStop3dEditing.setter
-    def OnStkObjectStop3dEditing(self, callback):
+    @on_stk_object_stop_3d_editing.setter
+    def on_stk_object_stop_3d_editing(self, callback):
         self._events["OnStkObjectStop3dEditing"]._safe_assign(callback)
         
     @property
-    def OnStkObjectApply3dEditing(self):
+    def on_stk_object_apply_3d_editing(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectApply3dEditing(Path:str) -> None]"""
         return self._events["OnStkObjectApply3dEditing"]
         
-    @OnStkObjectApply3dEditing.setter
-    def OnStkObjectApply3dEditing(self, callback):
+    @on_stk_object_apply_3d_editing.setter
+    def on_stk_object_apply_3d_editing(self, callback):
         self._events["OnStkObjectApply3dEditing"]._safe_assign(callback)
         
     @property
-    def OnStkObjectCancel3dEditing(self):
+    def on_stk_object_cancel_3d_editing(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCancel3dEditing(Path:str) -> None]"""
         return self._events["OnStkObjectCancel3dEditing"]
         
-    @OnStkObjectCancel3dEditing.setter
-    def OnStkObjectCancel3dEditing(self, callback):
+    @on_stk_object_cancel_3d_editing.setter
+    def on_stk_object_cancel_3d_editing(self, callback):
         self._events["OnStkObjectCancel3dEditing"]._safe_assign(callback)
         
     @property
-    def OnStkObjectPreCut(self):
+    def on_stk_object_pre_cut(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
         return self._events["OnStkObjectPreCut"]
         
-    @OnStkObjectPreCut.setter
-    def OnStkObjectPreCut(self, callback):
+    @on_stk_object_pre_cut.setter
+    def on_stk_object_pre_cut(self, callback):
         self._events["OnStkObjectPreCut"]._safe_assign(callback)
         
     @property
-    def OnStkObjectCopy(self):
+    def on_stk_object_copy(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
         return self._events["OnStkObjectCopy"]
         
-    @OnStkObjectCopy.setter
-    def OnStkObjectCopy(self, callback):
+    @on_stk_object_copy.setter
+    def on_stk_object_copy(self, callback):
         self._events["OnStkObjectCopy"]._safe_assign(callback)
         
     @property
-    def OnStkObjectPaste(self):
+    def on_stk_object_paste(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
         return self._events["OnStkObjectPaste"]
         
-    @OnStkObjectPaste.setter
-    def OnStkObjectPaste(self, callback):
+    @on_stk_object_paste.setter
+    def on_stk_object_paste(self, callback):
         self._events["OnStkObjectPaste"]._safe_assign(callback)
     
     
@@ -480,30 +487,30 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
             raise STKAttributeError(attrname + " is not a recognized event in STKXApplicationEvents.")
         
     @property
-    def OnScenarioNew(self):
+    def on_scenario_new(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioNew(Path:str) -> None]"""
         return self._events["OnScenarioNew"]
         
-    @OnScenarioNew.setter
-    def OnScenarioNew(self, callback):
+    @on_scenario_new.setter
+    def on_scenario_new(self, callback):
         self._events["OnScenarioNew"]._safe_assign(callback)
         
     @property
-    def OnScenarioLoad(self):
+    def on_scenario_load(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioLoad(Path:str) -> None]"""
         return self._events["OnScenarioLoad"]
         
-    @OnScenarioLoad.setter
-    def OnScenarioLoad(self, callback):
+    @on_scenario_load.setter
+    def on_scenario_load(self, callback):
         self._events["OnScenarioLoad"]._safe_assign(callback)
         
     @property
-    def OnScenarioClose(self):
+    def on_scenario_close(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioClose() -> None]"""
         return self._events["OnScenarioClose"]
         
-    @OnScenarioClose.setter
-    def OnScenarioClose(self, callback):
+    @on_scenario_close.setter
+    def on_scenario_close(self, callback):
         self._events["OnScenarioClose"]._safe_assign(callback)
         
     @property
@@ -516,93 +523,93 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         self._events["OnScenarioSave"]._safe_assign(callback)
         
     @property
-    def OnLogMessage(self):
+    def on_log_message(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MSG_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MSG_DISP_ID") -> None]"""
         return self._events["OnLogMessage"]
         
-    @OnLogMessage.setter
-    def OnLogMessage(self, callback):
+    @on_log_message.setter
+    def on_log_message(self, callback):
         self._events["OnLogMessage"]._safe_assign(callback)
 
     @property
-    def OnAnimUpdate(self):
+    def on_anim_update(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimUpdate(timeEpSec:float) -> None]"""
         return self._events["OnAnimUpdate"]
         
-    @OnAnimUpdate.setter
-    def OnAnimUpdate(self, callback):
+    @on_anim_update.setter
+    def on_anim_update(self, callback):
         self._events["OnAnimUpdate"]._safe_assign(callback)
         
     @property
-    def OnNewGlobeCtrlRequest(self):
+    def on_new_globe_ctrl_request(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGlobeCtrlRequest(SceneID:int) -> None]"""
         return self._events["OnNewGlobeCtrlRequest"]
         
-    @OnNewGlobeCtrlRequest.setter
-    def OnNewGlobeCtrlRequest(self, callback):
+    @on_new_globe_ctrl_request.setter
+    def on_new_globe_ctrl_request(self, callback):
         self._events["OnNewGlobeCtrlRequest"]._safe_assign(callback)
     
     @property
-    def OnNewMapCtrlRequest(self):
+    def on_new_map_ctrl_request(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewMapCtrlRequest(WinID:int) -> None]"""
         return self._events["OnNewMapCtrlRequest"]
         
-    @OnNewMapCtrlRequest.setter
-    def OnNewMapCtrlRequest(self, callback):
+    @on_new_map_ctrl_request.setter
+    def on_new_map_ctrl_request(self, callback):
         self._events["OnNewMapCtrlRequest"]._safe_assign(callback)
         
     @property
-    def OnBeforeNewScenario(self):
+    def on_before_new_scenario(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnBeforeNewScenario(Scenario:str) -> None]"""
         return self._events["OnBeforeNewScenario"]
         
-    @OnBeforeNewScenario.setter
-    def OnBeforeNewScenario(self, callback):
+    @on_before_new_scenario.setter
+    def on_before_new_scenario(self, callback):
         self._events["OnBeforeNewScenario"]._safe_assign(callback)
         
     @property
-    def OnBeforeLoadScenario(self):
+    def on_before_load_scenario(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnBeforeLoadScenario(Scenario:str) -> None]"""
         return self._events["OnBeforeLoadScenario"]
         
-    @OnBeforeLoadScenario.setter
-    def OnBeforeLoadScenario(self, callback):
+    @on_before_load_scenario.setter
+    def on_before_load_scenario(self, callback):
         self._events["OnBeforeLoadScenario"]._safe_assign(callback)
         
     @property
-    def OnBeginScenarioClose(self):
+    def on_begin_scenario_close(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnBeginScenarioClose() -> None]"""
         return self._events["OnBeginScenarioClose"]
         
-    @OnBeginScenarioClose.setter
-    def OnBeginScenarioClose(self, callback):
+    @on_begin_scenario_close.setter
+    def on_begin_scenario_close(self, callback):
         self._events["OnBeginScenarioClose"]._safe_assign(callback)
     
     @property
-    def OnNewGfxAnalysisCtrlRequest(self):
+    def on_new_gfx_analysis_ctrl_request(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None]"""
         return self._events["OnNewGfxAnalysisCtrlRequest"]
         
-    @OnNewGfxAnalysisCtrlRequest.setter
-    def OnNewGfxAnalysisCtrlRequest(self, callback):
+    @on_new_gfx_analysis_ctrl_request.setter
+    def on_new_gfx_analysis_ctrl_request(self, callback):
         self._events["OnNewGfxAnalysisCtrlRequest"]._safe_assign(callback)
     
     @property
-    def OnSSLCertificateServerError(self):
+    def on_ssl_certificate_server_error(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnSSLCertificateServerError(pArgs:"STKXSSLCertificateErrorEventArgs") -> None]"""
         return self._events["OnSSLCertificateServerError"]
         
-    @OnSSLCertificateServerError.setter
-    def OnSSLCertificateServerError(self, callback):
+    @on_ssl_certificate_server_error.setter
+    def on_ssl_certificate_server_error(self, callback):
         self._events["OnSSLCertificateServerError"]._safe_assign(callback)
         
     @property
-    def OnConControlQuitReceived(self):
+    def on_con_control_quit_received(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnConControlQuitReceived(pArgs:"STKXConControlQuitReceivedEventArgs") -> None]"""
         return self._events["OnConControlQuitReceived"]
         
-    @OnConControlQuitReceived.setter
-    def OnConControlQuitReceived(self, callback):
+    @on_con_control_quit_received.setter
+    def on_con_control_quit_received(self, callback):
         self._events["OnConControlQuitReceived"]._safe_assign(callback)
 
                 
@@ -630,93 +637,93 @@ class IAgUiAxStockEventHandler(object):
             raise STKAttributeError(attrname + " is not a recognized event in IAgUiAxStockEvents.")
     
     @property
-    def KeyDown(self):
+    def key_down(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [KeyDown(KeyCode:int, Shift:int) -> None]"""
         return self._events["KeyDown"]
         
-    @KeyDown.setter
-    def KeyDown(self, callback):
+    @key_down.setter
+    def key_down(self, callback):
         self._events["KeyDown"]._safe_assign(callback)
 
     @property
-    def KeyPress(self):
+    def key_press(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [KeyPress(KeyAscii:int) -> None]"""
         return self._events["KeyPress"]
         
-    @KeyPress.setter
-    def KeyPress(self, callback):
+    @key_press.setter
+    def key_press(self, callback):
         self._events["KeyPress"]._safe_assign(callback)
         
     @property
-    def KeyUp(self):
+    def key_up(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [KeyUp(KeyCode:int, Shift:int) -> None]"""
         return self._events["KeyUp"]
         
-    @KeyUp.setter
-    def KeyUp(self, callback):
+    @key_up.setter
+    def key_up(self, callback):
         self._events["KeyUp"]._safe_assign(callback)
         
     @property
-    def Click(self):
+    def click(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [Click() -> None]"""
         return self._events["Click"]
         
-    @Click.setter
-    def Click(self, callback):
+    @click.setter
+    def click(self, callback):
         self._events["Click"]._safe_assign(callback)
  
     @property
-    def DblClick(self):
+    def dbl_click(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [DblClick() -> None]"""
         return self._events["DblClick"]
         
-    @DblClick.setter
-    def DblClick(self, callback):
+    @dbl_click.setter
+    def dbl_click(self, callback):
         self._events["DblClick"]._safe_assign(callback)
         
     @property
-    def MouseDown(self):
+    def mouse_down(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [MouseDown(Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._events["MouseDown"]
         
-    @MouseDown.setter
-    def MouseDown(self, callback):
+    @mouse_down.setter
+    def mouse_down(self, callback):
         self._events["MouseDown"]._safe_assign(callback)
 
     @property
-    def MouseMove(self):
+    def mouse_move(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [MouseMove(Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._events["MouseMove"]
         
-    @MouseMove.setter
-    def MouseMove(self, callback):
+    @mouse_move.setter
+    def mouse_move(self, callback):
         self._events["MouseMove"]._safe_assign(callback)
 
     @property
-    def MouseUp(self):
+    def mouse_up(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [MouseUp(Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._events["MouseUp"]
         
-    @MouseUp.setter
-    def MouseUp(self, callback):
+    @mouse_up.setter
+    def mouse_up(self, callback):
         self._events["MouseUp"]._safe_assign(callback)
 
     @property
-    def OLEDragDrop(self):
+    def ole_drag_drop(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OLEDragDrop(Data:"DataObject", Effect:int, Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._events["OLEDragDrop"]
         
-    @OLEDragDrop.setter
-    def OLEDragDrop(self, callback):
+    @ole_drag_drop.setter
+    def ole_drag_drop(self, callback):
         self._events["OLEDragDrop"]._safe_assign(callback)
 
     @property
-    def MouseWheel(self):
+    def mouse_wheel(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [MouseWheel(Button:int, Shift:int, Delta:int, X:int, Y:int) -> None]"""
         return self._events["MouseWheel"]
         
-    @MouseWheel.setter
-    def MouseWheel(self, callback):
+    @mouse_wheel.setter
+    def mouse_wheel(self, callback):
         self._events["MouseWheel"]._safe_assign(callback)
 
 
@@ -773,39 +780,39 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
                 raise STKAttributeError(attrname + " is not a recognized event in UiAxGraphics3DCntrlEvents.")
             
     @property
-    def OnObjectEditingStart(self):
+    def on_object_editing_start(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingStart(Path:str) -> None]"""
         return self._events["OnObjectEditingStart"]
         
-    @OnObjectEditingStart.setter
-    def OnObjectEditingStart(self, callback):
+    @on_object_editing_start.setter
+    def on_object_editing_start(self, callback):
         self._events["OnObjectEditingStart"]._safe_assign(callback)
 
     @property
-    def OnObjectEditingApply(self):
+    def on_object_editing_apply(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingApply(Path:str) -> None]"""
         return self._events["OnObjectEditingApply"]
         
-    @OnObjectEditingApply.setter
-    def OnObjectEditingApply(self, callback):
+    @on_object_editing_apply.setter
+    def on_object_editing_apply(self, callback):
         self._events["OnObjectEditingApply"]._safe_assign(callback)
 
     @property
-    def OnObjectEditingCancel(self):
+    def on_object_editing_cancel(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingCancel(Path:str) -> None]"""
         return self._events["OnObjectEditingCancel"]
         
-    @OnObjectEditingCancel.setter
-    def OnObjectEditingCancel(self, callback):
+    @on_object_editing_cancel.setter
+    def on_object_editing_cancel(self, callback):
         self._events["OnObjectEditingCancel"]._safe_assign(callback)
 
     @property
-    def OnObjectEditingStop(self):
+    def on_object_editing_stop(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingStop(Path:str) -> None]"""
         return self._events["OnObjectEditingStop"]
         
-    @OnObjectEditingStop.setter
-    def OnObjectEditingStop(self, callback):
+    @on_object_editing_stop.setter
+    def on_object_editing_stop(self, callback):
         self._events["OnObjectEditingStop"]._safe_assign(callback)
         
         
@@ -835,12 +842,12 @@ class ISceneEventHandler(STKEventSubscriber):
             raise STKAttributeError(attrname + " is not a recognized event in SceneEvents.")
           
     @property
-    def Rendering(self):
+    def rendering(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [Rendering(Sender:typing.Any, Args:"RenderingEventArgs") -> None]"""
         return self._events["Rendering"]
         
-    @Rendering.setter
-    def Rendering(self, callback):
+    @rendering.setter
+    def rendering(self, callback):
         self._events["Rendering"]._safe_assign(callback)
                 
                 
@@ -870,12 +877,12 @@ class IKmlGraphicsEventHandler(STKEventSubscriber):
             raise STKAttributeError(attrname + " is not a recognized event in KmlGraphicsEvents.")
         
     @property
-    def DocumentLoaded(self):
+    def document_loaded(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [DocumentLoaded(Sender:typing.Any, Args:"KmlDocumentLoadedEventArgs") -> None]"""
         return self._events["DocumentLoaded"]
         
-    @DocumentLoaded.setter
-    def DocumentLoaded(self, callback):
+    @document_loaded.setter
+    def document_loaded(self, callback):
         self._events["DocumentLoaded"]._safe_assign(callback)
       
                 
@@ -905,12 +912,12 @@ class IImageCollectionEventHandler(STKEventSubscriber):
             raise STKAttributeError(attrname + " is not a recognized event in ImageCollectionEvents.")
 
     @property
-    def AddComplete(self):
+    def add_complete(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"GlobeImageOverlayAddCompleteEventArgs") -> None]"""
         return self._events["AddComplete"]
         
-    @AddComplete.setter
-    def AddComplete(self, callback):
+    @add_complete.setter
+    def add_complete(self, callback):
         self._events["AddComplete"]._safe_assign(callback)
 
                 
@@ -940,12 +947,12 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber):
             raise STKAttributeError(attrname + " is not a recognized event in TerrainOverlayCollectionEvents.")
 
     @property
-    def AddComplete(self):
+    def add_complete(self):
         """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"TerrainOverlayAddCompleteEventArgs") -> None]"""
         return self._events["AddComplete"]
         
-    @AddComplete.setter
-    def AddComplete(self, callback):
+    @add_complete.setter
+    def add_complete(self, callback):
         self._events["AddComplete"]._safe_assign(callback)
         
     

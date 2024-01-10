@@ -20,11 +20,6 @@ from ansys.stk.core.stkobjects.astrogator import (
     TARGET_SEQ_ACTION,
 )
 
-"""ffrom ansys.stk.core.stkobjects import *
-rom ansys.stk.core.stkutil import *
-from ansys.stk.core.stkobjects.astrogator import *
-from ansys.stk.core.utilities.colors import *"""
-
 
 class HohmannTransferUsingTargeter:
     """Demonstrates how to use Hohmann Transfer using Targeter with STK Engine."""
