@@ -122,8 +122,7 @@ class ControlBase(Frame):
         
         self.bind("<Configure>", self._configure)
         if os.name!="nt":
-            self.define_linux_events()
-            self.bind_linux_events()
+            self.define_and_bind_linux_events()
         
     def __setattr__(self, attrname, value):
         try:
@@ -179,13 +178,13 @@ class ControlBase(Frame):
             """Occurs when key is released."""
             self._nativeContainerMethods.KeyReleased(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
-    def bind_linux_events(self):
         self.bind("<Expose>", self._Expose)
         self.bind("<ButtonPress>", self._ButtonPress)
         self.bind("<ButtonRelease>", self._ButtonRelease)
         self.bind("<Motion>", self._Motion)
         self.bind_all("<Any-KeyPress>", self._KeyPress)
         self.bind_all("<Any-KeyRelease>", self._KeyRelease)
+        
 
 class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
     """The 3D Globe control for Tkinter."""
