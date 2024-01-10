@@ -91,7 +91,7 @@ class NativeContainerMethods:
         def KeyReleased(self, pContainer, keyCode, ctrlKeyDown, altKeyDown, shiftKeyDown):
             self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
     if os.name!="nt":
-        self.define_linux_events()
+        define_linux_events()
         
 class ControlBase(Frame):
     """Base class for Tkinter controls."""
